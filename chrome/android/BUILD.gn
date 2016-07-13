@@ -36,7 +36,7 @@ if (modularize_vr) {
   import("//chrome/android/features/vr/vr_module_tmpl.gni")
 }
 
-manifest_package = "org.chromium.chrome"
+manifest_package = "com.brave.browser"
 test_manifest_package = "org.chromium.chrome.tests"
 
 chrome_public_jinja_variables = default_chrome_public_jinja_variables +
@@ -973,7 +973,7 @@ if (enable_vr || (enable_arcore && package_arcore)) {
 
 # Overrides icon / name defined in chrome_app_java_resources.
 android_resources("chrome_public_apk_resources") {
-  resource_dirs = [ "java/res_chromium" ]
+  resource_dirs = [ "java/res_brave" ]
 
   # Dep needed to ensure override works properly.
   deps = [

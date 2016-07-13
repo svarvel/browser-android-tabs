@@ -186,6 +186,8 @@ ChromeNetworkDelegate::ChromeNetworkDelegate(
     extensions::EventRouterForwarder* event_router)
     : extensions_delegate_(
           ChromeExtensionsNetworkDelegate::Create(event_router)),
+      enable_tracking_protection_(nullptr),
+      enable_ad_block_(nullptr),
       experimental_web_platform_features_enabled_(
           base::CommandLine::ForCurrentProcess()->HasSwitch(
               switches::kEnableExperimentalWebPlatformFeatures)) {}
@@ -206,10 +208,65 @@ void ChromeNetworkDelegate::set_cookie_settings(
   cookie_settings_ = cookie_settings;
 }
 
+// static
+void ChromeNetworkDelegate::InitializePrefsOnUIThread(
+    BooleanPrefMember* enable_tracking_protection,
+    BooleanPrefMember* enable_ad_block
+    PrefService* pref_service) {
+  DCHECK_CURRENTLY_ON(BrowserThread::UI);
+  if (enable_tracking_protection) {
+    enable_tracking_protection->Init(prefs::kTrackingProtectionEnabled, pref_service);
+    enable_tracking_protection->MoveToThread(
+        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+  }
+  if (enable_ad_block) {
+    enable_ad_block->Init(prefs::kAdBlockEnabled, pref_service);
+    enable_ad_block->MoveToThread(
+        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+  }
+}
+
 int ChromeNetworkDelegate::OnBeforeURLRequest(
     net::URLRequest* request,
     net::CompletionOnceCallback callback,
     GURL* new_url) {
+
+  // Ad Block and tracking protection
+  bool isTPEnabled = true;
+	bool block = false;
+  if (enable_tracking_protection_) {
+    isTPEnabled = enable_tracking_protection_->GetValue();
+  }
+	if (request
+      && isTPEnabled
+			&& blockers_worker_.shouldTPBlockUrl(
+					request->first_party_for_cookies().host(),
+					request->url().host())
+				) {
+		block = true;
+	}
+  bool isAdBlockEnabled = true;
+  if (enable_ad_block_) {
+    isAdBlockEnabled = enable_ad_block_->GetValue();
+  }
+	const ResourceRequestInfo* info = ResourceRequestInfo::ForRequest(request);
+	if (!block
+      && isAdBlockEnabled
+      && request
+      && info
+			&& blockers_worker_.shouldAdBlockUrl(
+					request->first_party_for_cookies().host(),
+					request->url().spec(),
+					(unsigned int)info->GetResourceType())) {
+		block = true;
+	}
+	if (block) {
+		*new_url = GURL("");
+
+		return net::ERR_BLOCKED_BY_ADMINISTRATOR;
+	}
+  //
+
   extensions_delegate_->ForwardStartRequestStatus(request);
 
   // The non-redirect case is handled in GoogleURLLoaderThrottle.

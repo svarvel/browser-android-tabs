@@ -443,6 +443,18 @@ static void JNI_PrefServiceBridge_SetSafeBrowsingEnabled(
   GetPrefService()->SetBoolean(prefs::kSafeBrowsingEnabled, enabled);
 }
 
+static void JNI_PrefServiceBridge_SetAdBlockEnabled(JNIEnv* env,
+                                   const JavaParamRef<jobject>& obj,
+                                   jboolean enabled) {
+   GetPrefService()->SetBoolean(prefs::kAdBlockEnabled, enabled);
+}
+
+static void JNI_PrefServiceBridge_SetTrackingProtectionEnabled(JNIEnv* env,
+                                   const JavaParamRef<jobject>& obj,
+                                   jboolean enabled) {
+   GetPrefService()->SetBoolean(prefs::kTrackingProtectionEnabled, enabled);
+}
+
 static jboolean JNI_PrefServiceBridge_GetSafeBrowsingManaged(
     JNIEnv* env,
     const JavaParamRef<jobject>& obj) {
