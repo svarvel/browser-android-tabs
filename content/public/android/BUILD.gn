@@ -1,4 +1,3 @@
-# Copyright 2014 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
@@ -157,6 +156,8 @@ android_library("content_java") {
     "java/src/org/chromium/content/browser/ViewEventSinkImpl.java",
     "java/src/org/chromium/content/browser/WindowEventObserver.java",
     "java/src/org/chromium/content/browser/WindowEventObserverManager.java",
+    "java/src/org/chromium/content/browser/ADBlockUtils.java",
+    "java/src/org/chromium/content/browser/EtagObject.java",
     "java/src/org/chromium/content/browser/accessibility/KitKatWebContentsAccessibility.java",
     "java/src/org/chromium/content/browser/accessibility/LollipopWebContentsAccessibility.java",
     "java/src/org/chromium/content/browser/accessibility/OWebContentsAccessibility.java",
