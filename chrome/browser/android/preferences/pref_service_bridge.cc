@@ -443,6 +443,12 @@ static void JNI_PrefServiceBridge_SetSafeBrowsingEnabled(
   GetPrefService()->SetBoolean(prefs::kSafeBrowsingEnabled, enabled);
 }
 
+static void JNI_PrefServiceBridge_SetHTTPSEEnabled(JNIEnv* env,
+                                   const JavaParamRef<jobject>& obj,
+                                   jboolean enabled) {
+   GetPrefService()->SetBoolean(prefs::kHTTPSEEnabled, enabled);
+}
+
 static void JNI_PrefServiceBridge_SetAdBlockEnabled(JNIEnv* env,
                                    const JavaParamRef<jobject>& obj,
                                    jboolean enabled) {
