@@ -186,6 +186,7 @@ ChromeNetworkDelegate::ChromeNetworkDelegate(
     extensions::EventRouterForwarder* event_router)
     : extensions_delegate_(
           ChromeExtensionsNetworkDelegate::Create(event_router)),
+      enable_httpse_(nullptr),
       enable_tracking_protection_(nullptr),
       enable_ad_block_(nullptr),
       experimental_web_platform_features_enabled_(
@@ -210,10 +211,16 @@ void ChromeNetworkDelegate::set_cookie_settings(
 
 // static
 void ChromeNetworkDelegate::InitializePrefsOnUIThread(
+    BooleanPrefMember* enable_httpse,
     BooleanPrefMember* enable_tracking_protection,
     BooleanPrefMember* enable_ad_block
     PrefService* pref_service) {
   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+  if (enable_httpse) {
+    enable_httpse->Init(prefs::kHTTPSEEnabled, pref_service);
+    enable_httpse->MoveToThread(
+        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+  }
   if (enable_tracking_protection) {
     enable_tracking_protection->Init(prefs::kTrackingProtectionEnabled, pref_service);
     enable_tracking_protection->MoveToThread(
@@ -265,6 +272,15 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
 
 		return net::ERR_BLOCKED_BY_ADMINISTRATOR;
 	}
+  //
+
+  // HTTPSE work
+  if (enable_httpse_ && enable_httpse_->GetValue()) {
+    std::string newURL = blockers_worker_.getHTTPSURL(&request->url());
+    if (newURL != request->url().spec()) {
+      *new_url = GURL(newURL);
+    }
+  }
   //
 
   extensions_delegate_->ForwardStartRequestStatus(request);

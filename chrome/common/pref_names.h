@@ -160,6 +160,7 @@ extern const char kWebKitForceDarkModeEnabled[];
 #endif
 extern const char kDataSaverEnabled[];
 extern const char kSafeBrowsingEnabled[];
+extern const char kHTTPSEEnabled[];
 extern const char kTrackingProtectionEnabled[];
 extern const char kAdBlockEnabled[];
 extern const char kSafeBrowsingProceedAnywayDisabled[];

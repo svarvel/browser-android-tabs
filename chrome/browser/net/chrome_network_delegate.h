@@ -71,6 +71,10 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
     force_google_safe_search_ = force_google_safe_search;
   }
 
+  void set_enable_httpse(BooleanPrefMember* enable_httpse) {
+    enable_httpse_ = enable_httpse;
+  }
+
   void set_enable_tracking_protection(BooleanPrefMember* enable_tracking_protection) {
     enable_tracking_protection_ = enable_tracking_protection;
   }
@@ -93,6 +97,7 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   // All arguments can be nullptr. This method should be called on the UI
   // thread.
   static void InitializePrefsOnUIThread(
+      BooleanPrefMember* enable_httpse,
       BooleanPrefMember* enable_tracking_protection,
       BooleanPrefMember* enable_ad_block,
       PrefService* pref_service);
@@ -175,6 +180,7 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
 
   // Weak, owned by our owner.
   BooleanPrefMember* force_google_safe_search_ = nullptr;
+  BooleanPrefMember* enable_httpse_;
   BooleanPrefMember* enable_tracking_protection_;
   BooleanPrefMember* enable_ad_block_;
 
