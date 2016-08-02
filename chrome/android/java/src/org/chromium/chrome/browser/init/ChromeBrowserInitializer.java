@@ -73,6 +73,8 @@ public class ChromeBrowserInitializer {
     private boolean mNativeInitializationComplete;
     private boolean mNetworkChangeNotifierInitializationComplete;
 
+    private Context mContext;
+    private boolean mAdBlockInitCalled = false;
     // Public to allow use in ChromeBackupAgent
     public static final String PRIVATE_DATA_DIRECTORY_SUFFIX = "chrome";
 
@@ -109,7 +111,74 @@ public class ChromeBrowserInitializer {
     }
 
     private ChromeBrowserInitializer() {
+        mContext = ContextUtils.getApplicationContext();
         mApplication = (ChromeApplication) ContextUtils.getApplicationContext();
+    }
+
+    private void InitAdBlock() {
+      if (mAdBlockInitCalled) {
+          return;
+      }
+      mAdBlockInitCalled = true;
+      // Download tracking protection, adblock annd HTTPSE files lists
+      PathUtils.setPrivateDataDirectorySuffix(ADBlockUtils.PRIVATE_DATA_DIRECTORY_SUFFIX, mContext);
+      new DownloadTrackingProtectionDataAsyncTask().execute();
+      new DownloadAdBlockDataAsyncTask().execute();
+      new DownloadHTTPSDataAsyncTask().execute();
+    }
+
+    // Tracking ptotection data download
+    class DownloadTrackingProtectionDataAsyncTask extends AsyncTask<Void,Void,Long> {
+        protected Long doInBackground(Void... params) {
+            String verNumber = ADBlockUtils.getDataVerNumber(
+                ADBlockUtils.TRACKING_PROTECTION_URL);
+            ADBlockUtils.readData(mContext,
+                ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
+                ADBlockUtils.TRACKING_PROTECTION_URL,
+                ADBlockUtils.ETAG_PREPEND_TP, verNumber,
+                ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, true);
+
+            ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
+                verNumber, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED);
+
+            return null;
+        }
+    }
+
+    // Adblock data download
+    class DownloadAdBlockDataAsyncTask extends AsyncTask<Void,Void,Long> {
+        protected Long doInBackground(Void... params) {
+            String verNumber = ADBlockUtils.getDataVerNumber(
+                ADBlockUtils.ADBLOCK_URL);
+            ADBlockUtils.readData(mContext,
+                ADBlockUtils.ADBLOCK_LOCALFILENAME,
+                ADBlockUtils.ADBLOCK_URL,
+                ADBlockUtils.ETAG_PREPEND_ADBLOCK, verNumber,
+                ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, true);
+
+            ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.ADBLOCK_LOCALFILENAME,
+                verNumber, ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED);
+
+            return null;
+        }
+    }
+
+    // HTTPS data download
+    class DownloadHTTPSDataAsyncTask extends AsyncTask<Void,Void,Long> {
+        protected Long doInBackground(Void... params) {
+            String verNumber = ADBlockUtils.getDataVerNumber(
+                ADBlockUtils.HTTPS_URL);
+            ADBlockUtils.readData(mContext,
+                ADBlockUtils.HTTPS_LOCALFILENAME,
+                ADBlockUtils.HTTPS_URL,
+                ADBlockUtils.ETAG_PREPEND_HTTPS, verNumber,
+                ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED, true);
+
+            ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.HTTPS_LOCALFILENAME,
+                verNumber, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED);
+
+            return null;
+        }
     }
 
     /**
@@ -285,7 +354,10 @@ public class ChromeBrowserInitializer {
         // launch its required components.
         if (!delegate.startServiceManagerOnly()
                 && !ProcessInitializationHandler.getInstance().postNativeInitializationComplete()) {
-            tasks.add(() -> ProcessInitializationHandler.getInstance().initializePostNative());
+            tasks.add(() -> {
+                ProcessInitializationHandler.getInstance().initializePostNative();
+                InitAdBlock();
+            });
         }
 
         if (!mNetworkChangeNotifierInitializationComplete) {
