@@ -47,7 +47,7 @@ public class MainPreferences extends PreferenceFragment
     public static final String PREF_CONTEXTUAL_SUGGESTIONS = "contextual_suggestions";
     public static final String PREF_HOMEPAGE = "homepage";
     public static final String PREF_UI_THEME = "ui_theme";
-    public static final String PREF_DATA_REDUCTION = "data_reduction";
+    //public static final String PREF_DATA_REDUCTION = "data_reduction";
     public static final String PREF_NOTIFICATIONS = "notifications";
     public static final String PREF_LANGUAGES = "languages";
     public static final String PREF_DOWNLOADS = "downloads";
@@ -240,9 +240,9 @@ public class MainPreferences extends PreferenceFragment
             removePreferenceIfPresent(PREF_DEVELOPER);
         }
 
-        ChromeBasePreference dataReduction =
+        /*ChromeBasePreference dataReduction =
                 (ChromeBasePreference) findPreference(PREF_DATA_REDUCTION);
-        dataReduction.setSummary(DataReductionPreferenceFragment.generateSummary(getResources()));
+        dataReduction.setSummary(DataReductionPreferenceFragment.generateSummary(getResources()));*/
     }
 
     private Preference addPreferenceIfAbsent(String key) {
@@ -339,25 +339,25 @@ public class MainPreferences extends PreferenceFragment
         return new ManagedPreferenceDelegate() {
             @Override
             public boolean isPreferenceControlledByPolicy(Preference preference) {
-                if (PREF_DATA_REDUCTION.equals(preference.getKey())) {
+                /*if (PREF_DATA_REDUCTION.equals(preference.getKey())) {
                     return DataReductionProxySettings.getInstance().isDataReductionProxyManaged();
                 }
                 if (PREF_SEARCH_ENGINE.equals(preference.getKey())) {
                     return TemplateUrlService.getInstance().isDefaultSearchManaged();
-                }
+                }*/
                 return false;
             }
 
             @Override
             public boolean isPreferenceClickDisabledByPolicy(Preference preference) {
-                if (PREF_DATA_REDUCTION.equals(preference.getKey())) {
+                /*if (PREF_DATA_REDUCTION.equals(preference.getKey())) {
                     DataReductionProxySettings settings = DataReductionProxySettings.getInstance();
                     return settings.isDataReductionProxyManaged()
                             && !settings.isDataReductionProxyEnabled();
                 }
                 if (PREF_SEARCH_ENGINE.equals(preference.getKey())) {
                     return TemplateUrlService.getInstance().isDefaultSearchManaged();
-                }
+                }*/
                 return isPreferenceControlledByPolicy(preference)
                         || isPreferenceControlledByCustodian(preference);
             }
