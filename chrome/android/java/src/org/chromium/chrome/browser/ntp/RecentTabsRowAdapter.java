@@ -844,7 +844,7 @@ public class RecentTabsRowAdapter extends BaseExpandableListAdapter {
             addGroup(new ForeignSessionGroup(session));
         }
 
-        switch (mRecentTabsManager.getPromoType()) {
+        /*switch (mRecentTabsManager.getPromoType()) {
             case RecentTabsManager.PromoState.PROMO_NONE:
                 break;
             case RecentTabsManager.PromoState.PROMO_SIGNIN_PERSONALIZED:
@@ -855,7 +855,7 @@ public class RecentTabsRowAdapter extends BaseExpandableListAdapter {
                 break;
             default:
                 assert false : "Unexpected value for promo type!";
-        }
+        }*/
 
         // Add separator line after the recently closed tabs group.
         int recentlyClosedIndex = mGroups.indexOf(mRecentlyClosedTabsGroup);
