@@ -1598,7 +1598,7 @@ template("chrome_public_apk_or_module_tmpl") {
 
 chrome_public_apk_or_module_tmpl("chrome_public_apk") {
   target_type = "android_apk"
-  apk_name = "ChromePublic"
+  apk_name = "Brave"
 }
 
 chrome_public_apk_or_module_tmpl("chrome_modern_public_apk") {
