@@ -36,7 +36,7 @@ import java.util.Map;
 public class MainPreferences extends PreferenceFragment
         implements SigninManager.SignInStateObserver, TemplateUrlService.LoadListener {
     public static final String PREF_ACCOUNT_SECTION = "account_section";
-    public static final String PREF_SIGN_IN = "sign_in";
+    //public static final String PREF_SIGN_IN = "sign_in";
     public static final String PREF_SYNC_AND_SERVICES = "sync_and_services";
     public static final String PREF_SEARCH_ENGINE = "search_engine";
     public static final String PREF_SAVED_PASSWORDS = "saved_passwords";
