@@ -74,6 +74,8 @@ using content::BrowserThread;
 using content::RenderViewHost;
 using content::ResourceRequestInfo;
 
+#define TRANSPARENT1PXGIF "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+
 namespace {
 
 bool g_access_to_all_files_enabled = false;
@@ -267,7 +269,12 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
 					(unsigned int)info->GetResourceType())) {
 		block = true;
 	}
-	if (block) {
+  bool check_httpse_redirect = true;
+  if (block && content::RESOURCE_TYPE_IMAGE == info->GetResourceType()) {
+    check_httpse_redirect = false;
+    *new_url = GURL(TRANSPARENT1PXGIF);
+  }
+	else if (block) {
 		*new_url = GURL("");
 
 		return net::ERR_BLOCKED_BY_ADMINISTRATOR;
@@ -275,7 +282,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
   //
 
   // HTTPSE work
-  if (enable_httpse_ && enable_httpse_->GetValue()) {
+  if (check_httpse_redirect && enable_httpse_ && enable_httpse_->GetValue()) {
     std::string newURL = blockers_worker_.getHTTPSURL(&request->url());
     if (newURL != request->url().spec()) {
       *new_url = GURL(newURL);
