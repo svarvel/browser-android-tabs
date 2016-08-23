@@ -38,6 +38,9 @@ import org.chromium.chrome.browser.dependency_injection.ChromeAppModule;
 import org.chromium.chrome.browser.dependency_injection.DaggerChromeAppComponent;
 import org.chromium.chrome.browser.dependency_injection.ModuleFactoryOverrides;
 import org.chromium.chrome.browser.init.InvalidStartupDialog;
+import org.chromium.chrome.browser.instantapps.InstantAppsHandler;
+import org.chromium.chrome.browser.init.ShieldsConfig;
+import org.chromium.chrome.browser.locale.LocaleManager;
 import org.chromium.chrome.browser.metrics.UmaUtils;
 import org.chromium.chrome.browser.preferences.ChromePreferenceManager;
 import org.chromium.chrome.browser.vr.OnExitVrRequestListener;
@@ -54,6 +57,7 @@ public class ChromeApplication extends Application {
     private static final String TAG = "ChromiumApplication";
 
     private DiscardableReferencePool mReferencePool;
+    private ShieldsConfig mShieldsConfig;
 
     @Nullable
     private static ChromeAppComponent sComponent;
@@ -169,6 +173,16 @@ public class ChromeApplication extends Application {
         // to the API in the future.
         return (level >= TRIM_MEMORY_RUNNING_LOW && level < TRIM_MEMORY_UI_HIDDEN)
                 || level >= TRIM_MEMORY_MODERATE;
+    }
+
+    public void initShieldsConfig() {
+        if (null == mShieldsConfig) {
+            mShieldsConfig = new ShieldsConfig();
+        }
+    }
+
+    public ShieldsConfig getShieldsConfig() {
+        return mShieldsConfig;
     }
 
     /**

@@ -927,6 +927,7 @@ public class ToolbarManager
             FindToolbarManager findToolbarManager, OverviewModeBehavior overviewModeBehavior,
             LayoutManager layoutManager, OnClickListener tabSwitcherClickHandler,
             OnClickListener newTabClickHandler, OnClickListener bookmarkClickHandler,
+            OnClickListener braveShieldsClickHandler,
             OnClickListener customTabsBackClickHandler) {
         assert !mInitializedWithNative;
 
@@ -935,7 +936,7 @@ public class ToolbarManager
 
             mToolbar.initializeWithNative(tabModelSelector, controlsVisibilityDelegate,
                     layoutManager, tabSwitcherClickHandler, newTabClickHandler,
-                    bookmarkClickHandler, customTabsBackClickHandler);
+                    bookmarkClickHandler, braveShieldsClickHandler, customTabsBackClickHandler);
 
             toolbar.addOnAttachStateChangeListener(new OnAttachStateChangeListener() {
                 @Override

@@ -507,6 +507,11 @@ public class ChromeBrowserInitializer {
             for (Runnable r : mTasksToRunWithNative) r.run();
             mTasksToRunWithNative = null;
         }
+
+        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        if (null != app) {
+            app.initShieldsConfig();
+        }
     }
 
     private ActivityStateListener createActivityStateListener() {

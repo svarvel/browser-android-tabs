@@ -947,6 +947,8 @@ jumbo_split_static_library("browser") {
     "net/blockers/TPParser.h",
     "net/blockers/TPParser.cpp",
     "net/blockers/TrackerData.h",
+    "browser/net/blockers/shields_config.h",
+    "browser/net/blockers/shields_config.cc",
     "ntp_snippets/bookmark_last_visit_updater.cc",
     "ntp_snippets/bookmark_last_visit_updater.h",
     "ntp_snippets/content_suggestions_notifier_service_factory.cc",
