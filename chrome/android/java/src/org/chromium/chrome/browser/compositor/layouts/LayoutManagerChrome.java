@@ -8,6 +8,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.view.ViewGroup;
 
+import org.chromium.base.Log;
 import org.chromium.base.ObserverList;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordUserAction;

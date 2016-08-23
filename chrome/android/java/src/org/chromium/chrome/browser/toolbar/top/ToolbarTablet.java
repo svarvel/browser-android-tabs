@@ -19,6 +19,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.metrics.RecordUserAction;
@@ -62,6 +63,7 @@ public class ToolbarTablet extends ToolbarLayout
     private ToggleTabStackButton mAccessibilitySwitcherButton;
 
     private OnClickListener mBookmarkListener;
+    private OnClickListener mBraveShieldsListener;
 
     private boolean mIsInTabSwitcherMode;
 
@@ -131,6 +133,8 @@ public class ToolbarTablet extends ToolbarLayout
         // changes.
         mShouldAnimateButtonVisibilityChange = false;
         mToolbarButtonsVisible = true;
+        mBraveShieldsButton = (ImageView) findViewById(R.id.brave_shields_button);
+        mBraveShieldsButton.setClickable(true);
         mToolbarButtons = new ImageButton[] {mBackButton, mForwardButton, mReloadButton};
     }
 
@@ -256,6 +260,7 @@ public class ToolbarTablet extends ToolbarLayout
 
         mSaveOfflineButton.setOnClickListener(this);
         mSaveOfflineButton.setOnLongClickListener(this);
+        mBraveShieldsButton.setOnClickListener(this);
     }
 
     @Override
@@ -311,6 +316,11 @@ public class ToolbarTablet extends ToolbarLayout
         } else if (mSaveOfflineButton == v) {
             DownloadUtils.downloadOfflinePage(getContext(), getToolbarDataProvider().getTab());
             RecordUserAction.record("MobileToolbarDownloadPage");
+        } else if (mBraveShieldsButton == v) {
+            if (null != mBraveShieldsButton) {
+                mBraveShieldsListener.onClick(mBraveShieldsButton);
+                RecordUserAction.record("MobileToolbarShowBraveShields");
+            }
         }
     }
 
@@ -515,6 +525,11 @@ public class ToolbarTablet extends ToolbarLayout
     }
 
     @Override
+    void setBraveShieldsClickHandler(OnClickListener listener) {
+        mBraveShieldsListener = listener;
+    }
+
+    @Override
     void onHomeButtonUpdate(boolean homeButtonEnabled) {
         mHomeButton.setVisibility(homeButtonEnabled ? VISIBLE : GONE);
     }
@@ -600,6 +615,7 @@ public class ToolbarTablet extends ToolbarLayout
         for (ImageButton button : mToolbarButtons) {
             animators.add(mLocationBar.createShowButtonAnimator(button));
         }
+        animators.add(mLocationBar.createShowButtonAnimator(mBraveShieldsButton));
 
         // Add animators for location bar.
         animators.addAll(mLocationBar.getShowButtonsWhenUnfocusedAnimators(
@@ -614,6 +630,7 @@ public class ToolbarTablet extends ToolbarLayout
                 for (ImageButton button : mToolbarButtons) {
                     button.setVisibility(View.VISIBLE);
                 }
+                mBraveShieldsButton.setVisibility(View.VISIBLE);
                 // Set the padding at the start of the animation so the toolbar buttons don't jump
                 // when the animation ends.
                 setStartPaddingBasedOnButtonVisibility(true);
@@ -635,6 +652,7 @@ public class ToolbarTablet extends ToolbarLayout
         for (ImageButton button : mToolbarButtons) {
             animators.add(mLocationBar.createHideButtonAnimator(button));
         }
+        animators.add(mLocationBar.createHideButtonAnimator(mBraveShieldsButton));
 
         // Add animators for location bar.
         animators.addAll(mLocationBar.getHideButtonsWhenUnfocusedAnimators(
@@ -653,6 +671,8 @@ public class ToolbarTablet extends ToolbarLayout
                         button.setVisibility(View.GONE);
                         button.setAlpha(1.f);
                     }
+                    mBraveShieldsButton.setVisibility(View.GONE);
+                    mBraveShieldsButton.setAlpha(1.f);
                     // Set the padding at the end of the animation so the toolbar buttons don't jump
                     // when the animation starts.
                     setStartPaddingBasedOnButtonVisibility(false);

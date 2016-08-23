@@ -505,6 +505,11 @@ public class ChromeBrowserInitializer {
 
         PostTask.postTask(
                 TaskTraits.BEST_EFFORT_MAY_BLOCK, LibraryPrefetcher::maybePinOrderedCodeInMemory);
+
+        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        if (null != app) {
+            app.initShieldsConfig();
+        }
     }
 
     private ActivityStateListener createActivityStateListener() {
