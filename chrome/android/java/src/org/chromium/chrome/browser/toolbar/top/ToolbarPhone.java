@@ -84,6 +84,7 @@ import org.chromium.components.feature_engagement.EventConstants;
 import org.chromium.ui.UiUtils;
 import org.chromium.ui.base.LocalizationUtils;
 import org.chromium.ui.interpolators.BakedBezierInterpolator;
+import org.chromium.base.Log;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -148,6 +149,7 @@ public class ToolbarPhone
     protected ImageView mToggleTabStackButton;
     protected NewTabButton mNewTabButton;
     protected @Nullable ImageButton mHomeButton;
+    private ImageView mBraveShieldsButton;
     private TextView mUrlBar;
     protected View mUrlActionContainer;
     protected ImageView mToolbarShadow;
@@ -178,6 +180,7 @@ public class ToolbarPhone
     private boolean mDelayingTabSwitcherAnimation;
 
     private TabSwitcherDrawable mTabSwitcherAnimationTabStackDrawable;
+    private Drawable mBraveShieldsAnimationMenuDrawable;
     private Drawable mTabSwitcherAnimationMenuDrawable;
     private Drawable mTabSwitcherAnimationMenuBadgeDarkDrawable;
     private Drawable mTabSwitcherAnimationMenuBadgeLightDrawable;
@@ -193,6 +196,7 @@ public class ToolbarPhone
     private Rect mClipRect;
 
     private OnClickListener mTabSwitcherListener;
+    private OnClickListener mBraveShieldsListener;
     private OnClickListener mNewTabListener;
 
     @ViewDebug.ExportedProperty(category = "chrome")
@@ -471,6 +475,10 @@ public class ToolbarPhone
             mToggleTabStackButton.setImageDrawable(mTabSwitcherButtonDrawable);
             mTabSwitcherModeViews.add(mNewTabButton);
         }
+        mBraveShieldsButton = (ImageView) findViewById(R.id.brave_shields_button);
+        if (mBraveShieldsButton != null) {
+            mBraveShieldsButton.setClickable(true);
+        }
     }
 
     private void enableTabSwitchingResources() {
@@ -494,6 +502,8 @@ public class ToolbarPhone
         });
         mNewTabButton.setOnClickListener(this);
         mNewTabButton.setOnLongClickListener(this);
+        mBraveShieldsButton.setOnClickListener(this);
+        mBraveShieldsButton.setOnLongClickListener(this);
     }
 
     /**
@@ -534,6 +544,7 @@ public class ToolbarPhone
         if (mNewTabButton != null) mNewTabButton.postNativeInitialization();
 
         setTabSwitcherAnimationMenuDrawable();
+        setBraveShieldsAnimationMenuDrawable();
         updateVisualsForLocationBarState();
     }
 
@@ -589,6 +600,11 @@ public class ToolbarPhone
                 TrackerFactory.getTrackerForProfile(Profile.getLastUsedProfile())
                         .notifyEvent(EventConstants.PARTNER_HOME_PAGE_BUTTON_PRESSED);
             }
+        } else if (mBraveShieldsButton == v) {
+            if (null != mBraveShieldsButton) {
+                mBraveShieldsListener.onClick(mBraveShieldsButton);
+                RecordUserAction.record("MobileToolbarShowBraveShields");
+            }
         }
     }
 
@@ -618,6 +634,8 @@ public class ToolbarPhone
                                               ? R.string.button_new_private_tab
                                               : R.string.button_new_incognito_tab)
                             : R.string.button_new_tab);
+        } else if (v == mBraveShieldsButton) {
+            description = getResources().getString(R.string.accessibility_toolbar_btn_brave_shields);
         } else {
             return false;
         }
@@ -1368,6 +1386,30 @@ public class ToolbarPhone
             canvas.restore();
         }
 
+        // Draw Brave Shields button if necessary.
+        if (mBraveShieldsAnimationMenuDrawable != null
+                && mBraveShieldsButton != null
+                && mUrlExpansionPercent != 1f) {
+            canvas.save();
+            translateCanvasToView(mToolbarButtonsContainer, mBraveShieldsButton, canvas);
+
+            int backgroundWidth = mBraveShieldsButton.getDrawable().getIntrinsicWidth();
+            int backgroundHeight = mBraveShieldsButton.getDrawable().getIntrinsicHeight();
+            int backgroundLeft = (mBraveShieldsButton.getWidth()
+                    - mBraveShieldsButton.getPaddingLeft()
+                    - mBraveShieldsButton.getPaddingRight() - backgroundWidth) / 2;
+            backgroundLeft += mBraveShieldsButton.getPaddingLeft();
+            int backgroundTop = (mBraveShieldsButton.getHeight()
+                    - mBraveShieldsButton.getPaddingTop()
+                    - mBraveShieldsButton.getPaddingBottom() - backgroundHeight) / 2;
+            backgroundTop += mBraveShieldsButton.getPaddingTop();
+            canvas.translate(backgroundLeft, backgroundTop);
+
+            mBraveShieldsAnimationMenuDrawable.setAlpha(rgbAlpha);
+            mBraveShieldsAnimationMenuDrawable.draw(canvas);
+            canvas.restore();
+        }
+
         // Draw the menu button if necessary.
         final ImageButton menuButton = getMenuButton();
         if (menuButton != null && !mShowMenuBadge && mTabSwitcherAnimationMenuDrawable != null
@@ -1962,6 +2004,11 @@ public class ToolbarPhone
     }
 
     @Override
+    public void setBraveShieldsClickHandler(OnClickListener listener) {
+        mBraveShieldsListener = listener;
+    }
+
+    @Override
     public void setOnNewTabClickHandler(OnClickListener listener) {
         mNewTabListener = listener;
     }
@@ -2084,6 +2131,19 @@ public class ToolbarPhone
         animator.setDuration(URL_FOCUS_CHANGE_ANIMATION_DURATION_MS);
         animator.setInterpolator(BakedBezierInterpolator.TRANSFORM_CURVE);
         animators.add(animator);
+
+        if (mBraveShieldsButton != null) {
+            animator = ObjectAnimator.ofFloat(
+                    mBraveShieldsButton, TRANSLATION_X, toolbarButtonTranslationX);
+            animator.setDuration(URL_FOCUS_TOOLBAR_BUTTONS_DURATION_MS);
+            animator.setInterpolator(BakedBezierInterpolator.FADE_OUT_CURVE);
+            animators.add(animator);
+
+            animator = ObjectAnimator.ofFloat(mBraveShieldsButton, ALPHA, 0);
+            animator.setDuration(URL_FOCUS_TOOLBAR_BUTTONS_DURATION_MS);
+            animator.setInterpolator(BakedBezierInterpolator.FADE_OUT_CURVE);
+            animators.add(animator);
+        }
     }
 
     private void populateUrlClearFocusingAnimatorSet(List<Animator> animators) {
@@ -2134,6 +2194,20 @@ public class ToolbarPhone
             animator = ObjectAnimator.ofFloat(mExperimentalButton, ALPHA, 1);
             animator.setDuration(URL_FOCUS_TOOLBAR_BUTTONS_DURATION_MS);
             animator.setStartDelay(URL_CLEAR_FOCUS_EXPERIMENTAL_BUTTON_DELAY_MS);
+            animator.setInterpolator(BakedBezierInterpolator.TRANSFORM_CURVE);
+            animators.add(animator);
+        }
+
+        if (mBraveShieldsButton != null) {
+            animator = ObjectAnimator.ofFloat(mBraveShieldsButton, TRANSLATION_X, 0);
+            animator.setDuration(URL_FOCUS_TOOLBAR_BUTTONS_DURATION_MS);
+            animator.setStartDelay(URL_CLEAR_FOCUS_TABSTACK_DELAY_MS);
+            animator.setInterpolator(BakedBezierInterpolator.TRANSFORM_CURVE);
+            animators.add(animator);
+
+            animator = ObjectAnimator.ofFloat(mBraveShieldsButton, ALPHA, 1);
+            animator.setDuration(URL_FOCUS_TOOLBAR_BUTTONS_DURATION_MS);
+            animator.setStartDelay(URL_CLEAR_FOCUS_TABSTACK_DELAY_MS);
             animator.setInterpolator(BakedBezierInterpolator.TRANSFORM_CURVE);
             animators.add(animator);
         }
@@ -2854,6 +2928,15 @@ public class ToolbarPhone
     @VisibleForTesting
     public void endExperimentalButtonAnimationForTesting() {
         if (mExperimentalButtonAnimator != null) mExperimentalButtonAnimator.end();
+    }
+
+    private void setBraveShieldsAnimationMenuDrawable() {
+        mBraveShieldsAnimationMenuDrawable = ApiCompatibilityUtils.getDrawable(getResources(),
+                R.drawable.btn_brave);
+        int[] stateSet = {android.R.attr.state_enabled};
+        mBraveShieldsAnimationMenuDrawable.setState(stateSet);
+        mBraveShieldsAnimationMenuDrawable.setBounds(
+                mBraveShieldsButton.getDrawable().getBounds());
     }
 
     private void setTabSwitcherAnimationMenuDrawable() {

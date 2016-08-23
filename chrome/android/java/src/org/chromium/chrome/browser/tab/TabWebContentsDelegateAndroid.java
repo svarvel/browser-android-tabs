@@ -340,7 +340,6 @@ public class TabWebContentsDelegateAndroid extends WebContentsDelegateAndroid {
     public boolean addNewContents(WebContents sourceWebContents, WebContents webContents,
             int disposition, Rect initialPosition, boolean userGesture) {
         assert mWebContentsUrlMapping.first == webContents;
-
         TabCreator tabCreator = mTab.getActivity().getTabCreator(mTab.isIncognito());
         assert tabCreator != null;
 

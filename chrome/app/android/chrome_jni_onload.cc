@@ -11,6 +11,7 @@
 #include "content/public/app/content_jni_onload.h"
 #include "device/vr/buildflags/buildflags.h"
 
+#include "chrome/browser/net/blockers/shields_config.h"
 #if BUILDFLAG(ENABLE_VR)
 #include "third_party/gvr-android-sdk/display_synchronizer_jni.h"
 #include "third_party/gvr-android-sdk/gvr_api_jni.h"
@@ -21,14 +22,15 @@ namespace android {
 
 // These VR native functions are not handled by the automatic registration, so
 // they are manually registered here.
-#if BUILDFLAG(ENABLE_VR)
 static base::android::RegistrationMethod kChromeRegisteredMethods[] = {
+    {"ShieldsConfig", net::blockers::ShieldsConfig::RegisterShieldsConfig},
+#if BUILDFLAG(ENABLE_VR)
     {"DisplaySynchronizer",
      DisplaySynchronizer::RegisterDisplaySynchronizerNatives},
     {"GvrApi", GvrApi::RegisterGvrApiNatives},
     {"NativeCallbacks", NativeCallbacks::RegisterNativeCallbacksNatives},
-};
 #endif
+};
 
 bool OnJNIOnLoadRegisterJNI(JNIEnv* env) {
 #if BUILDFLAG(ENABLE_VR)
