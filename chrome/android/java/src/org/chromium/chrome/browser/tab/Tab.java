@@ -253,6 +253,9 @@ public class Tab
 
     private FullscreenManager mFullscreenManager;
 
+    private int mAdsAndTrackers;
+    private int mHttpsUpgrades;
+
     private TabDelegateFactory mDelegateFactory;
 
     /** Listens for views related to the tab to be attached or detached. */
@@ -347,6 +350,9 @@ public class Tab
                 updateInteractableState();
             }
         };
+
+        mAdsAndTrackers = 0;
+        mHttpsUpgrades = 0;
     }
 
     /**
@@ -1999,6 +2005,24 @@ public class Tab
     public void setNightModeEnabled(boolean enabled) {
         if (mNativeTabAndroid == 0) return;
         nativeSetNightModeEnabled(mNativeTabAndroid, enabled);
+    }
+
+    public void braveShieldsCountUpdate(int adsAndTrackers, int httpsUpgrades) {
+        mAdsAndTrackers += adsAndTrackers;
+        mHttpsUpgrades += httpsUpgrades;
+    }
+
+    public int getAdsAndTrackers() {
+        return mAdsAndTrackers;
+    }
+
+    public int getHttpsUpgrades() {
+        return mHttpsUpgrades;
+    }
+
+    public void clearBraveShieldsCount() {
+        mAdsAndTrackers = 0;
+        mHttpsUpgrades = 0;
     }
 
     private native void nativeInit();

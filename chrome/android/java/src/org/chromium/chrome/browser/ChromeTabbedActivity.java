@@ -1011,7 +1011,10 @@ public class ChromeTabbedActivity
                             URL url = new URL(currentTab.getUrl());
 
                             setBraveShieldsColor(url.getHost());
-                            getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button), url.getHost());
+                            getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
+                              , url.getHost()
+                              , currentTab.getAdsAndTrackers()
+                              , currentTab.getHttpsUpgrades());
                         } catch (Exception e) {
                             setBraveShieldsBlackAndWhite();
                         }
@@ -1667,6 +1670,23 @@ public class ChromeTabbedActivity
                     DataReductionPromoInfoBar.maybeLaunchPromoInfoBar(ChromeTabbedActivity.this,
                             tab.getWebContents(), navigation.getUrl(), tab.isShowingErrorPage(),
                             navigation.isFragmentNavigation(), navigation.httpStatusCode());
+                }
+            }
+
+            @Override
+            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades) {
+                for (int i = 0; i < getCurrentTabModel().getCount(); i++) {
+                    Tab tab = getCurrentTabModel().getTabAt(i);
+                    if (null != tab) {
+                        String tabUrl = tab.getUrl();
+                        if (tabUrl.equals(url)) {
+                            tab.braveShieldsCountUpdate(adsAndTrackers, httpsUpgrades);
+                            if (getActivityTab() == tab) {
+                                updateBraveryPanelCounts(tab.getAdsAndTrackers(), tab.getHttpsUpgrades());
+                            }
+                            break;
+                        }
+                    }
                 }
             }
         };

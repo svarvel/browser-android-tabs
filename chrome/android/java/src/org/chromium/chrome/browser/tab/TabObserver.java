@@ -340,4 +340,12 @@ public interface TabObserver {
      * This method is invoked when the WebContents reloads the LoFi images on the page.
      */
     public void didReloadLoFiImages(Tab tab);
+
+    /**
+     * Called when the Brave Shields counts changed.
+     * @param url The notifying Tab with url.
+     * @param adsAndTrackers The adsAndTrackers count.
+     * @param httpsUpgrades The httpsUpgrades count.
+     */
+    public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades);
 }
