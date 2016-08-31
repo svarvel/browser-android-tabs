@@ -632,6 +632,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
      * {@link Toolbar}. Extending classes can override this call to avoid creating the toolbar.
      */
     protected void initializeToolbar() {
+<<<<<<< HEAD
         try (TraceEvent te = TraceEvent.scoped("ChromeActivity.initializeToolbar")) {
             final View controlContainer = findViewById(R.id.control_container);
             assert controlContainer != null;
@@ -643,11 +644,13 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             mBraveShieldsMenuHandler = new BraveShieldsMenuHandler(this, R.menu.brave_shields_menu);
             mBraveShieldsMenuHandler.addObserver(new BraveShieldsMenuObserver() {
                 @Override
-                public void onMenuTopShieldsChanged(boolean isOn) {
-                    if (isOn) {
-                        setBraveShieldsColored();
-                    } else {
-                        setBraveShieldsBlackAndWhite();
+                public void onMenuTopShieldsChanged(boolean isOn, boolean isTopShield) {
+                    if (isTopShield) {
+                        if (isOn) {
+                            setBraveShieldsColored();
+                        } else {
+                            setBraveShieldsBlackAndWhite();
+                        }
                     }
                     Tab currentTab = getActivityTab();
                     if (currentTab == null) {
