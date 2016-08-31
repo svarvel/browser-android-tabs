@@ -148,4 +148,7 @@ public class EmptyTabObserver implements TabObserver {
 
     @Override
     public void didReloadLoFiImages(Tab tab) {}
+
+    @Override
+    public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades) { }
 }
