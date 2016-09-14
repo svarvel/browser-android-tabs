@@ -2636,8 +2636,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     /**
      * Updates Bravery Panel counts
      */
-    public void updateBraveryPanelCounts(int adsAndTrackers, int httpsUpgrades) {
-        mBraveShieldsMenuHandler.updateValues(adsAndTrackers, httpsUpgrades);
+    public void updateBraveryPanelCounts(int adsAndTrackers, int httpsUpgrades, int scriptsBlocked) {
+        mBraveShieldsMenuHandler.updateValues(adsAndTrackers, httpsUpgrades, scriptsBlocked);
     }
 
     private void clearToolbarResourceCache() {

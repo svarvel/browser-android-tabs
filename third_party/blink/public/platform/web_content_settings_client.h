@@ -122,6 +122,15 @@ class WebContentSettingsClient {
       const blink::WebURL& url) {}
 
   virtual ~WebContentSettingsClient() = default;
+
+  // Notifies the client that the frame denied scripts because script were disabled.
+  virtual void DeniedScript() { }
+
+  // Controls whether Fingerprinting is allowed for this frame.
+  virtual bool AllowFingerprinting();
+
+  // Notifies the client that the frame denied fingerprinting because it was disabled.
+  virtual void DeniedFingerprinting() { }
 };
 
 }  // namespace blink

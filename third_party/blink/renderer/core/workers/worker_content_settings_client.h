@@ -73,6 +73,15 @@ class CORE_EXPORT WorkerContentSettingsClient final
     Supplement<WorkerClients>::Trace(visitor);
   }
 
+  // Notifies the client that the frame denied scripts because script were disabled.
+  void DeniedScript();
+
+  // Controls whether Fingerprinting is allowed for this frame.
+  bool AllowFingerprinting();
+
+  // Notifies the client that the frame denied fingerprinting because it was disabled.
+  void DeniedFingerprinting();
+
  private:
   std::unique_ptr<WebContentSettingsClient> client_;
 };

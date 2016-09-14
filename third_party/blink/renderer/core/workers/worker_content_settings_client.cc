@@ -101,4 +101,19 @@ void ProvideContentSettingsClientToWorker(
       MakeGarbageCollected<WorkerContentSettingsClient>(std::move(client)));
 }
 
+void WorkerContentSettingsClient::DeniedScript() {
+  if (client_)
+    client_->DeniedScript();
+}
+
+bool WorkerContentSettingsClient::AllowFingerprinting() {
+  if (client_)
+    client_->AllowFingerprinting();
+}
+
+void WorkerContentSettingsClient::DeniedFingerprinting() {
+  if (client_)
+    client_->DeniedFingerprinting();
+}
+
 }  // namespace blink
