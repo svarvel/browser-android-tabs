@@ -1007,7 +1007,8 @@ public class ChromeTabbedActivity
                             getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
                               , url.getHost()
                               , currentTab.getAdsAndTrackers()
-                              , currentTab.getHttpsUpgrades());
+                              , currentTab.getHttpsUpgrades()
+                              , currentTab.getScriptsBlocked());
                         } catch (Exception e) {
                             setBraveShieldsBlackAndWhite();
                         }
@@ -1739,7 +1740,8 @@ public class ChromeTabbedActivity
             }
 
             @Override
-            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades) {
+            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
+                    int scriptsBlocked) {
                 List<Tab> tabsList = new ArrayList<>();
                 for (int i = 0; i < getCurrentTabModel().getCount(); i++) {
                     Tab tab = getCurrentTabModel().getTabAt(i);
@@ -1771,9 +1773,10 @@ public class ChromeTabbedActivity
                     }
                 }
                 if (null != tabToUpdate) {
-                    tabToUpdate.braveShieldsCountUpdate(adsAndTrackers, httpsUpgrades);
+                    tabToUpdate.braveShieldsCountUpdate(adsAndTrackers, httpsUpgrades, scriptsBlocked);
                     if (getActivityTab() == tabToUpdate) {
-                        updateBraveryPanelCounts(tabToUpdate.getAdsAndTrackers(), tabToUpdate.getHttpsUpgrades());
+                        updateBraveryPanelCounts(tabToUpdate.getAdsAndTrackers(), tabToUpdate.getHttpsUpgrades(),
+                                tabToUpdate.getScriptsBlocked());
                     }
                 }
             }

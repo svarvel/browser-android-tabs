@@ -313,6 +313,8 @@ class CORE_EXPORT LocalFrameClient : public FrameClient {
 
   virtual void DidChangeScrollOffset() {}
   virtual void DidUpdateCurrentHistoryItem() {}
+  // This callback notifies the client that script was blocked
+  virtual void DeniedScript() { }
 
   // Called when a content-initiated, main frame navigation to a data URL is
   // about to occur.
