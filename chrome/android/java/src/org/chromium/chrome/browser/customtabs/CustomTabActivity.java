@@ -78,6 +78,8 @@ import org.chromium.chrome.browser.tab.TabAssociatedApp;
 import org.chromium.chrome.browser.tabmodel.ChromeTabCreator;
 import org.chromium.chrome.browser.tabmodel.TabModelSelector;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorImpl;
+import org.chromium.chrome.browser.tabmodel.TabPersistencePolicy;
+import org.chromium.chrome.browser.tabmodel.TabModelSelectorTabObserver;
 import org.chromium.chrome.browser.toolbar.ToolbarManager;
 import org.chromium.chrome.browser.toolbar.top.ToolbarControlContainer;
 import org.chromium.chrome.browser.util.ColorUtils;
@@ -91,6 +93,7 @@ import org.chromium.content_public.browser.WebContents;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
+import java.net.URL;
 
 /**
  * The activity for custom tabs. It will be launched on top of a client's task.
@@ -119,6 +122,8 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
     private CustomTabActivityTabProvider mTabProvider;
     private CustomTabActivityTabFactory mTabFactory;
     private CustomTabActivityNavigationController mNavigationController;
+
+    private TabModelSelectorTabObserver mTabModelSelectorTabObserver;
 
     // This is to give the right package name while using the client's resources during an
     // overridePendingTransition call.
@@ -325,13 +330,33 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         initializeCompositorContent(layoutDriver, findViewById(R.id.url_bar),
                 (ViewGroup) findViewById(android.R.id.content),
                 (ToolbarControlContainer) findViewById(R.id.control_container));
-        getToolbarManager().initializeWithNative(getTabModelSelector(),
-                getFullscreenManager().getBrowserVisibilityDelegate(), getFindToolbarManager(),
-                null, layoutDriver, null, null, null, new OnClickListener() {
-        getToolbarManager().initializeWithNative(
-                getTabModelSelector(),
-                getFullscreenManager().getBrowserVisibilityDelegate(),
-                mFindToolbarManager, null, layoutDriver, null, null, null,
+        OnClickListener braveShieldsClickHandler = new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getFullscreenManager() != null
+                        && getFullscreenManager().getPersistentFullscreenMode()) {
+                    return;
+                }
+                Tab currentTab = getActivityTab();
+                if (currentTab != null) {
+                    try {
+                        URL url = new URL(currentTab.getUrl());
+
+                        setBraveShieldsColor(url.getHost());
+                        getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
+                          , url.getHost()
+                          , currentTab.getAdsAndTrackers()
+                          , currentTab.getHttpsUpgrades()
+                          , currentTab.getScriptsBlocked());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
+                    }
+                }
+            }
+        };
+        getToolbarManager().initializeWithNative(getTabModelSelector(), getFullscreenManager().getBrowserVisibilityDelegate(),
+                mFindToolbarManager, null, layoutDriver, null, null, null, braveShieldsClickHandler,
+                new OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         RecordUserAction.record("CustomTabs.CloseButtonClicked");
