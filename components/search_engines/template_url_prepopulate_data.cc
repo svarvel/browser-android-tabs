@@ -32,6 +32,7 @@ namespace {
 
 // Default (for countries with no better engine set)
 const PrepopulatedEngine* const engines_default[] = {
+    &duckduckgo,
     &google,
     &bing,
     &yahoo,
