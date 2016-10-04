@@ -100,7 +100,7 @@ std::string BuildMirrorRequestCookieIfPossible(
     const GURL& url,
     const std::string& account_id,
     AccountConsistencyMethod account_consistency,
-    const content_settings::CookieSettings* cookie_settings,
+    content_settings::CookieSettings* cookie_settings,
     int profile_mode_mask) {
   return ChromeConnectedHeaderHelper::BuildRequestCookieIfPossible(
       url, account_id, account_consistency, cookie_settings, profile_mode_mask);
@@ -169,7 +169,7 @@ void AppendOrRemoveMirrorRequestHeader(
     const GURL& redirect_url,
     const std::string& account_id,
     AccountConsistencyMethod account_consistency,
-    const content_settings::CookieSettings* cookie_settings,
+    content_settings::CookieSettings* cookie_settings,
     int profile_mode_mask) {
   const GURL& url = redirect_url.is_empty() ? request->GetUrl() : redirect_url;
   ChromeConnectedHeaderHelper chrome_connected_helper(account_consistency);
