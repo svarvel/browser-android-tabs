@@ -206,14 +206,13 @@ class SigninHeaderHelper {
   DISALLOW_COPY_AND_ASSIGN(SigninHeaderHelper);
 };
 
-
 // Returns the CHROME_CONNECTED cookie, or an empty string if it should not be
 // added to the request to |url|.
 std::string BuildMirrorRequestCookieIfPossible(
     const GURL& url,
     const std::string& account_id,
     AccountConsistencyMethod account_consistency,
-    const content_settings::CookieSettings* cookie_settings,
+    content_settings::CookieSettings* cookie_settings,
     int profile_mode_mask);
 
 // Adds the mirror header to all Gaia requests from a connected profile, with
@@ -224,7 +223,7 @@ void AppendOrRemoveMirrorRequestHeader(
     const GURL& redirect_url,
     const std::string& account_id,
     AccountConsistencyMethod account_consistency,
-    const content_settings::CookieSettings* cookie_settings,
+    content_settings::CookieSettings* cookie_settings,
     int profile_mode_mask);
 
 // Adds the Dice to all Gaia requests from a connected profile, with the

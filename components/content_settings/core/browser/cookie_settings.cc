@@ -17,6 +17,7 @@
 #include "net/base/net_errors.h"
 #include "net/base/static_cookie_policy.h"
 #include "url/gurl.h"
+#include "chrome/browser/net/blockers/shields_config.h"
 
 namespace content_settings {
 
@@ -42,7 +43,7 @@ ContentSetting CookieSettings::GetDefaultCookieSetting(
 }
 
 void CookieSettings::GetCookieSettings(
-    ContentSettingsForOneType* settings) const {
+    ContentSettingsForOneType* settings) {
   host_content_settings_map_->GetSettingsForOneType(
       CONTENT_SETTINGS_TYPE_COOKIES, std::string(), settings);
 }
@@ -122,7 +123,7 @@ void CookieSettings::GetCookieSetting(const GURL& url,
   // by default, apply CONTENT_SETTING_BLOCKED.
   bool block_third = info.primary_pattern.MatchesAllHosts() &&
                      info.secondary_pattern.MatchesAllHosts() &&
-                     ShouldBlockThirdPartyCookies() &&
+                     ShouldBlockThirdPartyCookies(first_party_url) &&
                      !first_party_url.SchemeIs(extension_scheme_);
   net::StaticCookiePolicy policy(
       net::StaticCookiePolicy::BLOCK_ALL_THIRD_PARTY_COOKIES);
@@ -146,8 +147,32 @@ void CookieSettings::OnBlockThirdPartyCookiesChanged() {
       prefs::kBlockThirdPartyCookies);
 }
 
-bool CookieSettings::ShouldBlockThirdPartyCookies() const {
+bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url) {
   base::AutoLock auto_lock(lock_);
+  net::blockers::ShieldsConfig* shieldsConfig =
+    net::blockers::ShieldsConfig::getShieldsConfig();
+  std::string host = first_party_url.host();
+  if (0 == host.length()) {
+    host = previous_first_party_host_;
+  } else {
+    previous_first_party_host_ = host;
+  }
+  if (nullptr != shieldsConfig && 0 != host.length()) {
+    std::string hostConfig = shieldsConfig->getHostSettings(host);
+    LOG(ERROR) << "!!!hostConfig == " << hostConfig;
+    if (hostConfig.length() == 9) {
+
+      if ('1' == hostConfig[0]) {
+        if ('0' == hostConfig[8]) {
+            return false;
+        }
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   return block_third_party_cookies_;
 }
 
