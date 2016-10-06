@@ -80,7 +80,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/learn_more"
                 android:textAppearance="@style/TextAppearance.IncognitoNewTabLearnMoreLinkModern"
-                android:lineSpacingExtra="@dimen/md_incognito_ntp_line_spacing" />
+                android:lineSpacingExtra="@dimen/md_incognito_ntp_line_spacing"
+                android:visibility = "gone" />
 
         </LinearLayout>
 
