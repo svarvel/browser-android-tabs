@@ -27,7 +27,7 @@
                 android:id="@+id/title"
                 android:text="@string/fre_welcome"
                 style="@style/FreTitle" />
-            
+
             <!-- The orientation of this view is changed dynamically to give a nicer layout when in
             landscape mode on devices with small screens. -->
             <LinearLayout
@@ -70,7 +70,8 @@
                         android:layout_height="wrap_content"
                         android:lineSpacingMultiplier="1.4"
                         android:text="@string/fre_send_report_check"
-                        android:textAppearance="@style/TextAppearance.BlackBodyDefault" />
+                        android:textAppearance="@style/TextAppearance.BlackBodyDefault"
+                        android:visibility = "gone" />
                     </LinearLayout>
             </LinearLayout>
         </LinearLayout>
