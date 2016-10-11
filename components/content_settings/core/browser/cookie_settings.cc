@@ -159,7 +159,6 @@ bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url) {
   }
   if (nullptr != shieldsConfig && 0 != host.length()) {
     std::string hostConfig = shieldsConfig->getHostSettings(host);
-    LOG(ERROR) << "!!!hostConfig == " << hostConfig;
     if (hostConfig.length() == 9) {
 
       if ('1' == hostConfig[0]) {
