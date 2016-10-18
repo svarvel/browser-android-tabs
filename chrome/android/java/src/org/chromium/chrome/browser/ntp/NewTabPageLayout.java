@@ -182,7 +182,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
     protected void onFinishInflate() {
         super.onFinishInflate();
         mMiddleSpacer = findViewById(R.id.ntp_middle_spacer);
-        mSearchProviderLogoView = findViewById(R.id.search_provider_logo);
+        //mSearchProviderLogoView = findViewById(R.id.search_provider_logo);
         mSearchBoxView = findViewById(R.id.search_box);
         insertSiteSectionView();
 
@@ -916,8 +916,8 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
         if (mSiteSectionView.getVisibility() != GONE) {
             final int width = mSiteSectionView.getMeasuredWidth() - mTileGridLayoutBleed;
             measureExactly(mSearchBoxView, width, mSearchBoxView.getMeasuredHeight());
-            measureExactly(mSearchProviderLogoView,
-                    width, mSearchProviderLogoView.getMeasuredHeight());
+            /*measureExactly(mSearchProviderLogoView,
+                    width, mSearchProviderLogoView.getMeasuredHeight());*/
 
             if (mExploreSectionView != null) {
                 measureExactly(mExploreSectionView, mSiteSectionView.getMeasuredWidth(),
@@ -926,8 +926,8 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
         } else if (mExploreSectionView != null) {
             final int exploreWidth = mExploreSectionView.getMeasuredWidth() - mTileGridLayoutBleed;
             measureExactly(mSearchBoxView, exploreWidth, mSearchBoxView.getMeasuredHeight());
-            measureExactly(mSearchProviderLogoView, exploreWidth,
-                    mSearchProviderLogoView.getMeasuredHeight());
+            /*measureExactly(mSearchProviderLogoView, exploreWidth,
+                    mSearchProviderLogoView.getMeasuredHeight());*/
         }
     }
 
