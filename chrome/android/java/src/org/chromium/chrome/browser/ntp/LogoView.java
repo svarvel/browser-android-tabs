@@ -27,6 +27,7 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 
 import org.chromium.base.ApiCompatibilityUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ntp.LogoBridge.Logo;
 import org.chromium.chrome.browser.search_engines.TemplateUrlService;
@@ -306,7 +307,7 @@ public class LogoView extends FrameLayout implements OnClickListener {
         if (!TemplateUrlService.getInstance().isDefaultSearchEngineGoogle()) return null;
 
         Bitmap defaultLogo = sDefaultLogo == null ? null : sDefaultLogo.get();
-        final int tint = ApiCompatibilityUtils.getColor(getResources(), R.color.google_logo_tint);
+        /*final int tint = ApiCompatibilityUtils.getColor(getResources(), R.color.google_logo_tint);
         if (defaultLogo == null || sDefaultLogoTint != tint) {
             if (tint == Color.TRANSPARENT) {
                 defaultLogo = BitmapFactory.decodeResource(getResources(), R.drawable.google_logo);
@@ -326,7 +327,7 @@ public class LogoView extends FrameLayout implements OnClickListener {
             }
             sDefaultLogo = new WeakReference<>(defaultLogo);
             sDefaultLogoTint = tint;
-        }
+        }*/
         return defaultLogo;
     }
 
