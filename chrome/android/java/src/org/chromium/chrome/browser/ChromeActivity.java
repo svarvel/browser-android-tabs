@@ -701,7 +701,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                     RecordUserAction.record("MobileToolbarReload");
                     if (null != mBraveShieldsMenuHandler) {
                         // Clean the Bravery Panel
-                        mBraveShieldsMenuHandler.updateValues(0, 0, 0);
+                        mBraveShieldsMenuHandler.updateValues(0, 0, 0, 0);
                     }
                 }
             });
@@ -768,7 +768,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     protected void braveShieldsCountUpdate(String url, int adsAndTrackers,
-            int httpsUpgrades, int scriptsBlocked) {
+            int httpsUpgrades, int scriptsBlocked, int fingerprintsBlocked) {
         List<Tab> tabsList = new ArrayList<>();
         for (int i = 0; i < getCurrentTabModel().getCount(); i++) {
             Tab tab = getCurrentTabModel().getTabAt(i);
@@ -797,13 +797,21 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 if (tabToUpdate.getHttpsUpgrades() > currentTab.getHttpsUpgrades()) {
                     tabToUpdate = currentTab;
                 }
+            } else if (0 != scriptsBlocked) {
+                if (tabToUpdate.getScriptsBlocked() > currentTab.getScriptsBlocked()) {
+                    tabToUpdate = currentTab;
+                }
+            } else if (0 != fingerprintsBlocked) {
+                if (tabToUpdate.getFingerprintsBlocked() > currentTab.getFingerprintsBlocked()) {
+                    tabToUpdate = currentTab;
+                }
             }
         }
         if (null != tabToUpdate) {
-            tabToUpdate.braveShieldsCountUpdate(adsAndTrackers, httpsUpgrades, scriptsBlocked);
+            tabToUpdate.braveShieldsCountUpdate(adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
             if (getActivityTab() == tabToUpdate) {
                 updateBraveryPanelCounts(tabToUpdate.getAdsAndTrackers(), tabToUpdate.getHttpsUpgrades(),
-                        tabToUpdate.getScriptsBlocked());
+                        tabToUpdate.getScriptsBlocked(), tabToUpdate.getFingerprintsBlocked());
             }
         }
     }
@@ -2694,8 +2702,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     /**
      * Updates Bravery Panel counts
      */
-    public void updateBraveryPanelCounts(int adsAndTrackers, int httpsUpgrades, int scriptsBlocked) {
-        mBraveShieldsMenuHandler.updateValues(adsAndTrackers, httpsUpgrades, scriptsBlocked);
+    public void updateBraveryPanelCounts(int adsAndTrackers, int httpsUpgrades, int scriptsBlocked, int fingerprintsBlocked) {
+        mBraveShieldsMenuHandler.updateValues(adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
     }
 
     private void clearToolbarResourceCache() {

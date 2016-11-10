@@ -347,7 +347,8 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
                           , url.getHost()
                           , currentTab.getAdsAndTrackers()
                           , currentTab.getHttpsUpgrades()
-                          , currentTab.getScriptsBlocked());
+                          , currentTab.getScriptsBlocked()
+                          , currentTab.getFingerprintsBlocked());
                     } catch (Exception e) {
                         setBraveShieldsBlackAndWhite();
                     }

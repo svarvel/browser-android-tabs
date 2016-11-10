@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 #include "chrome/renderer/content_settings_observer.h"
+#include "chrome/common/render_messages.h"
 
 #include <utility>
 #include <vector>
@@ -259,6 +260,21 @@ bool ContentSettingsObserver::AllowDatabase() {
   Send(new ChromeViewHostMsg_AllowDatabase(
       routing_id(), url::Origin(frame->GetSecurityOrigin()).GetURL(),
       url::Origin(frame->Top()->GetSecurityOrigin()).GetURL(), &result));
+  return result;
+}
+
+bool ContentSettingsObserver::AllowFingerprinting() {
+  WebFrame* frame = render_frame()->GetWebFrame();
+  if (!frame) {
+    return true;
+  }
+
+  bool result = true;
+  Send(new ChromeViewHostMsg_AllowFingerprinting(
+      routing_id(),
+      GURL(frame->top()->document().url()).host(),
+      &result));
+
   return result;
 }
 
@@ -555,8 +571,23 @@ void ContentSettingsObserver::DidNotAllowScript() {
 
 // We can pass an exact script URL here from FrameFetchContext.cpp
 void ContentSettingsObserver::deniedScript() {
+  WebFrame* frame = render_frame()->GetWebFrame();
+  if (!frame) {
+    return;
+  }
+
   Send(new ChromeViewHostMsg_DeniedScript(routing_id(),
-          GURL(render_frame()->GetWebFrame()->top()->document().url()).spec()));
+          GURL(frame->top()->document().url()).spec()));
+}
+
+void ContentSettingsObserver::deniedFingerprinting() {
+  WebFrame* frame = render_frame()->GetWebFrame();
+  if (!frame) {
+    return;
+  }
+
+  Send(new ChromeViewHostMsg_DeniedFingerprinting(routing_id(),
+          GURL(frame->top()->document().url()).spec()));
 }
 
 void ContentSettingsObserver::OnLoadBlockedPlugins(

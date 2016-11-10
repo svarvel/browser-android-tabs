@@ -158,6 +158,7 @@ extern const char kWebKitForceEnableZoom[];
 extern const char kWebKitPasswordEchoEnabled[];
 extern const char kWebKitForceDarkModeEnabled[];
 #endif
+extern const char kFingerprintingProtectionEnabled[];
 extern const char kHTTPSEEnabled[];
 extern const char kTrackingProtectionEnabled[];
 extern const char kAdBlockEnabled[];

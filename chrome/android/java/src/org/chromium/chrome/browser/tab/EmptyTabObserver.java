@@ -157,5 +157,5 @@ public class EmptyTabObserver implements TabObserver {
 
     @Override
     public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
-            int scriptsBlocked) { }
+            int scriptsBlocked, int fingerprintsBlocked) { }
 }

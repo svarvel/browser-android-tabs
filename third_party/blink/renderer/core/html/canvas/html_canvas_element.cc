@@ -996,6 +996,17 @@ void HTMLCanvasElement::RemoveListener(CanvasDrawListener* listener) {
 }
 
 bool HTMLCanvasElement::OriginClean() const {
+  LocalFrame* frame = GetDocument().frame();
+  bool allowed = true;
+  if (frame) {
+      allowed = frame->loader().client()->allowFingerprinting();
+  }
+  if (!allowed) {
+      if (frame) {
+        frame->loader().client()->deniedFingerprinting();
+      }
+    return false;
+  }
   if (GetDocument().GetSettings() &&
       GetDocument().GetSettings()->GetDisableReadingFromCanvas()) {
     return false;
