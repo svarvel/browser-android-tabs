@@ -443,6 +443,12 @@ static void JNI_PrefServiceBridge_SetSafeBrowsingEnabled(
   GetPrefService()->SetBoolean(prefs::kSafeBrowsingEnabled, enabled);
 }
 
+static void JNI_PrefServiceBridge_SetFingerprintingProtectionEnabled(JNIEnv* env,
+                                   const JavaParamRef<jobject>& obj,
+                                   jboolean enabled) {
+  GetPrefService()->SetBoolean(prefs::kFingerprintingProtectionEnabled, enabled);
+}
+
 static void JNI_PrefServiceBridge_SetHTTPSEEnabled(JNIEnv* env,
                                    const JavaParamRef<jobject>& obj,
                                    jboolean enabled) {
