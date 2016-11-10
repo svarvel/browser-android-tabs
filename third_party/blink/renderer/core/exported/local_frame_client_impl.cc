@@ -307,6 +307,16 @@ void LocalFrameClientImpl::DeniedScript()
   GetContentSettingsClient()->DeniedScript();
 }
 
+bool LocalFrameClientImpl::AllowFingerprinting()
+{
+  return GetContentSettingsClient()->allowFingerprinting();
+}
+
+void LocalFrameClientImpl::DeniedFingerprinting()
+{
+  GetContentSettingsClient->DeniedFingerprinting();
+}
+
 bool LocalFrameClientImpl::InShadowTree() const {
   return web_frame_->InShadowTree();
 }

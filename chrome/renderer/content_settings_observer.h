@@ -90,9 +90,11 @@ class ContentSettingsObserver
   bool AllowReadFromClipboard(bool default_value) override;
   bool AllowWriteToClipboard(bool default_value) override;
   bool AllowMutationEvents(bool default_value) override;
+  bool AllowFingerprinting() override;
   void DidNotAllowPlugins() override;
   void DidNotAllowScript() override;
   void DeniedScript() override;
+  void DeniedFingerprinting() override;
   bool AllowRunningInsecureContent(bool allowed_per_settings,
                                    const blink::WebSecurityOrigin& context,
                                    const blink::WebURL& url) override;
