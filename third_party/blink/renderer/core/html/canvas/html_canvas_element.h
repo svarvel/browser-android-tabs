@@ -409,6 +409,9 @@ class CORE_EXPORT HTMLCanvasElement final
 
   mutable bool gpu_readback_invoked_in_current_frame_;
   int gpu_readback_successive_frames_;
+
+  // It prevents from twice fingerprints block calculation
+  mutable bool wasBlockedByFingerprinting_;
 };
 
 }  // namespace blink
