@@ -953,6 +953,7 @@ jumbo_split_static_library("browser") {
     "net/blockers/TrackerData.h",
     "net/blockers/shields_config.h",
     "net/blockers/shields_config.cc",
+    "net/blockers/RecentlyUsedCache.h",
     "ntp_snippets/content_suggestions_notifier_service_factory.cc",
     "ntp_snippets/content_suggestions_notifier_service_factory.h",
     "ntp_snippets/content_suggestions_service_factory.cc",
