@@ -391,6 +391,9 @@ const char kTrackingProtectionEnabled[] = "trackingprotection.enabled";
 // Boolean that is true when AdBlocking is enabled.
 const char kAdBlockEnabled[] = "adblock.enabled";
 
+// Boolean that is true when AdBlocking Regional is enabled.
+const char kAdBlockRegionalEnabled[] = "adblockregional.enabled";
+
 // Boolean that is true when the SSL interstitial should allow users to
 // proceed anyway. Otherwise, proceeding is not possible.
 const char kSSLErrorOverrideAllowed[] = "ssl.error_override_allowed";
