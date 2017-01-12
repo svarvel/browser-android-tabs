@@ -461,6 +461,12 @@ static void JNI_PrefServiceBridge_SetAdBlockEnabled(JNIEnv* env,
    GetPrefService()->SetBoolean(prefs::kAdBlockEnabled, enabled);
 }
 
+static void JNI_PrefServiceBridge_SetAdBlockRegionalEnabled(JNIEnv* env,
+                                   const JavaParamRef<jobject>& obj,
+                                   jboolean enabled) {
+   GetPrefService()->SetBoolean(prefs::kAdBlockRegionalEnabled, enabled);
+}
+
 static void JNI_PrefServiceBridge_SetTrackingProtectionEnabled(JNIEnv* env,
                                    const JavaParamRef<jobject>& obj,
                                    jboolean enabled) {

@@ -1309,6 +1309,7 @@ if (current_toolchain == default_toolchain) {
       sources = [
         "$target_gen_dir/${_variant}_paks/chrome_100_percent.pak",
         "$target_gen_dir/${_variant}_paks/resources.pak",
+        "//chrome/browser/net/blockers/data/regions.json",
       ]
       disable_compression = true
 
