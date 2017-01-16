@@ -34,6 +34,7 @@ import org.chromium.chrome.browser.FileProviderHelper;
 import org.chromium.chrome.browser.crash.LogcatExtractionRunnable;
 import org.chromium.chrome.browser.download.DownloadManagerService;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
+import org.chromium.chrome.browser.preferences.privacy.PrivacyPreferencesManager;
 import org.chromium.chrome.browser.services.GoogleServicesManager;
 import org.chromium.chrome.browser.tabmodel.document.DocumentTabModelImpl;
 import org.chromium.chrome.browser.webapps.ActivityAssigner;
@@ -200,10 +201,19 @@ public class ChromeBrowserInitializer {
                 return null;
             }
 
+            final boolean enableRegionalAdBlock = (0 != files.size());
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock);
+                    PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
+                }
+            });
+
             for (int i = 0; i < files.size(); i ++) {
                 if (!ADBlockUtils.CreateDownloadedFile(mContext, files.get(i) + ".dat",
                     verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
-                      break;
+                        break;
                     }
             }
 
