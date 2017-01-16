@@ -54,6 +54,7 @@ import org.chromium.policy.CombinedPolicyProvider;
 import org.chromium.ui.resources.ResourceExtractor;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -77,6 +78,8 @@ public class ChromeBrowserInitializer {
 
     private boolean mAdBlockInitCalled = false;
     private boolean mUpdateStatsCalled = false;
+
+    List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
 
     // Public to allow use in ChromeBackupAgent
     public static final String PRIVATE_DATA_DIRECTORY_SUFFIX = "chrome";
@@ -194,8 +197,9 @@ public class ChromeBrowserInitializer {
         protected Long doInBackground(Void... params) {
             String verNumber = ADBlockUtils.getDataVerNumber(
                 ADBlockUtils.ADBLOCK_REGIONAL_URL, true);
+            final String deviceLanguage = Locale.getDefault().getLanguage();
             List<String> files = ADBlockUtils.readRegionalABData(ContextUtils.getApplicationContext(),
-                ADBlockUtils.ETAG_PREPEND_REGIONAL_ADBLOCK, verNumber);
+                ADBlockUtils.ETAG_PREPEND_REGIONAL_ADBLOCK, verNumber, deviceLanguage);
             if (null == files) {
                 return null;
             }
@@ -213,8 +217,13 @@ public class ChromeBrowserInitializer {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock);
-                        PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
+                        if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
+                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(false, false);
+                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(false);
+                        } else {
+                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock, true);
+                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
+                        }
                     }
                 });
             }
