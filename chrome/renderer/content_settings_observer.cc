@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 #include "chrome/renderer/content_settings_observer.h"
-#include "chrome/common/render_messages.h"
 
 #include <utility>
 #include <vector>
