@@ -2354,13 +2354,13 @@ HostResolverManager::CreateMdnsListener(const HostPortPair& host,
 
 void HostResolverManager::SetDnsClientEnabled(bool enabled) {
   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
-#if defined(ENABLE_BUILT_IN_DNS)
-  if (enabled && !dns_client_) {
-    SetDnsClient(DnsClient::CreateClient(net_log_));
-  } else if (!enabled && dns_client_) {
-    SetDnsClient(nullptr);
-  }
-#endif
+//#if defined(ENABLE_BUILT_IN_DNS)
+//  if (enabled && !dns_client_) {
+//    SetDnsClient(DnsClient::CreateClient(net_log_));
+//  } else if (!enabled && dns_client_) {
+//    SetDnsClient(nullptr);
+//  }
+//#endif
 }
 
 HostCache* HostResolverManager::GetHostCache() {
