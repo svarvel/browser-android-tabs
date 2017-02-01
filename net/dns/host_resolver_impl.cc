@@ -2237,12 +2237,12 @@ HostResolverImpl::CreateMdnsListener(const HostPortPair& host,
 
 void HostResolverImpl::SetDnsClientEnabled(bool enabled) {
   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
-#if defined(ENABLE_BUILT_IN_DNS)
-  if (enabled && !dns_client_) {
-    SetDnsClient(DnsClient::CreateClient(net_log_));
-  } else if (!enabled && dns_client_) {
-    SetDnsClient(std::unique_ptr<DnsClient>());
-  }
+//#if defined(ENABLE_BUILT_IN_DNS)
+//  if (enabled && !dns_client_) {
+//    SetDnsClient(DnsClient::CreateClient(net_log_));
+//  } else if (!enabled && dns_client_) {
+//    SetDnsClient(std::unique_ptr<DnsClient>());
+//  }
 #endif
 }
 
