@@ -82,7 +82,11 @@ class ChromeLifetimeController implements ApplicationLifetime.Observer,
 
         // Kick off a timer to kill the process after a delay, which fires only if the Activities
         // take too long to be finished.
-        mHandler.postDelayed(mRestartRunnable, WATCHDOG_DELAY_MS);
+        if (restart) {
+            mHandler.postDelayed(mRestartRunnable, WATCHDOG_DELAY_MS);
+        } else {
+            fireBrowserRestartActivityIntent();
+        }
     }
 
     @Override
