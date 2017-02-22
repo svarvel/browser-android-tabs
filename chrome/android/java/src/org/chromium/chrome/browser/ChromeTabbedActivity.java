@@ -1534,7 +1534,6 @@ public class ChromeTabbedActivity
 
             @Override
             public void onPageLoadFinished(Tab tab) {
-              Log.i("TAG", "!!!here11");
                 String url = tab.getUrl();
                 if (getActivityTab() == tab) {
                     try {
