@@ -86,7 +86,9 @@ std::string StripFirstGenericPrefix(const std::string& host) {
 }
 
 bool ShouldShowPopularSites() {
-  return base::FeatureList::IsEnabled(kUsePopularSitesSuggestions);
+  // We want to show popular websites in Brave always
+  return true;
+  //return base::FeatureList::IsEnabled(kUsePopularSitesSuggestions);
 }
 
 // Generate a short title for Most Visited items before they're converted to
