@@ -106,6 +106,16 @@
       "id": 92
     },
 
+    "ecosia": {
+      "name": "Ecosia",
+      "keyword": "ecosia.org",
+      "favicon_url": "https://cdn.ecosia.org/assets/images/ico/favicon.ico",
+      "search_url": "https://www.ecosia.org/search?q={searchTerms}",
+      "suggest_url": "https://ac.ecosia.org/autocomplete?q={searchTerms}&type=list",
+      "type": "SEARCH_ENGINE_ECOSIA",
+      "id": 30
+    },
+
     "github": {
       "name": "GitHub",
       "keyword": "github.com",
