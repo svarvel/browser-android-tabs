@@ -944,6 +944,15 @@
       "id": 78
     },
 
+    "searx": {
+      "name": "searx",
+      "keyword": "searx.me",
+      "favicon_url": "https://searx.me/favicon.ico",
+      "search_url": "https://searx.me/?q={searchTerms}&categories=general",
+      "type": "SEARCH_ENGINE_SEARX",
+      "id": 32
+    },
+
     "snapdo": {
       "name": "SnapDo",
       "keyword": "search.snapdo.com",
