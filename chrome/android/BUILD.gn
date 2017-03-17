@@ -1371,6 +1371,8 @@ if (current_toolchain == default_toolchain) {
         "$target_gen_dir/${_variant}_paks/chrome_100_percent.pak",
         "$target_gen_dir/${_variant}_paks/resources.pak",
         "//chrome/browser/net/blockers/data/regions.json",
+        "//braveSync/bundles/bundle.js",
+        "//sync/android_sync.js",
       ]
       disable_compression = true
 

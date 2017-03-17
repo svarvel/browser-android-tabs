@@ -912,6 +912,11 @@ Your Google account may have other forms of browsing history like searches and a
         Automatically send usage statistics and crash reports to Google
       </message>
 
+      <!-- Sync preferences -->
+      <message name="IDS_PREFS_SYNC" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
+        Sync
+      </message>
+
       <!-- Accessibility preferences -->
       <message name="IDS_PREFS_ACCESSIBILITY" desc="Title of Accessibility settings, which allows the user to change webpage font sizes. [CHAR-LIMIT=32]">
         Accessibility

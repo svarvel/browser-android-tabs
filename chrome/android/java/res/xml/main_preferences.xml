@@ -80,6 +80,11 @@
         android:key="privacy"
         android:order="14"
         android:title="@string/prefs_privacy"/>
+    <!-- <Preference
+        android:fragment="org.chromium.chrome.browser.preferences.BraveSyncPreferences"
+        android:key="sync"
+        android:order="9"
+        android:title="@string/prefs_sync" /> -->
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.AccessibilityPreferences"
         android:key="accessibility"

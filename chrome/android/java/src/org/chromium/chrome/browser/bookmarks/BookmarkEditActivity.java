@@ -12,8 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.BraveSyncWorker;
+import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.SynchronousInitializationActivity;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkItem;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkModelObserver;
@@ -141,8 +144,10 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
             final String title = mTitleEditText.getTrimmedText();
             final String url = mUrlEditText.getTrimmedText();
 
+            boolean sendToSyncWorker = false;
             if (!mTitleEditText.isEmpty()) {
                 mModel.setBookmarkTitle(mBookmarkId, title);
+                sendToSyncWorker = true;
             }
 
             if (!mUrlEditText.isEmpty()
@@ -150,6 +155,13 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
                 String fixedUrl = UrlFormatter.fixupUrl(url);
                 if (fixedUrl != null && !fixedUrl.equals(originalUrl)) {
                     mModel.setBookmarkUrl(mBookmarkId, fixedUrl);
+                    sendToSyncWorker = true;
+                }
+            }
+            if (sendToSyncWorker) {
+                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                if (null != app && null != app.mBraveSyncWorker) {
+                    app.mBraveSyncWorker.CreateUpdateBookmark(false, mModel.getBookmarkById(mBookmarkId));
                 }
             }
         }

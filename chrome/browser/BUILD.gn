@@ -175,6 +175,8 @@ jumbo_split_static_library("browser") {
     "bookmarks/managed_bookmark_service_factory.h",
     "bookmarks/startup_task_runner_service_factory.cc",
     "bookmarks/startup_task_runner_service_factory.h",
+    "brave_sync_worker.cc",
+    "brave_sync_worker.h",
     "browser_about_handler.cc",
     "browser_about_handler.h",
     "browser_features.cc",
