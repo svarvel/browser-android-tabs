@@ -297,91 +297,10 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         showCustomButtonOnToolbar();
         mBottomBarDelegate = new CustomTabBottomBarDelegate(this, mIntentDataProvider);
         mBottomBarDelegate.showBottomBarIfNecessary();
-    }
-
-    @Override
-    protected TabModelSelector createTabModelSelector() {
-        TabPersistencePolicy persistencePolicy = new CustomTabTabPersistencePolicy(
-                getTaskId(), getSavedInstanceState() != null);
-
-        TabModelSelectorImpl tabModelSelectorImpl = new TabModelSelectorImpl(this, this, persistencePolicy, false, false);
-
-        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(tabModelSelectorImpl) {
-
-            private boolean mIsFirstPageLoadStart = true;
-
-            @Override
-            public void onPageLoadStarted(Tab tab, String url) {
-                // Discard startup navigation measurements when the user interfered and started the
-                // 2nd navigation (in activity lifetime) in parallel.
-                Log.i("TAG", "!!!here0");
-                if (mIsFirstPageLoadStart) {
-                    mIsFirstPageLoadStart = false;
-                }
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-                if ((null != app) && (null != app.getShieldsConfig())) {
-                    app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
-                }
-                if (getActivityTab() == tab) {
-                    try {
-                        URL urlCheck = new URL(url);
-                        setBraveShieldsColor(urlCheck.getHost());
-                    } catch (Exception e) {
-                        setBraveShieldsBlackAndWhite();
-                    }
-                }
-                tab.clearBraveShieldsCount();
-            }
-
-            @Override
-            public void onPageLoadFinished(Tab tab) {
-              Log.i("TAG", "!!!here00");
-                String url = tab.getUrl();
-                if (getActivityTab() == tab) {
-                    try {
-                        URL urlCheck = new URL(url);
-                        setBraveShieldsColor(urlCheck.getHost());
-                    } catch (Exception e) {
-                        setBraveShieldsBlackAndWhite();
-                    }
-                }
-            }
-
-            @Override
-            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
-                    int scriptsBlocked, int fingerprintsBlocked) {
-                braveShieldsCountUpdate(url, adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
-            }
-        };
-
-        getToolbarManager().setCloseButtonDrawable(mIntentDataProvider.getCloseButtonDrawable());
-        getToolbarManager().setShowTitle(mIntentDataProvider.getTitleVisibilityState()
-                == CustomTabsIntent.SHOW_PAGE_TITLE);
-        if (mConnection.shouldHideDomainForSession(mSession)) {
-            getToolbarManager().setUrlBarHidden(true);
-        }
-        int toolbarColor = mIntentDataProvider.getToolbarColor();
-        getToolbarManager().onThemeColorChanged(toolbarColor, false);
-        if (!mIntentDataProvider.isOpenedByChrome()) {
-            getToolbarManager().setShouldUpdateToolbarPrimaryColor(false);
-        }
-
-        super.setStatusBarColor(toolbarColor,
-                ColorUtils.isUsingDefaultToolbarColor(getResources(), false, toolbarColor));
-
-        // Properly attach tab's infobar to the view hierarchy, as the main tab might have been
-        // initialized prior to inflation.
-        if (mTabController.getTab() != null) {
-            ViewGroup bottomContainer = (ViewGroup) findViewById(R.id.bottom_container);
-            InfoBarContainer.get(mTabController.getTab()).setParentView(bottomContainer);
-        }
-
-        // Setting task title and icon to be null will preserve the client app's title and icon.
-        ApiCompatibilityUtils.setTaskDescription(this, null, null, toolbarColor);
-        showCustomButtonsOnToolbar();
-        mBottomBarDelegate = getComponent().resolveBottomBarDelegate();
-        mBottomBarDelegate.showBottomBarIfNecessary();
-        mTopBarDelegate = getComponent().resolveTobBarDelegate();
+        mTopBarDelegate = new CustomTabTopBarDelegate(this);
+        mDefaultToolbarVisibility = getToolbarManager().getToolbarVisibility();
+        mDefaultToolbarShadowVisibility = getToolbarManager().getToolbarShadowVisibility();
+        mDefaultIsProgressBarEnabled = getToolbarManager().isProgressBarEnabled();
     }
 
     @Override

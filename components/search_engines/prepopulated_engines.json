@@ -945,7 +945,7 @@
     },
 
     "searx": {
-      "name": "searx",
+      "name": "Searx",
       "keyword": "searx.me",
       "favicon_url": "https://searx.me/favicon.ico",
       "search_url": "https://searx.me/?q={searchTerms}&categories=general",
