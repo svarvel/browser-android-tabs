@@ -15,7 +15,6 @@ import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.task.AsyncTask;
-import org.chromium.chrome.browser.init.StatsUpdater;
 import org.chromium.components.invalidation.PendingInvalidation;
 import org.chromium.components.signin.AccountManagerFacade;
 import org.chromium.components.sync.AndroidSyncSettings;
@@ -49,36 +48,11 @@ public class DelayedInvalidationsController {
     @VisibleForTesting
     DelayedInvalidationsController() {}
 
-      // Stats update
-    class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
-
-        private Context mContext = null;
-
-        public UpdateStatsAsyncTask(Context context) {
-            mContext = context;
-        }
-
-        protected Long doInBackground(Void... params) {
-            if (null == mContext) {
-                return null;
-            }
-            try {
-                StatsUpdater.UpdateStats(mContext);
-            }
-            catch(Exception exc) {
-                // Just ignore it if we cannot update
-            }
-
-            return null;
-        }
-    }
-
     /**
      * Notify any invalidations that were delayed while Chromium was backgrounded.
      * @return whether there were any invalidations pending to be notified.
      */
     public boolean notifyPendingInvalidations() {
-        new UpdateStatsAsyncTask(ContextUtils.getApplicationContext()).execute();
         SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
         String accountName = prefs.getString(DELAYED_ACCOUNT_NAME, null);
         if (accountName == null) {
