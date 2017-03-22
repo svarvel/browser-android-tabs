@@ -1,3 +1,7 @@
+<release version="1.0.17">
+    <change>Updated to Chromium v57.</change>
+    <change>Added Searx and Ecosia search engines.</change>
+</release>
 <release version="1.0.16">
     <change>Fixed SSL error on Chromium v56.</change>
 </release>
