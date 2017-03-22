@@ -543,6 +543,13 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
                     ColorUtils.getDarkenedColorForStatusBar(toolbarColor));
         }
 
+        // Properly attach tab's infobar to the view hierarchy, as the main tab might have been
+        // initialized prior to inflation.
+        if (mMainTab != null) {
+            ViewGroup bottomContainer = (ViewGroup) findViewById(R.id.bottom_container);
+            mMainTab.getInfoBarContainer().setParentView(bottomContainer);
+        }
+
         // Setting task title and icon to be null will preserve the client app's title and icon.
         ApiCompatibilityUtils.setTaskDescription(this, null, null, toolbarColor);
         showCustomButtonOnToolbar();
@@ -559,7 +566,55 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         mTabPersistencePolicy = new CustomTabTabPersistencePolicy(
                 getTaskId(), getSavedInstanceState() != null);
 
-        return new TabModelSelectorImpl(this, this, mTabPersistencePolicy, false, false);
+        TabModelSelectorImpl tabModelSelectorImpl = new TabModelSelectorImpl(this, this, mTabPersistencePolicy, false, false);
+
+        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(tabModelSelectorImpl) {
+
+            private boolean mIsFirstPageLoadStart = true;
+
+            @Override
+            public void onPageLoadStarted(Tab tab, String url) {
+                // Discard startup navigation measurements when the user interfered and started the
+                // 2nd navigation (in activity lifetime) in parallel.
+                if (mIsFirstPageLoadStart) {
+                    mIsFirstPageLoadStart = false;
+                }
+                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                if ((null != app) && (null != app.getShieldsConfig())) {
+                    app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
+                }
+                if (getActivityTab() == tab) {
+                    try {
+                        URL urlCheck = new URL(url);
+                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
+                    }
+                }
+                tab.clearBraveShieldsCount();
+            }
+
+            @Override
+            public void onPageLoadFinished(Tab tab) {
+                String url = tab.getUrl();
+                if (getActivityTab() == tab) {
+                    try {
+                        URL urlCheck = new URL(url);
+                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
+                    }
+                }
+            }
+
+            @Override
+            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
+                    int scriptsBlocked, int fingerprintsBlocked) {
+                braveShieldsCountUpdate(url, adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
+            }
+        };
+
+        return  tabModelSelectorImpl;
     }
 
     @Override
