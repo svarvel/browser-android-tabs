@@ -39,7 +39,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
     // are defined in the SiteSettingsCategory, additional keys
     // are listed here.
     static final String MEDIA_KEY = "media";
-    static final String TRANSLATE_KEY = "translate";
+    //static final String BACKGROUND_SYNC_KEY = "background_sync";
+    //static final String TRANSLATE_KEY = "translate";
 
     // Whether the Protected Content menu is available for display.
     boolean mProtectedContentMenuAvailable;
@@ -87,7 +88,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 getPreferenceScreen().removePreference(findPreference(i));
             }
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));
-            getPreferenceScreen().removePreference(findPreference(TRANSLATE_KEY));
+            //getPreferenceScreen().removePreference(findPreference(BACKGROUND_SYNC_KEY));
+            //getPreferenceScreen().removePreference(findPreference(TRANSLATE_KEY));
         } else {
             // If both Autoplay and Protected Content menus are available, they'll be tucked under
             // the Media key. Otherwise, we can remove the Media menu entry.
@@ -122,8 +124,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
         PrefServiceBridge prefServiceBridge = PrefServiceBridge.getInstance();
 
         // Translate preference.
-        Preference translatePref = findPreference(TRANSLATE_KEY);
-        if (translatePref != null) setTranslateStateSummary(translatePref);
+        /*Preference translatePref = findPreference(TRANSLATE_KEY);
+        if (translatePref != null) setTranslateStateSummary(translatePref);*/
 
         // Preferences that navigate to Website Settings.
         List<Integer> websitePrefs = new ArrayList<Integer>();
@@ -141,7 +143,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
             if (!mProtectedContentMenuAvailable) {
                 websitePrefs.add(Type.AUTOPLAY);
             }
-            websitePrefs.add(Type.BACKGROUND_SYNC);
+            //websitePrefs.add(Type.BACKGROUND_SYNC);
             websitePrefs.add(Type.CAMERA);
             if (!FeatureUtilities.isNoTouchModeEnabled()) {
                 websitePrefs.add(Type.CLIPBOARD);
