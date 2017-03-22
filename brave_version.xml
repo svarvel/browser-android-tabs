@@ -1,3 +1,8 @@
+<release version="1.0.18">
+    <change>Updated to Chromium v57.</change>
+    <change>Added Searx and Ecosia search engines.</change>
+    <change>Fixed crash on Custom Tabs.</change>
+</release>
 <release version="1.0.17">
     <change>Updated to Chromium v57.</change>
     <change>Added Searx and Ecosia search engines.</change>
