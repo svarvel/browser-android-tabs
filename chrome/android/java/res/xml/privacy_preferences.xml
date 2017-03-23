@@ -17,10 +17,10 @@
         android:title="@string/search_suggestions_title"
         android:summary="@string/search_suggestions_summary"
         android:defaultValue="true" />
-    <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
+    <!--<org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="safe_browsing_scout_reporting"
         android:title="@string/safe_browsing_scout_reporting_title"
-        android:summary="@string/safe_browsing_scout_reporting_summary" />
+        android:summary="@string/safe_browsing_scout_reporting_summary" />-->
     <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="safe_browsing"
         android:title="@string/safe_browsing_title"
