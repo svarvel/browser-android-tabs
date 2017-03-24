@@ -1,6 +1,6 @@
 # chromium
 
-##Get the code
+## Get the code
 
 - check out and install the [depot_tools package](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up).
 - create browser-android-tabs dir
@@ -11,7 +11,7 @@
 
   `git clone https://github.com/brave/browser-android-tabs.git src`
   
-##Configure your build (You can only use a Linux build machine for Android builds)
+## Configure your build (You can only use a Linux build machine for Android builds)
 
 - you have to install [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab). We use it for sync functionality.
 
@@ -19,7 +19,7 @@
 
   `sh scripts/getThirdParties.js`
   
-##Build the full browser in debug mode
+## Build the full browser in debug mode
 
 - build browser:
 
@@ -33,16 +33,16 @@
 
   `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
   
-##Build the full browser in release mode
+## Build the full browser in release mode
 
 - follow the link [Make release builds](https://github.com/brave/browser-android-tabs/wiki/Make-release-builds)
 
-##Debugging
+## Debugging
 
 - follow that [link](https://www.chromium.org/developers/how-tos/debugging-on-android) for the general debug process;
 
 - follow that [link](https://www.chromium.org/developers/android-eclipse-dev) to configure Eclipse IDE.
 
-##Android version
+## Android version
 
 You should have at least Android 4.1(Jelly Bean) to run Brave. Min SDK version is 16.
