@@ -55,10 +55,11 @@ namespace blockers {
                 slice += dot + domainParts[j];
                 dot = ".";
             }
-            resultDomains.push_back(slice);
             if (0 != i) {
               // We don't want * on the top URL
-              resultDomains.push_back(slice + ".*");
+                resultDomains.push_back(slice + ".*");
+            } else {
+                resultDomains.push_back(slice);
             }
         }
 
