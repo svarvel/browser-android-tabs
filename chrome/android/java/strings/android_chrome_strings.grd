@@ -1793,6 +1793,32 @@ Your Google account may have other forms of browsing history like searches and a
       <message name="IDS_SYNC_BOOKMARKS" desc="Title for preference which enables sync'ing of bookmarks. [CHAR-LIMT=32]">
         Bookmarks
       </message>
+      <message name="IDS_BRAVE_SYNC" desc="Brave sync main screen message title.">
+        Brave Sync
+      </message>
+      <message name="IDS_BRAVE_SYNC_MESSAGE" desc="Brave sync main screen message.">
+        Sync browser data between your devices
+        securely using Brave Sync, no account
+        creation required. Tap below to get started.
+      </message>
+      <message name="IDS_BRAVE_SYNC_QRCODE" desc="Brave sync main screen QRCode message title.">
+        Sync to device
+      </message>
+      <message name="IDS_BRAVE_SYNC_QRCODE_MESSAGE" desc="Brave sync main screen QRCode message.">
+        Using existing synced device open Brave
+        Settings and navigate to "Device &amp;
+        Settings", tap `+` to add a new device and
+        reveal sync code.
+      </message>
+      <message name="IDS_NEW_TO_SYNC" desc="Button for new to sync button. [CHAR-LIMT=32]">
+        I am new to sync
+      </message>
+      <message name="IDS_HAVE_EXISTING_SYNC_CODE" desc="Button for have existing sync code button. [CHAR-LIMT=32]">
+        I have an existing sync code
+      </message>
+      <message name="IDS_ENTER_CODE_WORDS_SYNC" desc="Button for enter code words. [CHAR-LIMT=32]">
+        Enter code words
+      </message>
       <message name="IDS_SYNC_HISTORY" desc="Title for preference which enables sync'ing of history data. [CHAR-LIMT=32]">
         History
       </message>

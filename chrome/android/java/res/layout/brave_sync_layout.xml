@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015 The Chromium Authors. All rights reserved.
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file. -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ImageView android:id="@+id/brave_sync_image"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:layout_weight="3"
+       android:src="@drawable/brave_sync2x"
+       android:background="@drawable/brave_sync_background"
+       android:scaleType="center"
+       android:contentDescription="@null" />
+
+   <org.chromium.chrome.browser.qrreader.CameraSourcePreview
+       android:id="@+id/preview"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:layout_weight="2.6"
+       android:scaleType="center"
+       android:visibility="gone" />
+
+   <TextView android:id="@+id/brave_sync_text"
+       android:layout_width="match_parent"
+       android:layout_height="0px"
+       android:layout_weight="1.4"
+       android:gravity="center" />
+
+   <ListView android:id="@android:id/list"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:visibility="gone"/>
+
+   <Button android:id="@+id/new_to_sync"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/new_to_sync"
+       style="@style/FlushFooterButton"/>
+
+   <Button android:id="@+id/have_existing_sync_code"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/have_existing_sync_code"
+       style="@style/FlushFooterButton"/>
+
+   <Button android:id="@+id/enter_code_words"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/enter_code_words_sync"
+       style="@style/FlushFooterButton"
+       android:visibility="gone"/>
+
+</LinearLayout>
