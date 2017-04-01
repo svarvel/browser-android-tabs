@@ -18,6 +18,7 @@ import org.chromium.components.bookmarks.BookmarkId;
 import org.chromium.components.bookmarks.BookmarkType;
 import org.chromium.components.url_formatter.UrlFormatter;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel;
+import org.chromium.chrome.browser.bookmarks.BookmarkUtils;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkItem;
 
 import java.lang.IllegalArgumentException;
@@ -33,6 +34,12 @@ import java.io.UnsupportedEncodingException;
 @JNINamespace("brave_sync_storage")
 public class BraveSyncWorker {
 
+    private static final String PREF_NAME = "SyncPreferences";
+    private static final String PREF_LAST_FETCH_NAME = "TimeLastFetch";
+    // TODO should by encrypted properly
+    private static final String PREF_DEVICE_ID = "DeviceId";
+    private static final String PREF_SEED = "Seed";
+    //
     private static final int INTERVAL_TO_FETCH_RECORDS = 1000 * 60;    // Milliseconds
     private static final String PREF_SYNC_SWITCH = "sync_switch";
     private static final String PREF_BOOKMARKS_CHECK_BOX = "sync_bookmarks_check_box";
@@ -253,7 +260,9 @@ public class BraveSyncWorker {
     }
 
     private void GotInitData() {
-        CallScript(String.format("javascript:callbackList['got-init-data'](null, %1$s, %2$s, {apiVersion: '%3$s', serverUrl: '%4$s', debug: %5$s})", mSeed, mDeviceId, mApiVersion, mServerUrl, mDebug));
+        String deviceId = (null == mDeviceId ? null : "[" + mDeviceId + "]");
+        String seed = (null == mSeed ? null : "[" + mSeed + "]");
+        CallScript(String.format("javascript:callbackList['got-init-data'](null, %1$s, %2$s, {apiVersion: '%3$s', serverUrl: '%4$s', debug: %5$s})", seed, deviceId, mApiVersion, mServerUrl, mDebug));
     }
 
     private void SaveInitData(String arg1, String arg2) {
@@ -262,8 +271,12 @@ public class BraveSyncWorker {
         }
         mSeed = arg1;
         mDeviceId = arg2;
-        Log.i("TAG", "!!!mSeed == " + mSeed);
-        Log.i("TAG", "!!!mDeviceId == " + mDeviceId);
+        // Save seed and deviceId in preferences
+        SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(PREF_DEVICE_ID, mDeviceId);
+        editor.putString(PREF_SEED, mSeed);
+        editor.apply();
     }
 
     public void SendSyncRecords(String recordType, String recordsJSON) {
@@ -280,6 +293,11 @@ public class BraveSyncWorker {
         CallScript(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s)", SyncRecordType.GetJSArray(), String.valueOf(mTimeLastFetch / 1000)));
         Calendar currentTime = Calendar.getInstance();
         mTimeLastFetch = currentTime.getTimeInMillis();
+        // Save last fetch time in preferences
+        SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putLong(PREF_LAST_FETCH_NAME, mTimeLastFetch);
+        editor.apply();
     }
 
     public String GetExistingObjects(String categoryName, String recordsJSON) {
@@ -431,6 +449,33 @@ public class BraveSyncWorker {
         return;
     }
 
+    private void AddBookmark(String url, String title) {
+        try {
+           AddBookmarkRunnable bookmarkRunnable = new AddBookmarkRunnable(url, title);
+           if (null == bookmarkRunnable) {
+              return;
+           }
+           synchronized (bookmarkRunnable)
+           {
+               // Execute code on UI thread
+               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+
+               // Wait until runnable finished
+               try {
+                   bookmarkRunnable.wait();
+               } catch (InterruptedException e) {
+               }
+           }
+           if (null != bookmarkRunnable.mBookmarkId) {
+               String objectId = GenerateObjectId(bookmarkRunnable.mBookmarkId.getId());
+               SaveObjectId(bookmarkRunnable.mBookmarkId.getId(), objectId);
+           }
+        } catch (NumberFormatException e) {
+        }
+
+        return;
+    }
+
     public void ResolvedSyncRecords(String categoryName, String recordsJSON) {
         if (null == categoryName || null == recordsJSON) {
             return;
@@ -464,7 +509,12 @@ public class BraveSyncWorker {
                if (null == bookmarkInternal) {
                     continue;
                }
-               EditBookmarkByLocalId(nativeGetLocalIdByObjectId(objectId), bookmarkInternal.mUrl, bookmarkInternal.mTitle);
+               String localId = nativeGetLocalIdByObjectId(objectId);
+               if (0 != localId.length()) {
+                  EditBookmarkByLocalId(nativeGetLocalIdByObjectId(objectId), bookmarkInternal.mUrl, bookmarkInternal.mTitle);
+               } else {
+                  AddBookmark(bookmarkInternal.mUrl, bookmarkInternal.mTitle);
+               }
            }
            reader.endArray();
         } catch (UnsupportedEncodingException e) {
@@ -700,11 +750,41 @@ public class BraveSyncWorker {
         }
     }
 
+    class AddBookmarkRunnable implements Runnable {
+        private BookmarkId mBookmarkId = null;
+        private String mUrl;
+        private String mTitle;
+
+        public AddBookmarkRunnable(String url, String title) {
+            mUrl = url;
+            mTitle = title;
+        }
+
+        @Override
+        public void run() {
+            BookmarkModel newBookmarkModel = new BookmarkModel();
+            if (null != newBookmarkModel) {
+                mBookmarkId = BookmarkUtils.addBookmarkSilently(mContext, newBookmarkModel, mTitle, mUrl);
+                newBookmarkModel.destroy();
+            }
+
+            synchronized (this)
+            {
+                this.notify();
+            }
+        }
+    }
+
     class SyncThread extends Thread {
         public void run() {
+          SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+          mTimeLastFetch = sharedPref.getLong(PREF_LAST_FETCH_NAME, 0);
+          mDeviceId = sharedPref.getString(PREF_DEVICE_ID, null);
+          //mSeed = sharedPref.getString(PREF_SEED, null);
+
           for (;;) {
               try {
-                  boolean prefSyncDefault = true; // TODO replace it on false
+                  boolean prefSyncDefault = false; // TODO replace it on false
                   boolean prefSync = mSharedPreferences.getBoolean(
                           PREF_SYNC_SWITCH, prefSyncDefault);
                   if (prefSync) {
