@@ -11,11 +11,26 @@
         android:summaryOff="@string/text_off"
         android:defaultValue="false" />
 
+    <!--<Preference
+        android:fragment="org.chromium.chrome.browser.preferences.website.BraveSyncScreensPreference"
+        android:key="sync_picture"/>-->
+        <!--<Preference
+            android:key="sync_picture"
+            android:layout="@layout/preference_category" />-->
+
     <!-- A toggle for allowing bookmarks to be synced. -->
-    <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
+    <!--<org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="sync_bookmarks_check_box"
         android:title="@string/sync_bookmarks"
-        android:defaultValue="true" />
+        android:defaultValue="true" />-->
+
+    <!--<org.chromium.chrome.browser.preferences.ButtonPreference
+        android:key="new_to_sync_button"
+        android:title="@string/new_to_sync" />
+
+    <org.chromium.chrome.browser.preferences.ButtonPreference
+        android:key="have_existing_sync_code_button"
+        android:title="@string/have_existing_sync_code" />-->
 
     <!--
     <org.chromium.chrome.browser.preferences.PreferenceCategoryWithButton
