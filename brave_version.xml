@@ -1,3 +1,8 @@
+<release version="1.0.19">
+    <change>Updated to Chromium v57.0.2987.132.</change>
+    <change>Added Iran regional filter.</change>
+    <change>Fixed journals.plos.org with HTTPSE shields turned on.</change>
+</release>
 <release version="1.0.18">
     <change>Updated to Chromium v57.</change>
     <change>Added Searx and Ecosia search engines.</change>
