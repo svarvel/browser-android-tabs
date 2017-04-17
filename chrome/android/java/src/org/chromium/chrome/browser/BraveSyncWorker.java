@@ -1,3 +1,6 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 package org.chromium.chrome.browser;
 
@@ -20,6 +23,7 @@ import org.chromium.components.url_formatter.UrlFormatter;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel;
 import org.chromium.chrome.browser.bookmarks.BookmarkUtils;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkItem;
+import org.chromium.chrome.browser.preferences.BraveSyncScreensObserver;
 
 import java.lang.IllegalArgumentException;
 import java.lang.Runnable;
@@ -43,12 +47,19 @@ public class BraveSyncWorker {
     private static final int INTERVAL_TO_FETCH_RECORDS = 1000 * 60;    // Milliseconds
     private static final String PREF_SYNC_SWITCH = "sync_switch";
     private static final String PREF_BOOKMARKS_CHECK_BOX = "sync_bookmarks_check_box";
+    private static final String CREATE_RECORD = "0";
+    private static final String UPDATE_RECORD = "1";
+    private static final String DELETE_RECORD = "2";
+
     private final SharedPreferences mSharedPreferences;
 
     // WebView to sync data
     private WebView mSyncWebView;
+    // WebView to call js functions
+    private WebView mJSWebView;
     // Sync data
     private static final String SYNC_HTML_SCRIPT = "<script src='android_sync.js' type='text/javascript'></script><script src='bundle.js' type='text/javascript'></script>";
+    private static final String SYNC_WORDS_HTML_SCRIPT = "<script src='niceware.js' type='text/javascript'></script><script src='android_sync_words.js' type='text/javascript'></script>";
     private SyncThread mSyncThread = null;
     //
 
@@ -62,6 +73,9 @@ public class BraveSyncWorker {
     private String mServerUrl = "https://sync-staging.brave.com";
     private String mDebug = "true";
     private long mTimeLastFetch = 0;   // In milliseconds
+    private boolean mShouldResetSync = false;
+
+    private BraveSyncScreensObserver mSyncScreensObserver;
 
     public static class SyncRecordType {
         public static final String BOOKMARKS = "BOOKMARKS";
@@ -69,7 +83,7 @@ public class BraveSyncWorker {
         public static final String PREFERENCES = "PREFERENCES";
 
         public static String GetJSArray() {
-            return "['" + BOOKMARKS + "', '" + HISTORY + "', '" + PREFERENCES + "']";
+            return "['" + BOOKMARKS + "']";//"', '" + HISTORY + "', '" + PREFERENCES + "']";
         }
     }
 
@@ -118,35 +132,61 @@ public class BraveSyncWorker {
         nativeClear();
     }
 
-    public void CreateUpdateBookmark(boolean bCreate, BookmarkItem bookmarkItem) {
+    public void CreateUpdateDeleteBookmarks(String action, BookmarkItem[] bookmarks) {
+        assert null != bookmarks;
+        if (null == bookmarks || 0 == bookmarks.length) {
+            return;
+        }
 
-        final boolean bCreateFinal = bCreate;
-        final BookmarkItem bookmarkItemFinal = bookmarkItem;
+        final String actionFinal = action;
+        final BookmarkItem[] bookmarksFinal = bookmarks;
+
         new AsyncTask<String, Void, Void>() {
             @Override
             protected Void doInBackground(String... params) {
-                if (!mSyncIsReady.IsReady() || null == bookmarkItemFinal) {
+                if (!mSyncIsReady.IsReady()) {
                     return null;
                 }
 
-                String objectId = GenerateObjectId(bookmarkItemFinal.getId().getId());
-                String bookmarkRequest = CreateRecord(objectId, "bookmark",
-                  (bCreateFinal ? "0" : "1"), mDeviceId) +
-                  CreateBookmarkRecord(bookmarkItemFinal.getUrl(),
-                    bookmarkItemFinal.getTitle(), bookmarkItemFinal.isFolder(),
-                    bookmarkItemFinal.getParentId().getId()) +
-                  "}]";
+                String bookmarkRequest = "[";
+                for (int i = 0; i < bookmarksFinal.length; i++) {
+                    if (bookmarkRequest.length() > 1) {
+                        bookmarkRequest += ", ";
+                    }
+                    String objectId = GenerateObjectId(bookmarksFinal[i].getId().getId());
+                    bookmarkRequest += CreateRecord(objectId, "bookmark", actionFinal, mDeviceId) +
+                      CreateBookmarkRecord(bookmarksFinal[i].getUrl(),
+                        bookmarksFinal[i].getTitle(), bookmarksFinal[i].isFolder(),
+                        bookmarksFinal[i].getParentId().getId()) + "}";
+                    SaveObjectId(bookmarksFinal[i].getId().getId(), objectId);
+                }
 
+                if (bookmarkRequest.length() > 1) {
+                    bookmarkRequest += "]";
+                } else {
+                    // Nothing to send
+                    return null;
+                }
+                Log.i("TAG", "!!!bookmarkRequest == " + bookmarkRequest);
                 SendSyncRecords(SyncRecordType.BOOKMARKS, bookmarkRequest);
-                SaveObjectId(bookmarkItemFinal.getId().getId(), objectId);
 
                 return null;
             }
         }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    public void DeleteBookmarks(BookmarkItem[] bookmarks) {
+        CreateUpdateDeleteBookmarks(DELETE_RECORD, bookmarks);
+    }
+
+    public void CreateUpdateBookmark(boolean bCreate, BookmarkItem bookmarkItem) {
+        BookmarkItem[] bookmarks = new BookmarkItem[1];
+        bookmarks[0] = bookmarkItem;
+        CreateUpdateDeleteBookmarks((bCreate ? CREATE_RECORD : UPDATE_RECORD), bookmarks);
+    }
+
     private String CreateRecord(String objectId, String objectData, String action, String deviceId) {
-        String record = "[{ action: " + action + ", ";
+        String record = "{ action: " + action + ", ";
         record += "deviceId: [" + deviceId + "], ";
         record += "objectId: [" + objectId + "], ";
         record += "objectData: '" + objectData + "', ";
@@ -157,13 +197,11 @@ public class BraveSyncWorker {
     private String CreateBookmarkRecord(String url, String title, boolean isFolder, long parentFolderId) {
         String bookmarkRequest = "bookmark:";
         bookmarkRequest += "{ site:";
-        bookmarkRequest += "{ location: '" + url + "', ";
-        bookmarkRequest += "title: '" + title + "', ";
+        bookmarkRequest += "{ location: \"" + url + "\", ";
+        bookmarkRequest += "title: \"" + title + "\", ";
         bookmarkRequest += "customTitle: '', ";
         bookmarkRequest += "lastAccessedTime: 0, ";
-        bookmarkRequest += "creationTime: 0 }, ";
-        bookmarkRequest += "isFolder: " + (isFolder ? "true" : "false") + ", ";
-        bookmarkRequest += "parentFolderObjectId: " + parentFolderId + " }";
+        bookmarkRequest += "creationlderObjectId: " + parentFolderId + " }}";
 
         return bookmarkRequest;
     }
@@ -238,6 +276,10 @@ public class BraveSyncWorker {
 
     private void TrySync() {
         try {
+            if (mShouldResetSync) {
+                mSyncWebView = null;
+                mShouldResetSync = false;
+            }
             if (null == mSyncWebView) {
                 mSyncWebView = new WebView(mContext);
                 mSyncWebView.getSettings().setJavaScriptEnabled(true);
@@ -250,7 +292,7 @@ public class BraveSyncWorker {
                 mSyncWebView.loadDataWithBaseURL("file:///android_asset/", SYNC_HTML_SCRIPT, "text/html", "UTF-8",null);
             }
         } catch (Exception exc) {
-            // Ignoring sync exception, we will try it on next loop execution
+            // Ignoring sync exception, we will try it on a next loop execution
             Log.i("TAG", "TrySync exception: " + exc);
         }
     }
@@ -271,6 +313,7 @@ public class BraveSyncWorker {
         }
         mSeed = arg1;
         mDeviceId = arg2;
+        Log.i("TAG", "!!!deviceId == " + mDeviceId);
         // Save seed and deviceId in preferences
         SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -287,17 +330,19 @@ public class BraveSyncWorker {
     }
 
     public void FetchSyncRecords() {
-        if (!mSyncIsReady.IsReady()) {
-            return;
+        synchronized (this) {
+            if (!mSyncIsReady.IsReady()) {
+                return;
+            }
+            CallScript(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s)", SyncRecordType.GetJSArray(), String.valueOf(mTimeLastFetch / 1000)));
+            Calendar currentTime = Calendar.getInstance();
+            mTimeLastFetch = currentTime.getTimeInMillis();
+            // Save last fetch time in preferences
+            SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putLong(PREF_LAST_FETCH_NAME, mTimeLastFetch);
+            editor.apply();
         }
-        CallScript(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s)", SyncRecordType.GetJSArray(), String.valueOf(mTimeLastFetch / 1000)));
-        Calendar currentTime = Calendar.getInstance();
-        mTimeLastFetch = currentTime.getTimeInMillis();
-        // Save last fetch time in preferences
-        SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putLong(PREF_LAST_FETCH_NAME, mTimeLastFetch);
-        editor.apply();
     }
 
     public String GetExistingObjects(String categoryName, String recordsJSON) {
@@ -310,12 +355,19 @@ public class BraveSyncWorker {
         }
         String res = "";
 
+        //to do debug
+        /*String[] records = recordsJSON.split("action");
+        for (int i = 0; i < records.length; i++) {
+            Log.i("TAG", "!!!record[" + i + "]" + records[i]);
+        }*/
+        //
+        int count = 0;
         JsonReader reader = null;
         try {
             reader = new JsonReader(new InputStreamReader(new ByteArrayInputStream(recordsJSON.getBytes()), "UTF-8"));
             reader.beginArray();
             while (reader.hasNext()) {
-                boolean bCreate = false;
+                String action = CREATE_RECORD;
                 String objectId = "";
                 String deviceId = "";
                 String objectData = "";
@@ -324,7 +376,7 @@ public class BraveSyncWorker {
                 while (reader.hasNext()) {
                     String name = reader.nextName();
                     if (name.equals("action")) {
-                        bCreate = GetAction(reader);
+                        action = GetAction(reader);
                     } else if (name.equals("deviceId")) {
                         deviceId = GetDeviceId(reader);
                     } else if (name.equals("objectId")) {
@@ -342,23 +394,23 @@ public class BraveSyncWorker {
                if (null == bookmarkInternal) {
                     continue;
                }
-               String serverRecord = CreateRecord(objectId, "bookmark",
-                 (bCreate ? "0" : "1"), deviceId) + CreateBookmarkRecord(bookmarkInternal.mUrl,
-                 bookmarkInternal.mTitle, bookmarkInternal.mIsFolder, 0) + " }]";
+               String serverRecord = "[" + CreateRecord(objectId, "bookmark",
+                 action, deviceId) + CreateBookmarkRecord(bookmarkInternal.mUrl,
+                 bookmarkInternal.mTitle, bookmarkInternal.mIsFolder, 0) + " }";
                String localRecord = "";
                BookmarkItem bookmartItem = GetBookmarkItemByLocalId(nativeGetLocalIdByObjectId(objectId));
                if (null != bookmartItem) {
-                   // TODO pass always "0", it means action is create
-                   localRecord = CreateRecord(objectId, "bookmark", "0", mDeviceId) +
+                   // TODO pass always CREATE_RECORD, it means action is create
+                   localRecord = CreateRecord(objectId, "bookmark", CREATE_RECORD, mDeviceId) +
                        CreateBookmarkRecord(bookmartItem.getUrl(), bookmartItem.getTitle(),
                        bookmartItem.isFolder(), bookmartItem.getParentId().getId()) + " }]";
                }
                if (0 == res.length()) {
                     res += "[";
                } else {
-                    res += ", [";
+                    res += ", ";
                }
-               res += serverRecord + ", " + (0 != localRecord.length() ? localRecord : "null");
+               res += serverRecord + ", " + (0 != localRecord.length() ? localRecord : "null]");
            }
            reader.endArray();
         } catch (UnsupportedEncodingException e) {
@@ -380,6 +432,9 @@ public class BraveSyncWorker {
         if (0 != res.length()) {
             res += "]";
         }
+        //to do debug
+        Log.i("TAG", "!!!GetExistingObjects123 res == " + res);
+        //
 
         return res;
     }
@@ -449,7 +504,7 @@ public class BraveSyncWorker {
         return;
     }
 
-    private void AddBookmark(String url, String title) {
+    private void AddBookmark(String url, String title, String objectId) {
         try {
            AddBookmarkRunnable bookmarkRunnable = new AddBookmarkRunnable(url, title);
            if (null == bookmarkRunnable) {
@@ -467,7 +522,6 @@ public class BraveSyncWorker {
                }
            }
            if (null != bookmarkRunnable.mBookmarkId) {
-               String objectId = GenerateObjectId(bookmarkRunnable.mBookmarkId.getId());
                SaveObjectId(bookmarkRunnable.mBookmarkId.getId(), objectId);
            }
         } catch (NumberFormatException e) {
@@ -485,8 +539,12 @@ public class BraveSyncWorker {
             return;
         }
 
-        Log.i("TAG", "!!!Resolved == " + recordsJSON);
-
+        //to do debug
+        /*String[] records = recordsJSON.split("action");
+        for (int i = 0; i < records.length; i++) {
+            Log.i("TAG", "!!!record[" + i + "]" + records[i]);
+        }*/
+        //
         JsonReader reader = null;
         try {
             reader = new JsonReader(new InputStreamReader(new ByteArrayInputStream(recordsJSON.getBytes()), "UTF-8"));
@@ -511,9 +569,9 @@ public class BraveSyncWorker {
                }
                String localId = nativeGetLocalIdByObjectId(objectId);
                if (0 != localId.length()) {
-                  EditBookmarkByLocalId(nativeGetLocalIdByObjectId(objectId), bookmarkInternal.mUrl, bookmarkInternal.mTitle);
+                  EditBookmarkByLocalId(localId, bookmarkInternal.mUrl, bookmarkInternal.mTitle);
                } else {
-                  AddBookmark(bookmarkInternal.mUrl, bookmarkInternal.mTitle);
+                  AddBookmark(bookmarkInternal.mUrl, bookmarkInternal.mTitle, objectId);
                }
            }
            reader.endArray();
@@ -547,12 +605,18 @@ public class BraveSyncWorker {
         // TODO
     }
 
-    private boolean GetAction(JsonReader reader) throws IOException {
+    private String GetAction(JsonReader reader) throws IOException {
         if (null == reader) {
-            return false;
+            return CREATE_RECORD;
+        }
+        int action = reader.nextInt();
+        if (1 == action) {
+            return UPDATE_RECORD;
+        } else if (2 == action) {
+            return DELETE_RECORD;
         }
 
-        return (reader.nextInt() == 0) ? true : false;
+        return CREATE_RECORD;
     }
 
     private String GetDeviceId(JsonReader reader) throws IOException {
@@ -780,7 +844,6 @@ public class BraveSyncWorker {
           SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
           mTimeLastFetch = sharedPref.getLong(PREF_LAST_FETCH_NAME, 0);
           mDeviceId = sharedPref.getString(PREF_DEVICE_ID, null);
-          //mSeed = sharedPref.getString(PREF_SEED, null);
 
           for (;;) {
               try {
@@ -788,12 +851,7 @@ public class BraveSyncWorker {
                   boolean prefSync = mSharedPreferences.getBoolean(
                           PREF_SYNC_SWITCH, prefSyncDefault);
                   if (prefSync) {
-                      ((Activity)mContext).runOnUiThread(new Runnable() {
-                          @Override
-                          public void run() {
-                             TrySync();
-                          }
-                      });
+                      InitSync(false);
                       FetchSyncRecords();
                   }
                   Thread.sleep(BraveSyncWorker.INTERVAL_TO_FETCH_RECORDS);
@@ -809,9 +867,46 @@ public class BraveSyncWorker {
         }
     }
 
+    public void ResetSync() {
+        mShouldResetSync = true;
+        SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove(PREF_LAST_FETCH_NAME);
+        editor.remove(PREF_DEVICE_ID);
+        editor.remove(PREF_SEED);
+        editor.apply();
+        mSeed = null;
+        mDeviceId = null;
+        mTimeLastFetch = 0;
+        Log.i("TAG", "!!!ResetSync");
+    }
+
+    public void InitSync(boolean calledFromUIThread) {
+          SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+          if (null == mSeed || mSeed.isEmpty()) {
+              mSeed = sharedPref.getString(PREF_SEED, null);
+              Log.i("TAG", "!!!got seed == " + mSeed);
+          }
+          if (null == mSeed || mSeed.isEmpty()) {
+              return;
+          }
+          // Init sync WebView
+          if (!calledFromUIThread) {
+              ((Activity)mContext).runOnUiThread(new Runnable() {
+                  @Override
+                  public void run() {
+                     TrySync();
+                  }
+              });
+          } else {
+              TrySync();
+          }
+    }
+
     class JsObject {
         @JavascriptInterface
         public void handleMessage(String message, String arg1, String arg2) {
+            Log.i("TAG", "!!!here message == " + message);
             switch (message) {
               case "get-init-data":
                 break;
@@ -849,6 +944,7 @@ public class BraveSyncWorker {
                 break;
               case "sync-ready":
                 mSyncIsReady.mReady = true;
+                FetchSyncRecords();
                 break;
               case "get-existing-objects":
                 SendResolveSyncRecords(arg1, GetExistingObjects(arg1, arg2));
@@ -858,6 +954,115 @@ public class BraveSyncWorker {
                 break;
             }
         }
+    }
+
+    class JsObjectWordsToBytes {
+        @JavascriptInterface
+        public void nicewareOutput(String result) {
+            if (null == result || 0 == result.length()) {
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onWordsCodeWrong();
+                }
+                return;
+            }
+
+            JsonReader reader = null;
+            String seed = "";
+            try {
+                reader = new JsonReader(new InputStreamReader(new ByteArrayInputStream(result.getBytes()), "UTF-8"));
+                reader.beginObject();
+                while (reader.hasNext()) {
+                    String name = reader.nextName();
+                    if (name.equals("data")) {
+                        reader.beginArray();
+                        while (reader.hasNext()) {
+                            if (0 != seed.length()) {
+                                seed += ", ";
+                            }
+                            seed += String.valueOf(reader.nextInt());
+                        }
+                        reader.endArray();
+                    } else {
+                        reader.skipValue();
+                    }
+               }
+               reader.endObject();
+            } catch (UnsupportedEncodingException e) {
+                Log.i("TAG", "nicewareOutput UnsupportedEncodingException error " + e);
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onWordsCodeWrong();
+                }
+            } catch (IOException e) {
+                Log.i("TAG", "nicewareOutput IOException error " + e);
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onWordsCodeWrong();
+                }
+            } catch (IllegalStateException e) {
+                Log.i("TAG", "nicewareOutput IllegalStateException error " + e);
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onWordsCodeWrong();
+                }
+            } catch (IllegalArgumentException exc) {
+                Log.i("TAG", "nicewareOutput generation exception " + exc);
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onWordsCodeWrong();
+                }
+            } finally {
+                if (null != reader) {
+                    try {
+                        reader.close();
+                    } catch (IOException e) {
+                    }
+                }
+            }
+            Log.i("TAG", "!!!seed == " + seed);
+
+            if (null != mSyncScreensObserver) {
+                mSyncScreensObserver.onSeedReceived(seed);
+            }
+        }
+    }
+
+    public void InitJSWebView(BraveSyncScreensObserver syncScreensObserver) {
+        try {
+            if (null == mJSWebView) {
+                mJSWebView = new WebView(mContext);
+                mJSWebView.getSettings().setJavaScriptEnabled(true);
+                mJSWebView.addJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject");
+                // TODO debug
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    WebView.setWebContentsDebuggingEnabled(true);
+                }
+                //
+                mJSWebView.loadDataWithBaseURL("file:///android_asset/", SYNC_WORDS_HTML_SCRIPT, "text/html", "UTF-8",null);
+            }
+        } catch (Exception exc) {
+            // Ignoring sync exception, we will try it on next loop execution
+            Log.i("TAG", "InitJSWebView exception: " + exc);
+        }
+        if (null == mSyncScreensObserver) {
+            mSyncScreensObserver = syncScreensObserver;
+        }
+    }
+
+    public void GetNumber(String[] words) {
+        if (null == mJSWebView) {
+            return;
+        }
+        String wordsJSArray = "";
+        for (int i = 0; i < words.length; i++) {
+            if (0 == i) {
+                wordsJSArray = "[";
+            } else {
+                wordsJSArray += ", ";
+            }
+            wordsJSArray += "'" + words[i] + "'";
+            if (words.length - 1 == i) {
+                wordsJSArray += "]";
+            }
+        }
+        Log.i("TAG", "!!!words == " + wordsJSArray);
+        mJSWebView.loadUrl(String.format("javascript:getBytesFromWords(%1$s)", wordsJSArray));
     }
 
     private native String nativeGetObjectIdByLocalId(String localId);

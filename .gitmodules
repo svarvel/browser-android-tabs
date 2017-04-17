@@ -13,3 +13,6 @@
 [submodule "braveSync"]
 	path = braveSync
 	url = https://github.com/brave/sync
+[submodule "niceware"]
+	path = niceware
+	url = https://github.com/diracdeltas/niceware.git

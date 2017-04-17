@@ -9,8 +9,6 @@ gn args out/Default
 build/install-build-deps-android.sh
 gclient sync
 sh . build/android/envsetup.sh
-cd braveSync
-yarn install
 cd ..
 sh scripts/updateSubModules.js
 sh scripts/copyAdBlockTPFiles.js
