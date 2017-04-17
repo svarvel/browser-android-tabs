@@ -6,7 +6,10 @@ package org.chromium.chrome.browser.bookmarks;
 
 import android.content.Context;
 
+import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkItem;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkModelObserver;
 import org.chromium.chrome.browser.bookmarks.BookmarkModel.BookmarkDeleteObserver;
@@ -25,6 +28,7 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
     private final BookmarkModel mBookmarkModel;
     private final SnackbarManager mSnackbarManager;
     private final Context mContext;
+    private BookmarkItem[] mBookmarks;
 
     /**
      * Creates an instance of {@link BookmarkUndoController}.
@@ -48,6 +52,13 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
         mSnackbarManager.dismissSnackbars(this);
     }
 
+    private void syncDeletedBookmarks() {
+        ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+        if (null != application && null != application.mBraveSyncWorker) {
+            application.mBraveSyncWorker.DeleteBookmarks(mBookmarks);
+        }
+    }
+
     @Override
     public void onAction(Object actionData) {
         mBookmarkModel.undo();
@@ -56,6 +67,7 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
 
     @Override
     public void onDismissNoAction(Object actionData) {
+        syncDeletedBookmarks();
     }
 
     // Overriding BookmarkModelObserver
@@ -76,11 +88,16 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
 
     // Implement BookmarkDeleteObserver
     @Override
-    public void onDeleteBookmarks(String[] titles, boolean isUndoable) {
-        assert titles != null && titles.length >= 1;
+    public void onDeleteBookmarks(String[] titles, BookmarkItem[] bookmarks, boolean isUndoable) {
+        assert titles != null && titles.length >= 1 && bookmarks != null && bookmarks.length == titles.length;
 
-        if (!isUndoable) return;
+        if (!isUndoable) {
+            syncDeletedBookmarks();
 
+            return;
+        }
+
+        mBookmarks = bookmarks;
         if (titles.length == 1) {
             mSnackbarManager.showSnackbar(
                     Snackbar.make(titles[0], this, Snackbar.TYPE_ACTION,

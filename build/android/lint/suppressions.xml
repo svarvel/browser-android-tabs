@@ -373,6 +373,7 @@ Still reading?
   <issue id="UselessParent">
     <ignore regexp="android_webview/tools/system_webview_shell/apk/res/layout/activity_webview_browser.xml"/>
     <ignore regexp="chrome/android/java/res/layout/data_usage_breakdown.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_sync_layout.xml"/>
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="tools/android/kerberos/SpnegoAuthenticator/res/layout/activity_account_authenticator.xml"/>
   </issue>
