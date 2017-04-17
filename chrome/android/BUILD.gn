@@ -1312,6 +1312,8 @@ if (current_toolchain == default_toolchain) {
         "//chrome/browser/net/blockers/data/regions.json",
         "//braveSync/bundles/bundle.js",
         "//sync/android_sync.js",
+        "//sync/android_sync_words.js",
+        "//niceware/browser/niceware.js",
       ]
       disable_compression = true
 

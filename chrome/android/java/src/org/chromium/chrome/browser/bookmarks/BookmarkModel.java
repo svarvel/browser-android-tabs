@@ -31,7 +31,7 @@ public class BookmarkModel extends BookmarkBridge {
          * @param titles All titles of the bookmarks to be deleted.
          * @param isUndoable Whether the deletion is undoable.
          */
-        void onDeleteBookmarks(String[] titles, boolean isUndoable);
+        void onDeleteBookmarks(String[] titles, BookmarkItem[] bookmarks, boolean isUndoable);
     }
 
     private ObserverList<BookmarkDeleteObserver> mDeleteObservers = new ObserverList<>();
@@ -88,6 +88,7 @@ public class BookmarkModel extends BookmarkBridge {
     void deleteBookmarks(BookmarkId... bookmarks) {
         assert bookmarks != null && bookmarks.length > 0;
         // Store all titles of bookmarks.
+        List<BookmarkItem> bookmarksItems = new ArrayList<>();
         List<String> titles = new ArrayList<>();
         boolean isUndoable = true;
 
@@ -97,12 +98,13 @@ public class BookmarkModel extends BookmarkBridge {
             if (bookmarkItem == null) continue;
             isUndoable &= (bookmarkId.getType() == BookmarkType.NORMAL);
             titles.add(bookmarkItem.getTitle());
+            bookmarksItems.add(bookmarkItem);
             deleteBookmark(bookmarkId);
         }
         endGroupingUndos();
 
         for (BookmarkDeleteObserver observer : mDeleteObservers) {
-            observer.onDeleteBookmarks(titles.toArray(new String[titles.size()]), isUndoable);
+            observer.onDeleteBookmarks(titles.toArray(new String[titles.size()]), bookmarksItems.toArray(new BookmarkItem[bookmarksItems.size()]),  isUndoable);
         }
     }
 

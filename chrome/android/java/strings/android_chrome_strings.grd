@@ -1748,6 +1748,9 @@ Your Google account may have other forms of browsing history like searches and a
         Settings", tap `+` to add a new device and
         reveal sync code.
       </message>
+      <message name="IDS_RESET_SYNC" desc="Button for reset sync. [CHAR-LIMT=32]">
+        Reset Sync...
+      </message>
       <message name="IDS_NEW_TO_SYNC" desc="Button for new to sync button. [CHAR-LIMT=32]">
         I am new to sync
       </message>
@@ -1756,6 +1759,9 @@ Your Google account may have other forms of browsing history like searches and a
       </message>
       <message name="IDS_ENTER_CODE_WORDS_SYNC" desc="Button for enter code words. [CHAR-LIMT=32]">
         Enter code words
+      </message>
+      <message name="IDS_ENTER_CODE_WORDS_BELOW_SYNC" desc="Message for enter code words. [CHAR-LIMT=32]">
+        Enter code words below.
       </message>
       <message name="IDS_SYNC_HISTORY" desc="Title for preference which enables sync'ing of history data. [CHAR-LIMT=32]">
         History
@@ -2159,6 +2165,9 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <!-- Runtime permission strings -->
       <message name="IDS_INFOBAR_MISSING_CAMERA_PERMISSION_TEXT" desc="Text shown in an infobar when a website has requested access to the camera capabilities, but Chrome is missing the Android camera permission.">
         Chrome needs permission to access your camera for this site.
+      </message>
+      <message name="IDS_NO_CAMERA_PERMISSION" desc="Text shown when Brave cannot get camera permissions.">
+        Brave sync cannot get camera access permissions.
       </message>
       <message name="IDS_INFOBAR_MISSING_MICROPHONE_PERMISSION_TEXT" desc="Text shown in an infobar when a website has requested access to the microphone capabilities, but Chrome is missing the Android microphone permission.">
         Chrome needs permission to access your microphone for this site.
