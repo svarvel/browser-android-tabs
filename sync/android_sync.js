@@ -12,17 +12,17 @@ if (!self.chrome || !self.chrome.ipc) {
 
     ipc.once = function (message, cb) {
         callbackList[message] = cb;
-        injectedObject.handleMessage(message, '0', '0');
+        injectedObject.handleMessage(message, '0', '0', '');
     };
 
     ipc.on = ipc.once;
 
-    ipc.send = function (message, arg1, arg2) {
+    ipc.send = function (message, arg1, arg2, arg3) {
         var arg2ToPass = arg2;
         if (undefined != arg2 && typeof arg2 != 'string' && 'save-init-data' != message) {
             arg2ToPass = JSON.stringify(arg2);
         }
-        injectedObject.handleMessage(message, undefined != arg1 ? arg1.toString() : arg1, undefined != arg2ToPass ? arg2ToPass.toString() : arg2ToPass);
+        injectedObject.handleMessage(message, undefined != arg1 ? arg1.toString() : arg1, undefined != arg2ToPass ? arg2ToPass.toString() : arg2ToPass, undefined != arg3 ? arg3.toString() : '');
     };
 
     self.chrome.ipc = ipc;
