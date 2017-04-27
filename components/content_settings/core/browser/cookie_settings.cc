@@ -93,7 +93,7 @@ void CookieSettings::ShutdownOnUIThread() {
 void CookieSettings::GetCookieSetting(const GURL& url,
                                       const GURL& first_party_url,
                                       content_settings::SettingSource* source,
-                                      ContentSetting* cookie_setting) const {
+                                      ContentSetting* cookie_setting) {
   DCHECK(cookie_setting);
   // Auto-allow in extensions or for WebUI embedded in a secure origin.
   if (first_party_url.SchemeIs(kChromeUIScheme) &&

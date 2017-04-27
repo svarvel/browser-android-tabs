@@ -302,7 +302,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         // Setting task title and icon to be null will preserve the client app's title and icon.
         ApiCompatibilityUtils.setTaskDescription(this, null, null, toolbarColor);
         showCustomButtonOnToolbar();
-        mBottomBarDelegate = new CustomTabBottomBarDelegate(this, mIntentDataProvider);
+        mBottomBarDelegate = new CustomTabBottomBarDelegate(this, mIntentDataProvider, getFullscreenManager());
         mBottomBarDelegate.showBottomBarIfNecessary();
         mTopBarDelegate = new CustomTabTopBarDelegate(this);
         mDefaultToolbarVisibility = getToolbarManager().getToolbarVisibility();
