@@ -5,6 +5,7 @@
 #include "blockers_worker.h"
 #include <fstream>
 #include <sstream>
+#include "base/threading/thread_restrictions.h"
 #include "../../../../base/android/apk_assets.h"
 #include "../../../../content/public/common/resource_type.h"
 #include "../../../../base/files/file_util.h"

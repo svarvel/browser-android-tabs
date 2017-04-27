@@ -9,4 +9,13 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/tab_strip_height" >
 
+    <ViewStub
+        android:id="@+id/new_tab_page_layout_stub"
+        android:inflatedId="@+id/ntp_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp" />
+    <!--<include
+        android:id="@+id/new_tab_page_recycler_view"
+        layout="@layout/new_tab_page_recycler_view" />-->
 </org.chromium.chrome.browser.ntp.NewTabPageView>
