@@ -1,4 +1,4 @@
-# chromium
+# Brave Android Browser
 
 ## Get the code
 
