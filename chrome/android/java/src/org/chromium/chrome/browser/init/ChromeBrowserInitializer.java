@@ -159,6 +159,10 @@ public class ChromeBrowserInitializer {
             DownloadTrackingProtectionData();
             DownloadAdBlockData();
             DownloadAdBlockRegionalData();
+            ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+            if (null != app) {
+                app.initShieldsConfig();
+            }
 
             return null;
         }
@@ -199,32 +203,30 @@ public class ChromeBrowserInitializer {
         final String deviceLanguage = Locale.getDefault().getLanguage();
         List<String> files = ADBlockUtils.readRegionalABData(ContextUtils.getApplicationContext(),
             ADBlockUtils.ETAG_PREPEND_REGIONAL_ADBLOCK, verNumber, deviceLanguage);
-        if (null == files) {
-            return;
-        }
-
-        boolean changePreference = true;
-        for (int i = 0; i < files.size(); i ++) {
-            if (!ADBlockUtils.CreateDownloadedFile(ContextUtils.getApplicationContext(), files.get(i) + ".dat",
-                verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
-                    changePreference = false;
-                    break;
-                }
-        }
-        if (changePreference) {
-            final boolean enableRegionalAdBlock = (0 != files.size());
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
-                        PrivacyPreferencesManager.getInstance().setRegionalAdBlock(false, false);
-                        PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(false);
-                    } else {
-                        PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock, true);
-                        PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
+        if (null != files) {
+            boolean changePreference = true;
+            for (int i = 0; i < files.size(); i ++) {
+                if (!ADBlockUtils.CreateDownloadedFile(ContextUtils.getApplicationContext(), files.get(i) + ".dat",
+                    verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
+                        changePreference = false;
+                        break;
                     }
-                }
-            });
+            }
+            if (changePreference) {
+                final boolean enableRegionalAdBlock = (0 != files.size());
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
+                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(false, false);
+                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(false);
+                        } else {
+                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock, true);
+                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
+                        }
+                    }
+                });
+            }
         }
     }
 
@@ -238,30 +240,28 @@ public class ChromeBrowserInitializer {
 
             String verNumber = ADBlockUtils.getDataVerNumber(
                 ADBlockUtils.HTTPS_URL_NEW, false);
-            if (!ADBlockUtils.readData(ContextUtils.getApplicationContext(),
+            if (ADBlockUtils.readData(ContextUtils.getApplicationContext(),
                   ADBlockUtils.HTTPS_LOCALFILENAME_NEW,
                   ADBlockUtils.HTTPS_URL_NEW,
                   ADBlockUtils.ETAG_PREPEND_HTTPS, verNumber,
                   ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, true)) {
-              return null;
-            }
-
-            // Make temporary several attempts because it fails on unzipping sometimes
-            boolean unzipped = false;
-            for (int i = 0; i < 5; i++) {
-                unzipped = ADBlockUtils.UnzipFile(ADBlockUtils.HTTPS_LOCALFILENAME_NEW, verNumber, true);
-                if (unzipped) {
-                    break;
+                // Make temporary several attempts because it fails on unzipping sometimes
+                boolean unzipped = false;
+                for (int i = 0; i < 5; i++) {
+                    unzipped = ADBlockUtils.UnzipFile(ADBlockUtils.HTTPS_LOCALFILENAME_NEW, verNumber, true);
+                    if (unzipped) {
+                        break;
+                    }
                 }
-            }
-            //
+                //
 
-            if (unzipped) {
-                ADBlockUtils.CreateDownloadedFile(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LEVELDB_FOLDER,
-                    verNumber, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, false);
-            } else {
-                ADBlockUtils.removeOldVersionFiles(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_NEW);
-                ADBlockUtils.removeOldVersionFiles(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW);
+                if (unzipped) {
+                    ADBlockUtils.CreateDownloadedFile(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LEVELDB_FOLDER,
+                        verNumber, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, false);
+                } else {
+                    ADBlockUtils.removeOldVersionFiles(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_NEW);
+                    ADBlockUtils.removeOldVersionFiles(ContextUtils.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW);
+                }
             }
 
             return null;
@@ -598,11 +598,6 @@ public class ChromeBrowserInitializer {
 
         InitAdBlock();
         UpdateStats();
-
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-        if (null != app) {
-            app.initShieldsConfig();
-        }
     }
 
     private ActivityStateListener createActivityStateListener() {
