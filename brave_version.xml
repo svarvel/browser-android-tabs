@@ -1,3 +1,7 @@
+<release version="1.0.20">
+    <change>Updated to Chromium v58.0.3029.83.</change>
+    <change>Fixed over aggressive blocking with some regional lists.</change>
+</release>
 <release version="1.0.19">
     <change>Updated to Chromium v57.0.2987.132.</change>
     <change>Added Iran regional filter.</change>
