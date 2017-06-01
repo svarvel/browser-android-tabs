@@ -16,6 +16,7 @@ import org.chromium.chrome.browser.bookmarks.BookmarkModel.BookmarkDeleteObserve
 import org.chromium.chrome.browser.snackbar.Snackbar;
 import org.chromium.chrome.browser.snackbar.SnackbarManager;
 
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -28,7 +29,7 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
     private final BookmarkModel mBookmarkModel;
     private final SnackbarManager mSnackbarManager;
     private final Context mContext;
-    private BookmarkItem[] mBookmarks;
+    private List<BookmarkItem> mBookmarks;
 
     /**
      * Creates an instance of {@link BookmarkUndoController}.
@@ -55,7 +56,7 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
     private void syncDeletedBookmarks() {
         ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != application && null != application.mBraveSyncWorker) {
-            application.mBraveSyncWorker.DeleteBookmarks(mBookmarks);
+            application.mBraveSyncWorker.DeleteBookmarks(mBookmarks.toArray(new BookmarkItem[mBookmarks.size()]));
         }
     }
 
@@ -88,8 +89,8 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
 
     // Implement BookmarkDeleteObserver
     @Override
-    public void onDeleteBookmarks(String[] titles, BookmarkItem[] bookmarks, boolean isUndoable) {
-        assert titles != null && titles.length >= 1 && bookmarks != null && bookmarks.length == titles.length;
+    public void onDeleteBookmarks(String[] titles, List<BookmarkItem> bookmarks, boolean isUndoable) {
+        assert titles != null && titles.length >= 1 && bookmarks != null && bookmarks.size() >= titles.length;
 
         if (!isUndoable) {
             syncDeletedBookmarks();

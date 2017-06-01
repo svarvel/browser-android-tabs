@@ -21,12 +21,6 @@ Still reading?
   Note: PRODUCT_DIR will be substituted at run-time with actual
   directory path (e.g. out/Debug)
 -->
-  <issue id="AddJavascriptInterface" severity="Error">
-    <ignore regexp="chrome/android/java/src/org/chromium/chrome/browser/BraveSyncWorker.java"/>
-  </issue>
-  <issue id="NewApi" severity="Error">
-    <ignore regexp="chrome/android/java/src/org/chromium/chrome/browser/BraveSyncWorker.java"/>
-  </issue>
   <!-- AllowBackup defaults to true, and causes a lint warning if not explicitly set. -->
   <issue id="AllowBackup">
     <ignore path="AndroidManifest.xml"/>

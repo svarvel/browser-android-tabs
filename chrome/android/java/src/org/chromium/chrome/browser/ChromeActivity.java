@@ -1638,10 +1638,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
 
         // Starting Brave Sync
-        /*ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
             app.mBraveSyncWorker = new BraveSyncWorker(this);
-        }*/
+        }
     }
 
     /**
