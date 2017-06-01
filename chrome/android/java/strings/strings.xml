@@ -31,4 +31,20 @@
 
     <string name="menu_exit">Exit</string>
 
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sync browser data between your devices securely using Brave Sync, no creation required. Tap below to get started.</string>
+    <string name="brave_sync_have_existing_code">I have an existing sync code</string>
+    <string name="sync_settings_add_device_name_title">Add device name</string>
+    <string name="sync_settings_add_device_name_label">Enter an optional name for this device</string>
+    <string name="sync_example_device_name">Android device</string>
+    <string name="brave_sync_qrcode">Sync to device</string>
+    <string name="brave_sync_qrcode_message">Using existing synced device open Brave Settings and navigate to "Device &amp;Settings", tap `+` to add a new device and reveal sync code.</string>
+    <string name="enter_code_words_sync">Enter code words</string>
+    <string name="enter_code_words_below_sync">Enter code words below.</string>
+    <string name="sync_device">Sync device</string>
+    <string name="sync_device_failure">Sync could not be setup</string>
+    <string name="sync_device_success">The sync setup has completed successfully</string>
+    <string name="reset_sync">Reset Sync...</string>
+    <string name="resetting_sync">Are you sure you want to reset this device&apos;s Sync settings?</string>
+
 </resources>

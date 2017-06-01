@@ -32,6 +32,8 @@ import java.io.IOException;
 public class CameraSourcePreview extends ViewGroup {
     private static final String TAG = CameraSourcePreview.class.getSimpleName();
 
+    public boolean mCameraExist = true;
+
     private Context mContext;
     private SurfaceView mSurfaceView;
     private boolean mStartRequested;
@@ -89,10 +91,15 @@ public class CameraSourcePreview extends ViewGroup {
         public void surfaceCreated(SurfaceHolder surface) {
             mSurfaceAvailable = true;
             try {
+                mCameraExist = true;
                 startIfReady();
             } catch (SecurityException se) {
                 Log.e(TAG,"Do not have permission to start the camera", se);
+            } catch (RuntimeException e) {
+                mCameraExist = false;
+                Log.e(TAG, "Could not start camera source.", e);
             } catch (IOException e) {
+                mCameraExist = false;
                 Log.e(TAG, "Could not start camera source.", e);
             }
         }

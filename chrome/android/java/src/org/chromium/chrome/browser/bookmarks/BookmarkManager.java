@@ -19,6 +19,7 @@ import org.chromium.base.ObserverList;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkItem;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkModelObserver;
 import org.chromium.chrome.browser.favicon.LargeIconBridge;
@@ -111,6 +112,17 @@ public class BookmarkManager implements BookmarkDelegate, SearchDelegate,
                 setState(mStateStack.peek());
             }
             mSelectionDelegate.clearSelection();
+        }
+    };
+
+    private final Runnable mModelLoadedRunnable = new Runnable() {
+        @Override
+        public void run() {
+            ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+            if (null != app && null != app.mBraveSyncWorker) {
+                mBookmarkModel.addObserver(app.mBraveSyncWorker.mBookmarkModelObserver);
+                app.mBraveSyncWorker.mBookmarkModelObserver.braveBookmarkModelLoaded(mBookmarkModel);
+            }
         }
     };
 

@@ -11,7 +11,7 @@
 
 namespace brave_sync_storage {
 
-#define DB_FILE_NAME  "brave_sync_db"
+#define DB_FILE_NAME      "brave_sync_db"
 
 leveldb::DB* g_level_db;
 static std::mutex* g_pLevel_db_init_mutex = new std::mutex();
@@ -92,7 +92,26 @@ void SaveObjectId(JNIEnv* env, const
 
     g_level_db->Put(leveldb::WriteOptions(), strLocalId,
         base::android::ConvertJavaStringToUTF8(objectIdJSON));
-    g_level_db->Put(leveldb::WriteOptions(), base::android::ConvertJavaStringToUTF8(objectId), strLocalId);
+    std::string strObjectId = base::android::ConvertJavaStringToUTF8(objectId);
+    if (0 != strObjectId.size()) {
+        g_level_db->Put(leveldb::WriteOptions(), strObjectId, strLocalId);
+    }
+}
+
+void DeleteByLocalId(JNIEnv* env,
+      const base::android::JavaParamRef<jobject>& obj,
+      const base::android::JavaParamRef<jstring>& localId) {
+    CreateOpenDatabase();
+    if (nullptr == g_level_db) {
+        return;
+    }
+
+    std::string strLocalId = base::android::ConvertJavaStringToUTF8(localId);
+    std::string value;
+    g_level_db->Get(leveldb::ReadOptions(), strLocalId, &value);
+
+    g_level_db->Delete(leveldb::WriteOptions(), strLocalId);
+    g_level_db->Delete(leveldb::WriteOptions(), value);
 }
 
 static void Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
@@ -104,6 +123,16 @@ static void Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) 
         delete g_pLevel_db_init_mutex;
         g_pLevel_db_init_mutex = nullptr;
     }
+}
+
+static void ResetSync(JNIEnv* env,
+      const base::android::JavaParamRef<jobject>& obj,
+      const base::android::JavaParamRef<jstring>& key) {
+    CreateOpenDatabase();
+    if (nullptr == g_level_db) {
+        return;
+    }
+    g_level_db->Delete(leveldb::WriteOptions(), base::android::ConvertJavaStringToUTF8(key));
 }
 
 // static

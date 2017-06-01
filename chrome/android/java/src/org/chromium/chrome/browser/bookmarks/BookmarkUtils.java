@@ -136,6 +136,23 @@ public class BookmarkUtils {
     }
 
     /**
+     * Adds a bookmark with the given title and url to the provided parent. Provides
+     * no visual feedback that a bookmark has been added.
+     *
+     * @param title The title of the bookmark.
+     * @param url The URL of the new bookmark.
+     * @param parent The parentId of the bookmark
+     */
+    public static BookmarkId addBookmarkSilently(
+            Context context, BookmarkModel bookmarkModel, String title, String url, BookmarkId parent) {
+        if (parent == null || !bookmarkModel.doesBookmarkExist(parent)) {
+            parent = bookmarkModel.getDefaultFolder();
+        }
+
+        return bookmarkModel.addBookmark(parent, bookmarkModel.getChildCount(parent), title, url);
+    }
+
+    /**
      * Creates a snackbar controller for a case where "Edit" button is shown to edit the newly
      * created bookmark.
      */

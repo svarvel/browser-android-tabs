@@ -1052,6 +1052,24 @@ Your Google account may have other forms of browsing history like searches and a
       <message name="IDS_WEBSITE_SETTINGS_ADD_SITE_SITE_URL" desc="The label for the input field where the user can type a website URL.">
         Site URL
       </message>
+      <message name="IDS_SYNC_SETTINGS_ADD_DEVICE_NAME_LABEL" desc="The label for the input field where the user can type a sync device name.">
+        Enter an optional name for this device
+      </message>
+      <message name="IDS_SYNC_SETTINGS_ADD_DEVICE_NAME_TITLE" desc="The title for the dialog where the user can type a sync device name.">
+        Add device name
+      </message>
+      <message name="IDS_SYNC_EXAMPLE_DEVICE_NAME" desc="The hint for a sync device name field, showing an example device name.">
+        Android device
+      </message>
+      <message name="IDS_SYNC_DEVICE" desc="The title for the dialog where the user notified about sync setup result.">
+        Sync device
+      </message>
+      <message name="IDS_SYNC_DEVICE_SUCCESS" desc="The message for the dialog where the user notified about sync setup success.">
+        The sync setup has completed successfully
+      </message>
+      <message name="IDS_SYNC_DEVICE_FAILURE" desc="The message for the dialog where the user notified about sync setup failure.">
+        Sync could not be setup
+      </message>
       <message name="IDS_EXAMPLE_URL" desc="The hint for a website url field, showing an example url.">
         www.example.com
       </message>
@@ -1812,6 +1830,9 @@ Your Google account may have other forms of browsing history like searches and a
       </message>
       <message name="IDS_RESET_SYNC" desc="Button for reset sync. [CHAR-LIMT=32]">
         Reset Sync...
+      </message>
+      <message name="IDS_RESETTING_SYNC" desc="Question about restting sync.">
+        Are you sure you want to reset this device&apos;s Sync settings?
       </message>
       <message name="IDS_NEW_TO_SYNC" desc="Button for new to sync button. [CHAR-LIMT=32]">
         I am new to sync
