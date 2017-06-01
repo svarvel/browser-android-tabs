@@ -73,6 +73,7 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="@string/new_to_sync"
+       android:visibility="gone"
        style="@style/FlushFooterButton"/>
 
    <Button android:id="@+id/have_existing_sync_code"

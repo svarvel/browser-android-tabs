@@ -8,7 +8,9 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
@@ -25,6 +27,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.text.format.DateUtils;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -33,9 +36,11 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.WindowManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -46,6 +51,7 @@ import android.widget.LinearLayout;
 
 import org.chromium.base.Log;
 import org.chromium.chrome.R;
+import org.chromium.ui.UiUtils;
 
 import org.chromium.base.ContextUtils;
 import org.chromium.chrome.browser.ChromeApplication;
@@ -66,11 +72,12 @@ import java.lang.Runnable;
  * Settings fragment that allows to control Sync functionality.
  */
 public class BraveSyncScreensPreference extends PreferenceFragment
-      implements View.OnClickListener, BarcodeTracker.BarcodeGraphicTrackerCallback{
+      implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, BarcodeTracker.BarcodeGraphicTrackerCallback{
 
   private static final String PREF_NAME = "SyncPreferences";
   private static final String PREF_SYNC_SWITCH = "sync_switch";
   private static final String PREF_SEED = "Seed";
+  private static final String PREF_SYNC_DEVICE_NAME = "SyncDeviceName";
   private static final String TAG = "SYNC_PREFERENCES";
   // Permission request codes need to be < 256
   private static final int RC_HANDLE_CAMERA_PERM = 2;
@@ -92,6 +99,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private Switch mSyncSwitch;
   private BraveSyncScreensObserver mSyncScreensObserver;
   private LinearLayout mBookmarksLayout;
+  private String mDeviceName = "";
 
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
@@ -158,7 +166,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
       addPreferencesFromResource(R.xml.brave_sync_preferences);
-      getActivity().setTitle(R.string.prefs_sync);
+      getActivity().setTitle(R.string.sign_in_sync);
       ListView listView = (ListView) getView().findViewById(android.R.id.list);
       mEmptyView = (TextView) getView().findViewById(android.R.id.empty);
       listView.setEmptyView(mEmptyView);
@@ -184,12 +192,17 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mCameraSourcePreview = (CameraSourcePreview)getView().findViewById(R.id.preview);
       mEnterWordsLayout = (TableLayout)getView().findViewById(R.id.tableEnterWords);
       mSyncSwitch = (Switch)getView().findViewById(R.id.sync_switch_control);
+      if (null != mSyncSwitch) {
+          mSyncSwitch.setOnCheckedChangeListener(this);
+      }
       mBookmarksLayout = (LinearLayout)getView().findViewById(R.id.bookmarksLayout);
       mResetSync = (Button)getView().findViewById(R.id.reset_sync);
       if (null != mResetSync) {
           mResetSync.setOnClickListener(this);
       }
       setAppropriateView();
+      getActivity().getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
       super.onActivityCreated(savedInstanceState);
   }
@@ -205,9 +218,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           if (null != mImageView) {
               mImageView.setVisibility(View.VISIBLE);
           }
-          if (null != mNewToSyncButton) {
+          /*if (null != mNewToSyncButton) {
               mNewToSyncButton.setVisibility(View.VISIBLE);
-          }
+          }*/
           if (null != mHaveASyncCodeButton) {
               mHaveASyncCodeButton.setVisibility(View.VISIBLE);
           }
@@ -301,32 +314,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           && v != mEnterCodeWordsButton && v != mResetSync) return;
 
       if (mHaveASyncCodeButton == v) {
-          if (null != mImageView) {
-              mImageView.setVisibility(View.GONE);
-          }
-          if (null != mNewToSyncButton) {
-              mNewToSyncButton.setVisibility(View.GONE);
-          }
-          if (null != mHaveASyncCodeButton) {
-              mHaveASyncCodeButton.setVisibility(View.GONE);
-          }
-          if (null != mEnterWordsLayout) {
-              mEnterWordsLayout.setVisibility(View.GONE);
-          }
-          if (null != mEnterCodeWordsButton) {
-              mEnterCodeWordsButton.setVisibility(View.VISIBLE);
-          }
-          setQRCodeText();
-          if (null != mCameraSourcePreview) {
-              mCameraSourcePreview.setVisibility(View.VISIBLE);
-              int rc = ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
-              if (rc == PackageManager.PERMISSION_GRANTED) {
-                  try {
-                    startCameraSource();
-                  } catch (SecurityException exc) {
-                  }
-              }
-          }
+          showAddDeviceNameDialog();
       } else if (mNewToSyncButton == v) {
           // TODO
       } else if (mEnterCodeWordsButton == v) {
@@ -363,7 +351,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               wordLastControl.setOnEditorActionListener(new EditText.OnEditorActionListener() {
                   public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                       if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                          Log.i(TAG,"!!!Enter pressed");
                           ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                           String[] words = new String[16];
                           if (null != application && null != application.mBraveSyncWorker && null != words) {
@@ -386,15 +373,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               if (null == mSyncScreensObserver) {
                   mSyncScreensObserver = new BraveSyncScreensObserver() {
                       public void onWordsCodeWrong() {
-                          //TODO show appropriate screen
-                          Log.i("TAG", "!!!wrong words");
+                          showEndDialog(getResources().getString(R.string.sync_device_failure));
                       }
 
                       public void onSeedReceived(String seed) {
                           if (!isBarCodeValid(seed, false)) {
-                              //TODO
+                              showEndDialog(getResources().getString(R.string.sync_device_failure));
                           }
-                          Log.i("TAG", "!!!received seed == " + seed);
+                          //Log.i("TAG", "!!!received seed == " + seed);
                           // Save seed and deviceId in preferences
                           SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
                           SharedPreferences.Editor editor = sharedPref.edit();
@@ -412,6 +398,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                   }
                                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                                   if (null != application && null != application.mBraveSyncWorker) {
+                                      showEndDialog(getResources().getString(R.string.sync_device_success));
                                       application.mBraveSyncWorker.InitSync(true);
                                   }
                                   setAppropriateView();
@@ -423,19 +410,18 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               application.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
           }
       } else if (mResetSync == v) {
-          //TODO dialog to ask
-          ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-          if (null != application && null != application.mBraveSyncWorker) {
-              application.mBraveSyncWorker.ResetSync();
-          }
-          ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
-          if (null != syncSwitch) {
-              syncSwitch.setChecked(false);
-              if (null != mSyncSwitch) {
-                  mSyncSwitch.setChecked(false);
-              }
-          }
-          setAppropriateView();
+          ResetSyncDialog();
+      }
+  }
+
+  public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+      if (getActivity() == null || buttonView != mSyncSwitch) return;
+      ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
+      if (null != syncSwitch) {
+          syncSwitch.setChecked(isChecked);
+          /*if (null != mSyncSwitch) {
+              mSyncSwitch.setChecked(isChecked);
+          }*/
       }
   }
 
@@ -443,9 +429,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (null != mImageView) {
           mImageView.setVisibility(View.VISIBLE);
       }
-      if (null != mNewToSyncButton) {
+      /*if (null != mNewToSyncButton) {
           mNewToSyncButton.setVisibility(View.VISIBLE);
-      }
+      }*/
       if (null != mHaveASyncCodeButton) {
           mHaveASyncCodeButton.setVisibility(View.VISIBLE);
       }
@@ -524,18 +510,25 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void startCameraSource() throws SecurityException {
-      // check that the device has play services available.
-      int code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(
-              getActivity().getApplicationContext());
-      if (code != ConnectionResult.SUCCESS) {
-          Dialog dlg =
-                  GoogleApiAvailability.getInstance().getErrorDialog(getActivity(), code, RC_HANDLE_GMS);
-          if (null != dlg) {
-              dlg.show();
-          }
-      }
+      if (mCameraSource != null && mCameraSourcePreview.mCameraExist) {
+          // check that the device has play services available.
+          try {
+              int code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(
+                      getActivity().getApplicationContext());
+              if (code != ConnectionResult.SUCCESS) {
+                  Dialog dlg =
+                          GoogleApiAvailability.getInstance().getErrorDialog(getActivity(), code, RC_HANDLE_GMS);
+                  if (null != dlg) {
+                      dlg.show();
+                  }
+              }
+          } catch (ActivityNotFoundException e) {
+              Log.e(TAG, "Unable to start camera source.", e);
+              mCameraSource.release();
+              mCameraSource = null;
 
-      if (mCameraSource != null) {
+              return;
+          }
           try {
               mCameraSourcePreview.start(mCameraSource);
           } catch (IOException e) {
@@ -549,8 +542,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   @Override
   public void onResume() {
       super.onResume();
-      if (null != mCameraSourcePreview && View.GONE != mCameraSourcePreview.getVisibility()) {
-          startCameraSource();
+      try {
+          if (null != mCameraSourcePreview && View.GONE != mCameraSourcePreview.getVisibility()) {
+              startCameraSource();
+          }
+      } catch (SecurityException se) {
+          Log.e(TAG,"Do not have permission to start the camera", se);
+      } catch (RuntimeException e) {
+          Log.e(TAG, "Could not start camera source.", e);
       }
   }
 
@@ -560,6 +559,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (mCameraSourcePreview != null) {
           mCameraSourcePreview.stop();
       }
+      InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+      imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
   }
 
   @Override
@@ -586,9 +587,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   @Override
   public void onDetectedQrCode(Barcode barcode) {
       if (barcode != null) {
-          Log.i(TAG, "!!!code == " + barcode.displayValue);
+          //Log.i(TAG, "!!!code == " + barcode.displayValue);
           final String barcodeValue = barcode.displayValue;
           if (!isBarCodeValid(barcodeValue, true)) {
+              showEndDialog(getResources().getString(R.string.sync_device_failure));
               showMainSyncScrypt();
 
               return;
@@ -601,7 +603,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               }
               seed += String.valueOf(Integer.parseInt(barcodeString[i], 16));
           }
-          Log.i(TAG, "!!!seed == " + seed);
+          //Log.i(TAG, "!!!seed == " + seed);
           // Save seed and deviceId in preferences
           SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
           SharedPreferences.Editor editor = sharedPref.edit();
@@ -610,6 +612,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           getActivity().runOnUiThread(new Runnable() {
               @Override
               public void run() {
+                  showEndDialog(getResources().getString(R.string.sync_device_success));
                   ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
                   if (null != syncSwitch) {
                       syncSwitch.setChecked(true);
@@ -681,5 +684,129 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       }
 
       return control;
+  }
+
+  private void showEndDialog(String message) {
+      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+      if (null == alert) {
+          return;
+      }
+      DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int button) {
+          }
+      };
+      AlertDialog alertDialog = alert
+              .setTitle(getResources().getString(R.string.sync_device))
+              .setMessage(message)
+              .setPositiveButton(R.string.ok, onClickListener)
+              .create();
+      alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
+      alertDialog.show();
+  }
+
+  private void showAddDeviceNameDialog() {
+      LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(
+              Context.LAYOUT_INFLATER_SERVICE);
+      View view = inflater.inflate(R.layout.add_sync_device_name_dialog, null);
+      final EditText input = (EditText) view.findViewById(R.id.device_name);
+
+      DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int button) {
+              if (button == AlertDialog.BUTTON_POSITIVE) {
+                  mDeviceName = input.getText().toString();
+                  if (mDeviceName.isEmpty()) {
+                      mDeviceName = input.getHint().toString();
+                  }
+                  SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+                  SharedPreferences.Editor editor = sharedPref.edit();
+                  editor.putString(PREF_SYNC_DEVICE_NAME, mDeviceName);
+                  editor.apply();
+                  if (null != mImageView) {
+                      mImageView.setVisibility(View.GONE);
+                  }
+                  if (null != mNewToSyncButton) {
+                      mNewToSyncButton.setVisibility(View.GONE);
+                  }
+                  if (null != mHaveASyncCodeButton) {
+                      mHaveASyncCodeButton.setVisibility(View.GONE);
+                  }
+                  if (null != mEnterWordsLayout) {
+                      mEnterWordsLayout.setVisibility(View.GONE);
+                  }
+                  if (null != mEnterCodeWordsButton) {
+                      mEnterCodeWordsButton.setVisibility(View.VISIBLE);
+                  }
+                  setQRCodeText();
+                  if (null != mCameraSourcePreview) {
+                      mCameraSourcePreview.setVisibility(View.VISIBLE);
+                      int rc = ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
+                      if (rc == PackageManager.PERMISSION_GRANTED) {
+                          try {
+                            startCameraSource();
+                          } catch (SecurityException exc) {
+                          }
+                      }
+                  }
+              }
+          }
+      };
+
+      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+      if (null == alert) {
+          return;
+      }
+      AlertDialog alertDialog = alert
+              .setTitle(R.string.sync_settings_add_device_name_title)
+              .setMessage(getResources().getString(R.string.sync_settings_add_device_name_label))
+              .setView(view)
+              .setPositiveButton(R.string.ok, onClickListener)
+              .setNegativeButton(R.string.cancel, onClickListener)
+              .create();
+      alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
+      alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+          @Override
+          public void onShow(DialogInterface dialog) {
+              UiUtils.showKeyboard(input);
+          }
+      });
+      alertDialog.show();
+      Button cancelButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+      cancelButton.setVisibility(View.GONE);
+  }
+
+  private void ResetSyncDialog() {
+      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+      if (null == alert) {
+          return;
+      }
+      DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialog, int button) {
+              if (button == AlertDialog.BUTTON_POSITIVE) {
+                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                  if (null != application && null != application.mBraveSyncWorker) {
+                      application.mBraveSyncWorker.ResetSync();
+                  }
+                  ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
+                  if (null != syncSwitch) {
+                      syncSwitch.setChecked(false);
+                      if (null != mSyncSwitch) {
+                          mSyncSwitch.setChecked(false);
+                      }
+                  }
+                  setAppropriateView();
+              }
+          }
+      };
+      AlertDialog alertDialog = alert
+              .setTitle(getResources().getString(R.string.reset_sync))
+              .setMessage(getResources().getString(R.string.resetting_sync))
+              .setPositiveButton(R.string.ok, onClickListener)
+              .setNegativeButton(R.string.cancel, onClickListener)
+              .create();
+      alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
+      alertDialog.show();
   }
 }

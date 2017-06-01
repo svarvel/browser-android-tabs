@@ -145,7 +145,7 @@ public final class OAuth2TokenService
         }
         String oauth2Scope = OAUTH2_SCOPE_PREFIX + scope;
 
-        AccountManagerFacade accountManagerFacade = AccountManagerFacade.get();
+        /*AccountManagerFacade accountManagerFacade = AccountManagerFacade.get();
         accountManagerFacade.getAuthToken(
                 account, oauth2Scope, new AccountManagerFacade.GetAuthTokenCallback() {
                     @Override
@@ -157,7 +157,7 @@ public final class OAuth2TokenService
                     public void tokenUnavailable(boolean isTransientError) {
                         nativeOAuth2TokenFetched(null, isTransientError, nativeCallback);
                     }
-                });
+                });*/
     }
 
     /**
@@ -171,7 +171,7 @@ public final class OAuth2TokenService
     public static void getOAuth2AccessToken(Context context, Account account, String scope,
             AccountManagerFacade.GetAuthTokenCallback callback) {
         String oauth2Scope = OAUTH2_SCOPE_PREFIX + scope;
-        AccountManagerFacade.get().getAuthToken(account, oauth2Scope, callback);
+        //AccountManagerFacade.get().getAuthToken(account, oauth2Scope, callback);
     }
 
     /**

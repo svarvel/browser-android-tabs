@@ -4,7 +4,7 @@
 
 'use strict';
 
-var callbackList = {}; // message name to callback function
+var callbackList = {}; /* message name to callback function */
 
 if (!self.chrome || !self.chrome.ipc) {
     self.chrome = {};
@@ -12,17 +12,17 @@ if (!self.chrome || !self.chrome.ipc) {
 
     ipc.once = function (message, cb) {
         callbackList[message] = cb;
-        injectedObject.handleMessage(message, '0', '0', '');
+        injectedObject.handleMessage(message, '0', '0', '', false);
     };
 
     ipc.on = ipc.once;
 
-    ipc.send = function (message, arg1, arg2, arg3) {
+    ipc.send = function (message, arg1, arg2, arg3, arg4) {
         var arg2ToPass = arg2;
         if (undefined != arg2 && typeof arg2 != 'string' && 'save-init-data' != message) {
             arg2ToPass = JSON.stringify(arg2);
         }
-        injectedObject.handleMessage(message, undefined != arg1 ? arg1.toString() : arg1, undefined != arg2ToPass ? arg2ToPass.toString() : arg2ToPass, undefined != arg3 ? arg3.toString() : '');
+        injectedObject.handleMessage(message, undefined != arg1 ? arg1.toString() : '', undefined != arg2ToPass ? arg2ToPass.toString() : arg2ToPass, undefined != arg3 ? arg3.toString() : '', undefined != arg4 ? arg4 : false);
     };
 
     self.chrome.ipc = ipc;

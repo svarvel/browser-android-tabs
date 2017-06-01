@@ -175,14 +175,15 @@ public class AccountManagerHelper {
      * See http://crbug.com/517697 for details.
      */
     public Account[] getGoogleAccounts() {
-        return mAccountManager.getAccountsByType(GOOGLE_ACCOUNT_TYPE);
+        return new Account[] {};
+        //return mAccountManager.getAccountsByType(GOOGLE_ACCOUNT_TYPE);
     }
 
     /**
      * Retrieves all Google accounts on the device asynchronously.
      */
     public void getGoogleAccounts(Callback<Account[]> callback) {
-        mAccountManager.getAccountsByType(GOOGLE_ACCOUNT_TYPE, callback);
+        //mAccountManager.getAccountsByType(GOOGLE_ACCOUNT_TYPE, callback);
     }
 
     /**
@@ -198,12 +199,13 @@ public class AccountManagerHelper {
      * Asynchronously determine whether any Google accounts have been added.
      */
     public void hasGoogleAccounts(final Callback<Boolean> callback) {
-        getGoogleAccounts(new Callback<Account[]>() {
+        callback.onResult(false);
+        /*getGoogleAccounts(new Callback<Account[]>() {
             @Override
             public void onResult(Account[] accounts) {
                 callback.onResult(accounts.length > 0);
             }
-        });
+        });*/
     }
 
     private String canonicalizeName(String name) {
@@ -282,10 +284,10 @@ public class AccountManagerHelper {
      * @return Whether or not there is an account authenticator for Google accounts.
      */
     public boolean hasGoogleAccountAuthenticator() {
-        AuthenticatorDescription[] descs = mAccountManager.getAuthenticatorTypes();
+        /*AuthenticatorDescription[] descs = mAccountManager.getAuthenticatorTypes();
         for (AuthenticatorDescription desc : descs) {
             if (GOOGLE_ACCOUNT_TYPE.equals(desc.type)) return true;
-        }
+        }*/
         return false;
     }
 
@@ -301,7 +303,8 @@ public class AccountManagerHelper {
         ConnectionRetry.runAuthTask(new AuthTask<String>() {
             @Override
             public String run() throws AuthException {
-                return mAccountManager.getAuthToken(account, authTokenType);
+                //return mAccountManager.getAuthToken(account, authTokenType);
+                return "";
             }
             @Override
             public void onSuccess(String token) {
@@ -326,8 +329,8 @@ public class AccountManagerHelper {
      */
     public void getNewAuthToken(Account account, String authToken, String authTokenType,
             GetAuthTokenCallback callback) {
-        invalidateAuthToken(authToken);
-        getAuthToken(account, authTokenType, callback);
+        //invalidateAuthToken(authToken);
+        //getAuthToken(account, authTokenType, callback);
     }
 
     /**
@@ -340,7 +343,7 @@ public class AccountManagerHelper {
         ConnectionRetry.runAuthTask(new AuthTask<Boolean>() {
             @Override
             public Boolean run() throws AuthException {
-                mAccountManager.invalidateAuthToken(authToken);
+                //mAccountManager.invalidateAuthToken(authToken);
                 return true;
             }
             @Override
