@@ -1816,17 +1816,17 @@ Your Google account may have other forms of browsing history like searches and a
       </message>
       <message name="IDS_BRAVE_SYNC_MESSAGE" desc="Brave sync main screen message.">
         Sync browser data between your devices
-        securely using Brave Sync, no account
-        creation required. Tap below to get started.
+securely using Brave Sync, no account
+creation required. Tap below to get started.
       </message>
       <message name="IDS_BRAVE_SYNC_QRCODE" desc="Brave sync main screen QRCode message title.">
         Sync to device
       </message>
       <message name="IDS_BRAVE_SYNC_QRCODE_MESSAGE" desc="Brave sync main screen QRCode message.">
         Using existing synced device open Brave
-        Settings and navigate to "Device &amp;
-        Settings", tap `+` to add a new device and
-        reveal sync code.
+Settings and navigate to "Device &amp;
+Settings", tap `+` to add a new device and
+reveal sync code.
       </message>
       <message name="IDS_RESET_SYNC" desc="Button for reset sync. [CHAR-LIMT=32]">
         Reset Sync...
