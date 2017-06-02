@@ -785,16 +785,16 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           @Override
           public void onClick(DialogInterface dialog, int button) {
               if (button == AlertDialog.BUTTON_POSITIVE) {
-                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                  if (null != application && null != application.mBraveSyncWorker) {
-                      application.mBraveSyncWorker.ResetSync();
-                  }
                   ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
                   if (null != syncSwitch) {
                       syncSwitch.setChecked(false);
                       if (null != mSyncSwitch) {
                           mSyncSwitch.setChecked(false);
                       }
+                  }
+                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                  if (null != application && null != application.mBraveSyncWorker) {
+                      application.mBraveSyncWorker.ResetSync();
                   }
                   setAppropriateView();
               }
