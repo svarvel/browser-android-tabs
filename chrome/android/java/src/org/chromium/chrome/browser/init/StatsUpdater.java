@@ -47,7 +47,11 @@ public class StatsUpdater {
                 boolean weekly = false;
                 boolean monthly = false;
 
-                if (milliSeconds - previousObject.mMilliSeconds >= MILLISECONDS_IN_A_DAY) {
+                long milliSecondsOfTheCurrentDay = currentTime.get(currentTime.HOUR_OF_DAY) * 60 * 60 * 1000
+                      + currentTime.get(currentTime.MINUTE) * 60 * 1000 + currentTime.get(currentTime.SECOND) * 1000
+                      + currentTime.get(currentTime.MILLISECOND);
+                if (milliSeconds - previousObject.mMilliSeconds >= MILLISECONDS_IN_A_DAY
+                      || milliSecondsOfTheCurrentDay < milliSeconds - previousObject.mMilliSeconds) {
                     daily = true;
                 }
                 if (milliSeconds - previousObject.mMilliSecondsForWeeklyStat >= MILLISECONDS_IN_A_WEEK) {
@@ -62,26 +66,28 @@ public class StatsUpdater {
                     return;
                 }
 
-                StatsUpdater.UpdateServer(context, firstRun, daily, weekly, monthly);
-                StatsObject currentObject = new StatsObject();
-                if (daily) {
-                    currentObject.mMilliSeconds = milliSeconds;
-                } else {
-                    currentObject.mMilliSeconds = previousObject.mMilliSeconds;
+                boolean updated = StatsUpdater.UpdateServer(context, firstRun, daily, weekly, monthly);
+                if (updated) {
+                    StatsObject currentObject = new StatsObject();
+                    if (daily) {
+                        currentObject.mMilliSeconds = milliSeconds;
+                    } else {
+                        currentObject.mMilliSeconds = previousObject.mMilliSeconds;
+                    }
+                    if (weekly) {
+                        currentObject.mMilliSecondsForWeeklyStat = milliSeconds;
+                    } else {
+                        currentObject.mMilliSecondsForWeeklyStat = previousObject.mMilliSecondsForWeeklyStat;
+                    }
+                    if (monthly) {
+                        currentObject.mMonth = currentTime.get(currentTime.MONTH);
+                        currentObject.mYear = currentTime.get(currentTime.YEAR);
+                    } else {
+                        currentObject.mMonth = previousObject.mMonth;
+                        currentObject.mYear = previousObject.mYear;
+                    }
+                    StatsUpdater.SetPreferences(context, currentObject);
                 }
-                if (weekly) {
-                    currentObject.mMilliSecondsForWeeklyStat = milliSeconds;
-                } else {
-                    currentObject.mMilliSecondsForWeeklyStat = previousObject.mMilliSecondsForWeeklyStat;
-                }
-                if (monthly) {
-                    currentObject.mMonth = currentTime.get(currentTime.MONTH);
-                    currentObject.mYear = currentTime.get(currentTime.YEAR);
-                } else {
-                    currentObject.mMonth = previousObject.mMonth;
-                    currentObject.mYear = previousObject.mYear;
-                }
-                StatsUpdater.SetPreferences(context, currentObject);
             } finally {
                 mAvailable.release();
             }
@@ -89,7 +95,7 @@ public class StatsUpdater {
         }
     }
 
-    public static void UpdateServer(Context context, boolean firstRun, boolean daily, boolean weekly, boolean monthly) {
+    public static boolean UpdateServer(Context context, boolean firstRun, boolean daily, boolean weekly, boolean monthly) {
         String versionNumber = "0";
         PackageInfo info = null;
         try {
@@ -102,7 +108,7 @@ public class StatsUpdater {
             versionNumber = info.versionName;
         }
         if (versionNumber.equals("Developer Build")) {
-            return;
+            return false;
         }
         versionNumber = versionNumber.replace(" ", "%20");
 
@@ -116,7 +122,11 @@ public class StatsUpdater {
                 connection.connect();
                 if (HttpURLConnection.HTTP_OK != connection.getResponseCode()) {
                     Log.e("STAT", "stat update error == " + connection.getResponseCode());
+
+                    return false;
                 }
+
+                return true;
             } finally {
                 connection.disconnect();
             }
@@ -127,6 +137,8 @@ public class StatsUpdater {
         }
         catch (Exception e) {
         }
+
+        return false;
     }
 
     public static StatsObject GetPreferences(Context context) {
