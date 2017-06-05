@@ -38,6 +38,7 @@ import org.chromium.chrome.browser.dependency_injection.ChromeAppModule;
 import org.chromium.chrome.browser.dependency_injection.DaggerChromeAppComponent;
 import org.chromium.chrome.browser.dependency_injection.ModuleFactoryOverrides;
 import org.chromium.chrome.browser.BraveSyncWorker;
+import org.chromium.chrome.browser.StatsUpdaterWorker;
 import org.chromium.chrome.browser.init.InvalidStartupDialog;
 import org.chromium.chrome.browser.instantapps.InstantAppsHandler;
 import org.chromium.chrome.browser.init.ShieldsConfig;
@@ -61,6 +62,8 @@ public class ChromeApplication extends Application {
     private ShieldsConfig mShieldsConfig;
     // Sync worker
     public BraveSyncWorker mBraveSyncWorker = null;
+    // Stats updater
+    public StatsUpdaterWorker mStatsUpdaterWorker = null;
 
     @Nullable
     private static ChromeAppComponent sComponent;
