@@ -30,6 +30,22 @@ public class NewTabPageScrollView extends ScrollView {
 
     private GestureDetector mGestureDetector;
     private FadingShadow mFadingShadow;
+    /** Whether the ScrollView and its children should react to touch events. */
+    private boolean mTouchEnabled = true;
+
+    /**
+     * Listener for scroll changes.
+     */
+    public interface OnScrollListener {
+        /**
+         * Triggered when the scroll changes.  See ScrollView#onScrollChanged for more
+         * details.
+         */
+        void onScrollChanged(int l, int t, int oldl, int oldt);
+    }
+
+    private OnScrollListener mOnScrollListener;
+    private NewTabPageLayout mNewTabPageLayout;
 
     /**
      * Constructor needed to inflate from XML.
@@ -61,14 +77,33 @@ public class NewTabPageScrollView extends ScrollView {
     }
 
     @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+
+        // Incognito also uses this scroll view but will not have the id so will return null.
+        mNewTabPageLayout = (NewTabPageLayout) findViewById(R.id.ntp_content);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (mNewTabPageLayout != null) {
+            mNewTabPageLayout.setParentViewportHeight(MeasureSpec.getSize(heightMeasureSpec));
+        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         mGestureDetector.onTouchEvent(ev);
+        if (!mTouchEnabled) return true;
         return super.onInterceptTouchEvent(ev);
     }
 
     @Override
     @SuppressLint("ClickableViewAccessibility")
     public boolean onTouchEvent(MotionEvent ev) {
+        if (!mTouchEnabled) return false;
+
         // Action down would already have been handled in onInterceptTouchEvent
         if (ev.getActionMasked() != MotionEvent.ACTION_DOWN) {
             mGestureDetector.onTouchEvent(ev);
@@ -88,6 +123,24 @@ public class NewTabPageScrollView extends ScrollView {
             }
             throw ex;
         }
+    }
+
+    public void setTouchEnabled(boolean enabled) {
+        mTouchEnabled = enabled;
+    }
+
+    /**
+     * Sets the listener to be notified of scroll changes.
+     * @param listener The listener to be updated on scroll changes.
+     */
+    public void setOnScrollListener(OnScrollListener listener) {
+        mOnScrollListener = listener;
+    }
+
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+        if (mOnScrollListener != null) mOnScrollListener.onScrollChanged(l, t, oldl, oldt);
     }
 
     @Override
