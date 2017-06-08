@@ -271,7 +271,7 @@ bool ContentSettingsObserver::AllowFingerprinting() {
   bool result = true;
   Send(new ChromeViewHostMsg_AllowFingerprinting(
       routing_id(),
-      GURL(frame->top()->document().url()).host(),
+      GURL(frame->Top()->GetDocument().Url()).host(),
       &result));
 
   return result;
@@ -569,24 +569,24 @@ void ContentSettingsObserver::DidNotAllowScript() {
 }
 
 // We can pass an exact script URL here from FrameFetchContext.cpp
-void ContentSettingsObserver::deniedScript() {
+void ContentSettingsObserver::DeniedScript() {
   WebFrame* frame = render_frame()->GetWebFrame();
   if (!frame) {
     return;
   }
 
   Send(new ChromeViewHostMsg_DeniedScript(routing_id(),
-          GURL(frame->top()->document().url()).spec()));
+          GURL(frame->Top()->GetDocument().Url()).spec()));
 }
 
-void ContentSettingsObserver::deniedFingerprinting() {
+void ContentSettingsObserver::DeniedFingerprinting() {
   WebFrame* frame = render_frame()->GetWebFrame();
   if (!frame) {
     return;
   }
 
   Send(new ChromeViewHostMsg_DeniedFingerprinting(routing_id(),
-          GURL(frame->top()->document().url()).spec()));
+          GURL(frame->Top()->GetDocument().Url()).spec()));
 }
 
 void ContentSettingsObserver::OnLoadBlockedPlugins(

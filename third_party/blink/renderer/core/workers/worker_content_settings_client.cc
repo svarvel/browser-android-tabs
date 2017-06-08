@@ -108,7 +108,9 @@ void WorkerContentSettingsClient::DeniedScript() {
 
 bool WorkerContentSettingsClient::AllowFingerprinting() {
   if (client_)
-    client_->AllowFingerprinting();
+    return client_->AllowFingerprinting();
+
+  return true;
 }
 
 void WorkerContentSettingsClient::DeniedFingerprinting() {
