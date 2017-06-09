@@ -1,3 +1,7 @@
+<release version="1.0.22">
+    <change>Updated to Chromium v59.0.3071.92.</change>
+    <change>Fixed update check frequency.</change>
+</release>
 <release version="1.0.21">
     <change>Updated to Chromium v58.0.3029.83.</change>
     <change>Fixed over aggressive blocking with some regional lists.</change>
