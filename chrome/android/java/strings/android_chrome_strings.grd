@@ -1770,7 +1770,7 @@ reveal sync code.
         Reset Sync...
       </message>
       <message name="IDS_RESETTING_SYNC" desc="Question about restting sync.">
-        Are you sure you want to reset this device&apos;s Sync settings?
+        Are you sure you want to reset this device Sync settings?
       </message>
       <message name="IDS_NEW_TO_SYNC" desc="Button for new to sync button. [CHAR-LIMT=32]">
         I am new to sync

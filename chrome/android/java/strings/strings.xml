@@ -45,6 +45,6 @@
     <string name="sync_device_failure">Sync could not be setup</string>
     <string name="sync_device_success">The sync setup has completed successfully</string>
     <string name="reset_sync">Reset Sync...</string>
-    <string name="resetting_sync">Are you sure you want to reset this device&apos;s Sync settings?</string>
+    <string name="resetting_sync">Are you sure you want to reset this device Sync settings?</string>
 
 </resources>
