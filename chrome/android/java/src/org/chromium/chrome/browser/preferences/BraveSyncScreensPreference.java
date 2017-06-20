@@ -269,9 +269,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               mSyncSwitch.setChecked(syncSwitch.isChecked());
           }
       }
-      if (null != mBookmarksLayout) {
+      /*if (null != mBookmarksLayout) {
           mBookmarksLayout.setVisibility(View.VISIBLE);
-      }
+      }*/
       if (null != mResetSync) {
           mResetSync.setVisibility(View.VISIBLE);
       }

@@ -139,15 +139,18 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
     @Override
     protected void onStop() {
         if (mModel.doesBookmarkExist(mBookmarkId)) {
-            final String originalUrl =
-                    mModel.getBookmarkById(mBookmarkId).getUrl();
+            BookmarkItem bookmarkItem = mModel.getBookmarkById(mBookmarkId);
+            final String originalUrl = bookmarkItem.getUrl();
+            final String originalTitle = bookmarkItem.getTitle();
             final String title = mTitleEditText.getTrimmedText();
             final String url = mUrlEditText.getTrimmedText();
 
             boolean sendToSyncWorker = false;
             if (!mTitleEditText.isEmpty()) {
                 mModel.setBookmarkTitle(mBookmarkId, title);
-                sendToSyncWorker = true;
+                if (!title.equals(originalTitle)) {
+                    sendToSyncWorker = true;
+                }
             }
 
             if (!mUrlEditText.isEmpty()
