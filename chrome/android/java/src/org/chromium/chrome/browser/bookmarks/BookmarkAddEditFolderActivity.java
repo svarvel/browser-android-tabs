@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.SynchronousInitializationActivity;
@@ -233,9 +234,14 @@ public class BookmarkAddEditFolderActivity extends SynchronousInitializationActi
     @Override
     protected void onStop() {
         if (!mIsAddMode && mModel.doesBookmarkExist(mFolderId) && !mFolderTitle.isEmpty()) {
+            BookmarkItem bookmarkItem = mModel.getBookmarkById(mFolderId);
+            boolean updateSync = false;
+            if (null != bookmarkItem && !bookmarkItem.getTitle().equals(mFolderTitle.getTrimmedText())) {
+                updateSync = true;
+            }
             mModel.setBookmarkTitle(mFolderId, mFolderTitle.getTrimmedText());
             ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-            if (null != app && null != app.mBraveSyncWorker) {
+            if (null != app && null != app.mBraveSyncWorker && updateSync) {
                 app.mBraveSyncWorker.CreateUpdateBookmark(false, mModel.getBookmarkById(mFolderId));
             }
         }
