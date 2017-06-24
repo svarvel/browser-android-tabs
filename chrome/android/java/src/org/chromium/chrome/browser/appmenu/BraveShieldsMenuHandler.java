@@ -42,10 +42,10 @@ import java.util.List;
  * Object responsible for handling the creation, showing, hiding of the BraveShields menu.
  */
 public class BraveShieldsMenuHandler {
-    private final static String mAdsTrackersCountColor = "#FD5926";
-    private final static String mHTTPSUpgradesCountColor = "#119AF8";
-    private final static String mScripsBlockedCountColor = "#5C5C5C";
-    private final static String mFingerprintsBlockedCountColor = "#FCB719";
+    private final static String mAdsTrackersCountColor = "##fe521d";
+    private final static String mHTTPSUpgradesCountColor = "#0796fa";
+    private final static String mScripsBlockedCountColor = "#999999";
+    private final static String mFingerprintsBlockedCountColor = "#ffc000";
     private final static float LAST_ITEM_SHOW_FRACTION = 0.5f;
 
     private final Activity mActivity;
