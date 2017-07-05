@@ -44,8 +44,16 @@ public class WebContentsFactory {
      */
     public WebContents createWebContentsWithWarmRenderer(
             boolean incognito, boolean initiallyHidden) {
-        return nativeCreateWebContents(
+        WebContents webContents = null;
+
+        try {
+            webContents = nativeCreateWebContents(
                 Profile.getLastUsedProfile(), incognito, initiallyHidden, true);
+        } catch (UnsatisfiedLinkError err) {
+            // Just return a null object in that case
+        }
+
+        return webContents;
     }
 
     private static native WebContents nativeCreateWebContents(Profile profile, boolean incognito,
