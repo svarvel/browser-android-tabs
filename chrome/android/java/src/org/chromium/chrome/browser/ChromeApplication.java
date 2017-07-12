@@ -49,6 +49,8 @@ import org.chromium.chrome.browser.vr.OnExitVrRequestListener;
 import org.chromium.chrome.browser.vr.VrModuleProvider;
 import org.chromium.components.module_installer.ModuleInstaller;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 /**
  * Basic application functionality that should be shared among all browser applications that use
  * chrome layer.
@@ -63,6 +65,8 @@ public class ChromeApplication extends Application {
     public BraveSyncWorker mBraveSyncWorker = null;
     // Stats updater
     public StatsUpdaterWorker mStatsUpdaterWorker = null;
+    // Mixpanel global object
+    public MixpanelAPI mMixpanelInstance = null;
 
     @Nullable
     private static ChromeAppComponent sComponent;

@@ -139,6 +139,17 @@ by a child template that "extends" this file.
         android:networkSecurityConfig="@xml/network_security_config"
         {% block extra_application_attributes %}{% endblock %}>
 
+        <!-- MixPanel proxy server -->
+        <!--<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
+              android:value="https://metric-proxy.brave.com" />-->
+        <!--<meta-data android:name="com.mixpanel.android.MPConfig.PeopleEndpoint"
+              android:value="https://metric-proxy.brave.com" />-->
+        <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
+              android:value="https://metric-proxy.brave.com" />
+        <!--<meta-data android:name="com.mixpanel.android.MPConfig.DecideEndpoint"
+              android:value="https://metric-proxy.brave.com" />-->
+        <meta-data android:name="com.mixpanel.android.MPConfig.EnableDebugLogging"
+              android:value="true" />
         <!-- Samsung MultiWindow Support -->
         <meta-data android:name="com.samsung.android.sdk.multiwindow.enable"
             android:value="true" />

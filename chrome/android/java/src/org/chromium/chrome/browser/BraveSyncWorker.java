@@ -797,6 +797,20 @@ public class BraveSyncWorker {
                 Log.i("TAG", "!!!record1 == " + recordsJSON.substring(iPos - 500, iPos + 1500));
             }
         }*/
+        /*int step = 2000;
+        int count = 0;
+        for (;;) {
+            int endIndex = count * step + step;
+            if (endIndex > recordsJSON.length() - 1) {
+                endIndex = recordsJSON.length() - 1;
+            }
+            String substr = recordsJSON.substring(count * step, endIndex);
+            Log.i("TAG", "!!!substr == " + substr);
+            if (endIndex != count * step + step) {
+                break;
+            }
+            count++;
+        }*/
         //
 
         HashMap<String, ArrayList<String>> syncedRecordsMap = new HashMap<String, ArrayList<String>>();
@@ -897,6 +911,20 @@ public class BraveSyncWorker {
         }
         //to do debug
         //Log.i("TAG", "!!!GetExistingObjects res == " + res);
+        /*int step = 2000;
+        int count = 0;
+        for (;;) {
+            int endIndex = count * step + step;
+            if (endIndex > res.length() - 1) {
+                endIndex = res.length() - 1;
+            }
+            String substr = res.substring(count * step, endIndex);
+            Log.i("TAG", "!!!substr == " + substr);
+            if (endIndex != count * step + step) {
+                break;
+            }
+            count++;
+        }*/
         //
 
         return res;

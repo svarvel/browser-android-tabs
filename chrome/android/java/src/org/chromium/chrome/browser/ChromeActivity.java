@@ -192,6 +192,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nullable;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+import com.mixpanel.android.mpmetrics.MPConfig;
+
 /**
  * A {@link AsyncInitializationActivity} that builds and manages a {@link CompositorViewHolder}
  * and associated classes.
@@ -1488,6 +1491,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             app.mStatsUpdaterWorker.Stop();
             app.mStatsUpdaterWorker = null;
         }
+        if (null != app && null != app.mMixpanelInstance) {
+            app.mMixpanelInstance.flush();
+            app.mMixpanelInstance = null;
+        }
 
 
         if (mTabContentManager != null) {
@@ -1629,8 +1636,14 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // Starting Brave Sync
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
-            //app.mBraveSyncWorker = new BraveSyncWorker(this);
+            app.mBraveSyncWorker = new BraveSyncWorker(this);
             app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
+            /*if (!ConfigAPIs.MIXPANEL_TOKEN.isEmpty()) {
+                app.mMixpanelInstance = MixpanelAPI.getInstance(getApplicationContext(), ConfigAPIs.MIXPANEL_TOKEN);
+            } else {
+                Log.i("ChromeActivity", "MixPanel is not activated");
+            }*/
+            //MixPanelWorker.SendEvent("MainActivity - onCreate called", "start", "open");
         }
     }
 
