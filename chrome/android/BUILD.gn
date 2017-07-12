@@ -357,6 +357,7 @@ android_library("chrome_java") {
     "//third_party/gif_player:gif_player_java",
     "//third_party/google_android_play_core:com_google_android_play_core_java",
     "//third_party/jsr-305:jsr_305_javalib",
+    "//third_party/mixpanel:mixpanel_java",
     "//ui/android:ui_java",
     "//ui/base/mojo:mojo_java",
     "//ui/gfx/geometry/mojo:mojo_java",
@@ -1291,6 +1292,13 @@ if (current_toolchain == default_toolchain) {
     android_assets("${_variant}_locale_pak_assets") {
       renaming_sources = []
       renaming_destinations = []
+      sources = [
+        "//chrome/browser/net/blockers/data/regions.json",
+        "//braveSync/bundles/bundle.js",
+        "//sync/android_sync.js",
+        "//sync/android_sync_words.js",
+        "//niceware/browser/niceware.js",
+      ]
       foreach(_locale, locales - android_chrome_omitted_locales) {
         renaming_sources +=
             [ "$target_gen_dir/${_variant}_paks/locales/$_locale.pak" ]
@@ -1308,12 +1316,7 @@ if (current_toolchain == default_toolchain) {
       assert("${_variant}_pak_assets" == target_name)
       sources = [
         "$target_gen_dir/${_variant}_paks/chrome_100_percent.pak",
-        "$target_gen_dir/${_variant}_paks/resources.pak",
-        "//chrome/browser/net/blockers/data/regions.json",
-        "//braveSync/bundles/bundle.js",
-        "//sync/android_sync.js",
-        "//sync/android_sync_words.js",
-        "//niceware/browser/niceware.js",
+        "$target_gen_dir/${_variant}_paks/resources.pak"
       ]
       disable_compression = true
 

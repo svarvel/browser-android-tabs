@@ -82,6 +82,7 @@ vs-chromium-project.txt
 /chrome/gles2_conform_test_run.xml
 /chrome/tab_capture_performance_tests_run.xml
 /chrome/telemetry_gpu_test_run.xml
+chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /chrome/app/theme/default_100_percent/google_chrome
 /chrome/app/theme/default_200_percent/google_chrome
 /chrome/app/theme/google_chrome
