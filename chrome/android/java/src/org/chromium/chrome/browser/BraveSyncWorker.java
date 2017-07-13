@@ -421,8 +421,17 @@ public class BraveSyncWorker {
         StringBuilder bookmarkRequest = new StringBuilder("bookmark:");
         bookmarkRequest.append("{ site:");
         bookmarkRequest.append("{ location: \"").append(url).append("\", ");
-        bookmarkRequest.append("title: \"").append(title.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
-        bookmarkRequest.append("customTitle: \"").append(customTitle.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
+        if (!isFolder) {
+            bookmarkRequest.append("title: \"").append(title.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
+            bookmarkRequest.append("customTitle: \"").append(customTitle.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
+        } else {
+            bookmarkRequest.append("title: \"\", ");
+            if (!customTitle.isEmpty()) {
+                bookmarkRequest.append("customTitle: \"").append(customTitle.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
+            } else {
+                bookmarkRequest.append("customTitle: \"").append(title.replace("\\", "\\\\").replace("\"", "\\\"")).append("\", ");
+            }
+        }
         bookmarkRequest.append("favicon: \"").append(favIcon).append("\", ");
         bookmarkRequest.append("lastAccessedTime: ").append(lastAccessedTime).append(", ");
         bookmarkRequest.append("creationTime: ").append(creationTime).append("}, ");
