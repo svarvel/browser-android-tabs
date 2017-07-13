@@ -69,3 +69,5 @@
   public <clinit>();
   *** build() return null;
 }
+
+-dontwarn com.mixpanel.android.R**
