@@ -48,3 +48,4 @@
 # Trichrome builds don't include a native library list in the main APK; it's
 # picked up from the library APK at runtime.
 -dontwarn org.chromium.base.library_loader.NativeLibraries
+-dontwarn com.mixpanel.android.R**
