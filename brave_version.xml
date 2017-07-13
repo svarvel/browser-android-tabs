@@ -1,3 +1,7 @@
+<release version="1.0.25">
+    <change>Added bookmarks sync functionality (Settings->Sync).</change>
+    <change>Re-added device branded home button on the URL bar, if present, can be hidden (Settings->Home page).</change>
+</release>
 <release version="1.0.24">
     <change>Updated to Chromium v59.0.3071.125.</change>
     <change>Removed device branded home button from URL bar.</change>
