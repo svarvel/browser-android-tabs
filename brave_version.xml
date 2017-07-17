@@ -1,4 +1,4 @@
-<release version="1.0.25">
+<release version="1.0.26">
     <change>Added bookmarks sync functionality (Settings->Sync).</change>
     <change>Re-added device branded home button on the URL bar, if present, can be hidden (Settings->Home page).</change>
 </release>
