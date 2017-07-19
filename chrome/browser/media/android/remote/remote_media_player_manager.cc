@@ -144,7 +144,7 @@ void RemoteMediaPlayerManager::DidDownloadPoster(
 RemoteMediaPlayerBridge* RemoteMediaPlayerManager::CreateRemoteMediaPlayer(
     int player_id) {
   alternative_players_.push_back(std::make_unique<RemoteMediaPlayerBridge>(
-      player_id, GetUserAgent(), this));
+      player_id, GetUserAgent(""), this));
   RemoteMediaPlayerBridge* remote =
       static_cast<RemoteMediaPlayerBridge*>(alternative_players_.back().get());
   remote->Initialize();

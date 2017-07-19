@@ -381,7 +381,7 @@ class BLINK_PLATFORM_EXPORT Platform {
   virtual WebPrescientNetworking* PrescientNetworking() { return nullptr; }
 
   // Returns the User-Agent string.
-  virtual WebString UserAgent() { return WebString(); }
+  virtual WebString UserAgent(const std::string& strHost) { return WebString(); }
 
   // A suggestion to cache this metadata in association with this URL.
   virtual void CacheMetadata(blink::mojom::CodeCacheType cache_type,

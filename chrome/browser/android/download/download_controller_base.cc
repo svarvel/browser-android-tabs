@@ -54,7 +54,7 @@ DownloadInfo::DownloadInfo(const net::URLRequest* request) {
   request->extra_request_headers().GetHeader(
     net::HttpRequestHeaders::kUserAgent, &user_agent);
   if (user_agent.empty())
-    user_agent = GetUserAgent();
+    user_agent = GetUserAgent("");
   GURL referer_url(request->referrer());
   if (referer_url.is_valid())
     referer = referer_url.spec();

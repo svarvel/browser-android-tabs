@@ -363,7 +363,7 @@ ChromeContentRendererClient::ChromeContentRendererClient()
     allowed_compositor_origins_.insert(origin);
 #endif
 #if BUILDFLAG(ENABLE_PRINTING)
-  printing::SetAgent(GetUserAgent());
+  printing::SetAgent(GetUserAgent(""));
 #endif
 
   heap_profiling::SetGCHeapAllocationHookFunctions(

@@ -75,7 +75,7 @@ std::string ContentClient::GetProduct() const {
   return std::string();
 }
 
-std::string ContentClient::GetUserAgent() const {
+std::string ContentClient::GetUserAgent(const std::string&) const {
   return std::string();
 }
 

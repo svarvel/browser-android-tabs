@@ -158,7 +158,7 @@ class CONTENT_EXPORT ContentClient {
 
   // Returns the user agent.  Content may cache this value.
   // TODO(yhirano): Move this to ContentBrowserClient.
-  virtual std::string GetUserAgent() const;
+  virtual std::string GetUserAgent(const std::string& strHost) const;
 
   // Returns a string resource given its id.
   virtual base::string16 GetLocalizedString(int message_id) const;

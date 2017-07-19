@@ -431,10 +431,14 @@ void URLRequestHttpJob::Start() {
 
   // This should be kept in sync with the corresponding code in
   // URLRequest::GetUserAgent.
+  std::string userAgentHost = referrer.host();
+  if (userAgentHost.empty()) {
+       userAgentHost = request_info_.url.host();
+  }
   request_info_.extra_headers.SetHeaderIfMissing(
       HttpRequestHeaders::kUserAgent,
       http_user_agent_settings_ ?
-          http_user_agent_settings_->GetUserAgent() : std::string());
+          http_user_agent_settings_->GetUserAgent(userAgentHost) : std::string());
 
   AddExtraHeaders();
   AddCookieHeaderAndStart();

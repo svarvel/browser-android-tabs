@@ -400,7 +400,7 @@ std::string GetProduct() {
 
 }  // namespace
 
-std::string GetUserAgent() {
+std::string GetUserAgent(const std::string& strHost) {
   base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
   if (command_line->HasSwitch(switches::kUserAgent)) {
     std::string ua = command_line->GetSwitchValueASCII(switches::kUserAgent);
@@ -414,7 +414,7 @@ std::string GetUserAgent() {
   if (command_line->HasSwitch(switches::kUseMobileUserAgent))
     product += " Mobile";
 #endif
-  return content::BuildUserAgentFromProduct(product);
+  return content::BuildUserAgentFromProduct(product, strHost);
 }
 
 ChromeContentClient::ChromeContentClient() {
@@ -680,8 +680,8 @@ std::string ChromeContentClient::GetProduct() const {
   return ::GetProduct();
 }
 
-std::string ChromeContentClient::GetUserAgent() const {
-  return ::GetUserAgent();
+std::string ChromeContentClient::GetUserAgent(const std::string& strHost) const {
+  return ::GetUserAgent(strHost);
 }
 
 base::string16 ChromeContentClient::GetLocalizedString(int message_id) const {

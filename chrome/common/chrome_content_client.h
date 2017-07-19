@@ -25,7 +25,7 @@
 #endif
 
 // Returns the user agent of Chrome.
-std::string GetUserAgent();
+std::string GetUserAgent(const std::string& strHost);
 
 class ChromeContentClient : public content::ContentClient {
  public:
@@ -84,7 +84,7 @@ class ChromeContentClient : public content::ContentClient {
 
   void AddAdditionalSchemes(Schemes* schemes) override;
   std::string GetProduct() const override;
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& strHost) const override;
   base::string16 GetLocalizedString(int message_id) const override;
   base::StringPiece GetDataResource(
       int resource_id,
