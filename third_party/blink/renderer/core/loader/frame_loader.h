@@ -157,7 +157,7 @@ class CORE_EXPORT FrameLoader final {
 
   void DidExplicitOpen();
 
-  String UserAgent() const;
+  String UserAgent(const std::string& strHost = "") const;
   blink::UserAgentMetadata UserAgentMetadata() const;
 
   void DispatchDidClearWindowObjectInMainWorld();

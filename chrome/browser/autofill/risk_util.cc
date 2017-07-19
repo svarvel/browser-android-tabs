@@ -96,7 +96,7 @@ void LoadRiskData(uint64_t obfuscated_gaia_id,
   risk::GetFingerprint(
       obfuscated_gaia_id, window_bounds, web_contents,
       version_info::GetVersionNumber(), charset, accept_languages, install_time,
-      g_browser_process->GetApplicationLocale(), GetUserAgent(),
+      g_browser_process->GetApplicationLocale(), GetUserAgent(""),
       base::BindOnce(PassRiskData, std::move(callback)), connector);
 }
 

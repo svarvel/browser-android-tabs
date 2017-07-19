@@ -310,7 +310,7 @@ class CORE_EXPORT EmptyLocalFrameClient : public LocalFrameClient {
       DocumentLoader* document_loader,
       std::unique_ptr<WebDocumentLoader::ExtraData> extra_data) override {}
 
-  String UserAgent() override { return ""; }
+  String UserAgent(const std::string&) override { return ""; }
   blink::UserAgentMetadata UserAgentMetadata() override {
     return blink::UserAgentMetadata();
   }

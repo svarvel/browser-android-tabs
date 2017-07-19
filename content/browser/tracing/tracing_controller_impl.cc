@@ -216,7 +216,7 @@ TracingControllerImpl::GenerateMetadataDict() const {
                            GetContentClient()->browser()->GetProduct());
   metadata_dict->SetString("v8-version", V8_VERSION_STRING);
   metadata_dict->SetString("user-agent",
-                           GetContentClient()->browser()->GetUserAgent());
+                           GetContentClient()->browser()->GetUserAgent(""));
 
 #if defined(OS_ANDROID)
   // The library name is used for symbolizing heap profiles. This cannot be

@@ -376,7 +376,7 @@ class BLINK_PLATFORM_EXPORT Platform {
   virtual WebPrescientNetworking* PrescientNetworking() { return nullptr; }
 
   // Returns the User-Agent string.
-  virtual WebString UserAgent() { return WebString(); }
+  virtual WebString UserAgent(const std::string& strHost) { return WebString(); }
 
   // Returns the User Agent metadata. This will replace `UserAgent()` if we
   // end up shipping https://github.com/WICG/ua-client-hints.

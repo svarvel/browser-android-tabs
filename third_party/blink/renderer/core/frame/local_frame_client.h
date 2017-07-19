@@ -261,7 +261,7 @@ class CORE_EXPORT LocalFrameClient : public FrameClient {
       DocumentLoader* document_loader,
       std::unique_ptr<WebDocumentLoader::ExtraData> extra_data) = 0;
 
-  virtual String UserAgent() = 0;
+  virtual String UserAgent(const std::string& strUrl) = 0;
   virtual blink::UserAgentMetadata UserAgentMetadata() = 0;
 
   virtual String DoNotTrackValue() = 0;
