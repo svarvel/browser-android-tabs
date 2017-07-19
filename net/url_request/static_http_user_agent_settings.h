@@ -28,7 +28,7 @@ class NET_EXPORT StaticHttpUserAgentSettings : public HttpUserAgentSettings {
 
   // HttpUserAgentSettings implementation
   std::string GetAcceptLanguage() const override;
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& strHost) const override;
 
  private:
   std::string accept_language_;

@@ -116,7 +116,7 @@ void MediaPlayerRenderer::CreateMediaPlayer(
     return;
   }
 
-  const std::string user_agent = GetContentClient()->browser()->GetUserAgent();
+  const std::string user_agent = GetContentClient()->browser()->GetUserAgent(url_params.first_party_for_cookies.host());
 
   // Never allow credentials on KitKat. See https://crbug.com/936566.
   bool allow_credentials = url_params.allow_credentials &&

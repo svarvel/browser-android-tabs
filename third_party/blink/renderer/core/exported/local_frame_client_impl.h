@@ -174,7 +174,7 @@ class LocalFrameClientImpl final : public LocalFrameClient {
   void UpdateDocumentLoader(
       DocumentLoader* document_loader,
       std::unique_ptr<WebDocumentLoader::ExtraData> extra_data) override;
-  WTF::String UserAgent() override;
+  WTF::String UserAgent(const std::string& strUrl) override;
   blink::UserAgentMetadata UserAgentMetadata() override;
   WTF::String DoNotTrackValue() override;
   void TransitionToCommittedForNewPage() override;

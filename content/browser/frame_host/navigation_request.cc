@@ -308,6 +308,20 @@ void AddAdditionalRequestHeaders(net::HttpRequestHeaders* headers,
     origin = frame_tree_node->frame_tree()->root()->current_origin();
   }
 
+  headers->SetHeaderIfMissing(net::HttpRequestHeaders::kUserAgent,
+                              user_agent_override.empty()
+                                  ? GetContentClient()->GetUserAgent(origin.Serialize())
+                                  : user_agent_override);
+
+  // Check whether DevTools wants to override user agent for this request
+  // after setting the default user agent.
+  std::string devtools_user_agent =
+      RenderFrameDevToolsAgentHost::UserAgentOverride(frame_tree_node);
+  if (!devtools_user_agent.empty()) {
+    headers->SetHeader(net::HttpRequestHeaders::kUserAgent,
+                       devtools_user_agent);
+  }
+
   headers->SetHeader(net::HttpRequestHeaders::kOrigin, origin.Serialize());
 }
 

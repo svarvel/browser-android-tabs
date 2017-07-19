@@ -1359,8 +1359,8 @@ void FrameLoader::RestoreScrollPositionAndViewState(
   GetDocumentLoader()->GetInitialScrollState().did_restore_from_history = true;
 }
 
-String FrameLoader::UserAgent() const {
-  String user_agent = Client()->UserAgent();
+String FrameLoader::UserAgent(const std::string& strHost) const {
+  String user_agent = Client()->UserAgent(strHost);
   probe::ApplyUserAgentOverride(probe::ToCoreProbeSink(frame_->GetDocument()),
                                 &user_agent);
   return user_agent;

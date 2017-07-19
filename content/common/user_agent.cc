@@ -20,6 +20,10 @@
 #include <sys/utsname.h>
 #endif
 
+#define DUCK_DUCK_GO "duckduckgo.com"
+#define CHROME_UA "Chrome"
+#define BRAVE_UA "Brave Chrome"
+
 namespace content {
 
 namespace {
@@ -134,23 +138,24 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
   return os_cpu;
 }
 
-std::string BuildUserAgentFromProduct(const std::string& product) {
+std::string BuildUserAgentFromProduct(const std::string& product, const std::string& strHost) {
   std::string os_info;
   base::StringAppendF(&os_info, "%s%s", GetUserAgentPlatform().c_str(),
                       BuildOSCpuInfo(false).c_str());
-  return BuildUserAgentFromOSAndProduct(os_info, product);
+  return BuildUserAgentFromOSAndProduct(os_info, product, strHost);
 }
 
 #if defined(OS_ANDROID)
 std::string BuildUserAgentFromProductAndExtraOSInfo(
     const std::string& product,
     const std::string& extra_os_info,
-    bool include_android_build_number) {
+    bool include_android_build_number,
+    const std::string& strHost) {
   std::string os_info;
   base::StringAppendF(&os_info, "%s%s%s", GetUserAgentPlatform().c_str(),
                       BuildOSCpuInfo(include_android_build_number).c_str(),
                       extra_os_info.c_str());
-  return BuildUserAgentFromOSAndProduct(os_info, product);
+  return BuildUserAgentFromOSAndProduct(os_info, product, strHost);
 }
 
 std::string GetAndroidOSInfo(bool include_android_build_number) {
@@ -181,7 +186,16 @@ std::string GetAndroidOSInfo(bool include_android_build_number) {
 #endif  // defined(OS_ANDROID)
 
 std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
-                                           const std::string& product) {
+                                           const std::string& product,
+                                           const std::string& strHost) {
+
+  std::string productToPass = product;
+  if (strHost == DUCK_DUCK_GO) {
+     int iPos = productToPass.find(CHROME_UA);
+     if (iPos != -1) {
+         productToPass.replace(iPos, strlen(CHROME_UA), BRAVE_UA);
+     }
+  }
   // Derived from Safari's UA string.
   // This is done to expose our product name in a manner that is maximally
   // compatible with Safari, we hope!!
@@ -192,9 +206,10 @@ std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
       os_info.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR,
-      product.c_str(),
+      productToPass.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR);
+
   return user_agent;
 }
 

@@ -818,14 +818,19 @@ void LocalFrameClientImpl::UpdateDocumentLoader(
       ->SetExtraData(std::move(extra_data));
 }
 
-String LocalFrameClientImpl::UserAgent() {
+String LocalFrameClientImpl::UserAgent(const std::string& strUrl) {
   WebString override =
       web_frame_->Client() ? web_frame_->Client()->UserAgentOverride() : "";
   if (!override.IsEmpty())
     return override;
 
-  if (user_agent_.IsEmpty())
-    user_agent_ = Platform::Current()->UserAgent();
+  if (user_agent_.IsEmpty() || (previous_url_ != strUrl && !strUrl.empty()))
+    user_agent_ = Platform::Current()->UserAgent(strUrl);
+
+  if (!strUrl.empty()) {
+    previous_url_ = strUrl;
+  }
+
   return user_agent_;
 }
 
