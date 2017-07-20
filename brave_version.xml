@@ -1,3 +1,8 @@
+<release version="1.0.27">
+    <change>Re-added device branded home button on the URL bar, if present, can be hidden (Settings->Home page).</change>
+    <change>Added Brave User-Agent for duckduckgo.com.</change>
+    <change>Improved LastPass integration.</change>
+</release>
 <release version="1.0.26">
     <change>Added bookmarks sync functionality (Settings->Sync).</change>
     <change>Re-added device branded home button on the URL bar, if present, can be hidden (Settings->Home page).</change>
