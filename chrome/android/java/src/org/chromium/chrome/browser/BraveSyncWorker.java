@@ -1722,6 +1722,7 @@ public class BraveSyncWorker {
                 parentBookmarkId = new BookmarkId(mParentLocalId, BookmarkType.NORMAL);
             } else {
                 parentBookmarkId = mDefaultFolder;
+                assert mDefaultFolder == null;
             }
             BookmarkId bookmarkId = new BookmarkId(mBookmarkId, BookmarkType.NORMAL);
             if (null != mNewBookmarkModel && null != bookmarkId) {
@@ -1915,10 +1916,10 @@ public class BraveSyncWorker {
                 mSyncIsReady.mDeleteSiteSettingsReady = true;
                 break;
               case "sync-ready":
-                mSyncIsReady.mReady = true;
                 if (null == mDefaultFolder) {
                     GetDefaultFolderId();
                 }
+                mSyncIsReady.mReady = true;
                 FetchSyncRecords("");
                 break;
               case "get-existing-objects":
