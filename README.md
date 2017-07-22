@@ -50,6 +50,10 @@ And to deploy it to your Android device:
 
    `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
 
+### Known Limitations
+
+- The browser will not compile in an encrypted file system.
+
 ## Debugging
 
 - See [https://www.chromium.org/developers/how-tos/debugging-on-android](https://www.chromium.org/developers/how-tos/debugging-on-android) for the general debug process.
