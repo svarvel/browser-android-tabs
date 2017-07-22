@@ -1,48 +1,57 @@
 # Brave Android Browser
 
-## Get the code
+## Building the Browser
 
-- check out and install the [depot_tools package](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up).
-- create browser-android-tabs dir
+### System Requirements
 
-  `mkdir browser-android-tabs`
+- Any Linux Version
+- [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab)
+- [ninja](https://ninja-build.org/)
 
-- clone the repository to src folder:
+### Preparing the Build Environment
 
-  `git clone https://github.com/brave/browser-android-tabs.git src`
-  
-## Configure your build (You can only use a Linux build machine for Android builds)
+1. Clone Chromium's depot_tools repository:
 
-- you have to install [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab). We use it for sync functionality.
+   `git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git`
 
-- run script and it will download all third-parties. You will be asked for some interaction during that process. Follow that link when you asked to create a gn file [gn file for debug](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug)
+2. Add the absolute path of the cloned directory to the end of your PATH variable (You may want to put this in ~/.bashrc or ~/.zshrc.). Assuming you cloned depot_tools to /path/to/depot_tools:
 
-  `sh scripts/getThirdParties.js`
-  
-## Build the full browser in debug mode
+   `export PATH=$PATH:/path/to/depot_tools`
 
-- build browser:
+3. Create a browser-android-tabs parent directory:
 
-  `ninja -C out/Default chrome_public_apk`
-  
-  If you have an error that it could not find the build.ninja file follow those steps:
-    - run `gn args out/Default` manually and fill it using that link [gn file for debug](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug)
-    - start `ninja -C out/Default chrome_public_apk` again.
-  
-- deploy it to your Android device:
+   `mkdir browser-android-tabs`
 
-  `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
-  
-## Build the full browser in release mode
+4. Switch to the directory you just created:
 
-- follow the link [Make release builds](https://github.com/brave/browser-android-tabs/wiki/Make-release-builds)
+   `cd browser-android-tabs`
+
+5. Clone the repository to the src subdirectory:
+
+   `git clone https://github.com/brave/browser-android-tabs.git src`
+
+6. Switch to the directory you just cloned:
+
+   `cd src`
+
+7. Execute the scripts/getThirdParties.js script:
+
+   `sh scripts/getThirdParties.js`
+
+8. Enter information as requested by the script. When asked to create a file for arguments, use [this gn file](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug).
+
+### Making the Build
+
+From the browser-android-tabs/src directory, execute the following:
+
+   `ninja -C out/Default chrome_public_apk`
+
+And to deploy it to your Android device:
+
+   `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
 
 ## Debugging
 
-- follow that [link](https://www.chromium.org/developers/how-tos/debugging-on-android) for the general debug process;
+- See [https://www.chromium.org/developers/how-tos/debugging-on-android](https://www.chromium.org/developers/how-tos/debugging-on-android) for the general debug process.
 
-- follow that [link](https://www.chromium.org/developers/android-eclipse-dev) to configure Eclipse IDE.
-
-## Android version
-
-You should have at least Android 4.1(Jelly Bean) to run Brave. Min SDK version is 16.
+- See [https://www.chromium.org/developers/android-eclipse-dev](https://www.chromium.org/developers/android-eclipse-dev) to configure the Eclipse IDE.
