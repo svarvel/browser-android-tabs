@@ -31,6 +31,9 @@ import org.chromium.chrome.browser.tabmodel.TabModelSelectorTabObserver;
 public class ShieldsConfig {
 
     private static final String PREF_AD_BLOCK = "ad_block";
+    private static final String PREF_TRACKERS_BLOCKED_COUNT = "trackers_blocked_count";
+    private static final String PREF_ADS_BLOCKED_COUNT = "ads_blocked_count";
+    private static final String PREF_HTTPS_UPGRADES_COUNT = "https_upgrades_count";
     private static final String PREF_HTTPSE = "httpse";
     private static final String PREF_TRACKING_PROTECTION = "tracking_protection";
     private static final String PREF_FINGERPRINTING_PROTECTION = "fingerprinting_protection";
@@ -464,12 +467,24 @@ public class ShieldsConfig {
     }
 
     @CalledByNative
-    public void setBlockedCountInfo(String url, int adsAndTrackers, int httpsUpgrades,
+    public void setBlockedCountInfo(String url, int trackersBlocked, int adsBlocked, int httpsUpgrades,
           int scriptsBlocked, int fingerprintingBlocked) {
+      updateBraveStats(trackersBlocked, adsBlocked, httpsUpgrades);
       if (null != mTabModelSelectorTabObserver) {
-          mTabModelSelectorTabObserver.onBraveShieldsCountUpdate(url, adsAndTrackers, httpsUpgrades,
+          mTabModelSelectorTabObserver.onBraveShieldsCountUpdate(url, trackersBlocked + adsBlocked, httpsUpgrades,
               scriptsBlocked, fingerprintingBlocked);
       }
+    }
+
+    private void updateBraveStats(int trackersBlocked, int adsBlocked, int httpsUpgrades) {
+        long trackersBlockedCount = mSharedPreferences.getLong(PREF_TRACKERS_BLOCKED_COUNT, 0) + trackersBlocked;
+        long adsBlockedCount = mSharedPreferences.getLong(PREF_ADS_BLOCKED_COUNT, 0) + adsBlocked;
+        long httpsUpgradesCount = mSharedPreferences.getLong(PREF_HTTPS_UPGRADES_COUNT, 0) + httpsUpgrades;
+        SharedPreferences.Editor sharedPreferencesEditor = mSharedPreferences.edit();
+        sharedPreferencesEditor.putLong(PREF_TRACKERS_BLOCKED_COUNT, trackersBlockedCount);
+        sharedPreferencesEditor.putLong(PREF_ADS_BLOCKED_COUNT, adsBlockedCount);
+        sharedPreferencesEditor.putLong(PREF_HTTPS_UPGRADES_COUNT, httpsUpgradesCount);
+        sharedPreferencesEditor.apply();
     }
 
     private native void nativeInit();
