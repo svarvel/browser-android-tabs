@@ -368,6 +368,12 @@ Still reading?
     <ignore regexp="android_webview/tools/system_webview_shell/apk/res/layout/activity_webview_browser.xml"/>
     <ignore regexp="chrome/android/java/res/layout/data_usage_breakdown.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_sync_layout.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_3rd_party_cookies_blocked_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_ads_tracking_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_fingerprints_blocked_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_https_upgrade_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_scripts_blocked_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_switcher.xml"/>
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="tools/android/kerberos/SpnegoAuthenticator/res/layout/activity_account_authenticator.xml"/>
   </issue>
