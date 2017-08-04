@@ -42,13 +42,47 @@
 
 ### Making the Build
 
-From the browser-android-tabs/src directory, execute the following:
+#### Debug
 
-   `ninja -C out/Default chrome_public_apk`
+   From the browser-android-tabs/src directory, execute the following:
 
-And to deploy it to your Android device:
+      `ninja -C out/Default chrome_public_apk`
 
-   `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
+   And to deploy it to your Android device:
+
+      `build/android/adb_install_apk.py out/Default/apks/Brave.apk`
+
+#### Release (arm)
+
+   Create configuration in new folder:
+
+      `gn args out/DefaultR`
+    
+   Set [these settings](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-arm-release) in `args.gn` file.
+
+   From the browser-android-tabs/src directory, execute the following:
+
+      `ninja -C out/DefaultR chrome_public_apk`
+
+   And to deploy it to your Android device:
+
+      `build/android/adb_install_apk.py out/DefaultR/apks/Brave.apk`
+
+#### Release (x86)
+
+   Create configuration in new folder:
+
+      `gn args out/Defaultx86`
+    
+   Set [these settings](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-x86-release) in `args.gn` file.
+
+   From the browser-android-tabs/src directory, execute the following:
+
+      `ninja -C out/Defaultx86 chrome_public_apk`
+
+   And to deploy it to your Android device:
+
+      `build/android/adb_install_apk.py out/Defaultx86/apks/Brave.apk`
 
 ### Known Limitations
 
