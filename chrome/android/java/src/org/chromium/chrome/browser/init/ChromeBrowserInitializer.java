@@ -76,7 +76,6 @@ public class ChromeBrowserInitializer {
     private boolean mNativeInitializationComplete;
     private boolean mNetworkChangeNotifierInitializationComplete;
 
-    private Context mContext;
     private boolean mAdBlockInitCalled = false;
     private boolean mUpdateStatsCalled = false;
 
@@ -118,7 +117,6 @@ public class ChromeBrowserInitializer {
     }
 
     private ChromeBrowserInitializer() {
-        mContext = ContextUtils.getApplicationContext();
         mApplication = (ChromeApplication) ContextUtils.getApplicationContext();
     }
 
@@ -150,7 +148,7 @@ public class ChromeBrowserInitializer {
     class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
         protected Long doInBackground(Void... params) {
             try {
-                StatsUpdater.UpdateStats(mContext);
+                StatsUpdater.UpdateStats(mApplication.getApplicationContext());
             }
             catch(Exception exc) {
                 // Just ignore it if we cannot update
@@ -178,13 +176,13 @@ public class ChromeBrowserInitializer {
     private void DownloadTrackingProtectionData() {
         String verNumber = ADBlockUtils.getDataVerNumber(
             ADBlockUtils.TRACKING_PROTECTION_URL, false);
-        ADBlockUtils.readData(mContext,
+        ADBlockUtils.readData(mApplication.getApplicationContext(),
             ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
             ADBlockUtils.TRACKING_PROTECTION_URL,
             ADBlockUtils.ETAG_PREPEND_TP, verNumber,
             ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false);
 
-        ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
+        ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
             verNumber, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false);
     }
 
@@ -192,13 +190,13 @@ public class ChromeBrowserInitializer {
     private void DownloadAdBlockData() {
         String verNumber = ADBlockUtils.getDataVerNumber(
             ADBlockUtils.ADBLOCK_URL, false);
-        ADBlockUtils.readData(mContext,
+        ADBlockUtils.readData(mApplication.getApplicationContext(),
             ADBlockUtils.ADBLOCK_LOCALFILENAME,
             ADBlockUtils.ADBLOCK_URL,
             ADBlockUtils.ETAG_PREPEND_ADBLOCK, verNumber,
             ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false);
 
-        ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.ADBLOCK_LOCALFILENAME,
+        ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.ADBLOCK_LOCALFILENAME,
             verNumber, ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false);
     }
 
@@ -207,12 +205,12 @@ public class ChromeBrowserInitializer {
         String verNumber = ADBlockUtils.getDataVerNumber(
             ADBlockUtils.ADBLOCK_REGIONAL_URL, true);
         final String deviceLanguage = Locale.getDefault().getLanguage();
-        List<String> files = ADBlockUtils.readRegionalABData(mContext,
+        List<String> files = ADBlockUtils.readRegionalABData(mApplication.getApplicationContext(),
             ADBlockUtils.ETAG_PREPEND_REGIONAL_ADBLOCK, verNumber, deviceLanguage);
         if (null != files) {
             boolean changePreference = true;
             for (int i = 0; i < files.size(); i ++) {
-                if (!ADBlockUtils.CreateDownloadedFile(mContext, files.get(i) + ".dat",
+                if (!ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), files.get(i) + ".dat",
                     verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
                         changePreference = false;
                         break;
@@ -240,13 +238,13 @@ public class ChromeBrowserInitializer {
     class DownloadHTTPSDataAsyncTask extends AsyncTask<Void,Void,Long> {
         protected Long doInBackground(Void... params) {
             // Remove old sqlite files. We use leveldb now, which much faster
-            ADBlockUtils.removeOldVersionFiles(mContext, ADBlockUtils.HTTPS_LOCALFILENAME);
-            ADBlockUtils.removeOldVersionFiles(mContext, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED);
+            ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME);
+            ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED);
             //
 
             String verNumber = ADBlockUtils.getDataVerNumber(
                 ADBlockUtils.HTTPS_URL_NEW, false);
-            if (ADBlockUtils.readData(mContext,
+            if (ADBlockUtils.readData(mApplication.getApplicationContext(),
                   ADBlockUtils.HTTPS_LOCALFILENAME_NEW,
                   ADBlockUtils.HTTPS_URL_NEW,
                   ADBlockUtils.ETAG_PREPEND_HTTPS, verNumber,
@@ -262,11 +260,11 @@ public class ChromeBrowserInitializer {
                 //
 
                 if (unzipped) {
-                    ADBlockUtils.CreateDownloadedFile(mContext, ADBlockUtils.HTTPS_LEVELDB_FOLDER,
+                    ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LEVELDB_FOLDER,
                         verNumber, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, false);
                 } else {
-                    ADBlockUtils.removeOldVersionFiles(mContext, ADBlockUtils.HTTPS_LOCALFILENAME_NEW);
-                    ADBlockUtils.removeOldVersionFiles(mContext, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW);
+                    ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_NEW);
+                    ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW);
                 }
             }
 
