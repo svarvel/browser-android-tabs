@@ -499,10 +499,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               .setRequestedFps(24.0f);
 
       // make sure that auto focus is an available option
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-          builder = builder.setFocusMode(
-                  autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null);
-      }
+      builder = builder.setFocusMode(
+              autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null);
 
       mCameraSource = builder
               .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)

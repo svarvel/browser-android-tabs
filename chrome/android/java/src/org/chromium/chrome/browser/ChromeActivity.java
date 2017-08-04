@@ -2700,6 +2700,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     @Deprecated
     public DiscardableReferencePool getReferencePool() {
         return mReferencePool;
+    }
 
     /**
      * Updates Bravery Panel counts
