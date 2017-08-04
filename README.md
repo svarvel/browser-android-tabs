@@ -64,9 +64,7 @@
 
       `ninja -C out/DefaultR chrome_public_apk`
 
-   And to deploy it to your Android device:
-
-      `build/android/adb_install_apk.py out/DefaultR/apks/Brave.apk`
+   Sign apk using [these steps](https://github.com/brave/browser-android-tabs/wiki/Sign-in-an-apk).
 
 #### Release (x86)
 
@@ -80,9 +78,7 @@
 
       `ninja -C out/Defaultx86 chrome_public_apk`
 
-   And to deploy it to your Android device:
-
-      `build/android/adb_install_apk.py out/Defaultx86/apks/Brave.apk`
+   Sign apk using [these steps](https://github.com/brave/browser-android-tabs/wiki/Sign-in-an-apk).
 
 ### Known Limitations
 
