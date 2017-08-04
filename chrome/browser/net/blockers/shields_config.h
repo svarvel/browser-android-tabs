@@ -17,7 +17,7 @@ public:
     ~ShieldsConfig();
 
     std::string getHostSettings(const std::string& host);
-    void setBlockedCountInfo(const std::string& url, int adsAndTrackers, int httpsUpgrades,
+    void setBlockedCountInfo(const std::string& url, int trackersBlocked, int adsBlocked, int httpsUpgrades,
             int scriptsBlocked, int fingerprintingBlocked);
 
     static ShieldsConfig* getShieldsConfig();
