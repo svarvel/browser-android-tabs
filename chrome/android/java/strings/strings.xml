@@ -47,4 +47,13 @@
     <string name="reset_sync">Reset Sync...</string>
     <string name="resetting_sync">Are you sure you want to reset this device Sync settings?</string>
 
+    <string name="brave_stats_text_trackers">Trackers
+Blocked</string>
+    <string name="brave_stats_text_ads">Ads
+Blocked</string>
+    <string name="brave_stats_text_https">HTTPS
+Upgrades</string>
+    <string name="brave_stats_text_time">Est. Time
+Saved</string>
+
 </resources>
