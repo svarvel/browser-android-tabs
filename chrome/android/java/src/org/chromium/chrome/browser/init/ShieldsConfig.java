@@ -114,6 +114,49 @@ public class ShieldsConfig {
       return settings;
     }
 
+    private String composeSettings(boolean isTopShieldsEnabled, boolean blockAdsAndTracking,
+    boolean isHTTPSEverywhereEnabled, boolean isJavaScriptEnabled,
+    boolean block3rdPartyCookies, boolean blockFingerprints) {
+      String settings = "";
+      if (isTopShieldsEnabled) {
+        settings = settings + "1,";
+      }
+      else {
+        settings = settings + "0,";
+      }
+      if (blockAdsAndTracking) {
+        settings = settings + "1,";
+      }
+      else {
+        settings = settings + "0,";
+      }
+      if (isHTTPSEverywhereEnabled) {
+        settings = settings + "1,";
+      }
+      else {
+        settings = settings + "0,";
+      }
+      if (isJavaScriptEnabled) {
+        settings = settings + "1,";
+      }
+      else {
+        settings = settings + "0,";
+      }
+      if (block3rdPartyCookies) {
+        settings = settings + "1,";
+      }
+      else {
+        settings = settings + "0,";
+      }
+      if (blockFingerprints) {
+        settings = settings + "1";
+      }
+      else {
+        settings = settings + "0";
+      }
+      return settings;
+    }
+
     public void setTopHost(String host, boolean enabled) {
         if (null != host && host.startsWith("www.")) {
             host = host.substring("www.".length());
@@ -129,7 +172,9 @@ public class ShieldsConfig {
                 }
             } else {
                 if (!enabled) {
-                    settings = "0,1,1,0,1,0";
+                    settings = composeSettings(false, blockAdsAndTracking(host),
+                    isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                    block3rdPartyCookies(host), blockFingerprints(host));
                 } else {
                     settings = ALL_SHIELDS_DEFAULT_MASK;
                 }
@@ -158,7 +203,9 @@ public class ShieldsConfig {
                 }
             } else {
                 if (!enabled) {
-                    settings = "1,0,1,0,1,0";
+                    settings = composeSettings(isTopShieldsEnabled(host), false,
+                    isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                    block3rdPartyCookies(host), blockFingerprints(host));
                 } else {
                     settings = ALL_SHIELDS_DEFAULT_MASK;
                 }
@@ -187,7 +234,9 @@ public class ShieldsConfig {
                 }
             } else {
                 if (!enabled) {
-                    settings = "1,1,0,0,1,0";
+                    settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
+                    false, isJavaScriptEnabled(host),
+                    block3rdPartyCookies(host), blockFingerprints(host));
                 } else {
                     settings = ALL_SHIELDS_DEFAULT_MASK;
                 }
@@ -233,7 +282,9 @@ public class ShieldsConfig {
                     if (!block) {
                         settings = ALL_SHIELDS_DEFAULT_MASK;
                     } else {
-                        settings = "1,1,1,1,1,0";
+                        settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
+                        isHTTPSEverywhereEnabled(host), false,
+                        block3rdPartyCookies(host), blockFingerprints(host));
                     }
                 }
                 settings = correctSettings(settings);
@@ -261,7 +312,9 @@ public class ShieldsConfig {
                 }
             } else {
                 if (!enabled) {
-                    settings = "1,1,1,0,0,0";
+                    settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
+                    isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                    false, blockFingerprints(host));
                 } else {
                     settings = ALL_SHIELDS_DEFAULT_MASK;
                 }
@@ -392,7 +445,9 @@ public class ShieldsConfig {
                 if (!block) {
                     settings = ALL_SHIELDS_DEFAULT_MASK;
                 } else {
-                    settings = "1,1,1,0,1,1";
+                    settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
+                    isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                    block3rdPartyCookies(host), false);
                 }
             }
             settings = correctSettings(settings);
