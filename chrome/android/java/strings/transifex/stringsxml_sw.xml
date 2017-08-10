@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Mipangilio mahiri ya ngao ya tovuti</string>
+    <string name="brave_shields_down">Chini</string>
+    <string name="brave_shields_up">Juu</string>
+    <string name="brave_shields_ads_trackers">Matangazo na Vifuatiliaji Vimezuiwa</string>
+    <string name="brave_shields_https_upgrades">Uboreshaji wa HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Hati Zimezuiwa</string>
+    <string name="brave_shields_ads_tracking_switch">Zuia Matangazo na Ufuatiliaji</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Zuia Hati</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Wezesha/Lemaza Ngao Mahiri</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Zuia vidakuzi vya mhusika mwengine</string>
+
+    <string name="httpse_summary">Hufungua tovuti zinazoauniwa kwa kutumia HTTPS badala ya HTTP ikiwezekana</string>
+    <string name="tracking_protection_title">Kufuatilia Modi ya Ulinzi</string>
+    <string name="tracking_protection_summary">Huzuia rasilimali zinazokufuatilia kupakia</string>
+    <string name="ad_block_title">Kizuiaji cha Tangazo</string>
+    <string name="ad_block_summary">Huzuia matangazo kupakia</string>
+
+    <string name="fingerprinting_protection_title">Ulinzi wa Alama ya kidole</string>
+    <string name="fingerprinting_protection_summary">Huzuia kivinjari kuchapisha kutumia alama ya kidole</string>
+    <string name="brave_shields_fingerprints_blocked">Mbinu za Uchapishaji wa Alama ya kidole Zimezuiwa</string>
+    <string name="brave_shields_block_fingerprints_switch">Ulinzi wa Uchapishaji wa Alama ya Kidole</string>
+
+    <string name="ad_block_regional_title">Uzuiaji wa Tangazo la Kimaeneo</string>
+    <string name="ad_block_regional_summary">Huzuia matangazo ya kimaeneo kupakia</string>
+
+    <string name="ad_block_regional_summary_no_list">Hakuna orodha za ziada zinazopatikana kwa lugha yako</string>
+
+    <string name="menu_exit">Mlango wa kutoka</string>
+
+    <string name="brave_sync">Ulandanishaji wa Brave</string>
+    <string name="brave_sync_description">Landanisha data ya kivinjari kati ya vifaa vyako kwa usalama kutumia Ulandanishaji wa Brave, hakuna uundaji akaunti unaohitajika. Donoa hapa chini ili kuanza.</string>
+    <string name="brave_sync_have_existing_code">Nina msimbo wa ulandanishaji uliopo</string>
+    <string name="sync_settings_add_device_name_title">Ongeza jina la kifaa</string>
+    <string name="sync_settings_add_device_name_label">Ingiza jina la hiari la kifaa hiki</string>
+    <string name="sync_example_device_name">Kifaa cha Android</string>
+    <string name="brave_sync_qrcode">Landanisha kwenye kifaa</string>
+    <string name="brave_sync_qrcode_message">Kutumia kifaa kiliopo kilicholandanishwa kunafungua Mipangilio ya Brave na kuabiri kwenye \"Kifaa na Mipangilio\", donoa `+` ili kuongeza kifaa kipya na kutambua msimbo wa ulandanishaji.</string>
+    <string name="enter_code_words_sync">Ingiza maneno ya msimbo</string>
+    <string name="enter_code_words_below_sync">Ingiza maneno ya msimbo hapa chini.</string>
+    <string name="sync_device">Landanisha kifaa</string>
+    <string name="sync_device_failure">Ulandanishaji usingesanidiwa</string>
+    <string name="sync_device_success">Usanidi wa ulandanishaji umekamilika kwa mafanikio</string>
+    <string name="reset_sync">Weka upya Ulandanishaji...</string>
+    <string name="resetting_sync">Una uhakika unataka kuweka upya kifaa hiki na mipangilio ya Ulandanishaji?</string>
+
+    <string name="brave_stats_text_trackers">Vifuatiliaji
+Vimezuiwa</string>
+    <string name="brave_stats_text_ads">Matangazo
+Vimezuiwa</string>
+    <string name="brave_stats_text_https">Uboreshaji
+wa HTTPS</string>
+    </resources>

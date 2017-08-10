@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">การตั้งค่าเกราะป้องกัน Brave สำหรับ</string>
+    <string name="brave_shields_down">ลง</string>
+    <string name="brave_shields_up">ขึ้น</string>
+    <string name="brave_shields_ads_trackers">ป้องกันโฆษณาและการติดตามข้อมูลแล้ว</string>
+    <string name="brave_shields_https_upgrades">อัพเกรด HTTPS</string>
+    <string name="brave_shields_scripts_blocked">ป้องกันสคริปแล้ว</string>
+    <string name="brave_shields_ads_tracking_switch">ป้องกันโฆษณาและการติดตามข้อมูล</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS ทุกแห่ง</string>
+    <string name="brave_shields_blocks_scripts_switch">ป้องกันสคริป</string>
+    <string name="accessibility_toolbar_btn_brave_shields">เปิดใช้งาน/ปิดเกราะป้องกัน Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">ปิดกั้นคุกกี้จากบุคคลภายนอก</string>
+
+    <string name="httpse_summary">เปิดเว็บที่รองรับโดยใช้ HTTPS แทน HTTP หากเป็นไปได้</string>
+    <string name="tracking_protection_title">โหมดป้องกันการติดตาม</string>
+    <string name="tracking_protection_summary">ป้องกันการโหลดทรัพยากรที่จะติดตามคุณ</string>
+    <string name="ad_block_title">บล็อกโฆษณา</string>
+    <string name="ad_block_summary">ป้องกันการโหลดโฆษณา</string>
+
+    <string name="fingerprinting_protection_title">การป้องกันการพิมพ์ลายนิ้วมือ</string>
+    <string name="fingerprinting_protection_summary">ป้องกันมิให้เบราเซอร์พิมพ์ลายนิ้วมือ</string>
+    <string name="brave_shields_fingerprints_blocked">วิธีการพิมพ์ลายนิ้วมือที่ถูกบล็อก</string>
+    <string name="brave_shields_block_fingerprints_switch">การป้องกันการพิมพ์ลายนิ้วมือ</string>
+
+    <string name="ad_block_regional_title">การบล็อกโฆษณาในภูมิภาค</string>
+    <string name="ad_block_regional_summary">ป้องกันมิให้โหลดโฆษณาในภูมิภาค</string>
+
+    <string name="ad_block_regional_summary_no_list">ไม่มีรายการเพิ่มเติมสำหรับสถานที่ของคุณ</string>
+
+    <string name="menu_exit">ทางออก</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">ซิงค์ข้อมูลเบราเซอร์ระหว่างอุปกรณ์ของคุณอย่างปลอดภัยโดยใช้ Brave Sync โดยไม่จำเป็นต้องสร้างบัญชี แตะที่ด้านล่างเพื่อเริ่มต้น</string>
+    <string name="brave_sync_have_existing_code">ฉันมีรหัสการซิงค์แล้ว</string>
+    <string name="sync_settings_add_device_name_title">เพิ่มชื่ออุปกรณ์</string>
+    <string name="sync_settings_add_device_name_label">ป้อนชื่อเพิ่มเติมสำหรับอุปกรณ์นี้</string>
+    <string name="sync_example_device_name">อุปกรณ์ Android</string>
+    <string name="brave_sync_qrcode">ซิงค์ไปยังอุปกรณ์</string>
+    <string name="brave_sync_qrcode_message">การใช้อุปกรณ์ที่มีการซิงค์อยู่แล้วจะเปิดการตั้งค่า Brave และนำทางไปยัง "การตั้งค่า &amp;อุปกรณ์" แตะ `+` เพื่อเพิ่มอุปกรณ์ใหม่และแสดงรหัสการซิงค์</string>
+    <string name="enter_code_words_sync">ป้อนคำรหัส</string>
+    <string name="enter_code_words_below_sync">ป้อนคำรหัสด้านล่าง</string>
+    <string name="sync_device">ซิงค์อุปกรณ์</string>
+    <string name="sync_device_failure">ไม่สามารถตั้งค่าการซิงค์ได้</string>
+    <string name="sync_device_success">การตั้งค่าการซิงค์เสร็จสมบูรณ์แล้ว</string>
+    <string name="reset_sync">รีเซ็ตซิงค์...</string>
+    <string name="resetting_sync">คุณแน่ใจหรือว่าต้องการรีเซ็ตการตั้งค่าการซิงค์ อุปกรณ์นี้?</string>
+
+    <string name="brave_stats_text_trackers">บล็อก
+ตัวติดตามแล้ว</string>
+    <string name="brave_stats_text_ads">บล็อก
+โฆษณาแล้ว</string>
+    <string name="brave_stats_text_https">อัพเกรด
+HTTPS</string>
+    <string name="brave_stats_text_time">บันทึกเวลา
+EST แล้ว</string>
+
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Definições de proteção do site de Brave para</string>
+    <string name="brave_shields_down">Para baixo</string>
+    <string name="brave_shields_up">Para cima</string>
+    <string name="brave_shields_ads_trackers">Anúncios e controladores bloqueados</string>
+    <string name="brave_shields_https_upgrades">Atualizações de HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Scripts bloqueados</string>
+    <string name="brave_shields_ads_tracking_switch">Bloquear anúncios e controlo</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Ativar/desativar proteções de Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloqueie cookies de terceiros</string>
+
+    <string name="httpse_summary">Sempre que possível abra sítios suportados que utilizam HTTPS em vez de HTTP</string>
+    <string name="tracking_protection_title">Modo Rastreamento Protegido</string>
+    <string name="tracking_protection_summary">Tenha o cuidado com fontes que  o rastreiam a partir de um carregamento</string>
+    <string name="ad_block_title">Bloqueador de Propagandas</string>
+    <string name="ad_block_summary">Elimine propagandas do carregamento</string>
+
+    <string name="fingerprinting_protection_title">Proteção de impressões digitais</string>
+    <string name="fingerprinting_protection_summary">Impede o browser a partir de impressões digitais</string>
+    <string name="brave_shields_fingerprints_blocked">Métodos de impressões digitais bloqueados</string>
+    <string name="brave_shields_block_fingerprints_switch">Proteção de impressões digitais</string>
+
+    <string name="ad_block_regional_title">Bloqueio de anúncio regional</string>
+    <string name="ad_block_regional_summary">Impede anúncios regionais de carregar</string>
+
+    <string name="ad_block_regional_summary_no_list">Sem listas adicionais disponíveis para o seu local</string>
+
+    <string name="menu_exit">Saída</string>
+
+    <string name="brave_sync">Sincronização Brave</string>
+    <string name="brave_sync_description">Sincronize os dados do navegador entre os seus dispositivos de forma segura utilizando a Brave Sync, não é necessário criar conta. Toque abaixo para começar. </string>
+    <string name="brave_sync_have_existing_code">Tenho um código de sincronização existente </string>
+    <string name="sync_settings_add_device_name_title"> Adicionar nome do dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Inserir um nome opcional para este dispositivo</string>
+    <string name="sync_example_device_name">Dispositivo Android </string>
+    <string name="brave_sync_qrcode">Sincronizar com o dispositivo </string>
+    <string name="brave_sync_qrcode_message">Ao utilizar o dispositivo sincronizado existente, abra as Configurações Brave e navegue até "Configurações do Dispositivo", toque `+` para adicionar um novo dispositivo e revelar o código de sincronização.</string>
+    <string name="enter_code_words_sync">Inserir código palavras </string>
+    <string name="enter_code_words_below_sync">Inserir código palavras abaixo. </string>
+    <string name="sync_device">Sincronizar dispositivo </string>
+    <string name="sync_device_failure">A sincronização não pôde ser configurada</string>
+    <string name="sync_device_success">A configuração da sincronização foi finalizada com sucesso</string>
+    <string name="reset_sync">Restaurar Sincronização...</string>
+    <string name="resetting_sync">Tem a certeza de que deseja redefinir as configurações de Sincronização deste dispositivo?</string>
+
+    <string name="brave_stats_text_trackers">Controladores
+bloqueados</string>
+    <string name="brave_stats_text_ads">Anúncios
+bloqueados</string>
+    <string name="brave_stats_text_https">Atualizações
+de HTTPS</string>
+    </resources>

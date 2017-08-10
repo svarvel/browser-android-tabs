@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">تنظیمات سپر سایت Brave برای</string>
+    <string name="brave_shields_down">پایین</string>
+    <string name="brave_shields_up">بالا</string>
+    <string name="brave_shields_ads_trackers">تبلیغات و ردیاب‌ها مسدود شدند</string>
+    <string name="brave_shields_https_upgrades">ارتقاهای HTTPS</string>
+    <string name="brave_shields_scripts_blocked">اسکریپت‌ها مسدود شدند</string>
+    <string name="brave_shields_ads_tracking_switch">مسدود کردن تبلیغات و ردیابی</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS در هر جایی</string>
+    <string name="brave_shields_blocks_scripts_switch">مسدود کردن اسکریپت‌ها</string>
+    <string name="accessibility_toolbar_btn_brave_shields">فعال‌سازی/غیرفعال‌سازی سپرهای Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">مسدود کردن کوکی‌های شخص ثالث</string>
+
+    <string name="httpse_summary">سایت‌های پشتیبانی شده را در صورت امکان با استفاده از HTTPS به جای HTTP باز می‌کند</string>
+    <string name="tracking_protection_title">حالت محافظت در برابر ردیابی</string>
+    <string name="tracking_protection_summary">بارگیری منابعی را مسدود می‌کند که شما را ردیابی می‌کنند</string>
+    <string name="ad_block_title">مسدود کردن تبلیغات</string>
+    <string name="ad_block_summary">مسدود کردن بارگیری تبلیغات</string>
+
+    <string name="fingerprinting_protection_title">محافظت در برابر ثبت اثر انگشت</string>
+    <string name="fingerprinting_protection_summary">مسدود کردن ثبت اثر انگشت توسط مرورگر</string>
+    <string name="brave_shields_fingerprints_blocked">روش‌های ثبت اثر انگشت مسدود شد</string>
+    <string name="brave_shields_block_fingerprints_switch">محافظت در برابر ثبت اثر انگشت</string>
+
+    <string name="ad_block_regional_title">مسدود کردن تبلیغات منطقه‌ای</string>
+    <string name="ad_block_regional_summary">مسدود کردن بارگیری تبلیغات منطقه‌ای</string>
+
+    <string name="ad_block_regional_summary_no_list">فهرست دیگری برای منطقه شما در دسترس نیست</string>
+
+    <string name="menu_exit">خروج</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">بدون نیاز به ایجاد حساب داده های مرورگر میان دستگاه های خود را به صورت ایمن با Brave Sync همگام سازی کنید. برای شروع پایین ضربه بزنید.</string>
+    <string name="brave_sync_have_existing_code">من در حال حاضر یک کد همگام سازی دارم</string>
+    <string name="sync_settings_add_device_name_title">نام دستگاه را اضافه کنید</string>
+    <string name="sync_settings_add_device_name_label">یک نام اختیاری برای این دستگاه وارد کنید</string>
+    <string name="sync_example_device_name">دستگاه اندروید</string>
+    <string name="brave_sync_qrcode">همگام سازی با دستگاه</string>
+    <string name="brave_sync_qrcode_message">با استفاده از دستگاه همگام سازی شده موجود تنظیمات Brave را باز کنید و به \"تنظیمات دستگاه\" بروید، روی \'+\' ضربه بزنید تا یک دستگاه جدید را اضافه کرده و کد همگام سازی را معلوم کنید.</string>
+    <string name="enter_code_words_sync">کلمات کد را وارد کنید</string>
+    <string name="enter_code_words_below_sync">کلمات کد را در پایین وارد کنید.</string>
+    <string name="sync_device">دستگاه را همگام سازی کنید</string>
+    <string name="sync_device_failure">همگام سازی تنظیم نشد</string>
+    <string name="sync_device_success">نصب همگام سازی با موفقیت به اتمام رسید</string>
+    <string name="reset_sync">بازنشانی همگام سازی...</string>
+    <string name="resetting_sync">آیا مطمئنید می خواهید تنظیمات همگام سازی این دستگاه را بازنشانی کنید؟</string>
+
+    </resources>

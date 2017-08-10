@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave网站屏蔽设置对象为</string>
+    <string name="brave_shields_down">向下</string>
+    <string name="brave_shields_up">向上</string>
+    <string name="brave_shields_ads_trackers">广告和跟踪器已阻止</string>
+    <string name="brave_shields_https_upgrades">HTTPS升级</string>
+    <string name="brave_shields_scripts_blocked">脚本已阻止</string>
+    <string name="brave_shields_ads_tracking_switch">屏蔽广告和跟踪</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS无处不在</string>
+    <string name="brave_shields_blocks_scripts_switch">阻止脚本</string>
+    <string name="accessibility_toolbar_btn_brave_shields">启用/禁用Brave盾牌</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">封鎖第三方 Cookie</string>
+
+    <string name="httpse_summary">如有可能，使用 HTTPS 而非 HTTP 開啟支援網站</string>
+    <string name="tracking_protection_title">追蹤保護模式</string>
+    <string name="tracking_protection_summary">防止讀取用於追蹤你的資源</string>
+    <string name="ad_block_title">阻擋廣告</string>
+    <string name="ad_block_summary">防止讀取廣告</string>
+
+    <string name="fingerprinting_protection_title">浏览指纹保护</string>
+    <string name="fingerprinting_protection_summary">阻止浏览器套取浏览指纹</string>
+    <string name="brave_shields_fingerprints_blocked">禁止浏览指纹套取</string>
+    <string name="brave_shields_block_fingerprints_switch">浏览指纹保护</string>
+
+    <string name="ad_block_regional_title">区域网络过滤</string>
+    <string name="ad_block_regional_summary">阻止区域广告加载</string>
+
+    <string name="ad_block_regional_summary_no_list">您的电脑区域没有更多的可用列表</string>
+
+    <string name="menu_exit">退出</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">使用 Brave Sync 在您的设备间安全同步浏览器数据，无需创建账户。点击下面开始。</string>
+    <string name="brave_sync_have_existing_code">我有现成的同步码</string>
+    <string name="sync_settings_add_device_name_title">添加设备名称</string>
+    <string name="sync_settings_add_device_name_label">为此设备输入可选名称</string>
+    <string name="sync_example_device_name">Android 设备</string>
+    <string name="brave_sync_qrcode">同步到设备</string>
+    <string name="brave_sync_qrcode_message">使用现有的同步设备，打开 Brave 设置，然后导航到“设备和设置”，点击“+”添加新的设备并显示同步码。</string>
+    <string name="enter_code_words_sync">输入密码词</string>
+    <string name="enter_code_words_below_sync">在下面输入密码词。</string>
+    <string name="sync_device">同步设备</string>
+    <string name="sync_device_failure">无法设置同步</string>
+    <string name="sync_device_success">同步设置完毕</string>
+    <string name="reset_sync">重置同步...</string>
+    <string name="resetting_sync">确定要重置此设备的同步设置吗？</string>
+
+    <string name="brave_stats_text_trackers">追蹤器
+已封鎖</string>
+    <string name="brave_stats_text_ads">廣告
+已封鎖</string>
+    <string name="brave_stats_text_https">HTTPS
+升级</string>
+    <string name="brave_stats_text_time">預計時間
+已儲存</string>
+
+</resources>
