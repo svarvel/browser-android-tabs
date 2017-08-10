@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave shield-indstillinger for</string>
+    <string name="brave_shields_down">Ned</string>
+    <string name="brave_shields_up">Op</string>
+    <string name="brave_shields_ads_trackers">Reklamer og sporing er blokeret</string>
+    <string name="brave_shields_https_upgrades">HTTPS-opgraderinger</string>
+    <string name="brave_shields_scripts_blocked">Skripts er blokeret</string>
+    <string name="brave_shields_ads_tracking_switch">Blokér reklamer og sporing</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokér skripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Deaktivér Brave Shields</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokér tredjeparts-cookies</string>
+
+    <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP når det er muligt</string>
+    <string name="tracking_protection_title">Sporingsbeskyttelse</string>
+    <string name="tracking_protection_summary">Forhindrer ressourcer, som sporer dig, i at blive indlæst</string>
+    <string name="ad_block_title">Reklameblokering</string>
+    <string name="ad_block_summary">Forhindrer reklamer i at loade</string>
+
+    <string name="fingerprinting_protection_title">Beskyttelse af fingeraftryk</string>
+    <string name="fingerprinting_protection_summary">Forhindrer browseren i at anvende fingeraftryk</string>
+    <string name="brave_shields_fingerprints_blocked">Metoder med brug af fingeraftryk er blokeret</string>
+    <string name="brave_shields_block_fingerprints_switch">Beskyttelse af fingeraftryk</string>
+
+    <string name="ad_block_regional_title">Regional reklameblokering</string>
+    <string name="ad_block_regional_summary">Forhindrer regionale reklamer i at blive indlæst</string>
+
+    <string name="ad_block_regional_summary_no_list">Der er ingen yderligere lister tilgængelig for dit område</string>
+
+    <string name="menu_exit">Afslut</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Data fra Sync browseren mellem dine enheder anvender det sikre Brave Sync, der er ikke nødvendigt at oprette en konto. Tryk her nededenfor, for at komme i gang.</string>
+    <string name="brave_sync_have_existing_code">Jeg har en eksisterende sync kode</string>
+    <string name="sync_settings_add_device_name_title">Tilføj enhedens navn</string>
+    <string name="sync_settings_add_device_name_label">Indtast et valgfrit navn til denne enhed</string>
+    <string name="sync_example_device_name">Android enhed</string>
+    <string name="brave_sync_qrcode">Sync til enhed</string>
+    <string name="brave_sync_qrcode_message">For at anvende den eksisterende, synkroniseret enhed åbnes Brave Settings. gå til "Device &amp;Settings", tryk `+`for at tilføje en ny enhed og se sync koden.</string>
+    <string name="enter_code_words_sync">Indtast kodeord</string>
+    <string name="enter_code_words_below_sync">Indtast nedestående kodeord.</string>
+    <string name="sync_device">Sync enhed</string>
+    <string name="sync_device_failure">Sync setup kunne ikke udføres</string>
+    <string name="sync_device_success">Sync setup er udført med succes</string>
+    <string name="reset_sync">Nulstil Sync...</string>
+    <string name="resetting_sync">Er du sikker på, at du ønsker at nulstille denne enhed Sync indstillinger?</string>
+
+    <string name="brave_stats_text_trackers">Tracking er
+blokeret</string>
+    <string name="brave_stats_text_ads">Reklamer er
+blokeret</string>
+    <string name="brave_stats_text_https">HTTPS
+Opgraderinger</string>
+    <string name="brave_stats_text_time">Forventet
+tid sparet</string>
+
+</resources>

@@ -21,7 +21,7 @@
             android:id="@+id/brave_shields_script_blocked_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/brave_shields_block_scripts_switch"
+            android:text="@string/brave_shields_blocks_scripts_switch"
             android:orientation="horizontal" />
     </LinearLayout>
 

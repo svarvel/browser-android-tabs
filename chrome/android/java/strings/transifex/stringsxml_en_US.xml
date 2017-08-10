@@ -1,4 +1,5 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="brave_settings_title">Brave site shield settings for</string>
     <string name="brave_shields_down">Down</string>
@@ -31,18 +32,13 @@
     <string name="menu_exit">Exit</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sync browser data between your devices
-securely using Brave Sync, no account
-creation required. Tap below to get started.</string>
+    <string name="brave_sync_description">Sync browser data between your devices securely using Brave Sync, no account creation required. Tap below to get started.</string>
     <string name="brave_sync_have_existing_code">I have an existing sync code</string>
     <string name="sync_settings_add_device_name_title">Add device name</string>
     <string name="sync_settings_add_device_name_label">Enter an optional name for this device</string>
     <string name="sync_example_device_name">Android device</string>
     <string name="brave_sync_qrcode">Sync to device</string>
-    <string name="brave_sync_qrcode_message">Using existing synced device open Brave
-Settings and navigate to "Device &amp;
-Settings", tap `+` to add a new device and
-reveal sync code.</string>
+    <string name="brave_sync_qrcode_message">Using existing synced device open Brave Settings and navigate to "Device &amp;Settings", tap `+` to add a new device and reveal sync code.</string>
     <string name="enter_code_words_sync">Enter code words</string>
     <string name="enter_code_words_below_sync">Enter code words below.</string>
     <string name="sync_device">Sync device</string>

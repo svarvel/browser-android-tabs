@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Nastavení ochranného štítu Brave pro stránku</string>
+    <string name="brave_shields_down">Dolů</string>
+    <string name="brave_shields_up">Nahoru</string>
+    <string name="brave_shields_ads_trackers">Reklamy a trackery zablokovány</string>
+    <string name="brave_shields_https_upgrades">HTTPS aktualizace</string>
+    <string name="brave_shields_scripts_blocked">Skripty zablokovány</string>
+    <string name="brave_shields_ads_tracking_switch">Blokovat reklamy a tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS všude</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokovat skripty</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Zapnout/Vypnout ochranné štíty Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokovat soubory cookie třetích stran</string>
+
+    <string name="httpse_summary">Otevírá podporované stránky s využitím protokolu HTTPS namísto HTTP, je-li to možné</string>
+    <string name="tracking_protection_title">Režim ochrany proti sledování</string>
+    <string name="tracking_protection_summary">Zamezuje načítání zdrojů, které vás sledují</string>
+    <string name="ad_block_title">Blokování reklam</string>
+    <string name="ad_block_summary">Zamezuje načítání reklam</string>
+
+    <string name="fingerprinting_protection_title">Ochrana proti otisku prohlížeče</string>
+    <string name="fingerprinting_protection_summary">Zamezuje otisku prohlížeče</string>
+    <string name="brave_shields_fingerprints_blocked">Metody otisku prohlížeče jsou blokované</string>
+    <string name="brave_shields_block_fingerprints_switch">Ochrana proti otisku prohlížeče</string>
+
+    <string name="ad_block_regional_title">Blokování regionálních reklam</string>
+    <string name="ad_block_regional_summary">Zamezuje načítání regionálních reklam</string>
+
+    <string name="ad_block_regional_summary_no_list">Žádné další seznamy nejsou dostupné pro vaše místní nastavení</string>
+
+    <string name="menu_exit">Výstup</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Synchronizujte bezpečně údaje prohlížečů mezi svými zařízeními pomocí Brave Sync. Není nutné vytvoření účtu. Začněte klepnutím níže.</string>
+    <string name="brave_sync_have_existing_code">Již mám synchronizační kód</string>
+    <string name="sync_settings_add_device_name_title">Přidat název zařízení</string>
+    <string name="sync_settings_add_device_name_label">Zadejte volitelný název pro toto zařízení</string>
+    <string name="sync_example_device_name">Zařízení Android</string>
+    <string name="brave_sync_qrcode">Synchronizovat se zařízením</string>
+    <string name="brave_sync_qrcode_message">V zařízení, které již je synchronizované, otevřete nastavení Brave a přejděte do nabídky „Zařízení &amp; nastavení“, klepnutím na tlačítko „+“` přidejte nové zařízení a zobrazte synchronizační kód.</string>
+    <string name="enter_code_words_sync">Zadejte kódová slova</string>
+    <string name="enter_code_words_below_sync">Níže zadejte kódová slova.</string>
+    <string name="sync_device">Synchronizovat zařízení</string>
+    <string name="sync_device_failure">Synchronizaci nelze nastavit</string>
+    <string name="sync_device_success">Nastavení synchronizace bylo úspěšně dokončeno</string>
+    <string name="reset_sync">Obnovit synchronizaci...</string>
+    <string name="resetting_sync">Opravdu chcete obnovit nastavení synchronizace tohoto zařízení?</string>
+
+    <string name="brave_stats_text_trackers">Trackery
+zablokovány</string>
+    <string name="brave_stats_text_ads">Reklamy
+zablokovány</string>
+    <string name="brave_stats_text_https">HTTPS
+aktualizace</string>
+    </resources>

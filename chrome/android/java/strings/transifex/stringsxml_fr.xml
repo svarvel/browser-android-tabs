@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title"> Paramètres pour le  site Brave Shield</string>
+    <string name="brave_shields_down">Vers le bas</string>
+    <string name="brave_shields_up">Vers le haut</string>
+    <string name="brave_shields_ads_trackers">Publicités et Trackers bloqués</string>
+    <string name="brave_shields_https_upgrades">Mises à jour HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Scripts bloqués</string>
+    <string name="brave_shields_ads_tracking_switch">Bloquer les publicités et le tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloquer les scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activer/Désactiver Brave Shields</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloquer les cookies tiers</string>
+
+    <string name="httpse_summary">Ouvre les sites compatibles en HTTPS plutôt qu'en HTTP, lorsque cela est possible</string>
+    <string name="tracking_protection_title">Mode de protection contre le tracking</string>
+    <string name="tracking_protection_summary">Empêche le chargement des ressources qui vous suivent à la trace</string>
+    <string name="ad_block_title">Bloqueur de publicités</string>
+    <string name="ad_block_summary">Empêche le chargement des publicités</string>
+
+    <string name="fingerprinting_protection_title">Protection par empreintes digitales</string>
+    <string name="fingerprinting_protection_summary">Empêche le navigateur de prendre des empreintes digitales</string>
+    <string name="brave_shields_fingerprints_blocked">Méthodes par empreintes digitales bloquées</string>
+    <string name="brave_shields_block_fingerprints_switch">Protection par empreintes digitales</string>
+
+    <string name="ad_block_regional_title">Pub régionale bloquée</string>
+    <string name="ad_block_regional_summary">Empêche les publicités régionales de se télécharger</string>
+
+    <string name="ad_block_regional_summary_no_list">Aucune liste supplémentaire n'est disponible pour votre localité</string>
+
+    <string name="menu_exit">Sortie</string>
+
+    <string name="brave_sync">Synchronisation Brave</string>
+    <string name="brave_sync_description">Synchronisez les données de navigation de vos appareils avec la synchronisation Brave, sans avoir à créer de compte. Cliquez ci-dessous pour commencer.</string>
+    <string name="brave_sync_have_existing_code">Je possède un code de synchronisation</string>
+    <string name="sync_settings_add_device_name_title">Ajouter un nom d'appareil</string>
+    <string name="sync_settings_add_device_name_label">Saisir un nom optionnel pour cet appareil</string>
+    <string name="sync_example_device_name">Appareil Android</string>
+    <string name="brave_sync_qrcode">Synchroniser avec l'appareil</string>
+    <string name="brave_sync_qrcode_message">Ouvrez les paramètres Brave à partir d'un appareil synchronisé existant et naviguez dans "Appareil &amp;Paramètres", sélectionnez `+` pour ajouter un nouvel appareil et afficher le code de synchronisation.</string>
+    <string name="enter_code_words_sync">Saisir un code</string>
+    <string name="enter_code_words_below_sync">Saisir le code ci-dessous.</string>
+    <string name="sync_device">Synchronisation de l'appareil</string>
+    <string name="sync_device_failure">Échec de la configuration de la synchronisation</string>
+    <string name="sync_device_success">La configuration de la synchronisation a été réalisée avec succès</string>
+    <string name="reset_sync">Réinitialiser la synchronisation...</string>
+    <string name="resetting_sync">Voulez-vous réinitialiser les paramètres de synchronisation de cet appareil\'s?</string>
+
+    <string name="brave_stats_text_trackers">Trackers
+bloqués</string>
+    <string name="brave_stats_text_ads">Publicités
+bloqués</string>
+    <string name="brave_stats_text_https">Mises à
+jour HTTPS</string>
+    <string name="brave_stats_text_time">Temps est.
+Enregistré</string>
+
+</resources>

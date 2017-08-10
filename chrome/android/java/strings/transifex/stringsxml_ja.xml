@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave サイトシールドの設定 対象:</string>
+    <string name="brave_shields_down">下へ</string>
+    <string name="brave_shields_up">上ヘ</string>
+    <string name="brave_shields_ads_trackers">広告と追跡トラッカーはブロックされました</string>
+    <string name="brave_shields_https_upgrades">HTTPS アップグレード</string>
+    <string name="brave_shields_scripts_blocked">スクリプトはブロックされました</string>
+    <string name="brave_shields_ads_tracking_switch">広告と追跡トラッカーをブロック</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPSをどこでも</string>
+    <string name="brave_shields_blocks_scripts_switch">スクリプトをブロック</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Braveシールドを有効化/無効化</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">サードパーティクッキーをブロック</string>
+
+    <string name="httpse_summary">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開く</string>
+    <string name="tracking_protection_title">追跡保護モード</string>
+    <string name="tracking_protection_summary">読み込む事であなたを追跡するリソースを防ぐ</string>
+    <string name="ad_block_title">広告ブロック</string>
+    <string name="ad_block_summary">広告の読み込みを防ぐ</string>
+
+    <string name="fingerprinting_protection_title">フィンガープリント保護</string>
+    <string name="fingerprinting_protection_summary">ブラウザーがフィンガープリントされるのを防ぐ。</string>
+    <string name="brave_shields_fingerprints_blocked">フィンガープリント法をブロック</string>
+    <string name="brave_shields_block_fingerprints_switch">フィンガープリント保護</string>
+
+    <string name="ad_block_regional_title">地域の広告ブロック</string>
+    <string name="ad_block_regional_summary">地域広告が読み込まれるのを防ぐ。</string>
+
+    <string name="ad_block_regional_summary_no_list">お住まいの地域では追加リストがご利用になれません。</string>
+
+    <string name="menu_exit">退出</string>
+
+    <string name="brave_sync">Brace Sync</string>
+    <string name="brave_sync_description">Brave Sync なら、端末間で安全にブラウザーデータの同期ができます。アカウント作成は不要です。下をタップして開始してください。</string>
+    <string name="brave_sync_have_existing_code">すでに同期コードを持っています</string>
+    <string name="sync_settings_add_device_name_title">端末名を追加</string>
+    <string name="sync_settings_add_device_name_label">この端末のオプション名を入力</string>
+    <string name="sync_example_device_name">Android 端末</string>
+    <string name="brave_sync_qrcode">端末に同期</string>
+    <string name="brave_sync_qrcode_message">同期されている既存の端末で、Brave 設定を開き、「端末と設定」から、「+」マークをタップして、同期コードを表示してください。</string>
+    <string name="enter_code_words_sync">コードの単語を入力</string>
+    <string name="enter_code_words_below_sync">下のコードの単語を入力してください</string>
+    <string name="sync_device">Sync 端末</string>
+    <string name="sync_device_failure">同期をセットアップできませでした</string>
+    <string name="sync_device_success">同期設定が完了しました</string>
+    <string name="reset_sync">同期のリセット中...</string>
+    <string name="resetting_sync">この端末の同期設定をリセットしてよろしいですか？</string>
+
+    <string name="brave_stats_text_trackers">トラッカー
+ブロックされました</string>
+    <string name="brave_stats_text_ads">広告
+ブロックされました</string>
+    <string name="brave_stats_text_https">HTTPS
+アップグレード</string>
+    <string name="brave_stats_text_time">東部標準時間
+セーブされました</string>
+
+</resources>

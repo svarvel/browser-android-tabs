@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Configuració d'escuts web de Brave per a </string>
+    <string name="brave_shields_down">Avall</string>
+    <string name="brave_shields_up">Amunt</string>
+    <string name="brave_shields_ads_trackers">Anuncis i seguiment bloquejats</string>
+    <string name="brave_shields_https_upgrades">Actualitzacions d'HTTPS </string>
+    <string name="brave_shields_scripts_blocked">Scripts bloquejats</string>
+    <string name="brave_shields_ads_tracking_switch">Bloqueja anuncis i seguiment</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS per tot</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloqueja scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activa/desactiva escuts Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloqueja les galetes de tercers</string>
+
+    <string name="httpse_summary">Obre els llocs compatibles amb HTTPS enlloc de HTTP, si és possible</string>
+    <string name="tracking_protection_title">Mode de protecció contra el seguiment</string>
+    <string name="tracking_protection_summary">Evita que es carreguin els recursos encarregats del seguiment</string>
+    <string name="ad_block_title">Bloqueig d'anuncis</string>
+    <string name="ad_block_summary">Evita que es carreguin els anuncis</string>
+
+    <string name="fingerprinting_protection_title">Protecció contra l'empremta digital</string>
+    <string name="fingerprinting_protection_summary">Evita que el navegador deixi empremta digital</string>
+    <string name="brave_shields_fingerprints_blocked">Mètodes d'empremta digital bloquejats</string>
+    <string name="brave_shields_block_fingerprints_switch">Protecció contra l'empremta digital</string>
+
+    <string name="ad_block_regional_title">Bloqueig d'anuncis regionals</string>
+    <string name="ad_block_regional_summary">Evita que es carreguin els anuncis regionals</string>
+
+    <string name="ad_block_regional_summary_no_list">No hi ha llistes addicionals per a aquest idioma</string>
+
+    <string name="menu_exit">Sortida</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sincronitzeu les dades dels navegadors dels vostres dispositius de forma segura amb Brave Sync; podeu fer-ho sense crear-vos un compte. Feu clic a sota per començar.</string>
+    <string name="brave_sync_have_existing_code">Tinc un codi de sincronització existent</string>
+    <string name="sync_settings_add_device_name_title">Afegiu el nom del dispositiu</string>
+    <string name="sync_settings_add_device_name_label">Introduïu un nom opcional per a aquest dispositiu</string>
+    <string name="sync_example_device_name">Dispositiu Android</string>
+    <string name="brave_sync_qrcode">Sincronitza al dispositiu</string>
+    <string name="brave_sync_qrcode_message">Des d'un dispositiu sincronitzat existent, obriu l'opció de configuració de Brave, aneu a «Dispositiu &amp;Configuració» i feu clic al símbol + per afegir un dispositiu nou i revelar el codi de sincronització.</string>
+    <string name="enter_code_words_sync">Introduïu les paraules del codi</string>
+    <string name="enter_code_words_below_sync">Introduïu les paraules del codi a sota.</string>
+    <string name="sync_device">Sincronitza el dispositiu</string>
+    <string name="sync_device_failure">No s\'ha pogut configurar la sincronització</string>
+    <string name="sync_device_success">S\'ha completat correctament la configuració</string>
+    <string name="reset_sync">Reinicialitza la sincronització...</string>
+    <string name="resetting_sync">Esteu segur/a que voleu restablir la configuració de sincronització d\'aquest dispositiu?</string>
+
+    <string name="brave_stats_text_trackers">Seguiment
+bloquejats</string>
+    <string name="brave_stats_text_ads">Anuncis
+bloquejats</string>
+    <string name="brave_stats_text_https">Actualitzacions
+d\'HTTPS</string>
+    </resources>

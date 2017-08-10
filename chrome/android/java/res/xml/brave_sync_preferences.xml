@@ -30,7 +30,7 @@
 
     <org.chromium.chrome.browser.preferences.ButtonPreference
         android:key="have_existing_sync_code_button"
-        android:title="@string/have_existing_sync_code" />-->
+        android:title="@string/brave_sync_have_existing_code" />-->
 
     <!--
     <org.chromium.chrome.browser.preferences.PreferenceCategoryWithButton

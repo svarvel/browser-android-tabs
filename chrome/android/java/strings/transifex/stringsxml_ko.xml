@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">다음 사이트에 대한 Brave shield 설정</string>
+    <string name="brave_shields_down">내리기</string>
+    <string name="brave_shields_up">올리기</string>
+    <string name="brave_shields_ads_trackers">차단된 광고 및 개인정보 추적</string>
+    <string name="brave_shields_https_upgrades">HTTPS 업그레이드</string>
+    <string name="brave_shields_scripts_blocked">차단된 스크립트</string>
+    <string name="brave_shields_ads_tracking_switch">광고 및 개인정보 추적 차단</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS 우선 사용</string>
+    <string name="brave_shields_blocks_scripts_switch">스크립트 차단</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Brave Shields 사용 / 사용않함</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">제삼자 쿠키 차단</string>
+
+    <string name="httpse_summary">가능 시 HTTP 대신 HTTPS를 사용하는 지원되는 사이트 열기</string>
+    <string name="tracking_protection_title">추적 보호 모드</string>
+    <string name="tracking_protection_summary">로딩부터 당신을 추적하는 리소스 방지</string>
+    <string name="ad_block_title">광고 차단</string>
+    <string name="ad_block_summary">로딩부터 광고 차단</string>
+
+    <string name="fingerprinting_protection_title">지문 보호</string>
+    <string name="fingerprinting_protection_summary">브라우저의 지문 채취 차단</string>
+    <string name="brave_shields_fingerprints_blocked">지문 채취 방법 차단</string>
+    <string name="brave_shields_block_fingerprints_switch">지문 보호</string>
+
+    <string name="ad_block_regional_title">지역 광고 차단</string>
+    <string name="ad_block_regional_summary">로딩 시 지역 광고 차단</string>
+
+    <string name="ad_block_regional_summary_no_list">기기에서 이용할 수 있는 추가 리스트 없음</string>
+
+    <string name="menu_exit">종료</string>
+
+    <string name="brave_sync">Brave 싱크</string>
+    <string name="brave_sync_description">Brave 싱크를 사용하여 장치 간의 브라우저 데이터를 안전하게 싱크합니다. 계정을 생성할 필요는 없습니다. 시작하려면 아래를 탭하십시오.</string>
+    <string name="brave_sync_have_existing_code">기존의 싱크 코드가 있습니다</string>
+    <string name="sync_settings_add_device_name_title">장치 이름을 추가합니다</string>
+    <string name="sync_settings_add_device_name_label">이 장치에 대한 별명을 입력합니다</string>
+    <string name="sync_example_device_name">Android 장치</string>
+    <string name="brave_sync_qrcode">장치로 싱크합니다</string>
+    <string name="brave_sync_qrcode_message">싱크된 장치를 사용하여 Brave 설정을 연 다음 "장치 &amp;설정"에서 '+'를 탭하여 새 장치를 추가하고 싱크 코드를 확인합니다.</string>
+    <string name="enter_code_words_sync">코드 문자를 입력합니다</string>
+    <string name="enter_code_words_below_sync">아래에 코드 문자를 입력합니다.</string>
+    <string name="sync_device">장치 싱크</string>
+    <string name="sync_device_failure">싱크를 설정할 수 없습니다</string>
+    <string name="sync_device_success">싱크 설정이 완료되었습니다</string>
+    <string name="reset_sync">싱크를 리셋합니다...</string>
+    <string name="resetting_sync">이 장치의 싱크 설정을 리셋합니까?</string>
+
+    <string name="brave_stats_text_trackers">추적기
+차단됨</string>
+    <string name="brave_stats_text_ads">광고
+차단됨</string>
+    <string name="brave_stats_text_https">HTTPS
+업그레이드</string>
+    <string name="brave_stats_text_time">예상 시간
+저장됨</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Налаштування захисту Brave для</string>
+    <string name="brave_shields_down">Вимк</string>
+    <string name="brave_shields_up">Увімк</string>
+    <string name="brave_shields_ads_trackers">Блоковано реклами та трекерів</string>
+    <string name="brave_shields_https_upgrades">HTTPS перенаправлень</string>
+    <string name="brave_shields_scripts_blocked">Блоковано скриптів</string>
+    <string name="brave_shields_ads_tracking_switch">Блокувати рекламу та трекінг</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS всюди</string>
+    <string name="brave_shields_blocks_scripts_switch">Блокувати скрипти</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк Brave захист</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Блокувати сторонні cookies</string>
+
+    <string name="httpse_summary">Відкриває сайти за допомогою HTTPS замість HTTP якщо це можливо</string>
+    <string name="tracking_protection_title">Режим захисту від трекінгу</string>
+    <string name="tracking_protection_summary">Блокує трекінг ресурси від завантаження</string>
+    <string name="ad_block_title">Блокує рекламу</string>
+    <string name="ad_block_summary">Блокує рекламу від завантаження</string>
+
+    <string name="fingerprinting_protection_title">Захист відбитка браузера</string>
+    <string name="fingerprinting_protection_summary">Захищає від відстеження відбитку браузера</string>
+    <string name="brave_shields_fingerprints_blocked">Блоковано відбитків</string>
+    <string name="brave_shields_block_fingerprints_switch">Захист відбитка браузера</string>
+
+    <string name="ad_block_regional_title">Блокує регіональну рекламу</string>
+    <string name="ad_block_regional_summary">Блокує регіональну рекламу від завантаження</string>
+
+    <string name="ad_block_regional_summary_no_list">Додаткових списків не знайдено для Вашої локалі</string>
+
+    <string name="menu_exit">Вихід</string>
+
+    <string name="brave_sync">Синхронізація Brave</string>
+    <string name="brave_sync_description">Безпечно синхронізуйте дані браузера між Вашими пристроями, використовуя синхронізацію Brave, без створення облікового запису. Натисніть знизу для початку.</string>
+    <string name="brave_sync_have_existing_code">У мене є код синхронізації</string>
+    <string name="sync_settings_add_device_name_title">Додавання імені пристрою</string>
+    <string name="sync_settings_add_device_name_label">Введіть ім\'я для даного пристрою</string>
+    <string name="sync_example_device_name">Android пристрій</string>
+    <string name="brave_sync_qrcode">Синхронізація до пристрою</string>
+    <string name="brave_sync_qrcode_message">Використовуючи існуючий синхронізований пристрій, відкрийте налаштування Brave і перейдіть в розділ Синхронізація, натисніть синхронізувати новий пристрій та отримайте код синхронізації</string>
+    <string name="enter_code_words_sync">Введення кодових слів</string>
+    <string name="enter_code_words_below_sync">Введіть кодові слова.</string>
+    <string name="sync_device">Синхронізація пристрою</string>
+    <string name="sync_device_failure">Синхронізація не може бути встановлена</string>
+    <string name="sync_device_success">Синхронізація встановлена успішно</string>
+    <string name="reset_sync">Скидання синхронізації...</string>
+    <string name="resetting_sync">Ви впевнені що хочете скинути синхронізацію для цього пристрою?</string>
+
+    <string name="brave_stats_text_trackers">Блоковано
+трекерів</string>
+    <string name="brave_stats_text_ads">Блоковано
+реклами</string>
+    <string name="brave_stats_text_https">HTTPS
+перенаправлень</string>
+    <string name="brave_stats_text_time">Збережено
+часу</string>
+
+</resources>

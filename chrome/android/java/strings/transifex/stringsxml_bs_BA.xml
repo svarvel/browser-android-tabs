@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Postavke štita za sajt Brave za</string>
+    <string name="brave_shields_down">Dolje</string>
+    <string name="brave_shields_up">Gore</string>
+    <string name="brave_shields_ads_trackers">Blokirani oglasi i programi za slijeđenje</string>
+    <string name="brave_shields_https_upgrades">HTTPS unapređenja</string>
+    <string name="brave_shields_scripts_blocked">Blokirane skripte</string>
+    <string name="brave_shields_ads_tracking_switch">Blokira oglase i slijeđenje</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS svuda</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokirati skripte</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Omogućiti/onemogućiti štitove Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokirati kolačiće trećih strana</string>
+
+    <string name="httpse_summary">Otvara podržane sajtove po mogućnosti uz pomoć HTTPS-a umjesto HTTP-a</string>
+    <string name="tracking_protection_title">Režim zaštite slijeđenja</string>
+    <string name="tracking_protection_summary">Sprečava učitavanje resursa koje vi slijedite</string>
+    <string name="ad_block_title">Bloker oglasa</string>
+    <string name="ad_block_summary">Sprečava učitavanje oglasa</string>
+
+    <string name="fingerprinting_protection_title">Zaštita na otisak prsta</string>
+    <string name="fingerprinting_protection_summary">Sprečava preglednik u uzimanju otiska prsta</string>
+    <string name="brave_shields_fingerprints_blocked">Blokirani metodi uzimanja otiska prsta</string>
+    <string name="brave_shields_block_fingerprints_switch">Zaštita na otisak prsta</string>
+
+    <string name="ad_block_regional_title">Regionalni bloker oglasa</string>
+    <string name="ad_block_regional_summary">Sprečava učitavanje regionalnih oglasa</string>
+
+    <string name="ad_block_regional_summary_no_list">Za Vašu lokaciju nema na raspolaganju dodatnih lista</string>
+
+    <string name="menu_exit">Izaći </string>
+
+    <string name="brave_sync">Brave sinhronizacija</string>
+    <string name="brave_sync_description">Podaci za sinhronizaciju iz preglednika između vaših uređaja uz pomoć Brave sinhronizacije, nije potrebno otvarati nalog.  Dotaknuti dolje za početak. </string>
+    <string name="brave_sync_have_existing_code">Ja imam postojeći sinhronizacijski kod</string>
+    <string name="sync_settings_add_device_name_title">Dodati naziv uređaja </string>
+    <string name="sync_settings_add_device_name_label">Unijeti opcioni naziv za ovaj uređaj </string>
+    <string name="sync_example_device_name">Uređaj Android</string>
+    <string name="brave_sync_qrcode">Sinhronizirati na uređaj </string>
+    <string name="brave_sync_qrcode_message">Uz pomoć postojećeg sinhroniziranog uređaja otvoriti Brave  postavke i preći na "Postavke&amp'uređaja", dotaknuti '+' za dodavanje novog uređaja i otkrivanje sinhronizacijskog koda. </string>
+    <string name="enter_code_words_sync">Unijeti kodne riječi </string>
+    <string name="enter_code_words_below_sync">Unijeti kodne riječi dolje. </string>
+    <string name="sync_device">Uređaj za sinhronizaciju </string>
+    <string name="sync_device_failure">Sinhronizacija se nije mogla uspostaviti </string>
+    <string name="sync_device_success">Uspostava sinhronizacije je uspješno obavljena</string>
+    <string name="reset_sync">Resetirati sinhronizaciju... </string>
+    </resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">إعدادات موقع درع Brave  ل</string>
+    <string name="brave_shields_down">أسفل</string>
+    <string name="brave_shields_up">فوق</string>
+    <string name="brave_shields_ads_trackers">حجب القتفون والإعلانات</string>
+    <string name="brave_shields_https_upgrades">تحديثات HTTPS</string>
+    <string name="brave_shields_scripts_blocked">حجب النصوص</string>
+    <string name="brave_shields_ads_tracking_switch">حظر الإعلانات والتتبع</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS في كل مكان</string>
+    <string name="brave_shields_blocks_scripts_switch">حظر النصوص</string>
+    <string name="accessibility_toolbar_btn_brave_shields">تفعيل/ تعطيل دروع Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">حجب ملفات تعريف الارتباط لطرف ثالث</string>
+
+    <string name="httpse_summary">يفتح المواقع المدعمة باستخدام HTTPS بدلا من HTTP إن أمكن</string>
+    <string name="tracking_protection_title">تتبع وضع الحماية</string>
+    <string name="tracking_protection_summary">يمنع الموارد التي تتبعها من التحميل</string>
+    <string name="ad_block_title">حجب الإعلانات</string>
+    <string name="ad_block_summary">يمنع تحميل الإعلانات</string>
+
+    <string name="fingerprinting_protection_title">حماية البصمة</string>
+    <string name="fingerprinting_protection_summary">يمنع المتصفح من التعرف على بصمتك الخاصة</string>
+    <string name="brave_shields_fingerprints_blocked">حظر وسائل الحصول على البصمة </string>
+    <string name="brave_shields_block_fingerprints_switch">حماية البصمة</string>
+
+    <string name="ad_block_regional_title">حظر الإعلانات المحلية</string>
+    <string name="ad_block_regional_summary">يمنع تحميل الإعلانات الإقليمية</string>
+
+    <string name="ad_block_regional_summary_no_list">لا توجد قوائم إضافية مُتاحة في موقعك</string>
+
+    <string name="menu_exit">ىخرج</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">قم بمزامنة بيانات المتصفح بين أجهزتك بصورة آمنه باستخدام Brave Sync، لا يتطلب إنشاء حساب. انقر أدناه للبدء.</string>
+    <string name="brave_sync_have_existing_code">يوجد لديّ رمز مزامنة حالي</string>
+    <string name="sync_settings_add_device_name_title">إضافة اسم جهاز</string>
+    <string name="sync_settings_add_device_name_label">أدخل اسمًا اختياريًا لهذا الجهاز</string>
+    <string name="sync_example_device_name">جهاز أندرويد</string>
+    <string name="brave_sync_qrcode">المزامنة مع الجهاز</string>
+    <string name="brave_sync_qrcode_message">باستخدام الجهاز المتزامن حاليًا، افتح إعدادات Brave وانتقل إلى "إعدادات&amp;الجهاز" وانقر على الرمز `+` لإضافة جهاز جديد وإظهار رمز المزامنة.</string>
+    <string name="enter_code_words_sync">أدخل كلمات الرمز</string>
+    <string name="enter_code_words_below_sync">أدخل كلمات الرمز أدناه.</string>
+    <string name="sync_device">مزامنة الجهاز</string>
+    <string name="sync_device_failure">تعذر إعداد المزامنة</string>
+    <string name="sync_device_success">أكتملت عملية إعداد المزامنة بنجاح</string>
+    <string name="reset_sync">إعادة تعيين المزامنة...</string>
+    <string name="resetting_sync">هل ترغب بالتأكيد في إعادة تعيين إعدادات مزامنة هذا الجهاز والتطبيقات؟</string>
+
+    <string name="brave_stats_text_trackers">تم حظر
+المتتبعات
+</string>
+    <string name="brave_stats_text_ads">تم حظر
+الإعلانات</string>
+    <string name="brave_stats_text_https">ترقيات 
+HTTPS</string>
+    <string name="brave_stats_text_time">حُفِظ
+توقيت الساحل الشرقي
+</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Pengaturan perisai situs Brave untuk</string>
+    <string name="brave_shields_down">Turun</string>
+    <string name="brave_shields_up">Naik</string>
+    <string name="brave_shields_ads_trackers">Iklan dan Pelacak Diblokir</string>
+    <string name="brave_shields_https_upgrades">Peningkatan HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Skrip Diblokir</string>
+    <string name="brave_shields_ads_tracking_switch">Blokir Iklan dan Pelacakan</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokir Skrip</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktifkan/Nonaktifkan Perisai Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokir kuki pihak ke-3</string>
+
+    <string name="httpse_summary">Buka situs yang didukung menggunakan HTTPS daripada HTTP jika memungkinkan</string>
+    <string name="tracking_protection_title">Mode Perlindungan Pelacakan</string>
+    <string name="tracking_protection_summary">Cegah proses memuat sumber-sumber yang melacak Anda</string>
+    <string name="ad_block_title">Blokir Iklan</string>
+    <string name="ad_block_summary">Cegah proses memuat iklan-iklan</string>
+
+    <string name="fingerprinting_protection_title">Perlindungan Sidik Jari</string>
+    <string name="fingerprinting_protection_summary">Cegah peramban dari sidik jari</string>
+    <string name="brave_shields_fingerprints_blocked">Metode Sidik Jari Diblokir</string>
+    <string name="brave_shields_block_fingerprints_switch">Perlindungan Sidik Jari</string>
+
+    <string name="ad_block_regional_title">Blokir Iklan Regional</string>
+    <string name="ad_block_regional_summary">Cegah proses memuat iklan-iklan regional</string>
+
+    <string name="ad_block_regional_summary_no_list">Tidak ada daftar tambahan yang tersedia untuk bahasa Anda</string>
+
+    <string name="menu_exit">Keluar</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sinkronisasi data peramban antarperangkat Anda dengan aman menggunakan Brave Sync, tanpa harus membuat akun. Ketuk di bawah ini untuk memulai.</string>
+    <string name="brave_sync_have_existing_code">Saya memiliki kode sinkronisasi yang ada</string>
+    <string name="sync_settings_add_device_name_title">Tambahkan nama perangkat</string>
+    <string name="sync_settings_add_device_name_label">Masukkan nama opsional untuk perangkat ini</string>
+    <string name="sync_example_device_name">Perangkat Android</string>
+    <string name="brave_sync_qrcode">Sinkronkan ke perangkat</string>
+    <string name="brave_sync_qrcode_message">Gunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan navigasikan ke \"Perangkat &amp;Pengaturan\", ketuk `+` untuk menambahkan perangkat baru dan mengungkapkan kode sinkronisasi.</string>
+    <string name="enter_code_words_sync">Masukkan kode kata</string>
+    <string name="enter_code_words_below_sync">Masukkan kode di bawah ini.</string>
+    <string name="sync_device">Sinkronisasi perangkat</string>
+    <string name="sync_device_failure">Sinkronisasi tidak dapat disiapkan</string>
+    <string name="sync_device_success">Penyiapan sinkronisasi telah selesai.</string>
+    <string name="reset_sync">Atur Ulang Sinkronisasi...</string>
+    <string name="resetting_sync">Anda yakin ingin mengatur ulang pengaturan Sinkronisasi perangkat ini?</string>
+
+    <string name="brave_stats_text_trackers">Pelacak
+Diblokir</string>
+    <string name="brave_stats_text_ads">Iklan
+Diblokir</string>
+    <string name="brave_stats_text_https">Peningkatan
+HTTPS</string>
+    <string name="brave_stats_text_time">± Waktu
+Dihemat</string>
+
+</resources>

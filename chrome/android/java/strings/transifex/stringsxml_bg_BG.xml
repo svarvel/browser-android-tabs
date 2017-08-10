@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Настройки на щита Brave на сайта за</string>
+    <string name="brave_shields_down">Долу</string>
+    <string name="brave_shields_up">Горе</string>
+    <string name="brave_shields_ads_trackers">Блокирани реклами и тракери</string>
+    <string name="brave_shields_https_upgrades">HTTPS се актуализира</string>
+    <string name="brave_shields_scripts_blocked">Блокирани скриптове</string>
+    <string name="brave_shields_ads_tracking_switch">Блокиране на реклами и тракери</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS навсякъде</string>
+    <string name="brave_shields_blocks_scripts_switch">Блокиране на скриптове</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Активиране/деактивиране на щитовете Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Блокиране на бисквитки на трета страна</string>
+
+    <string name="httpse_summary">Отваря поддържани сайтове с HTTPS, вместо HTTP, когато е възможно</string>
+    <string name="tracking_protection_title">Режим за защита от проследяване</string>
+    <string name="tracking_protection_summary">Предотвратява зареждането на ресурси, които ви следят</string>
+    <string name="ad_block_title">Блокиране на реклама</string>
+    <string name="ad_block_summary">Предотвратява зареждането на реклами</string>
+
+    <string name="fingerprinting_protection_title">Защита на пръстови отпечатъци</string>
+    <string name="fingerprinting_protection_summary">Предотвратява браузъра от идентификация на пръстови отпечатъци</string>
+    <string name="brave_shields_fingerprints_blocked">Блокирани методи на идентификация на пръстови отпечатъци</string>
+    <string name="brave_shields_block_fingerprints_switch">Защита от идентификация на пръстов отпечатък</string>
+
+    <string name="ad_block_regional_title">Блокиране на регионални реклами</string>
+    <string name="ad_block_regional_summary">Предотвратява зареждането на регионални реклами</string>
+
+    <string name="ad_block_regional_summary_no_list">Няма допълнителни списъци, налични за вашето място</string>
+
+    <string name="menu_exit">Изход</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Синхронизирайте данните за браузъра между устройствата си сигурно, като използвате Brave Sync, не е необходимо създаване на акаунт. Докоснете по-долу, за да започнете.</string>
+    <string name="brave_sync_have_existing_code">Имам съществуващ синхронизиращ код</string>
+    <string name="sync_settings_add_device_name_title">Добавете име на устройството</string>
+    <string name="sync_settings_add_device_name_label">Въведете опционално име за това устройство</string>
+    <string name="sync_example_device_name">Устройство с Android</string>
+    <string name="brave_sync_qrcode">Синхронизиране с устройството</string>
+    <string name="brave_sync_qrcode_message">Използвайки съществуващо синхронизирано устройство, отворете „Настройки на Brave“ и отидете до „Устройство &amp;настройки“, докоснете „+“, за да добавите ново устройство и да разкриете синхронизиращ код.</string>
+    <string name="enter_code_words_sync">Въведете кодовите думи</string>
+    <string name="enter_code_words_below_sync">Въведете кодовите думи по-долу.</string>
+    <string name="sync_device">Синхронизирай устройството</string>
+    <string name="sync_device_failure">Настройката на синхронизирането е неуспешна</string>
+    <string name="sync_device_success">Настройката на синхронизирането завърши успешно</string>
+    <string name="reset_sync">Нулиране на синхронизирането...</string>
+    <string name="resetting_sync">Сигурни ли сте, че искате да нулирате настройките за синхронизиране на това устройство?</string>
+
+    <string name="brave_stats_text_trackers">Блокирани
+тракери</string>
+    <string name="brave_stats_text_ads">Блокирани
+реклами</string>
+    <string name="brave_stats_text_https">HTTPS се
+актуализира</string>
+    </resources>

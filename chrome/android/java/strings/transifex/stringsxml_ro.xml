@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Configurări scut site Brave pentru</string>
+    <string name="brave_shields_down">Jos</string>
+    <string name="brave_shields_up">Sus</string>
+    <string name="brave_shields_ads_trackers">Reclame și urmărire blocate</string>
+    <string name="brave_shields_https_upgrades">Actualizări HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Scripturi blocate</string>
+    <string name="brave_shields_ads_tracking_switch">Blocare reclame și urmărire</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Blocare scripturi</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activare/Dezactivare scuturi Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blocare fișiere cookie terțe</string>
+
+    <string name="httpse_summary">Deschide site-uri compatibile utilizând HTTPS în loc de HTTP atunci când este posibil</string>
+    <string name="tracking_protection_title">Mod Protecție anti-monitorizare</string>
+    <string name="tracking_protection_summary">Împiedică încărcarea resurselor care vă monitorizează</string>
+    <string name="ad_block_title">Blocare reclame</string>
+    <string name="ad_block_summary">Împiedică încărcarea reclamelor</string>
+
+    <string name="fingerprinting_protection_title">Protecție pentru amprentare digitală</string>
+    <string name="fingerprinting_protection_summary">Împiedică amprentarea digitală a browserului</string>
+    <string name="brave_shields_fingerprints_blocked">Metode de amprentare digitală blocate</string>
+    <string name="brave_shields_block_fingerprints_switch">Protecție pentru amprentare digitală</string>
+
+    <string name="ad_block_regional_title">Ad Block regional</string>
+    <string name="ad_block_regional_summary">Împiedică încărcarea reclamelor regionale</string>
+
+    <string name="ad_block_regional_summary_no_list">Nicio listă suplimentară disponibilă pentru setările dvs. regionale</string>
+
+    <string name="menu_exit">Ieșire</string>
+
+    <string name="brave_sync">Sincronizare Brave</string>
+    <string name="brave_sync_description">Sincronizarea securizată a datelor de navigare între dispozitive, folosind sincronizare Brave. Nu este necesară crearea unui cont. Apăsați mai jos pentru pornire.</string>
+    <string name="brave_sync_have_existing_code">Am un cod de sincronizare deja existent</string>
+    <string name="sync_settings_add_device_name_title">Adăugare nume dispozitiv</string>
+    <string name="sync_settings_add_device_name_label">Introduceți un nume opțional pentru acest dispozitiv</string>
+    <string name="sync_example_device_name">Dispozitiv Android</string>
+    <string name="brave_sync_qrcode">Sincronizarea dispozitivului</string>
+    <string name="brave_sync_qrcode_message">Utilizând dispozitivul sincronizat existent, deschideți Setările Brave și navigați la „Device &amp;Settings", apăsați pe „+” pentru a adăuga un nou dispozitiv și obține codul de sincronizare.</string>
+    <string name="enter_code_words_sync">Introducere cuvânt codat</string>
+    <string name="enter_code_words_below_sync">Introduceți cuvântul codat mai jos</string>
+    <string name="sync_device">Dispozitiv de sincronizat</string>
+    <string name="sync_device_failure">Sincronizarea nu poate fi realizată</string>
+    <string name="sync_device_success">Sincronizarea a fost realizată cu succes</string>
+    <string name="reset_sync">Reinițializare sincronizare...</string>
+    <string name="resetting_sync">Sunteți sigur(ă) că doriți să reinițializați parametrii de sincronizare dispozitivului?</string>
+
+    <string name="brave_stats_text_trackers">Urmărire
+blocate</string>
+    <string name="brave_stats_text_ads">Reclame
+blocate</string>
+    <string name="brave_stats_text_https">Actualizări
+HTTPS</string>
+    <string name="brave_stats_text_time">Timp est.
+Salvat</string>
+
+</resources>

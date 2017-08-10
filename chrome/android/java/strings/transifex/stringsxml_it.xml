@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Impostazioni protezione sito Brave per</string>
+    <string name="brave_shields_down">Giù</string>
+    <string name="brave_shields_up">Su</string>
+    <string name="brave_shields_ads_trackers">Pubblicità e tracker bloccati</string>
+    <string name="brave_shields_https_upgrades">Aggiornamenti HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Script bloccati</string>
+    <string name="brave_shields_ads_tracking_switch">Blocca pubblicità e tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Ovunque</string>
+    <string name="brave_shields_blocks_scripts_switch">Blocca gli script</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Attiva/Disattiva le protezioni Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blocca i cookie di terze parti</string>
+
+    <string name="httpse_summary">Apre siti supportati utilizzando HTTPS invece di HTTP quando possibile</string>
+    <string name="tracking_protection_title">Modalità di protezione antitracciamento</string>
+    <string name="tracking_protection_summary">Impedisce il caricamento delle risorse che tracciano la tua attività</string>
+    <string name="ad_block_title">Blocco ad</string>
+    <string name="ad_block_summary">Impedisce il caricamento degli ad</string>
+
+    <string name="fingerprinting_protection_title">Protezione contro la raccolta illecita delle informazioni</string>
+    <string name="fingerprinting_protection_summary">Impedisce la raccolta illecita delle informazioni dal browser</string>
+    <string name="brave_shields_fingerprints_blocked">Metodi di blocco della raccolta illecita delle informazioni</string>
+    <string name="brave_shields_block_fingerprints_switch">Protezione contro la raccolta illecita delle informazioni</string>
+
+    <string name="ad_block_regional_title">Blocco delle pubblicità regionali</string>
+    <string name="ad_block_regional_summary">Impedisce che vengano scaricate le pubblicità regionali</string>
+
+    <string name="ad_block_regional_summary_no_list">Non ci sono liste disponibili per la vostra località</string>
+
+    <string name="menu_exit">Uscita</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sincronizza i dati del browser tra i tuoi dispositivi in modo sicuro con Brave Sync, non è necessario creare alcun account. Tocca qui sotto per cominciare.</string>
+    <string name="brave_sync_have_existing_code">Possiedo già un codice di sincronizzazione</string>
+    <string name="sync_settings_add_device_name_title">Aggiungi il nome del dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Inserisci un nome opzionale per questo dispositivo</string>
+    <string name="sync_example_device_name">Dispositivo Android</string>
+    <string name="brave_sync_qrcode">Sincronizza con il dispositivo</string>
+    <string name="brave_sync_qrcode_message">Utilizzando il dispositivo già sincronizzato apri Impostazioni Brave e naviga fino a "Impostazioni Dispositivo", tocca "+" per aggiungere un nuovo dispositivo e far apparire il codice di sincronizzazione.</string>
+    <string name="enter_code_words_sync">Inserisci le parole codice</string>
+    <string name="enter_code_words_below_sync">Inserisci le parole codice qui sotto.</string>
+    <string name="sync_device">Sincronizza dispositivo</string>
+    <string name="sync_device_failure">Non è stato impossibile configurare la sincronizzazione</string>
+    <string name="sync_device_success">La configurazione della sincronizzazione è stata completata correttamente</string>
+    <string name="reset_sync">Resetta Sincronizzazione...</string>
+    <string name="resetting_sync">Sei sicuro di voler resettare le impostazioni di sincronizzazione di questo dispositivo?</string>
+
+    <string name="brave_stats_text_trackers">Tracker
+bloccati</string>
+    <string name="brave_stats_text_ads">Pubblicità
+bloccati</string>
+    <string name="brave_stats_text_https">Aggiornamenti
+HTTPS</string>
+    <string name="brave_stats_text_time">Tempo Stimato
+Risparmiato</string>
+
+</resources>

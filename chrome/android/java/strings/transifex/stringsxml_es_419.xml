@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Configuración de protección de sitio de Brave para</string>
+    <string name="brave_shields_down">Apagado</string>
+    <string name="brave_shields_up">Encendido</string>
+    <string name="brave_shields_ads_trackers">Anuncios y rastreadores bloqueados</string>
+    <string name="brave_shields_https_upgrades">Actualizaciones HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Secuencias de comandos bloqueadas</string>
+    <string name="brave_shields_ads_tracking_switch">Bloquear anuncios y rastreadores</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloquear secuencias de comandos</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Habilitar/Deshabilitar protecciones de Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceros</string>
+
+    <string name="httpse_summary">Abre los sitios compatibles utilizando HTTPS en lugar de HTTP, cuando sea posible</string>
+    <string name="tracking_protection_title">Modo protección contra el monitoreo</string>
+    <string name="tracking_protection_summary">Evita que carguen los recursos que te monitorean</string>
+    <string name="ad_block_title">Bloqueador de publicidad</string>
+    <string name="ad_block_summary">Evita que carguen las publicidades</string>
+
+    <string name="fingerprinting_protection_title">Protección de huellas dactilares</string>
+    <string name="fingerprinting_protection_summary">Evita que el navegador obtenga las huellas dactilares</string>
+    <string name="brave_shields_fingerprints_blocked">De huellas dactilares bloqueadas</string>
+    <string name="brave_shields_block_fingerprints_switch">Protección de huellas dactilares</string>
+
+    <string name="ad_block_regional_title">Bloqueo de publicidades regionales</string>
+    <string name="ad_block_regional_summary">Evita que carguen las publicidades regionales</string>
+
+    <string name="ad_block_regional_summary_no_list">No hay ninguna lista adicional para su ubicación</string>
+
+    <string name="menu_exit">Salida</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sincroniza los datos de navegación entre tus dispositivos de forma segura utilizando Brave Sync; no es necesario crear una cuenta. Pulsa abajo para comenzar.</string>
+    <string name="brave_sync_have_existing_code">Ya tengo un código de sincronización</string>
+    <string name="sync_settings_add_device_name_title">Añadir nombre de dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Introducir un nombre opcional para este dispositivo</string>
+    <string name="sync_example_device_name">Dispositivo de Android</string>
+    <string name="brave_sync_qrcode">Sincronizar con dispositivo</string>
+    <string name="brave_sync_qrcode_message">Abre la configuración de Brave desde un dispositivo ya sincronizado y selecciona \"Configuración del dispositivo\". Luego, presiona \"+\" para añadir un nuevo dispositivo y obtener el código de sincronización. </string>
+    <string name="enter_code_words_sync">Introducir palabras clave</string>
+    <string name="enter_code_words_below_sync">Introduce las palabras clave abajo.</string>
+    <string name="sync_device">Sincronizar dispositivo</string>
+    <string name="sync_device_failure">No se pudo establecer la sincronización</string>
+    <string name="sync_device_success">La sincronización se ha completado correctamente</string>
+    <string name="reset_sync">Restablecer sincronización...</string>
+    <string name="resetting_sync">¿Estás seguro de que quieres restablecer la configuración de sincronización de este dispositivo?</string>
+
+    <string name="brave_stats_text_trackers">Rastreadores
+bloqueados</string>
+    <string name="brave_stats_text_ads">Anuncios
+bloqueados</string>
+    <string name="brave_stats_text_https">Actualizaciones
+HTTPS</string>
+    </resources>
