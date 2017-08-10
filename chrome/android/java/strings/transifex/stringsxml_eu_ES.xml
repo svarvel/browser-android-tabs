@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_shields_down">Behera</string>
+    <string name="brave_shields_up">Gora</string>
+    <string name="brave_shields_ads_trackers">Iragarkiak eta Aztarnariak Blokeatu </string>
+    <string name="brave_shields_https_upgrades">HTTPS eguneraketak</string>
+    <string name="brave_shields_scripts_blocked">Scripts-ak Blokeatutak</string>
+    <string name="brave_shields_ads_tracking_switch">Iragarkiak eta Aztarnariak Blokeatu </string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS edonon</string>
+    <string name="brave_shields_blocks_scripts_switch">Scripts-ak Blokeatu</string>
+    <string name="menu_exit">Irten</string>
+
+    </resources>

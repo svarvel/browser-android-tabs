@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">ब्रेव साइट के लिए रक्षा करनेवाला अस्त</string>
+    <string name="brave_shields_down">नीचे</string>
+    <string name="brave_shields_up">ऊपर</string>
+    <string name="brave_shields_ads_trackers">विज्ञापन और रास्ता ढूँढ़ने वाला अवरुद्ध</string>
+    <string name="brave_shields_https_upgrades">एचटीटीपीएस उन्नयन</string>
+    <string name="brave_shields_scripts_blocked">लिपिया अवरुद्ध</string>
+    <string name="brave_shields_ads_tracking_switch">अवस्र्द्ध विज्ञापन और निगाह रखना</string>
+    <string name="brave_shields_https_everywhere_switch">एचटीटीपीएस सब जगह</string>
+    <string name="brave_shields_blocks_scripts_switch">अवस्र्द्ध लिपिया </string>
+    <string name="accessibility_toolbar_btn_brave_shields">ब्रेव कवच को सक्षम/अक्षम करें </string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">3सरे दल बन को अवस्र्द्ध करें </string>
+
+    <string name="httpse_summary">जहां संभव हो, HTTP के स्थान पर HTTPS का प्रयोग करते हुये समर्थित साइटें खोलता है</string>
+    <string name="tracking_protection_title">ट्रैकिंग सुरक्षा प्रणाली</string>
+    <string name="tracking_protection_summary">आपको लोड करने पर नज़र रखने वाले स्रोतों को रोकता है</string>
+    <string name="ad_block_title">विज्ञापन ब्लॉक</string>
+    <string name="ad_block_summary">विज्ञापनों को लोड होने से रोकता है</string>
+
+    <string name="fingerprinting_protection_title">फिंगर-प्रिंटिंग सुरक्षा</string>
+    <string name="fingerprinting_protection_summary">ब्राउज़र को फिंगर-प्रिंटिंग करने से रोकता है</string>
+    <string name="brave_shields_fingerprints_blocked">फिंगर-प्रिंटिंग विधियां रोकी गई</string>
+    <string name="brave_shields_block_fingerprints_switch">फिंगर-प्रिंटिंग सुरक्षा</string>
+
+    <string name="ad_block_regional_title">स्थानीय विज्ञापन ब्लॉक</string>
+    <string name="ad_block_regional_summary">स्थानीय विज्ञापनों को लोड होने से रोकता है</string>
+
+    <string name="ad_block_regional_summary_no_list">आपके स्थान के लिए अतिरिक्त सूचियां उपलबद्ध नहीं है</string>
+
+    <string name="menu_exit">निकास</string>
+
+    <string name="brave_sync">ब्रेव सिंक </string>
+    <string name="brave_sync_description">ब्रेव सिंक का सुरक्षित रूप से प्रयोग करते हुये अपने उपकरणों के बीच ब्राउज़र आंकड़ा सिंक करें, कोई खाता बनाने की आवश्यकता नहीं है।  आरम्भ करने हेतु नीचे टैप करें </string>
+    <string name="brave_sync_have_existing_code">मेरे पास एक मौजूदा सिंक कोड है। </string>
+    <string name="sync_settings_add_device_name_title">उपकरण का नाम जोड़ें </string>
+    <string name="sync_settings_add_device_name_label">इस उपकरण के लिए कोई वैकल्पिक नाम एंटर करें </string>
+    <string name="sync_example_device_name">ऐन्ड्रॉइड उपकरण </string>
+    <string name="brave_sync_qrcode">उपकरण पर सिंक करें </string>
+    <string name="brave_sync_qrcode_message">सिंक किये गये मौजूदा उपकरण का प्रयोग करते हुये ब्रेव सैटिंग्स खोलें और "Device &amp;Settings" पर जायें व एक नया उपकरण जोड़ने और सिंक कोड दिखाने हेतु `+` पर टैप करें। </string>
+    <string name="enter_code_words_sync">कोड शब्द एंटर करें </string>
+    <string name="enter_code_words_below_sync">नीचे कोड शब्द एंटर करें </string>
+    <string name="sync_device">सिंक उपकरण</string>
+    <string name="sync_device_failure">सिंक सैट-अप नहीं किया जा सका </string>
+    <string name="sync_device_success">सिंक सैट-अप  सफलतापूर्वक पूरा हो गया है। </string>
+    <string name="reset_sync">सिंक को पुन:सेट करें... </string>
+    <string name="resetting_sync">क्या आप वास्तव में इस उपकरण और सिंक सैटिंग्स को पुन:सैट करना चाहते हैं?</string>
+
+    </resources>

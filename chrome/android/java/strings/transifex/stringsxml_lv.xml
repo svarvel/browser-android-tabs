@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave vietnes vairogu iestatījumi</string>
+    <string name="brave_shields_down">Uz leju</string>
+    <string name="brave_shields_up">Uz augšu</string>
+    <string name="brave_shields_ads_trackers">Reklāmas un izsekotāji ir bloķēti</string>
+    <string name="brave_shields_https_upgrades">HTTPS jauninājumi</string>
+    <string name="brave_shields_scripts_blocked">Skripti ir bloķēti</string>
+    <string name="brave_shields_ads_tracking_switch">Bloķēt reklāmas un izsekotājus</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS visur</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloķēt skriptus</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Iespējot/atspējot Brave vairogus</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloķē trešo pušu sīkfailus</string>
+
+    <string name="httpse_summary">Atver atbalstītās vietnes, HTTP vietā izmantojot HTTPS, kad iespējams</string>
+    <string name="tracking_protection_title">Izsekošanas aizsardzības režīms</string>
+    <string name="tracking_protection_summary">Neļauj ielādēt resursus, kas jūs izseko</string>
+    <string name="ad_block_title">Reklāmu bloķēšana</string>
+    <string name="ad_block_summary">Neļauj ielādēt reklāmas </string>
+
+    <string name="fingerprinting_protection_title">Identificējošās ciparvirknes veidošanas aizsardzība</string>
+    <string name="fingerprinting_protection_summary">Neļauj pārlūkam veidot identificējošo ciparvirkni</string>
+    <string name="brave_shields_fingerprints_blocked">Identificējošās ciparvirknes veidošanas metodes bloķētas</string>
+    <string name="brave_shields_block_fingerprints_switch">Identificējošās ciparvirknes veidošanas aizsardzība</string>
+
+    <string name="ad_block_regional_title">Reģionālo reklāmu bloķēšana</string>
+    <string name="ad_block_regional_summary">Neļauj ielādēt reģionālās reklāmas</string>
+
+    <string name="ad_block_regional_summary_no_list">Jūsu lokalizācijai nav pieejami papildu saraksti</string>
+
+    <string name="menu_exit">Izeja</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sinhronizējiet pārlūka datus savu ierīču starpā, droši izmantojot Brave Sync, bez nepieciešamības izveidot kontu. Pieskarieties zemāk, lai sāktu.</string>
+    <string name="brave_sync_have_existing_code">Man ir spēkā esošs sinhronizācijas kods</string>
+    <string name="sync_settings_add_device_name_title">Pievienojiet ierīces nosaukumu</string>
+    <string name="sync_settings_add_device_name_label">Ievadiet izvēles nosaukumu šai ierīcei</string>
+    <string name="sync_example_device_name">Android ierīce</string>
+    <string name="brave_sync_qrcode">Sinhronizācija ar ierīci</string>
+    <string name="brave_sync_qrcode_message">Izmantojot esošo sinhronizēto ierīci, atveriet Brave iestatījumus un dodieties uz „Ierīce &amp;Iestatījumi”, pieskarieties `+`, lai pievienotu jaunu ierīci un atklātu sinhronizācijas kodu.</string>
+    <string name="enter_code_words_sync">Ievadiet koda vārdus</string>
+    <string name="enter_code_words_below_sync">Ievadiet koda vārdus zemāk</string>
+    <string name="sync_device">Sinhronizācijas ierīce</string>
+    <string name="sync_device_failure">Sinhronizāciju nevarēja iestatīt</string>
+    <string name="sync_device_success">Sinhronizācijas iestatīšana veiksmīgi pabeigta</string>
+    <string name="reset_sync">Sinhronizācijas atiestate...</string>
+    <string name="resetting_sync">Vai tiešām vēlaties atiestatīt šīs ierīces sinhronizācijas iestatījumus?</string>
+
+    <string name="brave_stats_text_trackers">Izsekotāji
+ir bloķēti</string>
+    <string name="brave_stats_text_ads">Reklāmas
+ir bloķēti</string>
+    <string name="brave_stats_text_https">HTTPS
+jauninājumi</string>
+    </resources>

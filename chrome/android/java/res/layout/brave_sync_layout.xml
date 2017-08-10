@@ -79,7 +79,7 @@
    <Button android:id="@+id/have_existing_sync_code"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="@string/have_existing_sync_code"
+       android:text="@string/brave_sync_have_existing_code"
        style="@style/FlushFooterButton"/>
 
    <Button android:id="@+id/enter_code_words"

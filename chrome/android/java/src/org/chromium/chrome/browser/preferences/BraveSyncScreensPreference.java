@@ -278,7 +278,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void setMainSyncText() {
-      setSyncText(getResources().getString(R.string.brave_sync), getResources().getString(R.string.brave_sync_message));
+      setSyncText(getResources().getString(R.string.brave_sync), getResources().getString(R.string.brave_sync_description));
   }
 
   private void setQRCodeText() {

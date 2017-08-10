@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave site afscherming instellingen voor</string>
+    <string name="brave_shields_down">Omlaag</string>
+    <string name="brave_shields_up">Omhoog</string>
+    <string name="brave_shields_ads_trackers">Ads en Trackers geblokkeerd</string>
+    <string name="brave_shields_https_upgrades">HTTPS upgrades</string>
+    <string name="brave_shields_scripts_blocked">Scripts geblokkeerd</string>
+    <string name="brave_shields_ads_tracking_switch">Blokkeer Ads en Tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS overal</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokkeer Scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activeer/inactiveer Brave afschermingen</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden.</string>
+
+    <string name="httpse_summary">Opent ondersteunde websites met HTTPS in plaats van HTTP indien mogelijk</string>
+    <string name="tracking_protection_title">Tracking Protection Modus</string>
+    <string name="tracking_protection_summary">Voorkomt hulpmiddelen die u traceren vanaf het opladen</string>
+    <string name="ad_block_title">Advertentieblokkeerder</string>
+    <string name="ad_block_summary">Voorkomt het opladen van advertenties</string>
+
+    <string name="fingerprinting_protection_title">Vingerafdrukbescherming</string>
+    <string name="fingerprinting_protection_summary">Voorkomt dat de browser vingerafdrukken maakt</string>
+    <string name="brave_shields_fingerprints_blocked">Vingerafdrukmethodes geblokkeerd</string>
+    <string name="brave_shields_block_fingerprints_switch">Vingerafdrukbescherming</string>
+
+    <string name="ad_block_regional_title">Regionale blokkering van reclame</string>
+    <string name="ad_block_regional_summary">Voorkomt dat regionale reclame geladen wordt</string>
+
+    <string name="ad_block_regional_summary_no_list">Geen extra lijsten beschikbaar voor uw lokale</string>
+
+    <string name="menu_exit">Uitgang</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Synchroniseer browserdata tussen jouw apparaat op een veilige manier met Brave Sync, je hoeft geen account aan te maken. Klik hieronder om te beginnen.</string>
+    <string name="brave_sync_have_existing_code">Ik heb een bestaande synchronisatiecode</string>
+    <string name="sync_settings_add_device_name_title">Voeg naam apparaat toe</string>
+    <string name="sync_settings_add_device_name_label">Voor een optionele naam voor dit apparaat in</string>
+    <string name="sync_example_device_name">Android-apparaat</string>
+    <string name="brave_sync_qrcode">Synchroniseer met apparaat</string>
+    <string name="brave_sync_qrcode_message">Gebruikt geopende Brave Instellingen van bestaand gesynchroniseerd apparaat. Ga naar "Device &amp;Settings", tap `+` om een nieuw apparaat toe te voegen en de synchronisatiecode te tonen.</string>
+    <string name="enter_code_words_sync">Voer codewoorden in</string>
+    <string name="enter_code_words_below_sync">Voer codewoorden hieronder in.</string>
+    <string name="sync_device">Synchroniseer apparaat</string>
+    <string name="sync_device_failure">Synchronisatie kon niet worden gestart</string>
+    <string name="sync_device_success">De synchronisatie is succesvol afgerond</string>
+    <string name="reset_sync">Reset Synchronisatie...</string>
+    <string name="resetting_sync">Weet je zeker dat je deze apparaat Synchronisatie Instellingen wilt resetten?</string>
+
+    <string name="brave_stats_text_trackers">Trackers
+geblokkeerd</string>
+    <string name="brave_stats_text_ads">Ads
+geblokkeerd</string>
+    <string name="brave_stats_text_https">HTTPS
+upgrades</string>
+    <string name="brave_stats_text_time">Est. tijd
+Opgeslagen</string>
+
+</resources>

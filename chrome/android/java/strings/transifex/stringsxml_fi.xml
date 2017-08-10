@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="brave_settings_title">Brave -sivustosuoja-asetukset kohteelle</string>
+    <string name="brave_shields_down">Alas</string>
+    <string name="brave_shields_up">Ylös</string>
+    <string name="brave_shields_ads_trackers">Mainokset ja Seuraimet Estetty</string>
+    <string name="brave_shields_https_upgrades">HTTPS Päivitykset</string>
+    <string name="brave_shields_scripts_blocked">Komentosarjat Estetty</string>
+    <string name="brave_shields_ads_tracking_switch">Estä Mainokset ja Seuranta</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Kaikkialla</string>
+    <string name="brave_shields_blocks_scripts_switch">Estä Komentosarjat</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Ota käyttöön/Poista käytöstä Brave -suojat</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Estä kolmannen osapuolen evästeet</string>
+
+    <string name="httpse_summary">Avaa tuetut sivustot käyttämällä HTTPS:ää HTTP:n sijasta, kun mahdollista</string>
+    <string name="tracking_protection_title">Seurauksen estämismoodi</string>
+    <string name="tracking_protection_summary">Estää sinua seuraavien kohteiden latautumisen</string>
+    <string name="ad_block_title">Ad Block</string>
+    <string name="ad_block_summary">Estää mainoksia latautumasta</string>
+
+    <string name="fingerprinting_protection_title">Sormenjälkisuojaus</string>
+    <string name="fingerprinting_protection_summary">Ehkäisee selaimen sormenjäljiltä</string>
+    <string name="brave_shields_fingerprints_blocked">Sormenjälkimenetelmät estetty</string>
+    <string name="brave_shields_block_fingerprints_switch">Sormenjälkisuojaus</string>
+
+    <string name="ad_block_regional_title">Alueellisen mainoksen esto</string>
+    <string name="ad_block_regional_summary">Estää paikallisten mainosten latautumisen</string>
+
+    <string name="ad_block_regional_summary_no_list">Ei ylimääräisiä listoja saatavilla tapahtumapaikallasi</string>
+
+    <string name="menu_exit">Poistua</string>
+
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Brave Sync synkronoi selaimen tiedot laitteiden välillä turvallisesti ilman tilin luontia. Aloita napauttamalla alla.</string>
+    <string name="brave_sync_have_existing_code">Minulla on jo synkronointikoodi</string>
+    <string name="sync_settings_add_device_name_title">Lisää laitteen nimi</string>
+    <string name="sync_settings_add_device_name_label">Anna laitteelle vaihtoehtoinen nimi</string>
+    <string name="sync_example_device_name">Android-laite</string>
+    <string name="brave_sync_qrcode">Synkronoi laitteelle</string>
+    <string name="brave_sync_qrcode_message">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Laite ja asetukset -kohtaan, niin voit lisätä uuden laitteen ja näyttää synkronointikoodin.</string>
+    <string name="enter_code_words_sync">Anna koodisanat</string>
+    <string name="enter_code_words_below_sync">Anna koodisanat alla.</string>
+    <string name="sync_device">Synkronoi laite</string>
+    <string name="sync_device_failure">Synkronoinnin määritys ei onnistunut</string>
+    <string name="sync_device_success">Synkronoinnin määritys suoritettiin onnistuneesti</string>
+    <string name="reset_sync">Palauta synkronointi...</string>
+    <string name="resetting_sync">Haluatko varmasti palauttaa tämän laitteen synkronointiasetukset?</string>
+
+    <string name="brave_stats_text_trackers">Seuraimet
+Estetty</string>
+    <string name="brave_stats_text_ads">Mainokset
+Estetty</string>
+    <string name="brave_stats_text_https">HTTPS
+Päivitykset</string>
+    <string name="brave_stats_text_time">Arvioitu aika
+Tallennettu</string>
+
+</resources>
