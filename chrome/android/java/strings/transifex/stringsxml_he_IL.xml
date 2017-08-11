@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">הגדרות Brave Shield ל-</string>
+    <string name="brave_settings_title">הגדרות מגן אתר Brave עבור</string>
     <string name="brave_shields_down">למטה</string>
     <string name="brave_shields_up">למעלה</string>
-    <string name="brave_shields_ads_trackers">פרסומות חסומות</string>
-    <string name="brave_shields_https_upgrades">עדכוני HTTPS</string>
-    <string name="brave_shields_scripts_blocked">סקריפטים חסומים</string>
-    <string name="brave_shields_ads_tracking_switch">חסום מודעות</string>
+    <string name="brave_shields_ads_trackers">מודעות ושרתי Trackers שנחסמו</string>
+    <string name="brave_shields_https_upgrades">שדרוגי HTTPS</string>
+    <string name="brave_shields_scripts_blocked">קבצי Script שנחסמו</string>
+    <string name="brave_shields_ads_tracking_switch">חסום מודעות ומעקב</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS בכל מקום</string>
-    <string name="brave_shields_blocks_scripts_switch">חסום סקריפטים</string>
-    <string name="accessibility_toolbar_btn_brave_shields">הפעל/נטרל Brave Shields</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">חסום קבצי עוגיות של צד שלישי</string>
+    <string name="brave_shields_blocks_scripts_switch">חסום קבצי Script</string>
+    <string name="accessibility_toolbar_btn_brave_shields">הפעל/השבת מגן/י Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">חסום עוגיות צד שלישי</string>
 
-    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר ניתן</string>
+    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר הדבר ניתן</string>
     <string name="tracking_protection_title">מצב הגנה מפני מעקב</string>
     <string name="tracking_protection_summary">מניעת טעינה של משאבים העוקבים אחריך</string>
     <string name="ad_block_title">חסימת מודעות</string>
     <string name="ad_block_summary">מניעת טעינה של מודעות</string>
 
-    <string name="fingerprinting_protection_title">הגנת טביעות אצבעות</string>
-    <string name="fingerprinting_protection_summary">מניעת לקיחת טביעות אצבעות על-ידי הדפדפן</string>
-    <string name="brave_shields_fingerprints_blocked">שיטות טביעות אצבעות נחסמו</string>
+    <string name="fingerprinting_protection_title">הגנה באמצעות טביעות אצבעות</string>
+    <string name="fingerprinting_protection_summary">מניעת הדפדפן מלקיחת טביעות אצבעות</string>
+    <string name="brave_shields_fingerprints_blocked">שיטות טביעות אצבעות חסומות</string>
     <string name="brave_shields_block_fingerprints_switch">הגנה באמצעות טביעות אצבעות</string>
 
     <string name="ad_block_regional_title">חסימת מודעות אזוריות</string>
@@ -32,19 +32,25 @@
     <string name="menu_exit">יְצִיאָה</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים שלך באופן מאובטח באמצעות Brave Sync. אין צורך ביצירת חשבון. הקש להלן כדי להתחיל.</string>
+    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים
+ באמצעות Brave Sync. אין צורך ליצור
+ חשבון. הקש להלן כדי להתחיל.</string>
     <string name="brave_sync_have_existing_code">יש לי קוד סנכרון קיים</string>
     <string name="sync_settings_add_device_name_title">הוסף שם מכשיר</string>
     <string name="sync_settings_add_device_name_label">הזן שם אופציונלי עבור מכשיר זה</string>
     <string name="sync_example_device_name">מכשיר Android</string>
     <string name="brave_sync_qrcode">סנכרן למכשיר</string>
-    <string name="brave_sync_qrcode_message">במכשיר מסונכרן קיים, פתח את 'הגדרות' Brave, נווט אל 'מכשיר והגדרות' והקש על '+' כדי להוסיף מכשיר חדש ולגלות את קוד הסנכרון.</string>
+    <string name="brave_sync_qrcode_message">באמצעות מכשיר מסונכרן קיים,
+ פתח את Brave Settings (הגדרות Brave),
+ ונווט אל Device &amp;Settings"
+ (הגדרות מכשירים), הקש על '+' כדי
+ להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</string>
     <string name="enter_code_words_sync">הזן מילות קוד</string>
-    <string name="enter_code_words_below_sync">הזן מילות קוד להלן.</string>
+    <string name="enter_code_words_below_sync">הזן את מילות הקוד להלן.</string>
     <string name="sync_device">סנכרן מכשיר</string>
-    <string name="sync_device_failure">לא ניתן היה להגדיר סנכרון</string>
+    <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
     <string name="sync_device_success">הגדרת הסנכרון הושלמה בהצלחה</string>
-    <string name="reset_sync">איפוס סנכרון...</string>
+    <string name="reset_sync">איפוס הסנכרון...</string>
     <string name="resetting_sync">אתה בטוח שברצונך לאפס את הגדרות הסנכרון של מכשיר זה?</string>
 
     <string name="brave_stats_text_trackers">כל מעקב

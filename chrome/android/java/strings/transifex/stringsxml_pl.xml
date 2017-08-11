@@ -1,4 +1,5 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="brave_settings_title">Ustawienia zabezpieczeń strony Brave dla</string>
     <string name="brave_shields_down">Do dołu</string>
