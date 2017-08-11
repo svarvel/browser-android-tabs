@@ -13,7 +13,7 @@
     <string name="accessibility_toolbar_btn_brave_shields">Braveシールドを有効化/無効化</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">サードパーティクッキーをブロック</string>
 
-    <string name="httpse_summary">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開く</string>
+    <string name="httpse_summary">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開</string>
     <string name="tracking_protection_title">追跡保護モード</string>
     <string name="tracking_protection_summary">読み込む事であなたを追跡するリソースを防ぐ</string>
     <string name="ad_block_title">広告ブロック</string>
@@ -29,16 +29,19 @@
 
     <string name="ad_block_regional_summary_no_list">お住まいの地域では追加リストがご利用になれません。</string>
 
-    <string name="menu_exit">退出</string>
+    <string name="menu_exit">出口</string>
 
     <string name="brave_sync">Brace Sync</string>
-    <string name="brave_sync_description">Brave Sync なら、端末間で安全にブラウザーデータの同期ができます。アカウント作成は不要です。下をタップして開始してください。</string>
+    <string name="brave_sync_description">Brave Sync なら、端末間で安全にブラウザーデータの同期ができます。
+アカウント作成は不要です。下をタップして開始してください。</string>
     <string name="brave_sync_have_existing_code">すでに同期コードを持っています</string>
     <string name="sync_settings_add_device_name_title">端末名を追加</string>
     <string name="sync_settings_add_device_name_label">この端末のオプション名を入力</string>
     <string name="sync_example_device_name">Android 端末</string>
     <string name="brave_sync_qrcode">端末に同期</string>
-    <string name="brave_sync_qrcode_message">同期されている既存の端末で、Brave 設定を開き、「端末と設定」から、「+」マークをタップして、同期コードを表示してください。</string>
+    <string name="brave_sync_qrcode_message">同期されている既存の端末で、Brave 設定を開き、
+「端末と設定」から、「+」マークをタップして、
+同期コードを表示してください。</string>
     <string name="enter_code_words_sync">コードの単語を入力</string>
     <string name="enter_code_words_below_sync">下のコードの単語を入力してください</string>
     <string name="sync_device">Sync 端末</string>

@@ -32,13 +32,20 @@
     <string name="menu_exit">خروج</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">بدون نیاز به ایجاد حساب داده های مرورگر میان دستگاه های خود را به صورت ایمن با Brave Sync همگام سازی کنید. برای شروع پایین ضربه بزنید.</string>
+    <string name="brave_sync_description">بدون نیاز به ایجاد حساب داده های
+ مرورگر میان دستگاه های خود را
+ به صورت ایمن با Brave Sync همگام سازی
+ کنید. برای شروع پایین ضربه بزنید.</string>
     <string name="brave_sync_have_existing_code">من در حال حاضر یک کد همگام سازی دارم</string>
     <string name="sync_settings_add_device_name_title">نام دستگاه را اضافه کنید</string>
     <string name="sync_settings_add_device_name_label">یک نام اختیاری برای این دستگاه وارد کنید</string>
     <string name="sync_example_device_name">دستگاه اندروید</string>
     <string name="brave_sync_qrcode">همگام سازی با دستگاه</string>
-    <string name="brave_sync_qrcode_message">با استفاده از دستگاه همگام سازی شده موجود تنظیمات Brave را باز کنید و به \"تنظیمات دستگاه\" بروید، روی \'+\' ضربه بزنید تا یک دستگاه جدید را اضافه کرده و کد همگام سازی را معلوم کنید.</string>
+    <string name="brave_sync_qrcode_message">با استفاده از دستگاه همگام سازی
+ شده موجود تنظیمات Brave را
+ باز کنید و به "تنظیمات دستگاه" بروید، روی
+ '+' ضربه بزنید تا یک دستگاه جدید را
+ اضافه کرده و کد همگام سازی را معلوم کنید.</string>
     <string name="enter_code_words_sync">کلمات کد را وارد کنید</string>
     <string name="enter_code_words_below_sync">کلمات کد را در پایین وارد کنید.</string>
     <string name="sync_device">دستگاه را همگام سازی کنید</string>

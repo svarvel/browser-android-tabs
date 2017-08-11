@@ -17,7 +17,7 @@
     <string name="tracking_protection_title">Izsekošanas aizsardzības režīms</string>
     <string name="tracking_protection_summary">Neļauj ielādēt resursus, kas jūs izseko</string>
     <string name="ad_block_title">Reklāmu bloķēšana</string>
-    <string name="ad_block_summary">Neļauj ielādēt reklāmas </string>
+    <string name="ad_block_summary">Neļauj ielādēt reklāmas</string>
 
     <string name="fingerprinting_protection_title">Identificējošās ciparvirknes veidošanas aizsardzība</string>
     <string name="fingerprinting_protection_summary">Neļauj pārlūkam veidot identificējošo ciparvirkni</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Izeja</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sinhronizējiet pārlūka datus savu ierīču starpā, droši izmantojot Brave Sync, bez nepieciešamības izveidot kontu. Pieskarieties zemāk, lai sāktu.</string>
+    <string name="brave_sync_description">Sinhronizējiet pārlūka datus savu ierīču starpā,
+droši izmantojot Brave Sync, bez nepieciešamības
+izveidot kontu.
+Pieskarieties zemāk, lai sāktu.</string>
     <string name="brave_sync_have_existing_code">Man ir spēkā esošs sinhronizācijas kods</string>
     <string name="sync_settings_add_device_name_title">Pievienojiet ierīces nosaukumu</string>
     <string name="sync_settings_add_device_name_label">Ievadiet izvēles nosaukumu šai ierīcei</string>
     <string name="sync_example_device_name">Android ierīce</string>
     <string name="brave_sync_qrcode">Sinhronizācija ar ierīci</string>
-    <string name="brave_sync_qrcode_message">Izmantojot esošo sinhronizēto ierīci, atveriet Brave iestatījumus un dodieties uz „Ierīce &amp;Iestatījumi”, pieskarieties `+`, lai pievienotu jaunu ierīci un atklātu sinhronizācijas kodu.</string>
+    <string name="brave_sync_qrcode_message">Izmantojot esošo sinhronizēto ierīci, atveriet Brave
+iestatījumus un dodieties uz „Ierīce Iestatījumi”,
+pieskarieties `+`, lai pievienotu jaunu ierīci
+un atklātu sinhronizācijas kodu.</string>
     <string name="enter_code_words_sync">Ievadiet koda vārdus</string>
     <string name="enter_code_words_below_sync">Ievadiet koda vārdus zemāk</string>
     <string name="sync_device">Sinhronizācijas ierīce</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Nastavenie webovej ochrany Brave pre:  </string>
+    <string name="brave_settings_title">Nastavenie webovej ochrany Brave pre:</string>
     <string name="brave_shields_down">Dole</string>
     <string name="brave_shields_up">Hore</string>
     <string name="brave_shields_ads_trackers">Reklamy a sledovanie zablokované</string>
@@ -32,13 +32,20 @@
     <string name="menu_exit">Východ</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Bezpečne synchronizujte údaje prehliadača medzi vašimi zariadeniami pomocou Brave Sync, nie je potrebné vytvárať účet. Kliknite nižšie na odštartovanie.</string>
+    <string name="brave_sync_description">Bezpečne synchronizujte údaje prehliadača medzi
+vašimi zariadeniami pomocou Brave Sync,
+nie je potrebné vytvárať účet.
+Kliknite nižšie na odštartovanie.</string>
     <string name="brave_sync_have_existing_code">Mám existujúci synchronizačný kód</string>
     <string name="sync_settings_add_device_name_title">Pridajte názov zariadenia</string>
     <string name="sync_settings_add_device_name_label">Zadajte nepovinný názov pre toto zariadenie</string>
     <string name="sync_example_device_name">Android zariadenie</string>
     <string name="brave_sync_qrcode">Synchronizácia so zariadením</string>
-    <string name="brave_sync_qrcode_message">Pomocou existujúceho synchronizovaného zariadenia otvorte Brave Settings a prejdite na "Device &amp;Settings" (nastavenia zariadenia), kliknite na "+" na pridanie nového zariadenia a zobrazenie synchronizačného kódu.</string>
+    <string name="brave_sync_qrcode_message">Pomocou existujúceho synchronizovaného zariadenia
+otvorte Brave Settings a prejdite na
+"Device &amp;Settings" (nastavenia zariadenia),
+kliknite na "+" na pridanie nového zariadenia
+a zobrazenie synchronizačného kódu.</string>
     <string name="enter_code_words_sync">Zadajte kódové slová</string>
     <string name="enter_code_words_below_sync">Zadajte nižšie kódové slová.</string>
     <string name="sync_device">Synchronizované zariadenie</string>

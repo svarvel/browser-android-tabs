@@ -38,7 +38,7 @@
     <string name="sync_settings_add_device_name_label">Unijeti opcioni naziv za ovaj uređaj </string>
     <string name="sync_example_device_name">Uređaj Android</string>
     <string name="brave_sync_qrcode">Sinhronizirati na uređaj </string>
-    <string name="brave_sync_qrcode_message">Uz pomoć postojećeg sinhroniziranog uređaja otvoriti Brave  postavke i preći na "Postavke&amp'uređaja", dotaknuti '+' za dodavanje novog uređaja i otkrivanje sinhronizacijskog koda. </string>
+    <string name="brave_sync_qrcode_message">Uz pomoć postojećeg sinhroniziranog uređaja otvoriti Brave  postavke i preći na "Postavke&amp;'uređaja", dotaknuti '+' za dodavanje novog uređaja i otkrivanje sinhronizacijskog koda. </string>
     <string name="enter_code_words_sync">Unijeti kodne riječi </string>
     <string name="enter_code_words_below_sync">Unijeti kodne riječi dolje. </string>
     <string name="sync_device">Uređaj za sinhronizaciju </string>

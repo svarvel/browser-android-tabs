@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Configuración de escudos web de Brave para </string>
+    <string name="brave_settings_title">Configuración de escudos web de Brave para</string>
     <string name="brave_shields_down">Abajo</string>
     <string name="brave_shields_up">Arriba</string>
     <string name="brave_shields_ads_trackers">Anuncios y seguimiento bloqueados</string>
@@ -32,13 +32,20 @@
     <string name="menu_exit">Salida</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sincroniza los datos de tu navegador entre tus dispositivos de forma segura con Brave Sync. No es necesario crear ninguna cuenta. Toca a continuación para empezar.</string>
+    <string name="brave_sync_description">Sincroniza los datos de tu navegador entre tus
+dispositivos de forma segura con Brave Sync.
+No es necesario crear ninguna cuenta.
+Toca a continuación para empezar.</string>
     <string name="brave_sync_have_existing_code">Ya tengo un código de sincronización</string>
     <string name="sync_settings_add_device_name_title">Añade el nombre del dispositivo</string>
     <string name="sync_settings_add_device_name_label">Ingresa un nombre opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
     <string name="brave_sync_qrcode">Sincronizar con el dispositivo</string>
-    <string name="brave_sync_qrcode_message">Usando el dispositivo sincronizado, abre la configuración de Brave y ve hasta "Dispositivo y configuración", toca el "+" para añadir un dispositivo nuevo y ver el código de sincronización.</string>
+    <string name="brave_sync_qrcode_message">Usando el dispositivo sincronizado,
+abre la configuración de Brave y ve hasta
+"Dispositivo y configuración", toca el "+"
+para añadir un dispositivo nuevo
+y ver el código de sincronización.</string>
     <string name="enter_code_words_sync">Ingresa las palabras clave</string>
     <string name="enter_code_words_below_sync">Ingresa las palabras clave a continuación.</string>
     <string name="sync_device">Sincronizar dispositivo</string>

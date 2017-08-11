@@ -32,13 +32,17 @@
     <string name="menu_exit">Utgang</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synk nettleserdata sikkert, mellom dine enheter med Brave Synk, ingen konto må opprettes. Tapp under for å starte.</string>
+    <string name="brave_sync_description">Synk nettleserdata sikkert, mellom dine enheter
+med Brave Synk, ingen konto må opprettes.
+Tapp under for å starte.</string>
     <string name="brave_sync_have_existing_code">Jeg har en eksisterende synkkode</string>
     <string name="sync_settings_add_device_name_title">Legg til enhetsnavn</string>
     <string name="sync_settings_add_device_name_label">Skriv inn et valgfritt navn for denne enheten</string>
     <string name="sync_example_device_name">Android enhet</string>
     <string name="brave_sync_qrcode">Synkroniser til enhet</string>
-    <string name="brave_sync_qrcode_message">Med en allerede synkronisert enhet åpne Brave Settings og gå til "Device &amp;Settings", fanen `+` for å lege til en ny enhet og vise synkroniseringskoden.</string>
+    <string name="brave_sync_qrcode_message">Med en allerede synkronisert enhet åpne Brave Settings og gå til
+"Device &amp;Settings", fanen `+` for å lege til
+en ny enhet og vise synkroniseringskoden.</string>
     <string name="enter_code_words_sync">Skriv inn kode ord</string>
     <string name="enter_code_words_below_sync">Skriv kodeordene under</string>
     <string name="sync_device">Synk enhet</string>

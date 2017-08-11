@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title"> Paramètres pour le  site Brave Shield</string>
+    <string name="brave_settings_title">Paramètres pour le  site Brave Shield</string>
     <string name="brave_shields_down">Vers le bas</string>
     <string name="brave_shields_up">Vers le haut</string>
     <string name="brave_shields_ads_trackers">Publicités et Trackers bloqués</string>
@@ -32,20 +32,26 @@
     <string name="menu_exit">Sortie</string>
 
     <string name="brave_sync">Synchronisation Brave</string>
-    <string name="brave_sync_description">Synchronisez les données de navigation de vos appareils avec la synchronisation Brave, sans avoir à créer de compte. Cliquez ci-dessous pour commencer.</string>
+    <string name="brave_sync_description">Synchronisez les données de navigation de vos appareils
+avec la synchronisation Brave,
+sans avoir à créer de compte.
+Cliquez ci-dessous pour commencer.</string>
     <string name="brave_sync_have_existing_code">Je possède un code de synchronisation</string>
     <string name="sync_settings_add_device_name_title">Ajouter un nom d'appareil</string>
     <string name="sync_settings_add_device_name_label">Saisir un nom optionnel pour cet appareil</string>
     <string name="sync_example_device_name">Appareil Android</string>
     <string name="brave_sync_qrcode">Synchroniser avec l'appareil</string>
-    <string name="brave_sync_qrcode_message">Ouvrez les paramètres Brave à partir d'un appareil synchronisé existant et naviguez dans "Appareil &amp;Paramètres", sélectionnez `+` pour ajouter un nouvel appareil et afficher le code de synchronisation.</string>
+    <string name="brave_sync_qrcode_message">Ouvrez les paramètres Brave à partir d'un appareil synchronisé
+existant et naviguez dans "Appareil &amp;Paramètres",
+sélectionnez `+` pour ajouter un nouvel appareil
+et afficher le code de synchronisation.</string>
     <string name="enter_code_words_sync">Saisir un code</string>
     <string name="enter_code_words_below_sync">Saisir le code ci-dessous.</string>
     <string name="sync_device">Synchronisation de l'appareil</string>
     <string name="sync_device_failure">Échec de la configuration de la synchronisation</string>
     <string name="sync_device_success">La configuration de la synchronisation a été réalisée avec succès</string>
     <string name="reset_sync">Réinitialiser la synchronisation...</string>
-    <string name="resetting_sync">Voulez-vous réinitialiser les paramètres de synchronisation de cet appareil\'s?</string>
+    <string name="resetting_sync">Voulez-vous réinitialiser les paramètres de synchronisation de cet appareil's?</string>
 
     <string name="brave_stats_text_trackers">Trackers
 bloqués</string>

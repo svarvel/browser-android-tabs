@@ -32,13 +32,19 @@
     <string name="menu_exit">Výstup</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synchronizujte bezpečně údaje prohlížečů mezi svými zařízeními pomocí Brave Sync. Není nutné vytvoření účtu. Začněte klepnutím níže.</string>
+    <string name="brave_sync_description">Synchronizujte bezpečně údaje prohlížečů mezi
+svými zařízeními pomocí Brave Sync.
+Není nutné vytvoření účtu.
+Začněte klepnutím níže.</string>
     <string name="brave_sync_have_existing_code">Již mám synchronizační kód</string>
     <string name="sync_settings_add_device_name_title">Přidat název zařízení</string>
     <string name="sync_settings_add_device_name_label">Zadejte volitelný název pro toto zařízení</string>
     <string name="sync_example_device_name">Zařízení Android</string>
     <string name="brave_sync_qrcode">Synchronizovat se zařízením</string>
-    <string name="brave_sync_qrcode_message">V zařízení, které již je synchronizované, otevřete nastavení Brave a přejděte do nabídky „Zařízení &amp; nastavení“, klepnutím na tlačítko „+“` přidejte nové zařízení a zobrazte synchronizační kód.</string>
+    <string name="brave_sync_qrcode_message">V zařízení, které již je synchronizované, otevřete
+nastavení Brave a přejděte do nabídky „Zařízení &amp; nastavení“,
+klepnutím na tlačítko „+“` přidejte nové zařízení
+a zobrazte synchronizační kód.</string>
     <string name="enter_code_words_sync">Zadejte kódová slova</string>
     <string name="enter_code_words_below_sync">Níže zadejte kódová slova.</string>
     <string name="sync_device">Synchronizovat zařízení</string>

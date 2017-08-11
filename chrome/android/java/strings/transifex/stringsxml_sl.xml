@@ -32,13 +32,19 @@
     <string name="menu_exit">Izhod</string>
 
     <string name="brave_sync">Sinhronizacija Brave</string>
-    <string name="brave_sync_description">Varno sinhronizirajte podatke med vašimi napravami z uporabo orodja Brave Sync, izdelava računa ni potrebna. Za začetek tapnite spodaj.</string>
+    <string name="brave_sync_description">Varno sinhronizirajte podatke med vašimi
+napravami z uporabo orodja Brave Sync,
+izdelava računa ni potrebna.
+Za začetek tapnite spodaj.</string>
     <string name="brave_sync_have_existing_code">Imam obstoječo kodo za sinhronizacijo</string>
     <string name="sync_settings_add_device_name_title">Dodaj ime naprave</string>
     <string name="sync_settings_add_device_name_label">Vnesite izbirno ime za to napravo</string>
     <string name="sync_example_device_name">Naprava Android</string>
     <string name="brave_sync_qrcode">Sinhroniziraj v napravo</string>
-    <string name="brave_sync_qrcode_message">Z uporabo obstoječe sinhronizirane naprave odprite Nastavitve Brave in odprite »Naprava in nastavitve«, nato tapnite »+« za dodajanje nove naprave in prikaz kode za sinhronizacijo.</string>
+    <string name="brave_sync_qrcode_message">Z uporabo obstoječe sinhronizirane naprave odprite
+Nastavitve Brave in odprite »Naprava in nastavitve«,
+nato tapnite »+« za dodajanje nove naprave
+in prikaz kode za sinhronizacijo.</string>
     <string name="enter_code_words_sync">Vnos kodnih besed</string>
     <string name="enter_code_words_below_sync">Spodaj vnesite kodne besede.</string>
     <string name="sync_device">Sinhroniziraj napravo</string>

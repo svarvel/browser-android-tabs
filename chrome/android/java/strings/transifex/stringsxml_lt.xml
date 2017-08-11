@@ -32,13 +32,19 @@
     <string name="menu_exit">Išėjimas</string>
 
     <string name="brave_sync">„Brave Sync“</string>
-    <string name="brave_sync_description">Saugiai sinchronizuokite duomenis tarp savo prietaisų naudodami „Brave Sync“ – tam nereikia kurti paskyros. Jei norite pradėti, palieskite apačioje.</string>
+    <string name="brave_sync_description">Saugiai sinchronizuokite duomenis tarp savo
+prietaisų naudodami „Brave Sync“ – tam nereikia
+kurti paskyros. Jei norite pradėti,
+palieskite apačioje.</string>
     <string name="brave_sync_have_existing_code">Turiu sinchronizavo kodą</string>
     <string name="sync_settings_add_device_name_title">Įrašykite prietaiso pavadinimą</string>
     <string name="sync_settings_add_device_name_label">Įveskite kitą šio prietaiso pavadinimą</string>
     <string name="sync_example_device_name">„Android“ prietaisas</string>
     <string name="brave_sync_qrcode">Sinchronizuoti prietaisą</string>
-    <string name="brave_sync_qrcode_message">Sinchronizuotame prietaise eikite į „Brave Settings“ (nustatymai), ten eikite į „Device &amp;Settings“ (prietaisas ir nustatymai), kur palieskite „+“, kad įrašytumėte naują prietaisą ir pamatytumėte sinchronizavo kodą.</string>
+    <string name="brave_sync_qrcode_message">Sinchronizuotame prietaise eikite į „Brave Settings“ (nustatymai),
+ten eikite į „Device &amp;Settings“ (prietaisas ir nustatymai),
+kur palieskite „+“, kad įrašytumėte naują prietaisą
+ir pamatytumėte sinchronizavo kodą.</string>
     <string name="enter_code_words_sync">Įveskite žodinį kodą</string>
     <string name="enter_code_words_below_sync">Apačioje įveskite žodinį kodą.</string>
     <string name="sync_device">Sinchronizuoti prietaisą</string>

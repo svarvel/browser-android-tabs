@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Sköldinställningar</string>
-    <string name="brave_shields_down">Av</string>
-    <string name="brave_shields_up">På</string>
-    <string name="brave_shields_ads_trackers">Blockerade annonser och spårare</string>
-    <string name="brave_shields_https_upgrades">HTTPS uppgraderingar</string>
-    <string name="brave_shields_scripts_blocked">Blockerade skript</string>
-    <string name="brave_shields_ads_tracking_switch">Blockera annonser och spårning</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
-    <string name="brave_shields_blocks_scripts_switch">Blockera skript</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Aktivera/Inaktivera Brave:s sköldar</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Blockera 3:e parts cookies.</string>
+    <string name="brave_settings_title">Brave site shield-inställningar för</string>
+    <string name="brave_shields_down">Ner</string>
+    <string name="brave_shields_up">Upp</string>
+    <string name="brave_shields_ads_trackers">Annonser och trackers är blockerade</string>
+    <string name="brave_shields_https_upgrades">HTTPS-uppgraderingar</string>
+    <string name="brave_shields_scripts_blocked">Skript är blockerat</string>
+    <string name="brave_shields_ads_tracking_switch">Blockera annonser och tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS överallt</string>
+    <string name="brave_shields_blocks_scripts_switch">Blockera Skript</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktivera/Inaktivera Brave Shields</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blockera 3: e parts cookies</string>
 
     <string name="httpse_summary">Öppnar webbplatser som använder HTTPS i stället för HTTP när det är möjligt</string>
-    <string name="tracking_protection_title">Spårningsskyddsläge  </string>
-    <string name="tracking_protection_summary">Förhindrar resurser som spårar dig från att läsas in</string>
-    <string name="ad_block_title">Reklamblockerare</string>
+    <string name="tracking_protection_title">Spårningsskyddsläge</string>
+    <string name="tracking_protection_summary">Förhindrar resurser som spårar dig från att laddas</string>
+    <string name="ad_block_title">Annons blockad</string>
     <string name="ad_block_summary">Förhindrar annonser från att laddas</string>
 
     <string name="fingerprinting_protection_title">Fingeravtrycksskydd</string>
     <string name="fingerprinting_protection_summary">Hindrar webbläsaren från att ta fingeravtryck</string>
-    <string name="brave_shields_fingerprints_blocked">Blockerade fingeravtrycksmetoder</string>
+    <string name="brave_shields_fingerprints_blocked">Fingeravtrycksmetoder blockerade</string>
     <string name="brave_shields_block_fingerprints_switch">Fingeravtrycksskydd</string>
 
     <string name="ad_block_regional_title">Regional annonsblockering</string>
@@ -32,20 +32,26 @@
     <string name="menu_exit">Avsluta</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synka browser data mellan dina enheter på ett säkert sätt med Brave Sync, inget konto krävs. Klicka nedan för att börja.</string>
+    <string name="brave_sync_description">Synka browser data mellan dina enheter på
+ett säkert sätt med Brave Sync,
+inget konto krävs.
+Klicka nedan för att börja.</string>
     <string name="brave_sync_have_existing_code">I har redan en synk-kod</string>
     <string name="sync_settings_add_device_name_title">Lägg till enhetsnamn</string>
     <string name="sync_settings_add_device_name_label">Ange ett alternativt namn för denna enhet</string>
     <string name="sync_example_device_name">Android-enhet</string>
-    <string name="brave_sync_qrcode">Synka till enhet</string>
-    <string name="brave_sync_qrcode_message">På den befintliga synkroniserade enheten, öppna Braves inställningar och gå till ”Enhet &amp; inställningar”. Tryck på `+` för att lägga till en ny enhet och se synk-koden.</string>
+    <string name="brave_sync_qrcode">Synka med enhet</string>
+    <string name="brave_sync_qrcode_message">Använd den befintliga synkroniserade enheten,
+öppna Brave Settings och gå till "Enhet &amp; inställningar",
+tryck på `+` för att lägga till en ny
+enhet och få synkroniseringskoden.</string>
     <string name="enter_code_words_sync">Ange kodord</string>
     <string name="enter_code_words_below_sync">Ange kodord nedan</string>
     <string name="sync_device">Sync-enhet</string>
     <string name="sync_device_failure">Sync kunde inte ställas in</string>
     <string name="sync_device_success">Inställningarna för synk är klara</string>
     <string name="reset_sync">Återställ Sync...</string>
-    <string name="resetting_sync">Är du säker på att du vill återställa synkinställningarna för denna enhet?</string>
+    <string name="resetting_sync">Är du säker på att du vill återställa Syncinställningarna för denna enhet?</string>
 
     <string name="brave_stats_text_trackers">Blockerade
 spårare</string>

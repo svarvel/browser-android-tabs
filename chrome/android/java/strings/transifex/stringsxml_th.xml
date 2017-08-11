@@ -32,13 +32,17 @@
     <string name="menu_exit">ทางออก</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">ซิงค์ข้อมูลเบราเซอร์ระหว่างอุปกรณ์ของคุณอย่างปลอดภัยโดยใช้ Brave Sync โดยไม่จำเป็นต้องสร้างบัญชี แตะที่ด้านล่างเพื่อเริ่มต้น</string>
+    <string name="brave_sync_description">ซิงค์ข้อมูลเบราเซอร์ระหว่างอุปกรณ์ของคุณอย่างปลอดภัยโดยใช้
+Brave Sync โดยไม่จำเป็นต้องสร้างบัญชี
+แตะที่ด้านล่างเพื่อเริ่มต้น</string>
     <string name="brave_sync_have_existing_code">ฉันมีรหัสการซิงค์แล้ว</string>
     <string name="sync_settings_add_device_name_title">เพิ่มชื่ออุปกรณ์</string>
     <string name="sync_settings_add_device_name_label">ป้อนชื่อเพิ่มเติมสำหรับอุปกรณ์นี้</string>
     <string name="sync_example_device_name">อุปกรณ์ Android</string>
     <string name="brave_sync_qrcode">ซิงค์ไปยังอุปกรณ์</string>
-    <string name="brave_sync_qrcode_message">การใช้อุปกรณ์ที่มีการซิงค์อยู่แล้วจะเปิดการตั้งค่า Brave และนำทางไปยัง "การตั้งค่า &amp;อุปกรณ์" แตะ `+` เพื่อเพิ่มอุปกรณ์ใหม่และแสดงรหัสการซิงค์</string>
+    <string name="brave_sync_qrcode_message">การใช้อุปกรณ์ที่มีการซิงค์อยู่แล้วจะเปิดการตั้งค่า Brave และนำทางไปยัง
+"การตั้งค่า &amp;อุปกรณ์" แตะ `+`
+เพื่อเพิ่มอุปกรณ์ใหม่และแสดงรหัสการซิงค์</string>
     <string name="enter_code_words_sync">ป้อนคำรหัส</string>
     <string name="enter_code_words_below_sync">ป้อนคำรหัสด้านล่าง</string>
     <string name="sync_device">ซิงค์อุปกรณ์</string>

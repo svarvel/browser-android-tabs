@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
-    <string name="brave_settings_title">Ustawienia ochrony Brave dla:</string>
-    <string name="brave_shields_down">Wyłącz</string>
-    <string name="brave_shields_up">Włącz</string>
-    <string name="brave_shields_ads_trackers">Zablokowane reklamy i śledzenie</string>
-    <string name="brave_shields_https_upgrades">Użycia HTTPS</string>
+    <string name="brave_settings_title">Ustawienia zabezpieczeń strony Brave dla</string>
+    <string name="brave_shields_down">Do dołu</string>
+    <string name="brave_shields_up">Do góry</string>
+    <string name="brave_shields_ads_trackers">Zablokowane reklamy i oprogramowanie śledzące</string>
+    <string name="brave_shields_https_upgrades">Aktualizacje HTTPS</string>
     <string name="brave_shields_scripts_blocked">Zablokowane skrypty</string>
     <string name="brave_shields_ads_tracking_switch">Blokuj reklamy i śledzenie</string>
-    <string name="brave_shields_https_everywhere_switch">Wymuś HTTPS</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS wszędzie</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuj skrypty</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Włacz/wyłącz ochronę Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Blokuj pliki cookies innych witryn.</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktywuj/dezaktywuj zabezpieczenia Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Zablokuj pliki cookie z witryn innych firm</string>
 
     <string name="httpse_summary">Wymusza użycie HTTPS, jeśli jest to możliwe</string>
     <string name="tracking_protection_title">Ochrona przed śledzeniem</string>
@@ -19,26 +18,32 @@
     <string name="ad_block_title">Blokowanie reklam</string>
     <string name="ad_block_summary">Włącza blokowanie reklam</string>
 
-    <string name="fingerprinting_protection_title">Ochrona odcisku palca</string>
-    <string name="fingerprinting_protection_summary">Zabrania użycia unikalnego odcisku placa przeglądarki</string>
-    <string name="brave_shields_fingerprints_blocked">Próby użycia unikalnego odcisku palca</string>
-    <string name="brave_shields_block_fingerprints_switch">Ochrona odcisku palca</string>
+    <string name="fingerprinting_protection_title">Ochrona odcisków palców</string>
+    <string name="fingerprinting_protection_summary">Uniemożliwia przeglądarce z odcisków palców</string>
+    <string name="brave_shields_fingerprints_blocked">Metody pobierania odcisków palców zablokowane</string>
+    <string name="brave_shields_block_fingerprints_switch">Ochrona odcisków palców</string>
 
-    <string name="ad_block_regional_title">Blokowanie reklam lokalnych</string>
-    <string name="ad_block_regional_summary">Zapobiega wyświetlaniu lokalnych reklam </string>
+    <string name="ad_block_regional_title">Lokalny Ad Block</string>
+    <string name="ad_block_regional_summary">Zapobiega wyświetlaniu się lokalnych reklam</string>
 
-    <string name="ad_block_regional_summary_no_list">Brak dostępnych dodatkowych list dla Twojego języka</string>
+    <string name="ad_block_regional_summary_no_list">Brak dostępnych dodatkowych list dla Twojej lokalizacji</string>
 
-    <string name="menu_exit">Wyjdź</string>
+    <string name="menu_exit">Wyjście</string>
 
     <string name="brave_sync">Synchronizacja Brave</string>
-    <string name="brave_sync_description">Synchronizuj bezpiecznie dane między urządzeniami za pomocą funkcji Synchronizacja Brave. Nie potrzebujesz do tego tworzyć konta. Aby zacząć, dotknij pola niżej.</string>
+    <string name="brave_sync_description">Synchronizuj bezpiecznie dane między urządzeniami za
+pomocą funkcji Synchronizacja Brave.
+Nie potrzebujesz do tego tworzyć konta.
+Aby zacząć, dotknij pola niżej.</string>
     <string name="brave_sync_have_existing_code">Mam już istniejący kod synchronizacji</string>
     <string name="sync_settings_add_device_name_title">Dodaj nazwę urządzenia</string>
     <string name="sync_settings_add_device_name_label">Wpisz opcjonalną nazwę tego urządzenia</string>
     <string name="sync_example_device_name">Urządzenie Android</string>
     <string name="brave_sync_qrcode">Synchronizuj z urządzeniem</string>
-    <string name="brave_sync_qrcode_message">Za pomocą zsynchronizowanego już urządzenia otwórz ustawienia Brave, przejdź do sekcji Urządzenie i dotknij przycisku +, aby dodać nowe urządzenie i odsłonić hasło synchronizacji.</string>
+    <string name="brave_sync_qrcode_message">Za pomocą zsynchronizowanego już urządzenia otwórz
+ustawienia Brave, przejdź do sekcji Urządzenie
+i dotknij przycisku +, aby dodać nowe urządzenie
+i odsłonić hasło synchronizacji.</string>
     <string name="enter_code_words_sync">Wpisz hasła</string>
     <string name="enter_code_words_below_sync">Wpisz hasła poniżej.</string>
     <string name="sync_device">Synchronizuj urządzenie</string>

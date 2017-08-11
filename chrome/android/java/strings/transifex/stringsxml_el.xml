@@ -32,13 +32,19 @@
     <string name="menu_exit">Εξοδος</string>
 
     <string name="brave_sync">Συγχρονισμός Brave</string>
-    <string name="brave_sync_description">Τα δεδομένα συγχρονισμού περιήγησης μεταξύ των συσκευών σας χρησιμοποιούν με ασφάλεια τον Συγχρονισμό Brave, δεν απαιτείται δημιουργία λογαριασμού. Πατήστε παρακάτω για να ξεκινήσετε.</string>
+    <string name="brave_sync_description">Τα δεδομένα συγχρονισμού περιήγησης μεταξύ των συσκευών
+σας χρησιμοποιούν με ασφάλεια τον Συγχρονισμό Brave,
+δεν απαιτείται δημιουργία λογαριασμού.
+Πατήστε παρακάτω για να ξεκινήσετε.</string>
     <string name="brave_sync_have_existing_code">Έχω ήδη έναν κωδικό συγχρονισμού</string>
     <string name="sync_settings_add_device_name_title">Προσθήκη ονόματος συσκευής</string>
     <string name="sync_settings_add_device_name_label">Εισαγάγετε ένα προαιρετικό όνομα για αυτή τη συσκευή</string>
     <string name="sync_example_device_name">Συσκευή Android</string>
     <string name="brave_sync_qrcode">Συγχρονισμός στη συσκευή</string>
-    <string name="brave_sync_qrcode_message">Χρησιμοποιήστε την τρέχουσα συσκευή συγχρονισμού ανοίξτε τις Ρυθμίσεις Βrave και κάντε περιήγηση στο "Συσκευή &amp;Ρυθμίσεις", πατήστε `+` για να προσθέσετε μια νέα συσκευή και να αποκαλύψετε τον κωδικό συγχρονισμού.</string>
+    <string name="brave_sync_qrcode_message">Χρησιμοποιήστε την τρέχουσα συσκευή συγχρονισμού ανοίξτε
+τις Ρυθμίσεις Βrave και κάντε περιήγηση στο "Συσκευή &amp;Ρυθμίσεις",
+πατήστε `+` για να προσθέσετε μια νέα συσκευή και
+να αποκαλύψετε τον κωδικό συγχρονισμού.</string>
     <string name="enter_code_words_sync">Εισαγωγή κωδικών λέξεων </string>
     <string name="enter_code_words_below_sync">Εισαγάγετε λέξεις κωδικούς παρακάτω.</string>
     <string name="sync_device">Συσκευή συγχρονισμού</string>

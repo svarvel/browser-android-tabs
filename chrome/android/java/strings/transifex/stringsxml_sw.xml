@@ -22,7 +22,7 @@
     <string name="fingerprinting_protection_title">Ulinzi wa Alama ya kidole</string>
     <string name="fingerprinting_protection_summary">Huzuia kivinjari kuchapisha kutumia alama ya kidole</string>
     <string name="brave_shields_fingerprints_blocked">Mbinu za Uchapishaji wa Alama ya kidole Zimezuiwa</string>
-    <string name="brave_shields_block_fingerprints_switch">Ulinzi wa Uchapishaji wa Alama ya Kidole</string>
+    <string name="brave_shields_block_fingerprints_switch">Ulinzi wa Alama ya kidole</string>
 
     <string name="ad_block_regional_title">Uzuiaji wa Tangazo la Kimaeneo</string>
     <string name="ad_block_regional_summary">Huzuia matangazo ya kimaeneo kupakia</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Mlango wa kutoka</string>
 
     <string name="brave_sync">Ulandanishaji wa Brave</string>
-    <string name="brave_sync_description">Landanisha data ya kivinjari kati ya vifaa vyako kwa usalama kutumia Ulandanishaji wa Brave, hakuna uundaji akaunti unaohitajika. Donoa hapa chini ili kuanza.</string>
+    <string name="brave_sync_description">Landanisha data ya kivinjari kati ya
+vifaa vyako kwa usalama kutumia Ulandanishaji
+wa Brave, hakuna uundaji akaunti unaohitajika.
+Donoa hapa chini ili kuanza.</string>
     <string name="brave_sync_have_existing_code">Nina msimbo wa ulandanishaji uliopo</string>
     <string name="sync_settings_add_device_name_title">Ongeza jina la kifaa</string>
     <string name="sync_settings_add_device_name_label">Ingiza jina la hiari la kifaa hiki</string>
     <string name="sync_example_device_name">Kifaa cha Android</string>
     <string name="brave_sync_qrcode">Landanisha kwenye kifaa</string>
-    <string name="brave_sync_qrcode_message">Kutumia kifaa kiliopo kilicholandanishwa kunafungua Mipangilio ya Brave na kuabiri kwenye \"Kifaa na Mipangilio\", donoa `+` ili kuongeza kifaa kipya na kutambua msimbo wa ulandanishaji.</string>
+    <string name="brave_sync_qrcode_message">Kutumia kifaa kiliopo kilicholandanishwa kunafungua
+Mipangilio ya Brave na kuabiri kwenye "Kifaa na Mipangilio",
+donoa `+` ili kuongeza kifaa kipya
+na kutambua msimbo wa ulandanishaji.</string>
     <string name="enter_code_words_sync">Ingiza maneno ya msimbo</string>
     <string name="enter_code_words_below_sync">Ingiza maneno ya msimbo hapa chini.</string>
     <string name="sync_device">Landanisha kifaa</string>

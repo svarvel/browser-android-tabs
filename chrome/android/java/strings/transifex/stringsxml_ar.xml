@@ -21,7 +21,7 @@
 
     <string name="fingerprinting_protection_title">حماية البصمة</string>
     <string name="fingerprinting_protection_summary">يمنع المتصفح من التعرف على بصمتك الخاصة</string>
-    <string name="brave_shields_fingerprints_blocked">حظر وسائل الحصول على البصمة </string>
+    <string name="brave_shields_fingerprints_blocked">حظر وسائل الحصول على البصمة</string>
     <string name="brave_shields_block_fingerprints_switch">حماية البصمة</string>
 
     <string name="ad_block_regional_title">حظر الإعلانات المحلية</string>
@@ -32,13 +32,18 @@
     <string name="menu_exit">ىخرج</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">قم بمزامنة بيانات المتصفح بين أجهزتك بصورة آمنه باستخدام Brave Sync، لا يتطلب إنشاء حساب. انقر أدناه للبدء.</string>
+    <string name="brave_sync_description">قم بمزامنة بيانات المتصفح بين أجهزتك
+ بصورة آمنه باستخدام Brave Sync، لا
+ يتطلب إنشاء حساب. انقر أدناه للبدء.</string>
     <string name="brave_sync_have_existing_code">يوجد لديّ رمز مزامنة حالي</string>
     <string name="sync_settings_add_device_name_title">إضافة اسم جهاز</string>
     <string name="sync_settings_add_device_name_label">أدخل اسمًا اختياريًا لهذا الجهاز</string>
     <string name="sync_example_device_name">جهاز أندرويد</string>
     <string name="brave_sync_qrcode">المزامنة مع الجهاز</string>
-    <string name="brave_sync_qrcode_message">باستخدام الجهاز المتزامن حاليًا، افتح إعدادات Brave وانتقل إلى "إعدادات&amp;الجهاز" وانقر على الرمز `+` لإضافة جهاز جديد وإظهار رمز المزامنة.</string>
+    <string name="brave_sync_qrcode_message">باستخدام الجهاز المتزامن
+حاليًا، افتح إعدادات Brave وانتقل إلى
+"إعدادات&amp;الجهاز" وانقر على الرمز `+`
+ لإضافة جهاز جديد وإظهار رمز المزامنة.</string>
     <string name="enter_code_words_sync">أدخل كلمات الرمز</string>
     <string name="enter_code_words_below_sync">أدخل كلمات الرمز أدناه.</string>
     <string name="sync_device">مزامنة الجهاز</string>
