@@ -11,7 +11,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Chặn Script</string>
     <string name="accessibility_toolbar_btn_brave_shields">Bật/ Tắt Lá chắn Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Chặn cookies của bên thứ ba.</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Chặn cookies của bên thứ ba</string>
 
     <string name="httpse_summary">Mở các trang được hỗ trợ bằng cách sử dụng HTTPS thay vì HTTP khi có thể</string>
     <string name="tracking_protection_title">Chế độ Bảo vệ Theo dõi</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Lối thoát</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Đồng bộ dữ liệu trình duyệt giữa các thiết bị của bạn một cách an toàn bằng cách sử dụng Brave Sync, không cần tạo tài khoản. Nhấn vào dưới đây để bắt đầu.</string>
+    <string name="brave_sync_description">Đồng bộ dữ liệu trình duyệt giữa các thiết bị của bạn
+một cách an toàn bằng cách sử dụng Brave Sync,
+không cần tạo tài khoản.
+Nhấn vào dưới đây để bắt đầu.</string>
     <string name="brave_sync_have_existing_code">Tôi có mã đồng bộ hiện tại</string>
     <string name="sync_settings_add_device_name_title">Thêm tên thiết bị</string>
     <string name="sync_settings_add_device_name_label">Nhập tên tùy chọn cho thiết bị này</string>
     <string name="sync_example_device_name">Thiết bị Android</string>
     <string name="brave_sync_qrcode">Đồng bộ với thiết bị</string>
-    <string name="brave_sync_qrcode_message">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave và điều hướng tới "Thiết bị &amp; Cài đặt", nhấn `+` để thêm thiết bị mới và tiết lộ mã đồng bộ.</string>
+    <string name="brave_sync_qrcode_message">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave
+và điều hướng tới "Thiết bị &amp; Cài đặt",
+nhấn `+` để thêm thiết bị mới
+và tiết lộ mã đồng bộ.</string>
     <string name="enter_code_words_sync">Nhập các từ mã</string>
     <string name="enter_code_words_below_sync">Nhập các từ mã dưới đây.</string>
     <string name="sync_device">Thiết bị đồng bộ</string>

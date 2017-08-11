@@ -2,8 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="brave_settings_title">Configuración de protección de sitio de Brave para</string>
-    <string name="brave_shields_down">Apagado</string>
-    <string name="brave_shields_up">Encendido</string>
+    <string name="brave_shields_down">Abajo</string>
+    <string name="brave_shields_up">Arriba</string>
     <string name="brave_shields_ads_trackers">Anuncios y rastreadores bloqueados</string>
     <string name="brave_shields_https_upgrades">Actualizaciones HTTPS</string>
     <string name="brave_shields_scripts_blocked">Secuencias de comandos bloqueadas</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Salida</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sincroniza los datos de navegación entre tus dispositivos de forma segura utilizando Brave Sync; no es necesario crear una cuenta. Pulsa abajo para comenzar.</string>
+    <string name="brave_sync_description">Sincroniza los datos de navegación entre
+tus dispositivos de forma segura
+utilizando Brave Sync; no es necesario
+crear una cuenta. Pulsa abajo para comenzar.</string>
     <string name="brave_sync_have_existing_code">Ya tengo un código de sincronización</string>
     <string name="sync_settings_add_device_name_title">Añadir nombre de dispositivo</string>
     <string name="sync_settings_add_device_name_label">Introducir un nombre opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo de Android</string>
     <string name="brave_sync_qrcode">Sincronizar con dispositivo</string>
-    <string name="brave_sync_qrcode_message">Abre la configuración de Brave desde un dispositivo ya sincronizado y selecciona \"Configuración del dispositivo\". Luego, presiona \"+\" para añadir un nuevo dispositivo y obtener el código de sincronización. </string>
+    <string name="brave_sync_qrcode_message">Abre la configuración de Brave desde un dispositivo
+ya sincronizado y selecciona "Configuración del dispositivo".
+Luego, presiona "+" para añadir un nuevo dispositivo
+y obtener el código de sincronización.</string>
     <string name="enter_code_words_sync">Introducir palabras clave</string>
     <string name="enter_code_words_below_sync">Introduce las palabras clave abajo.</string>
     <string name="sync_device">Sincronizar dispositivo</string>

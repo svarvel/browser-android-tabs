@@ -11,7 +11,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS overal</string>
     <string name="brave_shields_blocks_scripts_switch">Blokkeer Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activeer/inactiveer Brave afschermingen</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden.</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden</string>
 
     <string name="httpse_summary">Opent ondersteunde websites met HTTPS in plaats van HTTP indien mogelijk</string>
     <string name="tracking_protection_title">Tracking Protection Modus</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Uitgang</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synchroniseer browserdata tussen jouw apparaat op een veilige manier met Brave Sync, je hoeft geen account aan te maken. Klik hieronder om te beginnen.</string>
+    <string name="brave_sync_description">Synchroniseer browserdata tussen jouw apparaat op een
+veilige manier met Brave Sync,
+je hoeft geen account aan te maken.
+Klik hieronder om te beginnen.</string>
     <string name="brave_sync_have_existing_code">Ik heb een bestaande synchronisatiecode</string>
     <string name="sync_settings_add_device_name_title">Voeg naam apparaat toe</string>
     <string name="sync_settings_add_device_name_label">Voor een optionele naam voor dit apparaat in</string>
     <string name="sync_example_device_name">Android-apparaat</string>
     <string name="brave_sync_qrcode">Synchroniseer met apparaat</string>
-    <string name="brave_sync_qrcode_message">Gebruikt geopende Brave Instellingen van bestaand gesynchroniseerd apparaat. Ga naar "Device &amp;Settings", tap `+` om een nieuw apparaat toe te voegen en de synchronisatiecode te tonen.</string>
+    <string name="brave_sync_qrcode_message">Gebruikt geopende Brave Instellingen van bestaand
+gesynchroniseerd apparaat. Ga naar "Device &amp;Settings",
+tap `+` om een nieuw apparaat toe te
+voegen en de synchronisatiecode te tonen.</string>
     <string name="enter_code_words_sync">Voer codewoorden in</string>
     <string name="enter_code_words_below_sync">Voer codewoorden hieronder in.</string>
     <string name="sync_device">Synchroniseer apparaat</string>

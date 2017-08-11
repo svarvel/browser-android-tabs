@@ -15,30 +15,35 @@
 
     <string name="httpse_summary">በተቻለ ሰአት ከ HTTP ይልቅ HTTPSን በመጠቀም የሚደገፉ ጣቢያዎችን ይከፍታል</string>
     <string name="tracking_protection_title">የመከላከያ ስልት መንገድን መፈለግ</string>
-    <string name="tracking_protection_summary">የመጫን ሂደት ዱካን ፈልጎ የሚያገኘውን ምንጭ ይከላከላል </string>
-    <string name="ad_block_title">ማስታወቂያ አግድ   </string>
-    <string name="ad_block_summary">ማስታወቂያዎች ከመተላለፍ ሂደታቸው ይከላከላል </string>
+    <string name="tracking_protection_summary">የመጫን ሂደት ዱካን ፈልጎ የሚያገኘውን ምንጭ ይከላከላል</string>
+    <string name="ad_block_title">ማስታወቂያ አግድ</string>
+    <string name="ad_block_summary">ማስታወቂያዎች ከመተላለፍ ሂደታቸው ይከላከላል</string>
 
-    <string name="fingerprinting_protection_title"> መለያ አሻራ መከላከያ  </string>
-    <string name="fingerprinting_protection_summary">አሳሾችን መለያ አሻራን ከመያዝ ይከላከላል  </string>
+    <string name="fingerprinting_protection_title">መለያ አሻራ መከላከያ</string>
+    <string name="fingerprinting_protection_summary">አሳሾችን መለያ አሻራን ከመያዝ ይከላከላል</string>
     <string name="brave_shields_fingerprints_blocked">የአሻራ መያዣ መንገዶች ታግደዋል</string>
-    <string name="brave_shields_block_fingerprints_switch">መለያ አሻራ መከላከያ   </string>
+    <string name="brave_shields_block_fingerprints_switch">መለያ አሻራ መከላከያ</string>
 
-    <string name="ad_block_regional_title">የክልል ማስታወቂያ ማገጃ </string>
-    <string name="ad_block_regional_summary">የክልል ማስታወቂያዎች  እንዳይጫኑ ይከላከላል </string>
+    <string name="ad_block_regional_title">የክልል ማስታወቂያ ማገጃ</string>
+    <string name="ad_block_regional_summary">የክልል ማስታወቂያዎች እንዳይጫኑ ይከላከላል</string>
 
-    <string name="ad_block_regional_summary_no_list">ለእርስዎ አከባቢ ሌላ ተጨማሪ ዝርዝሮች አልተገኙም  </string>
+    <string name="ad_block_regional_summary_no_list">ለእርስዎ አከባቢ ሌላ ተጨማሪ ዝርዝሮች አልተገኙም</string>
 
     <string name="menu_exit">ውጣ</string>
 
     <string name="brave_sync">Brave ማጣመሪያ</string>
-    <string name="brave_sync_description">የBrave ማጣመሪያን በመጠቀም የተለያዩ የኤሌክትሮኒክ መሳሪያዎችዎትን እርስ በእርስ ያገናኙ፣ ምንም አይነት አካውንት መክፈት አያስፈልግዎትም። ለመጀመር ቀጥሎ ይጫኑ።</string>
+    <string name="brave_sync_description">የBrave ማጣመሪያን በመጠቀም የተለያዩ የኤሌክትሮኒክ
+መሳሪያዎችዎትን እርስ በእርስ ያገናኙ፣ ምንም አይነት
+አካውንት መክፈት አያስፈልግዎትም። ለመጀመር ቀጥሎ ይጫኑ።</string>
     <string name="brave_sync_have_existing_code">ከዚህ ቀደም የነበረ የማጣመሪያ ኮድ አለኝ</string>
     <string name="sync_settings_add_device_name_title">የኤሌክትሮኒክ መሳሪያ ስም ይደምሩ</string>
     <string name="sync_settings_add_device_name_label">ለዚህ መሳሪያ ስም ያስገቡ (አማስገባት ይቻላል)</string>
     <string name="sync_example_device_name">አንድሮይድ የሚጠቀም መሳሪያ</string>
     <string name="brave_sync_qrcode">መሳሪያውን ያጣምሩ</string>
-    <string name="brave_sync_qrcode_message">የተጣመረውን መሳሪያ በመጠቀም የBrave ማጣመሪያ ቅንብሮችን ይክፈቱ እና “የመሳሪያእና የአፕሊኬሽኖች ቅንብሮች” የሚለውን ይፈልጉ፤ ከዛም አዲስ መሳሪያ ለመደመር ‘+’ የሚለውን ምልክት በመጫን የማጣመሪያ ኮዱን ያግኙ  </string>
+    <string name="brave_sync_qrcode_message">የተጣመረውን መሳሪያ በመጠቀም የBrave ማጣመሪያ ቅንብሮችን ይክፈቱ
+እና “የመሳሪያእና የአፕሊኬሽኖች ቅንብሮች” የሚለውን ይፈልጉ፤
+ከዛም አዲስ መሳሪያ ለመደመር ‘+’ የሚለውን ምልክት በመጫን
+የማጣመሪያ ኮዱን ያግኙ</string>
     <string name="enter_code_words_sync">የኮድ ቃላቱን ያስገቡ</string>
     <string name="enter_code_words_below_sync">የኮድ ቃላቱን ቀጥሎ ያስገቡ።</string>
     <string name="sync_device">መሳሪያውን ያጣምሩ</string>
