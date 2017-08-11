@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Brave site shield indstillinger for </string>
+    <string name="brave_settings_title">Brave shield-indstillinger for</string>
     <string name="brave_shields_down">Ned</string>
     <string name="brave_shields_up">Op</string>
-    <string name="brave_shields_ads_trackers">Annoncer og Trackers Blokeret</string>
+    <string name="brave_shields_ads_trackers">Reklamer og tracking er blokeret</string>
     <string name="brave_shields_https_upgrades">HTTPS Opgraderinger</string>
-    <string name="brave_shields_scripts_blocked">Scripts Blokeret</string>
-    <string name="brave_shields_ads_tracking_switch">Bloker Annoncer og Tracking</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS Overalt</string>
-    <string name="brave_shields_blocks_scripts_switch">Bloker Scripts</string>
-    <string name="accessibility_toolbar_btn_brave_shields">
-Aktiver/Deaktiver Brave Shields</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Blokér cookies fra tredje part</string>
+    <string name="brave_shields_scripts_blocked">Scripts er blokeret</string>
+    <string name="brave_shields_ads_tracking_switch">Blokér Reklamer og Tracking</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokér Scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Desaktivér Brave Shields</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloker tredjeparts cookies</string>
 
-    <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP, når det er muligt</string>
-    <string name="tracking_protection_title">Beskyttelse mod tracking</string>
-    <string name="tracking_protection_summary">Forhindrer ressourcer, der tracker dig, i at loade</string>
-    <string name="ad_block_title">Blokering af reklamer</string>
+    <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP når det er muligt</string>
+    <string name="tracking_protection_title">Sporingsbeskyttelse</string>
+    <string name="tracking_protection_summary">Forhindrer ressourcer som sporer dig i at loade</string>
+    <string name="ad_block_title">Ad Block</string>
     <string name="ad_block_summary">Forhindrer reklamer i at loade</string>
 
     <string name="fingerprinting_protection_title">Beskyttelse af fingeraftryk</string>
     <string name="fingerprinting_protection_summary">Forhindrer browseren i at anvende fingeraftryk</string>
-    <string name="brave_shields_fingerprints_blocked">Metoder til brug af fingeraftryk er blokeret</string>
-    <string name="brave_shields_block_fingerprints_switch">Beskyttelse af fingertryk</string>
+    <string name="brave_shields_fingerprints_blocked">Metoder med brug af fingeraftryk er blokeret</string>
+    <string name="brave_shields_block_fingerprints_switch">Beskyttelse af fingeraftryk</string>
 
-    <string name="ad_block_regional_title">Blokering af regionale reklamer</string>
+    <string name="ad_block_regional_title">Regional reklameblokering</string>
     <string name="ad_block_regional_summary">Forhindrer regionale reklamer i at blive loadet</string>
 
-    <string name="ad_block_regional_summary_no_list">Der ingen yderligere lister tilgængelig for dit område</string>
+    <string name="ad_block_regional_summary_no_list">Der er ingen yderligere lister tilgængelig for dit område</string>
 
     <string name="menu_exit">Afslut</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Data mellem Sync browseren og dine enheder anvender det sikre Brave Sync, det er ikke nødvendigt at oprette en konto. Tryk nedenfor for at komme i gang.</string>
+    <string name="brave_sync_description">Data fra Sync browseren mellem dine enheder
+anvender det sikre Brave Sync, der er
+ikke nødvendigt at oprette en konto.
+Tryk her nededenfor, for at komme i gang.</string>
     <string name="brave_sync_have_existing_code">Jeg har en eksisterende sync kode</string>
     <string name="sync_settings_add_device_name_title">Tilføj enhedens navn</string>
     <string name="sync_settings_add_device_name_label">Indtast et valgfrit navn til denne enhed</string>
     <string name="sync_example_device_name">Android enhed</string>
     <string name="brave_sync_qrcode">Sync til enhed</string>
-    <string name="brave_sync_qrcode_message">For at anvende den eksisterende, synkroniseret enhed åbnes Brave Settings. Gå herefter til "Device &amp;Settings", tryk `+` for at tilføje den nye enhed og se sync koden.</string>
+    <string name="brave_sync_qrcode_message">For at anvende den eksisterende, synkroniseret enhed
+åbnes Brave Settings. gå til "Device &amp;Settings",
+tryk `+`for at tilføje en ny enhed
+og se sync koden.</string>
     <string name="enter_code_words_sync">Indtast kodeord</string>
     <string name="enter_code_words_below_sync">Indtast nedestående kodeord.</string>
     <string name="sync_device">Sync enhed</string>
     <string name="sync_device_failure">Sync setup kunne ikke udføres</string>
-    <string name="sync_device_success">Sync setup er udført med succes.</string>
+    <string name="sync_device_success">Sync setup er udført med succes</string>
     <string name="reset_sync">Nulstil Sync...</string>
     <string name="resetting_sync">Er du sikker på, at du ønsker at nulstille denne enhed Sync indstillinger?</string>
 
