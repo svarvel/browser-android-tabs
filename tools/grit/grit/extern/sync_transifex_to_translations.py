@@ -53,7 +53,9 @@ def SyncTranslationsToTransifex():
                 xml_file_name = transifex_folder + '/stringsxml_' + lang_id + '.xml'
                 if os.path.isfile(xml_file_name):
                     # go through all strings in a file name
-                    strings = xml.etree.ElementTree.parse(xml_file_name).getroot()
+                    strings_tree = xml.etree.ElementTree.parse(xml_file_name)
+                    strings_file_was_changed = False
+                    strings = strings_tree.getroot()
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')
                         string_value = string_tag.text
@@ -68,6 +70,8 @@ def SyncTranslationsToTransifex():
                                     if not translation_text == string_value:
                                         print(str(replacingNumber) + ' replacing "' + string_value + '" with "' + translation_text + '"')
                                         replacingNumber += 1
+                                        string_tag.text = translation_text
+                                        strings_file_was_changed = True
                                     translation_id_found = True
                                     break
                             # could not find translation id, so append it to the end
@@ -75,6 +79,8 @@ def SyncTranslationsToTransifex():
                                 sys.exit('Translation id "' + str(brave_strings[string_name]) + '" for "' + string_name + '" not found')
                         else:
                             sys.exit('String name "' + string_name + '" not found in base strings')
+                    if strings_file_was_changed:
+                        strings_tree.write(xml_file_name, encoding="utf-8", xml_declaration=False)
                 else:
                     sys.exit('Language xml file not found ' + xml_file_name)
         break
@@ -105,7 +111,8 @@ def SyncTransifexToTranslations():
     for (dirpath, dirnames, filenames) in walk(translations_folder):
         for filename in filenames:
             if filename.endswith('.xtb'):
-                translations = xml.etree.ElementTree.parse(translations_folder + '/' + filename).getroot()
+                translations_tree = xml.etree.ElementTree.parse(translations_folder + '/' + filename)
+                translations = translations_tree.getroot()
                 # get language id
                 lang_id = translations.get('lang').replace('-', '_')
                 if not lang_id:
@@ -127,6 +134,7 @@ def SyncTransifexToTranslations():
                 if os.path.isfile(xml_file_name):
                     # go through all strings in a file name
                     strings = xml.etree.ElementTree.parse(xml_file_name).getroot()
+                    translations_file_was_changed = False
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')
                         string_value = string_tag.text
@@ -141,20 +149,38 @@ def SyncTransifexToTranslations():
                                     if not translation_text == string_value:
                                         print(str(replacingNumber) + ' replacing "' + translation_text + '" with "' + string_value + '"')
                                         replacingNumber += 1
+                                        translation_tag.text = string_value
+                                        translations_file_was_changed = True
                                     translation_id_found = True
                                     break
                             # could not find translation id, so append it to the end
                             if not translation_id_found:
                                 print(str(addingNumber) + ' adding "' + string_name + '" with "' + string_value + '"')
                                 addingNumber += 1
+                                new_translation_tag = xml.etree.ElementTree.Element('translation')
+                                new_translation_tag.set('id', str(brave_strings[string_name]))
+                                new_translation_tag.text = string_value
+                                translations.append(new_translation_tag)
+                                translations_file_was_changed = True
                         else:
                             sys.exit('String name "' + string_name + '" not found in base strings')
+                    # write changes
+                    if translations_file_was_changed:
+                        translations_file_name = translations_folder + '/' + filename
+                        translations_tree.write(translations_file_name, encoding="utf-8", xml_declaration=False)
+                        # we need to add prepend headers
+                        f = open(translations_file_name, 'r+')
+                        # load all content to the memory to make it faster (size is less than 1Mb, so should not be a problem)
+                        content = f.read()
+                        f.seek(0, 0)
+                        f.write(('<?xml version="1.0" ?>\n<!DOCTYPE translationbundle>\n') + content)
+                        f.close()
                 else:
                     sys.exit('Language xml file not found ' + xml_file_name)
         break
     print('Sync transifex to translations finished successfully')
 
-# supposedly should be used once and never again
-SyncTranslationsToTransifex()
+# supposedly should be used once and never again (it is already used)
+# SyncTranslationsToTransifex()
 # main function
-# SyncTransifexToTranslations()
+SyncTransifexToTranslations()
