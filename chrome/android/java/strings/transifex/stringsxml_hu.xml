@@ -32,13 +32,20 @@
     <string name="menu_exit">Kijárat</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Szinkronizálja a böngésző adatait az eszközei között a Brave Sync használatával, fiók létrehozása nem szükséges. Bökjön az alábbira az indításhoz.</string>
+    <string name="brave_sync_description">Szinkronizálja a böngésző adatait az eszközei
+között a Brave Sync használatával,
+fiók létrehozása nem szükséges.
+Bökjön az alábbira az indításhoz.</string>
     <string name="brave_sync_have_existing_code">Rendelkezek szinkronizációs kóddal</string>
     <string name="sync_settings_add_device_name_title">Eszköznév hozzáadása</string>
     <string name="sync_settings_add_device_name_label">Adjon egy elfogadható nevet ennek az eszköznek</string>
     <string name="sync_example_device_name">Android-eszköz</string>
     <string name="brave_sync_qrcode">Szinkronizálás eszközre</string>
-    <string name="brave_sync_qrcode_message">Meglévő szinkronizált eszköz használatakor nyissa meg a Brave Beállításokat és navigáljon az "Eszközök és beállítások" elemhez, bökjön `+` jelre az új eszköz hozzáadásához és a szinkronizációs kód felfedéséhez.</string>
+    <string name="brave_sync_qrcode_message">Meglévő szinkronizált eszköz használatakor nyissa meg
+a Brave Beállításokat és navigáljon az
+"Eszközök és beállítások" elemhez, bökjön `+`
+jelre az új eszköz hozzáadásához és a
+szinkronizációs kód felfedéséhez.</string>
     <string name="enter_code_words_sync">Kódszavak hozzáadása</string>
     <string name="enter_code_words_below_sync">Írja be a lenti kódszavakat.</string>
     <string name="sync_device">Eszköz szinkronizálása</string>

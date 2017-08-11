@@ -32,13 +32,20 @@
     <string name="menu_exit">Вихід</string>
 
     <string name="brave_sync">Синхронізація Brave</string>
-    <string name="brave_sync_description">Безпечно синхронізуйте дані браузера між Вашими пристроями, використовуя синхронізацію Brave, без створення облікового запису. Натисніть знизу для початку.</string>
+    <string name="brave_sync_description">Безпечно синхронізуйте дані браузера
+між Вашими пристроями,
+використовуя синхронізацію Brave,
+без створення облікового запису.
+Натисніть знизу для початку.</string>
     <string name="brave_sync_have_existing_code">У мене є код синхронізації</string>
     <string name="sync_settings_add_device_name_title">Додавання імені пристрою</string>
-    <string name="sync_settings_add_device_name_label">Введіть ім\'я для даного пристрою</string>
+    <string name="sync_settings_add_device_name_label">Введіть ім'я для даного пристрою</string>
     <string name="sync_example_device_name">Android пристрій</string>
     <string name="brave_sync_qrcode">Синхронізація до пристрою</string>
-    <string name="brave_sync_qrcode_message">Використовуючи існуючий синхронізований пристрій, відкрийте налаштування Brave і перейдіть в розділ Синхронізація, натисніть синхронізувати новий пристрій та отримайте код синхронізації</string>
+    <string name="brave_sync_qrcode_message">Використовуючи існуючий синхронізований пристрій,
+відкрийте налаштування Brave і перейдіть в розділ Синхронізація,
+натисніть синхронізувати новий пристрій
+та отримайте код синхронізації.</string>
     <string name="enter_code_words_sync">Введення кодових слів</string>
     <string name="enter_code_words_below_sync">Введіть кодові слова.</string>
     <string name="sync_device">Синхронізація пристрою</string>

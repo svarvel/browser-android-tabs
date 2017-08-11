@@ -32,13 +32,18 @@
     <string name="menu_exit">Poistua</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Brave Sync synkronoi selaimen tiedot laitteiden välillä turvallisesti ilman tilin luontia. Aloita napauttamalla alla.</string>
+    <string name="brave_sync_description">Brave Sync synkronoi selaimen tiedot laitteiden
+välillä turvallisesti ilman tilin luontia.
+Aloita napauttamalla alla.</string>
     <string name="brave_sync_have_existing_code">Minulla on jo synkronointikoodi</string>
     <string name="sync_settings_add_device_name_title">Lisää laitteen nimi</string>
     <string name="sync_settings_add_device_name_label">Anna laitteelle vaihtoehtoinen nimi</string>
     <string name="sync_example_device_name">Android-laite</string>
     <string name="brave_sync_qrcode">Synkronoi laitteelle</string>
-    <string name="brave_sync_qrcode_message">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Laite ja asetukset -kohtaan, niin voit lisätä uuden laitteen ja näyttää synkronointikoodin.</string>
+    <string name="brave_sync_qrcode_message">Kun käytät olemassa olevaa synkronoitua laitetta,
+avaa Braven asetukset ja siirry Laite ja asetukset -kohtaan,
+niin voit lisätä uuden laitteen
+ja näyttää synkronointikoodin.</string>
     <string name="enter_code_words_sync">Anna koodisanat</string>
     <string name="enter_code_words_below_sync">Anna koodisanat alla.</string>
     <string name="sync_device">Synkronoi laite</string>

@@ -32,16 +32,22 @@
     <string name="menu_exit">Saída</string>
 
     <string name="brave_sync">Sincronização Brave</string>
-    <string name="brave_sync_description">Sincronize os dados do navegador entre os seus dispositivos de forma segura utilizando a Brave Sync, não é necessário criar conta. Toque abaixo para começar. </string>
-    <string name="brave_sync_have_existing_code">Tenho um código de sincronização existente </string>
+    <string name="brave_sync_description">Sincronize os dados do navegador entre os seus
+dispositivos de forma segura utilizando a Brave Sync,
+não é necessário criar conta.
+Toque abaixo para começar. </string>
+    <string name="brave_sync_have_existing_code">Tenho um código de sincronização existente</string>
     <string name="sync_settings_add_device_name_title"> Adicionar nome do dispositivo</string>
     <string name="sync_settings_add_device_name_label">Inserir um nome opcional para este dispositivo</string>
-    <string name="sync_example_device_name">Dispositivo Android </string>
-    <string name="brave_sync_qrcode">Sincronizar com o dispositivo </string>
-    <string name="brave_sync_qrcode_message">Ao utilizar o dispositivo sincronizado existente, abra as Configurações Brave e navegue até "Configurações do Dispositivo", toque `+` para adicionar um novo dispositivo e revelar o código de sincronização.</string>
-    <string name="enter_code_words_sync">Inserir código palavras </string>
-    <string name="enter_code_words_below_sync">Inserir código palavras abaixo. </string>
-    <string name="sync_device">Sincronizar dispositivo </string>
+    <string name="sync_example_device_name">Dispositivo Android</string>
+    <string name="brave_sync_qrcode">Sincronizar com o dispositivo</string>
+    <string name="brave_sync_qrcode_message">Ao utilizar o dispositivo sincronizado existente,
+abra as Configurações Brave e navegue até
+"Configurações do Dispositivo", toque `+` para adicionar
+um novo dispositivo e revelar o código de sincronização.</string>
+    <string name="enter_code_words_sync">Inserir código palavras</string>
+    <string name="enter_code_words_below_sync">Inserir código palavras abaixo.</string>
+    <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">A sincronização não pôde ser configurada</string>
     <string name="sync_device_success">A configuração da sincronização foi finalizada com sucesso</string>
     <string name="reset_sync">Restaurar Sincronização...</string>

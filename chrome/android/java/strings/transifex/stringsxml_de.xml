@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Schutzschild-Einstellungen für</string>
+    <string name="brave_settings_title">Brave-Schutzschild für</string>
     <string name="brave_shields_down">Aus</string>
     <string name="brave_shields_up">An</string>
     <string name="brave_shields_ads_trackers">Blockierte Werbung und Tracker</string>
@@ -10,7 +10,7 @@
     <string name="brave_shields_ads_tracking_switch">Werbung und Tracking blockieren</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS überall</string>
     <string name="brave_shields_blocks_scripts_switch">Skripte blockieren</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Schutzschilde aktivieren/deaktivieren</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Brave-Schutzschilde aktivieren/deaktivieren</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Drittanbieter-Cookies blockieren</string>
 
     <string name="httpse_summary">Öffnet unterstützte Seiten mit verschlüsseltem HTTPS anstelle von unverschlüsseltem HTTP, sofern möglich</string>
@@ -32,20 +32,26 @@
     <string name="menu_exit">Beenden</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synchronisieren Sie Browserdaten zwischen Ihren Geräten sicher mit Brave Sync, die Erstellung eines Kontos ist nicht notwendig. Unten tippen und loslegen.</string>
+    <string name="brave_sync_description">Synchronisieren Sie Browserdaten zwischen Ihren Geräten
+sicher mit Brave Sync, die Erstellung eines
+Kontos ist nicht notwendig.
+Unten tippen und loslegen.</string>
     <string name="brave_sync_have_existing_code">Ich habe einen vorhandenen Synchronisierungscode</string>
     <string name="sync_settings_add_device_name_title">Gerätenamen hinzufügen</string>
     <string name="sync_settings_add_device_name_label">Optionalen Namen für dieses Gerät eingeben</string>
     <string name="sync_example_device_name">Android-Gerät</string>
     <string name="brave_sync_qrcode">Synchronisierung mit dem Gerät</string>
-    <string name="brave_sync_qrcode_message">Ein vorhandenes synchronisiertes Gerät verwenden, Brave Einstellungen öffnen und zu "Gerät &amp;Einstellungen" navigieren; mit '+' ein neues Gerät hinzufügen und Synchronisierungscode eingeben.</string>
+    <string name="brave_sync_qrcode_message">Ein vorhandenes synchronisiertes Gerät verwenden,
+Brave Einstellungen öffnen und zu "Gerät &amp;Einstellungen"
+navigieren; mit '+' ein neues Gerät hinzufügen und
+Synchronisierungscode eingeben.</string>
     <string name="enter_code_words_sync">Codewörter eingeben</string>
     <string name="enter_code_words_below_sync">Die Codewörter unten eingeben</string>
     <string name="sync_device">Gerät synchronisieren</string>
     <string name="sync_device_failure">Die Synchronisierung konnte nicht durchgeführt werden</string>
     <string name="sync_device_success">Das Setup der Synchronisierung wurde erfolgreich abgeschlossen</string>
     <string name="reset_sync">Synchronisierung zurücksetzen...</string>
-    <string name="resetting_sync">Sind Sie sicher, dass Sie dieses Gerät\'s Synchronisierungseinstellungen zurücksetzen möchten?</string>
+    <string name="resetting_sync">Sind Sie sicher, dass Sie dieses Gerät's Synchronisierungseinstellungen zurücksetzen möchten?</string>
 
     <string name="brave_stats_text_trackers">Blockierte
 Tracker</string>

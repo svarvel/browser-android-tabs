@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">  Podešavanje Brave štita sajta za</string>
-    <string name="brave_shields_down">  Dole</string>
-    <string name="brave_shields_up">  Gore</string>
-    <string name="brave_shields_ads_trackers"> Reklame i trekeri blokirani</string>
-    <string name="brave_shields_https_upgrades">  HTTPS nadogradnje</string>
-    <string name="brave_shields_scripts_blocked">  Skripte blokirane</string>
-    <string name="brave_shields_ads_tracking_switch">  Blokiraj reklame i trekere</string>
-    <string name="brave_shields_https_everywhere_switch">  HTTPS svuda</string>
-    <string name="brave_shields_blocks_scripts_switch">  Blokiraj skripte</string>
-    <string name="accessibility_toolbar_btn_brave_shields">  Aktiviraj/Deaktiviraj Brave štitove</string>
+    <string name="brave_settings_title">Podešavanje Brave štita sajta za</string>
+    <string name="brave_shields_down">Dole</string>
+    <string name="brave_shields_up">Gore</string>
+    <string name="brave_shields_ads_trackers">Reklame i trekeri blokirani</string>
+    <string name="brave_shields_https_upgrades">HTTPS nadogradnje</string>
+    <string name="brave_shields_scripts_blocked">Skripte blokirane</string>
+    <string name="brave_shields_ads_tracking_switch">Blokiraj reklame i trekere</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS svuda</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokiraj skripte</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktiviraj/Deaktiviraj Brave štitove</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokiraj kolačiće treće strane</string>
 
     <string name="httpse_summary">Otvara podržavane veb lokacije koristeći HTTPS umesto HTTP kada je to moguće</string>
@@ -31,14 +31,21 @@
 
     <string name="menu_exit">Izlaz</string>
 
-    <string name="brave_sync">Brave sinhronizacija </string>
-    <string name="brave_sync_description">Bezbedna sinhronizacija podataka pretraživača između uređaja uz pomoć Brave sinhronizacije, bez obaveze kreiranja naloga. Dodirnite dole da biste počeli.</string>
+    <string name="brave_sync">Brave sinhronizacija</string>
+    <string name="brave_sync_description">Bezbedna sinhronizacija podataka pretraživača
+između uređaja uz pomoć Brave sinhronizacije,
+bez obaveze kreiranja naloga.
+Dodirnite dole da biste počeli.</string>
     <string name="brave_sync_have_existing_code">Imam postojeći kod za sinhronizaciju</string>
     <string name="sync_settings_add_device_name_title">Dodajte naziv uređaja</string>
     <string name="sync_settings_add_device_name_label">Unesite opciono ime za ovaj uređaj</string>
     <string name="sync_example_device_name">Android uređaj</string>
-    <string name="brave_sync_qrcode">Sinhronizujte sa uređajem </string>
-    <string name="brave_sync_qrcode_message">Koristeći postojeći sinhronizovani uređaj, otvorite Brave podešavanja i idite do "Device &amp;Settings", odaberite `+` da biste dodali novi uređaj i dobili kod za sinhronizaciju.</string>
+    <string name="brave_sync_qrcode">Sinhronizujte sa uređajem</string>
+    <string name="brave_sync_qrcode_message">Koristeći postojeći sinhronizovani uređaj,
+otvorite Brave podešavanja i idite do
+"Device &amp;Settings", odaberite `+`
+da biste dodali novi uređaj i dobili
+kod za sinhronizaciju.</string>
     <string name="enter_code_words_sync">Unesite reči koda</string>
     <string name="enter_code_words_below_sync">Unesite reči koda dole.</string>
     <string name="sync_device">Sinhronizacija uređaja</string>
@@ -51,8 +58,8 @@
 blokirani</string>
     <string name="brave_stats_text_ads">Reklame
 blokirani</string>
-    <string name="brave_stats_text_https">HTTP
-Snadogradnje</string>
+    <string name="brave_stats_text_https">HTTPS
+nadogradnje</string>
     <string name="brave_stats_text_time">Predv. vreme
 Sačuvano</string>
 

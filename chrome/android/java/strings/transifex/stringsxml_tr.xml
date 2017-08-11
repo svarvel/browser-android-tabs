@@ -13,7 +13,7 @@
     <string name="accessibility_toolbar_btn_brave_shields">Brave Korumalarını Aç/Kapat</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Üçüncü kişi çerezlerini engelleyin</string>
 
-    <string name="httpse_summary">Desteklenen siteleri mümkün olduğunda HTTP yerine HTTPS kullanarak açar.</string>
+    <string name="httpse_summary">Desteklenen siteleri mümkün olduğunda HTTP yerine HTTPS kullanarak açar</string>
     <string name="tracking_protection_title">İzleme Koruması Modu</string>
     <string name="tracking_protection_summary">Sizi izleyen kaynakların yüklenmesini engeller</string>
     <string name="ad_block_title">Reklam Engelleme</string>
@@ -21,7 +21,7 @@
 
     <string name="fingerprinting_protection_title">Parmak izi koruması</string>
     <string name="fingerprinting_protection_summary">Tarayıcının parmak izi bırakmasını önler</string>
-    <string name="brave_shields_fingerprints_blocked"> Parmak İzi Yöntemleri Engellendi</string>
+    <string name="brave_shields_fingerprints_blocked">Parmak İzi Yöntemleri Engellendi</string>
     <string name="brave_shields_block_fingerprints_switch">Parmak izi koruması</string>
 
     <string name="ad_block_regional_title">Bölgesel Reklam Engeli</string>
@@ -32,13 +32,19 @@
     <string name="menu_exit">Çıkış</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Tarayıcı verilerini, Brave Sync'i kullanarak cihazlarınız arasında güvenli bir şekilde senkronize edin, hiçbir hesap oluşturulması gerekli değildir. Başlamak için aşağıya dokunun.</string>
+    <string name="brave_sync_description">Tarayıcı verilerini, Brave Sync'i kullanarak
+cihazlarınız arasında güvenli bir şekilde senkronize edin,
+hiçbir hesap oluşturulması gerekli değildir.
+Başlamak için aşağıya dokunun.</string>
     <string name="brave_sync_have_existing_code">Mevcut bir senkronizasyon kodum var</string>
     <string name="sync_settings_add_device_name_title">Cihaz adı ekle</string>
     <string name="sync_settings_add_device_name_label">Bu cihaz için isteğe bağlı bir ad girin</string>
     <string name="sync_example_device_name">Android cihazı</string>
     <string name="brave_sync_qrcode">Cihazı senkronize etme</string>
-    <string name="brave_sync_qrcode_message"> Cihazı senkronize kullanma Brave Settings ayarlarını açar ve  Cihaz ve amp;Ayarlar"ına yönlendirir, yeni bir cihaz eklemek için ve senkronizasyon kodu ortaya çıkarmak için"+"  üzerine dokunun.</string>
+    <string name="brave_sync_qrcode_message"> Cihazı senkronize kullanma Brave Settings ayarlarını
+açar ve Cihaz ve amp;Ayarlar"ına yönlendirir,
+yeni bir cihaz eklemek için ve senkronizasyon
+kodu ortaya çıkarmak için"+" üzerine dokunun.</string>
     <string name="enter_code_words_sync">Kod kelimeleri ekle</string>
     <string name="enter_code_words_below_sync">Aşağıdaki kod kelimelerini girin.</string>
     <string name="sync_device">Senkronizasyon cihazı</string>

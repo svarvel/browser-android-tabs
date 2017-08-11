@@ -13,44 +13,38 @@
     <string name="accessibility_toolbar_btn_brave_shields">הפעל/השבת מגן/י Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">חסום עוגיות צד שלישי</string>
 
-    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר הדבר ניתן
-</string>
-    <string name="tracking_protection_title">מצב הגנה מפני מעקב
-</string>
-    <string name="tracking_protection_summary">מניעת טעינה של משאבים העוקבים אחריך
-</string>
-    <string name="ad_block_title">חסימת מודעות
-</string>
-    <string name="ad_block_summary">מניעת טעינה של מודעות
-</string>
+    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר הדבר ניתן</string>
+    <string name="tracking_protection_title">מצב הגנה מפני מעקב</string>
+    <string name="tracking_protection_summary">מניעת טעינה של משאבים העוקבים אחריך</string>
+    <string name="ad_block_title">חסימת מודעות</string>
+    <string name="ad_block_summary">מניעת טעינה של מודעות</string>
 
-    <string name="fingerprinting_protection_title">הגנה באמצעות טביעות אצבעות
-</string>
-    <string name="fingerprinting_protection_summary">מניעת הדפדפן מלקיחת טביעות אצבעות
-</string>
-    <string name="brave_shields_fingerprints_blocked">שיטות טביעות אצבעות חסומות
-</string>
-    <string name="brave_shields_block_fingerprints_switch">הגנה באמצעות טביעות אצבעות
-</string>
+    <string name="fingerprinting_protection_title">הגנה באמצעות טביעות אצבעות</string>
+    <string name="fingerprinting_protection_summary">מניעת הדפדפן מלקיחת טביעות אצבעות</string>
+    <string name="brave_shields_fingerprints_blocked">שיטות טביעות אצבעות חסומות</string>
+    <string name="brave_shields_block_fingerprints_switch">הגנה באמצעות טביעות אצבעות</string>
 
-    <string name="ad_block_regional_title">חסימת מודעות אזוריות
-</string>
-    <string name="ad_block_regional_summary">מניעת טעינה של מודעות אזוריות
-</string>
+    <string name="ad_block_regional_title">חסימת מודעות אזוריות</string>
+    <string name="ad_block_regional_summary">מניעת טעינה של מודעות אזוריות</string>
 
-    <string name="ad_block_regional_summary_no_list">אין רשימות נוספות הזמינות עבור האזור שלך
-</string>
+    <string name="ad_block_regional_summary_no_list">אין רשימות נוספות הזמינות עבור האזור שלך</string>
 
     <string name="menu_exit">יְצִיאָה</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים באמצעות Brave Sync. אין צורך ליצור חשבון. הקש להלן כדי להתחיל.</string>
+    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים
+ באמצעות Brave Sync. אין צורך ליצור
+ חשבון. הקש להלן כדי להתחיל.</string>
     <string name="brave_sync_have_existing_code">יש לי קוד סנכרון קיים</string>
     <string name="sync_settings_add_device_name_title">הוסף שם מכשיר</string>
     <string name="sync_settings_add_device_name_label">הזן שם אופציונלי עבור מכשיר זה</string>
     <string name="sync_example_device_name">מכשיר Android</string>
     <string name="brave_sync_qrcode">סנכרן למכשיר</string>
-    <string name="brave_sync_qrcode_message">באמצעות מכשיר מסונכרן קיים, פתח את Brave Settings (הגדרות Brave), ונווט אל Device &amp;Settings" (הגדרות מכשירים), הקש על '+' כדי להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</string>
+    <string name="brave_sync_qrcode_message">באמצעות מכשיר מסונכרן קיים,
+ פתח את Brave Settings (הגדרות Brave),
+ ונווט אל Device &amp;Settings"
+ (הגדרות מכשירים), הקש על '+' כדי
+ להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</string>
     <string name="enter_code_words_sync">הזן מילות קוד</string>
     <string name="enter_code_words_below_sync">הזן את מילות הקוד להלן.</string>
     <string name="sync_device">סנכרן מכשיר</string>

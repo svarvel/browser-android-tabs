@@ -32,13 +32,20 @@
     <string name="menu_exit">Ieșire</string>
 
     <string name="brave_sync">Sincronizare Brave</string>
-    <string name="brave_sync_description">Sincronizarea securizată a datelor de navigare între dispozitive, folosind sincronizare Brave. Nu este necesară crearea unui cont. Apăsați mai jos pentru pornire.</string>
+    <string name="brave_sync_description">Sincronizarea securizată a datelor de navigare
+între dispozitive, folosind sincronizare Brave.
+Nu este necesară crearea unui cont.
+Apăsați mai jos pentru pornire.</string>
     <string name="brave_sync_have_existing_code">Am un cod de sincronizare deja existent</string>
     <string name="sync_settings_add_device_name_title">Adăugare nume dispozitiv</string>
     <string name="sync_settings_add_device_name_label">Introduceți un nume opțional pentru acest dispozitiv</string>
     <string name="sync_example_device_name">Dispozitiv Android</string>
     <string name="brave_sync_qrcode">Sincronizarea dispozitivului</string>
-    <string name="brave_sync_qrcode_message">Utilizând dispozitivul sincronizat existent, deschideți Setările Brave și navigați la „Device &amp;Settings", apăsați pe „+” pentru a adăuga un nou dispozitiv și obține codul de sincronizare.</string>
+    <string name="brave_sync_qrcode_message">Utilizând dispozitivul sincronizat existent,
+deschideți Setările Brave și navigați la
+„Device &amp;Settings", apăsați pe „+” pentru
+a adăuga un nou dispozitiv și obține
+codul de sincronizare.</string>
     <string name="enter_code_words_sync">Introducere cuvânt codat</string>
     <string name="enter_code_words_below_sync">Introduceți cuvântul codat mai jos</string>
     <string name="sync_device">Dispozitiv de sincronizat</string>
