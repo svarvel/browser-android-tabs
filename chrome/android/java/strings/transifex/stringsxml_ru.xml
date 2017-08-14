@@ -5,62 +5,62 @@
     <string name="brave_shields_down">Выкл</string>
     <string name="brave_shields_up">Вкл</string>
     <string name="brave_shields_ads_trackers">Реклам или трекеров заблокировано</string>
-    <string name="brave_shields_https_upgrades">HTTPS перенаправлений</string>
-    <string name="brave_shields_scripts_blocked">Блокировано скриптов</string>
+    <string name="brave_shields_https_upgrades">HTTPS-перенаправлений</string>
+    <string name="brave_shields_scripts_blocked">Скриптов заблокировано</string>
     <string name="brave_shields_ads_tracking_switch">Блокировать рекламу и трекинг</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS везде</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Блокировать скрипты</string>
     <string name="accessibility_toolbar_btn_brave_shields">Вкл/Выкл щиты Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Блокировать сторонние cookies</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Блокировать сторонние cookie</string>
 
     <string name="httpse_summary">Открывает сайты используя HTTPS вместо HTTP, где это возможно</string>
     <string name="tracking_protection_title">Режим защиты от трекинга</string>
-    <string name="tracking_protection_summary">Блокирует трекинг ресурсы</string>
-    <string name="ad_block_title">Блокирование рекламы</string>
+    <string name="tracking_protection_summary">Блокирует отслеживающие вас компоненты</string>
+    <string name="ad_block_title">Блокировка рекламы</string>
     <string name="ad_block_summary">Блокирует загрузку рекламы</string>
 
     <string name="fingerprinting_protection_title">Защита отпечатка браузера</string>
-    <string name="fingerprinting_protection_summary">Защищает от определения отпечатка браузера</string>
+    <string name="fingerprinting_protection_summary">Предотвращает определение отпечатка браузера</string>
     <string name="brave_shields_fingerprints_blocked">Блокировано отпечатков</string>
     <string name="brave_shields_block_fingerprints_switch">Защита отпечатка браузера</string>
 
-    <string name="ad_block_regional_title">Блокирование региональной рекламы</string>
-    <string name="ad_block_regional_summary">Блокирует загрузку региональной рекламы</string>
+    <string name="ad_block_regional_title">Блокировка региональной рекламы</string>
+    <string name="ad_block_regional_summary">Предотвращает загрузку региональной рекламы</string>
 
-    <string name="ad_block_regional_summary_no_list">Дополнительных списков не обнаружено для Вашей локали</string>
+    <string name="ad_block_regional_summary_no_list">Дополнительных списков для вашего региона не обнаружено</string>
 
     <string name="menu_exit">Выход</string>
 
-    <string name="brave_sync">Синхронизация Brave</string>
+    <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">Безопасно синхронизируйте данные браузера
-между Вашими устройствами,
+между вашими устройствами,
 используя синхронизацию Brave,
 без создания учетной записи.
-Нажмите внизу чтобы начать.</string>
+Нажмите ниже чтобы начать.</string>
     <string name="brave_sync_have_existing_code">У меня есть код синхронизации</string>
     <string name="sync_settings_add_device_name_title">Добавление имени устройства</string>
-    <string name="sync_settings_add_device_name_label">Введите имя для этого устройства</string>
+    <string name="sync_settings_add_device_name_label">Если хотите, введите имя для этого устройства</string>
     <string name="sync_example_device_name">Android устройство</string>
-    <string name="brave_sync_qrcode">Синхронизация к устройству</string>
-    <string name="brave_sync_qrcode_message">Используя существующее синхронизированное устройство,
-откройте настройки Brave и перейдите в раздел Синхронизация,
-нажмите синхронизировать новое устройство
-и получите код синхронизации.</string>
+    <string name="brave_sync_qrcode">Синхронизация с устройством</string>
+    <string name="brave_sync_qrcode_message">Используя уже имеющееся синхронизированное
+устройство, откройте настройки Brave и перейдите
+в раздел Синхронизация, нажмите синхронизировать
+новое устройство и получите код синхронизации</string>
     <string name="enter_code_words_sync">Ввод кодовых слов</string>
-    <string name="enter_code_words_below_sync">Введите кодовые слова.</string>
+    <string name="enter_code_words_below_sync">Введите кодовые слова ниже.</string>
     <string name="sync_device">Синхронизация устройства</string>
-    <string name="sync_device_failure">Синхронизация не может быть установлена</string>
-    <string name="sync_device_success">Синхронизация установлена успешно</string>
+    <string name="sync_device_failure">Не удалось настроить синхронизацию</string>
+    <string name="sync_device_success">Настройка синхронизации успешно завершена</string>
     <string name="reset_sync">Сброс синхронизации...</string>
-    <string name="resetting_sync">Вы уверены что хотите сбросить синхронизацию для этого устройства?</string>
+    <string name="resetting_sync">Вы действительно хотите сбросить настройки синхронизации этого устройства?</string>
 
     <string name="brave_stats_text_trackers">Трекеров
 блокировано</string>
     <string name="brave_stats_text_ads">Реклам
 блокировано</string>
-    <string name="brave_stats_text_https">HTTPS пере-
-направлений</string>
-    <string name="brave_stats_text_time">Сохранено
+    <string name="brave_stats_text_https">HTTPS-
+перенаправлений</string>
+    <string name="brave_stats_text_time">Сэкономлено
 времени</string>
 
 </resources>
