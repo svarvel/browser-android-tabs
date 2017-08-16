@@ -1,3 +1,12 @@
+<release version="1.0.29">
+    <change>Updated to Chromium 60.0.3112.97.</change>
+    <change>Added ability to turn WebRTC off for fingerprinting protection.</change>
+    <change>Removed account access permission on reboot.</change>
+</release>
+<release version="1.0.28">
+    <change>Updated to Chromium 60.0.3112.78.</change>
+    <change>Added New tab page stats.</change>
+</release>
 <release version="1.0.27">
     <change>Re-added device branded home button on the URL bar, if present, can be hidden (Settings->Home page).</change>
     <change>Added Brave User-Agent for duckduckgo.com.</change>
