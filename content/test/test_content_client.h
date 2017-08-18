@@ -20,7 +20,7 @@ class TestContentClient : public ContentClient {
   ~TestContentClient() override;
 
   // ContentClient:
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& strHost) const override;
   base::StringPiece GetDataResource(
       int resource_id,
       ui::ScaleFactor scale_factor) const override;
