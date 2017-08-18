@@ -386,7 +386,12 @@ public class SigninTest {
 
     private static void clickSigninPreference(Preferences prefActivity) {
         MainPreferences mainPrefs = getMainPreferences(prefActivity);
-        Preference signinPref = mainPrefs.findPreference(MainPreferences.PREF_SIGN_IN);
+        //we don't have it in Brave now
+        Preference signinPref = null;//mainPrefs.findPreference(MainPreferences.PREF_SIGN_IN);
+        if (signinPref == null) {
+          return;
+        }
+
         Assert.assertNotNull(signinPref);
         Assert.assertTrue(signinPref instanceof SignInPreference);
         Assert.assertNotNull(signinPref.getOnPreferenceClickListener());
