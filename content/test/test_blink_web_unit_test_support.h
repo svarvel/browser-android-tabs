@@ -53,7 +53,7 @@ class TestBlinkWebUnitTestSupport : public BlinkPlatformImpl {
       override;
   std::unique_ptr<blink::WebDataConsumerHandle> CreateDataConsumerHandle(
       mojo::ScopedDataPipeConsumerHandle handle) override;
-  blink::WebString UserAgent() override;
+  blink::WebString UserAgent(const std::string& strHost) override;
   blink::WebString QueryLocalizedString(
       blink::WebLocalizedString::Name name) override;
   blink::WebString QueryLocalizedString(blink::WebLocalizedString::Name name,
