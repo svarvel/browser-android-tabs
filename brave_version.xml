@@ -1,3 +1,6 @@
+<release version="1.0.30">
+    <change>Updated to Chromium 60.0.3112.107.</change>
+</release>
 <release version="1.0.29">
     <change>Updated to Chromium 60.0.3112.97.</change>
     <change>Added ability to turn WebRTC off for fingerprinting protection.</change>
