@@ -169,7 +169,7 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
       true);
   registry->RegisterBooleanPref(
       prefs::kAdBlockRegionalEnabled,
-      true);
+      false);
   registry->RegisterBooleanPref(prefs::kSafeBrowsingExtendedReportingEnabled,
                                 false);
   registry->RegisterBooleanPref(prefs::kSafeBrowsingScoutReportingEnabled,
