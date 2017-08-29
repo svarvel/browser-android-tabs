@@ -491,11 +491,19 @@ public class PrefServiceBridge {
         nativeSetHTTPSEEnabled(enabled);
     }
 
+    public boolean isHTTPSEEnabled() {
+        return nativeGetHTTPSEEnabled();
+    }
+
     /**
      * @param whether Fingerprinting Protection should be enabled.
      */
     public void setFingerprintingProtectionEnabled(boolean enabled) {
         nativeSetFingerprintingProtectionEnabled(enabled);
+    }
+
+    public boolean isFingerprintingProtectionEnabled() {
+        return nativeGetFingerprintingProtectionEnabled();
     }
 
     /**
@@ -505,6 +513,10 @@ public class PrefServiceBridge {
         nativeSetTrackingProtectionEnabled(enabled);
     }
 
+    public boolean isTrackingProtectionEnabled() {
+        return nativeGetTrackingProtectionEnabled();
+    }
+
     /**
      * @param whether AdBlock should be enabled.
      */
@@ -512,11 +524,19 @@ public class PrefServiceBridge {
         nativeSetAdBlockEnabled(enabled);
     }
 
+    public boolean isAdBlockEnabled() {
+        return nativeGetAdBlockEnabled();
+    }
+
     /**
      * @param whether AdBlock should be enabled.
      */
     public void setAdBlockRegionalEnabled(boolean enabled) {
         nativeSetAdBlockRegionalEnabled(enabled);
+    }
+
+    public boolean isAdBlockRegionalEnabled() {
+        return nativeGetAdBlockRegionalEnabled();
     }
 
     /**
@@ -1188,10 +1208,15 @@ public class PrefServiceBridge {
     private native boolean nativeGetSafeBrowsingEnabled();
     private native void nativeSetSafeBrowsingEnabled(boolean enabled);
     private native void nativeSetFingerprintingProtectionEnabled(boolean enabled);
+    private native boolean nativeGetFingerprintingProtectionEnabled();
     private native void nativeSetHTTPSEEnabled(boolean enabled);
+    private native boolean nativeGetHTTPSEEnabled();
     private native void nativeSetTrackingProtectionEnabled(boolean enabled);
+    private native boolean nativeGetTrackingProtectionEnabled();
     private native void nativeSetAdBlockEnabled(boolean enabled);
+    private native boolean nativeGetAdBlockEnabled();
     private native void nativeSetAdBlockRegionalEnabled(boolean enabled);
+    private native boolean nativeGetAdBlockRegionalEnabled();
     private native boolean nativeGetSafeBrowsingManaged();
     private native boolean nativeGetNetworkPredictionManaged();
     private native boolean nativeObsoleteNetworkPredictionOptionsHasUserSetting();
