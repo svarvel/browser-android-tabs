@@ -150,16 +150,14 @@ by a child template that "extends" this file.
        <meta-data android:name="android.allow_multiple_resumed_activities" android:value="true" />
 
         <!-- MixPanel proxy server -->
-        <!--<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
-              android:value="https://metric-proxy.brave.com" />-->
+        <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
+              android:value="https://metric-proxy.brave.com/track" />
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.PeopleEndpoint"
               android:value="https://metric-proxy.brave.com" />-->
-        <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
-              android:value="https://metric-proxy.brave.com" />
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.DecideEndpoint"
               android:value="https://metric-proxy.brave.com" />-->
-        <meta-data android:name="com.mixpanel.android.MPConfig.EnableDebugLogging"
-              android:value="true" />
+        <!--<meta-data android:name="com.mixpanel.android.MPConfig.EnableDebugLogging"
+              android:value="true" />-->
         <!-- Samsung MultiWindow Support -->
         <meta-data android:name="com.samsung.android.sdk.multiwindow.enable"
             android:value="true" />
