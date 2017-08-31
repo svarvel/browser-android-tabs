@@ -37,6 +37,7 @@ import org.chromium.chrome.browser.init.ShieldsConfig;
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
 import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.widget.TintedImageButton;
+import org.chromium.chrome.browser.MixPanelWorker;
 import org.chromium.ui.base.LocalizationUtils;
 import org.chromium.ui.interpolators.BakedBezierInterpolator;
 import org.chromium.chrome.browser.init.ShieldsConfig;
@@ -345,6 +346,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Shield Block Ads and Tracking Changed", "Block Ads and Tracking", isChecked);
                         app.getShieldsConfig().setAdsAndTracking(host, isChecked);
                         if (null != mMenuObserver) {
                             mMenuObserver.onMenuTopShieldsChanged(isChecked, false);
@@ -407,6 +409,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Shield Fingerprinting Protection Changed", "Fingerprinting Protection", isChecked);
                         app.getShieldsConfig().setBlockFingerprints(host, isChecked);
                         if (null != mMenuObserver) {
                             mMenuObserver.onMenuTopShieldsChanged(isChecked, false);
@@ -469,6 +472,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Shield Block 3rd Party Cookies Changed", "Block 3rd Party Cookies", isChecked);
                         app.getShieldsConfig().setBlock3rdPartyCookies(host, isChecked);
                         if (null != mMenuObserver) {
                             mMenuObserver.onMenuTopShieldsChanged(isChecked, false);
@@ -531,6 +535,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Shield Block Scripts Changed", "Block Scripts", isChecked);
                         app.getShieldsConfig().setJavaScriptBlock(host, isChecked, false);
                         if (null != mMenuObserver) {
                             mMenuObserver.onMenuTopShieldsChanged(isChecked, false);
@@ -593,6 +598,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Shield HTTPS Everywhere Changed", "HTTPS Everywhere", isChecked);
                         app.getShieldsConfig().setHTTPSEverywhere(host, isChecked);
                         if (null != mMenuObserver) {
                             mMenuObserver.onMenuTopShieldsChanged(isChecked, false);
@@ -635,6 +641,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                 if (0 != host.length()) {
                     ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                     if (null != app) {
+                        MixPanelWorker.SendEvent("Top Shield Changed", "Top Shield", isChecked);
                         app.getShieldsConfig().setTopHost(host, isChecked);
                         app.getShieldsConfig().setJavaScriptBlock(host, isChecked, true);
                         setupAdsTrackingSwitch(mBraveShieldsAdsTrackingSwitch, true);
