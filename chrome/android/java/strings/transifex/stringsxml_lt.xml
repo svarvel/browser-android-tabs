@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">„Brave“ svetainės skydo nustatymai</string>
-    <string name="brave_shields_down">Žemyn</string>
-    <string name="brave_shields_up">Aukštyn</string>
-    <string name="brave_shields_ads_trackers">Blokuotos reklamos ir sekimo failai</string>
-    <string name="brave_shields_https_upgrades">HTTPS atnaujinimai</string>
-    <string name="brave_shields_scripts_blocked">Blokuoti scenarijai</string>
-    <string name="brave_shields_ads_tracking_switch">Blokuoti reklamas ir sekimo failus</string>
+    <string name="brave_settings_title">„Brave“ svetainės skydo nustatymai, skirti</string>
+    <string name="brave_shields_down">Išjungta</string>
+    <string name="brave_shields_up">Įjungta</string>
+    <string name="brave_shields_ads_trackers">Užblokuota reklamų ir seklių</string>
+    <string name="brave_shields_https_upgrades">HTTPS atnaujinimų</string>
+    <string name="brave_shields_scripts_blocked">Užblokuoti scenarijai</string>
+    <string name="brave_shields_ads_tracking_switch">Blokuoti reklamas ir seklius</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuoti scenarijus</string>
     <string name="accessibility_toolbar_btn_brave_shields">Įjungti / išjungti „Brave“ skydus</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokuoti trečiųjų šalių slapukus</string>
 
-    <string name="httpse_summary">Jei įmanoma, palaikomas svetaines atidaro naudojant HTTPS, o ne HTTP</string>
-    <string name="tracking_protection_title">Apsaugos nuo sekimo režimas</string>
+    <string name="httpse_summary">Kai įmanoma, atveria palaikomas svetaines naudojant HTTPS, o ne HTTP</string>
+    <string name="tracking_protection_title">Apsaugos nuo sekimo veiksena</string>
     <string name="tracking_protection_summary">Neleidžia paleisti išteklių, kurie seka jūsų veiksmus</string>
     <string name="ad_block_title">Reklamos blokavimas</string>
     <string name="ad_block_summary">Neleidžia įkelti reklamų</string>

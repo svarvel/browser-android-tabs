@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Brave 网站盾设置</string>
-    <string name="brave_shields_down">向下</string>
-    <string name="brave_shields_up">向上</string>
+    <string name="brave_settings_title">Brave网站屏蔽设置</string>
+    <string name="brave_shields_down">关闭</string>
+    <string name="brave_shields_up">开启</string>
     <string name="brave_shields_ads_trackers">已屏蔽广告和跟踪器</string>
     <string name="brave_shields_https_upgrades">HTTPS 升级</string>
     <string name="brave_shields_scripts_blocked">已屏蔽脚本</string>
     <string name="brave_shields_ads_tracking_switch">屏蔽广告和跟踪</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">屏蔽脚本</string>
-    <string name="accessibility_toolbar_btn_brave_shields">启用/禁用Brave 盾</string>
+    <string name="accessibility_toolbar_btn_brave_shields">启用/禁用Brave屏蔽器</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">屏蔽第三方cookies</string>
 
-    <string name="httpse_summary">自动打开支持网站的HTTPS安全链接而不是HTTP链接</string>
-    <string name="tracking_protection_title">追踪保护模式</string>
-    <string name="tracking_protection_summary">阻止追踪插件加载</string>
+    <string name="httpse_summary">尽可能使用 HTTPS 而不是 HTTP 打开支持的网站</string>
+    <string name="tracking_protection_title">跟踪保护模式</string>
+    <string name="tracking_protection_summary">阻止加载追踪资源</string>
     <string name="ad_block_title">广告过滤</string>
     <string name="ad_block_summary">阻止广告加载</string>
 
-    <string name="fingerprinting_protection_title">浏览指纹保护</string>
-    <string name="fingerprinting_protection_summary">阻止浏览器套取浏览指纹</string>
-    <string name="brave_shields_fingerprints_blocked">禁用网络指纹套取</string>
-    <string name="brave_shields_block_fingerprints_switch">浏览指纹保护</string>
+    <string name="fingerprinting_protection_title">指纹保护</string>
+    <string name="fingerprinting_protection_summary">阻止浏览器识别浏览指纹</string>
+    <string name="brave_shields_fingerprints_blocked">禁用网络指纹识别</string>
+    <string name="brave_shields_block_fingerprints_switch">指纹保护</string>
 
-    <string name="ad_block_regional_title">区域广告过滤</string>
-    <string name="ad_block_regional_summary">阻止区域性广告加载</string>
+    <string name="ad_block_regional_title">当地广告过滤</string>
+    <string name="ad_block_regional_summary">阻止当地性广告加载</string>
 
-    <string name="ad_block_regional_summary_no_list">您的电脑区域没有其他可用列表</string>
+    <string name="ad_block_regional_summary_no_list">您的地区没有其他可用列表</string>
 
-    <string name="menu_exit">出口</string>
+    <string name="menu_exit">退出</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">使用 Brave Sync 在您的设备间安全同步浏览器数据，
+    <string name="brave_sync_description">使用 Brave Sync 在您的设备之间同步浏览器数据，
 无需创建账户。点击下面开始。</string>
-    <string name="brave_sync_have_existing_code">我有现成的同步码</string>
+    <string name="brave_sync_have_existing_code">我已有同步码</string>
     <string name="sync_settings_add_device_name_title">添加设备名称</string>
     <string name="sync_settings_add_device_name_label">为此设备输入可选名称</string>
     <string name="sync_example_device_name">Android 设备</string>
     <string name="brave_sync_qrcode">同步到设备</string>
-    <string name="brave_sync_qrcode_message">使用现有的同步设备，打开 Brave 设置，然后导航到“设备和设置”，
+    <string name="brave_sync_qrcode_message">使用已有的同步设备，打开 Brave 设置，然后点击“设备和设置”，
 点击“+”添加新的设备并显示同步码。</string>
-    <string name="enter_code_words_sync">输入密码词</string>
-    <string name="enter_code_words_below_sync">在下面输入密码词。</string>
+    <string name="enter_code_words_sync">输入同步代码</string>
+    <string name="enter_code_words_below_sync">在下面输入同步代码。</string>
     <string name="sync_device">同步设备</string>
     <string name="sync_device_failure">无法设置同步</string>
     <string name="sync_device_success">同步设置完毕</string>
     <string name="reset_sync">重置同步...</string>
     <string name="resetting_sync">确定要重置此设备的同步设置吗？</string>
 
+    <string name="brave_stats_text_trackers">跟踪器屏蔽</string>
+    <string name="brave_stats_text_ads">广告屏蔽</string>
     <string name="brave_stats_text_https">HTTPS
 升级</string>
-    </resources>
+    <string name="brave_stats_text_time">东部时间保存</string>
+
+    <string name="send_metrics_title">发送指标</string>
+
+</resources>
