@@ -2,27 +2,27 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="brave_settings_title">Ustawienia zabezpieczeń strony Brave dla</string>
-    <string name="brave_shields_down">Do dołu</string>
-    <string name="brave_shields_up">Do góry</string>
+    <string name="brave_shields_down">Nieaktywne</string>
+    <string name="brave_shields_up">Aktywne</string>
     <string name="brave_shields_ads_trackers">Zablokowane reklamy i oprogramowanie śledzące</string>
     <string name="brave_shields_https_upgrades">Aktualizacje HTTPS</string>
     <string name="brave_shields_scripts_blocked">Zablokowane skrypty</string>
     <string name="brave_shields_ads_tracking_switch">Blokuj reklamy i śledzenie</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS wszędzie</string>
+    <string name="brave_shields_https_everywhere_switch">Wymuszaj HTTPS</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuj skrypty</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktywuj/dezaktywuj zabezpieczenia Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Zablokuj pliki cookie z witryn innych firm</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokuj pliki cookie z witryn osób trzecich</string>
 
     <string name="httpse_summary">Wymusza użycie HTTPS, jeśli jest to możliwe</string>
     <string name="tracking_protection_title">Ochrona przed śledzeniem</string>
     <string name="tracking_protection_summary">Blokuje elementy śledzące podczas wczytywania strony</string>
     <string name="ad_block_title">Blokowanie reklam</string>
-    <string name="ad_block_summary">Włącza blokowanie reklam</string>
+    <string name="ad_block_summary">Zapobiega ładowaniu reklam</string>
 
-    <string name="fingerprinting_protection_title">Ochrona odcisków palców</string>
-    <string name="fingerprinting_protection_summary">Uniemożliwia przeglądarce z odcisków palców</string>
-    <string name="brave_shields_fingerprints_blocked">Metody pobierania odcisków palców zablokowane</string>
-    <string name="brave_shields_block_fingerprints_switch">Ochrona odcisków palców</string>
+    <string name="fingerprinting_protection_title">Zapobieganie zbieraniu odcisków palców</string>
+    <string name="fingerprinting_protection_summary">Uniemożliwia przeglądarce zbieranie odcisków palców</string>
+    <string name="brave_shields_fingerprints_blocked">Zablokowane metody zbierania odcisków palców</string>
+    <string name="brave_shields_block_fingerprints_switch">Ochrona przed zabieraniem odcisków palców</string>
 
     <string name="ad_block_regional_title">Lokalny Ad Block</string>
     <string name="ad_block_regional_summary">Zapobiega wyświetlaniu się lokalnych reklam</string>
@@ -50,7 +50,7 @@ i odsłonić hasło synchronizacji.</string>
     <string name="sync_device">Synchronizuj urządzenie</string>
     <string name="sync_device_failure">Nie można skonfigurować synchronizacji</string>
     <string name="sync_device_success">Ustawianie synchronizacji zakończyło się pomyślnie</string>
-    <string name="reset_sync">Resetuj synchronizację...</string>
+    <string name="reset_sync">Resetuj synchronizację…</string>
     <string name="resetting_sync">Czy na pewno chcesz zresetować ustawienia synchronizacji w tym urządzeniu?</string>
 
     <string name="brave_stats_text_trackers">Zablokowane
@@ -61,5 +61,7 @@ reklamy</string>
 HTTPS</string>
     <string name="brave_stats_text_time">Szacunkowy
 zaoszczędzony czas</string>
+
+    <string name="send_metrics_title">Wyślij mierniki</string>
 
 </resources>

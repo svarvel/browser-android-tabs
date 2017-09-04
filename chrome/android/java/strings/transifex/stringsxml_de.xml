@@ -4,27 +4,27 @@
     <string name="brave_settings_title">Brave-Schutzschild für</string>
     <string name="brave_shields_down">Aus</string>
     <string name="brave_shields_up">An</string>
-    <string name="brave_shields_ads_trackers">Blockierte Werbung und Tracker</string>
+    <string name="brave_shields_ads_trackers">Werbung und Tracker geblockt</string>
     <string name="brave_shields_https_upgrades">HTTPS-Aufwertungen</string>
-    <string name="brave_shields_scripts_blocked">Blockierte Skripte</string>
-    <string name="brave_shields_ads_tracking_switch">Werbung und Tracking blockieren</string>
+    <string name="brave_shields_scripts_blocked">Skripte geblockt</string>
+    <string name="brave_shields_ads_tracking_switch">Werbung und Tracking blocken</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS überall</string>
-    <string name="brave_shields_blocks_scripts_switch">Skripte blockieren</string>
+    <string name="brave_shields_blocks_scripts_switch">Skripte blocken</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave-Schutzschilde aktivieren/deaktivieren</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Drittanbieter-Cookies blockieren</string>
 
     <string name="httpse_summary">Öffnet unterstützte Seiten mit verschlüsseltem HTTPS anstelle von unverschlüsseltem HTTP, sofern möglich</string>
     <string name="tracking_protection_title">Tracking-Schutzmodus</string>
     <string name="tracking_protection_summary">Verhindert das Laden von Seitenelementen, die zum Verfolgen deiner Internetnutzung dienen</string>
-    <string name="ad_block_title">Werbung blockieren</string>
+    <string name="ad_block_title">Werbung blocken</string>
     <string name="ad_block_summary">Verhindert das Laden von Werbung</string>
 
     <string name="fingerprinting_protection_title">Fingerprinting-Schutz</string>
     <string name="fingerprinting_protection_summary">Verhindert das eindeutige Identifizieren deines Browsers durch besuchte Seiten</string>
-    <string name="brave_shields_fingerprints_blocked">Blockiertes Fingerprinting</string>
+    <string name="brave_shields_fingerprints_blocked">Fingerprinting geblockt</string>
     <string name="brave_shields_block_fingerprints_switch">Fingerprinting-Schutz</string>
 
-    <string name="ad_block_regional_title">Regionale Werbung blockieren</string>
+    <string name="ad_block_regional_title">Regionale Werbung blocken</string>
     <string name="ad_block_regional_summary">Verhindert das Laden regionaler Werbung</string>
 
     <string name="ad_block_regional_summary_no_list">Keine zusätzlichen Listen für deine Region verfügbar</string>
@@ -32,34 +32,36 @@
     <string name="menu_exit">Beenden</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synchronisieren Sie Browserdaten zwischen Ihren Geräten
-sicher mit Brave Sync, die Erstellung eines
+    <string name="brave_sync_description">Browserdaten sicher zwischen Ihren Geräten
+synchronisieren mit Brave Sync, die Erstellung eines
 Kontos ist nicht notwendig.
-Unten tippen und loslegen.</string>
+Unten antippen und loslegen.</string>
     <string name="brave_sync_have_existing_code">Ich habe einen vorhandenen Synchronisierungscode</string>
     <string name="sync_settings_add_device_name_title">Gerätenamen hinzufügen</string>
     <string name="sync_settings_add_device_name_label">Optionalen Namen für dieses Gerät eingeben</string>
     <string name="sync_example_device_name">Android-Gerät</string>
     <string name="brave_sync_qrcode">Synchronisierung mit dem Gerät</string>
-    <string name="brave_sync_qrcode_message">Ein vorhandenes synchronisiertes Gerät verwenden,
-Brave Einstellungen öffnen und zu "Gerät &amp;Einstellungen"
-navigieren; mit '+' ein neues Gerät hinzufügen und
+    <string name="brave_sync_qrcode_message">Um ein vorhandenes synchronisiertes Gerät zu verwenden,
+Brave-Einstellungen öffnen und zu \"Gerät &amp;Einstellungen\"
+navigieren; mit \'+\' ein neues Gerät hinzufügen und
 Synchronisierungscode eingeben.</string>
     <string name="enter_code_words_sync">Codewörter eingeben</string>
-    <string name="enter_code_words_below_sync">Die Codewörter unten eingeben</string>
+    <string name="enter_code_words_below_sync">Codewörter unten eingeben.</string>
     <string name="sync_device">Gerät synchronisieren</string>
-    <string name="sync_device_failure">Die Synchronisierung konnte nicht durchgeführt werden</string>
-    <string name="sync_device_success">Das Setup der Synchronisierung wurde erfolgreich abgeschlossen</string>
+    <string name="sync_device_failure">Synchronisierung konnte nicht eingerichtet werden</string>
+    <string name="sync_device_success">Synchronisierung wurde erfolgreich eingerichtet</string>
     <string name="reset_sync">Synchronisierung zurücksetzen...</string>
-    <string name="resetting_sync">Sind Sie sicher, dass Sie dieses Gerät's Synchronisierungseinstellungen zurücksetzen möchten?</string>
+    <string name="resetting_sync">Sind Sie sicher, dass Sie die Synchronisierungseinstellungen dieses Geräts zurücksetzen möchten?</string>
 
-    <string name="brave_stats_text_trackers">Blockierte
-Tracker</string>
-    <string name="brave_stats_text_ads">Blockierte
-Werbung</string>
+    <string name="brave_stats_text_trackers">Tracker
+geblockt</string>
+    <string name="brave_stats_text_ads">Werbung
+geblockt</string>
     <string name="brave_stats_text_https">HTTPS-
 Aufwertungen</string>
-    <string name="brave_stats_text_time">Vorauss. Zeit
-Gespeichert</string>
+    <string name="brave_stats_text_time">Ugf. Zeit
+gespart</string>
+
+    <string name="send_metrics_title">Metriken senden</string>
 
 </resources>
