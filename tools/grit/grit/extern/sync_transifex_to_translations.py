@@ -159,7 +159,7 @@ def SyncTransifexToTranslations():
                                 addingNumber += 1
                                 new_translation_tag = xml.etree.ElementTree.Element('translation')
                                 new_translation_tag.set('id', str(brave_strings[string_name]))
-                                new_translation_tag.text = string_value
+                                new_translation_tag.text = string_value + '\n'
                                 translations.append(new_translation_tag)
                                 translations_file_was_changed = True
                         else:
