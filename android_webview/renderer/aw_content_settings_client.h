@@ -16,7 +16,7 @@ class AwContentSettingsClient : public content::RenderFrameObserver,
                                 public blink::WebContentSettingsClient {
  public:
   explicit AwContentSettingsClient(content::RenderFrame* render_view);
-
+  bool AllowFingerprinting() override;
  private:
   ~AwContentSettingsClient() override;
 
