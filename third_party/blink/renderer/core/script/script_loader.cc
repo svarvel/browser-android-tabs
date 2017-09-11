@@ -394,7 +394,7 @@ bool ScriptLoader::PrepareScript(const TextPosition& script_start_position,
   if (!context_document || !context_document->ExecutingFrame())
     return false;
   if (!context_document->CanExecuteScripts(kAboutToExecuteScript)){
-    if (0 != ScriptContent().length()) {
+    if (0 != element_->TextFromChildren().length()) {
         LocalFrame* frame = context_document->GetFrame();
         if (frame) {
             frame->Loader().Client()->DeniedScript();

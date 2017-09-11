@@ -687,8 +687,11 @@ bool FrameFetchContext::AllowScriptFromSource(const KURL& url) const {
   if (AllowScriptFromSourceWithoutNotifying(url))
     return true;
   WebContentSettingsClient* settings_client = GetContentSettingsClient();
-  if (settings_client)
+  if (settings_client) {
     settings_client->DidNotAllowScript();
+    // We can pass an url in the future to get an exact URL of blocked script
+    settings_client->DeniedScript();
+  }
   return false;
 }
 

@@ -42,6 +42,7 @@ class WorkerContentSettingsClient : public blink::WebContentSettingsClient {
   bool AllowScriptFromSource(bool enabled_per_settings,
                              const blink::WebURL& script_url) override;
 
+  bool AllowFingerprinting() override;
  private:
   explicit WorkerContentSettingsClient(
       const WorkerContentSettingsClient& other);
