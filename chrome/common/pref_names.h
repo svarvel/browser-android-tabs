@@ -159,15 +159,11 @@ extern const char kWebKitPasswordEchoEnabled[];
 extern const char kWebKitForceDarkModeEnabled[];
 #endif
 extern const char kDataSaverEnabled[];
-extern const char kSafeBrowsingEnabled[];
 extern const char kFingerprintingProtectionEnabled[];
 extern const char kHTTPSEEnabled[];
 extern const char kTrackingProtectionEnabled[];
 extern const char kAdBlockEnabled[];
 extern const char kAdBlockRegionalEnabled[];
-extern const char kSafeBrowsingProceedAnywayDisabled[];
-extern const char kSafeBrowsingIncidentsSent[];
-extern const char kSafeBrowsingExtendedReportingOptInAllowed[];
 extern const char kSSLErrorOverrideAllowed[];
 extern const char kIncognitoModeAvailability[];
 extern const char kSearchSuggestEnabled[];
