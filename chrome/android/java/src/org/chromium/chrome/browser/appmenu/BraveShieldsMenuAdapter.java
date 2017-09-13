@@ -131,7 +131,8 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
     public static String addUpdateCounts(String title, int count, String color) {
         int space = title.indexOf(" ");
         if (-1 == space || title.length() - 1 == space) {
-            return title;
+            return String.format("%1$s %2$s", "<font color=" + color + "><b>" + count + "</b></font>",
+              title);
         }
         try {
             Integer.parseInt(title.substring(0, space));
