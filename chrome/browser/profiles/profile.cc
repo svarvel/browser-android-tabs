@@ -152,10 +152,6 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
   registry->RegisterInt64Pref(prefs::kSiteEngagementLastUpdateTime, 0,
                               PrefRegistry::LOSSY_PREF);
   registry->RegisterBooleanPref(
-      prefs::kSafeBrowsingEnabled,
-      true,
-      user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
-  registry->RegisterBooleanPref(
       prefs::kFingerprintingProtectionEnabled,
       false);
   registry->RegisterBooleanPref(
@@ -170,17 +166,6 @@ void Profile::RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry) {
   registry->RegisterBooleanPref(
       prefs::kAdBlockRegionalEnabled,
       false);
-  registry->RegisterBooleanPref(prefs::kSafeBrowsingExtendedReportingEnabled,
-                                false);
-  registry->RegisterBooleanPref(prefs::kSafeBrowsingScoutReportingEnabled,
-                                false);
-  registry->RegisterBooleanPref(prefs::kSafeBrowsingScoutGroupSelected, false);
-  registry->RegisterBooleanPref(
-      prefs::kSafeBrowsingSawInterstitialExtendedReporting, false);
-  registry->RegisterBooleanPref(
-      prefs::kSafeBrowsingSawInterstitialScoutReporting, false);
-  registry->RegisterBooleanPref(prefs::kSafeBrowsingProceedAnywayDisabled,
-                                false);
   registry->RegisterBooleanPref(prefs::kSSLErrorOverrideAllowed, true);
   registry->RegisterBooleanPref(prefs::kDisableExtensions, false);
 #if BUILDFLAG(ENABLE_EXTENSIONS)
