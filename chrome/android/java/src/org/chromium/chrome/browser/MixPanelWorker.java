@@ -8,24 +8,31 @@ import android.content.SharedPreferences;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 import com.mixpanel.android.mpmetrics.MPConfig;
 import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.json.JSONException;
 import org.json.JSONObject;
+import 	java.util.Calendar;
 
 public class MixPanelWorker {
     private static final String PREF_SEND_METRICS = "send_metrics";
     private static final String PREF_MIXPANEL_DISTINCT_ID_GENERATED_TIME = "mixpanel_distinct_id_generated_time";
-    private static final long DISTINCT_ID_REGENERATE_PERIOD = 60L * 24L * 60L * 60L * 1000L;
 
     public static void GetMixpanelInstance(ChromeApplication app) {
         if ((null != app) && (null == app.mMixpanelInstance) && !ConfigAPIs.MIXPANEL_TOKEN.isEmpty()
         && ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEND_METRICS, true)) {
             app.mMixpanelInstance = MixpanelAPI.getInstance(ContextUtils.getApplicationContext(), ConfigAPIs.MIXPANEL_TOKEN);
             long distinctIdGeneratedTime = ContextUtils.getAppSharedPreferences().getLong(PREF_MIXPANEL_DISTINCT_ID_GENERATED_TIME, 0);
-            long currentTime = System.currentTimeMillis();
+            Calendar cal = Calendar.getInstance();
+            long currentTime = cal.getTimeInMillis();
+            // Keep in mind that indexing is started from 0
+            int currentMonth = cal.get(Calendar.MONTH) + 1;
+            cal.setTimeInMillis(distinctIdGeneratedTime);
+            int genMonth = cal.get(Calendar.MONTH) + 1;
+            // We regenerate distinct id each odd month
+            boolean isOddMonth = (currentMonth % 2) == 1;
             boolean setNewDistictIdGeneratedTime = (distinctIdGeneratedTime == 0);
-            long timeDiff = currentTime - distinctIdGeneratedTime;
-            if ((distinctIdGeneratedTime > 0) && (timeDiff >= DISTINCT_ID_REGENERATE_PERIOD)) {
+            if ((distinctIdGeneratedTime > 0) && isOddMonth && currentMonth > genMonth) {
                 // It is time to regenerate distinct id
                 app.mMixpanelInstance.reset();
                 setNewDistictIdGeneratedTime = true;
