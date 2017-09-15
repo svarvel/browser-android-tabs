@@ -9,6 +9,8 @@ chrome_strings_file='../../../../chrome/android/java/strings/android_chrome_stri
 translations_folder='../../../../chrome/android/java/strings/translations'
 components_folder='../../../../components/strings'
 brave_brand_string='Brave'
+brave_company='Brave Software'
+google_company='Google'
 chrome_brand_strings={'Chrome', 'Google Chrome', 'Chromium'}
 brave_ids={}
 # Checked manually that these messages are indeed duplicated
@@ -16,7 +18,6 @@ duplicated_messages={'Open in new Brave tab', 'Link opened in Brave'}
 
 # Go through .xtb files and replace ids
 def ReplaceIds(folder):
-    replacingNumber = 1
     for (dirpath, dirnames, filenames) in walk(folder):
         for filename in filenames:
             if filename.endswith('.xtb') and not filename.startswith('components_locale_settings'):
@@ -47,11 +48,25 @@ def UpdateBraveIds():
     messages = xml.etree.ElementTree.parse(chrome_strings_file).getroot().find('release').find('messages')
     for message_tag in messages.findall('message'):
         brave_string = message_tag.text
-        if brave_brand_string in brave_string:
-            brave_string_phs = message_tag.findall('ph')
-            for brave_string_ph in brave_string_phs:
-                brave_string = brave_string + brave_string_ph.get('name').upper() + brave_string_ph.tail
-            brave_string = brave_string.strip().encode('utf-8')
+        brave_string_phs = message_tag.findall('ph')
+        for brave_string_ph in brave_string_phs:
+            brave_string = brave_string + brave_string_ph.get('name').upper() + brave_string_ph.tail
+        brave_string = brave_string.strip().encode('utf-8')
+        if brave_company in brave_string:
+            # Calculate Brave string id
+            brave_string_fp = FP.FingerPrint(brave_string) & 0x7fffffffffffffffL
+            print(str(brave_string_fp) + ' - ' + brave_string)
+            chrome_string = brave_string.replace(brave_company, google_company)
+            # Calculate Chrome string id
+            # Todo: it gets incorrect id here, need to figure out why next time, for now it is replaced it manually
+            chrome_string_fp = FP.FingerPrint(chrome_string) & 0x7fffffffffffffffL
+            print(str(chrome_string_fp) + ' - ' + chrome_string)
+            if chrome_string_fp in brave_ids:
+                if brave_string not in duplicated_messages:
+                    sys.exit('String "' + chrome_string + '" is duplicated')
+            brave_ids[chrome_string_fp] = brave_string_fp
+            print('\n')
+        elif brave_brand_string in brave_string:
             # Calculate Brave string id
             brave_string_fp = FP.FingerPrint(brave_string) & 0x7fffffffffffffffL
             print(str(brave_string_fp) + ' - ' + brave_string)
