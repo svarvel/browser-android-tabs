@@ -126,6 +126,9 @@ enum ContentSettingsType {
   // intent picker UI without explicitly choosing an option.
   CONTENT_SETTINGS_TYPE_INTENT_PICKER_DISPLAY,
 
+  // This content setting type is for displaying desktop version of the website
+  CONTENT_SETTINGS_TYPE_DESKTOP_VIEW,
+
   CONTENT_SETTINGS_NUM_TYPES,
 };
 

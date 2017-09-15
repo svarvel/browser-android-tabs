@@ -94,6 +94,10 @@ public class SiteSettingsCategory {
     public static SiteSettingsCategory createFromType(@Type int type) {
         if (type == Type.DEVICE_LOCATION) return new LocationCategory();
         if (type == Type.NOTIFICATIONS) return new NotificationCategory();
+        if (CATEGORY_DESKTOP_VIEW.equals(category)) {
+            return new SiteSettingsCategory(CATEGORY_DESKTOP_VIEW, "",
+                    ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW);
+        }
 
         final String permission;
         if (type == Type.CAMERA) {
@@ -113,6 +117,9 @@ public class SiteSettingsCategory {
         for (@Type int i = Type.ALL_SITES; i < Type.NUM_ENTRIES; i++) {
             if (contentSettingsType(i) == contentSettingsType) return createFromType(i);
         }
+        if (contentSettingsType == ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW) {
+            return fromString(CATEGORY_DESKTOP_VIEW);
+        }
         return null;
     }
 
@@ -125,7 +132,14 @@ public class SiteSettingsCategory {
     }
 
     /**
-     * Convert Type into {@link ContentSettingsType}
+     * Returns whether this category is the Desktop View category.
+     */
+    public boolean showDesktopViewSites() {
+        return mContentSettingsType == ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW;
+    }
+
+    /**
+      * Convert Type into {@link ContentSettingsType}
      */
     public static int contentSettingsType(@Type int type) {
         switch (type) {

@@ -160,6 +160,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
                 websitePrefs.add(Type.SENSORS);
             }
+            websitePrefs.add(DESKTOP_VIEW_SETTINGS_KEY);
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.SOUND_CONTENT_SETTING)) {
                 websitePrefs.add(Type.SOUND);
             }
@@ -212,6 +213,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
+            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
+                p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
             } else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }

@@ -63,4 +63,10 @@ Saved</string>
 
     <string name="send_metrics_title">Send metrics</string>
 
+    <string name="desktop_mode_title">Desktop Mode</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Prefer desktop version of sites</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Prefer mobile version of sites</string>
+    <string name="website_settings_category_desktop_view_enabled">Enable Desktop View for new tabs</string>
+    <string name="website_settings_category_desktop_view_disabled">Use mobile versions of sites for new tabs (recommended)</string>
+
 </resources>
