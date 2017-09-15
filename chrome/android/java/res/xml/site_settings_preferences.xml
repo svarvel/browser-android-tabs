@@ -49,6 +49,10 @@
     <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
         android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
         android:key="ads" />
+   <!-- DesktopView -->
+    <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
+        android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
+        android:key="desktop_view" />
     <!-- Background sync -->
     <!--<org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
         android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"

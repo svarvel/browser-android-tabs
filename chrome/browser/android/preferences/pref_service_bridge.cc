@@ -305,6 +305,11 @@ static jboolean JNI_PrefServiceBridge_GetAutomaticDownloadsEnabled(
   return GetBooleanForContentSetting(CONTENT_SETTINGS_TYPE_AUTOMATIC_DOWNLOADS);
 }
 
+static jboolean JNI_PrefServiceBridge_GetDesktopViewEnabled(JNIEnv* env,
+                                         const JavaParamRef<jobject>& obj) {
+  return GetBooleanForContentSetting(CONTENT_SETTINGS_TYPE_DESKTOP_VIEW);
+}
+
 static jboolean JNI_PrefServiceBridge_GetBlockThirdPartyCookiesEnabled(
     JNIEnv* env,
     const JavaParamRef<jobject>& obj) {
@@ -813,6 +818,16 @@ static void JNI_PrefServiceBridge_SetAutomaticDownloadsEnabled(
   host_content_settings_map->SetDefaultContentSetting(
       CONTENT_SETTINGS_TYPE_AUTOMATIC_DOWNLOADS,
       allow ? CONTENT_SETTING_ASK : CONTENT_SETTING_BLOCK);
+}
+
+static void JNI_PrefServiceBridge_SetDesktopViewEnabled(JNIEnv* env,
+                                     const JavaParamRef<jobject>& obj,
+                                     jboolean allow) {
+  HostContentSettingsMap* host_content_settings_map =
+      HostContentSettingsMapFactory::GetForProfile(GetOriginalProfile());
+  host_content_settings_map->SetDefaultContentSetting(
+      CONTENT_SETTINGS_TYPE_DESKTOP_VIEW,
+      allow ? CONTENT_SETTING_ALLOW : CONTENT_SETTING_BLOCK);
 }
 
 static void JNI_PrefServiceBridge_SetBlockThirdPartyCookiesEnabled(

@@ -141,6 +141,14 @@ public class ContentSettingsResources {
                             R.string.javascript_permission_title, ContentSettingValues.ALLOW,
                             ContentSettingValues.BLOCK,
                             R.string.website_settings_category_javascript_allowed, 0));
+            localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW,
+                    new ResourceItem(R.drawable.settings_desktop_view,
+                                 R.string.desktop_mode_title,
+                                 R.string.desktop_mode_title,
+                                 ContentSetting.ALLOW,
+                                 ContentSetting.BLOCK,
+                                 R.string.website_settings_category_desktop_view_enabled,
+                                 R.string.website_settings_category_desktop_view_disabled ));
             localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_MEDIASTREAM_CAMERA,
                     new ResourceItem(R.drawable.ic_videocam_white_24dp,
                             R.string.website_settings_use_camera, R.string.camera_permission_title,
@@ -341,6 +349,20 @@ public class ContentSettingsResources {
      */
     public static int getCookieAllowedExceptThirdPartySummary() {
         return R.string.website_settings_category_allowed_except_third_party;
+    }
+
+    /**
+     * Returns the summary for Desktop View settings when it is enabled.
+     */
+    public static int getDesktopViewEnabledSummary() {
+        return R.string.website_settings_category_desktop_view_enabled_summary;
+    }
+
+    /**
+     * Returns the summary for Desktop View settings when it is not enabled.
+     */
+    public static int getDesktopViewDisabledSummary() {
+        return R.string.website_settings_category_desktop_view_disabled_summary;
     }
 
     /**
