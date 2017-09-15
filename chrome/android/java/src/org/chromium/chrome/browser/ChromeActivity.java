@@ -2453,6 +2453,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             final boolean reloadOnChange = !currentTab.isNativePage();
             final boolean usingDesktopUserAgent =
                     currentTab.getWebContents().getNavigationController().getUseDesktopUserAgent();
+            currentTab.setDesktopModeOverridenByTab(true);
             currentTab.getWebContents().getNavigationController().setUseDesktopUserAgent(
                     !usingDesktopUserAgent, reloadOnChange);
             RecordUserAction.record("MobileMenuRequestDesktopSite");

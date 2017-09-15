@@ -450,6 +450,17 @@ void ContentSettingsRegistry::Init() {
            ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE,
            ContentSettingsInfo::PERSISTENT,
            ContentSettingsInfo::EXCEPTIONS_ON_SECURE_ORIGINS_ONLY);
+
+  Register(CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, "desktop-view",
+           CONTENT_SETTING_BLOCK, //default is a mobile view for pages
+           WebsiteSettingsInfo::UNSYNCABLE,
+           WhitelistedSchemes(),
+           ValidSettings(CONTENT_SETTING_BLOCK, CONTENT_SETTING_ALLOW),
+           WebsiteSettingsInfo::REQUESTING_ORIGIN_AND_TOP_LEVEL_ORIGIN_SCOPE,
+           WebsiteSettingsRegistry::PLATFORM_ANDROID,
+           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE,
+           ContentSettingsInfo::PERSISTENT,
+           ContentSettingsInfo::EXCEPTIONS_ON_SECURE_ORIGINS_ONLY);
 }
 
 void ContentSettingsRegistry::Register(
