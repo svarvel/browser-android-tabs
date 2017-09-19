@@ -29,7 +29,7 @@ struct HistogramValue {
 // content settings type name instead.
 //
 // The array size must be explicit for the static_asserts below.
-constexpr size_t kNumHistogramValues = 43;
+constexpr size_t kNumHistogramValues = 44;
 constexpr HistogramValue kHistogramValue[kNumHistogramValues] = {
     {CONTENT_SETTINGS_TYPE_COOKIES, 0},
     {CONTENT_SETTINGS_TYPE_IMAGES, 1},
@@ -74,6 +74,7 @@ constexpr HistogramValue kHistogramValue[kNumHistogramValues] = {
     {CONTENT_SETTINGS_TYPE_IDLE_DETECTION, 47},
     {CONTENT_SETTINGS_TYPE_SERIAL_GUARD, 48},
     {CONTENT_SETTINGS_TYPE_SERIAL_CHOOSER_DATA, 49},
+    {CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, 50},
 };
 
 }  // namespace
