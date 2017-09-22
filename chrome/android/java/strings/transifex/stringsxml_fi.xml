@@ -63,4 +63,10 @@ Tallennettu</string>
 
     <string name="send_metrics_title">Lähetä mittaustulokset</string>
 
+    <string name="desktop_mode_title">Työpöytätila</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Suosi sivustojen työpöytäversioita</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Suosi sivustojen mobiiliversioita</string>
+    <string name="website_settings_category_desktop_view_enabled">Käytä työpöytänäkymää uusissa välilehdissä</string>
+    <string name="website_settings_category_desktop_view_disabled">Käytä sivustojen mobiiliversioita uusissa välilehdissä (suositellaan)</string>
+
 </resources>

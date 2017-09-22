@@ -65,4 +65,10 @@ Salvat</string>
 
     <string name="send_metrics_title">Trimiteți măsurători</string>
 
+    <string name="desktop_mode_title">Mod calculator</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferință pentru versiunea pentru calculator a site-urilor</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferință pentru versiunea mobilă a site-urilor </string>
+    <string name="website_settings_category_desktop_view_enabled">Autorizare vizionare în mod calculator, pentru noi file</string>
+    <string name="website_settings_category_desktop_view_disabled">Utilizare versiuni mobile ale site-urilor, pentru noi file (recomandat)</string>
+
 </resources>

@@ -65,4 +65,10 @@ Risparmiato</string>
 
     <string name="send_metrics_title">Invia metriche</string>
 
+    <string name="desktop_mode_title">Modalità Desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferisco la versione desktop dei siti</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferisco la versione mobile dei siti</string>
+    <string name="website_settings_category_desktop_view_enabled">Attiva Vista Desktop per nuove schede</string>
+    <string name="website_settings_category_desktop_view_disabled">Utilizza versioni mobili dei siti per le nuove schede (consigliato)</string>
+
 </resources>

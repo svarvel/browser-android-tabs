@@ -60,4 +60,10 @@
 
     <string name="send_metrics_title">傳送計量</string>
 
+    <string name="desktop_mode_title">桌面模式</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">偏好網站的桌面版本</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">偏好網站的行動版本</string>
+    <string name="website_settings_category_desktop_view_enabled">為新分頁啟用桌面檢視</string>
+    <string name="website_settings_category_desktop_view_disabled">為新分頁使用網站的行動版本（推薦）</string>
+
 </resources>

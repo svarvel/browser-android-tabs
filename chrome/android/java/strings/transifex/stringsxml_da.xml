@@ -62,4 +62,12 @@ Opgraderinger</string>
     <string name="brave_stats_text_time">Forventet
 tid sparet</string>
 
-    </resources>
+    <string name="send_metrics_title">Send målinger</string>
+
+    <string name="desktop_mode_title">Skrivebordsmodus</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Foretræk skrivebordsversioner af websteder</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Foretræk mobile versioner af websteder</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktivér skrivebordsvisning for nye faneblade</string>
+    <string name="website_settings_category_desktop_view_disabled">Brug mobile versioner af websteder til nye faneblade (anbefalet)</string>
+
+</resources>

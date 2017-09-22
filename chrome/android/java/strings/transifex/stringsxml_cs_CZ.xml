@@ -59,4 +59,15 @@ zablokovány</string>
 zablokovány</string>
     <string name="brave_stats_text_https">HTTPS
 aktualizace</string>
-    </resources>
+    <string name="brave_stats_text_time">Zal. Čas
+Uloženo</string>
+
+    <string name="send_metrics_title">Zaslat metriky</string>
+
+    <string name="desktop_mode_title">Desktopový režim</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferovat desktopovou verzi stránek</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferovat mobilní verzi stránek</string>
+    <string name="website_settings_category_desktop_view_enabled">U nových záložek aktivovat desktopové zobrazení</string>
+    <string name="website_settings_category_desktop_view_disabled">U nových záložek používat mobilní verze stránek (doporučeno)</string>
+
+</resources>
