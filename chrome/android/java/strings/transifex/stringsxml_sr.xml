@@ -65,4 +65,10 @@ Sačuvano</string>
 
     <string name="send_metrics_title">Poslati statističke pokazatelje</string>
 
+    <string name="desktop_mode_title">Desktop režim</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Poželjna je desktop verzija sajtova</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Poželjna je mobilna verzija za sajtove</string>
+    <string name="website_settings_category_desktop_view_enabled">Omogući desktop prikaz za nove kartice</string>
+    <string name="website_settings_category_desktop_view_disabled">Koristi mobilne verzije sajtova u novim karticama (preporučeno)</string>
+
 </resources>

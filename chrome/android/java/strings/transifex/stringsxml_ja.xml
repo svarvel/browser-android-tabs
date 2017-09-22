@@ -61,4 +61,10 @@
 
     <string name="send_metrics_title">メトリクスを送信する</string>
 
+    <string name="desktop_mode_title">デスクトップモード</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">サイトのデスクトップバージョンを選択</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">サイトの携帯バージョンを選択</string>
+    <string name="website_settings_category_desktop_view_enabled">新しいタブでデスクトップビューを可能にする</string>
+    <string name="website_settings_category_desktop_view_disabled">新しいタブでサイトの携帯バーションをお使いください（奨励）</string>
+
 </resources>

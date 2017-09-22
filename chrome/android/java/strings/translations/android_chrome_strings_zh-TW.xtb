@@ -1088,52 +1088,58 @@
 <translation id="982182592107339124">這會清除所有網站的資料，包括：</translation>
 <translation id="983192555821071799">關閉所有分頁</translation>
 <translation id="987264212798334818">一般</translation>
-<translation id="3209146299287804856">Brave网站屏蔽设置对象为
-</translation><translation id="622484624075952240">向下
-</translation><translation id="2706462751667573066">向上
-</translation><translation id="4339730410920731698">广告和跟踪器已阻止
-</translation><translation id="2313532038420432247">HTTPS升级
-</translation><translation id="7461425058443653485">脚本已阻止
-</translation><translation id="7835726359440951858">屏蔽广告和跟踪
-</translation><translation id="520895744850022668">HTTPS无处不在
-</translation><translation id="94154759592465111">阻止脚本
-</translation><translation id="7307834434086582547">启用/禁用Brave盾牌
-</translation><translation id="6132506775968708399">封鎖第三方 Cookie
-</translation><translation id="8710614491157212477">如有可能，使用 HTTPS 而非 HTTP 開啟支援網站
-</translation><translation id="5758129336814690876">追蹤保護模式
-</translation><translation id="4609637183310787528">防止讀取用於追蹤你的資源
-</translation><translation id="8387201461264842096">阻擋廣告
-</translation><translation id="1934885595886623674">防止讀取廣告
-</translation><translation id="7458422973722236530">浏览指纹保护</translation><translation id="5787084571334399599">阻止浏览器套取浏览指纹
-</translation><translation id="3758669798635576061">禁止浏览指纹套取
-</translation><translation id="3276318574457057212">区域网络过滤
-</translation><translation id="2300239903491866759">阻止区域广告加载
-</translation><translation id="8142327400852603066">您的电脑区域没有更多的可用列表
-</translation><translation id="9148058034647219655">出口
-</translation><translation id="3149880132460839085">Brave Sync
-</translation><translation id="5853303025585906159">使用 Brave Sync 在您的设备间安全同步浏览器数据，
-无需创建账户。点击下面开始。
-</translation><translation id="4807681603968503084">我有现成的同步码
-</translation><translation id="3082265116777145081">添加设备名称
-</translation><translation id="9024091168371687561">为此设备输入可选名称
-</translation><translation id="3998827900918661986">Android 设备
-</translation><translation id="7319511434820752937">同步到设备
-</translation><translation id="2848874822038607051">使用现有的同步设备，打开 Brave 设置，然后导航到“设备和设置”，
-点击“+”添加新的设备并显示同步码。
-</translation><translation id="7539985410310934287">输入密码词
-</translation><translation id="3381055602822429838">在下面输入密码词。
-</translation><translation id="326454632686131209">同步设备
-</translation><translation id="8985635554450124959">无法设置同步
-</translation><translation id="7713465482966886648">同步设置完毕
-</translation><translation id="1068083442730715531">重置同步...
-</translation><translation id="6761015334234690567">确定要重置此设备的同步设置吗？
-</translation><translation id="6244065453125065109">追蹤器
-已封鎖
-</translation><translation id="2547939855139473800">廣告
-已封鎖
-</translation><translation id="8880969045613157151">HTTPS
-升级
-</translation><translation id="204407992549693965">預計時間
-已儲存
-</translation><translation id="991605024067283917">傳送計量
-</translation></translationbundle>
+<translation id="3209146299287804856">Brave网站屏蔽设置对象为</translation>
+<translation id="622484624075952240">向下</translation>
+<translation id="2706462751667573066">向上</translation>
+<translation id="4339730410920731698">广告和跟踪器已阻止</translation>
+<translation id="2313532038420432247">HTTPS升级</translation>
+<translation id="7461425058443653485">脚本已阻止</translation>
+<translation id="7835726359440951858">屏蔽广告和跟踪</translation>
+<translation id="520895744850022668">HTTPS无处不在</translation>
+<translation id="94154759592465111">阻止脚本</translation>
+<translation id="7307834434086582547">启用/禁用Brave盾牌</translation>
+<translation id="6132506775968708399">封鎖第三方 Cookie</translation>
+<translation id="8710614491157212477">如有可能，使用 HTTPS 而非 HTTP 開啟支援網站</translation>
+<translation id="5758129336814690876">追蹤保護模式</translation>
+<translation id="4609637183310787528">防止讀取用於追蹤你的資源</translation>
+<translation id="8387201461264842096">阻擋廣告</translation>
+<translation id="1934885595886623674">防止讀取廣告</translation>
+<translation id="7458422973722236530">浏览指纹保护</translation>
+<translation id="5787084571334399599">阻止浏览器套取浏览指纹</translation>
+<translation id="3758669798635576061">禁止浏览指纹套取</translation>
+<translation id="3276318574457057212">区域网络过滤</translation>
+<translation id="2300239903491866759">阻止区域广告加载</translation>
+<translation id="8142327400852603066">您的电脑区域没有更多的可用列表</translation>
+<translation id="9148058034647219655">出口</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="5853303025585906159">使用 Brave Sync 在您的设备间安全同步浏览器数据，
+无需创建账户。点击下面开始。</translation>
+<translation id="4807681603968503084">我有现成的同步码</translation>
+<translation id="3082265116777145081">添加设备名称</translation>
+<translation id="9024091168371687561">为此设备输入可选名称</translation>
+<translation id="3998827900918661986">Android 设备</translation>
+<translation id="7319511434820752937">同步到设备</translation>
+<translation id="2848874822038607051">使用现有的同步设备，打开 Brave 设置，然后导航到“设备和设置”，
+点击“+”添加新的设备并显示同步码。</translation>
+<translation id="7539985410310934287">输入密码词</translation>
+<translation id="3381055602822429838">在下面输入密码词。</translation>
+<translation id="326454632686131209">同步设备</translation>
+<translation id="8985635554450124959">无法设置同步</translation>
+<translation id="7713465482966886648">同步设置完毕</translation>
+<translation id="1068083442730715531">重置同步...</translation>
+<translation id="6761015334234690567">确定要重置此设备的同步设置吗？</translation>
+<translation id="6244065453125065109">追蹤器
+已封鎖</translation>
+<translation id="2547939855139473800">廣告
+已封鎖</translation>
+<translation id="8880969045613157151">HTTPS
+升级</translation>
+<translation id="204407992549693965">預計時間
+已儲存</translation>
+<translation id="991605024067283917">傳送計量</translation>
+<translation id="6572660632052512096">桌面模式</translation>
+<translation id="4479934682648362332">偏好網站的桌面版本</translation>
+<translation id="807636106793708118">偏好網站的行動版本</translation>
+<translation id="1340503115760585811">為新分頁啟用桌面檢視</translation>
+<translation id="7924540991929826186">為新分頁使用網站的行動版本（推薦）</translation>
+</translationbundle>

@@ -64,4 +64,10 @@ Dihemat</string>
 
     <string name="send_metrics_title">Kirim metrik</string>
 
+    <string name="desktop_mode_title">Mode Desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Memilih versi desktop situs</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Memilih versi mobile situs</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktifkan Tampilan Desktop untuk tab baru</string>
+    <string name="website_settings_category_desktop_view_disabled">Gunakan versi mobile situs untuk tab baru (sarankan)</string>
+
 </resources>

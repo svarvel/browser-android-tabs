@@ -59,4 +59,15 @@ ir bloķēti</string>
 ir bloķēti</string>
     <string name="brave_stats_text_https">HTTPS
 jauninājumi</string>
-    </resources>
+    <string name="brave_stats_text_time">Apt. Laiks
+Saglabāts</string>
+
+    <string name="send_metrics_title">Nosūtīt metriku</string>
+
+    <string name="desktop_mode_title">Darbvirsmas režīms</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Dot priekšroku vietņu darbvirsmas versijām</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Dot priekšroku vietņu mobilajām versijām</string>
+    <string name="website_settings_category_desktop_view_enabled">Iespējot Darbvirsmas skatu jaunām cilnēm</string>
+    <string name="website_settings_category_desktop_view_disabled">Jaunām cilnēm izmantot vietņu mobilās versijas (ieteicams)</string>
+
+</resources>

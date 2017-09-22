@@ -64,4 +64,10 @@ HTTPS</string>
 
     <string name="send_metrics_title">Gửi chỉ số</string>
 
+    <string name="desktop_mode_title">Phiên bản Máy để bàn</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Thích phiên bản máy để bàn của trang</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Thích phiên bản di động của trang</string>
+    <string name="website_settings_category_desktop_view_enabled">Bật Dạng xem Máy để bàn cho tab mới</string>
+    <string name="website_settings_category_desktop_view_disabled">Sử dụng phiên bản di động của trang cho các tab mới (khuyến khích)</string>
+
 </resources>

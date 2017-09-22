@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="brave_settings_title">Brave网站屏蔽设置</string>
+    <string name="brave_settings_title">Brave网站屏蔽设置对象为</string>
     <string name="brave_shields_down">关闭</string>
     <string name="brave_shields_up">开启</string>
     <string name="brave_shields_ads_trackers">已屏蔽广告和跟踪器</string>
@@ -15,7 +15,7 @@
 
     <string name="httpse_summary">尽可能使用 HTTPS 而不是 HTTP 打开支持的网站</string>
     <string name="tracking_protection_title">跟踪保护模式</string>
-    <string name="tracking_protection_summary">阻止加载追踪资源</string>
+    <string name="tracking_protection_summary">阻止加载跟踪资源</string>
     <string name="ad_block_title">广告过滤</string>
     <string name="ad_block_summary">阻止广告加载</string>
 
@@ -49,12 +49,21 @@
     <string name="reset_sync">重置同步...</string>
     <string name="resetting_sync">确定要重置此设备的同步设置吗？</string>
 
-    <string name="brave_stats_text_trackers">跟踪器屏蔽</string>
-    <string name="brave_stats_text_ads">广告屏蔽</string>
+    <string name="brave_stats_text_trackers">跟踪器
+已屏蔽</string>
+    <string name="brave_stats_text_ads">广告
+已屏蔽</string>
     <string name="brave_stats_text_https">HTTPS
-升级</string>
-    <string name="brave_stats_text_time">东部时间保存</string>
+已升级</string>
+    <string name="brave_stats_text_time">时间
+已节省</string>
 
-    <string name="send_metrics_title">发送指标</string>
+    <string name="send_metrics_title">发送计数</string>
+
+    <string name="desktop_mode_title">桌面模式</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">更喜欢桌面版的网站</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">更喜欢移动版的网站</string>
+    <string name="website_settings_category_desktop_view_enabled">对新标签页启用桌面视图</string>
+    <string name="website_settings_category_desktop_view_disabled">对新标签页使用移动版的网站（推荐）</string>
 
 </resources>

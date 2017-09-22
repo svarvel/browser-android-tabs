@@ -1088,54 +1088,60 @@ Noen nettsteder kan for eksempel svare på denne forespørselen ved å vise deg 
 <translation id="982182592107339124">Dette fører til at dataene for alle nettsteder slettes, deriblant disse:</translation>
 <translation id="983192555821071799">Lukk alle faner</translation>
 <translation id="987264212798334818">Generelt</translation>
-<translation id="3209146299287804856">Skjoldinnstillinger for Brave-nettstedet
-</translation><translation id="622484624075952240">Ned
-</translation><translation id="2706462751667573066">Opp
-</translation><translation id="4339730410920731698">Annonser og sporing blokkert
-</translation><translation id="2313532038420432247">HTTPS-oppgraderinger
-</translation><translation id="7461425058443653485">Skript blokkert
-</translation><translation id="7835726359440951858">Blokker annonser og sporing
-</translation><translation id="520895744850022668">HTTPS overalt
-</translation><translation id="94154759592465111">Blokker skript
-</translation><translation id="7307834434086582547">Aktiver/deaktiver Brave-skjold
-</translation><translation id="6132506775968708399">Blokker informasjonskapsler fra tredjeparter
-</translation><translation id="8710614491157212477">Åpner støttede nettsteder ved å bruke HTTPS i stedet for HTTP når mulig
-</translation><translation id="5758129336814690876">Sporingsbeskyttelsesmodus
-</translation><translation id="4609637183310787528">Forhindrer ressurser som sporer deg fra å starte
-</translation><translation id="8387201461264842096">Blokker annonse
-</translation><translation id="1934885595886623674">Forhindrer annonser å starte
-</translation><translation id="7458422973722236530">Beskyttelse mot bruk av fingeravtrykk</translation><translation id="5787084571334399599">Hindrer nettleser I å bruke fingeravtrykk
-</translation><translation id="3758669798635576061">Metoder for bruk av fingeravtrykk blokkert
-</translation><translation id="3276318574457057212">Regional annonse blokkering
-</translation><translation id="2300239903491866759">Hindrer regionale annonser fra å laste
-</translation><translation id="8142327400852603066">Ingen flere lister tilgjengelig for din lokasjon
-</translation><translation id="9148058034647219655">Utgang
-</translation><translation id="3149880132460839085">Brave Sync
-</translation><translation id="5853303025585906159">Synk nettleserdata sikkert, mellom dine enheter
+<translation id="3209146299287804856">Skjoldinnstillinger for Brave-nettstedet</translation>
+<translation id="622484624075952240">Ned</translation>
+<translation id="2706462751667573066">Opp</translation>
+<translation id="4339730410920731698">Annonser og sporing blokkert</translation>
+<translation id="2313532038420432247">HTTPS-oppgraderinger</translation>
+<translation id="7461425058443653485">Skript blokkert</translation>
+<translation id="7835726359440951858">Blokker annonser og sporing</translation>
+<translation id="520895744850022668">HTTPS overalt</translation>
+<translation id="94154759592465111">Blokker skript</translation>
+<translation id="7307834434086582547">Aktiver/deaktiver Brave-skjold</translation>
+<translation id="6132506775968708399">Blokker informasjonskapsler fra tredjeparter</translation>
+<translation id="8710614491157212477">Åpner støttede nettsteder ved å bruke HTTPS i stedet for HTTP når mulig</translation>
+<translation id="5758129336814690876">Sporingsbeskyttelsesmodus</translation>
+<translation id="4609637183310787528">Forhindrer ressurser som sporer deg fra å starte</translation>
+<translation id="8387201461264842096">Blokker annonse</translation>
+<translation id="1934885595886623674">Forhindrer annonser å starte</translation>
+<translation id="7458422973722236530">Beskyttelse mot bruk av fingeravtrykk</translation>
+<translation id="5787084571334399599">Hindrer nettleser I å bruke fingeravtrykk</translation>
+<translation id="3758669798635576061">Metoder for bruk av fingeravtrykk blokkert</translation>
+<translation id="3276318574457057212">Regional annonse blokkering</translation>
+<translation id="2300239903491866759">Hindrer regionale annonser fra å laste</translation>
+<translation id="8142327400852603066">Ingen flere lister tilgjengelig for din lokasjon</translation>
+<translation id="9148058034647219655">Utgang</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="5853303025585906159">Synk nettleserdata sikkert, mellom dine enheter
 med Brave Synk, ingen konto må opprettes.
-Tapp under for å starte.
-</translation><translation id="4807681603968503084">Jeg har en eksisterende synkkode
-</translation><translation id="3082265116777145081">Legg til enhetsnavn
-</translation><translation id="9024091168371687561">Skriv inn et valgfritt navn for denne enheten
-</translation><translation id="3998827900918661986">Android enhet
-</translation><translation id="7319511434820752937">Synkroniser til enhet
-</translation><translation id="2848874822038607051">Med en allerede synkronisert enhet åpne Brave Settings og gå til
+Tapp under for å starte.</translation>
+<translation id="4807681603968503084">Jeg har en eksisterende synkkode</translation>
+<translation id="3082265116777145081">Legg til enhetsnavn</translation>
+<translation id="9024091168371687561">Skriv inn et valgfritt navn for denne enheten</translation>
+<translation id="3998827900918661986">Android enhet</translation>
+<translation id="7319511434820752937">Synkroniser til enhet</translation>
+<translation id="2848874822038607051">Med en allerede synkronisert enhet åpne Brave Settings og gå til
 "Device &amp;Settings", fanen `+` for å lege til
-en ny enhet og vise synkroniseringskoden.
-</translation><translation id="7539985410310934287">Skriv inn kode ord
-</translation><translation id="3381055602822429838">Skriv kodeordene under
-</translation><translation id="326454632686131209">Synk enhet
-</translation><translation id="8985635554450124959">Synk kunne ikke settes opp
-</translation><translation id="7713465482966886648">Synkronisering er fullført med suksess.
-</translation><translation id="1068083442730715531">Reset Synk…
-</translation><translation id="6761015334234690567">Er du sikker på at du vil resette denne enheten Synk innstillinger?
-</translation><translation id="6244065453125065109">Sporing
-blokkert
-</translation><translation id="2547939855139473800">Annonser
-blokkert
-</translation><translation id="8880969045613157151">HTTPS-
-oppgraderinger
-</translation><translation id="204407992549693965">Beregnet tid
-Lagret
-</translation><translation id="991605024067283917">Send beregninger
-</translation></translationbundle>
+en ny enhet og vise synkroniseringskoden.</translation>
+<translation id="7539985410310934287">Skriv inn kode ord</translation>
+<translation id="3381055602822429838">Skriv kodeordene under</translation>
+<translation id="326454632686131209">Synk enhet</translation>
+<translation id="8985635554450124959">Synk kunne ikke settes opp</translation>
+<translation id="7713465482966886648">Synkronisering er fullført med suksess.</translation>
+<translation id="1068083442730715531">Reset Synk…</translation>
+<translation id="6761015334234690567">Er du sikker på at du vil resette denne enheten Synk innstillinger?</translation>
+<translation id="6244065453125065109">Sporing
+blokkert</translation>
+<translation id="2547939855139473800">Annonser
+blokkert</translation>
+<translation id="8880969045613157151">HTTPS-
+oppgraderinger</translation>
+<translation id="204407992549693965">Beregnet tid
+Lagret</translation>
+<translation id="991605024067283917">Send beregninger</translation>
+<translation id="6572660632052512096">Skrivebordsmodus</translation>
+<translation id="4479934682648362332">Foretrekker skrivebordsversjon av sidene</translation>
+<translation id="807636106793708118">Foretrekker mobilversjon av sidene</translation>
+<translation id="1340503115760585811">Aktiver skrivebordsvisning for nye faner</translation>
+<translation id="7924540991929826186">Bruk nettstedenes mobilversjoner for nye faner (anbefalt)</translation>
+</translationbundle>

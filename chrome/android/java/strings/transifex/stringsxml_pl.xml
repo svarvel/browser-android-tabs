@@ -64,4 +64,10 @@ zaoszczędzony czas</string>
 
     <string name="send_metrics_title">Wyślij mierniki</string>
 
+    <string name="desktop_mode_title">Tryb desktopowy</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferuj wersję desktopową stron</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferuj wersję mobilną stron</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktywuj widok desktopowy dla nowych zakładek</string>
+    <string name="website_settings_category_desktop_view_disabled">Używaj mobilnych wersji stron dla nowych zakładek (zalecane)</string>
+
 </resources>

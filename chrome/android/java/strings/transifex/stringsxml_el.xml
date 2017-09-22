@@ -64,4 +64,10 @@ HTTPS</string>
 
     <string name="send_metrics_title">Αποστολή μετρήσεων</string>
 
+    <string name="desktop_mode_title">Λειτουργία επιτραπέζιου υπολογιστή</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Προτίμηση των εκδόσεων των ιστοτόπων για επιτραπέζιους υπολογιστές</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Προτίμηση των εκδόσεων των ιστοτόπων για κινητά τηλέφωνα</string>
+    <string name="website_settings_category_desktop_view_enabled">Ενεργοποίηση προβολής για επιτραπέζιους υπολογιστές για νέες καρτέλες</string>
+    <string name="website_settings_category_desktop_view_disabled">Χρήση των ιστοτόπων σε έκδοση για κινητά για νέες καρτέλες (συνιστάται)</string>
+
 </resources>

@@ -1088,53 +1088,62 @@ Na primjer, neke web-lokacije na taj zahtjev mogu odgovoriti tako da vam prikaž
 <translation id="982182592107339124">Izbrisat će se podaci za sve web-lokacije, uključujući:</translation>
 <translation id="983192555821071799">Zatvori sve kartice</translation>
 <translation id="987264212798334818">Općenito</translation>
-<translation id="3209146299287804856">Postavke štita mrežne stranice Brave za
-</translation><translation id="622484624075952240">Dolje
-</translation><translation id="2706462751667573066">Gore
-</translation><translation id="4339730410920731698">Oglasi i obilježivači blokirani
-</translation><translation id="2313532038420432247">HTTPS Unaprjeđenja
-</translation><translation id="7461425058443653485">Skripte blokirane
-</translation><translation id="7835726359440951858">Blokirati oglase i obilježivače
-</translation><translation id="520895744850022668">HTTPS Svugdje
-</translation><translation id="94154759592465111">Blokirati skripte
-</translation><translation id="7307834434086582547">Omogućiti/onemogućiti štitove za Brave
-</translation><translation id="6132506775968708399">Blokirati kolačiće 3. strana
-</translation><translation id="8710614491157212477">Otvara podržane sajtove uz pomoć HTTPS umjesto HTTP kad je to mogućno
-</translation><translation id="5758129336814690876">Režim zaštite slijeđenja
-</translation><translation id="4609637183310787528">Sprječava resurse koji vas slijede kod učitavanja
-</translation><translation id="8387201461264842096">Bloker oglasa
-</translation><translation id="1934885595886623674">Sprječava učitavanje oglasa
-</translation><translation id="7458422973722236530">Zaštita otiskom prsta</translation><translation id="5787084571334399599">Sprječava preglednik u ostavljanju otiska prsta
-</translation><translation id="3758669798635576061">Blokirani metodi otiska prsta
-</translation><translation id="3276318574457057212">Regionalni bloker oglasa
-</translation><translation id="2300239903491866759">Sprječava učitavanje regionalnih oglasa
-</translation><translation id="8142327400852603066">Nema dodatnih popisa dostupnih za vašu lokaciju
-</translation><translation id="9148058034647219655">Izlaženje
-</translation><translation id="3149880132460839085">Sinkronizacija Brave
-</translation><translation id="5853303025585906159">Sigurno sinkronizirajte podatke u pregledniku između
+<translation id="3209146299287804856">Postavke štita mrežne stranice Brave za</translation>
+<translation id="622484624075952240">Dolje</translation>
+<translation id="2706462751667573066">Gore</translation>
+<translation id="4339730410920731698">Oglasi i obilježivači blokirani</translation>
+<translation id="2313532038420432247">HTTPS Unaprjeđenja</translation>
+<translation id="7461425058443653485">Skripte blokirane</translation>
+<translation id="7835726359440951858">Blokirati oglase i obilježivače</translation>
+<translation id="520895744850022668">HTTPS Svugdje</translation>
+<translation id="94154759592465111">Blokirati skripte</translation>
+<translation id="7307834434086582547">Omogućiti/onemogućiti štitove za Brave</translation>
+<translation id="6132506775968708399">Blokirati kolačiće 3. strana</translation>
+<translation id="8710614491157212477">Otvara podržane sajtove uz pomoć HTTPS umjesto HTTP kad je to mogućno</translation>
+<translation id="5758129336814690876">Režim zaštite slijeđenja</translation>
+<translation id="4609637183310787528">Sprječava resurse koji vas slijede kod učitavanja</translation>
+<translation id="8387201461264842096">Bloker oglasa</translation>
+<translation id="1934885595886623674">Sprječava učitavanje oglasa</translation>
+<translation id="7458422973722236530">Zaštita otiskom prsta</translation>
+<translation id="5787084571334399599">Sprječava preglednik u ostavljanju otiska prsta</translation>
+<translation id="3758669798635576061">Blokirani metodi otiska prsta</translation>
+<translation id="3276318574457057212">Regionalni bloker oglasa</translation>
+<translation id="2300239903491866759">Sprječava učitavanje regionalnih oglasa</translation>
+<translation id="8142327400852603066">Nema dodatnih popisa dostupnih za vašu lokaciju</translation>
+<translation id="9148058034647219655">Izlaženje</translation>
+<translation id="3149880132460839085">Sinkronizacija Brave</translation>
+<translation id="5853303025585906159">Sigurno sinkronizirajte podatke u pregledniku između
 svojih uređaja pomoću sinkronizacije Brave,
 ne zahtijeva stvaranje računa.
-Dodirnite ispod da biste započeli.
-</translation><translation id="4807681603968503084">Imam postojeći sinkronizacijski kod
-</translation><translation id="3082265116777145081">Dodaj naziv uređaja
-</translation><translation id="9024091168371687561">Unesi neobavezni naziv za ovaj uređaj
-</translation><translation id="3998827900918661986">Uređaj Android
-</translation><translation id="7319511434820752937">Sinkroniziraj s uređajem
-</translation><translation id="2848874822038607051">Koristeći se sinkroniziranim uređajem otvorite
+Dodirnite ispod da biste započeli.</translation>
+<translation id="4807681603968503084">Imam postojeći sinkronizacijski kod</translation>
+<translation id="3082265116777145081">Dodaj naziv uređaja</translation>
+<translation id="9024091168371687561">Unesi neobavezni naziv za ovaj uređaj</translation>
+<translation id="3998827900918661986">Uređaj Android</translation>
+<translation id="7319511434820752937">Sinkroniziraj s uređajem</translation>
+<translation id="2848874822038607051">Koristeći se sinkroniziranim uređajem otvorite
 postavke za Brave te idite na "Postavke &amp;uređaja",
 i dodirnite `+` da biste dodali novi uređaj
-i da se prikaže sinkronizacijski kod.
-</translation><translation id="7539985410310934287">Unesi kodne riječi
-</translation><translation id="3381055602822429838">Unesi kodne riječi ispod.
-</translation><translation id="326454632686131209">Sinkroniziraj uređaj
-</translation><translation id="8985635554450124959">Postavljanje sinkronizacije nije uspjelo
-</translation><translation id="7713465482966886648">Postavljanje sinkronizacije uspješno je dovršeno
-</translation><translation id="1068083442730715531">Ponovno postavi sinkronizaciju
-</translation><translation id="6761015334234690567">Jeste li sigurni da želite ponovno postaviti sinkronizacijske postavke ovog uređaja?
-</translation><translation id="6244065453125065109">Obilježivači
-blokirani
-</translation><translation id="2547939855139473800">Oglasi
-blokirani
-</translation><translation id="8880969045613157151">HTTPS
-Unaprjeđenja
-</translation></translationbundle>
+i da se prikaže sinkronizacijski kod.</translation>
+<translation id="7539985410310934287">Unesi kodne riječi</translation>
+<translation id="3381055602822429838">Unesi kodne riječi ispod.</translation>
+<translation id="326454632686131209">Sinkroniziraj uređaj</translation>
+<translation id="8985635554450124959">Postavljanje sinkronizacije nije uspjelo</translation>
+<translation id="7713465482966886648">Postavljanje sinkronizacije uspješno je dovršeno</translation>
+<translation id="1068083442730715531">Ponovno postavi sinkronizaciju</translation>
+<translation id="6761015334234690567">Jeste li sigurni da želite ponovno postaviti sinkronizacijske postavke ovog uređaja?</translation>
+<translation id="6244065453125065109">Obilježivači
+blokirani</translation>
+<translation id="2547939855139473800">Oglasi
+blokirani</translation>
+<translation id="8880969045613157151">HTTPS
+Unaprjeđenja</translation>
+<translation id="204407992549693965">Est. Vrijeme
+Spaseno</translation>
+<translation id="991605024067283917">Pošaljite metriku</translation>
+<translation id="6572660632052512096">Režim desktopa</translation>
+<translation id="4479934682648362332">Preferirajte desktop inačicu stranica</translation>
+<translation id="807636106793708118">Preferirajte mobilnu inačicu stranice</translation>
+<translation id="1340503115760585811">Omogućite pregled s desktopa za nove jezičke</translation>
+<translation id="7924540991929826186">Rabite mobilne inačice stranica za nove jezičke (preporučeno)</translation>
+</translationbundle>

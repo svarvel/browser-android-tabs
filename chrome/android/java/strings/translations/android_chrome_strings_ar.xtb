@@ -614,7 +614,7 @@
 <translation id="5689516760719285838">الموقع</translation>
 <translation id="569536719314091526">ترجمة هذه الصفحة إلى أي لغة من خلال الزر "مزيد من الخيارات"</translation>
 <translation id="5719837394786370183">لن تظهر الصفحات التي تشاهدها في علامات تبويب التصفح المتخفي في سجل متصفحك ولا في وحدة تخزين ملفات تعريف الارتباط ولا في سجل البحث بعد إغلاق جميع علامات تبويب التصفح المتخفي. وستُحفظ أي ملفات تنزلها وأي علامات مرجعية تنشئها.
-          
+
           لكنك لن تكون غير مرئي، فاستخدام وضع التصفح المتخفي لا يخفي تصفحك عن صاحب العمل أو مزود خدمة الإنترنت أو مواقع الويب التي تزورها.</translation>
 <translation id="572328651809341494">علامات التبويب الأخيرة</translation>
 <translation id="5726692708398506830">تكبير كل محتويات الصفحة</translation>
@@ -1088,57 +1088,63 @@
 <translation id="982182592107339124">سيؤدي هذا إلى مسح بيانات جميع المواقع، بما في ذلك:</translation>
 <translation id="983192555821071799">إغلاق جميع علامات التبويب</translation>
 <translation id="987264212798334818">عام</translation>
-<translation id="3209146299287804856">إعدادات موقع درع Brave  ل
-</translation><translation id="622484624075952240">أسفل
-</translation><translation id="2706462751667573066">فوق
-</translation><translation id="4339730410920731698">حجب القتفون والإعلانات
-</translation><translation id="2313532038420432247">تحديثات HTTPS
-</translation><translation id="7461425058443653485">حجب النصوص
-</translation><translation id="7835726359440951858">حظر الإعلانات والتتبع
-</translation><translation id="520895744850022668">HTTPS في كل مكان
-</translation><translation id="94154759592465111">حظر النصوص
-</translation><translation id="7307834434086582547">تفعيل/ تعطيل دروع Brave
-</translation><translation id="6132506775968708399">حجب ملفات تعريف الارتباط لطرف ثالث
-</translation><translation id="8710614491157212477">يفتح المواقع المدعمة باستخدام HTTPS بدلا من HTTP إن أمكن
-</translation><translation id="5758129336814690876">تتبع وضع الحماية
-</translation><translation id="4609637183310787528">يمنع الموارد التي تتبعها من التحميل
-</translation><translation id="8387201461264842096">حجب الإعلانات
-</translation><translation id="1934885595886623674">يمنع تحميل الإعلانات
-</translation><translation id="7458422973722236530">حماية البصمة</translation><translation id="5787084571334399599">يمنع المتصفح من التعرف على بصمتك الخاصة
-</translation><translation id="3758669798635576061">حظر وسائل الحصول على البصمة
-</translation><translation id="3276318574457057212">حظر الإعلانات المحلية
-</translation><translation id="2300239903491866759">يمنع تحميل الإعلانات الإقليمية
-</translation><translation id="8142327400852603066">لا توجد قوائم إضافية مُتاحة في موقعك
-</translation><translation id="9148058034647219655">ىخرج
-</translation><translation id="3149880132460839085">Brave Sync
-</translation><translation id="5853303025585906159">قم بمزامنة بيانات المتصفح بين أجهزتك
+<translation id="3209146299287804856">إعدادات موقع درع Brave  ل</translation>
+<translation id="622484624075952240">أسفل</translation>
+<translation id="2706462751667573066">فوق</translation>
+<translation id="4339730410920731698">حجب القتفون والإعلانات</translation>
+<translation id="2313532038420432247">تحديثات HTTPS</translation>
+<translation id="7461425058443653485">حجب النصوص</translation>
+<translation id="7835726359440951858">حظر الإعلانات والتتبع</translation>
+<translation id="520895744850022668">HTTPS في كل مكان</translation>
+<translation id="94154759592465111">حظر النصوص</translation>
+<translation id="7307834434086582547">تفعيل/ تعطيل دروع Brave</translation>
+<translation id="6132506775968708399">حجب ملفات تعريف الارتباط لطرف ثالث</translation>
+<translation id="8710614491157212477">يفتح المواقع المدعمة باستخدام HTTPS بدلا من HTTP إن أمكن</translation>
+<translation id="5758129336814690876">تتبع وضع الحماية</translation>
+<translation id="4609637183310787528">يمنع الموارد التي تتبعها من التحميل</translation>
+<translation id="8387201461264842096">حجب الإعلانات</translation>
+<translation id="1934885595886623674">يمنع تحميل الإعلانات</translation>
+<translation id="7458422973722236530">حماية البصمة</translation>
+<translation id="5787084571334399599">يمنع المتصفح من التعرف على بصمتك الخاصة</translation>
+<translation id="3758669798635576061">حظر وسائل الحصول على البصمة</translation>
+<translation id="3276318574457057212">حظر الإعلانات المحلية</translation>
+<translation id="2300239903491866759">يمنع تحميل الإعلانات الإقليمية</translation>
+<translation id="8142327400852603066">لا توجد قوائم إضافية مُتاحة في موقعك</translation>
+<translation id="9148058034647219655">ىخرج</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="5853303025585906159">قم بمزامنة بيانات المتصفح بين أجهزتك
  بصورة آمنه باستخدام Brave Sync، لا
- يتطلب إنشاء حساب. انقر أدناه للبدء.
-</translation><translation id="4807681603968503084">يوجد لديّ رمز مزامنة حالي
-</translation><translation id="3082265116777145081">إضافة اسم جهاز
-</translation><translation id="9024091168371687561">أدخل اسمًا اختياريًا لهذا الجهاز
-</translation><translation id="3998827900918661986">جهاز أندرويد
-</translation><translation id="7319511434820752937">المزامنة مع الجهاز
-</translation><translation id="2848874822038607051">باستخدام الجهاز المتزامن
+ يتطلب إنشاء حساب. انقر أدناه للبدء.</translation>
+<translation id="4807681603968503084">يوجد لديّ رمز مزامنة حالي</translation>
+<translation id="3082265116777145081">إضافة اسم جهاز</translation>
+<translation id="9024091168371687561">أدخل اسمًا اختياريًا لهذا الجهاز</translation>
+<translation id="3998827900918661986">جهاز أندرويد</translation>
+<translation id="7319511434820752937">المزامنة مع الجهاز</translation>
+<translation id="2848874822038607051">باستخدام الجهاز المتزامن
 حاليًا، افتح إعدادات Brave وانتقل إلى
 "إعدادات&amp;الجهاز" وانقر على الرمز `+`
- لإضافة جهاز جديد وإظهار رمز المزامنة.
-</translation><translation id="7539985410310934287">أدخل كلمات الرمز
-</translation><translation id="3381055602822429838">أدخل كلمات الرمز أدناه.
-</translation><translation id="326454632686131209">مزامنة الجهاز
-</translation><translation id="8985635554450124959">تعذر إعداد المزامنة
-</translation><translation id="7713465482966886648">أكتملت عملية إعداد المزامنة بنجاح
-</translation><translation id="1068083442730715531">إعادة تعيين المزامنة...
-</translation><translation id="6761015334234690567">هل ترغب بالتأكيد في إعادة تعيين إعدادات مزامنة هذا الجهاز والتطبيقات؟
-</translation><translation id="6244065453125065109">تم حظر
+ لإضافة جهاز جديد وإظهار رمز المزامنة.</translation>
+<translation id="7539985410310934287">أدخل كلمات الرمز</translation>
+<translation id="3381055602822429838">أدخل كلمات الرمز أدناه.</translation>
+<translation id="326454632686131209">مزامنة الجهاز</translation>
+<translation id="8985635554450124959">تعذر إعداد المزامنة</translation>
+<translation id="7713465482966886648">أكتملت عملية إعداد المزامنة بنجاح</translation>
+<translation id="1068083442730715531">إعادة تعيين المزامنة...</translation>
+<translation id="6761015334234690567">هل ترغب بالتأكيد في إعادة تعيين إعدادات مزامنة هذا الجهاز والتطبيقات؟</translation>
+<translation id="6244065453125065109">تم حظر
 المتتبعات
-
-</translation><translation id="2547939855139473800">تم حظر
-الإعلانات
-</translation><translation id="8880969045613157151">ترقيات 
-HTTPS
-</translation><translation id="204407992549693965">حُفِظ
+</translation>
+<translation id="2547939855139473800">تم حظر
+الإعلانات</translation>
+<translation id="8880969045613157151">ترقيات 
+HTTPS</translation>
+<translation id="204407992549693965">حُفِظ
 توقيت الساحل الشرقي
-
-</translation><translation id="991605024067283917">إرسال المقاييس
-</translation></translationbundle>
+</translation>
+<translation id="991605024067283917">إرسال المقاييس</translation>
+<translation id="6572660632052512096">وضع سطح المكتب</translation>
+<translation id="4479934682648362332">هل تفضل إصدار سطح المكتب للمواقع</translation>
+<translation id="807636106793708118">هل تفضل إصدار الهاتف الجوال للمواقع </translation>
+<translation id="1340503115760585811">تمكين عرض سطح المكتب لعلامات التبويب الجديدة</translation>
+<translation id="7924540991929826186">استخدم إصدارات الهاتف الجوال للمواقع للحصول على علامات تبويب جديدة (مُستحسن)</translation>
+</translationbundle>

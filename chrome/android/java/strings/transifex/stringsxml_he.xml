@@ -64,4 +64,10 @@ HTTPS</string>
 
     <string name="send_metrics_title">שלח מדדים</string>
 
+    <string name="desktop_mode_title">מצב שולחן עבודה</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">העדף/י את גרסאות האתרים לשולחן עבודה</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">העדף/י את גרסאות האתרים למכשירים ניידים</string>
+    <string name="website_settings_category_desktop_view_enabled">הפעל/י תצוגת שולחן עבודה לכרטיסיות חדשות</string>
+    <string name="website_settings_category_desktop_view_disabled">השתמש/י בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</string>
+
 </resources>

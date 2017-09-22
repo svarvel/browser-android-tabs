@@ -1088,56 +1088,62 @@ Par exemple, certains sites Web peuvent répondre à cette demande en diffusant 
 <translation id="982182592107339124">Cette opération entraînera la suppression des informations concernant tous les sites, y compris :</translation>
 <translation id="983192555821071799">Fermer tous les onglets</translation>
 <translation id="987264212798334818">Général</translation>
-<translation id="3209146299287804856">Paramètres pour le  site Brave Shield
-</translation><translation id="622484624075952240">Vers le bas
-</translation><translation id="2706462751667573066">Vers le haut
-</translation><translation id="4339730410920731698">Publicités et Trackers bloqués
-</translation><translation id="2313532038420432247">Mises à jour HTTPS
-</translation><translation id="7461425058443653485">Scripts bloqués
-</translation><translation id="7835726359440951858">Bloquer les publicités et le tracking
-</translation><translation id="520895744850022668">HTTPS Everywhere
-</translation><translation id="94154759592465111">Bloquer les scripts
-</translation><translation id="7307834434086582547">Activer/Désactiver Brave Shields
-</translation><translation id="6132506775968708399">Bloquer les cookies tiers
-</translation><translation id="8710614491157212477">Ouvre les sites compatibles en HTTPS plutôt qu'en HTTP, lorsque cela est possible
-</translation><translation id="5758129336814690876">Mode de protection contre le tracking
-</translation><translation id="4609637183310787528">Empêche le chargement des ressources qui vous suivent à la trace
-</translation><translation id="8387201461264842096">Bloqueur de publicités
-</translation><translation id="1934885595886623674">Empêche le chargement des publicités
-</translation><translation id="7458422973722236530">Protection par empreintes digitales</translation><translation id="5787084571334399599">Empêche le navigateur de prendre des empreintes digitales
-</translation><translation id="3758669798635576061">Méthodes par empreintes digitales bloquées
-</translation><translation id="3276318574457057212">Pub régionale bloquée
-</translation><translation id="2300239903491866759">Empêche les publicités régionales de se télécharger
-</translation><translation id="8142327400852603066">Aucune liste supplémentaire n'est disponible pour votre localité
-</translation><translation id="9148058034647219655">Sortie
-</translation><translation id="3149880132460839085">Synchronisation Brave
-</translation><translation id="5853303025585906159">Synchronisez les données de navigation de vos appareils
+<translation id="3209146299287804856">Paramètres pour le  site Brave Shield</translation>
+<translation id="622484624075952240">Vers le bas</translation>
+<translation id="2706462751667573066">Vers le haut</translation>
+<translation id="4339730410920731698">Publicités et Trackers bloqués</translation>
+<translation id="2313532038420432247">Mises à jour HTTPS</translation>
+<translation id="7461425058443653485">Scripts bloqués</translation>
+<translation id="7835726359440951858">Bloquer les publicités et le tracking</translation>
+<translation id="520895744850022668">HTTPS Everywhere</translation>
+<translation id="94154759592465111">Bloquer les scripts</translation>
+<translation id="7307834434086582547">Activer/Désactiver Brave Shields</translation>
+<translation id="6132506775968708399">Bloquer les cookies tiers</translation>
+<translation id="8710614491157212477">Ouvre les sites compatibles en HTTPS plutôt qu'en HTTP, lorsque cela est possible</translation>
+<translation id="5758129336814690876">Mode de protection contre le tracking</translation>
+<translation id="4609637183310787528">Empêche le chargement des ressources qui vous suivent à la trace</translation>
+<translation id="8387201461264842096">Bloqueur de publicités</translation>
+<translation id="1934885595886623674">Empêche le chargement des publicités</translation>
+<translation id="7458422973722236530">Protection par empreintes digitales</translation>
+<translation id="5787084571334399599">Empêche le navigateur de prendre des empreintes digitales</translation>
+<translation id="3758669798635576061">Méthodes par empreintes digitales bloquées</translation>
+<translation id="3276318574457057212">Pub régionale bloquée</translation>
+<translation id="2300239903491866759">Empêche les publicités régionales de se télécharger</translation>
+<translation id="8142327400852603066">Aucune liste supplémentaire n'est disponible pour votre localité</translation>
+<translation id="9148058034647219655">Sortie</translation>
+<translation id="3149880132460839085">Synchronisation Brave</translation>
+<translation id="5853303025585906159">Synchronisez les données de navigation de vos appareils
 avec la synchronisation Brave,
 sans avoir à créer de compte.
-Cliquez ci-dessous pour commencer.
-</translation><translation id="4807681603968503084">Je possède un code de synchronisation
-</translation><translation id="3082265116777145081">Ajouter un nom d'appareil
-</translation><translation id="9024091168371687561">Saisir un nom optionnel pour cet appareil
-</translation><translation id="3998827900918661986">Appareil Android
-</translation><translation id="7319511434820752937">Synchroniser avec l'appareil
-</translation><translation id="2848874822038607051">Ouvrez les paramètres Brave à partir d'un appareil synchronisé
+Cliquez ci-dessous pour commencer.</translation>
+<translation id="4807681603968503084">Je possède un code de synchronisation</translation>
+<translation id="3082265116777145081">Ajouter un nom d'appareil</translation>
+<translation id="9024091168371687561">Saisir un nom optionnel pour cet appareil</translation>
+<translation id="3998827900918661986">Appareil Android</translation>
+<translation id="7319511434820752937">Synchroniser avec l'appareil</translation>
+<translation id="2848874822038607051">Ouvrez les paramètres Brave à partir d'un appareil synchronisé
 existant et naviguez dans "Appareil &amp;Paramètres",
 sélectionnez `+` pour ajouter un nouvel appareil
-et afficher le code de synchronisation.
-</translation><translation id="7539985410310934287">Saisir un code
-</translation><translation id="3381055602822429838">Saisir le code ci-dessous.
-</translation><translation id="326454632686131209">Synchronisation de l'appareil
-</translation><translation id="8985635554450124959">Échec de la configuration de la synchronisation
-</translation><translation id="7713465482966886648">La configuration de la synchronisation a été réalisée avec succès
-</translation><translation id="1068083442730715531">Réinitialiser la synchronisation...
-</translation><translation id="6761015334234690567">Voulez-vous réinitialiser les paramètres de synchronisation de cet appareil's?
-</translation><translation id="6244065453125065109">Trackers
-bloqués
-</translation><translation id="2547939855139473800">Publicités
-bloqués
-</translation><translation id="8880969045613157151">Mises à
-jour HTTPS
-</translation><translation id="204407992549693965">Temps est.
-Enregistré
-</translation><translation id="991605024067283917">Envoyer les métriques
-</translation></translationbundle>
+et afficher le code de synchronisation.</translation>
+<translation id="7539985410310934287">Saisir un code</translation>
+<translation id="3381055602822429838">Saisir le code ci-dessous.</translation>
+<translation id="326454632686131209">Synchronisation de l'appareil</translation>
+<translation id="8985635554450124959">Échec de la configuration de la synchronisation</translation>
+<translation id="7713465482966886648">La configuration de la synchronisation a été réalisée avec succès</translation>
+<translation id="1068083442730715531">Réinitialiser la synchronisation...</translation>
+<translation id="6761015334234690567">Voulez-vous réinitialiser les paramètres de synchronisation de cet appareil's?</translation>
+<translation id="6244065453125065109">Trackers
+bloqués</translation>
+<translation id="2547939855139473800">Publicités
+bloqués</translation>
+<translation id="8880969045613157151">Mises à
+jour HTTPS</translation>
+<translation id="204407992549693965">Temps est.
+Enregistré</translation>
+<translation id="991605024067283917">Envoyer les métriques</translation>
+<translation id="6572660632052512096">Mode Bureau</translation>
+<translation id="4479934682648362332">Privilégier la version bureau des sites</translation>
+<translation id="807636106793708118">Privilégier la version mobiles des sites </translation>
+<translation id="1340503115760585811">Activer l\'Aperçu Bureau pour les nouveaux onglets</translation>
+<translation id="7924540991929826186">Utiliser les versions mobiles des sites pour les nouveaux onglets (recommandé)</translation>
+</translationbundle>

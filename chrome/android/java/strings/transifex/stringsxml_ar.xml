@@ -65,4 +65,10 @@ HTTPS</string>
 
     <string name="send_metrics_title">إرسال المقاييس</string>
 
+    <string name="desktop_mode_title">وضع سطح المكتب</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">هل تفضل إصدار سطح المكتب للمواقع</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">هل تفضل إصدار الهاتف الجوال للمواقع </string>
+    <string name="website_settings_category_desktop_view_enabled">تمكين عرض سطح المكتب لعلامات التبويب الجديدة</string>
+    <string name="website_settings_category_desktop_view_disabled">استخدم إصدارات الهاتف الجوال للمواقع للحصول على علامات تبويب جديدة (مُستحسن)</string>
+
 </resources>

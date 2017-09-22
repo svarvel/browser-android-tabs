@@ -64,4 +64,10 @@ Salvo</string>
 
     <string name="send_metrics_title">Enviar medidas</string>
 
+    <string name="desktop_mode_title">Modo Área de Trabalho</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir a versão de área de trabalho dos sites</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir a versão móvel dos sites</string>
+    <string name="website_settings_category_desktop_view_enabled">Ativar Visualização da Área de Trabalho para novas abas</string>
+    <string name="website_settings_category_desktop_view_disabled">Usar versões móveis dos sites para novas abas (recomendado)</string>
+
 </resources>

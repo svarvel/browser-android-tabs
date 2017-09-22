@@ -65,4 +65,10 @@
 
     <string name="send_metrics_title">Надсилати метрики</string>
 
+    <string name="desktop_mode_title">Режим робочого столу</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Віддайте перевагу настільним версіям сайтів</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Віддайте перевагу мобільній версії сайтів</string>
+    <string name="website_settings_category_desktop_view_enabled">Увімкнути робочий стіл для нових вкладок</string>
+    <string name="website_settings_category_desktop_view_disabled">Для нових вкладок слід використовувати мобільні версії сайтів (рекомендовано)</string>
+
 </resources>

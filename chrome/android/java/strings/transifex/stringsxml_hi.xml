@@ -51,4 +51,21 @@
     <string name="reset_sync">सिंक को पुन:सेट करें... </string>
     <string name="resetting_sync">क्या आप वास्तव में इस उपकरण और सिंक सैटिंग्स को पुन:सैट करना चाहते हैं?</string>
 
-    </resources>
+    <string name="brave_stats_text_trackers">ट्रैकर 
+ब्लॉक किया गया  </string>
+    <string name="brave_stats_text_ads">विज्ञापन 
+ब्लॉक किया गया  </string>
+    <string name="brave_stats_text_https">एचटीटीपीएस 
+अपग्रेड </string>
+    <string name="brave_stats_text_time">स्थापित   समय 
+सेव किया गया </string>
+
+    <string name="send_metrics_title">मेट्रिक्स भेजें </string>
+
+    <string name="desktop_mode_title">डेस्कटॉप मोड </string>
+    <string name="website_settings_category_desktop_view_enabled_summary">साइटों के डेस्कटॉप  प्रारूप को वरीयता दें </string>
+    <string name="website_settings_category_desktop_view_disabled_summary">साइटों के मोबाइल प्रारूप को वरीयता दें  </string>
+    <string name="website_settings_category_desktop_view_enabled">नये टैबों के लिये डेस्कटॉप व्यू एनेबल करें  </string>
+    <string name="website_settings_category_desktop_view_disabled">नये टैबों के लिये साइटों के मोबाइल प्रारूपों का प्रयोग करें (अनुशंसित) </string>
+
+</resources>

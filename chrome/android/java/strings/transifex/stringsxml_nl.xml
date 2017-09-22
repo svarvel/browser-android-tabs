@@ -64,4 +64,10 @@ Opgeslagen</string>
 
     <string name="send_metrics_title">Verstuur data</string>
 
+    <string name="desktop_mode_title">Desktopmodus</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Desktop versie van websites toepassen</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Mobiele versie van websites toepassen</string>
+    <string name="website_settings_category_desktop_view_enabled">Desktopmodus voor nieuwe tabs inschakelen</string>
+    <string name="website_settings_category_desktop_view_disabled">Gebruik mobiele versies van websites voor nieuwe tabs (aanbevolen)</string>
+
 </resources>

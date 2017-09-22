@@ -62,4 +62,10 @@ Lagret</string>
 
     <string name="send_metrics_title">Send beregninger</string>
 
+    <string name="desktop_mode_title">Skrivebordsmodus</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Foretrekker skrivebordsversjon av sidene</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Foretrekker mobilversjon av sidene</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktiver skrivebordsvisning for nye faner</string>
+    <string name="website_settings_category_desktop_view_disabled">Bruk nettstedenes mobilversjoner for nye faner (anbefalt)</string>
+
 </resources>

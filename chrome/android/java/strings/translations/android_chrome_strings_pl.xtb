@@ -1088,56 +1088,62 @@ Na przykład niektóre strony mogą na nie zareagować, wyświetlając reklamy b
 <translation id="982182592107339124">Spowoduje to usunięcie danych wszystkich witryn, w tym:</translation>
 <translation id="983192555821071799">Zamknij wszystkie karty</translation>
 <translation id="987264212798334818">Ogólne</translation>
-<translation id="3209146299287804856">Ustawienia zabezpieczeń strony Brave dla
-</translation><translation id="622484624075952240">Nieaktywne
-</translation><translation id="2706462751667573066">Aktywne
-</translation><translation id="4339730410920731698">Zablokowane reklamy i oprogramowanie śledzące
-</translation><translation id="2313532038420432247">Aktualizacje HTTPS
-</translation><translation id="7461425058443653485">Zablokowane skrypty
-</translation><translation id="7835726359440951858">Blokuj reklamy i śledzenie
-</translation><translation id="520895744850022668">Wymuszaj HTTPS
-</translation><translation id="94154759592465111">Blokuj skrypty
-</translation><translation id="7307834434086582547">Aktywuj/dezaktywuj zabezpieczenia Brave
-</translation><translation id="6132506775968708399">Blokuj pliki cookie z witryn osób trzecich
-</translation><translation id="8710614491157212477">Wymusza użycie HTTPS, jeśli jest to możliwe
-</translation><translation id="5758129336814690876">Ochrona przed śledzeniem
-</translation><translation id="4609637183310787528">Blokuje elementy śledzące podczas wczytywania strony
-</translation><translation id="8387201461264842096">Blokowanie reklam
-</translation><translation id="1934885595886623674">Zapobiega ładowaniu reklam
-</translation><translation id="7458422973722236530">Ochrona przed zabieraniem odcisków palców</translation><translation id="5787084571334399599">Uniemożliwia przeglądarce zbieranie odcisków palców
-</translation><translation id="3758669798635576061">Zablokowane metody zbierania odcisków palców
-</translation><translation id="3276318574457057212">Lokalny Ad Block
-</translation><translation id="2300239903491866759">Zapobiega wyświetlaniu się lokalnych reklam
-</translation><translation id="8142327400852603066">Brak dostępnych dodatkowych list dla Twojej lokalizacji
-</translation><translation id="9148058034647219655">Wyjście
-</translation><translation id="3149880132460839085">Synchronizacja Brave
-</translation><translation id="5853303025585906159">Synchronizuj bezpiecznie dane między urządzeniami za
+<translation id="3209146299287804856">Ustawienia zabezpieczeń strony Brave dla</translation>
+<translation id="622484624075952240">Nieaktywne</translation>
+<translation id="2706462751667573066">Aktywne</translation>
+<translation id="4339730410920731698">Zablokowane reklamy i oprogramowanie śledzące</translation>
+<translation id="2313532038420432247">Aktualizacje HTTPS</translation>
+<translation id="7461425058443653485">Zablokowane skrypty</translation>
+<translation id="7835726359440951858">Blokuj reklamy i śledzenie</translation>
+<translation id="520895744850022668">Wymuszaj HTTPS</translation>
+<translation id="94154759592465111">Blokuj skrypty</translation>
+<translation id="7307834434086582547">Aktywuj/dezaktywuj zabezpieczenia Brave</translation>
+<translation id="6132506775968708399">Blokuj pliki cookie z witryn osób trzecich</translation>
+<translation id="8710614491157212477">Wymusza użycie HTTPS, jeśli jest to możliwe</translation>
+<translation id="5758129336814690876">Ochrona przed śledzeniem</translation>
+<translation id="4609637183310787528">Blokuje elementy śledzące podczas wczytywania strony</translation>
+<translation id="8387201461264842096">Blokowanie reklam</translation>
+<translation id="1934885595886623674">Zapobiega ładowaniu reklam</translation>
+<translation id="7458422973722236530">Ochrona przed zabieraniem odcisków palców</translation>
+<translation id="5787084571334399599">Uniemożliwia przeglądarce zbieranie odcisków palców</translation>
+<translation id="3758669798635576061">Zablokowane metody zbierania odcisków palców</translation>
+<translation id="3276318574457057212">Lokalny Ad Block</translation>
+<translation id="2300239903491866759">Zapobiega wyświetlaniu się lokalnych reklam</translation>
+<translation id="8142327400852603066">Brak dostępnych dodatkowych list dla Twojej lokalizacji</translation>
+<translation id="9148058034647219655">Wyjście</translation>
+<translation id="3149880132460839085">Synchronizacja Brave</translation>
+<translation id="5853303025585906159">Synchronizuj bezpiecznie dane między urządzeniami za
 pomocą funkcji Synchronizacja Brave.
 Nie potrzebujesz do tego tworzyć konta.
-Aby zacząć, dotknij pola niżej.
-</translation><translation id="4807681603968503084">Mam już istniejący kod synchronizacji
-</translation><translation id="3082265116777145081">Dodaj nazwę urządzenia
-</translation><translation id="9024091168371687561">Wpisz opcjonalną nazwę tego urządzenia
-</translation><translation id="3998827900918661986">Urządzenie Android
-</translation><translation id="7319511434820752937">Synchronizuj z urządzeniem
-</translation><translation id="2848874822038607051">Za pomocą zsynchronizowanego już urządzenia otwórz
+Aby zacząć, dotknij pola niżej.</translation>
+<translation id="4807681603968503084">Mam już istniejący kod synchronizacji</translation>
+<translation id="3082265116777145081">Dodaj nazwę urządzenia</translation>
+<translation id="9024091168371687561">Wpisz opcjonalną nazwę tego urządzenia</translation>
+<translation id="3998827900918661986">Urządzenie Android</translation>
+<translation id="7319511434820752937">Synchronizuj z urządzeniem</translation>
+<translation id="2848874822038607051">Za pomocą zsynchronizowanego już urządzenia otwórz
 ustawienia Brave, przejdź do sekcji Urządzenie
 i dotknij przycisku +, aby dodać nowe urządzenie
-i odsłonić hasło synchronizacji.
-</translation><translation id="7539985410310934287">Wpisz hasła
-</translation><translation id="3381055602822429838">Wpisz hasła poniżej.
-</translation><translation id="326454632686131209">Synchronizuj urządzenie
-</translation><translation id="8985635554450124959">Nie można skonfigurować synchronizacji
-</translation><translation id="7713465482966886648">Ustawianie synchronizacji zakończyło się pomyślnie
-</translation><translation id="1068083442730715531">Resetuj synchronizację…
-</translation><translation id="6761015334234690567">Czy na pewno chcesz zresetować ustawienia synchronizacji w tym urządzeniu?
-</translation><translation id="6244065453125065109">Zablokowane
-oprogramowanie śledzące
-</translation><translation id="2547939855139473800">Zablokowane
-reklamy
-</translation><translation id="8880969045613157151">Aktualizacje
-HTTPS
-</translation><translation id="204407992549693965">Szacunkowy
-zaoszczędzony czas
-</translation><translation id="991605024067283917">Wyślij mierniki
-</translation></translationbundle>
+i odsłonić hasło synchronizacji.</translation>
+<translation id="7539985410310934287">Wpisz hasła</translation>
+<translation id="3381055602822429838">Wpisz hasła poniżej.</translation>
+<translation id="326454632686131209">Synchronizuj urządzenie</translation>
+<translation id="8985635554450124959">Nie można skonfigurować synchronizacji</translation>
+<translation id="7713465482966886648">Ustawianie synchronizacji zakończyło się pomyślnie</translation>
+<translation id="1068083442730715531">Resetuj synchronizację…</translation>
+<translation id="6761015334234690567">Czy na pewno chcesz zresetować ustawienia synchronizacji w tym urządzeniu?</translation>
+<translation id="6244065453125065109">Zablokowane
+oprogramowanie śledzące</translation>
+<translation id="2547939855139473800">Zablokowane
+reklamy</translation>
+<translation id="8880969045613157151">Aktualizacje
+HTTPS</translation>
+<translation id="204407992549693965">Szacunkowy
+zaoszczędzony czas</translation>
+<translation id="991605024067283917">Wyślij mierniki</translation>
+<translation id="6572660632052512096">Tryb desktopowy</translation>
+<translation id="4479934682648362332">Preferuj wersję desktopową stron</translation>
+<translation id="807636106793708118">Preferuj wersję mobilną stron</translation>
+<translation id="1340503115760585811">Aktywuj widok desktopowy dla nowych zakładek</translation>
+<translation id="7924540991929826186">Używaj mobilnych wersji stron dla nowych zakładek (zalecane)</translation>
+</translationbundle>

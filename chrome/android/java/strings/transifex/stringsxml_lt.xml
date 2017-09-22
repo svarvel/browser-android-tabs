@@ -59,4 +59,15 @@ sekimo failai</string>
 reklamos</string>
     <string name="brave_stats_text_https">HTTPS
 atnaujinimai</string>
-    </resources>
+    <string name="brave_stats_text_time">Rytų Laikas
+Išsaugoti</string>
+
+    <string name="send_metrics_title">Siųsti metriką</string>
+
+    <string name="desktop_mode_title">Darbalaukio veiksena</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Geriau naudoti svetainių darbalaukio versiją</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Geriau naudoti svetainių mobiliąją versiją</string>
+    <string name="website_settings_category_desktop_view_enabled">Įjungti naujų skirtukų darbalaukio versiją</string>
+    <string name="website_settings_category_desktop_view_disabled">Naujiems svetainių skirtukams naudoti mobiliąją versiją (rekomenduojama)</string>
+
+</resources>
