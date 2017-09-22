@@ -59,4 +59,15 @@ bloquejats</string>
 bloquejats</string>
     <string name="brave_stats_text_https">Actualitzacions
 d'HTTPS</string>
-    </resources>
+    <string name="brave_stats_text_time">Est. Temps
+Desat</string>
+
+    <string name="send_metrics_title">Envia analítica</string>
+
+    <string name="desktop_mode_title">Mode escriptori</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Prefereix la versió d\'escriptori de les pàgines</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Prefereix la versió mòbil de les pàgines</string>
+    <string name="website_settings_category_desktop_view_enabled">Habilita la vista d\'escriptori a les noves pestanyes</string>
+    <string name="website_settings_category_desktop_view_disabled">Fes servir la versió mòbil a les noves pestanyes (recomanat)</string>
+
+</resources>

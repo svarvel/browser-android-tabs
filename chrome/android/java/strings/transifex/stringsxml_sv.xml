@@ -64,4 +64,10 @@ tid</string>
 
     <string name="send_metrics_title">Skicka värden</string>
 
+    <string name="desktop_mode_title">Skrivbordsläge</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Föredrar skrivbordsversioner av webbplatser</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Föredrar mobilversion av webbplatser</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktivera skrivbordsvy för nya flikar</string>
+    <string name="website_settings_category_desktop_view_disabled">Använd mobilversioner av webbplatser för nya flikar (rekommenderas)</string>
+
 </resources>

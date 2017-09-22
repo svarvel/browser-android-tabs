@@ -62,4 +62,10 @@
 
     <string name="send_metrics_title">측정 결과 보내기</string>
 
+    <string name="desktop_mode_title">데스크탑 모드 </string>
+    <string name="website_settings_category_desktop_view_enabled_summary">데스크탑 버전 사이트 기본 사용 </string>
+    <string name="website_settings_category_desktop_view_disabled_summary">모바일 버전 사이트 기본 사용 </string>
+    <string name="website_settings_category_desktop_view_enabled">새로운 탭의 데스크탑 보기 사용 </string>
+    <string name="website_settings_category_desktop_view_disabled">새로운 탭을 만들 때 모바일 버전 사이트 사용(권장 사항)</string>
+
 </resources>

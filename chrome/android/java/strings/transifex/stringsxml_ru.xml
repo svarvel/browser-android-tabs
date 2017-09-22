@@ -33,9 +33,8 @@
 
     <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">Безопасно синхронизируйте данные браузера
-между вашими устройствами,
-используя синхронизацию Brave,
-без создания учетной записи.
+между вашими устройствами, используя
+синхронизацию Brave, без создания учетной записи. 
 Нажмите ниже чтобы начать.</string>
     <string name="brave_sync_have_existing_code">У меня есть код синхронизации</string>
     <string name="sync_settings_add_device_name_title">Добавление имени устройства</string>
@@ -58,11 +57,17 @@
 блокировано</string>
     <string name="brave_stats_text_ads">Реклам
 блокировано</string>
-    <string name="brave_stats_text_https">HTTPS-
-перенаправлений</string>
+    <string name="brave_stats_text_https">HTTPS-пере
+направлений</string>
     <string name="brave_stats_text_time">Сэкономлено
 времени</string>
 
     <string name="send_metrics_title">Отправка метрик</string>
+
+    <string name="desktop_mode_title">Версия сайтов для компьютера</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Предпочитать версию сайтов для компьютера</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Предпочитать мобильную версию сайтов</string>
+    <string name="website_settings_category_desktop_view_enabled">Включить версию сайтов для компьютера для новых вкладок</string>
+    <string name="website_settings_category_desktop_view_disabled">Использовать мобильную версию сайтов для новых вкладок (рекомендуется)</string>
 
 </resources>

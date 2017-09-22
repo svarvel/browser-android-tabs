@@ -65,4 +65,10 @@ ušetrený čas</string>
 
     <string name="send_metrics_title">Odoslať metriky</string>
 
+    <string name="desktop_mode_title">Desktopový režim</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Uprednostňujte desktopovú verziu stránok</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Uprednostňujte mobilnú verziu stránok</string>
+    <string name="website_settings_category_desktop_view_enabled">Povoľte desktopové zobrazenie pre nové karty</string>
+    <string name="website_settings_category_desktop_view_disabled">Používajte mobilné verzie stránok pre nové karty (odporúčané)</string>
+
 </resources>

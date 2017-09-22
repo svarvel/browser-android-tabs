@@ -64,4 +64,10 @@ Kaydedildi</string>
 
     <string name="send_metrics_title">Ölçümleri gönder</string>
 
+    <string name="desktop_mode_title">Masaüstü Modu</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Sitelerin masaüstü versiyonunu tercih et</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Sitelerin mobil versiyonunu tercih et</string>
+    <string name="website_settings_category_desktop_view_enabled">Yeni sekmeler için Masaüstü Görünümünü Etkinleştir</string>
+    <string name="website_settings_category_desktop_view_disabled">Yeni sekmeler için sitelerin mobil versiyonlarını kullanın (önerilir)</string>
+
 </resources>

@@ -60,4 +60,16 @@
 реклами</string>
     <string name="brave_stats_text_https">HTTPS се
 актуализира</string>
-    </resources>
+    <string name="brave_stats_text_time">Оцен. Време
+Записано</string>
+
+    <string name="send_metrics_title">Изпрати метрични
+</string>
+
+    <string name="desktop_mode_title">Настолен режим</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Предпочитане на настолната версия на сайтовете</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Предпочитане на мобилната версия на сайтовете</string>
+    <string name="website_settings_category_desktop_view_enabled">Активиране на настолен изглед за новите раздели</string>
+    <string name="website_settings_category_desktop_view_disabled">Използване на мобилните версии на сайтовете за нови раздели (препоръчително)</string>
+
+</resources>

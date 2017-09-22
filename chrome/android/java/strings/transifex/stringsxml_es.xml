@@ -65,4 +65,10 @@ Guardado</string>
 
     <string name="send_metrics_title">Enviar indicadores</string>
 
+    <string name="desktop_mode_title">Modo de escritorio</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir la versión de escritorio de los sitios</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir versión móvil de los sitios</string>
+    <string name="website_settings_category_desktop_view_enabled">Habilitar vista de escritorio para nuevas pestañas</string>
+    <string name="website_settings_category_desktop_view_disabled">Usar versiones móviles de sitios para nuevas pestañas (recomendado)</string>
+
 </resources>

@@ -62,4 +62,10 @@ EST แล้ว</string>
 
     <string name="send_metrics_title">ส่งตัววัด</string>
 
+    <string name="desktop_mode_title">โหมดเดสก์ท็อป</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">ต้องการใช้งานเว็บไซต์เวอร์ชันเดสก์ท็อปมากกว่า</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">ต้องการใช้งานเว็บไซต์เวอร์ชันมือถือมากกว่า</string>
+    <string name="website_settings_category_desktop_view_enabled">เปิดใช้มุมมองเดสก์ท็อปสำหรับแท็บใหม่</string>
+    <string name="website_settings_category_desktop_view_disabled">ใช้เว็บไซต์เวอร์ชันมือถือสำหรับแท็บใหม่ (แนะนำ)</string>
+
 </resources>

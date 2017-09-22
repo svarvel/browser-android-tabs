@@ -59,4 +59,15 @@ blokirani</string>
 blokirani</string>
     <string name="brave_stats_text_https">HTTPS
 Unaprjeđenja</string>
-    </resources>
+    <string name="brave_stats_text_time">Est. Vrijeme
+Spaseno</string>
+
+    <string name="send_metrics_title">Pošaljite metriku</string>
+
+    <string name="desktop_mode_title">Režim desktopa</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferirajte desktop inačicu stranica</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferirajte mobilnu inačicu stranice</string>
+    <string name="website_settings_category_desktop_view_enabled">Omogućite pregled s desktopa za nove jezičke</string>
+    <string name="website_settings_category_desktop_view_disabled">Rabite mobilne inačice stranica za nove jezičke (preporučeno)</string>
+
+</resources>

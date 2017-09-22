@@ -65,4 +65,10 @@ Mentve</string>
 
     <string name="send_metrics_title">Mutatók küldése</string>
 
+    <string name="desktop_mode_title">Asztal mód</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Részesítse előnyben az oldalak asztali verzióit</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Részesítse előnyben az oldalak mobil verzióit</string>
+    <string name="website_settings_category_desktop_view_enabled">Asztali nézet engedélyezése az új lapok számára</string>
+    <string name="website_settings_category_desktop_view_disabled">Az új lapokhoz használja az oldalak mobil verzióját (ajánlott)</string>
+
 </resources>
