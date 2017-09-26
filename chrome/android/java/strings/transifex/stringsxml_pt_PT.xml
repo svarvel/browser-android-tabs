@@ -59,4 +59,15 @@ bloqueados</string>
 bloqueados</string>
     <string name="brave_stats_text_https">Atualizações
 de HTTPS</string>
-    </resources>
+    <string name="brave_stats_text_time">Estimativa Hora
+Guardado</string>
+
+    <string name="send_metrics_title">Enviar métricas</string>
+
+    <string name="desktop_mode_title">Modo de desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Dar preferência a versões para desktop de Websites</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Dar preferência a versões para dispositivos móveis de Websites</string>
+    <string name="website_settings_category_desktop_view_enabled">Ativar Vista de desktop para novos separadores</string>
+    <string name="website_settings_category_desktop_view_disabled">Utilizar versões para dispositivos móveis de Websites para novos separadores (recomendado)</string>
+
+</resources>
