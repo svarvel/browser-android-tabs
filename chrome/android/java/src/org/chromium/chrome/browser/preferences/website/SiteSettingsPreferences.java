@@ -42,7 +42,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
     static final String MEDIA_KEY = "media";
     //static final String BACKGROUND_SYNC_KEY = "background_sync";
     //static final String TRANSLATE_KEY = "translate";
-    //static final String DESKTOP_VIEW_SETTINGS_KEY = "desktop_view";
 
     // Whether the Protected Content menu is available for display.
     boolean mProtectedContentMenuAvailable;
@@ -92,7 +91,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));
             //getPreferenceScreen().removePreference(findPreference(BACKGROUND_SYNC_KEY));
             //getPreferenceScreen().removePreference(findPreference(TRANSLATE_KEY));
-            //getPreferenceScreen().removePreference(findPreference(DESKTOP_VIEW_SETTINGS_KEY));
         } else {
             // If both Autoplay and Protected Content menus are available, they'll be tucked under
             // the Media key. Otherwise, we can remove the Media menu entry.
@@ -162,7 +160,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
                 websitePrefs.add(Type.SENSORS);
             }
-            //websitePrefs.add(DESKTOP_VIEW_SETTINGS_KEY);
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.SOUND_CONTENT_SETTING)) {
                 websitePrefs.add(Type.SOUND);
             }
@@ -215,9 +212,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
-            }/* else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
+            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
-            }*/ else {
+            } else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }
 
