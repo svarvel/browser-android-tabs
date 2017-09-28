@@ -337,6 +337,7 @@ public final class WarmupManager {
         }
         mSpareWebContents = WebContentsFactory.createWebContentsWithWarmRenderer(
                 false /* incognito */, true /* initiallyHidden */);
+        if (mSpareWebContents == null) return;
         mObserver = new RenderProcessGoneObserver();
         mSpareWebContents.addObserver(mObserver);
         mWebContentsCreationTimeMs = SystemClock.elapsedRealtime();
