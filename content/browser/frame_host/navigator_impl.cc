@@ -877,6 +877,11 @@ void NavigatorImpl::DidStartMainFrameNavigation(
       entry->SetRedirectChain(pending_entry->GetRedirectChain());
     }
 
+    if (controller_->GetLastCommittedEntry()) {
+      NavigationEntryImpl* last_committed_entry = controller_->GetLastCommittedEntry();
+      entry->SetIsOverridingUserAgent(last_committed_entry->GetIsOverridingUserAgent());
+    }
+
     controller_->SetPendingEntry(std::move(entry));
     if (delegate_)
       delegate_->NotifyChangedNavigationState(content::INVALIDATE_TYPE_URL);

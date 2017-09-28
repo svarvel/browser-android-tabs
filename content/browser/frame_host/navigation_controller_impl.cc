@@ -49,6 +49,7 @@
 #include "base/trace_event/trace_event.h"
 #include "build/build_config.h"
 #include "cc/base/switches.h"
+#include "components/content_settings/core/browser/host_content_settings_map.h"
 #include "content/browser/bad_message.h"
 #include "content/browser/blob_storage/chrome_blob_storage_context.h"
 #include "content/browser/browser_url_handler_impl.h"
@@ -78,6 +79,9 @@
 #include "content/public/common/content_constants.h"
 #include "content/public/common/content_features.h"
 #include "content/public/common/url_utils.h"
+#include "chrome/browser/content_settings/host_content_settings_map_factory.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/profiles/profile_manager.h"
 #include "media/base/mime_util.h"
 #include "net/base/escape.h"
 #include "net/http/http_status_code.h"
@@ -130,10 +134,21 @@ void ConfigureEntriesForRestore(
   }
 }
 
+// Gets the global settings value for Desktop Mode
+bool IsGlobalDesktopSettingsOn() {
+  bool is_desktop_settings_on = HostContentSettingsMapFactory::GetForProfile(
+    ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
+    GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, NULL) == CONTENT_SETTING_ALLOW;
+  return is_desktop_settings_on;
+}
+
 // Determines whether or not we should be carrying over a user agent override
 // between two NavigationEntries.
 bool ShouldKeepOverride(NavigationEntry* last_entry) {
-  return last_entry && last_entry->GetIsOverridingUserAgent();
+  if (!last_entry) {
+    return IsGlobalDesktopSettingsOn();
+  }
+  return last_entry->GetIsOverridingUserAgent();
 }
 
 // Determines whether to override user agent for a navigation.
@@ -485,6 +500,7 @@ std::unique_ptr<NavigationEntry> NavigationController::CreateNavigationEntry(
   entry->set_user_typed_url(virtual_url);
   entry->set_update_virtual_url_with_url(reverse_on_redirect);
   entry->set_extra_headers(extra_headers);
+  entry->SetIsOverridingUserAgent(IsGlobalDesktopSettingsOn());
   return base::WrapUnique(entry);
 }
 
