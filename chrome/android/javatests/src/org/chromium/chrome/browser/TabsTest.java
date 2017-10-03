@@ -364,7 +364,7 @@ public class TabsTest {
     @DisabledTest(message = "crbug.com/766735")
     @Test
     @MediumTest
-    @Feature({"Android-TabSwitcher"})
+    @Feature({"Android-TabSwitcher", "ApplyLater"})
     @RetryOnFailure
     public void testHideKeyboardWhenOpeningWindow() throws Exception {
         mTestServer = EmbeddedTestServer.createAndStartServer(InstrumentationRegistry.getContext());

@@ -165,7 +165,7 @@ public class PaymentRequestMultipleContactDetailsTest implements MainActivitySta
      */
     @Test
     @MediumTest
-    @Feature({"Payments"})
+    @Feature({"Payments", "ApplyLater"})
     public void testContactDetailsEditRequiredMessage()
             throws InterruptedException, ExecutionException, TimeoutException {
         mProfilesToAdd = new AutofillProfile[] {AUTOFILL_PROFILES[0], AUTOFILL_PROFILES[1],

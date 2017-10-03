@@ -27,6 +27,7 @@ import org.junit.runner.RunWith;
 import org.chromium.base.ThreadUtils;
 import org.chromium.base.test.util.DisabledTest;
 import org.chromium.base.test.util.FlakyTest;
+import org.chromium.base.test.util.Feature;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.customtabs.CustomTabActivity;
@@ -245,6 +246,7 @@ public class FirstRunIntegrationTest {
 
     @Test
     @MediumTest
+    @Feature({"ApplyLater"})
     public void testDefaultSearchEngine_ShowExisting() throws Exception {
         runSearchEnginePromptTest(LocaleManager.SearchEnginePromoType.SHOW_EXISTING);
     }

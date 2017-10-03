@@ -197,7 +197,7 @@ public class PaymentRequestMetricsTest implements MainActivityStartCallback {
      */
     @Test
     @MediumTest
-    @Feature({"Payments"})
+    @Feature({"Payments", "ApplyLater"})
     @RetryOnFailure
     public void testAbortMetrics_OtherAborted_TabClosed()
             throws InterruptedException, ExecutionException, TimeoutException {

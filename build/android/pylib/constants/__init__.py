@@ -65,6 +65,11 @@ PACKAGE_INFO.update({
         'org.chromium.chromedriver_webview_shell.Main',
         None,
         None),
+    'brave': chrome.PackageInfo(
+        'com.brave.browser',
+        'com.google.android.apps.chrome.Main',
+        'chrome-command-line',
+        'chrome_devtools_remote'),
 })
 
 

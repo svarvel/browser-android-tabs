@@ -88,6 +88,11 @@ const BrowserDescriptor kBrowserDescriptors[] = {
     kChromeDefaultSocket,
     "Chromium"
   },
+  {
+    "com.brave.browser",
+    kChromeDefaultSocket,
+    "Brave"
+  },
 };
 
 const BrowserDescriptor* FindBrowserDescriptor(const std::string& package) {

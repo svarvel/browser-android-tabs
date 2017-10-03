@@ -34,6 +34,7 @@ import org.chromium.base.library_loader.LibraryLoader;
 import org.chromium.base.library_loader.LibraryProcessType;
 import org.chromium.base.test.util.CallbackHelper;
 import org.chromium.base.test.util.CommandLineFlags;
+import org.chromium.base.test.util.Feature;
 import org.chromium.base.test.util.Restriction;
 import org.chromium.base.test.util.RetryOnFailure;
 import org.chromium.chrome.browser.ChromeSwitches;
@@ -144,6 +145,7 @@ public class CustomTabsConnectionTest {
 
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     public void testHiddenTabTakessSpareRenderer() throws Exception {
         final CustomTabsSessionToken token =
@@ -202,6 +204,7 @@ public class CustomTabsConnectionTest {
      */
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     @CommandLineFlags.Add(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
     @RetryOnFailure
@@ -337,6 +340,7 @@ public class CustomTabsConnectionTest {
 
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     public void testStillHighConfidenceMayLaunchUrlWithSeveralUrls() {
         final CustomTabsSessionToken token =
@@ -533,6 +537,7 @@ public class CustomTabsConnectionTest {
 
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     public void testBanningWorks() {
         mCustomTabsConnection.ban(Process.myUid());
@@ -546,6 +551,7 @@ public class CustomTabsConnectionTest {
 
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     public void testBanningDisabledForCellular() {
         mCustomTabsConnection.ban(Process.myUid());
@@ -589,6 +595,7 @@ public class CustomTabsConnectionTest {
 
     @Test
     @SmallTest
+    @Feature({"ApplyLater"})
     @Restriction(RESTRICTION_TYPE_NON_LOW_END_DEVICE)
     @RetryOnFailure
     public void testHiddenTabTakesSpareRenderer() throws Exception {

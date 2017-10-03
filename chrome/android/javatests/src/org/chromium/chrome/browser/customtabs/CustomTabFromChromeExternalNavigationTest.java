@@ -122,7 +122,7 @@ public class CustomTabFromChromeExternalNavigationTest {
     }
 
     @Test
-    @Feature("CustomTabFromChrome")
+    @Feature({"CustomTabFromChrome", "ApplyLater"})
     @LargeTest
     public void testIntentWithRedirectToApp() throws Exception {
         final String redirectUrl = "https://maps.google.com/maps?q=1600+amphitheatre+parkway";
