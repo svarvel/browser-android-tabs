@@ -146,6 +146,7 @@ public class FirstRunIntegrationTest {
 
     @Test
     @MediumTest
+    @Feature({"ApplyLater"})
     public void testDefaultSearchEngine_ShowExisting() throws Exception {
         runSearchEnginePromptTest(LocaleManager.SearchEnginePromoType.SHOW_EXISTING);
     }

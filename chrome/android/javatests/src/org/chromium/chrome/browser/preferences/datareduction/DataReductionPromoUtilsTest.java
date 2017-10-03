@@ -60,7 +60,7 @@ public class DataReductionPromoUtilsTest {
     @UiThreadTest
     @CommandLineFlags.Add({ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE,
             "force-fieldtrials=DataCompressionProxyPromoVisibility/Enabled"})
-    @Feature({"DataReduction"})
+    @Feature({"DataReduction", "ApplyLater"})
     public void
     testCanShowPromos() throws Throwable {
         if (DataReductionProxySettings.getInstance().isDataReductionProxyManaged()) return;

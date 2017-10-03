@@ -670,7 +670,7 @@ public class TabPersistentStoreTest {
      */
     @Test
     @SmallTest
-    @Feature({"TabPersistentStore"})
+    @Feature({"TabPersistentStore", "ApplyLater"})
     @RetryOnFailure
     public void testUndoCloseAllTabsWritesTabListFile() throws Exception {
         final TabModelMetaDataInfo info = TestTabModelDirectory.TAB_MODEL_METADATA_V5_NO_M18;

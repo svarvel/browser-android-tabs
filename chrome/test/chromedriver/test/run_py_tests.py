@@ -241,6 +241,8 @@ _ANDROID_NEGATIVE_FILTER['chrome_beta'] = (
 _ANDROID_NEGATIVE_FILTER['chromium'] = (
     _ANDROID_NEGATIVE_FILTER['chrome'] + []
 )
+_ANDROID_NEGATIVE_FILTER['brave'] = (
+    _ANDROID_NEGATIVE_FILTER['chromium'])
 _ANDROID_NEGATIVE_FILTER['chromedriver_webview_shell'] = (
     _ANDROID_NEGATIVE_FILTER['chrome_stable'] + [
         # WebView doesn't support emulating network conditions.

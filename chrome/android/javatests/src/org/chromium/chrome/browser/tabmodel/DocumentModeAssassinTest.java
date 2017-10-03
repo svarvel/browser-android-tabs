@@ -25,6 +25,7 @@ import org.chromium.base.ThreadUtils;
 import org.chromium.base.test.BaseJUnit4ClassRunner;
 import org.chromium.base.test.util.AdvancedMockContext;
 import org.chromium.base.test.util.CallbackHelper;
+import org.chromium.base.test.util.Feature;
 import org.chromium.base.test.util.DisabledTest;
 import org.chromium.base.test.util.RetryOnFailure;
 import org.chromium.chrome.browser.tab.Tab;
@@ -408,6 +409,7 @@ public class DocumentModeAssassinTest {
     // now fails because the tab model metadata file is actually incorrect.
     @Test
     @MediumTest
+    @Feature({"ApplyLater"})
     public void testWriteTabModelMetadata() throws Exception {
         // Write the TabState files into the tabbed mode directory directly, but fail to copy just
         // one of them.  This forces the TabPersistentStore to improvise and use the initial URL
