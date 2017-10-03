@@ -236,7 +236,6 @@ public class NewTabPageView extends HistoryNavigationLayout {
         });
 
         manager.addDestructionObserver(NewTabPageView.this::onDestroy);
-        initializeBraveStats();
 
         TraceEvent.end(TAG + ".initialize()");
     }
@@ -276,8 +275,8 @@ public class NewTabPageView extends HistoryNavigationLayout {
     /**
      * Sets up Brave stats.
      */
-    private void initializeBraveStats() {
-        TraceEvent.begin(TAG + ".initializeBraveStats()");
+    private void updateBraveStats() {
+        TraceEvent.begin(TAG + ".updateBraveStats()");
         long trackersBlockedCount = mSharedPreferences.getLong(PREF_TRACKERS_BLOCKED_COUNT, 0);
         long adsBlockedCount = mSharedPreferences.getLong(PREF_ADS_BLOCKED_COUNT, 0);
         long httpsUpgradesCount = mSharedPreferences.getLong(PREF_HTTPS_UPGRADES_COUNT, 0);
@@ -290,7 +289,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         adsBlockedCountTextView.setText(getBraveStatsStringFormNumber(adsBlockedCount));
         httpsUpgradesCountTextView.setText(getBraveStatsStringFormNumber(httpsUpgradesCount));
         estTimeSavedTextView.setText(getBraveStatsStringFromTime(estimatedMillisecondsSaved / 1000));
-        TraceEvent.end(TAG + ".initializeBraveStats()");
+        TraceEvent.end(TAG + ".updateBraveStats()");
     }
 
     /*
@@ -383,6 +382,12 @@ public class NewTabPageView extends HistoryNavigationLayout {
         // immediately attached to the window if the RecyclerView is scrolled when the NTP
         // is refocused.
         if (mManager.isLocationBarShownInNTP()) mNewTabPageLayout.updateSearchBoxOnScroll();
+    }
+
+    @Override
+    protected void onWindowVisibilityChanged(int visibility) {
+        super.onWindowVisibilityChanged(visibility);
+        updateBraveStats();
     }
 
     /**
