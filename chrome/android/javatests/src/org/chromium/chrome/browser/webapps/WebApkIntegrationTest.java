@@ -224,7 +224,7 @@ public class WebApkIntegrationTest {
      */
     @Test
     @LargeTest
-    @Feature({"WebApk"})
+    @Feature({"WebApk", "ApplyLater"})
     public void testLaunchIntervalHistogramNotRecordedOnFirstLaunch() throws Exception {
         final String histogramName = "WebApk.LaunchInterval";
         final String packageName = "org.chromium.webapk.test";

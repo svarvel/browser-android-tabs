@@ -16,6 +16,7 @@ import org.junit.rules.TestRule;
 import org.junit.runner.RunWith;
 
 import org.chromium.base.test.util.CommandLineFlags;
+import org.chromium.base.test.util.DisabledTest;
 import org.chromium.base.test.util.Feature;
 import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.ChromeSwitches;
@@ -77,7 +78,16 @@ public class NewTabPageUiCaptureTest {
                 () -> mNtp.getNewTabPageView().getRecyclerView().clearScrollToLoadListener());
     }
 
+    private void waitForWindowUpdates() {
+        // Wait for update to start and finish.
+        UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        device.waitForWindowUpdate(null, MAX_WINDOW_UPDATE_TIME_MS);
+        device.waitForIdle(MAX_WINDOW_UPDATE_TIME_MS);
+    }
+
+    // Disabled as there is no RecyclerView
     @Test
+    @DisabledTest
     @MediumTest
     @Feature({"NewTabPage", "UiCatalogue"})
     public void testCaptureNewTabPage() {

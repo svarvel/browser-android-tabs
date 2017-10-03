@@ -100,7 +100,7 @@ public class PreferencesTest {
      */
     @Test
     @SmallTest
-    @Feature({"Preferences"})
+    @Feature({"Preferences", "ApplyLater"})
     @DisableIf.Build(hardware_is = "sprout", message = "crashes on android-one: crbug.com/540720")
     @RetryOnFailure
     public void testSearchEnginePreference() throws Exception {
@@ -172,7 +172,7 @@ public class PreferencesTest {
 
     @Test
     @SmallTest
-    @Feature({"Preferences"})
+    @Feature({"Preferences", "ApplyLater"})
     @Policies.Add({ @Policies.Item(key = "DefaultSearchProviderEnabled", string = "false") })
     public void testSearchEnginePreference_DisabledIfNoDefaultSearchEngine() throws Exception {
         TestThreadUtils.runOnUiThreadBlocking(() -> {
