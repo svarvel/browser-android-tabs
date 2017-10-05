@@ -106,6 +106,15 @@
       "id": 92
     },
 
+    "duckduckgo_light": {
+      "name": "DuckDuckGo Light",
+      "keyword": "duckduckgo.com/lite",
+      "favicon_url": "https://duckduckgo.com/favicon.ico",
+      "search_url": "https://duckduckgo.com/lite/?q={searchTerms}&t=brave",
+      "type": "SEARCH_ENGINE_DUCKDUCKGOLIGHT",
+      "id": 33
+    },
+
     "ecosia": {
       "name": "Ecosia",
       "keyword": "ecosia.org",
