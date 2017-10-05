@@ -5,7 +5,7 @@
 ### System Requirements
 
 - Any Linux Version
-- Make sure you have enough swpaspace available
+- Make sure you have enough swapspace available
 - [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab)
 - [ninja](https://ninja-build.org/)
 
