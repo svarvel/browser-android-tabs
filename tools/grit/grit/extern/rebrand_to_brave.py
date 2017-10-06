@@ -6,21 +6,21 @@ from os import walk
 
 # These are hard coded values
 chrome_strings_file='../../../../chrome/android/java/strings/android_chrome_strings.grd'
+chromium_strings_file='../../../../chrome/app/chromium_strings.grd'
 translations_folder='../../../../chrome/android/java/strings/translations'
 components_folder='../../../../components/strings'
+chromium_strings_folder='../../../../chrome/app/resources'
 brave_brand_string='Brave'
 brave_company='Brave Software'
 google_company='Google'
 chrome_brand_strings={'Chrome', 'Google Chrome', 'Chromium'}
 brave_ids={}
-# Checked manually that these messages are indeed duplicated
-duplicated_messages={'Open in new Brave tab', 'Link opened in Brave'}
 
 # Go through .xtb files and replace ids
 def ReplaceIds(folder):
     for (dirpath, dirnames, filenames) in walk(folder):
         for filename in filenames:
-            if filename.endswith('.xtb') and not filename.startswith('components_locale_settings'):
+            if filename.endswith('.xtb') and 'locale_settings' not in filename:
                 translations_tree = xml.etree.ElementTree.parse(folder + '/' + filename)
                 translations = translations_tree.getroot()
                 print('Processing file "' + filename + '"...')
@@ -44,8 +44,8 @@ def ReplaceIds(folder):
     print('Brave ids successfully updated in ' + folder)
 
 # Check for Brave branded strings in grd file, calculate their ids and update them in xtb files (instead of Chrome, Google Chrome and Chromium)
-def UpdateBraveIds():
-    messages = xml.etree.ElementTree.parse(chrome_strings_file).getroot().find('release').find('messages')
+def UpdateBraveIds(grd_file):
+    messages = xml.etree.ElementTree.parse(grd_file).getroot().find('release').find('messages')
     for message_tag in messages.findall('message'):
         brave_string = message_tag.text
         brave_string_phs = message_tag.findall('ph')
@@ -61,10 +61,8 @@ def UpdateBraveIds():
             # Todo: it gets incorrect id here, need to figure out why next time, for now it is replaced it manually
             chrome_string_fp = FP.FingerPrint(chrome_string) & 0x7fffffffffffffffL
             print(str(chrome_string_fp) + ' - ' + chrome_string)
-            if chrome_string_fp in brave_ids:
-                if brave_string not in duplicated_messages:
-                    sys.exit('String "' + chrome_string + '" is duplicated')
-            brave_ids[chrome_string_fp] = brave_string_fp
+            if not chrome_string_fp in brave_ids:
+                brave_ids[chrome_string_fp] = brave_string_fp
             print('\n')
         elif brave_brand_string in brave_string:
             # Calculate Brave string id
@@ -75,14 +73,9 @@ def UpdateBraveIds():
                 # Calculate Chrome string id
                 chrome_string_fp = FP.FingerPrint(chrome_string) & 0x7fffffffffffffffL
                 print(str(chrome_string_fp) + ' - ' + chrome_string)
-                if chrome_string_fp in brave_ids:
-                    if brave_string not in duplicated_messages:
-                        sys.exit('String "' + chrome_string + '" is duplicated')
-                brave_ids[chrome_string_fp] = brave_string_fp
+                if not chrome_string_fp in brave_ids:
+                    brave_ids[chrome_string_fp] = brave_string_fp
             print('\n')
-    ReplaceIds(translations_folder)
-    ReplaceIds(components_folder)
-                        
 
 # Todo: next time add function to replace Chrome strings with Brave strings
 # Make changes to strings in folders (chrome/android/java/strings/*.*, components/strings/*.*):
@@ -97,4 +90,8 @@ def UpdateBraveIds():
 # https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/ -> https://brave.com/privacy_android
 # https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/eula_text.html -> https://brave.com/terms_of_use
 
-UpdateBraveIds()
+UpdateBraveIds(chrome_strings_file)
+ReplaceIds(translations_folder)
+ReplaceIds(components_folder)
+UpdateBraveIds(chromium_strings_file)
+ReplaceIds(chromium_strings_folder)
