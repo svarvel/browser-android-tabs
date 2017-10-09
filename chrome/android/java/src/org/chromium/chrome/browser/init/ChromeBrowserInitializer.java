@@ -37,6 +37,7 @@ import org.chromium.chrome.browser.ChromeSwitches;
 import org.chromium.chrome.browser.FileProviderHelper;
 import org.chromium.chrome.browser.crash.LogcatExtractionRunnable;
 import org.chromium.chrome.browser.download.DownloadManagerService;
+import org.chromium.chrome.browser.init.InstallationSourceInformer;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.privacy.PrivacyPreferencesManager;
 import org.chromium.chrome.browser.services.GoogleServicesManager;
@@ -78,6 +79,7 @@ public class ChromeBrowserInitializer {
 
     private boolean mAdBlockInitCalled = false;
     private boolean mUpdateStatsCalled = false;
+    private boolean mInstallationSourceChecked = false;
 
     List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
 
@@ -140,6 +142,15 @@ public class ChromeBrowserInitializer {
       new UpdateStatsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    private void CheckInstallationSource() {
+      if (mInstallationSourceChecked) {
+        return;
+      }
+
+      mInstallationSourceChecked = true;
+      new CheckInstallationSourceAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     // Stats update
     class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
         protected Long doInBackground(Void... params) {
@@ -167,6 +178,33 @@ public class ChromeBrowserInitializer {
             return null;
         }
     }
+
+    class CheckInstallationSourceAsyncTask extends AsyncTask<Void,Void,Long> {
+       protected Long doInBackground(Void... params) {
+           try {
+             Context context = mApplication.getApplicationContext();
+             // A list with valid installers package name
+             List<String> validInstallers = new ArrayList<>(Arrays.asList("com.android.vending", "com.google.android.feedback"));
+
+             // The package name of the app that has installed your app
+             final String installer = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+             Log.i(TAG, "Installation source detection, installer=" + installer);
+
+             // true if your app has been downloaded from Play Store
+             boolean fromPlayStore = installer != null && validInstallers.contains(installer);
+             Log.i(TAG, "Installation source detection, fromPlayStore="+fromPlayStore);
+             if (!fromPlayStore) {
+               InstallationSourceInformer.InformFromOther();
+             }
+           }
+           catch(Exception exc) {
+               // not critical
+               Log.i(TAG, "Installation source detection: ex " + exc);
+           }
+
+           return null;
+       }
+   }
 
     // Tracking protection data download
     private void DownloadTrackingProtectionData() {
@@ -598,6 +636,7 @@ public class ChromeBrowserInitializer {
 
         InitAdBlock();
         UpdateStats();
+        CheckInstallationSource();
     }
 
     private ActivityStateListener createActivityStateListener() {

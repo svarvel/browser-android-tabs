@@ -149,6 +149,17 @@ by a child template that "extends" this file.
 
        <meta-data android:name="android.allow_multiple_resumed_activities" android:value="true" />
 
+        <!-- For Google Play Store Campaign Measurement-->
+        <receiver android:name="org.chromium.chrome.browser.init.InstallReferrerReceiver"
+           android:enabled="true"
+           android:exported="true"
+           android:permission="android.permission.INSTALL_PACKAGES"
+           >
+           <intent-filter>
+               <action android:name="com.android.vending.INSTALL_REFERRER" />
+           </intent-filter>
+         </receiver>
+
         <!-- MixPanel proxy server -->
         <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
               android:value="https://metric-proxy.brave.com/track" />
