@@ -844,6 +844,8 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/init/StatsUpdater.java",
   "java/src/org/chromium/chrome/browser/init/EmptyBrowserParts.java",
   "java/src/org/chromium/chrome/browser/init/InvalidStartupDialog.java",
+  "java/src/org/chromium/chrome/browser/init/InstallReferrerReceiver.java",
+  "java/src/org/chromium/chrome/browser/init/InstallationSourceInformer.java",
   "java/src/org/chromium/chrome/browser/init/NativeInitializationController.java",
   "java/src/org/chromium/chrome/browser/init/ProcessInitializationHandler.java",
   "java/src/org/chromium/chrome/browser/init/ServiceManagerStartupUtils.java",
