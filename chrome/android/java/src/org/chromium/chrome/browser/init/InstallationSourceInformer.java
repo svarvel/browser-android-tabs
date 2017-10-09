@@ -12,11 +12,11 @@ public class InstallationSourceInformer {
   private static final String PREF_MIXPANEL_INSTALL_SOURCE_INFORMED = "mixpanel_installation_source_informed";
 
   public static void InformFromOther() {
-    Inform("Other");
+    Inform("Others");
   }
 
   public static void InformFromPlayMarket() {
-    Inform("Play Market");
+    Inform("Google Play");
   }
 
   public static void InformFromAdWords() {
@@ -25,17 +25,15 @@ public class InstallationSourceInformer {
 
   private static synchronized void Inform(String sourceName) {
 
-    Log.i("TAG", "InstallationSourceInformer, sourceName="+sourceName);
+    Log.i("TAG", "InstallationSourceInformer, sourceName=" + sourceName);
     if (IsAlreadyInformed()) {
       Log.i("TAG", "InstallationSourceInformer, already informed");
       return;
     }
 
-return;//not to spoil Miz Panel Data until all is tested
-/*
-    MixPanelWorker.SendEvent("App Installation Source Detected", "Installation Source", sourceName);
+    MixPanelWorker.SendEvent("Installed from " + sourceName);
     SetAlreadyInformed();
-*/  }
+  }
 
   private static boolean IsAlreadyInformed() {
     boolean installSourceInformed = ContextUtils.getAppSharedPreferences().getBoolean(
