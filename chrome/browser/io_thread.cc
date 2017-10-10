@@ -29,6 +29,7 @@
 #include "build/build_config.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/data_use_measurement/chrome_data_use_ascriber.h"
+#include "chrome/browser/net/blockers/blockers_worker.h"
 #include "chrome/browser/net/chrome_network_delegate.h"
 #include "chrome/browser/net/failing_url_request_interceptor.h"
 #include "chrome/browser/net/proxy_service_factory.h"
@@ -283,6 +284,8 @@ void IOThread::Init() {
   globals_->data_use_ascriber =
       std::make_unique<data_use_measurement::ChromeDataUseAscriber>();
 
+  globals_->blockers_worker_.reset(new net::blockers::BlockersWorker());
+
   if (command_line.HasSwitch(network::switches::kIgnoreUrlFetcherCertRequests))
     net::URLFetcher::SetIgnoreCertificateRequests(true);
 
@@ -373,6 +376,7 @@ void IOThread::ConstructSystemRequestContext() {
 
     auto chrome_network_delegate = std::make_unique<ChromeNetworkDelegate>(
         extension_event_router_forwarder());
+    chrome_network_delegate->set_blockers_worker(globals_->blockers_worker_);
     builder->set_network_delegate(
         globals_->data_use_ascriber->CreateNetworkDelegate(
             std::move(chrome_network_delegate)));
