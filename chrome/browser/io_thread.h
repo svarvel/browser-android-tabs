@@ -111,6 +111,9 @@ class IOThread : public content::BrowserThreadDelegate {
     scoped_refptr<extensions::EventRouterForwarder>
         extension_event_router_forwarder;
 #endif
+
+    // BlockersWorker instance for blocking
+    std::shared_ptr<net::blockers::BlockersWorker> blockers_worker_;
   };
 
   // |net_log| must either outlive the IOThread or be NULL.

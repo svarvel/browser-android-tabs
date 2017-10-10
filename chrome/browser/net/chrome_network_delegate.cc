@@ -27,6 +27,7 @@
 #include "chrome/browser/content_settings/cookie_settings_factory.h"
 #include "chrome/browser/content_settings/tab_specific_content_settings.h"
 #include "chrome/browser/custom_handlers/protocol_handler_registry.h"
+#include "chrome/browser/net/blockers/blockers_worker.h"
 #include "chrome/browser/net/chrome_extensions_network_delegate.h"
 #include "chrome/browser/profiles/profile_manager.h"
 #include "chrome/browser/task_manager/task_manager_interface.h"
@@ -185,6 +186,59 @@ bool IsAccessAllowedInternal(const base::FilePath& path,
 
 }  // namespace
 
+class PendingRequests {
+public:
+  void Insert(const uint64_t &request_identifier) {
+    pending_requests_.insert(request_identifier);
+  }
+  void Destroy(const uint64_t &request_identifier) {
+    pending_requests_.erase(request_identifier);
+  }
+  bool IsPendingAndAlive(const uint64_t &request_identifier) {
+    bool isPending = pending_requests_.find(request_identifier) != pending_requests_.end();
+    return isPending;
+  }
+private:
+  std::set<uint64_t> pending_requests_;
+  //no need synchronization, should be executed in the same thread content::BrowserThread::IO
+};
+
+struct OnBeforeURLRequestContext
+{
+  OnBeforeURLRequestContext(){}
+  ~OnBeforeURLRequestContext(){}
+
+  int adsBlocked = 0;
+  int trackersBlocked = 0;
+  int httpsUpgrades = 0;
+
+  bool isGlobalBlockEnabled = true;
+  bool blockAdsAndTracking = true;
+  bool isAdBlockRegionalEnabled = true;
+  bool isTPEnabled = true;
+  bool isHTTPSEEnabled = true;
+
+  bool shieldsSetExplicitly = false;
+
+  bool needPerformAdBlock = false;
+  bool needPerformTPBlock = false;
+  bool needPerformHTTPSE = false;
+
+  bool block = false;
+
+  const ResourceRequestInfo* info = nullptr;
+  bool isValidUrl = true;
+  std::string firstparty_host = "";
+  bool check_httpse_redirect = true;
+  GURL UrlCopy;
+  std::string newURL;
+
+  bool pendingAtLeastOnce = false;
+  uint64_t request_identifier = 0;
+
+  DISALLOW_COPY_AND_ASSIGN(OnBeforeURLRequestContext);
+};
+
 ChromeNetworkDelegate::ChromeNetworkDelegate(
     extensions::EventRouterForwarder* event_router)
     : extensions_delegate_(
@@ -195,7 +249,9 @@ ChromeNetworkDelegate::ChromeNetworkDelegate(
       enable_ad_block_regional_(nullptr),
       experimental_web_platform_features_enabled_(
           base::CommandLine::ForCurrentProcess()->HasSwitch(
-              switches::kEnableExperimentalWebPlatformFeatures)) {}
+              switches::kEnableExperimentalWebPlatformFeatures)) {
+  pending_requests_.reset(new PendingRequests());
+}
 
 ChromeNetworkDelegate::~ChromeNetworkDelegate() {}
 
@@ -211,6 +267,11 @@ void ChromeNetworkDelegate::set_profile(void* profile) {
 void ChromeNetworkDelegate::set_cookie_settings(
     content_settings::CookieSettings* cookie_settings) {
   cookie_settings_ = cookie_settings;
+}
+
+void ChromeNetworkDelegate::set_blockers_worker(
+  std::shared_ptr<net::blockers::BlockersWorker> blockers_worker) {
+  blockers_worker_ = blockers_worker;
 }
 
 // static
@@ -247,146 +308,341 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
     net::URLRequest* request,
     net::CompletionOnceCallback callback,
     GURL* new_url) {
+  std::shared_ptr<OnBeforeURLRequestContext> ctx(new OnBeforeURLRequestContext());
 
-  std::string firstparty_host = "";
-  if (request) {
-    firstparty_host = request->first_party_for_cookies().host();
-  }
-  // (TODO)find a better way to handle last first party
-  if (0 == firstparty_host.length()) {
-    firstparty_host = last_first_party_url_.host();
-  } else if (request) {
-    last_first_party_url_ = request->first_party_for_cookies();
-  }
-  // We want to block first party ads as well
-  /*bool firstPartyUrl = false;
-  if (request && (last_first_party_url_ == request->url())) {
-    firstPartyUrl = true;
-  }*/
-  // Ad Block and tracking protection
-  bool isGlobalBlockEnabled = true;
-  bool blockAdsAndTracking = true;
-  bool isHTTPSEEnabled = true;
-  bool shieldsSetExplicitly = false;
-  net::blockers::ShieldsConfig* shieldsConfig =
-    net::blockers::ShieldsConfig::getShieldsConfig();
-  if (request && nullptr != shieldsConfig) {
-      std::string hostConfig = shieldsConfig->getHostSettings(firstparty_host);
-      // It is a length of ALL_SHIELDS_DEFAULT_MASK in ShieldsConfig.java
-      if (hostConfig.length() == 11) {
-        shieldsSetExplicitly  = true;
-        if ('0' == hostConfig[0]) {
-            isGlobalBlockEnabled = false;
-        }
-        if (isGlobalBlockEnabled) {
-            if ('0' ==  hostConfig[2]) {
-                blockAdsAndTracking = false;
-            }
-            if ('0' ==  hostConfig[4]) {
-                isHTTPSEEnabled = false;
-            }
-        }
-      }
-  } else if (nullptr == shieldsConfig){
-      isGlobalBlockEnabled = false;
-  }
-  bool isValidUrl = true;
-  if (request) {
-      isValidUrl = request->url().is_valid();
-      std::string scheme = request->url().scheme();
-      if (scheme.length()) {
-          std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
-          if ("http" != scheme && "https" != scheme) {
-              isValidUrl = false;
-          }
-      }
-  }
-  bool isTPEnabled = true;
-	bool block = false;
-  if (enable_tracking_protection_ && !shieldsSetExplicitly) {
-    isTPEnabled = enable_tracking_protection_->GetValue();
-  }
-  int adsBlocked = 0;
-  int trackersBlocked = 0;
-  int httpsUpgrades = 0;
-	if (request
+  int rv = OnBeforeURLRequest_PreBlockersWork(
+       request,
+       callback,
+       new_url,
+       ctx);
+
+   return rv;
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
+   net::URLRequest* request,
+   const net::CompletionCallback& callback,
+   GURL* new_url,
+   std::shared_ptr<OnBeforeURLRequestContext> ctx)
+ {
+   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+
+   ctx->firstparty_host = "";
+   if (request) {
+     ctx->firstparty_host = request->first_party_for_cookies().host();
+     ctx->request_identifier = request->identifier();
+   }
+   // (TODO)find a better way to handle last first party
+   if (0 == ctx->firstparty_host.length()) {
+     ctx->firstparty_host = last_first_party_url_.host();
+   } else if (request) {
+     last_first_party_url_ = request->first_party_for_cookies();
+   }
+   // We want to block first party ads as well
+   /*bool firstPartyUrl = false;
+   if (request && (last_first_party_url_ == request->url())) {
+     firstPartyUrl = true;
+   }*/
+   // Ad Block and tracking protection
+   ctx->isGlobalBlockEnabled = true;
+   ctx->blockAdsAndTracking = true;
+   ctx->isHTTPSEEnabled = true;
+   ctx->shieldsSetExplicitly = false;
+   net::blockers::ShieldsConfig* shieldsConfig =
+     net::blockers::ShieldsConfig::getShieldsConfig();
+   if (request && nullptr != shieldsConfig) {
+       std::string hostConfig = shieldsConfig->getHostSettings(ctx->firstparty_host);
+       // It is a length of ALL_SHIELDS_DEFAULT_MASK in ShieldsConfig.java
+       if (hostConfig.length() == 11) {
+         ctx->shieldsSetExplicitly  = true;
+         if ('0' == hostConfig[0]) {
+             ctx->isGlobalBlockEnabled = false;
+         }
+         if (ctx->isGlobalBlockEnabled) {
+             if ('0' ==  hostConfig[2]) {
+                 ctx->blockAdsAndTracking = false;
+             }
+             if ('0' ==  hostConfig[4]) {
+                 ctx->isHTTPSEEnabled = false;
+             }
+         }
+       }
+   } else if (nullptr == shieldsConfig){
+       ctx->isGlobalBlockEnabled = false;
+   }
+   ctx->isValidUrl = true;
+   if (request) {
+       ctx->isValidUrl = request->url().is_valid();
+       std::string scheme = request->url().scheme();
+       if (scheme.length()) {
+           std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
+           if ("http" != scheme && "https" != scheme) {
+               ctx->isValidUrl = false;
+           }
+       }
+   }
+   ctx->isTPEnabled = true;
+   ctx->block = false;
+   if (enable_tracking_protection_ && !ctx->shieldsSetExplicitly) {
+     ctx->isTPEnabled = enable_tracking_protection_->GetValue();
+   }
+
+  ctx->adsBlocked = 0;
+  ctx->trackersBlocked = 0;
+  ctx->httpsUpgrades = 0;
+
+  int rv = OnBeforeURLRequest_TpBlockPreFileWork(request, callback, new_url, ctx);
+  return rv;
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
+  net::URLRequest* request,
+  const net::CompletionCallback& callback,
+  GURL* new_url,
+  std::shared_ptr<OnBeforeURLRequestContext> ctx)
+{
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+  ctx->needPerformTPBlock = false;
+  if (request
       //&& !firstPartyUrl
-      && isValidUrl
-      && isGlobalBlockEnabled
-      && blockAdsAndTracking
-      && isTPEnabled
-			&& blockers_worker_.shouldTPBlockUrl(
-					firstparty_host,
-					request->url().host())
-				) {
-		block = true;
-    trackersBlocked++;
-	}
+      && ctx->isValidUrl
+      && ctx->isGlobalBlockEnabled
+      && ctx->blockAdsAndTracking
+      && ctx->isTPEnabled) {
+
+      ctx->needPerformTPBlock = true;
+      if (!blockers_worker_->isTPInitialized() ) {
+        content::BrowserThread::PostTaskAndReply(
+          content::BrowserThread::FILE, FROM_HERE,
+          base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork,
+              base::Unretained(this)),
+          base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
+              base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
+            );
+        ctx->pendingAtLeastOnce = true;
+        pending_requests_->Insert(request->identifier());
+        return net::ERR_IO_PENDING;
+      }
+  }
+
+  int rv = OnBeforeURLRequest_TpBlockPostFileWork(request, callback, new_url, ctx);
+  return rv;
+}
+
+void ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork() {
+  base::ThreadRestrictions::AssertIOAllowed();
+  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
+  blockers_worker_->InitTP();
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork(
+  net::URLRequest* request,
+  const net::CompletionCallback& callback,
+  GURL* new_url,
+  std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+
+  if (PendedRequestIsDestroyedOrCancelled(ctx.get(), request)) {
+    return net::OK;
+  }
+
+  if (ctx->needPerformTPBlock){
+    if (blockers_worker_->shouldTPBlockUrl(
+        ctx->firstparty_host,
+        request->url().host())) {
+      ctx->block = true;
+      ctx->trackersBlocked++;
+    }
+  }
+
+  int rv = OnBeforeURLRequest_AdBlockPreFileWork(request, callback, new_url, ctx);
+  return rv;
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
+  net::URLRequest* request,
+  const net::CompletionCallback& callback,
+  GURL* new_url,
+  std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
   bool isAdBlockEnabled = true;
-  if (enable_ad_block_ && !shieldsSetExplicitly) {
+  if (enable_ad_block_ && !ctx->shieldsSetExplicitly) {
     isAdBlockEnabled = enable_ad_block_->GetValue();
   }
   // Regional ad block flag
-  bool isAdBlockRegionalEnabled = true;
-  if (enable_ad_block_regional_ && !shieldsSetExplicitly) {
-    isAdBlockRegionalEnabled = enable_ad_block_regional_->GetValue();
+  ctx->isAdBlockRegionalEnabled = true;
+  if (enable_ad_block_regional_ && !ctx->shieldsSetExplicitly) {
+    ctx->isAdBlockRegionalEnabled = enable_ad_block_regional_->GetValue();
   }
-	const ResourceRequestInfo* info = ResourceRequestInfo::ForRequest(request);
-	if (!block
+
+  ctx->info = ResourceRequestInfo::ForRequest(request);
+	if (!ctx->block
       //&& !firstPartyUrl
-      && isValidUrl
-      && isGlobalBlockEnabled
-      && blockAdsAndTracking
+      && ctx->isValidUrl
+      && ctx->isGlobalBlockEnabled
+      && ctx->blockAdsAndTracking
       && isAdBlockEnabled
       && request
-      && info
-      && content::RESOURCE_TYPE_MAIN_FRAME != info->GetResourceType()
-			&& blockers_worker_.shouldAdBlockUrl(
-					firstparty_host,
-					request->url().spec(),
-					(unsigned int)info->GetResourceType(),
-          isAdBlockRegionalEnabled)) {
-		block = true;
-    adsBlocked++;
-	}
-  bool check_httpse_redirect = true;
-  if (block && info && content::RESOURCE_TYPE_IMAGE == info->GetResourceType()) {
-    check_httpse_redirect = false;
+      && ctx->info
+      && content::RESOURCE_TYPE_MAIN_FRAME != ctx->info->GetResourceType()) {
+        ctx->needPerformAdBlock = true;
+      if (!blockers_worker_->isAdBlockerInitialized() ||
+        (ctx->isAdBlockRegionalEnabled && !blockers_worker_->isAdBlockerRegionalInitialized()) ) {
+
+        content::BrowserThread::PostTaskAndReply(
+          content::BrowserThread::FILE, FROM_HERE,
+          base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork,
+              base::Unretained(this), ctx),
+          base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork),
+              base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
+            );
+        ctx->pendingAtLeastOnce = true;
+        pending_requests_->Insert(request->identifier());
+        return net::ERR_IO_PENDING;
+      }
+  }
+
+  int rv = OnBeforeURLRequest_AdBlockPostFileWork(request, callback, new_url, ctx);
+  return rv;
+}
+
+void ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  base::ThreadRestrictions::AssertIOAllowed();
+  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
+  blockers_worker_->InitAdBlock();
+
+  if (ctx->isAdBlockRegionalEnabled &&
+    !blockers_worker_->isAdBlockerRegionalInitialized()) {
+    blockers_worker_->InitAdBlockRegional();
+  }
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
+  net::URLRequest* request,
+  const net::CompletionCallback& callback,
+  GURL* new_url,
+  std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+
+  if (PendedRequestIsDestroyedOrCancelled(ctx.get(), request)) {
+    return net::OK;
+  }
+
+  if (ctx->needPerformAdBlock) {
+    if (blockers_worker_->shouldAdBlockUrl(
+        ctx->firstparty_host,
+        request->url().spec(),
+        (unsigned int)ctx->info->GetResourceType(),
+        ctx->isAdBlockRegionalEnabled)) {
+          ctx->block = true;
+          ctx->adsBlocked++;
+      }
+  }
+
+  ctx->check_httpse_redirect = true;
+  if (ctx->block && ctx->info && content::RESOURCE_TYPE_IMAGE == ctx->info->GetResourceType()) {
+    ctx->check_httpse_redirect = false;
     *new_url = GURL(TRANSPARENT1PXGIF);
   }
-  //
 
+   int rv = OnBeforeURLRequest_HttpsePreFileWork(request, callback, new_url, ctx);
+   return rv;
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
+  net::URLRequest* request,
+  const net::CompletionCallback& callback,
+  GURL* new_url,
+  std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+  ctx->needPerformHTTPSE = false;
   // HTTPSE work
-  if (!block
+  if (!ctx->block
       && request
-      && isValidUrl
-      && isGlobalBlockEnabled
-      && isHTTPSEEnabled
-      && check_httpse_redirect
-      && (shieldsSetExplicitly || (enable_httpse_ && enable_httpse_->GetValue()))) {
-    std::string newURL = blockers_worker_.getHTTPSURL(&request->url());
-    if (newURL != request->url().spec()) {
-      *new_url = GURL(newURL);
-      if (last_first_party_url_ != request->url()) {
-        httpsUpgrades++;
-      }
+      && ctx->isValidUrl
+      && ctx->isGlobalBlockEnabled
+      && ctx->isHTTPSEEnabled
+      && ctx->check_httpse_redirect
+      && (ctx->shieldsSetExplicitly || (enable_httpse_ && enable_httpse_->GetValue()))) {
+    ctx->needPerformHTTPSE = true;
+  }
+
+  if (ctx->needPerformHTTPSE) {
+    ctx->newURL = blockers_worker_->getHTTPSURLFromCacheOnly(&request->url());
+    if (ctx->newURL == request->url().spec()) {
+      ctx->UrlCopy = request->url();
+      content::BrowserThread::PostTaskAndReply(
+        content::BrowserThread::FILE, FROM_HERE,
+        base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork,
+            base::Unretained(this), base::Unretained(request), ctx),
+        base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork),
+            base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
+          );
+      ctx->pendingAtLeastOnce = true;
+      pending_requests_->Insert(request->identifier());
+      return net::ERR_IO_PENDING;
     }
   }
-  //
-  if (nullptr != shieldsConfig && (0 != trackersBlocked || 0 != adsBlocked || 0 != httpsUpgrades)) {
+
+  int rv = OnBeforeURLRequest_HttpsePostFileWork(request, callback, new_url, ctx);
+  return rv;
+}
+
+void ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRequest* request, std::shared_ptr<OnBeforeURLRequestContext> ctx)
+{
+  base::ThreadRestrictions::AssertIOAllowed();
+  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
+  ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy);
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request,const net::CompletionCallback& callback,GURL* new_url,std::shared_ptr<OnBeforeURLRequestContext> ctx)
+{
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+
+  if (PendedRequestIsDestroyedOrCancelled(ctx.get(), request)) {
+    return net::OK;
+  }
+
+  if (!ctx->newURL.empty() &&
+    ctx->needPerformHTTPSE &&
+    ctx->newURL != request->url().spec()) {
+    *new_url = GURL(ctx->newURL);
+    if (last_first_party_url_ != request->url()) {
+      ctx->httpsUpgrades++;
+    }
+  }
+
+  int rv = OnBeforeURLRequest_PostBlockers(request, callback, new_url, ctx);
+  return rv;
+}
+
+int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
+    net::URLRequest* request,
+    const net::CompletionCallback& callback,
+    GURL* new_url,
+    std::shared_ptr<OnBeforeURLRequestContext> ctx)
+{
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+  net::blockers::ShieldsConfig* shieldsConfig =
+     net::blockers::ShieldsConfig::getShieldsConfig();
+  if (nullptr != shieldsConfig && (0 != ctx->trackersBlocked || 0 != ctx->adsBlocked || 0 != ctx->httpsUpgrades)) {
     shieldsConfig->setBlockedCountInfo(last_first_party_url_.spec()
-        , trackersBlocked
-        , adsBlocked
-        , httpsUpgrades
+        , ctx->trackersBlocked
+        , ctx->adsBlocked
+        , ctx->httpsUpgrades
         , 0
         , 0);
   }
 
-  if (block && (nullptr == info || content::RESOURCE_TYPE_IMAGE != info->GetResourceType())) {
-		*new_url = GURL("");
+  if (ctx->block && (nullptr == ctx->info || content::RESOURCE_TYPE_IMAGE != ctx->info->GetResourceType())) {
+    *new_url = GURL("");
 
-		return net::ERR_BLOCKED_BY_ADMINISTRATOR;
-	}
+    if (ctx->pendingAtLeastOnce) {
+      callback.Run(net::ERR_BLOCKED_BY_ADMINISTRATOR);
+    }
+    return net::ERR_BLOCKED_BY_ADMINISTRATOR;
+  }
 
   extensions_delegate_->ForwardStartRequestStatus(request);
 
@@ -475,6 +731,7 @@ void ChromeNetworkDelegate::OnCompleted(net::URLRequest* request,
 
 void ChromeNetworkDelegate::OnURLRequestDestroyed(net::URLRequest* request) {
   extensions_delegate_->NotifyURLRequestDestroyed(request);
+  pending_requests_->Destroy(request->identifier());
 }
 
 net::NetworkDelegate::AuthRequiredResponse
@@ -599,4 +856,14 @@ bool ChromeNetworkDelegate::OnCanUseReportingClient(
     return false;
 
   return cookie_settings_->IsCookieAccessAllowed(endpoint, origin.GetURL());
+}
+
+bool ChromeNetworkDelegate::PendedRequestIsDestroyedOrCancelled(OnBeforeURLRequestContext* ctx, net::URLRequest* request) {
+  if (ctx->pendingAtLeastOnce) {
+    if ( !pending_requests_->IsPendingAndAlive(ctx->request_identifier)
+      || request->status().status() == net::URLRequestStatus::CANCELED) {
+      return true;
+    }
+  }
+  return false;
 }
