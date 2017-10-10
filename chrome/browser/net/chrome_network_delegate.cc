@@ -340,6 +340,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
       && isAdBlockEnabled
       && request
       && info
+      && content::RESOURCE_TYPE_MAIN_FRAME != info->GetResourceType()
 			&& blockers_worker_.shouldAdBlockUrl(
 					firstparty_host,
 					request->url().spec(),
