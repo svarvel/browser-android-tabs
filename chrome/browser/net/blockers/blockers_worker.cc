@@ -82,8 +82,10 @@ namespace blockers {
     BlockersWorker::BlockersWorker() :
         level_db_(nullptr),
         tp_parser_(nullptr),
-        adblock_parser_(nullptr) {
-        base::ThreadRestrictions::SetIOAllowed(true);
+        adblock_parser_(nullptr),
+        tp_initialized_(false),
+        adblock_initialized_(false),
+        adblock_regional_initialized_(false) {
     }
 
     BlockersWorker::~BlockersWorker() {
@@ -103,6 +105,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitAdBlock() {
+        base::ThreadRestrictions::AssertIOAllowed();
         std::lock_guard<std::mutex> guard(adblock_init_mutex_);
 
         if (adblock_parser_) {
@@ -122,10 +125,12 @@ namespace blockers {
             return false;
         }
 
+        set_adblock_initialized();
         return true;
     }
 
     bool BlockersWorker::InitAdBlockRegional() {
+        base::ThreadRestrictions::AssertIOAllowed();
         std::lock_guard<std::mutex> guard(adblock_regional_init_mutex_);
 
         if (0 != adblock_regional_parsers_.size()) {
@@ -161,10 +166,12 @@ namespace blockers {
             adblock_regional_parsers_.push_back(parser);
         }
 
+        set_adblock_regional_initialized();
         return true;
     }
 
     bool BlockersWorker::InitTP() {
+        base::ThreadRestrictions::AssertIOAllowed();
         std::lock_guard<std::mutex> guard(tp_init_mutex_);
 
         if (tp_parser_) {
@@ -194,10 +201,12 @@ namespace blockers {
         tp_white_list_.push_back("platform.twitter.com");
         tp_white_list_.push_back("syndication.twitter.com");
 
+        set_tp_initialized();
         return true;
     }
 
     bool BlockersWorker::InitHTTPSE() {
+        base::ThreadRestrictions::AssertIOAllowed();
         std::lock_guard<std::mutex> guard(httpse_init_mutex_);
 
         if (level_db_) {
@@ -282,8 +291,8 @@ namespace blockers {
 
     bool BlockersWorker::shouldAdBlockUrl(const std::string& base_host, const std::string& url,
                                           unsigned int resource_type, bool isAdBlockRegionalEnabled) {
-        if (!InitAdBlock()) {
-            return false;
+        if (!isAdBlockerInitialized()) {
+          return false;
         }
 
         FilterOption currentOption = FONoFilterOption;
@@ -301,7 +310,7 @@ namespace blockers {
         }
 
         // Check regional ad block
-        if (!isAdBlockRegionalEnabled || !InitAdBlockRegional()) {
+        if (!isAdBlockRegionalEnabled || !isAdBlockerRegionalInitialized()) {
             return false;
         }
         for (size_t i = 0; i < adblock_regional_parsers_.size(); i++) {
@@ -363,8 +372,8 @@ namespace blockers {
     }
 
     bool BlockersWorker::shouldTPBlockUrl(const std::string& base_host, const std::string& host) {
-        if (!InitTP()) {
-            return false;
+        if (!isTPInitialized()) {
+          return false;
         }
 
         if (!tp_parser_->matchesTracker(base_host.c_str(), host.c_str())) {
@@ -394,7 +403,25 @@ namespace blockers {
         return true;
     }
 
+    std::string BlockersWorker::getHTTPSURLFromCacheOnly(const GURL* url) {
+        if (nullptr == url
+          || url->scheme() == "https") {
+            return url->spec();
+        }
+        if (!shouldHTTPSERedirect(url->spec())) {
+            return url->spec();
+        }
+
+        if (recently_used_cache_.data.count(url->spec()) > 0) {
+            addHTTPSEUrlToRedirectList(url->spec());
+            return recently_used_cache_.data[url->spec()];
+        }
+
+        return url->spec();
+    }
+
     std::string BlockersWorker::getHTTPSURL(const GURL* url) {
+        base::ThreadRestrictions::AssertIOAllowed();
         if (nullptr == url
           || url->scheme() == "https"
           || !InitHTTPSE()) {
@@ -581,5 +608,34 @@ namespace blockers {
         return correctedto;
     }
 
+    bool BlockersWorker::isTPInitialized() {
+      std::lock_guard<std::mutex> guard(tp_initialized_mutex_);
+      return tp_initialized_;
+    }
+
+    bool BlockersWorker::isAdBlockerInitialized() {
+      std::lock_guard<std::mutex> guard(adblock_initialized_mutex_);
+      return adblock_initialized_;
+    }
+
+    bool BlockersWorker::isAdBlockerRegionalInitialized() {
+      std::lock_guard<std::mutex> guard(adblock_regional_initialized_mutex_);
+      return adblock_regional_initialized_;
+    }
+
+    void BlockersWorker::set_tp_initialized() {
+      std::lock_guard<std::mutex> guard(tp_initialized_mutex_);
+      tp_initialized_ = true;
+    }
+
+    void BlockersWorker::set_adblock_initialized() {
+      std::lock_guard<std::mutex> guard(adblock_initialized_mutex_);
+      adblock_initialized_ = true;
+    }
+
+    void BlockersWorker::set_adblock_regional_initialized() {
+      std::lock_guard<std::mutex> guard(adblock_regional_initialized_mutex_);
+      adblock_regional_initialized_ = true;
+    }
 }  // namespace blockers
 }  // namespace net

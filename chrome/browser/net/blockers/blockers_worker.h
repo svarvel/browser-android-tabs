@@ -41,13 +41,17 @@ public:
     bool shouldTPBlockUrl(const std::string& base_host, const std::string& host);
     bool shouldAdBlockUrl(const std::string& base_host, const std::string& url, unsigned int resource_type,
       bool isAdBlockRegionalEnabled);
+    std::string getHTTPSURLFromCacheOnly(const GURL* url);
     std::string getHTTPSURL(const GURL* url);
+    bool isTPInitialized();
+    bool isAdBlockerInitialized();
+    bool isAdBlockerRegionalInitialized();
 
-private:
     bool InitTP();
     bool InitAdBlock();
     bool InitAdBlockRegional();
     bool InitHTTPSE();
+private:
     std::string applyHTTPSRule(const std::string& originalUrl, const std::string& rule);
     std::vector<std::string> getTPThirdPartyHosts(const std::string& base_host);
 
@@ -58,6 +62,10 @@ private:
 
     void addHTTPSEUrlToRedirectList(const std::string originalUrl);
     bool shouldHTTPSERedirect(const std::string originalUrl);
+
+    void set_tp_initialized();
+    void set_adblock_initialized();
+    void set_adblock_regional_initialized();
 
     std::vector<unsigned char> tp_buffer_;
     std::vector<unsigned char> adblock_buffer_;
@@ -76,12 +84,19 @@ private:
     // inside the tracking protection lib
     std::vector<std::string> tp_white_list_;
 
+    bool tp_initialized_;
+    bool adblock_initialized_;
+    bool adblock_regional_initialized_;
+
     std::mutex httpse_init_mutex_;
     std::mutex adblock_init_mutex_;
     std::mutex adblock_regional_init_mutex_;
     std::mutex tp_init_mutex_;
     std::mutex tp_get_third_party_hosts_mutex_;
     std::mutex httpse_get_urls_redirects_count_mutex_;
+    std::mutex tp_initialized_mutex_;
+    std::mutex adblock_initialized_mutex_;
+    std::mutex adblock_regional_initialized_mutex_;
 };
 
 }  // namespace blockers
