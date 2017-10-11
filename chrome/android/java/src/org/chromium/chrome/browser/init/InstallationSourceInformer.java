@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 
 package org.chromium.chrome.browser.init;
 
@@ -12,11 +16,15 @@ public class InstallationSourceInformer {
   private static final String PREF_MIXPANEL_INSTALL_SOURCE_INFORMED = "mixpanel_installation_source_informed";
 
   public static void InformFromOther() {
-    Inform("Others");
+    //Disabled until we not ensured InformFromAdWords works well
+    //Inform("Others");
+    Log.i("TAG", "InstallationSourceInformer.InformFromOther skip send info");
   }
 
   public static void InformFromPlayMarket() {
-    Inform("Google Play");
+    //Disabled until we not ensured InformFromAdWords works well
+    //Inform("Google Play");
+    Log.i("TAG", "InstallationSourceInformer.InformFromPlayMarket skip send info");
   }
 
   public static void InformFromAdWords() {
@@ -24,7 +32,6 @@ public class InstallationSourceInformer {
   }
 
   private static synchronized void Inform(String sourceName) {
-
     Log.i("TAG", "InstallationSourceInformer, sourceName=" + sourceName);
     if (IsAlreadyInformed()) {
       Log.i("TAG", "InstallationSourceInformer, already informed");
