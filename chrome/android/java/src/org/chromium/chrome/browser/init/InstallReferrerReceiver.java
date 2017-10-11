@@ -18,7 +18,7 @@ public class InstallReferrerReceiver extends BroadcastReceiver {
         Log.i("TAG", "InstallReferrerReceiver: referrer: " + referrer);
 
       if (referrer != null && referrer.contains("utm_source") ) {
-        InstallationSourceInformer.InformFromAdWords();
+        InstallationSourceInformer.InformFromPromo();
       } else {
         InstallationSourceInformer.InformFromPlayMarket();
       }
