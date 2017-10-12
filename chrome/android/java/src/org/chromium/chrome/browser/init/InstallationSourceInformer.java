@@ -28,7 +28,9 @@ public class InstallationSourceInformer {
   }
 
   public static void InformFromPromo() {
-    Inform("Promo");
+    //Disabled because event receiver doesn't work yet
+    //Inform("Promo");
+    Log.i("TAG", "InstallationSourceInformer.InformFromPromo skip send info");
   }
 
   private static synchronized void Inform(String sourceName) {
