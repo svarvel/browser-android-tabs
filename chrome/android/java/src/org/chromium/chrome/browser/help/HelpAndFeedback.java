@@ -29,7 +29,7 @@ import javax.annotation.Nonnull;
  */
 public class HelpAndFeedback {
     protected static final String FALLBACK_SUPPORT_URL =
-            "https://support.google.com/chrome/topic/6069782";
+            "https://community.brave.com";
     private static final String TAG = "cr_HelpAndFeedback";
 
     private static HelpAndFeedback sInstance;
