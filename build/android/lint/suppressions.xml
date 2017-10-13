@@ -374,6 +374,7 @@ Still reading?
     <ignore regexp="chrome/android/java/res/layout/brave_shields_https_upgrade_switcher.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_shields_scripts_blocked_switcher.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_shields_switcher.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_shields_menu_item.xml"/>
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="tools/android/kerberos/SpnegoAuthenticator/res/layout/activity_account_authenticator.xml"/>
   </issue>
