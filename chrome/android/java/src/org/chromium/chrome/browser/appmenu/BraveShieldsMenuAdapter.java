@@ -19,6 +19,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ListPopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -87,9 +88,14 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
     private static final float ENTER_STANDARD_ITEM_OFFSET_Y_DP = -10.f;
     private static final float ENTER_STANDARD_ITEM_OFFSET_X_DP = 10.f;
 
-    private static final String BRAVE_SHIELDS_GREY = "#858585";
-    private static final String BRAVE_SHIELDS_LIGHT_GREY = "#E8E9E8";
-    private static final String BRAVE_SHIELDS_TEXT = "#FFFFFF";
+    private static final String BRAVE_SHIELDS_GREY = "#F2F2F2";
+    private static final String BRAVE_SHIELDS_BLACK = "#000000";
+    private static final String BRAVE_SHIELDS_WHITE = "#FFFFFF";
+    private static final String BRAVE_GROUP_TITLE_COLOR = "#6B6B6B";
+    private static final String ADS_AND_TRACKERS_COLOR = "#FF5100";
+    private static final String HTTPS_UPDATES_COLOR = "#0094FD";
+    private static final String SCRIPTS_BLOCKED_COLOR = "#999999";
+    private static final String FINGERPRINTS_BLOCKED_COLOR = "#FFC100";
     private static final double BRAVE_WEBSITE_TEXT_SIZE_INCREMENT = 1.2;
     private static final double BRAVE_SCREEN_FOR_PANEL = 0.8;
     private static final double BRAVE_MAX_PANEL_TEXT_SIZE_INCREMENT = 1.3;
@@ -128,28 +134,9 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
         mCurrentDisplayWidth = currentDisplayWidth;
     }
 
-    public static String addUpdateCounts(String title, int count, String color) {
-        int space = title.indexOf(" ");
-        if (-1 == space || title.length() - 1 == space) {
-            return String.format("%1$s %2$s", "<font color=" + color + "><b>" + count + "</b></font>",
-              title);
-        }
-        try {
-            Integer.parseInt(title.substring(0, space));
-            title = title.substring(space + 1);
-        }
-        catch (NumberFormatException e) {
-        }
-
-        return String.format("%1$s %2$s", "<font color=" + color + "><b>" + count + "</b></font>",
-          title);
-    }
-
     @Override
     public boolean isEnabled(int position) {
-        if (0 == position || 1 == position
-          || 3 == position || 4 == position
-          || 5 == position || 6 == position) {
+        if (position >= 1 &&  position <= 8) {
             return false;
         }
 
@@ -207,55 +194,108 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         || mapView != convertView
                         || !(convertView.getTag() instanceof StandardMenuItemViewHolder)) {
                     holder = new StandardMenuItemViewHolder();
-                    if (2 == position) {
+                    if (0 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_switcher, parent, false);
                         setupSwitchClick((Switch)convertView.findViewById(R.id.brave_shields_switch));
+                        convertView.setBackgroundColor(Color.parseColor(BRAVE_SHIELDS_GREY));
                     // We should set layouts for switch rows
+                    } else if (1 == position || 2 == position || 8 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_text_item, parent, false);
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_text);
+                        if (text != null) {
+                            if (2 == position) {
+                                text.setText(R.string.brave_shields_first_group_title);
+                            } else if (8 == position) {
+                                text.setText(R.string.brave_shields_second_group_title);
+                            } else {
+                                text.setTextColor(Color.parseColor(BRAVE_SHIELDS_BLACK));
+                                text.setTextSize(20);
+                                text.setText(getItem(1).getTitle());
+                            }
+                        }
+                    } else if (3 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_text);
+                        if (text != null) {
+                            text.setText(R.string.brave_shields_ads_and_trackers);
+                        }
+                        TextView number = (TextView) convertView.findViewById(R.id.brave_shields_number);
+                        if (number != null) {
+                            number.setTextColor(Color.parseColor(ADS_AND_TRACKERS_COLOR));
+                            number.setText(getItem(3).getTitle());
+                        }
+                    } else if (4 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_text);
+                        if (text != null) {
+                            text.setText(R.string.brave_shields_https_upgrades);
+                        }
+                        TextView number = (TextView) convertView.findViewById(R.id.brave_shields_number);
+                        if (number != null) {
+                            number.setTextColor(Color.parseColor(HTTPS_UPDATES_COLOR));
+                            number.setText(getItem(4).getTitle());
+                        }
+                    } else if (5 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_text);
+                        if (text != null) {
+                            text.setText(R.string.brave_shields_scripts_blocked);
+                        }
+                        TextView number = (TextView) convertView.findViewById(R.id.brave_shields_number);
+                        if (number != null) {
+                            number.setTextColor(Color.parseColor(SCRIPTS_BLOCKED_COLOR));
+                            number.setText(getItem(5).getTitle());
+                        }
+                    } else if (6 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_text);
+                        if (text != null) {
+                            text.setText(R.string.brave_shields_fingerprint_methods);
+                        }
+                        TextView number = (TextView) convertView.findViewById(R.id.brave_shields_number);
+                        if (number != null) {
+                            number.setTextColor(Color.parseColor(FINGERPRINTS_BLOCKED_COLOR));
+                            number.setText(getItem(6).getTitle());
+                        }
                     } else if (7 == position) {
+                        convertView = mInflater.inflate(R.layout.menu_separator, parent, false);
+                    } else if (9 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_ads_tracking_switcher, parent, false);
                         mBraveShieldsAdsTrackingSwitch = (Switch)convertView.findViewById(R.id.brave_shields_ads_tracking_switch);
                         setupAdsTrackingSwitchClick(mBraveShieldsAdsTrackingSwitch);
-                    } else if (8 == position) {
+                        // To make it more nice looking
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_ads_tracking_text);
+                        if (text != null && text.getText().toString().indexOf("and") != -1) {
+                            String value = text.getText().toString().replaceFirst("and", "&");
+                            text.setText(value);
+                        }
+                    } else if (10 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_https_upgrade_switcher, parent, false);
                         mBraveShieldsHTTPSEverywhereSwitch = (Switch)convertView.findViewById(R.id.brave_shields_https_upgrade_switch);
                         setupHTTPSEverywhereSwitchClick(mBraveShieldsHTTPSEverywhereSwitch);
-                    } else if (9 == position) {
-                        convertView = mInflater.inflate(R.layout.brave_shields_scripts_blocked_switcher, parent, false);
-                        mBraveShieldsBlockingScriptsSwitch = (Switch)convertView.findViewById(R.id.brave_shields_scripts_blocked_switch);
-                        setupBlockingScriptsSwitchClick(mBraveShieldsBlockingScriptsSwitch);
-                    } else if (10 == position) {
+                    } else if (11 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_3rd_party_cookies_blocked_switcher, parent, false);
                         mBraveShieldsBlocking3rdPartyCookiesSwitch = (Switch)convertView.findViewById(R.id.brave_shields_3rd_party_cookies_blocked_switch);
                         setup3rdPartyCookiesSwitchClick(mBraveShieldsBlocking3rdPartyCookiesSwitch);
-                    } else if (11 == position) {
+                    } else if (12 == position) {
+                        convertView = mInflater.inflate(R.layout.brave_shields_scripts_blocked_switcher, parent, false);
+                        mBraveShieldsBlockingScriptsSwitch = (Switch)convertView.findViewById(R.id.brave_shields_scripts_blocked_switch);
+                        setupBlockingScriptsSwitchClick(mBraveShieldsBlockingScriptsSwitch);
+                    } else if (13 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_fingerprints_blocked_switcher, parent, false);
                         mBraveShieldsFingerprintsSwitch = (Switch)convertView.findViewById(R.id.brave_shields_fingerprints_blocked_switch);
                         setupFingerprintsSwitchClick(mBraveShieldsFingerprintsSwitch);
+                        // To make it more nice looking
+                        TextView text = (TextView) convertView.findViewById(R.id.brave_shields_fingerprinting_blocked_text);
+                        if (text != null && text.getText().toString().indexOf(" ") != -1) {
+                            String value = text.getText().toString().replaceFirst(" ", "\n");
+                            text.setText(value);
+                        }
                     } else {
                         convertView = mInflater.inflate(R.layout.menu_item, parent, false);
                     }
                     holder.text = (TextView) convertView.findViewById(R.id.menu_item_text);
                     holder.image = (AppMenuItemIcon) convertView.findViewById(R.id.menu_item_icon);
-                    switch (position) {
-                        case 0:
-                            convertView.setBackgroundColor(Color.parseColor(BRAVE_SHIELDS_GREY));
-                            holder.text.setTypeface(null, Typeface.BOLD);
-                            holder.text.setTextColor(Color.parseColor(BRAVE_SHIELDS_TEXT));
-                            break;
-                        case 1:
-                            convertView.setBackgroundColor(Color.parseColor(BRAVE_SHIELDS_GREY));
-                            holder.text.setTypeface(null, Typeface.BOLD);
-                            holder.text.setTextSize(TypedValue.COMPLEX_UNIT_PX, holder.text.getTextSize() * (float)BRAVE_WEBSITE_TEXT_SIZE_INCREMENT);
-                            holder.text.setTextColor(Color.parseColor(BRAVE_SHIELDS_TEXT));
-                            break;
-                    }
-                    if (2 == position) {
-                        convertView.setBackgroundColor(Color.parseColor(BRAVE_SHIELDS_GREY));
-                    } else if (7 == position || 8 == position || 9 == position || 10 == position || 11 == position) {
-                        convertView.setBackgroundColor(Color.parseColor(BRAVE_SHIELDS_LIGHT_GREY));
-                    } else {
-                        convertView.setTag(holder);
-                    }
                     convertView.setTag(R.id.menu_item_enter_anim_id,
                             buildStandardItemEnterAnimator(convertView, position));
 

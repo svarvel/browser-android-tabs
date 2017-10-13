@@ -13,6 +13,7 @@ import android.view.ContextThemeWrapper;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.widget.ListPopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.PopupWindow;
 import android.graphics.drawable.Drawable;
 import android.view.MenuItem;
@@ -22,7 +23,6 @@ import android.animation.Animator.AnimatorListener;
 import android.animation.AnimatorSet;
 import android.os.Build;
 import android.view.ViewGroup;
-import android.widget.Switch;
 import android.view.Surface;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -42,10 +42,6 @@ import java.util.List;
  * Object responsible for handling the creation, showing, hiding of the BraveShields menu.
  */
 public class BraveShieldsMenuHandler {
-    private final static String mAdsTrackersCountColor = "#fe521d";
-    private final static String mHTTPSUpgradesCountColor = "#0796fa";
-    private final static String mScripsBlockedCountColor = "#999999";
-    private final static String mFingerprintsBlockedCountColor = "#ffc000";
     private final static float LAST_ITEM_SHOW_FRACTION = 0.5f;
 
     private final Activity mActivity;
@@ -155,16 +151,37 @@ public class BraveShieldsMenuHandler {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         for (int i = 0; i < numItems; ++i) {
             MenuItem item = mMenu.getItem(i);
-            if (1 == i) {
+            RelativeLayout menuItemView = (RelativeLayout)item.getActionView();
+            if (1 == i && menuItemView != null) {
                 item.setTitle(host);
-            } else if (3 == i) {
-                item.setTitle(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(item.getTitle().toString(), adsAndTrackers, mAdsTrackersCountColor)));
-            } else if (4 == i) {
-                item.setTitle(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(item.getTitle().toString(), httpsUpgrades, mHTTPSUpgradesCountColor)));
-            } else if (5 == i) {
-                item.setTitle(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(item.getTitle().toString(), scriptsBlocked, mScripsBlockedCountColor)));
-            } else if (6 == i) {
-                item.setTitle(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(item.getTitle().toString(), fingerprintsBlocked, mFingerprintsBlockedCountColor)));
+                TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_text);
+                if (menuText != null) {
+                    menuText.setText(host);
+                }
+            } else if (3 == i && menuItemView != null) {
+                item.setTitle(String.valueOf(adsAndTrackers));
+                TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                if (menuText != null) {
+                    menuText.setText(String.valueOf(adsAndTrackers));
+                }
+            } else if (4 == i && menuItemView != null) {
+                item.setTitle(String.valueOf(httpsUpgrades));
+                TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                if (menuText != null) {
+                    menuText.setText(String.valueOf(httpsUpgrades));
+                }
+            } else if (5 == i && menuItemView != null) {
+                item.setTitle(String.valueOf(scriptsBlocked));
+                TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                if (menuText != null) {
+                    menuText.setText(String.valueOf(scriptsBlocked));
+                }
+            } else if (6 == i && menuItemView != null) {
+                item.setTitle(String.valueOf(fingerprintsBlocked));
+                TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                if (menuText != null) {
+                    menuText.setText(String.valueOf(fingerprintsBlocked));
+                }
             }
             menuItems.add(item);
         }
@@ -176,8 +193,6 @@ public class BraveShieldsMenuHandler {
             LayoutInflater.from(wrapper), mMenuObserver, mPopup,
             currentDisplayWidth);
         mPopup.setAdapter(mAdapter);
-        setMenuHeight(menuItems.size(), appRect, pt.y, sizingPadding, 0,
-            wrapper);
 
         mPopup.show();
         mPopup.getListView().setItemsCanFocus(true);
@@ -193,47 +208,7 @@ public class BraveShieldsMenuHandler {
                 }
             });
         }
-    }
-
-    private void setMenuHeight(int numMenuItems, Rect appDimensions,
-            int screenHeight, Rect padding, int footerHeight,
-            ContextThemeWrapper wrapper) {
-        assert mPopup.getAnchorView() != null;
-        View anchorView = mPopup.getAnchorView();
-        int[] anchorViewLocation = new int[2];
-        anchorView.getLocationInWindow(anchorViewLocation);
-        anchorViewLocation[1] -= appDimensions.top;
-        int anchorViewImpactHeight = 0;
-
-        // Set appDimensions.height() for abnormal anchorViewLocation.
-        if (anchorViewLocation[1] > screenHeight) {
-            anchorViewLocation[1] = appDimensions.height();
-        }
-        int availableScreenSpace = Math.max(anchorViewLocation[1],
-                appDimensions.height() - anchorViewLocation[1] - anchorViewImpactHeight);
-
-        availableScreenSpace -= padding.bottom + footerHeight;
-
-        TypedArray a = wrapper.obtainStyledAttributes(new int[]
-                {android.R.attr.listPreferredItemHeightSmall, android.R.attr.listDivider});
-        int itemRowHeight = a.getDimensionPixelSize(0, 0);
-        Drawable itemDivider = a.getDrawable(R.styleable.ActionBar_title);
-        int itemDividerHeight = itemDivider != null ? itemDivider.getIntrinsicHeight() : 0;
-        a.recycle();
-
-        int numCanFit = availableScreenSpace / (itemRowHeight + itemDividerHeight);
-
-        // Fade out the last item if we cannot fit all items.
-        if (numCanFit < numMenuItems) {
-            int spaceForFullItems = numCanFit * (itemRowHeight + itemDividerHeight);
-            int spaceForPartialItem = (int) (LAST_ITEM_SHOW_FRACTION * itemRowHeight);
-            mPopup.setHeight(spaceForFullItems - itemRowHeight + spaceForPartialItem
-                    + padding.top + padding.bottom);
-        } else {
-            int spaceForFullItems = numMenuItems * (itemRowHeight + itemDividerHeight);
-            mPopup.setHeight(spaceForFullItems + padding.top + padding.bottom);
-        }
-    }
+    }   
 
     private void runMenuItemEnterAnimations() {
         mMenuItemEnterAnimator = new AnimatorSet();
@@ -269,7 +244,7 @@ public class BraveShieldsMenuHandler {
                 }
                 try {
                     ViewGroup list = mPopup.getListView();
-                    if (null == list || list.getChildCount() < 4) {
+                    if (null == list || list.getChildCount() < 7) {
                         return;
                     }
                     // Set Ads and Trackers count
@@ -277,29 +252,29 @@ public class BraveShieldsMenuHandler {
                     if (null == menuItemView) {
                         return;
                     }
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.menu_item_text);
-                    menuText.setText(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(menuText.getText().toString(), fadsAndTrackers, mAdsTrackersCountColor)));
+                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                    menuText.setText(String.valueOf(fadsAndTrackers));
                     // Set HTTPS Upgrades count
                     menuItemView = list.getChildAt(4);
                     if (null == menuItemView) {
                         return;
                     }
-                    menuText = (TextView) menuItemView.findViewById(R.id.menu_item_text);
-                    menuText.setText(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(menuText.getText().toString(), fhttpsUpgrades, mHTTPSUpgradesCountColor)));
+                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                    menuText.setText(String.valueOf(fhttpsUpgrades));
                     // Set Scripts Blocked count
                     menuItemView = list.getChildAt(5);
                     if (null == menuItemView) {
                         return;
                     }
-                    menuText = (TextView) menuItemView.findViewById(R.id.menu_item_text);
-                    menuText.setText(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(menuText.getText().toString(), fscriptsBlocked, mScripsBlockedCountColor)));
+                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                    menuText.setText(String.valueOf(fscriptsBlocked));
                     // Set Fingerprints Blocked count
                     menuItemView = list.getChildAt(6);
                     if (null == menuItemView) {
                         return;
                     }
-                    menuText = (TextView) menuItemView.findViewById(R.id.menu_item_text);
-                    menuText.setText(Html.fromHtml(BraveShieldsMenuAdapter.addUpdateCounts(menuText.getText().toString(), ffingerprintsBlocked, mFingerprintsBlockedCountColor)));
+                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                    menuText.setText(String.valueOf(ffingerprintsBlocked));
                 }
                 catch (NullPointerException exc) {
                     // It means that the Bravery Panel was destroyed during the update, we just do nothing

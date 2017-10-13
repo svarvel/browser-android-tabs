@@ -36,9 +36,9 @@
         <item name="android:textColorHighlight">@color/text_highlight_color</item>
 
         <!-- Color of checkboxes, switches, buttons, etc. -->
-        <item name="colorAccent">@color/light_active_color</item>
+        <item name="colorAccent">@color/brave_theme_color</item>
         <item name="colorControlNormal">@color/control_normal_color</item>
-        <item name="colorControlActivated">@color/light_active_color</item>
+        <item name="colorControlActivated">@color/brave_theme_color</item>
         <item name="colorControlHighlight">@color/control_highlight_color</item>
 
         <!-- Spinner styles -->
@@ -893,4 +893,20 @@
         <item name="android:layout_height">@dimen/omnibox_suggestion_edit_url_min_height</item>
         <item name="tint">@color/default_icon_color</item>
     </style>
+<<<<<<< HEAD
+=======
+
+    <!-- Trusted Web Activities -->
+    <style name="ClearDataDialogActivityTheme" parent="FullscreenTransparentActivityTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Switch theme -->
+    <style name="SwitchTheme">
+        <item name="colorControlActivated">@color/brave_theme_color</item>
+    </style>
+>>>>>>> 64f3715bb01... UI changes
 </resources>
