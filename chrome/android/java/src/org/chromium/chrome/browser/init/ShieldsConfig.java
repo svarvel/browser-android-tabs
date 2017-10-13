@@ -115,7 +115,7 @@ public class ShieldsConfig {
     }
 
     private String composeSettings(boolean isTopShieldsEnabled, boolean blockAdsAndTracking,
-    boolean isHTTPSEverywhereEnabled, boolean isJavaScriptEnabled,
+    boolean isHTTPSEverywhereEnabled, boolean isJavaScriptBlocked/*aka JS block switch enabled*/,
     boolean block3rdPartyCookies, boolean blockFingerprints) {
       String settings = "";
       if (isTopShieldsEnabled) {
@@ -136,7 +136,7 @@ public class ShieldsConfig {
       else {
         settings = settings + "0,";
       }
-      if (isJavaScriptEnabled) {
+      if (isJavaScriptBlocked) {
         settings = settings + "1,";
       }
       else {
@@ -158,9 +158,7 @@ public class ShieldsConfig {
     }
 
     public void setTopHost(String host, boolean enabled) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
             String settings = getHostSettings(host);
@@ -172,7 +170,7 @@ public class ShieldsConfig {
                 }
             } else {
                 settings = composeSettings(enabled, blockAdsAndTracking(host),
-                isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
                 block3rdPartyCookies(host), blockFingerprints(host));
             }
             settings = correctSettings(settings);
@@ -185,9 +183,7 @@ public class ShieldsConfig {
     }
 
     public void setAdsAndTracking(String host, boolean enabled) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
             String settings = getHostSettings(host);
@@ -199,7 +195,7 @@ public class ShieldsConfig {
                 }
             } else {
                 settings = composeSettings(isTopShieldsEnabled(host), enabled,
-                isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
                 block3rdPartyCookies(host), blockFingerprints(host));
             }
             settings = correctSettings(settings);
@@ -212,9 +208,7 @@ public class ShieldsConfig {
     }
 
     public void setHTTPSEverywhere(String host, boolean enabled) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
             String settings = getHostSettings(host);
@@ -226,7 +220,7 @@ public class ShieldsConfig {
                 }
             } else {
                 settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-                enabled, isJavaScriptEnabled(host),
+                enabled, isJavaScriptBlocked(host),
                 block3rdPartyCookies(host), blockFingerprints(host));
             }
             settings = correctSettings(settings);
@@ -239,18 +233,32 @@ public class ShieldsConfig {
     }
 
     public void setJavaScriptBlock(String host, boolean block, boolean fromTopShields) {
+        String hostForAccessMap = CutWwwPrefix(host);
+
         ContentSetting setting = ContentSetting.ALLOW;
-        if (block) {
+        if (block && !fromTopShields) {
             setting = ContentSetting.BLOCK;
         }
 
-        if (block && fromTopShields) {
-            String settings = getHostSettings(host);
+        if (fromTopShields) {
+          //when change comes from Top Shields:
+          // in anyway do not touch hostSettings string
+          // block is false => we should allow js
+          // block is true => we should switch js back according to hostSettings string
+          if (!block) {
+            setting = ContentSetting.ALLOW;
+          } else {
+            boolean allowJsFromBraveHostSettings = true;//safe dafault
+            String settings = getHostSettings(hostForAccessMap);
+
             if (null == settings
               || 0 == settings.length()
-              || (settings.length() > 7 && '0' == settings.charAt(6))) {
-                return;
+              || (settings.length() > 7 && '1' == settings.charAt(6))) {
+                //'1' means Block Scripts switch is on
+                allowJsFromBraveHostSettings = false;
             }
+            setting = allowJsFromBraveHostSettings ? ContentSetting.ALLOW : ContentSetting.BLOCK;
+          }
         }
 
         PrefServiceBridge.getInstance().nativeSetContentSettingForPattern(
@@ -259,7 +267,7 @@ public class ShieldsConfig {
         if (!fromTopShields) {
             try {
                 mLock.writeLock().lock();
-                String settings = getHostSettings(host);
+                String settings = getHostSettings(hostForAccessMap);
                 if (settings.length() > 7) {
                     if (!block) {
                         settings = settings.substring(0, 6) + "0" + settings.substring(7);
@@ -272,7 +280,7 @@ public class ShieldsConfig {
                     block3rdPartyCookies(host), blockFingerprints(host));
                 }
                 settings = correctSettings(settings);
-                mSettings.put(host, settings);
+                mSettings.put(hostForAccessMap, settings);
             }
             finally {
                 mLock.writeLock().unlock();
@@ -282,9 +290,7 @@ public class ShieldsConfig {
     }
 
     public void setBlock3rdPartyCookies(String host, boolean enabled) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
             String settings = getHostSettings(host);
@@ -296,7 +302,7 @@ public class ShieldsConfig {
                 }
             } else {
                 settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-                isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
                 enabled, blockFingerprints(host));
             }
             settings = correctSettings(settings);
@@ -356,20 +362,23 @@ public class ShieldsConfig {
         return true;
     }
 
+    public boolean isJavaScriptBlocked(String host) {
+      return !isJavaScriptEnabled(host);
+    }
+
     public boolean isJavaScriptEnabled(String host) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         List<ContentSettingException> exceptions =
             WebsitePreferenceBridge.getContentSettingsExceptions(ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT);
+
         for (ContentSettingException exception : exceptions) {
             String pattern = exception.getPattern();
-            if (null != pattern && pattern.startsWith("www.")) {
-                pattern = pattern.substring("www.".length());
-            }
+
+            pattern = CutWwwPrefix(pattern);
             if (!pattern.equals(host)) {
                 continue;
             }
+
             if (ContentSetting.ALLOW == exception.getContentSetting()) {
                 return true;
             } else {
@@ -409,9 +418,7 @@ public class ShieldsConfig {
     }
 
     public void setBlockFingerprints(String host, boolean block) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
             String settings = getHostSettings(host);
@@ -423,7 +430,7 @@ public class ShieldsConfig {
                 }
             } else {
               settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-              isHTTPSEverywhereEnabled(host), isJavaScriptEnabled(host),
+              isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
               block3rdPartyCookies(host), block);
             }
             settings = correctSettings(settings);
@@ -473,15 +480,20 @@ public class ShieldsConfig {
         }
     }
 
+    private static String CutWwwPrefix(String host) {
+      if (null != host && host.startsWith("www.")) {
+          host = host.substring("www.".length());
+      }
+      return host;
+    }
+
     public void setTabModelSelectorTabObserver(TabModelSelectorTabObserver tabModelSelectorTabObserver) {
         mTabModelSelectorTabObserver = tabModelSelectorTabObserver;
     }
 
     @CalledByNative
     public String getHostSettings(String host) {
-        if (null != host && host.startsWith("www.")) {
-            host = host.substring("www.".length());
-        }
+        host = CutWwwPrefix(host);
         try {
             mLock.readLock().lock();
 
