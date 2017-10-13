@@ -267,7 +267,7 @@
     <style name="OverflowMenuTheme" parent="Theme.AppCompat.Light">
         <item name="android:popupBackground">@null</item>
         <item name="android:listDivider">@null</item>
-        <item name="android:listPreferredItemHeightSmall">46dp</item>
+        <item name="android:listPreferredItemHeightSmall">48dp</item>
         <item name="android:textAppearance">@style/BlackTitle1</item>
         <item name="colorControlHighlight">@color/control_highlight_color</item>
     </style>
