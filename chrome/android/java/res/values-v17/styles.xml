@@ -209,7 +209,7 @@
         <!-- Status bar color -->
         <item name="colorPrimaryDark">@android:color/black</item>
         <!-- Color of checkboxes, switches, buttons, etc. -->
-        <item name="colorAccent">@color/pref_accent_color</item>
+        <item name="colorAccent">@color/brave_theme_color</item>
         <item name="colorControlHighlight">@color/control_highlight_color</item>
         <item name="spinnerStyle">@style/SpinnerStyle</item>
     </style>
@@ -267,7 +267,7 @@
     <style name="OverflowMenuTheme" parent="Theme.AppCompat.Light">
         <item name="android:popupBackground">@null</item>
         <item name="android:listDivider">@null</item>
-        <item name="android:listPreferredItemHeightSmall">48dp</item>
+        <item name="android:listPreferredItemHeightSmall">46dp</item>
         <item name="android:textAppearance">@style/BlackTitle1</item>
         <item name="colorControlHighlight">@color/control_highlight_color</item>
     </style>
@@ -789,5 +789,10 @@
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
         <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!-- Switch theme -->
+    <style name="SwitchTheme">
+        <item name="colorControlActivated">@color/brave_theme_color</item>
     </style>
 </resources>

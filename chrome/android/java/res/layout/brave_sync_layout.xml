@@ -25,13 +25,15 @@
             android:textStyle="bold"
             android:padding="5dip" />
 
-        <Switch android:id="@+id/sync_switch_control"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:padding="5dip"
-           android:defaultValue="false"
-           android:gravity="end"
-           android:layout_weight="1" />
+        <Switch
+            android:id="@+id/sync_switch_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:defaultValue="false"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:theme="@style/SwitchTheme" />
     </LinearLayout>
 
     <Button android:id="@+id/reset_sync"
