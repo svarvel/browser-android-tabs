@@ -4,7 +4,7 @@
 
 ### System Requirements
 
-- Any Linux Version
+- OS Linux, Ubuntu is completely supported. Other distros may or may not work
 - Make sure you have enough swapspace available
 - [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab)
 - [ninja](https://ninja-build.org/)
