@@ -1,3 +1,11 @@
+<release version="1.0.35">
+    <change>Added always Desktop Mode option(Settings->Site settings->Desktop Mode).</change>
+    <change>Added DuckDuckGo Lite search engine.</change>
+    <change>Fixed HTTPSE on incognito tabs.</change>
+    <change>Corrected websites geolocation request.</change>
+    <change>Updated main icon.</change>
+    <change>Improved websites filtering.</change>
+</release>
 <release version="1.0.33">
     <change>Updated to Chromium 61.0.3163.98.</change>
     <change>Fixed shields counter for several languages.</change>
