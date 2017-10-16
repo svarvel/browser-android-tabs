@@ -6,7 +6,7 @@
 
 - OS Linux, Ubuntu is completely supported. Other distros may or may not work
 - Make sure you have enough swapspace available
-- [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab)
+- [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab) (including Node, it is required for ubuntu 17.04 as well)
 - [ninja](https://ninja-build.org/)
 
 ### Preparing the Build Environment
@@ -35,9 +35,9 @@
 
    `cd src`
 
-7. Execute the `scripts/getThirdParties.js` script under a root account:
+7. Execute the `scripts/getThirdParties.js` script:
 
-   `sudo sh scripts/getThirdParties.js`
+   `sh scripts/getThirdParties.js`
 
 8. Enter information as requested by the script. When asked to create a file for arguments, use [this gn file](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug).
 
