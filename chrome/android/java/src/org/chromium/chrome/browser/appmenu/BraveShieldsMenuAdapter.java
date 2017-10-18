@@ -296,9 +296,10 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         }
                     } else {
                         convertView = mInflater.inflate(R.layout.menu_item, parent, false);
+                        holder.text = (TextView) convertView.findViewById(R.id.menu_item_text);
+                        holder.image = (AppMenuItemIcon) convertView.findViewById(R.id.menu_item_icon);
+                        convertView.setTag(holder);
                     }
-                    holder.text = (TextView) convertView.findViewById(R.id.menu_item_text);
-                    holder.image = (AppMenuItemIcon) convertView.findViewById(R.id.menu_item_icon);
                     convertView.setTag(R.id.menu_item_enter_anim_id,
                             buildStandardItemEnterAnimator(convertView, position));
 

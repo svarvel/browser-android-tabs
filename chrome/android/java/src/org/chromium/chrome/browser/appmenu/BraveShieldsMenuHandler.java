@@ -151,39 +151,16 @@ public class BraveShieldsMenuHandler {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         for (int i = 0; i < numItems; ++i) {
             MenuItem item = mMenu.getItem(i);
-            RelativeLayout menuItemView = (RelativeLayout)item.getActionView();
-            if (menuItemView != null) {
-                if (1 == i) {
-                    item.setTitle(host);
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_text);
-                    if (menuText != null) {
-                        menuText.setText(host);
-                    }
-                } else if (3 == i) {
-                    item.setTitle(String.valueOf(adsAndTrackers));
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    if (menuText != null) {
-                        menuText.setText(String.valueOf(adsAndTrackers));
-                    }
-                } else if (4 == i) {
-                    item.setTitle(String.valueOf(httpsUpgrades));
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    if (menuText != null) {
-                        menuText.setText(String.valueOf(httpsUpgrades));
-                    }
-                } else if (5 == i) {
-                    item.setTitle(String.valueOf(scriptsBlocked));
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    if (menuText != null) {
-                        menuText.setText(String.valueOf(scriptsBlocked));
-                    }
-                } else if (6 == i) {
-                    item.setTitle(String.valueOf(fingerprintsBlocked));
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    if (menuText != null) {
-                        menuText.setText(String.valueOf(fingerprintsBlocked));
-                    }
-                }
+            if (1 == i) {
+                item.setTitle(host);
+            } else if (3 == i) {
+                item.setTitle(String.valueOf(adsAndTrackers));
+            } else if (4 == i) {
+                item.setTitle(String.valueOf(httpsUpgrades));
+            } else if (5 == i) {
+                item.setTitle(String.valueOf(scriptsBlocked));
+            } else if (6 == i) {
+                item.setTitle(String.valueOf(fingerprintsBlocked));
             }
             menuItems.add(item);
         }
