@@ -32,7 +32,7 @@
         @color/white_alpha_38
     </color>
     <color name="default_icon_color_blue" tools:ignore="UnusedResources">
-        @color/modern_blue_600
+        @color/brave_theme_color
     </color>
     <color name="light_icon_color" tools:ignore="UnusedResources">@color/modern_grey_500</color>
     <color name="hairline_stroke_color">@color/modern_grey_300</color>
