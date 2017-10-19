@@ -226,6 +226,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         if (number != null) {
                             number.setTextColor(Color.parseColor(ADS_AND_TRACKERS_COLOR));
                             number.setText(getItem(3).getTitle());
+                            number.setTag(R.string.brave_shields_ads_and_trackers);
                         }
                     } else if (4 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
@@ -237,6 +238,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         if (number != null) {
                             number.setTextColor(Color.parseColor(HTTPS_UPDATES_COLOR));
                             number.setText(getItem(4).getTitle());
+                            number.setTag(R.string.brave_shields_https_upgrades);
                         }
                     } else if (5 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
@@ -248,6 +250,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         if (number != null) {
                             number.setTextColor(Color.parseColor(SCRIPTS_BLOCKED_COLOR));
                             number.setText(getItem(5).getTitle());
+                            number.setTag(R.string.brave_shields_scripts_blocked);
                         }
                     } else if (6 == position) {
                         convertView = mInflater.inflate(R.layout.brave_shields_menu_item, parent, false);
@@ -259,6 +262,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
                         if (number != null) {
                             number.setTextColor(Color.parseColor(FINGERPRINTS_BLOCKED_COLOR));
                             number.setText(getItem(6).getTitle());
+                            number.setTag(R.string.brave_shields_fingerprint_methods);
                         }
                     } else if (7 == position) {
                         convertView = mInflater.inflate(R.layout.menu_separator, parent, false);
