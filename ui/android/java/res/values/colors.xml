@@ -15,7 +15,7 @@
     <!-- Common icon colors for drawables. -->
     <color name="default_icon_color" tools:ignore="UnusedResources">@color/modern_grey_800</color>
     <color name="default_icon_color_blue" tools:ignore="UnusedResources">
-        @color/modern_blue_600
+        @color/brave_theme_color
     </color>
     <color name="default_icon_color_white" tools:ignore="UnusedResources">
         @android:color/white

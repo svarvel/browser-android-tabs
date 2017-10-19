@@ -226,34 +226,29 @@ public class BraveShieldsMenuHandler {
                     if (null == list || list.getChildCount() < 7) {
                         return;
                     }
-                    // Set Ads and Trackers count
-                    View menuItemView = list.getChildAt(3);
-                    if (null == menuItemView) {
-                        return;
+                    for (int i = 0; i < list.getChildCount(); i++) {
+                        View menuItemView = list.getChildAt(i);
+                        if (null == menuItemView) {
+                            continue;
+                        }
+                        TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
+                        if (null == menuText || null == menuText.getTag()) {
+                            continue;
+                        }
+                        if ((int)menuText.getTag() == R.string.brave_shields_ads_and_trackers) {
+                            // Set Ads and Trackers count
+                            menuText.setText(String.valueOf(fadsAndTrackers));
+                        } else if ((int)menuText.getTag() == R.string.brave_shields_https_upgrades) {
+                            // Set HTTPS Upgrades count
+                            menuText.setText(String.valueOf(fhttpsUpgrades));
+                        } else if ((int)menuText.getTag() == R.string.brave_shields_scripts_blocked) {
+                            // Set Scripts Blocked count
+                            menuText.setText(String.valueOf(fscriptsBlocked));
+                        } else if ((int)menuText.getTag() == R.string.brave_shields_fingerprint_methods) {
+                            // Set Fingerprints Blocked count
+                            menuText.setText(String.valueOf(ffingerprintsBlocked));
+                        }
                     }
-                    TextView menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    menuText.setText(String.valueOf(fadsAndTrackers));
-                    // Set HTTPS Upgrades count
-                    menuItemView = list.getChildAt(4);
-                    if (null == menuItemView) {
-                        return;
-                    }
-                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    menuText.setText(String.valueOf(fhttpsUpgrades));
-                    // Set Scripts Blocked count
-                    menuItemView = list.getChildAt(5);
-                    if (null == menuItemView) {
-                        return;
-                    }
-                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    menuText.setText(String.valueOf(fscriptsBlocked));
-                    // Set Fingerprints Blocked count
-                    menuItemView = list.getChildAt(6);
-                    if (null == menuItemView) {
-                        return;
-                    }
-                    menuText = (TextView) menuItemView.findViewById(R.id.brave_shields_number);
-                    menuText.setText(String.valueOf(ffingerprintsBlocked));
                 }
                 catch (NullPointerException exc) {
                     // It means that the Bravery Panel was destroyed during the update, we just do nothing
