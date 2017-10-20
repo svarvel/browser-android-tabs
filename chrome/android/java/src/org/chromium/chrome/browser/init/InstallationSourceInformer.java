@@ -16,21 +16,15 @@ public class InstallationSourceInformer {
   private static final String PREF_MIXPANEL_INSTALL_SOURCE_INFORMED = "mixpanel_installation_source_informed";
 
   public static void InformFromOther() {
-    //Disabled until we not ensured InformFromPromo works well
-    //Inform("Others");
-    Log.i("TAG", "InstallationSourceInformer.InformFromOther skip send info");
+    Inform("Others");
   }
 
   public static void InformFromPlayMarket() {
-    //Disabled until we not ensured InformFromPromo works well
-    //Inform("Google Play");
-    Log.i("TAG", "InstallationSourceInformer.InformFromPlayMarket skip send info");
+    Inform("Google Play");
   }
 
   public static void InformFromPromo() {
-    //Disabled because event receiver doesn't work yet
-    //Inform("Promo");
-    Log.i("TAG", "InstallationSourceInformer.InformFromPromo skip send info");
+    Inform("Promo");
   }
 
   private static synchronized void Inform(String sourceName) {

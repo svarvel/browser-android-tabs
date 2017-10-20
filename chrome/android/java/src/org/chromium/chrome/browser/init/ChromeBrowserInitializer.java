@@ -142,15 +142,14 @@ public class ChromeBrowserInitializer {
       new UpdateStatsAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
-    // disabled for now
-    // private void CheckInstallationSource() {
-    //   if (mInstallationSourceChecked) {
-    //     return;
-    //   }
-    //
-    //   mInstallationSourceChecked = true;
-    //   new CheckInstallationSourceAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-    // }
+    private void CheckInstallationSource() {
+      if (mInstallationSourceChecked) {
+        return;
+      }
+
+      mInstallationSourceChecked = true;
+      new CheckInstallationSourceAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 
     // Stats update
     class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
@@ -180,33 +179,32 @@ public class ChromeBrowserInitializer {
         }
     }
 
-    // disabled for now
-    // class CheckInstallationSourceAsyncTask extends AsyncTask<Void,Void,Long> {
-    //    protected Long doInBackground(Void... params) {
-    //        try {
-    //          Context context = mApplication.getApplicationContext();
-    //          // A list with valid installers package name
-    //          List<String> validInstallers = new ArrayList<>(Arrays.asList("com.android.vending", "com.google.android.feedback"));
-    //
-    //          // The package name of the app that has installed your app
-    //          final String installer = context.getPackageManager().getInstallerPackageName(context.getPackageName());
-    //          Log.i(TAG, "Installation source detection, installer=" + installer);
-    //
-    //          // true if your app has been downloaded from Play Store
-    //          boolean fromPlayStore = installer != null && validInstallers.contains(installer);
-    //          Log.i(TAG, "Installation source detection, fromPlayStore="+fromPlayStore);
-    //          if (!fromPlayStore) {
-    //            InstallationSourceInformer.InformFromOther();
-    //          }
-    //        }
-    //        catch(Exception exc) {
-    //            // not critical
-    //            Log.i(TAG, "Installation source detection: ex " + exc);
-    //        }
-    //
-    //        return null;
-    //    }
-    //}
+    class CheckInstallationSourceAsyncTask extends AsyncTask<Void,Void,Long> {
+       protected Long doInBackground(Void... params) {
+           try {
+             Context context = mApplication.getApplicationContext();
+             // A list with valid installers package name
+             List<String> validInstallers = new ArrayList<>(Arrays.asList("com.android.vending", "com.google.android.feedback"));
+
+             // The package name of the app that has installed your app
+             final String installer = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+             Log.i(TAG, "Installation source detection, installer=" + installer);
+
+             // true if your app has been downloaded from Play Store
+             boolean fromPlayStore = installer != null && validInstallers.contains(installer);
+             Log.i(TAG, "Installation source detection, fromPlayStore="+fromPlayStore);
+             if (!fromPlayStore) {
+               InstallationSourceInformer.InformFromOther();
+             }
+           }
+           catch(Exception exc) {
+               // not critical
+               Log.i(TAG, "Installation source detection: ex " + exc);
+           }
+
+           return null;
+       }
+    }
 
     // Tracking protection data download
     private void DownloadTrackingProtectionData() {
@@ -638,7 +636,7 @@ public class ChromeBrowserInitializer {
 
         InitAdBlock();
         UpdateStats();
-        //CheckInstallationSource();// disabled for now
+        CheckInstallationSource();
     }
 
     private ActivityStateListener createActivityStateListener() {
