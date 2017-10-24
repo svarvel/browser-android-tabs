@@ -93,7 +93,8 @@ class CookiesTreeModelTest : public testing::Test {
         new content_settings::CookieSettings(
             HostContentSettingsMapFactory::GetForProfile(profile_.get()),
             profile_->GetPrefs(),
-            kExtensionScheme);
+            kExtensionScheme,
+            false);
 #if BUILDFLAG(ENABLE_EXTENSIONS)
     special_storage_policy_ =
         new ExtensionSpecialStoragePolicy(cookie_settings.get());

@@ -105,6 +105,8 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   void set_blockers_worker(
         std::shared_ptr<net::blockers::BlockersWorker> blockers_worker);
 
+  void set_incognito(const bool &incognito);
+
   // Binds the pref members to |pref_service| and moves them to the IO thread.
   // All arguments can be nullptr. This method should be called on the UI
   // thread.
@@ -259,6 +261,8 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   GURL last_first_party_url_;
 
   std::auto_ptr<PendingRequests> pending_requests_;
+
+  bool incognito_;
 
   DISALLOW_COPY_AND_ASSIGN(ChromeNetworkDelegate);
 };

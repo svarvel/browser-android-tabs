@@ -18,12 +18,12 @@ ShieldsConfig::ShieldsConfig(JNIEnv* env, jobject obj):
 ShieldsConfig::~ShieldsConfig() {
 }
 
-std::string ShieldsConfig::getHostSettings(const std::string& host) {
+std::string ShieldsConfig::getHostSettings(const bool &incognitoTab, const std::string& host) {
   JNIEnv* env = base::android::AttachCurrentThread();
   base::android::ScopedJavaLocalRef<jstring> jhost(base::android::ConvertUTF8ToJavaString(env, host));
   return base::android::ConvertJavaStringToUTF8(
     Java_ShieldsConfig_getHostSettings(env, weak_java_shields_config_.get(env),
-    jhost));
+    incognitoTab, jhost));
 }
 
 void ShieldsConfig::setBlockedCountInfo(const std::string& url, int trackersBlocked, int adsBlocked, int httpsUpgrades,

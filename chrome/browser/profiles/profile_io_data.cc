@@ -956,6 +956,7 @@ void ProfileIOData::Init(
     chrome_network_delegate->set_enable_ad_block(&enable_ad_block_);
     chrome_network_delegate->set_enable_ad_block_regional(&enable_ad_block_regional_);
     chrome_network_delegate->set_blockers_worker(io_thread_globals->blockers_worker_);
+    chrome_network_delegate->set_incognito(profile_type() == Profile::INCOGNITO_PROFILE);
 
     chrome_network_delegate_unowned_ = chrome_network_delegate.get();
 
