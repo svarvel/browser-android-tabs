@@ -721,10 +721,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
     }
 
-    protected void setBraveShieldsColor(String url) {
+    protected void setBraveShieldsColor(boolean incognitoTab, String url) {
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
-            if (app.getShieldsConfig().isTopShieldsEnabled(url)) {
+            if (app.getShieldsConfig().isTopShieldsEnabled(incognitoTab, url)) {
                 // Set Brave Shields button in color if we have a valid URL
                 setBraveShieldsColored();
             } else {
@@ -2394,7 +2394,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         } else if (id == R.id.request_desktop_site_id || id == R.id.request_desktop_site_check_id) {
             final boolean reloadOnChange = !currentTab.isNativePage();
             final boolean usingDesktopUserAgent = currentTab.getUseDesktopUserAgent();
-            currentTab.setDesktopModeOverridenByTab(true); 
+            currentTab.setDesktopModeOverridenByTab(true);
             currentTab.setUseDesktopUserAgent(!usingDesktopUserAgent, reloadOnChange);
             RecordUserAction.record("MobileMenuRequestDesktopSite");
         } else if (id == R.id.reader_mode_prefs_id) {

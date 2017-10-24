@@ -16,7 +16,7 @@ public:
     ShieldsConfig(JNIEnv* env, jobject obj);
     ~ShieldsConfig();
 
-    std::string getHostSettings(const std::string& host);
+    std::string getHostSettings(const bool &incognitoTab, const std::string& host);
     void setBlockedCountInfo(const std::string& url, int trackersBlocked, int adsBlocked, int httpsUpgrades,
             int scriptsBlocked, int fingerprintingBlocked);
 

@@ -173,7 +173,9 @@ void ChromeRenderMessageFilter::OnContentAllowFingerprinting(int render_frame_id
     net::blockers::ShieldsConfig* shieldsConfig =
       net::blockers::ShieldsConfig::getShieldsConfig();
     if (nullptr != shieldsConfig) {
-      std::string hostConfig = shieldsConfig->getHostSettings(original_host);
+      const bool incognitoTab = (profile_ != nullptr &&
+        profile_->GetProfileType() == Profile::INCOGNITO_PROFILE) ? true : false;
+      std::string hostConfig = shieldsConfig->getHostSettings(incognitoTab, original_host);
       // The fingerprinting flag is on position 10
       if (hostConfig.length() >= 11) {
         bool isGlobalBlockEnabled = true;

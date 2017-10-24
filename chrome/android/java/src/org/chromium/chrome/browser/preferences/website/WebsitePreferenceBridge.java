@@ -163,6 +163,15 @@ public abstract class WebsitePreferenceBridge {
         return managedExceptions;
     }
 
+    public static List<ContentSettingException> getContentSettingsExceptionsIncognito(
+            int contentSettingsType) {
+        List<ContentSettingException> exceptions =
+                PrefServiceBridge.getInstance().getContentSettingsExceptionsIncognito(
+                        contentSettingsType);
+
+        return exceptions;
+    }
+
     public static void fetchLocalStorageInfo(Callback<HashMap> callback, boolean fetchImportant) {
         nativeFetchLocalStorageInfo(callback, fetchImportant);
     }
