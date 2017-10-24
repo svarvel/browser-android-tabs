@@ -336,6 +336,7 @@ void IOThread::ConstructSystemRequestContext() {
 
     auto chrome_network_delegate = std::make_unique<ChromeNetworkDelegate>(
         extension_event_router_forwarder());
+    chrome_network_delegate->set_incognito(false);
     chrome_network_delegate->set_blockers_worker(globals_->blockers_worker_);
     builder->set_network_delegate(
         globals_->data_use_ascriber->CreateNetworkDelegate(

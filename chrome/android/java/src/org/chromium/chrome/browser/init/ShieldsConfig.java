@@ -43,6 +43,7 @@ public class ShieldsConfig {
     // We handle JavaScript blocking by internal implementation of Chromium, but save the state here also
     private static final String ALL_SHIELDS_DEFAULT_MASK = "1,1,1,0,1,0";
     private HashMap<String, String> mSettings = new HashMap<String, String>();
+    private HashMap<String, String> mSettingsIncognito = new HashMap<String, String>();
     private ReentrantReadWriteLock mLock = new ReentrantReadWriteLock();
     private Context mContext = null;
     private TabModelSelectorTabObserver mTabModelSelectorTabObserver;
@@ -157,11 +158,11 @@ public class ShieldsConfig {
       return settings;
     }
 
-    public void setTopHost(String host, boolean enabled) {
+    public void setTopHost(boolean incognitoTab, String host, boolean enabled) {
         host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
-            String settings = getHostSettings(host);
+            String settings = getHostSettings(incognitoTab, host);
             if (settings.length() > 1) {
                 if (!enabled) {
                     settings = "0" + settings.substring(1);
@@ -169,24 +170,30 @@ public class ShieldsConfig {
                     settings = "1" + settings.substring(1);
                 }
             } else {
-                settings = composeSettings(enabled, blockAdsAndTracking(host),
-                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
-                block3rdPartyCookies(host), blockFingerprints(host));
+                settings = composeSettings(enabled, blockAdsAndTracking(incognitoTab, host),
+                isHTTPSEverywhereEnabled(incognitoTab, host), isJavaScriptBlocked(incognitoTab, host),
+                block3rdPartyCookies(incognitoTab, host), blockFingerprints(incognitoTab, host));
             }
             settings = correctSettings(settings);
-            mSettings.put(host, settings);
+            if (!incognitoTab) {
+                mSettings.put(host, settings);
+            } else {
+                mSettingsIncognito.put(host, settings);
+            }
         }
         finally {
             mLock.writeLock().unlock();
         }
-        new SaveDataAsyncTask().execute();
+        if (!incognitoTab) {
+            new SaveDataAsyncTask().execute();
+        }
     }
 
-    public void setAdsAndTracking(String host, boolean enabled) {
+    public void setAdsAndTracking(boolean incognitoTab, String host, boolean enabled) {
         host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
-            String settings = getHostSettings(host);
+            String settings = getHostSettings(incognitoTab, host);
             if (settings.length() > 3) {
                 if (!enabled) {
                     settings = settings.substring(0, 2) + "0" + settings.substring(3);
@@ -194,24 +201,30 @@ public class ShieldsConfig {
                     settings = settings.substring(0, 2) + "1" + settings.substring(3);
                 }
             } else {
-                settings = composeSettings(isTopShieldsEnabled(host), enabled,
-                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
-                block3rdPartyCookies(host), blockFingerprints(host));
+                settings = composeSettings(isTopShieldsEnabled(incognitoTab, host), enabled,
+                isHTTPSEverywhereEnabled(incognitoTab, host), isJavaScriptBlocked(incognitoTab, host),
+                block3rdPartyCookies(incognitoTab, host), blockFingerprints(incognitoTab, host));
             }
             settings = correctSettings(settings);
-            mSettings.put(host, settings);
+            if (incognitoTab) {
+                mSettingsIncognito.put(host, settings);
+            } else {
+                mSettings.put(host, settings);
+            }
         }
         finally {
             mLock.writeLock().unlock();
         }
-        new SaveDataAsyncTask().execute();
+        if (!incognitoTab) {
+            new SaveDataAsyncTask().execute();
+        }
     }
 
-    public void setHTTPSEverywhere(String host, boolean enabled) {
+    public void setHTTPSEverywhere(boolean incognitoTab, String host, boolean enabled) {
         host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
-            String settings = getHostSettings(host);
+            String settings = getHostSettings(incognitoTab, host);
             if (settings.length() > 5) {
                 if (!enabled) {
                     settings = settings.substring(0, 4) + "0" + settings.substring(5);
@@ -219,20 +232,26 @@ public class ShieldsConfig {
                     settings = settings.substring(0, 4) + "1" + settings.substring(5);
                 }
             } else {
-                settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-                enabled, isJavaScriptBlocked(host),
-                block3rdPartyCookies(host), blockFingerprints(host));
+                settings = composeSettings(isTopShieldsEnabled(incognitoTab, host), blockAdsAndTracking(incognitoTab, host),
+                enabled, isJavaScriptBlocked(incognitoTab, host),
+                block3rdPartyCookies(incognitoTab, host), blockFingerprints(incognitoTab, host));
             }
             settings = correctSettings(settings);
-            mSettings.put(host, settings);
+            if (incognitoTab) {
+                mSettingsIncognito.put(host, settings);
+            } else {
+                mSettings.put(host, settings);
+            }
         }
         finally {
             mLock.writeLock().unlock();
         }
-        new SaveDataAsyncTask().execute();
+        if (!incognitoTab) {
+            new SaveDataAsyncTask().execute();
+        }
     }
 
-    public void setJavaScriptBlock(String host, boolean block, boolean fromTopShields) {
+    public void setJavaScriptBlock(boolean incognitoTab, String host, boolean block, boolean fromTopShields) {
         String hostForAccessMap = CutWwwPrefix(host);
 
         ContentSetting setting = ContentSetting.ALLOW;
@@ -249,7 +268,7 @@ public class ShieldsConfig {
             setting = ContentSetting.ALLOW;
           } else {
             boolean allowJsFromBraveHostSettings = true;//safe dafault
-            String settings = getHostSettings(hostForAccessMap);
+            String settings = getHostSettings(incognitoTab, hostForAccessMap);
 
             if (null == settings
               || 0 == settings.length()
@@ -261,13 +280,20 @@ public class ShieldsConfig {
           }
         }
 
-        PrefServiceBridge.getInstance().nativeSetContentSettingForPattern(
-                    ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT, host,
-                    setting.toInt());
+        if (incognitoTab) {
+            PrefServiceBridge.getInstance().nativeSetContentSettingForPatternIncognito(
+                      ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT, host,
+                      setting.toInt());
+        } else {
+            PrefServiceBridge.getInstance().nativeSetContentSettingForPattern(
+                      ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT, host,
+                      setting.toInt());
+        }
+
         if (!fromTopShields) {
             try {
                 mLock.writeLock().lock();
-                String settings = getHostSettings(hostForAccessMap);
+                String settings = getHostSettings(incognitoTab, hostForAccessMap);
                 if (settings.length() > 7) {
                     if (!block) {
                         settings = settings.substring(0, 6) + "0" + settings.substring(7);
@@ -275,25 +301,31 @@ public class ShieldsConfig {
                         settings = settings.substring(0, 6) + "1" + settings.substring(7);
                     }
                 } else {
-                    settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-                    isHTTPSEverywhereEnabled(host), block,
-                    block3rdPartyCookies(host), blockFingerprints(host));
+                    settings = composeSettings(isTopShieldsEnabled(incognitoTab, host), blockAdsAndTracking(incognitoTab, host),
+                    isHTTPSEverywhereEnabled(incognitoTab, host), block,
+                    block3rdPartyCookies(incognitoTab, host), blockFingerprints(incognitoTab, host));
                 }
                 settings = correctSettings(settings);
-                mSettings.put(hostForAccessMap, settings);
+                if (incognitoTab) {
+                    mSettingsIncognito.put(hostForAccessMap, settings);
+                } else {
+                    mSettings.put(hostForAccessMap, settings);
+                }
             }
             finally {
                 mLock.writeLock().unlock();
             }
-            new SaveDataAsyncTask().execute();
+            if (!incognitoTab) {
+                new SaveDataAsyncTask().execute();
+            }
         }
     }
 
-    public void setBlock3rdPartyCookies(String host, boolean enabled) {
+    public void setBlock3rdPartyCookies(boolean incognitoTab, String host, boolean enabled) {
         host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
-            String settings = getHostSettings(host);
+            String settings = getHostSettings(incognitoTab, host);
             if (settings.length() > 7) {
                 if (!enabled) {
                     settings = settings.substring(0, 8) + "0" + settings.substring(9);
@@ -301,21 +333,27 @@ public class ShieldsConfig {
                     settings = settings.substring(0, 8) + "1" + settings.substring(9);
                 }
             } else {
-                settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-                isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
-                enabled, blockFingerprints(host));
+                settings = composeSettings(isTopShieldsEnabled(incognitoTab, host), blockAdsAndTracking(incognitoTab, host),
+                isHTTPSEverywhereEnabled(incognitoTab, host), isJavaScriptBlocked(incognitoTab, host),
+                enabled, blockFingerprints(incognitoTab, host));
             }
             settings = correctSettings(settings);
-            mSettings.put(host, settings);
+            if (incognitoTab) {
+                mSettingsIncognito.put(host, settings);
+            } else {
+                mSettings.put(host, settings);
+            }
         }
         finally {
             mLock.writeLock().unlock();
         }
-        new SaveDataAsyncTask().execute();
+        if (!incognitoTab) {
+            new SaveDataAsyncTask().execute();
+        }
     }
 
-    public boolean blockAdsAndTracking(String host) {
-        String settings = getHostSettings(host);
+    public boolean blockAdsAndTracking(boolean incognitoTab, String host) {
+        String settings = getHostSettings(incognitoTab, host);
         if (null == settings || settings.length() <= 2) {
             boolean prefAdBlockDefault = true;
             boolean prefAdBlock = mSharedPreferences.getBoolean(
@@ -333,8 +371,8 @@ public class ShieldsConfig {
         return true;
     }
 
-    public boolean block3rdPartyCookies(String host) {
-        String settings = getHostSettings(host);
+    public boolean block3rdPartyCookies(boolean incognitoTab, String host) {
+        String settings = getHostSettings(incognitoTab, host);
         if (null == settings || settings.length() <= 8) {
             return PrefServiceBridge.getInstance().isBlockThirdPartyCookiesEnabled();
         }
@@ -345,8 +383,8 @@ public class ShieldsConfig {
         return true;
     }
 
-    public boolean isHTTPSEverywhereEnabled(String host) {
-        String settings = getHostSettings(host);
+    public boolean isHTTPSEverywhereEnabled(boolean incognitoTab, String host) {
+        String settings = getHostSettings(incognitoTab, host);
         if (null == settings || settings.length() <= 5) {
             boolean prefHTTPSEDefault = true;
             boolean prefHTTPSE = mSharedPreferences.getBoolean(
@@ -362,13 +400,14 @@ public class ShieldsConfig {
         return true;
     }
 
-    public boolean isJavaScriptBlocked(String host) {
-      return !isJavaScriptEnabled(host);
+    public boolean isJavaScriptBlocked(boolean incognitoTab, String host) {
+      return !isJavaScriptEnabled(incognitoTab, host);
     }
 
-    public boolean isJavaScriptEnabled(String host) {
+    public boolean isJavaScriptEnabled(boolean incognitoTab, String host) {
         host = CutWwwPrefix(host);
-        List<ContentSettingException> exceptions =
+        List<ContentSettingException> exceptions = (incognitoTab)?
+            WebsitePreferenceBridge.getContentSettingsExceptionsIncognito(ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT):
             WebsitePreferenceBridge.getContentSettingsExceptions(ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT);
 
         for (ContentSettingException exception : exceptions) {
@@ -385,6 +424,12 @@ public class ShieldsConfig {
                 return false;
             }
         }
+
+        if (incognitoTab) {
+          //for incognito tab inherit settings from normal tab
+          return isJavaScriptEnabled(false, host);
+        }
+
         if (!PrefServiceBridge.getInstance().javaScriptEnabled()) {
             return false;
         }
@@ -392,8 +437,8 @@ public class ShieldsConfig {
         return true;
     }
 
-    public boolean isTopShieldsEnabled(String host) {
-        String settings = getHostSettings(host);
+    public boolean isTopShieldsEnabled(boolean incognitoTab, String host) {
+        String settings = getHostSettings(incognitoTab, host);
         if (null != settings && 0 != settings.length() && '0' == settings.charAt(0)) {
             return false;
         }
@@ -401,8 +446,8 @@ public class ShieldsConfig {
         return true;
     }
 
-    public boolean blockFingerprints(String host) {
-        String settings = getHostSettings(host);
+    public boolean blockFingerprints(boolean incognitoTab, String host) {
+        String settings = getHostSettings(incognitoTab, host);
         if (null == settings || settings.length() <= 10) {
             boolean prefFingerprintsDefault = false;
             boolean prefFingerprints = mSharedPreferences.getBoolean(
@@ -417,11 +462,11 @@ public class ShieldsConfig {
         return true;
     }
 
-    public void setBlockFingerprints(String host, boolean block) {
+    public void setBlockFingerprints(boolean incognitoTab, String host, boolean block) {
         host = CutWwwPrefix(host);
         try {
             mLock.writeLock().lock();
-            String settings = getHostSettings(host);
+            String settings = getHostSettings(incognitoTab, host);
             if (settings.length() > 10) {
                 if (!block) {
                     settings = settings.substring(0, 10) + "0";
@@ -429,17 +474,23 @@ public class ShieldsConfig {
                     settings = settings.substring(0, 10) + "1";
                 }
             } else {
-              settings = composeSettings(isTopShieldsEnabled(host), blockAdsAndTracking(host),
-              isHTTPSEverywhereEnabled(host), isJavaScriptBlocked(host),
-              block3rdPartyCookies(host), block);
+              settings = composeSettings(isTopShieldsEnabled(incognitoTab, host), blockAdsAndTracking(incognitoTab, host),
+              isHTTPSEverywhereEnabled(incognitoTab, host), isJavaScriptBlocked(incognitoTab, host),
+              block3rdPartyCookies(incognitoTab, host), block);
             }
             settings = correctSettings(settings);
-            mSettings.put(host, settings);
+            if (incognitoTab) {
+                mSettingsIncognito.put(host, settings);
+            } else {
+                mSettings.put(host, settings);
+            }
         }
         finally {
             mLock.writeLock().unlock();
         }
-        new SaveDataAsyncTask().execute();
+        if (!incognitoTab) {
+            new SaveDataAsyncTask().execute();
+        }
     }
 
     class SaveDataAsyncTask extends AsyncTask<Void,Void,Long> {
@@ -492,12 +543,15 @@ public class ShieldsConfig {
     }
 
     @CalledByNative
-    public String getHostSettings(String host) {
+    public String getHostSettings(boolean incognitoTab, String host) {
         host = CutWwwPrefix(host);
         try {
             mLock.readLock().lock();
 
-            String settings = mSettings.get(host);
+            String settings = incognitoTab ? mSettingsIncognito.get(host) : mSettings.get(host);
+            if (incognitoTab && null == settings) {
+                settings = mSettings.get(host);
+            }
             if (null != settings) {
                 return settings;
             }

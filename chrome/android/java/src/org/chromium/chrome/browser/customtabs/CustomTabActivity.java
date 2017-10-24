@@ -349,8 +349,9 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
                     try {
                         URL url = new URL(currentTab.getUrl());
 
-                        setBraveShieldsColor(url.getHost());
+                        setBraveShieldsColor(currentTab.isIncognito(), url.getHost());
                         getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
+                          , currentTab.isIncognito()
                           , url.getHost()
                           , currentTab.getAdsAndTrackers()
                           , currentTab.getHttpsUpgrades()
