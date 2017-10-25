@@ -200,6 +200,7 @@ namespace blockers {
         tp_white_list_.push_back("scontent-sjc2-1.xx.fbcdn.net");
         tp_white_list_.push_back("platform.twitter.com");
         tp_white_list_.push_back("syndication.twitter.com");
+        tp_white_list_.push_back("cdn.syndication.twimg.com");
 
         set_tp_initialized();
         return true;
@@ -373,7 +374,7 @@ namespace blockers {
 
     bool BlockersWorker::shouldTPBlockUrl(const std::string& base_host, const std::string& host) {
         if (!isTPInitialized()) {
-          return false;
+            return false;
         }
 
         if (!tp_parser_->matchesTracker(base_host.c_str(), host.c_str())) {
