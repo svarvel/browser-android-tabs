@@ -24,12 +24,12 @@ namespace blockers {
 
 struct HTTPSE_REDIRECTS_COUNT_ST {
 public:
-    HTTPSE_REDIRECTS_COUNT_ST(std::string url, unsigned int redirects):
-      url_(url),
+    HTTPSE_REDIRECTS_COUNT_ST(uint64_t request_identifier, unsigned int redirects):
+      request_identifier_(request_identifier),
       redirects_(redirects) {
     }
 
-    std::string url_;
+    uint64_t request_identifier_;
     unsigned int redirects_;
 };
 
@@ -41,8 +41,8 @@ public:
     bool shouldTPBlockUrl(const std::string& base_host, const std::string& host);
     bool shouldAdBlockUrl(const std::string& base_host, const std::string& url, unsigned int resource_type,
       bool isAdBlockRegionalEnabled);
-    std::string getHTTPSURLFromCacheOnly(const GURL* url);
-    std::string getHTTPSURL(const GURL* url);
+    std::string getHTTPSURLFromCacheOnly(const GURL* url, const uint64_t &request_id);
+    std::string getHTTPSURL(const GURL* url, const uint64_t &request_id);
     bool isTPInitialized();
     bool isAdBlockerInitialized();
     bool isAdBlockerRegionalInitialized();
@@ -60,8 +60,8 @@ private:
 
     std::string correcttoRuleToRE2Engine(const std::string& to);
 
-    void addHTTPSEUrlToRedirectList(const std::string originalUrl);
-    bool shouldHTTPSERedirect(const std::string originalUrl);
+    void addHTTPSEUrlToRedirectList(const uint64_t &request_id);
+    bool shouldHTTPSERedirect(const uint64_t &request_id);
 
     void set_tp_initialized();
     void set_adblock_initialized();
