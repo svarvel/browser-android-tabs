@@ -404,37 +404,37 @@ namespace blockers {
         return true;
     }
 
-    std::string BlockersWorker::getHTTPSURLFromCacheOnly(const GURL* url) {
+    std::string BlockersWorker::getHTTPSURLFromCacheOnly(const GURL* url, const uint64_t &request_identifier) {
         if (nullptr == url
           || url->scheme() == "https") {
             return url->spec();
         }
-        if (!shouldHTTPSERedirect(url->spec())) {
+        if (!shouldHTTPSERedirect(request_identifier)) {
             return url->spec();
         }
 
         if (recently_used_cache_.data.count(url->spec()) > 0) {
-            addHTTPSEUrlToRedirectList(url->spec());
+            addHTTPSEUrlToRedirectList(request_identifier);
             return recently_used_cache_.data[url->spec()];
         }
 
         return url->spec();
     }
 
-    std::string BlockersWorker::getHTTPSURL(const GURL* url) {
+    std::string BlockersWorker::getHTTPSURL(const GURL* url, const uint64_t &request_identifier) {
         base::ThreadRestrictions::AssertIOAllowed();
+
         if (nullptr == url
           || url->scheme() == "https"
           || !InitHTTPSE()) {
             return url->spec();
         }
-        if (!shouldHTTPSERedirect(url->spec())) {
+        if (!shouldHTTPSERedirect(request_identifier)) {
             return url->spec();
         }
 
         if (recently_used_cache_.data.count(url->spec()) > 0) {
-            addHTTPSEUrlToRedirectList(url->spec());
-
+            addHTTPSEUrlToRedirectList(request_identifier);
             return recently_used_cache_.data[url->spec()];
         }
 
@@ -445,21 +445,19 @@ namespace blockers {
                 std::string newURL = applyHTTPSRule(url->spec(), value);
                 if (0 != newURL.length()) {
                     recently_used_cache_.data[url->spec()] = newURL;
-                    addHTTPSEUrlToRedirectList(url->spec());
-
+                    addHTTPSEUrlToRedirectList(request_identifier);
                     return newURL;
                 }
             }
         }
         recently_used_cache_.data[url->spec()] = "";
-
         return url->spec();
     }
 
-    bool BlockersWorker::shouldHTTPSERedirect(const std::string originalUrl) {
+    bool BlockersWorker::shouldHTTPSERedirect(const uint64_t &request_identifier) {
         std::lock_guard<std::mutex> guard(httpse_get_urls_redirects_count_mutex_);
         for (size_t i = 0; i < httpse_urls_redirects_count_.size(); i++) {
-            if (originalUrl == httpse_urls_redirects_count_[i].url_
+            if (request_identifier == httpse_urls_redirects_count_[i].request_identifier_
               && httpse_urls_redirects_count_[i].redirects_ >= HTTPSE_URL_MAX_REDIRECTS_COUNT - 1) {
                 return false;
             }
@@ -468,12 +466,12 @@ namespace blockers {
         return true;
     }
 
-    void BlockersWorker::addHTTPSEUrlToRedirectList(const std::string originalUrl) {
-        // Adding redirects count for the current website
+    void BlockersWorker::addHTTPSEUrlToRedirectList(const uint64_t &request_identifier) {
+        // Adding redirects count for the current request
         std::lock_guard<std::mutex> guard(httpse_get_urls_redirects_count_mutex_);
         bool hostFound = false;
         for (size_t i = 0; i < httpse_urls_redirects_count_.size(); i++) {
-            if (originalUrl == httpse_urls_redirects_count_[i].url_) {
+            if (request_identifier == httpse_urls_redirects_count_[i].request_identifier_) {
                 // Found the host, just increment the redirects_count
                 httpse_urls_redirects_count_[i].redirects_++;
                 hostFound = true;
@@ -486,7 +484,7 @@ namespace blockers {
                 // The queue is full, erase the first element
                 httpse_urls_redirects_count_.erase(httpse_urls_redirects_count_.begin());
             }
-            httpse_urls_redirects_count_.push_back(HTTPSE_REDIRECTS_COUNT_ST(originalUrl, 1));
+            httpse_urls_redirects_count_.push_back(HTTPSE_REDIRECTS_COUNT_ST(request_identifier, 1));
         }
     }
 

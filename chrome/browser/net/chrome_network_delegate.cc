@@ -575,7 +575,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
   }
 
   if (ctx->needPerformHTTPSE) {
-    ctx->newURL = blockers_worker_->getHTTPSURLFromCacheOnly(&request->url());
+    ctx->newURL = blockers_worker_->getHTTPSURLFromCacheOnly(&request->url(), request->identifier());
     if (ctx->newURL == request->url().spec()) {
       ctx->UrlCopy = request->url();
       content::BrowserThread::PostTaskAndReply(
@@ -599,7 +599,8 @@ void ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRequest* r
 {
   base::ThreadRestrictions::AssertIOAllowed();
   DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
-  ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy);
+  DCHECK(ctx->request_identifier != 0);
+  ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy, ctx->request_identifier);
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request,const net::CompletionCallback& callback,GURL* new_url,std::shared_ptr<OnBeforeURLRequestContext> ctx)
