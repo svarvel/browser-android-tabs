@@ -25,6 +25,7 @@ class SharedWorkerContentSettingsProxy : public WebContentSettingsClient {
   bool AllowIndexedDB(const WebSecurityOrigin&) override;
   bool AllowCacheStorage(const WebSecurityOrigin&) override;
   bool RequestFileSystemAccessSync() override;
+  bool AllowFingerprinting() override;
 
  private:
   // To ensure the returned pointer is destructed on the same thread

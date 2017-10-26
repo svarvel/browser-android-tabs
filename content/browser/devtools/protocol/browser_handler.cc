@@ -63,7 +63,7 @@ Response BrowserHandler::GetVersion(std::string* protocol_version,
   *protocol_version = DevToolsAgentHost::GetProtocolVersion();
   *revision = GetWebKitRevision();
   *product = GetContentClient()->browser()->GetProduct();
-  *user_agent = GetContentClient()->browser()->GetUserAgent();
+  *user_agent = GetContentClient()->browser()->GetUserAgent("");
   *js_version = V8_VERSION_STRING;
   return Response::OK();
 }

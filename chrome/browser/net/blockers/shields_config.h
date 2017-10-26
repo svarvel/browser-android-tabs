@@ -22,7 +22,7 @@ public:
 
     static ShieldsConfig* getShieldsConfig();
     // Register the ShieldsConfig's native methods through JNI.
-    static bool RegisterShieldsConfig(JNIEnv* env);
+    //static bool RegisterShieldsConfig(JNIEnv* env);
 
 private:
     JavaObjectWeakGlobalRef weak_java_shields_config_;

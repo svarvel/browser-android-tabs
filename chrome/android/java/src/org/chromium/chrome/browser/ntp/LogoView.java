@@ -129,6 +129,9 @@ public class LogoView extends FrameLayout implements OnClickListener {
         mLoadingView.setLayoutParams(lp);
         mLoadingView.setVisibility(View.GONE);
         addView(mLoadingView);
+        // Fake usage of drawables to not delete them as we might want to use them later.
+        int logo = R.drawable.google_logo;
+        int translate = R.drawable.settings_translate;
     }
 
     /**

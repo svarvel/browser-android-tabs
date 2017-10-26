@@ -1000,27 +1000,24 @@ public class ChromeTabbedActivity
                 toggleOverview();
             };
             OnClickListener braveShieldsClickHandler = v -> {
-                @Override
-                public void onClick(View v) {
-                    if (getFullscreenManager() != null
-                            && getFullscreenManager().getPersistentFullscreenMode()) {
-                        return;
-                    }
-                    Tab currentTab = getActivityTab();
-                    if (currentTab != null) {
-                        try {
-                            URL url = new URL(currentTab.getUrl());
+                if (getFullscreenManager() != null
+                        && getFullscreenManager().getPersistentFullscreenMode()) {
+                    return;
+                }
+                Tab currentTab = getActivityTab();
+                if (currentTab != null) {
+                    try {
+                        URL url = new URL(currentTab.getUrl());
 
-                            setBraveShieldsColor(url.getHost());
-                            getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
-                              , url.getHost()
-                              , currentTab.getAdsAndTrackers()
-                              , currentTab.getHttpsUpgrades()
-                              , currentTab.getScriptsBlocked()
-                              , currentTab.getFingerprintsBlocked());
-                        } catch (Exception e) {
-                            setBraveShieldsBlackAndWhite();
-                        }
+                        setBraveShieldsColor(url.getHost());
+                        getBraveShieldsMenuHandler().show((View)findViewById(R.id.brave_shields_button)
+                          , url.getHost()
+                          , currentTab.getAdsAndTrackers()
+                          , currentTab.getHttpsUpgrades()
+                          , currentTab.getScriptsBlocked()
+                          , currentTab.getFingerprintsBlocked());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
                     }
                 }
             };
