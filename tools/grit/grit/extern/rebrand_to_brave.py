@@ -1,3 +1,32 @@
+# Before running this script
+# In Atom (or other editor) make changes to .grd and .xtb files in folders (chrome/android/java/strings, components/strings, chrome/app/resources):
+# Chromium -> Brave (except for Chromium version)
+# Brave OS -> Chromium OS
+# Google Chrome -> Brave
+# Google Chromu -> Brave
+# Google Chroma -> Brave
+# Google Chromom -> Brave
+# Google Chromovimi -> Brave
+# Google Chromovim -> Brave
+# Google Chromovi -> Brave
+# Google Chromove -> Brave
+# Google Chromov -> Brave
+# Brave OS -> Google Chrome OS
+# Chrome -> Brave
+# Chromu -> Brave
+# Chroma -> Brave
+# Chromom -> Brave
+# Chromovimi -> Brave
+# Chromovim -> Brave
+# Chromovi -> Brave
+# Chromove -> Brave
+# Chromov -> Brave
+# Brave OS -> Chrome OS
+# Google Inc -> Brave Software Inc
+
+# In `android_chrome_strings.grd` make sure that these are changed:
+# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/ -> https://brave.com/privacy_android
+# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/eula_text.html -> https://brave.com/terms_of_use
 import sys
 import os.path
 import xml.etree.ElementTree
@@ -76,19 +105,6 @@ def UpdateBraveIds(grd_file):
                 if not chrome_string_fp in brave_ids:
                     brave_ids[chrome_string_fp] = brave_string_fp
             print('\n')
-
-# Todo: next time add function to replace Chrome strings with Brave strings
-# Make changes to strings in folders (chrome/android/java/strings/*.*, components/strings/*.*):
-# Google Chrome -> Brave
-# Google Chrom. -> Brave (this is regex)
-# Chrome -> Brave (except for Chrome OS)
-# Chrom. -> Brave (this is regex)
-# Chrom.. -> Brave (this is regex)
-# Chromium -> Brave (except for Chromium OS and refer that Brave is based on Chromium)
-# Google Inc -> Brave Software Inc
-# Copyright <ph name="year">%1$d<ex>2014</ex></ph> Google Inc. All rights reserved. -> Copyright <ph name="YEAR">%1$d<ex>2017</ex></ph> Brave Software Inc. All rights reserved.
-# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/ -> https://brave.com/privacy_android
-# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/eula_text.html -> https://brave.com/terms_of_use
 
 UpdateBraveIds(chrome_strings_file)
 ReplaceIds(translations_folder)
