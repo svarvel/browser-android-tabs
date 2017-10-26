@@ -16,7 +16,7 @@ public:
     ~BraveSyncWorker();
 
     // Register the BraveSyncStorage's native methods through JNI.
-    static bool RegisterBraveSyncStorage(JNIEnv* env);
+    // static bool RegisterBraveSyncStorage(JNIEnv* env);
 
 private:
     JavaObjectWeakGlobalRef weak_java_shields_config_;

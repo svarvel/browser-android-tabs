@@ -570,7 +570,7 @@ void DevToolsHttpHandler::OnJsonRequest(
                       DevToolsAgentHost::GetProtocolVersion());
     version.SetString("WebKit-Version", GetWebKitVersion());
     version.SetString("Browser", GetContentClient()->GetProduct());
-    version.SetString("User-Agent", GetContentClient()->GetUserAgent());
+    version.SetString("User-Agent", GetContentClient()->GetUserAgent(""));
     version.SetString("V8-Version", V8_VERSION_STRING);
     std::string host = info.headers["host"];
     version.SetString(

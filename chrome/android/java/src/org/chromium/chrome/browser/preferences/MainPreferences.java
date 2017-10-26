@@ -56,7 +56,7 @@ public class MainPreferences extends PreferenceFragment
 
     private final ManagedPreferenceDelegate mManagedPreferenceDelegate;
     private final Map<String, Preference> mAllPreferences = new HashMap<>();
-    private SignInPreference mSignInPreference;
+    //private SignInPreference mSignInPreference;
 
     public MainPreferences() {
         setHasOptionsMenu(true);
@@ -78,19 +78,19 @@ public class MainPreferences extends PreferenceFragment
     @Override
     public void onStart() {
         super.onStart();
-        if (SigninManager.get().isSigninSupported()) {
+        /*if (SigninManager.get().isSigninSupported()) {
             SigninManager.get().addSignInStateObserver(this);
             mSignInPreference.registerForUpdates();
-        }
+        }*/
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (SigninManager.get().isSigninSupported()) {
+        /*if (SigninManager.get().isSigninSupported()) {
             SigninManager.get().removeSignInStateObserver(this);
             mSignInPreference.unregisterForUpdates();
-        }
+        }*/
     }
 
     @Override
@@ -112,7 +112,7 @@ public class MainPreferences extends PreferenceFragment
 
         setManagedPreferenceDelegateForPreference(PREF_SEARCH_ENGINE);
         setManagedPreferenceDelegateForPreference(PREF_SAVED_PASSWORDS);
-        setManagedPreferenceDelegateForPreference(PREF_DATA_REDUCTION);
+        //setManagedPreferenceDelegateForPreference(PREF_DATA_REDUCTION);
 
         updatePasswordsPreference();
 
@@ -180,7 +180,7 @@ public class MainPreferences extends PreferenceFragment
             Preference preference = getPreferenceScreen().getPreference(index);
             mAllPreferences.put(preference.getKey(), preference);
         }
-        mSignInPreference = (SignInPreference) mAllPreferences.get(PREF_SIGN_IN);
+        //mSignInPreference = (SignInPreference) mAllPreferences.get(PREF_SIGN_IN);
     }
 
     private void setManagedPreferenceDelegateForPreference(String key) {
@@ -189,11 +189,11 @@ public class MainPreferences extends PreferenceFragment
     }
 
     private void updatePreferences() {
-        if (SigninManager.get().isSigninSupported()) {
+        /*if (SigninManager.get().isSigninSupported()) {
             addPreferenceIfAbsent(PREF_SIGN_IN);
         } else {
             removePreferenceIfPresent(PREF_SIGN_IN);
-        }
+        }*/
 
         updateSearchEnginePreference();
 

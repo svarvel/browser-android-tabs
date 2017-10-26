@@ -311,6 +311,7 @@ class LocalFrameClientImpl final : public LocalFrameClient {
   Member<WebLocalFrameImpl> web_frame_;
 
   String user_agent_;
+  std::string previous_url_;
 };
 
 DEFINE_TYPE_CASTS(LocalFrameClientImpl,

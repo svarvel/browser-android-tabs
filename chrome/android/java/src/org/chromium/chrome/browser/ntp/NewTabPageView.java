@@ -182,7 +182,7 @@ public class NewTabPageView extends FrameLayout {
         initializeLayoutChangeListener();
         mNewTabPageLayout.setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
 
-        mRecyclerView.init(mUiConfig, mContextMenuManager);
+        //mRecyclerView.init(mUiConfig, mContextMenuManager);
 
         // Set up snippets
         NewTabPageAdapter newTabPageAdapter = new NewTabPageAdapter(
