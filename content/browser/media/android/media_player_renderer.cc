@@ -110,7 +110,7 @@ void MediaPlayerRenderer::CreateMediaPlayer(
     return;
   }
 
-  const std::string user_agent = GetContentClient()->browser()->GetUserAgent(url_params.first_party_for_cookies.host());
+  const std::string user_agent = GetContentClient()->browser()->GetUserAgent(url_params.site_for_cookies.host());
 
   media_player_.reset(new media::MediaPlayerBridge(
       url_params.media_url, url_params.site_for_cookies, user_agent,

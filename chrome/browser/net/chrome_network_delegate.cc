@@ -329,14 +329,14 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
 
    ctx->firstparty_host = "";
    if (request) {
-     ctx->firstparty_host = request->first_party_for_cookies().host();
+     ctx->firstparty_host = request->site_for_cookies().host();
      ctx->request_identifier = request->identifier();
    }
    // (TODO)find a better way to handle last first party
    if (0 == ctx->firstparty_host.length()) {
      ctx->firstparty_host = last_first_party_url_.host();
    } else if (request) {
-     last_first_party_url_ = request->first_party_for_cookies();
+     last_first_party_url_ = request->site_for_cookies();
    }
    // We want to block first party ads as well
    /*bool firstPartyUrl = false;

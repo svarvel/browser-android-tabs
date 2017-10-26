@@ -136,9 +136,9 @@ static void ResetSync(JNIEnv* env,
 }
 
 // static
-bool BraveSyncWorker::RegisterBraveSyncStorage(JNIEnv* env) {
+/*bool BraveSyncWorker::RegisterBraveSyncStorage(JNIEnv* env) {
     g_level_db = nullptr;
     return RegisterNativesImpl(env);
-}
+}*/
 
 }
