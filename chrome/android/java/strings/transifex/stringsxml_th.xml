@@ -68,4 +68,11 @@ EST แล้ว</string>
     <string name="website_settings_category_desktop_view_enabled">เปิดใช้มุมมองเดสก์ท็อปสำหรับแท็บใหม่</string>
     <string name="website_settings_category_desktop_view_disabled">ใช้เว็บไซต์เวอร์ชันมือถือสำหรับแท็บใหม่ (แนะนำ)</string>
 
+    <string name="brave_shields_first_group_title">การบล็อกหน้าจอ</string>
+    <string name="brave_shields_second_group_title">ระบบควบคุมส่วนตัว</string>
+    <string name="brave_shields">เกราะป้องกัน</string>
+    <string name="brave_shields_ads_and_trackers">โฆษณาและระบบติดตาม</string>
+    <string name="brave_shields_fingerprint_methods">วิธีใช้ลายนิ้วมือ</string>
+    <string name="brave_shields_block_phishing_switch">บล็อกฟิชชิ่ง</string>
+
 </resources>

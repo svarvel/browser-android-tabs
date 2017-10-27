@@ -70,4 +70,11 @@ gespart</string>
     <string name="website_settings_category_desktop_view_enabled">Desktop-Ansicht für neue Tabs aktivieren</string>
     <string name="website_settings_category_desktop_view_disabled">Mobilversionen von Webseiten für neue Tabs verwenden (empfohlen)</string>
 
+    <string name="brave_shields_first_group_title">Blockiermonitor</string>
+    <string name="brave_shields_second_group_title">Individuelle Steuerungselemente</string>
+    <string name="brave_shields">Schutzschilde</string>
+    <string name="brave_shields_ads_and_trackers">Werbung und Tracking</string>
+    <string name="brave_shields_fingerprint_methods">Fingerabdruckmethoden</string>
+    <string name="brave_shields_block_phishing_switch">Phishing blockieren</string>
+
 </resources>

@@ -70,4 +70,11 @@ tid sparet</string>
     <string name="website_settings_category_desktop_view_enabled">Aktivér skrivebordsvisning for nye faneblade</string>
     <string name="website_settings_category_desktop_view_disabled">Brug mobile versioner af websteder til nye faneblade (anbefalet)</string>
 
+    <string name="brave_shields_first_group_title">Blokerer monitorering</string>
+    <string name="brave_shields_second_group_title">Individuel styring</string>
+    <string name="brave_shields">Skjolde</string>
+    <string name="brave_shields_ads_and_trackers">Reklamer og sporing</string>
+    <string name="brave_shields_fingerprint_methods">Fingeraftrykmetoder</string>
+    <string name="brave_shields_block_phishing_switch">Bloker phishing</string>
+
 </resources>

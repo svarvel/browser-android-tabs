@@ -71,4 +71,11 @@ Risparmiato</string>
     <string name="website_settings_category_desktop_view_enabled">Attiva Vista Desktop per nuove schede</string>
     <string name="website_settings_category_desktop_view_disabled">Utilizza versioni mobili dei siti per le nuove schede (consigliato)</string>
 
+    <string name="brave_shields_first_group_title">Blocco del Monitor</string>
+    <string name="brave_shields_second_group_title">Controlli Individuali</string>
+    <string name="brave_shields">Scudi</string>
+    <string name="brave_shields_ads_and_trackers">Pubblicità e Localizzatori</string>
+    <string name="brave_shields_fingerprint_methods">Metodi di Fingerprint</string>
+    <string name="brave_shields_block_phishing_switch">Blocca Phishing</string>
+
 </resources>

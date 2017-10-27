@@ -2,8 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="brave_settings_title">Brave site shield-inställningar för</string>
-    <string name="brave_shields_down">Ner</string>
-    <string name="brave_shields_up">Upp</string>
+    <string name="brave_shields_down">Av</string>
+    <string name="brave_shields_up">På</string>
     <string name="brave_shields_ads_trackers">Annonser och trackers är blockerade</string>
     <string name="brave_shields_https_upgrades">HTTPS-uppgraderingar</string>
     <string name="brave_shields_scripts_blocked">Skript är blockerat</string>
@@ -69,5 +69,12 @@ tid</string>
     <string name="website_settings_category_desktop_view_disabled_summary">Föredrar mobilversion av webbplatser</string>
     <string name="website_settings_category_desktop_view_enabled">Aktivera skrivbordsvy för nya flikar</string>
     <string name="website_settings_category_desktop_view_disabled">Använd mobilversioner av webbplatser för nya flikar (rekommenderas)</string>
+
+    <string name="brave_shields_first_group_title">Blockerar övervakning</string>
+    <string name="brave_shields_second_group_title">Individuella kontroller</string>
+    <string name="brave_shields">Sköldar</string>
+    <string name="brave_shields_ads_and_trackers">Annonser och spårare</string>
+    <string name="brave_shields_fingerprint_methods">Fingeravtrycksmetoder</string>
+    <string name="brave_shields_block_phishing_switch">Blockera nätfiske</string>
 
 </resources>
