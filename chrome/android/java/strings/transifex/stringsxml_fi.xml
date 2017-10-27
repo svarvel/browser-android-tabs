@@ -69,4 +69,11 @@ Tallennettu</string>
     <string name="website_settings_category_desktop_view_enabled">Käytä työpöytänäkymää uusissa välilehdissä</string>
     <string name="website_settings_category_desktop_view_disabled">Käytä sivustojen mobiiliversioita uusissa välilehdissä (suositellaan)</string>
 
+    <string name="brave_shields_first_group_title">Estojen valvonta</string>
+    <string name="brave_shields_second_group_title">Yksittäiset valvontaohjaimet</string>
+    <string name="brave_shields">Suojaukset</string>
+    <string name="brave_shields_ads_and_trackers">Mainokset ja seurantaohjelmat</string>
+    <string name="brave_shields_fingerprint_methods">Sormenjälkimenetelmät</string>
+    <string name="brave_shields_block_phishing_switch">Estä tiedonkalastelu</string>
+
 </resources>

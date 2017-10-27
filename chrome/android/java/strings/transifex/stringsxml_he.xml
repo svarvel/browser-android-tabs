@@ -70,4 +70,11 @@ HTTPS</string>
     <string name="website_settings_category_desktop_view_enabled">הפעל/י תצוגת שולחן עבודה לכרטיסיות חדשות</string>
     <string name="website_settings_category_desktop_view_disabled">השתמש/י בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</string>
 
+    <string name="brave_shields_first_group_title">חוסם צג</string>
+    <string name="brave_shields_second_group_title">פקדים אינדיבידואליים</string>
+    <string name="brave_shields">מגנים</string>
+    <string name="brave_shields_ads_and_trackers">פרסומות וכלי מעקב</string>
+    <string name="brave_shields_fingerprint_methods">שיטות טביעת אצבע</string>
+    <string name="brave_shields_block_phishing_switch">חסום דיוג</string>
+
 </resources>

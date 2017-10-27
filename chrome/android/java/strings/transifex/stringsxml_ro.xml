@@ -71,4 +71,11 @@ Salvat</string>
     <string name="website_settings_category_desktop_view_enabled">Autorizare vizionare în mod calculator, pentru noi file</string>
     <string name="website_settings_category_desktop_view_disabled">Utilizare versiuni mobile ale site-urilor, pentru noi file (recomandat)</string>
 
+    <string name="brave_shields_first_group_title">Monitor Blocare</string>
+    <string name="brave_shields_second_group_title">Controale Individuale</string>
+    <string name="brave_shields">Scuturi</string>
+    <string name="brave_shields_ads_and_trackers">Reclame şi Urmăritori</string>
+    <string name="brave_shields_fingerprint_methods">Metode Amprentă</string>
+    <string name="brave_shields_block_phishing_switch">Blocare Phishing</string>
+
 </resources>

@@ -70,4 +70,11 @@
     <string name="website_settings_category_desktop_view_enabled">Включить версию сайтов для компьютера для новых вкладок</string>
     <string name="website_settings_category_desktop_view_disabled">Использовать мобильную версию сайтов для новых вкладок (рекомендуется)</string>
 
+    <string name="brave_shields_first_group_title">Монитор блокирования</string>
+    <string name="brave_shields_second_group_title">Индивидуальные элементы управления</string>
+    <string name="brave_shields">Щиты</string>
+    <string name="brave_shields_ads_and_trackers">Реклама и трекеры</string>
+    <string name="brave_shields_fingerprint_methods">Методы определения отпечатка</string>
+    <string name="brave_shields_block_phishing_switch">Блокировать фишинг</string>
+
 </resources>
