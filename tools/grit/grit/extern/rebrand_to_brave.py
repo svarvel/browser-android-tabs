@@ -107,7 +107,7 @@ def UpdateBraveIds(grd_file):
             print('\n')
 
 UpdateBraveIds(chrome_strings_file)
+UpdateBraveIds(chromium_strings_file)
 ReplaceIds(translations_folder)
 ReplaceIds(components_folder)
-UpdateBraveIds(chromium_strings_file)
 ReplaceIds(chromium_strings_folder)
