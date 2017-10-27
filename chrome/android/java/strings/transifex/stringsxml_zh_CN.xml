@@ -66,4 +66,11 @@
     <string name="website_settings_category_desktop_view_enabled">对新标签页启用桌面视图</string>
     <string name="website_settings_category_desktop_view_disabled">对新标签页使用移动版的网站（推荐）</string>
 
+    <string name="brave_shields_first_group_title">屏蔽监视器</string>
+    <string name="brave_shields_second_group_title">个人控制</string>
+    <string name="brave_shields">屏蔽</string>
+    <string name="brave_shields_ads_and_trackers">广告和跟踪器</string>
+    <string name="brave_shields_fingerprint_methods">指纹识别方法</string>
+    <string name="brave_shields_block_phishing_switch">阻止网络钓鱼</string>
+
 </resources>

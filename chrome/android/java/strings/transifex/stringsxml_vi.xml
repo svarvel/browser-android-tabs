@@ -70,4 +70,11 @@ HTTPS</string>
     <string name="website_settings_category_desktop_view_enabled">Bật Dạng xem Máy để bàn cho tab mới</string>
     <string name="website_settings_category_desktop_view_disabled">Sử dụng phiên bản di động của trang cho các tab mới (khuyến khích)</string>
 
+    <string name="brave_shields_first_group_title">Giám sát Chặn</string>
+    <string name="brave_shields_second_group_title">Kiểm soát Riêng lẻ</string>
+    <string name="brave_shields">Khiên bảo vệ</string>
+    <string name="brave_shields_ads_and_trackers">Quảng cáo và Trình theo dõi</string>
+    <string name="brave_shields_fingerprint_methods">Biện pháp Vân tay</string>
+    <string name="brave_shields_block_phishing_switch">Chặn Lừa đảo</string>
+
 </resources>

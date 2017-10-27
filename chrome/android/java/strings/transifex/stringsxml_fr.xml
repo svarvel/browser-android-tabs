@@ -70,4 +70,11 @@ Enregistré</string>
     <string name="website_settings_category_desktop_view_enabled">Activer l\'Aperçu Bureau pour les nouveaux onglets</string>
     <string name="website_settings_category_desktop_view_disabled">Utiliser les versions mobiles des sites pour les nouveaux onglets (recommandé)</string>
 
+    <string name="brave_shields_first_group_title">Blocage du moniteur</string>
+    <string name="brave_shields_second_group_title">Commandes individuelles</string>
+    <string name="brave_shields">Blindages</string>
+    <string name="brave_shields_ads_and_trackers">Publicités et pistages</string>
+    <string name="brave_shields_fingerprint_methods">Méthodes des empreintes</string>
+    <string name="brave_shields_block_phishing_switch">Bloquer le hameçonnage</string>
+
 </resources>

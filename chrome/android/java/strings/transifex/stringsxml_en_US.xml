@@ -69,4 +69,11 @@ Saved</string>
     <string name="website_settings_category_desktop_view_enabled">Enable Desktop View for new tabs</string>
     <string name="website_settings_category_desktop_view_disabled">Use mobile versions of sites for new tabs (recommended)</string>
 
+    <string name="brave_shields_first_group_title">Blocking Monitor</string>
+    <string name="brave_shields_second_group_title">Individual Controls</string>
+    <string name="brave_shields">Shields</string>
+    <string name="brave_shields_ads_and_trackers">Ads and Trackers</string>
+    <string name="brave_shields_fingerprint_methods">Fingerprint Methods</string>
+    <string name="brave_shields_block_phishing_switch">Block Phishing</string>
+
 </resources>

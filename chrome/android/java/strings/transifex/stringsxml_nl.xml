@@ -70,4 +70,11 @@ Opgeslagen</string>
     <string name="website_settings_category_desktop_view_enabled">Desktopmodus voor nieuwe tabs inschakelen</string>
     <string name="website_settings_category_desktop_view_disabled">Gebruik mobiele versies van websites voor nieuwe tabs (aanbevolen)</string>
 
+    <string name="brave_shields_first_group_title">Blokkerende monitor</string>
+    <string name="brave_shields_second_group_title">Individuele controles</string>
+    <string name="brave_shields">Afschermingen</string>
+    <string name="brave_shields_ads_and_trackers">Advertenties en trackers</string>
+    <string name="brave_shields_fingerprint_methods">Vingerafdrukmethoden</string>
+    <string name="brave_shields_block_phishing_switch">Blokkeer phishing</string>
+
 </resources>

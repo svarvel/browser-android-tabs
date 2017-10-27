@@ -71,4 +71,11 @@ Mentve</string>
     <string name="website_settings_category_desktop_view_enabled">Asztali nézet engedélyezése az új lapok számára</string>
     <string name="website_settings_category_desktop_view_disabled">Az új lapokhoz használja az oldalak mobil verzióját (ajánlott)</string>
 
+    <string name="brave_shields_first_group_title">Blokkolási ellenőrzés</string>
+    <string name="brave_shields_second_group_title">Egyéni irányítás</string>
+    <string name="brave_shields">Pajzsok</string>
+    <string name="brave_shields_ads_and_trackers">Hirdetések és követők</string>
+    <string name="brave_shields_fingerprint_methods">Ujjlenyomat-módszerek</string>
+    <string name="brave_shields_block_phishing_switch">Adathalászat blokkolása</string>
+
 </resources>

@@ -71,4 +71,11 @@ ušetrený čas</string>
     <string name="website_settings_category_desktop_view_enabled">Povoľte desktopové zobrazenie pre nové karty</string>
     <string name="website_settings_category_desktop_view_disabled">Používajte mobilné verzie stránok pre nové karty (odporúčané)</string>
 
+    <string name="brave_shields_first_group_title">Monitorovanie blokovania</string>
+    <string name="brave_shields_second_group_title">Individuálne nastavenia</string>
+    <string name="brave_shields">Štíty</string>
+    <string name="brave_shields_ads_and_trackers">Reklama a sledovanie</string>
+    <string name="brave_shields_fingerprint_methods">Spôsoby identifikácie</string>
+    <string name="brave_shields_block_phishing_switch">Blokovanie phishingu</string>
+
 </resources>

@@ -70,4 +70,11 @@ zaoszczędzony czas</string>
     <string name="website_settings_category_desktop_view_enabled">Aktywuj widok desktopowy dla nowych zakładek</string>
     <string name="website_settings_category_desktop_view_disabled">Używaj mobilnych wersji stron dla nowych zakładek (zalecane)</string>
 
+    <string name="brave_shields_first_group_title">Blokada monitora</string>
+    <string name="brave_shields_second_group_title">Kontrolery indywidualne</string>
+    <string name="brave_shields">Tarcze</string>
+    <string name="brave_shields_ads_and_trackers">Reklamy i skrypty śledzące</string>
+    <string name="brave_shields_fingerprint_methods">Metody odcisku palca</string>
+    <string name="brave_shields_block_phishing_switch">Zablokuj phishing</string>
+
 </resources>

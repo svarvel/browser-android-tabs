@@ -70,4 +70,11 @@ Kaydedildi</string>
     <string name="website_settings_category_desktop_view_enabled">Yeni sekmeler için Masaüstü Görünümünü Etkinleştir</string>
     <string name="website_settings_category_desktop_view_disabled">Yeni sekmeler için sitelerin mobil versiyonlarını kullanın (önerilir)</string>
 
+    <string name="brave_shields_first_group_title">Ekranı Engelleme</string>
+    <string name="brave_shields_second_group_title">Bireysel Kontroller</string>
+    <string name="brave_shields">Kalkanlar</string>
+    <string name="brave_shields_ads_and_trackers">Reklamlar ve Takipçiler</string>
+    <string name="brave_shields_fingerprint_methods">Parmak İzi Yöntemleri</string>
+    <string name="brave_shields_block_phishing_switch">Kimlik Avını Engelleyin</string>
+
 </resources>

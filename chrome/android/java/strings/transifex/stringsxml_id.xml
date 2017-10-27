@@ -65,9 +65,16 @@ Dihemat</string>
     <string name="send_metrics_title">Kirim metrik</string>
 
     <string name="desktop_mode_title">Mode Desktop</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Memilih versi desktop situs</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Memilih versi mobile situs</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Memilih versi desktop dari situs</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Memilih versi seluler dari situs</string>
     <string name="website_settings_category_desktop_view_enabled">Aktifkan Tampilan Desktop untuk tab baru</string>
-    <string name="website_settings_category_desktop_view_disabled">Gunakan versi mobile situs untuk tab baru (sarankan)</string>
+    <string name="website_settings_category_desktop_view_disabled">Gunakan versi seluler situs untuk tab baru (disarankan)</string>
+
+    <string name="brave_shields_first_group_title">Pemblokiran layar</string>
+    <string name="brave_shields_second_group_title">Kontrol Individu</string>
+    <string name="brave_shields">Perisai</string>
+    <string name="brave_shields_ads_and_trackers">Iklan dan Pelacak</string>
+    <string name="brave_shields_fingerprint_methods">Metode Sidik Jari</string>
+    <string name="brave_shields_block_phishing_switch">Blokir Phishing</string>
 
 </resources>

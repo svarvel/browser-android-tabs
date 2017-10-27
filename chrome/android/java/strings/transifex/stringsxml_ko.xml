@@ -68,4 +68,11 @@
     <string name="website_settings_category_desktop_view_enabled">새로운 탭의 데스크탑 보기 사용 </string>
     <string name="website_settings_category_desktop_view_disabled">새로운 탭을 만들 때 모바일 버전 사이트 사용(권장 사항)</string>
 
+    <string name="brave_shields_first_group_title">감시 차단</string>
+    <string name="brave_shields_second_group_title">개별 제어</string>
+    <string name="brave_shields">방패</string>
+    <string name="brave_shields_ads_and_trackers">광고 및 트래커</string>
+    <string name="brave_shields_fingerprint_methods">지문 방식</string>
+    <string name="brave_shields_block_phishing_switch">피싱 차단</string>
+
 </resources>

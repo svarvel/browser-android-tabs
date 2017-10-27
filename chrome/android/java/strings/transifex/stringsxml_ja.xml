@@ -67,4 +67,11 @@
     <string name="website_settings_category_desktop_view_enabled">新しいタブでデスクトップビューを可能にする</string>
     <string name="website_settings_category_desktop_view_disabled">新しいタブでサイトの携帯バーションをお使いください（奨励）</string>
 
+    <string name="brave_shields_first_group_title">監視をブロック</string>
+    <string name="brave_shields_second_group_title">個別の制御</string>
+    <string name="brave_shields">シールド</string>
+    <string name="brave_shields_ads_and_trackers">広告とトラッカー</string>
+    <string name="brave_shields_fingerprint_methods">指紋による方法</string>
+    <string name="brave_shields_block_phishing_switch">フィッシングをブロック</string>
+
 </resources>

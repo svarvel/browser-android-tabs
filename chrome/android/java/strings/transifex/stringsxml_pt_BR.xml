@@ -70,4 +70,11 @@ Salvo</string>
     <string name="website_settings_category_desktop_view_enabled">Ativar Visualização da Área de Trabalho para novas abas</string>
     <string name="website_settings_category_desktop_view_disabled">Usar versões móveis dos sites para novas abas (recomendado)</string>
 
+    <string name="brave_shields_first_group_title">Monitor de bloqueio</string>
+    <string name="brave_shields_second_group_title">Controles individuais</string>
+    <string name="brave_shields">Blindagens</string>
+    <string name="brave_shields_ads_and_trackers">Anúncios e rastreadores</string>
+    <string name="brave_shields_fingerprint_methods">Métodos de impressão digital</string>
+    <string name="brave_shields_block_phishing_switch">Bloqueio de phishing</string>
+
 </resources>

@@ -71,4 +71,11 @@
     <string name="website_settings_category_desktop_view_enabled">Увімкнути робочий стіл для нових вкладок</string>
     <string name="website_settings_category_desktop_view_disabled">Для нових вкладок слід використовувати мобільні версії сайтів (рекомендовано)</string>
 
+    <string name="brave_shields_first_group_title">Монітор блокування</string>
+    <string name="brave_shields_second_group_title">Індивідуальне управління</string>
+    <string name="brave_shields">Захист</string>
+    <string name="brave_shields_ads_and_trackers">Реклами та трекерів</string>
+    <string name="brave_shields_fingerprint_methods">Блоковано відбитків</string>
+    <string name="brave_shields_block_phishing_switch">Блокувати фішинг</string>
+
 </resources>
