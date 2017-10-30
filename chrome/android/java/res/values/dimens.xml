@@ -603,6 +603,6 @@
     <dimen name="swipe_to_dismiss_threshold">72dp</dimen>
 
     <!-- Brave shields menu dimensions -->
-    <dimen name="brave_shields_first_group_item_height">36dp</dimen>
+    <dimen name="brave_shields_first_group_item_height">40dp</dimen>
     <dimen name="brave_shields_second_group_item_height">44dp</dimen>
 </resources>
