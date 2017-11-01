@@ -5,8 +5,8 @@ cd ..
 echo "{ 'GYP_DEFINES': 'OS=android target_arch=arm buildtype=Official', }" > chromium.gyp_env
 gclient runhooks
 cd src
-gn args out/Default
 build/install-build-deps-android.sh
 gclient sync
 sh . build/android/envsetup.sh
 sh scripts/postThirdPartiesSetup.js
+gn args out/Default
