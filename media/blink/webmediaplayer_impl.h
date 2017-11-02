@@ -141,6 +141,8 @@ class MEDIA_BLINK_EXPORT WebMediaPlayerImpl
   // True if the loaded media has a playable video/audio track.
   bool HasVideo() const override;
   bool HasAudio() const override;
+  // True is has video and it's frame size is not zero
+  bool HasVideoNonEmptySize() const;
 
   void EnabledAudioTracksChanged(
       const blink::WebVector<blink::WebMediaPlayer::TrackId>& enabledTrackIds)
