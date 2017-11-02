@@ -961,6 +961,12 @@ bool WebMediaPlayerImpl::HasAudio() const {
   return pipeline_metadata_.has_audio;
 }
 
+bool WebMediaPlayerImpl::HasVideoNonEmptySize() const {
+  DCHECK(main_task_runner_->BelongsToCurrentThread());
+
+  return pipeline_metadata_.has_video && pipeline_metadata_.natural_size.width() != 0 && pipeline_metadata_.natural_size.height() != 0;
+}
+
 void WebMediaPlayerImpl::EnabledAudioTracksChanged(
     const blink::WebVector<blink::WebMediaPlayer::TrackId>& enabledTrackIds) {
   DCHECK(main_task_runner_->BelongsToCurrentThread());
@@ -3205,7 +3211,10 @@ bool WebMediaPlayerImpl::ShouldPausePlaybackWhenHidden() const {
   // Audio only stream is allowed to play when in background.
   // TODO: We should check IsBackgroundOptimizationCandidate here. But we need
   // to move the logic of checking video frames out of that function.
-  if (!HasVideo())
+  //pipeline_metadata_.has_video is true for MediaPlayerRenderer,
+  //see media/base/pipeline_metadata.h. This is a workaround to allow audio
+  //streams be played in background.
+  if (!HasVideoNonEmptySize())
     return false;
 
   if (!is_background_video_playback_enabled_)
