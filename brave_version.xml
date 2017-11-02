@@ -1,3 +1,8 @@
+<release version="1.0.36">
+    <change>Updated to Chromium 62.0.3202.73.</change>
+    <change>New user interface.</change>
+    <change>Fixed embedded tweets problem.</change>
+</release>
 <release version="1.0.35">
     <change>Added always Desktop Mode option(Settings->Site settings->Desktop Mode).</change>
     <change>Added DuckDuckGo Lite search engine.</change>
