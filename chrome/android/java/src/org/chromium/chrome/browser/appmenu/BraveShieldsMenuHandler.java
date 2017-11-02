@@ -167,7 +167,6 @@ public class BraveShieldsMenuHandler {
 
         mPopup.setWidth(popupWidth);
 
-        Rect sizingPadding = new Rect(bgPadding);
         mAdapter = new BraveShieldsMenuAdapter(menuItems,
             LayoutInflater.from(wrapper), mMenuObserver, mPopup,
             currentDisplayWidth);
