@@ -2914,6 +2914,10 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
       base::NumberToString(display::win::GetDPIScale()));
 #endif
 
+  if (NeedPlayVideoInBackground()) {
+    command_line->AppendSwitch(switches::kDisableMediaSuspend);
+  }
+
   AppendCompositorCommandLineFlags(command_line);
 
   command_line->AppendSwitchASCII(
@@ -2926,6 +2930,10 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
     // Disable V8 code mitigations if renderer processes are site-isolated.
     command_line->AppendSwitch(switches::kNoV8UntrustedCodeMitigations);
   }
+}
+
+bool RenderProcessHostImpl::NeedPlayVideoInBackground() const {
+  return true;
 }
 
 void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(
