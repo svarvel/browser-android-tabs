@@ -37,6 +37,7 @@
 #include "components/omnibox/browser/search_provider.h"
 #include "components/omnibox/browser/shortcuts_provider.h"
 #include "components/omnibox/browser/zero_suggest_provider.h"
+#include "components/omnibox/browser/topsites_provider.h"
 #include "components/open_from_clipboard/clipboard_recent_content.h"
 #include "components/search_engines/template_url.h"
 #include "components/search_engines/template_url_service.h"
@@ -231,6 +232,7 @@ AutocompleteController::AutocompleteController(
   if (provider_types & AutocompleteProvider::TYPE_SEARCH) {
     search_provider_ = new SearchProvider(provider_client_.get(), this);
     providers_.push_back(search_provider_);
+    providers_.push_back(new TopSitesProvider(provider_client_.get()));
   }
   if (provider_types & AutocompleteProvider::TYPE_SHORTCUTS)
     providers_.push_back(new ShortcutsProvider(provider_client_.get()));
