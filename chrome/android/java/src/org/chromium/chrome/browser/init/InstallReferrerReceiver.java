@@ -7,6 +7,7 @@ package org.chromium.chrome.browser.init;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import org.chromium.base.Log;
 
 import org.chromium.chrome.browser.init.InstallationSourceInformer;
@@ -15,9 +16,17 @@ public class InstallReferrerReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
       String referrer = intent.getStringExtra("referrer");
-        Log.i("TAG", "InstallReferrerReceiver: referrer: " + referrer);
+      Log.i("TAG", "InstallReferrerReceiver: referrer: " + referrer);
 
-      if (referrer != null && referrer.contains("utm_source") ) {
+      if (referrer == null) {
+        InstallationSourceInformer.InformFromPlayMarket();
+        return;
+      }
+
+      Uri uri = Uri.parse("http://www.stub.co/?"+referrer);
+      String utm_medium_value = uri.getQueryParameter("utm_medium");
+      Log.i("TAG", "InstallReferrerReceiver: utm_medium_value: <" + utm_medium_value+">");
+      if (utm_medium_value != null && !utm_medium_value.isEmpty() && !utm_medium_value.equals("organic")) {
         InstallationSourceInformer.InformFromPromo();
       } else {
         InstallationSourceInformer.InformFromPlayMarket();
