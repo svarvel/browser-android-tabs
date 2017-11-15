@@ -80,6 +80,10 @@
     <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
         android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
         android:key="sound" />
+    <!-- PlayVideoInBackground -->
+    <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
+         android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
+         android:key="play_video_in_background" />
     <!-- Google Translate -->
     <!-- <Preference
         android:fragment="org.chromium.chrome.browser.preferences.website.TranslatePreferences"

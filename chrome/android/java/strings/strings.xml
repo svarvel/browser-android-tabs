@@ -76,4 +76,9 @@ Saved</string>
     <string name="brave_shields_fingerprint_methods">Fingerprint Methods</string>
     <string name="brave_shields_block_phishing_switch">Block Phishing</string>
 
+    <string name="play_video_in_background_title">Video in background</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Enabled</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Disabled</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Enables audio play from video in background when tab is not active or device screen is turned off. If it is not played still, try to switch page to desktop mode</string>
+
 </resources>

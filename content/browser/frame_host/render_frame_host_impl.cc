@@ -193,6 +193,10 @@
 #include "content/browser/android/java_interfaces_impl.h"
 #include "content/browser/frame_host/render_frame_host_android.h"
 #include "content/public/browser/android/java_interfaces.h"
+#include "components/content_settings/core/browser/host_content_settings_map.h"
+#include "chrome/browser/content_settings/host_content_settings_map_factory.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/profiles/profile_manager.h"
 #endif
 
 #if defined(OS_MACOSX)
@@ -878,6 +882,12 @@ RenderFrameHostImpl::RenderFrameHostImpl(SiteInstance* site_instance,
     parent_->GetFrameResourceCoordinator()->AddChildFrame(
         frame_resource_coordinator_);
   }
+
+#if defined(OS_ANDROID)
+  if (NeedPlayVideoInBackground()) {
+    AllowInjectingJavaScriptForAndroidWebView();
+  }
+#endif
 }
 
 RenderFrameHostImpl::~RenderFrameHostImpl() {
@@ -6156,6 +6166,13 @@ void RenderFrameHostImpl::MaybeGenerateCrashReport(
   GetProcess()->GetStoragePartition()->GetNetworkContext()->QueueReport(
       "crash" /* type */, "default" /* group */, last_committed_url_,
       base::nullopt, std::move(body));
+}
+
+bool RenderFrameHostImpl::NeedPlayVideoInBackground() const {
+  bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
+      ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
+      GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, NULL) == CONTENT_SETTING_ALLOW;
+  return play_video_in_background_enabled;
 }
 
 }  // namespace content
