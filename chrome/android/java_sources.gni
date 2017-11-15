@@ -50,6 +50,7 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/DelayedScreenLockIntentHandler.java",
   "java/src/org/chromium/chrome/browser/DeviceConditions.java",
   "java/src/org/chromium/chrome/browser/DevToolsServer.java",
+  "java/src/org/chromium/chrome/browser/DisableVideoPauseOnBackground.java",
   "java/src/org/chromium/chrome/browser/FileProviderHelper.java",
   "java/src/org/chromium/chrome/browser/InsetObserverView.java",
   "java/src/org/chromium/chrome/browser/IntentHandler.java",

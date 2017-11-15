@@ -100,6 +100,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 getPreferenceScreen().removePreference(findPreference(Type.AUTOPLAY));
             }
             getPreferenceScreen().removePreference(findPreference(Type.PROTECTED_MEDIA));
+            getPreferenceScreen().removePreference(findPreference(Type.PLAY_VIDEO_IN_BACKGROUND_KEY));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
             if (!SiteSettingsCategory.adsCategoryEnabled()) {
@@ -131,6 +132,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
         if (mMediaSubMenu) {
             websitePrefs.add(Type.PROTECTED_MEDIA);
             websitePrefs.add(Type.AUTOPLAY);
+            websitePrefs.add(Type.PLAY_VIDEO_IN_BACKGROUND);
         } else {
             if (SiteSettingsCategory.adsCategoryEnabled()) {
                 websitePrefs.add(Type.ADS);
@@ -204,7 +206,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
             } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
-            } else {
+            } else if (PLAY_VIDEO_IN_BACKGROUND_KEY.equals(prefName)) {
+                p.setSummary( checked ? ContentSettingsResources.getPlayVideoInBackgroundEnabledSummary() : ContentSettingsResources.getPlayVideoInBackgroundDisabledSummary());
+            }else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }
 
