@@ -223,6 +223,12 @@
 #include "ui/gl/gl_switches.h"
 #include "ui/native_theme/native_theme_features.h"
 
+#include "components/content_settings/core/browser/host_content_settings_map.h"
+#include "chrome/browser/content_settings/host_content_settings_map_factory.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/profiles/profile_manager.h"
+
+
 #if defined(OS_ANDROID)
 #include "content/public/browser/android/java_interfaces.h"
 #include "ipc/ipc_sync_channel.h"
@@ -2916,7 +2922,10 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
 }
 
 bool RenderProcessHostImpl::NeedPlayVideoInBackground() const {
-  return true;
+  bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
+      ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
+      GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, NULL) == CONTENT_SETTING_ALLOW;
+  return play_video_in_background_enabled;
 }
 
 void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(

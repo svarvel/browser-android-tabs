@@ -149,6 +149,14 @@ public class ContentSettingsResources {
                                  ContentSetting.BLOCK,
                                  R.string.website_settings_category_desktop_view_enabled,
                                  R.string.website_settings_category_desktop_view_disabled ));
+            localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND,
+                    new ResourceItem(R.drawable.settings_play_video_in_background,
+                                 R.string.play_video_in_background_title,
+                                 R.string.play_video_in_background_title,
+                                 ContentSetting.ALLOW,
+                                 ContentSetting.BLOCK,
+                                 R.string.website_settings_category_play_video_in_background_enabled,
+                                 R.string.website_settings_category_play_video_in_background_disabled_summary ));
             localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_MEDIASTREAM_CAMERA,
                     new ResourceItem(R.drawable.ic_videocam_white_24dp,
                             R.string.website_settings_use_camera, R.string.camera_permission_title,
@@ -363,6 +371,20 @@ public class ContentSettingsResources {
      */
     public static int getDesktopViewDisabledSummary() {
         return R.string.website_settings_category_desktop_view_disabled_summary;
+    }
+
+    /**
+     * Returns the summary for 'Play video in background' settings when it is enabled.
+     */
+    public static int getPlayVideoInBackgroundEnabledSummary() {
+        return R.string.website_settings_category_play_video_in_background_enabled_summary;
+    }
+
+    /**
+     * Returns the summary for 'Play video in background' settings when it is not enabled.
+     */
+    public static int getPlayVideoInBackgroundDisabledSummary() {
+        return R.string.website_settings_category_play_video_in_background_disabled_summary;
     }
 
     /**
