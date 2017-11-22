@@ -80,6 +80,7 @@ public class ChromeBrowserInitializer {
     private boolean mAdBlockInitCalled = false;
     private boolean mUpdateStatsCalled = false;
     private boolean mInstallationSourceChecked = false;
+    private boolean mSearchSuggestSwitched = false;
 
     List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
 
@@ -155,6 +156,15 @@ public class ChromeBrowserInitializer {
       new CheckInstallationSourceAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    private void SwitchSearchSuggestEnabled() {
+      if (mSearchSuggestSwitched) {
+        return;
+      }
+
+      mSearchSuggestSwitched = true;
+      new SwitchSearchSuggestAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     // Stats update
     class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
         protected Long doInBackground(Void... params) {
@@ -208,6 +218,52 @@ public class ChromeBrowserInitializer {
 
            return null;
        }
+    }
+
+    // Search suggestions are turned off by default in Brave since 1.0.38
+    // The users who had updated from 1.0.37 and earlier versions and had not
+    // touched this setting, should have it still turned on.
+    // For the first installation we switch it to false to simulate 'default false'.
+    class SwitchSearchSuggestAsyncTask extends AsyncTask<Void,Void,Long>
+    {
+        private static final String PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE = "search_suggestions_switched_to_default_false";
+
+        public boolean isFirstInstall() {
+            try {
+                Context context = mApplication.getApplicationContext();
+
+                long firstInstallTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).firstInstallTime;
+                long lastUpdateTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
+                return firstInstallTime == lastUpdateTime;
+            } catch (Exception exc) {
+                return false;
+            }
+        }
+
+        protected Long doInBackground(Void... params) {
+            try {
+                boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, false);
+                if (!alreadySwitched) {
+                    if (isFirstInstall()) {
+                        ThreadUtils.postOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                PrefServiceBridge.getInstance().setSearchSuggestEnabled(false);
+                            }
+                        });
+                    }
+
+                    ContextUtils.getAppSharedPreferences().edit()
+                      .putBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, true)
+                      .apply();
+                }
+            }
+            catch(Exception exc) {
+                // not critical
+            }
+
+            return null;
+        }
     }
 
     // Tracking protection data download
@@ -637,6 +693,7 @@ public class ChromeBrowserInitializer {
         InitAdBlock();
         UpdateStats();
         CheckInstallationSource();
+        SwitchSearchSuggestEnabled();
     }
 
     private ActivityStateListener createActivityStateListener() {
