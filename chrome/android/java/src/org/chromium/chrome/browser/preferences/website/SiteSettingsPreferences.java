@@ -100,7 +100,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 getPreferenceScreen().removePreference(findPreference(Type.AUTOPLAY));
             }
             getPreferenceScreen().removePreference(findPreference(Type.PROTECTED_MEDIA));
-            getPreferenceScreen().removePreference(findPreference(Type.PLAY_VIDEO_IN_BACKGROUND_KEY));
+            getPreferenceScreen().removePreference(findPreference(Type.PLAY_VIDEO_IN_BACKGROUND));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
             if (!SiteSettingsCategory.adsCategoryEnabled()) {
