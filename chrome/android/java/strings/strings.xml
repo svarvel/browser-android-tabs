@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave site shield settings for</string>
     <string name="brave_shields_down">Down</string>
@@ -79,7 +78,7 @@ Saved</string>
     <string name="play_video_in_background_title">Video in background</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Enabled</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Disabled</string>
-    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Enables audio play from video in background when tab is not active or device screen is turned off. Try to switch to desktop mode if this feature is not working.</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Enables play audio from video in background when tab is not active or device screen is turned off. Try to switch to desktop mode if this feature is not working.</string>
     <string name="settings_require_relaunch_notice">Your changes will take effect the next time you relaunch Brave</string>
     <string name="settings_require_relaunch_now">RELAUNCH NOW</string>
     <string name="settings_require_relaunch_later">LATER</string>
