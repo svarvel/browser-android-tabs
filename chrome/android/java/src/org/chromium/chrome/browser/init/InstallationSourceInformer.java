@@ -5,12 +5,13 @@
 
 package org.chromium.chrome.browser.init;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
 import org.chromium.chrome.browser.MixPanelWorker;
-
+import org.chromium.chrome.browser.util.PackageUtils;
 
 public class InstallationSourceInformer {
   private static final String PREF_MIXPANEL_INSTALL_SOURCE_INFORMED = "mixpanel_installation_source_informed";
@@ -23,8 +24,9 @@ public class InstallationSourceInformer {
     Inform("Google Play");
   }
 
-  public static void InformFromPromo() {
+  public static void InformFromPromo(String promoName) {
     Inform("Promo");
+    InformStatsPromo(promoName);
   }
 
   private static synchronized void Inform(String sourceName) {
@@ -48,5 +50,20 @@ public class InstallationSourceInformer {
     SharedPreferences.Editor sharedPreferencesEditor = ContextUtils.getAppSharedPreferences().edit();
     sharedPreferencesEditor.putBoolean(PREF_MIXPANEL_INSTALL_SOURCE_INFORMED, true);
     sharedPreferencesEditor.apply();
+  }
+
+  private static final String STATS_PREF_NAME = "StatsPreferences";
+  private static final String PROMO_NAME = "Promo";
+
+  private static void InformStatsPromo(String promoName) {
+    Log.i("TAG", "InformStatsPromo, promoName=" + promoName);
+    Context context = ContextUtils.getApplicationContext();
+    if (promoName != null && !promoName.isEmpty() && PackageUtils.isFirstInstall(context)) {
+      SharedPreferences sharedPref = context.getSharedPreferences(STATS_PREF_NAME, 0);
+      SharedPreferences.Editor editor = sharedPref.edit();
+
+      editor.putString(PROMO_NAME, promoName);
+      editor.apply();
+    }
   }
 }
