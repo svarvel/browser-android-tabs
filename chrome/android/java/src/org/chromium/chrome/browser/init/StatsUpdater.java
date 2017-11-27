@@ -35,7 +35,7 @@ public class StatsUpdater {
     private static final String WEEK_OF_INSTALLATION_NAME = "WeekOfInstallation";
     private static final String PROMO_NAME = "Promo";
 
-    private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable";
+    private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable&woi=%6$s&ref=%7$s";
 
     private static Semaphore mAvailable = new Semaphore(1);
 
@@ -117,8 +117,11 @@ public class StatsUpdater {
         }
         versionNumber = versionNumber.replace(" ", "%20");
 
-        String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly, versionNumber, firstRun);
-        strQuery = ApplyWoiRef(context, strQuery);
+        String woi = GetWeekOfInstallation(context);
+        String ref = GetRef(context);
+
+        String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly,
+            versionNumber, firstRun, woi, ref);
 
         try {
             URL url = new URL(strQuery);
@@ -173,7 +176,7 @@ public class StatsUpdater {
         editor.apply();
     }
 
-    private static String ApplyWoiRef(Context context, String strQuery) {
+    private static String GetWeekOfInstallation(Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
 
         String weekOfInstallation = sharedPref.getString(WEEK_OF_INSTALLATION_NAME, null);
@@ -188,16 +191,15 @@ public class StatsUpdater {
             editor.apply();
         }
 
-        String woi = weekOfInstallation;
+        return weekOfInstallation;
+    }
+
+    private static String GetRef(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
         String ref = sharedPref.getString(PROMO_NAME, null);
-
-        if (woi != null && !woi.isEmpty()) {
-            strQuery = strQuery+"&woi="+woi;
+        if (ref == null || ref.isEmpty()) {
+            ref = "others";
         }
-        if (ref != null && !ref.isEmpty()) {
-            strQuery = strQuery+"&ref="+ref;
-        }
-
-        return strQuery;
+        return ref;
     }
 }
