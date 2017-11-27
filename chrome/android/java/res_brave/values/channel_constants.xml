@@ -7,4 +7,5 @@
     <!-- The application name displayed to the user. -->
     <string name="app_name" translatable="false">Brave</string>
     <string name="bookmark_widget_title" translatable="false">Brave bookmarks</string>
+    <string name="search_widget_title" translatable="false">Brave search</string>
 </resources>
