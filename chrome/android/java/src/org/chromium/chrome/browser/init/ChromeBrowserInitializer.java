@@ -42,6 +42,7 @@ import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.privacy.PrivacyPreferencesManager;
 import org.chromium.chrome.browser.services.GoogleServicesManager;
 import org.chromium.chrome.browser.tabmodel.document.DocumentTabModelImpl;
+import org.chromium.chrome.browser.util.PackageUtils;
 import org.chromium.chrome.browser.webapps.ActivityAssigner;
 import org.chromium.chrome.browser.webapps.ChromeWebApkHost;
 import org.chromium.components.crash.browser.ChildProcessCrashObserver;
@@ -228,23 +229,11 @@ public class ChromeBrowserInitializer {
     {
         private static final String PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE = "search_suggestions_switched_to_default_false";
 
-        public boolean isFirstInstall() {
-            try {
-                Context context = mApplication.getApplicationContext();
-
-                long firstInstallTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).firstInstallTime;
-                long lastUpdateTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
-                return firstInstallTime == lastUpdateTime;
-            } catch (Exception exc) {
-                return false;
-            }
-        }
-
         protected Long doInBackground(Void... params) {
             try {
                 boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, false);
                 if (!alreadySwitched) {
-                    if (isFirstInstall()) {
+                    if (PackageUtils.isFirstInstall(mApplication.getApplicationContext())) {
                         ThreadUtils.postOnUiThread(new Runnable() {
                             @Override
                             public void run() {

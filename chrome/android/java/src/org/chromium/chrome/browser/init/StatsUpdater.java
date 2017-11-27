@@ -15,10 +15,13 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.concurrent.Semaphore;
 
 import org.chromium.base.Log;
 import org.chromium.chrome.browser.ChromeVersionInfo;
+import org.chromium.chrome.browser.util.DateUtils;
+import org.chromium.chrome.browser.util.PackageUtils;
 
 public class StatsUpdater {
     public static final long MILLISECONDS_IN_A_DAY = 86400 * 1000;
@@ -29,6 +32,8 @@ public class StatsUpdater {
     private static final String MILLISECONDS_FOR_WEEKLY_STATS_NAME = "MillisecondsForWeeklyStats";
     private static final String MONTH_NAME = "Month";
     private static final String YEAR_NAME = "Year";
+    private static final String WEEK_OF_INSTALLATION_NAME = "WeekOfInstallation";
+    private static final String PROMO_NAME = "Promo";
 
     private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable";
 
@@ -113,6 +118,7 @@ public class StatsUpdater {
         versionNumber = versionNumber.replace(" ", "%20");
 
         String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly, versionNumber, firstRun);
+        strQuery = ApplyWoiRef(context, strQuery);
 
         try {
             URL url = new URL(strQuery);
@@ -165,5 +171,33 @@ public class StatsUpdater {
         editor.putInt(YEAR_NAME, statsObject.mYear);
 
         editor.apply();
+    }
+
+    private static String ApplyWoiRef(Context context, String strQuery) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
+
+        String weekOfInstallation = sharedPref.getString(WEEK_OF_INSTALLATION_NAME, null);
+        if (weekOfInstallation == null || weekOfInstallation.isEmpty()) {
+            SharedPreferences.Editor editor = sharedPref.edit();
+            // If this is an update installation, consider week of installation
+            // is the first Monday of 2016
+            //DateUtils.testGetPreviousMondayDate();
+            weekOfInstallation = PackageUtils.isFirstInstall(context) ?
+              DateUtils.getPreviousMondayDate(Calendar.getInstance()) : "2016-01-04";
+            editor.putString(WEEK_OF_INSTALLATION_NAME, weekOfInstallation);
+            editor.apply();
+        }
+
+        String woi = weekOfInstallation;
+        String ref = sharedPref.getString(PROMO_NAME, null);
+
+        if (woi != null && !woi.isEmpty()) {
+            strQuery = strQuery+"&woi="+woi;
+        }
+        if (ref != null && !ref.isEmpty()) {
+            strQuery = strQuery+"&ref="+ref;
+        }
+
+        return strQuery;
     }
 }
