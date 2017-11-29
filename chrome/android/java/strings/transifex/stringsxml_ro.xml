@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Configurări scut site Brave pentru</string>
     <string name="brave_shields_down">Jos</string>
@@ -77,5 +76,13 @@ Salvat</string>
     <string name="brave_shields_ads_and_trackers">Reclame şi Urmăritori</string>
     <string name="brave_shields_fingerprint_methods">Metode Amprentă</string>
     <string name="brave_shields_block_phishing_switch">Blocare Phishing</string>
+
+    <string name="play_video_in_background_title">Redare video în fundal</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Activat</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Dezactivat</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Funcție experimentală. Permite redarea în fundal a pistei audio a videoclipurilor atunci când fila nu este activă sau când ecranul dispozitivului este închis. Dacă funcția nu rulează, încercați să comutați în modul desktop.</string>
+    <string name="settings_require_relaunch_notice">Modificările efectuate vor fi activate la următoarea lansare a Brave</string>
+    <string name="settings_require_relaunch_now">RELANSEAZĂ ACUM</string>
+    <string name="settings_require_relaunch_later">MAI TÂRZIU</string>
 
 </resources>

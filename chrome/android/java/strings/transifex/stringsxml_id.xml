@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Pengaturan perisai situs Brave untuk</string>
     <string name="brave_shields_down">Turun</string>
@@ -76,5 +75,13 @@ Dihemat</string>
     <string name="brave_shields_ads_and_trackers">Iklan dan Pelacak</string>
     <string name="brave_shields_fingerprint_methods">Metode Sidik Jari</string>
     <string name="brave_shields_block_phishing_switch">Blokir Phishing</string>
+
+    <string name="play_video_in_background_title">Video di latar</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Diaktifkan</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Dinonaktifkan</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimental: Aktifkan memutar audio dari video di latar ketika tab tidak aktif atau layar perangkat mati. Coba beralih ke mode desktop jika fitur ini tidak bekerja.</string>
+    <string name="settings_require_relaunch_notice">Perubahan Anda akan berlaku setelah Anda meluncurkan ulang Brave</string>
+    <string name="settings_require_relaunch_now">LUNCURKAN ULANG</string>
+    <string name="settings_require_relaunch_later">NANTI</string>
 
 </resources>

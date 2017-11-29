@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave shield-indstillinger for</string>
     <string name="brave_shields_down">Ned</string>
@@ -76,5 +75,13 @@ tid sparet</string>
     <string name="brave_shields_ads_and_trackers">Reklamer og sporing</string>
     <string name="brave_shields_fingerprint_methods">Fingeraftrykmetoder</string>
     <string name="brave_shields_block_phishing_switch">Bloker phishing</string>
+
+    <string name="play_video_in_background_title">Video i baggrunden</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiveret</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktiveret</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentel. Muliggør afspilning af lyd fra video i baggrunden, når fanen ikke er aktiv eller enhedens skærm er slukket. Prøv at skifte til skrivebordstilstand, hvis denne funktion ikke virker.</string>
+    <string name="settings_require_relaunch_notice">Dine ændringer træder i kraft, næste gang du genstarter Brave</string>
+    <string name="settings_require_relaunch_now">GENSTART NU</string>
+    <string name="settings_require_relaunch_later">SENERE</string>
 
 </resources>

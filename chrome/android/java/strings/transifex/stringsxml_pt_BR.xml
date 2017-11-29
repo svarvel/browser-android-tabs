@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Preferências do Brave Shield para o site</string>
     <string name="brave_shields_down">Desligado</string>
@@ -76,5 +75,13 @@ Salvo</string>
     <string name="brave_shields_ads_and_trackers">Anúncios e rastreadores</string>
     <string name="brave_shields_fingerprint_methods">Métodos de impressão digital</string>
     <string name="brave_shields_block_phishing_switch">Bloqueio de phishing</string>
+
+    <string name="play_video_in_background_title">Vídeo no plano de fundo</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Habilitado</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Desabilitado</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Permite a reprodução de áudio a partir do vídeo no plano de fundo quando a aba não estiver ativa ou a tela do dispositivo estiver desligada. Experimente mudar para o modo de área de trabalho caso esse recurso não esteja funcionando.</string>
+    <string name="settings_require_relaunch_notice">Suas mudanças farão efeito na próxima vez que você iniciar o Brave novamente</string>
+    <string name="settings_require_relaunch_now">REINICIAR AGORA</string>
+    <string name="settings_require_relaunch_later">DEPOIS</string>
 
 </resources>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave -sivustosuoja-asetukset kohteelle</string>
     <string name="brave_shields_down">Alas</string>
@@ -75,5 +74,13 @@ Tallennettu</string>
     <string name="brave_shields_ads_and_trackers">Mainokset ja seurantaohjelmat</string>
     <string name="brave_shields_fingerprint_methods">Sormenjälkimenetelmät</string>
     <string name="brave_shields_block_phishing_switch">Estä tiedonkalastelu</string>
+
+    <string name="play_video_in_background_title">Video taustalla</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Käytössä</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Pois käytöstä</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Kokeiluversio. Mahdollistaa äänentoiston taustalla olevasta videosta kun välilehti ei ole auki tai laitteen näyttö ei ole päällä. Kokeile työpöytätilaan siirtymistä, jos tämä ominaisuus ei toimi.</string>
+    <string name="settings_require_relaunch_notice">Tekemäsi muutokset astuvat voimaan käynnistäessäsi Braven seuraavan kerran</string>
+    <string name="settings_require_relaunch_now">KÄYNNISTÄ UUDELLEEN NYT</string>
+    <string name="settings_require_relaunch_later">MYÖHEMMIN</string>
 
 </resources>

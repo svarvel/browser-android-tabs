@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Skjoldinnstillinger for Brave-nettstedet</string>
     <string name="brave_shields_down">Ned</string>
@@ -74,5 +73,13 @@ Lagret</string>
     <string name="brave_shields_ads_and_trackers">Annonser og sporinger</string>
     <string name="brave_shields_fingerprint_methods">Fingeravtrykksmetoder</string>
     <string name="brave_shields_block_phishing_switch">Blokker nettfisking</string>
+
+    <string name="play_video_in_background_title">Video i bakgrunnen</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Aktivert</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktivert</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentelt. Gjør det mulig å spille av lyd fra video i bakgrunnen når fanen ikke er aktiv eller skjermen på enheten er avslått. Prøv å bytte til skrivebordsmodus hvis denne funksjonen ikke virker.</string>
+    <string name="settings_require_relaunch_notice">Endringene dine trer i kraft neste gang du starter Brave på nytt</string>
+    <string name="settings_require_relaunch_now">START PÅ NYTT NÅ</string>
+    <string name="settings_require_relaunch_later">SENERE</string>
 
 </resources>

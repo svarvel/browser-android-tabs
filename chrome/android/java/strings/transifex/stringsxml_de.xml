@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave-Schutzschild für</string>
     <string name="brave_shields_down">Aus</string>
@@ -50,8 +49,8 @@ Synchronisierungscode eingeben.</string>
     <string name="sync_device">Gerät synchronisieren</string>
     <string name="sync_device_failure">Synchronisierung konnte nicht eingerichtet werden</string>
     <string name="sync_device_success">Synchronisierung wurde erfolgreich eingerichtet</string>
-    <string name="reset_sync">Synchronisierung zurücksetzen...</string>
-    <string name="resetting_sync">Sind Sie sicher, dass Sie die Synchronisierungseinstellungen dieses Geräts zurücksetzen möchten?</string>
+    <string name="reset_sync">Synchronisation zurücksetzen …</string>
+    <string name="resetting_sync">Sind Sie sicher, dass Sie die Synchronisationsseinstellungen dieses Geräts zurücksetzen möchten?</string>
 
     <string name="brave_stats_text_trackers">Tracker
 geblockt</string>
@@ -71,10 +70,18 @@ gespart</string>
     <string name="website_settings_category_desktop_view_disabled">Mobilversionen von Webseiten für neue Tabs verwenden (empfohlen)</string>
 
     <string name="brave_shields_first_group_title">Blockiermonitor</string>
-    <string name="brave_shields_second_group_title">Individuelle Steuerungselemente</string>
+    <string name="brave_shields_second_group_title">Einzeleinstellungen</string>
     <string name="brave_shields">Schutzschilde</string>
-    <string name="brave_shields_ads_and_trackers">Werbung und Tracking</string>
-    <string name="brave_shields_fingerprint_methods">Fingerabdruckmethoden</string>
-    <string name="brave_shields_block_phishing_switch">Phishing blockieren</string>
+    <string name="brave_shields_ads_and_trackers">Werbungen und Tracker</string>
+    <string name="brave_shields_fingerprint_methods">Fingerprint-Methoden</string>
+    <string name="brave_shields_block_phishing_switch">Phishing blocken</string>
+
+    <string name="play_video_in_background_title">Video im Hintergrund</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiviert</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktiviert</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimentell. Ermöglicht die Audio-Wiedergabe von im Hintergrund laufenden Videos, wenn der Tab nicht aktiv ist oder der Bildschirm des Geräts ausgeschaltet ist. Versuchen Sie, in den Desktop-Modus zu wechseln, wenn diese Funktion nicht funktioniert.</string>
+    <string name="settings_require_relaunch_notice">Ihre Änderungen werden mit dem nächsten Neustart von Brave wirksam.</string>
+    <string name="settings_require_relaunch_now">JETZT NEUSTARTEN</string>
+    <string name="settings_require_relaunch_later">SPÄTER</string>
 
 </resources>

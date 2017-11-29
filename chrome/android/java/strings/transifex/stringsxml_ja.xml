@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave サイトシールドの設定 対象:</string>
     <string name="brave_shields_down">下へ</string>
@@ -73,5 +72,13 @@
     <string name="brave_shields_ads_and_trackers">広告とトラッカー</string>
     <string name="brave_shields_fingerprint_methods">指紋による方法</string>
     <string name="brave_shields_block_phishing_switch">フィッシングをブロック</string>
+
+    <string name="play_video_in_background_title">バックグラウンドの動画</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">有効</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">無効</string>
+    <string name="website_settings_category_play_video_in_background_enabled">試験的機能です。タブが無効またはデバイスの画面がオフの際のバックグラウンドの動画からのオーディオ再生を有効化します。この機能が動作しない場合には、デスクトップモードに切り替えてみてください。</string>
+    <string name="settings_require_relaunch_notice">変更は次回の Brave 再起動後に有効となります</string>
+    <string name="settings_require_relaunch_now">今すぐ再起動する</string>
+    <string name="settings_require_relaunch_later">後で</string>
 
 </resources>
