@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Ustawienia zabezpieczeń strony Brave dla</string>
     <string name="brave_shields_down">Nieaktywne</string>
@@ -76,5 +75,13 @@ zaoszczędzony czas</string>
     <string name="brave_shields_ads_and_trackers">Reklamy i skrypty śledzące</string>
     <string name="brave_shields_fingerprint_methods">Metody odcisku palca</string>
     <string name="brave_shields_block_phishing_switch">Zablokuj phishing</string>
+
+    <string name="play_video_in_background_title">Wideo w tle</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Włączone</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Wyłączone</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Funkcja eksperymentalna. Umożliwia odtwarzanie dźwięku z klipu wideo w tle, kiedy karta jest nieaktywna lub ekran urządzenia jest wyłączony. Jeśli funkcja nie działa, spróbuj przełączyć do trybu desktopowego.</string>
+    <string name="settings_require_relaunch_notice">Zmiany zostaną wprowadzone po ponownym uruchomieniu Brave</string>
+    <string name="settings_require_relaunch_now">URUCHOM PONOWNIE TERAZ</string>
+    <string name="settings_require_relaunch_later">PÓŹNIEJ</string>
 
 </resources>

@@ -1091,27 +1091,27 @@ Egyes webhelyek például válaszolhatnak rá úgy, hogy olyan hirdetéseket jel
 <translation id="3209146299287804856">Brave site shield beállítások ehhez</translation>
 <translation id="622484624075952240">Le</translation>
 <translation id="2706462751667573066">Fel</translation>
-<translation id="4339730410920731698">Ads és Tracker-ek blokkolva</translation>
-<translation id="2313532038420432247">HTTPS fejlesztések</translation>
+<translation id="4339730410920731698">Reklámok és követések blokkolva</translation>
+<translation id="2313532038420432247">HTTPS használata</translation>
 <translation id="7461425058443653485">Szkriptek blokkolva</translation>
-<translation id="7835726359440951858">Blokkolja az Asd-t és a Tracking-et</translation>
+<translation id="7835726359440951858">Blokkolja a reklámokat és a követést</translation>
 <translation id="520895744850022668">HTTPS mindenhol</translation>
 <translation id="94154759592465111">Blokkolja a szkripteket</translation>
-<translation id="7307834434086582547">Brave Shields engedélyezése/letiltása</translation>
-<translation id="6132506775968708399">3-dik fél sütijeinek blokkolása</translation>
-<translation id="8710614491157212477">A támogatott oldalakat lehetőség szerint HTTP helyet HTTPS protokollal nyitja meg</translation>
-<translation id="5758129336814690876">Nyomkövetés elleni védelem mód</translation>
+<translation id="7307834434086582547">Brave Pajzsok engedélyezése/letiltása</translation>
+<translation id="6132506775968708399">3. fél sütijeinek blokkolása</translation>
+<translation id="8710614491157212477">A támogatott oldalakat lehetőség szerint HTTP helyett HTTPS protokollal nyitja meg</translation>
+<translation id="5758129336814690876">Nyomkövetés elleni védelmi mód</translation>
 <translation id="4609637183310787528">Megakadályozza a nyomkövető programok betöltődését</translation>
-<translation id="8387201461264842096">Ad Block</translation>
-<translation id="1934885595886623674">Megakadályozza a hirdetések betöltődését</translation>
+<translation id="8387201461264842096">Reklám blokkolás</translation>
+<translation id="1934885595886623674">Megakadályozza a reklám betöltődését</translation>
 <translation id="7458422973722236530">Ujjlenyomat alapú védelem</translation>
 <translation id="5787084571334399599">Megakadályozza a böngészőben az ujjlenyomatot</translation>
 <translation id="3758669798635576061">Ujjlenyomat alapú módszerek letiltva</translation>
-<translation id="3276318574457057212">Regionális Ad Block</translation>
-<translation id="2300239903491866759">Megakadályozza, hogy helyi reklámok töltődjenek be</translation>
+<translation id="3276318574457057212">Területi Reklám Blokkolás</translation>
+<translation id="2300239903491866759">Megakadályozza, hogy területi reklámok töltődjenek be</translation>
 <translation id="8142327400852603066">További listák nincsenek az Ön területéhez</translation>
-<translation id="9148058034647219655">Kijárat</translation>
-<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="9148058034647219655">Kilépés</translation>
+<translation id="3149880132460839085">Brave szinkronizálás</translation>
 <translation id="5853303025585906159">Szinkronizálja a böngésző adatait az eszközei
 között a Brave Sync használatával,
 fiók létrehozása nem szükséges.
@@ -1119,7 +1119,7 @@ Bökjön az alábbira az indításhoz.</translation>
 <translation id="4807681603968503084">Rendelkezek szinkronizációs kóddal</translation>
 <translation id="3082265116777145081">Eszköznév hozzáadása</translation>
 <translation id="9024091168371687561">Adjon egy elfogadható nevet ennek az eszköznek</translation>
-<translation id="3998827900918661986">Android-eszköz</translation>
+<translation id="3998827900918661986">Android eszköz</translation>
 <translation id="7319511434820752937">Szinkronizálás eszközre</translation>
 <translation id="2848874822038607051">Meglévő szinkronizált eszköz használatakor nyissa meg
 a Brave Beállításokat és navigáljon az
@@ -1133,14 +1133,14 @@ szinkronizációs kód felfedéséhez.</translation>
 <translation id="7713465482966886648">A szinkronizálás sikeresen végrehajtva</translation>
 <translation id="1068083442730715531">Szinkronizálás visszaállítása...</translation>
 <translation id="6761015334234690567">Biztos benne, hogy visszaállítja ennek az eszköznek a szinkronizációs beállításait?</translation>
-<translation id="6244065453125065109">Tracker-ek
+<translation id="6244065453125065109">Követések
 blokkolva</translation>
-<translation id="2547939855139473800">Ads
+<translation id="2547939855139473800">Reklámok
 blokkolva</translation>
 <translation id="8880969045613157151">HTTPS
-fejlesztések</translation>
-<translation id="204407992549693965">Becsült idő
-Mentve</translation>
+használata</translation>
+<translation id="204407992549693965">Becsült megspórolt
+idő</translation>
 <translation id="991605024067283917">Mutatók küldése</translation>
 <translation id="6572660632052512096">Asztal mód</translation>
 <translation id="4479934682648362332">Részesítse előnyben az oldalak asztali verzióit</translation>
@@ -1150,7 +1150,14 @@ Mentve</translation>
 <translation id="3834924998750356151">Blokkolási ellenőrzés</translation>
 <translation id="1713450908129883784">Egyéni irányítás</translation>
 <translation id="6303294677342628402">Pajzsok</translation>
-<translation id="252011129655042182">Hirdetések és követők</translation>
+<translation id="252011129655042182">Reklámok és követések</translation>
 <translation id="6754976710186182237">Ujjlenyomat-módszerek</translation>
 <translation id="8585880402319729023">Adathalászat blokkolása</translation>
+<translation id="4235790499274112499">Videó a háttérben</translation>
+<translation id="59174027418879706">Engedélyezve</translation>
+<translation id="4176463684765177261">Letiltva</translation>
+<translation id="1580125697191336644">Kísérleti. Lehetővé teszi egy videó hangjának lejátszását a háttérben, ha a fül nem aktív, vagy a készülék képernyője ki van kapcsolva. Próbálj átváltani asztali módra, ha ez a funkció nem működik.</translation>
+<translation id="6587448235155023666">A végzett változtatások a Brave következő indításakor lépnek érvénybe.</translation>
+<translation id="8701563696941209024">ÚJRAINDÍTÁS MOST</translation>
+<translation id="834487290629916192">KÉSŐBB</translation>
 </translationbundle>

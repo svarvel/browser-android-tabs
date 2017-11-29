@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Cài đặt lá chắn của trang Brave cho</string>
     <string name="brave_shields_down">Xuống</string>
@@ -76,5 +75,13 @@ HTTPS</string>
     <string name="brave_shields_ads_and_trackers">Quảng cáo và Trình theo dõi</string>
     <string name="brave_shields_fingerprint_methods">Biện pháp Vân tay</string>
     <string name="brave_shields_block_phishing_switch">Chặn Lừa đảo</string>
+
+    <string name="play_video_in_background_title">Video chạy ngầm</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Đã kích hoạt</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Tắt</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Thử nghiệm. Kích hoạt tính năng phát nhạc từ video chạy ngầm khi cửa sổ không ở trạng thái sử dụng hoặc màn hình thiết bị đang tắt. Hãy thử chuyển về chế độ màn hình chính nếu tính năng này không hoạt động.</string>
+    <string name="settings_require_relaunch_notice">Các thay đổi của bạn sẽ có hiệu lực vào lần tiếp theo khi bạn khởi động lại ứng dụng Brave</string>
+    <string name="settings_require_relaunch_now">KHỞI ĐỘNG LẠI NGAY BÂY GIỜ</string>
+    <string name="settings_require_relaunch_later">ĐỂ SAU</string>
 
 </resources>

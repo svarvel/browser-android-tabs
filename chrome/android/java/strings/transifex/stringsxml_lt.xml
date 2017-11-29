@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">„Brave“ svetainės skydo nustatymai, skirti</string>
     <string name="brave_shields_down">Išjungta</string>
@@ -70,4 +69,10 @@ Išsaugoti</string>
     <string name="website_settings_category_desktop_view_enabled">Įjungti naujų skirtukų darbalaukio versiją</string>
     <string name="website_settings_category_desktop_view_disabled">Naujiems svetainių skirtukams naudoti mobiliąją versiją (rekomenduojama)</string>
 
-    </resources>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Įjungta</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Išjungta</string>
+    <string name="settings_require_relaunch_notice">Pakeitimai įsigalios, kai kitą kartą paleisite Brave</string>
+    <string name="settings_require_relaunch_now">PALEISTI IŠ NAUJO DABAR</string>
+    <string name="settings_require_relaunch_later">VĖLIAU</string>
+
+</resources>

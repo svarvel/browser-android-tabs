@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">إعدادات موقع درع Brave  ل</string>
     <string name="brave_shields_down">أسفل</string>
@@ -77,5 +76,13 @@ HTTPS</string>
     <string name="brave_shields_ads_and_trackers">إعلانات ومتتبعات</string>
     <string name="brave_shields_fingerprint_methods">وسائل قراءة البصمات</string>
     <string name="brave_shields_block_phishing_switch">حظر التصيد الاحتيالي</string>
+
+    <string name="play_video_in_background_title">فيديو في الخلفية</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">مُمَكَّنْ</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">مُعَطَّلْ</string>
+    <string name="website_settings_category_play_video_in_background_enabled">تجريبي. يتيح تشغيل صوت من فيديو في الخلفية عندما تكون علامة التبويب غير نشطة، أو عندما تكون شاشة الجهاز مطفأة. إذا كانت هذه الميزة لا تعمل حاول التبديل إلى وضع سطح المكتب.</string>
+    <string name="settings_require_relaunch_notice">سيظهر أثر التغييرات التي قمت بإدخالها في المرة القادمة عند إعادة تشغيل Brave</string>
+    <string name="settings_require_relaunch_now">إعادة التشغيل الآن</string>
+    <string name="settings_require_relaunch_later">فيما بعد</string>
 
 </resources>

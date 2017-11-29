@@ -1,33 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
-    <string name="brave_settings_title">Налаштування захисту Brave для</string>
+    <string name="brave_settings_title">Налаштування щитів Brave для</string>
     <string name="brave_shields_down">Вимк</string>
     <string name="brave_shields_up">Увімк</string>
-    <string name="brave_shields_ads_trackers">Блоковано реклами та трекерів</string>
+    <string name="brave_shields_ads_trackers">Реклами і стеження</string>
     <string name="brave_shields_https_upgrades">HTTPS перенаправлень</string>
-    <string name="brave_shields_scripts_blocked">Блоковано скриптів</string>
-    <string name="brave_shields_ads_tracking_switch">Блокувати рекламу та трекінг</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS всюди</string>
-    <string name="brave_shields_blocks_scripts_switch">Блокувати скрипти</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк Brave захист</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Блокувати сторонні cookies</string>
+    <string name="brave_shields_scripts_blocked">Скриптів</string>
+    <string name="brave_shields_ads_tracking_switch">Реклама і стеження</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Скрипти</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк щити Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Блокувати сторонні куки</string>
 
-    <string name="httpse_summary">Відкриває сайти за допомогою HTTPS замість HTTP якщо це можливо</string>
-    <string name="tracking_protection_title">Режим захисту від трекінгу</string>
-    <string name="tracking_protection_summary">Блокує трекінг ресурси від завантаження</string>
-    <string name="ad_block_title">Блокує рекламу</string>
-    <string name="ad_block_summary">Блокує рекламу від завантаження</string>
+    <string name="httpse_summary">Відкриття підтримуваних сайтів з використанням протоколу HTTPS замість HTTP</string>
+    <string name="tracking_protection_title">Режим захисту від стеження</string>
+    <string name="tracking_protection_summary">Блокування завантаження елементів стеження</string>
+    <string name="ad_block_title">Блокувати рекламу</string>
+    <string name="ad_block_summary">Блокування завантаження реклами</string>
 
-    <string name="fingerprinting_protection_title">Захист відбитка браузера</string>
-    <string name="fingerprinting_protection_summary">Захищає від відстеження відбитку браузера</string>
-    <string name="brave_shields_fingerprints_blocked">Блоковано відбитків</string>
-    <string name="brave_shields_block_fingerprints_switch">Захист відбитка браузера</string>
+    <string name="fingerprinting_protection_title">Захист відбитку браузера</string>
+    <string name="fingerprinting_protection_summary">Захист відстеження відбитку браузера</string>
+    <string name="brave_shields_fingerprints_blocked">Відбитків браузера</string>
+    <string name="brave_shields_block_fingerprints_switch">Відбиток браузера</string>
 
-    <string name="ad_block_regional_title">Блокує регіональну рекламу</string>
-    <string name="ad_block_regional_summary">Блокує регіональну рекламу від завантаження</string>
+    <string name="ad_block_regional_title">Блокувати регіональну рекламу</string>
+    <string name="ad_block_regional_summary">Блокування завантаження регіональної реклами</string>
 
-    <string name="ad_block_regional_summary_no_list">Додаткових списків не знайдено для Вашої локалі</string>
+    <string name="ad_block_regional_summary_no_list">Для вашої локалі не знайдено додаткових списків</string>
 
     <string name="menu_exit">Вихід</string>
 
@@ -54,28 +53,36 @@
     <string name="reset_sync">Скидання синхронізації...</string>
     <string name="resetting_sync">Ви впевнені що хочете скинути синхронізацію для цього пристрою?</string>
 
-    <string name="brave_stats_text_trackers">Блоковано
-трекерів</string>
-    <string name="brave_stats_text_ads">Блоковано
+    <string name="brave_stats_text_trackers">Заблоковано
+стеження</string>
+    <string name="brave_stats_text_ads">Заблоковано
 реклами</string>
     <string name="brave_stats_text_https">HTTPS
 перенаправлень</string>
-    <string name="brave_stats_text_time">Збережено
+    <string name="brave_stats_text_time">Заощаджено
 часу</string>
 
     <string name="send_metrics_title">Надсилати метрики</string>
 
-    <string name="desktop_mode_title">Режим робочого столу</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Віддайте перевагу настільним версіям сайтів</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Віддайте перевагу мобільній версії сайтів</string>
-    <string name="website_settings_category_desktop_view_enabled">Увімкнути робочий стіл для нових вкладок</string>
-    <string name="website_settings_category_desktop_view_disabled">Для нових вкладок слід використовувати мобільні версії сайтів (рекомендовано)</string>
+    <string name="desktop_mode_title">Режим повних версій сайтів</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Перевага для повних версій сайтів</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Перевага для мобільних версій сайтів</string>
+    <string name="website_settings_category_desktop_view_enabled">Повні версії сайтів для нових вкладок</string>
+    <string name="website_settings_category_desktop_view_disabled">Використовувати мобільні версії сайтів для нових вкладок (рекомендовано)</string>
 
     <string name="brave_shields_first_group_title">Монітор блокування</string>
-    <string name="brave_shields_second_group_title">Індивідуальне управління</string>
-    <string name="brave_shields">Захист</string>
-    <string name="brave_shields_ads_and_trackers">Реклами та трекерів</string>
-    <string name="brave_shields_fingerprint_methods">Блоковано відбитків</string>
-    <string name="brave_shields_block_phishing_switch">Блокувати фішинг</string>
+    <string name="brave_shields_second_group_title">Керування блокуванням</string>
+    <string name="brave_shields">Щити</string>
+    <string name="brave_shields_ads_and_trackers">Реклами і стеження</string>
+    <string name="brave_shields_fingerprint_methods">Відбитків браузера</string>
+    <string name="brave_shields_block_phishing_switch">Шахрайство</string>
+
+    <string name="play_video_in_background_title">Відео на задньому плані</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Увімкнено</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Вимкнено</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Експериментальна функція. Вмикає відтворення аудіо для відео на задньому плані, коли вкладка неактивна, або екран вимкнений. Якщо ця функція не працює, спробуйте перемкнутися на повну версію сайту.</string>
+    <string name="settings_require_relaunch_notice">Зміни набудуть чинності після перезапуску Brave</string>
+    <string name="settings_require_relaunch_now">ПЕРЕЗАПУСТИТИ ЗАРАЗ</string>
+    <string name="settings_require_relaunch_later">ПІЗНІШЕ</string>
 
 </resources>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave site afscherming instellingen voor</string>
     <string name="brave_shields_down">Omlaag</string>
@@ -76,5 +75,13 @@ Opgeslagen</string>
     <string name="brave_shields_ads_and_trackers">Advertenties en trackers</string>
     <string name="brave_shields_fingerprint_methods">Vingerafdrukmethoden</string>
     <string name="brave_shields_block_phishing_switch">Blokkeer phishing</string>
+
+    <string name="play_video_in_background_title">Video op achtergrond</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Ingeschakeld</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Uitgeschakeld</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimenteel. Schakelt de optie in om audio af te spelen van een video op de achtergrond, wanneer de tab niet actief is, of het scherm van het apparaat is uitgeschakeld. Probeer naar de desktopmodus te schakelen als deze functie niet werkt.</string>
+    <string name="settings_require_relaunch_notice">De wijzigingen worden van kracht de volgende keer dat je Brave opnieuw opstart</string>
+    <string name="settings_require_relaunch_now">START NU OPNIEUW OP</string>
+    <string name="settings_require_relaunch_later">LATER</string>
 
 </resources>

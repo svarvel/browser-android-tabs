@@ -1108,13 +1108,13 @@
 <translation id="5787084571334399599">阻止浏览器识别浏览指纹</translation>
 <translation id="3758669798635576061">禁用网络指纹识别</translation>
 <translation id="3276318574457057212">当地广告过滤</translation>
-<translation id="2300239903491866759">阻止当地性广告加载</translation>
+<translation id="2300239903491866759">阻止所在地区的广告加载</translation>
 <translation id="8142327400852603066">您的地区没有其他可用列表</translation>
 <translation id="9148058034647219655">退出</translation>
 <translation id="3149880132460839085">Brave Sync</translation>
 <translation id="5853303025585906159">使用 Brave Sync 在您的设备之间同步浏览器数据，
 无需创建账户。点击下面开始。</translation>
-<translation id="4807681603968503084">我已有同步码</translation>
+<translation id="4807681603968503084">我已有同步代码</translation>
 <translation id="3082265116777145081">添加设备名称</translation>
 <translation id="9024091168371687561">为此设备输入可选名称</translation>
 <translation id="3998827900918661986">Android 设备</translation>
@@ -1148,4 +1148,11 @@
 <translation id="252011129655042182">广告和跟踪器</translation>
 <translation id="6754976710186182237">指纹识别方法</translation>
 <translation id="8585880402319729023">阻止网络钓鱼</translation>
+<translation id="4235790499274112499">后台视频</translation>
+<translation id="59174027418879706">启用</translation>
+<translation id="4176463684765177261">禁用</translation>
+<translation id="1580125697191336644">实验性功能。当标签页未激活或者设备锁屏时可以在后台播放视频。如果此功能不起作用，尝试切换到桌面模式。</translation>
+<translation id="6587448235155023666">您的更改将在重启Brave后生效</translation>
+<translation id="8701563696941209024">现在重启</translation>
+<translation id="834487290629916192">稍后</translation>
 </translationbundle>

@@ -1,37 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave site shield beállítások ehhez</string>
     <string name="brave_shields_down">Le</string>
     <string name="brave_shields_up">Fel</string>
-    <string name="brave_shields_ads_trackers">Ads és Tracker-ek blokkolva</string>
-    <string name="brave_shields_https_upgrades">HTTPS fejlesztések</string>
+    <string name="brave_shields_ads_trackers">Reklámok és követések blokkolva</string>
+    <string name="brave_shields_https_upgrades">HTTPS használata</string>
     <string name="brave_shields_scripts_blocked">Szkriptek blokkolva</string>
-    <string name="brave_shields_ads_tracking_switch">Blokkolja az Asd-t és a Tracking-et</string>
+    <string name="brave_shields_ads_tracking_switch">Blokkolja a reklámokat és a követést</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS mindenhol</string>
     <string name="brave_shields_blocks_scripts_switch">Blokkolja a szkripteket</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Brave Shields engedélyezése/letiltása</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">3-dik fél sütijeinek blokkolása</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Brave Pajzsok engedélyezése/letiltása</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">3. fél sütijeinek blokkolása</string>
 
-    <string name="httpse_summary">A támogatott oldalakat lehetőség szerint HTTP helyet HTTPS protokollal nyitja meg</string>
-    <string name="tracking_protection_title">Nyomkövetés elleni védelem mód</string>
+    <string name="httpse_summary">A támogatott oldalakat lehetőség szerint HTTP helyett HTTPS protokollal nyitja meg</string>
+    <string name="tracking_protection_title">Nyomkövetés elleni védelmi mód</string>
     <string name="tracking_protection_summary">Megakadályozza a nyomkövető programok betöltődését</string>
-    <string name="ad_block_title">Ad Block</string>
-    <string name="ad_block_summary">Megakadályozza a hirdetések betöltődését</string>
+    <string name="ad_block_title">Reklám blokkolás</string>
+    <string name="ad_block_summary">Megakadályozza a reklám betöltődését</string>
 
     <string name="fingerprinting_protection_title">Ujjlenyomat alapú védelem</string>
     <string name="fingerprinting_protection_summary">Megakadályozza a böngészőben az ujjlenyomatot</string>
     <string name="brave_shields_fingerprints_blocked">Ujjlenyomat alapú módszerek letiltva</string>
     <string name="brave_shields_block_fingerprints_switch">Ujjlenyomat alapú védelem</string>
 
-    <string name="ad_block_regional_title">Regionális Ad Block</string>
-    <string name="ad_block_regional_summary">Megakadályozza, hogy helyi reklámok töltődjenek be</string>
+    <string name="ad_block_regional_title">Területi Reklám Blokkolás</string>
+    <string name="ad_block_regional_summary">Megakadályozza, hogy területi reklámok töltődjenek be</string>
 
     <string name="ad_block_regional_summary_no_list">További listák nincsenek az Ön területéhez</string>
 
-    <string name="menu_exit">Kijárat</string>
+    <string name="menu_exit">Kilépés</string>
 
-    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync">Brave szinkronizálás</string>
     <string name="brave_sync_description">Szinkronizálja a böngésző adatait az eszközei
 között a Brave Sync használatával,
 fiók létrehozása nem szükséges.
@@ -39,7 +38,7 @@ Bökjön az alábbira az indításhoz.</string>
     <string name="brave_sync_have_existing_code">Rendelkezek szinkronizációs kóddal</string>
     <string name="sync_settings_add_device_name_title">Eszköznév hozzáadása</string>
     <string name="sync_settings_add_device_name_label">Adjon egy elfogadható nevet ennek az eszköznek</string>
-    <string name="sync_example_device_name">Android-eszköz</string>
+    <string name="sync_example_device_name">Android eszköz</string>
     <string name="brave_sync_qrcode">Szinkronizálás eszközre</string>
     <string name="brave_sync_qrcode_message">Meglévő szinkronizált eszköz használatakor nyissa meg
 a Brave Beállításokat és navigáljon az
@@ -54,14 +53,14 @@ szinkronizációs kód felfedéséhez.</string>
     <string name="reset_sync">Szinkronizálás visszaállítása...</string>
     <string name="resetting_sync">Biztos benne, hogy visszaállítja ennek az eszköznek a szinkronizációs beállításait?</string>
 
-    <string name="brave_stats_text_trackers">Tracker-ek
+    <string name="brave_stats_text_trackers">Követések
 blokkolva</string>
-    <string name="brave_stats_text_ads">Ads
+    <string name="brave_stats_text_ads">Reklámok
 blokkolva</string>
     <string name="brave_stats_text_https">HTTPS
-fejlesztések</string>
-    <string name="brave_stats_text_time">Becsült idő
-Mentve</string>
+használata</string>
+    <string name="brave_stats_text_time">Becsült megspórolt
+idő</string>
 
     <string name="send_metrics_title">Mutatók küldése</string>
 
@@ -74,8 +73,16 @@ Mentve</string>
     <string name="brave_shields_first_group_title">Blokkolási ellenőrzés</string>
     <string name="brave_shields_second_group_title">Egyéni irányítás</string>
     <string name="brave_shields">Pajzsok</string>
-    <string name="brave_shields_ads_and_trackers">Hirdetések és követők</string>
+    <string name="brave_shields_ads_and_trackers">Reklámok és követések</string>
     <string name="brave_shields_fingerprint_methods">Ujjlenyomat-módszerek</string>
     <string name="brave_shields_block_phishing_switch">Adathalászat blokkolása</string>
+
+    <string name="play_video_in_background_title">Videó a háttérben</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Engedélyezve</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Letiltva</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Kísérleti. Lehetővé teszi egy videó hangjának lejátszását a háttérben, ha a fül nem aktív, vagy a készülék képernyője ki van kapcsolva. Próbálj átváltani asztali módra, ha ez a funkció nem működik.</string>
+    <string name="settings_require_relaunch_notice">A végzett változtatások a Brave következő indításakor lépnek érvénybe.</string>
+    <string name="settings_require_relaunch_now">ÚJRAINDÍTÁS MOST</string>
+    <string name="settings_require_relaunch_later">KÉSŐBB</string>
 
 </resources>
