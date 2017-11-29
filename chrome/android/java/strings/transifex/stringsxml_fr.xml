@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Paramètres pour le  site Brave Shield</string>
     <string name="brave_shields_down">Vers le bas</string>
@@ -76,5 +75,13 @@ Enregistré</string>
     <string name="brave_shields_ads_and_trackers">Publicités et pistages</string>
     <string name="brave_shields_fingerprint_methods">Méthodes des empreintes</string>
     <string name="brave_shields_block_phishing_switch">Bloquer le hameçonnage</string>
+
+    <string name="play_video_in_background_title">Vidéo en arrière-plan</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Activé</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Désactivé</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Expérimental. Active la lecture audio à partir d\'une vidéo en arrière-plan lorsque l\'onglet est inactif ou l\'écran de l\'appareil éteint. Tentez de passer en mode bureau si cette fonctionnalité n\'est pas opérationnelle.</string>
+    <string name="settings_require_relaunch_notice">Vos changements prendront effet lors du prochain démarrage de Brave</string>
+    <string name="settings_require_relaunch_now">REDÉMARRER MAINTENANT</string>
+    <string name="settings_require_relaunch_later">PLUS TARD</string>
 
 </resources>

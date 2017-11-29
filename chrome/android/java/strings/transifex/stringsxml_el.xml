@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Ρυθμίσεις ασπίδων [προστασίας] ιστοτόπου Brave για</string>
     <string name="brave_shields_down">Κάτω-</string>
@@ -76,5 +75,13 @@ HTTPS</string>
     <string name="brave_shields_ads_and_trackers">Διαφημίσεις και Ανιχνευτές</string>
     <string name="brave_shields_fingerprint_methods">Μέθοδοι Δαχτυλικών Αποτυπωμάτων</string>
     <string name="brave_shields_block_phishing_switch">Μπλόκαρε το Ηλεκτρονικό Ψάρεμα</string>
+
+    <string name="play_video_in_background_title">Βίντεο στο παρασκήνιο</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Ενεργοποιημένο</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Απενεργοποιημένο</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Πειραματικό. Σας επιτρέπει να παίζετε ήχο από βίντεο στο παρασκήνιο όταν η καρτέλα δεν είναι ενεργή ή η οθόνη της συσκευής είναι κλειστή. Δοκιμάστε τη μετάβαση σε λειτουργία σταθερού υπολογιστή αν αυτό το χαρακτηριστικό δε λειτουργεί.</string>
+    <string name="settings_require_relaunch_notice">Οι αλλαγές σας θα εφαρμοστούν την επόμενη φορά που θα κάνετε επανεκκίνηση στο Brave</string>
+    <string name="settings_require_relaunch_now">ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΩΡΑ</string>
+    <string name="settings_require_relaunch_later">ΑΡΓΟΤΕΡΑ</string>
 
 </resources>

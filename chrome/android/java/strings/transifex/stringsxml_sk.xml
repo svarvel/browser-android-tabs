@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Nastavenie webovej ochrany Brave pre:</string>
     <string name="brave_shields_down">Dole</string>
@@ -77,5 +76,13 @@ ušetrený čas</string>
     <string name="brave_shields_ads_and_trackers">Reklama a sledovanie</string>
     <string name="brave_shields_fingerprint_methods">Spôsoby identifikácie</string>
     <string name="brave_shields_block_phishing_switch">Blokovanie phishingu</string>
+
+    <string name="play_video_in_background_title">Video v pozadí</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Aktivované</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktivované</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimentálne. Umožňuje prehrávať zvuk z videa v pozadí, keď karta nie je aktívna alebo je obrazovka zariadenia vypnutá. Ak táto funkcia nefunguje, skúste prepnúť do režimu pracovnej plochy.</string>
+    <string name="settings_require_relaunch_notice">Vaše zmeny sa prejavia pri ďalšom spustení Brave</string>
+    <string name="settings_require_relaunch_now">SPUSTIŤ ZNOVA</string>
+    <string name="settings_require_relaunch_later">NESKÔR</string>
 
 </resources>

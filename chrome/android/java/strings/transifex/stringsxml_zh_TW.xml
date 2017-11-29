@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave 網站防護設定</string>
     <string name="brave_shields_down">關閉</string>
@@ -72,5 +71,13 @@
     <string name="brave_shields_ads_and_trackers">廣告與追蹤器</string>
     <string name="brave_shields_fingerprint_methods">指紋方式</string>
     <string name="brave_shields_block_phishing_switch">阻擋網路釣魚</string>
+
+    <string name="play_video_in_background_title">背景影片</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">已啟用</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">已停用</string>
+    <string name="website_settings_category_play_video_in_background_enabled">實驗性功能。在分頁未使用或裝置螢幕關閉時於背景播放影片音效。若此功能無法運作，請嘗試切換到桌面模式。</string>
+    <string name="settings_require_relaunch_notice">您的變更將在下次重啟 Brave 後生效</string>
+    <string name="settings_require_relaunch_now">立即重啟</string>
+    <string name="settings_require_relaunch_later">稍後</string>
 
 </resources>

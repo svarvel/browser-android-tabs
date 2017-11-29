@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
     <string name="brave_settings_title">Brave网站屏蔽设置对象为</string>
     <string name="brave_shields_down">关闭</string>
@@ -25,7 +24,7 @@
     <string name="brave_shields_block_fingerprints_switch">指纹保护</string>
 
     <string name="ad_block_regional_title">当地广告过滤</string>
-    <string name="ad_block_regional_summary">阻止当地性广告加载</string>
+    <string name="ad_block_regional_summary">阻止所在地区的广告加载</string>
 
     <string name="ad_block_regional_summary_no_list">您的地区没有其他可用列表</string>
 
@@ -34,7 +33,7 @@
     <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">使用 Brave Sync 在您的设备之间同步浏览器数据，
 无需创建账户。点击下面开始。</string>
-    <string name="brave_sync_have_existing_code">我已有同步码</string>
+    <string name="brave_sync_have_existing_code">我已有同步代码</string>
     <string name="sync_settings_add_device_name_title">添加设备名称</string>
     <string name="sync_settings_add_device_name_label">为此设备输入可选名称</string>
     <string name="sync_example_device_name">Android 设备</string>
@@ -72,5 +71,13 @@
     <string name="brave_shields_ads_and_trackers">广告和跟踪器</string>
     <string name="brave_shields_fingerprint_methods">指纹识别方法</string>
     <string name="brave_shields_block_phishing_switch">阻止网络钓鱼</string>
+
+    <string name="play_video_in_background_title">后台视频</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">启用</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">禁用</string>
+    <string name="website_settings_category_play_video_in_background_enabled">实验性功能。当标签页未激活或者设备锁屏时可以在后台播放视频。如果此功能不起作用，尝试切换到桌面模式。</string>
+    <string name="settings_require_relaunch_notice">您的更改将在重启Brave后生效</string>
+    <string name="settings_require_relaunch_now">现在重启</string>
+    <string name="settings_require_relaunch_later">稍后</string>
 
 </resources>
