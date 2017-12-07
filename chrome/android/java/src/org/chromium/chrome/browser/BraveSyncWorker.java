@@ -546,7 +546,7 @@ public class BraveSyncWorker {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initContenViewCore();
                         } else {
-                            mContentViewCore.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", null);
+                            mWebContents.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", null);
                         }
 
                         String toLoad = "<script type='text/javascript'>";
@@ -570,7 +570,7 @@ public class BraveSyncWorker {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void initContenViewCore() {
-        mContentViewCore.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", JavascriptInterface.class);
+        mWebContents.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", JavascriptInterface.class);
     }
 
     private void CallScript(StringBuilder strCall) {
@@ -2013,7 +2013,7 @@ public class BraveSyncWorker {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initJSContenViewCore();
                         } else {
-                            mJSContentViewCore.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", null);
+                            mJSWebContents.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", null);
                         }
 
                         String toLoad = "<script type='text/javascript'>";
@@ -2040,7 +2040,7 @@ public class BraveSyncWorker {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void initJSContenViewCore() {
-        mJSContentViewCore.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", JavascriptInterface.class);
+        mJSWebContents.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", JavascriptInterface.class);
     }
 
     public void GetNumber(String[] words) {
