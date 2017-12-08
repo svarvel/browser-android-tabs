@@ -11,17 +11,15 @@
 #include "base/strings/string_util.h"
 #include "base/strings/utf_string_conversions.h"
 #include "components/omnibox/browser/autocomplete_input.h"
-#include "components/omnibox/browser/autocomplete_provider_client.h"
 #include "components/omnibox/browser/history_provider.h"
 
-// As from autocomplete_classifier.h:
-// Search Primary Provider (navigational suggestion)                   |  800++
-const int TopSitesProvider::kRelevance = 800;
+// As from autocomplete_provider.h:
+// Search Secondary Provider (suggestion)                              |  100++
+const int TopSitesProvider::kRelevance = 100;
 
 
 TopSitesProvider::TopSitesProvider(AutocompleteProviderClient* client)
-    : AutocompleteProvider(AutocompleteProvider::TYPE_SEARCH),
-      client_(client) {
+    : AutocompleteProvider(AutocompleteProvider::TYPE_SEARCH) {
 }
 
 void TopSitesProvider::Start(const AutocompleteInput& input,
@@ -31,11 +29,6 @@ void TopSitesProvider::Start(const AutocompleteInput& input,
       (input.type() == metrics::OmniboxInputType::INVALID) ||
       (input.type() == metrics::OmniboxInputType::QUERY))
     return;
-
-  if (client_->SearchSuggestEnabled()) {
-    // When search suggestions are enabled, top sites suggestions are not used
-    return;
-  }
 
   const std::string input_text = base::ToLowerASCII(base::UTF16ToASCII(input.text()));
 
