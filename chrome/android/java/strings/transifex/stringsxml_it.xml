@@ -21,7 +21,7 @@
     <string name="fingerprinting_protection_title">Proteziona fingerprint</string>
     <string name="fingerprinting_protection_summary">Impedisce la raccolta illecita delle informazioni dal browser</string>
     <string name="brave_shields_fingerprints_blocked">Metodi di blocco della raccolta illecita delle informazioni</string>
-    <string name="brave_shields_block_fingerprints_switch">Protezione contro la raccolta illecita delle informazioni</string>
+    <string name="brave_shields_block_fingerprints_switch">Proteziona fingerprint</string>
 
     <string name="ad_block_regional_title">Blocco delle pubblicità regionali</string>
     <string name="ad_block_regional_summary">Impedisce che vengano scaricate le pubblicità regionali</string>
