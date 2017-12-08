@@ -38,8 +38,6 @@ class TopSitesProvider : public AutocompleteProvider {
       const std::string &site,
       const size_t &foundPos);
 
-  AutocompleteProviderClient* client_;
-
   DISALLOW_COPY_AND_ASSIGN(TopSitesProvider);
 };
 
