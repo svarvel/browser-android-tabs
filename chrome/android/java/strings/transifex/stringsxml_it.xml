@@ -18,7 +18,7 @@
     <string name="ad_block_title">Blocco ad</string>
     <string name="ad_block_summary">Impedisce il caricamento degli ad</string>
 
-    <string name="fingerprinting_protection_title">Protezione contro la raccolta illecita delle informazioni</string>
+    <string name="fingerprinting_protection_title">Proteziona fingerprint</string>
     <string name="fingerprinting_protection_summary">Impedisce la raccolta illecita delle informazioni dal browser</string>
     <string name="brave_shields_fingerprints_blocked">Metodi di blocco della raccolta illecita delle informazioni</string>
     <string name="brave_shields_block_fingerprints_switch">Protezione contro la raccolta illecita delle informazioni</string>
