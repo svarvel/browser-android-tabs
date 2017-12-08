@@ -1,0 +1,81 @@
+<resources>
+
+    <string name="brave_settings_title">Nastavení stránkového štítu Brave pro</string>
+    <string name="brave_shields_down">Dolů</string>
+    <string name="brave_shields_up">Nahoru</string>
+    <string name="brave_shields_ads_trackers">Reklamy a trackery zablokovány</string>
+    <string name="brave_shields_https_upgrades">Rozšíření HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Skripty zablokovány</string>
+    <string name="brave_shields_ads_tracking_switch">Zablokovat reklamy a sledování</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS všude</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokovat skripty</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Zapnout/vypnout štíty Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokovat cookies třetí strany</string>
+
+    <string name="httpse_summary">Otevře podporované stránky pomocí HTTPS místo HTTP, pokud je to možné</string>
+    <string name="tracking_protection_title">Mód ochrany proti sledování</string>
+    <string name="tracking_protection_summary">Zabraňuje prostředkům, které vás sledují, aby se načetly</string>
+    <string name="ad_block_title">Blokace reklam</string>
+    <string name="ad_block_summary">Zabraňuje reklamám, aby se načetly</string>
+
+    <string name="fingerprinting_protection_title">Ochrana pomocí otisků prstu</string>
+    <string name="fingerprinting_protection_summary">Zabrání prohlížeči, aby sbíral otisky prstů</string>
+    <string name="brave_shields_fingerprints_blocked">Metody sběru otisků prstů blokovány</string>
+    <string name="brave_shields_block_fingerprints_switch">Ochrana před sběrem otisků prstů</string>
+
+    <string name="ad_block_regional_title">Regionální blokace reklam</string>
+    <string name="ad_block_regional_summary">Zabraňuje regionálním reklamám, aby se načetly</string>
+
+    <string name="ad_block_regional_summary_no_list">Pro vaši lokalitu nejsou dostupné žádné další seznamy</string>
+
+    <string name="menu_exit">Odejít</string>
+
+    <string name="brave_sync">Synchronizace Brave </string>
+    <string name="brave_sync_description">Bezpečně synchronizujte prohlížečová data mezi svými zařízeními pomocí synchronizace Brave, bez nutnosti tvorby účtu. Začněte kliknutím níže.</string>
+    <string name="brave_sync_have_existing_code">Mám existující synchronizační kód</string>
+    <string name="sync_settings_add_device_name_title">Přidat jméno zařízení</string>
+    <string name="sync_settings_add_device_name_label">Vložte volitelné jméno pro toto zařízení</string>
+    <string name="sync_example_device_name">Zařízení Android</string>
+    <string name="brave_sync_qrcode">Synchronizovat do zařízení</string>
+    <string name="brave_sync_qrcode_message">Na existujícím synchronizovaném zařízení otevřete Nastavení Brave a přejděte na „Zařízení & nastavení“. Abyste přidali nové zařízení, klikněte na ‚+\' a odhalte synchronizační kód.</string>
+    <string name="enter_code_words_sync">Vložte kódová slova</string>
+    <string name="enter_code_words_below_sync">Vložte kódová slova níže.</string>
+    <string name="sync_device">Synchronizovat zařízení</string>
+    <string name="sync_device_failure">Synchronizace nemohla být nastavena</string>
+    <string name="sync_device_success">Nastavení synchronizace bylo úspěšně dokončeno</string>
+    <string name="reset_sync">Resetovat synchronizaci...</string>
+    <string name="resetting_sync">Jste si jisti, že chcete resetovat Synchronizační nastavení tohoto zařízení?</string>
+
+    <string name="brave_stats_text_trackers">Trackery
+Zablokovány</string>
+    <string name="brave_stats_text_ads">Reklamy
+Zablokovány</string>
+    <string name="brave_stats_text_https">HTTPS
+Rozšíření</string>
+    <string name="brave_stats_text_time">Odhadovaný čas
+Uložen</string>
+
+    <string name="send_metrics_title">Poslat metriku</string>
+
+    <string name="desktop_mode_title">Desktopový mód</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Upřednostňovat desktopovou verzi stránek</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Upřednostňovat mobilní verzi stránek</string>
+    <string name="website_settings_category_desktop_view_enabled">Umožnit desktopové zobrazení po nové panely</string>
+    <string name="website_settings_category_desktop_view_disabled">Používat mobilní verze stránek pro nové panely (doporučeno)</string>
+
+    <string name="brave_shields_first_group_title">Blokování monitoru</string>
+    <string name="brave_shields_second_group_title">Vlastní ovládání</string>
+    <string name="brave_shields">Štíty</string>
+    <string name="brave_shields_ads_and_trackers">Reklamy a trackery</string>
+    <string name="brave_shields_fingerprint_methods">Metody sběru otisků prstů</string>
+    <string name="brave_shields_block_phishing_switch">Zablokovat phishing</string>
+
+    <string name="play_video_in_background_title">Video na pozadí</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Zapnuto</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Vypnuto</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimentální. Umožňuje, aby zvuk z videa hrál na pozadí, když panel není aktivní nebo je vypnutá obrazovka zařízení. Pokud tato funkce nefunguje, zkuste přepnout na desktopový mód.</string>
+    <string name="settings_require_relaunch_notice">Vaše změny začnou platit, až znovu spustíte Brave.</string>
+    <string name="settings_require_relaunch_now">ZNOVU SPUSTIT NYNÍ</string>
+    <string name="settings_require_relaunch_later">POZDĚJI</string>
+
+</resources>

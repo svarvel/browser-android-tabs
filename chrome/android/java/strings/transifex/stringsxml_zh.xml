@@ -1,0 +1,81 @@
+<resources>
+
+    <string name="brave_settings_title">Brave 网站盾设置</string>
+    <string name="brave_shields_down">向下</string>
+    <string name="brave_shields_up">向上</string>
+    <string name="brave_shields_ads_trackers">已拦截广告和追踪程序</string>
+    <string name="brave_shields_https_upgrades">HTTPS 升级</string>
+    <string name="brave_shields_scripts_blocked">脚本已被拦截</string>
+    <string name="brave_shields_ads_tracking_switch">拦截广告和追踪</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS 随处可见</string>
+    <string name="brave_shields_blocks_scripts_switch">拦截脚本</string>
+    <string name="accessibility_toolbar_btn_brave_shields">启用/禁用 Brave 盾</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">拦截第 3 方 cookies</string>
+
+    <string name="httpse_summary">尽可能使用 HTTPS 而不是 HTTP 打开支持的网站</string>
+    <string name="tracking_protection_title">防追踪模式</string>
+    <string name="tracking_protection_summary">防止资源追踪您加载</string>
+    <string name="ad_block_title">广告拦截</string>
+    <string name="ad_block_summary">阻止广告加载</string>
+
+    <string name="fingerprinting_protection_title">指纹识别保护</string>
+    <string name="fingerprinting_protection_summary">阻止浏览器进行指纹识别</string>
+    <string name="brave_shields_fingerprints_blocked">指纹识别方法已拦截</string>
+    <string name="brave_shields_block_fingerprints_switch">指纹识别保护</string>
+
+    <string name="ad_block_regional_title">局部广告拦截</string>
+    <string name="ad_block_regional_summary">防止载入局部广告</string>
+
+    <string name="ad_block_regional_summary_no_list">您所在位置没有额外的列表可用</string>
+
+    <string name="menu_exit">出口</string>
+
+    <string name="brave_sync">Brave 同步</string>
+    <string name="brave_sync_description">使用 Brave 同步功能可在您的设备之间安全地同步浏览器数据，不需要创建账号。点击下方开始。</string>
+    <string name="brave_sync_have_existing_code">我有同步码</string>
+    <string name="sync_settings_add_device_name_title">添加设备名称</string>
+    <string name="sync_settings_add_device_name_label">为该设备输入一个可选名称</string>
+    <string name="sync_example_device_name">Android 设备</string>
+    <string name="brave_sync_qrcode">同步到设备</string>
+    <string name="brave_sync_qrcode_message">使用现有的经过同步的设备打开 Brave 设置并前往“设备&amp;设置”，点击“+”添加新的设备并显示同步编码。</string>
+    <string name="enter_code_words_sync">输入密语</string>
+    <string name="enter_code_words_below_sync">在下方输入密语。</string>
+    <string name="sync_device">同步设备</string>
+    <string name="sync_device_failure">无法设置 Sync</string>
+    <string name="sync_device_success">已成功完成同步设置</string>
+    <string name="reset_sync">重置同步……</string>
+    <string name="resetting_sync">您确定想要重置该设备的同步设置吗？</string>
+
+    <string name="brave_stats_text_trackers">追踪程序
+已拦截</string>
+    <string name="brave_stats_text_ads">广告
+已拦截</string>
+    <string name="brave_stats_text_https">HTTPS
+升级</string>
+    <string name="brave_stats_text_time">预计时间
+已保存</string>
+
+    <string name="send_metrics_title">发送度量值</string>
+
+    <string name="desktop_mode_title">桌面模式</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">更喜欢桌面版本的网站</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">更喜欢手机版本的网站</string>
+    <string name="website_settings_category_desktop_view_enabled">为新标签页启用桌面视图</string>
+    <string name="website_settings_category_desktop_view_disabled">对于新标签页，可使用手机版本的网站（推荐）</string>
+
+    <string name="brave_shields_first_group_title">拦截监视器</string>
+    <string name="brave_shields_second_group_title">单独控制</string>
+    <string name="brave_shields">盾</string>
+    <string name="brave_shields_ads_and_trackers">广告和追踪程序</string>
+    <string name="brave_shields_fingerprint_methods">指纹方法</string>
+    <string name="brave_shields_block_phishing_switch">拦截网络钓鱼</string>
+
+    <string name="play_video_in_background_title">后台的视频</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">已启用</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">已禁用</string>
+    <string name="website_settings_category_play_video_in_background_enabled">实验的。当标签页处于非活动状态或者设备屏幕关闭时，允许播放后台视频中的音频。如果该功能失效，可以尝试切换到桌面模式。</string>
+    <string name="settings_require_relaunch_notice">您的改变会在您下一次重新启动 Brave 时生效</string>
+    <string name="settings_require_relaunch_now">现在重新启动</string>
+    <string name="settings_require_relaunch_later">稍后</string>
+
+</resources>
