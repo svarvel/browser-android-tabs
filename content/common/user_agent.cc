@@ -188,9 +188,9 @@ std::string GetAndroidOSInfo(bool include_android_build_number) {
 std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
                                            const std::string& product,
                                            const std::string& strHost) {
-
   std::string productToPass = product;
-  if (strHost == DUCK_DUCK_GO) {
+  int iDDGPosition = strHost.find(DUCK_DUCK_GO);
+  if (0 == iDDGPosition || (int)std::string("https://").length() == iDDGPosition) {
      int iPos = productToPass.find(CHROME_UA);
      if (iPos != -1) {
          productToPass.replace(iPos, strlen(CHROME_UA), BRAVE_UA);

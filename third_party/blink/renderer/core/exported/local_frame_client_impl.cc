@@ -816,12 +816,15 @@ String LocalFrameClientImpl::UserAgent(const std::string& strUrl) {
   if (!override.IsEmpty())
     return override;
 
-  if (user_agent_.IsEmpty() || (previous_url_ != strUrl && !strUrl.empty()))
-    user_agent_ = Platform::Current()->UserAgent(strUrl);
-
-  if (!strUrl.empty()) {
-    previous_url_ = strUrl;
+  std::string newURL = strUrl;
+  if (newURL.empty()) {
+    std::unique_ptr<SourceLocation> source_location =
+        SourceLocation::Capture(web_frame_->GetFrame()->GetDocument());
+    if (source_location && !source_location->IsUnknown()) {
+      newURL = source_location->Url().Utf8().data();
+    }
   }
+  user_agent_ = Platform::Current()->UserAgent(newURL);
 
   return user_agent_;
 }
