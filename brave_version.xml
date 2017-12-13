@@ -1,3 +1,12 @@
+<release version="1.0.38">
+    <change>Upgraded to Chromium 63.0.3239.83.</change>
+    <change>Added a feature to play YouTube and other video when Brave is in the background (Settings->Site settings->Media->Video in background).</change>
+    <change>Corrected some strings.</change>
+    <change>Fixed an icon on notifications.</change>
+    <change>Improved suggestions for URL bar.</change>
+    <change>Fixed notification crash on Android 8.0 and higher.</change>
+    <change>Fixed User Agent for DuckDuckGo.</change>
+</release>
 <release version="1.0.36">
     <change>Updated to Chromium 62.0.3202.73.</change>
     <change>New user interface.</change>
