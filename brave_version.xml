@@ -1,3 +1,10 @@
+<release version="1.0.40">
+    <change>Upgraded to Chromium 63.0.3239.111.</change>
+</release>
+<release version="1.0.39">
+    <change>Upgraded to Chromium 63.0.3239.107.</change>
+    <change>Fixed home button.</change>
+</release>
 <release version="1.0.38">
     <change>Upgraded to Chromium 63.0.3239.83.</change>
     <change>Added a feature to play YouTube and other video when Brave is in the background (Settings->Site settings->Media->Video in background).</change>
