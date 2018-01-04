@@ -1,5 +1,5 @@
 # Before running this script
-# In Atom (or other editor) make changes to .grd and .xtb files in folders (chrome/android/java/strings, components/strings, chrome/app/resources):
+# In Atom (or other editor) make changes to .grd and .xtb files in folders (chrome/android/java/strings, components/strings, chrome/app/resources, chrome/app):
 # Chromium -> Brave (except for Chromium version)
 # Brave Authors -> Chromium Authors
 # Brave OS -> Chromium OS
