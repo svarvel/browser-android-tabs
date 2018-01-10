@@ -45,7 +45,7 @@ public class PrivacyPreferences extends PreferenceFragment
     private static final String PREF_SEARCH_SUGGESTIONS = "search_suggestions";
     /*private static final String PREF_SAFE_BROWSING_SCOUT_REPORTING =
             "safe_browsing_scout_reporting";*/
-    private static final String PREF_SAFE_BROWSING = "safe_browsing";
+    //private static final String PREF_SAFE_BROWSING = "safe_browsing";
     private static final String PREF_CAN_MAKE_PAYMENT = "can_make_payment";
     private static final String PREF_FINGERPRINTING_PROTECTION = "fingerprinting_protection";
     private static final String PREF_HTTPSE = "httpse";
@@ -143,10 +143,10 @@ public class PrivacyPreferences extends PreferenceFragment
         scoutReportingPref.setOnPreferenceChangeListener(this);
         scoutReportingPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);*/
 
-        ChromeBaseCheckBoxPreference safeBrowsingPref =
-                (ChromeBaseCheckBoxPreference) findPreference(PREF_SAFE_BROWSING);
-        safeBrowsingPref.setOnPreferenceChangeListener(this);
-        safeBrowsingPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
+        // ChromeBaseCheckBoxPreference safeBrowsingPref =
+        //         (ChromeBaseCheckBoxPreference) findPreference(PREF_SAFE_BROWSING);
+        // safeBrowsingPref.setOnPreferenceChangeListener(this);
+        // safeBrowsingPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
         ChromeBaseCheckBoxPreference fingerprintingProtectionPref =
                 (ChromeBaseCheckBoxPreference) findPreference(PREF_FINGERPRINTING_PROTECTION);
@@ -186,9 +186,9 @@ public class PrivacyPreferences extends PreferenceFragment
         String key = preference.getKey();
         if (PREF_SEARCH_SUGGESTIONS.equals(key)) {
             PrefServiceBridge.getInstance().setSearchSuggestEnabled((boolean) newValue);
-        } else if (PREF_SAFE_BROWSING.equals(key)) {
+        } /*else if (PREF_SAFE_BROWSING.equals(key)) {
             PrefServiceBridge.getInstance().setSafeBrowsingEnabled((boolean) newValue);
-        } else if (PREF_FINGERPRINTING_PROTECTION.equals(key)) {
+        }*/ else if (PREF_FINGERPRINTING_PROTECTION.equals(key)) {
             PrefServiceBridge.getInstance().setFingerprintingProtectionEnabled((boolean) newValue);
             MixPanelWorker.SendEvent("Fingerprinting Protection Option Changed", "Fingerprinting Protection", newValue);
         } else if (PREF_HTTPSE.equals(key)) {
@@ -261,11 +261,11 @@ public class PrivacyPreferences extends PreferenceFragment
                     prefServiceBridge.isSafeBrowsingExtendedReportingEnabled());
         }*/
 
-        CheckBoxPreference safeBrowsingPref =
-                (CheckBoxPreference) findPreference(PREF_SAFE_BROWSING);
-        if (safeBrowsingPref != null) {
-            safeBrowsingPref.setChecked(prefServiceBridge.isSafeBrowsingEnabled());
-        }
+        // CheckBoxPreference safeBrowsingPref =
+        //         (CheckBoxPreference) findPreference(PREF_SAFE_BROWSING);
+        // if (safeBrowsingPref != null) {
+        //     safeBrowsingPref.setChecked(prefServiceBridge.isSafeBrowsingEnabled());
+        // }
 
         CheckBoxPreference canMakePaymentPref =
                 (CheckBoxPreference) findPreference(PREF_CAN_MAKE_PAYMENT);
@@ -337,9 +337,9 @@ public class PrivacyPreferences extends PreferenceFragment
             /*if (PREF_SAFE_BROWSING_SCOUT_REPORTING.equals(key)) {
                 return prefs.isSafeBrowsingExtendedReportingManaged();
             }*/
-            if (PREF_SAFE_BROWSING.equals(key)) {
+            /*if (PREF_SAFE_BROWSING.equals(key)) {
                 return prefs.isSafeBrowsingManaged();
-            }
+            }*/
             if (PREF_NETWORK_PREDICTIONS.equals(key)) {
                 return prefs.isNetworkPredictionManaged();
             }
