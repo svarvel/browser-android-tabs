@@ -21,10 +21,10 @@
         android:key="safe_browsing_scout_reporting"
         android:title="@string/safe_browsing_scout_reporting_title"
         android:summary="@string/safe_browsing_scout_reporting_summary" />-->
-    <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
+    <!--<org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="safe_browsing"
         android:title="@string/safe_browsing_title"
-        android:summary="@string/safe_browsing_summary" />
+        android:summary="@string/safe_browsing_summary" />-->
     <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="httpse"
         android:title="@string/httpse_title"
