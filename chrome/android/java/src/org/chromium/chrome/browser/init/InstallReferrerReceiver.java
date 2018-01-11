@@ -27,10 +27,14 @@ public class InstallReferrerReceiver extends BroadcastReceiver {
       String utm_medium_value = uri.getQueryParameter("utm_medium");
       Log.i("TAG", "InstallReferrerReceiver: utm_medium_value: <" + utm_medium_value+">");
       if (utm_medium_value != null && !utm_medium_value.isEmpty() && !utm_medium_value.equals("organic")) {
-        String utm_campaign_value = uri.getQueryParameter("utm_campaign");
-        InstallationSourceInformer.InformFromPromo(utm_campaign_value);
+        InstallationSourceInformer.InformFromPromo();
       } else {
         InstallationSourceInformer.InformFromPlayMarket();
       }
+
+      //in any way update stats with promo name
+      String utm_campaign_value = uri.getQueryParameter("utm_campaign");
+      Log.i("TAG", "InstallReferrerReceiver: utm_campaign: <" + utm_campaign_value+">");
+      InstallationSourceInformer.InformStatsPromo(utm_campaign_value);
     }
 }
