@@ -24,9 +24,8 @@ public class InstallationSourceInformer {
     Inform("Google Play");
   }
 
-  public static void InformFromPromo(String promoName) {
+  public static void InformFromPromo() {
     Inform("Promo");
-    InformStatsPromo(promoName);
   }
 
   private static synchronized void Inform(String sourceName) {
@@ -55,7 +54,7 @@ public class InstallationSourceInformer {
   private static final String STATS_PREF_NAME = "StatsPreferences";
   private static final String PROMO_NAME = "Promo";
 
-  private static void InformStatsPromo(String promoName) {
+  public static void InformStatsPromo(String promoName) {
     Log.i("TAG", "InformStatsPromo, promoName=" + promoName);
     Context context = ContextUtils.getApplicationContext();
     if (promoName != null && !promoName.isEmpty() && PackageUtils.isFirstInstall(context)) {

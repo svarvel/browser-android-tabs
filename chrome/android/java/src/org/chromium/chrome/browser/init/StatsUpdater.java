@@ -198,7 +198,7 @@ public class StatsUpdater {
         SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
         String ref = sharedPref.getString(PROMO_NAME, null);
         if (ref == null || ref.isEmpty()) {
-            ref = "others";
+            ref = "none";
         }
         return ref;
     }
