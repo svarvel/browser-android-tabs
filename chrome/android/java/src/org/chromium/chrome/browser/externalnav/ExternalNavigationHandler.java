@@ -400,6 +400,13 @@ public class ExternalNavigationHandler {
             return OverrideUrlLoadingResult.NO_OVERRIDE;
         }
 
+        // Force to open YouTube urls in Brave
+        String intentPackageName = intent.getPackage();
+        if (intentPackageName != null && intentPackageName.equals("com.google.android.youtube")) {
+            if (DEBUG) Log.i(TAG, "NO_OVERRIDE: YouTube URL for YouTube app");
+            return OverrideUrlLoadingResult.NO_OVERRIDE;
+        }
+
         // Sanitize the Intent, ensuring web pages can not bypass browser
         // security (only access to BROWSABLE activities).
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
