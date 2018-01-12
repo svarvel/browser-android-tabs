@@ -101,6 +101,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
             }
             getPreferenceScreen().removePreference(findPreference(Type.PROTECTED_MEDIA));
             getPreferenceScreen().removePreference(findPreference(Type.PLAY_VIDEO_IN_BACKGROUND));
+            getPreferenceScreen().removePreference(findPreference(Type.PLAY_YT_VIDEO_IN_BROWSER));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
             if (!SiteSettingsCategory.adsCategoryEnabled()) {
@@ -130,9 +131,10 @@ public class SiteSettingsPreferences extends PreferenceFragment
         // Preferences that navigate to Website Settings.
         List<Integer> websitePrefs = new ArrayList<Integer>();
         if (mMediaSubMenu) {
-            websitePrefs.add(Type.PROTECTED_MEDIA);
+            if (mProtectedContentMenuAvailable) {websitePrefs.add(Type.PROTECTED_MEDIA);}
             websitePrefs.add(Type.AUTOPLAY);
             websitePrefs.add(Type.PLAY_VIDEO_IN_BACKGROUND);
+            websitePrefs.add(Type.PLAY_YT_VIDEO_IN_BROWSER);
         } else {
             if (SiteSettingsCategory.adsCategoryEnabled()) {
                 websitePrefs.add(Type.ADS);
@@ -208,7 +210,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
             } else if (PLAY_VIDEO_IN_BACKGROUND_KEY.equals(prefName)) {
                 p.setSummary( checked ? ContentSettingsResources.getPlayVideoInBackgroundEnabledSummary() : ContentSettingsResources.getPlayVideoInBackgroundDisabledSummary());
-            }else {
+            } else if (PLAY_YT_VIDEO_IN_BROWSER_KEY.equals(prefName)) {
+                p.setSummary( checked ? ContentSettingsResources.getPlayYTVideoInBrowserEnabledSummary() : ContentSettingsResources.getPlayYTVideoInBrowserDisabledSummary());
+            } else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
             }
 
