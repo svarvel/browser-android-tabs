@@ -72,6 +72,7 @@ public class SiteSettingsCategory {
 
     public static final String CATEGORY_DESKTOP_VIEW = "desktop_view";
     public static final String CATEGORY_PLAY_VIDEO_IN_BACKGROUND = "play_video_in_background";
+    public static final String CATEGORY_PLAY_YT_VIDEO_IN_BROWSER = "play_yt_video_in_browser";
 
     // The id of this category.
     private @Type int mCategory;
@@ -125,6 +126,9 @@ public class SiteSettingsCategory {
         }
         if (contentSettingsType == ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND) {
             return fromString(CATEGORY_PLAY_VIDEO_IN_BACKGROUND);
+        }
+        if (contentSettingsType == ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER) {
+            return fromString(CATEGORY_PLAY_YT_VIDEO_IN_BROWSER);
         }
         return null;
     }

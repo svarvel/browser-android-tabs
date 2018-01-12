@@ -84,6 +84,10 @@
     <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
          android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
          android:key="play_video_in_background" />
+    <!-- PlayYouTubeVideoInBrowser -->
+    <org.chromium.chrome.browser.preferences.website.SiteSettingsPreference
+        android:fragment="org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences"
+        android:key="play_yt_video_in_browser" />
     <!-- Google Translate -->
     <!-- <Preference
         android:fragment="org.chromium.chrome.browser.preferences.website.TranslatePreferences"
