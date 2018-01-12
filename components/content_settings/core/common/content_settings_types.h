@@ -143,6 +143,10 @@ enum ContentSettingsType {
   // browser is hidden or the screen is turned off
   CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND,
 
+  // This content setting type is for play YouTube videos in browser instead of
+  // launch YouTube app, even if link points to YouTube app
+  CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER,
+
   CONTENT_SETTINGS_NUM_TYPES,
 };
 

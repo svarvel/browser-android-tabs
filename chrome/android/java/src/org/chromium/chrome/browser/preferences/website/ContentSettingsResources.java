@@ -157,6 +157,14 @@ public class ContentSettingsResources {
                                  ContentSetting.BLOCK,
                                  R.string.website_settings_category_play_video_in_background_enabled,
                                  R.string.website_settings_category_play_video_in_background_disabled_summary ));
+            localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER,
+                   new ResourceItem(R.drawable.settings_play_yt_video_in_browser,
+                                R.string.play_yt_video_in_browser_title,
+                                R.string.play_yt_video_in_browser_title,
+                                ContentSetting.ALLOW,
+                                ContentSetting.BLOCK,
+                                R.string.website_settings_category_play_yt_video_in_browser_enabled,
+                                R.string.website_settings_category_play_yt_video_in_browser_disabled_summary ));
             localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_MEDIASTREAM_CAMERA,
                     new ResourceItem(R.drawable.ic_videocam_white_24dp,
                             R.string.website_settings_use_camera, R.string.camera_permission_title,
@@ -385,6 +393,20 @@ public class ContentSettingsResources {
      */
     public static int getPlayVideoInBackgroundDisabledSummary() {
         return R.string.website_settings_category_play_video_in_background_disabled_summary;
+    }
+
+    /**
+     * Returns the summary for 'Play YouTube video in browser' settings when it is enabled.
+     */
+    public static int getPlayYTVideoInBrowserEnabledSummary() {
+        return R.string.website_settings_category_play_yt_video_in_browser_enabled_summary;
+    }
+
+    /**
+     * Returns the summary for 'Play YouTube video in browser' settings when it is not enabled.
+     */
+    public static int getPlayYTVideoInBrowserDisabledSummary() {
+        return R.string.website_settings_category_play_yt_video_in_browser_disabled_summary;
     }
 
     /**
