@@ -13,10 +13,12 @@ import org.chromium.base.Log;
 import org.chromium.chrome.browser.init.InstallationSourceInformer;
 
 public class InstallReferrerReceiver extends BroadcastReceiver {
+    private static final String TAG = "STAT";
+
     @Override
     public void onReceive(final Context context, Intent intent) {
       String referrer = intent.getStringExtra("referrer");
-      Log.i("TAG", "InstallReferrerReceiver: referrer: " + referrer);
+      Log.i(TAG, "InstallReferrerReceiver: referrer: " + referrer);
 
       if (referrer == null) {
         InstallationSourceInformer.InformFromPlayMarket();
@@ -25,16 +27,21 @@ public class InstallReferrerReceiver extends BroadcastReceiver {
 
       Uri uri = Uri.parse("http://www.stub.co/?"+referrer);
       String utm_medium_value = uri.getQueryParameter("utm_medium");
-      Log.i("TAG", "InstallReferrerReceiver: utm_medium_value: <" + utm_medium_value+">");
+      Log.i(TAG, "InstallReferrerReceiver: utm_medium_value: <" + utm_medium_value + ">");
       if (utm_medium_value != null && !utm_medium_value.isEmpty() && !utm_medium_value.equals("organic")) {
         InstallationSourceInformer.InformFromPromo();
       } else {
         InstallationSourceInformer.InformFromPlayMarket();
       }
 
-      //in any way update stats with promo name
+      // In any way update stats with promo name
       String utm_campaign_value = uri.getQueryParameter("utm_campaign");
-      Log.i("TAG", "InstallReferrerReceiver: utm_campaign: <" + utm_campaign_value+">");
+      Log.i(TAG, "InstallReferrerReceiver: utm_campaign: <" + utm_campaign_value + ">");
       InstallationSourceInformer.InformStatsPromo(utm_campaign_value);
+
+      // Get and save user referal program code
+      String urpc = uri.getQueryParameter("urpc");
+      Log.i(TAG, "InstallReferrerReceiver: urpc: <" + urpc + ">");
+      InstallationSourceInformer.InformUserReferralProgramCode(urpc);
     }
 }
