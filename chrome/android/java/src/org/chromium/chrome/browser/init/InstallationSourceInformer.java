@@ -14,6 +14,7 @@ import org.chromium.chrome.browser.MixPanelWorker;
 import org.chromium.chrome.browser.util.PackageUtils;
 
 public class InstallationSourceInformer {
+  private static final String TAG = "STAT";
   private static final String PREF_MIXPANEL_INSTALL_SOURCE_INFORMED = "mixpanel_installation_source_informed";
 
   public static void InformFromOther() {
@@ -29,9 +30,9 @@ public class InstallationSourceInformer {
   }
 
   private static synchronized void Inform(String sourceName) {
-    Log.i("TAG", "InstallationSourceInformer, sourceName=" + sourceName);
+    Log.i(TAG, "InstallationSourceInformer, sourceName=" + sourceName);
     if (IsAlreadyInformed()) {
-      Log.i("TAG", "InstallationSourceInformer, already informed");
+      Log.i(TAG, "InstallationSourceInformer, already informed");
       return;
     }
 
@@ -53,15 +54,27 @@ public class InstallationSourceInformer {
 
   private static final String STATS_PREF_NAME = "StatsPreferences";
   private static final String PROMO_NAME = "Promo";
+  private static final String URPC_NAME = "UserReferalProgramCode";
 
   public static void InformStatsPromo(String promoName) {
-    Log.i("TAG", "InformStatsPromo, promoName=" + promoName);
+    Log.i(TAG, "InformStatsPromo, promoName=" + promoName);
     Context context = ContextUtils.getApplicationContext();
     if (promoName != null && !promoName.isEmpty() && PackageUtils.isFirstInstall(context)) {
       SharedPreferences sharedPref = context.getSharedPreferences(STATS_PREF_NAME, 0);
       SharedPreferences.Editor editor = sharedPref.edit();
 
       editor.putString(PROMO_NAME, promoName);
+      editor.apply();
+    }
+  }
+
+  public static void InformUserReferralProgramCode(String urpc) {
+    Context context = ContextUtils.getApplicationContext();
+    if (urpc != null && !urpc.isEmpty() && PackageUtils.isFirstInstall(context)) {
+      SharedPreferences sharedPref = context.getSharedPreferences(STATS_PREF_NAME, 0);
+      SharedPreferences.Editor editor = sharedPref.edit();
+
+      editor.putString(URPC_NAME, urpc);
       editor.apply();
     }
   }
