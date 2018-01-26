@@ -75,4 +75,6 @@ Išsaugoti</string>
     <string name="settings_require_relaunch_now">PALEISTI IŠ NAUJO DABAR</string>
     <string name="settings_require_relaunch_later">VĖLIAU</string>
 
-</resources>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Įjungta</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Išjungta</string>
+    </resources>

@@ -1,72 +1,85 @@
 <resources>
 
-    <string name="brave_settings_title">Definições de proteção do site de Brave para</string>
-    <string name="brave_shields_down">Para baixo</string>
-    <string name="brave_shields_up">Para cima</string>
-    <string name="brave_shields_ads_trackers">Anúncios e controladores bloqueados</string>
-    <string name="brave_shields_https_upgrades">Atualizações de HTTPS</string>
+    <string name="brave_settings_title">Definições de proteção para</string>
+    <string name="brave_shields_down">Desligar</string>
+    <string name="brave_shields_up">Ligar</string>
+    <string name="brave_shields_ads_trackers">Anúncios e rastreadores bloqueados</string>
+    <string name="brave_shields_https_upgrades">Atualizações HTTPS</string>
     <string name="brave_shields_scripts_blocked">Scripts bloqueados</string>
-    <string name="brave_shields_ads_tracking_switch">Bloquear anúncios e controlo</string>
+    <string name="brave_shields_ads_tracking_switch">Bloquear anúncios e rastreio</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Ativar/desativar proteções de Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Bloqueie cookies de terceiros</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Ativar/desativar proteções Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceiros</string>
 
-    <string name="httpse_summary">Sempre que possível abra sítios suportados que utilizam HTTPS em vez de HTTP</string>
-    <string name="tracking_protection_title">Modo Rastreamento Protegido</string>
-    <string name="tracking_protection_summary">Tenha o cuidado com fontes que  o rastreiam a partir de um carregamento</string>
-    <string name="ad_block_title">Bloqueador de Propagandas</string>
-    <string name="ad_block_summary">Elimine propagandas do carregamento</string>
+    <string name="httpse_summary">Se possível, abrir sites através do protocolo HTTPS em vez de HTTP</string>
+    <string name="tracking_protection_title">Modo de proteção contra rastreio</string>
+    <string name="tracking_protection_summary">Impede o carregamento dos recursos que o monitorizam</string>
+    <string name="ad_block_title">Bloqueador de anúncios</string>
+    <string name="ad_block_summary">Impede o carregamento de anúncios</string>
 
-    <string name="fingerprinting_protection_title">Proteção de impressões digitais</string>
-    <string name="fingerprinting_protection_summary">Impede o browser a partir de impressões digitais</string>
-    <string name="brave_shields_fingerprints_blocked">Métodos de impressões digitais bloqueados</string>
-    <string name="brave_shields_block_fingerprints_switch">Proteção de impressões digitais</string>
+    <string name="fingerprinting_protection_title">Proteção de impressão digital</string>
+    <string name="fingerprinting_protection_summary">Impede a utilização de impressões digitais no navegador</string>
+    <string name="brave_shields_fingerprints_blocked">Métodos de impressão digital bloqueados</string>
+    <string name="brave_shields_block_fingerprints_switch">Proteção de impressão digital</string>
 
-    <string name="ad_block_regional_title">Bloqueio de anúncio regional</string>
-    <string name="ad_block_regional_summary">Impede anúncios regionais de carregar</string>
+    <string name="ad_block_regional_title">Anúncios regionais</string>
+    <string name="ad_block_regional_summary">Impede o carregamento de anúncios regionais</string>
 
-    <string name="ad_block_regional_summary_no_list">Sem listas adicionais disponíveis para o seu local</string>
+    <string name="ad_block_regional_summary_no_list">Não existem listas disponíveis para a sua região</string>
 
-    <string name="menu_exit">Saída</string>
+    <string name="menu_exit">Sair</string>
 
-    <string name="brave_sync">Sincronização Brave</string>
-    <string name="brave_sync_description">Sincronize os dados do navegador entre os seus
-dispositivos de forma segura utilizando a Brave Sync,
-não é necessário criar conta.
-Toque abaixo para começar. </string>
-    <string name="brave_sync_have_existing_code">Tenho um código de sincronização existente</string>
+    <string name="brave_sync">Brave Sync</string>
+    <string name="brave_sync_description">Sincronizar dados entre os seus dispositivo
+em segurança através de Brave Sync. Não
+requer conta. toque abaixo para continuar.</string>
+    <string name="brave_sync_have_existing_code">Tenho um código de sincronização</string>
     <string name="sync_settings_add_device_name_title"> Adicionar nome do dispositivo</string>
-    <string name="sync_settings_add_device_name_label">Inserir um nome opcional para este dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Digite um nome opcional para o dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
     <string name="brave_sync_qrcode">Sincronizar com o dispositivo</string>
     <string name="brave_sync_qrcode_message">Ao utilizar o dispositivo sincronizado existente,
 abra as Configurações Brave e navegue até
 "Configurações do Dispositivo", toque `+` para adicionar
 um novo dispositivo e revelar o código de sincronização.</string>
-    <string name="enter_code_words_sync">Inserir código palavras</string>
-    <string name="enter_code_words_below_sync">Inserir código palavras abaixo.</string>
+    <string name="enter_code_words_sync">Digite o código</string>
+    <string name="enter_code_words_below_sync">Digite o código em baixo.</string>
     <string name="sync_device">Sincronizar dispositivo</string>
-    <string name="sync_device_failure">A sincronização não pôde ser configurada</string>
-    <string name="sync_device_success">A configuração da sincronização foi finalizada com sucesso</string>
-    <string name="reset_sync">Restaurar Sincronização...</string>
-    <string name="resetting_sync">Tem a certeza de que deseja redefinir as configurações de Sincronização deste dispositivo?</string>
+    <string name="sync_device_failure">Incapaz de configurar o Sync</string>
+    <string name="sync_device_success">A configuração foi terminada com sucesso</string>
+    <string name="reset_sync">Repor Sync...</string>
+    <string name="resetting_sync">Tem a certeza de que deseja repor as definições do Sync?</string>
 
-    <string name="brave_stats_text_trackers">Controladores
+    <string name="brave_stats_text_trackers">Rastreios
 bloqueados</string>
     <string name="brave_stats_text_ads">Anúncios
 bloqueados</string>
     <string name="brave_stats_text_https">Atualizações
-de HTTPS</string>
-    <string name="brave_stats_text_time">Estimativa Hora
-Guardado</string>
+HTTPS</string>
+    <string name="brave_stats_text_time">Poupança
+de tempo</string>
 
     <string name="send_metrics_title">Enviar métricas</string>
 
-    <string name="desktop_mode_title">Modo de desktop</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Dar preferência a versões para desktop de Websites</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Dar preferência a versões para dispositivos móveis de Websites</string>
-    <string name="website_settings_category_desktop_view_enabled">Ativar Vista de desktop para novos separadores</string>
-    <string name="website_settings_category_desktop_view_disabled">Utilizar versões para dispositivos móveis de Websites para novos separadores (recomendado)</string>
+    <string name="desktop_mode_title">Modo desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir versão normal dos sites</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir versão para dispositivos móveis</string>
+    <string name="website_settings_category_desktop_view_enabled">Ativar vista normal para novos separadores</string>
+    <string name="website_settings_category_desktop_view_disabled">Utilizar versão reduzida para novos separadores (recomendado)</string>
+
+    <string name="brave_shields_first_group_title">Monitor de bloqueio</string>
+    <string name="brave_shields_second_group_title">Controlos individuais</string>
+    <string name="brave_shields">Proteções</string>
+    <string name="brave_shields_ads_and_trackers">Anúncios e rastreio</string>
+    <string name="brave_shields_fingerprint_methods">Métodos de impressão digital</string>
+    <string name="brave_shields_block_phishing_switch">Bloquear phising</string>
+
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Ativado</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Desativado</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Ativa a reprodução do som dos vídeos em segundo plano se o separador não estiver ativo ou se o ecrã estiver desligado. tente altera para o modo desktop se não estiver a funcionar corretamente.</string>
+    <string name="settings_require_relaunch_notice">As alterações serão aplicadas depois de reiniciar o Brave</string>
+    <string name="settings_require_relaunch_now">Reiniciar agora</string>
+    <string name="settings_require_relaunch_later">Mais tarde</string>
 
     </resources>

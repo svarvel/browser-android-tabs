@@ -72,12 +72,17 @@
     <string name="brave_shields_fingerprint_methods">指紋方式</string>
     <string name="brave_shields_block_phishing_switch">阻擋網路釣魚</string>
 
-    <string name="play_video_in_background_title">背景影片</string>
+    <string name="play_video_in_background_title">背景影片播放</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">已啟用</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">已停用</string>
     <string name="website_settings_category_play_video_in_background_enabled">實驗性功能。在分頁未使用或裝置螢幕關閉時於背景播放影片音效。若此功能無法運作，請嘗試切換到桌面模式。</string>
     <string name="settings_require_relaunch_notice">您的變更將在下次重啟 Brave 後生效</string>
     <string name="settings_require_relaunch_now">立即重啟</string>
     <string name="settings_require_relaunch_later">稍後</string>
+
+    <string name="play_yt_video_in_browser_title">在 Brave 中播放影片</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">已啟用</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">已停用</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">一經啟用，影片將在 Brave 而不是相對應的 App 中播放</string>
 
 </resources>

@@ -76,12 +76,17 @@ Enregistré</string>
     <string name="brave_shields_fingerprint_methods">Méthodes des empreintes</string>
     <string name="brave_shields_block_phishing_switch">Bloquer le hameçonnage</string>
 
-    <string name="play_video_in_background_title">Vidéo en arrière-plan</string>
+    <string name="play_video_in_background_title">Lecture vidéo en arrière-plan</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Activé</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Désactivé</string>
     <string name="website_settings_category_play_video_in_background_enabled">Expérimental. Active la lecture audio à partir d\'une vidéo en arrière-plan lorsque l\'onglet est inactif ou l\'écran de l\'appareil éteint. Tentez de passer en mode bureau si cette fonctionnalité n\'est pas opérationnelle.</string>
     <string name="settings_require_relaunch_notice">Vos changements prendront effet lors du prochain démarrage de Brave</string>
     <string name="settings_require_relaunch_now">REDÉMARRER MAINTENANT</string>
     <string name="settings_require_relaunch_later">PLUS TARD</string>
+
+    <string name="play_yt_video_in_browser_title">Lecture vidéo dans Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Activée</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Désactivée</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Si ce paramètre est activé, les vidéos seront lues dans Brave au lieu de l\'application correspondante</string>
 
 </resources>
