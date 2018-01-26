@@ -98,18 +98,18 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_MEDIA_ROUTER_FIRST_RUN_FLOW_TITLE" desc="Title of the first run flow, which is shown to the user the first time they use Media Router, until they acknowledge the message. This is a welcome message that introduces Media Router to the user.">
-      Welcome to the Cast experience in Chrome!
+      Welcome to the Cast experience in Brave!
     </message>
     <message name="IDS_MEDIA_ROUTER_FIRST_RUN_FLOW_TEXT" desc="Text of the first run flow, which is shown to the user the first time they use Media Router. This is an introductory description of what Media Router does.">
-      You can use this feature to display content from Chrome on your TV or other devices.
+      You can use this feature to display content from Brave on your TV or other devices.
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_MEDIA_ROUTER_FIRST_RUN_FLOW_TITLE" desc="Title of the first run flow, which is shown to the user the first time they use Media Router, until they acknowledge the message. This is a welcome message that introduces Media Router to the user.">
-      Welcome to the Cast experience in Chromium!
+      Welcome to the Cast experience in Brave!
     </message>
     <message name="IDS_MEDIA_ROUTER_FIRST_RUN_FLOW_TEXT" desc="Text of the first run flow, which is shown to the user the first time they use Media Router. This is an introductory description of what Media Router does.">
-      You can use this feature to display content from Chromium on your TV or other devices.
+      You can use this feature to display content from Brave on your TV or other devices.
     </message>
   </if>
   <message name="IDS_MEDIA_ROUTER_FIRST_RUN_FLOW_BUTTON" desc="Acknowledge button for the first run flow, which, on click, will dismiss the first run flow and set the current profile's preference that the user has acknowledged the first run flow.">
