@@ -77,12 +77,17 @@ ušetrený čas</string>
     <string name="brave_shields_fingerprint_methods">Spôsoby identifikácie</string>
     <string name="brave_shields_block_phishing_switch">Blokovanie phishingu</string>
 
-    <string name="play_video_in_background_title">Video v pozadí</string>
+    <string name="play_video_in_background_title">Prehrávanie videa na pozadí</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Aktivované</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktivované</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimentálne. Umožňuje prehrávať zvuk z videa v pozadí, keď karta nie je aktívna alebo je obrazovka zariadenia vypnutá. Ak táto funkcia nefunguje, skúste prepnúť do režimu pracovnej plochy.</string>
     <string name="settings_require_relaunch_notice">Vaše zmeny sa prejavia pri ďalšom spustení Brave</string>
     <string name="settings_require_relaunch_now">SPUSTIŤ ZNOVA</string>
     <string name="settings_require_relaunch_later">NESKÔR</string>
+
+    <string name="play_yt_video_in_browser_title">Prehrávanie videa cez Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Povolené</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Zakázané</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Ak je to povolené, videá sa budú prehrávať cez Brave namiesto zodpovedajúcej aplikácie</string>
 
 </resources>

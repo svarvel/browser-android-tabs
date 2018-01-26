@@ -76,12 +76,17 @@ HTTPS</string>
     <string name="brave_shields_fingerprint_methods">Μέθοδοι Δαχτυλικών Αποτυπωμάτων</string>
     <string name="brave_shields_block_phishing_switch">Μπλόκαρε το Ηλεκτρονικό Ψάρεμα</string>
 
-    <string name="play_video_in_background_title">Βίντεο στο παρασκήνιο</string>
+    <string name="play_video_in_background_title">Αναπαραγωγή βίντεο φόντου</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Ενεργοποιημένο</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Απενεργοποιημένο</string>
     <string name="website_settings_category_play_video_in_background_enabled">Πειραματικό. Σας επιτρέπει να παίζετε ήχο από βίντεο στο παρασκήνιο όταν η καρτέλα δεν είναι ενεργή ή η οθόνη της συσκευής είναι κλειστή. Δοκιμάστε τη μετάβαση σε λειτουργία σταθερού υπολογιστή αν αυτό το χαρακτηριστικό δε λειτουργεί.</string>
     <string name="settings_require_relaunch_notice">Οι αλλαγές σας θα εφαρμοστούν την επόμενη φορά που θα κάνετε επανεκκίνηση στο Brave</string>
     <string name="settings_require_relaunch_now">ΕΠΑΝΕΚΚΙΝΗΣΗ ΤΩΡΑ</string>
     <string name="settings_require_relaunch_later">ΑΡΓΟΤΕΡΑ</string>
+
+    <string name="play_yt_video_in_browser_title">Αναπαραγωγή βίντεο στο Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Ενεργοποιημένο</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Απενεργοποιημένο</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Αν ενεργοποιηθεί, τα βίντεο θα αναπαράγονται στο Brave, αντί για την αντίστοιχη εφαρμογή</string>
 
 </resources>

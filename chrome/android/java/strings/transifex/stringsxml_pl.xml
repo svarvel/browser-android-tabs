@@ -76,12 +76,17 @@ zaoszczędzony czas</string>
     <string name="brave_shields_fingerprint_methods">Metody odcisku palca</string>
     <string name="brave_shields_block_phishing_switch">Zablokuj phishing</string>
 
-    <string name="play_video_in_background_title">Wideo w tle</string>
+    <string name="play_video_in_background_title">Odtwarzanie wideo w tle</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Włączone</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Wyłączone</string>
     <string name="website_settings_category_play_video_in_background_enabled">Funkcja eksperymentalna. Umożliwia odtwarzanie dźwięku z klipu wideo w tle, kiedy karta jest nieaktywna lub ekran urządzenia jest wyłączony. Jeśli funkcja nie działa, spróbuj przełączyć do trybu desktopowego.</string>
     <string name="settings_require_relaunch_notice">Zmiany zostaną wprowadzone po ponownym uruchomieniu Brave</string>
     <string name="settings_require_relaunch_now">URUCHOM PONOWNIE TERAZ</string>
     <string name="settings_require_relaunch_later">PÓŹNIEJ</string>
+
+    <string name="play_yt_video_in_browser_title">Odtwarzanie wideo w Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Włączone</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Wyłączone</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">W przypadku włączenia klipy wideo będą odtwarzane w Brave, a nie w aplikacji</string>
 
 </resources>

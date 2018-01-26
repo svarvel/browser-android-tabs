@@ -67,4 +67,24 @@
     <string name="website_settings_category_desktop_view_enabled">नये टैबों के लिये डेस्कटॉप व्यू एनेबल करें  </string>
     <string name="website_settings_category_desktop_view_disabled">नये टैबों के लिये साइटों के मोबाइल प्रारूपों का प्रयोग करें (अनुशंसित) </string>
 
-    </resources>
+    <string name="brave_shields_first_group_title">मॉनीटर ब्लॉक करना</string>
+    <string name="brave_shields_second_group_title">व्यक्तिगत नियंत्रण</string>
+    <string name="brave_shields">शील्ड</string>
+    <string name="brave_shields_ads_and_trackers">विज्ञापन व ट्रैकर्स</string>
+    <string name="brave_shields_fingerprint_methods">फिंगरप्रिंट विधि</string>
+    <string name="brave_shields_block_phishing_switch">फिशिंग ब्लॉक करें</string>
+
+    <string name="play_video_in_background_title">पृष्ठभूमि वीडियो प्लेबैक</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">सक्षम किया</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">अक्षम किया</string>
+    <string name="website_settings_category_play_video_in_background_enabled">प्रायोगिक. जब टैब सक्रिय ना हो या सक्रीन ऑफ हो तो पृष्ठभूमि में वीडियो से ऑडियो चलाना सक्षम करता है. यदि यह सुविधा काम ना करे तो डेस्कटॉप मोड पर जाने का प्रयास करें.</string>
+    <string name="settings_require_relaunch_notice">आपके किए गए बदलाव तब प्रभावी होंगे जब आप ब्रेव को फिर से लॉन्च करेंगे</string>
+    <string name="settings_require_relaunch_now">अभी फिर से लॉन्च करें</string>
+    <string name="settings_require_relaunch_later">बाद में</string>
+
+    <string name="play_yt_video_in_browser_title">ब्रेव में वीडियो प्लेबैक</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">सक्षम किया</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">अक्षम किया</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">सक्षम किए जाने पर वीडियो, संबंधित ऐप के स्थान पर ब्रेव में चलाए जाएंगे </string>
+
+</resources>

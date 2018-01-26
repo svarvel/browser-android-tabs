@@ -75,12 +75,17 @@ Saved</string>
     <string name="brave_shields_fingerprint_methods">Fingerprint Methods</string>
     <string name="brave_shields_block_phishing_switch">Block Phishing</string>
 
-    <string name="play_video_in_background_title">Video in background</string>
+    <string name="play_video_in_background_title">Background video playback</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Enabled</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Disabled</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimental. Enables play audio from video in background when tab is not active or device screen is turned off. Try to switch to desktop mode if this feature is not working.</string>
     <string name="settings_require_relaunch_notice">Your changes will take effect the next time you relaunch Brave</string>
     <string name="settings_require_relaunch_now">RELAUNCH NOW</string>
     <string name="settings_require_relaunch_later">LATER</string>
+
+    <string name="play_yt_video_in_browser_title">Video playback in Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Enabled</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Disabled</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">If enabled, videos will be played in Brave instead of corresponding app</string>
 
 </resources>

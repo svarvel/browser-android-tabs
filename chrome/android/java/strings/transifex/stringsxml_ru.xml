@@ -76,12 +76,17 @@
     <string name="brave_shields_fingerprint_methods">Методы определения отпечатка</string>
     <string name="brave_shields_block_phishing_switch">Блокировать фишинг</string>
 
-    <string name="play_video_in_background_title">Видео в фоновом режиме</string>
+    <string name="play_video_in_background_title">Воспроизведение видео в фоне</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Включено</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Отключено</string>
     <string name="website_settings_category_play_video_in_background_enabled">Тестовая функция. Включает воспроизведение звука из видео в фоновом режиме, если вкладка не активна или экран устройства выключен. Попробуйте переключиться в режим рабочего стола, если эта функция не работает.</string>
     <string name="settings_require_relaunch_notice">Изменения вступят в силу после перезапуска Brave</string>
     <string name="settings_require_relaunch_now">ПЕРЕЗАПУСТИТЬ СЕЙЧАС</string>
     <string name="settings_require_relaunch_later">ПОЗЖЕ</string>
+
+    <string name="play_yt_video_in_browser_title">Воспроизведение видео в Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Включено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Отключено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Если включено, видео будет воспроизводиться в Brave вместо соответствующего приложения</string>
 
 </resources>

@@ -76,12 +76,17 @@ Kaydedildi</string>
     <string name="brave_shields_fingerprint_methods">Parmak İzi Yöntemleri</string>
     <string name="brave_shields_block_phishing_switch">Kimlik Avını Engelleyin</string>
 
-    <string name="play_video_in_background_title">Arka plandaki video</string>
+    <string name="play_video_in_background_title">Arka planda vide oynatma</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Etkin</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Kapalı</string>
     <string name="website_settings_category_play_video_in_background_enabled">Deneme niteliğinde. Sekme etkin olmadığında veya cihaz ekranı kapalıyken arka plandaki videnun oynatma sesini etkinleştirir. Bu özellik çalışmıyorsa masaüstü moduna geçmeyi deneyin.</string>
     <string name="settings_require_relaunch_notice">Değişiklikleriniz Brave\'i bir sonraki yeniden başlattığınızda geçerli olacak</string>
     <string name="settings_require_relaunch_now">ŞİMDİ YENİDEN BAŞLAT</string>
     <string name="settings_require_relaunch_later">SONRA</string>
+
+    <string name="play_yt_video_in_browser_title">Brave\'de video oynatma</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Etkin</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Devre Dışı</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Etkinleştirilmesi halinde videolar ilişkili uygulama yerine Brave\'de oynatılacaktır</string>
 
 </resources>

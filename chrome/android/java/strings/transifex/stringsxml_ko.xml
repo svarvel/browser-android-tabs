@@ -74,12 +74,17 @@
     <string name="brave_shields_fingerprint_methods">지문 방식</string>
     <string name="brave_shields_block_phishing_switch">피싱 차단</string>
 
-    <string name="play_video_in_background_title">배경에서 영상 재생</string>
+    <string name="play_video_in_background_title">백그라운드 비디오 재생</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">활성화됨</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">비활성화됨</string>
     <string name="website_settings_category_play_video_in_background_enabled">실험적. 탭이 활성화 상태가 아니거나 장치의 화면이 꺼져 있을 때 배경에서 영상의 소리를 재생하도록 합니다. 이 기능이 작동하지 않으면 데스크톱 모드로 전환해보시기 바랍니다.</string>
     <string name="settings_require_relaunch_notice">Brave를 다시 시작한 후 변경 사항이 적용됩니다</string>
     <string name="settings_require_relaunch_now">지금 다시 시작</string>
     <string name="settings_require_relaunch_later">나중에</string>
+
+    <string name="play_yt_video_in_browser_title">Brave에서 비디오 재생</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">활성화됨</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">비활성화됨</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">활성화된 경우, 연관 앱 대신에 Brave에서 비디오가 재생됩니다</string>
 
 </resources>

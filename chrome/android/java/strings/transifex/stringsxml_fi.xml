@@ -75,12 +75,17 @@ Tallennettu</string>
     <string name="brave_shields_fingerprint_methods">Sormenjälkimenetelmät</string>
     <string name="brave_shields_block_phishing_switch">Estä tiedonkalastelu</string>
 
-    <string name="play_video_in_background_title">Video taustalla</string>
+    <string name="play_video_in_background_title">Toista videot taustalla</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Käytössä</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Pois käytöstä</string>
     <string name="website_settings_category_play_video_in_background_enabled">Kokeiluversio. Mahdollistaa äänentoiston taustalla olevasta videosta kun välilehti ei ole auki tai laitteen näyttö ei ole päällä. Kokeile työpöytätilaan siirtymistä, jos tämä ominaisuus ei toimi.</string>
     <string name="settings_require_relaunch_notice">Tekemäsi muutokset astuvat voimaan käynnistäessäsi Braven seuraavan kerran</string>
     <string name="settings_require_relaunch_now">KÄYNNISTÄ UUDELLEEN NYT</string>
     <string name="settings_require_relaunch_later">MYÖHEMMIN</string>
+
+    <string name="play_yt_video_in_browser_title">Toista videot Brave-sovelluksessa</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Käytössä</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Pois käytöstä</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Jos asetus on käytössä, videot toistetaan Brave-sovelluksessa niille määritellyn oletussovelluksen sijaan</string>
 
 </resources>

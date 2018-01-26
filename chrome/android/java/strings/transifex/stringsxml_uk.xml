@@ -10,13 +10,13 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Скрипти</string>
     <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк щити Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Блокувати сторонні куки</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Сторонні куки</string>
 
-    <string name="httpse_summary">Відкриття підтримуваних сайтів з використанням протоколу HTTPS замість HTTP</string>
+    <string name="httpse_summary">Відкривати підтримувані сайти з використанням протоколу HTTPS замість HTTP</string>
     <string name="tracking_protection_title">Режим захисту від стеження</string>
-    <string name="tracking_protection_summary">Блокування завантаження елементів стеження</string>
+    <string name="tracking_protection_summary">Блокувати завантаження елементів стеження</string>
     <string name="ad_block_title">Блокувати рекламу</string>
-    <string name="ad_block_summary">Блокування завантаження реклами</string>
+    <string name="ad_block_summary">Блокувати завантаження реклами</string>
 
     <string name="fingerprinting_protection_title">Захист відбитку браузера</string>
     <string name="fingerprinting_protection_summary">Захист відстеження відбитку браузера</string>
@@ -24,7 +24,7 @@
     <string name="brave_shields_block_fingerprints_switch">Відбиток браузера</string>
 
     <string name="ad_block_regional_title">Блокувати регіональну рекламу</string>
-    <string name="ad_block_regional_summary">Блокування завантаження регіональної реклами</string>
+    <string name="ad_block_regional_summary">Блокувати завантаження регіональної реклами</string>
 
     <string name="ad_block_regional_summary_no_list">Для вашої локалі не знайдено додаткових списків</string>
 
@@ -84,5 +84,10 @@
     <string name="settings_require_relaunch_notice">Зміни набудуть чинності після перезапуску Brave</string>
     <string name="settings_require_relaunch_now">ПЕРЕЗАПУСТИТИ ЗАРАЗ</string>
     <string name="settings_require_relaunch_later">ПІЗНІШЕ</string>
+
+    <string name="play_yt_video_in_browser_title">Відтворення відео в Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Увімкнено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Вимкнено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Якщо увімкнено, відео буде відтворюватись в Brave замість відповідного додатку</string>
 
 </resources>

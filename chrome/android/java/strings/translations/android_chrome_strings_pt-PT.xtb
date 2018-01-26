@@ -1088,62 +1088,73 @@ Por exemplo, alguns Sites podem responder a este pedido ao mostrar-lhe anúncios
 <translation id="982182592107339124">Esta ação limpa os dados de todos os sites, incluindo:</translation>
 <translation id="983192555821071799">Fechar todos os separadores</translation>
 <translation id="987264212798334818">Geral</translation>
-<translation id="3209146299287804856">Definições de proteção do site de Brave para</translation>
-<translation id="622484624075952240">Para baixo</translation>
-<translation id="2706462751667573066">Para cima</translation>
-<translation id="4339730410920731698">Anúncios e controladores bloqueados</translation>
-<translation id="2313532038420432247">Atualizações de HTTPS</translation>
+<translation id="3209146299287804856">Definições de proteção para</translation>
+<translation id="622484624075952240">Desligar</translation>
+<translation id="2706462751667573066">Ligar</translation>
+<translation id="4339730410920731698">Anúncios e rastreadores bloqueados</translation>
+<translation id="2313532038420432247">Atualizações HTTPS</translation>
 <translation id="7461425058443653485">Scripts bloqueados</translation>
-<translation id="7835726359440951858">Bloquear anúncios e controlo</translation>
+<translation id="7835726359440951858">Bloquear anúncios e rastreio</translation>
 <translation id="520895744850022668">HTTPS Everywhere</translation>
 <translation id="94154759592465111">Bloquear scripts</translation>
-<translation id="7307834434086582547">Ativar/desativar proteções de Brave</translation>
-<translation id="6132506775968708399">Bloqueie cookies de terceiros</translation>
-<translation id="8710614491157212477">Sempre que possível abra sítios suportados que utilizam HTTPS em vez de HTTP</translation>
-<translation id="5758129336814690876">Modo Rastreamento Protegido</translation>
-<translation id="4609637183310787528">Tenha o cuidado com fontes que  o rastreiam a partir de um carregamento</translation>
-<translation id="8387201461264842096">Bloqueador de Propagandas</translation>
-<translation id="1934885595886623674">Elimine propagandas do carregamento</translation>
-<translation id="7458422973722236530">Proteção de impressões digitais</translation>
-<translation id="5787084571334399599">Impede o browser a partir de impressões digitais</translation>
-<translation id="3758669798635576061">Métodos de impressões digitais bloqueados</translation>
-<translation id="3276318574457057212">Bloqueio de anúncio regional</translation>
-<translation id="2300239903491866759">Impede anúncios regionais de carregar</translation>
-<translation id="8142327400852603066">Sem listas adicionais disponíveis para o seu local</translation>
-<translation id="9148058034647219655">Saída</translation>
-<translation id="3149880132460839085">Sincronização Brave</translation>
-<translation id="5853303025585906159">Sincronize os dados do navegador entre os seus
-dispositivos de forma segura utilizando a Brave Sync,
-não é necessário criar conta.
-Toque abaixo para começar. </translation>
-<translation id="4807681603968503084">Tenho um código de sincronização existente</translation>
+<translation id="7307834434086582547">Ativar/desativar proteções Brave</translation>
+<translation id="6132506775968708399">Bloquear cookies de terceiros</translation>
+<translation id="8710614491157212477">Se possível, abrir sites através do protocolo HTTPS em vez de HTTP</translation>
+<translation id="5758129336814690876">Modo de proteção contra rastreio</translation>
+<translation id="4609637183310787528">Impede o carregamento dos recursos que o monitorizam</translation>
+<translation id="8387201461264842096">Bloqueador de anúncios</translation>
+<translation id="1934885595886623674">Impede o carregamento de anúncios</translation>
+<translation id="7458422973722236530">Proteção de impressão digital</translation>
+<translation id="5787084571334399599">Impede a utilização de impressões digitais no navegador</translation>
+<translation id="3758669798635576061">Métodos de impressão digital bloqueados</translation>
+<translation id="3276318574457057212">Anúncios regionais</translation>
+<translation id="2300239903491866759">Impede o carregamento de anúncios regionais</translation>
+<translation id="8142327400852603066">Não existem listas disponíveis para a sua região</translation>
+<translation id="9148058034647219655">Sair</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="5853303025585906159">Sincronizar dados entre os seus dispositivo
+em segurança através de Brave Sync. Não
+requer conta. toque abaixo para continuar.</translation>
+<translation id="4807681603968503084">Tenho um código de sincronização</translation>
 <translation id="3082265116777145081"> Adicionar nome do dispositivo</translation>
-<translation id="9024091168371687561">Inserir um nome opcional para este dispositivo</translation>
+<translation id="9024091168371687561">Digite um nome opcional para o dispositivo</translation>
 <translation id="3998827900918661986">Dispositivo Android</translation>
 <translation id="7319511434820752937">Sincronizar com o dispositivo</translation>
 <translation id="2848874822038607051">Ao utilizar o dispositivo sincronizado existente,
 abra as Configurações Brave e navegue até
 "Configurações do Dispositivo", toque `+` para adicionar
 um novo dispositivo e revelar o código de sincronização.</translation>
-<translation id="7539985410310934287">Inserir código palavras</translation>
-<translation id="3381055602822429838">Inserir código palavras abaixo.</translation>
+<translation id="7539985410310934287">Digite o código</translation>
+<translation id="3381055602822429838">Digite o código em baixo.</translation>
 <translation id="326454632686131209">Sincronizar dispositivo</translation>
-<translation id="8985635554450124959">A sincronização não pôde ser configurada</translation>
-<translation id="7713465482966886648">A configuração da sincronização foi finalizada com sucesso</translation>
-<translation id="1068083442730715531">Restaurar Sincronização...</translation>
-<translation id="6761015334234690567">Tem a certeza de que deseja redefinir as configurações de Sincronização deste dispositivo?</translation>
-<translation id="6244065453125065109">Controladores
+<translation id="8985635554450124959">Incapaz de configurar o Sync</translation>
+<translation id="7713465482966886648">A configuração foi terminada com sucesso</translation>
+<translation id="1068083442730715531">Repor Sync...</translation>
+<translation id="6761015334234690567">Tem a certeza de que deseja repor as definições do Sync?</translation>
+<translation id="6244065453125065109">Rastreios
 bloqueados</translation>
 <translation id="2547939855139473800">Anúncios
 bloqueados</translation>
 <translation id="8880969045613157151">Atualizações
-de HTTPS</translation>
-<translation id="204407992549693965">Estimativa Hora
-Guardado</translation>
+HTTPS</translation>
+<translation id="204407992549693965">Poupança
+de tempo</translation>
 <translation id="991605024067283917">Enviar métricas</translation>
-<translation id="6572660632052512096">Modo de desktop</translation>
-<translation id="4479934682648362332">Dar preferência a versões para desktop de Websites</translation>
-<translation id="807636106793708118">Dar preferência a versões para dispositivos móveis de Websites</translation>
-<translation id="1340503115760585811">Ativar Vista de desktop para novos separadores</translation>
-<translation id="7924540991929826186">Utilizar versões para dispositivos móveis de Websites para novos separadores (recomendado)</translation>
+<translation id="6572660632052512096">Modo desktop</translation>
+<translation id="4479934682648362332">Preferir versão normal dos sites</translation>
+<translation id="807636106793708118">Preferir versão para dispositivos móveis</translation>
+<translation id="1340503115760585811">Ativar vista normal para novos separadores</translation>
+<translation id="7924540991929826186">Utilizar versão reduzida para novos separadores (recomendado)</translation>
+<translation id="3834924998750356151">Monitor de bloqueio</translation>
+<translation id="1713450908129883784">Controlos individuais</translation>
+<translation id="6303294677342628402">Proteções</translation>
+<translation id="252011129655042182">Anúncios e rastreio</translation>
+<translation id="6754976710186182237">Métodos de impressão digital</translation>
+<translation id="8585880402319729023">Bloquear phising</translation>
+<translation id="59174027418879706">Ativado</translation>
+<translation id="4176463684765177261">Desativado</translation>
+<translation id="1580125697191336644">Experimental. Ativa a reprodução do som dos vídeos em segundo plano se o separador não estiver ativo ou se o ecrã estiver desligado. tente altera para o modo desktop se não estiver a funcionar corretamente.</translation>
+<translation id="6587448235155023666">As alterações serão aplicadas depois de reiniciar o Brave</translation>
+<translation id="8701563696941209024">Reiniciar agora</translation>
+<translation id="834487290629916192">Mais tarde</translation>
 </translationbundle>

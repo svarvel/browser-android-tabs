@@ -70,12 +70,17 @@
     <string name="brave_shields_fingerprint_methods">Методи на пръстови отпечатъци</string>
     <string name="brave_shields_block_phishing_switch">Блокиране на фишинг</string>
 
-    <string name="play_video_in_background_title">Видео на фона</string>
+    <string name="play_video_in_background_title">Възпроизвеждане на фоново видео</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Разрешено</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Забранено</string>
     <string name="website_settings_category_play_video_in_background_enabled">Експериментално. Разрешава просвирване на аудио на фона когато разделът не е активен или екранът на устройството е изключен. Опитайте да превключите към режим работен плот ако тази характеристика не работи.</string>
     <string name="settings_require_relaunch_notice">Вашите промени ще влезнат в сила следващия път, в който пуснете Brave</string>
     <string name="settings_require_relaunch_now">ПРЕЗАРЕДИ СЕГА</string>
     <string name="settings_require_relaunch_later">ПО-КЪСНО</string>
+
+    <string name="play_yt_video_in_browser_title">Възпроизвеждане на видео в Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Разрешено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Забранено</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Ако е разрешено, видеоклиповете ще се възпроизвеждат в Brave вместо в съответното приложение</string>
 
 </resources>
