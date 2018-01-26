@@ -76,12 +76,17 @@ HTTPS</string>
     <string name="brave_shields_fingerprint_methods">Biện pháp Vân tay</string>
     <string name="brave_shields_block_phishing_switch">Chặn Lừa đảo</string>
 
-    <string name="play_video_in_background_title">Video chạy ngầm</string>
+    <string name="play_video_in_background_title">Phát lại video nền</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Đã kích hoạt</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Tắt</string>
     <string name="website_settings_category_play_video_in_background_enabled">Thử nghiệm. Kích hoạt tính năng phát nhạc từ video chạy ngầm khi cửa sổ không ở trạng thái sử dụng hoặc màn hình thiết bị đang tắt. Hãy thử chuyển về chế độ màn hình chính nếu tính năng này không hoạt động.</string>
     <string name="settings_require_relaunch_notice">Các thay đổi của bạn sẽ có hiệu lực vào lần tiếp theo khi bạn khởi động lại ứng dụng Brave</string>
     <string name="settings_require_relaunch_now">KHỞI ĐỘNG LẠI NGAY BÂY GIỜ</string>
     <string name="settings_require_relaunch_later">ĐỂ SAU</string>
+
+    <string name="play_yt_video_in_browser_title">Phát lại video trong Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Đã bật</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Đã tắt</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Nếu được bật, video sẽ được phát trong Brave thay vì ứng dụng tương ứng</string>
 
 </resources>

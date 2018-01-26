@@ -76,12 +76,17 @@ HTTPS</string>
     <string name="brave_shields_fingerprint_methods">שיטות טביעת אצבע</string>
     <string name="brave_shields_block_phishing_switch">חסום דיוג</string>
 
-    <string name="play_video_in_background_title">וידאו ברקע</string>
+    <string name="play_video_in_background_title">הצגת סרט ברקע</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">זמין</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">לא זמין</string>
     <string name="website_settings_category_play_video_in_background_enabled">ניסיוני. מאפשר הפעלת אודיו מווידאו ברקע כשהכרטיסייה אינה פעילה או כשמסך המכשיר מכובה. נסה/נסי לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</string>
     <string name="settings_require_relaunch_notice">השינויים שלך ייכנסו לתוקף בפעם הבאה שתפעיל/י מחדש את Brave</string>
     <string name="settings_require_relaunch_now">הפעל/י מחדש עכשיו</string>
     <string name="settings_require_relaunch_later">מאוחר יותר</string>
+
+    <string name="play_yt_video_in_browser_title">הצגת סרט ב-Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">זמין</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">לא זמין</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">אם הם זמינים, הסרטים יוצגו ב-Brave במקום באפליקציה מקבילה</string>
 
 </resources>

@@ -76,12 +76,17 @@ tid</string>
     <string name="brave_shields_fingerprint_methods">Fingeravtrycksmetoder</string>
     <string name="brave_shields_block_phishing_switch">Blockera nätfiske</string>
 
-    <string name="play_video_in_background_title">Video i bakgrunden</string>
+    <string name="play_video_in_background_title">Videouppspelning i bakgrunden</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiverad</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Inaktiverad</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimentell. Möjliggör uppspelning av ljud från video i bakgrunden när fliken är inaktiv eller enhetens skärm är avstängd. Pröva att byta till desktop-läge om den här funktionen inte fungerar.</string>
     <string name="settings_require_relaunch_notice">Dina ändringar träder ikraft efter att du har startat om Brave</string>
     <string name="settings_require_relaunch_now">STARTA OM NU</string>
     <string name="settings_require_relaunch_later">SENARE</string>
+
+    <string name="play_yt_video_in_browser_title">Videouppspelning i Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Aktiverad</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Inaktiverad</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Om aktiverad kommer videor att spelas i Brave istället för någon annan app</string>
 
 </resources>

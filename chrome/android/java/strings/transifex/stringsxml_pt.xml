@@ -72,12 +72,17 @@ Guardado</string>
     <string name="brave_shields_fingerprint_methods">Métodos de impressão Digital</string>
     <string name="brave_shields_block_phishing_switch">Bloquear Phishing</string>
 
-    <string name="play_video_in_background_title">Vídeo em segundo plano</string>
+    <string name="play_video_in_background_title">Reprodução de vídeo em segundo plano</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Ativado</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Desativado</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimental. Ativa a reprodução do áudio de um vídeo em segundo plano quando o separador não está ativo ou quando o ecrã está desligado. Tente alterar para modo de computador se esta funcionalidade não estiver a funcionar.</string>
     <string name="settings_require_relaunch_notice">As suas alterações entrarão em vigor da próxima vez que reiniciar o Brave</string>
     <string name="settings_require_relaunch_now">REINICIAR AGORA</string>
     <string name="settings_require_relaunch_later">MAIS TARDE</string>
+
+    <string name="play_yt_video_in_browser_title">Reprodução de vídeo no Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Ativado</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desativado</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Se ativado, os vídeos serão reproduzidos no Brave e não na aplicação correspondente</string>
 
 </resources>

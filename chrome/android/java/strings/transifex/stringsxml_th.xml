@@ -74,12 +74,17 @@ EST แล้ว</string>
     <string name="brave_shields_fingerprint_methods">วิธีใช้ลายนิ้วมือ</string>
     <string name="brave_shields_block_phishing_switch">บล็อกฟิชชิ่ง</string>
 
-    <string name="play_video_in_background_title">วิดีโอในเบื้องหลัง</string>
+    <string name="play_video_in_background_title">การเล่นวิดีโอพื้นหลัง</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">เปิดใช้แล้ว</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">ปิดใช้แล้ว</string>
     <string name="website_settings_category_play_video_in_background_enabled">การทดลอง เปิดใช้ฟีเจอร์เล่นเสียงจากวิดีโอในเบื้องหลังเมื่อแท็บไม่ได้ทำงานหรือเมื่อปิดหน้าจออุปกรณ์ ลองเปลี่ยนเป็นโหมดเดสก์ท็อปหากฟีเจอร์นี้ยังไม่ทำงาน</string>
     <string name="settings_require_relaunch_notice">การเปลี่ยนแปลงจะมีผลในครั้งถัดไปที่คุณเปิด Brave ใหม่</string>
     <string name="settings_require_relaunch_now">เปิดใหม่ทันที</string>
     <string name="settings_require_relaunch_later">ภายหลัง</string>
+
+    <string name="play_yt_video_in_browser_title">การเล่นวิดีโอใน Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">เปิดใช้งาน</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">ปิดใช้งาน</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">หากเปิดใช้งาน วิดีโอจะถูกเล่นใน Brave แทนแอปที่เกี่ยวข้อง</string>
 
 </resources>

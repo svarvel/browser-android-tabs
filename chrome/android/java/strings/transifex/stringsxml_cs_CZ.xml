@@ -76,7 +76,6 @@ Uloženo</string>
     <string name="brave_shields_fingerprint_methods">Metody sběru otisků prstů</string>
     <string name="brave_shields_block_phishing_switch">Zablokovat phishing</string>
 
-    <string name="play_video_in_background_title">Video na pozadí</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Zapnuto</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Vypnuto</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimentální. Umožňuje, aby zvuk z videa hrál na pozadí, když panel není aktivní nebo je vypnutá obrazovka zařízení. Pokud tato funkce nefunguje, zkuste přepnout na desktopový mód.</string>
@@ -84,4 +83,4 @@ Uloženo</string>
     <string name="settings_require_relaunch_now">ZNOVU SPUSTIT NYNÍ</string>
     <string name="settings_require_relaunch_later">POZDĚJI</string>
 
-</resources>
+    </resources>

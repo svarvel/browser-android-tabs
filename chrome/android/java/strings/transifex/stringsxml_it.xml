@@ -77,12 +77,17 @@ Risparmiato</string>
     <string name="brave_shields_fingerprint_methods">Metodi di Fingerprint</string>
     <string name="brave_shields_block_phishing_switch">Blocca Phishing</string>
 
-    <string name="play_video_in_background_title">Video in background</string>
+    <string name="play_video_in_background_title">Riproduzione video in background</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Abilitato</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Disabilitato</string>
     <string name="website_settings_category_play_video_in_background_enabled">Sperimentale. Consente la riproduzione di audio da video in background quando la scheda non è attiva o lo schermo del dispositivo è disattivato. Prova a passare alla modalità desktop se questa funzionalità non funziona.</string>
     <string name="settings_require_relaunch_notice">Al prossimo riavvio di Brave le modiche saranno effettive</string>
     <string name="settings_require_relaunch_now">RIAVVIA ADESSO</string>
     <string name="settings_require_relaunch_later">DOPO</string>
+
+    <string name="play_yt_video_in_browser_title">Riproduzione con Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Abilitato</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Disabilitato</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Se abilitato, i video saranno riprodotti con Brave piuttosto che in app corrispondenti</string>
 
 </resources>

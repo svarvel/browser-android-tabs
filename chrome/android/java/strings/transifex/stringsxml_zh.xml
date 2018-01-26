@@ -70,12 +70,17 @@
     <string name="brave_shields_fingerprint_methods">指纹方法</string>
     <string name="brave_shields_block_phishing_switch">拦截网络钓鱼</string>
 
-    <string name="play_video_in_background_title">后台的视频</string>
+    <string name="play_video_in_background_title">后台视频回放</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">已启用</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">已禁用</string>
     <string name="website_settings_category_play_video_in_background_enabled">实验的。当标签页处于非活动状态或者设备屏幕关闭时，允许播放后台视频中的音频。如果该功能失效，可以尝试切换到桌面模式。</string>
     <string name="settings_require_relaunch_notice">您的改变会在您下一次重新启动 Brave 时生效</string>
     <string name="settings_require_relaunch_now">现在重新启动</string>
     <string name="settings_require_relaunch_later">稍后</string>
+
+    <string name="play_yt_video_in_browser_title">在Brave中回放视频</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">已启用</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">已禁用</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">一旦启用后，视频将在Brave中播放，而不是在相应的应用中播放。</string>
 
 </resources>
