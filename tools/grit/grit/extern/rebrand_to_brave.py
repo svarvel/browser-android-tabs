@@ -29,8 +29,8 @@
 # Google Inc -> Brave Software Inc
 
 # In `android_chrome_strings.grd` make sure that these are changed:
-# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/ -> https://brave.com/privacy_android
-# https://www.google.com/intl/[GRITLANGCODE]/chrome/browser/privacy/eula_text.html -> https://brave.com/terms_of_use
+# IDS_CHROME_PRIVACY_NOTICE_URL -> https://brave.com/privacy_android
+# IDS_CHROME_TERMS_OF_SERVICE_URL -> https://brave.com/terms_of_use
 import sys
 import os.path
 import xml.etree.ElementTree
