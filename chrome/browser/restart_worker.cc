@@ -6,6 +6,6 @@
 #include "chrome/browser/lifetime/application_lifetime.h"
 
 
-static void Restart(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+static void JNI_RestartWorker_Restart(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
     chrome::AttemptRestart();
 }

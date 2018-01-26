@@ -51,7 +51,7 @@ void CreateOpenDatabase() {
     }
 }
 
-base::android::ScopedJavaLocalRef<jstring> GetLocalIdByObjectId(JNIEnv*
+base::android::ScopedJavaLocalRef<jstring> JNI_BraveSyncWorker_GetLocalIdByObjectId(JNIEnv*
       env, const base::android::JavaParamRef<jobject>& jcaller,
       const base::android::JavaParamRef<jstring>& objectId) {
     CreateOpenDatabase();
@@ -65,7 +65,7 @@ base::android::ScopedJavaLocalRef<jstring> GetLocalIdByObjectId(JNIEnv*
     return base::android::ConvertUTF8ToJavaString(env, value);
 }
 
-base::android::ScopedJavaLocalRef<jstring> GetObjectIdByLocalId(JNIEnv* env,
+base::android::ScopedJavaLocalRef<jstring> JNI_BraveSyncWorker_GetObjectIdByLocalId(JNIEnv* env,
       const base::android::JavaParamRef<jobject>& obj,
       const base::android::JavaParamRef<jstring>& localId) {
     CreateOpenDatabase();
@@ -79,7 +79,7 @@ base::android::ScopedJavaLocalRef<jstring> GetObjectIdByLocalId(JNIEnv* env,
     return base::android::ConvertUTF8ToJavaString(env, value);
 }
 
-void SaveObjectId(JNIEnv* env, const
+void JNI_BraveSyncWorker_SaveObjectId(JNIEnv* env, const
       base::android::JavaParamRef<jobject>& jcaller,
       const base::android::JavaParamRef<jstring>& localId,
       const base::android::JavaParamRef<jstring>& objectIdJSON,
@@ -98,7 +98,7 @@ void SaveObjectId(JNIEnv* env, const
     }
 }
 
-void DeleteByLocalId(JNIEnv* env,
+void JNI_BraveSyncWorker_DeleteByLocalId(JNIEnv* env,
       const base::android::JavaParamRef<jobject>& obj,
       const base::android::JavaParamRef<jstring>& localId) {
     CreateOpenDatabase();
@@ -114,7 +114,7 @@ void DeleteByLocalId(JNIEnv* env,
     g_level_db->Delete(leveldb::WriteOptions(), value);
 }
 
-static void Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+static void JNI_BraveSyncWorker_Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
     if (g_level_db) {
         delete g_level_db;
         g_level_db = nullptr;
@@ -125,7 +125,7 @@ static void Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) 
     }
 }
 
-static void ResetSync(JNIEnv* env,
+static void JNI_BraveSyncWorker_ResetSync(JNIEnv* env,
       const base::android::JavaParamRef<jobject>& obj,
       const base::android::JavaParamRef<jstring>& key) {
     CreateOpenDatabase();
