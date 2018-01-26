@@ -17,7 +17,7 @@ public class DisableVideoPauseOnBackground {
     }
 
     private static boolean NeedToDisable(Tab tab) {
-        boolean bRet = tab != null && tab.getUrl().contains("https://m.youtube.com/watch?v");
+        boolean bRet = tab != null && tab.getUrl().contains("https://m.youtube.com/watch?");
         return bRet;
     }
 
