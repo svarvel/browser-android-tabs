@@ -41,7 +41,7 @@ fi
 
 echo "Aligning apk..."  
 #removed -v key
-third_party/android_tools/sdk/build-tools/26.0.0/zipalign -f -p 4 $BASEDIR/apks/Brave.apk $BASEDIR/apks/Brave_aligned.apk
+third_party/android_tools/sdk/build-tools/27.0.1/zipalign -f -p 4 $BASEDIR/apks/Brave.apk $BASEDIR/apks/Brave_aligned.apk
 rc=$?
 if [ $rc != 0 ] 
 then 
