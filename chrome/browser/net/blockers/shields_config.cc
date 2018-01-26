@@ -38,12 +38,12 @@ ShieldsConfig* ShieldsConfig::getShieldsConfig() {
     return gShieldsConfig;
 }
 
-static void Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+static void JNI_ShieldsConfig_Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
     delete gShieldsConfig;
     gShieldsConfig = nullptr;
 }
 
-static void Init(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+static void JNI_ShieldsConfig_Init(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
   // This will automatically bind to the Java object and pass ownership there.
   gShieldsConfig = new ShieldsConfig(env, obj);
 }
