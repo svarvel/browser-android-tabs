@@ -216,7 +216,7 @@ static void JNI_PrefServiceBridge_SetContentSettingForPattern(
       static_cast<ContentSetting>(setting));
 }
 
-static void SetContentSettingForPatternIncognito(JNIEnv* env,
+static void JNI_PrefServiceBridge_SetContentSettingForPatternIncognito(JNIEnv* env,
                                         const JavaParamRef<jobject>& obj,
                                         int content_settings_type,
                                         const JavaParamRef<jstring>& pattern,

@@ -36,6 +36,7 @@ import org.chromium.content_public.browser.LoadUrlParams;
 import java.util.Scanner;
 import org.chromium.content.browser.ContentView;
 import org.chromium.content.browser.ContentViewCore;
+import org.chromium.content.browser.ContentViewCoreImpl;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.ui.base.ViewAndroidDelegate;
 
@@ -607,7 +608,7 @@ public class BraveSyncWorker {
             if (null == mWebContents) {
                 mWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mWebContents) {
-                    mContentViewCore = new ContentViewCore(mContext, ChromeVersionInfo.getProductVersion());
+                    mContentViewCore = new ContentViewCoreImpl(mContext, ChromeVersionInfo.getProductVersion());
                     if (null != mContentViewCore) {
                         ContentView cv = ContentView.createContentView(mContext, mContentViewCore);
                         cv.setContentDescription("");
@@ -718,42 +719,40 @@ public class BraveSyncWorker {
         }
     }
 
-    private ArrayList<String> SaveGetDeleteNotSyncedRecords(String recordType, String action, ArrayList<String> ids, NotSyncedRecordsOperation operation) {
-        synchronized(this) {
-            if (NotSyncedRecordsOperation.GetItems != operation && 0 == ids.size()) {
+    private synchronized ArrayList<String> SaveGetDeleteNotSyncedRecords(String recordType, String action, ArrayList<String> ids, NotSyncedRecordsOperation operation) {
+        if (NotSyncedRecordsOperation.GetItems != operation && 0 == ids.size()) {
+            return null;
+        }
+        String recordId = recordType + action;
+        ArrayList<String> existingList = GetNotSyncedRecords(recordId);
+        if (NotSyncedRecordsOperation.GetItems == operation) {
+            return existingList;
+        } else if (NotSyncedRecordsOperation.AddItems == operation) {
+            for (String id: ids) {
+                if (!existingList.contains(id)) {
+                    existingList.add(id);
+                }
+            }
+        } else if (NotSyncedRecordsOperation.DeleteItems == operation) {
+            boolean listChanged = false;
+            boolean clearLocalDb = action.equals(DELETE_RECORD);
+            for (String id: ids) {
+                if (!listChanged) {
+                    listChanged = existingList.remove(id);
+                } else {
+                    existingList.remove(id);
+                }
+                // Delete corresponding objectIds
+                if (clearLocalDb) {
+                    nativeDeleteByLocalId(id);
+                }
+            }
+            if (!listChanged) {
                 return null;
             }
-            String recordId = recordType + action;
-            ArrayList<String> existingList = GetNotSyncedRecords(recordId);
-            if (NotSyncedRecordsOperation.GetItems == operation) {
-                return existingList;
-            } else if (NotSyncedRecordsOperation.AddItems == operation) {
-                for (String id: ids) {
-                    if (!existingList.contains(id)) {
-                        existingList.add(id);
-                    }
-                }
-            } else if (NotSyncedRecordsOperation.DeleteItems == operation) {
-                boolean listChanged = false;
-                boolean clearLocalDb = action.equals(DELETE_RECORD);
-                for (String id: ids) {
-                    if (!listChanged) {
-                        listChanged = existingList.remove(id);
-                    } else {
-                        existingList.remove(id);
-                    }
-                    // Delete corresponding objectIds
-                    if (clearLocalDb) {
-                        nativeDeleteByLocalId(id);
-                    }
-                }
-                if (!listChanged) {
-                    return null;
-                }
-            }
-
-            SaveNotSyncedRecords(recordId, existingList);
         }
+
+        SaveNotSyncedRecords(recordId, existingList);
 
         return null;
     }
@@ -791,36 +790,34 @@ public class BraveSyncWorker {
         }
     }
 
-    public void FetchSyncRecords(String lastRecordFetchTime) {
-        synchronized (this) {
-            if (!mSyncIsReady.IsReady()) {
-                return;
-            }
-            //Log.i("TAG", "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
-            if (0 == mTimeLastFetch && 0 == mTimeLastFetchExecuted) {
-                // It is the very first time of the sync start
-                // Set device name
-                SetUpdateDeleteDeviceName(CREATE_RECORD);
-                SendAllLocalBookmarks();
-            }
-            Calendar currentTime = Calendar.getInstance();
-            if (currentTime.getTimeInMillis() - mTimeLastFetch <= INTERVAL_TO_FETCH_RECORDS
-                  && lastRecordFetchTime.isEmpty()) {
-                return;
-            }
-            String fetchToRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
-            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), fetchToRequest, FETCH_RECORDS_CHUNK_SIZE)));
-            mTimeLastFetchExecuted = currentTime.getTimeInMillis();
-            if (!lastRecordFetchTime.isEmpty()) {
-                try {
-                    mTimeLastFetch = Long.parseLong(lastRecordFetchTime);
-                    // Save last fetch time in preferences
-                    SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putLong(PREF_LAST_FETCH_NAME, mTimeLastFetch);
-                    editor.apply();
-                } catch (NumberFormatException e) {
-                }
+    private synchronized void FetchSyncRecords(String lastRecordFetchTime) {
+        if (!mSyncIsReady.IsReady()) {
+            return;
+        }
+        //Log.i("TAG", "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
+        if (0 == mTimeLastFetch && 0 == mTimeLastFetchExecuted) {
+            // It is the very first time of the sync start
+            // Set device name
+            SetUpdateDeleteDeviceName(CREATE_RECORD);
+            SendAllLocalBookmarks();
+        }
+        Calendar currentTime = Calendar.getInstance();
+        if (currentTime.getTimeInMillis() - mTimeLastFetch <= INTERVAL_TO_FETCH_RECORDS
+              && lastRecordFetchTime.isEmpty()) {
+            return;
+        }
+        String fetchToRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
+        CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), fetchToRequest, FETCH_RECORDS_CHUNK_SIZE)));
+        mTimeLastFetchExecuted = currentTime.getTimeInMillis();
+        if (!lastRecordFetchTime.isEmpty()) {
+            try {
+                mTimeLastFetch = Long.parseLong(lastRecordFetchTime);
+                // Save last fetch time in preferences
+                SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putLong(PREF_LAST_FETCH_NAME, mTimeLastFetch);
+                editor.apply();
+            } catch (NumberFormatException e) {
             }
         }
     }
@@ -1893,7 +1890,7 @@ public class BraveSyncWorker {
         if (null != mNewBookmarkModel) {
             // Partner bookmarks need to be loaded explicitly so that BookmarkModel can be loaded.
             PartnerBookmarksShim.kickOffReading(mContext);
-            mNewBookmarkModel.runAfterBookmarkModelLoaded(new Runnable() {
+            mNewBookmarkModel.finishLoadingBookmarkModel(new Runnable() {
                 @Override
                 public void run() {
                   BookmarkId bookmarkId = mNewBookmarkModel.getMobileFolderId();
@@ -2203,7 +2200,7 @@ public class BraveSyncWorker {
             if (null == mJSWebContents) {
                 mJSWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mJSWebContents) {
-                    mJSContentViewCore = new ContentViewCore(mContext, ChromeVersionInfo.getProductVersion());
+                    mJSContentViewCore = new ContentViewCoreImpl(mContext, ChromeVersionInfo.getProductVersion());
                     if (null != mJSContentViewCore) {
                         ContentView cv = ContentView.createContentView(mContext, mJSContentViewCore);
                         cv.setContentDescription("");

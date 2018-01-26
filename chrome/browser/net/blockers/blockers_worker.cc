@@ -105,7 +105,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitAdBlock() {
-        base::ThreadRestrictions::AssertIOAllowed();
+        base::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(adblock_init_mutex_);
 
         if (adblock_parser_) {
@@ -130,7 +130,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitAdBlockRegional() {
-        base::ThreadRestrictions::AssertIOAllowed();
+        base::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(adblock_regional_init_mutex_);
 
         if (0 != adblock_regional_parsers_.size()) {
@@ -171,7 +171,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitTP() {
-        base::ThreadRestrictions::AssertIOAllowed();
+        base::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(tp_init_mutex_);
 
         if (tp_parser_) {
@@ -207,7 +207,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitHTTPSE() {
-        base::ThreadRestrictions::AssertIOAllowed();
+        base::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(httpse_init_mutex_);
 
         if (level_db_) {
@@ -422,7 +422,7 @@ namespace blockers {
     }
 
     std::string BlockersWorker::getHTTPSURL(const GURL* url, const uint64_t &request_identifier) {
-        base::ThreadRestrictions::AssertIOAllowed();
+        base::AssertBlockingAllowed();
 
         if (nullptr == url
           || url->scheme() == "https"
