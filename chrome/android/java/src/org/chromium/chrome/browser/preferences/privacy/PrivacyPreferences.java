@@ -54,7 +54,7 @@ public class PrivacyPreferences extends PreferenceFragment
     private static final String PREF_SYNC_AND_SERVICES_LINK_DIVIDER =
             "sync_and_services_link_divider";
     private static final String PREF_SYNC_AND_SERVICES_LINK = "sync_and_services_link";
-    private static final String PREF_SEND_METRICS = "send_metrics";
+    //private static final String PREF_SEND_METRICS = "send_metrics";
 
     private ManagedPreferenceDelegate mManagedPreferenceDelegate;
 
@@ -156,10 +156,10 @@ public class PrivacyPreferences extends PreferenceFragment
         adBlockRegionalPref.setOnPreferenceChangeListener(this);
         adBlockRegionalPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
 
-        ChromeBaseCheckBoxPreference sendMetricsPref =
+        /*ChromeBaseCheckBoxPreference sendMetricsPref =
                 (ChromeBaseCheckBoxPreference) findPreference(PREF_SEND_METRICS);
         sendMetricsPref.setOnPreferenceChangeListener(this);
-        sendMetricsPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);
+        sendMetricsPref.setManagedPreferenceDelegate(mManagedPreferenceDelegate);*/
 
         updateSummaries();
     }
@@ -197,11 +197,11 @@ public class PrivacyPreferences extends PreferenceFragment
         } else if (PREF_CAN_MAKE_PAYMENT.equals(key)) {
             PrefServiceBridge.getInstance().setBoolean(
                     Pref.CAN_MAKE_PAYMENT_ENABLED, (boolean) newValue);
-        } else if (PREF_SEND_METRICS.equals(key)) {
+        }/* else if (PREF_SEND_METRICS.equals(key)) {
             SharedPreferences.Editor sharedPreferencesEditor = ContextUtils.getAppSharedPreferences().edit();
             sharedPreferencesEditor.putBoolean(PREF_SEND_METRICS, (boolean)newValue);
             sharedPreferencesEditor.apply();
-        }
+        }*/
 
         return true;
     }
