@@ -1361,6 +1361,8 @@ if (current_toolchain == default_toolchain) {
         "//sync/android_sync.js",
         "//sync/android_sync_words.js",
         "//niceware/browser/niceware.js",
+        "//net/data/ssl/certificates/urp_staging.crt",
+        "//net/data/ssl/certificates/urp.crt",
       ]
       foreach(_locale, locales - android_chrome_omitted_locales) {
         renaming_sources +=
