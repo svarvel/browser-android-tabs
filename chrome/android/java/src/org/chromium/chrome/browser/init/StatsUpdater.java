@@ -19,8 +19,20 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.concurrent.Semaphore;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLException;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
 
 import org.chromium.base.Log;
 import org.chromium.chrome.browser.ConfigAPIs;
@@ -33,9 +45,11 @@ import org.json.JSONObject;
 public class StatsUpdater {
     private static final String TAG = "STAT";
 
-    public static final long MILLISECONDS_IN_A_DAY = 86400 * 1000;
-    public static final long MILLISECONDS_IN_A_WEEK = 7 * MILLISECONDS_IN_A_DAY;
-    public static final long MILLISECONDS_IN_A_MONTH = 30 * MILLISECONDS_IN_A_DAY;
+    //private static final String URP_CERT = "urp_staging.crt";
+    private static final String URP_CERT = "urp.crt";
+    private static final long MILLISECONDS_IN_A_DAY = 86400 * 1000;
+    private static final long MILLISECONDS_IN_A_WEEK = 7 * MILLISECONDS_IN_A_DAY;
+    private static final long MILLISECONDS_IN_A_MONTH = 30 * MILLISECONDS_IN_A_DAY;
 
     private static final String PREF_NAME = "StatsPreferences";
     private static final String MILLISECONDS_NAME = "Milliseconds";
@@ -175,123 +189,155 @@ public class StatsUpdater {
         if (urpc.isEmpty()) {
             return;
         }
-        String downloadId = GetDownloadId(context);
-        if (downloadId.isEmpty()){
-            // Send request to get download id
-            try {
-                URL url = new URL(SERVER_REQUEST_URPC_INITIALIZE);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                try {
-                    // Create and send request JSON
-                    JSONObject jsonOut = new JSONObject();
-                    jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
-                    jsonOut.put("referral_code", urpc);
-                    jsonOut.put("platform", URPC_PLATFORM);
-                    connection.setDoOutput(true);
-                    connection.setDoInput(true);
-                    connection.setRequestProperty("Content-Type", "application/json");
-                    connection.setRequestProperty("Accept", "application/json");
-                    connection.setRequestMethod("PUT");
-                    OutputStream os = connection.getOutputStream();
-                    os.write(jsonOut.toString().getBytes("UTF-8"));
-                    os.close();
-                    // Read response JSON
-                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        sb.append(line + "\n");
-                    }
-                    br.close();
-                    JSONObject jsonRes = new JSONObject(sb.toString());
-
-                    downloadId = jsonRes.getString("download_id");
-                    SetDownloadId(context, downloadId);
-                } finally {
-                    connection.disconnect();
-                }
-            }
-            catch (MalformedURLException e) {
-                Log.e(TAG, "UpdateUrpc error 1: " + e);
-            }
-            catch (IOException e) {
-                Log.e(TAG, "UpdateUrpc error 2: " + e);
-            }
-            catch (Exception e) {
-                Log.e(TAG, "UpdateUrpc error 3: " + e);
-            }
-        }
-        if (downloadId.isEmpty()){
-            // It should not be empty at this point
-            Log.e(TAG, "UpdateUrpc error: download id is empty");
-            return;
-        }
-        PackageInfo info = null;
         try {
-            info = context.getPackageManager().getPackageInfo(
-                    context.getPackageName(), 0);
-        } catch (NameNotFoundException e) {
-            // Can't go further since we need first time install
-            Log.e(TAG, "UpdateUrpc error on get package info: " + e);
-            return;
-        }
-        if (null == info) {
-            // Can't go further since we need first time install
-            Log.e(TAG, "UpdateUrpc error: could not get package info");
-            return;
-        }
-        if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_A_MONTH) {
-            // We need to inform server about that condition
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            InputStream caInput = new BufferedInputStream(context.getAssets().open(URP_CERT));
+            Certificate ca;
             try {
-                URL url = new URL(SERVER_REQUEST_URPC_FINALIZE);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                ca = cf.generateCertificate(caInput);
+            } finally {
+                caInput.close();
+            }
+
+            // Create a KeyStore containing our trusted CAs
+            String keyStoreType = KeyStore.getDefaultType();
+            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
+            keyStore.load(null, null);
+            keyStore.setCertificateEntry("ca", ca);
+
+            // Create a TrustManager that trusts the CAs in our KeyStore
+            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+            tmf.init(keyStore);
+
+            // Create an SSLContext that uses our TrustManager
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, tmf.getTrustManagers(), null);
+
+            String downloadId = GetDownloadId(context);
+            if (downloadId.isEmpty()){
+                // Send request to get download id
                 try {
-                    // Create and send request JSON
-                    JSONObject jsonOut = new JSONObject();
-                    jsonOut.put("download_id", downloadId);
-                    jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
-                    connection.setDoOutput(true);
-                    connection.setDoInput(true);
-                    connection.setRequestProperty("Content-Type", "application/json");
-                    connection.setRequestProperty("Accept", "application/json");
-                    connection.setRequestMethod("PUT");
-                    OutputStream os = connection.getOutputStream();
-                    os.write(jsonOut.toString().getBytes("UTF-8"));
-                    os.close();
-                    // Read response JSON
-                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        sb.append(line + "\n");
+                    URL url = new URL(SERVER_REQUEST_URPC_INITIALIZE);
+                    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+                    connection.setSSLSocketFactory(sslContext.getSocketFactory());
+                    try {
+                        // Create and send request JSON
+                        JSONObject jsonOut = new JSONObject();
+                        jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
+                        jsonOut.put("referral_code", urpc);
+                        jsonOut.put("platform", URPC_PLATFORM);
+                        connection.setDoOutput(true);
+                        connection.setDoInput(true);
+                        connection.setRequestProperty("Content-Type", "application/json");
+                        connection.setRequestProperty("Accept", "application/json");
+                        connection.setRequestMethod("PUT");
+                        OutputStream os = connection.getOutputStream();
+                        os.write(jsonOut.toString().getBytes("UTF-8"));
+                        os.close();
+                        // Read response JSON
+                        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        br.close();
+                        JSONObject jsonRes = new JSONObject(sb.toString());
+
+                        downloadId = jsonRes.getString("download_id");
+                        SetDownloadId(context, downloadId);
+                    } finally {
+                        connection.disconnect();
                     }
-                    br.close();
-                    JSONObject jsonRes = new JSONObject(sb.toString());
-                    String isFinalized = jsonRes.getString("finalized");
-                    if (isFinalized.equals("true")) {
-                        // Clean up values to skip further checking
-                        SetUrpc(context, "");
-                        SetDownloadId(context, "");
-                    } else if (isFinalized.equals("false")) {
-                        // We will repeat attempt next time
-                        Log.w(TAG, "UpdateUrpc error: could not finalize");
-                    } else {
-                        // We should not be here
-                        Log.e(TAG, "UpdateUrpc error: unknown response on finalize " + isFinalized);
-                    }
-                } finally {
-                    connection.disconnect();
+                } catch (MalformedURLException e) {
+                    Log.e(TAG, "UpdateUrpc error 1: " + e);
+                } catch (IOException e) {
+                    Log.e(TAG, "UpdateUrpc error 2: " + e);
+                } catch (Exception e) {
+                    Log.e(TAG, "UpdateUrpc error 3: " + e);
                 }
             }
-            catch (MalformedURLException e) {
-                Log.e(TAG, "UpdateUrpc error 1: " + e);
+            if (downloadId.isEmpty()){
+                // It should not be empty at this point
+                Log.e(TAG, "UpdateUrpc error: download id is empty");
+                return;
             }
-            catch (IOException e) {
-                Log.e(TAG, "UpdateUrpc error 2: " + e);
+            PackageInfo info = null;
+            try {
+                info = context.getPackageManager().getPackageInfo(
+                        context.getPackageName(), 0);
+            } catch (NameNotFoundException e) {
+                // Can't go further since we need first time install
+                Log.e(TAG, "UpdateUrpc error on get package info: " + e);
+                return;
             }
-            catch (Exception e) {
-                Log.e(TAG, "UpdateUrpc error 3: " + e);
+            if (null == info) {
+                // Can't go further since we need first time install
+                Log.e(TAG, "UpdateUrpc error: could not get package info");
+                return;
             }
+            if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_A_MONTH) {
+                // We need to inform server about that condition
+                try {
+                    URL url = new URL(SERVER_REQUEST_URPC_FINALIZE);
+                    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+                    connection.setSSLSocketFactory(sslContext.getSocketFactory());
+                    try {
+                        // Create and send request JSON
+                        JSONObject jsonOut = new JSONObject();
+                        jsonOut.put("download_id", downloadId);
+                        jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
+                        connection.setDoOutput(true);
+                        connection.setDoInput(true);
+                        connection.setRequestProperty("Content-Type", "application/json");
+                        connection.setRequestProperty("Accept", "application/json");
+                        connection.setRequestMethod("PUT");
+                        OutputStream os = connection.getOutputStream();
+                        os.write(jsonOut.toString().getBytes("UTF-8"));
+                        os.close();
+                        // Read response JSON
+                        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            sb.append(line + "\n");
+                        }
+                        br.close();
+                        JSONObject jsonRes = new JSONObject(sb.toString());
+                        String isFinalized = jsonRes.getString("finalized");
+                        if (isFinalized.equals("true")) {
+                            // Clean up values to skip further checking
+                            SetUrpc(context, "");
+                            SetDownloadId(context, "");
+                        } else if (isFinalized.equals("false")) {
+                            // We will repeat attempt next time
+                            Log.w(TAG, "UpdateUrpc error: could not finalize");
+                        } else {
+                            // We should not be here
+                            Log.e(TAG, "UpdateUrpc error: unknown response on finalize " + isFinalized);
+                        }
+                    } finally {
+                        connection.disconnect();
+                    }
+                } catch (MalformedURLException e) {
+                    Log.e(TAG, "UpdateUrpc error 1: " + e);
+                } catch (IOException e) {
+                    Log.e(TAG, "UpdateUrpc error 2: " + e);
+                } catch (Exception e) {
+                    Log.e(TAG, "UpdateUrpc error 3: " + e);
+                }
+            }
+        } catch (CertificateException e) {
+            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+        } catch (IOException e) {
+            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+        } catch (KeyStoreException e) {
+            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+        } catch (NoSuchAlgorithmException e) {
+            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+        } catch (KeyManagementException e) {
+            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
         }
     }
 
@@ -357,7 +403,7 @@ public class StatsUpdater {
         return urpc;
     }
 
-    public static void SetUrpc(Context context, String urpc) {
+    private static void SetUrpc(Context context, String urpc) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
 
@@ -374,7 +420,7 @@ public class StatsUpdater {
         return downloadId;
     }
 
-    public static void SetDownloadId(Context context, String downloadId) {
+    private static void SetDownloadId(Context context, String downloadId) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
 
