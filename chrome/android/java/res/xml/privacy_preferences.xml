@@ -64,6 +64,10 @@
         android:title="@string/usage_stats_setting_title"
         android:persistent="false" />
 
+    <!--<org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
+        android:key="send_metrics"
+        android:title="@string/send_metrics_title"
+        android:defaultValue="true" />-->
     <!-- Only one of these "Usage and crash reports" preferences will be shown, depending on whether
          the device has cellular support. -->
     <!--<org.chromium.chrome.browser.preferences.privacy.CrashDumpUploadPreference
