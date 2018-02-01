@@ -190,20 +190,23 @@ public class StatsUpdater {
             return;
         }
         try {
-            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            InputStream caInput = new BufferedInputStream(context.getAssets().open(URP_CERT));
-            Certificate ca;
-            try {
-                ca = cf.generateCertificate(caInput);
-            } finally {
-                caInput.close();
-            }
-
             // Create a KeyStore containing our trusted CAs
             String keyStoreType = KeyStore.getDefaultType();
             KeyStore keyStore = KeyStore.getInstance(keyStoreType);
             keyStore.load(null, null);
-            keyStore.setCertificateEntry("ca", ca);
+
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            InputStream caInput = new BufferedInputStream(context.getAssets().open(URP_CERT));
+            try {
+                int i = 0;
+                while (caInput.available() > 0) {
+                    Certificate cert = cf.generateCertificate(caInput);
+                    String alias = "ca" + i++;
+                    keyStore.setCertificateEntry(alias, cert);
+                }
+            } finally {
+                caInput.close();
+            }
 
             // Create a TrustManager that trusts the CAs in our KeyStore
             String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
@@ -244,7 +247,6 @@ public class StatsUpdater {
                         }
                         br.close();
                         JSONObject jsonRes = new JSONObject(sb.toString());
-
                         downloadId = jsonRes.getString("download_id");
                         SetDownloadId(context, downloadId);
                     } finally {
