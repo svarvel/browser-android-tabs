@@ -30,9 +30,7 @@ public class InstallationSourceInformer {
   }
 
   private static synchronized void Inform(String sourceName) {
-    Log.i(TAG, "InstallationSourceInformer, sourceName=" + sourceName);
     if (IsAlreadyInformed()) {
-      Log.i(TAG, "InstallationSourceInformer, already informed");
       return;
     }
 
@@ -57,7 +55,6 @@ public class InstallationSourceInformer {
   private static final String URPC_NAME = "UserReferalProgramCode";
 
   public static void InformStatsPromo(String promoName) {
-    Log.i(TAG, "InformStatsPromo, promoName=" + promoName);
     Context context = ContextUtils.getApplicationContext();
     if (promoName != null && !promoName.isEmpty() && PackageUtils.isFirstInstall(context)) {
       SharedPreferences sharedPref = context.getSharedPreferences(STATS_PREF_NAME, 0);
