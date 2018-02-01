@@ -8,7 +8,11 @@ import org.chromium.base.Log;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.tab.Tab;
 
+import java.net.URL;
+import java.net.MalformedURLException;
+
 public class DisableVideoPauseOnBackground {
+    private static String TAG = "PLAYBG";
     public static void Execute(Tab tab) {
         final boolean videoInBackgroundEnabled = PrefServiceBridge.getInstance().playVideoInBackgroundEnabled();
         if (videoInBackgroundEnabled && NeedToDisable(tab)) {
@@ -16,9 +20,31 @@ public class DisableVideoPauseOnBackground {
         }
     }
 
+    private static boolean IsYTWatchUrl(String sUrl) {
+        if (sUrl == null || sUrl.isEmpty()) {
+          return false;
+        }
+
+        try {
+          URL url = new URL(sUrl);
+          if ("/watch".equalsIgnoreCase(url.getPath()) ) {
+            String sHost = url.getHost();
+            if ("www.youtube.com".equalsIgnoreCase(sHost) ||
+                "youtube.com".equalsIgnoreCase(sHost) ||
+                "m.youtube.com".equalsIgnoreCase(sHost)) {
+                return true;
+            }
+          }
+        } catch(MalformedURLException e) {
+          Log.w(TAG, "MalformedURLException "+ e.getMessage());
+        }
+
+        return false;
+    }
+
     private static boolean NeedToDisable(Tab tab) {
-        boolean bRet = tab != null && tab.getUrl().contains("https://m.youtube.com/watch?");
-        return bRet;
+        boolean bNeedToDisablePause = (tab != null) && IsYTWatchUrl(tab.getUrl());
+        return bNeedToDisablePause;
     }
 
     private static final String SCRIPT = ""
