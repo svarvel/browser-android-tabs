@@ -214,7 +214,7 @@ public class StatsUpdater {
             tmf.init(keyStore);
 
             // Create an SSLContext that uses our TrustManager
-            SSLContext sslContext = SSLContext.getInstance("TLS");
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, tmf.getTrustManagers(), null);
 
             String downloadId = GetDownloadId(context);
