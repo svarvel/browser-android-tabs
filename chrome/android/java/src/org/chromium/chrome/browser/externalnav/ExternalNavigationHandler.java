@@ -64,6 +64,7 @@ public class ExternalNavigationHandler {
     private static final String PLAY_REFERRER_PARAM = "referrer";
     private static final String PLAY_APP_PATH = "/store/apps/details";
     private static final String PLAY_HOSTNAME = "play.google.com";
+    private static final String YT_PACKAGE_NAME = "com.google.android.youtube";
 
     @VisibleForTesting
     static final String EXTRA_BROWSER_FALLBACK_URL = "browser_fallback_url";
@@ -404,7 +405,7 @@ public class ExternalNavigationHandler {
         if (PrefServiceBridge.getInstance().playYTVideoInBrowserEnabled()) {
             // Force to open YouTube urls in Brave
             String intentPackageName = intent.getPackage();
-            if (intentPackageName != null && intentPackageName.equals("com.google.android.youtube")) {
+            if (intentPackageName != null && intentPackageName.equals(YT_PACKAGE_NAME)) {
                 if (DEBUG) Log.i(TAG, "NO_OVERRIDE: YouTube URL for YouTube app");
                 return OverrideUrlLoadingResult.NO_OVERRIDE;
             }
@@ -422,6 +423,14 @@ public class ExternalNavigationHandler {
 
         List<ResolveInfo> resolvingInfos = mDelegate.queryIntentActivities(intent);
         if (resolvingInfos == null) return OverrideUrlLoadingResult.NO_OVERRIDE;
+
+        if (PrefServiceBridge.getInstance().playYTVideoInBrowserEnabled()) {
+            // Force to open YouTube urls in Brave, override app chooser
+            if (ContainsYT(resolvingInfos)) {
+              if (DEBUG) Log.i(TAG, "NO_OVERRIDE: YouTube URL for YouTube app (2)");
+              return OverrideUrlLoadingResult.NO_OVERRIDE;
+            }
+        }
 
         boolean canResolveActivity = resolvingInfos.size() > 0;
         String packageName = ContextUtils.getApplicationContext().getPackageName();
@@ -652,6 +661,24 @@ public class ExternalNavigationHandler {
         }
 
         return OverrideUrlLoadingResult.NO_OVERRIDE;
+    }
+
+    /**
+     * @return true when resolve infos contain ref to YouTube app
+     */
+    private boolean ContainsYT(List<ResolveInfo> resolvingInfos) {
+        for (ResolveInfo info : resolvingInfos) {
+            String packageName = null;
+            if (info.activityInfo != null) {
+                packageName = info.activityInfo.packageName;
+            } else if (info.serviceInfo != null) {
+                packageName = info.serviceInfo.packageName;
+            }
+            if (YT_PACKAGE_NAME.equalsIgnoreCase(packageName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
