@@ -1,3 +1,10 @@
+<release version="1.0.41">
+    <change>Upgraded to Chromium 64.0.3282.137.</change>
+    <change>Added handling to stay in Brave for video links.</change>
+    <change>Fixed video in background feature for some links.</change>
+    <change>Fixed some translations.</change>
+    <change>Updated the app icon.</change>
+</release>
 <release version="1.0.40">
     <change>Upgraded to Chromium 63.0.3239.111.</change>
 </release>
