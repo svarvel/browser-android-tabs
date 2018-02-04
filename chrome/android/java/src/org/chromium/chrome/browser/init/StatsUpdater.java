@@ -299,6 +299,14 @@ public class StatsUpdater {
                         os.write(jsonOut.toString().getBytes("UTF-8"));
                         os.close();
                         // Read response JSON
+                        if (409 == connection.getResponseCode()) {
+                            // 409 - means download already finalized
+                            Log.w(TAG, "UpdateUrpc: download already finalized");
+                            // Clean up values to skip further checking
+                            SetUrpc(context, "");
+                            SetDownloadId(context, "");
+                            return;
+                        }
                         BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                         StringBuilder sb = new StringBuilder();
                         String line;
