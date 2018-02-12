@@ -5,6 +5,8 @@
 package org.chromium.chrome.browser.init;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -47,9 +49,13 @@ public class StatsUpdater {
 
     //private static final String URP_CERT = "urp_staging.crt";
     private static final String URP_CERT = "urp.crt";
-    private static final long MILLISECONDS_IN_A_DAY = 86400 * 1000;
+
+    private static final long MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
     private static final long MILLISECONDS_IN_A_WEEK = 7 * MILLISECONDS_IN_A_DAY;
     private static final long MILLISECONDS_IN_A_MONTH = 30 * MILLISECONDS_IN_A_DAY;
+    private static final long MILLISECONDS_IN_90_DAYS = 90 * MILLISECONDS_IN_A_DAY;
+
+    private static final int DEFAULT_ATTEMPTS_NUMBER = 30;
 
     private static final String PREF_NAME = "StatsPreferences";
     private static final String MILLISECONDS_NAME = "Milliseconds";
@@ -60,6 +66,9 @@ public class StatsUpdater {
     private static final String PROMO_NAME = "Promo";
     private static final String URPC_NAME = "UserReferalProgramCode";
     private static final String DOWNLOAD_ID_NAME = "DownloadId";
+    private static final String URP_ATTEMPTS_NUMBER = "URPAttemptsNumber";
+    private static final String URP_LAST_ATTEMPT_TIME = "URPLastAttemptTime";
+    private static final String URP_IS_FINALIZED = "URPIsFinalized";
 
     private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable&woi=%6$s&ref=%7$s";
     private static final String SERVER_REQUEST_URPC_INITIALIZE = "https://laptop-updates.brave.com/promo/initialize/nonua";
@@ -153,6 +162,11 @@ public class StatsUpdater {
 
         String woi = GetWeekOfInstallation(context);
         String ref = GetRef(context);
+        String urpc = GetUrpc(context);
+
+        if (!urpc.isEmpty()) {
+            ref = urpc;
+        }
 
         String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly,
             versionNumber, firstRun, woi, ref);
@@ -189,6 +203,42 @@ public class StatsUpdater {
         if (urpc.isEmpty()) {
             return;
         }
+        PackageInfo info = null;
+        try {
+            info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+        } catch (NameNotFoundException e) {
+            // Can't go further since we need first time install
+            Log.e(TAG, "UpdateUrpc error on get package info: " + e);
+            return;
+        }
+        if (null == info) {
+            // Can't go further since we need first time install
+            Log.e(TAG, "UpdateUrpc error: could not get package info");
+            return;
+        }
+        if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_90_DAYS) {
+            // We clean up referral code after 90 days
+            SetUrpc(context, "");
+            return;
+        }
+        String isFinalizedRes = GetIsFinalized(context);
+        if (isFinalizedRes.equals("true")) {
+            // Referral program is finalized (no more checks)
+            return;
+        }
+        if (!IsDeviceOnline(context)) {
+            // We don't try to check if device is offline
+            return;
+        }
+        if (!CheckLastTimeAttempt(context, currentTimeInMillis)) {
+            // Less than 24 hours since last attempt
+            return;
+        }
+        String downloadId = GetDownloadId(context);
+        if (downloadId.isEmpty() && !CheckAttemptsLeft(context)) {
+            // No attempts left
+            return;
+        }
         try {
             // Create a KeyStore containing our trusted CAs
             String keyStoreType = KeyStore.getDefaultType();
@@ -217,7 +267,6 @@ public class StatsUpdater {
             SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
             sslContext.init(null, tmf.getTrustManagers(), null);
 
-            String downloadId = GetDownloadId(context);
             if (downloadId.isEmpty()){
                 // Send request to get download id
                 try {
@@ -265,21 +314,12 @@ public class StatsUpdater {
                 Log.e(TAG, "UpdateUrpc error: download id is empty");
                 return;
             }
-            PackageInfo info = null;
-            try {
-                info = context.getPackageManager().getPackageInfo(
-                        context.getPackageName(), 0);
-            } catch (NameNotFoundException e) {
-                // Can't go further since we need first time install
-                Log.e(TAG, "UpdateUrpc error on get package info: " + e);
-                return;
-            }
-            if (null == info) {
-                // Can't go further since we need first time install
-                Log.e(TAG, "UpdateUrpc error: could not get package info");
-                return;
-            }
             if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_A_MONTH) {
+                if (!CheckAttemptsLeft(context)) {
+                    // There are no more attempts left, so clean up download id
+                    SetDownloadId(context, "");
+                    return;
+                }
                 // We need to inform server about that condition
                 try {
                     URL url = new URL(SERVER_REQUEST_URPC_FINALIZE);
@@ -302,8 +342,7 @@ public class StatsUpdater {
                         if (409 == connection.getResponseCode()) {
                             // 409 - means download already finalized
                             Log.w(TAG, "UpdateUrpc: download already finalized");
-                            // Clean up values to skip further checking
-                            SetUrpc(context, "");
+                            // Clean up download id
                             SetDownloadId(context, "");
                             return;
                         }
@@ -316,9 +355,9 @@ public class StatsUpdater {
                         br.close();
                         JSONObject jsonRes = new JSONObject(sb.toString());
                         String isFinalized = jsonRes.getString("finalized");
+                        SetIsFinalized(context, isFinalized);
                         if (isFinalized.equals("true")) {
-                            // Clean up values to skip further checking
-                            SetUrpc(context, "");
+                            // Clean up download id
                             SetDownloadId(context, "");
                         } else if (isFinalized.equals("false")) {
                             // We will repeat attempt next time
@@ -349,6 +388,15 @@ public class StatsUpdater {
         } catch (KeyManagementException e) {
             Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
         }
+    }
+
+    private static boolean IsDeviceOnline(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (null == cm) {
+            return false;
+        }
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnected();
     }
 
     public static StatsObject GetPreferences(Context context) {
@@ -436,5 +484,48 @@ public class StatsUpdater {
 
         editor.putString(DOWNLOAD_ID_NAME, downloadId);
         editor.apply();
+    }
+
+    private static boolean CheckAttemptsLeft(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
+        int attemptsNumber = sharedPref.getInt(URP_ATTEMPTS_NUMBER, DEFAULT_ATTEMPTS_NUMBER);
+        boolean res = (attemptsNumber > 0);
+        if (res) {
+            attemptsNumber--;
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(URP_ATTEMPTS_NUMBER, attemptsNumber);
+            editor.apply();
+        }
+        return res;
+    }
+
+    private static boolean CheckLastTimeAttempt(Context context, long currentTime) {
+        boolean res = false;
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
+        long lastAttemptTime = sharedPref.getLong(URP_LAST_ATTEMPT_TIME, 0);
+        if ((currentTime - lastAttemptTime) > MILLISECONDS_IN_A_DAY) {
+            res = true;
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putLong(URP_LAST_ATTEMPT_TIME, currentTime);
+            editor.apply();
+        }
+        return res;
+    }
+
+    private static void SetIsFinalized(Context context, String isFinalized) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putString(URP_IS_FINALIZED, isFinalized);
+        editor.apply();
+    }
+
+    private static String GetIsFinalized(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
+        String isFinalized = sharedPref.getString(URP_IS_FINALIZED, null);
+        if (isFinalized == null) {
+            isFinalized = "";
+        }
+        return isFinalized;
     }
 }
