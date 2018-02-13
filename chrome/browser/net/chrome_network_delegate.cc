@@ -382,7 +382,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
        std::string scheme = request->url().scheme();
        if (scheme.length()) {
            std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
-           if ("http" != scheme && "https" != scheme && "blob" != scheme) {
+           if ("http" != scheme && "https" != scheme/* && "blob" != scheme*/) {
                ctx->isValidUrl = false;
            }
        }
