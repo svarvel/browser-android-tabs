@@ -341,6 +341,7 @@ public class StatsUpdater {
                         // Read response JSON
                         if (409 == connection.getResponseCode()) {
                             // 409 - means download already finalized
+                            SetIsFinalized(context, "true");
                             Log.w(TAG, "UpdateUrpc: download already finalized");
                             // Clean up download id
                             SetDownloadId(context, "");
