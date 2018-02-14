@@ -4,7 +4,7 @@
 
 ### System Requirements
 
-- OS Linux, Ubuntu (14.04 - 17.04) is completely supported. Other distros may or may not work
+- OS Linux, Ubuntu (14.04 - 17.10) is completely supported. Other distros may or may not work
 - Make sure you have enough swapspace available
 - [yarn](https://yarnpkg.com/lang/en/docs/install/#linux-tab) (including Node, it is required for ubuntu 17.04 as well)
 - [ninja](https://ninja-build.org/)
