@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingStart="15dip" >
+
+    <ImageView android:id="@+id/brave_sync_device_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/recent_laptop"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/brave_sync_btn_mobile" />
+
+    <TextView android:id="@+id/brave_sync_device_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/brave_sync_device_image"
+        android:paddingStart="10dip" />
+
+</RelativeLayout>

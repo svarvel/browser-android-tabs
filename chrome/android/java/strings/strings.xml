@@ -111,4 +111,31 @@ Saved</string>
     <string name="update_notification_title">Brave update</string>
     <string name="update_notification_text">The new Brave browser is 22% faster</string>
 
+    <string name="prefs_sync">Sync</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync allows you to sync bookmarks, tabs, history and other data privately between your Brave Browsers on your various devices.</string>
+    <string name="brave_sync_description_page_1_part_2">Simply scan the code from your sync chain that you created on another device. Or start a new sync chain.</string>
+    <string name="brave_sync_scan_chain_code">Scan a sync chain code</string>
+    <string name="brave_sync_start_new_chain">Start a new sync chain</string>
+    <string name="brave_sync_qrcode_message_v2">Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" and scan the code displayed on the screen.</string>
+    <string name="brave_sync_btn_mobile">Add a Mobile Device</string>
+    <string name="brave_sync_btn_laptop">Add a Computer</string>
+    <string name="brave_sync_scan_sync_code">Scan this sync code</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Using a second phone or tablet, navigate to Brave Settings > Sync > Scan.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Capture the QR code (above) with your second device, or enter code words if no camera is available.</string>
+    <string name="brave_sync_btn_done">Done</string>
+    <string name="brave_sync_btn_display_code_words">Display code words instead</string>
+    <string name="brave_sync_tabs_text">Tabs</string>
+    <string name="brave_sync_history_text">History</string>
+    <string name="brave_sync_autofill_passwords_text">Autofill/Passwords</string>
+    <string name="brave_sync_payment_settings_text">Brave Payment Settings</string>
+    <string name="brave_sync_settings_title">SYNC ON THIS DEVICE</string>
+    <string name="brave_sync_settings_description">Changing settings will only affect data that this device shares with others.</string>
+    <string name="brave_sync_devices_title">OTHER DEVICES ON CHAIN</string>
+    <string name="brave_sync_add_device_text">Add Another Device</string>
+    <string name="brave_sync_remove_device_text">Remove My Device</string>
+    <string name="brave_sync_code_words_title">Pair</string>
+    <string name="brave_sync_add_laptop_text_title">Enter the sync chain code</string>
+    <string name="brave_sync_add_laptop_text_part_1">On your laptop, navigate to Brave Settings > Sync. Choose "Enter a Sync Chain Code".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Enter the code words above, including spaces.</string>
+
 </resources>

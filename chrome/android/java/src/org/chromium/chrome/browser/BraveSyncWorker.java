@@ -41,6 +41,10 @@ import org.chromium.content.browser.ViewEventSinkImpl;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.ui.base.ViewAndroidDelegate;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.IllegalArgumentException;
 import java.lang.Runnable;
 import java.util.Calendar;
@@ -62,7 +66,7 @@ import java.io.UnsupportedEncodingException;
 
 @JNINamespace("brave_sync_storage")
 public class BraveSyncWorker {
-
+    private static final String TAG = "SYNC";
     private static final String PREF_NAME = "SyncPreferences";
     private static final String PREF_LAST_FETCH_NAME = "TimeLastFetch";
     private static final String PREF_DEVICE_ID = "DeviceId";
@@ -74,7 +78,6 @@ public class BraveSyncWorker {
     private static final int SEND_RECORDS_COUNT_LIMIT = 1000;
     private static final int FETCH_RECORDS_CHUNK_SIZE = 300;
     private static final String PREF_SYNC_SWITCH = "sync_switch";
-    private static final String PREF_BOOKMARKS_CHECK_BOX = "sync_bookmarks_check_box";
     public static final String CREATE_RECORD = "0";
     public static final String UPDATE_RECORD = "1";
     public static final String DELETE_RECORD = "2";
@@ -97,8 +100,8 @@ public class BraveSyncWorker {
     private String mSeed = null;
     private String mDeviceId = null;
     private String mApiVersion = "0";
-    //private String mServerUrl = "https://sync-staging.brave.com";
-    private String mServerUrl = "https://sync.brave.com";
+    private String mServerUrl = "https://sync-staging.brave.com";
+    //private String mServerUrl = "https://sync.brave.com";
     private String mDebug = "true";
     private long mTimeLastFetch = 0;   // In milliseconds
     private long mTimeLastFetchExecuted = 0;   // In milliseconds
@@ -336,7 +339,7 @@ public class BraveSyncWorker {
                     // Nothing to send
                     return null;
                 }
-                //Log.i("TAG", "!!!bookmarkRequest == " + bookmarkRequest);
+                //Log.i(TAG, "!!!bookmarkRequest == " + bookmarkRequest);
                 SendSyncRecords(SyncRecordType.BOOKMARKS, bookmarkRequest, actionFinal, ids);
 
                 return null;
@@ -425,7 +428,7 @@ public class BraveSyncWorker {
         record.append("objectId: [").append(objectId).append("], ");
         record.append(SyncObjectData.DEVICE).append(": { name: \"").append(replaceUnsupportedCharacters(deviceName)).append("\"}}");
 
-        //Log.i("TAG", "!!!device record == " + record);
+        //Log.i(TAG, "!!!device record == " + record);
         return record;
     }
 
@@ -479,48 +482,55 @@ public class BraveSyncWorker {
             return "";
         }
 
-        JsonReader reader = null;
         String res = "";
         try {
-            reader = new JsonReader(new InputStreamReader(new ByteArrayInputStream(object.getBytes()), "UTF-8"));
-            reader.beginArray();
-            boolean currentObject = false;
-            while (reader.hasNext()) {
-                reader.beginObject();
-                while (reader.hasNext()) {
-                    String name = reader.nextName();
-                    if (name.equals("name")) {
-                        res = reader.nextString();
-                    } else if (name.equals("objectId")) {
-                        currentObject = reader.nextString().equals(objectId);
-                    } else {
-                        reader.skipValue();
-                    }
-               }
-               reader.endObject();
-               if (currentObject) {
-                 break;
-               }
-           }
-           reader.endArray();
-        } catch (UnsupportedEncodingException e) {
-            Log.i("TAG", "GetDeviceNameByObjectId UnsupportedEncodingException error " + e);
-        } catch (IOException e) {
-            Log.i("TAG", "GetDeviceNameByObjectId IOException error " + e);
-        } catch (IllegalStateException e) {
-              Log.i("TAG", "GetDeviceNameByObjectId IllegalStateException error " + e);
-        } finally {
-            if (null != reader) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
+            Log.i(TAG, "GetDeviceNameByObjectId: trying to read JSON: " + object);
+            JSONObject result = new JSONObject(object);
+            JSONArray devices = result.getJSONArray("devices");
+            for (int i = 0; i < devices.length(); i++) {
+                JSONObject device = devices.getJSONObject(i);
+                res = device.getString("name");
+                String currentObject = device.getString("objectId");
+                if (currentObject.equals(objectId)) {
+                    break;
                 }
             }
+        } catch (JSONException e) {
+            Log.e(TAG, "GetDeviceNameByObjectId JSONException error " + e);
+        } catch (IllegalStateException e) {
+              Log.e(TAG, "GetDeviceNameByObjectId IllegalStateException error " + e);
         }
 
-        //Log.i("TAG", "!!!GetDeviceNameByObjectId res == " + res);
+        //Log.i(TAG, "!!!GetDeviceNameByObjectId res == " + res);
 
         return res;
+    }
+
+    public ArrayList<String> GetAllDevices() {
+        Log.i(TAG, "GetAllDevices: start");
+        ArrayList<String> result_devices = new ArrayList<String>();
+        String object = nativeGetObjectIdByLocalId("devicesNames");
+        if (object.isEmpty()) {
+            Log.e(TAG, "GetAllDevices: object.isEmpty()");
+            return result_devices;
+        }
+
+        JsonReader reader = null;
+        try {
+            Log.i(TAG, "GetAllDevices: trying to read JSON: " + object);
+            JSONObject result = new JSONObject(object);
+            JSONArray devices = result.getJSONArray("devices");
+            for (int i = 0; i < devices.length(); i++) {
+                JSONObject device = devices.getJSONObject(i);
+                String name = device.getString("name");
+                result_devices.add(name);
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, "GetAllDevices JSONException error " + e);
+        } catch (IllegalStateException e) {
+              Log.e(TAG, "GetAllDevices IllegalStateException error " + e);
+        }
+        return result_devices;
     }
 
     private String GetObjectId(String localId) {
@@ -547,11 +557,11 @@ public class BraveSyncWorker {
            }
            reader.endArray();
         } catch (UnsupportedEncodingException e) {
-            Log.i("TAG", "GetObjectId UnsupportedEncodingException error " + e);
+            Log.e(TAG, "GetObjectId UnsupportedEncodingException error " + e);
         } catch (IOException e) {
-            Log.i("TAG", "GetObjectId IOException error " + e);
+            Log.e(TAG, "GetObjectId IOException error " + e);
         } catch (IllegalStateException e) {
-              Log.i("TAG", "GetObjectId IllegalStateException error " + e);
+              Log.e(TAG, "GetObjectId IllegalStateException error " + e);
         } finally {
             if (null != reader) {
                 try {
@@ -588,7 +598,7 @@ public class BraveSyncWorker {
                 res += String.valueOf(random.nextInt(256));
             } catch (IllegalArgumentException exc) {
                 res = "";
-                Log.i("TAG", "ObjectId generation exception " + exc);
+                Log.e(TAG, "ObjectId generation exception " + exc);
             }
         }
 
@@ -631,7 +641,7 @@ public class BraveSyncWorker {
             }
         } catch (Exception exc) {
             // Ignoring sync exception, we will try it on a next loop execution
-            Log.i("TAG", "TrySync exception: " + exc);
+            Log.e(TAG, "TrySync exception: " + exc);
         }
     }
 
@@ -655,19 +665,26 @@ public class BraveSyncWorker {
 
     private void SaveInitData(String arg1, String arg2) {
         if (null == arg1 || null == arg2) {
-            Log.i("TAG", "Sync SaveInitData args expected");
+            Log.e(TAG, "Sync SaveInitData args expected");
+            if (null != mSyncScreensObserver) {
+                mSyncScreensObserver.onSyncError();
+            }
         }
         if (null != arg1 && !arg1.isEmpty()) {
             mSeed = arg1;
         }
         mDeviceId = arg2;
-        //Log.i("TAG", "!!!deviceId == " + mDeviceId);
-        //Log.i("TAG", "!!!seed == " + mSeed);
+        Log.i(TAG, "!!!deviceId == " + mDeviceId);
+        Log.i(TAG, "!!!seed == " + mSeed);
         // Save seed and deviceId in preferences
         SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(PREF_DEVICE_ID, mDeviceId);
         if (null != mSeed && !mSeed.isEmpty()) {
+            if (null != mSyncScreensObserver) {
+                mSyncScreensObserver.onSeedReceived(mSeed, false, true);
+            }
+            Log.i(TAG, "Saving seed");
             editor.putString(PREF_SEED, mSeed);
         }
         editor.apply();
@@ -769,7 +786,7 @@ public class BraveSyncWorker {
         request.append(CreateDeviceCreationRecord(objectId, action, mDeviceId)).append("]");
         ArrayList<String> ids = new ArrayList<String>();
         //ids.add(id);
-        Log.i("TAG", "!!!create device request: " + request.toString());
+        Log.i(TAG, "!!!create device request: " + request.toString());
         SendSyncRecords(SyncRecordType.PREFERENCES, request, action, ids);
     }
 
@@ -777,7 +794,7 @@ public class BraveSyncWorker {
         // Grab current existing bookmarksIds to sync them
         List<BookmarkItem> localBookmarks = GetBookmarkItems();
         if (null != localBookmarks) {
-            //Log.i("TAG", "!!!localBookmarks.size() == " + localBookmarks.size());
+            //Log.i(TAG, "!!!localBookmarks.size() == " + localBookmarks.size());
             int listSize = localBookmarks.size();
             for (int i = 0; i < listSize; i += SEND_RECORDS_COUNT_LIMIT) {
                 List<BookmarkItem> subList = localBookmarks.subList(i, Math.min(listSize, i + SEND_RECORDS_COUNT_LIMIT));
@@ -790,7 +807,7 @@ public class BraveSyncWorker {
         if (!mSyncIsReady.IsReady()) {
             return;
         }
-        //Log.i("TAG", "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
+        //Log.i(TAG, "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
         if (0 == mTimeLastFetch && 0 == mTimeLastFetchExecuted) {
             // It is the very first time of the sync start
             // Set device name
@@ -829,45 +846,45 @@ public class BraveSyncWorker {
         mFetchInProgress = true;
         mLatestRecordTimeStampt = latestRecordTimeStampt;
         StringBuilder res = new StringBuilder("");
-        //Log.i("TAG", "!!!in GetExistingObjects");
+        //Log.i(TAG, "!!!in GetExistingObjects");
 
         // Debug
         /*int iPos = recordsJSON.indexOf("NewFolder3");
         if (-1 != iPos) {
             if (iPos + 2000 > recordsJSON.length()) {
-                Log.i("TAG", "!!!GetExistingObjects == " + recordsJSON.substring(iPos));
+                Log.i(TAG, "!!!GetExistingObjects == " + recordsJSON.substring(iPos));
             } else {
-                Log.i("TAG", "!!!GetExistingObjects == " + recordsJSON.substring(iPos, iPos + 2000));
+                Log.i(TAG, "!!!GetExistingObjects == " + recordsJSON.substring(iPos, iPos + 2000));
             }
             if (iPos > 500) {
                 if (iPos + 1500 > recordsJSON.length()) {
-                    Log.i("TAG", "!!!GetExistingObjects == " + recordsJSON.substring(iPos - 500));
+                    Log.i(TAG, "!!!GetExistingObjects == " + recordsJSON.substring(iPos - 500));
                 } else {
-                    Log.i("TAG", "!!!GetExistingObjects == " + recordsJSON.substring(iPos - 500, iPos + 1500));
+                    Log.i(TAG, "!!!GetExistingObjects == " + recordsJSON.substring(iPos - 500, iPos + 1500));
                 }
             }
         }*/
         /*iPos = recordsJSON.indexOf("\"objectId\":{\"0\":26,\"1\":251", iPos + 1);
         if (-1 != iPos) {
             if (iPos + 2000 > recordsJSON.length()) {
-                Log.i("TAG", "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos));
+                Log.i(TAG, "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos));
             } else {
-                Log.i("TAG", "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos, iPos + 2000));
+                Log.i(TAG, "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos, iPos + 2000));
             }
             if (iPos > 500) {
                 if (iPos + 1500 > recordsJSON.length()) {
-                    Log.i("TAG", "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos - 500));
+                    Log.i(TAG, "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos - 500));
                 } else {
-                    Log.i("TAG", "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos - 500, iPos + 1500));
+                    Log.i(TAG, "!!!GetExistingObjects1 == " + recordsJSON.substring(iPos - 500, iPos + 1500));
                 }
             }
         }*/
-        //Log.i("TAG", "!!!recordsJSON == " + recordsJSON);
+        //Log.i(TAG, "!!!recordsJSON == " + recordsJSON);
         /*int iPos = recordsJSON.indexOf("Just kidding");
         if (-1 != iPos) {
-            Log.i("TAG", "!!!record == " + recordsJSON.substring(iPos, iPos + 2000));
+            Log.i(TAG, "!!!record == " + recordsJSON.substring(iPos, iPos + 2000));
             if (iPos > 500) {
-                Log.i("TAG", "!!!record1 == " + recordsJSON.substring(iPos - 500, iPos + 1500));
+                Log.i(TAG, "!!!record1 == " + recordsJSON.substring(iPos - 500, iPos + 1500));
             }
         }*/
         /*int step = 2000;
@@ -878,7 +895,7 @@ public class BraveSyncWorker {
                 endIndex = recordsJSON.length() - 1;
             }
             String substr = recordsJSON.substring(count * step, endIndex);
-            Log.i("TAG", "!!!substr == " + substr);
+            Log.i(TAG, "!!!substr == " + substr);
             if (endIndex != count * step + step) {
                 break;
             }
@@ -967,13 +984,13 @@ public class BraveSyncWorker {
            }
            reader.endArray();
         } catch (UnsupportedEncodingException e) {
-            Log.i("TAG", "GetExistingObjects UnsupportedEncodingException error " + e);
+            Log.i(TAG, "GetExistingObjects UnsupportedEncodingException error " + e);
         } catch (IOException e) {
-            Log.i("TAG", "GetExistingObjects IOException error " + e);
+            Log.i(TAG, "GetExistingObjects IOException error " + e);
         } catch (IllegalStateException e) {
-            Log.i("TAG", "GetExistingObjects IllegalStateException error " + e);
+            Log.i(TAG, "GetExistingObjects IllegalStateException error " + e);
         } catch (IllegalArgumentException exc) {
-            Log.i("TAG", "GetExistingObjects generation exception " + exc);
+            Log.i(TAG, "GetExistingObjects generation exception " + exc);
         } finally {
             if (null != reader) {
                 try {
@@ -988,14 +1005,14 @@ public class BraveSyncWorker {
         }
         if (!isTruncated) {
             // We finished fetch in chunks;
-            //Log.i("TAG", "!!!finished fetch in chunks");
+            //Log.i(TAG, "!!!finished fetch in chunks");
             mLatestRecordTimeStampt = "";
         }
         for (Map.Entry<String, ArrayList<String>> entry : syncedRecordsMap.entrySet()) {
             SaveGetDeleteNotSyncedRecords(categoryName, entry.getKey(), entry.getValue(), NotSyncedRecordsOperation.DeleteItems);
         }
         //
-        //Log.i("TAG", "!!!GetExistingObjects res == " + res);
+        //Log.i(TAG, "!!!GetExistingObjects res == " + res);
         /*int step = 2000;
         int count = 0;
         for (;;) {
@@ -1004,7 +1021,7 @@ public class BraveSyncWorker {
                 endIndex = res.length() - 1;
             }
             String substr = res.substring(count * step, endIndex);
-            Log.i("TAG", "!!!substr == " + substr);
+            Log.i(TAG, "!!!substr == " + substr);
             if (endIndex != count * step + step) {
                 break;
             }
@@ -1012,7 +1029,7 @@ public class BraveSyncWorker {
         }*/
         //
 
-        //Log.i("TAG", "!!!res == " + res.toString());
+        //Log.i(TAG, "!!!res == " + res.toString());
         return res;
     }
 
@@ -1275,7 +1292,7 @@ public class BraveSyncWorker {
     }
 
     public void ResolvedSyncRecords(String categoryName, String recordsJSON) {
-        //Log.i("TAG", "!!!in ResolvedSyncRecords");
+        //Log.i(TAG, "!!!in ResolvedSyncRecords");
         if (null == categoryName || null == recordsJSON) {
             assert false;
             return;
@@ -1290,23 +1307,23 @@ public class BraveSyncWorker {
         /*int iPos = recordsJSON.indexOf("Vim Commands");
         if (-1 != iPos) {
             if (iPos + 2000 > recordsJSON.length()) {
-                Log.i("TAG", "!!!Resolvedrecord == " + recordsJSON.substring(iPos));
+                Log.i(TAG, "!!!Resolvedrecord == " + recordsJSON.substring(iPos));
             } else {
-                Log.i("TAG", "!!!Resolvedrecord == " + recordsJSON.substring(iPos, iPos + 2000));
+                Log.i(TAG, "!!!Resolvedrecord == " + recordsJSON.substring(iPos, iPos + 2000));
             }
             if (iPos > 500) {
                 if (iPos + 1500 > recordsJSON.length()) {
-                    Log.i("TAG", "!!!Resolvedrecord == " + recordsJSON.substring(iPos - 500));
+                    Log.i(TAG, "!!!Resolvedrecord == " + recordsJSON.substring(iPos - 500));
                 } else {
-                    Log.i("TAG", "!!!Resolvedrecord == " + recordsJSON.substring(iPos - 500, iPos + 1500));
+                    Log.i(TAG, "!!!Resolvedrecord == " + recordsJSON.substring(iPos - 500, iPos + 1500));
                 }
             }
         }*/
         //
-        //Log.i("TAG", "!!!recordsJSON = " + recordsJSON);
+        //Log.i(TAG, "!!!recordsJSON = " + recordsJSON);
         /*String[] records = recordsJSON.split("action");
         for (int i = 0; i < records.length; i++) {
-            Log.i("TAG", "!!!record[" + i + "]" + records[i]);
+            Log.i(TAG, "!!!record[" + i + "]" + records[i]);
         }*/
         //
         if (SyncRecordType.BOOKMARKS.equals(categoryName)) {
@@ -1354,13 +1371,13 @@ public class BraveSyncWorker {
            }
            reader.endArray();
         } catch (UnsupportedEncodingException e) {
-            Log.i("TAG", "ResolvedSyncRecords UnsupportedEncodingException error " + e);
+            Log.i(TAG, "ResolvedSyncRecords UnsupportedEncodingException error " + e);
         } catch (IOException e) {
-            Log.i("TAG", "ResolvedSyncRecords IOException error " + e);
+            Log.i(TAG, "ResolvedSyncRecords IOException error " + e);
         } catch (IllegalStateException e) {
-            Log.i("TAG", "ResolvedSyncRecords IllegalStateException error " + e);
+            Log.i(TAG, "ResolvedSyncRecords IllegalStateException error " + e);
         } catch (IllegalArgumentException exc) {
-            Log.i("TAG", "ResolvedSyncRecords generation exception " + exc);
+            Log.i(TAG, "ResolvedSyncRecords generation exception " + exc);
         } finally {
             if (null != reader) {
                 try {
@@ -1384,7 +1401,7 @@ public class BraveSyncWorker {
                 mResolvedRecordsToApply = new ArrayList<ResolvedRecordsToApply>(resolvedRecordsToApply);
                 resolvedRecordsToApply.clear();
                 newSize = mResolvedRecordsToApply.size();
-                //Log.i("TAG", "!!!oldSize == " + oldSize + ", newSize == " + newSize);
+                //Log.i(TAG, "!!!oldSize == " + oldSize + ", newSize == " + newSize);
                 if (oldSize == newSize) {
                     if (mLatestRecordTimeStampt.isEmpty()) {
                         // Applying all records to default folder
@@ -1434,46 +1451,23 @@ public class BraveSyncWorker {
         }
         String object = nativeGetObjectIdByLocalId("devicesNames");
 
-        JsonReader reader = null;
         List<ResolvedRecordsToApply> existingRecords = new ArrayList<ResolvedRecordsToApply>();
         if (!object.isEmpty()) {
           try {
-              reader = new JsonReader(new InputStreamReader(new ByteArrayInputStream(object.getBytes()), "UTF-8"));
-              reader.beginArray();
-              String deviceName = "";
-              String currentObject = "";
-              String deviceId = "";
-              while (reader.hasNext()) {
-                  reader.beginObject();
-                  while (reader.hasNext()) {
-                      String name = reader.nextName();
-                      if (name.equals("name")) {
-                          deviceName = reader.nextString();
-                      } else if (name.equals("objectId")) {
-                          currentObject = reader.nextString();
-                      } else if (name.equals("deviceId")) {
-                          deviceId = reader.nextString();
-                      } else {
-                          reader.skipValue();
-                      }
-                 }
-                 existingRecords.add(new ResolvedRecordsToApply(currentObject, "0", null, deviceName, deviceId));
-                 reader.endObject();
-             }
-             reader.endArray();
-          } catch (UnsupportedEncodingException e) {
-              Log.i("TAG", "GetDeviceNameByObjectId UnsupportedEncodingException error " + e);
-          } catch (IOException e) {
-              Log.i("TAG", "GetDeviceNameByObjectId IOException error " + e);
-          } catch (IllegalStateException e) {
-                Log.i("TAG", "GetDeviceNameByObjectId IllegalStateException error " + e);
-          } finally {
-              if (null != reader) {
-                  try {
-                      reader.close();
-                  } catch (IOException e) {
-                  }
+              Log.i(TAG, "DeviceResolver: trying to read JSON: " + object);
+              JSONObject result = new JSONObject(object);
+              JSONArray devices = result.getJSONArray("devices");
+              for (int i = 0; i < devices.length(); i++) {
+                  JSONObject device = devices.getJSONObject(i);
+                  String deviceName = device.getString("name");
+                  String currentObject = device.getString("objectId");
+                  String deviceId = device.getString("deviceId");
+                  existingRecords.add(new ResolvedRecordsToApply(currentObject, "0", null, deviceName, deviceId));
               }
+          } catch (JSONException e) {
+              Log.i(TAG, "DeviceResolver JSONException error " + e);
+          } catch (IllegalStateException e) {
+                Log.i(TAG, "DeviceResolver IllegalStateException error " + e);
           }
         }
 
@@ -1502,17 +1496,24 @@ public class BraveSyncWorker {
             }
         }
         // TODO add or remove devices in devices list
-        StringBuilder toSave = new StringBuilder("[");
-        for (ResolvedRecordsToApply existingRecord: existingRecords) {
-            if (toSave.length() > 1) {
-              toSave.append(", ");
+        JSONObject result = new JSONObject();
+        try {
+            JSONArray devices = new JSONArray();
+            for (ResolvedRecordsToApply existingRecord: existingRecords) {
+                JSONObject device = new JSONObject();
+                device.put("name", replaceUnsupportedCharacters(existingRecord.mDeviceName));
+                device.put("objectId", existingRecord.mObjectId);
+                device.put("deviceId", existingRecord.mDeviceId);
+                devices.put(device);
             }
-            toSave.append("{'name': '").append(replaceUnsupportedCharacters(existingRecord.mDeviceName))
-              .append("', 'objectId': '").append(existingRecord.mObjectId).append("', 'deviceId': '")
-              .append(existingRecord.mDeviceId).append("'}");
+            result.put("devices", devices);
+        } catch (JSONException e) {
+            Log.e(TAG, "DeviceResolver JSONException error " + e);
         }
-        toSave.append("]");
-        nativeSaveObjectId("devicesNames", toSave.toString(), "");
+        nativeSaveObjectId("devicesNames", result.toString(), "");
+        if (null != mSyncScreensObserver) {
+            mSyncScreensObserver.onDevicesAvailable();
+        }
     }
 
     private boolean BookmarkResolver(ResolvedRecordsToApply resolvedRecord, List<ResolvedRecordsToApply> resolvedRecordsToApply, boolean applyToDefaultFolder) {
@@ -2006,7 +2007,7 @@ public class BraveSyncWorker {
           for (;;) {
               try {
                   if (IsSyncEnabled()) {
-                      InitSync(false);
+                      InitSync(false, false);
                       Calendar currentTime = Calendar.getInstance();
                       long timeLastFetch = currentTime.getTimeInMillis();
                       if (!mFetchInProgress || timeLastFetch - mTimeLastFetchExecuted > INTERVAL_TO_REFETCH_RECORDS) {
@@ -2019,7 +2020,7 @@ public class BraveSyncWorker {
               }
               catch(Exception exc) {
                   // Just ignore it if we cannot sync
-                  Log.i("TAG", "Sync loop exception: " + exc);
+                  Log.i(TAG, "Sync loop exception: " + exc);
               }
               if (mStopThread) {
                   break;
@@ -2055,13 +2056,18 @@ public class BraveSyncWorker {
         }.start();
     }
 
-    public void InitSync(boolean calledFromUIThread) {
-          SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
-          if (null == mSeed || mSeed.isEmpty()) {
-              mSeed = sharedPref.getString(PREF_SEED, null);
-          }
-          if (null == mSeed || mSeed.isEmpty()) {
-              return;
+    public void InitSync(boolean calledFromUIThread, boolean startNewChain) {
+          if (!startNewChain) {
+              // Here we already supposed to get existing seed
+              SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+              if (null == mSeed || mSeed.isEmpty()) {
+                  mSeed = sharedPref.getString(PREF_SEED, null);
+              }
+              if (null == mSeed || mSeed.isEmpty()) {
+                  return;
+              }
+          } else {
+              Log.i(TAG, "Start new chain. Current seed: " + mSeed);
           }
           // Init sync WebView
           if (!calledFromUIThread) {
@@ -2090,7 +2096,7 @@ public class BraveSyncWorker {
                 break;
               case "sync-debug":
                 /*if (null != arg1) {
-                    Log.i("TAG", "!!!sync-debug: " + arg1);
+                    Log.i(TAG, "!!!sync-debug: " + arg1);
                 }*/
                 break;
               case "fetch-sync-records":
@@ -2124,7 +2130,7 @@ public class BraveSyncWorker {
                 SendResolveSyncRecords(arg1, GetExistingObjects(arg1, arg2, arg3, arg4));
                 break;
               default:
-                //Log.i("TAG", "!!!message == " + message + ", !!!arg1 == " + arg1 + ", arg2 == " + arg2);
+                Log.i(TAG, "!!!message == " + message + ", !!!arg1 == " + arg1 + ", arg2 == " + arg2);
                 break;
             }
         }
@@ -2135,7 +2141,7 @@ public class BraveSyncWorker {
         public void nicewareOutput(String result) {
             if (null == result || 0 == result.length()) {
                 if (null != mSyncScreensObserver) {
-                    mSyncScreensObserver.onWordsCodeWrong();
+                    mSyncScreensObserver.onSyncError();
                 }
                 return;
             }
@@ -2162,24 +2168,24 @@ public class BraveSyncWorker {
                }
                reader.endObject();
             } catch (UnsupportedEncodingException e) {
-                Log.i("TAG", "nicewareOutput UnsupportedEncodingException error " + e);
+                Log.i(TAG, "nicewareOutput UnsupportedEncodingException error " + e);
                 if (null != mSyncScreensObserver) {
-                    mSyncScreensObserver.onWordsCodeWrong();
+                    mSyncScreensObserver.onSyncError();
                 }
             } catch (IOException e) {
-                Log.i("TAG", "nicewareOutput IOException error " + e);
+                Log.i(TAG, "nicewareOutput IOException error " + e);
                 if (null != mSyncScreensObserver) {
-                    mSyncScreensObserver.onWordsCodeWrong();
+                    mSyncScreensObserver.onSyncError();
                 }
             } catch (IllegalStateException e) {
-                Log.i("TAG", "nicewareOutput IllegalStateException error " + e);
+                Log.i(TAG, "nicewareOutput IllegalStateException error " + e);
                 if (null != mSyncScreensObserver) {
-                    mSyncScreensObserver.onWordsCodeWrong();
+                    mSyncScreensObserver.onSyncError();
                 }
             } catch (IllegalArgumentException exc) {
-                Log.i("TAG", "nicewareOutput generation exception " + exc);
+                Log.i(TAG, "nicewareOutput generation exception " + exc);
                 if (null != mSyncScreensObserver) {
-                    mSyncScreensObserver.onWordsCodeWrong();
+                    mSyncScreensObserver.onSyncError();
                 }
             } finally {
                 if (null != reader) {
@@ -2189,10 +2195,37 @@ public class BraveSyncWorker {
                     }
                 }
             }
-            //Log.i("TAG", "!!!seed == " + seed);
+            //Log.i(TAG, "!!!seed == " + seed);
 
             if (null != mSyncScreensObserver) {
-                mSyncScreensObserver.onSeedReceived(seed);
+                mSyncScreensObserver.onSeedReceived(seed, true, false);
+            }
+        }
+
+        @JavascriptInterface
+        public void nicewareOutputCodeWords(String result) {
+            Log.i(TAG, "nicewareOutputCodeWords: " + result);
+            if (null == result || 0 == result.length()) {
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onSyncError();
+                }
+                return;
+            }
+
+            String[] codeWords = result.replace('\"', ' ').replace('[', ' ').replace(']', ' ').split(",");
+
+            if (16 != codeWords.length) {
+                Log.e(TAG, "Incorrect number of code words");
+                if (null != mSyncScreensObserver) {
+                    mSyncScreensObserver.onSyncError();
+                }
+                return;
+            }
+
+            if (null != mSyncScreensObserver) {
+                mSyncScreensObserver.onCodeWordsReceived(codeWords);
+            } else {
+                Log.e(TAG, "mSyncScreensObserver is null");
             }
         }
     }
@@ -2225,7 +2258,7 @@ public class BraveSyncWorker {
             }
         } catch (Exception exc) {
             // Ignoring sync exception, we will try it on next loop execution
-            Log.i("TAG", "InitJSWebView exception: " + exc);
+            Log.e(TAG, "InitJSWebView exception: " + exc);
         }
         if (null == mSyncScreensObserver) {
             mSyncScreensObserver = syncScreensObserver;
@@ -2253,7 +2286,7 @@ public class BraveSyncWorker {
                 wordsJSArray += "]";
             }
         }
-        //Log.i("TAG", "!!!words == " + wordsJSArray);
+        //Log.i(TAG, "!!!words == " + wordsJSArray);
         mJSWebContents.getNavigationController().loadUrl(
                 new LoadUrlParams("javascript:(function() { " + String.format("javascript:getBytesFromWords(%1$s)", wordsJSArray) + " })()"));
     }
@@ -2270,6 +2303,20 @@ public class BraveSyncWorker {
             mJSWebContentsInjector = JavascriptInjector.fromWebContents(mJSWebContents);
         }
         return mJSWebContentsInjector;
+    }
+
+    public void GetCodeWords() {
+        if (null == mJSWebContents) {
+            Log.e(TAG, "Error on receiving code words. JSWebContents is null.");
+            return;
+        }
+        if (null == mSeed || mSeed.isEmpty()) {
+            Log.e(TAG, "Error on receiving code words. Seed is empty.");
+            return;
+        }
+        Log.i(TAG, "GetCodeWords seed: " + mSeed);
+        mJSWebContents.getNavigationController().loadUrl(
+                new LoadUrlParams("javascript:(function() { " + String.format("javascript:getCodeWordsFromSeed([%1$s])", mSeed) + " })()"));
     }
 
     private native String nativeGetObjectIdByLocalId(String localId);

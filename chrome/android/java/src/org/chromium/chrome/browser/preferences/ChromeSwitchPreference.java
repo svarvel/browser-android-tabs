@@ -28,6 +28,7 @@ public class ChromeSwitchPreference extends SwitchPreference {
 
     private boolean mDontUseSummaryAsTitle;
     private boolean mDrawDivider;
+    private View mView;
 
     /**
      * Constructor for inflating from XML.
@@ -72,6 +73,8 @@ public class ChromeSwitchPreference extends SwitchPreference {
     protected void onBindView(View view) {
         super.onBindView(view);
 
+        mView = view;
+
         if (mDrawDivider) {
             int left = view.getPaddingLeft();
             int right = view.getPaddingRight();
@@ -105,5 +108,20 @@ public class ChromeSwitchPreference extends SwitchPreference {
     protected void onClick() {
         if (ManagedPreferencesUtils.onClickPreference(mManagedPrefDelegate, this)) return;
         super.onClick();
+    }
+
+    public void setInvisible() {
+        SwitchCompat switchView = (SwitchCompat) mView.findViewById(R.id.switch_widget);
+        if (null != switchView) {
+            switchView.setVisibility(View.GONE);
+        }
+        TextView title = (TextView) mView.findViewById(android.R.id.title);
+        if (null != title) {
+            title.setVisibility(View.GONE);
+        }
+        TextView summary = (TextView) mView.findViewById(android.R.id.summary);
+        if (null != summary) {
+            summary.setVisibility(View.GONE);
+        }
     }
 }
