@@ -11,10 +11,20 @@ public interface BraveSyncScreensObserver {
     /**
      * Informs when the words code provided is incorrect
      */
-    public void onWordsCodeWrong();
+    public void onSyncError();
 
     /**
-     * Informs when the words code provided is correct
+     * Informs when the seed in received
      */
-    public void onSeedReceived(String seed);
+    public void onSeedReceived(String seed, boolean fromCodeWords, boolean afterInitialization);
+
+    /**
+     * Informs when the code words are received
+     */
+    public void onCodeWordsReceived(String[] codeWords);
+
+    /**
+     * Informs when the list of devices is available
+     */
+    public void onDevicesAvailable();
 }

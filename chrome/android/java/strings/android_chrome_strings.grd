@@ -3890,9 +3890,6 @@ However, you aren’t invisible. Going private doesn’t hide your browsing from
       <message name="IDS_HTTPSE_TITLE" desc="Title for HTTPS Everywhere.">
         HTTPS Everywhere
       </message>
-      <message name="IDS_NEW_TO_SYNC" desc="Button for new to sync button. [CHAR-LIMT=32]">
-        I am new to sync
-      </message>
       <message name="IDS_BRAVE_VERSION_NUMBER" desc="Message showing Brave's version and chromium version">
         Brave <ph name="VERSION">%1$s<ex>1.0.0</ex></ph>, Chromium <ph name="VERSION_CHROMIUM">%2$s<ex>40.0.2214.67</ex></ph>
       </message>
@@ -4164,6 +4161,86 @@ Saved
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_TEXT" desc="Text of notification on application update.">
         The new Brave browser is 22% faster
+      </message>
+
+      <!-- Sync preferences -->
+      <message name="IDS_PREFS_SYNC" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
+        Sync
+      </message>
+      <message name="IDS_BRAVE_SYNC_DESCRIPTION_PAGE_1_PART_1" desc="Brave sync main screen message (part 1).">
+        Brave Sync allows you to sync bookmarks, tabs, history and other data privately between your Brave Browsers on your various devices.
+      </message>
+      <message name="IDS_BRAVE_SYNC_DESCRIPTION_PAGE_1_PART_2" desc="Brave sync main screen message (part 2).">
+        Simply scan the code from your sync chain that you created on another device. Or start a new sync chain.
+      </message>
+      <message name="IDS_BRAVE_SYNC_SCAN_CHAIN_CODE" desc="Scan chain code button title.">
+        Scan a sync chain code
+      </message>
+      <message name="IDS_BRAVE_SYNC_START_NEW_CHAIN" desc="Start new chain button title.">
+        Start a new sync chain
+      </message>
+      <message name="IDS_BRAVE_SYNC_QRCODE_MESSAGE_V2" desc="Brave sync main screen QRCode message.">
+        Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" and scan the code displayed on the screen.
+      </message>
+      <message name="IDS_BRAVE_SYNC_BTN_MOBILE" desc="Brave sync button mobile text.">
+        Add a Mobile Device
+      </message>
+      <message name="IDS_BRAVE_SYNC_BTN_LAPTOP" desc="Brave sync button laptop text.">
+        Add a Computer
+      </message>
+      <message name="IDS_BRAVE_SYNC_SCAN_SYNC_CODE" desc="Description title for 'Add a mobile device' page.">
+        Scan this sync code
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_MOBILE_DEVICE_TEXT_PART_1" desc="Description for 'Add a mobile device' page (part 1).">
+        Using a second phone or tablet, navigate to Brave Settings > Sync > Scan.
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_MOBILE_DEVICE_TEXT_PART_2" desc="Description for 'Add a mobile device' page (part 2).">
+        Capture the QR code (above) with your second device, or enter code words if no camera is available.
+      </message>
+      <message name="IDS_BRAVE_SYNC_BTN_DONE" desc="Title for 'Done' button.">
+        Done
+      </message>
+      <message name="IDS_BRAVE_SYNC_BTN_DISPLAY_CODE_WORDS" desc="Title for 'Display code words instead' button.">
+        Display code words instead
+      </message>
+      <message name="IDS_BRAVE_SYNC_TABS_TEXT" desc="Title for 'Tabs' switch.">
+        Tabs
+      </message>
+      <message name="IDS_BRAVE_SYNC_HISTORY_TEXT" desc="Title for 'History' switch.">
+        History
+      </message>
+      <message name="IDS_BRAVE_SYNC_AUTOFILL_PASSWORDS_TEXT" desc="Title for 'Autofill/Passwords' switch.">
+        Autofill/Passwords
+      </message>
+      <message name="IDS_BRAVE_SYNC_PAYMENT_SETTINGS_TEXT" desc="Title for 'Brave Payment Settings' switch.">
+        Brave Payment Settings
+      </message>
+      <message name="IDS_BRAVE_SYNC_SETTINGS_TITLE" desc="Title for 'Sync Settings'.">
+        SYNC ON THIS DEVICE
+      </message>
+      <message name="IDS_BRAVE_SYNC_SETTINGS_DESCRIPTION" desc="Description for 'Sync Settings'.">
+        Changing settings will only affect data that this device shares with others.
+      </message>
+      <message name="IDS_BRAVE_SYNC_DEVICES_TITLE" desc="Title for 'Devices List'.">
+        OTHER DEVICES ON CHAIN
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_DEVICE_TEXT" desc="Text for 'Add Another Device' button.">
+        Add Another Device
+      </message>
+      <message name="IDS_BRAVE_SYNC_REMOVE_DEVICE_TEXT" desc="Text for 'Remove My Device' button.">
+        Remove My Device
+      </message>
+      <message name="IDS_BRAVE_SYNC_CODE_WORDS_TITLE" desc="Title for 'Code Words' Brave sync settings page.">
+        Pair
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_TITLE" desc="Title for text on 'Add Laptop' page.">
+        Enter the sync chain code
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_1" desc="Part 1 of the text on 'Add Laptop' page.">
+        On your laptop, navigate to Brave Settings > Sync. Choose "Enter a Sync Chain Code".
+      </message>
+      <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2" desc="Part 2 of the text on 'Add Laptop' page.">
+        Enter the code words above, including spaces.
       </message>
     </messages>
   </release>

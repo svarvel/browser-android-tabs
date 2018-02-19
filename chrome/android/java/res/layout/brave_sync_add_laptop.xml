@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_add_laptop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <TableLayout android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:padding="5dip">
+
+           <TableRow
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content" >
+
+               <EditText android:id="@+id/textWord1"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord16"
+                   android:nextFocusLeft="@+id/textWord16"
+                   android:nextFocusRight="@+id/textWord2"
+                   android:nextFocusDown="@+id/textWord2"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord2"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord1"
+                   android:nextFocusLeft="@+id/textWord1"
+                   android:nextFocusRight="@+id/textWord3"
+                   android:nextFocusDown="@+id/textWord3"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord3"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord2"
+                   android:nextFocusLeft="@+id/textWord2"
+                   android:nextFocusRight="@+id/textWord4"
+                   android:nextFocusDown="@+id/textWord4"
+                   android:enabled="false" />
+           </TableRow>
+
+           <TableRow
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content" >
+
+               <EditText android:id="@+id/textWord4"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord3"
+                   android:nextFocusLeft="@+id/textWord3"
+                   android:nextFocusRight="@+id/textWord5"
+                   android:nextFocusDown="@+id/textWord5"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord5"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord4"
+                   android:nextFocusLeft="@+id/textWord4"
+                   android:nextFocusRight="@+id/textWord6"
+                   android:nextFocusDown="@+id/textWord6"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord6"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord5"
+                   android:nextFocusLeft="@+id/textWord5"
+                   android:nextFocusRight="@+id/textWord7"
+                   android:nextFocusDown="@+id/textWord7"
+                   android:enabled="false" />
+           </TableRow>
+
+           <TableRow
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content" >
+
+               <EditText android:id="@+id/textWord7"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord6"
+                   android:nextFocusLeft="@+id/textWord6"
+                   android:nextFocusRight="@+id/textWord8"
+                   android:nextFocusDown="@+id/textWord8"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord8"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord7"
+                   android:nextFocusLeft="@+id/textWord7"
+                   android:nextFocusRight="@+id/textWord9"
+                   android:nextFocusDown="@+id/textWord9"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord9"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord8"
+                   android:nextFocusLeft="@+id/textWord8"
+                   android:nextFocusRight="@+id/textWord10"
+                   android:nextFocusDown="@+id/textWord10"
+                   android:enabled="false" />
+           </TableRow>
+
+           <TableRow
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"  >
+
+               <EditText android:id="@+id/textWord10"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord9"
+                   android:nextFocusLeft="@+id/textWord9"
+                   android:nextFocusRight="@+id/textWord11"
+                   android:nextFocusDown="@+id/textWord11"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord11"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord10"
+                   android:nextFocusLeft="@+id/textWord10"
+                   android:nextFocusRight="@+id/textWord12"
+                   android:nextFocusDown="@+id/textWord12"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord12"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord11"
+                   android:nextFocusLeft="@+id/textWord11"
+                   android:nextFocusRight="@+id/textWord13"
+                   android:nextFocusDown="@+id/textWord13"
+                   android:enabled="false" />
+           </TableRow>
+
+           <TableRow
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content" >
+
+               <EditText android:id="@+id/textWord13"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord12"
+                   android:nextFocusLeft="@+id/textWord12"
+                   android:nextFocusRight="@+id/textWord14"
+                   android:nextFocusDown="@+id/textWord14"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord14"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord13"
+                   android:nextFocusLeft="@+id/textWord13"
+                   android:nextFocusRight="@+id/textWord15"
+                   android:nextFocusDown="@+id/textWord15"
+                   android:enabled="false" />
+
+               <EditText android:id="@+id/textWord15"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord14"
+                   android:nextFocusLeft="@+id/textWord14"
+                   android:nextFocusRight="@+id/textWord16"
+                   android:nextFocusDown="@+id/textWord16"
+                   android:enabled="false" />
+           </TableRow>
+
+           <TableRow
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" >
+
+               <EditText
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:visibility="invisible" />
+
+               <EditText android:id="@+id/textWord16"
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:nextFocusUp="@+id/textWord15"
+                   android:nextFocusLeft="@+id/textWord15"
+                   android:enabled="false" />
+
+               <EditText
+                   android:layout_width="0px"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:inputType="text"
+                   android:visibility="invisible" />
+           </TableRow>
+         </TableLayout>
+
+         <TextView android:id="@+id/brave_sync_text_add_laptop"
+             android:layout_width="match_parent"
+             android:layout_height="0px"
+             android:layout_weight="1.4"
+             android:gravity="center"/>
+
+         <Button android:id="@+id/brave_sync_btn_add_laptop_done"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/brave_sync_btn_done"
+             style="@style/FlushFooterButton"/>
+
+    </LinearLayout>
+</ScrollView>
