@@ -366,6 +366,7 @@ android_library("chrome_java") {
     "//third_party/google_android_play_core:com_google_android_play_core_java",
     "//third_party/jsr-305:jsr_305_javalib",
 #   "//third_party/mixpanel:mixpanel_java",
+    "//third_party/zxing:zxing_java",
     "//ui/android:ui_java",
     "//ui/base/mojo:mojo_java",
     "//ui/gfx/geometry/mojo:mojo_java",

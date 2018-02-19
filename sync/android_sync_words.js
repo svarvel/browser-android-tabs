@@ -9,3 +9,12 @@ function getBytesFromWords(words) {
       injectedObject.nicewareOutput("")
     }
 }
+
+function getCodeWordsFromSeed(seed) {
+    try {
+      var buffer = new Uint8Array(seed)
+      injectedObject.nicewareOutputCodeWords(JSON.stringify(niceware.bytesToPassphrase(buffer)))
+    } catch(e) {
+      injectedObject.nicewareOutputCodeWords("")
+    }
+}
