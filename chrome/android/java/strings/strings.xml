@@ -131,11 +131,16 @@ Saved</string>
     <string name="brave_sync_settings_title">SYNC ON THIS DEVICE</string>
     <string name="brave_sync_settings_description">Changing settings will only affect data that this device shares with others.</string>
     <string name="brave_sync_devices_title">OTHER DEVICES ON CHAIN</string>
+    <string name="brave_sync_loading_devices_title">LOADING DEVICES...</string>
     <string name="brave_sync_add_device_text">Add Another Device</string>
     <string name="brave_sync_remove_device_text">Remove My Device</string>
     <string name="brave_sync_code_words_title">Pair</string>
     <string name="brave_sync_add_laptop_text_title">Enter the sync chain code</string>
     <string name="brave_sync_add_laptop_text_part_1">On your laptop, navigate to Brave Settings > Sync. Choose "Enter a Sync Chain Code".</string>
     <string name="brave_sync_add_laptop_text_part_2">Enter the code words above, including spaces.</string>
+    <string name="brave_sync_delete_device">Are you sure you want to delete device</string>
+    <string name="brave_sync_delete_sent">Delete request has been sent. Device will be removed shortly.</string>
+    <string name="brave_sync_loading_data_title">Loading data...</string>
+    <string name="brave_sync_time_out_message">Time is out</string>
 
 </resources>

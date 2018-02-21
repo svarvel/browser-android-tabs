@@ -21,7 +21,10 @@
 
         <RelativeLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:paddingStart="15dip" >
+            android:paddingStart="15dip"
+            android:paddingTop="5dip"
+            android:paddingBottom="5dip"
+            android:paddingEnd="10dip" >
 
             <TextView android:id="@+id/sync_bookmarks_text"
                 android:layout_width="match_parent"
@@ -156,8 +159,12 @@
 
         <LinearLayout android:id="@+id/brave_sync_devices"
             android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+        <TextView android:id="@+id/brave_sync_fake"
             android:layout_height="0dp"
-            android:layout_weight="1.4"
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:paddingBottom="30dip" />
 

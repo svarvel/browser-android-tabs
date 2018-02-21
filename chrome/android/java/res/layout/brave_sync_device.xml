@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:chrome="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:paddingStart="15dip" >
+    android:paddingStart="15dip"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip"
+    android:paddingEnd="10dip" >
 
     <ImageView android:id="@+id/brave_sync_device_image"
         android:layout_width="wrap_content"
@@ -18,6 +22,18 @@
         android:textSize="16sp"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/brave_sync_device_image"
+        android:layout_toStartOf="@+id/brave_sync_remove_device"
         android:paddingStart="10dip" />
+
+    <org.chromium.chrome.browser.widget.TintedImageButton
+        android:id="@+id/brave_sync_remove_device"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ListItemEndIcon"
+        android:contentDescription="@string/remove"
+        android:src="@drawable/btn_trash"
+        chrome:chrometint="@color/dark_mode_tint"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

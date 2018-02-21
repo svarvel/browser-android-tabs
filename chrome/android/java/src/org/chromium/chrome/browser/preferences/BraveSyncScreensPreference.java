@@ -8,6 +8,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ import android.hardware.SensorManager;
 import org.chromium.base.task.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
@@ -62,12 +64,15 @@ import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.ui.KeyboardVisibilityDelegate;
 
+import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.ContextUtils;
+import org.chromium.chrome.browser.BraveSyncWorker;
 import org.chromium.chrome.browser.ChromeApplication;
 import org.chromium.chrome.browser.qrreader.BarcodeTracker;
 import org.chromium.chrome.browser.qrreader.BarcodeTrackerFactory;
 import org.chromium.chrome.browser.qrreader.CameraSource;
 import org.chromium.chrome.browser.qrreader.CameraSourcePreview;
+import org.chromium.chrome.browser.widget.TintedImageButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.MultiProcessor;
@@ -92,8 +97,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private static final String PREF_SYNC_HISTORY = "brave_sync_history";
   private static final String PREF_SYNC_AUTOFILL_PASSWORDS = "brave_sync_autofill_passwords";
   private static final String PREF_SYNC_PAYMENT_SETTINGS = "brave_sync_payment_settings";
-  private static final String PREF_SEED = "Seed";
-  private static final String PREF_SYNC_DEVICE_NAME = "SyncDeviceName";
   private static final String TAG = "SYNC";
   // Permission request codes need to be < 256
   private static final int RC_HANDLE_CAMERA_PERM = 2;
@@ -148,6 +151,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private ScrollView mScrollViewSyncDone;
   private LayoutInflater mInflater;
   private ImageView mQRCodeImage;
+  private ProgressDialog mProgressDialog;
 
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
@@ -216,6 +220,11 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       addPreferencesFromResource(R.xml.brave_sync_preferences);
       getActivity().setTitle(R.string.sign_in_sync);
 
+      SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+      mDeviceName = sharedPref.getString(BraveSyncWorker.PREF_SYNC_DEVICE_NAME, "");
+
+      mProgressDialog = new ProgressDialog(getActivity());
+
       mPrefSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
 
       mPrefSwitchBookmarks = (ChromeSwitchPreference) findPreference(PREF_SYNC_BOOKMARKS);
@@ -223,6 +232,234 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mPrefSwitchHistory = (ChromeSwitchPreference) findPreference(PREF_SYNC_HISTORY);
       mPrefSwitchAutofillPasswords = (ChromeSwitchPreference) findPreference(PREF_SYNC_AUTOFILL_PASSWORDS);
       mPrefSwitchPaymentSettings = (ChromeSwitchPreference) findPreference(PREF_SYNC_PAYMENT_SETTINGS);
+
+      // Initialize mSyncScreensObserver
+      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      if (null != application && null != application.mBraveSyncWorker) {
+          if (null == mSyncScreensObserver) {
+              mSyncScreensObserver = new BraveSyncScreensObserver() {
+                  @Override
+                  public void onSyncError(String message) {
+                      cancelProgressDialog();
+                      if (null != message && !message.isEmpty()) {
+                          message = getResources().getString(R.string.sync_device_failure) + " [" + message + "]";
+                      }
+                      showEndDialog(message);
+                  }
+
+                  @Override
+                  public void onSeedReceived(String seed, boolean fromCodeWords, boolean afterInitialization) {
+                      if (fromCodeWords) {
+                          assert !afterInitialization;
+                          if (!isBarCodeValid(seed, false)) {
+                              showEndDialog(getResources().getString(R.string.sync_device_failure));
+                          }
+                          //Log.i(TAG, "!!!received seed == " + seed);
+                          // Save seed and deviceId in preferences
+                          SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+                          SharedPreferences.Editor editor = sharedPref.edit();
+                          editor.putString(BraveSyncWorker.PREF_SEED, seed);
+                          editor.apply();
+                          getActivity().runOnUiThread(new Runnable() {
+                              @Override
+                              public void run() {
+                                  cancelProgressDialog();
+                                  if (null != mPrefSwitch) {
+                                      mPrefSwitch.setChecked(true);
+                                  }
+                                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                                  if (null != application && null != application.mBraveSyncWorker) {
+                                      showEndDialog(getResources().getString(R.string.sync_device_success));
+                                      application.mBraveSyncWorker.InitSync(true, false);
+                                  }
+                                  setAppropriateView();
+                              }
+                          });
+                      } else if (afterInitialization) {
+                          assert !fromCodeWords;
+                          Log.i(TAG, "!!!init received seed == " + seed);
+                          if (null != seed && !seed.isEmpty()) {
+                              if (View.VISIBLE == mScrollViewAddMobileDevice.getVisibility()) {
+                                  String[] seeds = seed.split(",");
+                                  if (seeds.length != 32) {
+                                      Log.e(TAG, "Incorrect seed for QR code");
+                                  }
+                                  String qrData = "";
+                                  for (String s : seeds) {
+                                      String hex = Integer.toHexString(Integer.parseInt(s.trim(), 10));
+                                      if (hex.length() == 1) {
+                                          hex = "0" + hex;
+                                      }
+                                      qrData += hex;
+                                  }
+                                  final String qrDataFinal = qrData;
+                                  //Log.i(TAG, "Generate QR with data: " + qrDataFinal);
+                                  new Thread(new Runnable() {
+                                      @Override
+                                      public void run() {
+                                          // Generate QR code
+                                          BitMatrix result;
+                                          try {
+                                              result = new MultiFormatWriter().encode(qrDataFinal, BarcodeFormat.QR_CODE, WIDTH, WIDTH, null);
+                                          } catch (WriterException e) {
+                                              Log.e(TAG, "QR code unsupported format: " + e);
+                                              return;
+                                          }
+                                          int w = result.getWidth();
+                                          int h = result.getHeight();
+                                          int[] pixels = new int[w * h];
+                                          for (int y = 0; y < h; y++) {
+                                              int offset = y * w;
+                                              for (int x = 0; x < w; x++) {
+                                                  pixels[offset + x] = result.get(x, y) ? BLACK : WHITE;
+                                              }
+                                          }
+                                          Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+                                          bitmap.setPixels(pixels, 0, WIDTH, 0, 0, w, h);
+                                          getActivity().runOnUiThread(new Runnable() {
+                                              @Override
+                                              public void run() {
+                                                  cancelProgressDialog();
+                                                  if (null != mPrefSwitch) {
+                                                      mPrefSwitch.setChecked(true);
+                                                  }
+                                                  mQRCodeImage.setImageBitmap(bitmap);
+                                                  mQRCodeImage.invalidate();
+                                              }
+                                          });
+                                      }
+                                  }).start();
+                              } else if (View.VISIBLE == mScrollViewAddLaptop.getVisibility()) {
+                                  getActivity().runOnUiThread(new Runnable() {
+                                      @Override
+                                      public void run() {
+                                          application.mBraveSyncWorker.GetCodeWords();
+                                      }
+                                  });
+                              }
+                          }
+                      } else {
+                          Log.e(TAG, "Unknown flag on receiving seed");
+                          assert false;
+                      }
+                  }
+
+                  @Override
+                  public void onCodeWordsReceived(String[] codeWords) {
+                      getActivity().runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              cancelProgressDialog();
+                              if (null != mPrefSwitch) {
+                                  mPrefSwitch.setChecked(true);
+                              }
+                              //Log.i(TAG, "onCodeWordsReceived:");
+                              for (int i = 0; i < codeWords.length; i++) {
+                                  //Log.i(TAG, codeWords[i].trim());
+                                  EditText wordControl = getWordControl(i + 1, false);
+                                  if (null != wordControl) {
+                                      wordControl.setText(codeWords[i].trim());
+                                      wordControl.invalidate();
+                                  } else {
+                                      Log.e(TAG, "wordControl is null");
+                                  }
+                              }
+                          }
+                      });
+                  }
+
+                  @Override
+                  public void onDevicesAvailable() {
+                      getActivity().runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              synchronized (this) {
+                                  if (View.VISIBLE != mScrollViewSyncDone.getVisibility()) {
+                                      Log.i(TAG, "No need to load devices for other pages");
+                                      return;
+                                  }
+                                  SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+                                  String currentDeviceId = sharedPref.getString(BraveSyncWorker.PREF_DEVICE_ID, "");
+                                  // Load other devices in chain
+                                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                                  if (null != application && null != application.mBraveSyncWorker) {
+                                      new Thread(new Runnable() {
+                                          @Override
+                                          public void run() {
+                                              ArrayList<BraveSyncWorker.ResolvedRecordsToApply> devices = application.mBraveSyncWorker.GetAllDevices();
+                                              getActivity().runOnUiThread(new Runnable() {
+                                                  @Override
+                                                  public void run() {
+                                                      ViewGroup insertPoint = (ViewGroup) getView().findViewById(R.id.brave_sync_devices);
+                                                      insertPoint.removeAllViews();
+                                                      mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_loading_devices_title));
+                                                      cancelProgressDialog();
+                                                      int index = 0;
+                                                      for (BraveSyncWorker.ResolvedRecordsToApply device : devices) {
+                                                          View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
+                                                          View listItemView = (View) mInflater.inflate(R.layout.brave_sync_device, null);
+                                                          if (null != listItemView && null != separator && null != insertPoint) {
+                                                              TextView textView = (TextView) listItemView.findViewById(R.id.brave_sync_device_text);
+                                                              if (null != textView) {
+                                                                  textView.setText(device.mDeviceName);
+                                                              }
+                                                              TintedImageButton deleteButton = (TintedImageButton) listItemView.findViewById(R.id.brave_sync_remove_device);
+                                                              if (null != deleteButton) {
+                                                                  if (currentDeviceId.equals(device.mDeviceId)) {
+                                                                      // Current device is deleted by button on the bottom
+                                                                      deleteButton.setVisibility(View.GONE);
+                                                                      if (null != textView) {
+                                                                          // Highlight curret device
+                                                                          textView.setTextColor(ApiCompatibilityUtils.getColor(getActivity().getResources(), R.color.brave_theme_color));
+                                                                      }
+                                                                      if (null != mRemoveDeviceButton) {
+                                                                          mRemoveDeviceButton.setTag(device);
+                                                                          mRemoveDeviceButton.setVisibility(View.VISIBLE);
+                                                                      }
+                                                                  } else {
+                                                                      deleteButton.setTag(device);
+                                                                      deleteButton.setOnClickListener(v -> {
+                                                                          BraveSyncWorker.ResolvedRecordsToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordsToApply) v.getTag();
+                                                                          deleteDeviceDialog(deviceToDelete.mDeviceName, deviceToDelete.mDeviceId, deviceToDelete.mObjectId, v);
+                                                                      });
+                                                                  }
+                                                              }
+
+                                                              insertPoint.addView(separator, index++);
+                                                              insertPoint.addView(listItemView, index++);
+                                                          }
+                                                      }
+                                                      if (index > 0) {
+                                                          mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_devices_title));
+                                                          View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
+                                                          if (null != insertPoint && null != separator) {
+                                                              insertPoint.addView(separator, index++);
+                                                          }
+                                                      }
+                                                  }
+                                              });
+                                          }
+                                      }).start();
+                                  }
+                              }
+                          }
+                      });
+                  }
+
+                  @Override
+                  public void onResetSync() {
+                      getActivity().runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              cancelProgressDialog();
+                              setAppropriateView();
+                          }
+                      });
+                  }
+              };
+          }
+          application.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
+      }
 
       mSyncSwitchBookmarks = (Switch) getView().findViewById(R.id.sync_bookmarks_switch);
       if (null != mSyncSwitchBookmarks) {
@@ -318,165 +555,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
       super.onActivityCreated(savedInstanceState);
-      // Initialize mSyncScreensObserver
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-      if (null != application && null != application.mBraveSyncWorker) {
-          if (null == mSyncScreensObserver) {
-              mSyncScreensObserver = new BraveSyncScreensObserver() {
-                  public void onSyncError() {
-                      showEndDialog(getResources().getString(R.string.sync_device_failure));
-                  }
-
-                  public void onSeedReceived(String seed, boolean fromCodeWords, boolean afterInitialization) {
-                      if (fromCodeWords) {
-                          assert !afterInitialization;
-                          if (!isBarCodeValid(seed, false)) {
-                              showEndDialog(getResources().getString(R.string.sync_device_failure));
-                          }
-                          Log.i(TAG, "!!!received seed == " + seed);
-                          // Save seed and deviceId in preferences
-                          SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
-                          SharedPreferences.Editor editor = sharedPref.edit();
-                          editor.putString(PREF_SEED, seed);
-                          editor.apply();
-                          getActivity().runOnUiThread(new Runnable() {
-                              @Override
-                              public void run() {
-                                  if (null != mPrefSwitch) {
-                                      mPrefSwitch.setChecked(true);
-                                  }
-                                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                                  if (null != application && null != application.mBraveSyncWorker) {
-                                      showEndDialog(getResources().getString(R.string.sync_device_success));
-                                      application.mBraveSyncWorker.InitSync(true, false);
-                                  }
-                                  setAppropriateView();
-                              }
-                          });
-                      } else if (afterInitialization) {
-                          assert !fromCodeWords;
-                          Log.i(TAG, "!!!init received seed == " + seed);
-                          if (null != seed && !seed.isEmpty()) {
-                              if (View.VISIBLE == mScrollViewAddMobileDevice.getVisibility()) {
-                                  Log.i(TAG, "Generate QR with seed: " + seed);
-                                  new Thread(new Runnable() {
-                                      @Override
-                                      public void run() {
-                                          // Generate QR code
-                                          BitMatrix result;
-                                          try {
-                                              result = new MultiFormatWriter().encode(seed, BarcodeFormat.QR_CODE, WIDTH, WIDTH, null);
-                                          } catch (WriterException e) {
-                                              Log.e(TAG, "QR code unsupported format: " + e);
-                                              return;
-                                          }
-                                          int w = result.getWidth();
-                                          int h = result.getHeight();
-                                          int[] pixels = new int[w * h];
-                                          for (int y = 0; y < h; y++) {
-                                              int offset = y * w;
-                                              for (int x = 0; x < w; x++) {
-                                                  pixels[offset + x] = result.get(x, y) ? BLACK : WHITE;
-                                              }
-                                          }
-                                          Bitmap bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-                                          bitmap.setPixels(pixels, 0, WIDTH, 0, 0, w, h);
-                                          getActivity().runOnUiThread(new Runnable() {
-                                              @Override
-                                              public void run() {
-                                                  mQRCodeImage.setImageBitmap(bitmap);
-                                                  mQRCodeImage.invalidate();
-                                              }
-                                          });
-                                      }
-                                  }).start();
-                              } else if (View.VISIBLE == mScrollViewAddLaptop.getVisibility()) {
-                                  getActivity().runOnUiThread(new Runnable() {
-                                      @Override
-                                      public void run() {
-                                          application.mBraveSyncWorker.GetCodeWords();
-                                      }
-                                  });
-                              }
-                          }
-                      } else {
-                          Log.e(TAG, "Unknown flag on receiving seed");
-                          assert false;
-                      }
-                  }
-
-                  public void onCodeWordsReceived(String[] codeWords) {
-                      getActivity().runOnUiThread(new Runnable() {
-                          @Override
-                          public void run() {
-                              Log.i(TAG, "onCodeWordsReceived:");
-                              for (int i = 0; i < codeWords.length; i++) {
-                                  Log.i(TAG, codeWords[i].trim());
-                                  EditText wordControl = getWordControl(i + 1, false);
-                                  if (null != wordControl) {
-                                      wordControl.setText(codeWords[i].trim());
-                                      wordControl.invalidate();
-                                  } else {
-                                      Log.e(TAG, "wordControl is null");
-                                  }
-                              }
-                          }
-                      });
-                  }
-
-                  public void onDevicesAvailable() {
-                      synchronized (this) {
-                          // Load other devices in chain
-                          ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                          if (null != application && null != application.mBraveSyncWorker) {
-                              ViewGroup insertPoint = (ViewGroup) getView().findViewById(R.id.brave_sync_devices);
-                              insertPoint.removeAllViews();
-                              new Thread(new Runnable() {
-                                  @Override
-                                  public void run() {
-                                      ArrayList<String> devices = application.mBraveSyncWorker.GetAllDevices();
-                                      getActivity().runOnUiThread(new Runnable() {
-                                          @Override
-                                          public void run() {
-                                              int index = 0;
-                                              for (String device : devices) {
-                                                  View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
-                                                  View listItemView = (View) mInflater.inflate(R.layout.brave_sync_device, null);
-                                                  if (null != listItemView && null != separator && null != insertPoint) {
-                                                      TextView textView = (TextView) listItemView.findViewById(R.id.brave_sync_device_text);
-                                                      if (null != textView) {
-                                                          textView.setText(device);
-                                                      }
-                                                      insertPoint.addView(separator, index++);
-                                                      insertPoint.addView(listItemView, index++);
-                                                  }
-                                              }
-                                              if (index > 0) {
-                                                  View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
-                                                  if (null != insertPoint && null != separator) {
-                                                      insertPoint.addView(separator, index++);
-                                                  }
-                                              } else {
-                                                  mBraveSyncTextDevicesTitle.setVisibility(View.GONE);
-                                              }
-                                          }
-                                      });
-                                  }
-                              }).start();
-                          }
-                      }
-                  }
-              };
-          }
-          application.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
-      }
   }
 
   private void setAppropriateView() {
       getActivity().setTitle(R.string.prefs_sync);
       SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
-      String seed = sharedPref.getString(PREF_SEED, null);
-      Log.i(TAG, "setAppropriateView: seed == " + seed);
+      String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
+      //Log.i(TAG, "setAppropriateView: seed == " + seed);
       if (null == seed || seed.isEmpty()) {
           if (null != mCameraSourcePreview) {
               mCameraSourcePreview.stop();
@@ -545,14 +630,18 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   /** OnClickListener for the clear button. We show an alert dialog to confirm the action */
   @Override
   public void onClick(View v) {
-      if (getActivity() == null || v != mScanChainCodeButton && v != mStartNewChainButton
+      if ((getActivity() == null) || (v != mScanChainCodeButton && v != mStartNewChainButton
           && v != mEnterCodeWordsButton && v != mDoneButton && v != mDoneLaptopButton && v != mDisplayCodeWordsButton
-          && v != mMobileButton && v != mLaptopButton && v != mRemoveDeviceButton && v != mAddDeviceButton) return;
+          && v != mMobileButton && v != mLaptopButton && v != mRemoveDeviceButton && v != mAddDeviceButton)) return;
 
       if (mScanChainCodeButton == v) {
-          showAddDeviceNameDialog();
+          showAddDeviceNameDialog(false);
       } else if (mStartNewChainButton == v) {
-          setNewChainLayout();
+          if (mDeviceName.isEmpty()) {
+              showAddDeviceNameDialog(true);
+          } else {
+              setNewChainLayout();
+          }
       } else if (mMobileButton == v) {
           setAddMobileDeviceLayout();
       } else if (mLaptopButton == v) {
@@ -616,8 +705,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               });
           }
       } else if (mRemoveDeviceButton == v) {
-          Log.i(TAG, "mRemoveDeviceButton clicked");
-          //ResetSyncDialog();
+          BraveSyncWorker.ResolvedRecordsToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordsToApply) mRemoveDeviceButton.getTag();
+          deleteDeviceDialog(deviceToDelete.mDeviceName, deviceToDelete.mDeviceId, deviceToDelete.mObjectId, mRemoveDeviceButton);
       } else if (mAddDeviceButton == v) {
           setNewChainLayout();
       }
@@ -625,8 +714,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
   @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-      if (getActivity() == null || buttonView != mSyncSwitchBookmarks && buttonView != mSyncSwitchTabs &&
-            buttonView != mSyncSwitchHistory && buttonView != mSyncSwitchAutofillPasswords && buttonView != mSyncSwitchPaymentSettings) {
+      if ((getActivity() == null) || (buttonView != mSyncSwitchBookmarks && buttonView != mSyncSwitchTabs &&
+            buttonView != mSyncSwitchHistory && buttonView != mSyncSwitchAutofillPasswords && buttonView != mSyncSwitchPaymentSettings)) {
           Log.w(TAG, "Unknown button");
           return;
       }
@@ -816,11 +905,11 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               }
               seed += String.valueOf(Integer.parseInt(barcodeString[i], 16));
           }
-          Log.i(TAG, "!!!seed == " + seed);
+          //Log.i(TAG, "!!!seed == " + seed);
           // Save seed and deviceId in preferences
           SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
           SharedPreferences.Editor editor = sharedPref.edit();
-          editor.putString(PREF_SEED, seed);
+          editor.putString(BraveSyncWorker.PREF_SEED, seed);
           editor.apply();
           getActivity().runOnUiThread(new Runnable() {
               @Override
@@ -916,7 +1005,42 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       alertDialog.show();
   }
 
-  private void showAddDeviceNameDialog() {
+  private void showProgressDialog(String message) {
+      if (null != mProgressDialog) {
+          mProgressDialog.setMessage(message);
+          mProgressDialog.setCancelable(false);
+          mProgressDialog.setIndeterminate(false);
+          mProgressDialog.setMax(120);
+          mProgressDialog.show();
+          new CountDownTimer(120000, 1000) {
+              @Override
+              public void onTick(long millisUntilFinished) {
+                  if (null != mProgressDialog && mProgressDialog.isShowing()) {
+                      int progress = (int)((60000 - millisUntilFinished) / 1000);
+                      mProgressDialog.setProgress(progress);
+                  } else {
+                      cancel();
+                  }
+              }
+              @Override
+              public void onFinish() {
+                  if (cancelProgressDialog()) {
+                      showEndDialog(getResources().getString(R.string.brave_sync_time_out_message));
+                  }
+              }
+          }.start();
+      }
+  }
+
+  private boolean cancelProgressDialog() {
+      if (null != mProgressDialog && mProgressDialog.isShowing()) {
+          mProgressDialog.dismiss();
+          return true;
+      }
+      return false;
+  }
+
+  private void showAddDeviceNameDialog(boolean createNewChain) {
       LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(
               Context.LAYOUT_INFLATER_SERVICE);
       View view = inflater.inflate(R.layout.add_sync_device_name_dialog, null);
@@ -930,38 +1054,43 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   if (mDeviceName.isEmpty()) {
                       mDeviceName = input.getHint().toString();
                   }
+                  //Log.i(TAG, "mDeviceName just set: " + mDeviceName);
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
                   SharedPreferences.Editor editor = sharedPref.edit();
-                  editor.putString(PREF_SYNC_DEVICE_NAME, mDeviceName);
+                  editor.putString(BraveSyncWorker.PREF_SYNC_DEVICE_NAME, mDeviceName);
                   editor.apply();
-                  if (null != mScrollViewSyncInitial) {
-                      mScrollViewSyncInitial.setVisibility(View.GONE);
-                  }
-                  if (null != mScrollViewEnterCodeWords) {
-                      mScrollViewEnterCodeWords.setVisibility(View.GONE);
-                  }
-                  if (null != mScrollViewAddMobileDevice) {
-                      mScrollViewAddMobileDevice.setVisibility(View.GONE);
-                  }
-                  if (null != mScrollViewAddLaptop) {
-                      mScrollViewAddLaptop.setVisibility(View.GONE);
-                  }
-                  if (null != mScrollViewSyncStartChain) {
-                      mScrollViewSyncStartChain.setVisibility(View.GONE);
-                  }
-                  setQRCodeText();
-                  getActivity().setTitle(R.string.brave_sync_scan_chain_code);
-                  if (null != mScrollViewSyncChainCode) {
-                      mScrollViewSyncChainCode.setVisibility(View.VISIBLE);
-                  }
-                  if (null != mCameraSourcePreview) {
-                      int rc = ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
-                      if (rc == PackageManager.PERMISSION_GRANTED) {
-                          try {
-                            startCameraSource();
-                          } catch (SecurityException exc) {
+                  if (!createNewChain) {
+                      if (null != mScrollViewSyncInitial) {
+                          mScrollViewSyncInitial.setVisibility(View.GONE);
+                      }
+                      if (null != mScrollViewEnterCodeWords) {
+                          mScrollViewEnterCodeWords.setVisibility(View.GONE);
+                      }
+                      if (null != mScrollViewAddMobileDevice) {
+                          mScrollViewAddMobileDevice.setVisibility(View.GONE);
+                      }
+                      if (null != mScrollViewAddLaptop) {
+                          mScrollViewAddLaptop.setVisibility(View.GONE);
+                      }
+                      if (null != mScrollViewSyncStartChain) {
+                          mScrollViewSyncStartChain.setVisibility(View.GONE);
+                      }
+                      setQRCodeText();
+                      getActivity().setTitle(R.string.brave_sync_scan_chain_code);
+                      if (null != mScrollViewSyncChainCode) {
+                          mScrollViewSyncChainCode.setVisibility(View.VISIBLE);
+                      }
+                      if (null != mCameraSourcePreview) {
+                          int rc = ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA);
+                          if (rc == PackageManager.PERMISSION_GRANTED) {
+                              try {
+                                startCameraSource();
+                              } catch (SecurityException exc) {
+                              }
                           }
                       }
+                  } else {
+                      setNewChainLayout();
                   }
               }
           }
@@ -990,7 +1119,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       cancelButton.setVisibility(View.GONE);
   }
 
-  private void ResetSyncDialog() {
+  private void deleteDeviceDialog(String deviceName, String deviceId, String deviceObjectId, View v) {
       AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
       if (null == alert) {
           return;
@@ -999,20 +1128,27 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           @Override
           public void onClick(DialogInterface dialog, int button) {
               if (button == AlertDialog.BUTTON_POSITIVE) {
-                  if (null != mPrefSwitch) {
-                      mPrefSwitch.setChecked(false);
-                  }
+                  Log.i(TAG, "Removing device '" + deviceName + "' with id '" + deviceId + "'");
                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                   if (null != application && null != application.mBraveSyncWorker) {
-                      application.mBraveSyncWorker.ResetSync();
+                      application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
+                      if (null != v) {
+                          v.setVisibility(View.GONE);
+                      }
+                      showProgressDialog(getResources().getString(R.string.brave_sync_delete_sent));
                   }
-                  setAppropriateView();
+                  /*if (isCurrentDevice) {
+                      if (null != application && null != application.mBraveSyncWorker) {
+                          application.mBraveSyncWorker.ResetSync();
+                      }
+                  }
+                  setAppropriateView();*/
               }
           }
       };
       AlertDialog alertDialog = alert
               .setTitle(getResources().getString(R.string.brave_sync_remove_device_text))
-              .setMessage(getResources().getString(R.string.resetting_sync))
+              .setMessage(getResources().getString(R.string.brave_sync_delete_device) + " '" + deviceName + "'?")
               .setPositiveButton(R.string.ok, onClickListener)
               .setNegativeButton(R.string.cancel, onClickListener)
               .create();
@@ -1067,8 +1203,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
               if (null != application && null != application.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
-                  String seed = sharedPref.getString(PREF_SEED, null);
+                  String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
+                      showProgressDialog(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
                       application.mBraveSyncWorker.InitSync(true, true);
                   } else {
@@ -1107,8 +1244,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
               if (null != application && null != application.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(PREF_NAME, 0);
-                  String seed = sharedPref.getString(PREF_SEED, null);
+                  String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
+                      showProgressDialog(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
                       application.mBraveSyncWorker.InitSync(true, true);
                   } else {
@@ -1170,7 +1308,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               mSyncSwitchPaymentSettings.setChecked(mPrefSwitchPaymentSettings.isChecked());
           }
       }
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      if (null != mRemoveDeviceButton) {
+          // It should become visible as soon as we get all devices info
+          mRemoveDeviceButton.setVisibility(View.GONE);
+      }
       if (null != mSyncScreensObserver) {
           mSyncScreensObserver.onDevicesAvailable();
       }
