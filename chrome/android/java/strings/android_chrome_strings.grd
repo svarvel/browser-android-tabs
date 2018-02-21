@@ -4224,6 +4224,9 @@ Saved
       <message name="IDS_BRAVE_SYNC_DEVICES_TITLE" desc="Title for 'Devices List'.">
         OTHER DEVICES ON CHAIN
       </message>
+      <message name="IDS_BRAVE_SYNC_LOADING_DEVICES_TITLE" desc="Title for 'Loading Devices List'.">
+        LOADING DEVICES...
+      </message>
       <message name="IDS_BRAVE_SYNC_ADD_DEVICE_TEXT" desc="Text for 'Add Another Device' button.">
         Add Another Device
       </message>
@@ -4241,6 +4244,18 @@ Saved
       </message>
       <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2" desc="Part 2 of the text on 'Add Laptop' page.">
         Enter the code words above, including spaces.
+      </message>
+      <message name="IDS_BRAVE_SYNC_DELETE_DEVICE" desc="Delete device message.">
+        Are you sure you want to delete device
+      </message>
+      <message name="IDS_BRAVE_SYNC_DELETE_SENT" desc="Delete request sent message.">
+        Delete request has been sent. Device will be removed shortly.
+      </message>
+      <message name="IDS_BRAVE_SYNC_LOADING_DATA_TITLE" desc="Title for 'Loading data...'.">
+        Loading data...
+      </message>
+      <message name="IDS_BRAVE_SYNC_TIME_OUT_MESSAGE" desc="Time out message.">
+        Time is out
       </message>
     </messages>
   </release>
