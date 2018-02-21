@@ -77,18 +77,21 @@
     </ScrollView>
 
     <ScrollView android:id="@+id/view_sync_start_chain"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:fillViewport="true"
-        android:maxWidth="350dp" >
+        android:fillViewport="true" >
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" >
 
             <FrameLayout android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingStart="5dip"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:paddingEnd="5dip" >
 
                 <ImageButton android:id="@+id/brave_sync_btn_mobile"
                     android:layout_width="match_parent"
@@ -110,7 +113,11 @@
 
             <FrameLayout android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:paddingStart="5dip"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:paddingEnd="5dip" >
 
                 <ImageButton android:id="@+id/brave_sync_btn_laptop"
                     android:layout_width="match_parent"
