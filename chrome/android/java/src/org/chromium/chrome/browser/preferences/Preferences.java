@@ -241,6 +241,13 @@ public class Preferences extends AppCompatActivity implements OnPreferenceStartF
         Fragment activeFragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (activeFragment != null && activeFragment.onOptionsItemSelected(item)) return true;
         if (item.getItemId() == android.R.id.home) {
+            Log.i(TAG, "SAM: android.R.id.home clicked");
+            if (getFragmentForTest() instanceof BraveSyncScreensPreference) {
+                BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
+                if (pref.onBackPressed()) {
+                    return true;
+                }
+            }
             finish();
             return true;
         } else if (item.getItemId() == R.id.menu_id_general_help) {
@@ -265,5 +272,17 @@ public class Preferences extends AppCompatActivity implements OnPreferenceStartF
             // Something terribly wrong has happened.
             throw new RuntimeException(ex);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+         Log.i(TAG, "SAM: onBackPressed clicked");
+         if (getFragmentForTest() instanceof BraveSyncScreensPreference) {
+             BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
+             if (pref.onBackPressed()) {
+                 return;
+             }
+         }
+         super.onBackPressed();
     }
 }

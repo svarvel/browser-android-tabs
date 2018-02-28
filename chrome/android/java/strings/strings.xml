@@ -117,13 +117,13 @@ Saved</string>
     <string name="brave_sync_scan_chain_code">Scan a sync chain code</string>
     <string name="brave_sync_start_new_chain">Start a new sync chain</string>
     <string name="brave_sync_qrcode_message_v2">Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" and scan the code displayed on the screen.</string>
+    <string name="brave_sync_codewords_message">Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" then "Display code words instead".</string>
     <string name="brave_sync_btn_mobile">Add a Mobile Device</string>
     <string name="brave_sync_btn_laptop">Add a Computer</string>
     <string name="brave_sync_scan_sync_code">Scan this sync code</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Using a second phone or tablet, navigate to Brave Settings > Sync > Scan.</string>
     <string name="brave_sync_add_mobile_device_text_part_2">Capture the QR code (above) with your second device, or enter code words if no camera is available.</string>
     <string name="brave_sync_btn_done">Done</string>
-    <string name="brave_sync_btn_display_code_words">Display code words instead</string>
     <string name="brave_sync_tabs_text">Tabs</string>
     <string name="brave_sync_history_text">History</string>
     <string name="brave_sync_autofill_passwords_text">Autofill/Passwords</string>
@@ -142,5 +142,11 @@ Saved</string>
     <string name="brave_sync_delete_sent">Delete request has been sent. Device will be removed shortly.</string>
     <string name="brave_sync_loading_data_title">Loading data...</string>
     <string name="brave_sync_time_out_message">Time is out</string>
+    <string name="brave_sync_use_camera_text">I'll use my camera...</string>
+    <string name="brave_sync_confirm_code_words_text">Confirm</string>
+    <string name="brave_sync_word_count_text">Word count</string>
+    <string name="brave_sync_word_count_error">Incorrect number of words</string>
+    <string name="brave_sync_qr_code">QR Code</string>
+    <string name="brave_sync_code_words">Code Words</string>
 
 </resources>

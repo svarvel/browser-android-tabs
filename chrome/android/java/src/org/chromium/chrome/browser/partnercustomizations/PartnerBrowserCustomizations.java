@@ -86,8 +86,8 @@ public class PartnerBrowserCustomizations {
         }
 
         private boolean isValid() {
-            if (sValid == null) sValid = isValidInternal();
-            return sValid;
+            // We do not load partner's customizations
+            return false;
         }
 
         @Override

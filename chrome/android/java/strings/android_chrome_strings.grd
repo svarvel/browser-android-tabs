@@ -4182,6 +4182,9 @@ Saved
       <message name="IDS_BRAVE_SYNC_QRCODE_MESSAGE_V2" desc="Brave sync main screen QRCode message.">
         Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" and scan the code displayed on the screen.
       </message>
+      <message name="IDS_BRAVE_SYNC_CODEWORDS_MESSAGE" desc="Brave sync hint for code words edit box.">
+        Using existing synced device, open Brave Settings and navigate to Settings > Sync. Choose "Add Device" then "Display code words instead".
+      </message>
       <message name="IDS_BRAVE_SYNC_BTN_MOBILE" desc="Brave sync button mobile text.">
         Add a Mobile Device
       </message>
@@ -4199,9 +4202,6 @@ Saved
       </message>
       <message name="IDS_BRAVE_SYNC_BTN_DONE" desc="Title for 'Done' button.">
         Done
-      </message>
-      <message name="IDS_BRAVE_SYNC_BTN_DISPLAY_CODE_WORDS" desc="Title for 'Display code words instead' button.">
-        Display code words instead
       </message>
       <message name="IDS_BRAVE_SYNC_TABS_TEXT" desc="Title for 'Tabs' switch.">
         Tabs
@@ -4256,6 +4256,24 @@ Saved
       </message>
       <message name="IDS_BRAVE_SYNC_TIME_OUT_MESSAGE" desc="Time out message.">
         Time is out
+      </message>
+      <message name="IDS_BRAVE_SYNC_USE_CAMERA_TEXT" desc="Text for 'Use camera' button.">
+        I'll use my camera...
+      </message>
+      <message name="IDS_BRAVE_SYNC_CONFIRM_CODE_WORDS_TEXT" desc="Text for 'Confirm code words' button.">
+        Confirm
+      </message>
+      <message name="IDS_BRAVE_SYNC_WORD_COUNT_TEXT" desc="Text for 'Word count' label.">
+        Word count
+      </message>
+      <message name="IDS_BRAVE_SYNC_WORD_COUNT_ERROR" desc="Text for error on incorrect number of words.">
+        Incorrect number of words
+      </message>
+      <message name="IDS_BRAVE_SYNC_QR_CODE" desc="Text for 'QR Code' button.">
+        QR Code
+      </message>
+      <message name="IDS_BRAVE_SYNC_CODE_WORDS" desc="Text for 'Code Words' button.">
+        Code Words
       </message>
     </messages>
   </release>

@@ -3,15 +3,20 @@
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file. -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:id="@+id/brave_sync_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent" >
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center" >
 
     <ScrollView android:id="@+id/view_sync_initial"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true" >
+        android:fillViewport="true"
+        android:background="@color/google_grey_50" >
+
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" >
@@ -28,20 +33,21 @@
                android:layout_width="match_parent"
                android:layout_height="0px"
                android:layout_weight="1.4"
-               android:gravity="center" />
+               android:gravity="center"
+               android:paddingStart="15dip"
+               android:paddingEnd="15dip" />
 
            <Button android:id="@+id/brave_sync_btn_scan_chain_code"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="@string/brave_sync_scan_chain_code"
-               style="@style/FlushFooterButton" />
+               style="@style/BraveSyncButton" />
 
            <Button android:id="@+id/brave_sync_btn_start_new_chain"
-               android:fragment="org.chromium.chrome.browser.preferences.BraveSyncScreensPreference"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="@string/brave_sync_start_new_chain"
-               style="@style/FlushFooterButton" />
+               style="@style/BraveSyncButton" />
 
         </LinearLayout>
     </ScrollView>
@@ -49,29 +55,46 @@
     <ScrollView android:id="@+id/view_sync_chain_code"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true" >
+        android:fillViewport="true"
+        android:background="@color/google_grey_50" >
+
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" >
 
-            <org.chromium.chrome.browser.qrreader.CameraSourcePreview
-                android:id="@+id/preview"
+            <LinearLayout android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="2.6"
-                android:scaleType="center" />
+                android:background="@android:color/white" >
+
+                <org.chromium.chrome.browser.qrreader.CameraSourcePreview
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:paddingStart="15dip"
+                    android:paddingEnd="15dip"
+                    android:paddingTop="15dip"
+                    android:paddingBottom="15dip" />
+
+            </LinearLayout>
+
+            <include layout="@layout/menu_separator"/>
 
            <TextView android:id="@+id/brave_sync_text_sync_chain_code"
                android:layout_width="match_parent"
                android:layout_height="0px"
                android:layout_weight="1.4"
-               android:gravity="center" />
+               android:gravity="center"
+               android:paddingStart="15dip"
+               android:paddingEnd="15dip" />
 
            <Button android:id="@+id/brave_sync_btn_enter_code_words"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:text="@string/enter_code_words_sync"
-               style="@style/FlushFooterButton" />
+               style="@style/BraveSyncButton" />
 
         </LinearLayout>
     </ScrollView>
@@ -81,23 +104,28 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:fillViewport="true" >
-        <LinearLayout android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" >
 
-            <FrameLayout android:layout_width="match_parent"
+        <LinearLayout android:id="@+id/view_sync_start_chain_layout"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:baselineAligned="false" >
+
+            <FrameLayout android:id="@+id/brave_sync_frame_mobile"
+                android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
-                android:paddingStart="5dip"
-                android:paddingTop="5dip"
-                android:paddingBottom="5dip"
-                android:paddingEnd="5dip" >
+                android:paddingStart="15dip"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:paddingEnd="15dip" >
 
                 <ImageButton android:id="@+id/brave_sync_btn_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/brave_sync_btn_mobile"
-                    android:contentDescription="@string/brave_sync_btn_mobile" />
+                    android:contentDescription="@string/brave_sync_btn_mobile"
+                    android:background="@drawable/brave_sync_image_btn" />
 
                 <TextView android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,19 +139,21 @@
 
             </FrameLayout>
 
-            <FrameLayout android:layout_width="match_parent"
+            <FrameLayout android:id="@+id/brave_sync_frame_laptop"
+                android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1"
-                android:paddingStart="5dip"
-                android:paddingTop="5dip"
-                android:paddingBottom="5dip"
-                android:paddingEnd="5dip" >
+                android:paddingStart="15dip"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:paddingEnd="15dip" >
 
                 <ImageButton android:id="@+id/brave_sync_btn_laptop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/brave_sync_btn_laptop"
-                    android:contentDescription="@string/brave_sync_btn_laptop" />
+                    android:contentDescription="@string/brave_sync_btn_laptop"
+                    android:background="@drawable/brave_sync_image_btn" />
 
                 <TextView android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,34 +173,65 @@
     <ScrollView android:id="@+id/view_add_mobile_device"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true" >
+        android:fillViewport="true"
+        android:background="@color/google_grey_50" >
+
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" >
 
-            <ImageView android:id="@+id/brave_sync_qr_code_image"
-                android:layout_width="256dp"
-                android:layout_height="256dp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/brave_sync_btn_laptop" />
+            <LinearLayout android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:paddingTop="15dip"
+                android:paddingStart="15dip"
+                android:paddingEnd="15dip" >
+
+                <Button android:id="@+id/brave_sync_qr_code_on_btn"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:text="@string/brave_sync_qr_code"
+                    style="@style/BraveSyncToggleOnButton" />
+
+                <Button android:id="@+id/brave_sync_code_words_off_btn"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:text="@string/brave_sync_code_words"
+                    style="@style/BraveSyncToggleOffButton" />
+
+            </LinearLayout>
+
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white" >
+
+                <ImageView android:id="@+id/brave_sync_qr_code_image"
+                    android:layout_width="256dp"
+                    android:layout_height="256dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/brave_sync_btn_laptop" />
+
+            </LinearLayout>
+
+            <include layout="@layout/menu_separator"/>
 
             <TextView android:id="@+id/brave_sync_text_add_mobile_device"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
                 android:layout_weight="1.4"
-                android:gravity="center" />
+                android:gravity="center"
+                android:paddingStart="15dip"
+                android:paddingEnd="15dip" />
 
             <Button android:id="@+id/brave_sync_btn_done"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/brave_sync_btn_done"
-                style="@style/FlushFooterButton" />
-
-            <Button android:id="@+id/brave_sync_btn_display_code_words"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/brave_sync_btn_display_code_words"
-                style="@style/FlushFooterButton" />
+                style="@style/BraveSyncButton" />
 
         </LinearLayout>
     </ScrollView>
@@ -178,225 +239,70 @@
     <ScrollView android:id="@+id/view_enter_code_words"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true" >
-        <TableLayout android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:padding="5dip" >
+        android:fillViewport="true"
+        android:background="@color/google_grey_50" >
 
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content" >
+        <LinearLayout android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" >
 
-               <TextView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:gravity="center"
-                   android:text="@string/enter_code_words_below_sync" />
-           </TableRow>
+            <EditText android:id="@+id/code_words"
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:inputType="text|textMultiLine"
+                android:singleLine="false"
+                android:gravity="top|start"
+                android:hint="@string/brave_sync_codewords_message"
+                android:textSize="18sp"
+                android:background="@android:color/white"
+                android:paddingStart="15dip"
+                android:paddingTop="15dip"
+                android:paddingEnd="15dip" />
 
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content" >
+            <LinearLayout android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:paddingStart="15dip"
+                android:paddingEnd="15dip"
+                android:paddingBottom="15dip" >
 
-               <EditText android:id="@+id/editTextWord1"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord16"
-                   android:nextFocusLeft="@+id/editTextWord16"
-                   android:nextFocusRight="@+id/editTextWord2"
-                   android:nextFocusDown="@+id/editTextWord2" />
+                <TextView android:id="@+id/brave_sync_text_word_count"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/brave_sync_word_count_text"
+                    android:gravity="start|center"
+                    android:textSize="16sp" />
 
-               <EditText android:id="@+id/editTextWord2"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord1"
-                   android:nextFocusLeft="@+id/editTextWord1"
-                   android:nextFocusRight="@+id/editTextWord3"
-                   android:nextFocusDown="@+id/editTextWord3" />
+                <ImageButton android:id="@+id/brave_sync_paste_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/copy_paste"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/brave_sync_word_count_text"
+                    android:gravity="end|center" />
 
-               <EditText android:id="@+id/editTextWord3"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord2"
-                   android:nextFocusLeft="@+id/editTextWord2"
-                   android:nextFocusRight="@+id/editTextWord4"
-                   android:nextFocusDown="@+id/editTextWord4" />
-           </TableRow>
+            </LinearLayout>
 
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content" >
+            <include layout="@layout/menu_separator"/>
 
-               <EditText android:id="@+id/editTextWord4"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord3"
-                   android:nextFocusLeft="@+id/editTextWord3"
-                   android:nextFocusRight="@+id/editTextWord5"
-                   android:nextFocusDown="@+id/editTextWord5" />
+            <Button android:id="@+id/brave_sync_confirm_code_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_sync_confirm_code_words_text"
+                style="@style/BraveSyncButton"
+                android:layout_marginTop="15dip" />
 
-               <EditText android:id="@+id/editTextWord5"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord4"
-                   android:nextFocusLeft="@+id/editTextWord4"
-                   android:nextFocusRight="@+id/editTextWord6"
-                   android:nextFocusDown="@+id/editTextWord6" />
+            <Button android:id="@+id/brave_sync_btn_use_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_sync_use_camera_text"
+                style="@style/BraveSyncButton" />
 
-               <EditText android:id="@+id/editTextWord6"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord5"
-                   android:nextFocusLeft="@+id/editTextWord5"
-                   android:nextFocusRight="@+id/editTextWord7"
-                   android:nextFocusDown="@+id/editTextWord7" />
-           </TableRow>
+        </LinearLayout>
 
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content" >
-
-               <EditText android:id="@+id/editTextWord7"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord6"
-                   android:nextFocusLeft="@+id/editTextWord6"
-                   android:nextFocusRight="@+id/editTextWord8"
-                   android:nextFocusDown="@+id/editTextWord8" />
-
-               <EditText android:id="@+id/editTextWord8"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord7"
-                   android:nextFocusLeft="@+id/editTextWord7"
-                   android:nextFocusRight="@+id/editTextWord9"
-                   android:nextFocusDown="@+id/editTextWord9" />
-
-               <EditText android:id="@+id/editTextWord9"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord8"
-                   android:nextFocusLeft="@+id/editTextWord8"
-                   android:nextFocusRight="@+id/editTextWord10"
-                   android:nextFocusDown="@+id/editTextWord10" />
-           </TableRow>
-
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content"  >
-
-               <EditText android:id="@+id/editTextWord10"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord9"
-                   android:nextFocusLeft="@+id/editTextWord9"
-                   android:nextFocusRight="@+id/editTextWord11"
-                   android:nextFocusDown="@+id/editTextWord11" />
-
-               <EditText android:id="@+id/editTextWord11"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord10"
-                   android:nextFocusLeft="@+id/editTextWord10"
-                   android:nextFocusRight="@+id/editTextWord12"
-                   android:nextFocusDown="@+id/editTextWord12" />
-
-               <EditText android:id="@+id/editTextWord12"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord11"
-                   android:nextFocusLeft="@+id/editTextWord11"
-                   android:nextFocusRight="@+id/editTextWord13"
-                   android:nextFocusDown="@+id/editTextWord13" />
-           </TableRow>
-
-           <TableRow
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content" >
-
-               <EditText android:id="@+id/editTextWord13"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord12"
-                   android:nextFocusLeft="@+id/editTextWord12"
-                   android:nextFocusRight="@+id/editTextWord14"
-                   android:nextFocusDown="@+id/editTextWord14" />
-
-               <EditText android:id="@+id/editTextWord14"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord13"
-                   android:nextFocusLeft="@+id/editTextWord13"
-                   android:nextFocusRight="@+id/editTextWord15"
-                   android:nextFocusDown="@+id/editTextWord15" />
-
-               <EditText android:id="@+id/editTextWord15"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord14"
-                   android:nextFocusLeft="@+id/editTextWord14"
-                   android:nextFocusRight="@+id/editTextWord16"
-                   android:nextFocusDown="@+id/editTextWord16" />
-           </TableRow>
-
-           <TableRow
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" >
-
-               <EditText
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:visibility="invisible" />
-
-               <EditText android:id="@+id/editTextWord16"
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:nextFocusUp="@+id/editTextWord15"
-                   android:nextFocusLeft="@+id/editTextWord15" />
-
-               <EditText
-                   android:layout_width="0px"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:inputType="text"
-                   android:visibility="invisible" />
-           </TableRow>
-         </TableLayout>
     </ScrollView>
     <include layout="@layout/brave_sync_add_laptop" />
     <include layout="@layout/brave_sync_done" />
