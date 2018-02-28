@@ -62,15 +62,8 @@ public class PartnerBookmarksProviderIterator implements PartnerBookmark.Bookmar
      * @return                Iterator over bookmarks or null.
      */
     public static PartnerBookmarksProviderIterator createIfAvailable() {
-        try {
-            Cursor cursor = ContextUtils.getApplicationContext().getContentResolver().query(
-                    BOOKMARKS_CONTENT_URI, BOOKMARKS_PROJECTION, null, null, BOOKMARKS_SORT_ORDER);
-            if (cursor == null) return null;
-            return new PartnerBookmarksProviderIterator(cursor);
-        } catch (SQLiteException ex) {
-            Log.e(TAG, "Unable to read partner bookmark database", ex);
-            return null;
-        }
+        // Skip loading partner's bookmarks
+        return null;
     }
 
     private PartnerBookmarksProviderIterator(Cursor cursor) {

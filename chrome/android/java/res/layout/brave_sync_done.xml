@@ -4,7 +4,9 @@
     android:id="@+id/view_sync_done"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true" >
+    android:fillViewport="true"
+    android:background="@color/google_grey_50" >
+
     <LinearLayout android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" >
@@ -17,34 +19,41 @@
             android:paddingStart="15dip"
             android:paddingTop="30dip" />
 
-        <include layout="@layout/menu_separator"/>
-
-        <RelativeLayout android:layout_height="wrap_content"
+        <LinearLayout android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:paddingStart="15dip"
-            android:paddingTop="5dip"
-            android:paddingBottom="5dip"
-            android:paddingEnd="10dip" >
+            android:background="@android:color/white" >
 
-            <TextView android:id="@+id/sync_bookmarks_text"
+            <include layout="@layout/menu_separator"/>
+
+            <RelativeLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/sync_bookmarks"
-                android:layout_centerVertical="true"
-                android:textSize="16sp" />
+                android:paddingStart="15dip"
+                android:paddingTop="8dip"
+                android:paddingBottom="8dip"
+                android:paddingEnd="15dip" >
 
-            <Switch android:id="@+id/sync_bookmarks_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:theme="@style/SwitchTheme"
-                android:switchMinWidth="56dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true" />
+                <TextView android:id="@+id/sync_bookmarks_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sync_bookmarks"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp" />
 
-        </RelativeLayout>
+                <Switch android:id="@+id/sync_bookmarks_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:theme="@style/SwitchTheme"
+                    android:switchMinWidth="56dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
 
-        <include layout="@layout/menu_separator"/>
+            </RelativeLayout>
+
+            <include layout="@layout/menu_separator"/>
+
+        </LinearLayout>
 
         <!-- <RelativeLayout android:layout_height="wrap_content"
             android:layout_width="match_parent"
@@ -160,26 +169,26 @@
         <LinearLayout android:id="@+id/brave_sync_devices"
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:background="@android:color/white" />
 
         <TextView android:id="@+id/brave_sync_fake"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:paddingBottom="30dip" />
+            android:visibility="invisible" />
 
         <Button android:id="@+id/brave_sync_btn_add_device"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/brave_sync_add_device_text"
-            style="@style/FlushFooterButton" />
+            style="@style/BraveSyncButton" />
 
         <Button android:id="@+id/brave_sync_btn_remove_device"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/brave_sync_remove_device_text"
-            android:color="@color/google_red_700"
-            style="@style/FlushFooterButton" />
+            style="@style/BraveSyncButton" />
 
     </LinearLayout>
 </ScrollView>
