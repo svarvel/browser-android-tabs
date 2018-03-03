@@ -57,6 +57,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -108,7 +109,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   // For QR code generation
   private static final int WHITE = 0xFFFFFFFF;
   private static final int BLACK = 0xFF000000;
-  private static final int WIDTH = 256;
+  private static final int WIDTH = 300;
   // For view sizes limit
   private static final int MAX_WIDTH = 512;
   private static final int MAX_HEIGHT = 1024;
@@ -639,6 +640,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
       mLayoutMobile = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_mobile);
       mLayoutLaptop = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_laptop);
+
+      // TODO for non-tablet devices set fixed camera size to be able to apply overlay
+      /*if (!DeviceFormFactor.isTablet()) {
+          RelativeLayout cameraLayout = (RelativeLayout) getView().findViewById(R.id.camera_layout);
+          if (null != cameraLayout) {
+              overlay.setVisibility(View.GONE);
+          }
+      }*/
 
       setAppropriateView();
 
@@ -1366,6 +1375,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (null != application && null != application.mBraveSyncWorker) {
           mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_loading_devices_title));
           application.mBraveSyncWorker.InterruptSyncSleep();
+      }
+      if (null != mSyncScreensObserver) {
+          mSyncScreensObserver.onDevicesAvailable();
       }
   }
 

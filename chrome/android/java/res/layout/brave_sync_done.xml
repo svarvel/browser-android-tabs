@@ -188,7 +188,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/brave_sync_remove_device_text"
-            style="@style/BraveSyncButton" />
+            style="@style/BraveSyncBottomButton"
+            android:background="@android:color/transparent"
+            android:textColor="@color/google_red_700" />
 
     </LinearLayout>
 </ScrollView>
