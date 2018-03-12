@@ -64,6 +64,7 @@ import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveSyncWorker;
 import org.chromium.chrome.browser.StatsUpdaterWorker;
+import org.chromium.chrome.browser.ADBlockUpdaterWorker;
 import org.chromium.chrome.browser.IntentHandler.IntentHandlerDelegate;
 import org.chromium.chrome.browser.IntentHandler.TabOpenType;
 import org.chromium.chrome.browser.appmenu.AppMenu;
@@ -1515,6 +1516,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             app.mStatsUpdaterWorker.Stop();
             app.mStatsUpdaterWorker = null;
         }
+        if (null != app && null != app.mADBlockUpdaterWorker) {
+            app.mADBlockUpdaterWorker.Stop();
+            app.mADBlockUpdaterWorker = null;
+        }
         if (null != app && null != app.mMixpanelInstance) {
             app.mMixpanelInstance.flush();
             app.mMixpanelInstance = null;
@@ -1661,6 +1666,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         if (null != app) {
             //app.mBraveSyncWorker = new BraveSyncWorker(this);
             app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
+            app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
             MixPanelWorker.SendBraveAppStartEvent();
         }
     }

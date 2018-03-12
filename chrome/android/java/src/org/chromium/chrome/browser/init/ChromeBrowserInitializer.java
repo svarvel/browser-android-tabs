@@ -67,6 +67,7 @@ import java.util.Locale;
  */
 public class ChromeBrowserInitializer {
     private static final String TAG = "BrowserInitializer";
+    private static final String PREF_ALLOW_3RD_PARTY_COOKIES_SWITCHED = "allow_3rd_party_cookies_switched";
     private static ChromeBrowserInitializer sChromeBrowserInitializer;
     private static BrowserStartupController sBrowserStartupController;
     private final ChromeApplication mApplication;
@@ -82,8 +83,6 @@ public class ChromeBrowserInitializer {
     private boolean mUpdateStatsCalled = false;
     private boolean mInstallationSourceChecked = false;
     private boolean mSearchSuggestSwitched = false;
-
-    List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
 
     // Public to allow use in ChromeBackupAgent
     public static final String PRIVATE_DATA_DIRECTORY_SUFFIX = "chrome";
@@ -134,9 +133,14 @@ public class ChromeBrowserInitializer {
       mAdBlockInitCalled = true;
       // Download tracking protection, adblock annd HTTPSE files lists
       PathUtils.setPrivateDataDirectorySuffix(ADBlockUtils.PRIVATE_DATA_DIRECTORY_SUFFIX);
-      new DownloadAdBlockTrackingProtectionDataAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-      new DownloadHTTPSDataAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-      PrefServiceBridge.getInstance().setBlockThirdPartyCookiesEnabled(true);
+      new UpdateADBlockAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+      boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_ALLOW_3RD_PARTY_COOKIES_SWITCHED, false);
+      if (!alreadySwitched) {
+        PrefServiceBridge.getInstance().setBlockThirdPartyCookiesEnabled(true);
+        ContextUtils.getAppSharedPreferences().edit()
+          .putBoolean(PREF_ALLOW_3RD_PARTY_COOKIES_SWITCHED, true)
+          .apply();
+      }
       Log.i(TAG, "Started AdBlock async tasks");
     }
 
@@ -166,8 +170,24 @@ public class ChromeBrowserInitializer {
       new SwitchSearchSuggestAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    // ADBlock update
+    class UpdateADBlockAsyncTask extends AsyncTask<Void,Void,Long> {
+        @Override
+        protected Long doInBackground(Void... params) {
+            try {
+                ADBlockUpdater.UpdateADBlock(mApplication.getApplicationContext(), true);
+            }
+            catch(Exception exc) {
+                // Just ignore it if we cannot update
+            }
+
+            return null;
+        }
+    }
+
     // Stats update
     class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
+        @Override
         protected Long doInBackground(Void... params) {
             try {
                 StatsUpdater.UpdateStats(mApplication.getApplicationContext());
@@ -180,21 +200,8 @@ public class ChromeBrowserInitializer {
         }
     }
 
-    class DownloadAdBlockTrackingProtectionDataAsyncTask extends AsyncTask<Void,Void,Long> {
-        protected Long doInBackground(Void... params) {
-            DownloadTrackingProtectionData();
-            DownloadAdBlockData();
-            DownloadAdBlockRegionalData();
-            ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-            if (null != app) {
-                app.initShieldsConfig();
-            }
-
-            return null;
-        }
-    }
-
     class CheckInstallationSourceAsyncTask extends AsyncTask<Void,Void,Long> {
+       @Override
        protected Long doInBackground(Void... params) {
            try {
              Context context = mApplication.getApplicationContext();
@@ -229,6 +236,7 @@ public class ChromeBrowserInitializer {
     {
         private static final String PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE = "search_suggestions_switched_to_default_false";
 
+        @Override
         protected Long doInBackground(Void... params) {
             try {
                 boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, false);
@@ -249,106 +257,6 @@ public class ChromeBrowserInitializer {
             }
             catch(Exception exc) {
                 // not critical
-            }
-
-            return null;
-        }
-    }
-
-    // Tracking protection data download
-    private void DownloadTrackingProtectionData() {
-        String verNumber = ADBlockUtils.getDataVerNumber(
-            ADBlockUtils.TRACKING_PROTECTION_URL, false);
-        ADBlockUtils.readData(mApplication.getApplicationContext(),
-            ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
-            ADBlockUtils.TRACKING_PROTECTION_URL,
-            ADBlockUtils.ETAG_PREPEND_TP, verNumber,
-            ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false);
-
-        ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
-            verNumber, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false);
-    }
-
-    // Adblock data download
-    private void DownloadAdBlockData() {
-        String verNumber = ADBlockUtils.getDataVerNumber(
-            ADBlockUtils.ADBLOCK_URL, false);
-        ADBlockUtils.readData(mApplication.getApplicationContext(),
-            ADBlockUtils.ADBLOCK_LOCALFILENAME,
-            ADBlockUtils.ADBLOCK_URL,
-            ADBlockUtils.ETAG_PREPEND_ADBLOCK, verNumber,
-            ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false);
-
-        ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.ADBLOCK_LOCALFILENAME,
-            verNumber, ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false);
-    }
-
-    // Adblock regional data download
-    private void DownloadAdBlockRegionalData() {
-        String verNumber = ADBlockUtils.getDataVerNumber(
-            ADBlockUtils.ADBLOCK_REGIONAL_URL, true);
-        final String deviceLanguage = Locale.getDefault().getLanguage();
-        List<String> files = ADBlockUtils.readRegionalABData(mApplication.getApplicationContext(),
-            ADBlockUtils.ETAG_PREPEND_REGIONAL_ADBLOCK, verNumber, deviceLanguage);
-        if (null != files) {
-            boolean changePreference = true;
-            for (int i = 0; i < files.size(); i ++) {
-                if (!ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), files.get(i) + ".dat",
-                    verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
-                        changePreference = false;
-                        break;
-                    }
-            }
-            if (changePreference) {
-                final boolean enableRegionalAdBlock = (0 != files.size());
-                mHandler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
-                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(false, false);
-                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(false);
-                        } else {
-                            PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock, true);
-                            PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
-                        }
-                    }
-                });
-            }
-        }
-    }
-
-    // HTTPS data download
-    class DownloadHTTPSDataAsyncTask extends AsyncTask<Void,Void,Long> {
-        protected Long doInBackground(Void... params) {
-            // Remove old sqlite files. We use leveldb now, which much faster
-            ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME);
-            ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED);
-            //
-
-            String verNumber = ADBlockUtils.getDataVerNumber(
-                ADBlockUtils.HTTPS_URL_NEW, false);
-            if (ADBlockUtils.readData(mApplication.getApplicationContext(),
-                  ADBlockUtils.HTTPS_LOCALFILENAME_NEW,
-                  ADBlockUtils.HTTPS_URL_NEW,
-                  ADBlockUtils.ETAG_PREPEND_HTTPS, verNumber,
-                  ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, true)) {
-                // Make temporary several attempts because it fails on unzipping sometimes
-                boolean unzipped = false;
-                for (int i = 0; i < 5; i++) {
-                    unzipped = ADBlockUtils.UnzipFile(ADBlockUtils.HTTPS_LOCALFILENAME_NEW, verNumber, true);
-                    if (unzipped) {
-                        break;
-                    }
-                }
-                //
-
-                if (unzipped) {
-                    ADBlockUtils.CreateDownloadedFile(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LEVELDB_FOLDER,
-                        verNumber, ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, false);
-                } else {
-                    ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_NEW);
-                    ADBlockUtils.removeOldVersionFiles(mApplication.getApplicationContext(), ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW);
-                }
             }
 
             return null;
