@@ -279,10 +279,6 @@ void AddAdditionalRequestHeaders(
                                   ? GetContentClient()->GetUserAgent(origin.Serialize())
                                   : user_agent_override);
 
-  // Check whether DevTools wants to override user agent for this request
-  // after setting the default user agent, or append throttling control header.
-  RenderFrameDevToolsAgentHost::AppendDevToolsHeaders(frame_tree_node, headers);
-
   headers->SetHeader(net::HttpRequestHeaders::kOrigin, origin.Serialize());
 }
 

@@ -112,9 +112,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
             }
             // The new Languages Preference *feature* is an advanced version of this translate
             // preference. Once Languages Preference is enabled, remove this setting.
-            if (ChromeFeatureList.isEnabled(ChromeFeatureList.LANGUAGES_PREFERENCE)) {
+            /*if (ChromeFeatureList.isEnabled(ChromeFeatureList.LANGUAGES_PREFERENCE)) {
                 getPreferenceScreen().removePreference(findPreference(TRANSLATE_KEY));
-            }
+            }*/
             if (!ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
                 getPreferenceScreen().removePreference(findPreference(Type.SENSORS));
             }
