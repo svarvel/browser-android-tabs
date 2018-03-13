@@ -31,6 +31,7 @@ import org.chromium.chrome.browser.bookmarks.BookmarkBridge.BookmarkModelObserve
 import org.chromium.chrome.browser.partnerbookmarks.PartnerBookmarksShim;
 import org.chromium.chrome.browser.preferences.BraveSyncScreensObserver;
 import org.chromium.chrome.browser.WebContentsFactory;
+import org.chromium.content_public.browser.JavascriptInjector;
 import org.chromium.content_public.browser.WebContents;
 import org.chromium.content_public.browser.LoadUrlParams;
 import java.util.Scanner;
@@ -111,10 +112,12 @@ public class BraveSyncWorker {
 
     private List<ResolvedRecordsToApply> mResolvedRecordsToApply = new ArrayList<ResolvedRecordsToApply>();
 
-    WebContents mWebContents = null;
-    ContentViewCore mContentViewCore = null;
-    WebContents mJSWebContents = null;
-    ContentViewCore mJSContentViewCore = null;
+    private WebContents mWebContents = null;
+    private JavascriptInjector mWebContentsInjector = null;
+    private ContentViewCore mContentViewCore = null;
+    private WebContents mJSWebContents = null;
+    private JavascriptInjector mJSWebContentsInjector = null;
+    private ContentViewCore mJSContentViewCore = null;
 
     enum NotSyncedRecordsOperation {
         GetItems, AddItems, DeleteItems
@@ -617,7 +620,7 @@ public class BraveSyncWorker {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initContenViewCore();
                         } else {
-                            mWebContents.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", null);
+                            getWebContentsInjector().addPossiblyUnsafeInterface(new JsObject(), "injectedObject", null);
                         }
 
                         String toLoad = "<script type='text/javascript'>";
@@ -641,7 +644,7 @@ public class BraveSyncWorker {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void initContenViewCore() {
-        mWebContents.addPossiblyUnsafeJavascriptInterface(new JsObject(), "injectedObject", JavascriptInterface.class);
+        getWebContentsInjector().addPossiblyUnsafeInterface(new JsObject(), "injectedObject", JavascriptInterface.class);
     }
 
     private void CallScript(StringBuilder strCall) {
@@ -2209,7 +2212,7 @@ public class BraveSyncWorker {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initJSContenViewCore();
                         } else {
-                            mJSWebContents.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", null);
+                            getJSWebContentsInjector().addPossiblyUnsafeInterface(new JsObjectWordsToBytes(), "injectedObject", null);
                         }
 
                         String toLoad = "<script type='text/javascript'>";
@@ -2236,7 +2239,7 @@ public class BraveSyncWorker {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void initJSContenViewCore() {
-        mJSWebContents.addPossiblyUnsafeJavascriptInterface(new JsObjectWordsToBytes(), "injectedObject", JavascriptInterface.class);
+        getJSWebContentsInjector().addPossiblyUnsafeInterface(new JsObjectWordsToBytes(), "injectedObject", JavascriptInterface.class);
     }
 
     public void GetNumber(String[] words) {
@@ -2258,6 +2261,20 @@ public class BraveSyncWorker {
         //Log.i("TAG", "!!!words == " + wordsJSArray);
         mJSWebContents.getNavigationController().loadUrl(
                 new LoadUrlParams("javascript:(function() { " + String.format("javascript:getBytesFromWords(%1$s)", wordsJSArray) + " })()"));
+    }
+
+    private JavascriptInjector getWebContentsInjector() {
+        if (mWebContentsInjector == null) {
+            mWebContentsInjector = JavascriptInjector.fromWebContents(mWebContents);
+        }
+        return mWebContentsInjector;
+    }
+
+    private JavascriptInjector getJSWebContentsInjector() {
+        if (mJSWebContentsInjector == null) {
+            mJSWebContentsInjector = JavascriptInjector.fromWebContents(mJSWebContents);
+        }
+        return mJSWebContentsInjector;
     }
 
     private native String nativeGetObjectIdByLocalId(String localId);
