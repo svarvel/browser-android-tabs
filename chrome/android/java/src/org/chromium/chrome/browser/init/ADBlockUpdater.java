@@ -23,11 +23,14 @@ public class ADBlockUpdater {
     private static final String TAG = "ADBLOCK";
     private static Semaphore mAvailable = new Semaphore(1);
     private static List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
+    private static boolean receivedAnUpdate = false;
+    private static final String UPDATE_ADBLOCKER = "update_adblocker";
 
     public static void UpdateADBlock(Context context, boolean initShieldsConfig) {
         try {
             mAvailable.acquire();
             try {
+              receivedAnUpdate = false;
               DownloadTrackingProtectionData(context);
               DownloadAdBlockData(context);
               DownloadAdBlockRegionalData(context);
@@ -38,8 +41,12 @@ public class ADBlockUpdater {
                 }
               }
               DownloadHTTPSData(context);
-              //new DownloadAdBlockTrackingProtectionDataAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-              //new DownloadHTTPSDataAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+              if (!initShieldsConfig && receivedAnUpdate) {
+                // Don't set an update flag on initial download
+                ContextUtils.getAppSharedPreferences().edit()
+                  .putBoolean(UPDATE_ADBLOCKER, true)
+                  .apply();
+              }
             } finally {
                 mAvailable.release();
             }
@@ -58,6 +65,7 @@ public class ADBlockUpdater {
             ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false)) {
           ADBlockUtils.CreateDownloadedFile(context, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME,
               verNumber, ADBlockUtils.TRACKING_PROTECTION_LOCALFILENAME_DOWNLOADED, false);
+          receivedAnUpdate = true;
         }
     }
 
@@ -72,6 +80,7 @@ public class ADBlockUpdater {
             ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false)) {
           ADBlockUtils.CreateDownloadedFile(context, ADBlockUtils.ADBLOCK_LOCALFILENAME,
               verNumber, ADBlockUtils.ADBLOCK_LOCALFILENAME_DOWNLOADED, false);
+          receivedAnUpdate = true;
         }
     }
 
@@ -86,6 +95,7 @@ public class ADBlockUpdater {
             List<String> files = filesSt.uuid;
             boolean changePreference = true;
             for (int i = 0; i < files.size(); i ++) {
+                receivedAnUpdate = true;
                 if (!ADBlockUtils.CreateDownloadedFile(context, files.get(i) + ".dat",
                     verNumber, ADBlockUtils.ADBLOCK_REGIONAL_LOCALFILENAME_DOWNLOADED, i != 0) && 0 == i) {
                         changePreference = false;
@@ -125,6 +135,7 @@ public class ADBlockUpdater {
               ADBlockUtils.ETAG_PREPEND_HTTPS, verNumber,
               ADBlockUtils.HTTPS_LOCALFILENAME_DOWNLOADED_NEW, true)) {
             // Make temporary several attempts because it fails on unzipping sometimes
+            receivedAnUpdate = true;
             boolean unzipped = false;
             for (int i = 0; i < 5; i++) {
                 unzipped = ADBlockUtils.UnzipFile(ADBlockUtils.HTTPS_LOCALFILENAME_NEW, verNumber, true);

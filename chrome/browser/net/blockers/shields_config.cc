@@ -34,6 +34,17 @@ void ShieldsConfig::setBlockedCountInfo(const std::string& url, int trackersBloc
     jurl, trackersBlocked, adsBlocked, httpsUpgrades, scriptsBlocked, fingerprintingBlocked);
 }
 
+bool ShieldsConfig::needUpdateAdBlocker() {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  return Java_ShieldsConfig_needUpdateAdBlocker(env, weak_java_shields_config_.get(env));
+}
+
+void ShieldsConfig::resetUpdateAdBlockerFlag() {
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_ShieldsConfig_resetUpdateAdBlockerFlag(env, weak_java_shields_config_.get(env));
+}
+
 ShieldsConfig* ShieldsConfig::getShieldsConfig() {
     return gShieldsConfig;
 }

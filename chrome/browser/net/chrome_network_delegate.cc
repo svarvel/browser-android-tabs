@@ -21,6 +21,7 @@
 #include "base/strings/string_number_conversions.h"
 #include "base/strings/string_util.h"
 #include "base/task/post_task.h"
+#include "base/sequenced_task_runner.h"
 #include "base/time/time.h"
 #include "build/build_config.h"
 #include "chrome/browser/browser_process.h"
@@ -250,6 +251,7 @@ ChromeNetworkDelegate::ChromeNetworkDelegate(
       experimental_web_platform_features_enabled_(
           base::CommandLine::ForCurrentProcess()->HasSwitch(
               switches::kEnableExperimentalWebPlatformFeatures)),
+      reload_adblocker_(false),
       incognito_(false) {
   pending_requests_.reset(new PendingRequests());
 }
@@ -397,8 +399,60 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
   ctx->trackersBlocked = 0;
   ctx->httpsUpgrades = 0;
 
-  int rv = OnBeforeURLRequest_TpBlockPreFileWork(request, callback, new_url, ctx);
+  int rv = net::ERR_IO_PENDING;
+  if (reload_adblocker_) {
+    reload_adblocker_ = false;
+    content::BrowserThread::PostTask(
+      content::BrowserThread::UI, FROM_HERE,
+      base::Bind(&ChromeNetworkDelegate::GetIOThread,
+          base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
+    if (nullptr != shieldsConfig) {
+      shieldsConfig->resetUpdateAdBlockerFlag();
+    }
+    ctx->pendingAtLeastOnce = true;
+    pending_requests_->Insert(request->identifier());
+  } else {
+    rv = OnBeforeURLRequest_TpBlockPreFileWork(request, callback, new_url, ctx);
+    // Check do we need to reload adblocker. We will do that on next call
+    content::BrowserThread::PostTask(
+      content::BrowserThread::IO, FROM_HERE,
+      base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::CheckAdBlockerReload),
+          base::Unretained(this), shieldsConfig));
+  }
+
   return rv;
+}
+
+void ChromeNetworkDelegate::CheckAdBlockerReload(net::blockers::ShieldsConfig* shields_config) {
+  if (nullptr == shields_config) {
+    return;
+  }
+  reload_adblocker_ = shields_config->needUpdateAdBlocker();
+}
+
+void ChromeNetworkDelegate::GetIOThread(net::URLRequest* request,
+    const net::CompletionCallback& callback,
+    GURL* new_url,
+    std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  scoped_refptr<base::SequencedTaskRunner> task_runner =
+    base::CreateSequencedTaskRunnerWithTraits(
+         {base::MayBlock(), base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN});
+  task_runner->PostTask(FROM_HERE, base::Bind(&ChromeNetworkDelegate::ResetBlocker,
+        base::Unretained(this), g_browser_process->io_thread(), base::Unretained(request), callback,
+          new_url, ctx));
+}
+
+void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* request,
+    const net::CompletionCallback& callback,
+    GURL* new_url,
+    std::shared_ptr<OnBeforeURLRequestContext> ctx) {
+  blockers_worker_ = io_thread->ResetBlockersWorker();
+
+  content::BrowserThread::PostTask(
+    content::BrowserThread::IO, FROM_HERE,
+    base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
+        base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
+      );
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
