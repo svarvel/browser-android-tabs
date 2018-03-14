@@ -36,11 +36,13 @@ namespace net {
 class URLRequest;
 namespace blockers {
 class BlockersWorker;
+class ShieldsConfig;
 }
 }
 
 struct OnBeforeURLRequestContext;
 class PendingRequests;
+class IOThread;
 
 // ChromeNetworkDelegate is the central point from within the chrome code to
 // add hooks into the network stack.
@@ -52,6 +54,16 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
 
   // Pass through to ChromeExtensionsNetworkDelegate::set_extension_info_map().
   void set_extension_info_map(extensions::InfoMap* extension_info_map);
+
+  void ResetBlocker(IOThread* io_thread, net::URLRequest* request,
+      const net::CompletionCallback& callback,
+      GURL* new_url,
+      std::shared_ptr<OnBeforeURLRequestContext> ctx);
+  void GetIOThread(net::URLRequest* request,
+      const net::CompletionCallback& callback,
+      GURL* new_url,
+      std::shared_ptr<OnBeforeURLRequestContext> ctx);
+  void CheckAdBlockerReload(net::blockers::ShieldsConfig* shields_config);
 
   // If |profile| is nullptr or not set, events will be broadcast to all
   // profiles, otherwise they will only be sent to the specified profile.
@@ -256,6 +268,7 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
 
   // Blockers
   std::shared_ptr<net::blockers::BlockersWorker> blockers_worker_;
+  bool reload_adblocker_;
 
   // (TODO)find a better way to handle last first party
   GURL last_first_party_url_;

@@ -39,6 +39,7 @@ public class ShieldsConfig {
     private static final String PREF_FINGERPRINTING_PROTECTION = "fingerprinting_protection";
     private static final String TAG = "ShieldsConfig";
     private static final String SHIELDS_CONFIG_LOCALFILENAME = "shields_config.dat";
+    private static final String UPDATE_ADBLOCKER = "update_adblocker";
     // The format is (<top shields switch>,<ads and tracking switch>,<HTTPSE switch>,<JavaScript switch>,<3rd party cookies switch><Fingerprinting switch>)
     // We handle JavaScript blocking by internal implementation of Chromium, but save the state here also
     private static final String ALL_SHIELDS_DEFAULT_MASK = "1,1,1,0,1,0";
@@ -571,6 +572,18 @@ public class ShieldsConfig {
           mTabModelSelectorTabObserver.onBraveShieldsCountUpdate(url, trackersBlocked + adsBlocked, httpsUpgrades,
               scriptsBlocked, fingerprintingBlocked);
       }
+    }
+
+    @CalledByNative
+    public boolean needUpdateAdBlocker() {
+      return ContextUtils.getAppSharedPreferences().getBoolean(UPDATE_ADBLOCKER, false);
+    }
+
+    @CalledByNative
+    public void resetUpdateAdBlockerFlag() {
+      ContextUtils.getAppSharedPreferences().edit()
+        .putBoolean(UPDATE_ADBLOCKER, false)
+        .apply();
     }
 
     private void updateBraveStats(int trackersBlocked, int adsBlocked, int httpsUpgrades) {

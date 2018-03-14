@@ -147,6 +147,8 @@ class IOThread : public content::BrowserThreadDelegate {
   // Configures |builder|'s ProxyResolutionService based on prefs and policies.
   void SetUpProxyService(network::URLRequestContextBuilderMojo* builder) const;
 
+  std::shared_ptr<net::blockers::BlockersWorker> ResetBlockersWorker();
+
  private:
   // BrowserThreadDelegate implementation, runs on the IO thread.
   // This handles initialization and destruction of state that must
