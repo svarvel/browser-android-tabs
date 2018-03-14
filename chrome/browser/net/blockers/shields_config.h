@@ -19,6 +19,8 @@ public:
     std::string getHostSettings(const bool &incognitoTab, const std::string& host);
     void setBlockedCountInfo(const std::string& url, int trackersBlocked, int adsBlocked, int httpsUpgrades,
             int scriptsBlocked, int fingerprintingBlocked);
+    bool needUpdateAdBlocker();
+    void resetUpdateAdBlockerFlag();
 
     static ShieldsConfig* getShieldsConfig();
     // Register the ShieldsConfig's native methods through JNI.
