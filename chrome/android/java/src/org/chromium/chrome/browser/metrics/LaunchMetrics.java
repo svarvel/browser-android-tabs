@@ -95,7 +95,7 @@ public class LaunchMetrics {
             boolean showHomeButton, boolean homepageIsNtp, String homepageUrl) {
         if (homepageUrl == null) {
             homepageUrl = "";
-            assert !showHomeButton : "Homepage should be disabled for a null URL";
+            //assert !showHomeButton : "Homepage should be disabled for a null URL";
         }
         nativeRecordHomePageLaunchMetrics(showHomeButton, homepageIsNtp, homepageUrl);
     }
