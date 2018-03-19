@@ -83,8 +83,7 @@
 
                 <RelativeLayout android:id="@+id/camera_overlay"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent" >
+                    android:layout_height="match_parent" >
 
                     <ImageView android:layout_width="match_parent"
                        android:layout_height="match_parent"

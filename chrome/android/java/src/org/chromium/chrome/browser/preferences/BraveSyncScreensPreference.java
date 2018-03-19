@@ -40,6 +40,7 @@ import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -641,13 +642,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mLayoutMobile = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_mobile);
       mLayoutLaptop = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_laptop);
 
-      // TODO for non-tablet devices set fixed camera size to be able to apply overlay
-      /*if (!DeviceFormFactor.isTablet()) {
+      if (!DeviceFormFactor.isTablet()) {
           RelativeLayout cameraLayout = (RelativeLayout) getView().findViewById(R.id.camera_layout);
-          if (null != cameraLayout) {
-              overlay.setVisibility(View.GONE);
-          }
-      }*/
+          LayoutParams params = cameraLayout.getLayoutParams();
+          params.width = LayoutParams.MATCH_PARENT;
+          params.height = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getActivity().getApplicationContext().getResources().getDisplayMetrics());
+          cameraLayout.setLayoutParams(params);
+      }
 
       setAppropriateView();
 
@@ -1155,9 +1156,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                   if (null != application && null != application.mBraveSyncWorker) {
                       application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
-                      if (null != v) {
-                          v.setVisibility(View.GONE);
-                      }
                       application.mBraveSyncWorker.InterruptSyncSleep();
                       showProgressDialog(getResources().getString(R.string.brave_sync_delete_sent));
                   }

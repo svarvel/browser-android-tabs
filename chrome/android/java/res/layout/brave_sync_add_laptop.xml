@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@color/google_grey_50" >
+
     <LinearLayout android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent" >
 
         <LinearLayout android:orientation="horizontal"
             android:layout_height="wrap_content"

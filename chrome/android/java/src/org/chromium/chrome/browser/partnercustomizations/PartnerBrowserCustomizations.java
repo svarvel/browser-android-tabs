@@ -138,7 +138,7 @@ public class PartnerBrowserCustomizations {
      *         class has been completed.
      */
     public static boolean isHomepageProviderAvailableAndEnabled() {
-        return !TextUtils.isEmpty(getHomePageUrl());
+        return true;
     }
 
     /**
