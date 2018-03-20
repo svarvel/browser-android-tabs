@@ -29,17 +29,17 @@ public class ADBlockUpdater {
     public static void UpdateADBlock(Context context, boolean initShieldsConfig) {
         try {
             mAvailable.acquire();
+            if (initShieldsConfig) {
+              ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+              if (null != app) {
+                  app.initShieldsConfig();
+              }
+            }
             try {
               mReceivedAnUpdate = false;
               DownloadTrackingProtectionData(context);
               DownloadAdBlockData(context);
               DownloadAdBlockRegionalData(context);
-              if (initShieldsConfig) {
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-                if (null != app) {
-                    app.initShieldsConfig();
-                }
-              }
               DownloadHTTPSData(context);
               if (!initShieldsConfig && mReceivedAnUpdate) {
                 // Don't set an update flag on initial download
