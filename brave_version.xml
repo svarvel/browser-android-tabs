@@ -1,3 +1,8 @@
+<release version="1.0.43">
+  <change>Upgraded to Chromium 65.0.3325.109.</change>
+  <change>Upgraded to HTTPS Everywhere 6.0.</change>
+  <change>Improved websites filtering.</change>
+</release>
 <release version="1.0.42">
     <change>Fixed video in background feature for some links.</change>
     <change>General bugfixes and performance improvements.</change>
