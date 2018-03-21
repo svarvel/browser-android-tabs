@@ -68,24 +68,25 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="2.6"
-                android:paddingStart="15dip"
-                android:paddingEnd="15dip"
-                android:paddingTop="15dip"
-                android:paddingBottom="15dip" >
+                android:layout_weight="4" >
 
                 <org.chromium.chrome.browser.qrreader.CameraSourcePreview
                     android:id="@+id/preview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="center"
-                    android:background="@drawable/rounded_shape" />
+                    android:paddingStart="11dip"
+                    android:paddingEnd="11dip"
+                    android:paddingTop="11dip"
+                    android:paddingBottom="11dip" />
 
                 <RelativeLayout android:id="@+id/camera_overlay"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_shape" >
 
-                    <ImageView android:layout_width="match_parent"
+                    <ImageView android:id="@+id/camera_overlay_image"
+                       android:layout_width="match_parent"
                        android:layout_height="match_parent"
                        android:src="@drawable/camera"
                        android:scaleType="center"
@@ -101,7 +102,7 @@
            <TextView android:id="@+id/brave_sync_text_sync_chain_code"
                android:layout_width="match_parent"
                android:layout_height="0px"
-               android:layout_weight="1.4"
+               android:layout_weight="1"
                android:gravity="center"
                android:paddingStart="15dip"
                android:paddingEnd="15dip" />
