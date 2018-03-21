@@ -114,6 +114,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   // For view sizes limit
   private static final int MAX_WIDTH = 512;
   private static final int MAX_HEIGHT = 1024;
+  // Wait time out
+  private static final int WAIT_TIMEOUT = 120000;
 
   private ChromeSwitchPreference mPrefSwitchTabs;
   private ChromeSwitchPreference mPrefSwitchHistory;
@@ -642,14 +644,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mLayoutMobile = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_mobile);
       mLayoutLaptop = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_laptop);
 
-      if (!DeviceFormFactor.isTablet()) {
-          RelativeLayout cameraLayout = (RelativeLayout) getView().findViewById(R.id.camera_layout);
-          LayoutParams params = cameraLayout.getLayoutParams();
-          params.width = LayoutParams.MATCH_PARENT;
-          params.height = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 300, getActivity().getApplicationContext().getResources().getDisplayMetrics());
-          cameraLayout.setLayoutParams(params);
-      }
-
       setAppropriateView();
 
       super.onActivityCreated(savedInstanceState);
@@ -1062,13 +1056,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           mProgressDialog.setMessage(message);
           mProgressDialog.setCancelable(false);
           mProgressDialog.setIndeterminate(false);
-          mProgressDialog.setMax(120);
+          mProgressDialog.setMax(WAIT_TIMEOUT / 1000);
           mProgressDialog.show();
-          new CountDownTimer(120000, 1000) {
+          new CountDownTimer(WAIT_TIMEOUT, 1000) {
               @Override
               public void onTick(long millisUntilFinished) {
                   if (null != mProgressDialog && mProgressDialog.isShowing()) {
-                      int progress = (int)((60000 - millisUntilFinished) / 1000);
+                      int progress = (int)((WAIT_TIMEOUT - millisUntilFinished) / 1000);
                       mProgressDialog.setProgress(progress);
                   } else {
                       cancel();
