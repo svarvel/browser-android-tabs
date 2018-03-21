@@ -144,7 +144,7 @@ Saved</string>
     <string name="brave_sync_time_out_message">Something went wrong, looks like your request timed out.</string>
     <string name="brave_sync_use_camera_text">I'll use my camera...</string>
     <string name="brave_sync_confirm_code_words_text">Confirm</string>
-    <string name="brave_sync_word_count_text">Word count</string>
+    <string name="brave_sync_word_count_text">Word count: <ph name="WORD_COUNT">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Incorrect number of words</string>
     <string name="brave_sync_qr_code">QR Code</string>
     <string name="brave_sync_code_words">Code Words</string>
