@@ -614,7 +614,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mBraveSyncTextViewAddLaptop = (TextView) getView().findViewById(R.id.brave_sync_text_add_laptop);
       mBraveSyncTextDevicesTitle = (TextView) getView().findViewById(R.id.brave_sync_devices_title);
       mBraveSyncWordCountTitle = (TextView) getView().findViewById(R.id.brave_sync_text_word_count);
-      mBraveSyncWordCountTitle.setText(getResources().getString(R.string.brave_sync_word_count_text) + ": 0");
+      mBraveSyncWordCountTitle.setText(getString(R.string.brave_sync_word_count_text, 0));
       mBraveSyncAddDeviceCodeWords = (TextView) getView().findViewById(R.id.brave_sync_add_device_code_words);
       setMainSyncText();
       mCameraSourcePreview = (CameraSourcePreview) getView().findViewById(R.id.preview);
@@ -802,7 +802,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                            String[] words = mCodeWords.getText().toString().trim().replace("   ", " ").replace("\n", " ").split(" ");
                            wordCount = words.length;
                        }
-                       mBraveSyncWordCountTitle.setText(getResources().getString(R.string.brave_sync_word_count_text) + ": " + wordCount);
+                       mBraveSyncWordCountTitle.setText(getString(R.string.brave_sync_word_count_text, wordCount));
                        mBraveSyncWordCountTitle.invalidate();
                    }
               });

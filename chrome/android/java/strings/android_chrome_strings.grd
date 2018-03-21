@@ -4264,7 +4264,7 @@ Saved
         Confirm
       </message>
       <message name="IDS_BRAVE_SYNC_WORD_COUNT_TEXT" desc="Text for 'Word count' label.">
-        Word count
+        Word count: <ph name="WORD_COUNT">%1$d</ph>
       </message>
       <message name="IDS_BRAVE_SYNC_WORD_COUNT_ERROR" desc="Text for error on incorrect number of words.">
         Incorrect number of words
