@@ -20,12 +20,14 @@
             android:text="@string/brave_sync_settings_title"
             android:textColor="@color/google_grey_500"
             android:paddingStart="15dip"
-            android:paddingTop="30dip" />
+            android:paddingTop="30dip"
+            android:visibility="gone" />
 
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:background="@android:color/white" >
+            android:background="@android:color/white"
+            android:visibility="gone" >
 
             <include layout="@layout/menu_separator"/>
 
@@ -159,7 +161,8 @@
             android:layout_height="wrap_content"
             android:text="@string/brave_sync_settings_description"
             android:paddingStart="15dip"
-            android:textColor="@color/google_grey_500" />
+            android:textColor="@color/google_grey_500"
+            android:visibility="gone" />
 
         <TextView android:id="@+id/brave_sync_devices_title"
             android:layout_width="match_parent"
