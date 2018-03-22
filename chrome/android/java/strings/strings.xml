@@ -138,7 +138,7 @@ Saved</string>
     <string name="brave_sync_add_laptop_text_title">Enter the sync chain code</string>
     <string name="brave_sync_add_laptop_text_part_1">On your computer, navigate to Brave Settings > Sync. Choose "Enter a Sync Chain Code".</string>
     <string name="brave_sync_add_laptop_text_part_2">Enter the code words above, including spaces.</string>
-    <string name="brave_sync_delete_device">Are you sure you want to delete device?</string>
+    <string name="brave_sync_delete_device">Are you sure you want to delete device '<ph name="DEVICE_NAME">%1$s</ph>'?</string>
     <string name="brave_sync_delete_sent">Delete request has been sent. Device will be removed shortly.</string>
     <string name="brave_sync_loading_data_title">Loading data...</string>
     <string name="brave_sync_time_out_message">Something went wrong, looks like your request timed out.</string>

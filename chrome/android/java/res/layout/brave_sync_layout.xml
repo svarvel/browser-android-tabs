@@ -15,11 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/google_grey_50" >
+        android:background="@drawable/brave_sync_cover_general" >
 
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" >
+            android:layout_width="match_parent"
+            android:paddingStart="2dip"
+            android:paddingTop="2dip"
+            android:paddingEnd="2dip" >
 
             <ImageView android:id="@+id/brave_sync_image"
                android:layout_width="match_parent"
@@ -58,11 +61,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/google_grey_50" >
+        android:background="@drawable/brave_sync_cover_general" >
 
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" >
+            android:layout_width="match_parent"
+            android:paddingStart="2dip"
+            android:paddingTop="2dip"
+            android:paddingEnd="2dip" >
 
             <RelativeLayout android:id="@+id/camera_layout"
                 android:orientation="vertical"
@@ -193,16 +199,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/google_grey_50" >
+        android:background="@drawable/brave_sync_cover_general" >
 
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" >
+            android:layout_width="match_parent"
+            android:paddingStart="2dip"
+            android:paddingTop="2dip"
+            android:paddingEnd="2dip" >
 
             <LinearLayout android:orientation="horizontal"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:background="@android:color/white"
+                android:background="@drawable/brave_sync_top_rounded"
                 android:paddingTop="15dip"
                 android:paddingStart="15dip"
                 android:paddingEnd="15dip" >
@@ -259,11 +268,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/google_grey_50" >
+        android:background="@drawable/brave_sync_cover_general" >
 
         <LinearLayout android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent" >
+            android:layout_width="match_parent"
+            android:paddingStart="2dip"
+            android:paddingTop="2dip"
+            android:paddingEnd="2dip" >
 
             <EditText android:id="@+id/code_words"
                 android:layout_width="match_parent"
@@ -274,7 +286,7 @@
                 android:gravity="top|start"
                 android:hint="@string/brave_sync_codewords_message"
                 android:textSize="18sp"
-                android:background="@android:color/white"
+                android:background="@drawable/brave_sync_top_rounded"
                 android:paddingStart="15dip"
                 android:paddingTop="15dip"
                 android:paddingEnd="15dip" />
