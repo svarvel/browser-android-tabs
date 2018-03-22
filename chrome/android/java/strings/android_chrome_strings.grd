@@ -4246,7 +4246,7 @@ Saved
         Enter the code words above, including spaces.
       </message>
       <message name="IDS_BRAVE_SYNC_DELETE_DEVICE" desc="Delete device message.">
-        Are you sure you want to delete device?
+        Are you sure you want to delete device '<ph name="DEVICE_NAME">%1$s</ph>'?
       </message>
       <message name="IDS_BRAVE_SYNC_DELETE_SENT" desc="Delete request sent message.">
         Delete request has been sent. Device will be removed shortly.

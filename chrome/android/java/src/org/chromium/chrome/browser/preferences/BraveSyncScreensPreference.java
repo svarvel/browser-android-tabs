@@ -543,6 +543,16 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mScrollViewEnterCodeWords = (ScrollView) getView().findViewById(R.id.view_enter_code_words);
       mScrollViewSyncDone = (ScrollView) getView().findViewById(R.id.view_sync_done);
 
+      if (!DeviceFormFactor.isTablet()) {
+          clearBackground(mScrollViewSyncInitial);
+          clearBackground(mScrollViewSyncChainCode);
+          clearBackground(mScrollViewSyncStartChain);
+          clearBackground(mScrollViewAddMobileDevice);
+          clearBackground(mScrollViewAddLaptop);
+          clearBackground(mScrollViewEnterCodeWords);
+          clearBackground(mScrollViewSyncDone);
+      }
+
       mLayoutSyncStartChain = (LinearLayout) getView().findViewById(R.id.view_sync_start_chain_layout);
       mRootLayout = (LinearLayout) getView().findViewById(R.id.brave_sync_layout);
       if (DeviceFormFactor.isTablet()) {
@@ -1158,7 +1168,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       };
       AlertDialog alertDialog = alert
               .setTitle(getResources().getString(R.string.brave_sync_remove_device_text))
-              .setMessage(getResources().getString(R.string.brave_sync_delete_device) + " '" + deviceName + "'?")
+              .setMessage(getString(R.string.brave_sync_delete_device, deviceName))
               .setPositiveButton(R.string.ok, onClickListener)
               .setNegativeButton(R.string.cancel, onClickListener)
               .create();
@@ -1406,6 +1416,12 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           }
           mLayoutMobile.setLayoutParams(params);
           mLayoutLaptop.setLayoutParams(params);
+      }
+  }
+
+  private void clearBackground(View view) {
+      if (null != view) {
+          view.setBackgroundColor(Color.TRANSPARENT);
       }
   }
 
