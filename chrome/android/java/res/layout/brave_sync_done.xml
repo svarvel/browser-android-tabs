@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/google_grey_50" >
+    android:background="@drawable/brave_sync_cover_general" >
 
     <LinearLayout android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent" >
+        android:layout_width="match_parent"
+        android:paddingStart="2dip"
+        android:paddingTop="2dip"
+        android:paddingEnd="2dip" >
 
         <TextView android:id="@+id/brave_sync_settings_title"
             android:layout_width="match_parent"
