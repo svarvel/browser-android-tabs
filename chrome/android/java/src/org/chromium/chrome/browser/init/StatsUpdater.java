@@ -608,9 +608,8 @@ public class StatsUpdater {
 
     @CalledByNative
     public static String GetCustomHeadersForHost(String host) {
-        String res = "";
         if ((null == host) || host.isEmpty()) {
-            return res;
+            return "";
         }
         if (null == mCustomHeaders) {
             SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
@@ -620,7 +619,7 @@ public class StatsUpdater {
             }
         }
         if (mCustomHeaders.isEmpty()) {
-            return res;
+            return "";
         }
         if (null == mCustomHeadersMap) {
             mCustomHeadersMap = new HashMap<String, String>();
@@ -661,7 +660,7 @@ public class StatsUpdater {
                 return mCustomHeadersMap.get(domain);
             }
         }
-        return res;
+        return "";
     }
 
     private static SSLContext CreateSSLContext(Context context) {
