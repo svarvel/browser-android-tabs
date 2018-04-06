@@ -1564,6 +1564,8 @@ jumbo_split_static_library("browser") {
     "ssl/ssl_error_navigation_throttle.h",
     "ssl/typed_navigation_timing_throttle.cc",
     "ssl/typed_navigation_timing_throttle.h",
+    "stats_updater.cc",
+    "stats_updater.h",
     "status_icons/status_icon.cc",
     "status_icons/status_icon.h",
     "status_icons/status_icon_menu_model.cc",
@@ -4929,6 +4931,7 @@ if (is_android) {
       "../android/java/src/org/chromium/chrome/browser/webapps/WebappRegistry.java",
       "../android/java/src/org/chromium/chrome/browser/widget/ThumbnailGenerator.java",
       "../android/java/src/org/chromium/chrome/browser/init/ShieldsConfig.java",
+      "../android/java/src/org/chromium/chrome/browser/init/StatsUpdater.java",
     ]
 
     # Used for testing only, should not be shipped to end users.

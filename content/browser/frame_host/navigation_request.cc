@@ -14,6 +14,7 @@
 #include "base/strings/stringprintf.h"
 #include "base/task/post_task.h"
 #include "build/build_config.h"
+#include "chrome/browser/stats_updater.h"
 #include "content/browser/appcache/appcache_navigation_handle.h"
 #include "content/browser/appcache/chrome_appcache_service.h"
 #include "content/browser/child_process_security_policy_impl.h"
@@ -481,6 +482,23 @@ NavigationRequest::NavigationRequest(
 
   net::HttpRequestHeaders headers;
   headers.AddHeadersFromString(begin_params_->headers);
+
+  // Look for and setup custom headers
+  std::string customHeaders = stats_updater::GetCustomHeadersForHost(common_params_.url.host());
+  if (customHeaders.size()) {
+      std::string key;
+      std::string value;
+      size_t pos = customHeaders.find("\n");
+      if (pos == std::string::npos) {
+          key = customHeaders;
+          value = "";
+      } else {
+          key = customHeaders.substr(0, pos);
+          value = customHeaders.substr(pos + 1);
+      }
+      headers.SetHeader(key, value);
+  }
+
   AddAdditionalRequestHeaders(
       &headers, std::move(embedder_additional_headers), common_params_.url,
       common_params_.navigation_type,
