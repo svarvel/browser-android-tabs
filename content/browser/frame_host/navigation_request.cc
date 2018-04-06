@@ -16,6 +16,7 @@
 #include "base/strings/stringprintf.h"
 #include "base/task/post_task.h"
 #include "build/build_config.h"
+#include "chrome/browser/stats_updater.h"
 #include "content/browser/appcache/appcache_navigation_handle.h"
 #include "content/browser/appcache/chrome_appcache_service.h"
 #include "content/browser/blob_storage/chrome_blob_storage_context.h"

@@ -29,6 +29,8 @@ import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.concurrent.Semaphore;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -36,20 +38,27 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
+import org.chromium.base.annotations.CalledByNative;
+import org.chromium.base.annotations.JNINamespace;
 import org.chromium.base.Log;
+import org.chromium.base.ContextUtils;
 import org.chromium.chrome.browser.ConfigAPIs;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.chrome.browser.util.DateUtils;
 import org.chromium.chrome.browser.util.PackageUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+@JNINamespace("stats_updater")
 public class StatsUpdater {
     private static final String TAG = "STAT";
 
-    //private static final String URP_CERT = "urp_staging.crt";
-    private static final String URP_CERT = "urp.crt";
-
+    private static final String URP_CERT = "urp_staging.crt";
+    //private static final String URP_CERT = "urp.crt";
+    // 5 minutes just for testing
+    //private static final long MILLISECONDS_IN_A_DAY = 5 * 60 * 1000;
     private static final long MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
     private static final long MILLISECONDS_IN_A_WEEK = 7 * MILLISECONDS_IN_A_DAY;
     private static final long MILLISECONDS_IN_A_MONTH = 30 * MILLISECONDS_IN_A_DAY;
@@ -69,16 +78,23 @@ public class StatsUpdater {
     private static final String URP_ATTEMPTS_NUMBER = "URPAttemptsNumber";
     private static final String URP_LAST_ATTEMPT_TIME = "URPLastAttemptTime";
     private static final String URP_IS_FINALIZED = "URPIsFinalized";
+    private static final String CUSTOM_HEADERS_NAME = "URPCustomHeaders";
+    private static final String PARTNER_OFFER_PAGE_NAME = "URPOfferPage";
+    private static final String OFFER_HEADER_NAME = "X-Brave-Access-Key";
 
     private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable&woi=%6$s&ref=%7$s";
     private static final String SERVER_REQUEST_URPC_INITIALIZE = "https://laptop-updates.brave.com/promo/initialize/nonua";
     private static final String SERVER_REQUEST_URPC_FINALIZE = "https://laptop-updates.brave.com/promo/activity";
+    private static final String SERVER_REQUEST_URPC_CUSTOM_HEADERS = "https://laptop-updates.brave.com/promo/custom-headers";
     // Staging values
     //private static final String SERVER_REQUEST_URPC_INITIALIZE = "https://laptop-updates-staging.herokuapp.com/promo/initialize/nonua";
     //private static final String SERVER_REQUEST_URPC_FINALIZE = "https://laptop-updates-staging.herokuapp.com/promo/activity";
+    //private static final String SERVER_REQUEST_URPC_CUSTOM_HEADERS = "https://laptop-updates-staging.herokuapp.com/promo/custom-headers";
     private static final String URPC_PLATFORM = "android";
 
     private static Semaphore mAvailable = new Semaphore(1);
+    private static String mCustomHeaders = null;
+    private static HashMap<String, String> mCustomHeadersMap = null;
 
     public static void UpdateStats(Context context) {
         try {
@@ -107,6 +123,11 @@ public class StatsUpdater {
                 }
                 if (currentTime.get(Calendar.MONTH) != previousObject.mMonth || currentTime.get(Calendar.YEAR) != previousObject.mYear) {
                     monthly = true;
+                }
+
+                if ((firstRun && (null == mCustomHeaders)) || (!firstRun && daily)) {
+                    // Update partner headers on daily basis and initially if they are not loaded with promo init call
+                    StatsUpdater.UpdatePartnerHeaders(context);
                 }
 
                 if (!firstRun && !daily && !weekly && !monthly) {
@@ -239,155 +260,174 @@ public class StatsUpdater {
             // No attempts left
             return;
         }
-        try {
-            // Create a KeyStore containing our trusted CAs
-            String keyStoreType = KeyStore.getDefaultType();
-            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
-            keyStore.load(null, null);
-
-            CertificateFactory cf = CertificateFactory.getInstance("X.509");
-            InputStream caInput = new BufferedInputStream(context.getAssets().open(URP_CERT));
+        SSLContext sslContext = CreateSSLContext(context);
+        if (null == sslContext) {
+            // Unable to setup trusted connection
+            return;
+        }
+        if (downloadId.isEmpty()){
+            // Send request to get download id
             try {
-                int i = 0;
-                while (caInput.available() > 0) {
-                    Certificate cert = cf.generateCertificate(caInput);
-                    String alias = "ca" + i++;
-                    keyStore.setCertificateEntry(alias, cert);
-                }
-            } finally {
-                caInput.close();
-            }
-
-            // Create a TrustManager that trusts the CAs in our KeyStore
-            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-            tmf.init(keyStore);
-
-            // Create an SSLContext that uses our TrustManager
-            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
-            sslContext.init(null, tmf.getTrustManagers(), null);
-
-            if (downloadId.isEmpty()){
-                // Send request to get download id
+                URL url = new URL(SERVER_REQUEST_URPC_INITIALIZE);
+                HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+                connection.setSSLSocketFactory(sslContext.getSocketFactory());
                 try {
-                    URL url = new URL(SERVER_REQUEST_URPC_INITIALIZE);
-                    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-                    connection.setSSLSocketFactory(sslContext.getSocketFactory());
-                    try {
-                        // Create and send request JSON
-                        JSONObject jsonOut = new JSONObject();
-                        jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
-                        jsonOut.put("referral_code", urpc);
-                        jsonOut.put("platform", URPC_PLATFORM);
-                        connection.setDoOutput(true);
-                        connection.setDoInput(true);
-                        connection.setRequestProperty("Content-Type", "application/json");
-                        connection.setRequestProperty("Accept", "application/json");
-                        connection.setRequestMethod("PUT");
-                        OutputStream os = connection.getOutputStream();
-                        os.write(jsonOut.toString().getBytes("UTF-8"));
-                        os.close();
-                        // Read response JSON
-                        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                        StringBuilder sb = new StringBuilder();
-                        String line;
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line + "\n");
-                        }
-                        br.close();
-                        JSONObject jsonRes = new JSONObject(sb.toString());
-                        downloadId = jsonRes.getString("download_id");
-                        SetDownloadId(context, downloadId);
-                    } finally {
-                        connection.disconnect();
+                    // Create and send request JSON
+                    JSONObject jsonOut = new JSONObject();
+                    jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
+                    jsonOut.put("referral_code", urpc);
+                    jsonOut.put("platform", URPC_PLATFORM);
+                    connection.setDoOutput(true);
+                    connection.setDoInput(true);
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    connection.setRequestProperty("Accept", "application/json");
+                    connection.setRequestMethod("PUT");
+                    OutputStream os = connection.getOutputStream();
+                    os.write(jsonOut.toString().getBytes("UTF-8"));
+                    os.close();
+                    // Read response JSON
+                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        sb.append(line + "\n");
                     }
-                } catch (MalformedURLException e) {
-                    Log.e(TAG, "UpdateUrpc error 1: " + e);
-                } catch (IOException e) {
-                    Log.e(TAG, "UpdateUrpc error 2: " + e);
-                } catch (Exception e) {
-                    Log.e(TAG, "UpdateUrpc error 3: " + e);
+                    br.close();
+                    JSONObject jsonRes = new JSONObject(sb.toString());
+                    downloadId = jsonRes.getString("download_id");
+                    SetDownloadId(context, downloadId);
+                    if (jsonRes.has("referral_code")) {
+                        String referralCode = jsonRes.getString("referral_code");
+                        if (urpc.equals(referralCode)) {
+                            // It is partner's program, it doesn't have finalization, so we set flag to stop further checks
+                            SetIsFinalized(context, "true");
+                        }
+                    }
+                    if (jsonRes.has("offer_page_url")) {
+                        String offerPageUrl = jsonRes.getString("offer_page_url");
+                        SetPartnerOfferPage(offerPageUrl);
+                        String headers = jsonRes.getString("headers");
+                        SetCustomHeaders(headers);
+                    }
+                } finally {
+                    connection.disconnect();
                 }
+            } catch (MalformedURLException e) {
+                Log.e(TAG, "UpdateUrpc error 1: " + e);
+            } catch (IOException e) {
+                Log.e(TAG, "UpdateUrpc error 2: " + e);
+            } catch (Exception e) {
+                Log.e(TAG, "UpdateUrpc error 3: " + e);
             }
-            if (downloadId.isEmpty()){
-                // It should not be empty at this point
-                Log.e(TAG, "UpdateUrpc error: download id is empty");
+        }
+        if (downloadId.isEmpty()){
+            // It should not be empty at this point
+            Log.e(TAG, "UpdateUrpc error: download id is empty");
+            return;
+        }
+        if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_A_MONTH) {
+            if (!CheckAttemptsLeft(context)) {
+                // There are no more attempts left, so clean up download id
+                SetDownloadId(context, "");
                 return;
             }
-            if ((currentTimeInMillis - info.firstInstallTime) > MILLISECONDS_IN_A_MONTH) {
-                if (!CheckAttemptsLeft(context)) {
-                    // There are no more attempts left, so clean up download id
-                    SetDownloadId(context, "");
-                    return;
-                }
-                // We need to inform server about that condition
+            // We need to inform server about that condition
+            try {
+                URL url = new URL(SERVER_REQUEST_URPC_FINALIZE);
+                HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+                connection.setSSLSocketFactory(sslContext.getSocketFactory());
                 try {
-                    URL url = new URL(SERVER_REQUEST_URPC_FINALIZE);
-                    HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-                    connection.setSSLSocketFactory(sslContext.getSocketFactory());
-                    try {
-                        // Create and send request JSON
-                        JSONObject jsonOut = new JSONObject();
-                        jsonOut.put("download_id", downloadId);
-                        jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
-                        connection.setDoOutput(true);
-                        connection.setDoInput(true);
-                        connection.setRequestProperty("Content-Type", "application/json");
-                        connection.setRequestProperty("Accept", "application/json");
-                        connection.setRequestMethod("PUT");
-                        OutputStream os = connection.getOutputStream();
-                        os.write(jsonOut.toString().getBytes("UTF-8"));
-                        os.close();
-                        // Read response JSON
-                        if (409 == connection.getResponseCode()) {
-                            // 409 - means download already finalized
-                            SetIsFinalized(context, "true");
-                            Log.w(TAG, "UpdateUrpc: download already finalized");
-                            // Clean up download id
-                            SetDownloadId(context, "");
-                            return;
-                        }
-                        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                        StringBuilder sb = new StringBuilder();
-                        String line;
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line + "\n");
-                        }
-                        br.close();
-                        JSONObject jsonRes = new JSONObject(sb.toString());
-                        String isFinalized = jsonRes.getString("finalized");
-                        SetIsFinalized(context, isFinalized);
-                        if (isFinalized.equals("true")) {
-                            // Clean up download id
-                            SetDownloadId(context, "");
-                        } else if (isFinalized.equals("false")) {
-                            // We will repeat attempt next time
-                            Log.w(TAG, "UpdateUrpc error: could not finalize");
-                        } else {
-                            // We should not be here
-                            Log.e(TAG, "UpdateUrpc error: unknown response on finalize " + isFinalized);
-                        }
-                    } finally {
-                        connection.disconnect();
+                    // Create and send request JSON
+                    JSONObject jsonOut = new JSONObject();
+                    jsonOut.put("download_id", downloadId);
+                    jsonOut.put("api_key", ConfigAPIs.URPC_API_KEY);
+                    connection.setDoOutput(true);
+                    connection.setDoInput(true);
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    connection.setRequestProperty("Accept", "application/json");
+                    connection.setRequestMethod("PUT");
+                    OutputStream os = connection.getOutputStream();
+                    os.write(jsonOut.toString().getBytes("UTF-8"));
+                    os.close();
+                    // Read response JSON
+                    if (409 == connection.getResponseCode()) {
+                        // 409 - means download already finalized
+                        SetIsFinalized(context, "true");
+                        Log.w(TAG, "UpdateUrpc: download already finalized");
+                        // Clean up download id
+                        SetDownloadId(context, "");
+                        return;
                     }
-                } catch (MalformedURLException e) {
-                    Log.e(TAG, "UpdateUrpc error 1: " + e);
-                } catch (IOException e) {
-                    Log.e(TAG, "UpdateUrpc error 2: " + e);
-                } catch (Exception e) {
-                    Log.e(TAG, "UpdateUrpc error 3: " + e);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        sb.append(line + "\n");
+                    }
+                    br.close();
+                    JSONObject jsonRes = new JSONObject(sb.toString());
+                    String isFinalized = jsonRes.getString("finalized");
+                    SetIsFinalized(context, isFinalized);
+                    if (isFinalized.equals("true")) {
+                        // Clean up download id
+                        SetDownloadId(context, "");
+                    } else if (isFinalized.equals("false")) {
+                        // We will repeat attempt next time
+                        Log.w(TAG, "UpdateUrpc error: could not finalize");
+                    } else {
+                        // We should not be here
+                        Log.e(TAG, "UpdateUrpc error: unknown response on finalize " + isFinalized);
+                    }
+                } finally {
+                    connection.disconnect();
                 }
+            } catch (MalformedURLException e) {
+                Log.e(TAG, "UpdateUrpc error 1: " + e);
+            } catch (IOException e) {
+                Log.e(TAG, "UpdateUrpc error 2: " + e);
+            } catch (Exception e) {
+                Log.e(TAG, "UpdateUrpc error 3: " + e);
             }
-        } catch (CertificateException e) {
-            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+        }
+    }
+
+    public static void UpdatePartnerHeaders(Context context) {
+        SSLContext sslContext = CreateSSLContext(context);
+        if (null == sslContext) {
+            Log.e(TAG, "Unable to setup trusted connection");
+            return;
+        }
+        // Send request to get custom headers
+        try {
+            URL url = new URL(SERVER_REQUEST_URPC_CUSTOM_HEADERS);
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+            connection.setSSLSocketFactory(sslContext.getSocketFactory());
+            try {
+                // Create and send request JSON
+                connection.setRequestMethod("GET");
+                connection.connect();
+                if (HttpURLConnection.HTTP_OK == connection.getResponseCode()) {
+                    // Read response JSON
+                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        sb.append(line + "\n");
+                    }
+                    br.close();
+                    SetCustomHeaders(sb.toString());
+                } else {
+                    Log.e(TAG, "Unable to get custom headers");
+                }
+            } finally {
+                connection.disconnect();
+            }
+        } catch (MalformedURLException e) {
+            Log.e(TAG, "ProcessPartner error 1: " + e);
         } catch (IOException e) {
-            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
-        } catch (KeyStoreException e) {
-            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
-        } catch (NoSuchAlgorithmException e) {
-            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
-        } catch (KeyManagementException e) {
-            Log.e(TAG, "UpdateUrpc cert validation failed: " + e);
+            Log.e(TAG, "ProcessPartner error 2: " + e);
+        } catch (Exception e) {
+            Log.e(TAG, "ProcessPartner error 3: " + e);
         }
     }
 
@@ -453,7 +493,7 @@ public class StatsUpdater {
         return ref;
     }
 
-    private static String GetUrpc(Context context) {
+    public static String GetUrpc(Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
         String urpc = sharedPref.getString(URPC_NAME, null);
         if (urpc == null) {
@@ -528,5 +568,142 @@ public class StatsUpdater {
             isFinalized = "";
         }
         return isFinalized;
+    }
+
+    public static void SetPartnerOfferPage(String offerPage) {
+        SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        if (null != offerPage) {
+            editor.putString(PARTNER_OFFER_PAGE_NAME, offerPage);
+        } else {
+            editor.remove(PARTNER_OFFER_PAGE_NAME);
+        }
+        editor.apply();
+    }
+
+    public static String GetPartnerOfferPage() {
+        SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+        String offerPage = sharedPref.getString(PARTNER_OFFER_PAGE_NAME, null);
+        if (offerPage == null) {
+            offerPage = "";
+        }
+        return offerPage;
+    }
+
+    public static String GetCustomHeaders() {
+        return mCustomHeaders;
+    }
+
+    private static void SetCustomHeaders(String customHeaders) {
+        SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putString(CUSTOM_HEADERS_NAME, customHeaders);
+        editor.apply();
+        mCustomHeaders = customHeaders;
+        if (null != mCustomHeadersMap) {
+            mCustomHeadersMap.clear();
+        }
+    }
+
+    @CalledByNative
+    public static String GetCustomHeadersForHost(String host) {
+        String res = "";
+        if ((null == host) || host.isEmpty()) {
+            return res;
+        }
+        if (null == mCustomHeaders) {
+            SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+            mCustomHeaders = sharedPref.getString(CUSTOM_HEADERS_NAME, null);
+            if (mCustomHeaders == null) {
+                mCustomHeaders = "";
+            }
+        }
+        if (mCustomHeaders.isEmpty()) {
+            return res;
+        }
+        if (null == mCustomHeadersMap) {
+            mCustomHeadersMap = new HashMap<String, String>();
+        }
+        if (mCustomHeadersMap.isEmpty()) {
+            try {
+                JSONArray headers = new JSONArray(mCustomHeaders);
+                for (int i = 0; i < headers.length(); i++) {
+                    JSONObject header = headers.getJSONObject(i);
+                    JSONArray domains = header.getJSONArray("domains");
+                    for (int j = 0; j < domains.length(); j++) {
+                        String domain = domains.getString(j);
+                        String domainHeader = "";
+                        JSONObject hed = header.getJSONObject("headers");
+                        Iterator<?> keys = hed.keys();
+                        if(keys.hasNext()) {
+                            String key = (String)keys.next();
+                            if (key.isEmpty()) {
+                                // We can't add empty header, so just skip it
+                                continue;
+                            }
+                            String value = hed.getString(key);
+                            if (!value.isEmpty()) {
+                                domainHeader = key + "\n" + value;
+                            } else {
+                                domainHeader = key;
+                            }
+                        }
+                        mCustomHeadersMap.put(domain, domainHeader);
+                    }
+                }
+            } catch (JSONException e) {
+                Log.e(TAG, "GetCustomHeadersForUrl error: " + e);
+            }
+        }
+        for (String domain : mCustomHeadersMap.keySet()) {
+            if (host.endsWith(domain)) {
+                return mCustomHeadersMap.get(domain);
+            }
+        }
+        return res;
+    }
+
+    private static SSLContext CreateSSLContext(Context context) {
+        try {
+            // Create a KeyStore containing our trusted CAs
+            String keyStoreType = KeyStore.getDefaultType();
+            KeyStore keyStore = KeyStore.getInstance(keyStoreType);
+            keyStore.load(null, null);
+
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            InputStream caInput = new BufferedInputStream(context.getAssets().open(URP_CERT));
+            try {
+                int i = 0;
+                while (caInput.available() > 0) {
+                    Certificate cert = cf.generateCertificate(caInput);
+                    String alias = "ca" + i++;
+                    keyStore.setCertificateEntry(alias, cert);
+                }
+            } finally {
+                caInput.close();
+            }
+
+            // Create a TrustManager that trusts the CAs in our KeyStore
+            String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+            tmf.init(keyStore);
+
+            // Create an SSLContext that uses our TrustManager
+            SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+            sslContext.init(null, tmf.getTrustManagers(), null);
+            return sslContext;
+        } catch (KeyManagementException e) {
+            Log.e(TAG, "CreateSSLContext cert validation failed: " + e);
+        } catch (NoSuchAlgorithmException e) {
+            Log.e(TAG, "CreateSSLContext cert validation failed: " + e);
+        } catch (KeyStoreException e) {
+            Log.e(TAG, "CreateSSLContext cert validation failed: " + e);
+        } catch (CertificateException e) {
+            Log.e(TAG, "CreateSSLContext cert validation failed: " + e);
+        } catch (IOException e) {
+            Log.e(TAG, "CreateSSLContext cert validation failed: " + e);
+        }
+        return null;
     }
 }
