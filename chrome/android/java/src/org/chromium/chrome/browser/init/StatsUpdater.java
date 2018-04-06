@@ -55,8 +55,8 @@ import org.json.JSONObject;
 public class StatsUpdater {
     private static final String TAG = "STAT";
 
-    private static final String URP_CERT = "urp_staging.crt";
-    //private static final String URP_CERT = "urp.crt";
+    //private static final String URP_CERT = "urp_staging.crt";
+    private static final String URP_CERT = "urp.crt";
     // 5 minutes just for testing
     //private static final long MILLISECONDS_IN_A_DAY = 5 * 60 * 1000;
     private static final long MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
