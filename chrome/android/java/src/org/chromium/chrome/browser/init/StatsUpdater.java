@@ -705,4 +705,14 @@ public class StatsUpdater {
         }
         return null;
     }
+
+    public static void WaitForUpdate() {
+        try {
+            mAvailable.acquire();
+        } catch (InterruptedException exc) {
+            Log.w(TAG, "WaitForUpdate was interrupted");
+        } finally {
+            mAvailable.release();
+        }
+    }
 }
