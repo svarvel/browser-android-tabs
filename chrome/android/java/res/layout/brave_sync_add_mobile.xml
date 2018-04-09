@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/view_add_laptop"
+    android:id="@+id/view_add_mobile_device"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -18,28 +18,28 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:background="@android:color/transparent"
-            android:paddingBottom="15dip"
             android:paddingTop="15dip"
             android:paddingStart="15dip"
-            android:paddingEnd="15dip" >
+            android:paddingEnd="15dip"
+            android:paddingBottom="15dip" >
 
-            <Button android:id="@+id/brave_sync_qr_code_off_btn"
+            <Button android:id="@+id/brave_sync_qr_code_on_btn"
                 android:layout_width="0px"
                 android:layout_weight="1"
                 android:layout_height="30dp"
                 android:text="@string/brave_sync_qr_code"
-                style="@style/BraveSyncToggleOffButtonLeft" />
+                style="@style/BraveSyncToggleOnButtonLeft" />
 
-            <Button android:id="@+id/brave_sync_code_words_on_btn"
+            <Button android:id="@+id/brave_sync_code_words_off_btn"
                 android:layout_width="0px"
                 android:layout_weight="1"
                 android:layout_height="30dp"
                 android:text="@string/brave_sync_code_words"
-                style="@style/BraveSyncToggleOnButtonRight" />
+                style="@style/BraveSyncToggleOffButtonRight" />
 
         </LinearLayout>
 
-        <TextView android:id="@+id/brave_sync_text_add_laptop"
+        <TextView android:id="@+id/brave_sync_text_add_mobile_device"
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="1"
@@ -47,36 +47,30 @@
             android:paddingStart="15dip"
             android:paddingEnd="15dip" />
 
-        <FrameLayout android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1"
-            android:paddingStart="15dip"
-            android:paddingEnd="15dip" >
-
-            <TextView android:id="@+id/brave_sync_add_device_code_words"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start|top"
-                android:textSize="18sp"
-                android:background="@drawable/brave_sync_top_rounded"
-                android:paddingStart="15dip"
-                android:paddingEnd="15dip" />
-
-        </FrameLayout>
-
-        <Button android:id="@+id/brave_sync_copy_button"
-            android:layout_width="match_parent"
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/brave_sync_copy_button_text"
-            style="@style/BraveSyncBottomButton"
-            android:background="@android:color/transparent"
-            android:textColor="@color/brave_theme_color" />
+            android:background="@drawable/brave_sync_top_rounded"
+            android:layout_gravity="center"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:paddingStart="5dip"
+            android:paddingEnd="5dip"
+            android:layout_marginBottom="15dp" >
 
-        <Button android:id="@+id/brave_sync_btn_add_laptop_done"
+            <ImageView android:id="@+id/brave_sync_qr_code_image"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/brave_sync_btn_laptop" />
+
+        </LinearLayout>
+
+        <Button android:id="@+id/brave_sync_btn_done"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/brave_sync_btn_done"
-            style="@style/BraveSyncButton"/>
+            style="@style/BraveSyncButton" />
 
     </LinearLayout>
 </ScrollView>
