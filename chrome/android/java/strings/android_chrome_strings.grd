@@ -4275,6 +4275,12 @@ Saved
       <message name="IDS_BRAVE_SYNC_CODE_WORDS" desc="Text for 'Code Words' button.">
         Code Words
       </message>
+      <message name="IDS_BRAVE_SYNC_COPY_BUTTON_TEXT" desc="Text for 'Copy to Clipboard' button.">
+        Copy to Clipboard
+      </message>
+      <message name="IDS_BRAVE_SYNC_THIS_DEVICE_TEXT" desc="Text to mark current device.">
+        (this device)
+      </message>
     </messages>
   </release>
 </grit>

@@ -9,7 +9,8 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:layout_gravity="center"
-    android:gravity="center" >
+    android:gravity="center"
+    android:background="@color/google_grey_50" >
 
     <ScrollView android:id="@+id/view_sync_initial"
         android:layout_width="match_parent"
@@ -74,7 +75,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
-                android:layout_weight="4" >
+                android:layout_weight="3.5" >
 
                 <org.chromium.chrome.browser.qrreader.CameraSourcePreview
                     android:id="@+id/preview"
@@ -195,75 +196,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <ScrollView android:id="@+id/view_add_mobile_device"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:background="@drawable/brave_sync_cover_general" >
-
-        <LinearLayout android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:paddingStart="2dip"
-            android:paddingTop="2dip"
-            android:paddingEnd="2dip" >
-
-            <LinearLayout android:orientation="horizontal"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:background="@drawable/brave_sync_top_rounded"
-                android:paddingTop="15dip"
-                android:paddingStart="15dip"
-                android:paddingEnd="15dip" >
-
-                <Button android:id="@+id/brave_sync_qr_code_on_btn"
-                    android:layout_width="0px"
-                    android:layout_weight="1"
-                    android:layout_height="30dp"
-                    android:text="@string/brave_sync_qr_code"
-                    style="@style/BraveSyncToggleOnButton" />
-
-                <Button android:id="@+id/brave_sync_code_words_off_btn"
-                    android:layout_width="0px"
-                    android:layout_weight="1"
-                    android:layout_height="30dp"
-                    android:text="@string/brave_sync_code_words"
-                    style="@style/BraveSyncToggleOffButton" />
-
-            </LinearLayout>
-
-            <LinearLayout android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white" >
-
-                <ImageView android:id="@+id/brave_sync_qr_code_image"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/brave_sync_btn_laptop" />
-
-            </LinearLayout>
-
-            <include layout="@layout/menu_separator"/>
-
-            <TextView android:id="@+id/brave_sync_text_add_mobile_device"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1.4"
-                android:gravity="center"
-                android:paddingStart="15dip"
-                android:paddingEnd="15dip" />
-
-            <Button android:id="@+id/brave_sync_btn_done"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/brave_sync_btn_done"
-                style="@style/BraveSyncButton" />
-
-        </LinearLayout>
-    </ScrollView>
-
     <ScrollView android:id="@+id/view_enter_code_words"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -337,7 +269,11 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <include layout="@layout/brave_sync_add_mobile" />
+
     <include layout="@layout/brave_sync_add_laptop" />
+
     <include layout="@layout/brave_sync_done" />
 
     <!-- Items from brave_sync_preferences.xml -->

@@ -148,5 +148,7 @@ Saved</string>
     <string name="brave_sync_word_count_error">Incorrect number of words</string>
     <string name="brave_sync_qr_code">QR Code</string>
     <string name="brave_sync_code_words">Code Words</string>
+    <string name="brave_sync_copy_button_text">Copy to Clipboard</string>
+    <string name="brave_sync_this_device_text">(this device)</string>
 
 </resources>
