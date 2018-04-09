@@ -137,7 +137,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private ImageButton mMobileButton;
   private ImageButton mLaptopButton;
   private ImageButton mPasteButton;
-  private ImageButton mCopyButton;
+  private Button mCopyButton;
   private Button mAddDeviceButton;
   private Button mRemoveDeviceButton;
   private Button mQRCodeButton;
@@ -168,7 +168,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private ImageView mQRCodeImage;
   private ProgressDialog mProgressDialog;
   private LinearLayout mLayoutSyncStartChain;
-  private LinearLayout mRootLayout;
   private EditText mCodeWords;
   private FrameLayout mLayoutMobile;
   private FrameLayout mLayoutLaptop;
@@ -454,6 +453,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                                       if (null != textView) {
                                                                           // Highlight curret device
                                                                           textView.setTextColor(ApiCompatibilityUtils.getColor(getActivity().getResources(), R.color.brave_theme_color));
+                                                                          String currentDevice = device.mDeviceName + " " + getResources().getString(R.string.brave_sync_this_device_text);
+                                                                          textView.setText(currentDevice);
                                                                       }
                                                                       if (null != mRemoveDeviceButton) {
                                                                           mRemoveDeviceButton.setTag(device);
@@ -554,12 +555,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       }
 
       mLayoutSyncStartChain = (LinearLayout) getView().findViewById(R.id.view_sync_start_chain_layout);
-      mRootLayout = (LinearLayout) getView().findViewById(R.id.brave_sync_layout);
-      if (DeviceFormFactor.isTablet()) {
-          mRootLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getActivity().getResources(), R.color.google_grey_50));
-      } else {
-          mRootLayout.setBackgroundColor(Color.WHITE);
-      }
 
       mScanChainCodeButton = (Button) getView().findViewById(R.id.brave_sync_btn_scan_chain_code);
       if (mScanChainCodeButton != null) {
@@ -613,7 +608,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           mPasteButton.setOnClickListener(this);
       }
 
-      mCopyButton = (ImageButton) getView().findViewById(R.id.brave_sync_copy_button);
+      mCopyButton = (Button) getView().findViewById(R.id.brave_sync_copy_button);
       if (mCopyButton != null) {
           mCopyButton.setOnClickListener(this);
       }

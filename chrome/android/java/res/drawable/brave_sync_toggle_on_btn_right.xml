@@ -4,10 +4,10 @@
 
     <solid android:color="@color/brave_theme_color" />
 
-    <!--<corners android:bottomRightRadius="5dp"
+    <corners android:bottomRightRadius="6dp"
         android:bottomLeftRadius="0dp"
-        android:topRightRadius="5dp"
-        android:topLeftRadius="0dp" />-->
+        android:topRightRadius="6dp"
+        android:topLeftRadius="0dp" />
 
     <stroke android:width="1px" android:color="@color/brave_theme_color" />
 
