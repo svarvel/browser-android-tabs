@@ -96,6 +96,7 @@ public class BraveSyncWorker {
     private static final String ANDROID_SYNC_WORDS_JS = "android_sync_words.js";
 
     private static final String ORIGINAL_SEED_KEY = "originalSeed";
+    private static final String DEVICES_NAMES = "devicesNames";
 
     private SyncThread mSyncThread = null;
 
@@ -107,6 +108,7 @@ public class BraveSyncWorker {
     private String mDeviceId = null;
     private String mDeviceName = null;
     private String mApiVersion = "0";
+    //private String mServerUrl = "http://192.168.0.196:4000";
     private String mServerUrl = "https://sync-staging.brave.com";
     //private String mServerUrl = "https://sync.brave.com";
     private String mDebug = "true";
@@ -483,7 +485,7 @@ public class BraveSyncWorker {
     }
 
     private String GetDeviceNameByObjectId(String objectId) {
-        String object = nativeGetObjectIdByLocalId("devicesNames");
+        String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
         if (object.isEmpty()) {
             return "";
         }
@@ -515,7 +517,7 @@ public class BraveSyncWorker {
     public ArrayList<ResolvedRecordsToApply> GetAllDevices() {
         Log.i(TAG, "GetAllDevices: start");
         ArrayList<ResolvedRecordsToApply> result_devices = new ArrayList<ResolvedRecordsToApply>();
-        String object = nativeGetObjectIdByLocalId("devicesNames");
+        String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
         if (object.isEmpty()) {
             Log.e(TAG, "GetAllDevices: object.isEmpty()");
             return result_devices;
@@ -806,10 +808,11 @@ public class BraveSyncWorker {
     }
 
     private synchronized void FetchSyncRecords(String lastRecordFetchTime) {
+        Log.i(TAG, "!!!Sync is not ready");
         if (!mSyncIsReady.IsReady()) {
             return;
         }
-        //Log.i(TAG, "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
+        Log.i(TAG, "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
         if (0 == mTimeLastFetch && 0 == mTimeLastFetchExecuted) {
             // It is the very first time of the sync start
             // Set device name
@@ -1458,7 +1461,7 @@ public class BraveSyncWorker {
         if (0 == resolvedRecords.size()) {
             return;
         }
-        String object = nativeGetObjectIdByLocalId("devicesNames");
+        String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
 
         List<ResolvedRecordsToApply> existingRecords = new ArrayList<ResolvedRecordsToApply>();
         if (!object.isEmpty()) {
@@ -1523,7 +1526,7 @@ public class BraveSyncWorker {
         } catch (JSONException e) {
             Log.e(TAG, "DeviceResolver JSONException error " + e);
         }
-        nativeSaveObjectId("devicesNames", result.toString(), "");
+        nativeSaveObjectId(DEVICES_NAMES, result.toString(), "");
         if (null != mSyncScreensObserver && !mSyncIsReady.mShouldResetSync) {
             mSyncScreensObserver.onDevicesAvailable();
         }
@@ -2099,6 +2102,7 @@ public class BraveSyncWorker {
               nativeResetSync(SyncRecordType.BOOKMARKS + CREATE_RECORD);
               nativeResetSync(SyncRecordType.BOOKMARKS + UPDATE_RECORD);
               nativeResetSync(SyncRecordType.BOOKMARKS + DELETE_RECORD);
+              nativeResetSync(DEVICES_NAMES);
               SaveObjectId(ORIGINAL_SEED_KEY, seed, true);
               // TODO for other categories type
             }
@@ -2147,9 +2151,9 @@ public class BraveSyncWorker {
                 SaveInitData(arg1, arg2);
                 break;
               case "sync-debug":
-                /*if (null != arg1) {
+                if (null != arg1) {
                     Log.i(TAG, "!!!sync-debug: " + arg1);
-                }*/
+                }
                 break;
               case "fetch-sync-records":
                 mSyncIsReady.mFetchRecordsReady = true;
