@@ -755,14 +755,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       } else if (mConfirmCodeWordsButton == v) {
           ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
           String[] words = mCodeWords.getText().toString().trim().replace("   ", " ").replace("\n", " ").split(" ");
-          if (16 != words.length) {
+          if (BraveSyncWorker.NICEWARE_WORD_COUNT != words.length && BraveSyncWorker.BIP39_WORD_COUNT != words.length) {
               if (null != mSyncScreensObserver) {
                   mSyncScreensObserver.onSyncError(getResources().getString(R.string.brave_sync_word_count_error));
               }
               return;
           }
           if (null != application && null != application.mBraveSyncWorker && null != words) {
-              for (int i = 0; i < 16; i++) {
+              for (int i = 0; i < words.length; i++) {
                   words[i] = words[i].trim();
               }
               application.mBraveSyncWorker.GetNumber(words);
@@ -989,7 +989,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (hexValue && barcode.length() != 64) {
           return false;
       } else if (!hexValue) {
-          String[] split = barcode.split(", ");
+          String[] split = barcode.split(",");
           if (split.length != 32) {
               return false;
           }
@@ -1013,7 +1013,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           String seed = "";
           for (int i = 0; i < barcodeString.length; i++) {
               if (0 != seed.length()) {
-                  seed += ", ";
+                  seed += ",";
               }
               seed += String.valueOf(Integer.parseInt(barcodeString[i], 16));
           }

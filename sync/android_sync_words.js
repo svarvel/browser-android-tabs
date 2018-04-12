@@ -4,17 +4,17 @@
 
 function getBytesFromWords(words) {
     try {
-      injectedObject.nicewareOutput(JSON.stringify(niceware.passphraseToBytes(words)))
+      injectedObject.cryptoOutput(JSON.stringify(module.exports.passphrase.toBytes32(words)))
     } catch(e) {
-      injectedObject.nicewareOutput("")
+      injectedObject.cryptoOutputError("JS error: " + e)
     }
 }
 
 function getCodeWordsFromSeed(seed) {
     try {
       var buffer = new Uint8Array(seed)
-      injectedObject.nicewareOutputCodeWords(JSON.stringify(niceware.bytesToPassphrase(buffer)))
+      injectedObject.cryptoOutputCodeWords(JSON.stringify(module.exports.passphrase.fromBytesOrHex(buffer)))
     } catch(e) {
-      injectedObject.nicewareOutputCodeWords("")
+      injectedObject.cryptoOutputError("JS error: " + e)
     }
 }
