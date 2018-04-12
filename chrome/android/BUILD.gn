@@ -1311,7 +1311,7 @@ if (current_toolchain == default_toolchain) {
         "//braveSync/bundles/bundle.js",
         "//sync/android_sync.js",
         "//sync/android_sync_words.js",
-        "//niceware/browser/niceware.js",
+        "//brave-crypto/browser/crypto.js",
         "//net/data/ssl/certificates/urp_staging.crt",
         "//net/data/ssl/certificates/urp.crt",
       ]
