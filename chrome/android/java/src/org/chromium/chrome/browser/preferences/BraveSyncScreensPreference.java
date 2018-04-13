@@ -302,7 +302,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                                       if (null != application && null != application.mBraveSyncWorker) {
                                           application.mBraveSyncWorker.SetSyncEnabled(true);
-                                          showEndDialog(getResources().getString(R.string.sync_device_success));
                                           application.mBraveSyncWorker.InitSync(true, false);
                                       }
                                       setAppropriateView();
@@ -685,6 +684,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           }
           if (null != mScrollViewSyncDone) {
               mScrollViewSyncDone.setVisibility(View.GONE);
+          }
+          if (null != mCodeWords) {
+              mCodeWords.setText("");
           }
           return;
       }
