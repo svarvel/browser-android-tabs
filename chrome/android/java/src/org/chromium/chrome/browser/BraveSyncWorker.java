@@ -171,6 +171,16 @@ public class BraveSyncWorker {
                 && mSendRecordsReady && mDeleteUserReady && mDeleteCategoryReady
                 && mDeleteSiteSettingsReady && !mShouldResetSync;
         }
+
+        public void Reset() {
+            mFetchRecordsReady = false;
+            mResolveRecordsReady = false;
+            mSendRecordsReady = false;
+            mDeleteUserReady = false;
+            mDeleteCategoryReady = false;
+            mDeleteSiteSettingsReady = false;
+            mReady = false;
+        }
     }
 
     class BookMarkInternal {
@@ -520,9 +530,11 @@ public class BraveSyncWorker {
     public ArrayList<ResolvedRecordsToApply> GetAllDevices() {
         Log.i(TAG, "GetAllDevices: start");
         ArrayList<ResolvedRecordsToApply> result_devices = new ArrayList<ResolvedRecordsToApply>();
+        if (!mSyncIsReady.IsReady()) {
+            return result_devices;
+        }
         String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
         if (object.isEmpty()) {
-            Log.e(TAG, "GetAllDevices: object.isEmpty()");
             return result_devices;
         }
 
@@ -620,11 +632,15 @@ public class BraveSyncWorker {
     private void TrySync() {
         try {
             if (mSyncIsReady.mShouldResetSync) {
+                if (null != mWebContentsInjector) {
+                    mWebContentsInjector.removeInterface("injectedObject");
+                }
                 if (null != mWebContents) {
                     mWebContents.destroy();
                 }
                 mWebContents = null;
                 mViewEventSink = null;
+                mWebContentsInjector = null;
                 mSyncIsReady.mShouldResetSync = false;
             }
             if (null == mWebContents) {
@@ -644,7 +660,9 @@ public class BraveSyncWorker {
                             toLoad += script.replace("%", "%25").replace("\n", "%0A") + "</script><script type='text/javascript'>";
                             script = convertStreamToString(mContext.getAssets().open(BUNDLE_JS));
                             toLoad += script.replace("%", "%25").replace("\n", "%0A") + "</script>";
-                        } catch (IOException exc) {}
+                        } catch (IOException exc) {
+                            Log.e(TAG, "Load script exception: " + exc);
+                        }
                         LoadUrlParams loadUrlParams = LoadUrlParams.createLoadDataParamsWithBaseUrl(toLoad, "text/html", false, "file:///android_asset/", null);
                         loadUrlParams.setCanLoadLocalResources(true);
                         mWebContents.getNavigationController().loadUrl(loadUrlParams);
@@ -2078,6 +2096,7 @@ public class BraveSyncWorker {
     public void ResetSync() {
         Log.i(TAG, "ResetSync");
         SetSyncEnabled(false);
+        mSyncIsReady.Reset();
         mSyncIsReady.mShouldResetSync = true;
         SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
