@@ -8,7 +8,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.ClipData;
@@ -53,18 +52,19 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Switch;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import android.widget.TableLayout;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.common.BitMatrix;
@@ -166,7 +166,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private ScrollView mScrollViewSyncDone;
   private LayoutInflater mInflater;
   private ImageView mQRCodeImage;
-  private ProgressDialog mProgressDialog;
+  private CountDownTimer mTimeoutTimer;
   private LinearLayout mLayoutSyncStartChain;
   private EditText mCodeWords;
   private FrameLayout mLayoutMobile;
@@ -243,8 +243,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
       mDeviceName = sharedPref.getString(BraveSyncWorker.PREF_SYNC_DEVICE_NAME, "");
 
-      mProgressDialog = new ProgressDialog(getActivity());
-
       mPrefSwitchTabs = (ChromeSwitchPreference) findPreference(BraveSyncWorker.PREF_SYNC_TABS);
       mPrefSwitchHistory = (ChromeSwitchPreference) findPreference(BraveSyncWorker.PREF_SYNC_HISTORY);
       mPrefSwitchAutofillPasswords = (ChromeSwitchPreference) findPreference(BraveSyncWorker.PREF_SYNC_AUTOFILL_PASSWORDS);
@@ -268,7 +266,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                           getActivity().runOnUiThread(new Runnable() {
                               @Override
                               public void run() {
-                                  cancelProgressDialog();
+                                  cancelTimeoutTimer();
                                   showEndDialog(getResources().getString(R.string.sync_device_failure) + messageFinal);
                               }
                           });
@@ -298,7 +296,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                               getActivity().runOnUiThread(new Runnable() {
                                   @Override
                                   public void run() {
-                                      cancelProgressDialog();
+                                      cancelTimeoutTimer();
                                       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                                       if (null != application && null != application.mBraveSyncWorker) {
                                           application.mBraveSyncWorker.SetSyncEnabled(true);
@@ -351,7 +349,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                               getActivity().runOnUiThread(new Runnable() {
                                                   @Override
                                                   public void run() {
-                                                      cancelProgressDialog();
+                                                      cancelTimeoutTimer();
                                                       application.mBraveSyncWorker.SetSyncEnabled(true);
                                                       mQRCodeImage.setImageBitmap(bitmap);
                                                       mQRCodeImage.invalidate();
@@ -390,7 +388,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                           getActivity().runOnUiThread(new Runnable() {
                               @Override
                               public void run() {
-                                  cancelProgressDialog();
+                                  cancelTimeoutTimer();
                                   application.mBraveSyncWorker.SetSyncEnabled(true);
                                   String words = "";
                                   for (int i = 0; i < codeWords.length; i++) {
@@ -434,7 +432,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                   public void run() {
                                                       ViewGroup insertPoint = (ViewGroup) getView().findViewById(R.id.brave_sync_devices);
                                                       insertPoint.removeAllViews();
-                                                      cancelProgressDialog();
+                                                      cancelTimeoutTimer();
                                                       int index = 0;
                                                       for (BraveSyncWorker.ResolvedRecordsToApply device : devices) {
                                                           View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
@@ -458,6 +456,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                                       if (null != mRemoveDeviceButton) {
                                                                           mRemoveDeviceButton.setTag(device);
                                                                           mRemoveDeviceButton.setVisibility(View.VISIBLE);
+                                                                          mRemoveDeviceButton.setEnabled(true);
                                                                       }
                                                                   } else {
                                                                       deleteButton.setTag(device);
@@ -501,7 +500,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                           getActivity().runOnUiThread(new Runnable() {
                               @Override
                               public void run() {
-                                  cancelProgressDialog();
+                                  cancelTimeoutTimer();
                                   setAppropriateView();
                               }
                           });
@@ -647,6 +646,20 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
       mLayoutMobile = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_mobile);
       mLayoutLaptop = (FrameLayout) getView().findViewById(R.id.brave_sync_frame_laptop);
+
+      mTimeoutTimer = new CountDownTimer(WAIT_TIMEOUT, WAIT_TIMEOUT) {
+          @Override
+          public void onTick(long millisUntilFinished) {
+              // No action is required here
+          }
+          @Override
+          public void onFinish() {
+              if (null != mSyncScreensObserver) {
+                  mSyncScreensObserver.onDevicesAvailable();
+              }
+              showEndDialog(getResources().getString(R.string.brave_sync_time_out_message));
+          }
+      };
 
       setAppropriateView();
 
@@ -1058,39 +1071,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       alertDialog.show();
   }
 
-  private void showProgressDialog(String message) {
-      if (null != mProgressDialog) {
-          mProgressDialog.setMessage(message);
-          mProgressDialog.setCancelable(false);
-          mProgressDialog.setIndeterminate(false);
-          mProgressDialog.setMax(WAIT_TIMEOUT / 1000);
-          mProgressDialog.show();
-          new CountDownTimer(WAIT_TIMEOUT, 1000) {
-              @Override
-              public void onTick(long millisUntilFinished) {
-                  if (null != mProgressDialog && mProgressDialog.isShowing()) {
-                      int progress = (int)((WAIT_TIMEOUT - millisUntilFinished) / 1000);
-                      mProgressDialog.setProgress(progress);
-                  } else {
-                      cancel();
-                  }
-              }
-              @Override
-              public void onFinish() {
-                  if (cancelProgressDialog()) {
-                      showEndDialog(getResources().getString(R.string.brave_sync_time_out_message));
-                  }
-              }
-          }.start();
-      }
+  private void startTimeoutTimerWithPopup(String message) {
+      Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+      mTimeoutTimer.start();
   }
 
-  private boolean cancelProgressDialog() {
-      if (null != mProgressDialog && mProgressDialog.isShowing()) {
-          mProgressDialog.dismiss();
-          return true;
-      }
-      return false;
+  private void cancelTimeoutTimer() {
+      mTimeoutTimer.cancel();
   }
 
   private void showAddDeviceNameDialog(boolean createNewChain) {
@@ -1158,7 +1145,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   if (null != application && null != application.mBraveSyncWorker) {
                       application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
                       application.mBraveSyncWorker.InterruptSyncSleep();
-                      showProgressDialog(getResources().getString(R.string.brave_sync_delete_sent));
+                      v.setEnabled(false);
+                      startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_delete_sent));
                   }
               }
           }
@@ -1260,7 +1248,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
-                      showProgressDialog(getResources().getString(R.string.brave_sync_loading_data_title));
+                      startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
                       application.mBraveSyncWorker.InitSync(true, true);
                   } else {
@@ -1302,7 +1290,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
-                      showProgressDialog(getResources().getString(R.string.brave_sync_loading_data_title));
+                      startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
                       application.mBraveSyncWorker.InitSync(true, true);
                   } else {
@@ -1437,6 +1425,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           setJoinExistingChainLayout();
           return true;
       }
+      cancelTimeoutTimer();
       return false;
   }
 }
