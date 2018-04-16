@@ -62,7 +62,7 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/LaunchIntentDispatcher.java",
   "java/src/org/chromium/chrome/browser/LauncherShortcutActivity.java",
   "java/src/org/chromium/chrome/browser/LoginPrompt.java",
-  "java/src/org/chromium/chrome/browser/MixPanelWorker.java",
+# "java/src/org/chromium/chrome/browser/MixPanelWorker.java",
   "java/src/org/chromium/chrome/browser/NavigationBarColorController.java",
   "java/src/org/chromium/chrome/browser/NavigationPopup.java",
   "java/src/org/chromium/chrome/browser/NearOomMonitor.java",

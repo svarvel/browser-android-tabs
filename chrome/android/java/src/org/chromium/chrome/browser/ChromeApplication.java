@@ -51,7 +51,7 @@ import org.chromium.chrome.browser.vr.VrModuleProvider;
 import org.chromium.components.embedder_support.application.FontPreloadingWorkaround;
 import org.chromium.components.module_installer.ModuleInstaller;
 
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
+//import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 /**
  * Basic application functionality that should be shared among all browser applications that use
@@ -70,7 +70,7 @@ public class ChromeApplication extends Application {
     // ADBlock updater
     public ADBlockUpdaterWorker mADBlockUpdaterWorker = null;
     // Mixpanel global object
-    public MixpanelAPI mMixpanelInstance = null;
+    //public MixpanelAPI mMixpanelInstance = null;
 
     @Nullable
     private static ChromeAppComponent sComponent;

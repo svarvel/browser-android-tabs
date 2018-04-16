@@ -34,7 +34,7 @@ import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.usage_stats.UsageStatsConsentDialog;
 import org.chromium.ui.text.NoUnderlineClickableSpan;
 import org.chromium.ui.text.SpanApplier;
-import org.chromium.chrome.browser.MixPanelWorker;
+//import org.chromium.chrome.browser.MixPanelWorker;
 
 /**
  * Fragment to keep track of the all the privacy related preferences.
@@ -191,19 +191,19 @@ public class PrivacyPreferences extends PreferenceFragment
             PrefServiceBridge.getInstance().setSafeBrowsingEnabled((boolean) newValue);
         }*/ else if (PREF_FINGERPRINTING_PROTECTION.equals(key)) {
             PrefServiceBridge.getInstance().setFingerprintingProtectionEnabled((boolean) newValue);
-            MixPanelWorker.SendEvent("Fingerprinting Protection Option Changed", "Fingerprinting Protection", newValue);
+            //MixPanelWorker.SendEvent("Fingerprinting Protection Option Changed", "Fingerprinting Protection", newValue);
         } else if (PREF_HTTPSE.equals(key)) {
             PrefServiceBridge.getInstance().setHTTPSEEnabled((boolean) newValue);
-            MixPanelWorker.SendEvent("HTTPS Everywhere Option Changed", "HTTPS Everywhere", newValue);
+            //MixPanelWorker.SendEvent("HTTPS Everywhere Option Changed", "HTTPS Everywhere", newValue);
         } else if (PREF_TRACKING_PROTECTION.equals(key)) {
             PrefServiceBridge.getInstance().setTrackingProtectionEnabled((boolean) newValue);
-            MixPanelWorker.SendEvent("Tracking Protection Mode Option Changed", "Tracking Protection Mode", newValue);
+            //MixPanelWorker.SendEvent("Tracking Protection Mode Option Changed", "Tracking Protection Mode", newValue);
         } else if (PREF_AD_BLOCK.equals(key)) {
             PrefServiceBridge.getInstance().setAdBlockEnabled((boolean) newValue);
-            MixPanelWorker.SendEvent("Ad Block Option Changed", "Ad Block", newValue);
+            //MixPanelWorker.SendEvent("Ad Block Option Changed", "Ad Block", newValue);
         } else if (PREF_AD_BLOCK_REGIONAL.equals(key)) {
             PrefServiceBridge.getInstance().setAdBlockRegionalEnabled((boolean) newValue);
-            MixPanelWorker.SendEvent("Regional Ad Block Option Changed", "Regional Ad Block", newValue);
+            //MixPanelWorker.SendEvent("Regional Ad Block Option Changed", "Regional Ad Block", newValue);
         }/* else if (PREF_SAFE_BROWSING_SCOUT_REPORTING.equals(key)) {
             PrefServiceBridge.getInstance().setSafeBrowsingExtendedReportingEnabled(
                     (boolean) newValue);
