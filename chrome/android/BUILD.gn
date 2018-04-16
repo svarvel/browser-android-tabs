@@ -332,7 +332,7 @@ android_library("chrome_java") {
     "//third_party/gif_player:gif_player_java",
     "//third_party/jsr-305:jsr_305_javalib",
     "//third_party/protobuf:protobuf_lite_javalib",
-    "//third_party/mixpanel:mixpanel_java",
+#    "//third_party/mixpanel:mixpanel_java",
     "//ui/android:ui_java",
     "//ui/base/mojo:mojo_java",
     "//ui/gfx/geometry/mojo:mojo_java",
