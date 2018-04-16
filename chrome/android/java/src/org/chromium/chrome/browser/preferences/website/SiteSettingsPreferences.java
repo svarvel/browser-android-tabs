@@ -18,7 +18,7 @@ import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.PreferenceUtils;
 import org.chromium.chrome.browser.preferences.website.SiteSettingsCategory.Type;
 import org.chromium.chrome.browser.util.FeatureUtilities;
-import org.chromium.chrome.browser.MixPanelWorker;
+//import org.chromium.chrome.browser.MixPanelWorker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -246,9 +246,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        if (R.string.javascript_permission_title == preference.getTitleRes()) {
+        /*if (R.string.javascript_permission_title == preference.getTitleRes()) {
             MixPanelWorker.SendEvent("JavaScript Option Changed", "JavaScript", !PrefServiceBridge.getInstance().javaScriptEnabled());
-        }
+        }*/
         preference.getExtras().putString(
                 SingleCategoryPreferences.EXTRA_CATEGORY, preference.getKey());
         preference.getExtras().putString(SingleCategoryPreferences.EXTRA_TITLE,

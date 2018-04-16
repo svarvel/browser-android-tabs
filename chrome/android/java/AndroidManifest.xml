@@ -161,8 +161,8 @@ by a child template that "extends" this file.
          </receiver>
 
         <!-- MixPanel proxy server -->
-        <meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
-              android:value="https://metric-proxy.brave.com/track" />
+        <!--<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
+              android:value="https://metric-proxy.brave.com/track" />-->
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.PeopleEndpoint"
               android:value="https://metric-proxy.brave.com" />-->
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.DecideEndpoint"

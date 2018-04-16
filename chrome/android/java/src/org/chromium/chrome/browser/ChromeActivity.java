@@ -1529,10 +1529,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             app.mADBlockUpdaterWorker.Stop();
             app.mADBlockUpdaterWorker = null;
         }
-        if (null != app && null != app.mMixpanelInstance) {
+        /*if (null != app && null != app.mMixpanelInstance) {
             app.mMixpanelInstance.flush();
             app.mMixpanelInstance = null;
-        }
+        }*/
 
 
         if (mTabContentManager != null) {
@@ -1689,7 +1689,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             //app.mBraveSyncWorker = new BraveSyncWorker(this);
             app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
             app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
-            MixPanelWorker.SendBraveAppStartEvent();
+            //MixPanelWorker.SendBraveAppStartEvent();
         }
     }
 
