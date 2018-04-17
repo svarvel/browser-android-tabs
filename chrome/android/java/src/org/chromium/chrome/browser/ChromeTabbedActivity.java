@@ -1203,8 +1203,10 @@ public class ChromeTabbedActivity
             boolean hadCipherData =
                     CipherFactory.getInstance().restoreFromBundle(getSavedInstanceState());
 
+            String PREF_CLOSE_TABS_ON_EXIT = "close_tabs_on_exit";
             boolean noRestoreState =
-                    CommandLine.getInstance().hasSwitch(ChromeSwitches.NO_RESTORE_STATE);
+                CommandLine.getInstance().hasSwitch(ChromeSwitches.NO_RESTORE_STATE) ||
+                ContextUtils.getAppSharedPreferences().getBoolean(PREF_CLOSE_TABS_ON_EXIT, false);
             if (noRestoreState) {
                 // Clear the state files because they are inconsistent and useless from now on.
                 mTabModelSelectorImpl.clearState();
