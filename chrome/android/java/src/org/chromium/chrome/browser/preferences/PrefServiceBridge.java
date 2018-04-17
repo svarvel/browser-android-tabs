@@ -370,7 +370,7 @@ public class PrefServiceBridge {
 
     /**
      * @return true if 'Play YouTube video in browser' is enabled.
-     * The default is false.
+     * The default is true.
      */
     public boolean playYTVideoInBrowserEnabled() {
         return nativeGetPlayYTVideoInBrowserEnabled();
