@@ -35,8 +35,8 @@ import org.chromium.content_public.browser.JavascriptInjector;
 import org.chromium.content_public.browser.WebContents;
 import org.chromium.content_public.browser.LoadUrlParams;
 import java.util.Scanner;
-import org.chromium.content.browser.ContentView;
-import org.chromium.content.browser.ContentViewCore;
+import org.chromium.components.content_view.ContentView;
+import org.chromium.content_public.browser.ContentViewCore;
 import org.chromium.content.browser.ContentViewCoreImpl;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.ui.base.ViewAndroidDelegate;
@@ -1487,17 +1487,21 @@ public class BraveSyncWorker {
         for (ResolvedRecordsToApply resolvedRecord: resolvedRecords) {
             assert !resolvedRecord.mDeviceName.isEmpty();
             boolean exist = false;
+            ResolvedRecordsToApply existingRecordToRemove = null;
             for (ResolvedRecordsToApply existingRecord: existingRecords) {
                 if (existingRecord.mObjectId.equals(resolvedRecord.mObjectId)) {
                     if (resolvedRecord.mAction.equals(DELETE_RECORD)) {
-                        // TODO remove from the list
-                        existingRecords.remove(existingRecord);
+                        existingRecordToRemove = existingRecord;
                     } else if (resolvedRecord.mAction.equals(UPDATE_RECORD)) {
                         existingRecord.mDeviceName = resolvedRecord.mDeviceName;
                     }
                     exist = true;
                     break;
                 }
+            }
+            if (null != existingRecordToRemove) {
+                // TODO remove from the list
+                existingRecords.remove(existingRecordToRemove);
             }
             if (!exist && !resolvedRecord.mAction.equals(DELETE_RECORD)) {
                 // TODO add to the list
@@ -2000,6 +2004,7 @@ public class BraveSyncWorker {
     }
 
     class SyncThread extends Thread {
+        @Override
         public void run() {
           SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
           mTimeLastFetch = sharedPref.getLong(PREF_LAST_FETCH_NAME, 0);
@@ -2045,6 +2050,7 @@ public class BraveSyncWorker {
         mTimeLastFetch = 0;
         mTimeLastFetchExecuted = 0;
         new Thread() {
+            @Override
             public void run() {
               nativeResetSync(ORIGINAL_SEED_KEY);
               nativeResetSync(SyncRecordType.BOOKMARKS + CREATE_RECORD);

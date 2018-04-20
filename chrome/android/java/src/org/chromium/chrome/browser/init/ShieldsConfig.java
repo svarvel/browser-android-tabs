@@ -59,6 +59,7 @@ public class ShieldsConfig {
     }
 
     class ReadDataAsyncTask extends AsyncTask<Void,Void,Long> {
+        @Override
         protected Long doInBackground(Void... params) {
             // Read file with the settings
             try {
@@ -495,6 +496,7 @@ public class ShieldsConfig {
     }
 
     class SaveDataAsyncTask extends AsyncTask<Void,Void,Long> {
+        @Override
         protected Long doInBackground(Void... params) {
             saveSettings();
 
