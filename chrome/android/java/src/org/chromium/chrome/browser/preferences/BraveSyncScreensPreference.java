@@ -349,6 +349,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           EditText wordLastControl = getWordControl(16);
           if (null != wordLastControl) {
               wordLastControl.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+                  @Override
                   public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                       if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
                           ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
@@ -372,10 +373,11 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           if (null != application && null != application.mBraveSyncWorker) {
               if (null == mSyncScreensObserver) {
                   mSyncScreensObserver = new BraveSyncScreensObserver() {
+                      @Override
                       public void onWordsCodeWrong() {
                           showEndDialog(getResources().getString(R.string.sync_device_failure));
                       }
-
+                      @Override
                       public void onSeedReceived(String seed) {
                           if (!isBarCodeValid(seed, false)) {
                               showEndDialog(getResources().getString(R.string.sync_device_failure));
@@ -414,6 +416,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       }
   }
 
+  @Override
   public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
       if (getActivity() == null || buttonView != mSyncSwitch) return;
       ChromeSwitchPreference syncSwitch = (ChromeSwitchPreference) findPreference(PREF_SYNC_SWITCH);
