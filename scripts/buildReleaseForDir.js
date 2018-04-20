@@ -41,7 +41,7 @@ fi
 
 echo "Signing apk..."
 #removed -verbose key
-third_party/android_tools/sdk/build-tools/27.0.3/apksigner sign --in $BASEDIR/apks/Brave_aligned.apk --out $BASEDIR/apks/Brave_aligned.apk --ks $KEYSTORE_PATH --ks-key-alias linkbubble --ks-pass pass:$KEYSTOREPASSWORD
+third_party/android_tools/sdk/build-tools/27.0.3/apksigner sign --in $BASEDIR/apks/Brave_aligned.apk --out $BASEDIR/apks/Brave_aligned.apk --ks $KEYSTORE_PATH --ks-key-alias linkbubble --ks-pass pass:$KEYSTOREPASSWORD --key-pass pass:$KEYPASSWORD
 rc=$?
 if [ $rc != 0 ] 
 then 
