@@ -525,7 +525,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
     public void postInflationStartup() {
         super.postInflationStartup();
 
-        getToolbarManager().setCloseButtonDrawable(mIntentDataProvider.getCloseButtonDrawable());
+        /*getToolbarManager().setCloseButtonDrawable(mIntentDataProvider.getCloseButtonDrawable());
         getToolbarManager().setShowTitle(mIntentDataProvider.getTitleVisibilityState()
                 == CustomTabsIntent.SHOW_PAGE_TITLE);
         if (mConnection.shouldHideDomainForSession(mSession)) {
@@ -557,7 +557,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         mTopBarDelegate = new CustomTabTopBarDelegate(this);
         mDefaultToolbarVisibility = getToolbarManager().getToolbarVisibility();
         mDefaultToolbarShadowVisibility = getToolbarManager().getToolbarShadowVisibility();
-        mDefaultIsProgressBarEnabled = getToolbarManager().isProgressBarEnabled();
+        mDefaultIsProgressBarEnabled = getToolbarManager().isProgressBarEnabled();*/
     }
 
     @Override

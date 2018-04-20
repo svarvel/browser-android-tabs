@@ -35,6 +35,7 @@ public class StatsUpdaterWorker {
     }
 
     class UpdateThread extends Thread {
+        @Override
         public void run() {
           for (;;) {
               try {

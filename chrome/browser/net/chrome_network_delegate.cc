@@ -472,13 +472,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
 
       ctx->needPerformTPBlock = true;
       if (!blockers_worker_->isTPInitialized() ) {
-        content::BrowserThread::PostTaskAndReply(
-          content::BrowserThread::FILE, FROM_HERE,
+        scoped_refptr<base::SequencedTaskRunner> task_runner =
+          base::CreateSequencedTaskRunnerWithTraits({base::MayBlock(), base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN});
+        task_runner->PostTaskAndReply(FROM_HERE,
           base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork,
               base::Unretained(this)),
           base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
-              base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
-            );
+              base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
         ctx->pendingAtLeastOnce = true;
         pending_requests_->Insert(request->identifier());
         return net::ERR_IO_PENDING;
@@ -491,7 +491,6 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
 
 void ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork() {
   base::AssertBlockingAllowed();
-  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
   blockers_worker_->InitTP();
 }
 
@@ -549,13 +548,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
       if (!blockers_worker_->isAdBlockerInitialized() ||
         (ctx->isAdBlockRegionalEnabled && !blockers_worker_->isAdBlockerRegionalInitialized()) ) {
 
-        content::BrowserThread::PostTaskAndReply(
-          content::BrowserThread::FILE, FROM_HERE,
+          scoped_refptr<base::SequencedTaskRunner> task_runner =
+            base::CreateSequencedTaskRunnerWithTraits({base::MayBlock(), base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN});
+          task_runner->PostTaskAndReply(FROM_HERE,
           base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork,
               base::Unretained(this), ctx),
           base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork),
-              base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
-            );
+              base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
         ctx->pendingAtLeastOnce = true;
         pending_requests_->Insert(request->identifier());
         return net::ERR_IO_PENDING;
@@ -568,7 +567,6 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
 
 void ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   base::AssertBlockingAllowed();
-  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
   blockers_worker_->InitAdBlock();
 
   if (ctx->isAdBlockRegionalEnabled &&
@@ -632,13 +630,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
     ctx->newURL = blockers_worker_->getHTTPSURLFromCacheOnly(&request->url(), request->identifier());
     if (ctx->newURL == request->url().spec()) {
       ctx->UrlCopy = request->url();
-      content::BrowserThread::PostTaskAndReply(
-        content::BrowserThread::FILE, FROM_HERE,
+      scoped_refptr<base::SequencedTaskRunner> task_runner =
+        base::CreateSequencedTaskRunnerWithTraits({base::MayBlock(), base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN});
+      task_runner->PostTaskAndReply(FROM_HERE,
         base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork,
             base::Unretained(this), base::Unretained(request), ctx),
         base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork),
-            base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
-          );
+            base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
       ctx->pendingAtLeastOnce = true;
       pending_requests_->Insert(request->identifier());
       return net::ERR_IO_PENDING;
@@ -652,7 +650,6 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
 void ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRequest* request, std::shared_ptr<OnBeforeURLRequestContext> ctx)
 {
   base::AssertBlockingAllowed();
-  DCHECK_CURRENTLY_ON(content::BrowserThread::FILE);
   DCHECK(ctx->request_identifier != 0);
   ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy, ctx->request_identifier);
 }
