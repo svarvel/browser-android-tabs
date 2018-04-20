@@ -27,28 +27,28 @@ else
 	echo "Build of apk succeeded and took $DIFF sec"
 fi
 
-echo "Signing apk..."  
-#removed -verbose key 
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore $KEYSTORE_PATH -storepass $KEYSTOREPASSWORD -keypass $KEYPASSWORD $BASEDIR/apks/Brave.apk linkbubble 
-rc=$?
-if [ $rc != 0 ] 
-then 
-	echo "Apk signing failed ($rc)" 
-	exit $rc 
-else
-	echo "Apk signing succeeded"
-fi
-
-echo "Aligning apk..."  
+echo "Aligning apk..."
 #removed -v key
-third_party/android_tools/sdk/build-tools/27.0.1/zipalign -f -p 4 $BASEDIR/apks/Brave.apk $BASEDIR/apks/Brave_aligned.apk
+third_party/android_tools/sdk/build-tools/27.0.3/zipalign -f -p 4 $BASEDIR/apks/Brave.apk $BASEDIR/apks/Brave_aligned.apk
 rc=$?
 if [ $rc != 0 ] 
 then 
-	echo "Apk aligning failed ($rc)" 
+	echo "Apk aligning failed ($rc)"
 	exit $rc 
 else
 	echo "Apk aligning succeeded"
+fi
+
+echo "Signing apk..."
+#removed -verbose key
+third_party/android_tools/sdk/build-tools/27.0.3/apksigner sign --in $BASEDIR/apks/Brave_aligned.apk --out $BASEDIR/apks/Brave_aligned.apk --ks $KEYSTORE_PATH --ks-key-alias linkbubble --ks-pass pass:$KEYSTOREPASSWORD
+rc=$?
+if [ $rc != 0 ] 
+then 
+	echo "Apk signing failed ($rc)"
+	exit $rc 
+else
+	echo "Apk signing succeeded"
 fi
 
 echo "Apk build, sign and align succeeded for $BASEDIR"
