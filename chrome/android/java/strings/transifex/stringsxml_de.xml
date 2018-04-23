@@ -76,7 +76,7 @@ gespart</string>
     <string name="brave_shields_fingerprint_methods">Fingerprint-Methoden</string>
     <string name="brave_shields_block_phishing_switch">Phishing blocken</string>
 
-    <string name="play_video_in_background_title">Hintergrund-Videowiedergabe</string>
+    <string name="play_video_in_background_title">Videowiedergabe im Hintergrund</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiviert</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktiviert</string>
     <string name="website_settings_category_play_video_in_background_enabled">Experimentell. Ermöglicht die Audio-Wiedergabe von im Hintergrund laufenden Videos, wenn der Tab nicht aktiv ist oder der Bildschirm des Geräts ausgeschaltet ist. Versuchen Sie, in den Desktop-Modus zu wechseln, wenn diese Funktion nicht funktioniert.</string>
@@ -87,6 +87,9 @@ gespart</string>
     <string name="play_yt_video_in_browser_title">Videowiedergabe in Brave</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Aktiviert</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Deaktiviert</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">Wenn aktiviert, werden Videos in Brave abgespielt anstatt in der entsprechenden Anwendung</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Falls aktiviert, werden Videos anstatt in der entsprechenden App in Brave wiedergegeben</string>
+
+    <string name="close_tabs_on_exit_title">Tabs beim Beenden schließen</string>
+    <string name="close_tabs_on_exit_summary">Tabs zwischen Browser-Sitzungen nicht speichern</string>
 
 </resources>

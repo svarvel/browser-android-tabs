@@ -89,4 +89,7 @@ HTTPS</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Απενεργοποιημένο</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Αν ενεργοποιηθεί, τα βίντεο θα αναπαράγονται στο Brave, αντί για την αντίστοιχη εφαρμογή</string>
 
+    <string name="close_tabs_on_exit_title">Κλείσιμο καρτελών κατά την έξοδο</string>
+    <string name="close_tabs_on_exit_summary">Να μην διατηρούνται καρτέλες μεταξύ συνεδριών περιήγησης</string>
+
 </resources>

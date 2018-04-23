@@ -3,56 +3,56 @@
     <string name="brave_settings_title">הגדרות מגן אתר Brave עבור</string>
     <string name="brave_shields_down">למטה</string>
     <string name="brave_shields_up">למעלה</string>
-    <string name="brave_shields_ads_trackers">מודעות ושרתי Trackers שנחסמו</string>
+    <string name="brave_shields_ads_trackers">מודעות ושרתי מעקב שנחסמו</string>
     <string name="brave_shields_https_upgrades">שדרוגי HTTPS</string>
-    <string name="brave_shields_scripts_blocked">קבצי Script שנחסמו</string>
-    <string name="brave_shields_ads_tracking_switch">חסום מודעות ומעקב</string>
+    <string name="brave_shields_scripts_blocked">קובצי תסריט שנחסמו</string>
+    <string name="brave_shields_ads_tracking_switch">חסימת מודעות ומעקב</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS בכל מקום</string>
-    <string name="brave_shields_blocks_scripts_switch">חסום קבצי Script</string>
-    <string name="accessibility_toolbar_btn_brave_shields">הפעל/השבת מגן/י Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">חסום עוגיות צד שלישי</string>
+    <string name="brave_shields_blocks_scripts_switch">לחסום קובצי תסריט</string>
+    <string name="accessibility_toolbar_btn_brave_shields">הפעלה/השבתה של מגני Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">לחסום עוגיות צד שלישי</string>
 
-    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר הדבר ניתן</string>
+    <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP כשאפשר</string>
     <string name="tracking_protection_title">מצב הגנה מפני מעקב</string>
-    <string name="tracking_protection_summary">מניעת טעינה של משאבים העוקבים אחריך</string>
-    <string name="ad_block_title">חסימת מודעות</string>
-    <string name="ad_block_summary">מניעת טעינה של מודעות</string>
+    <string name="tracking_protection_summary">מניעת טעינה של משאבים שעוקבים אחריך</string>
+    <string name="ad_block_title">לחסום פרסומות</string>
+    <string name="ad_block_summary">מניעת טעינה של פרסומות</string>
 
-    <string name="fingerprinting_protection_title">הגנה באמצעות טביעות אצבעות</string>
+    <string name="fingerprinting_protection_title">להגן מפני תקיפת טביעת אצבע</string>
     <string name="fingerprinting_protection_summary">מניעת הדפדפן מלקיחת טביעות אצבעות</string>
-    <string name="brave_shields_fingerprints_blocked">שיטות טביעות אצבעות חסומות</string>
-    <string name="brave_shields_block_fingerprints_switch">הגנה באמצעות טביעות אצבעות</string>
+    <string name="brave_shields_fingerprints_blocked">שיטות לקיחת טביעת אצבע חסומות</string>
+    <string name="brave_shields_block_fingerprints_switch">הגנה מפני תקיפת טביעת אצבע</string>
 
-    <string name="ad_block_regional_title">חסימת מודעות אזוריות</string>
-    <string name="ad_block_regional_summary">מניעת טעינה של מודעות אזוריות</string>
+    <string name="ad_block_regional_title">לחסום פרסומות אזוריות</string>
+    <string name="ad_block_regional_summary">מניעת טעינה של פרסומות אזוריות</string>
 
-    <string name="ad_block_regional_summary_no_list">אין רשימות נוספות הזמינות עבור האזור שלך</string>
+    <string name="ad_block_regional_summary_no_list">אין רשימות נוספות זמינות עבור האזור שלך</string>
 
-    <string name="menu_exit">יְצִיאָה</string>
+    <string name="menu_exit">יציאה</string>
 
     <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים
- באמצעות Brave Sync. אין צורך ליצור
- חשבון. הקש להלן כדי להתחיל.</string>
+באמצעות Brave Sync. אין צורך ליצור
+חשבון. הקש להלן כדי להתחיל.</string>
     <string name="brave_sync_have_existing_code">יש לי קוד סנכרון קיים</string>
-    <string name="sync_settings_add_device_name_title">הוסף שם מכשיר</string>
-    <string name="sync_settings_add_device_name_label">הזן שם אופציונלי עבור מכשיר זה</string>
-    <string name="sync_example_device_name">מכשיר Android</string>
-    <string name="brave_sync_qrcode">סנכרן למכשיר</string>
-    <string name="brave_sync_qrcode_message">באמצעות מכשיר מסונכרן קיים,
- פתח את Brave Settings (הגדרות Brave),
- ונווט אל Device &amp;Settings"
- (הגדרות מכשירים), הקש על '+' כדי
- להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</string>
-    <string name="enter_code_words_sync">הזן מילות קוד</string>
-    <string name="enter_code_words_below_sync">הזן את מילות הקוד להלן.</string>
-    <string name="sync_device">סנכרן מכשיר</string>
+    <string name="sync_settings_add_device_name_title">נא להוסיף שם מכשיר</string>
+    <string name="sync_settings_add_device_name_label">נא להזין שם אופציונלי עבור מכשיר זה</string>
+    <string name="sync_example_device_name">מכשיר אנדרואיד</string>
+    <string name="brave_sync_qrcode">לסנכרן למכשיר</string>
+    <string name="brave_sync_qrcode_message">במכשיר מסונכרן קיים,
+פתח את הגדרות Brave,
+ונווט אל הגדרות מכשיר,
+ולחץ + להוספת מכשיר חדש
+והצגת קוד הסנכרון.</string>
+    <string name="enter_code_words_sync">נא להזין מילות קוד</string>
+    <string name="enter_code_words_below_sync">נא להזין את מילות הקוד להלן.</string>
+    <string name="sync_device">לסנכרן מכשיר</string>
     <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
     <string name="sync_device_success">הגדרת הסנכרון הושלמה בהצלחה</string>
     <string name="reset_sync">איפוס הסנכרון...</string>
-    <string name="resetting_sync">אתה בטוח שברצונך לאפס את הגדרות הסנכרון של מכשיר זה?</string>
+    <string name="resetting_sync">האם ברצונך באמת לאפס את הגדרות הסנכרון של מכשיר זה?</string>
 
-    <string name="brave_stats_text_trackers">כל מעקב
+    <string name="brave_stats_text_trackers">כלי מעקב
 שנחסמו</string>
     <string name="brave_stats_text_ads">פרסומות
 שנחסמו</string>
@@ -61,32 +61,35 @@ HTTPS</string>
     <string name="brave_stats_text_time">הזמן המשוער
 שנחסך</string>
 
-    <string name="send_metrics_title">שלח מדדים</string>
+    <string name="send_metrics_title">לשלוח מדדים</string>
 
     <string name="desktop_mode_title">מצב שולחן עבודה</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">העדף/י את גרסאות האתרים לשולחן עבודה</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">העדף/י את גרסאות האתרים למכשירים ניידים</string>
-    <string name="website_settings_category_desktop_view_enabled">הפעל/י תצוגת שולחן עבודה לכרטיסיות חדשות</string>
-    <string name="website_settings_category_desktop_view_disabled">השתמש/י בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">להעדיף את גרסאות האתרים לשולחן עבודה</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">להעדיף את גרסאות האתרים למכשירים ניידים</string>
+    <string name="website_settings_category_desktop_view_enabled">להפעיל תצוגת שולחן עבודה לכרטיסיות חדשות</string>
+    <string name="website_settings_category_desktop_view_disabled">להשתמש בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</string>
 
-    <string name="brave_shields_first_group_title">חוסם צג</string>
-    <string name="brave_shields_second_group_title">פקדים אינדיבידואליים</string>
+    <string name="brave_shields_first_group_title">צג חסימות</string>
+    <string name="brave_shields_second_group_title">פקדים פרטניים</string>
     <string name="brave_shields">מגנים</string>
     <string name="brave_shields_ads_and_trackers">פרסומות וכלי מעקב</string>
-    <string name="brave_shields_fingerprint_methods">שיטות טביעת אצבע</string>
-    <string name="brave_shields_block_phishing_switch">חסום דיוג</string>
+    <string name="brave_shields_fingerprint_methods">שיטות לקיחת טביעת אצבע</string>
+    <string name="brave_shields_block_phishing_switch">חסימת דיוג</string>
 
-    <string name="play_video_in_background_title">הצגת סרט ברקע</string>
-    <string name="website_settings_category_play_video_in_background_enabled_summary">זמין</string>
-    <string name="website_settings_category_play_video_in_background_disabled_summary">לא זמין</string>
-    <string name="website_settings_category_play_video_in_background_enabled">ניסיוני. מאפשר הפעלת אודיו מווידאו ברקע כשהכרטיסייה אינה פעילה או כשמסך המכשיר מכובה. נסה/נסי לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</string>
-    <string name="settings_require_relaunch_notice">השינויים שלך ייכנסו לתוקף בפעם הבאה שתפעיל/י מחדש את Brave</string>
-    <string name="settings_require_relaunch_now">הפעל/י מחדש עכשיו</string>
+    <string name="play_video_in_background_title">נגינת סרטים ברקע</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">מופעל</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">כבוי</string>
+    <string name="website_settings_category_play_video_in_background_enabled">ניסיוני. מאפשר הפעלת צליל מווידאו ברקע כשכרטיסיות אינן פעילות או כשמסך המכשיר מכובה. נא לנסות לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</string>
+    <string name="settings_require_relaunch_notice">השינויים שלך ייכנסו לתוקף בפעם הבאה ש־Brave יופעל מחדש</string>
+    <string name="settings_require_relaunch_now">להפעיל מחדש עכשיו</string>
     <string name="settings_require_relaunch_later">מאוחר יותר</string>
 
-    <string name="play_yt_video_in_browser_title">הצגת סרט ב-Brave</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">זמין</string>
-    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">לא זמין</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">אם הם זמינים, הסרטים יוצגו ב-Brave במקום באפליקציה מקבילה</string>
+    <string name="play_yt_video_in_browser_title">הצגת סרטים ב־Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">מופעל</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">כבוי</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">אם זה מופעל, הסרטים יוצגו ב־Brave במקום באפליקציה המשויכת</string>
+
+    <string name="close_tabs_on_exit_title">סגור כרטיסיות ביציאה</string>
+    <string name="close_tabs_on_exit_summary">אין להחזיק כרטיסיות בין זמני עיון שונים</string>
 
 </resources>

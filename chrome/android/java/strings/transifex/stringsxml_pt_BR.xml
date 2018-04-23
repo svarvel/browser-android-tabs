@@ -89,4 +89,7 @@ Salvo</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desativado</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Se estiver ativado, os vídeos serão reproduzidos no Brave em vez do aplicativo correspondente</string>
 
+    <string name="close_tabs_on_exit_title">Fechar abas ao sair</string>
+    <string name="close_tabs_on_exit_summary">Não continue com as abas entre as sessões de navegação</string>
+
 </resources>
