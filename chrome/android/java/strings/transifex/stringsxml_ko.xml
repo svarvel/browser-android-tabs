@@ -87,4 +87,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">비활성화됨</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">활성화된 경우, 연관 앱 대신에 Brave에서 비디오가 재생됩니다</string>
 
+    <string name="close_tabs_on_exit_title">나갈 때 탭을 닫아주세요</string>
+    <string name="close_tabs_on_exit_summary">검색 세션 사이에 탭을 열어두지 마십시오</string>
+
 </resources>

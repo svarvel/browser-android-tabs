@@ -89,4 +89,7 @@ Dihemat</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Dinonaktifkan</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Jika diaktifkan, video akan diputar di Brave dan bukan di aplikasi yang terkait</string>
 
+    <string name="close_tabs_on_exit_title">Tutup tab saat keluar</string>
+    <string name="close_tabs_on_exit_summary">Jangan tahan tab di antara sesi penelusuran</string>
+
 </resources>

@@ -89,4 +89,7 @@ HTTPS</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Đã tắt</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Nếu được bật, video sẽ được phát trong Brave thay vì ứng dụng tương ứng</string>
 
+    <string name="close_tabs_on_exit_title">Đóng các tab khi thoát </string>
+    <string name="close_tabs_on_exit_summary">Không tiếp tục duy trì các tab giữa các phiên duyệt web</string>
+
 </resources>

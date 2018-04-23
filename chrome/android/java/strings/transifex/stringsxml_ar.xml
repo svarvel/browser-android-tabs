@@ -92,4 +92,7 @@ HTTPS</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">مُعطَّل</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">إذا تم تمكينه، سيتم تشغيل الفيديو عن طريق Brave  بدلا من التطبيق المُناظر</string>
 
+    <string name="close_tabs_on_exit_title">قُم بإغلاق علامات التبويب عند الخروج</string>
+    <string name="close_tabs_on_exit_summary">لا تترك علامات التبويب مفتوحة بين جلسات التصفح</string>
+
 </resources>

@@ -90,4 +90,7 @@ Guardado</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desactivado</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Si está activado, los vídeos se reproducirán en Brave en lugar de la aplicación correspondiente</string>
 
+    <string name="close_tabs_on_exit_title">Cerrar pestañas al salir</string>
+    <string name="close_tabs_on_exit_summary">No continúe las pestañas entre sesiones de navegación</string>
+
 </resources>

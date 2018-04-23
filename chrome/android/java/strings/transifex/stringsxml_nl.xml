@@ -89,4 +89,7 @@ Opgeslagen</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Uitgeschakeld</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Indien ingeschakeld, worden video\'s afgespeeld in Brave in plaats van in de betreffende app</string>
 
+    <string name="close_tabs_on_exit_title">Sluit tabs bij weggaan af</string>
+    <string name="close_tabs_on_exit_summary">Laat tabs tussen browsersessies niet openstaan</string>
+
 </resources>
