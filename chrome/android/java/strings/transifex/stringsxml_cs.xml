@@ -83,4 +83,7 @@ Uložen</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Zakázáno</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Pokud je tato funkce povolena, videa budou přehrávána v aplikaci Brave namísto příslušné aplikace</string>
 
+    <string name="close_tabs_on_exit_title">Zavřít panely při vypnutí</string>
+    <string name="close_tabs_on_exit_summary">Neponechávat panely mezi relacemi prohlížeče</string>
+
 </resources>

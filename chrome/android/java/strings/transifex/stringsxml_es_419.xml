@@ -58,4 +58,35 @@ bloqueados</string>
 bloqueados</string>
     <string name="brave_stats_text_https">Actualizaciones
 HTTPS</string>
+    <string name="brave_stats_text_time">Tiempo ahorrado
+estimado</string>
+
+    <string name="send_metrics_title">Enviar mediciones</string>
+
+    <string name="desktop_mode_title">Modo Escritorio</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir la versión de escritorio de los sitios</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir la versión móvil de los sitios</string>
+    <string name="website_settings_category_desktop_view_enabled">Habilitar vista de escritorio para nuevas pestañas</string>
+    <string name="website_settings_category_desktop_view_disabled">Utilizar la versión móvil de los sitios para pestañas nuevas (recomendado) </string>
+
+    <string name="brave_shields_first_group_title">Monitor de bloqueo</string>
+    <string name="brave_shields_second_group_title">Controles individuales</string>
+    <string name="brave_shields">Protecciones</string>
+    <string name="brave_shields_ads_and_trackers">Anuncios y Rastreadores</string>
+    <string name="brave_shields_fingerprint_methods">Métodos de huellas dactilares </string>
+    <string name="brave_shields_block_phishing_switch">Bloquear Fraude Electrónico </string>
+
+    <string name="play_video_in_background_title">Reproducción de vídeo en el fondo</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Habilitado</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Discapacitado </string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Permite reproducir audio de vídeo en el fondo cuando la pestaña no está activa o la pantalla del dispositivo está apagada. Intente cambiar al modo de escritorio si esta característica no funciona.</string>
+    <string name="settings_require_relaunch_notice">Tus cambios tendrán efecto la próxima vez que relances Brave</string>
+    <string name="settings_require_relaunch_now">RELANZAR AHORA</string>
+    <string name="settings_require_relaunch_later">LUEGO</string>
+
+    <string name="play_yt_video_in_browser_title">Reproducción de video en Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Habilitado </string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Discapacitado</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Si habilitado, los videos se reproducirán en Brave en lugar de la aplicación correspondiente</string>
+
     </resources>

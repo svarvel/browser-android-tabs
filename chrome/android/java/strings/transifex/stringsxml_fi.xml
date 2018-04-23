@@ -88,4 +88,7 @@ Tallennettu</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Pois käytöstä</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Jos asetus on käytössä, videot toistetaan Brave-sovelluksessa niille määritellyn oletussovelluksen sijaan</string>
 
+    <string name="close_tabs_on_exit_title">Sulje välilehdet lopetettaessa</string>
+    <string name="close_tabs_on_exit_summary">Älä muista välilehtiä selausistuntojen välillä</string>
+
 </resources>

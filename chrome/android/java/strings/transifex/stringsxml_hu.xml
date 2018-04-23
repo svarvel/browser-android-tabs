@@ -90,4 +90,7 @@ idő</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Letiltva</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Engedélyezése esetén a videókat a kapcsolódó alkalmazás helyett a Brave fogja lejátszani.</string>
 
+    <string name="close_tabs_on_exit_title">Lapok bezárása kilépéskor</string>
+    <string name="close_tabs_on_exit_summary">Ne tartsa fent a füleket a böngészési szessziók közt</string>
+
 </resources>

@@ -1088,35 +1088,37 @@
 <translation id="982182592107339124">פעולה זו תמחק נתונים של כל האתרים, כולל:</translation>
 <translation id="983192555821071799">סגור את כל הכרטיסיות</translation>
 <translation id="987264212798334818">כללי</translation>
-<translation id="3209146299287804856">הגדרות מגן אתר Brave עבור</translation><translation id="622484624075952240">למטה</translation><translation id="2706462751667573066">למעלה</translation><translation id="4339730410920731698">מודעות ושרתי Trackers שנחסמו</translation><translation id="2313532038420432247">שדרוגי HTTPS</translation><translation id="7461425058443653485">קבצי Script שנחסמו</translation><translation id="7835726359440951858">חסום מודעות ומעקב</translation><translation id="520895744850022668">HTTPS בכל מקום</translation><translation id="94154759592465111">חסום קבצי Script</translation><translation id="7307834434086582547">הפעל/השבת מגן/י Brave</translation><translation id="6132506775968708399">חסום עוגיות צד שלישי</translation><translation id="8710614491157212477">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP, כאשר הדבר ניתן</translation><translation id="5758129336814690876">מצב הגנה מפני מעקב</translation><translation id="4609637183310787528">מניעת טעינה של משאבים העוקבים אחריך</translation><translation id="8387201461264842096">חסימת מודעות</translation><translation id="1934885595886623674">מניעת טעינה של מודעות</translation><translation id="7458422973722236530">הגנה באמצעות טביעות אצבעות</translation><translation id="5787084571334399599">מניעת הדפדפן מלקיחת טביעות אצבעות</translation><translation id="3758669798635576061">שיטות טביעות אצבעות חסומות</translation><translation id="3276318574457057212">חסימת מודעות אזוריות</translation><translation id="2300239903491866759">מניעת טעינה של מודעות אזוריות</translation><translation id="8142327400852603066">אין רשימות נוספות הזמינות עבור האזור שלך</translation><translation id="9148058034647219655">יְצִיאָה</translation><translation id="3149880132460839085">Brave Sync</translation><translation id="5853303025585906159">סנכרן את נתוני הדפדפן בין המכשירים
- באמצעות Brave Sync. אין צורך ליצור
- חשבון. הקש להלן כדי להתחיל.</translation><translation id="4807681603968503084">יש לי קוד סנכרון קיים</translation><translation id="3082265116777145081">הוסף שם מכשיר</translation><translation id="9024091168371687561">הזן שם אופציונלי עבור מכשיר זה</translation><translation id="3998827900918661986">מכשיר Android</translation><translation id="7319511434820752937">סנכרן למכשיר</translation><translation id="2848874822038607051">באמצעות מכשיר מסונכרן קיים,
- פתח את Brave Settings (הגדרות Brave),
- ונווט אל Device &amp;Settings"
- (הגדרות מכשירים), הקש על '+' כדי
- להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</translation><translation id="7539985410310934287">הזן מילות קוד</translation><translation id="3381055602822429838">הזן את מילות הקוד להלן.</translation><translation id="326454632686131209">סנכרן מכשיר</translation><translation id="8985635554450124959">לא ניתן להגדיר את הסנכרון</translation><translation id="7713465482966886648">הגדרת הסנכרון הושלמה בהצלחה</translation><translation id="1068083442730715531">איפוס הסנכרון...</translation><translation id="6761015334234690567">אתה בטוח שברצונך לאפס את הגדרות הסנכרון של מכשיר זה?</translation><translation id="6244065453125065109">כל מעקב
+<translation id="3209146299287804856">הגדרות מגן אתר Brave עבור</translation><translation id="622484624075952240">למטה</translation><translation id="2706462751667573066">למעלה</translation><translation id="4339730410920731698">מודעות ושרתי מעקב שנחסמו</translation><translation id="2313532038420432247">שדרוגי HTTPS</translation><translation id="7461425058443653485">קובצי תסריט שנחסמו</translation><translation id="7835726359440951858">חסימת מודעות ומעקב</translation><translation id="520895744850022668">HTTPS בכל מקום</translation><translation id="94154759592465111">לחסום קובצי תסריט</translation><translation id="7307834434086582547">הפעלה/השבתה של מגני Brave</translation><translation id="6132506775968708399">לחסום עוגיות צד שלישי</translation><translation id="8710614491157212477">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP כשאפשר</translation><translation id="5758129336814690876">מצב הגנה מפני מעקב</translation><translation id="4609637183310787528">מניעת טעינה של משאבים שעוקבים אחריך</translation><translation id="8387201461264842096">לחסום פרסומות</translation><translation id="1934885595886623674">מניעת טעינה של פרסומות</translation><translation id="7458422973722236530">הגנה מפני תקיפת טביעת אצבע</translation><translation id="5787084571334399599">מניעת הדפדפן מלקיחת טביעות אצבעות</translation><translation id="3758669798635576061">שיטות לקיחת טביעת אצבע חסומות</translation><translation id="3276318574457057212">לחסום פרסומות אזוריות</translation><translation id="2300239903491866759">מניעת טעינה של פרסומות אזוריות</translation><translation id="8142327400852603066">אין רשימות נוספות זמינות עבור האזור שלך</translation><translation id="9148058034647219655">יציאה</translation><translation id="3149880132460839085">Brave Sync</translation><translation id="5853303025585906159">סנכרן את נתוני הדפדפן בין המכשירים
+באמצעות Brave Sync. אין צורך ליצור
+חשבון. הקש להלן כדי להתחיל.</translation><translation id="4807681603968503084">יש לי קוד סנכרון קיים</translation><translation id="3082265116777145081">נא להוסיף שם מכשיר</translation><translation id="9024091168371687561">נא להזין שם אופציונלי עבור מכשיר זה</translation><translation id="3998827900918661986">מכשיר אנדרואיד</translation><translation id="7319511434820752937">לסנכרן למכשיר</translation><translation id="2848874822038607051">במכשיר מסונכרן קיים,
+פתח את הגדרות Brave,
+ונווט אל הגדרות מכשיר,
+ולחץ + להוספת מכשיר חדש
+והצגת קוד הסנכרון.</translation><translation id="7539985410310934287">נא להזין מילות קוד</translation><translation id="3381055602822429838">נא להזין את מילות הקוד להלן.</translation><translation id="326454632686131209">לסנכרן מכשיר</translation><translation id="8985635554450124959">לא ניתן להגדיר את הסנכרון</translation><translation id="7713465482966886648">הגדרת הסנכרון הושלמה בהצלחה</translation><translation id="1068083442730715531">איפוס הסנכרון...</translation><translation id="6761015334234690567">האם ברצונך באמת לאפס את הגדרות הסנכרון של מכשיר זה?</translation><translation id="6244065453125065109">כלי מעקב
 שנחסמו</translation><translation id="2547939855139473800">פרסומות
 שנחסמו</translation><translation id="8880969045613157151">שדרוגי
 HTTPS</translation><translation id="204407992549693965">הזמן המשוער
-שנחסך</translation><translation id="991605024067283917">שלח מדדים</translation><translation id="6572660632052512096">מצב שולחן עבודה</translation>
-<translation id="4479934682648362332">העדף/י את גרסאות האתרים לשולחן עבודה</translation>
-<translation id="807636106793708118">העדף/י את גרסאות האתרים למכשירים ניידים</translation>
-<translation id="1340503115760585811">הפעל/י תצוגת שולחן עבודה לכרטיסיות חדשות</translation>
-<translation id="7924540991929826186">השתמש/י בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</translation>
-<translation id="3834924998750356151">חוסם צג</translation>
-<translation id="1713450908129883784">פקדים אינדיבידואליים</translation>
+שנחסך</translation><translation id="991605024067283917">לשלוח מדדים</translation><translation id="6572660632052512096">מצב שולחן עבודה</translation>
+<translation id="4479934682648362332">להעדיף את גרסאות האתרים לשולחן עבודה</translation>
+<translation id="807636106793708118">להעדיף את גרסאות האתרים למכשירים ניידים</translation>
+<translation id="1340503115760585811">להפעיל תצוגת שולחן עבודה לכרטיסיות חדשות</translation>
+<translation id="7924540991929826186">להשתמש בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</translation>
+<translation id="3834924998750356151">צג חסימות</translation>
+<translation id="1713450908129883784">פקדים פרטניים</translation>
 <translation id="6303294677342628402">מגנים</translation>
 <translation id="252011129655042182">פרסומות וכלי מעקב</translation>
-<translation id="6754976710186182237">שיטות טביעת אצבע</translation>
-<translation id="8585880402319729023">חסום דיוג</translation>
+<translation id="6754976710186182237">שיטות לקיחת טביעת אצבע</translation>
+<translation id="8585880402319729023">חסימת דיוג</translation>
 <translation id="4235790499274112499">וידאו ברקע</translation>
-<translation id="59174027418879706">זמין</translation>
-<translation id="4176463684765177261">לא זמין</translation>
-<translation id="1580125697191336644">ניסיוני. מאפשר הפעלת אודיו מווידאו ברקע כשהכרטיסייה אינה פעילה או כשמסך המכשיר מכובה. נסה/נסי לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</translation>
-<translation id="6587448235155023666">השינויים שלך ייכנסו לתוקף בפעם הבאה שתפעיל/י מחדש את Brave</translation>
-<translation id="8701563696941209024">הפעל/י מחדש עכשיו</translation>
+<translation id="59174027418879706">מופעל</translation>
+<translation id="4176463684765177261">כבוי</translation>
+<translation id="1580125697191336644">ניסיוני. מאפשר הפעלת צליל מווידאו ברקע כשכרטיסיות אינן פעילות או כשמסך המכשיר מכובה. נא לנסות לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</translation>
+<translation id="6587448235155023666">השינויים שלך ייכנסו לתוקף בפעם הבאה ש־Brave יופעל מחדש</translation>
+<translation id="8701563696941209024">להפעיל מחדש עכשיו</translation>
 <translation id="834487290629916192">מאוחר יותר</translation>
-<translation id="5965081608816406060">הצגת סרט ברקע</translation>
-<translation id="1842747674580016420">הצגת סרט ב-Brave</translation>
-<translation id="5368992950177874750">אם הם זמינים, הסרטים יוצגו ב-Brave במקום באפליקציה מקבילה</translation>
+<translation id="5965081608816406060">נגינת סרטים ברקע</translation>
+<translation id="1842747674580016420">הצגת סרטים ב־Brave</translation>
+<translation id="5368992950177874750">אם זה מופעל, הסרטים יוצגו ב־Brave במקום באפליקציה המשויכת</translation>
+<translation id="7459000603787995422">סגור כרטיסיות ביציאה</translation>
+<translation id="1680858055899097121">אין להחזיק כרטיסיות בין זמני עיון שונים</translation>
 </translationbundle>

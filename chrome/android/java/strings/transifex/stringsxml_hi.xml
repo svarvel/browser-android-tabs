@@ -87,4 +87,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">अक्षम किया</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">सक्षम किए जाने पर वीडियो, संबंधित ऐप के स्थान पर ब्रेव में चलाए जाएंगे </string>
 
+    <string name="close_tabs_on_exit_title">बाहर निकलने पर टैब बंद करें</string>
+    <string name="close_tabs_on_exit_summary">ब्राउज़िंग सत्रों के बीच टैब पर ना टिके</string>
+
 </resources>

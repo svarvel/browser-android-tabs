@@ -88,4 +88,7 @@ Saved</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Disabled</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">If enabled, videos will be played in Brave instead of corresponding app</string>
 
+    <string name="close_tabs_on_exit_title">Close tabs on exit</string>
+    <string name="close_tabs_on_exit_summary">Don't persist tabs between browsing sessions</string>
+
 </resources>

@@ -90,4 +90,7 @@ ušetrený čas</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Zakázané</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Ak je to povolené, videá sa budú prehrávať cez Brave namiesto zodpovedajúcej aplikácie</string>
 
+    <string name="close_tabs_on_exit_title">Pri odchode zatvoriť karty</string>
+    <string name="close_tabs_on_exit_summary">Neuchovávať karty medzi reláciami</string>
+
 </resources>

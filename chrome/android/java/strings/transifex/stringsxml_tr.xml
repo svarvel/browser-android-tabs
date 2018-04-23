@@ -89,4 +89,7 @@ Kaydedildi</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Devre Dışı</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Etkinleştirilmesi halinde videolar ilişkili uygulama yerine Brave\'de oynatılacaktır</string>
 
+    <string name="close_tabs_on_exit_title">Çıkışta sekmeleri kapatın</string>
+    <string name="close_tabs_on_exit_summary">Tarama oturumları arasında sekmeleri sürdürmeyin</string>
+
 </resources>

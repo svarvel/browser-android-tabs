@@ -83,4 +83,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Забранено</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Ако е разрешено, видеоклиповете ще се възпроизвеждат в Brave вместо в съответното приложение</string>
 
+    <string name="close_tabs_on_exit_title">Затворете разделите при излизане</string>
+    <string name="close_tabs_on_exit_summary">Не поддържайте разделите между сесиите на браузване</string>
+
 </resources>

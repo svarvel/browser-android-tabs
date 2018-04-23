@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="brave_shields_down">Navzdol</string>
+    <string name="brave_shields_up">Navzgor</string>
+    <string name="brave_shields_ads_trackers">blokiranih oglasov in sledilnikov</string>
+    <string name="brave_shields_https_upgrades">nadgradenj HTTPS</string>
+    <string name="brave_shields_scripts_blocked">blokiranih skriptov</string>
+    <string name="brave_shields_ads_tracking_switch">Blokirajte oglase in sledenje</string>
+    <string name="menu_exit">Izhod</string>
+
+    <string name="sync_settings_add_device_name_title">Dodaj ime naprave</string>
+    <string name="sync_settings_add_device_name_label">Vnesite dodatno ime za to napravo</string>
+    <string name="sync_example_device_name">Naprava Android</string>
+    <string name="brave_sync_qrcode">Uskladi z napravo</string>
+    <string name="brave_stats_text_trackers">blokiranih
+sledilnikov</string>
+    <string name="brave_stats_text_ads">blokiranih
+oglasov</string>
+    <string name="brave_stats_text_https">nadgradenj
+HTTPS</string>
+    <string name="brave_stats_text_time">Ocenjen
+prihranek časa</string>
+
+    <string name="brave_shields">Ščiti</string>
+    <string name="brave_shields_ads_and_trackers">Oglasi in sledilniki</string>
+    <string name="brave_shields_fingerprint_methods">Metode prstnega odtisa</string>
+    <string name="play_video_in_background_title">Predvajanje videa v ozadju</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Omogočeno</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Onemogočeno</string>
+    <string name="settings_require_relaunch_now">PONOVNO ZAŽENI ZDAJ</string>
+    </resources>

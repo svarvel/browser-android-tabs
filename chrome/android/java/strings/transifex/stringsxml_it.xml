@@ -90,4 +90,7 @@ Risparmiato</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Disabilitato</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Se abilitato, i video saranno riprodotti con Brave piuttosto che in app corrispondenti</string>
 
+    <string name="close_tabs_on_exit_title">Chiudi le schede all\'uscita</string>
+    <string name="close_tabs_on_exit_summary">Non mantenere le schede tra le sessioni di navigazione</string>
+
 </resources>

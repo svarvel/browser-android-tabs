@@ -1092,8 +1092,8 @@ Pavyzdžiui, kai kurios svetainės gali atsakyti į šią užklausą rodydamos j
 <translation id="622484624075952240">Išjungta</translation>
 <translation id="2706462751667573066">Įjungta</translation>
 <translation id="4339730410920731698">Užblokuota reklamų ir seklių</translation>
-<translation id="2313532038420432247">HTTPS atnaujinimų</translation>
-<translation id="7461425058443653485">Užblokuoti scenarijai</translation>
+<translation id="2313532038420432247">HTTPS naujinimų</translation>
+<translation id="7461425058443653485">Užblokuota scenarijų</translation>
 <translation id="7835726359440951858">Blokuoti reklamas ir seklius</translation>
 <translation id="520895744850022668">HTTPS Everywhere</translation>
 <translation id="94154759592465111">Blokuoti scenarijus</translation>
@@ -1104,51 +1104,56 @@ Pavyzdžiui, kai kurios svetainės gali atsakyti į šią užklausą rodydamos j
 <translation id="4609637183310787528">Neleidžia paleisti išteklių, kurie seka jūsų veiksmus</translation>
 <translation id="8387201461264842096">Reklamos blokavimas</translation>
 <translation id="1934885595886623674">Neleidžia įkelti reklamų</translation>
-<translation id="7458422973722236530">Pirštų atspaudų apsauga</translation>
-<translation id="5787084571334399599">Neleidžia naršyklei naudoti pirštų atspaudų</translation>
+<translation id="7458422973722236530">Apsauga nuo būdingų bruožų atpažinimo</translation>
+<translation id="5787084571334399599">Neleidžia naršyklei atpažinti jums būdingus bruožus</translation>
 <translation id="3758669798635576061">Pirštų atspaudų metodai blokuoti</translation>
 <translation id="3276318574457057212">Regioninės reklamos blokavimas</translation>
 <translation id="2300239903491866759">Neleidžia įkelti regioninių reklamų</translation>
-<translation id="8142327400852603066">Jūsų lokalei nėra kitų sąrašų</translation>
-<translation id="9148058034647219655">Išėjimas</translation>
+<translation id="8142327400852603066">Jūsų lokalei nėra jokių papildomų sąrašų</translation>
+<translation id="9148058034647219655">Išeiti</translation>
 <translation id="3149880132460839085">„Brave Sync“</translation>
 <translation id="5853303025585906159">Saugiai sinchronizuokite duomenis tarp savo
-prietaisų naudodami „Brave Sync“ – tam nereikia
+įrenginių naudodami „Brave Sync“ – tam nereikia
 kurti paskyros. Jei norite pradėti,
-palieskite apačioje.</translation>
-<translation id="4807681603968503084">Turiu sinchronizavo kodą</translation>
-<translation id="3082265116777145081">Įrašykite prietaiso pavadinimą</translation>
-<translation id="9024091168371687561">Įveskite kitą šio prietaiso pavadinimą</translation>
-<translation id="3998827900918661986">„Android“ prietaisas</translation>
-<translation id="7319511434820752937">Sinchronizuoti prietaisą</translation>
-<translation id="2848874822038607051">Sinchronizuotame prietaise eikite į „Brave Settings“ (nustatymai),
+bakstelėkite apačioje.</translation>
+<translation id="4807681603968503084">Turiu sinchronizavimo kodą</translation>
+<translation id="3082265116777145081">Įrašykite įrenginio pavadinimą</translation>
+<translation id="9024091168371687561">Įveskite pasirinktinį šio įrenginio pavadinimą</translation>
+<translation id="3998827900918661986">„Android“ įrenginys</translation>
+<translation id="7319511434820752937">Sinchronizuoti įrenginį</translation>
+<translation id="2848874822038607051">Sinchronizuotame įrenginyje pereikite į „Brave Settings“ (nustatymai),
 ten eikite į „Device &amp;Settings“ (prietaisas ir nustatymai),
 kur palieskite „+“, kad įrašytumėte naują prietaisą
 ir pamatytumėte sinchronizavo kodą.</translation>
 <translation id="7539985410310934287">Įveskite žodinį kodą</translation>
 <translation id="3381055602822429838">Apačioje įveskite žodinį kodą.</translation>
-<translation id="326454632686131209">Sinchronizuoti prietaisą</translation>
-<translation id="8985635554450124959">Nepavyko atlikti sinchronizavimo</translation>
+<translation id="326454632686131209">Sinchronizuoti įrenginį</translation>
+<translation id="8985635554450124959">Nepavyko nustatyti sinchronizavimo</translation>
 <translation id="7713465482966886648">Sinchronizavimas atliktas sėkmingai</translation>
-<translation id="1068083442730715531">Sinchronizuoti iš naujo...</translation>
-<translation id="6761015334234690567">Ar tikrai norite atkurti standartinius šio prietaiso sinchronizavo nustatymus?</translation>
-<translation id="6244065453125065109">Blokuotos
-sekimo failai</translation>
-<translation id="2547939855139473800">Blokuotos
-reklamos</translation>
+<translation id="1068083442730715531">Atstatyti sinchronizavimą...</translation>
+<translation id="6761015334234690567">Ar tikrai norite atstatyti šio įrenginio sinchronizavo nustatymus?</translation>
+<translation id="6244065453125065109">Blokuota
+sekimo failų</translation>
+<translation id="2547939855139473800">Blokuota
+reklamų</translation>
 <translation id="8880969045613157151">HTTPS
-atnaujinimai</translation>
-<translation id="204407992549693965">Rytų Laikas
-Išsaugoti</translation>
+atnaujinimų</translation>
+<translation id="204407992549693965">Sutaupyta
+maždaug laiko</translation>
 <translation id="991605024067283917">Siųsti metriką</translation>
 <translation id="6572660632052512096">Darbalaukio veiksena</translation>
-<translation id="4479934682648362332">Geriau naudoti svetainių darbalaukio versiją</translation>
-<translation id="807636106793708118">Geriau naudoti svetainių mobiliąją versiją</translation>
-<translation id="1340503115760585811">Įjungti naujų skirtukų darbalaukio versiją</translation>
-<translation id="7924540991929826186">Naujiems svetainių skirtukams naudoti mobiliąją versiją (rekomenduojama)</translation>
+<translation id="4479934682648362332">Teikti pirmenybę svetainių darbalaukio versijai</translation>
+<translation id="807636106793708118">Teikti pirmenybę svetainių mobiliajai versijai</translation>
+<translation id="1340503115760585811">Naujoms kortelėms įjungti darbalaukio rodinį</translation>
+<translation id="7924540991929826186">Naujoms kortelėms naudoti mobiliąsias svetainių versijas (rekomenduojama)</translation>
 <translation id="59174027418879706">Įjungta</translation>
 <translation id="4176463684765177261">Išjungta</translation>
 <translation id="6587448235155023666">Pakeitimai įsigalios, kai kitą kartą paleisite Brave</translation>
 <translation id="8701563696941209024">PALEISTI IŠ NAUJO DABAR</translation>
 <translation id="834487290629916192">VĖLIAU</translation>
+<translation id="1713450908129883784">Atskiri valdikliai</translation>
+<translation id="6303294677342628402">Skydai</translation>
+<translation id="252011129655042182">Reklamos ir sekliai</translation>
+<translation id="5965081608816406060">Foninis vaizdo atkūrimas</translation>
+<translation id="7459000603787995422">Išeinant, užverti korteles</translation>
 </translationbundle>

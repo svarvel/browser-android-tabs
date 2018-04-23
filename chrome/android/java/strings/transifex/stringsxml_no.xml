@@ -87,4 +87,7 @@ Lagret</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Deaktivert</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Hvis dette er aktivert, blir videoer spilt av i Brave i stedet for den tilhørende appen</string>
 
+    <string name="close_tabs_on_exit_title">Lukk faner ved avslutning </string>
+    <string name="close_tabs_on_exit_summary">Ikke behold fanene mellom nettleserøktene </string>
+
 </resources>

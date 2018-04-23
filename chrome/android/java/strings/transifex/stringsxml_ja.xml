@@ -86,4 +86,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">無効になっています</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">有効になっているときは、対応するアプリの代わりにBraveで動画が再生されます</string>
 
+    <string name="close_tabs_on_exit_title">出口にあるタブを閉じてください</string>
+    <string name="close_tabs_on_exit_summary">ブラウズの間はタブをそのままにしないでください。</string>
+
 </resources>

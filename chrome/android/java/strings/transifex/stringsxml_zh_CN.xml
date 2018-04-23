@@ -85,4 +85,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">禁用</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">启用后视频会使用Brave播放而不是相应的程序</string>
 
+    <string name="close_tabs_on_exit_title">退出时关闭标签页</string>
+    <string name="close_tabs_on_exit_summary">不要在两次浏览会话中保存标签页</string>
+
 </resources>

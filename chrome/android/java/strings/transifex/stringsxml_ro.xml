@@ -90,4 +90,7 @@ Salvat</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Dezactivat</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Dacă este activat, fișierele video vor fi redate în Brave în loc de altă aplicație corespondentă</string>
 
+    <string name="close_tabs_on_exit_title">Închidere file la ieșire</string>
+    <string name="close_tabs_on_exit_summary">Taburile nu sunt persistente de la o sesiune de browsing la alta</string>
+
 </resources>

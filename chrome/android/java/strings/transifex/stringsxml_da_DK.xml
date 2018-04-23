@@ -1,72 +1,91 @@
 <resources>
 
-    <string name="brave_settings_title">Brave shield-indstillinger for</string>
+    <string name="brave_settings_title">Brave webskjoldsindstillinger for</string>
     <string name="brave_shields_down">Ned</string>
     <string name="brave_shields_up">Op</string>
-    <string name="brave_shields_ads_trackers">Reklamer og tracking er blokeret</string>
+    <string name="brave_shields_ads_trackers">Reklamer og Sporere er blokeret</string>
     <string name="brave_shields_https_upgrades">HTTPS Opgraderinger</string>
     <string name="brave_shields_scripts_blocked">Scripts er blokeret</string>
-    <string name="brave_shields_ads_tracking_switch">Blokér Reklamer og Tracking</string>
+    <string name="brave_shields_ads_tracking_switch">Blokér Reklamer og sporing</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokér Scripts</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Desaktivér Brave Shields</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Bloker tredjeparts cookies</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Desaktivér Brave Skjolde</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloker 3. parts cookies</string>
 
     <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP når det er muligt</string>
     <string name="tracking_protection_title">Sporingsbeskyttelse</string>
-    <string name="tracking_protection_summary">Forhindrer ressourcer som sporer dig i at loade</string>
-    <string name="ad_block_title">Ad Block</string>
-    <string name="ad_block_summary">Forhindrer reklamer i at loade</string>
+    <string name="tracking_protection_summary">Forhindrer indlæsning af ressourcer, der sporer dig</string>
+    <string name="ad_block_title">Reklameblokering</string>
+    <string name="ad_block_summary">Forhindrer indlæsning af reklamer</string>
 
-    <string name="fingerprinting_protection_title">Beskyttelse af fingeraftryk</string>
+    <string name="fingerprinting_protection_title">Fingeraftryksbeskyttelse</string>
     <string name="fingerprinting_protection_summary">Forhindrer browseren i at anvende fingeraftryk</string>
-    <string name="brave_shields_fingerprints_blocked">Metoder med brug af fingeraftryk er blokeret</string>
-    <string name="brave_shields_block_fingerprints_switch">Beskyttelse af fingeraftryk</string>
+    <string name="brave_shields_fingerprints_blocked">Fingeraftryksmetoder er blokeret</string>
+    <string name="brave_shields_block_fingerprints_switch">Fingeraftryksbeskyttelse</string>
 
     <string name="ad_block_regional_title">Regional reklameblokering</string>
-    <string name="ad_block_regional_summary">Forhindrer regionale reklamer i at blive loadet</string>
+    <string name="ad_block_regional_summary">Forhindrer indlæsning af regionale reklamer</string>
 
-    <string name="ad_block_regional_summary_no_list">Der er ingen yderligere lister tilgængelig for dit område</string>
+    <string name="ad_block_regional_summary_no_list">Ingen yderligere lister er tilgængelig for dit lokalitet</string>
 
     <string name="menu_exit">Afslut</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Data fra Sync browseren mellem dine enheder
-anvender det sikre Brave Sync, der er
-ikke nødvendigt at oprette en konto.
-Tryk her nededenfor, for at komme i gang.</string>
-    <string name="brave_sync_have_existing_code">Jeg har en eksisterende sync kode</string>
+    <string name="brave_sync_description">Synkroniser browserdata mellem dine enheder
+sikkert ved hjælp af  Brave Sync, ingen kontooprettelse
+kræves. Tryk nedenfor for at komme i gang.</string>
+    <string name="brave_sync_have_existing_code">Jeg har en eksisterende synkroniseringskode</string>
     <string name="sync_settings_add_device_name_title">Tilføj enhedens navn</string>
     <string name="sync_settings_add_device_name_label">Indtast et valgfrit navn til denne enhed</string>
     <string name="sync_example_device_name">Android enhed</string>
-    <string name="brave_sync_qrcode">Sync til enhed</string>
-    <string name="brave_sync_qrcode_message">For at anvende den eksisterende, synkroniseret enhed
-åbnes Brave Settings. gå til "Device &amp;Settings",
-tryk `+`for at tilføje en ny enhed
-og se sync koden.</string>
+    <string name="brave_sync_qrcode">Synkroniser til enhed</string>
+    <string name="brave_sync_qrcode_message">Bruger eksisterende og synkroniseret enhed
+åbn Brave Indstillinger og gå til \"Enhed &amp;
+Indstillinger\", tryk `+` for at tilføje en ny enhed
+og se synkroniseringskoden.</string>
     <string name="enter_code_words_sync">Indtast kodeord</string>
-    <string name="enter_code_words_below_sync">Indtast nedestående kodeord.</string>
-    <string name="sync_device">Sync enhed</string>
-    <string name="sync_device_failure">Sync setup kunne ikke udføres</string>
-    <string name="sync_device_success">Sync setup er udført med succes</string>
-    <string name="reset_sync">Nulstil Sync...</string>
-    <string name="resetting_sync">Er du sikker på, at du ønsker at nulstille denne enhed Sync indstillinger?</string>
+    <string name="enter_code_words_below_sync">Indtast kodeord nedenfor.</string>
+    <string name="sync_device">Synkroniser enhed</string>
+    <string name="sync_device_failure">Synkronisering kunne ikke opsættes</string>
+    <string name="sync_device_success">Opsætning af synkronisering er udført med succes</string>
+    <string name="reset_sync">Nulstil Synkronisering...</string>
+    <string name="resetting_sync">Er du sikker på, at du vil nulstille denne enhedssynkroniseringsindstillinger?</string>
 
-    <string name="brave_stats_text_trackers">Tracking er
+    <string name="brave_stats_text_trackers">Sporere er
 blokeret</string>
     <string name="brave_stats_text_ads">Reklamer er
 blokeret</string>
     <string name="brave_stats_text_https">HTTPS
 Opgraderinger</string>
-    <string name="brave_stats_text_time">Forventet
-tid sparet</string>
+    <string name="brave_stats_text_time">Anslået tids-
+besparelse</string>
 
     <string name="send_metrics_title">Send målinger</string>
 
-    <string name="desktop_mode_title">Skrivebordsmodus</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Foretræk skrivebordsversioner af websteder</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Foretræk mobile versioner af websteder</string>
-    <string name="website_settings_category_desktop_view_enabled">Aktivér skrivebordsvisning for nye faneblade</string>
-    <string name="website_settings_category_desktop_view_disabled">Brug mobile versioner af websteder til nye faneblade (anbefalet)</string>
+    <string name="desktop_mode_title">Skrivebordstilstand</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Foretræk skrivebordsversion</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Foretræk mobilversion</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktivér skrivebordsvisning for nye faner</string>
+    <string name="website_settings_category_desktop_view_disabled">Brug mobilversioner til nye faner (anbefalet)</string>
+
+    <string name="brave_shields_first_group_title">Blokeringsmonitor</string>
+    <string name="brave_shields_second_group_title">Individuel styring</string>
+    <string name="brave_shields">Skjolde</string>
+    <string name="brave_shields_ads_and_trackers">Reklamer og sporere</string>
+    <string name="brave_shields_fingerprint_methods">Fingeraftryksmetoder</string>
+    <string name="brave_shields_block_phishing_switch">Bloker phishing</string>
+
+    <string name="play_video_in_background_title">Baggrundsafspilning af video</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiveret</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktiveret</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentel. Gør det muligt at afspille lyd fra video i baggrunden, når fanen ikke er aktiv eller enhedens skærm er slukket. Prøv at skifte til skrivebordstilstand, hvis denne funktion ikke virker.</string>
+    <string name="settings_require_relaunch_notice">Dine ændringer træder i kraft næste gang du genstarter Brave</string>
+    <string name="settings_require_relaunch_now">GENSTART NU</string>
+    <string name="settings_require_relaunch_later">SENERE</string>
+
+    <string name="play_yt_video_in_browser_title">Videoafspilning i Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Aktiveret</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Deaktiveret</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Hvis aktiveret, afspilles videoer i Brave i stedet for tilsvarende app</string>
 
     </resources>

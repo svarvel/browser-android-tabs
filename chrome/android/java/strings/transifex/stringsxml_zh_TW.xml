@@ -85,4 +85,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">已停用</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">一經啟用，影片將在 Brave 而不是相對應的 App 中播放</string>
 
+    <string name="close_tabs_on_exit_title">結束時關閉標籤</string>
+    <string name="close_tabs_on_exit_summary">在瀏覽階段作業之間不要保存標籤</string>
+
 </resources>

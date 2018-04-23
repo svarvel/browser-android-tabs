@@ -89,4 +89,7 @@
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Отключено</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Если включено, видео будет воспроизводиться в Brave вместо соответствующего приложения</string>
 
+    <string name="close_tabs_on_exit_title">Закрывать вкладки при выходе</string>
+    <string name="close_tabs_on_exit_summary">Не сохранять вкладки между сессиями</string>
+
 </resources>

@@ -89,4 +89,7 @@ Enregistré</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Désactivée</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Si ce paramètre est activé, les vidéos seront lues dans Brave au lieu de l\'application correspondante</string>
 
+    <string name="close_tabs_on_exit_title">Fermez les onglets en quittant</string>
+    <string name="close_tabs_on_exit_summary">Ne faites pas persister les onglets entre les sessions de navigation</string>
+
 </resources>

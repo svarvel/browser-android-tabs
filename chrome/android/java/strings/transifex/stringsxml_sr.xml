@@ -90,4 +90,7 @@ Sačuvano</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Onemogućeno</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Ako je omogućeno, video snimci će se puštati u Brave-u umesto u odgovarajućoj aplikaciji</string>
 
+    <string name="close_tabs_on_exit_title">Zatvorite kartice kada izlazite</string>
+    <string name="close_tabs_on_exit_summary">Ne zadržavajte kartice između sesija pretraživanja</string>
+
 </resources>

@@ -85,4 +85,7 @@ Guardado</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desativado</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Se ativado, os vídeos serão reproduzidos no Brave e não na aplicação correspondente</string>
 
+    <string name="close_tabs_on_exit_title">Ao sair, feche os separadores</string>
+    <string name="close_tabs_on_exit_summary">Não mantenha os separadores abertos entre as sessões de navegação</string>
+
 </resources>

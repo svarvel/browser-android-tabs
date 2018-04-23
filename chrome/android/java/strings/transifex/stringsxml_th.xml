@@ -87,4 +87,7 @@ EST แล้ว</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">ปิดใช้งาน</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">หากเปิดใช้งาน วิดีโอจะถูกเล่นใน Brave แทนแอปที่เกี่ยวข้อง</string>
 
+    <string name="close_tabs_on_exit_title">ปิดแท็บเมื่อออก</string>
+    <string name="close_tabs_on_exit_summary">อย่าเก็บแท็บไว้ข้ามเซสชันการเรียกดู</string>
+
 </resources>
