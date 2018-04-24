@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         style="@style/ListItemEndIcon"
         android:contentDescription="@string/remove"
-        android:src="@drawable/btn_trash"
+        android:src="@drawable/btn_delete_24dp"
         chrome:chrometint="@color/dark_mode_tint"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
