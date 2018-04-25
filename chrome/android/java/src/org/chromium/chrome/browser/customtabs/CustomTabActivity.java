@@ -525,7 +525,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
     public void postInflationStartup() {
         super.postInflationStartup();
 
-        /*getToolbarManager().setCloseButtonDrawable(mIntentDataProvider.getCloseButtonDrawable());
+        getToolbarManager().setCloseButtonDrawable(mIntentDataProvider.getCloseButtonDrawable());
         getToolbarManager().setShowTitle(mIntentDataProvider.getTitleVisibilityState()
                 == CustomTabsIntent.SHOW_PAGE_TITLE);
         if (mConnection.shouldHideDomainForSession(mSession)) {
@@ -551,13 +551,13 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
 
         // Setting task title and icon to be null will preserve the client app's title and icon.
         ApiCompatibilityUtils.setTaskDescription(this, null, null, toolbarColor);
-        showCustomButtonOnToolbar();
+        showCustomButtonsOnToolbar();
         mBottomBarDelegate = new CustomTabBottomBarDelegate(this, mIntentDataProvider, getFullscreenManager());
         mBottomBarDelegate.showBottomBarIfNecessary();
         mTopBarDelegate = new CustomTabTopBarDelegate(this);
         mDefaultToolbarVisibility = getToolbarManager().getToolbarVisibility();
         mDefaultToolbarShadowVisibility = getToolbarManager().getToolbarShadowVisibility();
-        mDefaultIsProgressBarEnabled = getToolbarManager().isProgressBarEnabled();*/
+        mDefaultIsProgressBarEnabled = getToolbarManager().isProgressBarEnabled();
     }
 
     @Override
