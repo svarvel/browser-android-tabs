@@ -154,12 +154,16 @@ void AddToHomescreenDataFetcher::OnDidGetWebApplicationInfo(
   shortcut_info_.short_name = shortcut_info_.user_title;
   shortcut_info_.name = shortcut_info_.user_title;
 
-  if (web_app_info.mobile_capable == WebApplicationInfo::MOBILE_CAPABLE ||
+  /*if (web_app_info.mobile_capable == WebApplicationInfo::MOBILE_CAPABLE ||
       web_app_info.mobile_capable == WebApplicationInfo::MOBILE_CAPABLE_APPLE) {
     shortcut_info_.display = blink::kWebDisplayModeStandalone;
     shortcut_info_.UpdateSource(
         ShortcutInfo::SOURCE_ADD_TO_HOMESCREEN_STANDALONE);
-  }
+  }*/
+  // We always want to handle it in browser
+  shortcut_info_.display = blink::kWebDisplayModeBrowser;
+  shortcut_info_.UpdateSource(
+      ShortcutInfo::SOURCE_ADD_TO_HOMESCREEN_SHORTCUT);
 
   // Record what type of shortcut was added by the user.
   switch (web_app_info.mobile_capable) {
@@ -221,11 +225,11 @@ void AddToHomescreenDataFetcher::OnDidGetManifestAndIcons(
 
   is_waiting_for_manifest_ = false;
 
-  if (!data.manifest->IsEmpty()) {
+  /*if (!data.manifest->IsEmpty()) {
     base::RecordAction(base::UserMetricsAction("webapps.AddShortcut.Manifest"));
     shortcut_info_.UpdateFromManifest(*data.manifest);
     shortcut_info_.manifest_url = data.manifest_url;
-  }
+  }*/
 
   // Do this after updating from the manifest for the case where a site has
   // a manifest with name and standalone specified, but no icons.
