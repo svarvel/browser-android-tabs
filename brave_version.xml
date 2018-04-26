@@ -1,3 +1,8 @@
+<release version="1.0.45">
+  <change>Upgraded to Chromium 66.0.3359.126.</change>
+  <change>Added an option to close tabs on exit (Settings->Privacy->Close tabs on exit).</change>
+  <change>Allow video playback in Brave by default.</change>
+</release>
 <release version="1.0.44">
   <change>Improved video playback.</change>
 </release>
