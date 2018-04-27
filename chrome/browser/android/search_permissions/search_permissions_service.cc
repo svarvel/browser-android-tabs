@@ -336,8 +336,8 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
   // If we get to here, the DSE is not disabled by enterprise policy. If it was
   // previously enterprise controlled, we initialize the setting to BLOCK since
   // we don't know what the user's setting was previously.
-  bool was_enterprise_controlled =
-      pref_service_->GetBoolean(prefs::kDSEWasDisabledByPolicy);
+  /*bool was_enterprise_controlled =
+      pref_service_->GetBoolean(prefs::kDSEWasDisabledByPolicy);*/
   pref_service_->ClearPref(prefs::kDSEWasDisabledByPolicy);
 
   // Initialize the pref for geolocation if it hasn't been initialized yet.
@@ -361,20 +361,20 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
       // we migrate the DSE setting to be stored in the user's content setting.
       bool dse_setting = false;
       dict->GetBoolean(kDSESettingKeyDeprecated, &dse_setting);
-      if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
+      /*if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
         dse_geolocation_setting =
             dse_setting ? CONTENT_SETTING_ALLOW : CONTENT_SETTING_BLOCK;
-      }
+      }*/
 
       // Delete setting.
       pref_service_->ClearPref(prefs::kDSEGeolocationSettingDeprecated);
-    } else if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
+    }/* else if (dse_geolocation_setting == CONTENT_SETTING_ASK) {
       // If the user hasn't explicitly allowed or blocked geolocation for the
       // DSE, initialize it to allowed.
       dse_geolocation_setting = was_enterprise_controlled
                                     ? CONTENT_SETTING_BLOCK
                                     : CONTENT_SETTING_ALLOW;
-    }
+    }*/
 
     // Update the content setting with the auto-grants for the DSE.
     SetContentSetting(dse_origin, CONTENT_SETTINGS_TYPE_GEOLOCATION,
@@ -399,11 +399,11 @@ void SearchPermissionsService::InitializeSettingsIfNeeded() {
     ContentSetting dse_notifications_setting = notifications_setting_to_restore;
     // If the user hasn't explicitly allowed or blocked notifications for the
     // DSE, initialize it to allowed.
-    if (dse_notifications_setting == CONTENT_SETTING_ASK) {
+    /*if (dse_notifications_setting == CONTENT_SETTING_ASK) {
       dse_notifications_setting = was_enterprise_controlled
                                       ? CONTENT_SETTING_BLOCK
                                       : CONTENT_SETTING_ALLOW;
-    }
+    }*/
 
     // Update the content setting with the auto-grants for the DSE.
     SetContentSetting(dse_origin, CONTENT_SETTINGS_TYPE_NOTIFICATIONS,
