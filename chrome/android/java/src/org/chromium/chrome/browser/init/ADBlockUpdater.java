@@ -107,13 +107,13 @@ public class ADBlockUpdater {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
+                        /*if (enableRegionalAdBlock && !mWhitelistedRegionalLocales.contains(deviceLanguage)) {
                             PrivacyPreferencesManager.getInstance().setRegionalAdBlock(false, false);
                             PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(false);
-                        } else {
+                        } else {*/
                             PrivacyPreferencesManager.getInstance().setRegionalAdBlock(enableRegionalAdBlock, true);
                             PrefServiceBridge.getInstance().setAdBlockRegionalEnabled(enableRegionalAdBlock);
-                        }
+                        //}
                     }
                 });
             }
