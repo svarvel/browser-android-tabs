@@ -156,12 +156,13 @@ public class SysUtils {
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private static boolean detectLowEndDevice() {
-        assert CommandLine.isInitialized();
-        if (CommandLine.getInstance().hasSwitch(BaseSwitches.ENABLE_LOW_END_DEVICE_MODE)) {
-            return true;
-        }
-        if (CommandLine.getInstance().hasSwitch(BaseSwitches.DISABLE_LOW_END_DEVICE_MODE)) {
-            return false;
+        if (CommandLine.isInitialized()) {
+            if (CommandLine.getInstance().hasSwitch(BaseSwitches.ENABLE_LOW_END_DEVICE_MODE)) {
+                return true;
+            }
+            if (CommandLine.getInstance().hasSwitch(BaseSwitches.DISABLE_LOW_END_DEVICE_MODE)) {
+                return false;
+            }
         }
 
         sAmountOfPhysicalMemoryKB = detectAmountOfPhysicalMemoryKB();
