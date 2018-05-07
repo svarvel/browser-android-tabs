@@ -414,10 +414,10 @@ namespace blockers {
         if (!shouldHTTPSERedirect(request_identifier)) {
             return url->spec();
         }
-
-        if (GetRecentlyUsedCacheHasKey(url->spec())) {
+        std::string value;
+        if (GetRecentlyUsedCacheValue(url->spec(), value)) {
             addHTTPSEUrlToRedirectList(request_identifier);
-            return GetRecentlyUsedCacheValue(url->spec());
+            return value;
         }
 
         return url->spec();
@@ -436,10 +436,10 @@ namespace blockers {
         if (!shouldHTTPSERedirect(request_identifier)) {
             return url->spec();
         }
-
-        if (GetRecentlyUsedCacheHasKey(url->spec())) {
+        std::string value;
+        if (GetRecentlyUsedCacheValue(url->spec(), value)) {
             addHTTPSEUrlToRedirectList(request_identifier);
-            return GetRecentlyUsedCacheValue(url->spec());
+            return value;
         }
 
         const std::vector<std::string> domains = expandDomainForLookup(url->host());
@@ -642,14 +642,13 @@ namespace blockers {
       adblock_regional_initialized_ = true;
     }
 
-    bool BlockersWorker::GetRecentlyUsedCacheHasKey(const std::string& key) {
+    bool BlockersWorker::GetRecentlyUsedCacheValue(const std::string& key, std::string& value) {
       std::lock_guard<std::mutex> guard(httpse_recently_used_cache_mutex_);
-      return recently_used_cache_.data.count(key) > 0;
-    }
-
-    std::string BlockersWorker::GetRecentlyUsedCacheValue(const std::string& key) {
-      std::lock_guard<std::mutex> guard(httpse_recently_used_cache_mutex_);
-      return recently_used_cache_.data[key];
+      if (recently_used_cache_.data.count(key) > 0) {
+        value = recently_used_cache_.data[key];
+        return true;
+      }
+      return false;
     }
 
     void BlockersWorker::SetRecentlyUsedCacheValue(const std::string& key, const std::string& value) {
