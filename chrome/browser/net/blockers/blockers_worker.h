@@ -67,8 +67,7 @@ private:
     void set_adblock_initialized();
     void set_adblock_regional_initialized();
 
-    bool GetRecentlyUsedCacheHasKey(const std::string& key);
-    std::string GetRecentlyUsedCacheValue(const std::string& key);
+    bool GetRecentlyUsedCacheValue(const std::string& key, std::string& value);
     void SetRecentlyUsedCacheValue(const std::string& key, const std::string& value);
 
     std::vector<unsigned char> tp_buffer_;
