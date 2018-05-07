@@ -67,11 +67,15 @@ private:
     void set_adblock_initialized();
     void set_adblock_regional_initialized();
 
+    bool GetRecentlyUsedCacheHasKey(const std::string& key);
+    std::string GetRecentlyUsedCacheValue(const std::string& key);
+    void SetRecentlyUsedCacheValue(const std::string& key, const std::string& value);
+
     std::vector<unsigned char> tp_buffer_;
     std::vector<unsigned char> adblock_buffer_;
     std::vector<std::vector<unsigned char>> adblock_regional_buffer_;
     leveldb::DB* level_db_;
-    // We use that to cache httpse requests
+    // We use that to cache httpse requests (do not use it directly, only covered with httpse_recently_used_cache_mutex_)
     RecentlyUsedCache<std::string> recently_used_cache_;
     CTPParser* tp_parser_;
     AdBlockClient* adblock_parser_;
@@ -94,6 +98,7 @@ private:
     std::mutex tp_init_mutex_;
     std::mutex tp_get_third_party_hosts_mutex_;
     std::mutex httpse_get_urls_redirects_count_mutex_;
+    std::mutex httpse_recently_used_cache_mutex_;
     std::mutex tp_initialized_mutex_;
     std::mutex adblock_initialized_mutex_;
     std::mutex adblock_regional_initialized_mutex_;
