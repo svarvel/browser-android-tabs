@@ -111,7 +111,6 @@ public class BraveSyncWorker {
     private String mDeviceId = null;
     private String mDeviceName = null;
     private String mApiVersion = "0";
-    //private String mServerUrl = "http://192.168.0.196:4000";
     private String mServerUrl = "https://sync-staging.brave.com";
     //private String mServerUrl = "https://sync.brave.com";
     private String mDebug = "true";
@@ -192,6 +191,7 @@ public class BraveSyncWorker {
         public long mLastAccessedTime = 0;
         public long mCreationTime = 0;
         public String mFavIcon = "";
+        public String mOrder = "";
     }
 
     public class ResolvedRecordsToApply {
@@ -391,7 +391,7 @@ public class BraveSyncWorker {
                 bookmarkRequest.append(CreateRecord(new StringBuilder(objectId), SyncObjectData.BOOKMARK, new StringBuilder(action), new StringBuilder(mDeviceId)));
                 bookmarkRequest.append(CreateBookmarkRecord(bookmarkItem.getUrl(),
                     bookmarkItem.getTitle(), bookmarkItem.isFolder(),
-                    parentId, "", "", 0, 0, ""));
+                    parentId, "", "", 0, 0, "", ""));
                 bookmarkRequest.append("}");
                 if (!objectExist) {
                     Log.i(TAG, "Saving object [" + bookmarkItem.getId().getId() + ", " + bookmarkItem.isFolder() + "]: " + objectId);
@@ -457,7 +457,8 @@ public class BraveSyncWorker {
     }
 
     private StringBuilder CreateBookmarkRecord(String url, String title, boolean isFolder, long parentFolderId,
-              String parentFolderObjectId, String customTitle, long lastAccessedTime, long creationTime, String favIcon) {
+              String parentFolderObjectId, String customTitle, long lastAccessedTime, long creationTime, String favIcon,
+              String order) {
         StringBuilder bookmarkRequest = new StringBuilder("bookmark:");
         bookmarkRequest.append("{ site:");
         bookmarkRequest.append("{ location: \"").append(url).append("\", ");
@@ -476,6 +477,7 @@ public class BraveSyncWorker {
         bookmarkRequest.append("lastAccessedTime: ").append(lastAccessedTime).append(", ");
         bookmarkRequest.append("creationTime: ").append(creationTime).append("}, ");
         bookmarkRequest.append("isFolder: ").append(isFolder).append(", ");
+        bookmarkRequest.append("order: \"").append(order).append("\", ");
         long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
         String parentObjectId = parentFolderObjectId;
         if (defaultFolderId != parentFolderId) {
@@ -980,14 +982,14 @@ public class BraveSyncWorker {
                    action, deviceId)).append(CreateBookmarkRecord(bookmarkInternal.mUrl,
                    bookmarkInternal.mTitle, bookmarkInternal.mIsFolder, defaultFolderId, "[" + bookmarkInternal.mParentFolderObjectId + "]",
                    bookmarkInternal.mCustomTitle, bookmarkInternal.mLastAccessedTime, bookmarkInternal.mCreationTime,
-                   bookmarkInternal.mFavIcon)).append(" }");
+                   bookmarkInternal.mFavIcon, bookmarkInternal.mOrder)).append(" }");
                  BookmarkItem bookmarkItem = GetBookmarkItemByLocalId(localId);
                  if (null != bookmarkItem) {
                      // TODO pass always CREATE_RECORD, it means action is create
                      long parentId = bookmarkItem.getParentId().getId();
                      localRecord.append(CreateRecord(objectId, SyncObjectData.BOOKMARK, new StringBuilder(CREATE_RECORD), new StringBuilder(mDeviceId)))
                           .append(CreateBookmarkRecord(bookmarkItem.getUrl(), bookmarkItem.getTitle(),
-                          bookmarkItem.isFolder(), parentId, "", "", 0, 0, "")).append(" }]");
+                          bookmarkItem.isFolder(), parentId, "", "", 0, 0, "", "")).append(" }]");
                  }
                  // Mark the record as sucessfully sent
                  ArrayList<String> value = syncedRecordsMap.get(action.toString());
@@ -1714,6 +1716,9 @@ public class BraveSyncWorker {
                         bookmarkInternal.mCreationTime = reader.nextLong();
                     } else if (name.equals("favicon")) {
                         bookmarkInternal.mFavIcon = reader.nextString();
+                    } else if (name.equals("order")) {
+                        bookmarkInternal.mOrder = reader.nextString();
+                        Log.i("TAG", "!!!order == " + bookmarkInternal.mOrder);
                     } else {
                         assert false;
                         reader.skipValue();
@@ -2199,10 +2204,24 @@ public class BraveSyncWorker {
                 break;
               case "sync-ready":
                 mSyncIsReady.mReady = true;
+                // TODO debug
+                //CallScript(new StringBuilder(String.format("javascript:callbackList['get-bookmarks-base-order'](null, %1$s, 'android')", mDeviceId)));
+                //CallScript(new StringBuilder(String.format("javascript:callbackList['get-bookmark-order'](null, '2.0.8.1', '2.0.9')")));
+                //
                 FetchSyncRecords("");
                 break;
               case "get-existing-objects":
                 SendResolveSyncRecords(arg1, GetExistingObjects(arg1, arg2, arg3, arg4));
+                break;
+              case "get-bookmarks-sync-order":
+                break;
+              case "save-bookmarks-sync-order":
+                Log.i(TAG, "!!!save-bookmarks-sync-order == " + arg1);
+                break;
+              case "get-bookmark-order":
+                break;
+              case "save-bookmark-order":
+                Log.i(TAG, "!!!save-bookmark-order1 arg1 == " + arg1 + ", arg2 == " + arg2 + ", arg3 == " + arg3);
                 break;
               case "sync-setup-error":
                 Log.e(TAG, "sync-setup-error , !!!arg1 == " + arg1 + ", arg2 == " + arg2);
