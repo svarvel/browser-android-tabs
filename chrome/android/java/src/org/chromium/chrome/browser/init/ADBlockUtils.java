@@ -382,6 +382,21 @@ public class ADBlockUtils {
 
         return true;
     }
+    
+    public static String validateFilename(String filename, String intendedDir)
+      throws java.io.IOException {
+        File f = new File(filename);
+        String canonicalPath = f.getCanonicalPath();
+
+        File iD = new File(intendedDir);
+        String canonicalID = iD.getCanonicalPath();
+
+        if (canonicalPath.startsWith(canonicalID)) {
+            return canonicalPath;
+        } else {
+            throw new IllegalStateException("File is outside extraction target directory.");
+        }
+    }
 
     public static boolean UnzipFile(String zipName, String verNumber, boolean removeZipFile) {
         ZipInputStream zis = null;
@@ -409,7 +424,7 @@ public class ADBlockUtils {
             String fileName;
 
             while (null != ze) {
-                fileName = ze.getName();
+                fileName = validateFilename(ze.getName(), dir);
                 File fmd = new File(dir, verNumber + fileName);
                 if (null == fmd) {
                     zis.closeEntry();
@@ -473,6 +488,8 @@ public class ADBlockUtils {
 
             return false;
         } catch (IOException exc) {
+            return false;
+        } catch (IllegalStateException exc) {
             return false;
         }
 
