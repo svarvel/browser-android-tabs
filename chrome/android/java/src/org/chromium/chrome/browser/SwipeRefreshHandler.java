@@ -87,7 +87,7 @@ public class SwipeRefreshHandler
         mSwipeRefreshLayout = new SwipeRefreshLayout(context);
         mSwipeRefreshLayout.setLayoutParams(
                 new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.light_active_color);
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.brave_theme_color);
         // SwipeRefreshLayout.LARGE layouts appear broken on JellyBean.
         mSwipeRefreshLayout.setSize(SwipeRefreshLayout.DEFAULT);
         mSwipeRefreshLayout.setEnabled(false);
