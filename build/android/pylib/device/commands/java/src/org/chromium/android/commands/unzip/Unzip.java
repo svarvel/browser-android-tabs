@@ -37,6 +37,21 @@ public class Unzip {
         s.println("Usage:");
         s.println("unzip [zipfile]");
     }
+ 
+    private String validateFilename(String filename, String intendedDir)
+      throws java.io.IOException {
+  	File f = new File(filename);
+  	String canonicalPath = f.getCanonicalPath();
+ 
+  	File iD = new File(intendedDir);
+  	String canonicalID = iD.getCanonicalPath();
+   
+  	if (canonicalPath.startsWith(canonicalID)) {
+    	    return canonicalPath;
+  	} else {
+    	    throw new IllegalStateException("File is outside extraction target directory.");
+        }
+    }
 
     @SuppressWarnings("Finally")
     private void unzip(String[] args) {
@@ -48,7 +63,8 @@ public class Unzip {
 
             byte[] bytes = new byte[1024];
             while ((ze = zis.getNextEntry()) != null) {
-                File outputFile = new File(ze.getName());
+                String entry = validateFilename(ze.getName(), ".");
+                File outputFile = new File(entry);
                 if (ze.isDirectory()) {
                     if (!outputFile.exists() && !outputFile.mkdirs()) {
                         throw new RuntimeException(
@@ -73,6 +89,8 @@ public class Unzip {
             }
 
         } catch (IOException e) {
+            throw new RuntimeException("Error while unzipping: " + e.toString());
+        } catch (IllegalStateException e) {
             throw new RuntimeException("Error while unzipping: " + e.toString());
         } finally {
             try {
