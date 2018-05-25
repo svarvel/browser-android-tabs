@@ -27,29 +27,6 @@
         android:orientation="horizontal"
         android:baselineAligned="false" >
         <LinearLayout
-            android:id="@+id/brave_stats_trackers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:baselineAligned="false"
-            android:layout_weight="1" >
-            <TextView
-                android:id="@+id/brave_stats_text_trackers_count"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="#F18E3A"
-                android:textStyle="bold"
-                android:textSize="24sp" />
-            <TextView
-                android:id="@+id/brave_stats_text_trackers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="12sp"
-                android:text="@string/brave_stats_text_trackers" />
-        </LinearLayout>
-        <LinearLayout
             android:id="@+id/brave_stats_ads"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#E95A34"
+                android:textColor="#FB542B"
                 android:textStyle="bold"
                 android:textSize="24sp" />
             <TextView
@@ -71,6 +48,29 @@
                 android:gravity="center"
                 android:textSize="12sp"
                 android:text="@string/brave_stats_text_ads" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/brave_stats_trackers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:baselineAligned="false"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/brave_stats_text_trackers_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#8236B9"
+                android:textStyle="bold"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/brave_stats_text_trackers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/brave_stats_text_trackers" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/brave_stats_https"
@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#2393F8"
+                android:textColor="#22C976"
                 android:textStyle="bold"
                 android:textSize="24sp" />
             <TextView
@@ -107,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#2B2B2B"
+                android:textColor="#222326"
                 android:textStyle="bold"
                 android:textSize="24sp" />
             <TextView

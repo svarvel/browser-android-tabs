@@ -92,10 +92,10 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
     private static final String BRAVE_SHIELDS_BLACK = "#000000";
     private static final String BRAVE_SHIELDS_WHITE = "#FFFFFF";
     private static final String BRAVE_GROUP_TITLE_COLOR = "#6B6B6B";
-    private static final String ADS_AND_TRACKERS_COLOR = "#FF5100";
-    private static final String HTTPS_UPDATES_COLOR = "#0094FD";
-    private static final String SCRIPTS_BLOCKED_COLOR = "#999999";
-    private static final String FINGERPRINTS_BLOCKED_COLOR = "#FFC100";
+    private static final String ADS_AND_TRACKERS_COLOR = "#FB542B";
+    private static final String HTTPS_UPDATES_COLOR = "#22C976";
+    private static final String SCRIPTS_BLOCKED_COLOR = "#8236B9";
+    private static final String FINGERPRINTS_BLOCKED_COLOR = "#818589";
     private static final double BRAVE_WEBSITE_TEXT_SIZE_INCREMENT = 1.2;
     private static final double BRAVE_SCREEN_FOR_PANEL = 0.8;
     private static final double BRAVE_MAX_PANEL_TEXT_SIZE_INCREMENT = 1.3;
