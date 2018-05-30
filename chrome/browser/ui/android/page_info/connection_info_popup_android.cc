@@ -137,10 +137,10 @@ void ConnectionInfoPopupAndroid::SetIdentityInfo(
                                                    nullptr, description);
   }
 
-  Java_ConnectionInfoPopup_addMoreInfoLink(
+  /*Java_ConnectionInfoPopup_addMoreInfoLink(
       env, popup_jobject_,
       ConvertUTF8ToJavaString(
-          env, l10n_util::GetStringUTF8(IDS_PAGE_INFO_HELP_CENTER_LINK)));
+          env, l10n_util::GetStringUTF8(IDS_PAGE_INFO_HELP_CENTER_LINK)));*/
   Java_ConnectionInfoPopup_showDialog(env, popup_jobject_);
 }
 
