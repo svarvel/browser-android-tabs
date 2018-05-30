@@ -277,7 +277,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
                   @Override
                   public void onSeedReceived(String seed, boolean fromCodeWords, boolean afterInitialization) {
-                      Log.i(TAG, "onSeedReceived: " + seed + ", " + fromCodeWords + ", " + afterInitialization);
                       try {
                           if (fromCodeWords) {
                               assert !afterInitialization;
@@ -307,7 +306,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                               });
                           } else if (afterInitialization) {
                               assert !fromCodeWords;
-                              Log.i(TAG, "!!!init received seed == " + seed);
                               if (null != seed && !seed.isEmpty()) {
                                   if ((null != mScrollViewAddMobileDevice) && (View.VISIBLE == mScrollViewAddMobileDevice.getVisibility())) {
                                       String[] seeds = seed.split(",");
@@ -766,6 +764,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
               ClipData clip = ClipData.newPlainText("", mBraveSyncAddDeviceCodeWords.getText());
               clipboard.setPrimaryClip(clip);
+              Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.brave_sync_copied_text), Toast.LENGTH_LONG).show();
           }
       } else if (mConfirmCodeWordsButton == v) {
           ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
@@ -1412,7 +1411,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
   // Handles 'Back' button. Returns true if it is handled, false otherwise.
   public boolean onBackPressed() {
-      Log.i(TAG, "SAM: BraveSyncScreensPreference onBackPressed");
       if ((View.VISIBLE == mScrollViewSyncChainCode.getVisibility())
       || (View.VISIBLE == mScrollViewSyncStartChain.getVisibility())) {
           setAppropriateView();
