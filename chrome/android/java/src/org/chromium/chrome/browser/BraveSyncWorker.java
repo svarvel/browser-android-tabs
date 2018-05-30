@@ -34,7 +34,6 @@ import org.chromium.chrome.browser.WebContentsFactory;
 import org.chromium.content_public.browser.JavascriptInjector;
 import org.chromium.content_public.browser.WebContents;
 import org.chromium.content_public.browser.LoadUrlParams;
-import java.util.Scanner;
 import org.chromium.components.embedder_support.view.ContentView;
 import org.chromium.content_public.browser.ViewEventSink;
 import org.chromium.content.browser.ViewEventSinkImpl;
@@ -49,12 +48,14 @@ import java.lang.IllegalArgumentException;
 import java.lang.Runnable;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.HashSet;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Scanner;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -71,6 +72,8 @@ public class BraveSyncWorker {
     public static final String PREF_NAME = "SyncPreferences";
     private static final String PREF_LAST_FETCH_NAME = "TimeLastFetch";
     public static final String PREF_DEVICE_ID = "DeviceId";
+    public static final String PREF_BASE_ORDER = "BaseOrder";
+    public static final String PREF_LAST_ORDER = "LastOrder";
     public static final String PREF_SEED = "Seed";
     public static final String PREF_SYNC_DEVICE_NAME = "SyncDeviceName";
     private static final int SYNC_SLEEP_ATTEMPTS_COUNT = 20;
@@ -88,6 +91,7 @@ public class BraveSyncWorker {
     public static final String CREATE_RECORD = "0";
     public static final String UPDATE_RECORD = "1";
     public static final String DELETE_RECORD = "2";
+    private static final int ATTEMPTS_BEFORE_SENDING_NOT_SYNCED_RECORDS = 10;
 
     private final SharedPreferences mSharedPreferences;
 
@@ -111,6 +115,8 @@ public class BraveSyncWorker {
     private String mDeviceId = null;
     private String mDeviceName = null;
     private String mApiVersion = "0";
+    private String mBaseOrder = null;
+    private String mLastOrder = null;
     private String mServerUrl = "https://sync-staging.brave.com";
     //private String mServerUrl = "https://sync.brave.com";
     private String mDebug = "true";
@@ -132,6 +138,8 @@ public class BraveSyncWorker {
     private WebContents mJSWebContents = null;
     private JavascriptInjector mJSWebContentsInjector = null;
     private ViewEventSinkImpl mJSViewEventSink = null;
+    private boolean mReorderBookmarks;
+    private int mAttepmtsBeforeSendingNotSyncedRecords = ATTEMPTS_BEFORE_SENDING_NOT_SYNCED_RECORDS;
 
     enum NotSyncedRecordsOperation {
         GetItems, AddItems, DeleteItems
@@ -194,6 +202,44 @@ public class BraveSyncWorker {
         public String mOrder = "";
     }
 
+    public class OrderedBookmark implements Comparable<OrderedBookmark> {
+        private BookmarkItem bookmark;
+        private String order;
+
+        public OrderedBookmark(BookmarkItem bookmark, String order){
+            this.bookmark = bookmark;
+            this.order = order;
+        }
+
+        public BookmarkItem Bookmark() {
+            return bookmark;
+        }
+
+        @Override
+        public int compareTo(OrderedBookmark compare) {
+            if (order.isEmpty() || compare.order.isEmpty()) {
+                Log.e(TAG, "Incorrect bookmark order");
+                // This should not happen
+                assert false;
+                return 0;
+            }
+            String[] thisNumbers = order.split("\\.");
+            String[] compareNumbers = compare.order.split("\\.");
+            int maxSize = thisNumbers.length > compareNumbers.length ? compareNumbers.length : thisNumbers.length;
+            for (int i = 0; i < maxSize; i++) {
+                if (Integer.parseInt(thisNumbers[i]) > Integer.parseInt(compareNumbers[i])) {
+                    return 1;
+                } else if (Integer.parseInt(thisNumbers[i]) < Integer.parseInt(compareNumbers[i])){
+                    return -1;
+                }
+            }
+            Log.e(TAG, "Bookmark compare improper state");
+            // This should not happen
+            assert false;
+            return 0;
+        }
+    }
+
     public class ResolvedRecordsToApply {
         public ResolvedRecordsToApply(String objectId, String action, BookMarkInternal bookMarkInternal, String deviceName, String deviceId) {
             mObjectId = objectId;
@@ -249,6 +295,7 @@ public class BraveSyncWorker {
 
 
     public BraveSyncWorker(Context context) {
+        mReorderBookmarks = false;
         mContext = context;
         mTimeLastFetchExecuted = 0;
         mSharedPreferences = ContextUtils.getAppSharedPreferences();
@@ -286,32 +333,34 @@ public class BraveSyncWorker {
         if (null == bookmarks || 0 == bookmarks.length || !mSyncIsReady.IsReady() || !IsSyncBookmarksEnabled()) {
             return;
         }
-
+        Log.i(TAG, "CreateUpdateDeleteBookmarks: " + bookmarks.length);
         final String actionFinal = action;
         final HashSet<Long> processedFolderIds = new HashSet<Long>();
         final long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
         final List<BookmarkItem> bookmarksParentFolders = new ArrayList<BookmarkItem>();
         boolean uiThread = (Looper.myLooper() == Looper.getMainLooper());
-        // Fill parent folders recursively
-        for (int i = 0; i < bookmarks.length; i++) {
-            long processedId = bookmarks[i].getParentId().getId();
-            if (defaultFolderId == processedId) {
-                continue;
-            }
-            int currentSize = bookmarksParentFolders.size();
-            if (!processedFolderIds.contains(processedId)) {
-                BookmarkItem item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
-                while (item != null && !item.getTitle().isEmpty()) {
-                    processedFolderIds.add(processedId);
-                    bookmarksParentFolders.add(currentSize, item);
-                    processedId = item.getParentId().getId();
-                    if (processedFolderIds.contains(processedId)) {
-                        break;
+        if (!actionFinal.equals(DELETE_RECORD)) {
+            // Fill parent folders recursively, if it's not delete operation
+            for (int i = 0; i < bookmarks.length; i++) {
+                long processedId = bookmarks[i].getParentId().getId();
+                if (defaultFolderId == processedId) {
+                    continue;
+                }
+                int currentSize = bookmarksParentFolders.size();
+                if (!processedFolderIds.contains(processedId)) {
+                    BookmarkItem item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
+                    while (item != null && !item.getTitle().isEmpty()) {
+                        processedFolderIds.add(processedId);
+                        bookmarksParentFolders.add(currentSize, item);
+                        processedId = item.getParentId().getId();
+                        if (processedFolderIds.contains(processedId)) {
+                            break;
+                        }
+                        if (defaultFolderId == processedId) {
+                            break;
+                        }
+                        item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
                     }
-                    if (defaultFolderId == processedId) {
-                        break;
-                    }
-                    item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
                 }
             }
         }
@@ -333,6 +382,28 @@ public class BraveSyncWorker {
                         comesFromPreviousSeed = true;
                     }
                 }
+                if (actionFinal.equals(DELETE_RECORD)) {
+                    // On delete we just process delete items
+                    formRequestForBookmarks(bookmarksFinal, processedFolderIds, comesFromPreviousSeed, actionFinal, true, bookmarkRequest, ids);
+                } else {
+                    // On other cases we process parent folders first
+                    formRequestForParrentFolders(bookmarksParentFolders, isInitialSync, comesFromPreviousSeed, bookmarkRequest, ids);
+                    formRequestForBookmarks(bookmarksFinal, processedFolderIds, comesFromPreviousSeed, actionFinal, false, bookmarkRequest, ids);
+                }
+                if (bookmarkRequest.length() > 1) {
+                    bookmarkRequest.append("]");
+                } else {
+                    // Nothing to send
+                    return null;
+                }
+                //Log.i(TAG, "!!!bookmarkRequest == " + bookmarkRequest);
+                SendSyncRecords(SyncRecordType.BOOKMARKS, bookmarkRequest, actionFinal, ids);
+
+                return null;
+            }
+
+            private void formRequestForParrentFolders(List<BookmarkItem> bookmarksParentFolders, boolean isInitialSync, boolean comesFromPreviousSeed,
+                                                        StringBuilder bookmarkRequest, ArrayList<String> ids) {
                 for (BookmarkItem bookmarkFolder : bookmarksParentFolders) {
                     String localId = String.valueOf(bookmarkFolder.getId().getId());
                     String objectId = GetObjectId(localId);
@@ -341,31 +412,35 @@ public class BraveSyncWorker {
                         continue;
                     }
 
-                    bookmarkRequest.append(formRequestByBookmarkItem(bookmarkFolder, bookmarkRequest.length() <= 1, "0", defaultFolderId, comesFromPreviousSeed));
+                    bookmarkRequest.append(formRequestByBookmarkItem(bookmarkFolder, bookmarkRequest.length() <= 1, CREATE_RECORD, defaultFolderId, comesFromPreviousSeed));
                     if (addIdsToNotSynced) {
                         ids.add(localId);
                     }
                 }
-                for (int i = 0; i < bookmarksFinal.length; i++) {
-                    if (bookmarksFinal[i].isFolder() && processedFolderIds.contains(bookmarksFinal[i].getId().getId())) {
-                        continue;
-                    }
-                    bookmarkRequest.append(formRequestByBookmarkItem(bookmarksFinal[i], bookmarkRequest.length() <= 1, actionFinal, defaultFolderId, comesFromPreviousSeed));
-                    if (addIdsToNotSynced) {
-                        ids.add(String.valueOf(bookmarksFinal[i].getId().getId()));
-                    }
-                }
+            }
 
-                if (bookmarkRequest.length() > 1) {
-                    bookmarkRequest.append("]");
+            private void formRequestForBookmarks(BookmarkItem[] bookmarksFinal, HashSet<Long> processedFolderIds, boolean comesFromPreviousSeed, String actionFinal, boolean deleteOperation,
+                                                  StringBuilder bookmarkRequest, ArrayList<String> ids) {
+                if (deleteOperation) {
+                    // Delete operation we perform in reverse order
+                    for (int i = bookmarksFinal.length - 1; i >=0; i--) {
+                        Log.i(TAG, "Deleting " + bookmarksFinal[i].getTitle());
+                        bookmarkRequest.append(formRequestByBookmarkItem(bookmarksFinal[i], bookmarkRequest.length() <= 1, actionFinal, defaultFolderId, comesFromPreviousSeed));
+                        if (addIdsToNotSynced) {
+                            ids.add(String.valueOf(bookmarksFinal[i].getId().getId()));
+                        }
+                    }
                 } else {
-                    // Nothing to send
-                    return null;
+                    for (int i = 0; i < bookmarksFinal.length; i++) {
+                        if (bookmarksFinal[i].isFolder() && processedFolderIds.contains(bookmarksFinal[i].getId().getId())) {
+                            continue;
+                        }
+                        bookmarkRequest.append(formRequestByBookmarkItem(bookmarksFinal[i], bookmarkRequest.length() <= 1, actionFinal, defaultFolderId, comesFromPreviousSeed));
+                        if (addIdsToNotSynced) {
+                            ids.add(String.valueOf(bookmarksFinal[i].getId().getId()));
+                        }
+                    }
                 }
-                Log.i(TAG, "!!!bookmarkRequest == " + bookmarkRequest);
-                SendSyncRecords(SyncRecordType.BOOKMARKS, bookmarkRequest, actionFinal, ids);
-
-                return null;
             }
 
             private StringBuilder formRequestByBookmarkItem(BookmarkItem bookmarkItem, boolean firstRecord, String action,
@@ -387,15 +462,22 @@ public class BraveSyncWorker {
                 if (!firstRecord) {
                     bookmarkRequest.append(", ");
                 }
+                String order = GetBookmarkOrder(localId, !objectExist);
+                if (order.isEmpty()) {
+                    Log.e(TAG, "formRequestByBookmarkItem empty order");
+                    assert false;
+                }
                 long parentId = bookmarkItem.getParentId().getId();
                 bookmarkRequest.append(CreateRecord(new StringBuilder(objectId), SyncObjectData.BOOKMARK, new StringBuilder(action), new StringBuilder(mDeviceId)));
                 bookmarkRequest.append(CreateBookmarkRecord(bookmarkItem.getUrl(),
                     bookmarkItem.getTitle(), bookmarkItem.isFolder(),
-                    parentId, "", "", 0, 0, "", ""));
+                    parentId, "", "", 0, 0, "", order));
                 bookmarkRequest.append("}");
                 if (!objectExist) {
-                    Log.i(TAG, "Saving object [" + bookmarkItem.getId().getId() + ", " + bookmarkItem.isFolder() + "]: " + objectId);
-                    SaveObjectId(String.valueOf(bookmarkItem.getId().getId()), objectId, true);
+                    Log.i(TAG, "Saving object [" + bookmarkItem.getId().getId() + ", " + bookmarkItem.isFolder() + ", " + order + "]: " + objectId);
+                    SaveObjectId(String.valueOf(bookmarkItem.getId().getId()), objectId, order, true);
+                    mReorderBookmarks = true;
+                    ReorderBookmarks();
                 }
                 // We will delete the objectId when we ensure that records were transferred
                 /*else if (action.equals(DELETE_RECORD)) {
@@ -530,7 +612,6 @@ public class BraveSyncWorker {
     }
 
     public ArrayList<ResolvedRecordsToApply> GetAllDevices() {
-        Log.i(TAG, "GetAllDevices: start");
         ArrayList<ResolvedRecordsToApply> result_devices = new ArrayList<ResolvedRecordsToApply>();
         if (!mSyncIsReady.IsReady()) {
             return result_devices;
@@ -558,6 +639,26 @@ public class BraveSyncWorker {
               Log.e(TAG, "GetAllDevices IllegalStateException error " + e);
         }
         return result_devices;
+    }
+
+    private String GetBookmarkOrder(String localId) {
+        try {
+            String objectId = nativeGetObjectIdByLocalId(localId);
+            if (objectId.isEmpty()) {
+                return "";
+            }
+            JSONArray bookmarkArray = new JSONArray(objectId);
+            JSONObject bookmark = bookmarkArray.getJSONObject(0);
+            if (!bookmark.has("order")) {
+                Log.e(TAG, "Could not find order for bookmark: " + objectId);
+                return "";
+            }
+            String order = bookmark.getString("order");
+            return order;
+        } catch (JSONException e) {
+            Log.e(TAG, "Could not get order for bookmark: " + e);
+            return "";
+        }
     }
 
     private String GetObjectId(String localId) {
@@ -600,8 +701,8 @@ public class BraveSyncWorker {
         return res;
     }
 
-    private void SaveObjectId(String localId, String objectId, boolean saveObjectId) {
-        String objectIdJSON = "[{\"objectId\": \"" + objectId + "\", \"apiVersion\": \"" + mApiVersion + "\"}]";
+    private void SaveObjectId(String localId, String objectId, String order, boolean saveObjectId) {
+        String objectIdJSON = "[{\"objectId\": \"" + objectId + "\", \"order\": \"" + order + "\", \"apiVersion\": \"" + mApiVersion + "\"}]";
         if (!saveObjectId) {
             nativeSaveObjectId(localId, objectIdJSON, "");
         } else {
@@ -705,8 +806,8 @@ public class BraveSyncWorker {
             mSeed = arg1;
         }
         mDeviceId = arg2;
-        Log.i(TAG, "!!!deviceId == " + mDeviceId);
-        Log.i(TAG, "!!!seed == " + mSeed);
+        //Log.i(TAG, "!!!deviceId == " + mDeviceId);
+        //Log.i(TAG, "!!!seed == " + mSeed);
         // Save seed and deviceId in preferences
         SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -715,7 +816,6 @@ public class BraveSyncWorker {
             if (null != mSyncScreensObserver) {
                 mSyncScreensObserver.onSeedReceived(mSeed, false, true);
             }
-            Log.i(TAG, "Saving seed");
             editor.putString(PREF_SEED, mSeed);
         }
         editor.apply();
@@ -729,7 +829,7 @@ public class BraveSyncWorker {
         StringBuilder script = new StringBuilder("javascript:callbackList['send-sync-records'](null, '");
         script.append(recordType).append("'");
         script.append(", ").append(recordsJSON).append(")");
-
+        Log.i(TAG, "SendSyncRecords: " + recordsJSON);
         CallScript(script);
     }
 
@@ -758,7 +858,7 @@ public class BraveSyncWorker {
             ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(existingList);
             oos.close();
-            SaveObjectId(recordId, Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT), false);
+            SaveObjectId(recordId, Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT), "", false);
         } catch (IOException ioe) {
         }
     }
@@ -781,10 +881,9 @@ public class BraveSyncWorker {
             boolean listChanged = false;
             boolean clearLocalDb = action.equals(DELETE_RECORD);
             for (String id: ids) {
+                boolean itemRemoved = existingList.remove(id);
                 if (!listChanged) {
-                    listChanged = existingList.remove(id);
-                } else {
-                    existingList.remove(id);
+                    listChanged = itemRemoved;
                 }
                 // Delete corresponding objectIds
                 if (clearLocalDb) {
@@ -813,26 +912,32 @@ public class BraveSyncWorker {
         request.append(CreateDeviceCreationRecord(deviceName, objectId, action, deviceId)).append("]");
         ArrayList<String> ids = new ArrayList<String>();
         //ids.add(id);
-        Log.i(TAG, "!!!device operation request: " + request.toString());
+        //Log.i(TAG, "!!!device operation request: " + request.toString());
         SendSyncRecords(SyncRecordType.PREFERENCES, request, action, ids);
     }
 
     private void SendAllLocalBookmarks() {
-        // Grab current existing bookmarksIds to sync them
-        List<BookmarkItem> localBookmarks = GetBookmarkItems();
-        if (null != localBookmarks) {
-            //Log.i(TAG, "!!!localBookmarks.size() == " + localBookmarks.size());
-            int listSize = localBookmarks.size();
-            for (int i = 0; i < listSize; i += SEND_RECORDS_COUNT_LIMIT) {
-                List<BookmarkItem> subList = localBookmarks.subList(i, Math.min(listSize, i + SEND_RECORDS_COUNT_LIMIT));
-                CreateUpdateDeleteBookmarks(CREATE_RECORD, subList.toArray(new BookmarkItem[subList.size()]), true, true);
-            }
-        }
+      if (null == mNewBookmarkModel) {
+          return;
+      }
+      synchronized (mNewBookmarkModel)
+      {
+          // Grab current existing bookmarksIds to sync them
+          List<BookmarkItem> localBookmarks = GetBookmarkItems();
+          if (null != localBookmarks) {
+              //Log.i(TAG, "!!!localBookmarks.size() == " + localBookmarks.size());
+              int listSize = localBookmarks.size();
+              for (int i = 0; i < listSize; i += SEND_RECORDS_COUNT_LIMIT) {
+                  List<BookmarkItem> subList = localBookmarks.subList(i, Math.min(listSize, i + SEND_RECORDS_COUNT_LIMIT));
+                  CreateUpdateDeleteBookmarks(CREATE_RECORD, subList.toArray(new BookmarkItem[subList.size()]), true, true);
+              }
+          }
+      }
     }
 
     private synchronized void FetchSyncRecords(String lastRecordFetchTime) {
         if (!mSyncIsReady.IsReady()) {
-            Log.i(TAG, "!!!Sync is not ready");
+            //Log.i(TAG, "!!!Sync is not ready");
             return;
         }
         //Log.i(TAG, "!!!in FetchSyncRecords lastRecordFetchTime == " + lastRecordFetchTime);
@@ -848,9 +953,7 @@ public class BraveSyncWorker {
         }
         Calendar currentTime = Calendar.getInstance();
         long timeDiff = currentTime.getTimeInMillis() - mTimeLastFetch;
-        if (currentTime.getTimeInMillis() - mTimeLastFetch <= INTERVAL_TO_FETCH_RECORDS
-              && lastRecordFetchTime.isEmpty()) {
-            Log.w(TAG, "FetchSyncRecords <= INTERVAL_TO_FETCH_RECORDS: " + timeDiff);
+        if (currentTime.getTimeInMillis() - mTimeLastFetch <= INTERVAL_TO_FETCH_RECORDS && lastRecordFetchTime.isEmpty()) {
             return;
         }
         mInterruptSyncSleep = false;
@@ -880,8 +983,11 @@ public class BraveSyncWorker {
         }
         mFetchInProgress = true;
         mLatestRecordTimeStampt = latestRecordTimeStampt;
+
         StringBuilder res = new StringBuilder("");
-        //Log.i(TAG, "!!!in GetExistingObjects");
+        if (recordsJSON.length() > 2 && SyncRecordType.BOOKMARKS.equals(categoryName)) {
+            Log.i(TAG, "!!!in GetExistingObjects: " + latestRecordTimeStampt + ": " + isTruncated + ": " + recordsJSON);
+        }
 
         // Debug
         /*int iPos = recordsJSON.indexOf("NewFolder3");
@@ -915,7 +1021,7 @@ public class BraveSyncWorker {
             }
         }*/
         //Log.i(TAG, "!!!recordsJSON == " + recordsJSON);
-        /*int iPos = recordsJSON.indexOf("Just kidding");
+        /*int iPos = recordsJSON.indexOf("Bobrina");
         if (-1 != iPos) {
             Log.i(TAG, "!!!record == " + recordsJSON.substring(iPos, iPos + 2000));
             if (iPos > 500) {
@@ -985,12 +1091,14 @@ public class BraveSyncWorker {
                    bookmarkInternal.mFavIcon, bookmarkInternal.mOrder)).append(" }");
                  BookmarkItem bookmarkItem = GetBookmarkItemByLocalId(localId);
                  if (null != bookmarkItem) {
+                     String order = GetBookmarkOrder(localId, false);
                      // TODO pass always CREATE_RECORD, it means action is create
                      long parentId = bookmarkItem.getParentId().getId();
                      localRecord.append(CreateRecord(objectId, SyncObjectData.BOOKMARK, new StringBuilder(CREATE_RECORD), new StringBuilder(mDeviceId)))
                           .append(CreateBookmarkRecord(bookmarkItem.getUrl(), bookmarkItem.getTitle(),
-                          bookmarkItem.isFolder(), parentId, "", "", 0, 0, "", "")).append(" }]");
+                          bookmarkItem.isFolder(), parentId, "", "", 0, 0, "", order)).append(" }]");
                  }
+                 Log.i(TAG, "Confirmed: " + bookmarkInternal.mTitle + ": " + action);
                  // Mark the record as sucessfully sent
                  ArrayList<String> value = syncedRecordsMap.get(action.toString());
                  if (null == value) {
@@ -1092,6 +1200,7 @@ public class BraveSyncWorker {
 
            return bookmarkRunnable.mBookmarkItems;
         } catch (NumberFormatException e) {
+            Log.e(TAG, "NumberFormatException: " + e);
         }
 
         return null;
@@ -1116,11 +1225,13 @@ public class BraveSyncWorker {
                try {
                    bookmarkRunnable.wait();
                } catch (InterruptedException e) {
+                   Log.e(TAG, "GetBookmarkItemByLocalId error: " + e);
                }
            }
 
            return bookmarkRunnable.mBookmarkItem;
         } catch (NumberFormatException e) {
+           Log.e(TAG, "GetBookmarkItemByLocalId error: " + e);
         }
 
         return null;
@@ -1187,10 +1298,36 @@ public class BraveSyncWorker {
         @Override
         public void run() {
             BookmarkId bookmarkId = new BookmarkId(mBookmarkId, BookmarkType.NORMAL);
+            if (bookmarkId == null) {
+                Log.e(TAG, "bookmarkId == null");
+            }
             if (null != mNewBookmarkModel && null != bookmarkId) {
-                // Get childs to clean local leveldb, all childs are deleted recursively
-                mBookmarksItems = getBookmarksForFolder(mNewBookmarkModel, mNewBookmarkModel.getBookmarkById(bookmarkId));
-                mNewBookmarkModel.deleteBookmarkSilently(bookmarkId);
+                synchronized (mNewBookmarkModel) {
+                    // Get children to clean local leveldb, all children are deleted recursively
+                    BookmarkItem bookmarkRoot = mNewBookmarkModel.getBookmarkById(bookmarkId);
+                    mBookmarksItems = getBookmarksForFolder(mNewBookmarkModel, bookmarkRoot);
+                    // Delete children bookmarks
+                    for (BookmarkItem bookmark : mBookmarksItems) {
+                        if (!bookmark.isFolder()) {
+                            Log.i(TAG, "deleteBookmarkSilently: " + bookmark.getTitle() + " (" + bookmark.getId().getId() + ")");
+                            mNewBookmarkModel.deleteBookmarkSilently(bookmark.getId());
+                        }
+                    }
+                    // Delete children bookmark folders
+                    for (BookmarkItem bookmark : mBookmarksItems) {
+                        if (bookmark.isFolder()) {
+                            Log.i(TAG, "deleteBookmarkSilently: " + bookmark.getTitle() + " (" + bookmark.getId().getId() + ")");
+                            mNewBookmarkModel.deleteBookmarkSilently(bookmark.getId());
+                        }
+                    }
+                    // Delete root bookmark
+                    if (bookmarkRoot == null) {
+                        Log.e(TAG, "Failed to find root bookmark: " + bookmarkId);
+                    } else {
+                        Log.i(TAG, "Delete root bookmark: " + bookmarkRoot.getTitle() + "(" + bookmarkId + ")");
+                    }
+                    mNewBookmarkModel.deleteBookmarkSilently(bookmarkId);
+                }
             }
 
             synchronized (this)
@@ -1200,7 +1337,7 @@ public class BraveSyncWorker {
         }
     }
 
-    private void EditBookmarkByLocalId(String localId, String url, String title, String parentLocalId) {
+    private void EditBookmarkByLocalId(String localId, String url, String title, String parentLocalId, String objectId, String order) {
         if (0 == localId.length()) {
             return;
         }
@@ -1224,15 +1361,19 @@ public class BraveSyncWorker {
                try {
                    bookmarkRunnable.wait();
                } catch (InterruptedException e) {
+                  Log.e(TAG, "EditBookmarkByLocalId error: " + e);
                }
            }
         } catch (NumberFormatException e) {
+            Log.e(TAG, "EditBookmarkByLocalId error: " + e);
         }
-
+        Log.i(TAG, "EditBookmarkByLocalId: " + localId + ": " + objectId + ": " + order);
+        SaveObjectId(localId, objectId, order, true);
+        mReorderBookmarks = true;
         return;
     }
 
-    private void AddBookmark(String url, String title, boolean isFolder, String objectId, String parentLocalId) {
+    private void AddBookmark(String url, String title, boolean isFolder, String objectId, String parentLocalId, String order) {
         try {
            long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
            long lparentLocalId = defaultFolderId;
@@ -1252,15 +1393,17 @@ public class BraveSyncWorker {
                try {
                    bookmarkRunnable.wait();
                } catch (InterruptedException e) {
+                   Log.e(TAG, "AddBookmark error: " + e);
                }
            }
            if (null != bookmarkRunnable.mBookmarkId) {
-               SaveObjectId(String.valueOf(bookmarkRunnable.mBookmarkId.getId()), objectId, true);
+               Log.i(TAG, "AddBookmark: " + String.valueOf(bookmarkRunnable.mBookmarkId.getId()) + ": " + objectId + ": " + order);
+               SaveObjectId(String.valueOf(bookmarkRunnable.mBookmarkId.getId()), objectId, order, true);
+               mReorderBookmarks = true;
            }
         } catch (NumberFormatException e) {
+            Log.e(TAG, "AddBookmark error: " + e);
         }
-
-        return;
     }
 
     private List<BookmarkItem> GetBookmarkItems() {
@@ -1354,7 +1497,9 @@ public class BraveSyncWorker {
             }
         }*/
         //
-        Log.i(TAG, "ResolvedSyncRecords!!!recordsJSON = " + recordsJSON);
+        /*if (recordsJSON.length() > 3) {
+            Log.i(TAG, "ResolvedSyncRecords!!!recordsJSON = " + recordsJSON);
+        }*/
         /*String[] records = recordsJSON.split("action");
         for (int i = 0; i < records.length; i++) {
             Log.i(TAG, "!!!record[" + i + "]" + records[i]);
@@ -1393,14 +1538,17 @@ public class BraveSyncWorker {
                }
                reader.endObject();
                if (null == bookmarkInternal && deviceName.isEmpty()) {
-                    continue;
+                  continue;
                }
-               if (null != bookmarkInternal && (!bookmarkInternal.mTitle.isEmpty() || !bookmarkInternal.mCustomTitle.isEmpty())) {
+               if (null != bookmarkInternal && (action.equals(DELETE_RECORD) || !bookmarkInternal.mTitle.isEmpty() || !bookmarkInternal.mCustomTitle.isEmpty())) {
                    if (BookmarkResolver(new ResolvedRecordsToApply(objectId, action, bookmarkInternal, "", ""), mResolvedRecordsToApply, false)) {
                       continue;
                    }
                } else if (!deviceName.isEmpty()) {
                    devicesRecords.add(new ResolvedRecordsToApply(objectId, action, null, deviceName, deviceId));
+               } else {
+                  Log.e(TAG, "Unknown state");
+                  assert false;
                }
            }
            reader.endArray();
@@ -1458,16 +1606,55 @@ public class BraveSyncWorker {
             editor.apply();
             mFetchInProgress = false;
             SendNotSyncedRecords();
+            if (SyncRecordType.BOOKMARKS.equals(categoryName)) {
+                ReorderBookmarks();
+            }
         } else {
             FetchSyncRecords(mLatestRecordTimeStampt);
         }
     }
 
+    private void ReorderBookmarks() {
+        if (null == mNewBookmarkModel) {
+            return;
+        }
+        synchronized (mNewBookmarkModel)
+        {
+            if (!mReorderBookmarks) {
+                return;
+            }
+            List<BookmarkItem> localBookmarks = GetBookmarkItems();
+            List<OrderedBookmark> orderedBookmarks = new ArrayList<OrderedBookmark>();
+            for (BookmarkItem bookmark : localBookmarks) {
+                String order = GetBookmarkOrder(String.valueOf(bookmark.getId().getId()));
+                if (order.isEmpty()) {
+                    Log.e(TAG, "ReorderBookmarks empty order for " + bookmark.getId().getId());
+                    assert false;
+                }
+                OrderedBookmark orderedBookmark = new OrderedBookmark(bookmark, order);
+                orderedBookmarks.add(orderedBookmark);
+            }
+            Collections.sort(orderedBookmarks);
+            ((Activity)mContext).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    for (OrderedBookmark orderedBookmark : orderedBookmarks) {
+                        mNewBookmarkModel.moveBookmark(orderedBookmark.Bookmark().getId(), orderedBookmark.Bookmark().getParentId());
+                    }
+                }
+            });
+            mReorderBookmarks = false;
+        }
+    }
+
     private void SendNotSyncedRecords() {
-        // TODO for other categories, not only for bookmarks
-        ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, CREATE_RECORD);
-        ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, UPDATE_RECORD);
-        ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, DELETE_RECORD);
+        if (mAttepmtsBeforeSendingNotSyncedRecords-- == 0) {
+            mAttepmtsBeforeSendingNotSyncedRecords = ATTEMPTS_BEFORE_SENDING_NOT_SYNCED_RECORDS;
+            // TODO for other categories, not only for bookmarks
+            ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, CREATE_RECORD);
+            ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, UPDATE_RECORD);
+            ProcessNotSyncedRecords(SyncRecordType.BOOKMARKS, DELETE_RECORD);
+        }
     }
 
     private void ProcessNotSyncedRecords(String categoryName, String action) {
@@ -1523,10 +1710,10 @@ public class BraveSyncWorker {
             if (null != existingRecordToRemove) {
                 if (existingRecordToRemove.mDeviceId.equals(mDeviceId)) {
                     // We deleted current device, so need to reset sync
-                    Log.i(TAG, "DeviceResolver reset sync for " + resolvedRecord.mDeviceName);
+                    //Log.i(TAG, "DeviceResolver reset sync for " + resolvedRecord.mDeviceName);
                     ResetSync();
                 }
-                Log.i(TAG, "DeviceResolver remove from list device " + resolvedRecord.mDeviceName);
+                //Log.i(TAG, "DeviceResolver remove from list device " + resolvedRecord.mDeviceName);
                 existingRecords.remove(existingRecordToRemove);
             }
             if (!exist && !resolvedRecord.mAction.equals(DELETE_RECORD)) {
@@ -1569,13 +1756,13 @@ public class BraveSyncWorker {
         String parentLocalId = nativeGetLocalIdByObjectId(resolvedRecord.mBookmarkInternal.mParentFolderObjectId);
         if (!applyToDefaultFolder && parentLocalId.isEmpty() && !resolvedRecord.mBookmarkInternal.mParentFolderObjectId.isEmpty()) {
             resolvedRecordsToApply.add(resolvedRecord);
-
             return true;
         }
         if (0 != localId.length()) {
             if (resolvedRecord.mAction.equals(UPDATE_RECORD)) {
                 EditBookmarkByLocalId(localId, resolvedRecord.mBookmarkInternal.mUrl,
-                    (resolvedRecord.mBookmarkInternal.mCustomTitle.isEmpty() ? resolvedRecord.mBookmarkInternal.mTitle : resolvedRecord.mBookmarkInternal.mCustomTitle), parentLocalId);
+                    (resolvedRecord.mBookmarkInternal.mCustomTitle.isEmpty() ? resolvedRecord.mBookmarkInternal.mTitle : resolvedRecord.mBookmarkInternal.mCustomTitle),
+                    parentLocalId, resolvedRecord.mObjectId, resolvedRecord.mBookmarkInternal.mOrder);
             } else if (resolvedRecord.mAction.equals(DELETE_RECORD)) {
                 DeleteBookmarkByLocalId(localId);
             } else {
@@ -1585,7 +1772,7 @@ public class BraveSyncWorker {
         } else {
             AddBookmark(resolvedRecord.mBookmarkInternal.mUrl,
                 (resolvedRecord.mBookmarkInternal.mCustomTitle.isEmpty() ? resolvedRecord.mBookmarkInternal.mTitle : resolvedRecord.mBookmarkInternal.mCustomTitle),
-                resolvedRecord.mBookmarkInternal.mIsFolder, resolvedRecord.mObjectId, parentLocalId);
+                resolvedRecord.mBookmarkInternal.mIsFolder, resolvedRecord.mObjectId, parentLocalId, resolvedRecord.mBookmarkInternal.mOrder);
         }
 
         return false;
@@ -1716,9 +1903,6 @@ public class BraveSyncWorker {
                         bookmarkInternal.mCreationTime = reader.nextLong();
                     } else if (name.equals("favicon")) {
                         bookmarkInternal.mFavIcon = reader.nextString();
-                    } else if (name.equals("order")) {
-                        bookmarkInternal.mOrder = reader.nextString();
-                        Log.i("TAG", "!!!order == " + bookmarkInternal.mOrder);
                     } else {
                         assert false;
                         reader.skipValue();
@@ -1731,6 +1915,8 @@ public class BraveSyncWorker {
                 } else {
                     bookmarkInternal.mIsFolder = (reader.nextInt() != 0);
                 }
+            } else if (name.equals("order")) {
+                bookmarkInternal.mOrder = reader.nextString();
             } else if (name.equals("parentFolderObjectId")) {
                 bookmarkInternal.mParentFolderObjectId = GetObjectIdJSON(reader).toString();
             } else {
@@ -1800,8 +1986,6 @@ public class BraveSyncWorker {
                     if (null != bookmarkItem) {
                         mBookmarkItems.add(bookmarkItem);
                     } else if (mAction.equals(DELETE_RECORD)) {
-                        // TODO ask Serg
-                        Log.w(TAG, "Why are we here");
                         long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
                         mBookmarkItems.add(BookmarkBridge.createBookmarkItem(id, BookmarkType.NORMAL, "", "", false,
                             defaultFolderId, BookmarkType.NORMAL, true, true));
@@ -1840,8 +2024,10 @@ public class BraveSyncWorker {
         BookmarkItem bookmarkItem = null;
         BookmarkId bookmarkId = new BookmarkId(lBookmarkId, BookmarkType.NORMAL);
         if (null != mNewBookmarkModel && null != bookmarkId) {
-            if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
-                bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
+            synchronized (mNewBookmarkModel) {
+                if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
+                    bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
+                }
             }
         }
 
@@ -1942,7 +2128,6 @@ public class BraveSyncWorker {
                   BookmarkId bookmarkId = mNewBookmarkModel.getMobileFolderId();
 
                   mDefaultFolder = bookmarkId;
-                  Log.i(TAG, "mDefaultFolder is " + mDefaultFolder);
                 }
             });
         }
@@ -1969,24 +2154,26 @@ public class BraveSyncWorker {
                 parentBookmarkId = new BookmarkId(mParentLocalId, BookmarkType.NORMAL);
             } else {
                 parentBookmarkId = mDefaultFolder;
-                assert mDefaultFolder == null;
+                assert mDefaultFolder != null;
             }
             BookmarkId bookmarkId = new BookmarkId(mBookmarkId, BookmarkType.NORMAL);
             if (null != mNewBookmarkModel && null != bookmarkId) {
-                if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
-                    BookmarkItem bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
-                    if (null != bookmarkItem) {
-                        if (!bookmarkItem.getTitle().equals(mTitle)) {
-                            mNewBookmarkModel.setBookmarkTitle(bookmarkId, mTitle);
-                        }
-                        if (!mUrl.isEmpty() && bookmarkItem.isUrlEditable()) {
-                            String fixedUrl = UrlFormatter.fixupUrl(mUrl);
-                            if (null != fixedUrl && !fixedUrl.equals(bookmarkItem.getTitle())) {
-                                mNewBookmarkModel.setBookmarkUrl(bookmarkId, fixedUrl);
+                synchronized (mNewBookmarkModel) {
+                    if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
+                        BookmarkItem bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
+                        if (null != bookmarkItem) {
+                            if (!bookmarkItem.getTitle().equals(mTitle)) {
+                                mNewBookmarkModel.setBookmarkTitle(bookmarkId, mTitle);
                             }
-                        }
-                        if (bookmarkItem.getParentId().getId() != mParentLocalId) {
-                            mNewBookmarkModel.moveBookmark(bookmarkId, parentBookmarkId);
+                            if (!mUrl.isEmpty() && bookmarkItem.isUrlEditable()) {
+                                String fixedUrl = UrlFormatter.fixupUrl(mUrl);
+                                if (null != fixedUrl && !fixedUrl.equals(bookmarkItem.getTitle())) {
+                                    mNewBookmarkModel.setBookmarkUrl(bookmarkId, fixedUrl);
+                                }
+                            }
+                            if (bookmarkItem.getParentId().getId() != mParentLocalId) {
+                                mNewBookmarkModel.moveBookmark(bookmarkId, parentBookmarkId);
+                            }
                         }
                     }
                 }
@@ -2023,10 +2210,12 @@ public class BraveSyncWorker {
                 parentBookmarkId = mDefaultFolder;
             }
             if (null != mNewBookmarkModel) {
-                if (!misFolder) {
-                    mBookmarkId = BookmarkUtils.addBookmarkSilently(mContext, mNewBookmarkModel, mTitle, mUrl, parentBookmarkId);
-                } else {
-                    mBookmarkId = mNewBookmarkModel.addFolder(parentBookmarkId, 0, mTitle);
+                synchronized (mNewBookmarkModel) {
+                    if (!misFolder) {
+                        mBookmarkId = BookmarkUtils.addBookmarkSilently(mContext, mNewBookmarkModel, mTitle, mUrl, parentBookmarkId);
+                    } else {
+                        mBookmarkId = mNewBookmarkModel.addFolder(parentBookmarkId, 0, mTitle);
+                    }
                 }
             }
 
@@ -2066,6 +2255,8 @@ public class BraveSyncWorker {
           mTimeLastFetch = sharedPref.getLong(PREF_LAST_FETCH_NAME, 0);
           mDeviceId = sharedPref.getString(PREF_DEVICE_ID, null);
           mDeviceName = sharedPref.getString(PREF_SYNC_DEVICE_NAME, null);
+          mBaseOrder = sharedPref.getString(PREF_BASE_ORDER, null);
+          mLastOrder = sharedPref.getString(PREF_LAST_ORDER, null);
 
           for (;;) {
               try {
@@ -2091,7 +2282,6 @@ public class BraveSyncWorker {
                   Log.e(TAG, "Sync loop exception: " + exc);
               }
               if (mStopThread) {
-                  Log.i(TAG, "Sync thread is stopped");
                   break;
               }
           }
@@ -2107,6 +2297,8 @@ public class BraveSyncWorker {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.remove(PREF_LAST_FETCH_NAME);
         editor.remove(PREF_DEVICE_ID);
+        editor.remove(PREF_BASE_ORDER);
+        editor.remove(PREF_LAST_ORDER);
         editor.remove(PREF_SEED);
         editor.remove(PREF_SYNC_DEVICE_NAME);
         editor.apply();
@@ -2127,7 +2319,7 @@ public class BraveSyncWorker {
               nativeResetSync(SyncRecordType.BOOKMARKS + UPDATE_RECORD);
               nativeResetSync(SyncRecordType.BOOKMARKS + DELETE_RECORD);
               nativeResetSync(DEVICES_NAMES);
-              SaveObjectId(ORIGINAL_SEED_KEY, seed, true);
+              SaveObjectId(ORIGINAL_SEED_KEY, seed, "", true);
               // TODO for other categories type
             }
         }.start();
@@ -2175,9 +2367,9 @@ public class BraveSyncWorker {
                 SaveInitData(arg1, arg2);
                 break;
               case "sync-debug":
-                if (null != arg1) {
+                /*if (null != arg1) {
                     Log.i(TAG, "!!!sync-debug: " + arg1);
-                }
+                }*/
                 break;
               case "fetch-sync-records":
                 mSyncIsReady.mFetchRecordsReady = true;
@@ -2203,20 +2395,29 @@ public class BraveSyncWorker {
                 mSyncIsReady.mDeleteSiteSettingsReady = true;
                 break;
               case "sync-ready":
-                mSyncIsReady.mReady = true;
-                // TODO debug
-                //CallScript(new StringBuilder(String.format("javascript:callbackList['get-bookmarks-base-order'](null, %1$s, 'android')", mDeviceId)));
-                //CallScript(new StringBuilder(String.format("javascript:callbackList['get-bookmark-order'](null, '2.0.8.1', '2.0.9')")));
-                //
-                FetchSyncRecords("");
+                if (mBaseOrder == null || mBaseOrder.isEmpty()) {
+                    // Get sync order prefix
+                    CallScript(new StringBuilder(String.format("javascript:callbackList['get-bookmarks-base-order'](null, %1$s, 'android')", mDeviceId)));
+                } else {
+                    mSyncIsReady.mReady = true;
+                    FetchSyncRecords("");
+                }
                 break;
               case "get-existing-objects":
                 SendResolveSyncRecords(arg1, GetExistingObjects(arg1, arg2, arg3, arg4));
                 break;
-              case "get-bookmarks-sync-order":
+              case "get-bookmarks-base-order":
                 break;
-              case "save-bookmarks-sync-order":
-                Log.i(TAG, "!!!save-bookmarks-sync-order == " + arg1);
+              case "save-bookmarks-base-order":
+                assert arg1 != null;
+                // Save base order before sending local bookmarks
+                mBaseOrder = arg1;
+                SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString(PREF_BASE_ORDER, mBaseOrder);
+                editor.apply();
+                mSyncIsReady.mReady = true;
+                FetchSyncRecords("");
                 break;
               case "get-bookmark-order":
                 break;
@@ -2394,6 +2595,33 @@ public class BraveSyncWorker {
 
     public void InterruptSyncSleep() {
         mInterruptSyncSleep = true;
+    }
+
+    private String GetBookmarkOrder(String localId, boolean generateIfEmpty) {
+        String currentOrder = GetBookmarkOrder(localId);
+        if (!currentOrder.isEmpty() || !generateIfEmpty) {
+            return currentOrder;
+        }
+        if (mLastOrder == null || mLastOrder.isEmpty()) {
+            assert mBaseOrder != null;
+            // It is the very first element
+            mLastOrder = mBaseOrder + "1";
+        } else {
+            assert !mLastOrder.isEmpty();
+            String[] numbers = mLastOrder.split("\\.");
+            assert numbers.length > 0;
+            int newLastNumber = Integer.parseInt(numbers[numbers.length - 1]) + 1;
+            mLastOrder = numbers[0] + ".";
+            for (int i = 1; i < numbers.length - 1; i++) {
+                mLastOrder += numbers[i] + ".";
+            }
+            mLastOrder += newLastNumber;
+        }
+        SharedPreferences sharedPref = mContext.getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(PREF_LAST_ORDER, mLastOrder);
+        editor.apply();
+        return mLastOrder;
     }
 
     private native String nativeGetObjectIdByLocalId(String localId);
