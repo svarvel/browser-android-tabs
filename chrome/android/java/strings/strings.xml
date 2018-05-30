@@ -149,6 +149,7 @@ Saved</string>
     <string name="brave_sync_qr_code">QR Code</string>
     <string name="brave_sync_code_words">Code Words</string>
     <string name="brave_sync_copy_button_text">Copy to Clipboard</string>
+    <string name="brave_sync_copied_text">Copied to Clipboard</string>
     <string name="brave_sync_this_device_text">(this device)</string>
 
 </resources>
