@@ -6,7 +6,7 @@ base_strings_file='../../../../chrome/android/java/strings/strings.xml'
 chrome_strings_file='../../../../chrome/android/java/strings/android_chrome_strings.grd'
 # Strings that are not used at the moment
 skip_string_names={'brave_settings_title', 'brave_shields_down', 'brave_shields_up', 'brave_shields_ads_trackers',
-'brave_shields_block_phishing_switch', 'brave_shields_fingerprints_blocked'}
+'brave_shields_block_phishing_switch', 'brave_shields_fingerprints_blocked', 'send_metrics_title'}
 
 # Go through the strings in the base file and check for appropriate string in chrome strings file
 def CheckStrings():
