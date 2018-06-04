@@ -1,6 +1,7 @@
 # Before running this script
 # In Atom (or other editor) make changes to .grd and .xtb files in folders (chrome/android/java/strings, components/strings, chrome/app/resources, chrome/app):
-# Chromium -> Brave (except for Chromium version)
+# Chromium -> Brave
+# Brave <ph name="VERSION_CHROMIUM"> -> Chromium <ph name="VERSION_CHROMIUM">
 # Brave Authors -> Chromium Authors
 # Brave OS -> Chromium OS
 # Google Chrome -> Brave
@@ -12,6 +13,7 @@
 # Google Chromovi -> Brave
 # Google Chromove -> Brave
 # Google Chromovo -> Brave
+# Google Chromova -> Brave
 # Google Chromov -> Brave
 # Brave OS -> Google Chrome OS
 # Chrome -> Brave
@@ -24,6 +26,7 @@
 # Chromovi -> Brave
 # Chromove -> Brave
 # Chromovo -> Brave
+# Chromova -> Brave
 # Chromov -> Brave
 # Brave OS -> Chrome OS
 # Google Inc -> Brave Software Inc
