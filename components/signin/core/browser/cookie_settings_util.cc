@@ -11,7 +11,7 @@
 namespace signin {
 
 bool SettingsAllowSigninCookies(
-    const content_settings::CookieSettings* cookie_settings) {
+    content_settings::CookieSettings* cookie_settings) {
   GURL gaia_url = GaiaUrls::GetInstance()->gaia_url();
   GURL google_url = GaiaUrls::GetInstance()->google_url();
   return cookie_settings &&
@@ -20,7 +20,7 @@ bool SettingsAllowSigninCookies(
 }
 
 bool SettingsDeleteSigninCookiesOnExit(
-    const content_settings::CookieSettings* cookie_settings) {
+    content_settings::CookieSettings* cookie_settings) {
   GURL gaia_url = GaiaUrls::GetInstance()->gaia_url();
   GURL google_url = GaiaUrls::GetInstance()->google_url();
   ContentSettingsForOneType settings;

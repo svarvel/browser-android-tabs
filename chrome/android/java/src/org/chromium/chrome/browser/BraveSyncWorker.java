@@ -611,12 +611,9 @@ public class BraveSyncWorker {
             if (null == mWebContents) {
                 mWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mWebContents) {
-                    mContentViewCore = new ContentViewCoreImpl(mContext, ChromeVersionInfo.getProductVersion());
+                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mWebContents);
+                    mContentViewCore = ContentViewCore.create(mContext, ChromeVersionInfo.getProductVersion(), mWebContents, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid());
                     if (null != mContentViewCore) {
-                        ContentView cv = ContentView.createContentView(mContext, mContentViewCore);
-                        cv.setContentDescription("");
-                        mContentViewCore.initialize(ViewAndroidDelegate.createBasicDelegate(cv), cv, mWebContents,
-                                ((ChromeActivity)mContext).getWindowAndroid());
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initContenViewCore();
                         } else {
@@ -2209,12 +2206,9 @@ public class BraveSyncWorker {
             if (null == mJSWebContents) {
                 mJSWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mJSWebContents) {
-                    mJSContentViewCore = new ContentViewCoreImpl(mContext, ChromeVersionInfo.getProductVersion());
+                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mJSWebContents);
+                    mJSContentViewCore = ContentViewCore.create(mContext, ChromeVersionInfo.getProductVersion(), mJSWebContents, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid());
                     if (null != mJSContentViewCore) {
-                        ContentView cv = ContentView.createContentView(mContext, mJSContentViewCore);
-                        cv.setContentDescription("");
-                        mJSContentViewCore.initialize(ViewAndroidDelegate.createBasicDelegate(cv), cv, mJSWebContents,
-                                ((ChromeActivity)mContext).getWindowAndroid());
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initJSContenViewCore();
                         } else {
