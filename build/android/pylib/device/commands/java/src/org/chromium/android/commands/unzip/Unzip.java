@@ -37,17 +37,17 @@ public class Unzip {
         s.println("Usage:");
         s.println("unzip [zipfile]");
     }
- 
+
     private String validateFilename(String filename, String intendedDir)
       throws java.io.IOException {
-  	File f = new File(filename);
+  	File f = new File(intendedDir, filename);
   	String canonicalPath = f.getCanonicalPath();
- 
+
   	File iD = new File(intendedDir);
   	String canonicalID = iD.getCanonicalPath();
-   
+
   	if (canonicalPath.startsWith(canonicalID)) {
-    	    return canonicalPath;
+    	    return filename;
   	} else {
     	    throw new IllegalStateException("File is outside extraction target directory.");
         }
@@ -110,4 +110,3 @@ public class Unzip {
         unzip(args);
     }
 }
-
