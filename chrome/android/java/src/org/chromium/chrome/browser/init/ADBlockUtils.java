@@ -382,17 +382,17 @@ public class ADBlockUtils {
 
         return true;
     }
-    
+
     public static String validateFilename(String filename, String intendedDir)
       throws java.io.IOException {
-        File f = new File(filename);
+        File f = new File(intendedDir, filename);
         String canonicalPath = f.getCanonicalPath();
 
         File iD = new File(intendedDir);
         String canonicalID = iD.getCanonicalPath();
 
         if (canonicalPath.startsWith(canonicalID)) {
-            return canonicalPath;
+            return filename;
         } else {
             throw new IllegalStateException("File is outside extraction target directory.");
         }
