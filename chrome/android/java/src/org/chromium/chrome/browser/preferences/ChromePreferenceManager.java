@@ -310,6 +310,8 @@ public class ChromePreferenceManager {
             "chrome_home_opt_out_snackbar_shown";
     public static final String CHROME_HOME_INFO_PROMO_SHOWN_KEY = "chrome_home_info_promo_shown";
     public static final String CHROME_HOME_SHARED_PREFERENCES_KEY = "chrome_home_enabled_date";
+    private static final String USE_CUSTOM_TABS =
+            "use_custom_tabs";
 
     /**
      * Whether or not bootstrap tasks should be prioritized (i.e. bootstrap task prioritization
@@ -548,6 +550,14 @@ public class ChromePreferenceManager {
      */
     public void clearNewTabPageSigninPromoSuppressionPeriodStart() {
         removeKey(NTP_SIGNIN_PROMO_SUPPRESSION_PERIOD_START);
+    }
+
+    /**
+     * Get whether or not use custom tabs.
+     * @return True if we can use custom tabs.
+     */
+    public boolean useCustomTabs() {
+        return mSharedPreferences.getBoolean(USE_CUSTOM_TABS, false);
     }
 
     /**

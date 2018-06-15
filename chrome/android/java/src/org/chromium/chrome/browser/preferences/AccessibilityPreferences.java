@@ -4,12 +4,14 @@
 
 package org.chromium.chrome.browser.preferences;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.widget.ListView;
 
+import org.chromium.base.ContextUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs.FontSizePrefsObserver;
@@ -26,6 +28,7 @@ public class AccessibilityPreferences extends PreferenceFragment
     static final String PREF_TEXT_SCALE = "text_scale";
     static final String PREF_FORCE_ENABLE_ZOOM = "force_enable_zoom";
     static final String PREF_READER_FOR_ACCESSIBILITY = "reader_for_accessibility";
+    static final String PREF_USE_CUSTOM_TABS = "use_custom_tabs";
 
     private NumberFormat mFormat;
     private FontSizePrefs mFontSizePrefs;
@@ -124,6 +127,10 @@ public class AccessibilityPreferences extends PreferenceFragment
         } else if (PREF_READER_FOR_ACCESSIBILITY.equals(preference.getKey())) {
             PrefServiceBridge.getInstance().setBoolean(
                     Pref.READER_FOR_ACCESSIBILITY_ENABLED, (Boolean) newValue);
+        } else if (PREF_USE_CUSTOM_TABS.equals(preference.getKey())) {
+            SharedPreferences.Editor sharedPreferencesEditor = ContextUtils.getAppSharedPreferences().edit();
+            sharedPreferencesEditor.putBoolean(PREF_USE_CUSTOM_TABS, (boolean)newValue);
+            sharedPreferencesEditor.apply();
         }
         return true;
     }
