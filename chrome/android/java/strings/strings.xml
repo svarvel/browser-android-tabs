@@ -91,4 +91,7 @@ Saved</string>
     <string name="close_tabs_on_exit_title">Close tabs on exit</string>
     <string name="close_tabs_on_exit_summary">Don't persist tabs between browsing sessions</string>
 
+    <string name="open_pages_in_custom_tabs_title">Open tabs in Custom Tabs</string>
+    <string name="open_pages_in_custom_tabs_summary">Offer to open tabs in Custom Tabs</string>
+
 </resources>
