@@ -291,7 +291,7 @@ public class LaunchIntentDispatcher implements IntentHandler.IntentHandlerDelega
                 && !IntentHandler.wasIntentSenderChrome(intent)) {
             return false;
         }
-        if (CustomTabsIntent.shouldAlwaysUseBrowserUI(intent)
+        if (!FeatureUtilities.useCustomTabs() || CustomTabsIntent.shouldAlwaysUseBrowserUI(intent)
                 || !intent.hasExtra(CustomTabsIntent.EXTRA_SESSION)) {
             return false;
         }

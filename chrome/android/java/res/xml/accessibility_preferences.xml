@@ -20,6 +20,11 @@
         android:key="reader_for_accessibility"
         android:summary="@string/reader_for_accessibility_summary"
         android:title="@string/reader_for_accessibility_title" />
+    <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
+        android:key="use_custom_tabs"
+        android:summary="@string/open_pages_in_custom_tabs_summary"
+        android:title="@string/open_pages_in_custom_tabs_title"
+        android:defaultValue="true" />
 
     <org.chromium.chrome.browser.preferences.ChromeBaseCheckBoxPreference
         android:key="accessibility_tab_switcher"

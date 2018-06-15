@@ -235,6 +235,13 @@ public class FeatureUtilities {
     }
 
     /**
+     * Whether or not use custom tabs
+     */
+    public static boolean useCustomTabs() {
+        return ChromePreferenceManager.getInstance().useCustomTabs();
+    }
+
+    /**
      * Cache whether or not the home page button is force enabled so on next startup, the value can
      * be made available immediately.
      */
