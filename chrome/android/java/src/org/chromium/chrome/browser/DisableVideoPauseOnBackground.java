@@ -49,12 +49,14 @@ public class DisableVideoPauseOnBackground {
 
     private static final String SCRIPT = ""
 +"(function() {"
-+"    document._addEventListener = document.addEventListener;"
-+"    document.addEventListener = function(a,b,c) {"
-+"        if(a != 'visibilitychange') {"
-+"            document._addEventListener(a,b,c);"
-+"        }"
-+"    };"
++"    if (document._addEventListener === undefined) {"
++"        document._addEventListener = document.addEventListener;"
++"        document.addEventListener = function(a,b,c) {"
++"            if(a != 'visibilitychange') {"
++"                document._addEventListener(a,b,c);"
++"            }"
++"        };"
++"    }"
 +"}());"
 ;
 }
