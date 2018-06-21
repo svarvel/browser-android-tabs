@@ -588,7 +588,7 @@ public class ChromePreferenceManager {
      * @return True if we can use custom tabs.
      */
     public boolean useCustomTabs() {
-        return mSharedPreferences.getBoolean(USE_CUSTOM_TABS, false);
+        return mSharedPreferences.getBoolean(USE_CUSTOM_TABS, true);
     }
 
     /**
