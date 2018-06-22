@@ -52,6 +52,8 @@
 #include "extensions/buildflags/buildflags.h"
 #include "net/base/host_port_pair.h"
 #include "net/base/net_errors.h"
+#include "net/base/upload_bytes_element_reader.h"
+#include "net/base/upload_data_stream.h"
 #include "net/cookies/canonical_cookie.h"
 #include "net/cookies/cookie_options.h"
 #include "net/http/http_request_headers.h"
@@ -714,12 +716,24 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
   }
 
   // Notify ledger if we have YouTube or Twitch links
-  std::string linkType = GetLinkType(request->url().spec());
+  std::string linkType = GetLinkType(request, last_first_party_url_.spec());
   if (!linkType.empty()) {
+    std::string urlQuery = request->url().query();
+    if ("twitch" == linkType) {
+      if (request->get_upload()) {
+        for (size_t i = 0; i < (*(request->get_upload())->GetElementReaders()).size(); i++) {
+          const net::UploadBytesElementReader* reader =
+            (*(request->get_upload())->GetElementReaders())[i]->AsBytesReader();
+          std::string upload_data(reader->bytes(), reader->length());
+          urlQuery += upload_data;
+        }
+      }
+    }
+
     content::BrowserThread::PostTask(
       content::BrowserThread::UI, FROM_HERE,
       base::Bind(&ChromeNetworkDelegate::NotifyLedger,
-          base::Unretained(this), request->url().spec(), request->url().query(), linkType));
+          base::Unretained(this), request->url().spec(), urlQuery, linkType));
   }
   //
 
@@ -786,14 +800,29 @@ void SetCustomHeaders(
 
 }  // namespace
 
-std::string ChromeNetworkDelegate::GetLinkType(const std::string& url) {
+std::string ChromeNetworkDelegate::GetLinkType(net::URLRequest* request, const std::string& first_party_url) {
   std::string res("");
+  if (!request) {
+    return res;
+  }
 
+  std::string url = request->url().spec();
   if (url.find("https://m.youtube.com/api/stats/watchtime?") != std::string::npos
       || url.find("https://www.youtube.com/api/stats/watchtime?") != std::string::npos) {
     res = "youtube";
+  }  else if (
+    (
+      (first_party_url.find("https://www.twitch.tv/") == 0 || 
+        first_party_url.find("https://m.twitch.tv/") == 0) ||
+      (request->referrer().find("https://player.twitch.tv/") == 0)
+    ) &&
+    (
+      url.find(".ttvnw.net/v1/segment/") != std::string::npos ||
+      url.find("https://ttvnw.net/v1/segment/") != std::string::npos
+    )
+  ) {
+    return "twitch";
   }
-  // TODO make for twitch
 
   return res;
 }

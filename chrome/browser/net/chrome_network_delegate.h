@@ -252,10 +252,11 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   bool PendedRequestIsDestroyedOrCancelled(
             OnBeforeURLRequestContext* ctx,
             net::URLRequest* request);
+
   void ShouldBlockReferrer(std::shared_ptr<OnBeforeURLRequestContext> ctx,
             net::URLRequest* request);
 
-  std::string GetLinkType(const std::string& url);
+  std::string GetLinkType(net::URLRequest* request, const std::string& first_party_url);
 
   std::unique_ptr<ChromeExtensionsNetworkDelegate> extensions_delegate_;
 
