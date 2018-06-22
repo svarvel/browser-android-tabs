@@ -59,11 +59,13 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
       net::CompletionOnceCallback callback,
       GURL* new_url,
       std::shared_ptr<OnBeforeURLRequestContext> ctx);
-  void GetIOThread(net::URLRequest* request,
+  void GetIOThreadResetBlocker(net::URLRequest* request,
       net::CompletionOnceCallback callback,
       GURL* new_url,
       std::shared_ptr<OnBeforeURLRequestContext> ctx);
   void CheckAdBlockerReload(net::blockers::ShieldsConfig* shields_config);
+  void NotifyLedger(const std::string& url, const std::string& urlQuery,
+      const std::string& type);
 
   // If |profile| is nullptr or not set, events will be broadcast to all
   // profiles, otherwise they will only be sent to the specified profile.
@@ -252,6 +254,8 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
             net::URLRequest* request);
   void ShouldBlockReferrer(std::shared_ptr<OnBeforeURLRequestContext> ctx,
             net::URLRequest* request);
+
+  std::string GetLinkType(const std::string& url);
 
   std::unique_ptr<ChromeExtensionsNetworkDelegate> extensions_delegate_;
 
