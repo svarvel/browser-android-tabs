@@ -16,3 +16,15 @@
 [submodule "brave-crypto"]
 	path = brave-crypto
 	url = https://github.com/brave/crypto
+[submodule "niceware"]
+	path = niceware
+	url = https://github.com/diracdeltas/niceware.git
+[submodule "anonize2"]
+	path = anonize2
+	url = https://github.com/brave-intl/bat-native-anonize.git
+[submodule "bip39wally-core"]
+	path = bip39wally-core
+	url = https://github.com/brave-intl/bip39wally-core-native.git
+[submodule "braveLedger"]
+	path = braveLedger
+	url = https://github.com/brave-intl/bat-native-ledger.git
