@@ -64,6 +64,10 @@ namespace policy {
 class PolicyService;
 }  // namespace policy
 
+namespace ledger {
+class Ledger;
+}  // namespace ledger
+
 // Contains state associated with, initialized and cleaned up on, and
 // primarily used on, the IO thread.
 //
@@ -116,6 +120,9 @@ class IOThread : public content::BrowserThreadDelegate {
 
     // BlockersWorker instance for blocking
     std::shared_ptr<net::blockers::BlockersWorker> blockers_worker_;
+    
+    // Ledger instance for bat ledger client
+    std::shared_ptr<ledger::Ledger> ledger_;
   };
 
   // |net_log| must either outlive the IOThread or be NULL.

@@ -1633,6 +1633,11 @@ class CONTENT_EXPORT WebContentsImpl : public WebContents,
   // the WebContents creation time.
   base::TimeTicks last_active_time_;
 
+  // The time that this WebContents was last made hidden. The initial value is
+  // zero.
+  base::TimeTicks last_hidden_time_;
+
+
   // The time that this WebContents last received an 'interactive' input event
   // from the user. Interactive input events are things like mouse clicks and
   // keyboard input, but not mouse wheel scrolling or mouse moves.
