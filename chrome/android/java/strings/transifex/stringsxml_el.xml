@@ -92,4 +92,7 @@ HTTPS</string>
     <string name="close_tabs_on_exit_title">Κλείσιμο καρτελών κατά την έξοδο</string>
     <string name="close_tabs_on_exit_summary">Να μην διατηρούνται καρτέλες μεταξύ συνεδριών περιήγησης</string>
 
+    <string name="open_pages_in_custom_tabs_title">Άνοιξε καρτέλες στις Προσαρμοσμένες Καρτέλες</string>
+    <string name="open_pages_in_custom_tabs_summary">Προσφερθείτε να ανοίγετε καρτέλες στις Προσαρμοσμένες Καρτέλες</string>
+
 </resources>

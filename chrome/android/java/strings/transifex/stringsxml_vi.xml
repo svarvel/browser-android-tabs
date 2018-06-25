@@ -92,4 +92,7 @@ HTTPS</string>
     <string name="close_tabs_on_exit_title">Đóng các tab khi thoát </string>
     <string name="close_tabs_on_exit_summary">Không tiếp tục duy trì các tab giữa các phiên duyệt web</string>
 
+    <string name="open_pages_in_custom_tabs_title">Mở các tab trong mục Tùy chỉnh Tab</string>
+    <string name="open_pages_in_custom_tabs_summary">Đề xuất mở các tab trong mục Tùy chỉnh Tab</string>
+
 </resources>

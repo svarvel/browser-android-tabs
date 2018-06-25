@@ -93,4 +93,7 @@ ušetrený čas</string>
     <string name="close_tabs_on_exit_title">Pri odchode zatvoriť karty</string>
     <string name="close_tabs_on_exit_summary">Neuchovávať karty medzi reláciami</string>
 
+    <string name="open_pages_in_custom_tabs_title">Otvárať karty v položke Vlastné karty</string>
+    <string name="open_pages_in_custom_tabs_summary">Ponuka otvárať karty v položke Vlastné karty</string>
+
 </resources>

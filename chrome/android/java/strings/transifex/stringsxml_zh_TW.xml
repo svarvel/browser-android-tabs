@@ -88,4 +88,7 @@
     <string name="close_tabs_on_exit_title">結束時關閉標籤</string>
     <string name="close_tabs_on_exit_summary">在瀏覽階段作業之間不要保存標籤</string>
 
+    <string name="open_pages_in_custom_tabs_title">以「自訂索引標籤」開啟標籤</string>
+    <string name="open_pages_in_custom_tabs_summary">提議以「自訂索引標籤」開啟標籤</string>
+
 </resources>

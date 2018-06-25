@@ -93,4 +93,7 @@ Guardado</string>
     <string name="close_tabs_on_exit_title">Cerrar pestañas al salir</string>
     <string name="close_tabs_on_exit_summary">No continúe las pestañas entre sesiones de navegación</string>
 
+    <string name="open_pages_in_custom_tabs_title">Abrir pestañas en Pestañas Personalizadas</string>
+    <string name="open_pages_in_custom_tabs_summary">Oferta para abrir pestañas en Pestañas Personalizadas</string>
+
 </resources>

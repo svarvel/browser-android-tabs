@@ -91,4 +91,7 @@ besparelse</string>
     <string name="close_tabs_on_exit_title">Luk faner ved udgang</string>
     <string name="close_tabs_on_exit_summary">Forlad ikke faner mellem browsersessioner</string>
 
+    <string name="open_pages_in_custom_tabs_title">Åben tabs i tilpassede tabs</string>
+    <string name="open_pages_in_custom_tabs_summary">Tilbyder at åbne tabs i tilpassede tabs</string>
+
 </resources>

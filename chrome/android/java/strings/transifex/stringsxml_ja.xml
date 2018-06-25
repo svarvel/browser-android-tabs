@@ -89,4 +89,7 @@
     <string name="close_tabs_on_exit_title">出口にあるタブを閉じてください</string>
     <string name="close_tabs_on_exit_summary">ブラウズの間はタブをそのままにしないでください。</string>
 
+    <string name="open_pages_in_custom_tabs_title">カスタムタブ内のタブを開く</string>
+    <string name="open_pages_in_custom_tabs_summary">カスタムタブ内のタブを開くよう提案する</string>
+
 </resources>

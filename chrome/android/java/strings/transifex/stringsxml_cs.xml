@@ -86,4 +86,7 @@ Uložen</string>
     <string name="close_tabs_on_exit_title">Zavřít panely při vypnutí</string>
     <string name="close_tabs_on_exit_summary">Neponechávat panely mezi relacemi prohlížeče</string>
 
+    <string name="open_pages_in_custom_tabs_title">Otevřít karty ve Vlastních kartách</string>
+    <string name="open_pages_in_custom_tabs_summary">Nabídnout otevření ve Vlastních kartách</string>
+
 </resources>

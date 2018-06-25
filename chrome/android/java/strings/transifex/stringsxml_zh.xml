@@ -86,4 +86,7 @@
     <string name="close_tabs_on_exit_title">关闭退出标签</string>
     <string name="close_tabs_on_exit_summary">不要在浏览会话之间保留标签</string>
 
+    <string name="open_pages_in_custom_tabs_title">在自定义选项卡中展开选项卡</string>
+    <string name="open_pages_in_custom_tabs_summary">提供在自定义选项卡中展开选项卡</string>
+
 </resources>
