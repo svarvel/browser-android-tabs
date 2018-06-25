@@ -33,7 +33,7 @@
     <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">Безопасно синхронизируйте данные браузера
 между вашими устройствами, используя
-синхронизацию Brave, без создания учетной записи. 
+Brave Sync, без создания учетной записи.
 Нажмите ниже чтобы начать.</string>
     <string name="brave_sync_have_existing_code">У меня есть код синхронизации</string>
     <string name="sync_settings_add_device_name_title">Добавление имени устройства</string>
@@ -63,11 +63,11 @@
 
     <string name="send_metrics_title">Отправка метрик</string>
 
-    <string name="desktop_mode_title">Версия сайтов для компьютера</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Предпочитать версию сайтов для компьютера</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Предпочитать мобильную версию сайтов</string>
-    <string name="website_settings_category_desktop_view_enabled">Включить версию сайтов для компьютера для новых вкладок</string>
-    <string name="website_settings_category_desktop_view_disabled">Использовать мобильную версию сайтов для новых вкладок (рекомендуется)</string>
+    <string name="desktop_mode_title">Полная версия сайта</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Предпочитать версию сайта для компьютера</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Предпочитать мобильную версию сайта</string>
+    <string name="website_settings_category_desktop_view_enabled">Включить полную версию сайта для новых вкладок</string>
+    <string name="website_settings_category_desktop_view_disabled">Использовать мобильную версию сайта для новых вкладок (рекомендуется)</string>
 
     <string name="brave_shields_first_group_title">Монитор блокирования</string>
     <string name="brave_shields_second_group_title">Индивидуальные элементы управления</string>
@@ -91,5 +91,8 @@
 
     <string name="close_tabs_on_exit_title">Закрывать вкладки при выходе</string>
     <string name="close_tabs_on_exit_summary">Не сохранять вкладки между сессиями</string>
+
+    <string name="open_pages_in_custom_tabs_title">Открыть вкладки в Моих Вкладках</string>
+    <string name="open_pages_in_custom_tabs_summary">Предложить открыть вкладки в Моих Вкладках</string>
 
 </resources>

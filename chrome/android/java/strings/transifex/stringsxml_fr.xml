@@ -92,4 +92,7 @@ Enregistré</string>
     <string name="close_tabs_on_exit_title">Fermez les onglets en quittant</string>
     <string name="close_tabs_on_exit_summary">Ne faites pas persister les onglets entre les sessions de navigation</string>
 
+    <string name="open_pages_in_custom_tabs_title">Ouvrir les onglets dans la section Personnalisation des onglets</string>
+    <string name="open_pages_in_custom_tabs_summary">Proposer d\'ouvrir les onglets dans la section Personnalisation des onglets</string>
+
 </resources>

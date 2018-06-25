@@ -88,4 +88,7 @@ Guardado</string>
     <string name="close_tabs_on_exit_title">Ao sair, feche os separadores</string>
     <string name="close_tabs_on_exit_summary">Não mantenha os separadores abertos entre as sessões de navegação</string>
 
+    <string name="open_pages_in_custom_tabs_title">Abrir separadores em Custom Tabs</string>
+    <string name="open_pages_in_custom_tabs_summary">Oferta para abrir separadores em Custom Tabs</string>
+
 </resources>

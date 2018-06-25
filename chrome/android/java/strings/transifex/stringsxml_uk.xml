@@ -93,4 +93,7 @@
     <string name="close_tabs_on_exit_title">Закривати вкладки при виході</string>
     <string name="close_tabs_on_exit_summary">Не зберігати вкладки між сеансами перегляду</string>
 
+    <string name="open_pages_in_custom_tabs_title">Відкривати вкладки у Custom Tabs</string>
+    <string name="open_pages_in_custom_tabs_summary">Запропонувати відкривати вкладки у Custom Tabs </string>
+
 </resources>

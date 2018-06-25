@@ -92,4 +92,7 @@ HTTPS</string>
     <string name="close_tabs_on_exit_title">סגור כרטיסיות ביציאה</string>
     <string name="close_tabs_on_exit_summary">אין להחזיק כרטיסיות בין זמני עיון שונים</string>
 
+    <string name="open_pages_in_custom_tabs_title">פתח לשוניות ב׳לשוניות מותאמות׳</string>
+    <string name="open_pages_in_custom_tabs_summary">הצעה לפתוח לשוניות ב׳לשוניות מותאמות׳</string>
+
 </resources>

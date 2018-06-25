@@ -93,4 +93,7 @@ Salvat</string>
     <string name="close_tabs_on_exit_title">Închidere file la ieșire</string>
     <string name="close_tabs_on_exit_summary">Taburile nu sunt persistente de la o sesiune de browsing la alta</string>
 
+    <string name="open_pages_in_custom_tabs_title">Deschidere file în File particularizate</string>
+    <string name="open_pages_in_custom_tabs_summary">Oferiți opțiunea de deschidere a filelor în File particularizate</string>
+
 </resources>

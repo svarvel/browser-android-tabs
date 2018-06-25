@@ -92,4 +92,7 @@ Opgeslagen</string>
     <string name="close_tabs_on_exit_title">Sluit tabs bij weggaan af</string>
     <string name="close_tabs_on_exit_summary">Laat tabs tussen browsersessies niet openstaan</string>
 
+    <string name="open_pages_in_custom_tabs_title">Open tabbladen in Aangepaste tabbladen</string>
+    <string name="open_pages_in_custom_tabs_summary">Aanbieden om tabbladen in Aangepaste tabbladen te openen</string>
+
 </resources>

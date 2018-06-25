@@ -92,4 +92,7 @@ zaoszczędzony czas</string>
     <string name="close_tabs_on_exit_title">Zamknij karty przy wyjściu</string>
     <string name="close_tabs_on_exit_summary">Nie zapisuj kart pomiędzy sesjami przeglądania</string>
 
+    <string name="open_pages_in_custom_tabs_title">Otwórz zakładki w Zakładkach Własnych</string>
+    <string name="open_pages_in_custom_tabs_summary">Oferuj otwarcie zakładek w Zakładkach Własnych</string>
+
 </resources>

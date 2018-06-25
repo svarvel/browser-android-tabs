@@ -92,4 +92,7 @@ Dihemat</string>
     <string name="close_tabs_on_exit_title">Tutup tab saat keluar</string>
     <string name="close_tabs_on_exit_summary">Jangan tahan tab di antara sesi penelusuran</string>
 
+    <string name="open_pages_in_custom_tabs_title">Buka tab-tab di Tab Suaian</string>
+    <string name="open_pages_in_custom_tabs_summary">Menawarkan untuk membuka tab-tab di Tab Suaian</string>
+
 </resources>

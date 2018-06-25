@@ -93,4 +93,7 @@ Sačuvano</string>
     <string name="close_tabs_on_exit_title">Zatvorite kartice kada izlazite</string>
     <string name="close_tabs_on_exit_summary">Ne zadržavajte kartice između sesija pretraživanja</string>
 
+    <string name="open_pages_in_custom_tabs_title">Otvoriti kartice u Prilagođenim karticama</string>
+    <string name="open_pages_in_custom_tabs_summary">Ponuda da se otvore kartice u Prilagođenim karticama</string>
+
 </resources>

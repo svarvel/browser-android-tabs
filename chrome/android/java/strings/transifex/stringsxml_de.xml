@@ -92,4 +92,7 @@ gespart</string>
     <string name="close_tabs_on_exit_title">Tabs beim Beenden schließen</string>
     <string name="close_tabs_on_exit_summary">Tabs zwischen Browser-Sitzungen nicht speichern</string>
 
+    <string name="open_pages_in_custom_tabs_title">Tabs in benutzerdefinierten Tabs öffnen</string>
+    <string name="open_pages_in_custom_tabs_summary">Angebot zum Öffnen von Tabs in benutzerdefinierten Tabs</string>
+
 </resources>

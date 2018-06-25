@@ -93,4 +93,7 @@ idő</string>
     <string name="close_tabs_on_exit_title">Lapok bezárása kilépéskor</string>
     <string name="close_tabs_on_exit_summary">Ne tartsa fent a füleket a böngészési szessziók közt</string>
 
+    <string name="open_pages_in_custom_tabs_title">Fülek nyitása Egyedi Fülekben</string>
+    <string name="open_pages_in_custom_tabs_summary">Ajánlat fülek megnyitására az Egyedi Fülekben</string>
+
 </resources>

@@ -92,4 +92,7 @@ Salvo</string>
     <string name="close_tabs_on_exit_title">Fechar abas ao sair</string>
     <string name="close_tabs_on_exit_summary">Não continue com as abas entre as sessões de navegação</string>
 
+    <string name="open_pages_in_custom_tabs_title">Abrir abas em Abas Personalizadas</string>
+    <string name="open_pages_in_custom_tabs_summary">Oferta para abrir abas em Abas Personalizadas</string>
+
 </resources>
