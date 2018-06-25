@@ -86,4 +86,7 @@
     <string name="close_tabs_on_exit_title">Затворете разделите при излизане</string>
     <string name="close_tabs_on_exit_summary">Не поддържайте разделите между сесиите на браузване</string>
 
+    <string name="open_pages_in_custom_tabs_title">Отворете разделите в Персонализирани Раздели</string>
+    <string name="open_pages_in_custom_tabs_summary">Предложение за отваряне на разделите в Персонализирани Раздели</string>
+
 </resources>

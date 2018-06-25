@@ -92,4 +92,7 @@ tid</string>
     <string name="close_tabs_on_exit_title">Stäng flikar vid avslut</string>
     <string name="close_tabs_on_exit_summary">Behåll inte flikar mellan webbläsarsessioner</string>
 
+    <string name="open_pages_in_custom_tabs_title">Öppna flikar i Anpassade flikar</string>
+    <string name="open_pages_in_custom_tabs_summary">Erbjud öppnande av flikar i Anpassade flikar </string>
+
 </resources>

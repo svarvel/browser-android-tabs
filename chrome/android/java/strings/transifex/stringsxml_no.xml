@@ -90,4 +90,7 @@ Lagret</string>
     <string name="close_tabs_on_exit_title">Lukk faner ved avslutning </string>
     <string name="close_tabs_on_exit_summary">Ikke behold fanene mellom nettleserøktene </string>
 
+    <string name="open_pages_in_custom_tabs_title">Åpne faner i \"Tilpassede faner\"</string>
+    <string name="open_pages_in_custom_tabs_summary">Tilby å åpne faner i \"Tilpassede faner\"</string>
+
 </resources>

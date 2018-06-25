@@ -88,4 +88,7 @@
     <string name="close_tabs_on_exit_title">退出时关闭标签页</string>
     <string name="close_tabs_on_exit_summary">不要在两次浏览会话中保存标签页</string>
 
+    <string name="open_pages_in_custom_tabs_title">在自定义标签页中打开标签页</string>
+    <string name="open_pages_in_custom_tabs_summary">在自定义标签页打开标签页的选项</string>
+
 </resources>

@@ -69,4 +69,27 @@ Shranjeno</string>
     <string name="website_settings_category_desktop_view_enabled">Omogoči namizni pogled za nove zavihke</string>
     <string name="website_settings_category_desktop_view_disabled">V novih zavihkih prikaži mobilne različice spletnih mest (priporočeno)</string>
 
+    <string name="brave_shields_first_group_title">Spremljanje blokad</string>
+    <string name="brave_shields_second_group_title">Posamezni kontrolniki</string>
+    <string name="brave_shields">Ščiti</string>
+    <string name="brave_shields_ads_and_trackers">Oglasi in sledilniki</string>
+    <string name="brave_shields_fingerprint_methods">Načini za prstne odtise</string>
+    <string name="brave_shields_block_phishing_switch">Blokiraj zvabljanje</string>
+
+    <string name="play_video_in_background_title">Predvajanje videa v ozadju</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Omogočeno</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Onemogočeno</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Poskusno. Omogoča predvajanje zvoka iz videa v ozadju, ko zavihek ni aktiven ali je zaslon naprave izključen. Če ta funkcija ne deluje, poskusite preklopiti na namizni način.</string>
+    <string name="settings_require_relaunch_notice">Opravljene spremembe bodo začele veljati po naslednjem ponovnem zagonu Brave.</string>
+    <string name="settings_require_relaunch_now">PONOVNO ZAŽENI ZDAJ</string>
+    <string name="settings_require_relaunch_later">KASNEJE</string>
+
+    <string name="play_yt_video_in_browser_title">Predvajanje videa v Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Omogočeno</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Onemogočeno</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Če potrdite to možnost, se bodo filmi predvajali v Brave in ne v zato namenjenih programih</string>
+
+    <string name="close_tabs_on_exit_title">Zapri zavihke ob izhodu</string>
+    <string name="close_tabs_on_exit_summary">Ne vztrajaj z zavihki med sejami brskanja</string>
+
     </resources>

@@ -3,24 +3,24 @@
     <string name="brave_settings_title">Configuració d'escuts web de Brave per a</string>
     <string name="brave_shields_down">Avall</string>
     <string name="brave_shields_up">Amunt</string>
-    <string name="brave_shields_ads_trackers">Anuncis i seguiment bloquejats</string>
-    <string name="brave_shields_https_upgrades">Actualitzacions d'HTTPS</string>
-    <string name="brave_shields_scripts_blocked">Scripts bloquejats</string>
-    <string name="brave_shields_ads_tracking_switch">Bloqueja anuncis i seguiment</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS per tot</string>
-    <string name="brave_shields_blocks_scripts_switch">Bloqueja scripts</string>
+    <string name="brave_shields_ads_trackers">Anuncis i seguiment blocats</string>
+    <string name="brave_shields_https_upgrades">Actualitzacions del HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Scripts blocats</string>
+    <string name="brave_shields_ads_tracking_switch">Bloca anuncis i seguiment</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Arreu</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloca scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activa/desactiva escuts Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Bloqueja les galetes de tercers</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloca les galetes de 3rs</string>
 
     <string name="httpse_summary">Obre els llocs compatibles amb HTTPS enlloc de HTTP, si és possible</string>
     <string name="tracking_protection_title">Mode de protecció contra el seguiment</string>
     <string name="tracking_protection_summary">Evita que es carreguin els recursos encarregats del seguiment</string>
     <string name="ad_block_title">Bloqueig d'anuncis</string>
-    <string name="ad_block_summary">Evita que es carreguin els anuncis</string>
+    <string name="ad_block_summary">Evita que es carreguin anuncis</string>
 
     <string name="fingerprinting_protection_title">Protecció contra l'empremta digital</string>
     <string name="fingerprinting_protection_summary">Evita que el navegador deixi empremta digital</string>
-    <string name="brave_shields_fingerprints_blocked">Mètodes d'empremta digital bloquejats</string>
+    <string name="brave_shields_fingerprints_blocked">Mètodes d\'empremta digital blocats</string>
     <string name="brave_shields_block_fingerprints_switch">Protecció contra l'empremta digital</string>
 
     <string name="ad_block_regional_title">Bloqueig d'anuncis regionals</string>
@@ -52,12 +52,12 @@ nou i revelar el codi de sincronització.</string>
     <string name="reset_sync">Reinicialitza la sincronització...</string>
     <string name="resetting_sync">Esteu segur/a que voleu restablir la configuració de sincronització d'aquest dispositiu?</string>
 
-    <string name="brave_stats_text_trackers">Seguiment
-bloquejats</string>
+    <string name="brave_stats_text_trackers">Seguiments
+blocats</string>
     <string name="brave_stats_text_ads">Anuncis
-bloquejats</string>
+blocats</string>
     <string name="brave_stats_text_https">Actualitzacions
-d'HTTPS</string>
+del HTTPS</string>
     <string name="brave_stats_text_time">Est. Temps
 Desat</string>
 
@@ -69,4 +69,16 @@ Desat</string>
     <string name="website_settings_category_desktop_view_enabled">Habilita la vista d\'escriptori a les noves pestanyes</string>
     <string name="website_settings_category_desktop_view_disabled">Fes servir la versió mòbil a les noves pestanyes (recomanat)</string>
 
+    <string name="brave_shields">Escuts</string>
+    <string name="brave_shields_ads_and_trackers">Anuncis i seguiment</string>
+    <string name="brave_shields_fingerprint_methods">Mètodes d\'empremta digital</string>
+    <string name="brave_shields_block_phishing_switch">Bloca el phishing</string>
+
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Activat</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Desactivat</string>
+    <string name="settings_require_relaunch_now">REEMPRÈN ARA</string>
+    <string name="settings_require_relaunch_later">DESPRÉS</string>
+
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Activat</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desactivat</string>
     </resources>

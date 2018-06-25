@@ -90,4 +90,7 @@ EST แล้ว</string>
     <string name="close_tabs_on_exit_title">ปิดแท็บเมื่อออก</string>
     <string name="close_tabs_on_exit_summary">อย่าเก็บแท็บไว้ข้ามเซสชันการเรียกดู</string>
 
+    <string name="open_pages_in_custom_tabs_title">เปิดแท็บในแท็บแบบกำหนดเอง</string>
+    <string name="open_pages_in_custom_tabs_summary">ข้อเสนอให้เปิดแท็บในแท็บแบบกำหนดเอง</string>
+
 </resources>

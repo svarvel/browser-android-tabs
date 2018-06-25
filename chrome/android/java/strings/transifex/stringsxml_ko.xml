@@ -90,4 +90,7 @@
     <string name="close_tabs_on_exit_title">나갈 때 탭을 닫아주세요</string>
     <string name="close_tabs_on_exit_summary">검색 세션 사이에 탭을 열어두지 마십시오</string>
 
+    <string name="open_pages_in_custom_tabs_title">커스텀 탭에서 탭 열기 </string>
+    <string name="open_pages_in_custom_tabs_summary">커스텀 탭에서 탭을 여는 방법 제안 </string>
+
 </resources>

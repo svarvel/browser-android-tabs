@@ -91,4 +91,7 @@ Tallennettu</string>
     <string name="close_tabs_on_exit_title">Sulje välilehdet lopetettaessa</string>
     <string name="close_tabs_on_exit_summary">Älä muista välilehtiä selausistuntojen välillä</string>
 
+    <string name="open_pages_in_custom_tabs_title">Avoimet välilehdet Mukautetuissa Välilehdissä</string>
+    <string name="open_pages_in_custom_tabs_summary">Tarjoudu avaamaan välilehtiä Mukautetuissa Väilehdissä</string>
+
 </resources>

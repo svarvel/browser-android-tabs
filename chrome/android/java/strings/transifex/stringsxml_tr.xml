@@ -92,4 +92,7 @@ Kaydedildi</string>
     <string name="close_tabs_on_exit_title">Çıkışta sekmeleri kapatın</string>
     <string name="close_tabs_on_exit_summary">Tarama oturumları arasında sekmeleri sürdürmeyin</string>
 
+    <string name="open_pages_in_custom_tabs_title">Sekmeleri Özel Sekmelerde Açın</string>
+    <string name="open_pages_in_custom_tabs_summary">Sekmeleri Özel Sekmelerde açma teklifi</string>
+
 </resources>

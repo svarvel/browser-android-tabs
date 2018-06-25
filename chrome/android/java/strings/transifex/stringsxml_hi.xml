@@ -90,4 +90,7 @@
     <string name="close_tabs_on_exit_title">बाहर निकलने पर टैब बंद करें</string>
     <string name="close_tabs_on_exit_summary">ब्राउज़िंग सत्रों के बीच टैब पर ना टिके</string>
 
+    <string name="open_pages_in_custom_tabs_title">कस्टम टैब्स में टैब्स खोलें</string>
+    <string name="open_pages_in_custom_tabs_summary">कस्टम टैब में टैब खोलने की पेशकश करें</string>
+
 </resources>

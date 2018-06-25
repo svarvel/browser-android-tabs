@@ -95,4 +95,7 @@ HTTPS</string>
     <string name="close_tabs_on_exit_title">قُم بإغلاق علامات التبويب عند الخروج</string>
     <string name="close_tabs_on_exit_summary">لا تترك علامات التبويب مفتوحة بين جلسات التصفح</string>
 
+    <string name="open_pages_in_custom_tabs_title">افتح الألسنة في \"تخصيص الألسنة\"</string>
+    <string name="open_pages_in_custom_tabs_summary">اعرض فتح الألسنة في \"تخصيص الألسنة\"</string>
+
 </resources>

@@ -93,4 +93,7 @@ Risparmiato</string>
     <string name="close_tabs_on_exit_title">Chiudi le schede all\'uscita</string>
     <string name="close_tabs_on_exit_summary">Non mantenere le schede tra le sessioni di navigazione</string>
 
+    <string name="open_pages_in_custom_tabs_title">Apri le schede in Schede personalizzate</string>
+    <string name="open_pages_in_custom_tabs_summary">Offri di aprire le schede in Schede personalizzate</string>
+
 </resources>
