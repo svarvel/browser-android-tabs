@@ -100,6 +100,12 @@
         <item name="android:windowDisablePreview">true</item>
     </style>
 
+    <style name="BraveDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="buttonBarStyle">@style/ModalDialogButtonBarStyle</item>
+        <item name="buttonBarButtonStyle">@style/ModalDialogButtonStyle</item>
+    </style>
+
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/popup_bg</item>
         <item name="android:windowTitleStyle">@style/AlertDialogTitleStyle</item>

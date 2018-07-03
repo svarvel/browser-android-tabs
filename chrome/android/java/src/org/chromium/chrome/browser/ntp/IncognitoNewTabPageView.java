@@ -5,14 +5,19 @@
 package org.chromium.chrome.browser.ntp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import org.chromium.base.ApiCompatibilityUtils;
+import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeFeatureList;
+import org.chromium.chrome.browser.search_engines.TemplateUrlService;
 import org.chromium.chrome.browser.util.ViewUtils;
 
 /**
@@ -20,13 +25,20 @@ import org.chromium.chrome.browser.util.ViewUtils;
  */
 public class IncognitoNewTabPageView extends FrameLayout {
 
+    public static String INCOGNITO_DSE_NAME = "DuckDuckGo";
+    public static String INCOGNITO_DSE_KEYWORD = "duckduckgo.com";
+    public static String PREF_DDG_OFFER_SHOWN = "brave_ddg_offer_shown";
+
     private IncognitoNewTabPageManager mManager;
     private boolean mFirstShow = true;
     private NewTabPageScrollView mScrollView;
+    private Context mContext;
 
     private int mSnapshotWidth;
     private int mSnapshotHeight;
     private int mSnapshotScrollY;
+
+    private View mDDGOfferLink;
 
     /**
      * Manages the view interaction with the rest of the system.
@@ -45,6 +57,7 @@ public class IncognitoNewTabPageView extends FrameLayout {
     /** Default constructor needed to inflate via XML. */
     public IncognitoNewTabPageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
     }
 
     @Override
@@ -70,6 +83,15 @@ public class IncognitoNewTabPageView extends FrameLayout {
                 mManager.loadIncognitoLearnMore();
             }
         });
+
+        mDDGOfferLink = findViewById(R.id.ddg_offer_link);
+        mDDGOfferLink.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDDGOffer(true);
+            }
+        });
+        showDDGOffer(false);
     }
 
     /**
@@ -116,5 +138,27 @@ public class IncognitoNewTabPageView extends FrameLayout {
             mManager.onLoadingComplete();
             mFirstShow = false;
         }
+    }
+
+    public void showDDGOffer(boolean forceShow) {
+        if (TemplateUrlService.getInstance().getDefaultSearchEngineKeyword(true).equals(INCOGNITO_DSE_KEYWORD)) {
+            mDDGOfferLink.setVisibility(View.GONE);
+            return;
+        }
+        if (!forceShow && ContextUtils.getAppSharedPreferences().getBoolean(PREF_DDG_OFFER_SHOWN, false)) {
+            return;
+        }
+        ContextUtils.getAppSharedPreferences().edit().putBoolean(PREF_DDG_OFFER_SHOWN, true).apply();
+        new AlertDialog.Builder(mContext, R.style.BraveDialogTheme)
+        .setView(R.layout.ddg_offer_layout)
+        .setPositiveButton(R.string.ddg_offer_positive, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TemplateUrlService.getInstance().setSearchEngine(INCOGNITO_DSE_NAME, INCOGNITO_DSE_KEYWORD, true);
+                mDDGOfferLink.setVisibility(View.GONE);
+            }
+        })
+        .setNegativeButton(R.string.ddg_offer_negative, null)
+        .show();
     }
 }
