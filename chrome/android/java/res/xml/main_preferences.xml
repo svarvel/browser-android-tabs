@@ -22,14 +22,23 @@
         android:fragment="org.chromium.chrome.browser.preferences.SyncAndServicesPreferences"/>
 
     <PreferenceCategory
-        android:key="basics_section"
+        android:key="search_engine_section"
         android:order="3"
-        android:title="@string/prefs_section_basics"/>
-    <org.chromium.chrome.browser.preferences.ChromeBasePreference
-        android:fragment="org.chromium.chrome.browser.preferences.SearchEnginePreference"
-        android:key="search_engine"
-        android:order="4"
         android:title="@string/prefs_search_engine"/>
+    <org.chromium.chrome.browser.preferences.ChromeBasePreference
+        android:fragment="org.chromium.chrome.browser.preferences.StandardSearchEnginePreference"
+        android:key="standard_search_engine"
+        android:order="4"
+        android:title="@string/prefs_standard_search_engine"/>
+    <org.chromium.chrome.browser.preferences.ChromeBasePreference
+        android:fragment="org.chromium.chrome.browser.preferences.PrivateSearchEnginePreference"
+        android:key="private_search_engine"
+        android:order="5"
+        android:title="@string/prefs_private_search_engine"/>
+    <PreferenceCategory
+        android:key="basics_section"
+        android:order="6"
+        android:title="@string/prefs_section_basics"/>
     <org.chromium.chrome.browser.preferences.ChromeBasePreference
         android:fragment="org.chromium.chrome.browser.preferences.password.SavePasswordsPreferences"
         android:key="saved_passwords"
@@ -83,7 +92,7 @@
     <!--<Preference
         android:fragment="org.chromium.chrome.browser.preferences.BraveSyncScreensPreference"
         android:key="brave_sync_layout"
-        android:order="9"
+        android:order="14"
         android:title="@string/prefs_sync" />-->
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.AccessibilityPreferences"

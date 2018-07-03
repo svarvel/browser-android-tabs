@@ -83,6 +83,20 @@
                 android:lineSpacingExtra="@dimen/md_incognito_ntp_line_spacing"
                 android:visibility = "gone" />
 
+            <TextView
+                android:id="@+id/ddg_offer_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/ddg_offer_link"
+                android:textColor="@color/google_grey_400"
+                android:drawableStart="@drawable/duckduckgo"
+                android:drawablePadding="15dp"
+                android:layout_marginTop="15dp"
+                android:textSize="28sp"
+                android:scaleX="0.5"
+                android:scaleY="0.5" />
+
         </LinearLayout>
 
     </org.chromium.chrome.browser.ntp.NewTabPageScrollView>

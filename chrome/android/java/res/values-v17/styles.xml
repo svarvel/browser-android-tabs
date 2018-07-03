@@ -186,6 +186,12 @@
         <item name="spinnerStyle">@style/SpinnerStyle</item>
     </style>
 
+    <style name="BraveDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="buttonBarStyle">@style/ModalDialogButtonBarStyle</item>
+        <item name="buttonBarButtonStyle">@style/ModalDialogButtonStyle</item>
+    </style>
+
     <style name="Theme.Chromium.AlertDialog" parent="Base.Theme.Chromium.AlertDialog" />
 
     <style name="Theme.Chromium.AlertDialog.NoActionBar">
@@ -925,20 +931,4 @@
         <item name="android:layout_height">@dimen/omnibox_suggestion_edit_url_min_height</item>
         <item name="tint">@color/default_icon_color</item>
     </style>
-<<<<<<< HEAD
-=======
-
-    <!-- Trusted Web Activities -->
-    <style name="ClearDataDialogActivityTheme" parent="FullscreenTransparentActivityTheme">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowEnterAnimation">@null</item>
-        <item name="android:windowExitAnimation">@null</item>
-        <item name="android:windowAnimationStyle">@null</item>
-    </style>
-
-    <!-- Switch theme -->
-    <style name="SwitchTheme">
-        <item name="colorControlActivated">@color/brave_theme_color</item>
-    </style>
->>>>>>> 64f3715bb01... UI changes
 </resources>

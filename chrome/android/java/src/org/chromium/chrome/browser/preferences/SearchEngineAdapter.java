@@ -103,14 +103,17 @@ public class SearchEngineAdapter extends BaseAdapter
 
     private boolean mIsLocationPermissionChanged;
 
+    private boolean mIsPrivate;
+
     /**
      * Construct a SearchEngineAdapter.
      * @param context The current context.
      */
-    public SearchEngineAdapter(Context context) {
+    public SearchEngineAdapter(Context context, boolean is_private) {
         mContext = context;
         mLayoutInflater = (LayoutInflater) mContext.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+        mIsPrivate = is_private;
     }
 
     /**
@@ -203,13 +206,13 @@ public class SearchEngineAdapter extends BaseAdapter
         // Convert the TemplateUrl index into an index of mSearchEngines.
         mSelectedSearchEnginePosition = -1;
         for (int i = 0; i < mPrepopulatedSearchEngines.size(); ++i) {
-            if (mPrepopulatedSearchEngines.get(i).equals(defaultSearchEngineTemplateUrl)) {
+            if (mPrepopulatedSearchEngines.get(i).getShortName().equals(TemplateUrlService.getInstance().getDefaultSearchEngineName(mIsPrivate))) {
                 mSelectedSearchEnginePosition = i;
             }
         }
 
         for (int i = 0; i < mRecentSearchEngines.size(); ++i) {
-            if (mRecentSearchEngines.get(i).equals(defaultSearchEngineTemplateUrl)) {
+            if (mRecentSearchEngines.get(i).getShortName().equals(TemplateUrlService.getInstance().getDefaultSearchEngineName(mIsPrivate))) {
                 // Add one to offset the title for the recent search engine list.
                 mSelectedSearchEnginePosition = i + computeStartIndexForRecentSearchEngines();
             }
@@ -315,6 +318,15 @@ public class SearchEngineAdapter extends BaseAdapter
         } else {
             position -= computeStartIndexForRecentSearchEngines();
             return mRecentSearchEngines.get(position).getKeyword();
+        }
+    }
+
+    private String toName(int position) {
+        if (position < mPrepopulatedSearchEngines.size()) {
+            return mPrepopulatedSearchEngines.get(position).getShortName();
+        } else {
+            position -= computeStartIndexForRecentSearchEngines();
+            return mRecentSearchEngines.get(position).getShortName();
         }
     }
 
@@ -467,7 +479,8 @@ public class SearchEngineAdapter extends BaseAdapter
         mSelectedSearchEnginePosition = position;
 
         String keyword = toKeyword(mSelectedSearchEnginePosition);
-        TemplateUrlService.getInstance().setSearchEngine(keyword);
+        String name = toName(mSelectedSearchEnginePosition);
+        TemplateUrlService.getInstance().setSearchEngine(name, keyword, mIsPrivate);
 
         // If the user has manually set the default search engine, disable auto switching.
         boolean manualSwitch = mSelectedSearchEnginePosition != mInitialEnginePosition;
