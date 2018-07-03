@@ -14,6 +14,8 @@ import android.support.annotation.StringRes;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -22,9 +24,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.chromium.base.ApiCompatibilityUtils;
+import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.gesturenav.HistoryNavigationLayout;
+import org.chromium.chrome.browser.search_engines.TemplateUrlService;
 import org.chromium.chrome.browser.util.ViewUtils;
 import org.chromium.ui.text.NoUnderlineClickableSpan;
 import org.chromium.ui.text.SpanApplier;
@@ -34,9 +39,14 @@ import org.chromium.ui.widget.ChromeBulletSpan;
  * The New Tab Page for use in the incognito profile.
  */
 public class IncognitoNewTabPageView extends HistoryNavigationLayout {
+    public static String INCOGNITO_DSE_NAME = "DuckDuckGo";
+    public static String INCOGNITO_DSE_KEYWORD = "duckduckgo.com";
+    public static String PREF_DDG_OFFER_SHOWN = "brave_ddg_offer_shown";
+
     private IncognitoNewTabPageManager mManager;
     private boolean mFirstShow = true;
     private NewTabPageScrollView mScrollView;
+    private Context mContext;
 
     private int mSnapshotWidth;
     private int mSnapshotHeight;
@@ -56,6 +66,8 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
     private static final int CONTENT_WIDTH_DP = 600;
     private static final int WIDE_LAYOUT_THRESHOLD_DP = 720;
 
+    private View mDDGOfferLink;
+
     /**
      * Manages the view interaction with the rest of the system.
      */
@@ -73,6 +85,7 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
     /** Default constructor needed to inflate via XML. */
     public IncognitoNewTabPageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
     }
 
     @Override
@@ -114,6 +127,15 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
         mBulletpointsContainer = findViewById(R.id.new_tab_incognito_bulletpoints_container);
 
         adjustView();
+
+        mDDGOfferLink = findViewById(R.id.ddg_offer_link);
+        mDDGOfferLink.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDDGOffer(true);
+            }
+        });
+        showDDGOffer(false);
     }
 
     /**
@@ -347,5 +369,27 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
                 span, subtitleText.length() + 1, textWithLearnMoreLink.length(), 0 /* flags */);
         mSubtitle.setText(textWithLearnMoreLink);
         mSubtitle.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    public void showDDGOffer(boolean forceShow) {
+        if (TemplateUrlService.getInstance().getDefaultSearchEngineKeyword(true).equals(INCOGNITO_DSE_KEYWORD)) {
+            mDDGOfferLink.setVisibility(View.GONE);
+            return;
+        }
+        if (!forceShow && ContextUtils.getAppSharedPreferences().getBoolean(PREF_DDG_OFFER_SHOWN, false)) {
+            return;
+        }
+        ContextUtils.getAppSharedPreferences().edit().putBoolean(PREF_DDG_OFFER_SHOWN, true).apply();
+        new AlertDialog.Builder(mContext, R.style.BraveDialogTheme)
+        .setView(R.layout.ddg_offer_layout)
+        .setPositiveButton(R.string.ddg_offer_positive, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TemplateUrlService.getInstance().setSearchEngine(INCOGNITO_DSE_NAME, INCOGNITO_DSE_KEYWORD, true);
+                mDDGOfferLink.setVisibility(View.GONE);
+            }
+        })
+        .setNegativeButton(R.string.ddg_offer_negative, null)
+        .show();
     }
 }
