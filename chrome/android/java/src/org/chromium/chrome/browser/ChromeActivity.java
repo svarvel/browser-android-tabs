@@ -756,20 +756,16 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     protected void setBraveShieldsBlackAndWhite() {
-        ColorMatrix matrix = new ColorMatrix();
-        matrix.setSaturation(0);
-
-        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
         ImageButton braveShieldsButton = (ImageButton)findViewById(R.id.brave_shields_button);
         if (null != braveShieldsButton) {
-            braveShieldsButton.getDrawable().setColorFilter(filter);
+            braveShieldsButton.setImageResource(R.drawable.btn_brave_off);
         }
     }
 
     protected void setBraveShieldsColored() {
         ImageButton braveShieldsButton = (ImageButton)findViewById(R.id.brave_shields_button);
         if (null != braveShieldsButton) {
-            braveShieldsButton.getDrawable().clearColorFilter();
+            braveShieldsButton.setImageResource(R.drawable.btn_brave);
         }
     }
 
