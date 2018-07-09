@@ -8,6 +8,7 @@ git submodule update --init niceware
 git submodule update --init anonize2
 git submodule update --init bip39wally-core
 git submodule update --init braveLedger
+git submodule update --init bat-native-tweetnacl
 git submodule update hashset-cpp
 git submodule update tracking-protection
 git submodule update bloom-filter-cpp
@@ -18,6 +19,7 @@ git submodule update niceware
 git submodule update anonize2
 git submodule update bip39wally-core
 git submodule update braveLedger
+git submodule update bat-native-tweetnacl
 cd braveSync
 yarn install
 yarn run build
