@@ -1822,11 +1822,12 @@ jumbo_split_static_library("browser") {
   ]
 
   include_dirs = [
-    "//anonize2/anon",
-    "//anonize2/relic/include",
-    "//anonize2/relic/include/low",
-    "//braveLedger/src",
-    "//bip39wally-core/include",
+  #  "//anonize2/anon",
+  #  "//anonize2/relic/include",
+  #  "//anonize2/relic/include/low",
+    "//bat-native-ledger/src",
+    "//bat-native-ledger/include",
+  #  "//bip39wally-core/include",
   ]
 
   deps = [
@@ -1834,12 +1835,10 @@ jumbo_split_static_library("browser") {
     ":ntp_background_proto",
     ":resource_prefetch_predictor_proto",
     "//ad-block/brave:ad-block",
-    "//anonize2",
-    "//braveLedger",
+    "//bat-native-ledger",
     "//base:i18n",
     "//base/allocator:buildflags",
     "//brave_src/browser:browser_process",
-    "//bip39wally-core",
     "//cc",
     "//chrome:extra_resources",
     "//chrome:resources",

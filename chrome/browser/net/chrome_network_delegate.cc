@@ -24,7 +24,7 @@
 #include "base/sequenced_task_runner.h"
 #include "base/time/time.h"
 #include "brave_src/browser/brave_tab_url_web_contents_observer.h"
-#include "braveLedger/src/ledger.h"
+#include "bat-native-ledger/include/bat/ledger/ledger.h"
 #include "build/build_config.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/content_settings/cookie_settings_factory.h"
@@ -104,7 +104,7 @@ void ForceGoogleSafeSearchCallbackWrapper(net::CompletionOnceCallback callback,
 // Notifies ledger lib about media links
 void NotifyLedgerIOThread(IOThread* io_thread, const std::string& url, 
       const std::string& urlQuery, const std::string& type, bool privateTab) {
-  io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type, privateTab);
+  io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type/*, privateTab*/);
 }
 
 bool IsAccessAllowedInternal(const base::FilePath& path,
