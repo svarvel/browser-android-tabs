@@ -383,6 +383,7 @@ jumbo_source_set("browser_sources") {
     "//third_party/blink/public:mojo_bindings",
   ]
   deps = [
+    "//bat-native-ledger",
     "//cc",
     "//components/viz/host",
     "//content/browser",  # Must not be public_deps!

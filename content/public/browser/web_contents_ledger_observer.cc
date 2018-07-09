@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#include "braveLedger/src/ledger.h"
+#include "bat/ledger/ledger.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/io_thread.h"
 #include "web_contents_ledger_observer.h"
@@ -11,11 +11,11 @@
 #include "content/public/common/favicon_url.h"
 
 void WebSiteWasHidden(IOThread* io_thread, const std::string& url, uint64_t duration) {
-  io_thread->globals()->ledger_->saveVisit(url, duration, false);
+  //io_thread->globals()->ledger_->SaveVisit(url, duration, false);
 }
 
 void FavIconUpdated(IOThread* io_thread, const std::string& url, const std::string& favicon_url) {
-  io_thread->globals()->ledger_->favIconUpdated(url, favicon_url);
+  //io_thread->globals()->ledger_->favIconUpdated(url, favicon_url);
 }
 
 namespace content {

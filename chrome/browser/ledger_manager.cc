@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "ledger_manager.h"
-#include "braveLedger/src/ledger.h"
+#include "bat/ledger/ledger.h"
 #include "content/public/browser/web_contents_ledger_observer.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/io_thread.h"
@@ -16,7 +16,7 @@ void CreateWallet(IOThread* io_thread) {
     return;
   }
   walletCreated = true;
-  io_thread->globals()->ledger_->createWallet();
+  io_thread->globals()->ledger_->CreateWallet();
 }
 //
 
