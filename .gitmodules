@@ -28,3 +28,6 @@
 [submodule "braveLedger"]
 	path = braveLedger
 	url = https://github.com/brave-intl/bat-native-ledger.git
+[submodule "bat-native-tweetnacl"]
+	path = bat-native-tweetnacl
+	url = https://github.com/brave-intl/bat-native-tweetnacl.git
