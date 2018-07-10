@@ -33,10 +33,8 @@ public class IncognitoNotificationManager {
      */
     public static void showIncognitoNotification() {
         Context context = ContextUtils.getApplicationContext();
-        String actionMessage = context.getResources().getString(
-                ChromeFeatureList.isEnabled(ChromeFeatureList.INCOGNITO_STRINGS)
-                        ? R.string.close_all_private_notification
-                        : R.string.close_all_incognito_notification);
+        String actionMessage =
+                context.getResources().getString(R.string.brave_close_all_private_tabs);
         String title = context.getResources().getString(R.string.app_name);
 
         ChromeNotificationBuilder builder =
