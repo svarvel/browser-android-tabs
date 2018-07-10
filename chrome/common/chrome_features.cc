@@ -768,6 +768,6 @@ const base::Feature kWin10AcceleratedDefaultBrowserFlow{
 #if defined(OS_ANDROID)
 // Enables showing alternative incognito strings.
 const base::Feature kIncognitoStrings{"IncognitoStrings",
-                                      base::FEATURE_DISABLED_BY_DEFAULT};
+                                      base::FEATURE_ENABLED_BY_DEFAULT};
 #endif  // defined(OS_ANDROID)
 }  // namespace features

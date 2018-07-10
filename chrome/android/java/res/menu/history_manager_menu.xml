@@ -43,9 +43,9 @@
             app:showAsAction="never" />
         <item
             android:id="@+id/selection_mode_open_in_incognito"
-            android:title="@string/contextmenu_open_in_incognito_tab"
-            app:showAsAction="never" />
-        <item
+            android:title="@string/brave_open_in_private_tab"
+            chrome:showAsAction="never" />
+       <item
             android:id="@+id/selection_mode_copy_link"
             android:title="@string/copy_link"
             app:showAsAction="never" />

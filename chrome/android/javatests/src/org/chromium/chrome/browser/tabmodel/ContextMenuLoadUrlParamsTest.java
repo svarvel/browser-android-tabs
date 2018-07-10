@@ -122,7 +122,7 @@ public class ContextMenuLoadUrlParamsTest {
     @Feature({"Browser"})
     public void testOpenInIncognitoTabNoReferrer() throws InterruptedException, TimeoutException {
         triggerContextMenuLoad(mTestServer.getURL(HTML_PATH), "testLink",
-                R.id.contextmenu_open_in_incognito_tab);
+                R.id.brave_open_in_private_tab);
 
         Assert.assertNotNull(mOpenNewTabLoadUrlParams);
         Assert.assertNull(mOpenNewTabLoadUrlParams.getReferrer());
