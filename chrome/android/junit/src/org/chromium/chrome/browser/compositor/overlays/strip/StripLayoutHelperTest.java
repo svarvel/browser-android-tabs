@@ -142,7 +142,7 @@ public class StripLayoutHelperTest {
         }
 
         assertEquals(mActivity.getResources().getString(mIncognito
-                                     ? R.string.accessibility_toolbar_btn_new_incognito_tab
+                                     ? R.string.brave_new_private_tab
                                      : R.string.accessibility_toolbar_btn_new_tab),
                 views.get(views.size() - 1).getAccessibilityDescription());
     }

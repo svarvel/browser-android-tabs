@@ -359,7 +359,7 @@ public class ContextMenuTest implements CustomMainActivityStart {
         ContextMenu menu = ContextMenuUtils.openContextMenu(tab, "testLink");
 
         Integer[] expectedItems = {R.id.contextmenu_open_in_new_tab,
-                R.id.contextmenu_open_in_incognito_tab, R.id.contextmenu_save_link_as,
+                R.id.brave_open_in_private_tab, R.id.contextmenu_save_link_as,
                 R.id.contextmenu_copy_link_text, R.id.contextmenu_copy_link_address,
                 R.id.contextmenu_share_link};
         assertMenuItemsAreEqual(menu, expectedItems);
@@ -405,7 +405,7 @@ public class ContextMenuTest implements CustomMainActivityStart {
         ContextMenu menu = ContextMenuUtils.openContextMenu(tab, "testImageLink");
 
         Integer[] expectedItems = {R.id.contextmenu_open_in_new_tab,
-                R.id.contextmenu_open_in_incognito_tab, R.id.contextmenu_copy_link_address,
+                R.id.brave_open_in_private_tab, R.id.contextmenu_copy_link_address,
                 R.id.contextmenu_save_link_as, R.id.contextmenu_save_image,
                 R.id.contextmenu_open_image_in_new_tab, R.id.contextmenu_search_by_image,
                 R.id.contextmenu_share_image, R.id.contextmenu_share_link};

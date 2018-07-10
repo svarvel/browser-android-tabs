@@ -190,7 +190,7 @@ public class StripLayoutHelper implements StripLayoutTab.StripLayoutTabDelegate 
         Resources res = context.getResources();
         mNewTabButton.setAccessibilityDescription(
                 res.getString(R.string.accessibility_toolbar_btn_new_tab),
-                res.getString(R.string.accessibility_toolbar_btn_new_incognito_tab));
+                res.getString(R.string.brave_new_private_tab));
         mContext = context;
         mIncognito = incognito;
         mBrightness = 1.f;
@@ -202,9 +202,7 @@ public class StripLayoutHelper implements StripLayoutTab.StripLayoutTabDelegate 
         mTabMenu.setAdapter(new ArrayAdapter<String>(mContext, R.layout.list_menu_item,
                 new String[] {mContext.getString(!mIncognito
                                 ? R.string.menu_close_all_tabs
-                                : (userAlternativeIncognitoStrings
-                                                  ? R.string.menu_close_all_private_tabs
-                                                  : R.string.menu_close_all_incognito_tabs))}));
+                                : R.string.brave_close_all_private_tabs)}));
         mTabMenu.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
