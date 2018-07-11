@@ -16,7 +16,7 @@ void CreateWallet(IOThread* io_thread) {
     return;
   }
   walletCreated = true;
-  io_thread->globals()->ledger_->CreateWallet();
+  //io_thread->globals()->ledger_->CreateWallet();
 }
 //
 
