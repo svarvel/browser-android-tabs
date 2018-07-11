@@ -1846,6 +1846,7 @@ jumbo_split_static_library("browser") {
     "//chrome/app:chrome_service_manifests",
     "//chrome/app/resources:platform_locale_settings",
     "//chrome/app/theme:theme_resources",
+    "//chrome/browser/braveRewards",
     "//chrome/browser/devtools",
     "//chrome/browser/media:media_engagement_preload_proto",
     "//chrome/browser/media:mojo_bindings",
