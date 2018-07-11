@@ -306,9 +306,9 @@ chrome/browser/net/blockers/ad_block_client.cc
 chrome/browser/net/blockers/ad_block_client.h
 chrome/browser/net/blockers/BloomFilter.cpp
 chrome/browser/net/blockers/BloomFilter.h
-chrome/browser/net/blockers/HashItem.h
-chrome/browser/net/blockers/HashSet.cpp
-chrome/browser/net/blockers/HashSet.h
+chrome/browser/net/blockers/hash_item.h
+chrome/browser/net/blockers/hash_set.cc
+chrome/browser/net/blockers/hash_set.h
 chrome/browser/net/blockers/bad_fingerprint.h
 chrome/browser/net/blockers/bad_fingerprints.h
 chrome/browser/net/blockers/base.h
@@ -319,6 +319,12 @@ chrome/browser/net/blockers/filter.h
 chrome/browser/net/blockers/hashFn.cpp
 chrome/browser/net/blockers/hashFn.h
 chrome/browser/net/blockers/FirstPartyHost.h
+chrome/browser/net/blockers/FirstPartyHost.cpp
 chrome/browser/net/blockers/TrackerData.h
+chrome/browser/net/blockers/TrackerData.cpp
 chrome/browser/net/blockers/TPParser.h
 chrome/browser/net/blockers/TPParser.cpp
+chrome/browser/net/blockers/no_fingerprint_domain.h
+chrome/browser/net/blockers/no_fingerprint_domain.cc
+chrome/browser/net/blockers/protocol.h
+chrome/browser/net/blockers/protocol.cc
