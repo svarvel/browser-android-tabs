@@ -12,5 +12,4 @@ function createWallet() {
 
 document.addEventListener('DOMContentLoaded', function() {
   $('create_wallet').onclick = createWallet;
-  requestCrashes();
 });

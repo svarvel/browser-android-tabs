@@ -25,6 +25,7 @@ content::WebUIDataSource* CreateBraveRewardsUIHTMLSource() {
   content::WebUIDataSource* source =
       content::WebUIDataSource::Create(chrome::kBraveRewardsHost);
 
+	source->AddResourcePath("rewards.js", IDR_BRAVE_REWARDS_UI_JS);
   source->SetDefaultResource(IDR_BRAVE_REWARDS_UI_HTML);
   source->UseGzip();
   return source;
