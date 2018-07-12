@@ -26,6 +26,8 @@
 #include "chrome/browser/ui/webui/bluetooth_internals/bluetooth_internals_ui.h"
 #include "chrome/browser/ui/webui/chromeos/account_manager_welcome_ui.h"
 #include "chrome/browser/ui/webui/chromeos/insession_password_change_ui.h"
+#include "chrome/browser/ui/webui/brave_rewards_ui.h"
+#include "chrome/browser/ui/webui/bookmarks_ui.h"
 #include "chrome/browser/ui/webui/components_ui.h"
 #include "chrome/browser/ui/webui/constrained_web_dialog_ui.h"
 #include "chrome/browser/ui/webui/crashes_ui.h"
@@ -354,6 +356,8 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   // All platform builds of Chrome will need to have a cloud printing
   // dialog as backup.  It's just that on Chrome OS, it's the only
   // print dialog.
+  if (url.host_piece() == chrome::kBraveRewardsHost)
+    return &NewWebUI<BraveRewardsUI>;
   if (url.host_piece() == chrome::kChromeUIAccessibilityHost)
     return &NewWebUI<AccessibilityUI>;
   if (url.host_piece() == chrome::kChromeUIAutofillInternalsHost)
