@@ -3,8 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "bat/ledger/ledger.h"
+#include "chrome/browser/braveRewards/brave_rewards_service.h"
+#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/io_thread.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/profiles/profile_manager.h"
 #include "web_contents_ledger_observer.h"
 #include "web_contents_observer.h"
 #include "web_contents.h"
@@ -39,6 +43,17 @@ void WebContentsLedgerObserver::OnVisibilityChanged(Visibility visibility) {
     if (current_domain_.empty()) {
       return;
     }
+
+    //
+    brave_rewards::BraveRewardsService* brave_rewards_service =
+      BraveRewardsServiceFactory::GetForProfile(
+        ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+
+    if (brave_rewards_service) {
+      LOG(ERROR) << "!!!brave_rewards_service == " << brave_rewards_service;
+    }
+    //
+
     content::BrowserThread::PostTask(
         content::BrowserThread::IO, FROM_HERE,
         base::Bind(&WebSiteWasHidden, g_browser_process->io_thread(), current_domain_,

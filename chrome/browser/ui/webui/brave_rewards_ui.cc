@@ -4,6 +4,9 @@
 
 #include "chrome/browser/ui/webui/brave_rewards_ui.h"
 
+#include "chrome/browser/braveRewards/brave_rewards_service.h"
+#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
+
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
 #include "components/grit/components_resources.h"
@@ -41,7 +44,6 @@ content::WebUIDataSource* CreateBraveRewardsUIHTMLSource() {
 class RewardsDOMHandler : public WebUIMessageHandler {
  public:
   RewardsDOMHandler() {
-  	LOG(ERROR) << "!!!here3";
   }
   ~RewardsDOMHandler() override {}
 
@@ -57,7 +59,6 @@ class RewardsDOMHandler : public WebUIMessageHandler {
 };
 
 void RewardsDOMHandler::RegisterMessages() {
-	LOG(ERROR) << "!!!here4";
   web_ui()->RegisterMessageCallback(
       "createWallet",
       base::BindRepeating(&RewardsDOMHandler::HandleCreateWallet,
@@ -68,6 +69,14 @@ void RewardsDOMHandler::RegisterMessages() {
 void RewardsDOMHandler::HandleCreateWallet(
     const base::ListValue* args) {
 	LOG(ERROR) << "!!!HandleCreateWallet1";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+      BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    brave_rewards_service->CreateWallet();
+  }
   /*DCHECK(flags_storage_);
   DCHECK_EQ(2u, args->GetSize());
   if (args->GetSize() != 2)
