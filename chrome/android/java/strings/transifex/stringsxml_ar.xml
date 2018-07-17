@@ -98,4 +98,18 @@ HTTPS</string>
     <string name="open_pages_in_custom_tabs_title">افتح الألسنة في \"تخصيص الألسنة\"</string>
     <string name="open_pages_in_custom_tabs_summary">اعرض فتح الألسنة في \"تخصيص الألسنة\"</string>
 
+    <string name="ddg_offer_title">هل تريد القيام ببحث خاص بواسطة DuckDuckGo؟</string>
+    <string name="ddg_offer_text">بواسطة البحث الخاص، سنقوم باستخدم DuckDuckGo للإجابة عن عمليات البحث الخاصة بك أثناء وجودك في علامة التبويب الخاصة هذه. DuckDuckGo هو محرك بحث لا يقوم بتتبع سجل البحث الخاص بك، مما يتيح لك البحث بشكلٍ خاص.</string>
+    <string name="ddg_offer_positive">نعم</string>
+    <string name="ddg_offer_negative">لا</string>
+    <string name="ddg_offer_link">تعرّف على البحث الخاص بواسطة DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">علامة تبويب قياسية</string>
+    <string name="prefs_private_search_engine">علامة تبويب خاصة</string>
+
+    <string name="brave_open_in_private_tab">فتح في علامة تبويب خاصة</string>
+    <string name="brave_close_all_private_tabs">غلق علامات التبويب الخاصة</string>
+    <string name="brave_new_private_tab">علامة تبويب خاصة جديدة</string>
+    <string name="brave_new_tab_private_header">هذه علامة تبويب خاصة</string>
+    <string name="brave_new_tab_private_message">على الرغم من أن المواقع التي تزورها في علامات التبويب الخاصة لا يتم حفظها محلياً، إلا أنها لا تجعلك مجهولاً أو غير مرئياً بالنسبة لمزود خدمة الإنترنت أو صاحب العمل الخاص بك أو المواقع التي تزورها.</string>
+
 </resources>

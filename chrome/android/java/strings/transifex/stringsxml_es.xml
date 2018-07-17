@@ -96,4 +96,18 @@ Guardado</string>
     <string name="open_pages_in_custom_tabs_title">Abrir pestañas en Pestañas Personalizadas</string>
     <string name="open_pages_in_custom_tabs_summary">Oferta para abrir pestañas en Pestañas Personalizadas</string>
 
+    <string name="ddg_offer_title">¿Quiere hacer una búsqueda privada con DuckDuckGo?</string>
+    <string name="ddg_offer_text">Con la búsqueda privada, Brave usará DuckDuckGo para responder a sus búsquedas mientras esté en esta pestaña privada. DuckDuckGo es un motor de búsqueda que no graba su historial de búsquedas, posibilitando que pueda navegar de manera privada.</string>
+    <string name="ddg_offer_positive">Si</string>
+    <string name="ddg_offer_negative">No</string>
+    <string name="ddg_offer_link">Saber más sobre la búsqueda privada con DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Pestaña estándar</string>
+    <string name="prefs_private_search_engine">Pestaña privada</string>
+
+    <string name="brave_open_in_private_tab">Abrir en una pestaña privada</string>
+    <string name="brave_close_all_private_tabs">Cerrar pestañas privadas</string>
+    <string name="brave_new_private_tab">Nueva pestaña privada</string>
+    <string name="brave_new_tab_private_header">Esto es una Pestaña Privada</string>
+    <string name="brave_new_tab_private_message">Aunque los sitios que visite desde pestañas privadas no se guarden a nivel local, no serán anónimos o invisibles para sus ISP, su empleador o para las páginas que esté visitando.</string>
+
 </resources>

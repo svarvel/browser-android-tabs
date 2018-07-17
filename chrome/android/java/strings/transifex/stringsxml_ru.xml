@@ -95,4 +95,18 @@ Brave Sync, без создания учетной записи.
     <string name="open_pages_in_custom_tabs_title">Открыть вкладки в Моих Вкладках</string>
     <string name="open_pages_in_custom_tabs_summary">Предложить открыть вкладки в Моих Вкладках</string>
 
+    <string name="ddg_offer_title">Выполнить приватный поиск с помощью DuckDuckGo?</string>
+    <string name="ddg_offer_text">При выполнении приватного поиска Brave будет использовать DuckDuckGo для ответа на ваши поисковые запросы, когда вы находитесь на этой приватной вкладке. DuckDuckGo — это поисковая система, которая не отслеживает историю поиска, позволяя вам выполнять поиск конфиденциально.</string>
+    <string name="ddg_offer_positive">Да</string>
+    <string name="ddg_offer_negative">Нет</string>
+    <string name="ddg_offer_link">Узнайте о приватном поиске с помощью DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Стандартная вкладка</string>
+    <string name="prefs_private_search_engine">Приватная вкладка</string>
+
+    <string name="brave_open_in_private_tab">Открыть в приватной вкладке</string>
+    <string name="brave_close_all_private_tabs">Закрыть приватные вкладки</string>
+    <string name="brave_new_private_tab">Новая приватная вкладка</string>
+    <string name="brave_new_tab_private_header">Это приватная вкладка</string>
+    <string name="brave_new_tab_private_message">Хотя сайты, которые вы посещаете на приватных вкладках, не сохраняются локально, они не делают вас анонимными или невидимыми для вашего интернет-провайдера, вашего работодателя или сайтов, которые вы посещаете.</string>
+
 </resources>

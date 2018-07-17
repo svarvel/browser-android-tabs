@@ -93,4 +93,18 @@ EST แล้ว</string>
     <string name="open_pages_in_custom_tabs_title">เปิดแท็บในแท็บแบบกำหนดเอง</string>
     <string name="open_pages_in_custom_tabs_summary">ข้อเสนอให้เปิดแท็บในแท็บแบบกำหนดเอง</string>
 
+    <string name="ddg_offer_title">สงสัยเรื่องการค้นหาส่วนตัวด้วย DuckDuckGo ใช่หรือไม่</string>
+    <string name="ddg_offer_text">ด้วยการค้นหาส่วนตัว Brave จะใช้ DuckDuckGo เพื่อตอบการค้นหาในขณะที่คุณอยู่ในแท็บส่วนตัวนี้ DuckDuckGo คือเครื่องมือค้นหาที่ไม่ติดตามประวัติการใช้งาน จึงทำให้คุณค้นหาได้อย่างเป็นส่วนตัว</string>
+    <string name="ddg_offer_positive">ไม่ใช่</string>
+    <string name="ddg_offer_negative">ใช่</string>
+    <string name="ddg_offer_link">เรียนรู้เกี่ยวกับการค้นหาส่วนตัวด้วย DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">แท็บมาตรฐาน</string>
+    <string name="prefs_private_search_engine">แท็บส่วนตัว</string>
+
+    <string name="brave_open_in_private_tab">เปิดแท็บส่วนตัว</string>
+    <string name="brave_close_all_private_tabs">ปิดแท็บส่วนตัว</string>
+    <string name="brave_new_private_tab">แท็บส่วนตัวใหม่</string>
+    <string name="brave_new_tab_private_header">นี่คือแท็บส่วนตัว</string>
+    <string name="brave_new_tab_private_message">แม้ว่าเว็บไซต์ที่คุณเข้าชมในแท็บส่วนตัวจะไม่บันทึกลงในเครื่อง แต่วิธีนี้ไม่ทำให้คุณไม่มีตัวตนหรือหายไปจากผู้ให้บริการอินเทอร์เน็ต, นายจ้าง หรือเว็บไซต์ที่คุณเข้าชม</string>
+
 </resources>

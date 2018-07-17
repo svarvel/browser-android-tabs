@@ -93,4 +93,18 @@
     <string name="open_pages_in_custom_tabs_title">커스텀 탭에서 탭 열기 </string>
     <string name="open_pages_in_custom_tabs_summary">커스텀 탭에서 탭을 여는 방법 제안 </string>
 
+    <string name="ddg_offer_title">덕덕고(DuckDuckGo)로 비밀 검색을 할까요?</string>
+    <string name="ddg_offer_text">비밀 검색을 사용하시면, 브레이브(Brave)가 이 비밀 탭에 계신 동안 귀하의 검색들에 답변하기 위하여 덕덕고(DuckDuckGo)를 사용하게 됩니다. 덕덕고(DuckDuckGo)는 귀하께서 비밀로 검색하실 수 있도록 귀하의 검색 기록을 추적하지 않는 검색 엔진입니다.</string>
+    <string name="ddg_offer_positive">예</string>
+    <string name="ddg_offer_negative">아니오</string>
+    <string name="ddg_offer_link">덕덕고(DuckDuckGo)와 함께 비밀 검색에 대해 배워보세요</string>
+    <string name="prefs_standard_search_engine">스탠다드 탭</string>
+    <string name="prefs_private_search_engine">비밀 탭</string>
+
+    <string name="brave_open_in_private_tab">비밀 탭에서 열기</string>
+    <string name="brave_close_all_private_tabs">비밀 탭들 닫기</string>
+    <string name="brave_new_private_tab">새 비밀 탭</string>
+    <string name="brave_new_tab_private_header">이것은 비밀 탭입니다</string>
+    <string name="brave_new_tab_private_message">귀하께서 비밀 탭들로 방문한 사이트들이 위치상으로 저장되지는 않지만, 귀하를 익명으로 만들거나 귀하의 ISP, 귀하의 고용주 혹은 귀하께서 방문하고 계신 사이트들에 보이지 않도록 만들지 않습니다.</string>
+
 </resources>

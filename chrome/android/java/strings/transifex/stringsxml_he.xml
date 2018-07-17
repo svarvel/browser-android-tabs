@@ -95,4 +95,18 @@ HTTPS</string>
     <string name="open_pages_in_custom_tabs_title">פתח לשוניות ב׳לשוניות מותאמות׳</string>
     <string name="open_pages_in_custom_tabs_summary">הצעה לפתוח לשוניות ב׳לשוניות מותאמות׳</string>
 
+    <string name="ddg_offer_title">חיפוש אישי בעזרת DuckDuckGo?</string>
+    <string name="ddg_offer_text">בחיפוש הפרטי, Brave ישתמש ב-DuckDuckGo כדי לענות על החיפושים שלכם בזמן שתהיו בלשונית פרטית זו. DuckDuckGo הוא מנוע חיפוש שאינו עוקב אחרי היסטוריית החיפושים שלכם, ובכך הוא מאפשר לכם לבצע חיפושים באופן פרטי.</string>
+    <string name="ddg_offer_positive">כן</string>
+    <string name="ddg_offer_negative">לא</string>
+    <string name="ddg_offer_link">למדו אודות חיפוש פרטי בעזרת DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">לשונית סטנדרטית</string>
+    <string name="prefs_private_search_engine">לשונית פרטית</string>
+
+    <string name="brave_open_in_private_tab">פתחו בלשונית פרטית</string>
+    <string name="brave_close_all_private_tabs">סגרו את הלשוניות הפרטיות</string>
+    <string name="brave_new_private_tab">לשונית פרטית חדשה</string>
+    <string name="brave_new_tab_private_header">זו לשונית פרטית</string>
+    <string name="brave_new_tab_private_message">למרות שאתרים שבהם ביקרתם בעזרת לשונית פרטית אינם נשמרים במחשב שלכם, הם אינם הופכים אתכם לאנונימיים או לבלתי נראים בפני ספק שירות האינטרנט שלכם, המעביד שלכם או האתרים שבהם אתם מבקרים.</string>
+
 </resources>

@@ -93,4 +93,18 @@ Lagret</string>
     <string name="open_pages_in_custom_tabs_title">Åpne faner i \"Tilpassede faner\"</string>
     <string name="open_pages_in_custom_tabs_summary">Tilby å åpne faner i \"Tilpassede faner\"</string>
 
+    <string name="ddg_offer_title">Privat søk med DuckDuckGo?</string>
+    <string name="ddg_offer_text">Med privat søk vil Brave bruke DuckDuckGo til å svare på søkene dine så lenge du er i denne private fanen. DuckDuckGo er en søkemotor som ikke sporer søkehistorikken din, slik at du er i stand til å søke privat.</string>
+    <string name="ddg_offer_positive">Ja</string>
+    <string name="ddg_offer_negative">Nei</string>
+    <string name="ddg_offer_link">Lær om privat søk med DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standardfane</string>
+    <string name="prefs_private_search_engine">Privat fane</string>
+
+    <string name="brave_open_in_private_tab">Åpne i privat fane</string>
+    <string name="brave_close_all_private_tabs">Lukk private faner</string>
+    <string name="brave_new_private_tab">Ny privat fane</string>
+    <string name="brave_new_tab_private_header">Dette er en privat fane</string>
+    <string name="brave_new_tab_private_message">Selv om nettsteder du besøker i private faner, ikke lagres lokalt, gjør de deg ikke anonym eller usynlig overfor internettleverandøren din, arbeidsgiveren din eller nettstedene du besøker.</string>
+
 </resources>

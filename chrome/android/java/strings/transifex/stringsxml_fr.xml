@@ -95,4 +95,18 @@ Enregistré</string>
     <string name="open_pages_in_custom_tabs_title">Ouvrir les onglets dans la section Personnalisation des onglets</string>
     <string name="open_pages_in_custom_tabs_summary">Proposer d\'ouvrir les onglets dans la section Personnalisation des onglets</string>
 
+    <string name="ddg_offer_title">Recherche privée avec DuckDuckGo ?</string>
+    <string name="ddg_offer_text">Avec la recherche privée, Brave utilisera DuckDuckGo pour répondre à vos recherches alors que vous vous trouvez sur cet onglet privé. DuckDuckGo est un moteur de recherche qui ne traque pas votre historique de recherche, vous permettant d\'effectuer des recherches confidentiellement. </string>
+    <string name="ddg_offer_positive">Oui</string>
+    <string name="ddg_offer_negative">Non</string>
+    <string name="ddg_offer_link">Informez-vous à propos de la recherche privée avec DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Onglet standard</string>
+    <string name="prefs_private_search_engine">Onglet privé</string>
+
+    <string name="brave_open_in_private_tab">Ouvrez dans un onglet privé</string>
+    <string name="brave_close_all_private_tabs">Fermez les onglets privés</string>
+    <string name="brave_new_private_tab">Nouvel onglet privé</string>
+    <string name="brave_new_tab_private_header">Ceci est un onglet privé</string>
+    <string name="brave_new_tab_private_message">Même si les sites que vous visitez dans des onglets privés ne sont pas sauvegardés localement, ces derniers ne vous rendent pas anonyme ou invisible auprès de votre fournisseur de services internet, de votre employeur, ou des sites que vous visitez.</string>
+
 </resources>

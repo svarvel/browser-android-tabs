@@ -95,4 +95,18 @@ tid</string>
     <string name="open_pages_in_custom_tabs_title">Öppna flikar i Anpassade flikar</string>
     <string name="open_pages_in_custom_tabs_summary">Erbjud öppnande av flikar i Anpassade flikar </string>
 
+    <string name="ddg_offer_title">Privat sökning med DuckDuckGo?</string>
+    <string name="ddg_offer_text">Med privat sökning använder Brave DuckDuckGo för att besvara din sökning medan du är i den privata fliken. DuckDuckGo är en sökmotor som inte spårar din sökhistoria, vilket låter dig söka privat.</string>
+    <string name="ddg_offer_positive">Ja</string>
+    <string name="ddg_offer_negative">Nej</string>
+    <string name="ddg_offer_link">Lär dig mer om privat sökning med DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standardflik</string>
+    <string name="prefs_private_search_engine">Privat flik</string>
+
+    <string name="brave_open_in_private_tab">Öppna i privat flik</string>
+    <string name="brave_close_all_private_tabs">Stäng privata flikar</string>
+    <string name="brave_new_private_tab">Ny privat flik</string>
+    <string name="brave_new_tab_private_header">Detta är en privat flik</string>
+    <string name="brave_new_tab_private_message">Även om webbsidor du besöker i privata flikar inte sparas lokalt gör de dig inte anonym eller osynlig för din ISP, din arbetsgivare, eller de webbsidor du besöker.</string>
+
 </resources>

@@ -96,4 +96,18 @@ Salvat</string>
     <string name="open_pages_in_custom_tabs_title">Deschidere file în File particularizate</string>
     <string name="open_pages_in_custom_tabs_summary">Oferiți opțiunea de deschidere a filelor în File particularizate</string>
 
+    <string name="ddg_offer_title">Căutare privată cu DuckDuckGo?</string>
+    <string name="ddg_offer_text">În cazul căutării private, Brave va folosi DuckDuckGo pentru a răspunde la căutările dvs. în timp ce vă aflați pe această filă privată. DuckDuckGo este un motor de căutare care nu vă monitorizează istoricul căutărilor, permițându-vă să căutați în mod privat.</string>
+    <string name="ddg_offer_positive">Da</string>
+    <string name="ddg_offer_negative">Nu</string>
+    <string name="ddg_offer_link">Aflați despre căutarea privată cu DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Filă standard</string>
+    <string name="prefs_private_search_engine">Filă privată</string>
+
+    <string name="brave_open_in_private_tab">Deschideți în filă privată</string>
+    <string name="brave_close_all_private_tabs">Închideți filele private</string>
+    <string name="brave_new_private_tab">Filă privată nouă</string>
+    <string name="brave_new_tab_private_header">Aceasta este o filă privată</string>
+    <string name="brave_new_tab_private_message">Cu toate că site-urile pe care le vizitați în file private nu sunt salvate local, acestea nu vă fac anonim sau invizibil pentru furnizorul dvs. de internet, angajatorul dvs. sau site-urile pe care le vizitați.</string>
+
 </resources>

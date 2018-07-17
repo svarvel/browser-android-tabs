@@ -91,4 +91,18 @@
     <string name="open_pages_in_custom_tabs_title">在自定义标签页中打开标签页</string>
     <string name="open_pages_in_custom_tabs_summary">在自定义标签页打开标签页的选项</string>
 
+    <string name="ddg_offer_title">使用DuckDuckGo进行隐私搜索？</string>
+    <string name="ddg_offer_text">启用隐私搜索后，Brave会在隐私标签页中使用 DuckDuckGo 搜索。DuckDuckGo 这个搜索引擎不会通过搜索历史来跟踪您，可以保证您的搜索隐私性。</string>
+    <string name="ddg_offer_positive">确定</string>
+    <string name="ddg_offer_negative">取消</string>
+    <string name="ddg_offer_link">了解如何使用 Duckduckgo 隐私搜索</string>
+    <string name="prefs_standard_search_engine">普通标签页</string>
+    <string name="prefs_private_search_engine">隐私标签页</string>
+
+    <string name="brave_open_in_private_tab">在隐私标签页中打开</string>
+    <string name="brave_close_all_private_tabs">关闭隐私标签页</string>
+    <string name="brave_new_private_tab">新建隐私标签页</string>
+    <string name="brave_new_tab_private_header">这是个隐私标签页</string>
+    <string name="brave_new_tab_private_message">即使您通过隐私标签访问的网站未保存在本地，但这对于您的 ISP ，您的雇主或您访问的网站仍然不是匿名或者隐身的。</string>
+
 </resources>
