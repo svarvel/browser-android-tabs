@@ -76,19 +76,33 @@
     <string name="website_settings_category_play_video_in_background_enabled_summary">已啟用</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">已停用</string>
     <string name="website_settings_category_play_video_in_background_enabled">實驗性功能。在分頁未使用或裝置螢幕關閉時於背景播放影片音效。若此功能無法運作，請嘗試切換到桌面模式。</string>
-    <string name="settings_require_relaunch_notice">您的變更將在下次重啟 Brave 後生效</string>
-    <string name="settings_require_relaunch_now">立即重啟</string>
+    <string name="settings_require_relaunch_notice">您的變更將在下次重新開啟 Brave 後生效</string>
+    <string name="settings_require_relaunch_now">立即重新開啟</string>
     <string name="settings_require_relaunch_later">稍後</string>
 
     <string name="play_yt_video_in_browser_title">在 Brave 中播放影片</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">已啟用</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">已停用</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">一經啟用，影片將在 Brave 而不是相對應的 App 中播放</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">若啟用，影片將在 Brave 而不是相對應的 App 中播放</string>
 
-    <string name="close_tabs_on_exit_title">結束時關閉標籤</string>
-    <string name="close_tabs_on_exit_summary">在瀏覽階段作業之間不要保存標籤</string>
+    <string name="close_tabs_on_exit_title">離開時關閉分頁</string>
+    <string name="close_tabs_on_exit_summary">不要在瀏覽階段作業之間保存分頁</string>
 
-    <string name="open_pages_in_custom_tabs_title">以「自訂索引標籤」開啟標籤</string>
-    <string name="open_pages_in_custom_tabs_summary">提議以「自訂索引標籤」開啟標籤</string>
+    <string name="open_pages_in_custom_tabs_title">以「Custom Tabs」開啟分頁</string>
+    <string name="open_pages_in_custom_tabs_summary">提議以「Custom Tabs」開啟分頁</string>
+
+    <string name="ddg_offer_title">以 DuckDuckGo 進行隱私搜尋？</string>
+    <string name="ddg_offer_text">透過隱私搜尋，當您在此隱私分頁時，Brave 將使用 DuckDuckGo 回答您的搜尋問題。DuckDuckGo 是一家不會追蹤您搜尋紀錄的搜尋引擎，讓您能夠搜尋而保持隱私。</string>
+    <string name="ddg_offer_positive">是</string>
+    <string name="ddg_offer_negative">否</string>
+    <string name="ddg_offer_link">了解透過 DuckDuckGo 進行隱私搜尋</string>
+    <string name="prefs_standard_search_engine">標準分頁</string>
+    <string name="prefs_private_search_engine">隱私分頁</string>
+
+    <string name="brave_open_in_private_tab">在隱私分頁中開啟</string>
+    <string name="brave_close_all_private_tabs">關閉隱私分頁</string>
+    <string name="brave_new_private_tab">新隱私分頁</string>
+    <string name="brave_new_tab_private_header">這是隱私分頁</string>
+    <string name="brave_new_tab_private_message">雖然在隱私分頁中所到訪的網站不會儲存於本機，但不會讓您在您的 ISP、雇主或到訪的網站匿名或隱身。</string>
 
 </resources>

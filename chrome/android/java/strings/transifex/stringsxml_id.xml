@@ -95,4 +95,30 @@ Dihemat</string>
     <string name="open_pages_in_custom_tabs_title">Buka tab-tab di Tab Suaian</string>
     <string name="open_pages_in_custom_tabs_summary">Menawarkan untuk membuka tab-tab di Tab Suaian</string>
 
+    <string name="ddg_offer_title">Pencarian privat dengan DuckDuckGo?
+</string>
+    <string name="ddg_offer_text">Dengan pencarian privat, Brave akan menggunakan DuckDuckGo untuk mencari jawaban pencarian Anda saat Anda berada dalam tab privat ini. DuckDuckGo adalah mesin pencari yang tidak merekam riwayat pencarian Anda, memungkinkan Anda untuk mencari secara privat.
+</string>
+    <string name="ddg_offer_positive">Ya
+</string>
+    <string name="ddg_offer_negative">Tidak
+</string>
+    <string name="ddg_offer_link">Pelajari tentang pencarian privat dengan DuckDuckGo
+</string>
+    <string name="prefs_standard_search_engine">Tab Standar
+</string>
+    <string name="prefs_private_search_engine">Tab Privat
+</string>
+
+    <string name="brave_open_in_private_tab">Buka di tab privat
+</string>
+    <string name="brave_close_all_private_tabs">Tutup tab privat
+</string>
+    <string name="brave_new_private_tab">Tab privat baru
+</string>
+    <string name="brave_new_tab_private_header">Ini adalah Tab Privat
+</string>
+    <string name="brave_new_tab_private_message">Sekali pun situs yang Anda kunjungi melalui tab privat tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, kantor Anda, atau situs yang Anda kunjungi.
+</string>
+
 </resources>

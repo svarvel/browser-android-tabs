@@ -94,4 +94,19 @@ besparelse</string>
     <string name="open_pages_in_custom_tabs_title">Åben tabs i tilpassede tabs</string>
     <string name="open_pages_in_custom_tabs_summary">Tilbyder at åbne tabs i tilpassede tabs</string>
 
+    <string name="ddg_offer_title">Privat søgning med DuckDuckGo?</string>
+    <string name="ddg_offer_text">Med privat søgning vil Brave bruge DuckDuckGo til at besvare dine søgninger mens du er i dette private faneblad. DuckDuckGo er en søgemaskine der ikke holder rede med din søgehistorie, hvilket lader dig søge privat.</string>
+    <string name="ddg_offer_positive">Ja</string>
+    <string name="ddg_offer_negative">Nej</string>
+    <string name="ddg_offer_link">Lær mere om privat søgning med DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standard Faneblad
+</string>
+    <string name="prefs_private_search_engine">Privat Faneblad</string>
+
+    <string name="brave_open_in_private_tab">Åben i privat faneblad</string>
+    <string name="brave_close_all_private_tabs">Luk Private Faneblade</string>
+    <string name="brave_new_private_tab">Nyt privat faneblad</string>
+    <string name="brave_new_tab_private_header">Dette er et Privat Faneblad</string>
+    <string name="brave_new_tab_private_message">Selvom hjemmesider du besøger i private faneblade ikke bliver gemt lokalt, gør de dig ikke anonym eller usynlig over for din ISP, chef eller for hjemmesiderne du bsøger.</string>
+
 </resources>

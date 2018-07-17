@@ -96,4 +96,18 @@
     <string name="open_pages_in_custom_tabs_title">Відкривати вкладки у Custom Tabs</string>
     <string name="open_pages_in_custom_tabs_summary">Запропонувати відкривати вкладки у Custom Tabs </string>
 
+    <string name="ddg_offer_title">Приватний пошук з </string>
+    <string name="ddg_offer_text">Під час приватного пошуку Brave використовує DuckDuckGo, аби знайти те, що ви шукаєте, поки ви у приватній вкладці. DuckDuckGo — це пошукова система, що не збирає вашу історію пошуку, таким чином даючи вам змогу зберігати приватність.</string>
+    <string name="ddg_offer_positive">Так</string>
+    <string name="ddg_offer_negative">Ні</string>
+    <string name="ddg_offer_link">Дізнайтеся про приватний пошук з DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Звичайна вкладка</string>
+    <string name="prefs_private_search_engine">Приватна вкладка</string>
+
+    <string name="brave_open_in_private_tab">Відкрити у приватній вкладці</string>
+    <string name="brave_close_all_private_tabs">Закрити приватні вкладки</string>
+    <string name="brave_new_private_tab">Нова приватна вкладка</string>
+    <string name="brave_new_tab_private_header">Це приватна вкладка</string>
+    <string name="brave_new_tab_private_message">Хоча сайти, на які ви заходите у приватних вкладках, не зберігаються, ви не є анонімними чи невидимими для свого Інтернет-провайдера, начальника чи сайтів, на які ви заходите.</string>
+
 </resources>

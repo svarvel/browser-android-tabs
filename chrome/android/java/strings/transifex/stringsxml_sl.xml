@@ -92,4 +92,7 @@ Shranjeno</string>
     <string name="close_tabs_on_exit_title">Zapri zavihke ob izhodu</string>
     <string name="close_tabs_on_exit_summary">Ne vztrajaj z zavihki med sejami brskanja</string>
 
+    <string name="open_pages_in_custom_tabs_title">Odpri zavihke kot zavihke po meri</string>
+    <string name="open_pages_in_custom_tabs_summary">Ponudi odpiranje zavihkov med zavihki po meri</string>
+
     </resources>

@@ -92,4 +92,18 @@
     <string name="open_pages_in_custom_tabs_title">カスタムタブ内のタブを開く</string>
     <string name="open_pages_in_custom_tabs_summary">カスタムタブ内のタブを開くよう提案する</string>
 
+    <string name="ddg_offer_title"> DuckDuckGoでプライベート検索しますか？</string>
+    <string name="ddg_offer_text">プライベート検索では、BraveがDuckDuckGoを使って、このプライベートタブ内であなたの検索リクエストに応えます。DuckDuckGoは、検索履歴を追跡しない検索エンジンなので、プライベートな検索を行うことができます。</string>
+    <string name="ddg_offer_positive">はい</string>
+    <string name="ddg_offer_negative">いいえ</string>
+    <string name="ddg_offer_link">DuckDuckGoを使ったプライベート検索について学ぶ</string>
+    <string name="prefs_standard_search_engine">標準タブ</string>
+    <string name="prefs_private_search_engine">プライベートタブ</string>
+
+    <string name="brave_open_in_private_tab">プライベートタブで開く</string>
+    <string name="brave_close_all_private_tabs">プライベートタブを閉じる</string>
+    <string name="brave_new_private_tab">新しいプライベートタブ</string>
+    <string name="brave_new_tab_private_header">これはプライベートタブです</string>
+    <string name="brave_new_tab_private_message">プライベートタブで訪れたサイトはローカルに保存されませんが、ISPや雇用主、又は訪れたサイトに対して、あなたを匿名に保ったり、身元が分からない状態にはしません。</string>
+
 </resources>

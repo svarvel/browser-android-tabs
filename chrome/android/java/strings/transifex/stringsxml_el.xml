@@ -95,4 +95,18 @@ HTTPS</string>
     <string name="open_pages_in_custom_tabs_title">Άνοιξε καρτέλες στις Προσαρμοσμένες Καρτέλες</string>
     <string name="open_pages_in_custom_tabs_summary">Προσφερθείτε να ανοίγετε καρτέλες στις Προσαρμοσμένες Καρτέλες</string>
 
+    <string name="ddg_offer_title">Ιδιωτική αναζήτηση με το DuckDuckGo;</string>
+    <string name="ddg_offer_text">Με την ιδιωτική αναζήτηση, το Brave θα χρησιμοποιήσει το DuckDuckGo για να απαντήσει στις αναζητήσεις σας όσο βρίσκεστε σ\' αυτήν την ιδιωτική καρτέλα. Το DuckDuckGo είναι μια μηχανή αναζήτησης που δεν παρακολουθεί το ιστορικό αναζήτησής σας, δίνοντάς σας τη δυνατότητα να κάνετε ιδιωτική αναζήτηση.</string>
+    <string name="ddg_offer_positive">Ναι</string>
+    <string name="ddg_offer_negative">Όχι</string>
+    <string name="ddg_offer_link">Μάθετε σχετικά με την ιδιωτική αναζήτηση με το DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Κανονική Καρτέλα</string>
+    <string name="prefs_private_search_engine">Ιδιωτική Καρτέλα</string>
+
+    <string name="brave_open_in_private_tab">Ανοίξτε σε ιδιωτική καρτέλα</string>
+    <string name="brave_close_all_private_tabs">Κλείστε ιδιωτικές καρτέλες</string>
+    <string name="brave_new_private_tab">Νέα ιδιωτική καρτέλα</string>
+    <string name="brave_new_tab_private_header">Αυτή είναι μια Ιδιωτική Καρτέλα</string>
+    <string name="brave_new_tab_private_message">Αν και οι ιστότοποι που επισκέπτεστε σε ιδιωτικές καρτέλες δεν αποθηκεύονται τοπικά, δεν σας κάνουν ανώνυμους ή αόρατους στον ISP σας, στον εργοδότη σας ή στους ιστότοπους που επισκέπτεστε.</string>
+
 </resources>

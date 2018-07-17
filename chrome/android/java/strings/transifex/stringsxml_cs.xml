@@ -89,4 +89,18 @@ Uložen</string>
     <string name="open_pages_in_custom_tabs_title">Otevřít karty ve Vlastních kartách</string>
     <string name="open_pages_in_custom_tabs_summary">Nabídnout otevření ve Vlastních kartách</string>
 
+    <string name="ddg_offer_title">Soukromé vyhledávání ve vyhledávači DuckDuckGo? </string>
+    <string name="ddg_offer_text">Díky soukromému vyhledávání Brave použije vyhledávač DuckDuckGo k odpovědi na vaše vyhledávání, zatímco budete na této soukromé kartě. DuckDuckGo je vyhledávač, který nezaznamenává vaši historii vyhledávání a umožní vám vyhledávat v anonymitě.</string>
+    <string name="ddg_offer_positive">Ano</string>
+    <string name="ddg_offer_negative">Ne</string>
+    <string name="ddg_offer_link">Zjistěte více o soukromém vyhledávání s vyhledávačem DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standardní karta </string>
+    <string name="prefs_private_search_engine">Soukromá karta</string>
+
+    <string name="brave_open_in_private_tab">Otevřít v soukromé kartě</string>
+    <string name="brave_close_all_private_tabs">Zavřít soukromé karty</string>
+    <string name="brave_new_private_tab">Nová soukromá karta</string>
+    <string name="brave_new_tab_private_header">Toto je soukromá karta </string>
+    <string name="brave_new_tab_private_message">Přestože stránky, které jste navštívili v anonymním okně, nejsou ukládány lokálně, nezaručují vám anonymitu ani neviditelnost u vašeho poskytovatele internetu, zaměstnavatele ani navštěvovaných stránek.</string>
+
 </resources>

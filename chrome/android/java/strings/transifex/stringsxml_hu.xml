@@ -96,4 +96,18 @@ idő</string>
     <string name="open_pages_in_custom_tabs_title">Fülek nyitása Egyedi Fülekben</string>
     <string name="open_pages_in_custom_tabs_summary">Ajánlat fülek megnyitására az Egyedi Fülekben</string>
 
+    <string name="ddg_offer_title">Privát keresés a DuckGoGo-val?</string>
+    <string name="ddg_offer_text">Privát kereséssel a Brave a DuckGoGo segítségével szolgáltat választ kereséseidre, miközben ezt a privát fület használod. A DuckGoGo egy olyan keresőmotor, amely nem követi keresési előzményeidet, lehetővé téve, hogy titokban végezz kereséseket.</string>
+    <string name="ddg_offer_positive">Igen</string>
+    <string name="ddg_offer_negative">Nem</string>
+    <string name="ddg_offer_link">Tudj meg többet a privát keresésről a DuckGoGo-val</string>
+    <string name="prefs_standard_search_engine">Szabványos fül</string>
+    <string name="prefs_private_search_engine">Privát Fül</string>
+
+    <string name="brave_open_in_private_tab">Megnyitás privát fülben</string>
+    <string name="brave_close_all_private_tabs">Privát fülek bezárása</string>
+    <string name="brave_new_private_tab">Új privát fül</string>
+    <string name="brave_new_tab_private_header">Ez egy Privát Fül</string>
+    <string name="brave_new_tab_private_message">Bár a privát fülekben felkeresett oldalak helyileg nem mentődnek el, nem garantálják a névtelenséget vagy láthatatlanságot ISP-d, alkalmazód vagy a felkeresett oldalak előtt.</string>
+
 </resources>

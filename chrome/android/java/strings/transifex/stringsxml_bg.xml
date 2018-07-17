@@ -89,4 +89,18 @@
     <string name="open_pages_in_custom_tabs_title">Отворете разделите в Персонализирани Раздели</string>
     <string name="open_pages_in_custom_tabs_summary">Предложение за отваряне на разделите в Персонализирани Раздели</string>
 
+    <string name="ddg_offer_title">Поверително търсене с DuckDuckGo?</string>
+    <string name="ddg_offer_text">С поверително търсене Brave ще използва DuckDuckGo, за да отговаря на вашите търсения, докато сте в този поверителен раздел. DuckDuckGo е търсачка, която не проследява историята на търсенията ви, като ви дава възможност да търсите поверително.</string>
+    <string name="ddg_offer_positive">Да</string>
+    <string name="ddg_offer_negative">Не</string>
+    <string name="ddg_offer_link">Научете за поверителното търсене с DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Стандартен раздел</string>
+    <string name="prefs_private_search_engine">Поверителен раздел</string>
+
+    <string name="brave_open_in_private_tab">Отвори в поверителен раздел</string>
+    <string name="brave_close_all_private_tabs">Затваряне на поверителни раздели</string>
+    <string name="brave_new_private_tab">Нов поверителен раздел</string>
+    <string name="brave_new_tab_private_header">Това е поверителен раздел</string>
+    <string name="brave_new_tab_private_message">Въпреки че сайтовете, които посещавате в поверителните раздели, не се запазват локално, те не ви правят анонимни или невидими за вашия интернет доставчик, работодател или за сайтовете, които посещавате.</string>
+
 </resources>

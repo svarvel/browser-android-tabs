@@ -96,4 +96,18 @@ Sačuvano</string>
     <string name="open_pages_in_custom_tabs_title">Otvoriti kartice u Prilagođenim karticama</string>
     <string name="open_pages_in_custom_tabs_summary">Ponuda da se otvore kartice u Prilagođenim karticama</string>
 
+    <string name="ddg_offer_title">Privatna pretraga sa DuckDuckGo?</string>
+    <string name="ddg_offer_text">U privatnoj pretrazi, Brave će koristiti DuckDuckGo da odgovori na vaše pretrage dok ste na ovoj privatnoj kartici. DuckDuckGo je pretraživač koji ne prati istoriju vaše pretrage, omogućavajući vam da pretražujete uz privatnost.</string>
+    <string name="ddg_offer_positive">Da</string>
+    <string name="ddg_offer_negative">Ne</string>
+    <string name="ddg_offer_link">Saznajte o privatnoj pretrazi sa DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standardna kartica</string>
+    <string name="prefs_private_search_engine">Privatna kartica</string>
+
+    <string name="brave_open_in_private_tab">Otvorite na privatnoj kartici</string>
+    <string name="brave_close_all_private_tabs">Zatvori privatne kartice</string>
+    <string name="brave_new_private_tab">Nova privatna kartica</string>
+    <string name="brave_new_tab_private_header">Ovo je privatna kartica</string>
+    <string name="brave_new_tab_private_message">Iako se lokacije koje posećujete na privatnim karticama ne čuvaju lokalno, to vas ne čini anonimnim ili nevidljivim za vaš ISP, vašeg poslodavca, ili za lokacije koje posećujete.</string>
+
 </resources>

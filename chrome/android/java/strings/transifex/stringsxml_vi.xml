@@ -95,4 +95,18 @@ HTTPS</string>
     <string name="open_pages_in_custom_tabs_title">Mở các tab trong mục Tùy chỉnh Tab</string>
     <string name="open_pages_in_custom_tabs_summary">Đề xuất mở các tab trong mục Tùy chỉnh Tab</string>
 
+    <string name="ddg_offer_title">Tìm kiếm riêng tư với DuckDuckGo?</string>
+    <string name="ddg_offer_text">Với chức năng tìm kiếm riêng tư, Brave sẽ sử dụng DuckDuckGo để trả lời các tìm kiếm của bạn trong khi bạn đang ở trong tab riêng tư này. DuckDuckGo là một công cụ tìm kiếm không theo dõi lịch sử tìm kiếm của bạn, cho phép bạn tìm kiếm một cách riêng tư.</string>
+    <string name="ddg_offer_positive">Vâng</string>
+    <string name="ddg_offer_negative">Không</string>
+    <string name="ddg_offer_link">Tìm hiểu về công cụ tìm kiếm riêng tư với DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Tab chuẩn</string>
+    <string name="prefs_private_search_engine">Tab riêng tư</string>
+
+    <string name="brave_open_in_private_tab">Mở trong tab riêng tư</string>
+    <string name="brave_close_all_private_tabs">Đóng các tab riêng tư</string>
+    <string name="brave_new_private_tab">Tab riêng tư mới</string>
+    <string name="brave_new_tab_private_header">Đây là một tab riêng tư</string>
+    <string name="brave_new_tab_private_message">Mặc dù các trang web bạn truy cập trong các tab riêng tư không được lưu cục bộ, chúng không giúp bạn ẩn danh hoặc vô hình với ISP (Nhà cung cấp dịch vụ Internet) hay nhà tuyển dụng của bạn hoặc các trang web mà bạn đang truy cập.</string>
+
 </resources>

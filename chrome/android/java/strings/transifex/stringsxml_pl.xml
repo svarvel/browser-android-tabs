@@ -95,4 +95,18 @@ zaoszczędzony czas</string>
     <string name="open_pages_in_custom_tabs_title">Otwórz zakładki w Zakładkach Własnych</string>
     <string name="open_pages_in_custom_tabs_summary">Oferuj otwarcie zakładek w Zakładkach Własnych</string>
 
+    <string name="ddg_offer_title">Prywatne wyszukiwanie dzięki DuckDuckGo?</string>
+    <string name="ddg_offer_text">W prywatnym wyszukiwaniu Brave będzie używać DuckDuckGo, aby odpowiedzieć na twoje zapytania podczas przebywania w prywatnej karcie. DuckDuckGo to wyszukiwarka internetowa, która nie śledzi twojej historii wyszukiwania i pozwala ci na prywatność.</string>
+    <string name="ddg_offer_positive">Tak</string>
+    <string name="ddg_offer_negative">Nie</string>
+    <string name="ddg_offer_link">Dowiedz się więcej o prywatnym wyszukiwaniu za pomocą DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standardowa karta</string>
+    <string name="prefs_private_search_engine">Prywatna karta</string>
+
+    <string name="brave_open_in_private_tab">Otwórz w prywatnej karcie</string>
+    <string name="brave_close_all_private_tabs">Zamknij prywatne karty</string>
+    <string name="brave_new_private_tab">Nowa prywatna karta</string>
+    <string name="brave_new_tab_private_header">To jest prywatna karta</string>
+    <string name="brave_new_tab_private_message">Pomimo że strony, które odwiedzasz w prywatnej karcie nie są zapisywane lokalnie, nie czyni cię to ani anonimowym ani niewidocznym względem dostawcy usług internetowych, twojego pracodawcy lub stron, które odwiedzasz.</string>
+
 </resources>

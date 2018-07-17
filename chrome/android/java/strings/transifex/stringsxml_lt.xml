@@ -81,4 +81,13 @@ maždaug laiko</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Įjungta</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Išjungta</string>
     <string name="close_tabs_on_exit_title">Išeinant, užverti korteles</string>
+    <string name="ddg_offer_positive">Taip</string>
+    <string name="ddg_offer_negative">Ne</string>
+    <string name="prefs_standard_search_engine">Standartinė kortelė</string>
+    <string name="prefs_private_search_engine">Privati kortelė</string>
+
+    <string name="brave_open_in_private_tab">Atverti privačioje kortelėje</string>
+    <string name="brave_close_all_private_tabs">Užverti privačias korteles</string>
+    <string name="brave_new_private_tab">Nauja privati kortelė</string>
+    <string name="brave_new_tab_private_header">Tai yra privati kortelė</string>
     </resources>

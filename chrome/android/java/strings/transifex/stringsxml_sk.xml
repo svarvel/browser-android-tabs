@@ -96,4 +96,18 @@ ušetrený čas</string>
     <string name="open_pages_in_custom_tabs_title">Otvárať karty v položke Vlastné karty</string>
     <string name="open_pages_in_custom_tabs_summary">Ponuka otvárať karty v položke Vlastné karty</string>
 
+    <string name="ddg_offer_title">Prejsť na súkromné vyhľadávanie cez DuckDuckGo?</string>
+    <string name="ddg_offer_text">Kým ste na tejto súkromnej karte, Brave použije pre Vaše vyhľadávania DuckDuckGo. DuckDuckGo je vyhľadávací nástroj, ktorý nesleduje Vašu históriu vyhľadávania, a umožňuje Vám tak vyhľadávať v súkromí.</string>
+    <string name="ddg_offer_positive">Áno</string>
+    <string name="ddg_offer_negative">Nie</string>
+    <string name="ddg_offer_link">Zistite viac o súkromnom vyhľadávaní cez DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Štandardná karta</string>
+    <string name="prefs_private_search_engine">Súkromná karta</string>
+
+    <string name="brave_open_in_private_tab">Otvoriť na súkromnej karte</string>
+    <string name="brave_close_all_private_tabs">Zavrieť súkromné karty</string>
+    <string name="brave_new_private_tab">Nová súkromná karta</string>
+    <string name="brave_new_tab_private_header">Toto je súkromná karta</string>
+    <string name="brave_new_tab_private_message">Aj napriek tomu, že stránky, ktoré navštevujete na súkromných kartách, sa lokálne neukladajú, Vaša aktivita je stále viditeľná pre Vášho zamestnávateľa, poskytovateľa internetového pripojenia alebo vlastníkov navštevovaných stránok.</string>
+
 </resources>
