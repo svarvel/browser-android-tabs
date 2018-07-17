@@ -96,4 +96,18 @@ Risparmiato</string>
     <string name="open_pages_in_custom_tabs_title">Apri le schede in Schede personalizzate</string>
     <string name="open_pages_in_custom_tabs_summary">Offri di aprire le schede in Schede personalizzate</string>
 
+    <string name="ddg_offer_title">Ricerca privata con DuckDuckGo?</string>
+    <string name="ddg_offer_text">Con la ricerca privata, Brave utilizzerà DuckDuckgo per effettuare le tue ricerche mentre sei in questa scheda privata. DuckDuckGo è un motore di ricerca che non traccia la tua cronologia di ricerca, permettendoti di fare ricerche in modo privato.</string>
+    <string name="ddg_offer_positive">Sì</string>
+    <string name="ddg_offer_negative">No</string>
+    <string name="ddg_offer_link">Scopri la ricerca privata con DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Scheda Standard</string>
+    <string name="prefs_private_search_engine">Scheda Privata</string>
+
+    <string name="brave_open_in_private_tab">Apri in scheda privata</string>
+    <string name="brave_close_all_private_tabs">Chiudi schede private</string>
+    <string name="brave_new_private_tab">Nuova scheda privata</string>
+    <string name="brave_new_tab_private_header">Questa è una Scheda Privata</string>
+    <string name="brave_new_tab_private_message">Anche se i siti visitati in schede private non vengono salvati localmente, ciò non ti rende anonimo o invisibile al tuo ISP, al tuo datore di lavoro o ai siti che stai visitando.</string>
+
 </resources>

@@ -91,4 +91,18 @@ Guardado</string>
     <string name="open_pages_in_custom_tabs_title">Abrir separadores em Custom Tabs</string>
     <string name="open_pages_in_custom_tabs_summary">Oferta para abrir separadores em Custom Tabs</string>
 
+    <string name="ddg_offer_title">Pesquisar de forma privada com o DuckDuckGo?</string>
+    <string name="ddg_offer_text">Com a pesquisa privada, o Brave usará o DuckDuckGo para apresentar os resultados das suas pesquisas enquanto estiver neste separador privado. O DuckDuckGo é um motor de pesquisa que não monitoriza o seu histórico de pesquisas, permitindo-lhe pesquisar de forma privada.</string>
+    <string name="ddg_offer_positive">Sim</string>
+    <string name="ddg_offer_negative">Não</string>
+    <string name="ddg_offer_link">Saiba mais sobre a pesquisa privada com o DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Separador Normal</string>
+    <string name="prefs_private_search_engine">Separador Privado</string>
+
+    <string name="brave_open_in_private_tab">Abrir num separador privado</string>
+    <string name="brave_close_all_private_tabs">Fechar separadores privados</string>
+    <string name="brave_new_private_tab">Novo separador privado</string>
+    <string name="brave_new_tab_private_header">Este é um Separador Privado</string>
+    <string name="brave_new_tab_private_message">Apesar dos sítios que visita nos separadores privados não ficarem guardados localmente, os separadores privados não asseguram o seu anonimato e não o tornam invisível em relação ao seu ISP (fornecedor de Internet), ao seu empregador, ou em relação aos próprios sítios que visita.</string>
+
 </resources>

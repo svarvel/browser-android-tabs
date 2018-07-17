@@ -28,7 +28,7 @@
 
     <string name="ad_block_regional_summary_no_list">Geen extra lijsten beschikbaar voor uw lokale</string>
 
-    <string name="menu_exit">Uitgang</string>
+    <string name="menu_exit">Afsluiten</string>
 
     <string name="brave_sync">Brave Sync</string>
     <string name="brave_sync_description">Synchroniseer browserdata tussen jouw apparaat op een
@@ -89,10 +89,24 @@ Opgeslagen</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Uitgeschakeld</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Indien ingeschakeld, worden video\'s afgespeeld in Brave in plaats van in de betreffende app</string>
 
-    <string name="close_tabs_on_exit_title">Sluit tabs bij weggaan af</string>
+    <string name="close_tabs_on_exit_title">Sluit tabs bij afsluiten</string>
     <string name="close_tabs_on_exit_summary">Laat tabs tussen browsersessies niet openstaan</string>
 
     <string name="open_pages_in_custom_tabs_title">Open tabbladen in Aangepaste tabbladen</string>
     <string name="open_pages_in_custom_tabs_summary">Aanbieden om tabbladen in Aangepaste tabbladen te openen</string>
+
+    <string name="ddg_offer_title">Privé zoeken met DuckDuckGo?</string>
+    <string name="ddg_offer_text">Voor privézoekopdrachten maakt Brave gebruik van DuckDuckGo om een antwoord op je zoekopdrachten te geven terwijl je je in het privétabblad bevindt. DuckDuckGo is een zoekmachine die je zoekgeschiedenis niet bijhoudt, waardoor je privé kunt zoeken.</string>
+    <string name="ddg_offer_positive">Ja</string>
+    <string name="ddg_offer_negative">Nee</string>
+    <string name="ddg_offer_link">Lees meer over privézoekopdrachten met DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standaardtabblad</string>
+    <string name="prefs_private_search_engine">Privétabblad</string>
+
+    <string name="brave_open_in_private_tab">Openen in privétabblad</string>
+    <string name="brave_close_all_private_tabs">Sluit privétabbladen</string>
+    <string name="brave_new_private_tab">Nieuw privétabblad</string>
+    <string name="brave_new_tab_private_header">Dit is een privétabblad</string>
+    <string name="brave_new_tab_private_message">Alhoewel de websites die je via een privétabblad bezoekt niet lokaal worden opgeslagen, maken ze je niet anoniem of onzichtbaar voor je ISP, werkgever, of andere websites die je bezoekt.</string>
 
 </resources>

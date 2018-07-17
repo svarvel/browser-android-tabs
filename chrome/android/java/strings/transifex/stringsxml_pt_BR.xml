@@ -95,4 +95,18 @@ Salvo</string>
     <string name="open_pages_in_custom_tabs_title">Abrir abas em Abas Personalizadas</string>
     <string name="open_pages_in_custom_tabs_summary">Oferta para abrir abas em Abas Personalizadas</string>
 
+    <string name="ddg_offer_title">Pesquisa privada com o DuckDuckGo?</string>
+    <string name="ddg_offer_text">Com a pesquisa privada, o Brave vai usar o DuckDuckGo para responder às suas pesquisas enquanto você estiver nessa guia privada. O DuckDuckGo é um mecanismo de pesquisa que não rastreia seu histórico de pesquisa, permitindo que você pesquise com privacidade.</string>
+    <string name="ddg_offer_positive">Sim</string>
+    <string name="ddg_offer_negative">Não</string>
+    <string name="ddg_offer_link">Saiba mais sobre a pesquisa privada com o DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Guia-Padrão</string>
+    <string name="prefs_private_search_engine">Guia Privada</string>
+
+    <string name="brave_open_in_private_tab">Abrir em uma guia privada</string>
+    <string name="brave_close_all_private_tabs">Fechar guias privadas</string>
+    <string name="brave_new_private_tab">Nova guia privada</string>
+    <string name="brave_new_tab_private_header">Esta é uma Guia Privada</string>
+    <string name="brave_new_tab_private_message">Mesmo que os sites que você acessa em guias privadas não sejam salvos localmente, eles não deixam você anônimo ou invisível para seu provedor de internet, seu patrão ou os sites que você está acessando.</string>
+
 </resources>

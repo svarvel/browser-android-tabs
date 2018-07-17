@@ -94,4 +94,18 @@ Tallennettu</string>
     <string name="open_pages_in_custom_tabs_title">Avoimet välilehdet Mukautetuissa Välilehdissä</string>
     <string name="open_pages_in_custom_tabs_summary">Tarjoudu avaamaan välilehtiä Mukautetuissa Väilehdissä</string>
 
+    <string name="ddg_offer_title">Tehdäänkö yksityinen haku DuckDuckGolla?</string>
+    <string name="ddg_offer_text">Yksityishaussa Brave käyttää DuckDuckGota vastaamaan hakuihisi, kun olet tällä yksityisellä välilehdellä. DuckDuckGo on hakukone, joka ei seuraa hakuhistoriaasi, joten voit tehdä hakuja yksityisesti.</string>
+    <string name="ddg_offer_positive">Kyllä</string>
+    <string name="ddg_offer_negative">Ei</string>
+    <string name="ddg_offer_link">Lue lisää DuckDuckGon yksityisestä hausta</string>
+    <string name="prefs_standard_search_engine">Normaali välilehti</string>
+    <string name="prefs_private_search_engine">Yksityinen välilehti</string>
+
+    <string name="brave_open_in_private_tab">Avaa yksityisessä välilehdessä</string>
+    <string name="brave_close_all_private_tabs">Sulje yksityiset välilehdet</string>
+    <string name="brave_new_private_tab">Uusi yksityinen välilehti</string>
+    <string name="brave_new_tab_private_header">Tämä on yksityinen välilehti</string>
+    <string name="brave_new_tab_private_message">Vaikka sivustoja, joilla vierailemiseen käytät yksityisiä välilehtiä, ei tallennetakaan paikallisesti, et kuitenkaan ole anonyymi tai näkymätön Internet-palveluntarjoajallesi, työnantajallesi tai vierailemillesi sivustoille.</string>
+
 </resources>

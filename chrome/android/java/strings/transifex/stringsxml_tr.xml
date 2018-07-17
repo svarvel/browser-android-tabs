@@ -95,4 +95,18 @@ Kaydedildi</string>
     <string name="open_pages_in_custom_tabs_title">Sekmeleri Özel Sekmelerde Açın</string>
     <string name="open_pages_in_custom_tabs_summary">Sekmeleri Özel Sekmelerde açma teklifi</string>
 
+    <string name="ddg_offer_title">DuckDuckGo ile gizli arama yapılsın mı?</string>
+    <string name="ddg_offer_text">Gizli arama özelliği kullanıldığında Brave, bu gizli sekmede yaptığınız aramaları yanıtlamak için DuckDuckGo\'yu kullanır. DuckDuckGo, arama geçmişinizi takip etmeyen ve gizli şekilde arama yapmanızı sağlayan bir arama motorudur.</string>
+    <string name="ddg_offer_positive">Evet</string>
+    <string name="ddg_offer_negative">Hayır</string>
+    <string name="ddg_offer_link">DuckDuckGo ile gizli arama yapma hakkında bilgi edinin</string>
+    <string name="prefs_standard_search_engine">Standart Sekme</string>
+    <string name="prefs_private_search_engine">Gizli Sekme</string>
+
+    <string name="brave_open_in_private_tab">Gizli sekmede aç</string>
+    <string name="brave_close_all_private_tabs">Gizli sekmeleri kapat</string>
+    <string name="brave_new_private_tab">Yeni gizli sekme</string>
+    <string name="brave_new_tab_private_header">Bu bir Gizli Sekme</string>
+    <string name="brave_new_tab_private_message">Gizli sekmelerde ziyaret ettiğiniz siteler yerel olarak kaydedilmese de anonim olarak kalmazsınız ve bu siteler internet servis sağlayıcınız, işvereniniz veya ziyaret ettiğiniz siteler tarafından görülebilir.</string>
+
 </resources>
