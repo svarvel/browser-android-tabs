@@ -14,10 +14,6 @@
 #include "web_contents.h"
 #include "content/public/common/favicon_url.h"
 
-void WebSiteWasHidden(IOThread* io_thread, const std::string& url, uint64_t duration) {
-  //io_thread->globals()->ledger_->SaveVisit(url, duration, false);
-}
-
 void FavIconUpdated(IOThread* io_thread, const std::string& url, const std::string& favicon_url) {
   //io_thread->globals()->ledger_->favIconUpdated(url, favicon_url);
 }
@@ -44,39 +40,18 @@ void WebContentsLedgerObserver::OnVisibilityChanged(Visibility visibility) {
       return;
     }
 
-    //
     brave_rewards::BraveRewardsService* brave_rewards_service =
       BraveRewardsServiceFactory::GetForProfile(
         ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
 
     if (brave_rewards_service) {
       LOG(ERROR) << "!!!brave_rewards_service == " << brave_rewards_service;
+      brave_rewards_service->SaveVisit(current_domain_,
+        (web_contents_->GetLastHiddenTime().since_origin() - last_active_time_.since_origin()).InMilliseconds(),
+        false);
     }
-    //
-
-    content::BrowserThread::PostTask(
-        content::BrowserThread::IO, FROM_HERE,
-        base::Bind(&WebSiteWasHidden, g_browser_process->io_thread(), current_domain_,
-      (web_contents_->GetLastHiddenTime().since_origin() - last_active_time_.since_origin()).InMilliseconds()));
   }
 }
-
-/*void WebContentsLedgerObserver::WasShown() {
-  if (web_contents_->GetLastCommittedURL().is_valid() && web_contents_->GetLastCommittedURL().SchemeIsHTTPOrHTTPS()) {
-    current_domain_ = web_contents_->GetLastCommittedURL().host();
-  }
-  last_active_time_ = web_contents_->GetLastActiveTime();
-}
-
-void WebContentsLedgerObserver::WasHidden() {
-  if (current_domain_.empty()) {
-    return;
-  }
-  content::BrowserThread::PostTask(
-      content::BrowserThread::IO, FROM_HERE,
-      base::Bind(&WebSiteWasHidden, g_browser_process->io_thread(), current_domain_,
-    (web_contents_->GetLastHiddenTime().since_origin() - last_active_time_.since_origin()).InMilliseconds()));
-}*/
 
 void WebContentsLedgerObserver::WebContentsDestroyed() {
   is_being_destroyed_ = true;

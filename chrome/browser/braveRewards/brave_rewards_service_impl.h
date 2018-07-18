@@ -44,6 +44,9 @@ public:
   void Shutdown() override;
  
   void CreateWallet() override;
+  void SaveVisit(const std::string& publisher,
+                 uint64_t duration,
+                 bool ignoreMinTime) override;
  
 private:
   typedef base::Callback<void(int, const std::string&)> FetchCallback;
