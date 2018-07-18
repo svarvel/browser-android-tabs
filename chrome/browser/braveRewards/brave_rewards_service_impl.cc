@@ -110,6 +110,12 @@ void BraveRewardsServiceImpl::CreateWallet() {
   created_wallet = true;
 }
 
+void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
+                 uint64_t duration,
+                 bool ignoreMinTime) {
+  ledger_->SaveVisit(publisher, duration, ignoreMinTime);
+}
+
 std::string BraveRewardsServiceImpl::GenerateGUID() const {
   return base::GenerateGUID();
 }

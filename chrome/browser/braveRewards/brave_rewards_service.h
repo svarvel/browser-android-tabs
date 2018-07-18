@@ -22,6 +22,9 @@ public:
   void Shutdown() override;
 
   virtual void CreateWallet() = 0;
+  virtual void SaveVisit(const std::string& publisher,
+                 uint64_t duration,
+                 bool ignoreMinTime) = 0;
 
   void AddObserver(BraveRewardsServiceObserver* observer);
   void RemoveObserver(BraveRewardsServiceObserver* observer);
