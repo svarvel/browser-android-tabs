@@ -1,12 +1,12 @@
  /* This Source Code Form is subject to the terms of the Mozilla Public
   * License, v. 2.0. If a copy of the MPL was not distributed with this file,
   * You can obtain one at http://mozilla.org/MPL/2.0/. */
- 
+
  #ifndef BRAVE_REWARDS_SERVICE_IMPL_
  #define BRAVE_REWARDS_SERVICE_IMPL_
- 
+
  #include <memory>
- 
+
 #include "base/files/file_path.h"
 #include "base/observer_list.h"
 #include "base/memory/weak_ptr.h"
@@ -14,7 +14,7 @@
 #include "brave_rewards_service.h"
 #include "content/public/browser/browser_thread.h"
 #include "net/url_request/url_fetcher_delegate.h"
- 
+
 namespace base {
 class SequencedTaskRunner;
 }
@@ -27,11 +27,11 @@ class LedgerCallbackHandler;
 namespace net {
 class URLFetcher;
 }
- 
+
 class Profile;
 
 namespace brave_rewards {
- 
+
 class BraveRewardsServiceImpl : public BraveRewardsService,
                             public ledger::LedgerClient,
                             public net::URLFetcherDelegate,
@@ -39,15 +39,25 @@ class BraveRewardsServiceImpl : public BraveRewardsService,
 public:
   BraveRewardsServiceImpl(Profile* profile);
   ~BraveRewardsServiceImpl() override;
- 
+
   // KeyedService:
   void Shutdown() override;
- 
+
   void CreateWallet() override;
   void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) override;
- 
+
+  void SetPublisherMinVisitTime(uint64_t duration_in_milliseconds) override;
+  void SetPublisherMinVisits(unsigned int visits) override;
+  void SetPublisherAllowNonVerified(bool allow) override;
+  void SetContributionAmount(double amount) override;
+
+  uint64_t GetPublisherMinVisitTime() const override; // In milliseconds
+  unsigned int GetPublisherMinVisits() const override;
+  bool GetPublisherAllowNonVerified() const override;
+  double GetContributionAmount() const override;
+
 private:
   typedef base::Callback<void(int, const std::string&)> FetchCallback;
 
@@ -92,10 +102,10 @@ private:
   const base::FilePath publisher_state_path_;
 
   std::map<const net::URLFetcher*, FetchCallback> fetchers_;
- 
+
   DISALLOW_COPY_AND_ASSIGN(BraveRewardsServiceImpl);
 };
 
 }  // namespace brave_rewards
- 
+
 #endif  // BRAVE_REWARDS_SERVICE_IMPL_

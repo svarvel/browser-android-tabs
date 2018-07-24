@@ -116,6 +116,40 @@ void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
   ledger_->SaveVisit(publisher, duration, ignoreMinTime);
 }
 
+
+void BraveRewardsServiceImpl::SetPublisherMinVisitTime(uint64_t duration_in_milliseconds) {
+  ledger_->SetPublisherMinVisitTime(duration_in_milliseconds);
+}
+
+void BraveRewardsServiceImpl::SetPublisherMinVisits(unsigned int visits) {
+  ledger_->SetPublisherMinVisits(visits);
+}
+
+void BraveRewardsServiceImpl::SetPublisherAllowNonVerified(bool allow) {
+  ledger_->SetPublisherAllowNonVerified(allow);
+}
+
+void BraveRewardsServiceImpl::SetContributionAmount(double amount) {
+  ledger_->SetContributionAmount(amount);
+}
+
+uint64_t BraveRewardsServiceImpl::GetPublisherMinVisitTime() const {
+  return ledger_->GetPublisherMinVisitTime();
+}
+
+unsigned int BraveRewardsServiceImpl::GetPublisherMinVisits() const {
+  return ledger_->GetPublisherMinVisits();
+}
+
+bool BraveRewardsServiceImpl::GetPublisherAllowNonVerified() const {
+  return ledger_->GetPublisherAllowNonVerified();
+}
+
+double BraveRewardsServiceImpl::GetContributionAmount() const {
+  return ledger_->GetContributionAmount();
+}
+
+
 std::string BraveRewardsServiceImpl::GenerateGUID() const {
   return base::GenerateGUID();
 }
