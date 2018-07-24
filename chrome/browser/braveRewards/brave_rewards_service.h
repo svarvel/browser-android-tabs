@@ -26,6 +26,16 @@ public:
                  uint64_t duration,
                  bool ignoreMinTime) = 0;
 
+  virtual void SetPublisherMinVisitTime(uint64_t duration_in_milliseconds) = 0;
+  virtual void SetPublisherMinVisits(unsigned int visits) = 0;
+  virtual void SetPublisherAllowNonVerified(bool allow) = 0;
+  virtual void SetContributionAmount(double amount) = 0;
+
+  virtual uint64_t GetPublisherMinVisitTime() const = 0; // In milliseconds
+  virtual unsigned int GetPublisherMinVisits() const = 0;
+  virtual bool GetPublisherAllowNonVerified() const = 0;
+  virtual double GetContributionAmount() const = 0;
+
   void AddObserver(BraveRewardsServiceObserver* observer);
   void RemoveObserver(BraveRewardsServiceObserver* observer);
 

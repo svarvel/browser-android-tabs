@@ -53,6 +53,17 @@ class RewardsDOMHandler : public WebUIMessageHandler {
   // Callback for the "createWallet" message.
   void HandleCreateWallet(const base::ListValue* args);
 
+  void HandleSetPublisherMinVisitTime(const base::ListValue* args);
+  void HandleGetPublisherMinVisitTime(const base::ListValue* args);
+
+  void HandleSetPublisherMinVisits(const base::ListValue* args);
+  void HandleGetPublisherMinVisits(const base::ListValue* args);
+
+  void HandleSetPublisherAllowNonVerified(const base::ListValue* args);
+  void HandleGetPublisherAllowNonVerified(const base::ListValue* args);
+
+  void HandleSetContributionAmount(const base::ListValue* args);
+  void HandleGetContributionAmount(const base::ListValue* args);
  private:
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
@@ -63,6 +74,46 @@ void RewardsDOMHandler::RegisterMessages() {
       "createWallet",
       base::BindRepeating(&RewardsDOMHandler::HandleCreateWallet,
                           base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "setpublisherminvisittime",
+    base::BindRepeating(&RewardsDOMHandler::HandleSetPublisherMinVisitTime,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "getpublisherminvisittime",
+    base::BindRepeating(&RewardsDOMHandler::HandleGetPublisherMinVisitTime,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "setpublisherminvisits",
+    base::BindRepeating(&RewardsDOMHandler::HandleSetPublisherMinVisits,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "getpublisherminvisits",
+    base::BindRepeating(&RewardsDOMHandler::HandleGetPublisherMinVisits,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "setpublisherallownonverified",
+    base::BindRepeating(&RewardsDOMHandler::HandleSetPublisherAllowNonVerified,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "getpublisherallownonverified",
+    base::BindRepeating(&RewardsDOMHandler::HandleGetPublisherAllowNonVerified,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "setcontributionamount",
+    base::BindRepeating(&RewardsDOMHandler::HandleSetContributionAmount,
+      base::Unretained(this)));
+
+  web_ui()->RegisterMessageCallback(
+    "getcontributionamount",
+    base::BindRepeating(&RewardsDOMHandler::HandleGetContributionAmount,
+      base::Unretained(this)));
 }
 
 
@@ -90,6 +141,154 @@ void RewardsDOMHandler::HandleCreateWallet(
 
   about_flags::SetFeatureEntryEnabled(flags_storage_.get(), entry_internal_name,
                                       enable_str == "true");*/
+}
+
+
+void RewardsDOMHandler::HandleSetPublisherMinVisitTime(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleSetPublisherMinVisitTime";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    std::string value_str;
+    uint64_t value = -1;
+    if ( !args->GetString(0, &value_str) || !base::StringToUint64(value_str, &value)) {
+      LOG(ERROR) << "Failed to extract HandleSetPublisherMinVisitTime value.";
+      return;
+    }
+    else{
+      brave_rewards_service->SetPublisherMinVisitTime(value);
+    }
+  }
+}
+
+void RewardsDOMHandler::HandleGetPublisherMinVisitTime(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleGetPublisherMinVisitTime";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    uint64_t value = brave_rewards_service->GetPublisherMinVisitTime();
+
+    //base::Value doesn't accept uint64_t type
+    base::Value v( (int)value);
+    web_ui()->CallJavascriptFunctionUnsafe("returnPublisherMinVisitTime", v);
+  }
+}
+
+void RewardsDOMHandler::HandleSetPublisherMinVisits(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleSetPublisherMinVisits";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    std::string value_str;
+    unsigned int value = -1;
+    if (!args->GetString(0, &value_str) || !base::StringToUint(value_str, &value)) {
+      LOG(ERROR) << "Failed to extract HandleSetPublisherMinVisits value.";
+      return;
+    }
+    else {
+      brave_rewards_service->SetPublisherMinVisits(value);
+    }
+  }
+}
+
+void RewardsDOMHandler::HandleGetPublisherMinVisits(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleGetPublisherMinVisits";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    unsigned int value = brave_rewards_service->GetPublisherMinVisits();
+
+    //base::Value doesn't accept unsigned int type
+    base::Value v((int)value);
+    web_ui()->CallJavascriptFunctionUnsafe("returnPublisherMinVisits", v);
+  }
+}
+
+void RewardsDOMHandler::HandleSetPublisherAllowNonVerified(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleSetPublisherAllowNonVerified";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    std::string value_str;
+    if (!args->GetString(0, &value_str) || (value_str != "true" && value_str != "false") ) {
+      LOG(ERROR) << "Failed to extract HandleSetPublisherAllowNonVerified value.";
+      return;
+    }
+    else {
+      brave_rewards_service->SetPublisherAllowNonVerified(value_str == "true" ? true : false);
+    }
+  }
+}
+
+void RewardsDOMHandler::HandleGetPublisherAllowNonVerified(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleGetPublisherAllowNonVerified";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    bool value = brave_rewards_service->GetPublisherAllowNonVerified();
+    base::Value v(value);
+    web_ui()->CallJavascriptFunctionUnsafe("returnPublisherAllowNonVerified", v);
+  }
+}
+
+void RewardsDOMHandler::HandleSetContributionAmount(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleSetContributionAmount";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    std::string value_str;
+    double value = -1.0;
+    if (!args->GetString(0, &value_str) || !base::StringToDouble(value_str, &value)) {
+      LOG(ERROR) << "Failed to extract HandleSetContributionAmount value.";
+      return;
+    }
+    else {
+      brave_rewards_service->SetContributionAmount(value);
+    }
+  }
+}
+
+void RewardsDOMHandler::HandleGetContributionAmount(
+  const base::ListValue* args) {
+  LOG(ERROR) << "!!!HandleGetContributionAmount";
+
+  Profile* profile = Profile::FromWebUI(web_ui());
+  brave_rewards::BraveRewardsService* brave_rewards_service =
+    BraveRewardsServiceFactory::GetForProfile(profile);
+
+  if (brave_rewards_service) {
+    double value = brave_rewards_service->GetContributionAmount();
+    base::Value v(value);
+    web_ui()->CallJavascriptFunctionUnsafe("returnContributionAmount", v);
+  }
 }
 
 }  // namespace
