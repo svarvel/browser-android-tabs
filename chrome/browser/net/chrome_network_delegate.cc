@@ -104,7 +104,7 @@ void ForceGoogleSafeSearchCallbackWrapper(net::CompletionOnceCallback callback,
 // Notifies ledger lib about media links
 void NotifyLedgerIOThread(IOThread* io_thread, const std::string& url, 
       const std::string& urlQuery, const std::string& type, bool privateTab) {
-  io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type/*, privateTab*/);
+  //io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type/*, privateTab*/);
 }
 
 bool IsAccessAllowedInternal(const base::FilePath& path,
