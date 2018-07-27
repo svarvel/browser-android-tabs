@@ -34,6 +34,8 @@ class BraveRewardsServiceFactory : public BrowserContextKeyedServiceFactory {
   content::BrowserContext* GetBrowserContextToUse(
       content::BrowserContext* context) const override;
   bool ServiceIsNULLWhileTesting() const override;
+
+  DISALLOW_COPY_AND_ASSIGN(BraveRewardsServiceFactory);
 };
 
 #endif  // BRAVE_REWARDS_SERVICE_FACTORY_H_

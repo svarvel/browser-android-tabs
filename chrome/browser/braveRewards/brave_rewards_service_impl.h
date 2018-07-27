@@ -32,6 +32,8 @@ class Profile;
 
 namespace brave_rewards {
 
+class PublisherInfoBackend;
+
 class BraveRewardsServiceImpl : public BraveRewardsService,
                             public ledger::LedgerClient,
                             public net::URLFetcherDelegate,
@@ -47,6 +49,7 @@ public:
   void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) override;
+<<<<<<< HEAD
 
   void SetPublisherMinVisitTime(uint64_t duration_in_milliseconds) override;
   void SetPublisherMinVisits(unsigned int visits) override;
@@ -58,6 +61,21 @@ public:
   bool GetPublisherAllowNonVerified() const override;
   double GetContributionAmount() const override;
 
+=======
+  void SavePublisherInfo(std::unique_ptr<ledger::PublisherInfo> publisher_info,
+                 ledger::PublisherInfoCallback callback) override;
+  void LoadPublisherInfo(const ledger::PublisherInfo::id_type& publisher_id,
+                 ledger::PublisherInfoCallback callback) override;
+  void LoadPublisherInfoList(
+      uint32_t start,
+      uint32_t limit,
+      ledger::PublisherInfoFilter filter,
+      ledger::GetPublisherInfoListCallback callback) override;
+  void GetContentSiteList(uint32_t start,
+                          uint32_t limit,
+     const GetContentSiteListCallback& callback) override;
+ 
+>>>>>>> ea31a4df66e... ledger leveldb publishers storage
 private:
   typedef base::Callback<void(int, const std::string&)> FetchCallback;
 
@@ -69,6 +87,15 @@ private:
                              bool success);
   void OnPublisherStateLoaded(ledger::LedgerCallbackHandler* handler,
                               const std::string& data);
+  void OnPublisherInfoSaved(ledger::PublisherInfoCallback callback,
+                            std::unique_ptr<ledger::PublisherInfo> info,
+                            bool success);
+  void OnPublisherInfoLoaded(ledger::PublisherInfoCallback callback,
+                             std::unique_ptr<ledger::PublisherInfo> info);
+  void OnPublisherInfoListLoaded(uint32_t start,
+                                 uint32_t limit,
+                                 ledger::GetPublisherInfoListCallback callback,
+                                 const ledger::PublisherInfoList& list);
 
   void TriggerOnWalletCreated(int error_code);
 
@@ -100,6 +127,8 @@ private:
   const scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
   const base::FilePath ledger_state_path_;
   const base::FilePath publisher_state_path_;
+  const base::FilePath publisher_info_db_path_;
+  std::unique_ptr<PublisherInfoBackend> publisher_info_backend_;
 
   std::map<const net::URLFetcher*, FetchCallback> fetchers_;
 
