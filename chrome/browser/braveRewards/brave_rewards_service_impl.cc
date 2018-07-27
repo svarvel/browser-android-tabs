@@ -13,6 +13,7 @@
 #include "base/threading/sequenced_task_runner_handle.h"
 #include "bat/ledger/ledger.h"
 #include "brave_rewards_service_observer.h"
+#include "publisher_info_backend.h"
 #include "chrome/browser/browser_process_impl.h"
 #include "chrome/browser/profiles/profile.h"
 #include "net/url_request/url_fetcher.h"
@@ -21,6 +22,9 @@
 // TODO, just for test purpose
 static bool created_wallet = false;
 //
+
+using namespace std::placeholders;
+
 
 namespace brave_rewards {
 
@@ -85,6 +89,59 @@ void PostWriteCallback(
                               base::Bind(callback, write_success));
 }
 
+bool SavePublisherInfoOnFileTaskRunner(
+    ledger::PublisherInfo publisher_info,
+    PublisherInfoBackend* backend) {
+  if (backend && backend->Put(publisher_info.id, publisher_info.ToJSON())) {
+    return true;
+  }
+
+  return false;
+}
+
+std::unique_ptr<ledger::PublisherInfo> LoadPublisherInfoOnFileTaskRunner(
+    const std::string& id,
+    PublisherInfoBackend* backend) {
+  std::unique_ptr<ledger::PublisherInfo> info;
+   std::string json;
+  if (backend && backend->Get(id, &json)) {
+    info.reset(
+        new ledger::PublisherInfo(ledger::PublisherInfo::FromJSON(json)));
+  }
+
+  return info;
+}
+
+ledger::PublisherInfoList LoadPublisherInfoListOnFileTaskRunner(
+    uint32_t start,
+    uint32_t limit,
+    ledger::PublisherInfoFilter filter,
+    PublisherInfoBackend* backend) {
+  ledger::PublisherInfoList list;
+   std::vector<const std::string> results;
+  if (backend && backend->Load(start, limit, results)) {
+    for (std::vector<const std::string>::const_iterator it =
+        results.begin(); it != results.end(); ++it) {
+      list.push_back(ledger::PublisherInfo::FromJSON(*it));
+    }
+  }
+   return list;
+}
+
+void GetContentSiteListInternal(
+    uint32_t start,
+    uint32_t limit,
+    const GetContentSiteListCallback& callback,
+    const ledger::PublisherInfoList& publisher_list,
+    uint32_t next_record) {
+  std::unique_ptr<ContentSiteList> site_list(new ContentSiteList);
+  for (ledger::PublisherInfoList::const_iterator it =
+      publisher_list.begin(); it != publisher_list.end(); ++it) {
+    site_list->push_back(PublisherInfoToContentSite(*it));
+  }
+  callback.Run(std::move(site_list), next_record);
+}
+
 static uint64_t next_id = 1;
 
 }  // namespace
@@ -96,10 +153,13 @@ BraveRewardsServiceImpl::BraveRewardsServiceImpl(Profile* profile) :
         {base::MayBlock(), base::TaskPriority::BACKGROUND,
          base::TaskShutdownBehavior::BLOCK_SHUTDOWN})),
     ledger_state_path_(profile_->GetPath().Append("ledger_state")),
-    publisher_state_path_(profile_->GetPath().Append("publisher_state")) {
+    publisher_state_path_(profile_->GetPath().Append("publisher_state")),
+    publisher_info_db_path_(profile->GetPath().Append("publisher_info")),
+    publisher_info_backend_(new PublisherInfoBackend(publisher_info_db_path_)) {
 }
 
 BraveRewardsServiceImpl::~BraveRewardsServiceImpl() {
+  file_task_runner_->DeleteSoon(FROM_HERE, publisher_info_backend_.release());
 }
 
 void BraveRewardsServiceImpl::CreateWallet() {
@@ -113,7 +173,84 @@ void BraveRewardsServiceImpl::CreateWallet() {
 void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) {
-  ledger_->SaveVisit(publisher, duration, ignoreMinTime);
+  ledger::VisitData visit_data(publisher, publisher, "", duration);
+  ledger_->OnVisit(visit_data);
+}
+
+void BraveRewardsServiceImpl::GetContentSiteList(
+    uint32_t start, uint32_t limit,
+    const GetContentSiteListCallback& callback) {
+  ledger_->GetPublisherInfoList(start, limit,
+      ledger::PublisherInfoFilter::DEFAULT,
+      std::bind(&GetContentSiteListInternal,
+                start,
+                limit,
+                std::cref(callback), _1, _2));
+}
+
+void BraveRewardsServiceImpl::SavePublisherInfo(
+    std::unique_ptr<ledger::PublisherInfo> publisher_info,
+    ledger::PublisherInfoCallback callback) {
+  base::PostTaskAndReplyWithResult(file_task_runner_.get(), FROM_HERE,
+      base::Bind(&SavePublisherInfoOnFileTaskRunner,
+                    *publisher_info,
+                    publisher_info_backend_.get()),
+      base::Bind(&BraveRewardsServiceImpl::OnPublisherInfoSaved,
+                     AsWeakPtr(),
+                     callback,
+                     base::Passed(std::move(publisher_info))));
+}
+
+void BraveRewardsServiceImpl::OnPublisherInfoSaved(
+    ledger::PublisherInfoCallback callback,
+    std::unique_ptr<ledger::PublisherInfo> info,
+    bool success) {
+  callback(success ? ledger::Result::OK
+                      : ledger::Result::ERROR, std::move(info));
+}
+
+void BraveRewardsServiceImpl::LoadPublisherInfo(
+    const ledger::PublisherInfo::id_type& publisher_id,
+    ledger::PublisherInfoCallback callback) {
+  base::PostTaskAndReplyWithResult(file_task_runner_.get(), FROM_HERE,
+      base::Bind(&LoadPublisherInfoOnFileTaskRunner,
+          publisher_id, publisher_info_backend_.get()),
+      base::Bind(&BraveRewardsServiceImpl::OnPublisherInfoLoaded,
+                     AsWeakPtr(),
+                     callback));
+}
+
+void BraveRewardsServiceImpl::OnPublisherInfoLoaded(
+    ledger::PublisherInfoCallback callback,
+    std::unique_ptr<ledger::PublisherInfo> info) {
+  callback(ledger::Result::OK, std::move(info));
+}
+
+void BraveRewardsServiceImpl::LoadPublisherInfoList(
+    uint32_t start,
+    uint32_t limit,
+    ledger::PublisherInfoFilter filter,
+    ledger::GetPublisherInfoListCallback callback) {
+  base::PostTaskAndReplyWithResult(file_task_runner_.get(), FROM_HERE,
+      base::Bind(&LoadPublisherInfoListOnFileTaskRunner,
+                    start, limit, filter, publisher_info_backend_.get()),
+      base::Bind(&BraveRewardsServiceImpl::OnPublisherInfoListLoaded,
+                    AsWeakPtr(),
+                    start,
+                    limit,
+                    callback));
+}
+
+void BraveRewardsServiceImpl::OnPublisherInfoListLoaded(
+    uint32_t start,
+    uint32_t limit,
+    ledger::GetPublisherInfoListCallback callback,
+    const ledger::PublisherInfoList& list) {
+  uint32_t next_record = 0;
+  if (list.size() == limit)
+    next_record = start + limit + 1;
+
+  callback(std::cref(list), next_record);
 }
 
 
