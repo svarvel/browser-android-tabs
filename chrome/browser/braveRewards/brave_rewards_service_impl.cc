@@ -173,8 +173,9 @@ void BraveRewardsServiceImpl::CreateWallet() {
 void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) {
-  ledger::VisitData visit_data(publisher, publisher, "", duration);
-  ledger_->OnVisit(visit_data);
+  ledger::VisitData visit_data(publisher, publisher, "", 0);
+  visit_data.duration = duration;
+  //ledger_->OnVisit(visit_data);
 }
 
 void BraveRewardsServiceImpl::GetContentSiteList(
