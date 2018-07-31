@@ -15,8 +15,8 @@
 #include "../../../../third_party/leveldatabase/src/include/leveldb/db.h"
 #include "../../../../third_party/re2/src/re2/re2.h"
 #include "../../../../url/gurl.h"
-#include "TPParser.h"
-#include "ad_block_client.h"
+#include <tracking-protection/TPParser.h>
+#include <ad-block/ad_block_client.h>
 
 #define TP_DATA_FILE                        "TrackingProtectionDownloaded.dat"
 #define ADBLOCK_DATA_FILE                   "ABPFilterParserDataDownloaded.dat"
@@ -28,6 +28,78 @@
 
 namespace net {
 namespace blockers {
+
+    namespace {
+
+        FilterOption ResourceTypeToFilterOption(content::ResourceType resource_type) {
+          FilterOption filter_option = FONoFilterOption;
+          switch(resource_type) {
+            // top level page
+            case content::RESOURCE_TYPE_MAIN_FRAME:
+              filter_option = FODocument;
+              break;
+            // frame or iframe
+            case content::RESOURCE_TYPE_SUB_FRAME:
+              filter_option = FOSubdocument;
+              break;
+            // a CSS stylesheet
+            case content::RESOURCE_TYPE_STYLESHEET:
+              filter_option = FOStylesheet;
+              break;
+            // an external script
+            case content::RESOURCE_TYPE_SCRIPT:
+              filter_option = FOScript;
+              break;
+            // an image (jpg/gif/png/etc)
+            case content::RESOURCE_TYPE_IMAGE:
+              filter_option = FOImage;
+              break;
+            // a font
+            case content::RESOURCE_TYPE_FONT_RESOURCE:
+              filter_option = FOFont;
+              break;
+            // an "other" subresource.
+            case content::RESOURCE_TYPE_SUB_RESOURCE:
+              filter_option = FOOther;
+              break;
+            // an object (or embed) tag for a plugin.
+            case content::RESOURCE_TYPE_OBJECT:
+              filter_option = FOObject;
+              break;
+            // a media resource.
+            case content::RESOURCE_TYPE_MEDIA:
+              filter_option = FOMedia;
+              break;
+            // a XMLHttpRequest
+            case content::RESOURCE_TYPE_XHR:
+              filter_option = FOXmlHttpRequest;
+              break;
+            // a ping request for <a ping>/sendBeacon.
+            case content::RESOURCE_TYPE_PING:
+              filter_option = FOPing;
+              break;
+            // the main resource of a dedicated
+            case content::RESOURCE_TYPE_WORKER:
+            // the main resource of a shared worker.
+            case content::RESOURCE_TYPE_SHARED_WORKER:
+            // an explicitly requested prefetch
+            case content::RESOURCE_TYPE_PREFETCH:
+            // a favicon
+            case content::RESOURCE_TYPE_FAVICON:
+            // the main resource of a service worker.
+            case content::RESOURCE_TYPE_SERVICE_WORKER:
+            // a report of Content Security Policy
+            case content::RESOURCE_TYPE_CSP_REPORT:
+            // a resource that a plugin requested.
+            case content::RESOURCE_TYPE_PLUGIN_RESOURCE:
+            case content::RESOURCE_TYPE_LAST_TYPE:
+            default:
+              break;
+          }
+          return filter_option;
+        }
+
+        }  // namespace
 
     static std::vector<std::string> split(const std::string &s, char delim) {
         std::stringstream ss(s);
@@ -296,15 +368,7 @@ namespace blockers {
           return false;
         }
 
-        FilterOption currentOption = FONoFilterOption;
-        content::ResourceType internalResource = (content::ResourceType)resource_type;
-        if (content::RESOURCE_TYPE_STYLESHEET == internalResource) {
-            currentOption = FOStylesheet;
-        } else if (content::RESOURCE_TYPE_IMAGE == internalResource) {
-            currentOption = FOImage;
-        } else if (content::RESOURCE_TYPE_SCRIPT == internalResource) {
-            currentOption = FOScript;
-        }
+        FilterOption currentOption = ResourceTypeToFilterOption((content::ResourceType)resource_type);
 
         if (adblock_parser_->matches(url.c_str(), currentOption, base_host.c_str())) {
             return true;
