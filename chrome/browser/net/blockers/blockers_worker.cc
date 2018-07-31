@@ -292,7 +292,7 @@ namespace blockers {
             return false;
         }
         base::FilePath app_data_path;
-        PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
+        base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
         base::FilePath dbFilePath = app_data_path.Append((char*)&db_file_name.front());
 
         leveldb::Options options;
@@ -313,7 +313,7 @@ namespace blockers {
 
     bool BlockersWorker::GetData(const char* fileName, std::vector<unsigned char>& buffer, bool only_file_name) {
         base::FilePath app_data_path;
-        PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
+        base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
 
         base::FilePath dataFilePathDownloaded = app_data_path.Append(fileName);
         int64_t size = 0;
@@ -341,7 +341,7 @@ namespace blockers {
 
     bool BlockersWorker::GetBufferData(const char* fileName, std::vector<unsigned char>& buffer) {
         base::FilePath app_data_path;
-        PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
+        base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
 
         base::FilePath dataFilePath = app_data_path.Append(fileName);
         int64_t size = 0;

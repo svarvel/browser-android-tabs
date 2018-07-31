@@ -384,7 +384,7 @@ RendererBlinkPlatformImpl::PrescientNetworking() {
   return GetContentClient()->renderer()->GetPrescientNetworking();
 }
 
-blink::WebString RendererBlinkPlatformImpl::UserAgent() {
+blink::WebString RendererBlinkPlatformImpl::UserAgent(const std::string& strHost) {
   auto* render_thread = RenderThreadImpl::current();
   // RenderThreadImpl is null in some tests.
   if (!render_thread)
