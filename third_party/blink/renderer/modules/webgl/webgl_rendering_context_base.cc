@@ -3600,7 +3600,7 @@ WebGLRenderingContextBase::getSupportedExtensions() {
       }
   }
   if (!allowed)
-      return WTF::nullopt;
+      return base::nullopt;
 
   Vector<String> result;
 

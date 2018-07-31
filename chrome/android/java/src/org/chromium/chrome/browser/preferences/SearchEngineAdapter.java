@@ -164,7 +164,7 @@ public class SearchEngineAdapter extends BaseAdapter
         }
 
         List<TemplateUrl> templateUrls = new ArrayList<TemplateUrl>();
-        List<TemplateUrl> templateUrlsUnsorted = templateUrlService.getSearchEngines();
+        List<TemplateUrl> templateUrlsUnsorted = templateUrlService.getTemplateUrls();
         TemplateUrl defaultSearchEngineTemplateUrl =
                 templateUrlService.getDefaultSearchEngineTemplateUrl();
         sortAndFilterUnnecessaryTemplateUrl(templateUrls, defaultSearchEngineTemplateUrl);

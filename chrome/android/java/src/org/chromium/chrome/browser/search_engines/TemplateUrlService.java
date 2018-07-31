@@ -47,6 +47,13 @@ public class TemplateUrlService {
         void onTemplateURLServiceChanged();
     }
 
+    public static final String PREF_STANDARD_SEARCH_ENGINE = "brave_standard_search_engine";
+    public static final String PREF_STANDARD_SEARCH_ENGINE_KEYWORD = "brave_standard_search_engine_keyword";
+    public static final String PREF_PRIVATE_SEARCH_ENGINE = "brave_private_search_engine";
+    public static final String PREF_PRIVATE_SEARCH_ENGINE_KEYWORD = "brave_private_search_engine_keyword";
+
+    private boolean mCurrentDSEPrivate;
+
     private static TemplateUrlService sService;
 
     public static TemplateUrlService getInstance() {

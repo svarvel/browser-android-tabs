@@ -1105,7 +1105,9 @@ public class CameraSource {
         void setNextFrame(byte[] data, Camera camera) {
             synchronized (mLock) {
                 if (mPendingFrameData != null) {
-                    camera.addCallbackBuffer(mPendingFrameData.array());
+                    byte[] buffer = new byte[mPendingFrameData.remaining()];
+                    mPendingFrameData.get(buffer);
+                    camera.addCallbackBuffer(buffer);
                     mPendingFrameData = null;
                 }
 
@@ -1191,7 +1193,9 @@ public class CameraSource {
                 } catch (Throwable t) {
                     Log.e(TAG, "Exception thrown from receiver.", t);
                 } finally {
-                    mCamera.addCallbackBuffer(data.array());
+                    byte[] buffer = new byte[data.remaining()];
+                    data.get(buffer);
+                    mCamera.addCallbackBuffer(buffer);
                 }
             }
         }

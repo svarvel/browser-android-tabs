@@ -82,7 +82,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : public BlinkPlatformImpl {
                                      size_t length) override;
   bool IsLinkVisited(unsigned long long linkHash) override;
   blink::WebPrescientNetworking* PrescientNetworking() override;
-  blink::WebString UserAgent() override;
+  blink::WebString UserAgent(const std::string& strHost) override;
   blink::UserAgentMetadata UserAgentMetadata() override;
   void CacheMetadata(blink::mojom::CodeCacheType cache_type,
                      const blink::WebURL&,
