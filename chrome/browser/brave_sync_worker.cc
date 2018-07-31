@@ -32,7 +32,7 @@ void CreateOpenDatabase() {
 
     if (nullptr == g_level_db) {
         base::FilePath app_data_path;
-        PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
+        base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
         base::FilePath dbFilePath = app_data_path.Append(DB_FILE_NAME);
 
         leveldb::Options options;

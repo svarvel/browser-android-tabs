@@ -1526,7 +1526,12 @@ public class ChromeTabbedActivity
                     // we're in incognito mode.
                     setStatusBarColor(null, Color.BLACK);
                 }
+            }
+        });
 
+        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelectorImpl) {
+            @Override
+            public void onPageLoadStarted(Tab tab, String url) {
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
@@ -1543,7 +1548,7 @@ public class ChromeTabbedActivity
             }
 
             @Override
-            public void onPageLoadFinished(Tab tab) {
+            public void onPageLoadFinished(final Tab tab) {
                 String url = tab.getUrl();
                 if (getActivityTab() == tab) {
                     try {
