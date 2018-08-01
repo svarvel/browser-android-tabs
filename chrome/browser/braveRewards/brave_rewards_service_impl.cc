@@ -434,6 +434,16 @@ void BraveRewardsServiceImpl::OnURLFetchComplete(
   callback.Run(response_code, body);
 }
 
+void BraveRewardsServiceImpl::OnWalletProperties(ledger::WalletInfo) {
+  // TODO
+  assert(false);
+}
+
+void BraveRewardsServiceImpl::GetWalletProperties() {
+  // TODO
+  assert(false);
+}
+
 void BraveRewardsServiceImpl::RunIOTask(
     std::unique_ptr<ledger::LedgerTaskRunner> task) {
   file_task_runner_->PostTask(FROM_HERE,

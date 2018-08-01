@@ -122,6 +122,9 @@ private:
   // URLFetcherDelegate impl
   void OnURLFetchComplete(const net::URLFetcher* source) override;
 
+  void OnWalletProperties(ledger::WalletInfo) override;
+  void GetWalletProperties() override;
+
   Profile* profile_;  // NOT OWNED
   std::unique_ptr<ledger::Ledger> ledger_;
   const scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
