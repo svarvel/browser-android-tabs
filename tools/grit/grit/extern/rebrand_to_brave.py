@@ -22,7 +22,6 @@
 # Chromiumba -> Brave
 # Chromiumhoz -> Brave
 # Chromiumra -> Brave
-# Chromiumból -> Brave
 # Chromiummal -> Brave
 # Chromiumos -> Brave
 # Chromiumon -> Brave
@@ -117,6 +116,8 @@ def UpdateBraveIds(grd_file):
         brave_string_phs = message_tag.findall('ph')
         for brave_string_ph in brave_string_phs:
             brave_string = brave_string + brave_string_ph.get('name').upper() + brave_string_ph.tail
+        if brave_string is None:
+            continue
         brave_string = brave_string.strip().encode('utf-8')
         if brave_company in brave_string:
             # Calculate Brave string id
