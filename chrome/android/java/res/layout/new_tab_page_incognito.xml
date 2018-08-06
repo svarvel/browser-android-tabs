@@ -83,19 +83,32 @@
                 android:lineSpacingExtra="@dimen/md_incognito_ntp_line_spacing"
                 android:visibility = "gone" />
 
-            <TextView
-                android:id="@+id/ddg_offer_link"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="@string/ddg_offer_link"
-                android:textColor="@color/google_grey_400"
-                android:drawableStart="@drawable/duckduckgo"
-                android:drawablePadding="15dp"
-                android:layout_marginTop="15dp"
-                android:textSize="28sp"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:orientation="horizontal" >
+
+                <ImageView android:id="@+id/ddg_offer_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/duckduckgo_small"
+                    android:scaleType="center"
+                    android:contentDescription="@null"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/ddg_offer_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/ddg_offer_link"
+                    android:textColor="@color/google_grey_400" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
