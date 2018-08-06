@@ -37,9 +37,10 @@
                 android:id="@+id/new_tab_incognito_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="19dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 tools:ignore="ContentDescription"
-                android:src="@drawable/incognito_splash"/>
+                android:src="@drawable/incognito_splash" />
 
             <TextView
                 android:id="@+id/ntp_incognito_header"
@@ -53,9 +54,11 @@
                 style="@style/IncognitoNewTabMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="10dp"
-                android:text="@null" />
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="60dp"
+                android:text="@null"
+                android:textColor="@color/google_grey_400"
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/learn_more"
@@ -65,19 +68,32 @@
                 android:text="@string/learn_more"
                 android:visibility = "gone" />
 
-            <TextView
-                android:id="@+id/ddg_offer_link"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="@string/ddg_offer_link"
-                android:textColor="@color/google_grey_400"
-                android:drawableStart="@drawable/duckduckgo"
-                android:drawablePadding="15dp"
-                android:layout_marginTop="15dp"
-                android:textSize="28sp"
-                android:scaleX="0.5"
-                android:scaleY="0.5" />
+            <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:orientation="horizontal" >
+
+                <ImageView android:id="@+id/ddg_offer_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/duckduckgo_small"
+                    android:scaleType="center"
+                    android:contentDescription="@null"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/ddg_offer_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/ddg_offer_link"
+                    android:textColor="@color/google_grey_400" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
