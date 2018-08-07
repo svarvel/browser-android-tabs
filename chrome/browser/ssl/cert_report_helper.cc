@@ -103,10 +103,10 @@ void CertReportHelper::PopulateExtendedReportingOption(
       security_interstitials::CMD_OPEN_REPORTING_PRIVACY,
       l10n_util::GetStringUTF8(IDS_SAFE_BROWSING_PRIVACY_POLICY_PAGE).c_str());
 
-  load_time_data->SetString(
+  /*load_time_data->SetString(
       security_interstitials::kOptInLink,
       l10n_util::GetStringFUTF16(IDS_SAFE_BROWSING_SCOUT_REPORTING_AGREE,
-                                 base::UTF8ToUTF16(privacy_link)));
+                                 base::UTF8ToUTF16(privacy_link)));*/
 }
 
 void CertReportHelper::SetSSLCertReporterForTesting(
@@ -183,20 +183,7 @@ void CertReportHelper::FinishCertCollection() {
 }
 
 bool CertReportHelper::ShouldShowCertificateReporterCheckbox() {
-  // Only show the checkbox or send reports iff the user is part of the
-  // respective Finch group and the window is not incognito and the feature is
-  // not disabled by policy.
-  const bool in_incognito =
-      web_contents_->GetBrowserContext()->IsOffTheRecord();
-  Profile* profile = GetProfile(web_contents_);
-  const PrefService* pref_service = profile->GetPrefs();
-  bool can_show_checkbox =
-      safe_browsing::IsExtendedReportingOptInAllowed(*pref_service) &&
-      !safe_browsing::IsExtendedReportingPolicyManaged(*pref_service);
-
-  return base::FieldTrialList::FindFullName(kFinchExperimentName) ==
-             kFinchGroupShowPossiblySend &&
-         !in_incognito && can_show_checkbox;
+  return false;
 }
 
 bool CertReportHelper::ShouldReportCertificateError() {

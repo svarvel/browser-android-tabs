@@ -130,8 +130,7 @@ class BaseSafeBrowsingErrorUI {
   // - if kSafeBrowsingExtendedReportingOptInAllowed preference is disabled.
   // - if kSafeBrowsingExtendedReporting is managed by enterprise policy.
   bool CanShowExtendedReportingOption() {
-    return !is_off_the_record() && is_extended_reporting_opt_in_allowed() &&
-           !is_extended_reporting_policy_managed();
+    return false;
   }
 
   SBInterstitialReason interstitial_reason() const {
