@@ -55,8 +55,8 @@ private:
     std::string applyHTTPSRule(const std::string& originalUrl, const std::string& rule);
     std::vector<std::string> getTPThirdPartyHosts(const std::string& base_host);
 
-    bool GetData(const char* fileName, std::vector<unsigned char>& buffer, bool only_file_name = false);
-    bool GetBufferData(const char* fileName, std::vector<unsigned char>& buffer);
+    bool GetData(const std::string& version, const std::string& fileName, std::vector<unsigned char>& buffer, bool only_file_name = false);
+    bool GetBufferData(const std::string& version, const std::string& fileName, std::vector<unsigned char>& buffer);
 
     std::string correcttoRuleToRE2Engine(const std::string& to);
 
