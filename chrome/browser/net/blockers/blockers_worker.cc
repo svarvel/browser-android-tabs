@@ -17,14 +17,17 @@
 #include "../../../../url/gurl.h"
 #include <tracking-protection/TPParser.h>
 #include <ad-block/ad_block_client.h>
+#include <ad-block/data_file_version.h>
 
 #define TP_DATA_FILE                        "TrackingProtectionDownloaded.dat"
 #define ADBLOCK_DATA_FILE                   "ABPFilterParserDataDownloaded.dat"
 #define ADBLOCK_REGIONAL_DATA_FILE          "ABPRegionalDataDownloaded.dat"
 #define HTTPSE_DATA_FILE_NEW                "httpse.leveldbDownloaded.zip"
 #define TP_THIRD_PARTY_HOSTS_QUEUE          20
+#define TP_VERSION                          "1"
 #define HTTPSE_URLS_REDIRECTS_COUNT_QUEUE   1
 #define HTTPSE_URL_MAX_REDIRECTS_COUNT      5
+#define HTTPSE_VERSION                      "6.0"
 
 namespace net {
 namespace blockers {
@@ -184,7 +187,7 @@ namespace blockers {
             return true;
         }
 
-        if (!GetData(ADBLOCK_DATA_FILE, adblock_buffer_)) {
+        if (!GetData(std::to_string(DATA_FILE_VERSION), ADBLOCK_DATA_FILE, adblock_buffer_)) {
             return false;
         }
 
@@ -210,7 +213,7 @@ namespace blockers {
         }
 
         std::vector<unsigned char> db_file_name;
-        if (!GetData(ADBLOCK_REGIONAL_DATA_FILE, db_file_name, true)) {
+        if (!GetData(std::to_string(DATA_FILE_VERSION), ADBLOCK_REGIONAL_DATA_FILE, db_file_name, true)) {
             return false;
         }
         std::vector<std::string> files = split((char*)&db_file_name.front(), ';');
@@ -219,7 +222,7 @@ namespace blockers {
             if (!adblock_regional_buffer_.size()) {
                 continue;
             }
-            if (!GetBufferData(files[i].c_str(), adblock_regional_buffer_[adblock_regional_buffer_.size() - 1])) {
+            if (!GetBufferData(std::to_string(DATA_FILE_VERSION), files[i].c_str(), adblock_regional_buffer_[adblock_regional_buffer_.size() - 1])) {
                 adblock_regional_buffer_.erase(adblock_regional_buffer_.begin() + adblock_regional_buffer_.size() - 1);
                 continue;
             }
@@ -250,7 +253,7 @@ namespace blockers {
             return true;
         }
 
-        if (!GetData(TP_DATA_FILE, tp_buffer_)) {
+        if (!GetData(TP_VERSION, TP_DATA_FILE, tp_buffer_)) {
             return false;
         }
 
@@ -288,12 +291,19 @@ namespace blockers {
 
         // Init level database
         std::vector<unsigned char> db_file_name;
-        if (!GetData(HTTPSE_DATA_FILE_NEW, db_file_name, true)) {
+        if (!GetData(HTTPSE_VERSION, HTTPSE_DATA_FILE_NEW, db_file_name, true)) {
+            return false;
+        }
+
+        std::string dbFileName((char*)&db_file_name.front());
+        if (dbFileName.find(HTTPSE_VERSION) != 0) {
+            LOG(ERROR) << "HTTPSE_VERSION doesn't match for file " << dbFileName;
+            // Don't read data from file of other version
             return false;
         }
         base::FilePath app_data_path;
         base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
-        base::FilePath dbFilePath = app_data_path.Append((char*)&db_file_name.front());
+        base::FilePath dbFilePath = app_data_path.Append(dbFileName);
 
         leveldb::Options options;
         leveldb::Status status = leveldb::DB::Open(options, dbFilePath.value().c_str(), &level_db_);
@@ -311,7 +321,7 @@ namespace blockers {
         return true;
     }
 
-    bool BlockersWorker::GetData(const char* fileName, std::vector<unsigned char>& buffer, bool only_file_name) {
+    bool BlockersWorker::GetData(const std::string& version, const std::string& fileName, std::vector<unsigned char>& buffer, bool only_file_name) {
         base::FilePath app_data_path;
         base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
 
@@ -324,7 +334,7 @@ namespace blockers {
         }
         std::vector<char> data(size + 1);
         if (size != base::ReadFile(dataFilePathDownloaded, (char*)&data.front(), size)) {
-            LOG(ERROR) << "BlockersWorker::GetData: cannot read dat info file " << fileName;
+            LOG(ERROR) << "BlockersWorker::GetData: cannot read data from file " << fileName;
 
             return false;
         }
@@ -336,10 +346,16 @@ namespace blockers {
             return true;
         }
 
-        return GetBufferData(&data.front(), buffer);
+        return GetBufferData(version, &data.front(), buffer);
     }
 
-    bool BlockersWorker::GetBufferData(const char* fileName, std::vector<unsigned char>& buffer) {
+    bool BlockersWorker::GetBufferData(const std::string& version, const std::string& fileName, std::vector<unsigned char>& buffer) {
+        if (fileName.find(version) != 0) {
+            LOG(ERROR) << "BlockersWorker::GetBufferData: incorrect version for " << fileName;
+            // Don't read data from file of other version
+            return false;
+        }
+
         base::FilePath app_data_path;
         base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
 
