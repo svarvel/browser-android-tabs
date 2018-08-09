@@ -1,3 +1,11 @@
+<release version="1.0.54">
+  <change>Upgraded to Chromium 68.0.3440.91.</change>
+  <change>Updated to ad block v4.</change>
+  <change>Applied new Brave icons.</change>
+  <change>Implemented UI for DuckDuckGo private search.</change>
+  <change>Changed Incognito naming to be Private to match desktop Brave.</change>
+  <change>Fixed video playback issue (WebM wasn't working).</change>
+</release>
 <release version="1.0.45">
   <change>Upgraded to Chromium 66.0.3359.126.</change>
   <change>Added an option to close tabs on exit (Settings->Privacy->Close tabs on exit).</change>
