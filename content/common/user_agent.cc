@@ -23,6 +23,8 @@
 #define DUCK_DUCK_GO "duckduckgo.com"
 #define CHROME_UA "Chrome"
 #define BRAVE_UA "Brave Chrome"
+#define ANDROID_VERSION "8.1.0"
+#define ANDROID_INFO "; Pixel 2 Build/OPM1.171019.013"
 
 namespace content {
 
@@ -88,8 +90,8 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
       architecture_token = "; Win64; IA64";
   }
 #elif defined(OS_ANDROID)
-  std::string android_version_str = base::SysInfo::OperatingSystemVersion();
-  std::string android_info_str = GetAndroidOSInfo(include_android_build_number);
+  std::string android_version_str = ANDROID_VERSION;//base::SysInfo::OperatingSystemVersion();
+  std::string android_info_str = ANDROID_INFO;
 #elif (defined(OS_POSIX) && !defined(OS_MACOSX)) || defined(OS_FUCHSIA)
   // Should work on any Posix system.
   struct utsname unixinfo;
