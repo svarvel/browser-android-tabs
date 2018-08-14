@@ -2693,6 +2693,10 @@ void RenderProcessHostImpl::AddFrameWithSite(
     BrowserContext* browser_context,
     RenderProcessHost* render_process_host,
     const GURL& site_url) {
+  if (render_process_host && render_process_host->GetRendererInterface() && GetContentClient()) {
+    render_process_host->GetRendererInterface()->SetUserAgent(GetContentClient()->GetUserAgent(site_url.host()));
+  }
+
   if (!ShouldTrackProcessForSite(browser_context, render_process_host,
                                  site_url))
     return;
