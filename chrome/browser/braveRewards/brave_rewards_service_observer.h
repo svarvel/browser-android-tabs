@@ -13,7 +13,7 @@ class BraveRewardsServiceObserver {
  public:
   virtual ~BraveRewardsServiceObserver() {}
 
-  virtual void OnWalletCreated(BraveRewardsService* payment_service,
+  virtual void OnWalletInitialized(BraveRewardsService* payment_service,
                                int error_code) {};
 };
 

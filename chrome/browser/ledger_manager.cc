@@ -8,17 +8,6 @@
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/io_thread.h"
 
-bool walletCreated = false;
-
-// Wallet creation
-void CreateWallet(IOThread* io_thread) {
-  if (walletCreated) {
-    return;
-  }
-  walletCreated = true;
-  //io_thread->globals()->ledger_->CreateWallet();
-}
-//
 
 LedgerManager::LedgerManager() {
 
@@ -29,6 +18,7 @@ LedgerManager::~LedgerManager() {
 }
 
 void LedgerManager::AddObserver(std::shared_ptr<content::WebContentsLedgerObserver> observer) {
+  LOG(ERROR) << "!!!LedgerManager::AddObserver";
   for (size_t i = 0; i < web_contents_ledger_observers_.size(); i++) {
     if (web_contents_ledger_observers_[i]->IsBeingDestroyed()) {
       web_contents_ledger_observers_.erase(web_contents_ledger_observers_.begin() + i);
@@ -36,10 +26,6 @@ void LedgerManager::AddObserver(std::shared_ptr<content::WebContentsLedgerObserv
     }
   }
 
-  // TODO debug, call from the correct place
-  content::BrowserThread::PostTask(
-      content::BrowserThread::IO, FROM_HERE,
-      base::Bind(&CreateWallet, g_browser_process->io_thread()));
-  //
   web_contents_ledger_observers_.push_back(observer);
+  LOG(ERROR) << "!!!LedgerManager::AddObserver exit";
 }

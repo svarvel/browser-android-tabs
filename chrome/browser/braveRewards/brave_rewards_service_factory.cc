@@ -36,8 +36,9 @@ BraveRewardsServiceFactory::~BraveRewardsServiceFactory() {
 
 KeyedService* BraveRewardsServiceFactory::BuildServiceInstanceFor(
     content::BrowserContext* context) const {
-  std::unique_ptr<brave_rewards::BraveRewardsService> brave_rewards_service(
+  std::unique_ptr<brave_rewards::BraveRewardsServiceImpl> brave_rewards_service(
       new brave_rewards::BraveRewardsServiceImpl(Profile::FromBrowserContext(context)));
+  brave_rewards_service->Init();
   return brave_rewards_service.release();
 }
 

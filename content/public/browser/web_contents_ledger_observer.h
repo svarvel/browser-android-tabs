@@ -7,6 +7,10 @@
 
 #include "web_contents_observer.h"
 
+namespace brave_rewards {
+  class BraveRewardsService;
+}
+
 namespace content {
 
 class WebContents;
@@ -16,8 +20,6 @@ public:
   WebContentsLedgerObserver(WebContents* web_contents);
   ~WebContentsLedgerObserver() override;
 
-  //void WasShown() override;
-  //void WasHidden() override;
   // Invoked every time the WebContents changes visibility.
   void OnVisibilityChanged(Visibility visibility) override;
 
@@ -26,12 +28,15 @@ public:
                              const GURL& validated_url) override;
   void DidUpdateFaviconURL(const std::vector<FaviconURL>& candidates) override;
   bool IsBeingDestroyed();
+  void DidAttachInterstitialPage() override;
+  void DidFinishNavigation(content::NavigationHandle* navigation_handle) override;
+  void ResourceLoadComplete(
+      const content::mojom::ResourceLoadInfo& resource_load_info) override;
 
 private:
-  bool is_being_destroyed_;
   WebContents* web_contents_;
-  base::TimeTicks last_active_time_;
-  std::string current_domain_;
+  brave_rewards::BraveRewardsService* brave_rewards_service_;
+  bool is_being_destroyed_;
 };
 
 }
