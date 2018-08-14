@@ -86,22 +86,25 @@ public class IncognitoNewTabPageView extends FrameLayout {
         });
 
         mDDGOfferLink = findViewById(R.id.ddg_offer_link);
-        mDDGOfferLink.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDDGOffer(true);
-            }
-        });
+        if (mDDGOfferLink != null) {
+            mDDGOfferLink.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showDDGOffer(true);
+                }
+            });
+        }
 
         mDDGOfferImage = findViewById(R.id.ddg_offer_img);
-        mDDGOfferImage.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDDGOffer(true);
-            }
-        });
-
-        showDDGOffer(false);
+        if (mDDGOfferImage != null) {
+            mDDGOfferImage.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showDDGOffer(true);
+                }
+            });
+            showDDGOffer(false);
+        }
     }
 
     /**
