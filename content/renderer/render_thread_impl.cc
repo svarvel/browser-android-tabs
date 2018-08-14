@@ -2203,7 +2203,7 @@ void RenderThreadImpl::SetWebKitSharedTimersSuspended(bool suspend) {
 }
 
 void RenderThreadImpl::SetUserAgent(const std::string& user_agent) {
-  DCHECK(user_agent_.IsNull());
+  //DCHECK(user_agent_.IsNull());
   user_agent_ = WebString::FromUTF8(user_agent);
 }
 
