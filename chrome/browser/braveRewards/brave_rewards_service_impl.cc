@@ -162,20 +162,66 @@ BraveRewardsServiceImpl::~BraveRewardsServiceImpl() {
   file_task_runner_->DeleteSoon(FROM_HERE, publisher_info_backend_.release());
 }
 
+void BraveRewardsServiceImpl::Init() {
+  ledger_->Initialize();
+}
+
 void BraveRewardsServiceImpl::CreateWallet() {
   if (created_wallet) {
     return;
   }
   ledger_->CreateWallet();
+  // TODO debug
   created_wallet = true;
+  //
 }
 
-void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
+/*void BraveRewardsServiceImpl::SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) {
   ledger::VisitData visit_data(publisher, publisher, "", 0);
   visit_data.duration = duration;
-  //ledger_->OnVisit(visit_data);
+  ledger_->OnVisit(visit_data);
+}*/
+
+void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
+            const std::string& _domain,
+            const std::string& _path,
+            uint32_t tab_id) {
+  ledger::VisitData visit_data(_tld, _domain, _path, tab_id);
+  ledger_->OnLoad(visit_data, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnUnload(uint32_t tab_id) {
+  ledger_->OnUnload(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnShow(uint32_t tab_id) {
+  ledger_->OnShow(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnHide(uint32_t tab_id) {
+  ledger_->OnHide(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnForeground(uint32_t tab_id) {
+  ledger_->OnForeground(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnBackground(uint32_t tab_id) {
+  ledger_->OnBackground(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+}
+
+void BraveRewardsServiceImpl::OnMediaStart(uint32_t tab_id) {
+  
+}
+
+void BraveRewardsServiceImpl::OnMediaStop(uint32_t tab_id) {
+  
+}
+
+void BraveRewardsServiceImpl::OnXHRLoad(uint32_t tab_id, const std::string& url) {
+  ledger_->OnXHRLoad(tab_id, url); 
 }
 
 void BraveRewardsServiceImpl::GetContentSiteList(
@@ -298,8 +344,9 @@ void BraveRewardsServiceImpl::Shutdown() {
   BraveRewardsService::Shutdown();
 }
 
-void BraveRewardsServiceImpl::OnWalletCreated(ledger::Result result) {
-  TriggerOnWalletCreated(result);
+void BraveRewardsServiceImpl::OnWalletInitialized(ledger::Result result) {
+  TriggerOnWalletInitialized(result);
+  //GetWalletProperties();
 }
 
 void BraveRewardsServiceImpl::OnReconcileComplete(ledger::Result result,
@@ -434,15 +481,51 @@ void BraveRewardsServiceImpl::OnURLFetchComplete(
   callback.Run(response_code, body);
 }
 
-void BraveRewardsServiceImpl::OnWalletProperties(ledger::WalletInfo) {
-  // TODO
-  assert(false);
+void BraveRewardsServiceImpl::OnWalletProperties(ledger::Result result,
+                          std::unique_ptr<ledger::WalletInfo> info) {
+  // TODO implement
+  LOG(ERROR) << "!!!BraveRewardsServiceImpl::OnWalletProperties walletInfo.balance_ == " << info->balance_;
 }
 
 void BraveRewardsServiceImpl::GetWalletProperties() {
-  // TODO
-  assert(false);
+  ledger_->GetWalletProperties();
 }
+
+void BraveRewardsServiceImpl::OnPromotion(ledger::Promo result) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::OnPromotionCaptcha(const std::string& image) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::OnRecoverWallet(ledger::Result result, double balance) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::OnPromotionFinish(ledger::Result result, unsigned int statusCode, uint64_t expirationDate) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::GetPromotion(const std::string& lang, const std::string& paymentId) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::GetPromotionCaptcha() {
+  // TODO
+}
+
+/*void BraveRewardsServiceImpl::SolvePromotionCaptcha(const std::string& solution) const {
+  // TODO
+}
+
+std::string BraveRewardsServiceImpl::GetWalletPassphrase() const {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::RecoverWallet(const std::string passPhrase) const {
+  // TODO
+} */
 
 void BraveRewardsServiceImpl::RunIOTask(
     std::unique_ptr<ledger::LedgerTaskRunner> task) {
@@ -457,9 +540,9 @@ void BraveRewardsServiceImpl::RunTask(
                      std::move(task)));
 }
 
-void BraveRewardsServiceImpl::TriggerOnWalletCreated(int error_code) {
+void BraveRewardsServiceImpl::TriggerOnWalletInitialized(int error_code) {
   for (auto& observer : observers_)
-    observer.OnWalletCreated(this, error_code);
+    observer.OnWalletInitialized(this, error_code);
 }
 
 }  // namespace brave_rewards
