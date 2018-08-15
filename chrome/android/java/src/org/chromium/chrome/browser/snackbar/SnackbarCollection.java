@@ -28,9 +28,14 @@ class SnackbarCollection {
      * notifications are added after it.
      */
     void add(Snackbar snackbar) {
-        if (snackbar.isTypeAction()) {
-            if (getCurrent() != null && !getCurrent().isTypeAction()) {
-                removeCurrent(false);
+        try {
+            if (snackbar.isTypeAction()) {
+                if (getCurrent() != null && !getCurrent().isTypeAction()) {
+                    removeCurrent(false);
+                }
+                mSnackbars.addFirst(snackbar);
+            } else {
+                mSnackbars.addLast(snackbar);
             }
             mSnackbars.addFirst(snackbar);
         } else if (snackbar.isTypePersistent()) {
@@ -63,7 +68,6 @@ class SnackbarCollection {
             if (isAction) controller.onAction(current.getActionData());
             else controller.onDismissNoAction(current.getActionData());
         }
-        return current;
     }
 
     /**
@@ -119,7 +123,6 @@ class SnackbarCollection {
             controller.onDismissNoAction(snackbar.getActionData());
             snackbarRemoved = true;
         }
-        return snackbarRemoved;
     }
 
     boolean removeMatchingSnackbars(SnackbarController controller, Object data) {
@@ -141,7 +144,6 @@ class SnackbarCollection {
             controller.onDismissNoAction(snackbar.getActionData());
             snackbarRemoved = true;
         }
-        return snackbarRemoved;
     }
 
     private static boolean objectsAreEqual(Object a, Object b) {
