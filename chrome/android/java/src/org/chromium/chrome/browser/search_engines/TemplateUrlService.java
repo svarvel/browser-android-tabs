@@ -51,6 +51,8 @@ public class TemplateUrlService {
     public static final String PREF_STANDARD_SEARCH_ENGINE_KEYWORD = "brave_standard_search_engine_keyword";
     public static final String PREF_PRIVATE_SEARCH_ENGINE = "brave_private_search_engine";
     public static final String PREF_PRIVATE_SEARCH_ENGINE_KEYWORD = "brave_private_search_engine_keyword";
+    public static String DSE_NAME = "Google";
+    public static String DSE_KEYWORD = "google.com";
 
     private boolean mCurrentDSEPrivate;
 
@@ -374,12 +376,12 @@ public class TemplateUrlService {
 
     public String getDefaultSearchEngineName(boolean is_private) {
         updateDSEInfo(is_private);
-        return ContextUtils.getAppSharedPreferences().getString(is_private ? PREF_PRIVATE_SEARCH_ENGINE : PREF_STANDARD_SEARCH_ENGINE, null);
+        return ContextUtils.getAppSharedPreferences().getString(is_private ? PREF_PRIVATE_SEARCH_ENGINE : PREF_STANDARD_SEARCH_ENGINE, DSE_NAME);
     }
 
     public String getDefaultSearchEngineKeyword(boolean is_private) {
         updateDSEInfo(is_private);
-        return ContextUtils.getAppSharedPreferences().getString(is_private ? PREF_PRIVATE_SEARCH_ENGINE_KEYWORD : PREF_STANDARD_SEARCH_ENGINE_KEYWORD, null);
+        return ContextUtils.getAppSharedPreferences().getString(is_private ? PREF_PRIVATE_SEARCH_ENGINE_KEYWORD : PREF_STANDARD_SEARCH_ENGINE_KEYWORD, DSE_KEYWORD);
     }
 
     public void updateCurrentDSE(boolean is_private) {
