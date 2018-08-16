@@ -23,8 +23,6 @@
 #define DUCK_DUCK_GO "duckduckgo.com"
 #define CHROME_UA "Chrome"
 #define BRAVE_UA "Brave Chrome"
-#define ANDROID_VERSION "8.1.0"
-#define ANDROID_INFO "; Pixel 2 Build/OPM1.171019.013"
 
 namespace content {
 
@@ -89,9 +87,9 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
     else if (windows_architecture == base::win::OSInfo::IA64_ARCHITECTURE)
       architecture_token = "; Win64; IA64";
   }
-#elif defined(OS_ANDROID)
+/*#elif defined(OS_ANDROID)
   std::string android_version_str = ANDROID_VERSION;//base::SysInfo::OperatingSystemVersion();
-  std::string android_info_str = ANDROID_INFO;
+  std::string android_info_str = ANDROID_INFO;*/
 #elif (defined(OS_POSIX) && !defined(OS_MACOSX)) || defined(OS_FUCHSIA)
   // Should work on any Posix system.
   struct utsname unixinfo;
@@ -127,9 +125,10 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
       os_minor_version,
       os_bugfix_version
 #elif defined(OS_ANDROID)
-      "Android %s%s",
+      "Android"
+/*      "Android %s%s",
       android_version_str.c_str(),
-      android_info_str.c_str()
+      android_info_str.c_str()*/
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
                       "%s %s",
                       unixinfo.sysname,  // e.g. Linux
@@ -204,7 +203,7 @@ std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
   std::string user_agent;
   base::StringAppendF(
       &user_agent,
-      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d",
+      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d Brave",
       os_info.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR,
