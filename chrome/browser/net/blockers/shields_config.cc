@@ -5,6 +5,7 @@
  #include "base/android/jni_android.h"
  #include "base/android/jni_string.h"
  #include "jni/ShieldsConfig_jni.h"
+ #include "net/base/registry_controlled_domains/registry_controlled_domain.h"
 
 namespace net {
 namespace blockers {
@@ -47,6 +48,23 @@ void ShieldsConfig::resetUpdateAdBlockerFlag() {
 
 ShieldsConfig* ShieldsConfig::getShieldsConfig() {
     return gShieldsConfig;
+}
+
+bool ShieldsConfig::shouldSetReferrer(bool allow_referrers, bool shields_up,
+    const GURL& original_referrer, const GURL& tab_origin,
+    const GURL& target_url, const GURL& new_referrer_url,
+    blink::WebReferrerPolicy policy, content::Referrer *output_referrer) {
+  if (!output_referrer ||
+      allow_referrers ||
+      !shields_up ||
+      original_referrer.is_empty() ||
+      net::registry_controlled_domains::SameDomainOrHost(target_url, original_referrer,
+          net::registry_controlled_domains::INCLUDE_PRIVATE_REGISTRIES)) {
+    return false;
+  }
+  *output_referrer = content::Referrer::SanitizeForRequest(target_url,
+      content::Referrer(new_referrer_url, policy));
+  return true;
 }
 
 static void JNI_ShieldsConfig_Clear(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
