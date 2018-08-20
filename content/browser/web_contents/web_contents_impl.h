@@ -1459,6 +1459,7 @@ class CONTENT_EXPORT WebContentsImpl : public WebContents,
   // |current_fullscreen_frame_| and notify observers whenever it changes.
   void FullscreenFrameSetUpdated();
 
+  void ShouldBlockReferrer(NavigationHandle* navigation_handle);
   // Data for core operation ---------------------------------------------------
 
   // Delegate for notifying our owner about stuff. Not owned by us.
