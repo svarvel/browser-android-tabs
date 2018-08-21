@@ -310,9 +310,9 @@ bool FrameCompareDepth(RenderFrameHostImpl* a, RenderFrameHostImpl* b) {
 
 }  // namespace
 
-WebContents* WebContents::Create(const WebContents::CreateParams& params) {
-  WebContents* web_contents = WebContentsImpl::CreateWithOpener(params, FindOpenerRFH(params));
-  std::shared_ptr<WebContentsLedgerObserver> web_contents_ledger_observer(new WebContentsLedgerObserver(web_contents));
+std::unique_ptr<WebContents> WebContents::Create(const WebContents::CreateParams& params) {
+  std::unique_ptr<WebContents> web_contents = WebContentsImpl::CreateWithOpener(params, FindOpenerRFH(params));
+  std::shared_ptr<WebContentsLedgerObserver> web_contents_ledger_observer(new WebContentsLedgerObserver(web_contents.get()));
   g_browser_process->ledger_manager_.AddObserver(web_contents_ledger_observer);
 
   return web_contents;
