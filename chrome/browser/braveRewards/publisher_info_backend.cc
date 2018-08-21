@@ -84,7 +84,6 @@ bool PublisherInfoBackend::LoadWithPrefix(uint32_t start,
                                           uint32_t limit, 
                                           const std::vector<std::string>& prefix,
                                           std::vector<const std::string>& results) {
-  LOG(ERROR) << "!!!here1 ";
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   bool initialized = EnsureInitialized();
   DCHECK(initialized);
@@ -117,7 +116,6 @@ bool PublisherInfoBackend::LoadWithPrefix(uint32_t start,
     }
   }
 
-  LOG(ERROR) << "!!!here2 ";
   return true;
 }
 

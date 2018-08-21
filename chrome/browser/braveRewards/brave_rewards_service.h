@@ -29,7 +29,7 @@ public:
 
   virtual void CreateWallet() = 0;
 
-  virtual void MakePayment(const ledger::PaymentData& paid_data) = 0;
+  virtual void MakePayment(const ledger::PaymentData& payment_data) = 0;
   virtual void AddRecurringPayment(const std::string& domain, const double& value) = 0;
   virtual void OnLoad(const std::string& _tld,
             const std::string& _domain,
@@ -53,7 +53,7 @@ public:
   virtual void GetRecurringDonationPublisherInfo(ledger::PublisherInfoCallback callback) = 0;
   virtual void GetPublisherInfoList(uint32_t start,
                                 uint32_t limit,
-                                ledger::PUBLISHER_CATEGORY category,
+                                int category,
                                 const std::string& month,
                                 const std::string& year,
                                 ledger::GetPublisherInfoListCallback callback) = 0;
