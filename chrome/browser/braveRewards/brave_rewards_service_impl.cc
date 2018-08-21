@@ -149,7 +149,7 @@ ledger::PublisherInfoList LoadPublisherInfoListOnFileTaskRunner(
 // }
 
 // Callback for recurrent donations publishers list
-// void GotRecurrentDonationPublisherInfo(
+// void GotRecurringDonationPublisherInfo(
 //       ledger::Result result,
 //       std::unique_ptr<ledger::PublisherInfo> publisher_info) {
 //   if (result != ledger::Result::OK) {
@@ -206,12 +206,12 @@ void BraveRewardsServiceImpl::CreateWallet() {
   ledger_->OnVisit(visit_data);
 }*/
 
-void BraveRewardsServiceImpl::MakePayment(const ledger::PaidData& paid_data) {
+void BraveRewardsServiceImpl::MakePayment(const ledger::PaymentData& paid_data) {
   ledger_->MakePayment(paid_data);
 }
 
-void BraveRewardsServiceImpl::AddRecurrentPayment(const std::string& domain_name, const double& value) {
-  ledger_->AddRecurrentPayment(domain_name, value);
+void BraveRewardsServiceImpl::AddRecurringPayment(const std::string& domain, const double& value) {
+  ledger_->AddRecurringPayment(domain, value);
 }
 
 void BraveRewardsServiceImpl::SetBalanceReport(const ledger::BalanceReportInfo& report_info) {
@@ -221,11 +221,11 @@ void BraveRewardsServiceImpl::SetBalanceReport(const ledger::BalanceReportInfo& 
   ledger_->SetBalanceReport(year, month, report_info);
 }
 
-void BraveRewardsServiceImpl::GetBalanceReport(ledger::BalanceReportInfo& report_info) const {
+bool BraveRewardsServiceImpl::GetBalanceReport(ledger::BalanceReportInfo* report_info) const {
   std::string month;
   std::string year;
   GetLocalMonthYear(month, year);
-  ledger_->GetBalanceReport(year, month, report_info);
+  return ledger_->GetBalanceReport(year, month, report_info);
 }
 
 void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
@@ -238,23 +238,23 @@ void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
   ledger::VisitData visit_data(_tld, _domain, _path, tab_id, month, year);
   ledger_->OnLoad(visit_data, base::TimeTicks::Now().since_origin().InMilliseconds());
   // TODO adding a publisher to a Publishers List
-  //ledger::PaidData paid_data("clifton.io", 10.2, base::Time::Now().ToTimeT(), 
+  //ledger::PaymentData paid_data("clifton.io", 10.2, base::Time::Now().ToTimeT(), 
   //  ledger::PUBLISHER_CATEGORY::TIPPING, month, year);
   //MakePayment(paid_data);
   //
   // TODO adding a publisher to a recurrent payment
-  //AddRecurrentPayment("clifton.io", 1.111);
+  //AddRecurringPayment("clifton.io", 1.111);
   //
   // TODO sets the current balance
-  // ledger::BalanceReportInfo report_info;
-  // report_info.opening_balance_ = 1.0;
-  // report_info.closing_balance_ = 2.0;
-  // report_info.grants_avail_ = 3.0;
-  // report_info.earning_from_ads_ = 4.0;
-  // report_info.auto_contribute_ = 5.0;
-  // report_info.recurring_donation_ = 6.0;
-  // report_info.one_time_donation_ = 7.0;
-  // SetBalanceReport(report_info);
+   // ledger::BalanceReportInfo report_info;
+   // report_info.opening_balance_ = 1.0;
+   // report_info.closing_balance_ = 2.0;
+   // report_info.grants_avail_ = 3.0;
+   // report_info.earning_from_ads_ = 4.0;
+   // report_info.auto_contribute_ = 5.0;
+   // report_info.recurring_donation_ = 6.0;
+   // report_info.one_time_donation_ = 7.0;
+   // SetBalanceReport(report_info);
   //
 }
 
@@ -280,11 +280,15 @@ void BraveRewardsServiceImpl::OnHide(uint32_t tab_id) {
   //               _1, _2));
   //
   // TODO retrieving recurrent donation Publishers List
-  //GetRecurrentDonationPublisherInfo(std::bind(&GotRecurrentDonationPublisherInfo, _1, _2));
+  //GetRecurringDonationPublisherInfo(std::bind(&GotRecurringDonationPublisherInfo, _1, _2));
   //
   // TODO gets the current balance
-  //ledger::BalanceReportInfo report_info;
-  //GetBalanceReport(report_info);
+  // ledger::BalanceReportInfo report_info;
+  // if (!GetBalanceReport(&report_info)) {
+  //   // Something is wrong
+  // } else {
+  //   // Everything is good
+  // }
   //
 }
 
@@ -315,8 +319,8 @@ std::string BraveRewardsServiceImpl::URIEncode(const std::string& value) {
   return net::EscapeQueryParamValue(value, false);
 }
 
-void BraveRewardsServiceImpl::GetRecurrentDonationPublisherInfo(ledger::PublisherInfoCallback callback) {
-  ledger_->GetRecurrentDonationPublisherInfo(callback);
+void BraveRewardsServiceImpl::GetRecurringDonationPublisherInfo(ledger::PublisherInfoCallback callback) {
+  ledger_->GetRecurringDonationPublisherInfo(callback);
 }
 
 void BraveRewardsServiceImpl::GetPublisherInfoList(
