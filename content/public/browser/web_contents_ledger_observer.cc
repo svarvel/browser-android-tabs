@@ -114,7 +114,7 @@ void WebContentsLedgerObserver::ResourceLoadComplete(
 
   if (resource_load_info.resource_type == content::RESOURCE_TYPE_MEDIA ||
       resource_load_info.resource_type == content::RESOURCE_TYPE_XHR) {
-    brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_).id(), resource_load_info.url.spec());
+    //brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_).id(), resource_load_info.url.spec());
   }
 }
 
