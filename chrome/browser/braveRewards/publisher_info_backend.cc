@@ -69,7 +69,6 @@ bool PublisherInfoBackend::Load(uint32_t start,
 
   uint32_t count = 0;
   uint32_t position = 0;
-  std::string json;
   for (db_it->SeekToFirst(); count < limit && db_it->Valid(); db_it->Next()) {
     if (position++ < start)
       continue;
@@ -78,6 +77,47 @@ bool PublisherInfoBackend::Load(uint32_t start,
     results.push_back(db_it->value().ToString());
   }
 
+  return true;
+}
+
+bool PublisherInfoBackend::LoadWithPrefix(uint32_t start, 
+                                          uint32_t limit, 
+                                          const std::vector<std::string>& prefix,
+                                          std::vector<const std::string>& results) {
+  LOG(ERROR) << "!!!here1 ";
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
+  bool initialized = EnsureInitialized();
+  DCHECK(initialized);
+
+  if (!initialized)
+    return false;
+
+  for (size_t i = 0; i < prefix.size(); i++) {
+    leveldb::ReadOptions options;
+    std::unique_ptr<leveldb::Iterator> db_it(db_->NewIterator(options));
+    leveldb::Slice start_slice = prefix[i];
+
+    uint32_t count = 0;
+    uint32_t position = 0;
+    for (db_it->Seek(start_slice); count < limit && db_it->Valid(); db_it->Next()) {
+      if (position++ < start) {
+        continue;
+      }
+      else {
+        count++;
+      }
+
+      leveldb::Slice key_slice(db_it->key());
+      size_t pos = key_slice.ToString().find(prefix[i]);
+      if (pos == std::string::npos) {
+        break;
+      }
+      results.push_back(db_it->value().ToString());
+      LOG(ERROR) << "!!!value == " << db_it->value().ToString();
+    }
+  }
+
+  LOG(ERROR) << "!!!here2 ";
   return true;
 }
 

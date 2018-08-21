@@ -47,6 +47,9 @@ public:
 
   void Init();
   void CreateWallet() override;
+
+  void MakePayment(const ledger::PaidData& paid_data) override;
+  void AddRecurrentPayment(const std::string& domain_name, const double& value) override;
   void OnLoad(const std::string& _tld,
             const std::string& _domain,
             const std::string& _path,
@@ -58,7 +61,10 @@ public:
   void OnBackground(uint32_t tab_id) override;
   void OnMediaStart(uint32_t tab_id) override;
   void OnMediaStop(uint32_t tab_id) override;
-  void OnXHRLoad(uint32_t tab_id, const std::string& url) override;
+  void OnXHRLoad(uint32_t tab_id,
+      const std::string& url,
+      const std::map<std::string, std::string>& parts,
+      const uint64_t& current_time) override;
   /*void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) override;*/
@@ -67,23 +73,33 @@ public:
   void SetPublisherMinVisits(unsigned int visits) override;
   void SetPublisherAllowNonVerified(bool allow) override;
   void SetContributionAmount(double amount) override;
+  void SetBalanceReport(const ledger::BalanceReportInfo& report_info) override;
 
   uint64_t GetPublisherMinVisitTime() const override; // In milliseconds
   unsigned int GetPublisherMinVisits() const override;
   bool GetPublisherAllowNonVerified() const override;
   double GetContributionAmount() const override;
+  void GetBalanceReport(ledger::BalanceReportInfo& report_info) const override;
+
+  std::string URIEncode(const std::string& value) override;
+
   void SavePublisherInfo(std::unique_ptr<ledger::PublisherInfo> publisher_info,
                  ledger::PublisherInfoCallback callback) override;
-  void LoadPublisherInfo(const ledger::PublisherInfo::id_type& publisher_id,
+  void LoadPublisherInfo(const std::string& publisher_key,
                  ledger::PublisherInfoCallback callback) override;
   void LoadPublisherInfoList(
       uint32_t start,
       uint32_t limit,
       ledger::PublisherInfoFilter filter,
+      const std::vector<std::string>& prefix,
       ledger::GetPublisherInfoListCallback callback) override;
-  void GetContentSiteList(uint32_t start,
+  void GetPublisherInfoList(uint32_t start,
                           uint32_t limit,
-     const GetContentSiteListCallback& callback) override;
+                          ledger::PUBLISHER_CATEGORY category,
+                          const std::string& month,
+                          const std::string& year,
+                          ledger::GetPublisherInfoListCallback callback) override;
+  void GetRecurrentDonationPublisherInfo(ledger::PublisherInfoCallback callback) override;
  
 private:
   typedef base::Callback<void(int, const std::string&)> FetchCallback;
