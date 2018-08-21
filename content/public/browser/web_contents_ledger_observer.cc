@@ -108,7 +108,8 @@ void WebContentsLedgerObserver::DidFinishNavigation(content::NavigationHandle* n
 }
 
 void WebContentsLedgerObserver::ResourceLoadComplete(
-    const content::mojom::ResourceLoadInfo& resource_load_info) {
+    RenderFrameHost* render_frame_host,
+    const mojom::ResourceLoadInfo& resource_load_info) {
   if (!brave_rewards_service_)
     return;
 

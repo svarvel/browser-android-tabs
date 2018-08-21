@@ -30,8 +30,8 @@ public:
   bool IsBeingDestroyed();
   void DidAttachInterstitialPage() override;
   void DidFinishNavigation(content::NavigationHandle* navigation_handle) override;
-  void ResourceLoadComplete(
-      const content::mojom::ResourceLoadInfo& resource_load_info) override;
+  void ResourceLoadComplete(RenderFrameHost* render_frame_host,
+      const mojom::ResourceLoadInfo& resource_load_info) override;
 
 private:
   WebContents* web_contents_;
