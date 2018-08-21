@@ -140,13 +140,13 @@ ledger::PublisherInfoList LoadPublisherInfoListOnFileTaskRunner(
 }
 
 // Callback for publishers list
-// void GotContentSiteListInternal(
-//     uint32_t start,
-//     uint32_t limit,
-//     const ledger::PublisherInfoList& publisher_list,
-//     uint32_t next_record) {
-//   // TODO handle the publishers info list
-// }
+ // void GotContentSiteListInternal(
+ //     uint32_t start,
+ //     uint32_t limit,
+ //     const ledger::PublisherInfoList& publisher_list,
+ //     uint32_t next_record) {
+ //   // TODO handle the publishers info list
+ // }
 
 // Callback for recurrent donations publishers list
 // void GotRecurringDonationPublisherInfo(
@@ -206,8 +206,8 @@ void BraveRewardsServiceImpl::CreateWallet() {
   ledger_->OnVisit(visit_data);
 }*/
 
-void BraveRewardsServiceImpl::MakePayment(const ledger::PaymentData& paid_data) {
-  ledger_->MakePayment(paid_data);
+void BraveRewardsServiceImpl::MakePayment(const ledger::PaymentData& payment_data) {
+  ledger_->MakePayment(payment_data);
 }
 
 void BraveRewardsServiceImpl::AddRecurringPayment(const std::string& domain, const double& value) {
@@ -238,9 +238,16 @@ void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
   ledger::VisitData visit_data(_tld, _domain, _path, tab_id, month, year);
   ledger_->OnLoad(visit_data, base::TimeTicks::Now().since_origin().InMilliseconds());
   // TODO adding a publisher to a Publishers List
-  //ledger::PaymentData paid_data("clifton.io", 10.2, base::Time::Now().ToTimeT(), 
-  //  ledger::PUBLISHER_CATEGORY::TIPPING, month, year);
-  //MakePayment(paid_data);
+  // {
+  //   ledger::PaymentData payment_data("clifton.io", 10.2, base::Time::Now().ToTimeT(), 
+  //     ledger::PUBLISHER_CATEGORY::TIPPING, month, year);
+  //   MakePayment(payment_data);
+  // }
+  // {
+  //   ledger::PaymentData payment_data("clifton.io", 10.9, base::Time::Now().ToTimeT(), 
+  //     ledger::PUBLISHER_CATEGORY::DIRECT_DONATION, month, year);
+  //   MakePayment(payment_data);
+  // }
   //
   // TODO adding a publisher to a recurrent payment
   //AddRecurringPayment("clifton.io", 1.111);
@@ -269,15 +276,17 @@ void BraveRewardsServiceImpl::OnShow(uint32_t tab_id) {
 void BraveRewardsServiceImpl::OnHide(uint32_t tab_id) {
   ledger_->OnHide(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
   // TODO retrieving Publishers List
-  // std::string month;
-  // std::string year;
-  // GetLocalMonthYear(month, year);
-  // unsigned int start_record = 0;
-  // unsigned int limit_record = 100;
-  // GetPublisherInfoList(start_record, limit_record, ledger::PUBLISHER_CATEGORY::AUTO_CONTRIBUTE, month, year,
-  //   std::bind(&GotContentSiteListInternal,
-  //               start_record, limit_record,
-  //               _1, _2));
+   //std::string month;
+   //std::string year;
+   //GetLocalMonthYear(month, year);
+   //unsigned int start_record = 0;
+   //unsigned int limit_record = 100;
+   //int category = ledger::PUBLISHER_CATEGORY::ALL_CATEGORIES;
+   // int category = ledger::PUBLISHER_CATEGORY::TIPPING | ledger::PUBLISHER_CATEGORY::DIRECT_DONATION;
+   // GetPublisherInfoList(start_record, limit_record, category, month, year,
+   //   std::bind(&GotContentSiteListInternal,
+   //               start_record, limit_record,
+   //               _1, _2));
   //
   // TODO retrieving recurrent donation Publishers List
   //GetRecurringDonationPublisherInfo(std::bind(&GotRecurringDonationPublisherInfo, _1, _2));
@@ -325,7 +334,7 @@ void BraveRewardsServiceImpl::GetRecurringDonationPublisherInfo(ledger::Publishe
 
 void BraveRewardsServiceImpl::GetPublisherInfoList(
     uint32_t start, uint32_t limit, 
-    ledger::PUBLISHER_CATEGORY category,
+    int category,
     const std::string& month,
     const std::string& year,
     ledger::GetPublisherInfoListCallback callback) {
