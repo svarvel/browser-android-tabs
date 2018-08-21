@@ -29,8 +29,8 @@ public:
 
   virtual void CreateWallet() = 0;
 
-  virtual void MakePayment(const ledger::PaidData& paid_data) = 0;
-  virtual void AddRecurrentPayment(const std::string& domain_name, const double& value) = 0;
+  virtual void MakePayment(const ledger::PaymentData& paid_data) = 0;
+  virtual void AddRecurringPayment(const std::string& domain, const double& value) = 0;
   virtual void OnLoad(const std::string& _tld,
             const std::string& _domain,
             const std::string& _path,
@@ -50,7 +50,7 @@ public:
                  uint64_t duration,
                  bool ignoreMinTime) = 0;*/
 
-  virtual void GetRecurrentDonationPublisherInfo(ledger::PublisherInfoCallback callback) = 0;
+  virtual void GetRecurringDonationPublisherInfo(ledger::PublisherInfoCallback callback) = 0;
   virtual void GetPublisherInfoList(uint32_t start,
                                 uint32_t limit,
                                 ledger::PUBLISHER_CATEGORY category,
@@ -67,7 +67,7 @@ public:
   virtual unsigned int GetPublisherMinVisits() const = 0;
   virtual bool GetPublisherAllowNonVerified() const = 0;
   virtual double GetContributionAmount() const = 0;
-  virtual void GetBalanceReport(ledger::BalanceReportInfo& report_info) const = 0;
+  virtual bool GetBalanceReport(ledger::BalanceReportInfo* report_info) const = 0;
 
   void AddObserver(BraveRewardsServiceObserver* observer);
   void RemoveObserver(BraveRewardsServiceObserver* observer);
