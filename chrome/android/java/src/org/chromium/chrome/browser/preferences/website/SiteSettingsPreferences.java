@@ -104,9 +104,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
             getPreferenceScreen().removePreference(findPreference(Type.PLAY_YT_VIDEO_IN_BROWSER));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
-            if (!SiteSettingsCategory.adsCategoryEnabled()) {
+            /*if (!SiteSettingsCategory.adsCategoryEnabled()) {
                 getPreferenceScreen().removePreference(findPreference(Type.ADS));
-            }
+            }*/
             if (!ChromeFeatureList.isEnabled(ChromeFeatureList.CLIPBOARD_CONTENT_SETTING)) {
                 getPreferenceScreen().removePreference(findPreference(Type.CLIPBOARD));
             }
@@ -136,9 +136,9 @@ public class SiteSettingsPreferences extends PreferenceFragment
             websitePrefs.add(Type.PLAY_VIDEO_IN_BACKGROUND);
             websitePrefs.add(Type.PLAY_YT_VIDEO_IN_BROWSER);
         } else {
-            if (SiteSettingsCategory.adsCategoryEnabled()) {
+            /*if (SiteSettingsCategory.adsCategoryEnabled()) {
                 websitePrefs.add(Type.ADS);
-            }
+            }*/
             websitePrefs.add(Type.AUTOMATIC_DOWNLOADS);
 
             // When showing the main menu, if Protected Content is not available, only Autoplay
@@ -200,8 +200,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getGeolocationAllowedSummary());
             } else if (Type.CLIPBOARD == prefCategory && !checked) {
                 p.setSummary(ContentSettingsResources.getClipboardBlockedListSummary());
-            } else if (Type.ADS == prefCategory && !checked) {
-                p.setSummary(ContentSettingsResources.getAdsBlockedListSummary());
+            //} else if (Type.ADS == prefCategory && !checked) {
+            //    p.setSummary(ContentSettingsResources.getAdsBlockedListSummary());
             } else if (Type.SOUND == prefCategory && !checked) {
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
