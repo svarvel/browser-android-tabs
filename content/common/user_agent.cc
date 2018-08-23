@@ -87,9 +87,9 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
     else if (windows_architecture == base::win::OSInfo::IA64_ARCHITECTURE)
       architecture_token = "; Win64; IA64";
   }
-/*#elif defined(OS_ANDROID)
-  std::string android_version_str = ANDROID_VERSION;//base::SysInfo::OperatingSystemVersion();
-  std::string android_info_str = ANDROID_INFO;*/
+#elif defined(OS_ANDROID)
+  std::string android_version_str = base::SysInfo::OperatingSystemVersion();
+  std::string android_info_str = GetAndroidOSInfo(include_android_build_number);
 #elif (defined(OS_POSIX) && !defined(OS_MACOSX)) || defined(OS_FUCHSIA)
   // Should work on any Posix system.
   struct utsname unixinfo;
@@ -125,10 +125,9 @@ std::string BuildOSCpuInfo(bool include_android_build_number) {
       os_minor_version,
       os_bugfix_version
 #elif defined(OS_ANDROID)
-      "Android"
-/*      "Android %s%s",
+      "Android %s%s",
       android_version_str.c_str(),
-      android_info_str.c_str()*/
+      android_info_str.c_str()
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
                       "%s %s",
                       unixinfo.sysname,  // e.g. Linux
@@ -203,7 +202,7 @@ std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
   std::string user_agent;
   base::StringAppendF(
       &user_agent,
-      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d Brave",
+      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d",
       os_info.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR,
