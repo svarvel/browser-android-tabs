@@ -30,7 +30,7 @@ public:
   virtual void CreateWallet() = 0;
 
   virtual void MakePayment(const ledger::PaymentData& payment_data) = 0;
-  virtual void AddRecurringPayment(const std::string& domain, const double& value) = 0;
+  virtual void AddRecurringPayment(const std::string& publisher_id, const double& value) = 0;
   virtual void OnLoad(const std::string& _tld,
             const std::string& _domain,
             const std::string& _path,
@@ -50,12 +50,10 @@ public:
                  uint64_t duration,
                  bool ignoreMinTime) = 0;*/
 
-  virtual void GetRecurringDonationPublisherInfo(ledger::PublisherInfoCallback callback) = 0;
+  virtual std::vector<ledger::ContributionInfo> GetRecurringDonationPublisherInfo() = 0;
   virtual void GetPublisherInfoList(uint32_t start,
                                 uint32_t limit,
-                                int category,
-                                const std::string& month,
-                                const std::string& year,
+                                const ledger::PublisherInfoFilter& filter,
                                 ledger::GetPublisherInfoListCallback callback) = 0;
   virtual void SetPublisherMinVisitTime(uint64_t duration_in_milliseconds) = 0;
   virtual void SetPublisherMinVisits(unsigned int visits) = 0;

@@ -49,7 +49,7 @@ public:
   void CreateWallet() override;
 
   void MakePayment(const ledger::PaymentData& payment_data) override;
-  void AddRecurringPayment(const std::string& domain, const double& value) override;
+  void AddRecurringPayment(const std::string& publisher_id, const double& value) override;
   void OnLoad(const std::string& _tld,
             const std::string& _domain,
             const std::string& _path,
@@ -95,11 +95,9 @@ public:
       ledger::GetPublisherInfoListCallback callback) override;
   void GetPublisherInfoList(uint32_t start,
                           uint32_t limit,
-                          int category,
-                          const std::string& month,
-                          const std::string& year,
+                          const ledger::PublisherInfoFilter& filter,
                           ledger::GetPublisherInfoListCallback callback) override;
-  void GetRecurringDonationPublisherInfo(ledger::PublisherInfoCallback callback) override;
+  std::vector<ledger::ContributionInfo> GetRecurringDonationPublisherInfo() override;
  
 private:
   typedef base::Callback<void(int, const std::string&)> FetchCallback;
