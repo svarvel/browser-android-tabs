@@ -62,9 +62,8 @@ public:
   void OnMediaStart(uint32_t tab_id) override;
   void OnMediaStop(uint32_t tab_id) override;
   void OnXHRLoad(uint32_t tab_id,
-      const std::string& url,
-      const std::map<std::string, std::string>& parts,
-      const uint64_t& current_time) override;
+      const GURL& url, const std::string& first_party_url, 
+      const std::string& referrer) override;
   /*void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) override;*/
@@ -148,15 +147,18 @@ private:
   void OnWalletProperties(ledger::Result result,
                           std::unique_ptr<ledger::WalletInfo> info) override;
   void GetWalletProperties() override;
-  void GetPromotion(const std::string& lang, const std::string& paymentId) override;
-  void GetPromotionCaptcha() override;
   //void SolvePromotionCaptcha(const std::string& solution) const override;
   //std::string GetWalletPassphrase() const override;
   //void RecoverWallet(const std::string passPhrase) const override;
-  void OnPromotion(ledger::Promo result) override;
-  void OnPromotionCaptcha(const std::string& image) override;
-  void OnRecoverWallet(ledger::Result result, double balance) override;
-  void OnPromotionFinish(ledger::Result result, unsigned int statusCode, uint64_t expirationDate) override;
+
+  void GetGrant(const std::string& lang, const std::string& paymentId) override;
+  void OnGrant(ledger::Result result, const ledger::Grant& grant) override;
+  void GetGrantCaptcha() override;
+  void OnGrantCaptcha(const std::string& image) override;
+  void OnRecoverWallet(ledger::Result result, double balance, const std::vector<ledger::Grant>& grants) override;
+  void OnGrantFinish(ledger::Result result, const ledger::Grant& grant) override;
+
+  uint64_t GetCurrentTimeStamp();
 
   Profile* profile_;  // NOT OWNED
   std::unique_ptr<ledger::Ledger> ledger_;
