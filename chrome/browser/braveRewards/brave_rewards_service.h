@@ -10,6 +10,7 @@
 #include "base/observer_list.h"
 #include "content_site.h"
 #include "components/keyed_service/core/keyed_service.h"
+#include "url/gurl.h"
 
 namespace brave_rewards {
 
@@ -43,9 +44,8 @@ public:
   virtual void OnMediaStart(uint32_t tab_id) = 0;
   virtual void OnMediaStop(uint32_t tab_id) = 0;
   virtual void OnXHRLoad(uint32_t tab_id,
-      const std::string& url,
-      const std::map<std::string, std::string>& parts,
-      const uint64_t& current_time) = 0;
+      const GURL& url, const std::string& first_party_url, 
+      const std::string& referrer) = 0;
   /*virtual void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) = 0;*/

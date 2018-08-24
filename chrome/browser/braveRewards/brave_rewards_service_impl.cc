@@ -220,7 +220,7 @@ void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
   std::string year;
   GetLocalMonthYear(month, year);
   ledger::VisitData visit_data(_tld, _domain, _path, tab_id, month, year);
-  ledger_->OnLoad(visit_data, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnLoad(visit_data, GetCurrentTimeStamp());
   // TODO adding a publisher to a Publishers List
   // {
   //   ledger::PaymentData payment_data("clifton.io", 10.2, base::Time::Now().ToTimeT(), 
@@ -252,15 +252,15 @@ void BraveRewardsServiceImpl::OnLoad(const std::string& _tld,
 }
 
 void BraveRewardsServiceImpl::OnUnload(uint32_t tab_id) {
-  ledger_->OnUnload(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnUnload(tab_id, GetCurrentTimeStamp());
 }
 
 void BraveRewardsServiceImpl::OnShow(uint32_t tab_id) {
-  ledger_->OnShow(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnShow(tab_id, GetCurrentTimeStamp());
 }
 
 void BraveRewardsServiceImpl::OnHide(uint32_t tab_id) {
-  ledger_->OnHide(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnHide(tab_id, GetCurrentTimeStamp());
   // TODO retrieving Publishers List
    // ledger::PUBLISHER_MONTH month = ledger::PUBLISHER_MONTH::JANUARY;
    // std::string year;
@@ -294,11 +294,11 @@ void BraveRewardsServiceImpl::OnHide(uint32_t tab_id) {
 }
 
 void BraveRewardsServiceImpl::OnForeground(uint32_t tab_id) {
-  ledger_->OnForeground(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnForeground(tab_id, GetCurrentTimeStamp());
 }
 
 void BraveRewardsServiceImpl::OnBackground(uint32_t tab_id) {
-  ledger_->OnBackground(tab_id, base::TimeTicks::Now().since_origin().InMilliseconds());
+  ledger_->OnBackground(tab_id, GetCurrentTimeStamp());
 }
 
 void BraveRewardsServiceImpl::OnMediaStart(uint32_t tab_id) {
@@ -309,11 +309,23 @@ void BraveRewardsServiceImpl::OnMediaStop(uint32_t tab_id) {
   
 }
 
-void BraveRewardsServiceImpl::OnXHRLoad(uint32_t tab_id,
-      const std::string& url,
-      const std::map<std::string, std::string>& parts,
-      const uint64_t& current_time) {
-  //ledger_->OnXHRLoad(tab_id, url); 
+uint64_t BraveRewardsServiceImpl::GetCurrentTimeStamp() {
+  return base::TimeTicks::Now().since_origin().InMilliseconds();
+}
+
+void BraveRewardsServiceImpl::OnXHRLoad(uint32_t tab_id, const GURL& url, 
+  const std::string& first_party_url, const std::string& referrer) {
+
+  std::map<std::string, std::string> parts;
+
+  //LOG(ERROR) << "!!!url OnXHRLoad == " << url.spec();
+  for (net::QueryIterator it(url); !it.IsAtEnd(); it.Advance()) {
+    parts[it.GetKey()] = it.GetUnescapedValue();
+    //LOG(ERROR) << "!!!it.GetKey() == " << it.GetKey();
+    //LOG(ERROR) << "!!!it.GetUnescapedValue() == " << it.GetUnescapedValue();
+  }
+  ledger_->OnXHRLoad(tab_id, url.spec(), parts, first_party_url, referrer,
+    GetCurrentTimeStamp());
 }
 
 std::string BraveRewardsServiceImpl::URIEncode(const std::string& value) {
@@ -590,27 +602,24 @@ void BraveRewardsServiceImpl::GetWalletProperties() {
   ledger_->GetWalletProperties();
 }
 
-void BraveRewardsServiceImpl::OnPromotion(ledger::Promo result) {
+void BraveRewardsServiceImpl::GetGrant(const std::string& lang, const std::string& paymentId) {
   // TODO
 }
 
-void BraveRewardsServiceImpl::OnPromotionCaptcha(const std::string& image) {
+void BraveRewardsServiceImpl::OnGrant(ledger::Result result, const ledger::Grant& grant) {
   // TODO
 }
-
-void BraveRewardsServiceImpl::OnRecoverWallet(ledger::Result result, double balance) {
+void BraveRewardsServiceImpl::GetGrantCaptcha() {
   // TODO
 }
-
-void BraveRewardsServiceImpl::OnPromotionFinish(ledger::Result result, unsigned int statusCode, uint64_t expirationDate) {
+void BraveRewardsServiceImpl::OnGrantCaptcha(const std::string& image) {
   // TODO
 }
-
-void BraveRewardsServiceImpl::GetPromotion(const std::string& lang, const std::string& paymentId) {
+void BraveRewardsServiceImpl::OnRecoverWallet(ledger::Result result, double balance, 
+  const std::vector<ledger::Grant>& grants) {
   // TODO
 }
-
-void BraveRewardsServiceImpl::GetPromotionCaptcha() {
+void BraveRewardsServiceImpl::OnGrantFinish(ledger::Result result, const ledger::Grant& grant) {
   // TODO
 }
 
