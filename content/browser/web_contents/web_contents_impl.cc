@@ -37,8 +37,6 @@
 #include "base/time/time.h"
 #include "base/trace_event/trace_event.h"
 #include "build/build_config.h"
-#include "chrome/browser/net/blockers/shields_config.h"
-#include "chrome/browser/profiles/profile.h"
 #include "components/download/public/common/download_stats.h"
 #include "components/rappor/public/rappor_utils.h"
 #include "components/url_formatter/url_formatter.h"
@@ -4275,7 +4273,6 @@ void WebContentsImpl::DidRedirectNavigation(
 
 void WebContentsImpl::ReadyToCommitNavigation(
     NavigationHandle* navigation_handle) {
-  ShouldBlockReferrer(navigation_handle);
   TRACE_EVENT1("navigation", "WebContentsImpl::ReadyToCommitNavigation",
                "navigation_handle", navigation_handle);
   for (auto& observer : observers_)
@@ -7020,65 +7017,6 @@ void WebContentsImpl::MediaMutedStatusChanged(
 
 void WebContentsImpl::SetVisibilityForChildViews(bool visible) {
   GetMainFrame()->SetVisibilityForChildViews(visible);
-}
-
-void WebContentsImpl::ShouldBlockReferrer(NavigationHandle* navigation_handle) {
-  if (!navigation_handle) {
-    return;
-  }
-  auto frame_tree_node_id = navigation_handle->GetFrameTreeNodeId();
-  auto *frame_tree_node = content::FrameTreeNode::GloballyFindByID(
-      frame_tree_node_id);
-  if (!frame_tree_node) {
-    return;
-  }
-  auto* navigation_entry =
-    frame_tree_node->navigator()->GetController()->GetPendingEntry();
-
-  if (!navigation_entry) {
-    navigation_entry =
-      frame_tree_node->navigator()->GetController()->GetLastCommittedEntry();
-  }
-  if (!navigation_entry) {
-    return;
-  }
-  GURL target_origin = navigation_handle->GetURL().GetOrigin();
-  GURL tab_origin(navigation_entry->GetURL().GetOrigin());
-  content::Referrer original_referrer = navigation_handle->GetReferrer();
-  content::Referrer new_referrer;
-  bool allow_referrers = false;
-  bool shields_up = true;
-  Profile* profile = Profile::FromBrowserContext(GetBrowserContext());
-  if (!profile) {
-    return;
-  }
-  bool is_incognito = profile->GetProfileType() == Profile::INCOGNITO_PROFILE;
-  net::blockers::ShieldsConfig* shieldsConfig =
-    net::blockers::ShieldsConfig::getShieldsConfig();
-  if (shieldsConfig) {
-      std::string hostConfig = shieldsConfig->getHostSettings(is_incognito, navigation_handle->GetURL().host());
-      if (hostConfig.length() == 11) {
-        if ('0' == hostConfig[0]) {
-            shields_up = false;
-        }
-        if (shields_up) {
-            if ('0' ==  hostConfig[8]) {
-                allow_referrers = true;
-            }
-        }
-      }
-  } else {
-      shields_up = false;
-  }
-  if (net::blockers::ShieldsConfig::shouldSetReferrer(allow_referrers,
-          shields_up,
-          original_referrer.url,
-          tab_origin,
-          navigation_handle->GetURL(),
-          navigation_handle->GetURL().GetOrigin(),
-          original_referrer.policy, &new_referrer)) {
-    navigation_entry->SetReferrer(new_referrer);
-  }
 }
 
 }  // namespace content

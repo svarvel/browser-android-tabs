@@ -16,6 +16,9 @@
 #include "base/strings/stringprintf.h"
 #include "base/task/post_task.h"
 #include "build/build_config.h"
+#include "chrome/browser/net/blockers/blockers_worker.h"
+#include "chrome/browser/net/blockers/shields_config.h"
+#include "chrome/browser/profiles/profile.h"
 #include "chrome/browser/stats_updater.h"
 #include "content/browser/appcache/appcache_navigation_handle.h"
 #include "content/browser/appcache/chrome_appcache_service.h"
@@ -518,7 +521,7 @@ NavigationRequest::NavigationRequest(
   // Sanitize the referrer.
   common_params_.referrer =
       Referrer::SanitizeForRequest(common_params_.url, common_params_.referrer);
-
+  ShouldBlockReferrer();
   if (from_begin_navigation_) {
     // This is needed to have data URLs commit in the same SiteInstance as the
     // initiating renderer.
@@ -2179,6 +2182,59 @@ void NavigationRequest::IgnoreInterfaceDisconnection() {
 void NavigationRequest::IgnoreCommitInterfaceDisconnection() {
   return commit_navigation_client_.set_connection_error_handler(
       base::DoNothing());
+}
+
+void NavigationRequest::ShouldBlockReferrer() {
+  if (!frame_tree_node_) {
+    return;
+  }
+  auto* navigation_entry =
+    frame_tree_node_->navigator()->GetController()->GetPendingEntry();
+
+  if (!navigation_entry) {
+    navigation_entry =
+      frame_tree_node_->navigator()->GetController()->GetLastCommittedEntry();
+  }
+  if (!navigation_entry) {
+    return;
+  }
+  GURL target_origin = common_params_.url.GetOrigin();
+  GURL tab_origin(navigation_entry->GetURL().GetOrigin());
+  content::Referrer original_referrer = common_params_.referrer;
+  content::Referrer new_referrer;
+  bool allow_referrers = false;
+  bool shields_up = true;
+  Profile* profile = Profile::FromBrowserContext(frame_tree_node_->navigator()->GetController()->GetBrowserContext());
+  if (!profile) {
+    return;
+  }
+  bool is_incognito = profile->GetProfileType() == Profile::INCOGNITO_PROFILE;
+  net::blockers::ShieldsConfig* shieldsConfig =
+    net::blockers::ShieldsConfig::getShieldsConfig();
+  if (shieldsConfig) {
+      std::string hostConfig = shieldsConfig->getHostSettings(is_incognito, common_params_.url.host());
+      if (hostConfig.length() == 11) {
+        if ('0' == hostConfig[0]) {
+            shields_up = false;
+        }
+        if (shields_up) {
+            if ('0' ==  hostConfig[8]) {
+                allow_referrers = true;
+            }
+        }
+      }
+  } else {
+      shields_up = false;
+  }
+  if (net::blockers::BlockersWorker::ShouldSetReferrer(allow_referrers,
+          shields_up,
+          original_referrer.url,
+          tab_origin,
+          common_params_.url,
+          common_params_.url.GetOrigin(),
+          original_referrer.policy, &new_referrer)) {
+    common_params_.referrer = new_referrer;
+  }
 }
 
 }  // namespace content

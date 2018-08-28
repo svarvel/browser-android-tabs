@@ -411,6 +411,8 @@ class CONTENT_EXPORT NavigationRequest : public NavigationURLLoaderDelegate {
   // Inform the RenderProcessHost to no longer expect a navigation.
   void ResetExpectedProcess();
 
+  void ShouldBlockReferrer();
+
   FrameTreeNode* frame_tree_node_;
 
   RenderFrameHostImpl* render_frame_host_ = nullptr;

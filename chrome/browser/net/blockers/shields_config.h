@@ -6,8 +6,6 @@
 #define SHIELDS_CONFIG_H_
 
 #include <jni.h>
-#include "url/gurl.h"
-#include "content/public/common/referrer.h"
 #include "../../../../base/android/jni_weak_ref.h"
 
 namespace net {
@@ -25,10 +23,6 @@ public:
     void resetUpdateAdBlockerFlag();
 
     static ShieldsConfig* getShieldsConfig();
-    static bool shouldSetReferrer(bool allow_referrers, bool shields_up,
-        const GURL& original_referrer, const GURL& tab_origin,
-        const GURL& target_url, const GURL& new_referrer_url,
-        blink::WebReferrerPolicy policy, content::Referrer *output_referrer);
     // Register the ShieldsConfig's native methods through JNI.
     //static bool RegisterShieldsConfig(JNIEnv* env);
 

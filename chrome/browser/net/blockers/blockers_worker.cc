@@ -18,6 +18,8 @@
 #include <tracking-protection/TPParser.h>
 #include <ad-block/ad_block_client.h>
 #include <ad-block/data_file_version.h>
+#include "base/strings/pattern.h"
+#include "net/base/registry_controlled_domains/registry_controlled_domain.h"
 
 #define TP_DATA_FILE                        "TrackingProtectionDownloaded.dat"
 #define ADBLOCK_DATA_FILE                   "ABPFilterParserDataDownloaded.dat"
@@ -734,6 +736,91 @@ namespace blockers {
     void BlockersWorker::SetRecentlyUsedCacheValue(const std::string& key, const std::string& value) {
       std::lock_guard<std::mutex> guard(httpse_recently_used_cache_mutex_);
       recently_used_cache_.data[key] = value;
+    }
+
+    // Taken from brave-core.
+    // We will need to sync changes if any happens in future.
+    bool BlockersWorker::ShouldSetReferrer(bool allow_referrers, bool shields_up,
+        const GURL& original_referrer, const GURL& tab_origin,
+        const GURL& target_url, const GURL& new_referrer_url,
+        blink::WebReferrerPolicy policy, content::Referrer *output_referrer) {
+      if (!output_referrer ||
+          allow_referrers ||
+          !shields_up ||
+          original_referrer.is_empty() ||
+          // Same TLD+1 whouldn't set the referrer
+          SameDomainOrHost(target_url, original_referrer,
+              registry_controlled_domains::INCLUDE_PRIVATE_REGISTRIES) ||
+          // Whitelisted referrers shoud never set the referrer
+          BlockersWorker::IsWhitelistedReferrer(tab_origin, target_url.GetOrigin())) {
+        return false;
+      }
+      *output_referrer = content::Referrer::SanitizeForRequest(target_url,
+          content::Referrer(new_referrer_url, policy));
+      return true;
+    }
+
+    // Modification from brave-core. Have to avoid URLPattern as it is part of extensions, that are not supposed to be built on Android.
+    // We will need to sync changes if any happens in future.
+    bool BlockersWorker::IsWhitelistedReferrer(const GURL& firstPartyOrigin,
+        const GURL& subresourceUrl) {
+      // Note that there's already an exception for TLD+1, so don't add those here.
+      // Check with the security team before adding exceptions.
+      if (!firstPartyOrigin.is_valid() || !subresourceUrl.is_valid()) {
+        return false;
+      }
+
+      // https://github.com/brave/browser-laptop/issues/5861
+      // The below patterns are done to only allow the specific request
+      // pattern, of reddit -> redditmedia -> embedly -> imgur.
+      static std::string redditPtrn = "https://www.reddit.com/*";
+      static std::vector<std::string> reddit_embed_patterns({
+        redditPtrn,
+        "https://www.redditmedia.com/*",
+        "https://cdn.embedly.com/*",
+        "https://imgur.com/*"
+      });
+
+      if (base::MatchPattern(firstPartyOrigin.spec(), redditPtrn)) {
+        bool is_reddit_embed = std::any_of(
+          reddit_embed_patterns.begin(),
+          reddit_embed_patterns.end(),
+          [&subresourceUrl](const std::string& pattern){
+            return base::MatchPattern(subresourceUrl.spec(), pattern);
+          });
+        if (is_reddit_embed) {
+          return true;
+        }
+      }
+
+      static std::map<GURL, std::vector<std::string> > whitelist_patterns_map = {{
+          GURL("https://www.facebook.com/"), {
+            "https://*.fbcdn.net/*"
+          }
+        }
+      };
+      std::map<GURL, std::vector<std::string> >::iterator i =
+          whitelist_patterns_map.find(firstPartyOrigin);
+      if (i != whitelist_patterns_map.end()) {
+        std::vector<std::string> &exceptions = i->second;
+        bool any_match = std::any_of(exceptions.begin(), exceptions.end(),
+            [&subresourceUrl](const std::string& pattern) {
+              return base::MatchPattern(subresourceUrl.spec(), pattern);
+            });
+        if (any_match) {
+          return true;
+        }
+      }
+
+      // It's preferred to use specific_patterns below when possible
+      static std::vector<std::string> whitelist_patterns({
+        "*://use.typekit.net/*",
+        "*://cloud.typography.com/*"
+      });
+      return std::any_of(whitelist_patterns.begin(), whitelist_patterns.end(),
+        [&subresourceUrl](const std::string& pattern){
+          return base::MatchPattern(subresourceUrl.spec(), pattern);
+        });
     }
 }  // namespace blockers
 }  // namespace net
