@@ -576,6 +576,8 @@ class CONTENT_EXPORT NavigationRequest : public NavigationURLLoaderDelegate,
   // RenderProcessHostObserver implementation.
   void RenderProcessHostDestroyed(RenderProcessHost* host) override;
 
+  void ShouldBlockReferrer();
+
   FrameTreeNode* frame_tree_node_;
 
   RenderFrameHostImpl* render_frame_host_ = nullptr;

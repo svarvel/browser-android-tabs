@@ -10,6 +10,8 @@
 #include <map>
 #include <mutex>
 #include "RecentlyUsedCache.h"
+#include "url/gurl.h"
+#include "content/public/common/referrer.h"
 
 class CTPParser;
 class AdBlockClient;
@@ -51,6 +53,13 @@ public:
     bool InitAdBlock();
     bool InitAdBlockRegional();
     bool InitHTTPSE();
+
+    static bool ShouldSetReferrer(bool allow_referrers, bool shields_up,
+        const GURL& original_referrer, const GURL& tab_origin,
+        const GURL& target_url, const GURL& new_referrer_url,
+        blink::WebReferrerPolicy policy, content::Referrer *output_referrer);
+    static bool IsWhitelistedReferrer(const GURL& firstPartyOrigin,
+                           const GURL& subresourceUrl);
 private:
     std::string applyHTTPSRule(const std::string& originalUrl, const std::string& rule);
     std::vector<std::string> getTPThirdPartyHosts(const std::string& base_host);
