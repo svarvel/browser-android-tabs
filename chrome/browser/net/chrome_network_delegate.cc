@@ -943,7 +943,7 @@ void ChromeNetworkDelegate::ShouldBlockReferrer(std::shared_ptr<OnBeforeURLReque
   bool shields_up = ctx->isGlobalBlockEnabled;
   std::string original_referrer(request->referrer());
   content::Referrer new_referrer;
-  if (net::blockers::ShieldsConfig::shouldSetReferrer(allow_referrers, shields_up,
+  if (net::blockers::BlockersWorker::ShouldSetReferrer(allow_referrers, shields_up,
           GURL(original_referrer), tab_origin, request->url(), target_origin,
           content::Referrer::NetReferrerPolicyToBlinkReferrerPolicy(
               request->referrer_policy()), &new_referrer)) {
