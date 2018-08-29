@@ -49,6 +49,9 @@ CONTENT_EXPORT std::string BuildUserAgentFromOSAndProduct(
     const std::string& product,
     const std::string& strHost);
 
+// Adds Brave user agent string if necessary
+CONTENT_EXPORT std::string AddBraveUserAgent(const std::string& baseString, const std::string& strHost);
+
 }  // namespace content
 
 #endif  // CONTENT_PUBLIC_COMMON_USER_AGENT_H_
