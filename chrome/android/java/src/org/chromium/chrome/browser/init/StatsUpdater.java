@@ -591,7 +591,7 @@ public class StatsUpdater {
     }
 
     public static String GetCustomHeaders() {
-        return mCustomHeaders;
+        return mCustomHeaders != null ? mCustomHeaders : "";
     }
 
     private static void SetCustomHeaders(String customHeaders) {
@@ -614,11 +614,8 @@ public class StatsUpdater {
         if (null == mCustomHeaders) {
             SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
             mCustomHeaders = sharedPref.getString(CUSTOM_HEADERS_NAME, null);
-            if (mCustomHeaders == null) {
-                mCustomHeaders = "";
-            }
         }
-        if (mCustomHeaders.isEmpty()) {
+        if (mCustomHeaders == null || mCustomHeaders.isEmpty()) {
             return "";
         }
         if (null == mCustomHeadersMap) {
