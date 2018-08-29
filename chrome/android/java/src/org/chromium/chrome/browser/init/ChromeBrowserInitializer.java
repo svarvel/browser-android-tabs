@@ -575,7 +575,7 @@ public class ChromeBrowserInitializer {
         }
 
         InitAdBlock();
-        UpdateStats();
+        //UpdateStats();
         CheckInstallationSource();
         SwitchSearchSuggestEnabled();
     }
