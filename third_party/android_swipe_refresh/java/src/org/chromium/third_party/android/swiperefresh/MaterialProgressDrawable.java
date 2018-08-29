@@ -578,7 +578,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
                 mArrow.lineTo((mArrowWidth * mArrowScale / 2f), (mArrowHeight * mArrowScale));
                 mArrow.offset(x - inset, y);*/
                 // We want circle instead of arrow
-                mArrow.addCircle(x, y, mArrowHeight / 2f, Path.Direction.CW);
+                mArrow.addCircle(x, y, (mArrowHeight * mArrowScale) / 2f, Path.Direction.CW);
                 mArrow.close();
                 // draw a triangle
                 mArrowPaint.setColor(mCurrentColor);
