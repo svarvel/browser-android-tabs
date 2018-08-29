@@ -214,32 +214,6 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         implements TabCreatorManager, AccessibilityStateChangeListener, PolicyChangeListener,
                    ContextualSearchTabPromotionDelegate, SnackbarManageable, SceneChangeObserver {
 
-    // Stats update
-    class UpdateStatsAsyncTask extends AsyncTask<Void,Void,Long> {
-
-        private Context mContext = null;
-
-        public UpdateStatsAsyncTask(Context context) {
-            mContext = context;
-        }
-
-        @Override
-        protected Long doInBackground(Void... params) {
-            if (null == mContext) {
-                return null;
-            }
-            try {
-                StatsUpdater.UpdateStats(mContext);
-            }
-            catch(Exception exc) {
-                // Just ignore it if we cannot update
-            }
-
-            return null;
-        }
-    }
-
-
     /**
      * Factory which creates the AppMenuHandler.
      */
@@ -1151,7 +1125,12 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     @Override
     public void onResumeWithNative() {
         super.onResumeWithNative();
-        new UpdateStatsAsyncTask(this).execute();
+        new Thread(new Runnable() {
+          @Override
+          public void run () {
+            StatsUpdater.UpdateStats(ContextUtils.getApplicationContext());
+          }
+        }).start();
         markSessionResume();
         RecordUserAction.record("MobileComeToForeground");
 
