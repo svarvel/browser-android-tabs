@@ -32,13 +32,16 @@ class Profile;
 
 namespace brave_rewards {
 
-class PublisherInfoBackend;
+class PublisherInfoDatabase;
+class MediaPublisherInfoBackend;
 
 class BraveRewardsServiceImpl : public BraveRewardsService,
                             public ledger::LedgerClient,
                             public net::URLFetcherDelegate,
                             public base::SupportsWeakPtr<BraveRewardsServiceImpl> {
 public:
+  static bool IsMediaLink(const std::string& url, const std::string& first_party_url, const std::string& referrer);
+
   BraveRewardsServiceImpl(Profile* profile);
   ~BraveRewardsServiceImpl() override;
 
@@ -64,6 +67,8 @@ public:
   void OnXHRLoad(uint32_t tab_id,
       const GURL& url, const std::string& first_party_url, 
       const std::string& referrer) override;
+  void OnPostData(const GURL& url, const std::string& first_party_url, 
+      const std::string& referrer, const std::string& post_data) override;
   /*void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) override;*/
@@ -84,13 +89,16 @@ public:
 
   void SavePublisherInfo(std::unique_ptr<ledger::PublisherInfo> publisher_info,
                  ledger::PublisherInfoCallback callback) override;
-  void LoadPublisherInfo(const std::string& publisher_key,
+  void LoadPublisherInfo(ledger::PublisherInfoFilter filter,
                  ledger::PublisherInfoCallback callback) override;
+  void LoadMediaPublisherInfo(const std::string& publisher_id,
+                              ledger::MediaPublisherInfoCallback callback) override;
+  void SaveMediaPublisherInfo(std::unique_ptr<ledger::MediaPublisherInfo> media_publisher_info,
+                                ledger::MediaPublisherInfoCallback callback) override;
   void LoadPublisherInfoList(
       uint32_t start,
       uint32_t limit,
       ledger::PublisherInfoFilter filter,
-      const std::vector<std::string>& prefix,
       ledger::GetPublisherInfoListCallback callback) override;
   void GetPublisherInfoList(uint32_t start,
                           uint32_t limit,
@@ -113,7 +121,12 @@ private:
                             std::unique_ptr<ledger::PublisherInfo> info,
                             bool success);
   void OnPublisherInfoLoaded(ledger::PublisherInfoCallback callback,
-                             std::unique_ptr<ledger::PublisherInfo> info);
+                            const ledger::PublisherInfoList list);
+  void OnMediaPublisherInfoLoaded(ledger::MediaPublisherInfoCallback callback,
+                            std::unique_ptr<ledger::MediaPublisherInfo> info);
+  void OnMediaPublisherInfoSaved(ledger::MediaPublisherInfoCallback callback,
+                            std::unique_ptr<ledger::MediaPublisherInfo> info,
+                            bool success);
   void OnPublisherInfoListLoaded(uint32_t start,
                                  uint32_t limit,
                                  ledger::GetPublisherInfoListCallback callback,
@@ -160,13 +173,19 @@ private:
 
   uint64_t GetCurrentTimeStamp();
 
+  void SavePublishersList(const std::string& publisher_state,
+    ledger::LedgerCallbackHandler* handler) override;
+  void SetTimer(uint64_t time_offset, uint32_t & timer_id) override;
+
   Profile* profile_;  // NOT OWNED
   std::unique_ptr<ledger::Ledger> ledger_;
   const scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
   const base::FilePath ledger_state_path_;
   const base::FilePath publisher_state_path_;
   const base::FilePath publisher_info_db_path_;
-  std::unique_ptr<PublisherInfoBackend> publisher_info_backend_;
+  const base::FilePath media_publisher_info_db_path_;
+  std::unique_ptr<PublisherInfoDatabase> publisher_info_backend_;
+  std::unique_ptr<MediaPublisherInfoBackend> media_publisher_info_backend_;
 
   std::map<const net::URLFetcher*, FetchCallback> fetchers_;
 

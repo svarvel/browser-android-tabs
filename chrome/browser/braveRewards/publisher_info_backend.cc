@@ -25,12 +25,15 @@ bool PublisherInfoBackend::Put(const std::string& key,
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
   bool initialized = EnsureInitialized();
   DCHECK(initialized);
+  LOG(ERROR) << "!!!PublisherInfoBackend::Put key == " << key;
+  LOG(ERROR) << "!!!PublisherInfoBackend::Put value == " << value;
 
   if (!initialized)
     return false;
 
   leveldb::WriteOptions options;
   leveldb::Status status = db_->Put(options, key, value);
+  LOG(ERROR) << "!!!PublisherInfoBackend::Put done ";
   if (status.ok())
     return true;
 
@@ -48,6 +51,7 @@ bool PublisherInfoBackend::Get(const std::string& lookup,
 
   leveldb::ReadOptions options;
   leveldb::Status status = db_->Get(options, lookup, value);
+  LOG(ERROR) << "!!!PublisherInfoBackend::Get value == " << *value;
   if (status.ok())
     return true;
 

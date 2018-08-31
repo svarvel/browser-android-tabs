@@ -21,6 +21,10 @@ config("external_config") {
      "brave_rewards_service_impl.h",
      "publisher_info_backend.cc",
      "publisher_info_backend.h",
+     "media_publisher_info_backend.cc",
+     "media_publisher_info_backend.h",
+     "publisher_info_database.cc",
+     "publisher_info_database.h",
    ]
  
    deps = [
@@ -33,6 +37,7 @@ config("external_config") {
      "//content/public/browser",
      "//net",
      "//services/network/public/mojom",
+     "//sql",
      "//third_party/leveldatabase",
      "//url",
    ]
