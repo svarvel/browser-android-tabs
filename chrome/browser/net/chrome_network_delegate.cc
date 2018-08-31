@@ -26,6 +26,9 @@
 #include "brave_src/browser/brave_tab_url_web_contents_observer.h"
 #include "bat-native-ledger/include/bat/ledger/ledger.h"
 #include "build/build_config.h"
+#include "chrome/browser/braveRewards/brave_rewards_service.h"
+#include "chrome/browser/braveRewards/brave_rewards_service_impl.h"
+#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/content_settings/cookie_settings_factory.h"
 #include "chrome/browser/content_settings/tab_specific_content_settings.h"
@@ -102,11 +105,11 @@ void ForceGoogleSafeSearchCallbackWrapper(net::CompletionOnceCallback callback,
   std::move(callback).Run(rv);
 }
 // Notifies ledger lib about media links
-void NotifyLedgerIOThread(IOThread* io_thread, const std::string& url, 
+/*void NotifyLedgerIOThread(IOThread* io_thread, const std::string& url, 
       const std::string& urlQuery, const std::string& type, bool privateTab) {
   //LOG(ERROR) << "!!!url NotifyLedgerIOThread == " << url;
-  //io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type/*, privateTab*/);
-}
+  //io_thread->globals()->ledger_->OnMediaRequest(url, urlQuery, type);*/
+//}
 
 bool IsAccessAllowedInternal(const base::FilePath& path,
                              const base::FilePath& profile_path) {
@@ -458,12 +461,18 @@ void ChromeNetworkDelegate::GetIOThreadResetBlocker(net::URLRequest* request,
           new_url, ctx));
 }
 
-void ChromeNetworkDelegate::NotifyLedger(const std::string& url, const std::string& urlQuery,
-     const std::string& type) {
-  content::BrowserThread::PostTask(
+void ChromeNetworkDelegate::NotifyLedger(const GURL& url, const std::string& urlQuery,
+     const std::string& last_first_party_url, const std::string& referrer) {
+  /*content::BrowserThread::PostTask(
         content::BrowserThread::IO, FROM_HERE,
         base::Bind(&NotifyLedgerIOThread, g_browser_process->io_thread(), url, urlQuery,
-          type, incognito_));
+          type, incognito_));*/
+  brave_rewards::BraveRewardsService* brave_rewards_service = BraveRewardsServiceFactory::GetForProfile(
+      ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  if (!brave_rewards_service) {
+    return;
+  }
+  brave_rewards_service->OnPostData(url, last_first_party_url, referrer, urlQuery);
 }
 
 void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* request,
@@ -717,8 +726,24 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
   }
 
   // Notify ledger if we have YouTube or Twitch links
-  std::string linkType = GetLinkType(request, last_first_party_url_.spec());
-  if (!linkType.empty()) {
+  //std::string linkType = GetLinkType(request, last_first_party_url_.spec());
+  if (brave_rewards::BraveRewardsServiceImpl::IsMediaLink(request->url().spec(), last_first_party_url_.spec(), request->referrer())) {
+    if (request->get_upload()) {
+      std::string urlQuery;
+      for (size_t i = 0; i < (*(request->get_upload())->GetElementReaders()).size(); i++) {
+        const net::UploadBytesElementReader* reader =
+          (*(request->get_upload())->GetElementReaders())[i]->AsBytesReader();
+        std::string upload_data(reader->bytes(), reader->length());
+        urlQuery += upload_data;
+      }
+      content::BrowserThread::PostTask(
+      content::BrowserThread::UI, FROM_HERE,
+      base::Bind(&ChromeNetworkDelegate::NotifyLedger,
+          base::Unretained(this), request->url(), urlQuery, 
+          last_first_party_url_.spec(), request->referrer()));
+    }
+  }
+  /*if (!linkType.empty()) {
     std::string urlQuery = request->url().query();
     if ("twitch" == linkType) {
       if (request->get_upload()) {
@@ -735,7 +760,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
       content::BrowserThread::UI, FROM_HERE,
       base::Bind(&ChromeNetworkDelegate::NotifyLedger,
           base::Unretained(this), request->url().spec(), urlQuery, linkType));
-  }
+  }*/
   //
 
   if (ctx->block && (nullptr == ctx->info || content::RESOURCE_TYPE_IMAGE != ctx->info->GetResourceType())) {

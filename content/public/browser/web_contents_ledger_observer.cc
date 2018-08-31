@@ -110,8 +110,9 @@ void WebContentsLedgerObserver::DidFinishNavigation(content::NavigationHandle* n
 void WebContentsLedgerObserver::ResourceLoadComplete(
     RenderFrameHost* render_frame_host,
     const mojom::ResourceLoadInfo& resource_load_info) {
-  if (!brave_rewards_service_)
+  if (!brave_rewards_service_ || !render_frame_host) {
     return;
+  }
 
   if (resource_load_info.resource_type == content::RESOURCE_TYPE_MEDIA ||
       resource_load_info.resource_type == content::RESOURCE_TYPE_XHR ||
@@ -119,7 +120,8 @@ void WebContentsLedgerObserver::ResourceLoadComplete(
       resource_load_info.resource_type == content::RESOURCE_TYPE_SCRIPT) {
 
     // TODO fill first_party_url and referrer with actual values
-    brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_).id(), resource_load_info.url, "", "");
+    brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_).id(), resource_load_info.url, 
+      render_frame_host->GetLastCommittedURL().host(), resource_load_info.referrer.spec());
   }
 }
 

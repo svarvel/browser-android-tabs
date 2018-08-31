@@ -64,8 +64,8 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
       GURL* new_url,
       std::shared_ptr<OnBeforeURLRequestContext> ctx);
   void CheckAdBlockerReload(net::blockers::ShieldsConfig* shields_config);
-  void NotifyLedger(const std::string& url, const std::string& urlQuery,
-      const std::string& type);
+  void NotifyLedger(const GURL& url, const std::string& urlQuery,
+      const std::string& last_first_party_url, const std::string& referrer);
 
   // If |profile| is nullptr or not set, events will be broadcast to all
   // profiles, otherwise they will only be sent to the specified profile.

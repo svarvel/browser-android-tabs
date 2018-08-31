@@ -46,6 +46,8 @@ public:
   virtual void OnXHRLoad(uint32_t tab_id,
       const GURL& url, const std::string& first_party_url, 
       const std::string& referrer) = 0;
+  virtual void OnPostData(const GURL& url, const std::string& first_party_url, 
+      const std::string& referrer, const std::string& post_data) = 0;
   /*virtual void SaveVisit(const std::string& publisher,
                  uint64_t duration,
                  bool ignoreMinTime) = 0;*/
