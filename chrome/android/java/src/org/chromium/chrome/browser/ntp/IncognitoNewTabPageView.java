@@ -39,9 +39,6 @@ import org.chromium.ui.widget.ChromeBulletSpan;
  * The New Tab Page for use in the incognito profile.
  */
 public class IncognitoNewTabPageView extends HistoryNavigationLayout {
-    public static String INCOGNITO_DSE_NAME = "DuckDuckGo";
-    public static String INCOGNITO_DSE_KEYWORD = "duckduckgo.com";
-    public static String PREF_DDG_OFFER_SHOWN = "brave_ddg_offer_shown";
 
     private IncognitoNewTabPageManager mManager;
     private boolean mFirstShow = true;
@@ -385,21 +382,22 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
     }
 
     public void showDDGOffer(boolean forceShow) {
-        if (TemplateUrlService.getInstance().getDefaultSearchEngineKeyword(true).equals(INCOGNITO_DSE_KEYWORD)) {
+        if (TemplateUrlService.getInstance().getDefaultSearchEngineKeyword(true).equals(TemplateUrlService.DDG_SE_KEYWORD) ||
+            !ContextUtils.getAppSharedPreferences().getBoolean(TemplateUrlService.PREF_SHOW_DDG_OFFER, true)) {
             mDDGOfferLink.setVisibility(View.GONE);
             mDDGOfferImage.setVisibility(View.GONE);
             return;
         }
-        if (!forceShow && ContextUtils.getAppSharedPreferences().getBoolean(PREF_DDG_OFFER_SHOWN, false)) {
+        if (!forceShow && ContextUtils.getAppSharedPreferences().getBoolean(TemplateUrlService.PREF_DDG_OFFER_SHOWN, false)) {
             return;
         }
-        ContextUtils.getAppSharedPreferences().edit().putBoolean(PREF_DDG_OFFER_SHOWN, true).apply();
+        ContextUtils.getAppSharedPreferences().edit().putBoolean(TemplateUrlService.PREF_DDG_OFFER_SHOWN, true).apply();
         new AlertDialog.Builder(mContext, R.style.BraveDialogTheme)
         .setView(R.layout.ddg_offer_layout)
         .setPositiveButton(R.string.ddg_offer_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                TemplateUrlService.getInstance().setSearchEngine(INCOGNITO_DSE_NAME, INCOGNITO_DSE_KEYWORD, true);
+                TemplateUrlService.getInstance().setSearchEngine(TemplateUrlService.DDG_SE_NAME, TemplateUrlService.DDG_SE_KEYWORD, true);
                 mDDGOfferLink.setVisibility(View.GONE);
                 mDDGOfferImage.setVisibility(View.GONE);
             }

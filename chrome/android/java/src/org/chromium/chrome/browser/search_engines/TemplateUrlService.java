@@ -51,8 +51,14 @@ public class TemplateUrlService {
     public static final String PREF_STANDARD_SEARCH_ENGINE_KEYWORD = "brave_standard_search_engine_keyword";
     public static final String PREF_PRIVATE_SEARCH_ENGINE = "brave_private_search_engine";
     public static final String PREF_PRIVATE_SEARCH_ENGINE_KEYWORD = "brave_private_search_engine_keyword";
-    public static String DSE_NAME = "Google";
-    public static String DSE_KEYWORD = "google.com";
+    public static final String DSE_NAME = "Google";
+    public static final String DSE_KEYWORD = "google.com";
+    public static final String PREF_SHOW_DDG_OFFER = "brave_show_ddg_offer";
+    public static final String PREF_DDG_OFFER_SHOWN = "brave_ddg_offer_shown";
+    public static final String DDG_SE_NAME = "DuckDuckGo";
+    public static final String DDG_SE_KEYWORD = "duckduckgo.com";
+    public static final String QWANT_SE_NAME = "Qwant";
+    public static final String QWANT_SE_KEYWORD = "qwant.com";
 
     private boolean mCurrentDSEPrivate;
 
