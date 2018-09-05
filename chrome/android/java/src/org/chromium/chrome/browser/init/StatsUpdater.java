@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 
 import java.util.Calendar;
 import java.io.BufferedInputStream;
@@ -40,10 +41,12 @@ import javax.net.ssl.TrustManagerFactory;
 
 import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.annotations.JNINamespace;
-import org.chromium.base.Log;
 import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
+import org.chromium.base.ThreadUtils;
 import org.chromium.chrome.browser.ConfigAPIs;
 import org.chromium.chrome.browser.ChromeVersionInfo;
+import org.chromium.chrome.browser.search_engines.TemplateUrlService;
 import org.chromium.chrome.browser.util.DateUtils;
 import org.chromium.chrome.browser.util.PackageUtils;
 
@@ -123,6 +126,17 @@ public class StatsUpdater {
                 }
                 if (currentTime.get(Calendar.MONTH) != previousObject.mMonth || currentTime.get(Calendar.YEAR) != previousObject.mYear) {
                     monthly = true;
+                }
+
+                String country = GetCurrentCountry();
+                if (country.equals("FR") || country.equals("DE")) {
+                    if (firstRun) {
+                        ContextUtils.getAppSharedPreferences().edit().putBoolean(TemplateUrlService.PREF_SHOW_DDG_OFFER, false).apply();
+                        ThreadUtils.runOnUiThread(() -> {
+                            TemplateUrlService.getInstance().setSearchEngine(TemplateUrlService.QWANT_SE_NAME, TemplateUrlService.QWANT_SE_KEYWORD, true);
+                            TemplateUrlService.getInstance().setSearchEngine(TemplateUrlService.QWANT_SE_NAME, TemplateUrlService.QWANT_SE_KEYWORD, false);
+                        });
+                    }
                 }
 
                 if ((firstRun && (null == mCustomHeaders)) || (!firstRun && daily)) {
@@ -710,6 +724,14 @@ public class StatsUpdater {
             Log.w(TAG, "WaitForUpdate was interrupted");
         } finally {
             mAvailable.release();
+        }
+    }
+
+    public static String GetCurrentCountry() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            return ContextUtils.getApplicationContext().getResources().getConfiguration().getLocales().get(0).getCountry();
+        } else{
+            return ContextUtils.getApplicationContext().getResources().getConfiguration().locale.getCountry();
         }
     }
 }
