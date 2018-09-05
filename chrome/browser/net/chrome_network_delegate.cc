@@ -934,7 +934,7 @@ bool ChromeNetworkDelegate::PendedRequestIsDestroyedOrCancelled(OnBeforeURLReque
 }
 
 void ChromeNetworkDelegate::ShouldBlockReferrer(std::shared_ptr<OnBeforeURLRequestContext> ctx, net::URLRequest* request) {
-  if (!ctx || !request) {
+  /*if (!ctx || !request) {
     return;
   }
   GURL target_origin = GURL(request->url()).GetOrigin();
@@ -948,5 +948,5 @@ void ChromeNetworkDelegate::ShouldBlockReferrer(std::shared_ptr<OnBeforeURLReque
           content::Referrer::NetReferrerPolicyToBlinkReferrerPolicy(
               request->referrer_policy()), &new_referrer)) {
       request->SetReferrer(new_referrer.url.spec());
-  }
+  }*/
 }

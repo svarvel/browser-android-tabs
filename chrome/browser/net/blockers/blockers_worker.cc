@@ -744,7 +744,8 @@ namespace blockers {
         const GURL& original_referrer, const GURL& tab_origin,
         const GURL& target_url, const GURL& new_referrer_url,
         blink::WebReferrerPolicy policy, content::Referrer *output_referrer) {
-      if (!output_referrer ||
+      return false;
+      /*if (!output_referrer ||
           allow_referrers ||
           !shields_up ||
           original_referrer.is_empty() ||
@@ -757,7 +758,7 @@ namespace blockers {
       }
       *output_referrer = content::Referrer::SanitizeForRequest(target_url,
           content::Referrer(new_referrer_url, policy));
-      return true;
+      return true;*/
     }
 
     // Modification from brave-core. Have to avoid URLPattern as it is part of extensions, that are not supposed to be built on Android.
