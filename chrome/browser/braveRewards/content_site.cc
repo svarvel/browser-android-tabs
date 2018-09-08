@@ -3,26 +3,27 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 #include "content_site.h"
 
-#include "bat/ledger/publisher_info.h"
+
 
 namespace brave_rewards {
 
-ContentSite PublisherInfoToContentSite(
-    const ledger::PublisherInfo& publisher_info) {
-  ContentSite content_site(publisher_info.id);
-  content_site.score = publisher_info.score;
-  content_site.pinned = publisher_info.pinned;
-  content_site.percentage = publisher_info.percent;
-  content_site.excluded = publisher_info.excluded;
-  return content_site;
-}
+  ContentSite::ContentSite() : percentage(0) {}
 
-ContentSite::ContentSite(const id_type site_id) :
-    id(site_id),
-    score(0),
-    pinned(false),
-    percentage(0),
-    excluded(false) {
-}
+  ContentSite::ContentSite(const std::string& site_id) :
+      id(site_id),
+      percentage(0),
+      verified(false) {
+  }
+
+  ContentSite::~ContentSite() {}
+
+  ContentSite::ContentSite(const ContentSite &properties) {
+    percentage = properties.percentage;
+    verified = properties.verified;
+    name = properties.name;
+    favicon_url = properties.favicon_url;
+    url = properties.url;
+    provider = properties.provider;
+  }
 
 }  // namespace brave_rewards

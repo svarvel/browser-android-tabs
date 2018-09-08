@@ -12,7 +12,12 @@ BraveRewardsService::BraveRewardsService() {
 BraveRewardsService::~BraveRewardsService() {
 }
 
-void BraveRewardsService::Shutdown() {
+void BraveRewardsService::AddObserver(BraveRewardsServiceObserver* observer) {
+  observers_.AddObserver(observer);
+}
+
+void BraveRewardsService::RemoveObserver(BraveRewardsServiceObserver* observer) {
+  observers_.RemoveObserver(observer);
 }
 
 }  // namespace brave_rewards
