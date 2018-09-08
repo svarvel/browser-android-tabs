@@ -44,9 +44,13 @@ KeyedService* BraveRewardsServiceFactory::BuildServiceInstanceFor(
 
 content::BrowserContext* BraveRewardsServiceFactory::GetBrowserContextToUse(
     content::BrowserContext* context) const {
-  return chrome::GetBrowserContextOwnInstanceInIncognito(context);
+  if (context->IsOffTheRecord())
+    return chrome::GetBrowserContextOwnInstanceInIncognito(context);
+  // use original profile for session profiles
+  return chrome::GetBrowserContextRedirectedInIncognito(context);
 }
 
 bool BraveRewardsServiceFactory::ServiceIsNULLWhileTesting() const {
   return true;
 }
+

@@ -5,6 +5,7 @@
 #ifndef BRAVE_REWARDS_PUBLISHER_INFO_DATABASE_H_
 #define BRAVE_REWARDS_PUBLISHER_INFO_DATABASE_H_
 
+#include <memory>
 #include <stddef.h>
 
 #include "base/compiler_specific.h"
@@ -27,15 +28,22 @@ class PublisherInfoDatabase {
 
   // Call before Init() to set the error callback to be used for the
   // underlying database connection.
-  void set_error_callback(const sql::Connection::ErrorCallback& error_callback) {
+  //TODO
+  /*
+  void set_error_callback(const sql::Database::ErrorCallback& error_callback) {
     db_.set_error_callback(error_callback);
   }
+  */
 
   bool InsertOrUpdatePublisherInfo(const ledger::PublisherInfo& info);
+  bool InsertOrUpdateMediaPublisherInfo(const std::string& media_key, const std::string& publisher_id);
+
   bool Find(int start,
             int limit,
             const ledger::PublisherInfoFilter& filter,
             ledger::PublisherInfoList* list);
+  std::unique_ptr<ledger::PublisherInfo> GetMediaPublisherInfo(
+      const std::string& media_key);
 
   // Returns the current version of the publisher info database
   static int GetCurrentVersion();
@@ -52,7 +60,10 @@ class PublisherInfoDatabase {
     base::MemoryPressureListener::MemoryPressureLevel memory_pressure_level);
   bool CreateContributionInfoTable();
   bool CreatePublisherInfoTable();
+  bool CreateMediaPublisherInfoTable();
+  bool CreateActivityInfoTable();
   bool CreateContributionInfoIndex();
+  bool CreateActivityInfoIndex();
 
   sql::Connection& GetDB();
   sql::MetaTable& GetMetaTable();

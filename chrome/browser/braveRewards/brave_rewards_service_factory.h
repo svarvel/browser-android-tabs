@@ -10,8 +10,9 @@
 
 class Profile;
 
-namespace brave_rewards {
-class BraveRewardsService;
+namespace brave_rewards
+{
+  class BraveRewardsService;
 }
 
 // Singleton that owns all BraveRewardsService and associates them with
