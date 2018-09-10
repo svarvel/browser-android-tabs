@@ -20,7 +20,7 @@ static void JNI_ContentUtils_SetUserAgentOverride(
   const char kLinuxInfoStr[] = "X11; Linux x86_64";
   std::string product = version_info::GetProductNameAndVersionForUserAgent();
   std::string spoofed_ua =
-      content::BuildUserAgentFromOSAndProduct(kLinuxInfoStr, product);
+      content::BuildUserAgentFromOSAndProduct(kLinuxInfoStr, product, "");
   content::WebContents* web_contents =
       content::WebContents::FromJavaWebContents(jweb_contents);
   web_contents->SetUserAgentOverride(spoofed_ua, false);

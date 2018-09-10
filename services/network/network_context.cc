@@ -1626,7 +1626,7 @@ void NetworkContext::PreconnectSockets(uint32_t num_streams,
   std::string user_agent;
   if (url_request_context_->http_user_agent_settings()) {
     user_agent =
-        url_request_context_->http_user_agent_settings()->GetUserAgent();
+        url_request_context_->http_user_agent_settings()->GetUserAgent("");
   }
   net::HttpRequestInfo request_info;
   request_info.url = url;

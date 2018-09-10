@@ -29,6 +29,7 @@ class ServiceWorkerContentSettingsProxy final
   // Blocks until the response arrives.
   bool RequestFileSystemAccessSync() override;
   bool AllowIndexedDB(const WebSecurityOrigin&) override;
+  bool AllowFingerprinting() override;
 
  private:
   // To ensure the returned pointer is destructed on the same thread

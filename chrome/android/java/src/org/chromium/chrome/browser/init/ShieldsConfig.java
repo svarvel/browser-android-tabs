@@ -432,7 +432,7 @@ public class ShieldsConfig {
           return isJavaScriptEnabled(false, host);
         }
 
-        if (!PrefServiceBridge.getInstance().javaScriptEnabled()) {
+        if (!PrefServiceBridge.getInstance().isCategoryEnabled(ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT)) {
             return false;
         }
 

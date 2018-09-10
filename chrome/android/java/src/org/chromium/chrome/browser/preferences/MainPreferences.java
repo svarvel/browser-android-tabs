@@ -118,7 +118,7 @@ public class MainPreferences extends PreferenceFragment
         cachePreferences();
 
         if (ChromeFeatureList.isEnabled(ChromeFeatureList.UNIFIED_CONSENT)) {
-            mSignInPreference.setOnStateChangedCallback(this::onSignInPreferenceStateChanged);
+            //mSignInPreference.setOnStateChangedCallback(this::onSignInPreferenceStateChanged);
         } else {
             getPreferenceScreen().removePreference(findPreference(PREF_ACCOUNT_SECTION));
             getPreferenceScreen().removePreference(findPreference(PREF_SYNC_AND_SERVICES));
@@ -309,11 +309,11 @@ public class MainPreferences extends PreferenceFragment
 
     private void onSignInPreferenceStateChanged() {
         // Remove "Account" section header if the personalized sign-in promo is shown.
-        if (mSignInPreference.getState() == SignInPreference.State.PERSONALIZED_PROMO) {
+        /*if (mSignInPreference.getState() == SignInPreference.State.PERSONALIZED_PROMO) {
             removePreferenceIfPresent(PREF_ACCOUNT_SECTION);
         } else {
             addPreferenceIfAbsent(PREF_ACCOUNT_SECTION);
-        }
+        }*/
     }
 
     // TemplateUrlService.LoadListener implementation.

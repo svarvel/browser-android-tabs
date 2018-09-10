@@ -320,7 +320,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
 
   int rv = OnBeforeURLRequest_PreBlockersWork(
        request,
-       callback,
+       std::move(callback),
        new_url,
        ctx);
 
@@ -329,7 +329,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest(
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
    net::URLRequest* request,
-   const net::CompletionCallback& callback,
+   net::CompletionOnceCallback callback,
    GURL* new_url,
    std::shared_ptr<OnBeforeURLRequestContext> ctx)
  {
@@ -410,14 +410,14 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
     content::BrowserThread::PostTask(
       content::BrowserThread::UI, FROM_HERE,
       base::Bind(&ChromeNetworkDelegate::GetIOThread,
-          base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
+          base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
     if (nullptr != shieldsConfig) {
       shieldsConfig->resetUpdateAdBlockerFlag();
     }
     ctx->pendingAtLeastOnce = true;
     pending_requests_->Insert(request->identifier());
   } else {
-    rv = OnBeforeURLRequest_TpBlockPreFileWork(request, callback, new_url, ctx);
+    rv = OnBeforeURLRequest_TpBlockPreFileWork(request, std::move(callback), new_url, ctx);
     // Check do we need to reload adblocker. We will do that on next call
     content::BrowserThread::PostTask(
       content::BrowserThread::IO, FROM_HERE,
@@ -436,19 +436,19 @@ void ChromeNetworkDelegate::CheckAdBlockerReload(net::blockers::ShieldsConfig* s
 }
 
 void ChromeNetworkDelegate::GetIOThread(net::URLRequest* request,
-    const net::CompletionCallback& callback,
+    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   scoped_refptr<base::SequencedTaskRunner> task_runner =
     base::CreateSequencedTaskRunnerWithTraits(
          {base::MayBlock(), base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN});
   task_runner->PostTask(FROM_HERE, base::Bind(&ChromeNetworkDelegate::ResetBlocker,
-        base::Unretained(this), g_browser_process->io_thread(), base::Unretained(request), callback,
+        base::Unretained(this), g_browser_process->io_thread(), base::Unretained(request), base::Passed(&callback),
           new_url, ctx));
 }
 
 void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* request,
-    const net::CompletionCallback& callback,
+    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   blockers_worker_ = io_thread->ResetBlockersWorker();
@@ -456,13 +456,13 @@ void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* r
   content::BrowserThread::PostTask(
     content::BrowserThread::IO, FROM_HERE,
     base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
-        base::Unretained(this), base::Unretained(request), callback, new_url, ctx)
+        base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx)
       );
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
   net::URLRequest* request,
-  const net::CompletionCallback& callback,
+  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx)
 {
@@ -483,14 +483,14 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
           base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork,
               base::Unretained(this)),
           base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
-              base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
+              base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
         ctx->pendingAtLeastOnce = true;
         pending_requests_->Insert(request->identifier());
         return net::ERR_IO_PENDING;
       }
   }
 
-  int rv = OnBeforeURLRequest_TpBlockPostFileWork(request, callback, new_url, ctx);
+  int rv = OnBeforeURLRequest_TpBlockPostFileWork(request, std::move(callback), new_url, ctx);
   return rv;
 }
 
@@ -501,7 +501,7 @@ void ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork() {
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork(
   net::URLRequest* request,
-  const net::CompletionCallback& callback,
+  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
@@ -519,13 +519,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork(
     }
   }
 
-  int rv = OnBeforeURLRequest_AdBlockPreFileWork(request, callback, new_url, ctx);
+  int rv = OnBeforeURLRequest_AdBlockPreFileWork(request, std::move(callback), new_url, ctx);
   return rv;
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
   net::URLRequest* request,
-  const net::CompletionCallback& callback,
+  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
@@ -559,14 +559,14 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
           base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork,
               base::Unretained(this), ctx),
           base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork),
-              base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
+              base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
         ctx->pendingAtLeastOnce = true;
         pending_requests_->Insert(request->identifier());
         return net::ERR_IO_PENDING;
       }
   }
 
-  int rv = OnBeforeURLRequest_AdBlockPostFileWork(request, callback, new_url, ctx);
+  int rv = OnBeforeURLRequest_AdBlockPostFileWork(request, std::move(callback), new_url, ctx);
   return rv;
 }
 
@@ -582,7 +582,7 @@ void ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shared_ptr<O
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
   net::URLRequest* request,
-  const net::CompletionCallback& callback,
+  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
@@ -608,13 +608,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
     *new_url = GURL(TRANSPARENT1PXGIF);
   }
 
-   int rv = OnBeforeURLRequest_HttpsePreFileWork(request, callback, new_url, ctx);
+   int rv = OnBeforeURLRequest_HttpsePreFileWork(request, std::move(callback), new_url, ctx);
    return rv;
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
   net::URLRequest* request,
-  const net::CompletionCallback& callback,
+  net::CompletionOnceCallback callback,
   GURL* new_url,
   std::shared_ptr<OnBeforeURLRequestContext> ctx) {
 
@@ -641,14 +641,14 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
         base::Bind(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork,
             base::Unretained(this), base::Unretained(request), ctx),
         base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork),
-            base::Unretained(this), base::Unretained(request), callback, new_url, ctx));
+            base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
       ctx->pendingAtLeastOnce = true;
       pending_requests_->Insert(request->identifier());
       return net::ERR_IO_PENDING;
     }
   }
 
-  int rv = OnBeforeURLRequest_HttpsePostFileWork(request, callback, new_url, ctx);
+  int rv = OnBeforeURLRequest_HttpsePostFileWork(request, std::move(callback), new_url, ctx);
   return rv;
 }
 
@@ -659,7 +659,7 @@ void ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRequest* r
   ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy, ctx->request_identifier);
 }
 
-int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request,const net::CompletionCallback& callback,GURL* new_url,std::shared_ptr<OnBeforeURLRequestContext> ctx)
+int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest* request,net::CompletionOnceCallback callback,GURL* new_url,std::shared_ptr<OnBeforeURLRequestContext> ctx)
 {
   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
 
@@ -676,13 +676,13 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePostFileWork(net::URLRequest
     }
   }
 
-  int rv = OnBeforeURLRequest_PostBlockers(request, callback, new_url, ctx);
+  int rv = OnBeforeURLRequest_PostBlockers(request, std::move(callback), new_url, ctx);
   return rv;
 }
 
 int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
     net::URLRequest* request,
-    const net::CompletionCallback& callback,
+    net::CompletionOnceCallback callback,
     GURL* new_url,
     std::shared_ptr<OnBeforeURLRequestContext> ctx)
 {
@@ -700,9 +700,8 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
 
   if (ctx->block && (nullptr == ctx->info || content::RESOURCE_TYPE_IMAGE != ctx->info->GetResourceType())) {
     *new_url = GURL("");
-
     if (ctx->pendingAtLeastOnce) {
-      callback.Run(net::ERR_BLOCKED_BY_ADMINISTRATOR);
+      std::move(callback).Run(net::ERR_BLOCKED_BY_ADMINISTRATOR);
     }
     return net::ERR_BLOCKED_BY_ADMINISTRATOR;
   }
