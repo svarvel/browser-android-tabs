@@ -1,0 +1,45 @@
+brave_common_typescript_includes = [
+  rebase_path("classSet.ts"),
+  rebase_path("debounce.ts"),
+  rebase_path("locale.ts"),
+]
+
+template("transpile_web_ui") {
+  action(target_name) {
+    script = "//components/brave_rewards_ui/script/transpile-web-ui.py"
+
+    inputs = brave_common_typescript_includes
+    if (defined(invoker.inputs)) {
+      inputs += invoker.inputs
+    }
+
+    if (defined(invoker.output_dir)) {
+      output_dir = invoker.output_dir
+    } else {
+      output_dir = "$root_gen_dir/brave"
+    }
+
+    outputs = []
+    foreach(bundle_name, invoker.bundle_names) {
+      outputs += ["$output_dir/$bundle_name"]
+    }
+
+    gen_dir = rebase_path(output_dir)
+    args = [
+      "--target_gen_dir=$gen_dir"
+    ]
+    if (is_official_build) {
+      args += [
+        "--production",
+      ]
+    }
+
+    forward_variables_from(invoker,
+                           [
+                             "deps",
+                             "public_deps",
+                             "testonly",
+                             "visibility",
+                           ])
+  }
+}

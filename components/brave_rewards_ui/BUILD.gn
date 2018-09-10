@@ -1,0 +1,27 @@
+import("//components/common/typescript.gni")
+
+transpile_web_ui("ui") {
+  inputs = [
+    "resources/actions/rewards_actions.ts",
+    "resources/brave_rewards.html",
+    "resources/brave_rewards.tsx",
+    "resources/components/adsBox.tsx",
+    "resources/components/app.tsx",
+    "resources/components/contributeBox.tsx",
+    "resources/components/donationsBox.tsx",
+    "resources/components/grant.tsx",
+    "resources/components/pageWallet.tsx",
+    "resources/components/settingsPage.tsx",
+    "resources/constants/rewards_types.ts",
+    "resources/reducers/index.ts",
+    "resources/reducers/grant_reducer.ts",
+    "resources/reducers/publishers_reducer.ts",
+    "resources/reducers/rewards_reducer.ts",
+    "resources/reducers/wallet_reducer.ts",
+    "resources/storage.ts",
+    "resources/store.ts",
+    "resources/utils.ts",
+  ]
+
+  bundle_names = ["brave_rewards.bundle.js"]
+}
