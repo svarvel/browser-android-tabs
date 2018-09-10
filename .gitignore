@@ -49,6 +49,7 @@ GPATH
 GRTAGS
 GSYMS
 GTAGS
+package-lock.json
 Session.vim
 tags
 Thumbs.db
@@ -231,6 +232,7 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /net/Release
 /net/testserver.log
 /net/third_party/quiche
+/node_modules
 /out*/
 /ppapi/native_client/nacl_irt.xml
 /ppapi/native_client/ppapi_lib.xml
