@@ -25,7 +25,7 @@ static void JNI_ContentUtils_SetUserAgentOverride(
   ChromeContentClient content_client;
   std::string product = content_client.GetProduct();
   std::string spoofed_ua =
-      content::BuildUserAgentFromOSAndProduct(kLinuxInfoStr, product);
+      content::BuildUserAgentFromOSAndProduct(kLinuxInfoStr, product, "");
   content::WebContents* web_contents =
       content::WebContents::FromJavaWebContents(jweb_contents);
   web_contents->SetUserAgentOverride(spoofed_ua, false);

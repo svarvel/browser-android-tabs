@@ -507,7 +507,7 @@ public class ChromeTabbedActivity
 
             mTabModelObserver = new TabModelSelectorTabModelObserver(mTabModelSelectorImpl) {
                 @Override
-                public void didSelectTab(Tab tab, TabSelectionType type, int lastId) {
+                public void didSelectTab(Tab tab, @TabSelectionType int type, int lastId) {
                     try {
                         URL url = new URL(tab.getUrl());
 
@@ -1546,9 +1546,9 @@ public class ChromeTabbedActivity
                 }
                 tab.clearBraveShieldsCount();
             }
-
             @Override
             public void onPageLoadFinished(final Tab tab) {
+                mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 String url = tab.getUrl();
                 if (getActivityTab() == tab) {
                     try {
@@ -1558,21 +1558,6 @@ public class ChromeTabbedActivity
                         setBraveShieldsBlackAndWhite();
                     }
                 }
-            }
-
-            @Override
-            public void onTabStateInitialized() {
-                if (!mCreatedTabOnStartup) return;
-
-                TabModel model = mTabModelSelectorImpl.getModel(false);
-                TasksUma.recordTasksUma(model);
-            }
-        });
-
-        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelectorImpl) {
-            @Override
-            public void onPageLoadFinished(final Tab tab, String url) {
-                mAppIndexingUtil.extractCopylessPasteMetadata(tab);
             }
 
             @Override

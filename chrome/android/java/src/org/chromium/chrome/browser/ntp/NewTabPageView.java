@@ -13,7 +13,10 @@ import android.support.v7.widget.RecyclerView.AdapterDataObserver;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.chromium.base.TraceEvent;
 import org.chromium.base.VisibleForTesting;
@@ -39,6 +42,14 @@ import org.chromium.chrome.browser.widget.displaystyle.UiConfig;
  */
 public class NewTabPageView extends FrameLayout {
     private static final String TAG = "NewTabPageView";
+
+    /*
+    * For Brave stats
+    */
+    private static final String PREF_TRACKERS_BLOCKED_COUNT = "trackers_blocked_count";
+    private static final String PREF_ADS_BLOCKED_COUNT = "ads_blocked_count";
+    private static final String PREF_HTTPS_UPGRADES_COUNT = "https_upgrades_count";
+    private static final short MILLISECONDS_PER_ITEM = 50;
 
     private NewTabPageRecyclerView mRecyclerView;
 

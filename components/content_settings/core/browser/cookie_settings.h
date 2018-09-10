@@ -53,7 +53,7 @@ class CookieSettings : public CookieSettingsBase,
   // must be a non-nullptr outparam.
   //
   // This may be called on any thread.
-  void GetCookieSettings(ContentSettingsForOneType* settings);
+  void GetCookieSettings(ContentSettingsForOneType* settings) const;
 
   // Sets the default content setting (CONTENT_SETTING_ALLOW,
   // CONTENT_SETTING_BLOCK, or CONTENT_SETTING_SESSION_ONLY) for cookies.
@@ -94,7 +94,7 @@ class CookieSettings : public CookieSettingsBase,
   // Returns true if the "block third party cookies" preference is set.
   //
   // This method may be called on any thread.
-  bool ShouldBlockThirdPartyCookies(const GURL& first_party_url);
+  bool ShouldBlockThirdPartyCookies(const GURL& first_party_url) const;
 
   base::ThreadChecker thread_checker_;
   scoped_refptr<HostContentSettingsMap> host_content_settings_map_;
@@ -107,7 +107,7 @@ class CookieSettings : public CookieSettingsBase,
 
   bool block_third_party_cookies_;
 
-  std::string previous_first_party_host_;
+  mutable std::string previous_first_party_host_;
 
   bool incognito_;
 

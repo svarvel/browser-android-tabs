@@ -439,7 +439,8 @@ void ContentSettingsRegistry::Init() {
            ValidSettings(CONTENT_SETTING_BLOCK, CONTENT_SETTING_ALLOW),
            WebsiteSettingsInfo::REQUESTING_ORIGIN_AND_TOP_LEVEL_ORIGIN_SCOPE,
            WebsiteSettingsRegistry::PLATFORM_ANDROID,
-           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE);
+           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE,
+           ContentSettingsInfo::PERSISTENT);
 
   Register(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, "play-video-in-background",
            CONTENT_SETTING_BLOCK, //default is not to allow to play video in background
@@ -447,7 +448,8 @@ void ContentSettingsRegistry::Init() {
            ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
            WebsiteSettingsInfo::REQUESTING_ORIGIN_ONLY_SCOPE,
            WebsiteSettingsRegistry::PLATFORM_ANDROID,
-           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE);
+           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE,
+           ContentSettingsInfo::PERSISTENT);
 
   Register(CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER, "play-yt-video-in-browser",
            CONTENT_SETTING_ALLOW, //default is to allow to play YouTube video in browser instead of YouTube app
@@ -455,7 +457,8 @@ void ContentSettingsRegistry::Init() {
            ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
            WebsiteSettingsInfo::REQUESTING_ORIGIN_ONLY_SCOPE,
            WebsiteSettingsRegistry::PLATFORM_ANDROID,
-           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE);
+           ContentSettingsInfo::INHERIT_IF_LESS_PERMISSIVE,
+           ContentSettingsInfo::PERSISTENT);
 }
 
 void ContentSettingsRegistry::Register(

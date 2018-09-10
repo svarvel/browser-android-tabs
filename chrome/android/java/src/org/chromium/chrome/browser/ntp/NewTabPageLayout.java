@@ -80,7 +80,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
 
     private View mMiddleSpacer; // Spacer between toolbar and Most Likely.
 
-    private LogoView mSearchProviderLogoView;
+    //private LogoView mSearchProviderLogoView;
     private View mSearchBoxView;
     private ViewGroup mSiteSectionView;
     private SiteSectionViewHolder mSiteSectionViewHolder;
@@ -245,9 +245,9 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
                     mExploreSectionView, profile, mManager.getNavigationDelegate());
         }
 
-        mSearchProviderLogoView = findViewById(R.id.search_provider_logo);
+        /*mSearchProviderLogoView = findViewById(R.id.search_provider_logo);
         mLogoDelegate = new LogoDelegateImpl(
-                mManager.getNavigationDelegate(), mSearchProviderLogoView, profile);
+                mManager.getNavigationDelegate(), mSearchProviderLogoView, profile);*/
 
         mSearchBoxView = findViewById(R.id.search_box);
         if (!DeviceFormFactor.isWindowOnTablet(mTab.getWindowAndroid())) {
@@ -260,7 +260,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
         initializeVoiceSearchButton();
         initializeLayoutChangeListener();
         setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
-        mSearchProviderLogoView.showSearchProviderInitialView();
+        //mSearchProviderLogoView.showSearchProviderInitialView();
 
         mTileGroup.startObserving(getMaxTileRows() * getMaxTileColumns());
 
@@ -526,7 +526,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
     public void loadSearchProviderLogo() {
         if (!mSearchProviderHasLogo) return;
 
-        mSearchProviderLogoView.showSearchProviderInitialView();
+        /*mSearchProviderLogoView.showSearchProviderInitialView();
 
         mLogoDelegate.getSearchProviderLogo((logo, fromCache) -> {
             if (logo == null && fromCache) return;
@@ -534,7 +534,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
             mSearchProviderLogoView.setDelegate(mLogoDelegate);
             mSearchProviderLogoView.updateLogo(logo);
             mSnapshotTileGridChanged = true;
-        });
+        });*/
     }
 
     /**
@@ -566,11 +566,11 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
             // Don't change the visibility of a ViewStub as that will automagically inflate it.
             if (child instanceof ViewStub) continue;
 
-            if (child == mSearchProviderLogoView) {
+            /*if (child == mSearchProviderLogoView) {
                 child.setVisibility(logoVisibility);
-            } else {
+            } else {*/
                 child.setVisibility(visibility);
-            }
+            //}
         }
 
         updateTileGridPlaceholderVisibility();
@@ -676,7 +676,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
      * @param alpha opacity (alpha) value to use.
      */
     public void setSearchProviderLogoAlpha(float alpha) {
-        mSearchProviderLogoView.setAlpha(alpha);
+        //mSearchProviderLogoView.setAlpha(alpha);
     }
 
     /**
@@ -802,7 +802,7 @@ public class NewTabPageLayout extends LinearLayout implements TileGroup.Observer
      * @see InvalidationAwareThumbnailProvider#captureThumbnail(Canvas)
      */
     public void onPreCaptureThumbnail() {
-        mSearchProviderLogoView.endFadeAnimation();
+        //mSearchProviderLogoView.endFadeAnimation();
         mSnapshotTileGridChanged = false;
     }
 

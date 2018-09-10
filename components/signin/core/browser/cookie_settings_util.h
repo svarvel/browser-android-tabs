@@ -13,11 +13,11 @@ namespace signin {
 
 // Returns true if signin cookies are allowed.
 bool SettingsAllowSigninCookies(
-    content_settings::CookieSettings* cookie_settings);
+    const content_settings::CookieSettings* cookie_settings);
 
 // Returns true if signin cookies are cleared on exit.
 bool SettingsDeleteSigninCookiesOnExit(
-    content_settings::CookieSettings* cookie_settings);
+    const content_settings::CookieSettings* cookie_settings);
 
 }  // namespace signin
 
