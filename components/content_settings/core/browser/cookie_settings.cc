@@ -45,7 +45,7 @@ ContentSetting CookieSettings::GetDefaultCookieSetting(
 }
 
 void CookieSettings::GetCookieSettings(
-    ContentSettingsForOneType* settings) {
+    ContentSettingsForOneType* settings) const {
   host_content_settings_map_->GetSettingsForOneType(
       CONTENT_SETTINGS_TYPE_COOKIES, std::string(), settings);
 }
@@ -95,7 +95,7 @@ void CookieSettings::ShutdownOnUIThread() {
 void CookieSettings::GetCookieSetting(const GURL& url,
                                       const GURL& first_party_url,
                                       content_settings::SettingSource* source,
-                                      ContentSetting* cookie_setting) {
+                                      ContentSetting* cookie_setting) const {
   DCHECK(cookie_setting);
   // Auto-allow in extensions or for WebUI embedded in a secure origin.
   if (first_party_url.SchemeIs(kChromeUIScheme) &&
@@ -149,7 +149,7 @@ void CookieSettings::OnBlockThirdPartyCookiesChanged() {
       prefs::kBlockThirdPartyCookies);
 }
 
-bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url) {
+bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url) const {
   base::AutoLock auto_lock(lock_);
   net::blockers::ShieldsConfig* shieldsConfig =
     net::blockers::ShieldsConfig::getShieldsConfig();

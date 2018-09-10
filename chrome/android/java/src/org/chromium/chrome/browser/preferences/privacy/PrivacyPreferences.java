@@ -92,9 +92,9 @@ public class PrivacyPreferences extends PreferenceFragment
             preferenceScreen.removePreference(findPreference(PREF_NAVIGATION_ERROR));
             preferenceScreen.removePreference(findPreference(PREF_SEARCH_SUGGESTIONS));
             //preferenceScreen.removePreference(findPreference(PREF_SAFE_BROWSING_SCOUT_REPORTING));
-            preferenceScreen.removePreference(findPreference(PREF_SAFE_BROWSING));
+            //preferenceScreen.removePreference(findPreference(PREF_SAFE_BROWSING));
             preferenceScreen.removePreference(findPreference(PREF_CONTEXTUAL_SEARCH));
-            preferenceScreen.removePreference(findPreference(PREF_USAGE_AND_CRASH_REPORTING));
+            //preferenceScreen.removePreference(findPreference(PREF_USAGE_AND_CRASH_REPORTING));
 
             // TODO(https://crbug.com/846376): Update strings in XML after UNIFIED_CONSENT launch.
             networkPredictionPref.setTitle(R.string.preload_pages_title);

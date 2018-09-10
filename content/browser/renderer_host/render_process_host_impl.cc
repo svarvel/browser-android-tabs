@@ -4507,7 +4507,7 @@ void RenderProcessHostImpl::OnProcessLaunched() {
 
   // Pass bits of global renderer state to the renderer.
   GetRendererInterface()->SetUserAgent(
-      GetContentClient()->browser()->GetUserAgent());
+      GetContentClient()->browser()->GetUserAgent(""));
   GetRendererInterface()->SetUserAgentMetadata(
       GetContentClient()->browser()->GetUserAgentMetadata());
   NotifyRendererIfLockedToSite();

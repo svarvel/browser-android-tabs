@@ -206,11 +206,11 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getSoundBlockedListSummary());
             } else if (requiresTriStateSetting) {
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
-            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW_SETTINGS == prefCategory) {
+            } else if (SiteSettingsCategory.Type.DESKTOP_VIEW == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
-            } else if (PLAY_VIDEO_IN_BACKGROUND_KEY.equals(prefName)) {
+            } else if (SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getPlayVideoInBackgroundEnabledSummary() : ContentSettingsResources.getPlayVideoInBackgroundDisabledSummary());
-            } else if (PLAY_YT_VIDEO_IN_BROWSER_KEY.equals(prefName)) {
+            } else if (SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getPlayYTVideoInBrowserEnabledSummary() : ContentSettingsResources.getPlayYTVideoInBrowserDisabledSummary());
             } else {
                 p.setSummary(ContentSettingsResources.getCategorySummary(contentType, checked));
