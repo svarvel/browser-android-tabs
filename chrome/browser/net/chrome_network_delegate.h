@@ -149,7 +149,8 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   // NetworkDelegate implementation.
   int OnBeforeURLRequest(net::URLRequest* request,
                          net::CompletionOnceCallback callback,
-                         GURL* new_url) override;
+                         GURL* new_url,
+                         bool call_callback) override;
   int OnBeforeStartTransaction(net::URLRequest* request,
                                net::CompletionOnceCallback callback,
                                net::HttpRequestHeaders* headers) override;

@@ -50,7 +50,8 @@ class NET_EXPORT LayeredNetworkDelegate : public NetworkDelegate {
   // NetworkDelegate implementation:
   int OnBeforeURLRequest(URLRequest* request,
                          CompletionOnceCallback callback,
-                         GURL* new_url) final;
+                         GURL* new_url,
+                         bool call_callback) final;
   int OnBeforeStartTransaction(URLRequest* request,
                                CompletionOnceCallback callback,
                                HttpRequestHeaders* headers) final;
