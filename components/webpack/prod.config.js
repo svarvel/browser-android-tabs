@@ -29,10 +29,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.tsx', '.ts', '.json'],
-    alias: {
-      'dgram': 'chrome-dgram',
-      'net': 'chrome-net'
-    }
   },
   module: {
     rules: [

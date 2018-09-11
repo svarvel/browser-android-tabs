@@ -49,7 +49,6 @@ GPATH
 GRTAGS
 GSYMS
 GTAGS
-package-lock.json
 Session.vim
 tags
 Thumbs.db
@@ -195,6 +194,7 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /content/web_ui_test_mojo_bindings.xml
 /data
 /delegate_execute
+/dist
 /device/serial/device_serial_mojo.xml
 /google_apis/gcm/gcm.xml
 /google_apis/internal

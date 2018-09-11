@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "lib": [
+      "es6",
+      "dom",
+      "es7"
+    ],
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./components/definitions"
+    ],
+    // optional
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true
+  },
+  "include": [
+    "./components/**/*"
+  ],
+  "exclude": [
+    "./components/test/**/*",
+    "./components/sync/*"
+  ]
+}
