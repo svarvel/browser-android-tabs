@@ -41,7 +41,8 @@ class NET_EXPORT NetworkDelegateImpl : public NetworkDelegate {
  private:
   int OnBeforeURLRequest(URLRequest* request,
                          CompletionOnceCallback callback,
-                         GURL* new_url) override;
+                         GURL* new_url,
+                         bool call_callback) override;
 
   int OnBeforeStartTransaction(URLRequest* request,
                                CompletionOnceCallback callback,

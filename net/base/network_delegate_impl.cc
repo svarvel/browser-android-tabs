@@ -10,7 +10,11 @@ namespace net {
 
 int NetworkDelegateImpl::OnBeforeURLRequest(URLRequest* request,
                                             CompletionOnceCallback callback,
-                                            GURL* new_url) {
+                                            GURL* new_url,
+                                            bool call_callback) {
+  if (call_callback && !callback.is_null()) {
+    std::move(callback).Run(OK);
+  }
   return OK;
 }
 

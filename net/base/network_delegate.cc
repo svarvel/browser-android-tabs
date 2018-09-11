@@ -22,7 +22,8 @@ NetworkDelegate::~NetworkDelegate() {
 
 int NetworkDelegate::NotifyBeforeURLRequest(URLRequest* request,
                                             CompletionOnceCallback callback,
-                                            GURL* new_url) {
+                                            GURL* new_url,
+                                            bool call_callback) {
   TRACE_EVENT0(NetTracingCategory(), "NetworkDelegate::NotifyBeforeURLRequest");
   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
   DCHECK(request);
@@ -30,7 +31,7 @@ int NetworkDelegate::NotifyBeforeURLRequest(URLRequest* request,
 
   // ClusterFuzz depends on the following VLOG. See: crbug.com/715656
   VLOG(1) << "NetworkDelegate::NotifyBeforeURLRequest: " << request->url();
-  return OnBeforeURLRequest(request, std::move(callback), new_url);
+  return OnBeforeURLRequest(request, std::move(callback), new_url, call_callback);
 }
 
 int NetworkDelegate::NotifyBeforeStartTransaction(

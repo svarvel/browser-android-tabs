@@ -76,7 +76,11 @@ class BasicNetworkDelegate : public NetworkDelegateImpl {
  private:
   int OnBeforeURLRequest(URLRequest* request,
                          CompletionOnceCallback callback,
-                         GURL* new_url) override {
+                         GURL* new_url,
+                         bool call_callback) override {
+    if (call_callback && !callback.is_null()) {
+      std::move(callback).Run(OK);
+    }
     return OK;
   }
 
