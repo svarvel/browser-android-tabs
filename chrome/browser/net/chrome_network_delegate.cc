@@ -315,7 +315,8 @@ void ChromeNetworkDelegate::InitializePrefsOnUIThread(
 int ChromeNetworkDelegate::OnBeforeURLRequest(
     net::URLRequest* request,
     net::CompletionOnceCallback callback,
-    GURL* new_url) {
+    GURL* new_url,
+    bool call_callback) {
   std::shared_ptr<OnBeforeURLRequestContext> ctx(new OnBeforeURLRequestContext());
 
   int rv = OnBeforeURLRequest_PreBlockersWork(
@@ -724,7 +725,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
   }
 
   int rv = extensions_delegate_->NotifyBeforeURLRequest(
-      request, std::move(wrapped_callback), new_url);
+      request, std::move(wrapped_callback), new_url, ctx->pendingAtLeastOnce);
 
   if (force_safe_search && rv == net::OK && new_url->is_empty())
     safe_search_util::ForceGoogleSafeSearch(request->url(), new_url);
