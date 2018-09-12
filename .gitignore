@@ -196,6 +196,7 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /delegate_execute
 /dist
 /device/serial/device_serial_mojo.xml
+/dist
 /google_apis/gcm/gcm.xml
 /google_apis/internal
 /googleurl
