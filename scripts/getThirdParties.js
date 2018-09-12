@@ -9,4 +9,6 @@ build/install-build-deps-android.sh
 gclient sync
 sh . build/android/envsetup.sh
 sh scripts/postThirdPartiesSetup.js
+npm install
+npm run web-ui
 gn args out/Default

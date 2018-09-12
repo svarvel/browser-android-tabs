@@ -402,7 +402,6 @@ jumbo_split_static_library("ui") {
     "//components/autofill/core/browser",
     "//components/bookmarks/browser",
     "//components/bookmarks/managed",
-    #"//components/brave_rewards_ui",
     "//components/browser_sync",
     "//components/browsing_data/content",
     "//components/browsing_data/core",
