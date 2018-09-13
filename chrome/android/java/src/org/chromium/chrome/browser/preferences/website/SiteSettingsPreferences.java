@@ -84,7 +84,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
             // The Media sub-menu only contains Protected Content and Autoplay, so remove all other
             // menus.
             for (@Type int i = 0; i < Type.NUM_ENTRIES; i++) {
-                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA) continue;
+                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA || 
+                    i == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND || i == SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER) continue;
                 getPreferenceScreen().removePreference(findPreference(i));
             }
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));
@@ -151,12 +152,22 @@ public class SiteSettingsPreferences extends PreferenceFragment
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.CLIPBOARD_CONTENT_SETTING)) {
                 websitePrefs.add(Type.CLIPBOARD);
             }
+<<<<<<< HEAD
             websitePrefs.add(Type.COOKIES);
             websitePrefs.add(Type.JAVASCRIPT);
             websitePrefs.add(Type.DEVICE_LOCATION);
             websitePrefs.add(Type.MICROPHONE);
             websitePrefs.add(Type.NOTIFICATIONS);
             websitePrefs.add(Type.POPUPS);
+=======
+            websitePrefs.add(SiteSettingsCategory.Type.COOKIES);
+            websitePrefs.add(SiteSettingsCategory.Type.JAVASCRIPT);
+            websitePrefs.add(SiteSettingsCategory.Type.DEVICE_LOCATION);
+            websitePrefs.add(SiteSettingsCategory.Type.MICROPHONE);
+            websitePrefs.add(SiteSettingsCategory.Type.NOTIFICATIONS);
+            websitePrefs.add(SiteSettingsCategory.Type.POPUPS);
+            websitePrefs.add(SiteSettingsCategory.Type.DESKTOP_VIEW);
+>>>>>>> fd44a473772... Fixed Brave preferences
             if (ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
                 websitePrefs.add(Type.SENSORS);
             }
