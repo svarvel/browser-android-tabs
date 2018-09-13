@@ -842,6 +842,15 @@ public class PrefServiceBridge {
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND:
                 nativeSetSoundEnabled(allow);
                 break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
+                nativeSetDesktopViewEnabled(allow);
+                break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
+                nativeSetPlayVideoInBackgroundEnabled(allow);
+                break;
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
+                nativeSetPlayYTVideoInBrowserEnabled(allow);
+                break;
             default:
                 assert false;
         }
@@ -878,6 +887,12 @@ public class PrefServiceBridge {
                 return nativeGetSensorsEnabled();
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND:
                 return nativeGetSoundEnabled();
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
+                return nativeGetDesktopViewEnabled();
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
+                return nativeGetPlayVideoInBackgroundEnabled();
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
+                return nativeGetPlayYTVideoInBrowserEnabled();
             default:
                 assert false;
                 return false;

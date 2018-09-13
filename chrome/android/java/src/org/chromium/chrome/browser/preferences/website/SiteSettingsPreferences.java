@@ -85,7 +85,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
             // The Media sub-menu only contains Protected Content and Autoplay, so remove all other
             // menus.
             for (@Type int i = 0; i < Type.NUM_ENTRIES; i++) {
-                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA) continue;
+                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA || 
+                    i == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND || i == SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER) continue;
                 getPreferenceScreen().removePreference(findPreference(i));
             }
             getPreferenceScreen().removePreference(findPreference(MEDIA_KEY));
@@ -159,7 +160,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
             websitePrefs.add(Type.MICROPHONE);
             websitePrefs.add(Type.NOTIFICATIONS);
             websitePrefs.add(Type.POPUPS);
-            if (ChromeFeatureList.isEnabled(ChromeFeatureList.SENSOR_CONTENT_SETTING)) {
+            if (ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
                 websitePrefs.add(Type.SENSORS);
             }
             websitePrefs.add(Type.SOUND);
