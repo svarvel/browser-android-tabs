@@ -199,7 +199,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         initializeLayoutChangeListener();
         mNewTabPageLayout.setSearchProviderInfo(searchProviderHasLogo, searchProviderIsGoogle);
 
-        //mRecyclerView.init(mUiConfig, mContextMenuManager);
+        mRecyclerView.init(mUiConfig, mContextMenuManager);
 
         // Set up snippets
         NewTabPageAdapter newTabPageAdapter = new NewTabPageAdapter(
@@ -268,7 +268,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
      *                        has focus.
      */
     public void setFakeboxDelegate(FakeboxDelegate fakeboxDelegate) {
-        //mRecyclerView.setFakeboxDelegate(fakeboxDelegate);
+        mRecyclerView.setFakeboxDelegate(fakeboxDelegate);
     }
 
     private void initializeLayoutChangeListener() {
