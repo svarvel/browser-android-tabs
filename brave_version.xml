@@ -1,3 +1,9 @@
+<release version="1.0.57">
+  <change>Improved filtering.</change>
+  <change>Customized UA for some websites.</change>
+  <change>Fixed several crashes.</change>
+  <change>Small UI and translation fixes.</change>
+</release>
 <release version="1.0.54">
   <change>Upgraded to Chromium 68.0.3440.91.</change>
   <change>Updated to ad block v4.</change>
