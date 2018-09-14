@@ -125,7 +125,7 @@ void RegisterWithPrefetching(ContentSuggestionsService* service,
 #endif  // BUILDFLAG(ENABLE_OFFLINE_PAGES)
 
 bool IsArticleProviderEnabled() {
-  return base::FeatureList::IsEnabled(ntp_snippets::kArticleSuggestionsFeature);
+  return false;//base::FeatureList::IsEnabled(ntp_snippets::kArticleSuggestionsFeature);
 }
 
 bool IsKeepingPrefetchedSuggestionsEnabled() {
