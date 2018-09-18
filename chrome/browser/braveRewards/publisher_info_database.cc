@@ -356,16 +356,19 @@ bool PublisherInfoDatabase::Find(int start,
   if (filter.year > 0)
     query += " AND ai.year = ?";
 
-  if (start > 1)
-    query += " OFFSET " + std::to_string(start);
-
-  if (limit > 0)
-    query += " LIMIT " + std::to_string(limit);
 
   for (const auto& it : filter.order_by) {
     query += " ORDER BY " + it.first;
-    query += (it.second ? "ASC" : "DESC");
+    query += (it.second ? " ASC" : " DESC");
   }
+
+  if (limit > 0){
+    query += " LIMIT " + std::to_string(limit);
+		
+		if (start > 1)
+      query += " OFFSET " + std::to_string(start);
+	}
+  
 
   sql::Statement info_sql(db_.GetUniqueStatement(query.c_str()));
 
