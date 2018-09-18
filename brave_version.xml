@@ -1,3 +1,6 @@
+<release version="1.0.58">
+  <change>Upgraded to Chromium 69.0.3497.100.</change>
+</release>
 <release version="1.0.57">
   <change>Improved filtering.</change>
   <change>Customized UA for some websites.</change>
