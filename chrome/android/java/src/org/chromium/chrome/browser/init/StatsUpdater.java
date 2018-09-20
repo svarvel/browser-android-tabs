@@ -214,7 +214,8 @@ public class StatsUpdater {
             try {
                 connection.setRequestMethod("GET");
                 connection.connect();
-                if (HttpURLConnection.HTTP_OK != connection.getResponseCode()) {
+                if (connection.getResponseCode() < HttpURLConnection.HTTP_OK/*200*/ ||
+                    connection.getResponseCode() >= HttpURLConnection.HTTP_MULT_CHOICE/*300*/) {
                     Log.e(TAG, "stat update error == " + connection.getResponseCode());
 
                     return false;
