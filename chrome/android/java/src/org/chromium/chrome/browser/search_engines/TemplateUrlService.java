@@ -55,6 +55,7 @@ public class TemplateUrlService {
     public static final String DSE_KEYWORD = "google.com";
     public static final String PREF_SHOW_DDG_OFFER = "brave_show_ddg_offer";
     public static final String PREF_DDG_OFFER_SHOWN = "brave_ddg_offer_shown";
+    public static final String PREF_SET_QWANT_SE = "brave_set_qwant_se";
     public static final String DDG_SE_NAME = "DuckDuckGo";
     public static final String DDG_SE_KEYWORD = "duckduckgo.com";
     public static final String QWANT_SE_NAME = "Qwant";
