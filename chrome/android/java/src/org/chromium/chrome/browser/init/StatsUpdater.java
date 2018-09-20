@@ -130,7 +130,9 @@ public class StatsUpdater {
 
                 String country = GetCurrentCountry();
                 if (country.equals("FR") || country.equals("DE")) {
-                    if (firstRun) {
+                    boolean setQwant = ContextUtils.getAppSharedPreferences().getBoolean(TemplateUrlService.PREF_SET_QWANT_SE, true) && firstRun;
+                    if (setQwant) {
+                        ContextUtils.getAppSharedPreferences().edit().putBoolean(TemplateUrlService.PREF_SET_QWANT_SE, false).apply();
                         ContextUtils.getAppSharedPreferences().edit().putBoolean(TemplateUrlService.PREF_SHOW_DDG_OFFER, false).apply();
                         ThreadUtils.runOnUiThread(() -> {
                             TemplateUrlService.getInstance().setSearchEngine(TemplateUrlService.QWANT_SE_NAME, TemplateUrlService.QWANT_SE_KEYWORD, true);
