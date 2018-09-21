@@ -152,6 +152,7 @@ bool PublisherInfoDatabase::CreateActivityInfoTable() {
       "category INTEGER NOT NULL,"
       "month INTEGER NOT NULL,"
       "year INTEGER NOT NULL,"
+      "reconcile_stamp INTEGER DEFAULT 0 NOT NULL,"
       "CONSTRAINT fk_activity_info_publisher_id"
       "    FOREIGN KEY (publisher_id)"
       "    REFERENCES publisher_info (publisher_id)"
@@ -218,19 +219,20 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
     return false;
   }
 
-  if (!info.month || !info.year) {
+  if (info.month == ledger::PUBLISHER_MONTH::ANY || info.year == -1) {
     return true;
   }
 
   sql::Statement activity_get(
       db_.GetUniqueStatement("SELECT publisher_id FROM activity_info WHERE "
                              "publisher_id=? AND category=? "
-                             "AND month=? AND year=?"));
+                             "AND month=? AND year=? AND reconcile_stamp=?"));
 
   activity_get.BindString(0, info.id);
   activity_get.BindInt(1, info.category);
   activity_get.BindInt(2, info.month);
   activity_get.BindInt(3, info.year);
+  activity_get.BindInt(4, info.reconcile_stamp);
 
   if (activity_get.Step()) {
     sql::Statement activity_info_update(
@@ -239,7 +241,7 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
           "duration=?, score=?, percent=?, "
           "weight=? WHERE "
           "publisher_id=? AND category=? "
-          "AND month=? AND year=?"));
+          "AND month=? AND year=? AND reconcile_stamp=?"));
 
     activity_info_update.BindInt64(0, (int)info.duration);
     activity_info_update.BindDouble(1, info.score);
@@ -249,6 +251,7 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
     activity_info_update.BindInt(5, info.category);
     activity_info_update.BindInt(6, info.month);
     activity_info_update.BindInt(7, info.year);
+    activity_info_update.BindInt(8, info.reconcile_stamp);
 
     return activity_info_update.Run();
   }
@@ -257,8 +260,8 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
     GetDB().GetCachedStatement(SQL_FROM_HERE,
         "INSERT INTO activity_info "
         "(publisher_id, duration, score, percent, "
-        "weight, category, month, year) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"));
+        "weight, category, month, year, reconcile_stamp) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"));
 
   activity_info_insert.BindString(0, info.id);
   activity_info_insert.BindInt64(1, (int)info.duration);
@@ -268,6 +271,7 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
   activity_info_insert.BindInt(5, info.category);
   activity_info_insert.BindInt(6, info.month);
   activity_info_insert.BindInt(7, info.year);
+  activity_info_insert.BindInt(8, info.reconcile_stamp);
 
   return activity_info_insert.Run();
 }
@@ -356,6 +360,14 @@ bool PublisherInfoDatabase::Find(int start,
   if (filter.year > 0)
     query += " AND ai.year = ?";
 
+  if (filter.reconcile_stamp > 0)
+    query += " AND ai.reconcile_stamp = ?";
+
+  if (start > 1)
+    query += " OFFSET " + std::to_string(start);
+
+  if (limit > 0)
+    query += " LIMIT " + std::to_string(limit);
 
   for (const auto& it : filter.order_by) {
     query += " ORDER BY " + it.first;
@@ -385,6 +397,9 @@ bool PublisherInfoDatabase::Find(int start,
   if (filter.year > 0)
     info_sql.BindInt(column++, filter.year);
 
+  if (filter.reconcile_stamp > 0)
+    info_sql.BindInt(column++, filter.reconcile_stamp);
+
   while (info_sql.Step()) {
     std::string id(info_sql.ColumnString(0));
     ledger::PUBLISHER_MONTH month(
@@ -392,6 +407,7 @@ bool PublisherInfoDatabase::Find(int start,
     int year(info_sql.ColumnInt(9));
 
     ledger::PublisherInfo info(id, month, year);
+    info.reconcile_stamp = filter.reconcile_stamp;
     info.duration = info_sql.ColumnInt64(1);
 
     info.score = info_sql.ColumnDouble(2);
