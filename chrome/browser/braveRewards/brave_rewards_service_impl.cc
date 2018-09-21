@@ -482,10 +482,16 @@ void BraveRewardsServiceImpl::OnWalletInitialized(ledger::Result result) {
   //if (!ready_.is_signaled())
   //  ready_.Signal();
   TriggerOnWalletInitialized(result);
+
+  // TODO
+  /*if (result == ledger::Result::OK) {
+    GetWalletProperties();
+  }*/
 }
 
 void BraveRewardsServiceImpl::OnWalletProperties(ledger::Result result,
     std::unique_ptr<ledger::WalletInfo> wallet_info) {
+  LOG(ERROR) << "!!!here1 " << wallet_info->parameters_days_;
   TriggerOnWalletProperties(result, std::move(wallet_info));
 }
 

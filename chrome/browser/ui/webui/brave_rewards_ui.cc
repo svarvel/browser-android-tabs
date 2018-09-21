@@ -47,11 +47,14 @@ class RewardsDOMHandler : public WebUIMessageHandler {
   }
   ~RewardsDOMHandler() override {}
 
+  void Init();
+
   // WebUIMessageHandler implementation.
   void RegisterMessages() override;
 
-  // Callback for the "createWallet" message.
-  void HandleCreateWallet(const base::ListValue* args);
+private:
+  // Callback for the "createWalletRequested" message.
+  void HandleCreateWalletRequested(const base::ListValue* args);
 
   void HandleSetPublisherMinVisitTime(const base::ListValue* args);
   void HandleGetPublisherMinVisitTime(const base::ListValue* args);
@@ -64,15 +67,25 @@ class RewardsDOMHandler : public WebUIMessageHandler {
 
   void HandleSetContributionAmount(const base::ListValue* args);
   void HandleGetContributionAmount(const base::ListValue* args);
- private:
+
+  brave_rewards::BraveRewardsService* rewards_service_;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
 
+void RewardsDOMHandler::Init() {
+  Profile* profile = Profile::FromWebUI(web_ui());
+  rewards_service_ =
+      BraveRewardsServiceFactory::GetForProfile(profile);
+  // TODO add observer
+  //if (rewards_service_)
+  //  rewards_service_->AddObserver(this);
+}
+
 void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback(
-      "createWallet",
-      base::BindRepeating(&RewardsDOMHandler::HandleCreateWallet,
+      "createWalletRequested",
+      base::BindRepeating(&RewardsDOMHandler::HandleCreateWalletRequested,
                           base::Unretained(this)));
 
   web_ui()->RegisterMessageCallback(
@@ -117,16 +130,12 @@ void RewardsDOMHandler::RegisterMessages() {
 }
 
 
-void RewardsDOMHandler::HandleCreateWallet(
+void RewardsDOMHandler::HandleCreateWalletRequested(
     const base::ListValue* args) {
 	LOG(ERROR) << "!!!HandleCreateWallet1";
 
-  Profile* profile = Profile::FromWebUI(web_ui());
-  brave_rewards::BraveRewardsService* brave_rewards_service =
-      BraveRewardsServiceFactory::GetForProfile(profile);
-
-  if (brave_rewards_service) {
-    brave_rewards_service->CreateWallet();
+  if (rewards_service_) {
+    rewards_service_->CreateWallet();
   }
   /*DCHECK(flags_storage_);
   DCHECK_EQ(2u, args->GetSize());
@@ -304,8 +313,10 @@ BraveRewardsUI::BraveRewardsUI(content::WebUI* web_ui)
       weak_factory_(this) {
   Profile* profile = Profile::FromWebUI(web_ui);
 
-
-  web_ui->AddMessageHandler(std::make_unique<RewardsDOMHandler>());
+  auto handler_owner = std::make_unique<RewardsDOMHandler>();
+  RewardsDOMHandler * handler = handler_owner.get();
+  web_ui->AddMessageHandler(std::move(handler_owner));
+  handler->Init();
 
   // Set up the brave://rewards source.
   content::WebUIDataSource::Add(profile, CreateBraveRewardsUIHTMLSource());
