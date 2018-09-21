@@ -205,6 +205,10 @@ public class StatsUpdater {
             ref = urpc;
         }
 
+        if (!ConfigAPIs.REFERRER_CODE.isEmpty()) {
+            ref = ConfigAPIs.REFERRER_CODE;
+        }
+
         String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly,
             versionNumber, firstRun, woi, ref);
 
