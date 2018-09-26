@@ -114,7 +114,7 @@ public:
   std::map<std::string, brave_rewards::BalanceReport> GetAllBalanceReports() override;
 
  private:
-  typedef base::Callback<void(int, const std::string&)> FetchCallback;
+  typedef base::Callback<void(int, const std::string&, const std::map<std::string, std::string>& headers)> FetchCallback;
 
   //const extensions::OneShotEvent& ready() const { return ready_; } TODO
   void OnLedgerStateSaved(ledger::LedgerCallbackHandler* handler,
@@ -159,7 +159,7 @@ public:
   void OnWalletProperties(ledger::Result result,
                           std::unique_ptr<ledger::WalletInfo> info) override;
   void OnGrant(ledger::Result result, const ledger::Grant& grant) override;
-  void OnGrantCaptcha(const std::string& image) override;
+  void OnGrantCaptcha(const std::string& image, const std::string& hint) override;
   void OnRecoverWallet(ledger::Result result,
                       double balance,
                       const std::vector<ledger::Grant>& grants) override;
