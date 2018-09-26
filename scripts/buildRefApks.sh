@@ -3,6 +3,7 @@ KEYSTORE_PATH=$1
 KEYSTOREPASSWORD=$2
 KEYPASSWORD=$3
 REFCODES="$4"
+VERSION=$5
 if [ ! -f "$REFCODES" ]; then
     echo "File '$REFCODES' not found!"
     exit 1
@@ -18,7 +19,7 @@ while read -r line
 do
     refcode="$line"
     echo "---------------------------------"
-    echo "Building apks for $refcode..."
+    echo "Configuring build for $refcode..."
     # Replace pervious ref code with new ref code in the 10th line
     sed -i "10s/\"$prevrefcode\"/\"$refcode\"/" $config
     # Double check that new ref code was applied
@@ -27,8 +28,8 @@ do
         exit 3
     fi
     prevrefcode=$refcode
-    # Build apks
-    sh ./scripts/buildReleasesAll.js $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+    # Build arm apk
+    sh ./scripts/buildReleaseForDir.js out/DefaultR $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
     rc=$?
     if [ $rc != 0 ] 
     then 
@@ -38,11 +39,8 @@ do
         exit $rc 
     else
         echo "Build succeeded"
-	# Move apks to appropriate folders
-	mkdir -p "./out/DefaultR/apks/$refcode"
-        mv "./out/DefaultR/apks/Bravearm.apk" "./out/DefaultR/apks/$refcode/Bravearm.apk"
-	mkdir -p "./out/Defaultx86/apks/$refcode"
-        mv "./out/Defaultx86/apks/Bravex86.apk" "./out/Defaultx86/apks/$refcode/Bravex86.apk"
+	# Move apk to appropriate file
+        mv "./out/DefaultR/apks/Brave_aligned.apk" "./out/DefaultR/apks/Brave$VERSION$refcode.apk"
     fi
 done < "$REFCODES"
 # Normalize $config file
