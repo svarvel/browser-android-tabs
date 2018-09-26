@@ -6,7 +6,12 @@ then
 	exit 1	
 fi
 
-
+# Check that URPC_API_KEY was applied
+config="chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java"
+if grep -q "public static final String URPC_API_KEY = \"\";" "$config"; then
+    echo "URPC_API_KEY is not applied. You should do it manually."
+    exit 2
+fi
 
 BASEDIR=$1
 KEYSTORE_PATH=$2
