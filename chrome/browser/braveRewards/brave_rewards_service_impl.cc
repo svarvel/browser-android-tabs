@@ -411,7 +411,7 @@ void BraveRewardsServiceImpl::OnMediaPublisherInfoLoaded(
     return;
   }
 
-  callback(ledger::Result::OK, std::move(info));
+  callback(ledger::Result::LEDGER_OK, std::move(info));
 }
 
 void BraveRewardsServiceImpl::SaveMediaPublisherInfo(
@@ -500,7 +500,8 @@ void BraveRewardsServiceImpl::OnGrant(ledger::Result result,
   TriggerOnGrant(result, grant);
 }
 
-void BraveRewardsServiceImpl::OnGrantCaptcha(const std::string& image) {
+void BraveRewardsServiceImpl::OnGrantCaptcha(const std::string& image,
+    const std::string& hint) {
   TriggerOnGrantCaptcha(image);
 }
 
@@ -538,8 +539,8 @@ void BraveRewardsServiceImpl::LoadLedgerState(
 void BraveRewardsServiceImpl::OnLedgerStateLoaded(
     ledger::LedgerCallbackHandler* handler,
     const std::string& data) {
-  handler->OnLedgerStateLoaded(data.empty() ? ledger::Result::ERROR
-                                            : ledger::Result::OK,
+  handler->OnLedgerStateLoaded(data.empty() ? ledger::Result::LEDGER_ERROR
+                                            : ledger::Result::LEDGER_OK,
                                data);
 }
 
@@ -557,7 +558,7 @@ void BraveRewardsServiceImpl::OnPublisherStateLoaded(
     const std::string& data) {
   handler->OnPublisherStateLoaded(
       data.empty() ? ledger::Result::NO_PUBLISHER_STATE
-                   : ledger::Result::OK,
+                   : ledger::Result::LEDGER_OK,
       data);
 }
 
@@ -580,7 +581,7 @@ void BraveRewardsServiceImpl::SaveLedgerState(const std::string& ledger_state,
 void BraveRewardsServiceImpl::OnLedgerStateSaved(
     ledger::LedgerCallbackHandler* handler,
     bool success) {
-  handler->OnLedgerStateSaved(success ? ledger::Result::OK
+  handler->OnLedgerStateSaved(success ? ledger::Result::LEDGER_OK
                                       : ledger::Result::NO_LEDGER_STATE);
 }
 
@@ -602,8 +603,8 @@ void BraveRewardsServiceImpl::SavePublisherState(const std::string& publisher_st
 void BraveRewardsServiceImpl::OnPublisherStateSaved(
     ledger::LedgerCallbackHandler* handler,
     bool success) {
-  handler->OnPublisherStateSaved(success ? ledger::Result::OK
-                                         : ledger::Result::ERROR);
+  handler->OnPublisherStateSaved(success ? ledger::Result::LEDGER_OK
+                                         : ledger::Result::LEDGER_ERROR);
 }
 
 void BraveRewardsServiceImpl::SavePublisherInfo(
@@ -624,8 +625,8 @@ void BraveRewardsServiceImpl::OnPublisherInfoSaved(
     ledger::PublisherInfoCallback callback,
     std::unique_ptr<ledger::PublisherInfo> info,
     bool success) {
-  callback(success ? ledger::Result::OK
-                   : ledger::Result::ERROR, std::move(info));
+  callback(success ? ledger::Result::LEDGER_OK
+                   : ledger::Result::LEDGER_ERROR, std::move(info));
 
   TriggerOnContentSiteUpdated();
 }
@@ -656,7 +657,7 @@ void BraveRewardsServiceImpl::OnPublisherInfoLoaded(
     return;
   }
 
-  callback(ledger::Result::OK,
+  callback(ledger::Result::LEDGER_OK,
       std::make_unique<ledger::PublisherInfo>(list[0]));
 }
 
@@ -751,15 +752,27 @@ void BraveRewardsServiceImpl::OnURLFetchComplete(
 
   auto callback = fetchers_[source];
   fetchers_.erase(source);
-
   int response_code = source->GetResponseCode();
   std::string body;
+  std::map<std::string, std::string> headers;
+  scoped_refptr<net::HttpResponseHeaders> headersList = source->GetResponseHeaders();
+
+  if (headersList) {
+    size_t iter = 0;
+    std::string key;
+    std::string value;
+    while (headersList->EnumerateHeaderLines(&iter, &key, &value)) {
+      key = base::ToLowerASCII(key);
+      headers[key] = value;
+    }
+  }
+
   if (response_code != net::URLFetcher::ResponseCode::RESPONSE_CODE_INVALID &&
       source->GetStatus().is_success()) {
     source->GetResponseAsString(&body);
   }
 
-  callback.Run(response_code, body);
+  callback.Run(response_code, body, headers);
 }
 
 void BraveRewardsServiceImpl::RunIOTask(
@@ -938,8 +951,8 @@ void BraveRewardsServiceImpl::SavePublishersList(const std::string& publishers_l
 void BraveRewardsServiceImpl::OnPublishersListSaved(
     ledger::LedgerCallbackHandler* handler,
     bool success) {
-  handler->OnPublishersListSaved(success ? ledger::Result::OK
-                                         : ledger::Result::ERROR);
+  handler->OnPublishersListSaved(success ? ledger::Result::LEDGER_OK
+                                         : ledger::Result::LEDGER_ERROR);
 }
 
 void BraveRewardsServiceImpl::SetTimer(uint64_t time_offset,
@@ -977,7 +990,7 @@ void BraveRewardsServiceImpl::OnPublisherListLoaded(
     const std::string& data) {
   handler->OnPublisherListLoaded(
       data.empty() ? ledger::Result::NO_PUBLISHER_LIST
-                   : ledger::Result::OK,
+                   : ledger::Result::LEDGER_OK,
       data);
 }
 
