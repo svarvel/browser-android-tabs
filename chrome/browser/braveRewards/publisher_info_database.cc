@@ -152,7 +152,6 @@ bool PublisherInfoDatabase::CreateActivityInfoTable() {
       "category INTEGER NOT NULL,"
       "month INTEGER NOT NULL,"
       "year INTEGER NOT NULL,"
-      "reconcile_stamp INTEGER DEFAULT 0 NOT NULL,"
       "CONSTRAINT fk_activity_info_publisher_id"
       "    FOREIGN KEY (publisher_id)"
       "    REFERENCES publisher_info (publisher_id)"
@@ -226,13 +225,12 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
   sql::Statement activity_get(
       db_.GetUniqueStatement("SELECT publisher_id FROM activity_info WHERE "
                              "publisher_id=? AND category=? "
-                             "AND month=? AND year=? AND reconcile_stamp=?"));
+                             "AND month=? AND year=?"));
 
   activity_get.BindString(0, info.id);
   activity_get.BindInt(1, info.category);
   activity_get.BindInt(2, info.month);
   activity_get.BindInt(3, info.year);
-  activity_get.BindInt(4, info.reconcile_stamp);
 
   if (activity_get.Step()) {
     sql::Statement activity_info_update(
@@ -241,7 +239,7 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
           "duration=?, score=?, percent=?, "
           "weight=? WHERE "
           "publisher_id=? AND category=? "
-          "AND month=? AND year=? AND reconcile_stamp=?"));
+          "AND month=? AND year=?"));
 
     activity_info_update.BindInt64(0, (int)info.duration);
     activity_info_update.BindDouble(1, info.score);
@@ -251,7 +249,6 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
     activity_info_update.BindInt(5, info.category);
     activity_info_update.BindInt(6, info.month);
     activity_info_update.BindInt(7, info.year);
-    activity_info_update.BindInt(8, info.reconcile_stamp);
 
     return activity_info_update.Run();
   }
@@ -260,8 +257,8 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
     GetDB().GetCachedStatement(SQL_FROM_HERE,
         "INSERT INTO activity_info "
         "(publisher_id, duration, score, percent, "
-        "weight, category, month, year, reconcile_stamp) "
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"));
+        "weight, category, month, year) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"));
 
   activity_info_insert.BindString(0, info.id);
   activity_info_insert.BindInt64(1, (int)info.duration);
@@ -271,7 +268,6 @@ bool PublisherInfoDatabase::InsertOrUpdatePublisherInfo(
   activity_info_insert.BindInt(5, info.category);
   activity_info_insert.BindInt(6, info.month);
   activity_info_insert.BindInt(7, info.year);
-  activity_info_insert.BindInt(8, info.reconcile_stamp);
 
   return activity_info_insert.Run();
 }
@@ -348,57 +344,11 @@ bool PublisherInfoDatabase::Find(int start,
       "INNER JOIN publisher_info AS pi ON ai.publisher_id = pi.publisher_id "
       "WHERE 1 = 1";
 
-  if (!filter.id.empty())
-    query += " AND ai.publisher_id = ?";
-
-  if (filter.category != ledger::PUBLISHER_CATEGORY::ALL_CATEGORIES)
-    query += " AND ai.category = ?";
-
-  if (filter.month != ledger::PUBLISHER_MONTH::ANY)
-    query += " AND ai.month = ?";
-
-  if (filter.year > 0)
-    query += " AND ai.year = ?";
-
-  if (filter.reconcile_stamp > 0)
-    query += " AND ai.reconcile_stamp = ?";
-
-  if (start > 1)
-    query += " OFFSET " + std::to_string(start);
-
-  if (limit > 0)
-    query += " LIMIT " + std::to_string(limit);
-
-  for (const auto& it : filter.order_by) {
-    query += " ORDER BY " + it.first;
-    query += (it.second ? " ASC" : " DESC");
-  }
-
-  if (limit > 0){
-    query += " LIMIT " + std::to_string(limit);
-		
-		if (start > 1)
-      query += " OFFSET " + std::to_string(start);
-	}
-  
+  query+= BuildClauses(start, limit, filter);
 
   sql::Statement info_sql(db_.GetUniqueStatement(query.c_str()));
 
-  int column = 0;
-  if (!filter.id.empty())
-    info_sql.BindString(column++, filter.id);
-
-  if (filter.category != ledger::PUBLISHER_CATEGORY::ALL_CATEGORIES)
-    info_sql.BindInt(column++, filter.category);
-
-  if (filter.month != ledger::PUBLISHER_MONTH::ANY)
-    info_sql.BindInt(column++, filter.month);
-
-  if (filter.year > 0)
-    info_sql.BindInt(column++, filter.year);
-
-  if (filter.reconcile_stamp > 0)
-    info_sql.BindInt(column++, filter.reconcile_stamp);
+  BindFilter(info_sql, filter);
 
   while (info_sql.Step()) {
     std::string id(info_sql.ColumnString(0));
@@ -407,7 +357,6 @@ bool PublisherInfoDatabase::Find(int start,
     int year(info_sql.ColumnInt(9));
 
     ledger::PublisherInfo info(id, month, year);
-    info.reconcile_stamp = filter.reconcile_stamp;
     info.duration = info_sql.ColumnInt64(1);
 
     info.score = info_sql.ColumnDouble(2);
@@ -427,6 +376,93 @@ bool PublisherInfoDatabase::Find(int start,
   }
 
   return list;
+}
+
+int PublisherInfoDatabase::Count(const ledger::PublisherInfoFilter& filter) {
+  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
+
+  bool initialized = Init();
+  DCHECK(initialized);
+
+  if (!initialized)
+    return false;
+
+  std::string query = "SELECT COUNT(ai.publisher_id) "
+      "FROM activity_info AS ai "
+      "INNER JOIN publisher_info AS pi ON ai.publisher_id = pi.publisher_id "
+      "WHERE 1 = 1";
+
+  query+= BuildClauses(0, 0, filter);
+
+  sql::Statement publisher_count(db_.GetUniqueStatement(query.c_str()));
+
+  BindFilter(publisher_count, filter);
+
+  if (!publisher_count.Step())
+    return 0;
+
+  return publisher_count.ColumnInt(0);
+}
+
+std::string PublisherInfoDatabase::BuildClauses(int start,
+                                                int limit,
+                                                const ledger::PublisherInfoFilter& filter) {
+  std::string clauses = "";
+
+  if (!filter.id.empty())
+    clauses += " AND ai.publisher_id = ?";
+
+  if (filter.category != ledger::PUBLISHER_CATEGORY::ALL_CATEGORIES)
+    clauses += " AND ai.category = ?";
+
+  if (filter.month != ledger::PUBLISHER_MONTH::ANY)
+    clauses += " AND ai.month = ?";
+
+  if (filter.year > 0)
+    clauses += " AND ai.year = ?";
+
+  if (filter.min_duration > 0)
+    clauses += " AND ai.duration >= ?";
+
+  if (filter.excluded != ledger::PUBLISHER_EXCLUDE::ALL)
+    clauses += " AND pi.excluded = ?";
+
+  for (const auto& it : filter.order_by) {
+    clauses += " ORDER BY " + it.first;
+    clauses += (it.second ? " ASC" : " DESC");
+  }
+
+  if (limit > 0) {
+    clauses += " LIMIT " + std::to_string(limit);
+
+    if (start > 1) {
+      clauses += " OFFSET " + std::to_string(start);
+    }
+  }
+
+  return clauses;
+}
+
+void PublisherInfoDatabase::BindFilter(sql::Statement& statement,
+                                       const ledger::PublisherInfoFilter& filter) {
+  int column = 0;
+  if (!filter.id.empty())
+    statement.BindString(column++, filter.id);
+
+  if (filter.category != ledger::PUBLISHER_CATEGORY::ALL_CATEGORIES)
+    statement.BindInt(column++, filter.category);
+
+  if (filter.month != ledger::PUBLISHER_MONTH::ANY)
+    statement.BindInt(column++, filter.month);
+
+  if (filter.year > 0)
+    statement.BindInt(column++, filter.year);
+
+  if (filter.min_duration > 0)
+    statement.BindInt(column++, filter.min_duration);
+
+  if (filter.excluded != ledger::PUBLISHER_EXCLUDE::ALL)
+    statement.BindInt(column++, filter.excluded);
 }
 
 // static

@@ -199,7 +199,10 @@ public:
 
   void SetPublisherAllowVideos(bool allow) override;
   void SetAutoContribute(bool enabled) override;
-
+  void OnPublisherActivity(ledger::Result result,
+                          std::unique_ptr<ledger::PublisherInfo> info,
+                          uint64_t windowId) override;
+  void OnExcludedSitesChanged() override;
 
   // URLFetcherDelegate impl
   void OnURLFetchComplete(const net::URLFetcher* source) override;

@@ -1015,4 +1015,23 @@ std::map<std::string, brave_rewards::BalanceReport> BraveRewardsServiceImpl::Get
   return newReports;
 }
 
+void BraveRewardsServiceImpl::OnExcludedSitesChanged() {
+  for (auto& observer : observers_)
+    observer.OnExcludedSitesChanged(this);
+}
+
+void BraveRewardsServiceImpl::OnPublisherActivity(ledger::Result result,
+                                             std::unique_ptr<ledger::PublisherInfo> info,
+                                             uint64_t windowId) {
+   //TODO: add missing functionality
+
+
+    if (!info.get()) {
+      info.reset(new ledger::PublisherInfo());
+      info->id = "";
+    }
+
+
+
+}
 }  // namespace brave_rewards
