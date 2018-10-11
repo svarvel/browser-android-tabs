@@ -163,6 +163,7 @@ const char kChromeUIWelcomeHost[] = "welcome";
 const char kChromeUIWelcomeURL[] = "chrome://welcome/";
 const char kChromeUIWelcomeWin10Host[] = "welcome-win10";
 const char kChromeUIWelcomeWin10URL[] = "chrome://welcome-win10/";
+const char kRewardsJS[] = "brave_rewards.bundle.js";
 
 #if defined(OS_ANDROID)
 const char kChromeUIEocInternalsHost[] = "eoc-internals";

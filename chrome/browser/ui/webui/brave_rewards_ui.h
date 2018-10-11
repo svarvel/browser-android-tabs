@@ -5,24 +5,14 @@
 #ifndef BRAVE_BROWSER_UI_WEBUI_REWARDS_UI_H_
 #define BRAVE_BROWSER_UI_WEBUI_REWARDS_UI_H_
 
-#include "base/macros.h"
-#include "base/memory/weak_ptr.h"
-#include "build/build_config.h"
-#include "content/public/browser/web_ui_controller.h"
-#include "ui/base/layout.h"
+#include "chrome/browser/ui/webui/basic_ui.h"
 
-namespace base {
-class RefCountedMemory;
-}
-
-class BraveRewardsUI : public content::WebUIController {
+class BraveRewardsUI : public BasicUI {
  public:
-  explicit BraveRewardsUI(content::WebUI* web_ui);
+  BraveRewardsUI(content::WebUI* web_ui, const std::string& host);
   ~BraveRewardsUI() override;
 
  private:
-  base::WeakPtrFactory<BraveRewardsUI> weak_factory_;
-
   DISALLOW_COPY_AND_ASSIGN(BraveRewardsUI);
 };
 
