@@ -24,16 +24,6 @@ using content::WebUIMessageHandler;
 
 namespace {
 
-content::WebUIDataSource* CreateBraveRewardsUIHTMLSource() {
-  content::WebUIDataSource* source =
-      content::WebUIDataSource::Create(chrome::kBraveRewardsHost);
-
-	source->AddResourcePath("brave_rewards.bundle.js", IDR_BRAVE_REWARDS_UI_JS);
-  source->SetDefaultResource(IDR_BRAVE_REWARDS_UI_HTML);
-  source->UseGzip();
-  return source;
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 //
 // RewardsDOMHandler
@@ -308,19 +298,16 @@ void RewardsDOMHandler::HandleGetContributionAmount(
 //
 ///////////////////////////////////////////////////////////////////////////////
 
-BraveRewardsUI::BraveRewardsUI(content::WebUI* web_ui)
-    : WebUIController(web_ui),
-      weak_factory_(this) {
-  Profile* profile = Profile::FromWebUI(web_ui);
+BraveRewardsUI::BraveRewardsUI(content::WebUI* web_ui, const std::string& name)
+    : BasicUI(web_ui, name, chrome::kRewardsJS,
+        IDR_BRAVE_REWARDS_UI_JS, IDR_BRAVE_REWARDS_UI_HTML) {
 
   auto handler_owner = std::make_unique<RewardsDOMHandler>();
   RewardsDOMHandler * handler = handler_owner.get();
   web_ui->AddMessageHandler(std::move(handler_owner));
   handler->Init();
-
-  // Set up the brave://rewards source.
-  content::WebUIDataSource::Add(profile, CreateBraveRewardsUIHTMLSource());
 }
+
 
 BraveRewardsUI::~BraveRewardsUI() {
 }

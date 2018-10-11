@@ -252,6 +252,13 @@ WebUIController* NewWebUI(WebUI* web_ui, const GURL& url) {
   return new T(web_ui);
 }
 
+// Special case for BraveRewardsUI
+template<>
+WebUIController* NewWebUI<BraveRewardsUI>(WebUI* web_ui, const GURL& url) {
+  return new BraveRewardsUI(web_ui, url.host());
+}
+
+
 #if !defined(OS_ANDROID)
 template <>
 WebUIController* NewWebUI<PageNotAvailableForGuestUI>(WebUI* web_ui,

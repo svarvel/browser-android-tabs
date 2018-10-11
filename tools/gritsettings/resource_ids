@@ -202,11 +202,15 @@
     "includes": [17210],
   },
   "components/resources/components_scaled_resources.grd": {
-    "structures": [17400],
+    "structures": [17700],
   },
   "components/embedder_suppport/android/java/strings/web_contents_delegate_android_strings.grd": {
     "messages": [17600],
   },
+  "components/web_contents_delegate_android/web_contents_delegate_android_strings.grd": {
+    "messages": [17800],
+  },
+  
   # END components/ section.
 
   # START content/ section.
