@@ -53,6 +53,12 @@
             android:src="@drawable/btn_brave"
             android:layout_gravity="top"
             android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
+            
+        <ImageButton android:id="@+id/brave_rewards_button"
+            style="@style/ToolbarButton"
+            android:src="@drawable/btn_bat"
+            android:layout_gravity="top"
+            android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
 
         <include layout="@layout/menu_button"/>
 
