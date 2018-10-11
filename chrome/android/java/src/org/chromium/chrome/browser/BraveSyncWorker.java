@@ -2271,6 +2271,17 @@ public class BraveSyncWorker {
                       }
                   }
                   for (int i = 0; i < BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT; i++) {
+                      if (i == BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT / 2) {
+                          // SZ: preventing from page been frozen, we do that on the middle of the loop
+                          ((Activity)mContext).runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (null != mWebContents) {
+                                        mWebContents.onShow();
+                                    }
+                                }
+                            });
+                      }
                       Thread.sleep(BraveSyncWorker.INTERVAL_TO_FETCH_RECORDS / BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT);
                       if (mInterruptSyncSleep) {
                           break;
