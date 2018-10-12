@@ -32,6 +32,7 @@ declare namespace Rewards {
     contributionVideos: boolean
     donationAbilityYT: boolean
     donationAbilityTwitter: boolean
+    numExcludedSites: number
     walletInfo: WalletProperties
     connectedWallet: boolean
     recoveryKey: string
@@ -58,6 +59,7 @@ declare namespace Rewards {
     probi: string
     expiryTime: number
     captcha?: string
+    hint?: string
     status?: 'wrongPosition' | 'serverError' | number | null
   }
 
@@ -82,24 +84,38 @@ declare namespace Rewards {
     expiryTime: number
   }
 
+  export enum Status {
+    DEFAULT = 0,
+    EXCLUDED = 1,
+    INCLUDED = 2
+  }
+
   export interface Publisher {
     publisherKey: string
     percentage: number
     verified: boolean
+    excluded: Status
     url: string
     name: string
     provider: string
     favIcon: string
+    id: string
   }
 
   export interface Report {
-    ads: number
-    closing: number
-    contribute: number
-    donations: number
-    grants: number
-    oneTime: number
-    opening: number
-    total?: number
+    ads: string
+    closing: string
+    contribute: string
+    deposit: string
+    donation: string
+    grant: string
+    tips: string
+    opening: string
+    total: string
+  }
+
+  export interface Captcha {
+    image: string
+    hint: string
   }
 }

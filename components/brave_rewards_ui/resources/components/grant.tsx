@@ -17,7 +17,7 @@ import {
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
 import { getLocale } from '../../../common/locale'
-import BigNumber from 'bignumber.js'
+import { convertProbiToFixed } from '../utils'
 
 interface State {
   grantShow: boolean
@@ -65,9 +65,9 @@ class Grant extends React.Component<Props, State> {
       return null
     }
 
-    let tokens = 0
+    let tokens = '0.0'
     if (grant.probi) {
-      tokens = new BigNumber(grant.probi.toString()).dividedBy('1e18').toNumber()
+      tokens = convertProbiToFixed(grant.probi)
     }
 
     return (
@@ -78,13 +78,13 @@ class Grant extends React.Component<Props, State> {
             : null
         }
         {
-          !grant.expiryTime && grant.captcha
+          !grant.expiryTime && grant.captcha && grant.hint
             ? <GrantWrapper
               onClose={this.onGrantHide}
               title={grant.status === 'wrongPosition' ? getLocale('notQuite') : getLocale('almostThere')}
               text={getLocale('proveHuman')}
             >
-              <GrantCaptcha onSolution={this.onSolution} dropBgImage={grant.captcha} />
+              <GrantCaptcha onSolution={this.onSolution} dropBgImage={grant.captcha} hint={grant.hint} />
             </GrantWrapper>
             : null
         }

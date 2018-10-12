@@ -65,8 +65,8 @@ window.cr.define('brave_rewards', function () {
     getActions().onGrant(properties)
   }
 
-  function grantCaptcha (image: string) {
-    getActions().onGrantCaptcha(image)
+  function grantCaptcha (captcha: Rewards.Captcha) {
+    getActions().onGrantCaptcha(captcha)
   }
 
   function walletPassphrase (pass: string) {
@@ -93,8 +93,20 @@ window.cr.define('brave_rewards', function () {
     getActions().onContributeList(list)
   }
 
+  function numExcludedSites (num: string) {
+    getActions().onNumExcludedSites(num)
+  }
+
   function balanceReports (reports: Record<string, Rewards.Report>) {
     getActions().onBalanceReports(reports)
+  }
+
+  function walletExists (exists: boolean) {
+    getActions().onWalletExists(exists)
+  }
+
+  function contributionAmount (amount: number) {
+    getActions().onContributionAmount(amount)
   }
 
   return {
@@ -110,7 +122,10 @@ window.cr.define('brave_rewards', function () {
     reconcileStamp,
     addresses,
     contributeList,
-    balanceReports
+    numExcludedSites,
+    balanceReports,
+    walletExists,
+    contributionAmount
   }
 })
 

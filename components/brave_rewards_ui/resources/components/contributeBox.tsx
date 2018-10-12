@@ -24,8 +24,8 @@ interface State {
 }
 
 interface MonthlyChoice {
-  tokens: number
-  converted: number
+  tokens: string
+  converted: string
 }
 
 interface Props extends Rewards.ComponentProps {
@@ -40,10 +40,6 @@ class ContributeBox extends React.Component<Props, State> {
   }
 
   getContributeRows = (list: Rewards.Publisher[]) => {
-    if (!list) {
-      return []
-    }
-
     return list.map((item: Rewards.Publisher) => {
       let name = item.name
       if (item.provider) {
@@ -59,7 +55,7 @@ class ContributeBox extends React.Component<Props, State> {
         },
         url: item.url,
         attention: item.percentage,
-        onRemove: () => { console.log('remove publisher') }
+        onRemove: () => { this.actions.excludePublisher(item.id) }
       }
     })
   }
@@ -75,9 +71,13 @@ class ContributeBox extends React.Component<Props, State> {
         type={'contribute'}
       >
         • {getLocale('contributionDisabledText1')} <br />
-        • {getLocale('contributionDisabledText2')}}
+        • {getLocale('contributionDisabledText2')}
       </DisabledContent>
     )
+  }
+
+  onRestore = () => {
+    this.actions.restorePublishers()
   }
 
   onToggleContribution = () => {
@@ -122,8 +122,11 @@ class ContributeBox extends React.Component<Props, State> {
             >
               {
                 monthlyList.map((choice: MonthlyChoice) => {
-                  return <div key={`choice-${choice.tokens}`} data-value={choice.tokens.toString()}>
-                    <Tokens value={choice.tokens} converted={choice.converted} />
+                  return <div key={`choice-setting-${choice.tokens}`} data-value={choice.tokens.toString()}>
+                    <Tokens
+                      value={choice.tokens}
+                      converted={choice.converted}
+                    />
                   </div>
                 })
               }
@@ -175,13 +178,14 @@ class ContributeBox extends React.Component<Props, State> {
       contributionMonthly,
       enabledContribute,
       reconcileStamp,
+      numExcludedSites,
       autoContributeList
     } = this.props.rewardsData
     const toggleOn = !(firstLoad !== false || !enabledMain)
     const monthlyList: MonthlyChoice[] = utils.generateContributionMonthly(walletInfo.choices, walletInfo.rates)
     const contributeRows = this.getContributeRows(autoContributeList)
     const topRows = contributeRows.slice(0, 5)
-    const numRows = autoContributeList && autoContributeList.length
+    const numRows = contributeRows && contributeRows.length
     const allSites = !(numRows > 5)
 
     return (
@@ -200,6 +204,8 @@ class ContributeBox extends React.Component<Props, State> {
           this.state.modalContribute
           ? <ModalContribute
             rows={contributeRows}
+            onRestore={this.onRestore}
+            numExcludedSites={numExcludedSites}
             onClose={this.onModalContributeToggle}
           />
           : null
@@ -213,17 +219,23 @@ class ContributeBox extends React.Component<Props, State> {
             {
               monthlyList.map((choice: MonthlyChoice) => {
                 return <div key={`choice-${choice.tokens}`} data-value={choice.tokens.toString()}>
-                  <Tokens value={choice.tokens} converted={choice.converted} />
+                  <Tokens
+                    value={choice.tokens}
+                    converted={choice.converted}
+                  />
                 </div>
               })
             }
           </Select>
         </List>
         <List title={getLocale('contributionNextDate')}>
-          <NextContribution>{new Date(reconcileStamp).toLocaleDateString()}</NextContribution>
+          <NextContribution>{new Date(reconcileStamp * 1000).toLocaleDateString()}</NextContribution>
         </List>
         <List title={getLocale('contributionSites')}>
-          {getLocale('total')} &nbsp;<Tokens value={numRows} hideText={true} toFixed={false} />
+          {getLocale('total')} &nbsp;<Tokens
+            value={numRows.toString()}
+            hideText={true}
+          />
         </List>
         <TableContribute
           header={[
@@ -235,6 +247,7 @@ class ContributeBox extends React.Component<Props, State> {
           numSites={numRows}
           onShowAll={this.onModalContributeToggle}
           headerColor={true}
+          showRemove={true}
         >
           {getLocale('contributionVisitSome')}
         </TableContribute>

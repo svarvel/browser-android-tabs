@@ -67,6 +67,7 @@ public:
   void GetGrantCaptcha() override;
   void SolveGrantCaptcha(const std::string& solution) const override;
   std::string GetWalletPassphrase() const override;
+  unsigned int GetNumExcludedSites() const override;
   void RecoverWallet(const std::string passPhrase) const override;
   void GetContentSiteList(uint32_t start,
                           uint32_t limit,
@@ -111,7 +112,10 @@ public:
       const std::string& media_key,
       ledger::PublisherInfoCallback callback) override;
   void SaveMediaPublisherInfo(const std::string& media_key, const std::string& publisher_id) override;
+  void ExcludePublisher(const std::string publisherKey) const override;
+  void RestorePublishers() override;
   std::map<std::string, brave_rewards::BalanceReport> GetAllBalanceReports() override;
+  bool IsWalletCreated() override;
 
  private:
   typedef base::Callback<void(int, const std::string&, const std::map<std::string, std::string>& headers)> FetchCallback;
@@ -129,7 +133,7 @@ public:
   void TriggerOnWalletProperties(int error_code,
                                  std::unique_ptr<ledger::WalletInfo> result);
   void TriggerOnGrant(ledger::Result result, const ledger::Grant& grant);
-  void TriggerOnGrantCaptcha(const std::string& image);
+  void TriggerOnGrantCaptcha(const std::string& image, const std::string& hint);
   void TriggerOnRecoverWallet(ledger::Result result,
                               double balance,
                               const std::vector<ledger::Grant>& grants);
@@ -196,8 +200,9 @@ public:
                    ledger::LedgerCallbackHandler* handler) override;
   void RunIOTask(std::unique_ptr<ledger::LedgerTaskRunner> task) override;
   void RunTask(std::unique_ptr<ledger::LedgerTaskRunner> task) override;
-
+  void SetRewardsMainEnabled(bool enabled) const override;
   void SetPublisherAllowVideos(bool allow) override;
+  void SetUserChangedContribution() const override;
   void SetAutoContribute(bool enabled) override;
   void OnPublisherActivity(ledger::Result result,
                           std::unique_ptr<ledger::PublisherInfo> info,

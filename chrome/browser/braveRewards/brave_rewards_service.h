@@ -46,7 +46,10 @@ public:
   virtual void GetGrantCaptcha() = 0;
   virtual void SolveGrantCaptcha(const std::string& solution) const = 0;
   virtual std::string GetWalletPassphrase() const = 0;
+  virtual unsigned int GetNumExcludedSites() const = 0;
   virtual void RecoverWallet(const std::string passPhrase) const = 0;
+  virtual void ExcludePublisher(const std::string publisherKey) const = 0;
+  virtual void RestorePublishers() = 0;
   virtual void OnLoad(const std::string& _tld,
             const std::string& _domain,
             const std::string& _path,
@@ -70,11 +73,13 @@ public:
 
   virtual uint64_t GetReconcileStamp() const = 0;
   virtual std::map<std::string, std::string> GetAddresses() const = 0;
+  virtual void SetRewardsMainEnabled(bool enabled) const = 0;
   virtual void SetPublisherMinVisitTime(uint64_t duration_in_seconds) = 0;
   virtual void SetPublisherMinVisits(unsigned int visits) = 0;
   virtual void SetPublisherAllowNonVerified(bool allow) = 0;
   virtual void SetPublisherAllowVideos(bool allow) = 0;
   virtual void SetContributionAmount(double amount) = 0;
+  virtual void SetUserChangedContribution() const = 0;
   virtual void SetAutoContribute(bool enabled) = 0;
   virtual void SetBalanceReport(const ledger::BalanceReportInfo& report_info) = 0;
 
@@ -86,6 +91,7 @@ public:
 
   virtual void SetTimer(uint64_t time_offset, uint32_t& timer_id) = 0;
   virtual std::map<std::string, brave_rewards::BalanceReport> GetAllBalanceReports() = 0;
+  virtual bool IsWalletCreated() = 0;
 
   void AddObserver(BraveRewardsServiceObserver* observer);
   void RemoveObserver(BraveRewardsServiceObserver* observer);
