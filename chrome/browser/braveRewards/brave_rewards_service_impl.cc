@@ -82,10 +82,12 @@ ContentSite PublisherInfoToContentSite(
   ContentSite content_site(publisher_info.id);
   content_site.percentage = publisher_info.percent;
   content_site.verified = publisher_info.verified;
+  content_site.excluded = publisher_info.excluded;
   content_site.name = publisher_info.name;
   content_site.url = publisher_info.url;
   content_site.provider = publisher_info.provider;
   content_site.favicon_url = publisher_info.favicon_url;
+  content_site.id = publisher_info.id;
   return content_site;
 }
 
@@ -426,6 +428,13 @@ base::PostTaskAndReplyWithResult(file_task_runner_.get(), FROM_HERE,
                      AsWeakPtr()));
 }
 
+void BraveRewardsServiceImpl::ExcludePublisher(const std::string publisherKey) const {
+  ledger_->SetPublisherExclude(publisherKey, ledger::PUBLISHER_EXCLUDE::EXCLUDED);
+}
+
+void BraveRewardsServiceImpl::RestorePublishers() {
+  ledger_->RestorePublishers();
+}
 void BraveRewardsServiceImpl::OnMediaPublisherInfoSaved(bool success) {
   if (!success) {
     VLOG(1) << "Error in OnMediaPublisherInfoSaved";
@@ -500,9 +509,8 @@ void BraveRewardsServiceImpl::OnGrant(ledger::Result result,
   TriggerOnGrant(result, grant);
 }
 
-void BraveRewardsServiceImpl::OnGrantCaptcha(const std::string& image,
-    const std::string& hint) {
-  TriggerOnGrantCaptcha(image);
+void BraveRewardsServiceImpl::OnGrantCaptcha(const std::string& image, const std::string& hint) {
+  TriggerOnGrantCaptcha(image, hint);
 }
 
 void BraveRewardsServiceImpl::OnRecoverWallet(ledger::Result result,
@@ -858,15 +866,18 @@ void BraveRewardsServiceImpl::GetGrantCaptcha() {
   ledger_->GetGrantCaptcha();
 }
 
-void BraveRewardsServiceImpl::TriggerOnGrantCaptcha(const std::string& image) {
+void BraveRewardsServiceImpl::TriggerOnGrantCaptcha(const std::string& image, const std::string& hint) {
   for (auto& observer : observers_)
-    observer.OnGrantCaptcha(this, image);
+    observer.OnGrantCaptcha(this, image, hint);
 }
 
 std::string BraveRewardsServiceImpl::GetWalletPassphrase() const {
   return ledger_->GetWalletPassphrase();
 }
 
+unsigned int BraveRewardsServiceImpl::GetNumExcludedSites() const {
+  return ledger_->GetNumExcludedSites();
+}
 void BraveRewardsServiceImpl::RecoverWallet(const std::string passPhrase) const {
   return ledger_->RecoverWallet(passPhrase);
 }
@@ -918,11 +929,17 @@ std::map<std::string, std::string> BraveRewardsServiceImpl::GetAddresses() const
   return addresses;
 }
 
+void BraveRewardsServiceImpl::SetRewardsMainEnabled(bool enabled) const {
+  return ledger_->SetRewardsMainEnabled(enabled);
+}
 
 void BraveRewardsServiceImpl::SetPublisherAllowVideos(bool allow) {
   return ledger_->SetPublisherAllowVideos(allow);
 }
 
+void BraveRewardsServiceImpl::SetUserChangedContribution() const {
+  ledger_->SetUserChangedContribution();
+}
 void BraveRewardsServiceImpl::SetAutoContribute(bool enabled) {
   return ledger_->SetAutoContribute(enabled);
 }
@@ -1015,6 +1032,9 @@ std::map<std::string, brave_rewards::BalanceReport> BraveRewardsServiceImpl::Get
   return newReports;
 }
 
+bool BraveRewardsServiceImpl::IsWalletCreated() {
+  return ledger_->IsWalletCreated();
+}
 void BraveRewardsServiceImpl::OnExcludedSitesChanged() {
   for (auto& observer : observers_)
     observer.OnExcludedSitesChanged(this);
