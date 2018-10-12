@@ -56,7 +56,8 @@
             
         <ImageButton android:id="@+id/brave_rewards_button"
             style="@style/ToolbarButton"
-            android:src="@drawable/btn_bat"
+            android:src="@drawable/btn_bat_custom"
+            android:layout_marginStart="-8dp"
             android:layout_gravity="top"
             android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
 
