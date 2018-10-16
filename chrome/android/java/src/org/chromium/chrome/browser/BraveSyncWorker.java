@@ -233,7 +233,15 @@ public class BraveSyncWorker {
                     return -1;
                 }
             }
+            // It means we have equal start parts(ex. 2.2.1.1 vs 2.2.1)
+            if (thisNumbers.length > compareNumbers.length) {
+                return -1;
+            } else if (compareNumbers.length > thisNumbers.length) {
+                return 1;
+            }
             Log.e(TAG, "Bookmark compare improper state");
+            Log.e(TAG, "order == " + order);
+            Log.e(TAG, "compare.order == " + compare.order);
             // This should not happen
             assert false;
             return 0;
