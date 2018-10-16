@@ -7,8 +7,17 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { Checkbox, Grid, Column, Select, ControlWrapper } from 'brave-ui/components'
-import { Box, TableContribute, DisabledContent, List, ModalContribute, Tokens, NextContribution } from 'brave-ui/features/rewards'
+import {
+  StyledListContent,
+  StyledSitesNum,
+  StyledSupport,
+  StyledTotalContent,
+  StyledSupportSites,
+  StyledSitesLink
+} from './style'
+import { List, NextContribution, TableContribute, Tokens } from 'brave-ui/features/rewards'
+import { BoxMobile } from 'brave-ui/features/rewards/mobile'
+import { Column, Grid, Select, ControlWrapper, Checkbox } from 'brave-ui/components'
 import { Provider } from 'brave-ui/features/rewards/profile'
 
 // Utils
@@ -16,11 +25,8 @@ import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 import * as utils from '../utils'
 
-// Assets
-const contributeDisabledIcon = require('../../../img/rewards/contribute_disabled.svg')
-
 interface State {
-  modalContribute: boolean
+  allSitesShown: boolean
 }
 
 interface MonthlyChoice {
@@ -29,13 +35,14 @@ interface MonthlyChoice {
 }
 
 interface Props extends Rewards.ComponentProps {
+  enabledContribute?: boolean
 }
 
 class ContributeBox extends React.Component<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      modalContribute: false
+      allSitesShown: false
     }
   }
 
@@ -64,18 +71,6 @@ class ContributeBox extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  contributeDisabled () {
-    return (
-      <DisabledContent
-        image={contributeDisabledIcon}
-        type={'contribute'}
-      >
-        • {getLocale('contributionDisabledText1')} <br />
-        • {getLocale('contributionDisabledText2')}
-      </DisabledContent>
-    )
-  }
-
   onRestore = () => {
     this.actions.restorePublishers()
   }
@@ -84,18 +79,18 @@ class ContributeBox extends React.Component<Props, State> {
     this.actions.onSettingSave('enabledContribute', !this.props.rewardsData.enabledContribute)
   }
 
-  onModalContributeToggle = () => {
-    this.setState({
-      modalContribute: !this.state.modalContribute
-    })
-  }
-
   onSelectSettingChange = (key: string, value: string) => {
     this.actions.onSettingSave(key, +value)
   }
 
   onCheckSettingChange = (key: string, selected: boolean) => {
     this.actions.onSettingSave(key, selected)
+  }
+
+  onSitesShownToggle = () => {
+    this.setState({
+      allSitesShown: !this.state.allSitesShown
+    })
   }
 
   contributeSettings = (monthlyList: MonthlyChoice[]) => {
@@ -117,6 +112,7 @@ class ContributeBox extends React.Component<Props, State> {
         <Column size={1} customStyle={{ justifyContent: 'center', flexWrap: 'wrap' }}>
           <ControlWrapper text={getLocale('contributionMonthly')}>
             <Select
+              title={getLocale('contributionMonthly')}
               onChange={this.onSelectSettingChange.bind(this, 'contributionMonthly')}
               value={(contributionMonthly || '').toString()}
             >
@@ -134,6 +130,7 @@ class ContributeBox extends React.Component<Props, State> {
           </ControlWrapper>
           <ControlWrapper text={getLocale('contributionMinTime')}>
             <Select
+              title={getLocale('contributionMinTime')}
               onChange={this.onSelectSettingChange.bind(this, 'contributionMinTime')}
               value={(contributionMinTime || '').toString()}
             >
@@ -144,6 +141,7 @@ class ContributeBox extends React.Component<Props, State> {
           </ControlWrapper>
           <ControlWrapper text={getLocale('contributionMinVisits')}>
             <Select
+              title={getLocale('contributionMinVisits')}
               onChange={this.onSelectSettingChange.bind(this, 'contributionMinVisits')}
               value={(contributionMinVisits || '').toString()}
             >
@@ -178,80 +176,82 @@ class ContributeBox extends React.Component<Props, State> {
       contributionMonthly,
       enabledContribute,
       reconcileStamp,
-      numExcludedSites,
       autoContributeList
     } = this.props.rewardsData
     const toggleOn = !(firstLoad !== false || !enabledMain)
+    const prefix = this.state.allSitesShown ? 'Hide all' : 'Show all'
     const monthlyList: MonthlyChoice[] = utils.generateContributionMonthly(walletInfo.choices, walletInfo.rates)
     const contributeRows = this.getContributeRows(autoContributeList)
-    const topRows = contributeRows.slice(0, 5)
+    const shownRows = this.state.allSitesShown ? contributeRows : contributeRows.slice(0, 5)
     const numRows = contributeRows && contributeRows.length
-    const allSites = !(numRows > 5)
 
     return (
-      <Box
+      <BoxMobile
         title={getLocale('contributionTitle')}
         type={'contribute'}
         description={getLocale('contributionDesc')}
         toggle={toggleOn}
         checked={toggleOn ? enabledContribute : false}
         settingsChild={this.contributeSettings(monthlyList)}
-        disabledContent={this.contributeDisabled()}
-        onToggle={this.onToggleContribution}
-        testId={'autoContribution'}
+        toggleAction={this.onToggleContribution}
       >
-        {
-          this.state.modalContribute
-          ? <ModalContribute
-            rows={contributeRows}
-            onRestore={this.onRestore}
-            numExcludedSites={numExcludedSites}
-            onClose={this.onModalContributeToggle}
-          />
-          : null
-        }
-        <List title={getLocale('contributionMonthly')}>
-          <Select
-            floating={true}
-            onChange={this.onSelectSettingChange.bind(this, 'contributionMonthly')}
-            value={(contributionMonthly || '').toString()}
+        <List title={<StyledListContent>{getLocale('contributionMonthly')}</StyledListContent>}>
+          <StyledListContent>
+            <Select
+              floating={true}
+              title={getLocale('contributionMonthly')}
+              onChange={this.onSelectSettingChange.bind(this, 'contributionMonthly')}
+              value={(contributionMonthly || '').toString()}
+            >
+              {
+                monthlyList.map((choice: MonthlyChoice) => {
+                  return <div key={`choice-${choice.tokens}`} data-value={choice.tokens.toString()}>
+                    <Tokens
+                      value={choice.tokens}
+                      converted={choice.converted}
+                    />
+                  </div>
+                })
+              }
+            </Select>
+          </StyledListContent>
+        </List>
+        <List title={<StyledListContent>{getLocale('contributionNextDate')}</StyledListContent>}>
+          <StyledListContent>
+            <NextContribution>{new Date(reconcileStamp * 1000).toLocaleDateString()}</NextContribution>
+          </StyledListContent>
+        </List>
+        <StyledSupport>
+          <List title={<StyledSupportSites>{getLocale('contributionSites')}</StyledSupportSites>}>
+            <StyledTotalContent>
+              {getLocale('total')} &nbsp;<Tokens
+                value={numRows.toString()}
+                hideText={true}
+              />
+            </StyledTotalContent>
+          </List>
+        </StyledSupport>
+        <StyledListContent>
+          <TableContribute
+            header={[
+              getLocale('rewardsContributeAttention')
+            ]}
+            rows={shownRows}
+            allSites={true}
+            numSites={numRows}
+            headerColor={true}
+            showRemove={true}
+            showRowAmount={true}
           >
-            {
-              monthlyList.map((choice: MonthlyChoice) => {
-                return <div key={`choice-${choice.tokens}`} data-value={choice.tokens.toString()}>
-                  <Tokens
-                    value={choice.tokens}
-                    converted={choice.converted}
-                  />
-                </div>
-              })
-            }
-          </Select>
-        </List>
-        <List title={getLocale('contributionNextDate')}>
-          <NextContribution>{new Date(reconcileStamp * 1000).toLocaleDateString()}</NextContribution>
-        </List>
-        <List title={getLocale('contributionSites')}>
-          {getLocale('total')} &nbsp;<Tokens
-            value={numRows.toString()}
-            hideText={true}
-          />
-        </List>
-        <TableContribute
-          header={[
-            getLocale('site'),
-            getLocale('rewardsContributeAttention')
-          ]}
-          rows={topRows}
-          allSites={allSites}
-          numSites={numRows}
-          onShowAll={this.onModalContributeToggle}
-          headerColor={true}
-          showRemove={true}
-        >
-          {getLocale('contributionVisitSome')}
-        </TableContribute>
-      </Box>
+            {getLocale('contributionVisitSome')}
+          </TableContribute>
+        </StyledListContent>
+        <StyledSitesNum>
+          <StyledSitesLink onClick={this.onSitesShownToggle}>
+            {prefix} {numRows} sites
+          </StyledSitesLink>
+        </StyledSitesNum>
+      </BoxMobile>
     )
   }
 }
