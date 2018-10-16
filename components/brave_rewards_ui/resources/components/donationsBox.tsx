@@ -7,15 +7,14 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { Checkbox, Column, Grid, ControlWrapper } from 'brave-ui/components'
-import { DisabledContent, Box, TableDonation, List, Tokens } from 'brave-ui/features/rewards'
+import { StyledListContent } from './style'
+import { BoxMobile } from 'brave-ui/features/rewards/mobile'
+import { TableDonation, Tokens, List } from 'brave-ui/features/rewards'
+import { Column, Grid, Checkbox, ControlWrapper } from 'brave-ui/components'
 
 // Utils
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
-
-// Assets
-const donate = require('../../../img/rewards/donate_disabled.svg')
 
 interface Props extends Rewards.ComponentProps {
 }
@@ -61,18 +60,6 @@ class DonationBox extends React.Component<Props, {}> {
     )
   }
 
-  disabledContent = () => {
-    return (
-      <DisabledContent
-        image={donate}
-        type={'donation'}
-      >
-        • {getLocale('donationDisabledText1')}<br/>
-        • {getLocale('donationDisabledText2')}
-      </DisabledContent>
-    )
-  }
-
   getDonationRows = () => []
 
   render () {
@@ -83,25 +70,29 @@ class DonationBox extends React.Component<Props, {}> {
     const allSites = !(numRows > 5)
 
     return (
-      <Box
+      <BoxMobile
         title={getLocale('donationTitle')}
         type={'donation'}
+        toggle={false}
+        checked={rewardsData.enabledMain && !showDisabled}
         description={getLocale('donationDesc')}
         settingsChild={this.donationSettings()}
-        disabledContent={showDisabled ? this.disabledContent() : null}
       >
-        <List title={getLocale('donationTotalDonations')}>
-          <Tokens value={'0.0'} converted={'0.00'} />
+        <List title={<StyledListContent>{getLocale('donationTotalDonations')}</StyledListContent>}>
+          <StyledListContent>
+            <Tokens value={'0.0'} converted={'0.00'} />
+          </StyledListContent>
         </List>
-        <TableDonation
-          rows={donationRows}
-          allItems={allSites}
-          numItems={numRows}
-          headerColor={true}
-        >
-          {getLocale('donationVisitSome')}
-        </TableDonation>
-      </Box>
+        <StyledListContent>
+          <TableDonation
+            rows={donationRows}
+            allItems={allSites}
+            headerColor={true}
+          >
+            {getLocale('donationVisitSome')}
+          </TableDonation>
+        </StyledListContent>
+      </BoxMobile>
     )
   }
 }

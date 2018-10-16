@@ -7,35 +7,21 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { Box, DisabledContent } from 'brave-ui/features/rewards'
+import { BoxMobile } from 'brave-ui/features/rewards/mobile'
 
 // Utils
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 
-// Assets
-const adsDisabledIcon = require('../../../img/rewards/ads_disabled.svg')
-
 class AdsBox extends React.Component {
-  adsDisabled () {
-    return (
-      <DisabledContent
-        image={adsDisabledIcon}
-        type={'ads'}
-      >
-        <h3>{getLocale('adsDisabledText')}</h3>
-      </DisabledContent>
-    )
-  }
-
   render () {
     return (
-      <Box
+      <BoxMobile
         title={getLocale('adsTitle')}
         type={'ads'}
         description={getLocale('adsDesc')}
         toggle={false}
-        disabledContent={this.adsDisabled()}
+        checked={false}
       />
     )
   }

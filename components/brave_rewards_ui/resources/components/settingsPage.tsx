@@ -7,24 +7,40 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { Column, Grid } from 'brave-ui/components'
-import { MainToggle, SettingsPage as Page } from 'brave-ui/features/rewards'
-import PageWallet from './pageWallet'
 import AdsBox from './adsBox'
 import ContributeBox from './contributeBox'
 import DonationBox from './donationsBox'
+import {
+  MainToggleMobile,
+  SettingsPageMobile,
+  WalletInfoHeader
+} from 'brave-ui/features/rewards/mobile'
+import { StyledDisabledContent, StyledHeading, StyledText } from './style'
 
 // Utils
+import * as utils from '../utils'
 import * as rewardsActions from '../actions/rewards_actions'
-import Grant from './grant'
 
-interface Props extends Rewards.ComponentProps {
+interface State {
+  mainToggle: boolean
 }
 
-class SettingsPage extends React.Component<Props, {}> {
+interface Props extends Rewards.ComponentProps {
+  rewardsEnabled?: boolean
+}
+
+class SettingsPage extends React.Component<Props, State> {
   private balanceTimerId: number
 
+  constructor (props: Props) {
+    super(props)
+    this.state = {
+      mainToggle: true
+    }
+  }
+
   onToggle = () => {
+    this.setState({ mainToggle: !this.state.mainToggle })
     this.actions.onSettingSave('enabledMain', !this.props.rewardsData.enabledMain)
   }
 
@@ -55,31 +71,42 @@ class SettingsPage extends React.Component<Props, {}> {
   }
 
   render () {
-    const { enabledMain, grant } = this.props.rewardsData
+    const { enabledMain } = this.props.rewardsData
+    const { balance, rates } = this.props.rewardsData.walletInfo
+    const convertedBalance = utils.convertBalance(balance.toString(), rates)
 
     return (
-      <Page>
-        <Grid columns={3} customStyle={{ gridGap: '32px' }}>
-          <Column size={2} customStyle={{ justifyContent: 'center', flexWrap: 'wrap' }}>
-            <MainToggle
-              onToggle={this.onToggle}
-              enabled={enabledMain}
-              testId={'enableMain'}
-            />
-            <AdsBox />
-            <ContributeBox />
-            <DonationBox />
-          </Column>
-          <Column size={1} customStyle={{ justifyContent: 'center', flexWrap: 'wrap' }}>
-            {
-              enabledMain && grant && grant.promotionId
-                ? <Grant/>
-                : null
-            }
-            <PageWallet />
-          </Column>
-        </Grid>
-      </Page>
+      <SettingsPageMobile>
+        <MainToggleMobile
+          onToggle={this.onToggle}
+          enabled={enabledMain}
+        />
+        {
+          !this.state.mainToggle
+          ? <StyledDisabledContent>
+              <StyledHeading>
+                {'Why Brave Rewards?'}
+              </StyledHeading>
+              <StyledText>
+                {'With conventional browsers, you pay to browse the web by viewing ads with your valuable attention, spending your valuable time downloading invasive ad technology, that transmits your valuable private data to advertisers — without your consent.'}
+              </StyledText>
+              <StyledText>
+                {'Today, Brave welcomes you to the new internet. One where your time is valued, your personal data is kept private, and you actually get paid for your attention.'}
+              </StyledText>
+            </StyledDisabledContent>
+          : null
+        }
+        <WalletInfoHeader
+          balance={balance.toString()}
+          id={'mobile-wallet'}
+          converted={convertedBalance}
+        />
+        <AdsBox/>
+        <ContributeBox
+          enabledContribute={enabledMain}
+        />
+        <DonationBox/>
+      </SettingsPageMobile>
     )
   }
 }
