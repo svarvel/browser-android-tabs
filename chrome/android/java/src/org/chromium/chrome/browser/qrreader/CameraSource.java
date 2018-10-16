@@ -344,6 +344,7 @@ public class CameraSource {
             // SurfaceTexture was introduced in Honeycomb (11), so if we are running and
             // old version of Android. fall back to use SurfaceView.
             mDummySurfaceTexture = new SurfaceTexture(DUMMY_TEXTURE_NAME);
+
             mCamera.setPreviewTexture(mDummySurfaceTexture);
             mCamera.startPreview();
 
@@ -1102,12 +1103,11 @@ public class CameraSource {
          * (if present) back to the camera, and keeps a pending reference to the frame data for
          * future use.
          */
+        @SuppressWarnings("ByteBufferBackingArray")
         void setNextFrame(byte[] data, Camera camera) {
             synchronized (mLock) {
                 if (mPendingFrameData != null) {
-                    byte[] buffer = new byte[mPendingFrameData.remaining()];
-                    mPendingFrameData.get(buffer);
-                    camera.addCallbackBuffer(buffer);
+                    camera.addCallbackBuffer(mPendingFrameData.array());
                     mPendingFrameData = null;
                 }
 
@@ -1143,6 +1143,7 @@ public class CameraSource {
          * If you find that this is using more CPU than you'd like, you should probably decrease the
          * FPS setting above to allow for some idle time in between frames.
          */
+        @SuppressWarnings("ByteBufferBackingArray")
         @Override
         public void run() {
             Frame outputFrame;
@@ -1193,9 +1194,7 @@ public class CameraSource {
                 } catch (Throwable t) {
                     Log.e(TAG, "Exception thrown from receiver.", t);
                 } finally {
-                    byte[] buffer = new byte[data.remaining()];
-                    data.get(buffer);
-                    mCamera.addCallbackBuffer(buffer);
+                    mCamera.addCallbackBuffer(data.array());
                 }
             }
         }
