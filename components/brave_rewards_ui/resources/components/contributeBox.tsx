@@ -170,15 +170,12 @@ class ContributeBox extends React.Component<Props, State> {
 
   render () {
     const {
-      firstLoad,
-      enabledMain,
       walletInfo,
       contributionMonthly,
       enabledContribute,
       reconcileStamp,
       autoContributeList
     } = this.props.rewardsData
-    const toggleOn = !(firstLoad !== false || !enabledMain)
     const prefix = this.state.allSitesShown ? 'Hide all' : 'Show all'
     const monthlyList: MonthlyChoice[] = utils.generateContributionMonthly(walletInfo.choices, walletInfo.rates)
     const contributeRows = this.getContributeRows(autoContributeList)
@@ -190,8 +187,8 @@ class ContributeBox extends React.Component<Props, State> {
         title={getLocale('contributionTitle')}
         type={'contribute'}
         description={getLocale('contributionDesc')}
-        toggle={toggleOn}
-        checked={toggleOn ? enabledContribute : false}
+        toggle={enabledContribute}
+        checked={enabledContribute}
         settingsChild={this.contributeSettings(monthlyList)}
         toggleAction={this.onToggleContribution}
       >
