@@ -64,7 +64,6 @@ class DonationBox extends React.Component<Props, {}> {
 
   render () {
     const { rewardsData } = this.props
-    const showDisabled = rewardsData.firstLoad !== false || !rewardsData.enabledMain
     const donationRows = this.getDonationRows()
     const numRows = donationRows.length
     const allSites = !(numRows > 5)
@@ -74,7 +73,7 @@ class DonationBox extends React.Component<Props, {}> {
         title={getLocale('donationTitle')}
         type={'donation'}
         toggle={false}
-        checked={rewardsData.enabledMain && !showDisabled}
+        checked={rewardsData.enabledMain}
         description={getLocale('donationDesc')}
         settingsChild={this.donationSettings()}
       >
