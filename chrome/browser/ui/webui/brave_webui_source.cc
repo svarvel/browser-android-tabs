@@ -262,6 +262,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "whyBraveRewardsDesc", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC },
         { "whyBraveRewardsDesc1", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_1 },
         { "whyBraveRewardsDesc2", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_2 },
+        { "whyBraveRewardsDesc3", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_3 },
         { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET }
       }
     }

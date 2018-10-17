@@ -19,6 +19,7 @@ import { StyledDisabledContent, StyledHeading, StyledText } from './style'
 
 // Utils
 import * as utils from '../utils'
+import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 
 interface State {
@@ -85,13 +86,13 @@ class SettingsPage extends React.Component<Props, State> {
           !this.state.mainToggle
           ? <StyledDisabledContent>
               <StyledHeading>
-                {'Why Brave Rewards?'}
+                {getLocale('rewardsWhy')}
               </StyledHeading>
               <StyledText>
-                {'With conventional browsers, you pay to browse the web by viewing ads with your valuable attention, spending your valuable time downloading invasive ad technology, that transmits your valuable private data to advertisers — without your consent.'}
+                {getLocale('whyBraveRewardsDesc1')}
               </StyledText>
               <StyledText>
-                {'Today, Brave welcomes you to the new internet. One where your time is valued, your personal data is kept private, and you actually get paid for your attention.'}
+                {getLocale('whyBraveRewardsDesc3')}
               </StyledText>
             </StyledDisabledContent>
           : null
