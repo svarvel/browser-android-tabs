@@ -530,7 +530,9 @@ void BraveRewardsServiceImpl::OnGrantFinish(ledger::Result result,
 }
 
 void BraveRewardsServiceImpl::OnReconcileComplete(ledger::Result result,
-                                              const std::string& viewing_id) {
+                           const std::string& viewing_id,
+                           ledger::PUBLISHER_CATEGORY category,
+                           const std::string& probi) {
   LOG(ERROR) << "reconcile complete " << viewing_id;
   // TODO - TriggerOnReconcileComplete
 }
@@ -783,17 +785,26 @@ void BraveRewardsServiceImpl::OnURLFetchComplete(
   callback.Run(response_code, body, headers);
 }
 
-void BraveRewardsServiceImpl::RunIOTask(
-    std::unique_ptr<ledger::LedgerTaskRunner> task) {
-  file_task_runner_->PostTask(FROM_HERE,
-      base::BindOnce(&ledger::LedgerTaskRunner::Run, std::move(task)));
+void RunIOTaskCallback(
+    base::WeakPtr<BraveRewardsServiceImpl> rewards_service,
+    std::function<void(void)> callback) {
+  content::BrowserThread::PostTask(content::BrowserThread::UI, FROM_HERE,
+      base::BindOnce(&BraveRewardsServiceImpl::OnIOTaskComplete,
+                      rewards_service,
+                      callback));
 }
 
-void BraveRewardsServiceImpl::RunTask(
-      std::unique_ptr<ledger::LedgerTaskRunner> task) {
-  content::BrowserThread::PostTask(content::BrowserThread::UI, FROM_HERE,
-      base::BindOnce(&ledger::LedgerTaskRunner::Run,
-                     std::move(task)));
+void BraveRewardsServiceImpl::OnIOTaskComplete(std::function<void(void)> callback) {
+  callback();
+}
+
+void BraveRewardsServiceImpl::RunIOTask(
+    std::unique_ptr<ledger::LedgerTaskRunner> task) {
+  ledger::LedgerTaskRunner::CallerThreadCallback callback =
+      std::bind(&RunIOTaskCallback, AsWeakPtr(), _1);
+  file_task_runner_->PostTask(FROM_HERE,
+    base::BindOnce(&ledger::LedgerTaskRunner::Run,
+        std::move(task), std::move(callback)));
 }
 
 void BraveRewardsServiceImpl::TriggerOnWalletInitialized(int error_code) {
@@ -1038,6 +1049,39 @@ bool BraveRewardsServiceImpl::IsWalletCreated() {
 void BraveRewardsServiceImpl::OnExcludedSitesChanged() {
   for (auto& observer : observers_)
     observer.OnExcludedSitesChanged(this);
+}
+
+void BraveRewardsServiceImpl::LoadNicewareList(ledger::GetNicewareListCallback callback) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::LoadCurrentPublisherInfoList(
+    uint32_t start,
+    uint32_t limit,
+    ledger::PublisherInfoFilter filter,
+    ledger::GetPublisherInfoListCallback callback) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::FetchFavIcon(const std::string& url, const std::string& favicon_key) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::SaveContributionInfo(const std::string& probi,
+                          const int month,
+                          const int year,
+                          const uint32_t date,
+                          const std::string& publisher_key,
+                          const ledger::PUBLISHER_CATEGORY category) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::GetRecurringDonations(ledger::RecurringDonationCallback callback) {
+  // TODO
+}
+
+void BraveRewardsServiceImpl::OnRemoveRecurring(const std::string& publisher_key, ledger::RecurringRemoveCallback callback) {
+  // TODO
 }
 
 void BraveRewardsServiceImpl::OnPublisherActivity(ledger::Result result,

@@ -5,6 +5,7 @@
  #ifndef BRAVE_REWARDS_SERVICE_IMPL_
  #define BRAVE_REWARDS_SERVICE_IMPL_
 
+#include <functional>
 #include <map>
 #include <memory>
 #include <string>
@@ -118,6 +119,9 @@ public:
   bool IsWalletCreated() override;
 
  private:
+  friend void RunIOTaskCallback(
+      base::WeakPtr<BraveRewardsServiceImpl>,
+      std::function<void(void)>);
   typedef base::Callback<void(int, const std::string&, const std::map<std::string, std::string>& headers)> FetchCallback;
 
   //const extensions::OneShotEvent& ready() const { return ready_; } TODO
@@ -168,7 +172,9 @@ public:
                       double balance,
                       const std::vector<ledger::Grant>& grants) override;
   void OnReconcileComplete(ledger::Result result,
-                           const std::string& viewing_id) override;
+                           const std::string& viewing_id,
+                           ledger::PUBLISHER_CATEGORY category,
+                           const std::string& probi) override;
   void OnGrantFinish(ledger::Result result,
                      const ledger::Grant& grant) override;
   void LoadLedgerState(ledger::LedgerCallbackHandler* handler) override;
@@ -199,7 +205,6 @@ public:
                    const ledger::URL_METHOD& method,
                    ledger::LedgerCallbackHandler* handler) override;
   void RunIOTask(std::unique_ptr<ledger::LedgerTaskRunner> task) override;
-  void RunTask(std::unique_ptr<ledger::LedgerTaskRunner> task) override;
   void SetRewardsMainEnabled(bool enabled) const override;
   void SetPublisherAllowVideos(bool allow) override;
   void SetUserChangedContribution() const override;
@@ -209,8 +214,26 @@ public:
                           uint64_t windowId) override;
   void OnExcludedSitesChanged() override;
 
+  void OnIOTaskComplete(std::function<void(void)> callback);
+
   // URLFetcherDelegate impl
   void OnURLFetchComplete(const net::URLFetcher* source) override;
+
+  void LoadNicewareList(ledger::GetNicewareListCallback callback) override;
+  void LoadCurrentPublisherInfoList(
+      uint32_t start,
+      uint32_t limit,
+      ledger::PublisherInfoFilter filter,
+      ledger::GetPublisherInfoListCallback callback) override;
+  void FetchFavIcon(const std::string& url, const std::string& favicon_key) override;
+  void SaveContributionInfo(const std::string& probi,
+                            const int month,
+                            const int year,
+                            const uint32_t date,
+                            const std::string& publisher_key,
+                            const ledger::PUBLISHER_CATEGORY category) override;
+  void GetRecurringDonations(ledger::RecurringDonationCallback callback) override;
+  void OnRemoveRecurring(const std::string& publisher_key, ledger::RecurringRemoveCallback callback) override;
 
   Profile* profile_;  // NOT OWNED
   std::unique_ptr<ledger::Ledger> ledger_;
