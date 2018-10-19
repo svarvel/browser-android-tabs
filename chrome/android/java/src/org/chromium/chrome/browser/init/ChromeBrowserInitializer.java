@@ -181,9 +181,9 @@ public class ChromeBrowserInitializer {
     }
 
     // ADBlock update
-    class UpdateADBlockAsyncTask extends AsyncTask<Void,Void,Long> {
+    class UpdateADBlockAsyncTask extends AsyncTask<Long> {
         @Override
-        protected Long doInBackground(Void... params) {
+        protected Long doInBackground() {
             try {
                 ADBlockUpdater.UpdateADBlock(mApplication.getApplicationContext(), true);
             }
@@ -195,9 +195,9 @@ public class ChromeBrowserInitializer {
         }
     }
 
-    class CheckInstallationSourceAsyncTask extends AsyncTask<Void,Void,Long> {
+    class CheckInstallationSourceAsyncTask extends AsyncTask<Long> {
        @Override
-       protected Long doInBackground(Void... params) {
+       protected Long doInBackground() {
            try {
              Context context = mApplication.getApplicationContext();
              // A list with valid installers package name
@@ -227,12 +227,12 @@ public class ChromeBrowserInitializer {
     // The users who had updated from 1.0.37 and earlier versions and had not
     // touched this setting, should have it still turned on.
     // For the first installation we switch it to false to simulate 'default false'.
-    class SwitchSearchSuggestAsyncTask extends AsyncTask<Void,Void,Long>
+    class SwitchSearchSuggestAsyncTask extends AsyncTask<Long>
     {
         private static final String PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE = "search_suggestions_switched_to_default_false";
 
         @Override
-        protected Long doInBackground(Void... params) {
+        protected Long doInBackground() {
             try {
                 boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, false);
                 if (!alreadySwitched) {

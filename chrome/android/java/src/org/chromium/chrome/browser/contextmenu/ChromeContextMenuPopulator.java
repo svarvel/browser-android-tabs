@@ -413,7 +413,7 @@ public class ChromeContextMenuPopulator implements ContextMenuPopulator {
         if (itemId == R.id.contextmenu_open_in_new_tab) {
             ContextMenuUma.record(params, ContextMenuUma.Action.OPEN_IN_NEW_TAB);
             mDelegate.onOpenInNewTab(params.getUrl(), params.getReferrer());
-        } else if (itemId == R.id.brave_open_in_private_tab) {
+        } else if (itemId == R.id.contextmenu_open_in_incognito_tab) {
             ContextMenuUma.record(params, ContextMenuUma.Action.OPEN_IN_INCOGNITO_TAB);
             mDelegate.onOpenInNewIncognitoTab(params.getUrl());
         } else if (itemId == R.id.contextmenu_open_in_other_window) {
@@ -510,7 +510,7 @@ public class ChromeContextMenuPopulator implements ContextMenuPopulator {
         } else if (itemId == R.id.contextmenu_open_in_new_chrome_tab) {
             ContextMenuUma.record(params, ContextMenuUma.Action.OPEN_IN_NEW_CHROME_TAB);
             mDelegate.onOpenInNewChromeTabFromCCT(params.getUrl(), false);
-        } else if (itemId == R.id.brave_open_in_private_tab) {
+        } else if (itemId == R.id.contextmenu_open_in_chrome_incognito_tab) {
             ContextMenuUma.record(params, ContextMenuUma.Action.OPEN_IN_CHROME_INCOGNITO_TAB);
             mDelegate.onOpenInNewChromeTabFromCCT(params.getUrl(), true);
         } else if (itemId == R.id.contextmenu_open_in_browser_id) {

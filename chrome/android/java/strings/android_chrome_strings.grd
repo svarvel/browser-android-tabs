@@ -2784,12 +2784,12 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       </message>
 
       <!-- Document mode messages -->
-      <message name="IDS_CLOSE_ALL_INCOGNITO_NOTIFICATION" desc="Message on the notification that closes all incognito tabs in document mode">
+      <!--<message name="IDS_CLOSE_ALL_INCOGNITO_NOTIFICATION" desc="Message on the notification that closes all incognito tabs in document mode">
         Close all incognito tabs
       </message>
       <message name="IDS_CLOSE_ALL_PRIVATE_NOTIFICATION" desc="Message on the notification that closes all private tabs in document mode">
         Close all private tabs
-      </message>
+      </message>-->
 
       <!-- Autofill/Wallet integration prompt -->
       <message name="IDS_CARD_UNMASK_INPUT_HINT" desc="Hint text for an input field containing the user's credit card CVC (card verification code).">
@@ -3110,12 +3110,12 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <message name="IDS_BUTTON_NEW_TAB" desc="Button name for opening a new tab.">
         New tab
       </message>
-      <message name="IDS_BUTTON_NEW_INCOGNITO_TAB" desc="Tooltip for the button to open a new incognito browser tab.">
+      <!--<message name="IDS_BUTTON_NEW_INCOGNITO_TAB" desc="Tooltip for the button to open a new incognito browser tab.">
         New incognito tab
       </message>
       <message name="IDS_BUTTON_NEW_PRIVATE_TAB" desc="Tooltip for the button to open a new private browser tab.">
         New private tab
-      </message>
+      </message>-->
       <message name="IDS_CUSTOM_TAB_AMP_PUBLISHER_URL" desc="Text shown in a Custom Tab toolbar for a web page that is hosted by the Google content delivery network but was originally published by someone else.">
         From <ph name="PUBLISHER_ORIGIN">&lt;pub&gt;%1$s&lt;/pub&gt;<ex>example.com</ex></ph> – <ph name="BEGIN_DEEMPHASIZED">&lt;bg&gt;</ph>delivered by Google<ph name="END_DEEMPHASIZED">&lt;/bg&gt;</ph>
       </message>
