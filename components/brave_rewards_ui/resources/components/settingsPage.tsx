@@ -7,9 +7,11 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
+import Grant from './grant'
 import AdsBox from './adsBox'
 import ContributeBox from './contributeBox'
 import DonationBox from './donationsBox'
+import PageWallet from './pageWallet'
 import {
   MainToggleMobile,
   SettingsPageMobile,
@@ -24,6 +26,7 @@ import * as rewardsActions from '../actions/rewards_actions'
 
 interface State {
   mainToggle: boolean
+  walletShown: boolean
 }
 
 interface Props extends Rewards.ComponentProps {
@@ -36,13 +39,13 @@ class SettingsPage extends React.Component<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      mainToggle: true
+      mainToggle: true,
+      walletShown: false
     }
   }
 
-  // Temporary
-  doNothing = () => {
-    // nothing
+  get actions () {
+    return this.props.actions
   }
 
   onToggle = () => {
@@ -50,8 +53,8 @@ class SettingsPage extends React.Component<Props, State> {
     this.actions.onSettingSave('enabledMain', !this.props.rewardsData.enabledMain)
   }
 
-  get actions () {
-    return this.props.actions
+  onToggleWallet = () => {
+    this.setState({ walletShown: !this.state.walletShown })
   }
 
   componentDidMount () {
@@ -102,17 +105,22 @@ class SettingsPage extends React.Component<Props, State> {
             </StyledDisabledContent>
           : null
         }
+        <Grant />
         <WalletInfoHeader
-          onClick={this.doNothing}
+          onClick={this.onToggleWallet}
           balance={balance.toString()}
           id={'mobile-wallet'}
-          converted={convertedBalance}
+          converted={`${convertedBalance} USD`}
         />
-        <AdsBox/>
+        <AdsBox />
         <ContributeBox
           enabledContribute={enabledMain}
         />
-        <DonationBox/>
+        <DonationBox />
+        <PageWallet
+          toggleAction={this.onToggleWallet}
+          visible={this.state.walletShown}
+        />
       </SettingsPageMobile>
     )
   }

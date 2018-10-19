@@ -7,41 +7,31 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import {
-  ModalActivity,
-  ModalBackupRestore,
-  WalletWrapper,
-  WalletEmpty,
-  WalletSummary
-} from 'brave-ui/features/rewards'
-import { WalletAddIcon, WalletImportIcon } from 'brave-ui/components/icons'
 import { AlertWallet } from 'brave-ui/features/rewards/walletWrapper'
+import { ModalAddFunds, WalletSummary, WalletWrapper } from 'brave-ui/features/rewards'
+import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/components/icons'
+import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
 // Utils
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 import * as utils from '../utils'
-import WalletOff from '../../../../node_modules/brave-ui/features/rewards/walletOff'
-import ModalAddFunds from 'brave-ui/features/rewards/modalAddFunds'
 
 interface State {
-  modalBackup: boolean,
-  modalBackupActive: 'backup' | 'restore'
-  modalActivity: boolean
-  modalAddFunds: boolean
+  addFundsShown?: boolean
 }
 
 interface Props extends Rewards.ComponentProps {
+  visible?: boolean
+  toggleAction: () => void
 }
 
 class PageWallet extends React.Component<Props, State> {
   constructor (props: Props) {
     super(props)
+
     this.state = {
-      modalBackup: false,
-      modalBackupActive: 'backup',
-      modalActivity: false,
-      modalAddFunds: false
+      addFundsShown: false
     }
   }
 
@@ -49,65 +39,12 @@ class PageWallet extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  onModalBackupClose = () => {
-    this.actions.onModalBackupClose()
+  notImplemented = () => {
+    // Feature not implemented
   }
 
-  onModalBackupOpen = () => {
-    if (this.props.rewardsData.recoveryKey.length === 0) {
-      this.actions.getWalletPassphrase()
-    }
-
-    this.actions.onModalBackupOpen()
-  }
-
-  onModalBackupTabChange = (tabId: 'backup' | 'restore') => {
-    this.setState({
-      modalBackupActive: tabId
-    })
-  }
-
-  onModalBackupOnCopy = () => {
-    // TODO NZ implement
-    console.log('onModalBackupOnCopy')
-  }
-
-  onModalBackupOnPrint = () => {
-    // TODO NZ implement
-    console.log('onModalBackupOnPrint')
-  }
-
-  onModalBackupOnSaveFile = () => {
-    // TODO NZ implement
-    console.log('onModalBackupOnSaveFile')
-  }
-
-  onModalBackupOnRestore = (key: string | MouseEvent) => {
-    if (typeof key === 'string' && key.length > 0) {
-      key = this.pullRecoveryKeyFromFile(key)
-      this.actions.recoverWallet(key)
-    }
-  }
-
-  pullRecoveryKeyFromFile = (key: string) => {
-    let recoveryKey = null
-    if (key) {
-      let messageLines = key.match(/^.+$/gm)
-      if (messageLines) {
-        let passphraseLine = '' || messageLines[2]
-        if (passphraseLine) {
-          const passphrasePattern = new RegExp(['Recovery Key:', '(.+)$'].join(' '))
-          recoveryKey = (passphraseLine.match(passphrasePattern) || [])[1]
-          return recoveryKey
-        }
-      }
-    }
-    return key
-  }
-
-  onModalBackupOnImport = () => {
-    // TODO NZ implement
-    console.log('onModalBackupOnImport')
+  toggleAddFunds = () => {
+    this.setState({ addFundsShown: !this.state.addFundsShown })
   }
 
   getConversion = () => {
@@ -129,46 +66,13 @@ class PageWallet extends React.Component<Props, State> {
     })
   }
 
-  onModalActivityToggle = () => {
-    this.setState({
-      modalActivity: !this.state.modalActivity
-    })
-  }
-
-  onModalAddFundsToggle = () => {
-    this.setState({
-      modalAddFunds: !this.state.modalAddFunds
-    })
-  }
-
-  onModalActivityAction (action: string) {
-    // TODO NZ implement
-    console.log(action)
-  }
-
-  onModalActivityRemove () {
-    // TODO NZ implement
-    console.log('onModalActivityRemove')
-  }
-
   walletAlerts = (): AlertWallet | null => {
-    const { balance } = this.props.rewardsData.walletInfo
-    const { walletRecoverySuccess, walletServerProblem } = this.props.rewardsData.ui
+    const { walletServerProblem } = this.props.rewardsData.ui
 
     if (walletServerProblem) {
       return {
         node: <><b>{getLocale('uhOh')}</b> {getLocale('serverNotResponding')}</>,
         type: 'error'
-      }
-    }
-
-    if (walletRecoverySuccess) {
-      return {
-        node: <><b>{getLocale('walletRestored')}</b> {getLocale('walletRecoverySuccess', { balance: balance.toString() })}</>,
-        type: 'success',
-        onAlertClose: () => {
-          this.actions.onClearAlert('walletRecoverySuccess')
-        }
       }
     }
 
@@ -204,174 +108,50 @@ class PageWallet extends React.Component<Props, State> {
   }
 
   render () {
-    const { connectedWallet, recoveryKey, enabledMain, addresses, walletInfo, ui } = this.props.rewardsData
+    const { visible, toggleAction } = this.props
+    const { connectedWallet, addresses, walletInfo } = this.props.rewardsData
     const { balance } = walletInfo
-    const { walletRecoverySuccess, emptyWallet, modalBackup } = ui
     const addressArray = utils.getAddresses(addresses)
+
+    if (!visible) {
+      return null
+    }
 
     return (
       <>
-        <WalletWrapper
-          balance={balance.toFixed(1)}
-          converted={utils.formatConverted(this.getConversion())}
-          actions={[
-            {
-              name: getLocale('panelAddFunds'),
-              action: this.onModalAddFundsToggle,
-              icon: <WalletAddIcon />
-            },
-            {
-              name: getLocale('panelWithdrawFunds'),
-              action: () => { console.log('panelWithdrawFunds') },
-              icon: <WalletImportIcon />
-            }
-          ]}
-          onSettingsClick={this.onModalBackupOpen}
-          onActivityClick={this.onModalActivityToggle}
-          showCopy={true}
-          showSecActions={true}
-          grants={this.getGrants()}
-          connectedWallet={connectedWallet}
-          alert={this.walletAlerts()}
-        >
+        <StyledWalletOverlay>
+          <StyledWalletClose>
+            <CloseStrokeIcon onClick={toggleAction}/>
+          </StyledWalletClose>
+          <StyledWalletWrapper>
+            <WalletWrapper
+              balance={balance.toFixed(1)}
+              converted={utils.formatConverted(this.getConversion())}
+              actions={[
+                {
+                  name: getLocale('panelAddFunds'),
+                  action: this.toggleAddFunds,
+                  icon: <WalletAddIcon />
+                },
+              ]}
+              compact={true}
+              isMobile={true}
+              onSettingsClick={this.notImplemented}
+              onActivityClick={this.notImplemented}
+              showSecActions={true}
+              grants={this.getGrants()}
+              alert={this.walletAlerts()}
+              connectedWallet={connectedWallet}
+            >
+              <WalletSummary {...this.getWalletSummary()}/>
+            </WalletWrapper>
+          </StyledWalletWrapper>
           {
-            enabledMain
-            ? emptyWallet
-              ? <WalletEmpty />
-              : <WalletSummary {...this.getWalletSummary()}/>
-            : <WalletOff/>
+            this.state.addFundsShown
+            ? <ModalAddFunds isMobile={true} onClose={this.toggleAddFunds} addresses={addressArray} />
+            : null
           }
-        </WalletWrapper>
-        {
-          modalBackup
-            ? <ModalBackupRestore
-              activeTabId={this.state.modalBackupActive}
-              backupKey={recoveryKey}
-              onTabChange={this.onModalBackupTabChange}
-              onClose={this.onModalBackupClose}
-              onCopy={this.onModalBackupOnCopy}
-              onPrint={this.onModalBackupOnPrint}
-              onSaveFile={this.onModalBackupOnSaveFile}
-              onRestore={this.onModalBackupOnRestore}
-              error={walletRecoverySuccess === false ? getLocale('walletRecoveryFail') : ''}
-            />
-            : null
-        }
-        {
-          this.state.modalAddFunds
-            ? <ModalAddFunds
-              onClose={this.onModalAddFundsToggle}
-              addresses={addressArray}
-            />
-            : null
-        }
-        {
-          // TODO NZ add actual data for the whole section
-          this.state.modalActivity
-            ? <ModalActivity
-              contributeRows={[
-                {
-                  profile: {
-                    name: 'Bart Baker',
-                    verified: true,
-                    provider: 'youtube',
-                    src: ''
-                  },
-                  url: 'https://brave.com',
-                  attention: 40,
-                  onRemove: this.onModalActivityRemove,
-                  token: {
-                    value: '5.0',
-                    converted: '5.00'
-                  }
-                }
-              ]}
-              transactionRows={[
-                {
-                  date: '6/1',
-                  type: 'deposit',
-                  description: 'Brave Ads payment for May',
-                  amount: {
-                    value: '5.0',
-                    converted: '5.00'
-                  }
-                }
-              ]}
-              onClose={this.onModalActivityToggle}
-              onPrint={this.onModalActivityAction.bind('onPrint')}
-              onDownloadPDF={this.onModalActivityAction.bind('onDownloadPDF')}
-              onMonthChange={this.onModalActivityAction.bind('onMonthChange')}
-              months={{
-                'aug-2018': 'August 2018',
-                'jul-2018': 'July 2018',
-                'jun-2018': 'June 2018',
-                'may-2018': 'May 2018',
-                'apr-2018': 'April 2018'
-              }}
-              currentMonth={'aug-2018'}
-              summary={[
-                {
-                  text: 'Token Grant available',
-                  type: 'grant',
-                  token: {
-                    value: '10.0',
-                    converted: '5.20'
-                  }
-                },
-                {
-                  text: 'Earnings from Brave Ads',
-                  type: 'ads',
-                  token: {
-                    value: '10.0',
-                    converted: '5.20'
-                  }
-                },
-                {
-                  text: 'Brave Contribute',
-                  type: 'contribute',
-                  notPaid: true,
-                  token: {
-                    value: '10.0',
-                    converted: '5.20',
-                    isNegative: true
-                  }
-                },
-                {
-                  text: 'Recurring Donations',
-                  type: 'recurring',
-                  notPaid: true,
-                  token: {
-                    value: '2.0',
-                    converted: '1.1',
-                    isNegative: true
-                  }
-                },
-                {
-                  text: 'One-time Donations/Tips',
-                  type: 'donations',
-                  token: {
-                    value: '19.0',
-                    converted: '10.10',
-                    isNegative: true
-                  }
-                }
-              ]}
-              total={{
-                value: '1.0',
-                converted: '0.5'
-              }}
-              paymentDay={12}
-              openBalance={{
-                value: '10.0',
-                converted: '5.20'
-              }}
-              closingBalance={{
-                value: '11.0',
-                converted: '5.30'
-              }}
-            />
-            : null
-        }
+        </StyledWalletOverlay>
       </>
     )
   }
