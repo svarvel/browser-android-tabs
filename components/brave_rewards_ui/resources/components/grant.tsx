@@ -9,18 +9,19 @@ import { connect } from 'react-redux'
 // Components
 import {
   GrantClaim,
-  GrantWrapper,
-  GrantCaptcha,
-  GrantComplete
+  GrantComplete,
+  GrantWrapper
 } from 'brave-ui/features/rewards'
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
-import { getLocale } from '../../../common/locale'
 import { convertProbiToFixed } from '../utils'
 
+type Step = '' | 'complete'
+
 interface State {
-  grantShow: boolean
+  grantShown: boolean
+  grantStep: Step
 }
 
 interface Props extends Rewards.ComponentProps {
@@ -29,9 +30,10 @@ interface Props extends Rewards.ComponentProps {
 // TODO add local when we know what we will get from the server
 class Grant extends React.Component<Props, State> {
   constructor (props: Props) {
-    super(props)
+   super(props)
     this.state = {
-      grantShow: true
+      grantShown: true,
+      grantStep: ''
     }
   }
 
@@ -39,23 +41,20 @@ class Grant extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  onGrantShow = () => {
-    this.actions.getGrantCaptcha()
+  onClaim = () => {
+    this.setState({ grantStep: 'complete' })
   }
 
   onGrantHide = () => {
     this.actions.onResetGrant()
+    this.setState({ grantStep: '' })
   }
 
   onSuccess = () => {
     this.setState({
-      grantShow: false
+      grantShown: false
     })
     this.actions.onDeleteGrant()
-  }
-
-  onSolution = (x: number, y: number) => {
-    this.actions.solveGrantCaptcha(x, y)
   }
 
   render () {
@@ -73,25 +72,18 @@ class Grant extends React.Component<Props, State> {
     return (
       <>
         {
-          this.state.grantShow
-            ? <GrantClaim onClaim={this.onGrantShow}/>
-            : null
+          this.state.grantShown
+          ? <GrantClaim
+            isMobile={true}
+            onClaim={this.onClaim}
+          />
+          : null
         }
         {
-          !grant.expiryTime && grant.captcha && grant.hint
+          this.state.grantStep === 'complete'
             ? <GrantWrapper
+              fullScreen={true}
               onClose={this.onGrantHide}
-              title={grant.status === 'wrongPosition' ? getLocale('notQuite') : getLocale('almostThere')}
-              text={getLocale('proveHuman')}
-            >
-              <GrantCaptcha onSolution={this.onSolution} dropBgImage={grant.captcha} hint={grant.hint} />
-            </GrantWrapper>
-            : null
-        }
-        {
-          grant.expiryTime
-            ? <GrantWrapper
-              onClose={this.onSuccess}
               title={'It’s your lucky day!'}
               text={'Your token grant is on its way.'}
             >
