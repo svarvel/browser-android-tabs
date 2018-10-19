@@ -5031,7 +5031,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
           Save Card
         </message>
        </if>
-      <message name="IDS_TOOLTIP_MIGRATE_LOCAL_CARD" desc="Tooltip for the credit card icon that appears in the address bar. Icon is shown when a user has a credit card stored locally in Chrome but not in Google Pay.">
+      <message name="IDS_TOOLTIP_MIGRATE_LOCAL_CARD" desc="Tooltip for the credit card icon that appears in the address bar. Icon is shown when a user has a credit card stored locally in Brave but not in Google Pay.">
         Save payment method
       </message>
       <message name="IDS_TOOLTIP_TRANSLATE" desc="The tooltip for translate">
@@ -9250,7 +9250,7 @@ Please help our engineers fix this problem. Tell us what happened right before y
       <message name="IDS_WEBAUTHN_USB_ACTIVATE_DESCRIPTION" desc="Description in the dialog instructing the user to plug in and activate (e.g. press a button on) their USB security key (an external physical device for user authentication).">
         Plug in your security key and activate it
       </message>
-      <message name="IDS_WEBAUTHN_USB_SUCCESS_TITLE" desc="Title of the dialog informing the user that Chrome detected that they activated (e.g. pressed a button on) an external physical device used for authentication.">
+      <message name="IDS_WEBAUTHN_USB_SUCCESS_TITLE" desc="Title of the dialog informing the user that Brave detected that they activated (e.g. pressed a button on) an external physical device used for authentication.">
         Security key activated...
       </message>
       <message name="IDS_WEBAUTHN_ERROR_GENERIC_TITLE" desc="Title of most dialogs shown when an error occurs while the user trying to sign in to a web site using a hardware-based authentication mechanism.">
@@ -9280,13 +9280,13 @@ Please help our engineers fix this problem. Tell us what happened right before y
       <message name="IDS_WEBAUTHN_ERROR_NO_TRANSPORTS_DESCRIPTION" desc="Description in the dialog shown when the user could not sign in to a web site, because their computer did not support any of the hardware-based authentication mechanisms desired by the web site.">
         This device doesn't support the type of security key requested by this website
       </message>
-      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_TITLE" desc="Title of the dialog informing the user that Chrome needs to turn on Bluetooth by itself so that security keys can be used over Bluetooth.">
+      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_TITLE" desc="Title of the dialog informing the user that Brave needs to turn on Bluetooth by itself so that security keys can be used over Bluetooth.">
         Turn on Bluetooth?
       </message>
-      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_DESCRIPTION" desc="Description in the dialog informing the user that Chrome needs to turn on Bluetooth by itself so that security keys (external physical devices for user authentication) can be used over Bluetooth.">
+      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_DESCRIPTION" desc="Description in the dialog informing the user that Brave needs to turn on Bluetooth by itself so that security keys (external physical devices for user authentication) can be used over Bluetooth.">
         Bluetooth will be temporarily turned on to communicate with your security key
       </message>
-      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_NEXT" desc="Button text to allow Chrome to turn on Bluetooth so that security keys can be used over Bluetooth.">
+      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_AUTO_NEXT" desc="Button text to allow Brave to turn on Bluetooth so that security keys can be used over Bluetooth.">
         Turn on
       </message>
       <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_MANUAL_TITLE" desc="Title of the dialog requesting the user to manually turn on Bluetooth so that security keys can be used over Bluetooth.">
@@ -9295,7 +9295,7 @@ Please help our engineers fix this problem. Tell us what happened right before y
       <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_MANUAL_DESCRIPTION" desc="Description in the dialog requesting the user to manually turn on Bluetooth so that security keys (external physical devices for user authentication)can be used over Bluetooth.">
         Check your device settings and turn it on to continue
       </message>
-      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_MANUAL_NEXT" desc="Button text. The user clicks this once they manually turned on Bluetooth, so that Chrome would retry connecting to security keys over Bluetooth.">
+      <message name="IDS_WEBAUTHN_BLUETOOTH_POWER_ON_MANUAL_NEXT" desc="Button text. The user clicks this once they manually turned on Bluetooth, so that Brave would retry connecting to security keys over Bluetooth.">
         Try again
       </message>
       <message name="IDS_WEBAUTHN_BLE_PAIRING_BEGIN_TITLE" desc="Title of the dialog explaining to the user that they first need to pair a Bluetooth security key (an external physical device for user authentication) with their computer, and only after they can use it to sign in to web sites on their computer.">
@@ -9319,7 +9319,7 @@ Please help our engineers fix this problem. Tell us what happened right before y
       <message name="IDS_WEBAUTHN_BLE_DEVICE_SELECTION_DESCRIPTION" desc="Description in the dialog instructing the user to select their Bluetooth security key (an external physical device for user authentication) from a list of nearby Bluetooth devices. The user can identify their security key in the list by the name printed on the back of the security key.">
         Find the name printed on the back of your security key
       </message>
-      <message name="IDS_WEBAUTHN_BLE_DEVICE_SELECTION_SEARCHING_LABEL" desc="Label text. Displayed while Chrome is scanning for nearby Bluetooth devices.">
+      <message name="IDS_WEBAUTHN_BLE_DEVICE_SELECTION_SEARCHING_LABEL" desc="Label text. Displayed while Brave is scanning for nearby Bluetooth devices.">
         Searching...
       </message>
       <message name="IDS_WEBAUTHN_BLE_DEVICE_SELECTION_REMINDER_LABEL" desc="Label text. Reminds the user that their Bluetooth security key (an external physical device for user authentication) will only show up in the list of nearby Bluetooth devices if they put it into pairing mode. This is achieved by holding down the button on the device for 5 seconds, or longer.">
