@@ -122,7 +122,7 @@
         CLOSE
       </message>
       <message name="IDS_HOST_BROWSER_ITEM_NOT_SUPPORTING_WEBAPKS" desc="Text for the host browser item that doesn't support WebAPKs on the choose host browser dialog. ">
-        <ph name="BROWSER_NAME">%1$s<ex>Chrome</ex></ph>\nUnsupported
+        <ph name="BROWSER_NAME">%1$s<ex>Brave</ex></ph>\nUnsupported
       </message>
       <message name="IDS_INSTALL_HOST_BROWSER_DIALOG_TITLE" desc="Title for the dialog to install the host browser to launch the WebAPK.">
         <ph name="APP_NAME">%1$s<ex>Progressive Web Apps</ex></ph> requires the following app:

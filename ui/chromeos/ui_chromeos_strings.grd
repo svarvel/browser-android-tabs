@@ -463,8 +463,8 @@
       <message name="IDS_CHROMEBOX_DEVICE_NAME" desc="The device name for a Chromebox (versus say Chromebook)">
         Chromebox
       </message>
-      <message name="IDS_GENERIC_CHROMEOS_DEVICE_NAME" desc="The device name for a generic Chrome device">
-        Chrome device
+      <message name="IDS_GENERIC_CHROMEOS_DEVICE_NAME" desc="The device name for a generic Brave device">
+        Brave device
       </message>
 
       <!-- Input method strings. -->
