@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/ddg_offer_link"
-                    android:textColor="@color/google_grey_400" />
+                    android:textColor="@color/modern_grey_400" />
 
             </LinearLayout>
 

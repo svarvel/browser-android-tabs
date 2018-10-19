@@ -17,7 +17,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
+import org.chromium.base.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;

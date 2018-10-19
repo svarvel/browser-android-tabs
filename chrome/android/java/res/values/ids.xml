@@ -76,6 +76,7 @@
     <!-- Context Menu Ids -->
     <!-- Custom Tab Group -->
     <item type="id" name="contextmenu_open_in_new_chrome_tab" />
+    <item type="id" name="contextmenu_open_in_chrome_incognito_tab" />
     <item type="id" name="contextmenu_open_in_browser_id" />
 
     <!-- Link Group -->
@@ -116,7 +117,7 @@
 
     <!-- Menu item IDs for Browser Action menu -->
     <item type="id" name="browser_actions_open_in_background" />
-    <item type="id" name="brave_open_in_private_tab" />
+    <item type="id" name="browser_actions_open_in_incognito_tab" />
     <item type="id" name="browser_actions_save_link_as" />
     <item type="id" name="browser_actions_copy_address" />
     <item type="id" name="browser_actions_share" />

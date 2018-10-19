@@ -1104,7 +1104,7 @@ public class VrShell extends GvrLayout
 
     @CalledByNative
     public void openFeedback() {
-        mActivity.onMenuOrKeyboardAction(R.id.help_id, true);
+        //mActivity.onMenuOrKeyboardAction(R.id.help_id, true);
     }
 
     private void updateHistoryButtonsVisibility() {

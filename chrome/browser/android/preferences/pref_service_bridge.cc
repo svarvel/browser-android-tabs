@@ -272,6 +272,7 @@ static void JNI_PrefServiceBridge_SetContentSetting(
   host_content_settings_map->SetDefaultContentSetting(
       static_cast<ContentSettingsType>(content_settings_type),
       static_cast<ContentSetting>(setting));
+}
 
 static void JNI_PrefServiceBridge_GetContentSettingsExceptionsIncognito(JNIEnv* env,
                                          const JavaParamRef<jobject>& obj,
