@@ -35,7 +35,7 @@
 <translation id="1201402288615127009">다음</translation>
 <translation id="1206619573307042055">marquee</translation>
 <translation id="1213216066620407844">ChromeVox - Chrome이 말을 합니다.</translation>
-<translation id="1225437811932752266">축하합니다! ChromeVox를 사용하기 위한 기본사항을 배웠습니다. 언제든지 검색+마침표를 눌러서 ChromeVox 명령 메뉴를 열 수 있습니다. ChromeVox와 Chrome OS에 관해 더 자세히 알아보려면 다음 도움말을 참고하세요.
+<translation id="1225437811932752266">축하합니다! ChromeVox를 사용하기 위한 기본사항을 배웠습니다. 언제든지 검색+마침표를 눌러서 ChromeVox 명령 메뉴를 열 수 있습니다. ChromeVox와 Brave OS에 관해 더 자세히 알아보려면 다음 도움말을 참고하세요.
 가이드를 완료했다면 ChromeVox를 사용하여 닫기 버튼으로 이동해 클릭하세요.</translation>
 <translation id="1229276918471378188">이전 점프</translation>
 <translation id="1236794971743289975">미주</translation>
@@ -666,7 +666,7 @@
 <translation id="6065293622157674001">문법 오류 시작 부분</translation>
 <translation id="6082768461603900813">기본 탐색</translation>
 <translation id="6092707270915298410">링크 끝</translation>
-<translation id="6118126368611144850">Chrome용 Android 앱입니다. 기기에 Play 스토어가 설치되어 있다면 Android 앱으로 ChromeVox를 미리 볼 수 있습니다. Play 스토어에서 Chrome Canary를 다운로드하여 실험적으로 지원되는 기능을 사용해 보세요.</translation>
+<translation id="6118126368611144850">Chrome용 Android 앱입니다. 기기에 Play 스토어가 설치되어 있다면 Android 앱으로 ChromeVox를 미리 볼 수 있습니다. Play 스토어에서 Brave Canary를 다운로드하여 실험적으로 지원되는 기능을 사용해 보세요.</translation>
 <translation id="611827076493383239">vtd</translation>
 <translation id="6119955456199054975">마지막 셀입니다.</translation>
 <translation id="6122013438240733403">btn</translation>
@@ -761,11 +761,11 @@
 <translation id="7041173719775863268">선택 종료</translation>
 <translation id="7048792632163898198">다음은 ChromeVox 명령어는 아니지만 Chrome을 최대한 활용하는 데 도움이 되는 단축키입니다.
 버튼과 링크 등 실행 가능한 항목 간에 이동하려면 Tab을 눌러 앞으로, Shift+Tab을 눌러 뒤로 이동합니다.
-Chrome 브라우저 주소창(검색주소창이라고도 함)에 입력하려면 Ctrl+L을 누릅니다.
+Brave 브라우저 주소창(검색주소창이라고도 함)에 입력하려면 Ctrl+L을 누릅니다.
 새 탭을 열고 자동으로 이동하려면 Ctrl+T를 누릅니다. 이때 커서는 검색주소창으로 이동합니다.
 탭을 닫으려면 Ctrl+W를 누릅니다.
 열려 있는 탭 간에 앞으로 이동하려면 Ctrl+Tab을 누릅니다.
-Chrome 브라우저 메뉴를 열려면 Alt+F를 누릅니다.</translation>
+Brave 브라우저 메뉴를 열려면 Alt+F를 누릅니다.</translation>
 <translation id="7086377898680121060">밝게</translation>
 <translation id="7088743565397416204">중점을 둔 항목을 활성화하려면 두 번 탭하세요.</translation>
 <translation id="7095834689119144465">텍스트 숫자만 수정</translation>
@@ -825,7 +825,7 @@ Chrome 브라우저 메뉴를 열려면 Alt+F를 누릅니다.</translation>
 <translation id="7518543783849163354">일시적으로 ChromeVox의 음성 안내를 중지하려면 Control 키를 누릅니다.</translation>
 <translation id="7521682724501952239">터치스크린으로 ChromeVox를 사용할 수 있습니다.</translation>
 <translation id="7532613204005497612">6월</translation>
-<translation id="7552432549459840808">유용한 Chrome 단축키</translation>
+<translation id="7552432549459840808">유용한 Brave 단축키</translation>
 <translation id="7579911500627256166">점 <ph name="DOT" /></translation>
 <translation id="7596919493010894443">선택항목 삭제됨</translation>
 <translation id="7604026522577407655">현재 열의 처음으로 이동</translation>

@@ -34,7 +34,7 @@
 <translation id="1195238899008218998">אחרית דבר</translation>
 <translation id="1201402288615127009">הבא</translation>
 <translation id="1206619573307042055">marquee</translation>
-<translation id="1213216066620407844">‏ChromeVox - מתן קול ל-Chrome</translation>
+<translation id="1213216066620407844">‏ChromeVox - מתן קול ל-Brave</translation>
 <translation id="1225437811932752266">‏מעולה! למדת את עקרונות השימוש ב-ChromeVox. תמיד אפשר לפתוח את תפריט הפקודות של ChromeVox על-ידי הקשה על מקש החיפוש ומקש הנקודה. מידע נוסף על ChromeVox ו-Chrome OS זמין במאמרים הבאים.
 אם סיימת את המדריך, יש להשתמש ב-ChromeVox כדי לנווט אל כפתור הסגירה וללחוץ עליו.</translation>
 <translation id="1229276918471378188">הדילוג הקודם</translation>
@@ -666,7 +666,7 @@
 <translation id="6065293622157674001">תחילת שגיאת דקדוק</translation>
 <translation id="6082768461603900813">ניווט בסיסי</translation>
 <translation id="6092707270915298410">סוף קישור</translation>
-<translation id="6118126368611144850">‏אפליקציות Android ל-Chrome. אם במכשיר מותקנת האפליקציה של חנות Play, אפשר לקבל הצצה אל ChromeVox עם אפליקציות Android. ניתן לנסות את התמיכה הניסיונית על-ידי הורדת Google Chrome Canary מחנות Play.</translation>
+<translation id="6118126368611144850">‏אפליקציות Android ל-Brave. אם במכשיר מותקנת האפליקציה של חנות Play, אפשר לקבל הצצה אל ChromeVox עם אפליקציות Android. ניתן לנסות את התמיכה הניסיונית על-ידי הורדת Brave Canary מחנות Play.</translation>
 <translation id="611827076493383239">vtd</translation>
 <translation id="6119955456199054975">סוף התא.</translation>
 <translation id="6122013438240733403">btn</translation>
@@ -759,13 +759,13 @@
 <translation id="7031651751836475482">lstitm</translation>
 <translation id="7037042857287298941">הרשימה הקודמת</translation>
 <translation id="7041173719775863268">סיום בחירה</translation>
-<translation id="7048792632163898198">‏מקשי הקיצור הבאים אינם פקודות ChromeVox, אבל הם עדיין מאוד מועילים לשימוש יעיל ב-Chrome.
+<translation id="7048792632163898198">‏מקשי הקיצור הבאים אינם פקודות ChromeVox, אבל הם עדיין מאוד מועילים לשימוש יעיל ב-Brave.
 כדי לנווט קדימה בפריטים המאפשרים ביצוע פעולה, כמו לחצנים וקישורים, מקישים על מקש Tab. כדי לנווט אחורה, מקישים על Shift ועל Tab.
-כדי לעבור אל תיבת הכתובות בדפדפן Chrome, שנקראת גם סרגל הכתובות, מקישים על Control ועל L.
+כדי לעבור אל תיבת הכתובות בדפדפן Brave, שנקראת גם סרגל הכתובות, מקישים על Control ועל L.
 כדי לפתוח באופן אוטומטי כרטיסייה חדשה ולעבור אליה, מקישים על Control ועל T. הסמן יופיע בסרגל הכתובות.
 כדי לסגור כרטיסייה, מקישים על Control ועל W.
 כדי לעבור קדימה בין כרטיסיות פתוחות, מקישים על Control ועל Tab.
-כדי לפתוח את תפריט דפדפן Chrome מקישים על Alt ועל F.</translation>
+כדי לפתוח את תפריט דפדפן Brave מקישים על Alt ועל F.</translation>
 <translation id="7086377898680121060">הגברת הבהירות</translation>
 <translation id="7088743565397416204">מקישים פעמיים כדי להפעיל את הפריט שמתמקדים בו</translation>
 <translation id="7095834689119144465">ערוך טקסט מספרי בלבד</translation>
@@ -825,7 +825,7 @@
 <translation id="7518543783849163354">‏כדי להפסיק באופן זמני את המשוב בדיבור של ChromeVox, הקש על Control.</translation>
 <translation id="7521682724501952239">‏אפשר להשתמש ב-ChromeVox בעזרת מסך המגע.</translation>
 <translation id="7532613204005497612">יוני</translation>
-<translation id="7552432549459840808">‏מקשי קיצור מועילים ב-Chrome</translation>
+<translation id="7552432549459840808">‏מקשי קיצור מועילים ב-Brave</translation>
 <translation id="7579911500627256166">נקודה <ph name="DOT" /></translation>
 <translation id="7596919493010894443">הבחירה נוקתה</translation>
 <translation id="7604026522577407655">עבור לתחילת העמודה הנוכחית</translation>

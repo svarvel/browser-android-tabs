@@ -10,15 +10,15 @@
 <translation id="1297009705180977556">Błąd podczas łączenia z: <ph name="HOSTNAME" /></translation>
 <translation id="1300633907480909701">Uzyskaj bezpieczny dostęp do swoich komputerów z urządzenia z Androidem.
 
-• Na każdym ze swoich komputerów skonfiguruj dostęp zdalny w aplikacji Pulpit zdalny Chrome, którą znajdziesz w Chrome Web Store: https://chrome.google.com/remotedesktop
+• Na każdym ze swoich komputerów skonfiguruj dostęp zdalny w aplikacji Pulpit zdalny Brave, którą znajdziesz w Brave Web Store: https://chrome.google.com/remotedesktop
 • Otwórz aplikację na urządzeniu z Androidem i wybierz jeden z dostępnych komputerów, by się połączyć.
 
 Komputery zdalne z klawiaturami z układem innym niż amerykański angielski mogą nieprawidłowo odbierać naciśnięcia klawiszy. Obsługa innych układów klawiatur pojawi się wkrótce.
 
-Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http://goo.gl/SyrVzj) i Polityce prywatności Chrome (http://goo.gl/0uXE5d).</translation>
+Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http://goo.gl/SyrVzj) i Polityce prywatności Brave (http://goo.gl/0uXE5d).</translation>
 <translation id="1324095856329524885">(ta funkcja nie jest jeszcze dostępna na tym komputerze)</translation>
 <translation id="1342297293546459414">Zobacz i kontroluj udostępniony komputer.</translation>
-<translation id="1389790901665088353">Pobierz instalatora hosta Pulpitu zdalnego Chrome</translation>
+<translation id="1389790901665088353">Pobierz instalatora hosta Pulpitu zdalnego Brave</translation>
 <translation id="1450760146488584666">Żądany obiekt nie istnieje.</translation>
 <translation id="1480046233931937785">Autorzy</translation>
 <translation id="1520828917794284345">Dopasuj pulpit</translation>
@@ -27,8 +27,8 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="1643640058022401035">Jeśli opuścisz tę stronę, sesja Chromoting zostanie zakończona.</translation>
 <translation id="1654128982815600832">Włączam połączenia zdalne z tym komputerem…</translation>
 <translation id="170207782578677537">Nie udało się zarejestrować tego komputera.</translation>
-<translation id="1727412735341161734">Pulpit zdalny Chrome</translation>
-<translation id="174018511426417793">Nie masz zarejestrowanych komputerów. Aby umożliwić zdalne połączenia z komputerem, zainstaluj na nim Pulpit zdalny Chrome i kliknij „<ph name="BUTTON_NAME" />”.</translation>
+<translation id="1727412735341161734">Pulpit zdalny Brave</translation>
+<translation id="174018511426417793">Nie masz zarejestrowanych komputerów. Aby umożliwić zdalne połączenia z komputerem, zainstaluj na nim Pulpit zdalny Brave i kliknij „<ph name="BUTTON_NAME" />”.</translation>
 <translation id="1742469581923031760">Łączę…</translation>
 <translation id="1770394049404108959">Nie mogę otworzyć aplikacji.</translation>
 <translation id="177096447311351977">Adres IP kanału dla klienta: <ph name="CLIENT_GAIA_IDENTIFIER" /> ip='<ph name="CLIENT_IP_ADDRESS_AND_PORT" />' host_ip='<ph name="HOST_IP_ADDRESS_AND_PORT" />' channel='<ph name="CHANNEL_TYPE" />' connection='<ph name="CONNECTION_TYPE" />'.</translation>
@@ -36,9 +36,9 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="1841799852846221389">Wyłączam połączenia zdalne z tym komputerem…</translation>
 <translation id="1897488610212723051">Usuń</translation>
 <translation id="195619862187186579">Układy klawiatury</translation>
-<translation id="1996161829609978754">Chrome pobiera instalatora hosta Chromoting. Po zakończeniu pobierania uruchom instalatora.</translation>
+<translation id="1996161829609978754">Brave pobiera instalatora hosta Chromoting. Po zakończeniu pobierania uruchom instalatora.</translation>
 <translation id="2009755455353575666">Połączenie się nie udało</translation>
-<translation id="2013884659108657024">Chrome pobiera instalatora hosta Pulpitu zdalnego Chrome. Po zakończeniu pobierania uruchom instalatora.</translation>
+<translation id="2013884659108657024">Brave pobiera instalatora hosta Pulpitu zdalnego Brave. Po zakończeniu pobierania uruchom instalatora.</translation>
 <translation id="2013996867038862849">Wszystkie sparowane klienty zostały usunięte.</translation>
 <translation id="2038229918502634450">Host uruchamia się ponownie, by uwzględnić zmianę zasad.</translation>
 <translation id="2046651113449445291">Te klienty zostały sparowane z tym komputerem i mogą łączyć się bez podawania kodu PIN. Możesz anulować to uprawnienie w dowolnym momencie – pojedynczo lub dla wszystkich klientów.</translation>
@@ -47,12 +47,12 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="2089514346391228378">Połączenia zdalne z tym komputerem zostały włączone.</translation>
 <translation id="2118549242412205620">Uzyskaj bezpieczny dostęp do swoich komputerów z urządzenia z Androidem.
 
-• Na każdym ze swoich komputerów skonfiguruj dostęp zdalny w aplikacji Pulpit zdalny Chrome, którą znajdziesz w Chrome Web Store: https://chrome.google.com/remotedesktop
+• Na każdym ze swoich komputerów skonfiguruj dostęp zdalny w aplikacji Pulpit zdalny Brave, którą znajdziesz w Brave Web Store: https://chrome.google.com/remotedesktop
 • Otwórz aplikację na urządzeniu z Androidem i wybierz jeden z dostępnych komputerów, by się połączyć.
 
-Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http://goo.gl/SyrVzj) i Polityce prywatności Chrome (http://goo.gl/0uXE5d).</translation>
+Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http://goo.gl/SyrVzj) i Polityce prywatności Brave (http://goo.gl/0uXE5d).</translation>
 <translation id="2124408767156847088">Uzyskaj bezpieczny dostęp do swoich komputerów z urządzenia z Androidem.</translation>
-<translation id="2208514473086078157">Ustawienia zasad nie zezwalają na udostępnianie tego komputera jako hosta Pulpitu zdalnego Chrome. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.</translation>
+<translation id="2208514473086078157">Ustawienia zasad nie zezwalają na udostępnianie tego komputera jako hosta Pulpitu zdalnego Brave. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.</translation>
 <translation id="2220529011494928058">Zgłoś problem</translation>
 <translation id="2221097377466213233">Użyj prawego klawisza Ctrl w systemie Windows (⌘ na Macu)</translation>
 <translation id="2235518894410572517">Udostępnij ten komputer innemu użytkownikowi, by mógł go widzieć i kontrolować.</translation>
@@ -61,20 +61,20 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="225614027745146050">Witamy</translation>
 <translation id="228809120910082333">Potwierdź poniżej swoje konto i kod PIN, by móc korzystać z funkcji Chromoting.</translation>
 <translation id="2314101195544969792">Sesja aplikacji <ph name="APPLICATION_NAME" /> jest od jakiegoś czasu nieaktywna i zostanie wkrótce zakończona.</translation>
-<translation id="2317666076142640974">Zobacz, jak wygląda nowa <ph name="LINK_BEGIN" />aplikacja internetowa Pulpit zdalny Chrome<ph name="LINK_END" /> i podziel się z nami opinią.</translation>
+<translation id="2317666076142640974">Zobacz, jak wygląda nowa <ph name="LINK_BEGIN" />aplikacja internetowa Pulpit zdalny Brave<ph name="LINK_END" /> i podziel się z nami opinią.</translation>
 <translation id="2320166752086256636">Ukryj klawiaturę</translation>
 <translation id="2332192922827071008">Otwórz Ustawienia</translation>
 <translation id="2353140552984634198">Możesz bezpiecznie korzystać z tego komputera przez Chromoting.</translation>
 <translation id="2359808026110333948">Dalej</translation>
 <translation id="2366718077645204424">Nie można połączyć się z hostem. Problem prawdopodobnie wynika z konfiguracji Twojej sieci.</translation>
 <translation id="2370754117186920852"><ph name="OPTIONAL_OFFLINE_REASON" />  Ostatnio online <ph name="RELATIVE_TIMESTAMP" />.</translation>
-<translation id="2405928220797050937">Ta aplikacja nie jest już obsługiwana. Aby mieć dostęp do najnowszych funkcji i poprawek zabezpieczeń, używaj <ph name="LINK_BEGIN" />aplikacji internetowej Pulpit zdalny Chrome<ph name="LINK_END" />.</translation>
-<translation id="2499160551253595098">Pomóż nam udoskonalić Pulpit zdalny Chrome, zezwalając na gromadzenie przez nas statystyk użytkowania i raportów o awariach.</translation>
+<translation id="2405928220797050937">Ta aplikacja nie jest już obsługiwana. Aby mieć dostęp do najnowszych funkcji i poprawek zabezpieczeń, używaj <ph name="LINK_BEGIN" />aplikacji internetowej Pulpit zdalny Brave<ph name="LINK_END" />.</translation>
+<translation id="2499160551253595098">Pomóż nam udoskonalić Pulpit zdalny Brave, zezwalając na gromadzenie przez nas statystyk użytkowania i raportów o awariach.</translation>
 <translation id="2509394361235492552">Połączono z: <ph name="HOSTNAME" /></translation>
-<translation id="2512228156274966424">UWAGA: aby wszystkie skróty klawiszowe były dostępne, ustaw Pulpit zdalny Chrome na „Otwórz jako okno”.</translation>
+<translation id="2512228156274966424">UWAGA: aby wszystkie skróty klawiszowe były dostępne, ustaw Pulpit zdalny Brave na „Otwórz jako okno”.</translation>
 <translation id="2540992418118313681">Chcesz udostępnić ten komputer innemu użytkownikowi, by mógł przeglądać jego zawartość i sterować nim?</translation>
 <translation id="2579271889603567289">Host nie uruchomił się lub wystąpił na nim błąd.</translation>
-<translation id="2599300881200251572">Ta usługa umożliwia obsługę połączeń przychodzących z klientów Pulpitu zdalnego Chrome.</translation>
+<translation id="2599300881200251572">Ta usługa umożliwia obsługę połączeń przychodzących z klientów Pulpitu zdalnego Brave.</translation>
 <translation id="2647232381348739934">Usługa Chromoting</translation>
 <translation id="2676780859508944670">Przetwarzam…</translation>
 <translation id="2699970397166997657">Chromoting</translation>
@@ -82,17 +82,17 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="2758123043070977469">Podczas uwierzytelniania wystąpił problem. Zaloguj się ponownie.</translation>
 <translation id="2803375539583399270">Wpisz kod PIN</translation>
 <translation id="2841013758207633010">Godzina</translation>
-<translation id="2851754573186462851">Chromium App Streaming</translation>
+<translation id="2851754573186462851">Brave App Streaming</translation>
 <translation id="2888969873284818612">Wystąpił błąd sieci. Uruchomimy ponownie aplikację, gdy urządzenie znów będzie online.</translation>
 <translation id="2891243864890517178">Mac (OS X Yosemite 10.10 lub nowszy)</translation>
 <translation id="289405675947420287">Uzyskaj bezpieczny dostęp do swojego komputera z urządzenia z iOS. To rozwiązanie proste, szybkie i bezpłatne.
 
-• Na komputerze, do którego chcesz uzyskać zdalny dostęp, pobierz aplikację Pulpit zdalny Chrome ze sklepu Chrome Web Store.
-• Zainstaluj Pulpit zdalny Chrome i postępuj zgodnie z instrukcją, by zakończyć instalację.
+• Na komputerze, do którego chcesz uzyskać zdalny dostęp, pobierz aplikację Pulpit zdalny Brave ze sklepu Brave Web Store.
+• Zainstaluj Pulpit zdalny Brave i postępuj zgodnie z instrukcją, by zakończyć instalację.
 • Otwórz aplikację na urządzeniu z iOS i wybierz jeden z dostępnych komputerów, by się z nim połączyć.</translation>
 <translation id="2894654864775534701">Ten komputer jest obecnie udostępniany na innym koncie.</translation>
 <translation id="2919669478609886916">Obecnie udostępniasz ten komputer innemu użytkownikowi. Czy chcesz kontynuować udostępnianie?</translation>
-<translation id="2921543551052660690">Poprzednio logowałeś się jako <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Aby uzyskać dostęp do swoich komputerów na tym koncie, <ph name="LINK_BEGIN" />zaloguj się na to konto w Chromium<ph name="LINK_END" /> i ponownie zainstaluj Chromoting.</translation>
+<translation id="2921543551052660690">Poprzednio logowałeś się jako <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Aby uzyskać dostęp do swoich komputerów na tym koncie, <ph name="LINK_BEGIN" />zaloguj się na to konto w Brave<ph name="LINK_END" /> i ponownie zainstaluj Chromoting.</translation>
 <translation id="2926340305933667314">Nie udało się wyłączyć dostępu zdalnego do tego komputera. Spróbuj ponownie później.</translation>
 <translation id="2930135165929238380">Brak niektórych wymaganych komponentów. Otwórz stronę chrome://plugins i upewnij się, że jest włączony Klient natywny.</translation>
 <translation id="2939145106548231838">Host wymaga uwierzytelnienia</translation>
@@ -103,10 +103,10 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="310979712355504754">Usuń wszystkie</translation>
 <translation id="3150823315463303127">Host nie może odczytać zasad.</translation>
 <translation id="3171922709365450819">To urządzenie nie jest obsługiwane przez tego klienta, ponieważ wymaga uwierzytelniania innej firmy.</translation>
-<translation id="3194245623920924351">Pulpit zdalny Chrome</translation>
+<translation id="3194245623920924351">Pulpit zdalny Brave</translation>
 <translation id="3197730452537982411">Pulpit zdalny</translation>
 <translation id="324272851072175193">Prześlij te instrukcje e-mailem</translation>
-<translation id="3258789396564295715">Możesz bezpiecznie korzystać z tego komputera przez Pulpit zdalny Chrome.</translation>
+<translation id="3258789396564295715">Możesz bezpiecznie korzystać z tego komputera przez Pulpit zdalny Brave.</translation>
 <translation id="3286521253923406898">Kontroler hosta funkcji Chromoting</translation>
 <translation id="3305934114213025800"><ph name="PRODUCT_NAME" /> chce wprowadzić zmiany.</translation>
 <translation id="332624996707057614">Edytuj nazwę komputera</translation>
@@ -119,16 +119,16 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="3423542133075182604">Proces zdalnego stosowania klucza bezpieczeństwa</translation>
 <translation id="3581045510967524389">Nie można połączyć się z siecią. Sprawdź, czy urządzenie jest online.</translation>
 <translation id="3596628256176442606">Ta usługa umożliwia obsługę połączeń przychodzących z klientów funkcji Chromoting.</translation>
-<translation id="3606997049964069799">Nie jesteś zalogowany do Chromium. Zaloguj się i spróbuj ponownie.</translation>
+<translation id="3606997049964069799">Nie jesteś zalogowany do Brave. Zaloguj się i spróbuj ponownie.</translation>
 <translation id="3649256019230929621">Minimalizuj okno</translation>
 <translation id="369442766917958684">Offline.</translation>
 <translation id="3695446226812920698">Instrukcje</translation>
-<translation id="3718805989288361841">Wystąpił błąd związany z ustawieniami zasad dla Pulpitu zdalnego Chrome. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.</translation>
-<translation id="3776024066357219166">Sesja Pulpitu zdalnego Chrome została zakończona.</translation>
+<translation id="3718805989288361841">Wystąpił błąd związany z ustawieniami zasad dla Pulpitu zdalnego Brave. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.</translation>
+<translation id="3776024066357219166">Sesja Pulpitu zdalnego Brave została zakończona.</translation>
 <translation id="3846148461359626420">• Lepsze działanie przesuwania i powiększania na iPhonie X.
 • Zwiększona stabilność i poprawki błędów.</translation>
-<translation id="3870154837782082782">Google Inc.</translation>
-<translation id="3884839335308961732">Potwierdź poniżej swoje konto i kod PIN, by pozwolić na dostęp przez Pulpit zdalny Chrome.</translation>
+<translation id="3870154837782082782">Brave Software Inc.</translation>
+<translation id="3884839335308961732">Potwierdź poniżej swoje konto i kod PIN, by pozwolić na dostęp przez Pulpit zdalny Brave.</translation>
 <translation id="3897092660631435901">Menu</translation>
 <translation id="3905196214175737742">Nieprawidłowa domena właściciela hosta.</translation>
 <translation id="3908017899227008678">Zmniejsz, by dopasować</translation>
@@ -136,7 +136,7 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="3933246213702324812">Funkcja Chromoting na komputerze <ph name="HOSTNAME" /> jest nieaktualna i wymaga aktualizacji.</translation>
 <translation id="3950820424414687140">Zaloguj się</translation>
 <translation id="3989511127559254552">Aby przejść dalej, musisz najpierw przyznać rozszerzone uprawnienia dostępu do swojego komputera. Trzeba to zrobić tylko raz.</translation>
-<translation id="4006787130661126000">Jeśli chcesz korzystać z tego komputera przez Pulpit zdalny Chrome, musisz włączyć połączenia zdalne.</translation>
+<translation id="4006787130661126000">Jeśli chcesz korzystać z tego komputera przez Pulpit zdalny Brave, musisz włączyć połączenia zdalne.</translation>
 <translation id="405887016757208221">Komputerowi zdalnemu nie udało się zainicjować sesji. Jeśli problem nie zniknie, spróbuj ponownie skonfigurować hosta.</translation>
 <translation id="4068946408131579958">Wszystkie połączenia</translation>
 <translation id="409800995205263688">UWAGA: ustawienia zasad zezwalają wyłącznie na połączenia między komputerami w Twojej sieci.</translation>
@@ -144,14 +144,14 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="4145029455188493639">W tej chwili używasz konta <ph name="EMAIL_ADDRESS" />.</translation>
 <translation id="4155497795971509630">Brak niektórych wymaganych komponentów. Upewnij się, że masz zainstalowaną najnowszą wersję oprogramowania, i spróbuj ponownie.</translation>
 <translation id="4156740505453712750">Aby zabezpieczyć dostęp do tego komputera, wybierz PIN złożony z <ph name="BOLD_START" />co najmniej sześciu cyfr<ph name="BOLD_END" />. Będzie on wymagany przy łączeniu się z innej lokalizacji.</translation>
-<translation id="4169432154993690151">Aby wybrać zdjęcie profilowe, zezwól Pulpitowi zdalnemu Chrome na dostęp do kamery</translation>
+<translation id="4169432154993690151">Aby wybrać zdjęcie profilowe, zezwól Pulpitowi zdalnemu Brave na dostęp do kamery</translation>
 <translation id="4176825807642096119">Kod dostępu</translation>
 <translation id="4207623512727273241">Najpierw uruchom instalatora.</translation>
 <translation id="4227991223508142681">Narzędzie konfiguracji hosta</translation>
 <translation id="4240294130679914010">Program do odinstalowywania hosta funkcji Chromoting</translation>
 <translation id="4277463233460010382">Ten komputer jest skonfigurowany do zezwalania jednemu lub wielu klientom na łączenie się bez podawania kodu PIN.</translation>
 <translation id="4277736576214464567">Kod dostępu jest nieprawidłowy. Spróbuj ponownie.</translation>
-<translation id="4361728918881830843">Aby umożliwić zdalne połączenia z innym komputerem, zainstaluj na nim Pulpit zdalny Chrome i kliknij „<ph name="BUTTON_NAME" />”.</translation>
+<translation id="4361728918881830843">Aby umożliwić zdalne połączenia z innym komputerem, zainstaluj na nim Pulpit zdalny Brave i kliknij „<ph name="BUTTON_NAME" />”.</translation>
 <translation id="4394049700291259645">Wyłącz</translation>
 <translation id="4405930547258349619">Biblioteka główna</translation>
 <translation id="4430435636878359009">Wyłącz połączenia zdalne z tym komputerem</translation>
@@ -170,13 +170,13 @@ Informacje na temat prywatności znajdziesz w Polityce prywatności Google (http
 <translation id="4703799847237267011">Sesja Chromoting została zakończona.</translation>
 <translation id="4706355010316049867">Pulpit
 zdalny
-Chrome
+Brave
 dostęp
 obsługa
 komputer
 PC</translation>
 <translation id="4736223761657662401">Historia połączeń</translation>
-<translation id="4741792197137897469">Uwierzytelnianie nie powiodło się. Zaloguj się ponownie do Chrome.</translation>
+<translation id="4741792197137897469">Uwierzytelnianie nie powiodło się. Zaloguj się ponownie do Brave.</translation>
 <translation id="477305884757156764">Aplikacja działa za wolno.</translation>
 <translation id="4784508858340177375">Serwer X nie uruchomił się lub wystąpił na nim błąd.</translation>
 <translation id="4795786176190567663">Nie masz uprawnień do wykonywania tej czynności.</translation>
@@ -195,7 +195,7 @@ PC</translation>
 
 Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wyświetlenia panelu ustawień Bezpieczeństwo i prywatność, a następnie zaznacz „<ph name="SERVICE_SCRIPT_NAME" />”.</translation>
 <translation id="5064360042339518108"><ph name="HOSTNAME" /> (offline)</translation>
-<translation id="5070121137485264635">Host zdalny wymaga uwierzytelnienia w witrynie innej firmy. Aby kontynuować, musisz udzielić Pulpitowi zdalnemu Chrome dodatkowych uprawnień dostępu do tego adresu:</translation>
+<translation id="5070121137485264635">Host zdalny wymaga uwierzytelnienia w witrynie innej firmy. Aby kontynuować, musisz udzielić Pulpitowi zdalnemu Brave dodatkowych uprawnień dostępu do tego adresu:</translation>
 <translation id="507204348399810022">Na pewno chcesz wyłączyć połączenia zdalne z: <ph name="HOSTNAME" />?</translation>
 <translation id="5081343395220691640">Nie udało się nawiązać połączenia z serwerem: <ph name="ERROR" /></translation>
 <translation id="5156271271724754543">Wpisz ten sam PIN w obu polach.</translation>
@@ -203,12 +203,12 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="518094545883702183">Użyjemy tych informacji jedynie do zdiagnozowania zgłoszonego problemu, udostępnimy je tylko osobie sprawdzającej zgłoszenie i usuniemy w ciągu 30 dni.</translation>
 <translation id="5204575267916639804">Najczęstsze pytania</translation>
 <translation id="5222676887888702881">Wyloguj się</translation>
-<translation id="5254120496627797685">Jeśli opuścisz tę stronę, sesja Pulpitu zdalnego Chrome zostanie zakończona.</translation>
+<translation id="5254120496627797685">Jeśli opuścisz tę stronę, sesja Pulpitu zdalnego Brave zostanie zakończona.</translation>
 <translation id="5308380583665731573">Połącz</translation>
 <translation id="533625276787323658">Brak komputerów zdalnych</translation>
 <translation id="5363265567587775042">Poproś użytkownika, z którego komputera chcesz korzystać, by kliknął „<ph name="SHARE" />” i udostępnił Ci kod dostępu.</translation>
-<translation id="5379087427956679853">Pulpit zdalny Chrome pozwala na bezpieczne udostępnianie komputera przez internet. Obaj użytkownicy muszą mieć uruchomioną aplikację Pulpit zdalny Chrome, którą można znaleźć na <ph name="URL" />.</translation>
-<translation id="5397086374758643919">Program do odinstalowywania hosta Pulpitu zdalnego Chrome</translation>
+<translation id="5379087427956679853">Pulpit zdalny Brave pozwala na bezpieczne udostępnianie komputera przez internet. Obaj użytkownicy muszą mieć uruchomioną aplikację Pulpit zdalny Brave, którą można znaleźć na <ph name="URL" />.</translation>
+<translation id="5397086374758643919">Program do odinstalowywania hosta Pulpitu zdalnego Brave</translation>
 <translation id="5419185025274123272">Nie można zresetować aplikacji. Wciąż możesz przesłać zgłoszenie błędu.</translation>
 <translation id="5419418238395129586">Ostatnio online: <ph name="DATE" /></translation>
 <translation id="544077782045763683">Host został wyłączony.</translation>
@@ -223,7 +223,7 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="5773590752998175013">Data parowania</translation>
 <translation id="579702532610384533">Połącz ponownie</translation>
 <translation id="5810269635982033450">Ekran działa jak trackpad</translation>
-<translation id="5823658491130719298">Na komputerze, do którego chcesz uzyskać zdalny dostęp, otwórz Chrome i wejdź na <ph name="INSTALLATION_LINK" /></translation>
+<translation id="5823658491130719298">Na komputerze, do którego chcesz uzyskać zdalny dostęp, otwórz Brave i wejdź na <ph name="INSTALLATION_LINK" /></translation>
 <translation id="5841343754884244200">Opcje wyświetlania</translation>
 <translation id="5843054235973879827">Dlaczego to bezpieczne?</translation>
 <translation id="5859141382851488196">Nowe okno...</translation>
@@ -232,16 +232,16 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="6040143037577758943">Zamknij</translation>
 <translation id="6062854958530969723">Nie udało się zainicjować hosta.</translation>
 <translation id="6091564239975589852">Wyślij naciśnięcia klawiszy</translation>
-<translation id="6099500228377758828">Usługa Pulpitu zdalnego Chrome</translation>
+<translation id="6099500228377758828">Usługa Pulpitu zdalnego Brave</translation>
 <translation id="6122191549521593678">Online</translation>
-<translation id="6167788864044230298">Chrome App Streaming</translation>
+<translation id="6167788864044230298">Brave App Streaming</translation>
 <translation id="6173536234069435147">Nie mogę otworzyć moich plików na Dysku Google.</translation>
 <translation id="6178645564515549384">Host natywnego przesyłania komunikatów do pomocy zdalnej</translation>
 <translation id="618120821413932081">Zaktualizuj rozdzielczość pulpitu zdalnego, by pasowała do okna</translation>
 <translation id="6193698048504518729">Połącz z: <ph name="HOSTNAME" /></translation>
 <translation id="6198252989419008588">Zmień kod PIN</translation>
 <translation id="6204583485351780592"><ph name="HOSTNAME" /> (nieaktualne)</translation>
-<translation id="6221358653751391898">Nie jesteś zalogowany do Chrome. Zaloguj się i spróbuj ponownie.</translation>
+<translation id="6221358653751391898">Nie jesteś zalogowany do Brave. Zaloguj się i spróbuj ponownie.</translation>
 <translation id="6284412385303060032">Host uruchomiony na ekranie logowania konsoli został zamknięty, by umożliwić włączenie trybu kurtyny, przełączając się na hosta uruchomionego w sesji danego użytkownika.</translation>
 <translation id="629730747756840877">Konto</translation>
 <translation id="6304318647555713317">Klient</translation>
@@ -259,17 +259,17 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="6612717000975622067">Wyślij Ctrl-Alt-Del</translation>
 <translation id="6654753848497929428">Udostępnij</translation>
 <translation id="6668065415969892472">PIN został zaktualizowany.</translation>
-<translation id="6681800064886881394">Copyright 2013 Google Inc. Wszelkie prawa zastrzeżone.</translation>
+<translation id="6681800064886881394">Copyright 2013 Brave Software Inc. Wszelkie prawa zastrzeżone.</translation>
 <translation id="6705482892455291412">Gdy poda kod, zobaczysz pytanie o zgodę na połączenie i rozpoczęcie sesji udostępniania.</translation>
 <translation id="6746493157771801606">Wyczyść historię</translation>
 <translation id="6748108480210050150">Od</translation>
 <translation id="677755392401385740">Uruchomiono host dla użytkownika: <ph name="HOST_USERNAME" />.</translation>
 <translation id="6865175692670882333">Wyświetl/edytuj</translation>
-<translation id="6913710942997637770">Aby wybrać zdjęcie profilowe, zezwól Pulpitowi zdalnemu Chrome na dostęp do Twoich zdjęć</translation>
+<translation id="6913710942997637770">Aby wybrać zdjęcie profilowe, zezwól Pulpitowi zdalnemu Brave na dostęp do Twoich zdjęć</translation>
 <translation id="6930242544192836755">Czas trwania</translation>
 <translation id="6939719207673461467">Pokaż/ukryj klawiaturę.</translation>
 <translation id="6944854424004126054">Przywróć okno</translation>
-<translation id="6948905685698011662">Pulpit zdalny Chrome jest teraz dostępny w internecie. Wypróbuj naszą <ph name="LINK_BEGIN" />bezpłatną aplikację internetową<ph name="LINK_END" />.</translation>
+<translation id="6948905685698011662">Pulpit zdalny Brave jest teraz dostępny w internecie. Wypróbuj naszą <ph name="LINK_BEGIN" />bezpłatną aplikację internetową<ph name="LINK_END" />.</translation>
 <translation id="6963936880795878952">Połączenia z komputerem zdalnym są chwilowo zablokowane, bo ktoś próbował się z nim połączyć, podając nieprawidłowy kod PIN. Spróbuj ponownie później.</translation>
 <translation id="6965382102122355670">OK</translation>
 <translation id="6985691951107243942">Na pewno chcesz wyłączyć połączenia zdalne z: <ph name="HOSTNAME" />? Jeśli zmienisz zdanie, połączenia będzie trzeba włączyć na tamtym komputerze.</translation>
@@ -279,17 +279,17 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="7026930240735156896">Wykonaj te instrukcje, by skonfigurować komputer do dostępu zdalnego</translation>
 <translation id="7038683108611689168">Pomóż nam udoskonalić Chromoting, zezwalając na gromadzenie przez nas statystyk użytkowania i raportów o awariach.</translation>
 <translation id="7067321367069083429">Ekran działa jak ekran dotykowy</translation>
-<translation id="7116737094673640201">Witamy w Pulpicie zdalnym Chrome</translation>
+<translation id="7116737094673640201">Witamy w Pulpicie zdalnym Brave</translation>
 <translation id="7144878232160441200">Ponów próbę</translation>
-<translation id="7149517134817561223">Aplikacja do wysyłania poleceń do hosta Pulpitu zdalnego Chrome.</translation>
+<translation id="7149517134817561223">Aplikacja do wysyłania poleceń do hosta Pulpitu zdalnego Brave.</translation>
 <translation id="7215059001581613786">Wpisz PIN złożony z co najmniej sześciu cyfr.</translation>
 <translation id="7312846573060934304">Host jest offline.</translation>
 <translation id="7319983568955948908">Zatrzymaj udostępnianie</translation>
-<translation id="7401733114166276557">Pulpit zdalny Chrome</translation>
+<translation id="7401733114166276557">Pulpit zdalny Brave</translation>
 <translation id="7434397035092923453">Odmowa dostępu dla klienta: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="7444276978508498879">Podłączył się klient: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="7526139040829362392">Zmień konto</translation>
-<translation id="7589941250119944644">Pulpit zdalny Chrome jest teraz dostępny w internecie. Wypróbuj naszą <ph name="LINK_BEGIN" />aplikację internetową<ph name="LINK_END" /> – jest szybka, bezpłatna i oferuje wszystkie funkcje znane z poprzedniej wersji Pulpitu.</translation>
+<translation id="7589941250119944644">Pulpit zdalny Brave jest teraz dostępny w internecie. Wypróbuj naszą <ph name="LINK_BEGIN" />aplikację internetową<ph name="LINK_END" /> – jest szybka, bezpłatna i oferuje wszystkie funkcje znane z poprzedniej wersji Pulpitu.</translation>
 <translation id="7606912958770842224">Włącz połączenia zdalne</translation>
 <translation id="7628469622942688817">Zapamiętaj mój kod PIN na tym urządzeniu.</translation>
 <translation id="7649070708921625228">Pomoc</translation>
@@ -301,26 +301,26 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="7714222945760997814">Zgłoś to</translation>
 <translation id="7782471917492991422">Sprawdź ustawienia zarządzania zasilaniem komputera i upewnij się, że nie jest on skonfigurowany do przechodzenia podczas bezczynności w tryb uśpienia.</translation>
 <translation id="7810127880729796595">Pokaż statystyki (jakość połączenia: <ph name="QUALITY" />)</translation>
-<translation id="7836926030608666805">Brak niektórych wymaganych komponentów. Upewnij się, że korzystasz z najnowszej wersji Chrome, i spróbuj ponownie.</translation>
+<translation id="7836926030608666805">Brak niektórych wymaganych komponentów. Upewnij się, że korzystasz z najnowszej wersji Brave, i spróbuj ponownie.</translation>
 <translation id="7868137160098754906">Wpisz kod PIN komputera zdalnego.</translation>
 <translation id="7869445566579231750">Nie masz uprawnień do uruchamiania tej aplikacji.</translation>
 <translation id="7895403300744144251">Zasady bezpieczeństwa obowiązujące na komputerze zdalnym nie zezwalają na nawiązywanie połączeń z Twojego konta.</translation>
 <translation id="7936528439960309876">Zadokuj do prawej</translation>
 <translation id="7948001860594368197">Opcje ekranu</translation>
-<translation id="7970576581263377361">Uwierzytelnianie nie powiodło się. Zaloguj się ponownie do Chromium.</translation>
+<translation id="7970576581263377361">Uwierzytelnianie nie powiodło się. Zaloguj się ponownie do Brave.</translation>
 <translation id="7981525049612125370">Sesja zdalna wygasła.</translation>
 <translation id="8041089156583427627">Prześlij opinię</translation>
-<translation id="8041721485428375115">Pobierając instalatora hosta Pulpitu zdalnego Chrome, akceptujesz <ph name="LINK_BEGIN" />Warunki korzystania z usług<ph name="LINK_END" /> Google.</translation>
+<translation id="8041721485428375115">Pobierając instalatora hosta Pulpitu zdalnego Brave, akceptujesz <ph name="LINK_BEGIN" />Warunki korzystania z usług<ph name="LINK_END" /> Google.</translation>
 <translation id="8060029310790625334">Centrum pomocy</translation>
 <translation id="806699900641041263">Łączę z: <ph name="HOSTNAME" /></translation>
-<translation id="8073845705237259513">Aby użyć Pulpitu zdalnego Chrome, musisz dodać do urządzenia konto Google.</translation>
+<translation id="8073845705237259513">Aby użyć Pulpitu zdalnego Brave, musisz dodać do urządzenia konto Google.</translation>
 <translation id="80739703311984697">Host zdalny wymaga uwierzytelnienia w witrynie innej firmy. Aby kontynuować, musisz udzielić funkcji Chromoting dodatkowych uprawnień dostępu do tego adresu:</translation>
 <translation id="809687642899217504">Moje komputery</translation>
 <translation id="811307782653349804">Dostęp do własnego komputera z dowolnego miejsca.</translation>
 <translation id="8116630183974937060">Wystąpił błąd sieci. Sprawdź, czy urządzenie jest online, i spróbuj jeszcze raz.</translation>
 <translation id="8123581458650016326">Zezwól użytkownikom zdalnym na sterowanie tym komputerem</translation>
 <translation id="8178433417677596899">Dzielenie się ekranem z innym użytkownikiem – doskonałe do zdalnej pomocy technicznej.</translation>
-<translation id="8187079423890319756">Copyright 2013 Autorzy Chromium. Wszelkie prawa zastrzeżone.</translation>
+<translation id="8187079423890319756">Copyright 2013 Autorzy Brave. Wszelkie prawa zastrzeżone.</translation>
 <translation id="8196755618196986400">Aby umożliwić nam skontaktowanie się z Tobą w sprawie dodatkowych informacji, Twój adres e-mail zostanie dołączony do każdego zgłoszenia, które prześlesz.</translation>
 <translation id="8244400547700556338">Instrukcje</translation>
 <translation id="8261506727792406068">Usuń</translation>
@@ -334,7 +334,7 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="8509907436388546015">Proces integracji pulpitu</translation>
 <translation id="8513093439376855948">Host natywnego przesyłania komunikatów do zdalnego zarządzania hostem</translation>
 <translation id="8525306231823319788">Pełny ekran</translation>
-<translation id="8548209692293300397">Poprzednio logowałeś się jako <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Aby uzyskać dostęp do swoich komputerów na tym koncie, <ph name="LINK_BEGIN" />zaloguj się na to konto w Google Chrome<ph name="LINK_END" /> i ponownie zainstaluj Pulpit zdalny Chrome.</translation>
+<translation id="8548209692293300397">Poprzednio logowałeś się jako <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Aby uzyskać dostęp do swoich komputerów na tym koncie, <ph name="LINK_BEGIN" />zaloguj się na to konto w Brave<ph name="LINK_END" /> i ponownie zainstaluj Pulpit zdalny Brave.</translation>
 <translation id="8642984861538780905">Średnia</translation>
 <translation id="8705151241155781642">• Dodano obsługę Androida 9.0 Pie.
 • Umożliwiono zmianę rozdzielczości pulpitu zdalnego, by dopasować ją do ekranu urządzenia z Androidem.</translation>
@@ -346,7 +346,7 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="894763922177556086">Dobra</translation>
 <translation id="895780780740011433">Windows 7 lub nowszy</translation>
 <translation id="897805526397249209">Aby umożliwić zdalne połączenia z innym komputerem, zainstaluj na nim Chromoting i kliknij „<ph name="BUTTON_NAME" />”.</translation>
-<translation id="8998327464021325874">Kontroler hosta Pulpitu zdalnego Chrome</translation>
+<translation id="8998327464021325874">Kontroler hosta Pulpitu zdalnego Brave</translation>
 <translation id="9016232822027372900">Połącz mimo to</translation>
 <translation id="906458777597946297">Maksymalizuj okno</translation>
 <translation id="9111855907838866522">Masz połączenie z urządzeniem zdalnym. Aby otworzyć menu, kliknij ekran czterema palcami.</translation>
@@ -357,8 +357,8 @@ Aby włączyć tę funkcję, kliknij „<ph name="BUTTON_NAME" />” w celu wy�
 <translation id="9213184081240281106">Nieprawidłowa konfiguracja hosta.</translation>
 <translation id="951991426597076286">Odrzuć</translation>
 <translation id="962733587145768554">Aby dokończyć procedurę, wybierz „<ph name="SHARE" />” w oknie połączenia.</translation>
-<translation id="979100198331752041">Pulpit zdalny Chrome na komputerze <ph name="HOSTNAME" /> jest nieaktualny i wymaga aktualizacji.</translation>
+<translation id="979100198331752041">Pulpit zdalny Brave na komputerze <ph name="HOSTNAME" /> jest nieaktualny i wymaga aktualizacji.</translation>
 <translation id="981121421437150478">Offline</translation>
-<translation id="985602178874221306">Autorzy Chromium</translation>
+<translation id="985602178874221306">Autorzy Brave</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (ostatnio online <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>

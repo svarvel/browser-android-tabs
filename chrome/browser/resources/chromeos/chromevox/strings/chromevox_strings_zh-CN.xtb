@@ -35,7 +35,7 @@
 <translation id="1201402288615127009">下一页</translation>
 <translation id="1206619573307042055">marquee</translation>
 <translation id="1213216066620407844">ChromeVox - 为Chrome提供语音功能</translation>
-<translation id="1225437811932752266">恭喜！您已顺利学完使用 ChromeVox 所需掌握的基本知识。请记住，您随时可通过按搜索键+句点键打开 ChromeVox 命令菜单。要详细了解 ChromeVox 和 Chrome 操作系统，请阅读以下文章。
+<translation id="1225437811932752266">恭喜！您已顺利学完使用 ChromeVox 所需掌握的基本知识。请记住，您随时可通过按搜索键+句点键打开 ChromeVox 命令菜单。要详细了解 ChromeVox 和 Brave 操作系统，请阅读以下文章。
 若要结束此教程，请使用 ChromeVox 找到“关闭”按钮，然后点击该按钮。</translation>
 <translation id="1229276918471378188">上一个跳转</translation>
 <translation id="1236794971743289975">尾注</translation>
@@ -665,7 +665,7 @@
 <translation id="6065293622157674001">语法错误的开头</translation>
 <translation id="6082768461603900813">基本导航操作</translation>
 <translation id="6092707270915298410">链接末尾</translation>
-<translation id="6118126368611144850">适合在 Chrome 中使用的 Android 应用。如果您的设备上安装了 Play 商店，则可以通过 Android 应用抢先体验 ChromeVox。只需从 Play 商店下载 Google Chrome Canary，即可体验实验功能。</translation>
+<translation id="6118126368611144850">适合在 Brave 中使用的 Android 应用。如果您的设备上安装了 Play 商店，则可以通过 Android 应用抢先体验 ChromeVox。只需从 Play 商店下载 Brave Canary，即可体验实验功能。</translation>
 <translation id="611827076493383239">vtd</translation>
 <translation id="6119955456199054975">单元格结束。</translation>
 <translation id="6122013438240733403">按钮</translation>
@@ -760,11 +760,11 @@
 <translation id="7041173719775863268">结束选择</translation>
 <translation id="7048792632163898198">下面这几个快捷键并不是 ChromeVox 命令，但它们非常实用，有助于您充分利用 Chrome。
 要移到下一个可操作项（例如按钮和链接），请按 Tab 键。要移到上一个可操作项，请按 Shift+Tab。
-要进入 Chrome 浏览器的地址框（也称为多功能框），请按 Ctrl+L。
+要进入 Brave 浏览器的地址框（也称为多功能框），请按 Ctrl+L。
 要自动打开并转到新标签页，请按 Ctrl+T。您的光标将会位于多功能框内。
 要关闭标签页，请按 Ctrl+W。
 要转到下一个打开的标签页，请按 Ctrl+Tab。
-要打开 Chrome 浏览器菜单，请按 Alt+F。</translation>
+要打开 Brave 浏览器菜单，请按 Alt+F。</translation>
 <translation id="7086377898680121060">调高亮度</translation>
 <translation id="7088743565397416204">用 1 根手指连续点按两次即可激活所聚焦的项目</translation>
 <translation id="7095834689119144465">仅修改数字文本</translation>
@@ -824,7 +824,7 @@
 <translation id="7518543783849163354">要使 ChromeVox 暂时停止朗读功能，请按 Ctrl 键。</translation>
 <translation id="7521682724501952239">您可将 ChromeVox 与触摸屏搭配使用。</translation>
 <translation id="7532613204005497612">6月</translation>
-<translation id="7552432549459840808">实用的 Chrome 快捷键</translation>
+<translation id="7552432549459840808">实用的 Brave 快捷键</translation>
 <translation id="7579911500627256166">点 <ph name="DOT" /></translation>
 <translation id="7596919493010894443">已清除所选内容</translation>
 <translation id="7604026522577407655">转到当前列的开头</translation>

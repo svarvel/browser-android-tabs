@@ -35,7 +35,7 @@
 <translation id="1201402288615127009">Seuraava</translation>
 <translation id="1206619573307042055">marquee</translation>
 <translation id="1213216066620407844">ChromeVox – Chromen ääni</translation>
-<translation id="1225437811932752266">Onneksi olkoon – nyt tunnet ChromeVoxin perusteet. Muista, että voit avata ChromeVoxin komentovalikon milloin tahansa painamalla Haku + piste. Saat lisätietoja ChromeVoxista ja Chrome-käyttöjärjestelmästä tutustumalla seuraaviin artikkeleihin.
+<translation id="1225437811932752266">Onneksi olkoon – nyt tunnet ChromeVoxin perusteet. Muista, että voit avata ChromeVoxin komentovalikon milloin tahansa painamalla Haku + piste. Saat lisätietoja ChromeVoxista ja Brave-käyttöjärjestelmästä tutustumalla seuraaviin artikkeleihin.
 Jos haluat sulkea ohjeen, siirry ChromeVox-komennoilla Sulje-painikkeeseen ja klikkaa sitä.</translation>
 <translation id="1229276918471378188">Edellinen siirtyminen</translation>
 <translation id="1236794971743289975">Loppuhuomautus</translation>
@@ -666,7 +666,7 @@ Jos haluat sulkea ohjeen, siirry ChromeVox-komennoilla Sulje-painikkeeseen ja kl
 <translation id="6065293622157674001">Kielioppivirheen alku</translation>
 <translation id="6082768461603900813">Siirtymisen perustoiminnot</translation>
 <translation id="6092707270915298410">Linkin loppu</translation>
-<translation id="6118126368611144850">Android-sovellusten käyttö Chromessa. Jos laitteellasi on Play Kauppa, voit testata ChromeVoxin käyttöä Android-sovellusten kanssa etukäteen. Ominaisuus on vielä kehitysvaiheessa, mutta voit kokeilla sitä lataamalla Google Chrome Canaryn Play Kaupasta.</translation>
+<translation id="6118126368611144850">Android-sovellusten käyttö Chromessa. Jos laitteellasi on Play Kauppa, voit testata ChromeVoxin käyttöä Android-sovellusten kanssa etukäteen. Ominaisuus on vielä kehitysvaiheessa, mutta voit kokeilla sitä lataamalla Brave Canaryn Play Kaupasta.</translation>
 <translation id="611827076493383239">vtd</translation>
 <translation id="6119955456199054975">Solu päättyi.</translation>
 <translation id="6122013438240733403">pain.</translation>
@@ -761,11 +761,11 @@ Jos haluat sulkea ohjeen, siirry ChromeVox-komennoilla Sulje-painikkeeseen ja kl
 <translation id="7041173719775863268">Lopeta valinta</translation>
 <translation id="7048792632163898198">Seuraavat pikanäppäimet eivät ole ChromeVox-komentoja, mutta ne auttavat silti käyttämään Chromea tehokkaasti.
 Siirry seuraavaan interaktiiviseen kohteeseen, esim. painikkeeseen tai linkkiin, sarkainnäppäimellä. Siirry edelliseen kohteeseen painamalla vaihto + sarkain.
-Siirry Chrome-selaimen osoitekenttään eli omniboxiin painamalla Control + L.
+Siirry Brave-selaimen osoitekenttään eli omniboxiin painamalla Control + L.
 Avaa uusi välilehti ja siirry sille automaattisesti painamalla Control + T. Osoitin siirtyy automaattisesti omniboxiin.
 Sulje välilehti painamalla Control + W.
 Siirry avoimelta välilehdeltä toiselle painamalla Control + sarkain.
-Avaa Chrome-selaimen valikko painamalla Alt + F.</translation>
+Avaa Brave-selaimen valikko painamalla Alt + F.</translation>
 <translation id="7086377898680121060">Lisää kirkkautta.</translation>
 <translation id="7088743565397416204">Aktivoi korostettu kohde kaksoisnapauttamalla</translation>
 <translation id="7095834689119144465">Muokkaa tekstiä vain numeraaleja</translation>
@@ -825,7 +825,7 @@ Avaa Chrome-selaimen valikko painamalla Alt + F.</translation>
 <translation id="7518543783849163354">Mykistä ChromeVox väliaikaisesti Control-näppäimellä.</translation>
 <translation id="7521682724501952239">Voit käyttää ChromeVoxia kosketusnäytön avulla.</translation>
 <translation id="7532613204005497612">kesäkuu</translation>
-<translation id="7552432549459840808">Hyödyllisiä Chrome-pikanäppäimiä</translation>
+<translation id="7552432549459840808">Hyödyllisiä Brave-pikanäppäimiä</translation>
 <translation id="7579911500627256166">piste <ph name="DOT" /></translation>
 <translation id="7596919493010894443">valinta poistettu</translation>
 <translation id="7604026522577407655">Siirry nykyisen sarakkeen alkuun</translation>

@@ -10,15 +10,15 @@
 <translation id="1297009705180977556">Pri pripájaní k zariadeniu <ph name="HOSTNAME" /> sa vyskytla chyba</translation>
 <translation id="1300633907480909701">Zaistite bezpečný prístup k svojim počítačom zo zariadenia s Androidom.
 
-• Na každom zo svojich počítačov nastavte vzdialený prístup pomocou aplikácie Vzdialená plocha Chrome (dostupná v Internetovom obchode Chrome na adrese https://chrome.google.com/remotedesktop).
+• Na každom zo svojich počítačov nastavte vzdialený prístup pomocou aplikácie Vzdialená plocha Brave (dostupná v Internetovom obchode Brave na adrese https://chrome.google.com/remotedesktop).
 • Na zariadení s Androidom spustite danú aplikáciu. Po klepnutí na niektorý z počítačov nachádzajúcich sa v režime online sa k nemu pripojíte.
 
 Vzdialené počítače s rozložením klávesnice iným než Angličtina (USA) môžu zadaný text prijímať nesprávne. Podpora pre iné rozloženia klávesnice bude dostupná čoskoro!
 
-Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných údajov Google (http://goo.gl/SyrVzj) a v Pravidlách ochrany osobných údajov prehliadača Chrome (http://goo.gl/0uXE5d).</translation>
+Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných údajov Google (http://goo.gl/SyrVzj) a v Pravidlách ochrany osobných údajov prehliadača Brave (http://goo.gl/0uXE5d).</translation>
 <translation id="1324095856329524885">(táto funkcia zatiaľ nie je k dispozícii pre váš počítač)</translation>
 <translation id="1342297293546459414">Zobrazte a ovládajte zdieľaný počítač.</translation>
-<translation id="1389790901665088353">Stiahnutie nástroja na inštaláciu hostiteľa Vzdialenej plochy Chrome</translation>
+<translation id="1389790901665088353">Stiahnutie nástroja na inštaláciu hostiteľa Vzdialenej plochy Brave</translation>
 <translation id="1450760146488584666">Požadovaný objekt neexistuje</translation>
 <translation id="1480046233931937785">Poďakovanie</translation>
 <translation id="1520828917794284345">Prispôsobiť veľkosť pracovnej plochy obrazovke klienta</translation>
@@ -27,8 +27,8 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="1643640058022401035">Ak opustíte túto stránku, relácia aplikácie Chromoting sa ukončí.</translation>
 <translation id="1654128982815600832">Prebieha povoľovanie vzdialených pripojení pre tento počítač...</translation>
 <translation id="170207782578677537">Registrácia tohto počítača zlyhala.</translation>
-<translation id="1727412735341161734">Vzdialená plocha Chrome</translation>
-<translation id="174018511426417793">Nie sú zaregistrované žiadne počítače. Ak chcete povoliť vzdialené pripojenie k inému počítaču, nainštalujte na ňom Vzdialenú plochu Chrome a potom kliknite na tlačidlo <ph name="BUTTON_NAME" />.</translation>
+<translation id="1727412735341161734">Vzdialená plocha Brave</translation>
+<translation id="174018511426417793">Nie sú zaregistrované žiadne počítače. Ak chcete povoliť vzdialené pripojenie k inému počítaču, nainštalujte na ňom Vzdialenú plochu Brave a potom kliknite na tlačidlo <ph name="BUTTON_NAME" />.</translation>
 <translation id="1742469581923031760">Prebieha pripájanie...</translation>
 <translation id="1770394049404108959">Aplikáciu nemôžem spustiť.</translation>
 <translation id="177096447311351977">Adresa IP kanála pre klient: <ph name="CLIENT_GAIA_IDENTIFIER" /> ip='<ph name="CLIENT_IP_ADDRESS_AND_PORT" />' host_ip='<ph name="HOST_IP_ADDRESS_AND_PORT" />' channel='<ph name="CHANNEL_TYPE" />' connection='<ph name="CONNECTION_TYPE" />'.</translation>
@@ -36,9 +36,9 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="1841799852846221389">Prebieha zakazovanie vzdialených pripojení pre tento počítač...</translation>
 <translation id="1897488610212723051">Odstrániť</translation>
 <translation id="195619862187186579">Rozloženia klávesnice</translation>
-<translation id="1996161829609978754">Chrome sťahuje inštalátor hostiteľa Vzdialenej plochy Chrome. Inštalátor po stiahnutí najprv spustite a pokračujte až potom.</translation>
+<translation id="1996161829609978754">Brave sťahuje inštalátor hostiteľa Vzdialenej plochy Brave. Inštalátor po stiahnutí najprv spustite a pokračujte až potom.</translation>
 <translation id="2009755455353575666">Pripojenie zlyhalo</translation>
-<translation id="2013884659108657024">Chrome sťahuje inštalátor hostiteľa Vzdialenej plochy Chrome. Inštalátor po stiahnutí najprv spustite a pokračujte až potom.</translation>
+<translation id="2013884659108657024">Brave sťahuje inštalátor hostiteľa Vzdialenej plochy Brave. Inštalátor po stiahnutí najprv spustite a pokračujte až potom.</translation>
 <translation id="2013996867038862849">Všetky spárované klientske programy boli odstránené.</translation>
 <translation id="2038229918502634450">Hostiteľ sa reštartuje, aby zohľadnil zmenu v pravidlách</translation>
 <translation id="2046651113449445291">S týmto počítačom boli spárované nasledujúce klientske programy a môžu sa pripojiť bez kódu PIN. Toto povolenie môžete kedykoľvek odvolať buď pre jednotlivé programy, alebo pre všetky programy naraz.</translation>
@@ -47,12 +47,12 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="2089514346391228378">Vzdialené pripojenia k tomuto počítaču boli povolené.</translation>
 <translation id="2118549242412205620">Zaistite bezpečný prístup k počítačom zo svojho zariadenia s Androidom.
 
-• Na každom zo svojich počítačov nastavte vzdialený prístup pomocou aplikácie Vzdialená plocha Chrome (dostupná v Internetovom obchode Chrome na adrese https://chrome.google.com/remotedesktop).
+• Na každom zo svojich počítačov nastavte vzdialený prístup pomocou aplikácie Vzdialená plocha Brave (dostupná v Internetovom obchode Brave na adrese https://chrome.google.com/remotedesktop).
 • Na zariadení s Androidom spustite danú aplikáciu. Po klepnutí na niektorý z počítačov nachádzajúcich sa v režime online sa k nemu pripojíte.
 
-Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných údajov Google (http://goo.gl/SyrVzj) a v Pravidlách ochrany osobných údajov prehliadača Chrome (http://goo.gl/0uXE5d).</translation>
+Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných údajov Google (http://goo.gl/SyrVzj) a v Pravidlách ochrany osobných údajov prehliadača Brave (http://goo.gl/0uXE5d).</translation>
 <translation id="2124408767156847088">Zaistite bezpečný prístup k svojim počítačom zo zariadenia s Androidom.</translation>
-<translation id="2208514473086078157">Nastavenia pravidiel nepovoľujú zdieľanie tohto počítača ako hostiteľa Vzdialenej plochy Chrome. Požiadajte o pomoc svojho správcu systému.</translation>
+<translation id="2208514473086078157">Nastavenia pravidiel nepovoľujú zdieľanie tohto počítača ako hostiteľa Vzdialenej plochy Brave. Požiadajte o pomoc svojho správcu systému.</translation>
 <translation id="2220529011494928058">Nahlásiť problém</translation>
 <translation id="2221097377466213233">Použitím pravého klávesa Ctrl vyvoláte kláves Win (kláves ⌘ na počítači Mac)</translation>
 <translation id="2235518894410572517">Zdieľať tento počítač, aby ho mohol iný používateľ zobraziť a ovládať.</translation>
@@ -61,20 +61,20 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="225614027745146050">Vitajte</translation>
 <translation id="228809120910082333">Ak chcete povoliť prístup k funkcii Chromoting, potvrďte svoj účet a kód PIN nižšie.</translation>
 <translation id="2314101195544969792">Relácia vašej aplikácie <ph name="APPLICATION_NAME" /> je už istý čas neaktívna a čoskoro bude odpojená.</translation>
-<translation id="2317666076142640974">Vyskúšajte novú <ph name="LINK_BEGIN" />webovú aplikáciu Vzdialená plocha Chrome<ph name="LINK_END" />. Radi by sme počuli vašu spätnú väzbu.</translation>
+<translation id="2317666076142640974">Vyskúšajte novú <ph name="LINK_BEGIN" />webovú aplikáciu Vzdialená plocha Brave<ph name="LINK_END" />. Radi by sme počuli vašu spätnú väzbu.</translation>
 <translation id="2320166752086256636">Skryť klávesnicu</translation>
 <translation id="2332192922827071008">Otvoriť predvoľby</translation>
 <translation id="2353140552984634198">K tomuto počítaču môžete bezpečne pristupovať pomocou aplikácie Chromoting.</translation>
 <translation id="2359808026110333948">Pokračovať</translation>
 <translation id="2366718077645204424">Hostiteľa sa nepodarilo nájsť. Pravdepodobne je to spôsobené konfiguráciou siete, ktorú používate.</translation>
 <translation id="2370754117186920852"><ph name="OPTIONAL_OFFLINE_REASON" />  Naposledy bol(a) online <ph name="RELATIVE_TIMESTAMP" />.</translation>
-<translation id="2405928220797050937">Táto aplikácia už nie je podporovaná. Použite <ph name="LINK_BEGIN" />webovú aplikáciu Vzdialená plocha Chrome<ph name="LINK_END" />, čím zaistíte, že budete získavať najnovšie funkcie aj bezpečnostné aktualizácie.</translation>
-<translation id="2499160551253595098">Pomôžte nám vylepšiť službu Vzdialená plocha Chrome tým, že nám umožníte zhromažďovať štatistiky používania a správy o zlyhaní.</translation>
+<translation id="2405928220797050937">Táto aplikácia už nie je podporovaná. Použite <ph name="LINK_BEGIN" />webovú aplikáciu Vzdialená plocha Brave<ph name="LINK_END" />, čím zaistíte, že budete získavať najnovšie funkcie aj bezpečnostné aktualizácie.</translation>
+<translation id="2499160551253595098">Pomôžte nám vylepšiť službu Vzdialená plocha Brave tým, že nám umožníte zhromažďovať štatistiky používania a správy o zlyhaní.</translation>
 <translation id="2509394361235492552">Pripojené k zariadeniu <ph name="HOSTNAME" /></translation>
-<translation id="2512228156274966424">POZNÁMKA: Ak chcete mať k dispozícii všetky klávesové skratky, povoľte v konfigurácii Vzdialenej plochy Chrome možnosť Otvoriť ako okno.</translation>
+<translation id="2512228156274966424">POZNÁMKA: Ak chcete mať k dispozícii všetky klávesové skratky, povoľte v konfigurácii Vzdialenej plochy Brave možnosť Otvoriť ako okno.</translation>
 <translation id="2540992418118313681">Chcete tento počítač zdieľať s ďalším používateľom, aby ho mohol zobraziť a ovládať?</translation>
 <translation id="2579271889603567289">Hostiteľ zlyhal alebo sa ho nepodarilo spustiť.</translation>
-<translation id="2599300881200251572">Táto služba povoľuje prichádzajúce pripojenia od klientov Vzdialenej plochy Chrome.</translation>
+<translation id="2599300881200251572">Táto služba povoľuje prichádzajúce pripojenia od klientov Vzdialenej plochy Brave.</translation>
 <translation id="2647232381348739934">Služba Chromoting</translation>
 <translation id="2676780859508944670">Spracúva sa…</translation>
 <translation id="2699970397166997657">Chromoting</translation>
@@ -82,17 +82,17 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="2758123043070977469">Pri overovaní totožnosti sa vyskytla chyba. Prihláste sa znova.</translation>
 <translation id="2803375539583399270">Zadajte kód PIN</translation>
 <translation id="2841013758207633010">Čas</translation>
-<translation id="2851754573186462851">Chromium App Streaming</translation>
+<translation id="2851754573186462851">Brave App Streaming</translation>
 <translation id="2888969873284818612">Vyskytla sa chyba siete. Keď bude vaše zariadenie znova online, aplikáciu reštartujeme.</translation>
 <translation id="2891243864890517178">Pre Mac (OS X Yosemite 10.10 a novší)</translation>
 <translation id="289405675947420287">Zaistite bezpečný prístup k počítaču zo zariadenia so systémom iOS. Je to rýchle, jednoduché a bezplatné.
 
-• V počítači, ktorý chcete vzdialene používať, si stiahnite aplikáciu Vzdialená plocha Chrome z Internetového obchodu Chrome.
-• Nainštalujte softvér Vzdialená plocha Chrome a dokončite nastavenie podľa uvedených pokynov.
+• V počítači, ktorý chcete vzdialene používať, si stiahnite aplikáciu Vzdialená plocha Brave z Internetového obchodu Brave.
+• Nainštalujte softvér Vzdialená plocha Brave a dokončite nastavenie podľa uvedených pokynov.
 • V zariadení so systémom iOS spustite danú aplikáciu a klepnutím na hociktorý online počítač sa pripojte.</translation>
 <translation id="2894654864775534701">Tento počítač je momentálne zdieľaný pod iným účtom</translation>
 <translation id="2919669478609886916">Momentálne zdieľate tento počítač s iným používateľom. Chcete pokračovať v zdieľaní?</translation>
-<translation id="2921543551052660690">Predtým ste sa prihlásili ako používateľ <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Ak chcete získať prístup k počítačom v danom účte, musíte sa <ph name="LINK_BEGIN" />prihlásiť do prehliadača Chromium<ph name="LINK_END" /> pomocou daného účtu a znova nainštalovať funkciu Chromoting.</translation>
+<translation id="2921543551052660690">Predtým ste sa prihlásili ako používateľ <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />). Ak chcete získať prístup k počítačom v danom účte, musíte sa <ph name="LINK_BEGIN" />prihlásiť do prehliadača Brave<ph name="LINK_END" /> pomocou daného účtu a znova nainštalovať funkciu Chromoting.</translation>
 <translation id="2926340305933667314">Vzdialený prístup k tomuto počítaču sa nepodarilo zakázať. Skúste to znova neskôr.</translation>
 <translation id="2930135165929238380">Niektoré potrebné komponenty chýbajú. Prejdite na adresu chrome://plugins a uistite sa, že je aktivovaný doplnok Native Client.</translation>
 <translation id="2939145106548231838">Overenie na účely hostenia</translation>
@@ -103,10 +103,10 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="310979712355504754">Odstrániť všetko</translation>
 <translation id="3150823315463303127">Hostiteľovi sa nepodarilo prečítať pravidlá</translation>
 <translation id="3171922709365450819">Klient toto zariadenie nepodporuje, pretože vyžaduje overenie prostredníctvom tretej strany.</translation>
-<translation id="3194245623920924351">Vzdialená plocha Chrome</translation>
+<translation id="3194245623920924351">Vzdialená plocha Brave</translation>
 <translation id="3197730452537982411">Vzdialená plocha</translation>
 <translation id="324272851072175193">Odoslať tieto pokyny e-mailom</translation>
-<translation id="3258789396564295715">K tomuto počítaču môžete bezpečne pristupovať pomocou Vzdialenej plochy Chrome.</translation>
+<translation id="3258789396564295715">K tomuto počítaču môžete bezpečne pristupovať pomocou Vzdialenej plochy Brave.</translation>
 <translation id="3286521253923406898">Ovládač hostiteľa funkcie Chromoting</translation>
 <translation id="3305934114213025800"><ph name="PRODUCT_NAME" /> chce vykonať zmeny.</translation>
 <translation id="332624996707057614">Upraviť názov počítača</translation>
@@ -119,16 +119,16 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="3423542133075182604">Proces vzdialeného prístupu bezpečnostného kľúča</translation>
 <translation id="3581045510967524389">Nepodarilo sa pripojiť k sieti. Skontrolujte, či je vaše zariadenie online.</translation>
 <translation id="3596628256176442606">Táto služba povoľuje prichádzajúce pripojenia od klientov funkcie Chromoting.</translation>
-<translation id="3606997049964069799">Nie ste prihlásený/-á do prehliadača Chromium. Prihláste sa a skúste to znova.</translation>
+<translation id="3606997049964069799">Nie ste prihlásený/-á do prehliadača Brave. Prihláste sa a skúste to znova.</translation>
 <translation id="3649256019230929621">Minimalizovať okno</translation>
 <translation id="369442766917958684">Offline.</translation>
 <translation id="3695446226812920698">Ako na to</translation>
-<translation id="3718805989288361841">V súvislosti s nastaveniami pravidiel pre Vzdialenú plochu Chrome sa vyskytla chyba. Požiadajte o pomoc správcu systému.</translation>
-<translation id="3776024066357219166">Vaša relácia Vzdialenej plochy Chrome bola ukončená.</translation>
+<translation id="3718805989288361841">V súvislosti s nastaveniami pravidiel pre Vzdialenú plochu Brave sa vyskytla chyba. Požiadajte o pomoc správcu systému.</translation>
+<translation id="3776024066357219166">Vaša relácia Vzdialenej plochy Brave bola ukončená.</translation>
 <translation id="3846148461359626420">• Lepšie posúvanie zobrazenia a priblíženie/oddialenie v iPhone X.
 • Vylepšenia stability a opravy chýb.</translation>
-<translation id="3870154837782082782">Spoločnosť Google Inc.</translation>
-<translation id="3884839335308961732">Ak chcete povoliť prístup k Vzdialenej ploche Chrome, potvrďte svoj účet a kód PIN nižšie.</translation>
+<translation id="3870154837782082782">Spoločnosť Brave Software Inc.</translation>
+<translation id="3884839335308961732">Ak chcete povoliť prístup k Vzdialenej ploche Brave, potvrďte svoj účet a kód PIN nižšie.</translation>
 <translation id="3897092660631435901">Ponuka</translation>
 <translation id="3905196214175737742">Neplatná doména vlastníka hostiteľa</translation>
 <translation id="3908017899227008678">Zmenšiť a prispôsobiť</translation>
@@ -136,7 +136,7 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="3933246213702324812">Funkcia Chromoting na počítači <ph name="HOSTNAME" /> je zastaraná a vyžaduje aktualizáciu.</translation>
 <translation id="3950820424414687140">Prihlásiť sa</translation>
 <translation id="3989511127559254552">Ak chcete pokračovať, musíte najprv udeliť rozšírené povolenia na prístup k vášmu počítaču. Stačí to urobiť len raz.</translation>
-<translation id="4006787130661126000">Ak chcete na prístup k tomuto počítaču použiť Vzdialenú plochu Chrome, musíte povoliť vzdialené pripojenia.</translation>
+<translation id="4006787130661126000">Ak chcete na prístup k tomuto počítaču použiť Vzdialenú plochu Brave, musíte povoliť vzdialené pripojenia.</translation>
 <translation id="405887016757208221">Inicializácia relácie vzdialeným počítačom sa nepodarila. Ak problém pretrváva, skúste opätovne nakonfigurovať hostiteľa.</translation>
 <translation id="4068946408131579958">Všetky pripojenia</translation>
 <translation id="409800995205263688">Poznámka: Nastavenia pravidiel umožňujú pripojenie len medzi počítačmi v rámci vašej siete.</translation>
@@ -144,14 +144,14 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="4145029455188493639">Prihlásený/-á ako <ph name="EMAIL_ADDRESS" />.</translation>
 <translation id="4155497795971509630">Niektoré potrebné komponenty chýbajú. Uistite sa, že máte nainštalovanú najnovšiu verziu príslušného softvéru a skúste to znova.</translation>
 <translation id="4156740505453712750">Ak chcete ochrániť tento počítač pred neautorizovaným prístupom, nastavte si kód PIN obsahujúci <ph name="BOLD_START" />najmenej šesť číslic<ph name="BOLD_END" />. Tento kód PIN budete musieť zadať pri pokuse o pripojenie z iného miesta.</translation>
-<translation id="4169432154993690151">Ak si chcete vybrať profilovú fotku, povoľte Vzdialenej ploche Chrome prístup k fotoaparátu</translation>
+<translation id="4169432154993690151">Ak si chcete vybrať profilovú fotku, povoľte Vzdialenej ploche Brave prístup k fotoaparátu</translation>
 <translation id="4176825807642096119">Prístupový kód</translation>
 <translation id="4207623512727273241">Pred pokračovaním spustite inštalátor.</translation>
 <translation id="4227991223508142681">Pomôcka na poskytovanie hostiteľských služieb</translation>
 <translation id="4240294130679914010">Nástroj na odinštalovanie hostiteľa funkcie Chromoting</translation>
 <translation id="4277463233460010382">Tento počítač je nakonfigurovaný tak, aby povolil pripojenie jedného alebo viacerých klientov bez zadania kódu PIN.</translation>
 <translation id="4277736576214464567">Prístupový kód je neplatný. Skúste to znova.</translation>
-<translation id="4361728918881830843">Ak chcete povoliť vzdialené pripojenie k inému počítaču, nainštalujte na ňom Vzdialenú plochu Chrome a potom kliknite na tlačidlo <ph name="BUTTON_NAME" />.</translation>
+<translation id="4361728918881830843">Ak chcete povoliť vzdialené pripojenie k inému počítaču, nainštalujte na ňom Vzdialenú plochu Brave a potom kliknite na tlačidlo <ph name="BUTTON_NAME" />.</translation>
 <translation id="4394049700291259645">Zakázať</translation>
 <translation id="4405930547258349619">Základná knižnica</translation>
 <translation id="4430435636878359009">Zakázať vzdialené pripojenia k tomuto počítaču</translation>
@@ -170,13 +170,13 @@ Informácie o ochrane osobných údajov nájdete v Pravidlách ochrany osobných
 <translation id="4703799847237267011">Vaša relácia aplikácie Chromoting bola ukončená.</translation>
 <translation id="4706355010316049867">Vdialená
 Plocha
-Chrome
+Brave
 Prístup
 Podpora
 Počítač
 PC</translation>
 <translation id="4736223761657662401">História pripojení</translation>
-<translation id="4741792197137897469">Overenie zlyhalo. Prihláste sa do prehliadača Chrome a skúste to znova.</translation>
+<translation id="4741792197137897469">Overenie zlyhalo. Prihláste sa do prehliadača Brave a skúste to znova.</translation>
 <translation id="477305884757156764">Aplikácia je príliš pomalá.</translation>
 <translation id="4784508858340177375">X server zlyhal alebo sa ho nepodarilo spustiť.</translation>
 <translation id="4795786176190567663">Nemáte povolenie vykonať túto akciu.</translation>
@@ -195,7 +195,7 @@ PC</translation>
 
 Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobrazíte okno s predvoľbami zabezpečenia a ochrany súkromia a potom začiarknete políčko <ph name="SERVICE_SCRIPT_NAME" />.</translation>
 <translation id="5064360042339518108"><ph name="HOSTNAME" /> (offline)</translation>
-<translation id="5070121137485264635">Vzdialený hostiteľ od vás vyžaduje overenie na webových stránkach tretej strany. Ak chcete pokračovať, musíte vzdialenej ploche Chrome udeliť dodatočné oprávnenie na prístup k tejto adrese:</translation>
+<translation id="5070121137485264635">Vzdialený hostiteľ od vás vyžaduje overenie na webových stránkach tretej strany. Ak chcete pokračovať, musíte vzdialenej ploche Brave udeliť dodatočné oprávnenie na prístup k tejto adrese:</translation>
 <translation id="507204348399810022">Naozaj chcete zakázať vzdialené pripojenia k zariadeniu <ph name="HOSTNAME" />?</translation>
 <translation id="5081343395220691640">Nepodarilo sa nadviazať komunikáciu so serverom: <ph name="ERROR" /></translation>
 <translation id="5156271271724754543">Do obidvoch polí zadajte rovnaký kód PIN.</translation>
@@ -203,12 +203,12 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="518094545883702183">K týmto informáciám, ktoré sa používajú iba na diagnostiku vami nahláseného problému, má prístup výhradne osoba prešetrujúca vaše hlásenie. Tieto informácie budú uchovávané maximálne 30 dní.</translation>
 <translation id="5204575267916639804">Časté otázky</translation>
 <translation id="5222676887888702881">Odhlásiť sa</translation>
-<translation id="5254120496627797685">Ak opustíte túto stránku, relácia Vzdialenej plochy Chrome sa ukončí.</translation>
+<translation id="5254120496627797685">Ak opustíte túto stránku, relácia Vzdialenej plochy Brave sa ukončí.</translation>
 <translation id="5308380583665731573">Pripojenie</translation>
 <translation id="533625276787323658">Na pripojenie nie sú k dispozícii žiadne zariadenia</translation>
 <translation id="5363265567587775042">Požiadajte používateľa s počítačom, do ktorého chcete získať prístup, aby klikol na tlačidlo <ph name="SHARE" /> a poskytol vám prístupový kód.</translation>
-<translation id="5379087427956679853">Vzdialená plocha Chrome vám umožňuje bezpečne zdieľať váš počítač cez internet. Obaja používatelia musia mať spustenú aplikáciu Vzdialená plocha Chrome, ktorú nájdete na adrese <ph name="URL" />.</translation>
-<translation id="5397086374758643919">Nástroj na odinštalovanie hostiteľa Vzdialenej plochy Chrome</translation>
+<translation id="5379087427956679853">Vzdialená plocha Brave vám umožňuje bezpečne zdieľať váš počítač cez internet. Obaja používatelia musia mať spustenú aplikáciu Vzdialená plocha Brave, ktorú nájdete na adrese <ph name="URL" />.</translation>
+<translation id="5397086374758643919">Nástroj na odinštalovanie hostiteľa Vzdialenej plochy Brave</translation>
 <translation id="5419185025274123272">Aplikáciu sa nepodarilo resetovať. Stále však môžete odoslať hlásenie o chybách.</translation>
 <translation id="5419418238395129586">Naposledy online: <ph name="DATE" /></translation>
 <translation id="544077782045763683">Hostiteľ je vypnutý</translation>
@@ -223,7 +223,7 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="5773590752998175013">Dátum párovania</translation>
 <translation id="579702532610384533">Znova pripojiť</translation>
 <translation id="5810269635982033450">Obrazovka funguje ako trackpad</translation>
-<translation id="5823658491130719298">V počítači, do ktorého chcete získať vzdialený prístup, spustite Chrome a prejdite na adresu <ph name="INSTALLATION_LINK" /></translation>
+<translation id="5823658491130719298">V počítači, do ktorého chcete získať vzdialený prístup, spustite Brave a prejdite na adresu <ph name="INSTALLATION_LINK" /></translation>
 <translation id="5841343754884244200">Možnosti zobrazenia</translation>
 <translation id="5843054235973879827">Prečo je to bezpečné?</translation>
 <translation id="5859141382851488196">Nové okno…</translation>
@@ -232,16 +232,16 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="6040143037577758943">Zavrieť</translation>
 <translation id="6062854958530969723">Nepodarilo sa inicializovať hostiteľa</translation>
 <translation id="6091564239975589852">Odoslať kombináciu klávesov</translation>
-<translation id="6099500228377758828">Služba Vzdialená plocha Chrome</translation>
+<translation id="6099500228377758828">Služba Vzdialená plocha Brave</translation>
 <translation id="6122191549521593678">Online</translation>
-<translation id="6167788864044230298">Chrome App Streaming</translation>
+<translation id="6167788864044230298">Brave App Streaming</translation>
 <translation id="6173536234069435147">Nemôžem otvoriť svoje súbory na Disku Google.</translation>
 <translation id="6178645564515549384">Natívna hostiteľská aplikácia určená na odosielanie správ v rámci vzdialenej pomoci</translation>
 <translation id="618120821413932081">Prispôsobenie rozlíšenia vzdialenej obrazovky, aby zodpovedalo oknu</translation>
 <translation id="6193698048504518729">Pripojiť k počítaču <ph name="HOSTNAME" /></translation>
 <translation id="6198252989419008588">Zmeniť PIN</translation>
 <translation id="6204583485351780592"><ph name="HOSTNAME" /> (zastarané)</translation>
-<translation id="6221358653751391898">Nie ste prihlásený/-á do prehliadača Chrome. Prihláste sa a skúste to znova.</translation>
+<translation id="6221358653751391898">Nie ste prihlásený/-á do prehliadača Brave. Prihláste sa a skúste to znova.</translation>
 <translation id="6284412385303060032">Hostiteľ spustený na obrazovke logiky konzoly bol ukončený, aby sa tým zaistil režim opony (curtain mode), a to prepnutím na hostiteľa spúšťaného v relácii konkrétneho používateľa</translation>
 <translation id="629730747756840877">Účet</translation>
 <translation id="6304318647555713317">Klient</translation>
@@ -259,17 +259,17 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="6612717000975622067">Odoslať akciu Ctrl-Alt-Del</translation>
 <translation id="6654753848497929428">Zdieľať</translation>
 <translation id="6668065415969892472">Váš kód PIN bol aktualizovaný.</translation>
-<translation id="6681800064886881394">Copyright 2013 Google Inc. Všetky práva vyhradené.</translation>
+<translation id="6681800064886881394">Copyright 2013 Brave Software Inc. Všetky práva vyhradené.</translation>
 <translation id="6705482892455291412">Po zadaní kódu sa zobrazí výzva na prijatie pripojenia a začatie relácie zdieľania.</translation>
 <translation id="6746493157771801606">Vymazať históriu</translation>
 <translation id="6748108480210050150">Od</translation>
 <translation id="677755392401385740">Hostiteľ bol spustený pre používateľa: <ph name="HOST_USERNAME" />.</translation>
 <translation id="6865175692670882333">Zobraziť/upraviť</translation>
-<translation id="6913710942997637770">Ak si chcete vybrať profilovú fotku, povoľte Vzdialenej ploche Chrome prístup k fotkám</translation>
+<translation id="6913710942997637770">Ak si chcete vybrať profilovú fotku, povoľte Vzdialenej ploche Brave prístup k fotkám</translation>
 <translation id="6930242544192836755">Trvanie</translation>
 <translation id="6939719207673461467">Zobraziť/skryť klávesnicu</translation>
 <translation id="6944854424004126054">Obnovenie okna</translation>
-<translation id="6948905685698011662">Vzdialená plocha Chrome je už na webe! Vyskúšajte našu <ph name="LINK_BEGIN" />bezplatnú webovú aplikáciu<ph name="LINK_END" />.</translation>
+<translation id="6948905685698011662">Vzdialená plocha Brave je už na webe! Vyskúšajte našu <ph name="LINK_BEGIN" />bezplatnú webovú aplikáciu<ph name="LINK_END" />.</translation>
 <translation id="6963936880795878952">Pripojenia k vzdialenému počítaču sú dočasne zablokované, pretože sa k nemu niekto snažil pripojiť pomocou neplatného kódu PIN. Skúste to znova neskôr.</translation>
 <translation id="6965382102122355670">OK</translation>
 <translation id="6985691951107243942">Naozaj chcete zakázať vzdialené pripojenia k počítaču <ph name="HOSTNAME" />? Ak zmeníte názor, pripojenie budete musieť znova povoliť priamo z uvedeného počítača.</translation>
@@ -279,17 +279,17 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="7026930240735156896">Postupujte podľa pokynov a nastavte v počítači vzdialený prístup</translation>
 <translation id="7038683108611689168">Pomôžte nám zlepšiť aplikáciu Chromoting tým, že nám umožníte zhromažďovať štatistiky používania a správy o zlyhaní.</translation>
 <translation id="7067321367069083429">Obrazovka funguje ako dotyková obrazovka</translation>
-<translation id="7116737094673640201">Predstavujeme Vzdialenú plochu Chrome</translation>
+<translation id="7116737094673640201">Predstavujeme Vzdialenú plochu Brave</translation>
 <translation id="7144878232160441200">Skúsiť znova</translation>
-<translation id="7149517134817561223">Aplikácia na zadávanie príkazov hostiteľovi Vzdialenej plochy Chrome.</translation>
+<translation id="7149517134817561223">Aplikácia na zadávanie príkazov hostiteľovi Vzdialenej plochy Brave.</translation>
 <translation id="7215059001581613786">Zadajte kód PIN obsahujúci 6 alebo viac číslic.</translation>
 <translation id="7312846573060934304">Hostiteľ je v režime offline.</translation>
 <translation id="7319983568955948908">Prestať zdieľať</translation>
-<translation id="7401733114166276557">Vzdialená plocha Chrome</translation>
+<translation id="7401733114166276557">Vzdialená plocha Brave</translation>
 <translation id="7434397035092923453">Prístup bol odmietnutý klientskemu programu: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="7444276978508498879">Klient je pripojený: <ph name="CLIENT_USERNAME" />.</translation>
 <translation id="7526139040829362392">Zmeniť účet</translation>
-<translation id="7589941250119944644">Vzdialenú plochu Chrome odteraz nájdete na novom mieste – na webe! Vyskúšajte túto <ph name="LINK_BEGIN" />webovú aplikáciu<ph name="LINK_END" /> – je rýchla, bezplatná a má rovnaké funkcie ako predtým.</translation>
+<translation id="7589941250119944644">Vzdialenú plochu Brave odteraz nájdete na novom mieste – na webe! Vyskúšajte túto <ph name="LINK_BEGIN" />webovú aplikáciu<ph name="LINK_END" /> – je rýchla, bezplatná a má rovnaké funkcie ako predtým.</translation>
 <translation id="7606912958770842224">Povoliť vzdialené pripojenia</translation>
 <translation id="7628469622942688817">Zapamätať si môj kód PIN v tomto zariadení</translation>
 <translation id="7649070708921625228">Pomocník</translation>
@@ -301,26 +301,26 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="7714222945760997814">Nahlásiť</translation>
 <translation id="7782471917492991422">Skontrolujte nastavenia správy napájania svojho počítača a uistite sa, že nie je nakonfigurovaný prechod do režimu spánku pri nečinnosti.</translation>
 <translation id="7810127880729796595">Zobraziť štatistiky (pripojenie: <ph name="QUALITY" />)</translation>
-<translation id="7836926030608666805">Niektoré potrebné komponenty chýbajú. Uistite sa, že používate najnovšiu verziu prehliadača Chrome a skúste to znova.</translation>
+<translation id="7836926030608666805">Niektoré potrebné komponenty chýbajú. Uistite sa, že používate najnovšiu verziu prehliadača Brave a skúste to znova.</translation>
 <translation id="7868137160098754906">Zadajte číslo PIN pre vzdialený počítač.</translation>
 <translation id="7869445566579231750">Nemáte povolenie spustiť túto aplikáciu.</translation>
 <translation id="7895403300744144251">Pravidlá zabezpečenia vzdialeného počítača nepovoľujú pripojenia z vášho účtu.</translation>
 <translation id="7936528439960309876">Vložiť do doku vpravo</translation>
 <translation id="7948001860594368197">Možnosti obrazovky</translation>
-<translation id="7970576581263377361">Overenie zlyhalo. Prihláste sa do prehliadača Chromium a skúste to znova.</translation>
+<translation id="7970576581263377361">Overenie zlyhalo. Prihláste sa do prehliadača Brave a skúste to znova.</translation>
 <translation id="7981525049612125370">Vzdialená relácia vypršala.</translation>
 <translation id="8041089156583427627">Odoslať spätnú väzbu</translation>
-<translation id="8041721485428375115">Stiahnutím nástroja na inštaláciu hostiteľa Vzdialenej plochy Chrome vyjadrujete súhlas so <ph name="LINK_BEGIN" />zmluvnými podmienkami<ph name="LINK_END" /> Google.</translation>
+<translation id="8041721485428375115">Stiahnutím nástroja na inštaláciu hostiteľa Vzdialenej plochy Brave vyjadrujete súhlas so <ph name="LINK_BEGIN" />zmluvnými podmienkami<ph name="LINK_END" /> Google.</translation>
 <translation id="8060029310790625334">Centrum pomoci</translation>
 <translation id="806699900641041263">Prebieha pripájanie k zariadeniu <ph name="HOSTNAME" /></translation>
-<translation id="8073845705237259513">Ak chcete používať aplikáciu Vzdialená plocha Chrome, musíte si na zariadení pridať účet Google.</translation>
+<translation id="8073845705237259513">Ak chcete používať aplikáciu Vzdialená plocha Brave, musíte si na zariadení pridať účet Google.</translation>
 <translation id="80739703311984697">Vzdialený hostiteľ od vás vyžaduje overenie na webových stránkach tretej strany. Ak chcete pokračovať, musíte funkcii Chromoting udeliť dodatočné oprávnenie na prístup k tejto adrese:</translation>
 <translation id="809687642899217504">Moje počítače</translation>
 <translation id="811307782653349804">Pristupujte k svojmu počítaču odkiaľkoľvek.</translation>
 <translation id="8116630183974937060">Vyskytla sa chyba siete. Uistite sa, že je vaše zariadenie online a skúste to znova.</translation>
 <translation id="8123581458650016326">Povolenie vzdialeným používateľom ovládať tento počítač</translation>
 <translation id="8178433417677596899">Zdieľanie obrazovky medzi používateľmi – ideálne pre vzdialenú technickú podporu.</translation>
-<translation id="8187079423890319756">Copyright 2013 Autori Chromium. Všetky práva vyhradené.</translation>
+<translation id="8187079423890319756">Copyright 2013 Autori Brave. Všetky práva vyhradené.</translation>
 <translation id="8196755618196986400">Vaša e-mailová adresa bude uvedená v každej spätnej väzbe, ktorú odošlete. Umožní nám to kontaktovať vás v prípade potreby ďalších informácií.</translation>
 <translation id="8244400547700556338">Ďalšie informácie.</translation>
 <translation id="8261506727792406068">Odstrániť</translation>
@@ -334,7 +334,7 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="8509907436388546015">Proces integrácie pracovnej plochy</translation>
 <translation id="8513093439376855948">Natívna hostiteľská aplikácia určená na odosielanie správ v rámci správy vzdialených hostiteľov</translation>
 <translation id="8525306231823319788">Celá obrazovka</translation>
-<translation id="8548209692293300397">Predtým ste sa prihlásili ako používateľ <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />).  Ak chcete získať prístup k počítačom v danom účte, musíte sa <ph name="LINK_BEGIN" />prihlásiť do prehliadača Google Chrome<ph name="LINK_END" /> pomocou daného účtu a znova nainštalovať aplikáciu Vzdialená plocha Chrome.</translation>
+<translation id="8548209692293300397">Predtým ste sa prihlásili ako používateľ <ph name="USER_NAME" /> (<ph name="USER_EMAIL" />).  Ak chcete získať prístup k počítačom v danom účte, musíte sa <ph name="LINK_BEGIN" />prihlásiť do prehliadača Brave<ph name="LINK_END" /> pomocou daného účtu a znova nainštalovať aplikáciu Vzdialená plocha Brave.</translation>
 <translation id="8642984861538780905">Priemerné</translation>
 <translation id="8705151241155781642">• Pridaná podpora platformy Android 9.0 Pie.
 • Podpora zmeny rozlíšenia vzdialenej plochy tak, aby zodpovedalo obrazovke vášho zariadenia s Androidom.</translation>
@@ -346,7 +346,7 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="894763922177556086">Dobré</translation>
 <translation id="895780780740011433">Pre systém Windows 7 a vyšší</translation>
 <translation id="897805526397249209">Ak chcete povoliť vzdialené pripojenie k inému počítaču, nainštalujte na ňom aplikáciu Chromoting a potom kliknite na tlačidlo <ph name="BUTTON_NAME" />.</translation>
-<translation id="8998327464021325874">Ovládač hostiteľa Vzdialenej plochy Chrome</translation>
+<translation id="8998327464021325874">Ovládač hostiteľa Vzdialenej plochy Brave</translation>
 <translation id="9016232822027372900">Pripojiť</translation>
 <translation id="906458777597946297">Maximalizovať okno</translation>
 <translation id="9111855907838866522">Pripojili ste sa k vzdialenému zariadeniu. Ak chcete otvoriť ponuku, klepnite na obrazovku štyrmi prstami.</translation>
@@ -357,8 +357,8 @@ Túto funkciu povolíte tak, že si tlačidlom <ph name="BUTTON_NAME" /> zobraz�
 <translation id="9213184081240281106">Neplatná konfigurácia hostiteľa</translation>
 <translation id="951991426597076286">Odmietnuť</translation>
 <translation id="962733587145768554">Proces dokončíte tým, že v dialógovom okne pripojenia vyberiete možnosť <ph name="SHARE" />.</translation>
-<translation id="979100198331752041">Vzdialená plocha Chrome na počítači <ph name="HOSTNAME" /> je zastaraná a vyžaduje aktualizáciu.</translation>
+<translation id="979100198331752041">Vzdialená plocha Brave na počítači <ph name="HOSTNAME" /> je zastaraná a vyžaduje aktualizáciu.</translation>
 <translation id="981121421437150478">Offline</translation>
-<translation id="985602178874221306">Autori prehliadača Chromium</translation>
+<translation id="985602178874221306">Autori prehliadača Brave</translation>
 <translation id="992215271654996353"><ph name="HOSTNAME" /> (naposledy online <ph name="DATE_OR_TIME" />)</translation>
 </translationbundle>
