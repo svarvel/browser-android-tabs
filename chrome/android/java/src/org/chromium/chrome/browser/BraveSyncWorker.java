@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
-import android.os.AsyncTask;
+import org.chromium.base.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
 import android.util.Base64;
@@ -291,9 +291,9 @@ public class BraveSyncWorker {
         }
         final BookmarkItem[] bookmarksFinal = bookmarks;
 
-        new AsyncTask<String, Void, Void>() {
+        new AsyncTask<Void>() {
             @Override
-            protected Void doInBackground(String... params) {
+            protected Void doInBackground() {
                 if (!mSyncIsReady.IsReady()) {
                     return null;
                 }
@@ -608,8 +608,7 @@ public class BraveSyncWorker {
             if (null == mWebContents) {
                 mWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mWebContents) {
-                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mWebContents);
-                    mViewEventSink = ViewEventSinkImpl.create(mContext, mWebContents);
+                    mViewEventSink = ViewEventSinkImpl.from(mWebContents);
                     if (null != mViewEventSink) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initContenViewCore();
@@ -2203,8 +2202,7 @@ public class BraveSyncWorker {
             if (null == mJSWebContents) {
                 mJSWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mJSWebContents) {
-                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mJSWebContents);
-                    mJSViewEventSink = ViewEventSinkImpl.create(mContext, mJSWebContents);
+                    mJSViewEventSink = ViewEventSinkImpl.from(mJSWebContents);
                     if (null != mJSViewEventSink) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                             initJSContenViewCore();

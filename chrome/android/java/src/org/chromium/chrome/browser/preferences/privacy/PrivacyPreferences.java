@@ -30,6 +30,8 @@ import org.chromium.chrome.browser.preferences.PreferenceUtils;
 import org.chromium.chrome.browser.preferences.PreferencesLauncher;
 import org.chromium.chrome.browser.preferences.SyncAndServicesPreferences;
 import org.chromium.chrome.browser.profiles.Profile;
+import org.chromium.ui.text.NoUnderlineClickableSpan;
+import org.chromium.ui.text.SpanApplier;
 //import org.chromium.chrome.browser.MixPanelWorker;
 
 /**
