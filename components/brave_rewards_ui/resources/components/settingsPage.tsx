@@ -40,6 +40,11 @@ class SettingsPage extends React.Component<Props, State> {
     }
   }
 
+  // Temporary
+  doNothing = () => {
+    // nothing
+  }
+
   onToggle = () => {
     this.setState({ mainToggle: !this.state.mainToggle })
     this.actions.onSettingSave('enabledMain', !this.props.rewardsData.enabledMain)
@@ -98,6 +103,7 @@ class SettingsPage extends React.Component<Props, State> {
           : null
         }
         <WalletInfoHeader
+          onClick={this.doNothing}
           balance={balance.toString()}
           id={'mobile-wallet'}
           converted={convertedBalance}
