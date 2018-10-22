@@ -69,14 +69,14 @@ Dihemat</string>
     <string name="website_settings_category_desktop_view_enabled">Aktifkan Tampilan Desktop untuk tab baru</string>
     <string name="website_settings_category_desktop_view_disabled">Gunakan versi seluler situs untuk tab baru (disarankan)</string>
 
-    <string name="brave_shields_first_group_title">Pemblokiran layar</string>
+    <string name="brave_shields_first_group_title">Layar Pemblokiran</string>
     <string name="brave_shields_second_group_title">Kontrol Individu</string>
     <string name="brave_shields">Perisai</string>
     <string name="brave_shields_ads_and_trackers">Iklan dan Pelacak</string>
     <string name="brave_shields_fingerprint_methods">Metode Sidik Jari</string>
     <string name="brave_shields_block_phishing_switch">Blokir Phishing</string>
 
-    <string name="play_video_in_background_title">Pemutaran video latar belakang</string>
+    <string name="play_video_in_background_title">Pemutaran video di latar</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Diaktifkan</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Dinonaktifkan</string>
     <string name="website_settings_category_play_video_in_background_enabled">Eksperimental: Aktifkan memutar audio dari video di latar ketika tab tidak aktif atau layar perangkat mati. Coba beralih ke mode desktop jika fitur ini tidak bekerja.</string>
@@ -90,35 +90,26 @@ Dihemat</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Jika diaktifkan, video akan diputar di Brave dan bukan di aplikasi yang terkait</string>
 
     <string name="close_tabs_on_exit_title">Tutup tab saat keluar</string>
-    <string name="close_tabs_on_exit_summary">Jangan tahan tab di antara sesi penelusuran</string>
+    <string name="close_tabs_on_exit_summary">Jangan ingat tab di antara sesi penjelajahan</string>
 
-    <string name="open_pages_in_custom_tabs_title">Buka tab-tab di Tab Suaian</string>
-    <string name="open_pages_in_custom_tabs_summary">Menawarkan untuk membuka tab-tab di Tab Suaian</string>
+    <string name="open_pages_in_custom_tabs_title">Buka tab di Tab Ubahsuai</string>
+    <string name="open_pages_in_custom_tabs_summary">Tawarkan untuk membuka tab di Tab Ubahsuai</string>
 
-    <string name="ddg_offer_title">Pencarian privat dengan DuckDuckGo?
-</string>
-    <string name="ddg_offer_text">Dengan pencarian privat, Brave akan menggunakan DuckDuckGo untuk mencari jawaban pencarian Anda saat Anda berada dalam tab privat ini. DuckDuckGo adalah mesin pencari yang tidak merekam riwayat pencarian Anda, memungkinkan Anda untuk mencari secara privat.
-</string>
+    <string name="ddg_offer_title">Pencarian pribadi dengan DuckDuckGo?</string>
+    <string name="ddg_offer_text">Dengan pencarian pribadi, Brave akan menggunakan DuckDuckGo untuk mencari jawaban pencarian Anda saat Anda berada dalam tab pribadi ini. DuckDuckGo adalah mesin pencari yang tidak merekam riwayat pencarian Anda, memungkinkan Anda untuk mencari secara pribadi.</string>
     <string name="ddg_offer_positive">Ya
 </string>
     <string name="ddg_offer_negative">Tidak
 </string>
-    <string name="ddg_offer_link">Pelajari tentang pencarian privat dengan DuckDuckGo
-</string>
+    <string name="ddg_offer_link">Pelajari tentang pencarian pribadi dengan DuckDuckGo</string>
     <string name="prefs_standard_search_engine">Tab Standar
 </string>
-    <string name="prefs_private_search_engine">Tab Privat
-</string>
+    <string name="prefs_private_search_engine">Tab Pribadi</string>
 
-    <string name="brave_open_in_private_tab">Buka di tab privat
-</string>
-    <string name="brave_close_all_private_tabs">Tutup tab privat
-</string>
-    <string name="brave_new_private_tab">Tab privat baru
-</string>
-    <string name="brave_new_tab_private_header">Ini adalah Tab Privat
-</string>
-    <string name="brave_new_tab_private_message">Sekali pun situs yang Anda kunjungi melalui tab privat tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, kantor Anda, atau situs yang Anda kunjungi.
-</string>
+    <string name="brave_open_in_private_tab">Buka di tab pribadi</string>
+    <string name="brave_close_all_private_tabs">Tutup tab pribadi</string>
+    <string name="brave_new_private_tab">Tab pribadi baru</string>
+    <string name="brave_new_tab_private_header">Ini adalah Tab Pribadi</string>
+    <string name="brave_new_tab_private_message">Meski situs yang Anda kunjungi melalui tab pribadi tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, bos Anda, atau situs yang Anda kunjungi.</string>
 
 </resources>

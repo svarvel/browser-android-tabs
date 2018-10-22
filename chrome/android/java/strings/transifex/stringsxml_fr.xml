@@ -21,7 +21,7 @@
     <string name="fingerprinting_protection_title">Protection par empreintes digitales</string>
     <string name="fingerprinting_protection_summary">Empêche le navigateur de prendre des empreintes digitales</string>
     <string name="brave_shields_fingerprints_blocked">Méthodes par empreintes digitales bloquées</string>
-    <string name="brave_shields_block_fingerprints_switch">Protection par empreintes digitales</string>
+    <string name="brave_shields_block_fingerprints_switch">Protection contre les prises d\'empreinte</string>
 
     <string name="ad_block_regional_title">Pub régionale bloquée</string>
     <string name="ad_block_regional_summary">Empêche les publicités régionales de se télécharger</string>
@@ -55,11 +55,11 @@ et afficher le code de synchronisation.</string>
     <string name="brave_stats_text_trackers">Trackers
 bloqués</string>
     <string name="brave_stats_text_ads">Publicités
-bloqués</string>
-    <string name="brave_stats_text_https">Mises à
-jour HTTPS</string>
-    <string name="brave_stats_text_time">Temps est.
-Enregistré</string>
+bloquées</string>
+    <string name="brave_stats_text_https">Promotions
+vers HTTPS</string>
+    <string name="brave_stats_text_time">Temps
+Economisé</string>
 
     <string name="send_metrics_title">Envoyer les métriques</string>
 
@@ -71,9 +71,9 @@ Enregistré</string>
 
     <string name="brave_shields_first_group_title">Blocage du moniteur</string>
     <string name="brave_shields_second_group_title">Commandes individuelles</string>
-    <string name="brave_shields">Blindages</string>
+    <string name="brave_shields">Boucliers</string>
     <string name="brave_shields_ads_and_trackers">Publicités et pistages</string>
-    <string name="brave_shields_fingerprint_methods">Méthodes des empreintes</string>
+    <string name="brave_shields_fingerprint_methods">Méthodes de prise d\'empreinte</string>
     <string name="brave_shields_block_phishing_switch">Bloquer le hameçonnage</string>
 
     <string name="play_video_in_background_title">Lecture vidéo en arrière-plan</string>
