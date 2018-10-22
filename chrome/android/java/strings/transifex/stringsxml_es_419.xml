@@ -89,4 +89,24 @@ estimado</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Discapacitado</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled">Si habilitado, los videos se reproducirán en Brave en lugar de la aplicación correspondiente</string>
 
-    </resources>
+    <string name="close_tabs_on_exit_title">Cerrar pestañas al salir</string>
+    <string name="close_tabs_on_exit_summary">No persistir las pestañas entre sesiones de navegación</string>
+
+    <string name="open_pages_in_custom_tabs_title">Abrir pestañas en Pestañas Personalizadas</string>
+    <string name="open_pages_in_custom_tabs_summary">Ofrecer abrir las pestañas en Pestañas Personalizadas</string>
+
+    <string name="ddg_offer_title">¿Deseas la búsqueda privada con DuckDuckGo?</string>
+    <string name="ddg_offer_text">Con la búsqueda privada, Brave usará DuckDuckGo para respoender a tus búsquedas cuando usas una pestaña privada. DuckDuckGo es un motor de búsqueda que no realiza un seguimiento de tu historial de búsquedas, permitiéndote navegar privadamente.</string>
+    <string name="ddg_offer_positive">Si</string>
+    <string name="ddg_offer_negative">No</string>
+    <string name="ddg_offer_link">Conoce más acerca de la búsqueda privada con DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Pestaña Estándard</string>
+    <string name="prefs_private_search_engine">Pestaña Privada</string>
+
+    <string name="brave_open_in_private_tab">Abrir en pestaña privada</string>
+    <string name="brave_close_all_private_tabs">Cerrar las pestañas privadas</string>
+    <string name="brave_new_private_tab">Nueva pestaña privada</string>
+    <string name="brave_new_tab_private_header">Esta es una Pestaña Privada</string>
+    <string name="brave_new_tab_private_message">A pesar de que los sitios que visitas utilizando pestañas privadas no son guardados localmente, estos no te hacen anónimo o invicible a tu Proveedor de Internet, tu empleador, o a los sitios que visitas.</string>
+
+</resources>
