@@ -95,4 +95,18 @@ Shranjeno</string>
     <string name="open_pages_in_custom_tabs_title">Odpri zavihke kot zavihke po meri</string>
     <string name="open_pages_in_custom_tabs_summary">Ponudi odpiranje zavihkov med zavihki po meri</string>
 
-    </resources>
+    <string name="ddg_offer_title">Želite zasebno iskanje z DuckDuckGo?</string>
+    <string name="ddg_offer_text">Z zasebnim iskanjem bo Brave uporabljal DuckDuckGo za opravljanje iskanje, ko ste v tem zasebnem zavihku. DuckDuckGo je iskalnik, ki ne sledi vaši zgodovini iskanja, zaradi česar lahko iščete zasebno.</string>
+    <string name="ddg_offer_positive">Da</string>
+    <string name="ddg_offer_negative">Ne</string>
+    <string name="ddg_offer_link">Izvejte več o zasebnem iskanju z DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Navadni zavihek</string>
+    <string name="prefs_private_search_engine">Zasebni zavihek</string>
+
+    <string name="brave_open_in_private_tab">Odpri v zasebnem zavihku</string>
+    <string name="brave_close_all_private_tabs">Zapri zasebne zavihke</string>
+    <string name="brave_new_private_tab">Nov zasebni zavihek</string>
+    <string name="brave_new_tab_private_header">To je zasebni zavihek</string>
+    <string name="brave_new_tab_private_message">Čeprav spletišča, ki jih obiščete v zasebnih zavihkih, niso krajevno shranjena, ne ohranjajo vaše anonimnosti ali nevidnosti nasproti vašemu ponudniku internetnih storitev, vašemu delodajalcu ali spletiščem, ki jih obiskujete.</string>
+
+</resources>

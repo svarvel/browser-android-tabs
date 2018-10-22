@@ -71,6 +71,8 @@ maždaug laiko</string>
     <string name="brave_shields_second_group_title">Atskiri valdikliai</string>
     <string name="brave_shields">Skydai</string>
     <string name="brave_shields_ads_and_trackers">Reklamos ir sekliai</string>
+    <string name="brave_shields_block_phishing_switch">Blokuoti sukčiavimą</string>
+
     <string name="play_video_in_background_title">Foninis vaizdo atkūrimas</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Įjungta</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Išjungta</string>
@@ -81,8 +83,10 @@ maždaug laiko</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Įjungta</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Išjungta</string>
     <string name="close_tabs_on_exit_title">Išeinant, užverti korteles</string>
+    <string name="ddg_offer_title">Privati paieška, naudojant DuckDuckGo?</string>
     <string name="ddg_offer_positive">Taip</string>
     <string name="ddg_offer_negative">Ne</string>
+    <string name="ddg_offer_link">Sužinokite apie privačią paiešką, naudojant DuckDuckGo</string>
     <string name="prefs_standard_search_engine">Standartinė kortelė</string>
     <string name="prefs_private_search_engine">Privati kortelė</string>
 

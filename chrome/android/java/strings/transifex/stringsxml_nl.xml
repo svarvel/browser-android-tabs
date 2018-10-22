@@ -1,8 +1,8 @@
 <resources>
 
     <string name="brave_settings_title">Brave site afscherming instellingen voor</string>
-    <string name="brave_shields_down">Omlaag</string>
-    <string name="brave_shields_up">Omhoog</string>
+    <string name="brave_shields_down">Gedeactiveerd</string>
+    <string name="brave_shields_up">Geactiveerd</string>
     <string name="brave_shields_ads_trackers">Ads en Trackers geblokkeerd</string>
     <string name="brave_shields_https_upgrades">HTTPS upgrades</string>
     <string name="brave_shields_scripts_blocked">Scripts geblokkeerd</string>
@@ -13,10 +13,10 @@
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden</string>
 
     <string name="httpse_summary">Opent ondersteunde websites met HTTPS in plaats van HTTP indien mogelijk</string>
-    <string name="tracking_protection_title">Tracking Protection Modus</string>
+    <string name="tracking_protection_title">Trackingsbeschermingsmodus</string>
     <string name="tracking_protection_summary">Voorkomt hulpmiddelen die u traceren vanaf het opladen</string>
     <string name="ad_block_title">Advertentieblokkeerder</string>
-    <string name="ad_block_summary">Voorkomt het opladen van advertenties</string>
+    <string name="ad_block_summary">Voorkomt het laden van advertenties</string>
 
     <string name="fingerprinting_protection_title">Vingerafdrukbescherming</string>
     <string name="fingerprinting_protection_summary">Voorkomt dat de browser vingerafdrukken maakt</string>
@@ -26,7 +26,7 @@
     <string name="ad_block_regional_title">Regionale blokkering van reclame</string>
     <string name="ad_block_regional_summary">Voorkomt dat regionale reclame geladen wordt</string>
 
-    <string name="ad_block_regional_summary_no_list">Geen extra lijsten beschikbaar voor uw lokale</string>
+    <string name="ad_block_regional_summary_no_list">Geen extra lijsten beschikbaar voor uw locatie</string>
 
     <string name="menu_exit">Afsluiten</string>
 
@@ -58,8 +58,8 @@ geblokkeerd</string>
 geblokkeerd</string>
     <string name="brave_stats_text_https">HTTPS
 upgrades</string>
-    <string name="brave_stats_text_time">Est. tijd
-Opgeslagen</string>
+    <string name="brave_stats_text_time">Gesch. tijd
+Bespaard</string>
 
     <string name="send_metrics_title">Verstuur data</string>
 
@@ -69,8 +69,8 @@ Opgeslagen</string>
     <string name="website_settings_category_desktop_view_enabled">Desktopmodus voor nieuwe tabs inschakelen</string>
     <string name="website_settings_category_desktop_view_disabled">Gebruik mobiele versies van websites voor nieuwe tabs (aanbevolen)</string>
 
-    <string name="brave_shields_first_group_title">Blokkerende monitor</string>
-    <string name="brave_shields_second_group_title">Individuele controles</string>
+    <string name="brave_shields_first_group_title">Blokkeermonitor</string>
+    <string name="brave_shields_second_group_title">Individuele instellingen</string>
     <string name="brave_shields">Afschermingen</string>
     <string name="brave_shields_ads_and_trackers">Advertenties en trackers</string>
     <string name="brave_shields_fingerprint_methods">Vingerafdrukmethoden</string>
@@ -107,6 +107,6 @@ Opgeslagen</string>
     <string name="brave_close_all_private_tabs">Sluit privétabbladen</string>
     <string name="brave_new_private_tab">Nieuw privétabblad</string>
     <string name="brave_new_tab_private_header">Dit is een privétabblad</string>
-    <string name="brave_new_tab_private_message">Alhoewel de websites die je via een privétabblad bezoekt niet lokaal worden opgeslagen, maken ze je niet anoniem of onzichtbaar voor je ISP, werkgever, of andere websites die je bezoekt.</string>
+    <string name="brave_new_tab_private_message">Alhoewel de websites die je via een privétabblad bezoekt niet lokaal worden opgeslagen, maken ze je niet anoniem of onzichtbaar voor je internetprovider, werkgever, of andere websites die je bezoekt.</string>
 
 </resources>
