@@ -62,6 +62,7 @@ public class TemplateUrlService {
     public static final String QWANT_SE_KEYWORD = "qwant.com";
 
     private boolean mCurrentDSEPrivate;
+    private boolean mFirstDSEUpdate;
 
     private static TemplateUrlService sService;
 
@@ -83,6 +84,7 @@ public class TemplateUrlService {
         // is a singleton that lives forever and there's no clean shutdown of Chrome on Android
         mNativeTemplateUrlServiceAndroid = nativeInit();
         mCurrentDSEPrivate = false;
+        mFirstDSEUpdate = true;
     }
 
     public boolean isLoaded() {
@@ -392,8 +394,9 @@ public class TemplateUrlService {
     }
 
     public void updateCurrentDSE(boolean is_private) {
-        if (mCurrentDSEPrivate != is_private) {
+        if (mCurrentDSEPrivate != is_private || mFirstDSEUpdate) {
             mCurrentDSEPrivate = is_private;
+            mFirstDSEUpdate = false;
             setSearchEngine(getDefaultSearchEngineKeyword(is_private));
         }
     }
