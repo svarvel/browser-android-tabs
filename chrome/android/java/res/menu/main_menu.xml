@@ -80,6 +80,8 @@
             android:title="@string/menu_preferences" />
         <item android:id="@+id/enter_vr_id"
             android:title="@string/enter_vr" />
+        <item android:id="@+id/brave_rewards_id"
+            android:title="@string/brave_rewards" />
         <item android:id="@+id/exit_id"
             android:title="@string/menu_exit" />
     </group>

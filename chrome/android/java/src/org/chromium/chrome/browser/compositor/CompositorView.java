@@ -448,7 +448,7 @@ public class CompositorView
         // setBackground* calls in View.  We still call to setBackground on the SurfaceView because
         // SetBackgroundDrawable is deprecated, and the semantics are the same I think.
         super.setBackgroundDrawable(background);
-        mCompositorSurfaceManager.setBackgroundDrawable(background);
+        if (mCompositorSurfaceManager != null) mCompositorSurfaceManager.setBackgroundDrawable(background);
     }
 
     @Override
