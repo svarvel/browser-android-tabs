@@ -6,6 +6,7 @@ module.exports = {
   mode: 'production',
   entry: {
     brave_rewards: path.join(__dirname, '../brave_rewards_ui/resources/brave_rewards'),
+    brave_rewards_panel: path.join(__dirname, '../brave_rewards_ui/panel/brave_rewards/brave_rewards_panel')
   },
   output: {
     path: process.env.TARGET_GEN_DIR,
