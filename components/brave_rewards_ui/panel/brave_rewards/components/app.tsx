@@ -29,7 +29,7 @@ export class RewardsPanel extends React.Component<Props, State> {
   }
 
   componentDidMount () {
-    chrome.windows.getCurrent({}, this.onWindowCallback)
+    //chrome.windows.getCurrent({}, this.onWindowCallback)
   }
 
   onWindowCallback = (window: chrome.windows.Window) => {
@@ -48,6 +48,7 @@ export class RewardsPanel extends React.Component<Props, State> {
           !walletCreated
           ? <PanelWelcome
             variant={'two'}
+            optInErrorAction={actions.onWalletCreateFailed}
             optInAction={actions.createWallet}
           />
           : <Panel windowId={this.state.windowId} />
