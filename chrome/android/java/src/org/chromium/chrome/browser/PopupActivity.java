@@ -79,7 +79,7 @@ public class PopupActivity extends SingleTabActivity {
                             TabModel.TabLaunchType.FROM_CHROME_UI, null, null);
 
         tab.initialize(null, getTabContentManager(), createTabDelegateFactory(), false, false);
-        tab.loadUrl(new LoadUrlParams("chrome://rewards"));
+        tab.loadUrl(new LoadUrlParams("chrome://rewards-panel"));
         return tab;
     }
 

@@ -219,6 +219,8 @@ jumbo_split_static_library("ui") {
     "webui/autofill_internals_ui.h",
     "webui/brave_rewards_ui.cc",
     "webui/brave_rewards_ui.h",
+    "webui/brave_rewards_panel_ui.h",
+    "webui/brave_rewards_panel_ui.cc",
     "webui/brave_webui_source.h",
     "webui/brave_webui_source.cc",
     "webui/basic_ui.cc",
