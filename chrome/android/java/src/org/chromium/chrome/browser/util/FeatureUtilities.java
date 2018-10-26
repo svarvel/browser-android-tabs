@@ -397,8 +397,7 @@ public class FeatureUtilities {
         if (sIsBottomToolbarEnabled == null) {
             ChromePreferenceManager prefManager = ChromePreferenceManager.getInstance();
 
-            sIsBottomToolbarEnabled = prefManager.readBoolean(
-                    ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY, false);
+            sIsBottomToolbarEnabled = true;
         }
         // TODO(crbug.com/944228): TabGroupsAndroid and ChromeDuet are incompatible for now.
         return sIsBottomToolbarEnabled

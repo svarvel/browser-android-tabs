@@ -12,9 +12,9 @@ namespace brave_rewards {
 
 class BraveRewardsService;
 
-class BraveRewardsServiceObserver {
+class BraveRewardsServiceObserver : public base::CheckedObserver {
  public:
-  virtual ~BraveRewardsServiceObserver() {}
+  ~BraveRewardsServiceObserver() override {}
 
   virtual void OnWalletInitialized(BraveRewardsService* payment_service,
                                int error_code) {};

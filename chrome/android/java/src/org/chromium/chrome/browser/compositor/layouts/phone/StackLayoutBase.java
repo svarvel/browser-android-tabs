@@ -617,7 +617,7 @@ public abstract class StackLayoutBase extends Layout {
 
     @Override
     public void attachViews(ViewGroup container) {
-        if (FeatureUtilities.isBottomToolbarEnabled()) {
+        /*if (FeatureUtilities.isBottomToolbarEnabled()) {
             // In practice, the "container view" is used for animation. When Duet is enabled, the
             // container is placed behind the bottom toolbar since it is persistent.
             ViewGroup compositorViewHolder = container.findViewById(R.id.compositor_view_holder);
@@ -625,13 +625,13 @@ public abstract class StackLayoutBase extends Layout {
                     compositorViewHolder);
             mViewContainer.getLayoutParams().width = LayoutParams.MATCH_PARENT;
             mViewContainer.getLayoutParams().height = LayoutParams.MATCH_PARENT;
-        } else {
+        } else {*/
             // TODO(dtrainor): This is a hack.  We're attaching to the parent of the view container
             // which is the content container of the Activity.
             ((ViewGroup) container.getParent())
                     .addView(mViewContainer,
                             new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        }
+        //}
     }
 
     @Override

@@ -15,7 +15,7 @@
 #include "base/sequence_checker.h"
 #include "bat/ledger/publisher_info.h"
 #include "build/build_config.h"
-#include "sql/connection.h"
+#include "sql/database.h"
 #include "sql/init_status.h"
 #include "sql/meta_table.h"
 
@@ -72,12 +72,12 @@ class PublisherInfoDatabase {
                            const ledger::PublisherInfoFilter& filter);
   void BindFilter(sql::Statement& statement,
                   const ledger::PublisherInfoFilter& filter);
-  sql::Connection& GetDB();
+  sql::Database& GetDB();
   sql::MetaTable& GetMetaTable();
 
   sql::InitStatus EnsureCurrentVersion();
 
-  sql::Connection db_;
+  sql::Database db_;
   sql::MetaTable meta_table_;
   const base::FilePath db_path_;
   bool initialized_;

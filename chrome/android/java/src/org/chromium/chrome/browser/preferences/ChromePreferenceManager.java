@@ -570,7 +570,7 @@ public class ChromePreferenceManager {
       // return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, false);
     }
 
-     * Get whether or not use custom tabs.
+    /** Get whether or not use custom tabs.
      * @return True if we can use custom tabs.
      */
     public boolean useCustomTabs() {

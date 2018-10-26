@@ -31,6 +31,7 @@ public:
   void DidAttachInterstitialPage() override;
   void DidFinishNavigation(content::NavigationHandle* navigation_handle) override;
   void ResourceLoadComplete(RenderFrameHost* render_frame_host,
+      const GlobalRequestID& request_id,
       const mojom::ResourceLoadInfo& resource_load_info) override;
 
 private:

@@ -109,6 +109,7 @@ void WebContentsLedgerObserver::DidFinishNavigation(content::NavigationHandle* n
 
 void WebContentsLedgerObserver::ResourceLoadComplete(
     RenderFrameHost* render_frame_host,
+    const GlobalRequestID& request_id,
     const mojom::ResourceLoadInfo& resource_load_info) {
   if (!brave_rewards_service_ || !render_frame_host) {
     return;

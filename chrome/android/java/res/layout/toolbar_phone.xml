@@ -46,20 +46,37 @@
             style="@style/ToolbarButton"
             android:paddingStart="8dp"
             android:layout_gravity="top"
-            android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default" />
+            android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default"
+            android:visibility="gone" />
 
-        <ImageButton android:id="@+id/brave_shields_button"
-            style="@style/ToolbarButton"
-            android:src="@drawable/btn_brave"
-            android:layout_gravity="top"
-            android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
-            
-        <ImageButton android:id="@+id/brave_rewards_button"
-            style="@style/ToolbarButton"
-            android:src="@drawable/btn_bat_custom"
-            android:layout_marginStart="-8dp"
-            android:layout_gravity="top"
-            android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/brave_top_toolbar_background"
+            android:layout_height="match_parent" >
+            <ImageButton android:id="@+id/brave_shields_button"
+                style="@style/ToolbarButton"
+                android:src="@drawable/btn_brave"
+                android:layout_marginTop="-8dp"
+                android:layout_marginBottom="-6dp"
+                android:layout_gravity="top"
+                android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
+          </LinearLayout>
+
+          <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/brave_top_toolbar_background_end"
+            android:layout_height="match_parent" >
+            <ImageButton android:id="@+id/brave_rewards_button"
+                style="@style/ToolbarButton"
+                android:src="@drawable/btn_bat_custom"
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginBottom="-6dp"
+                android:layout_gravity="top"
+                android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+          </LinearLayout>
 
         <include layout="@layout/menu_button"/>
 
