@@ -4230,6 +4230,9 @@ Save battery and load web pages faster
       <message name="IDS_BRAVE_SET_DEFAULT_BROWSER_DIALOG_TEXT" desc="Dialog for setting default browser">
         Select Brave from the list and tap “Always”
       </message>
+      <message name="IDS_BRAVE_REWARDS" desc="Menu item for 'Brave Rewards'">
+        Brave Rewards
+      </message>
     </messages>
   </release>
 </grit>

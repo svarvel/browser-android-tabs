@@ -49,9 +49,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.chromium.base.ApiCompatibilityUtils;
+import org.chromium.base.ApplicationStatus;
 import org.chromium.base.TraceEvent;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
 import org.chromium.chrome.browser.device.DeviceClassManager;
@@ -61,6 +63,7 @@ import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper.MenuButtonState;
 import org.chromium.chrome.browser.omnibox.LocationBar;
 import org.chromium.chrome.browser.omnibox.LocationBarPhone;
+import org.chromium.chrome.browser.PopupActivity;
 import org.chromium.chrome.browser.partnercustomizations.HomepageManager;
 import org.chromium.chrome.browser.partnercustomizations.PartnerBrowserCustomizations;
 import org.chromium.chrome.browser.profiles.Profile;
@@ -140,6 +143,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     protected View mUrlActionContainer;
     protected ImageView mToolbarShadow;
     private @Nullable ImageButton mExperimentalButton;
+    private ImageView mBraveRewardsPanelButton;
 
     private ObjectAnimator mTabSwitcherModeAnimation;
     private ObjectAnimator mDelayedTabSwitcherModeAnimation;
@@ -445,6 +449,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         if (mBraveShieldsButton != null) {
             mBraveShieldsButton.setClickable(true);
         }
+        mBraveRewardsPanelButton = (ImageView) findViewById(R.id.brave_rewards_button);
+        if (mBraveRewardsPanelButton != null) {
+            mBraveRewardsPanelButton.setClickable(true);
+        }
     }
 
     private void enableTabSwitchingResources() {
@@ -466,6 +474,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         });
         mBraveShieldsButton.setOnClickListener(this);
         mBraveShieldsButton.setOnLongClickListener(this);
+        mBraveRewardsPanelButton.setOnClickListener(this);
     }
 
     /**
@@ -551,6 +560,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         } else if (mBraveShieldsButton == v) {
             if (null != mBraveShieldsButton) {
                 mBraveShieldsListener.onClick(mBraveShieldsButton);
+            }
+        } else if (mBraveRewardsPanelButton == v) {
+            if (null != mBraveRewardsPanelButton) {
+                PopupActivity.show((ChromeActivity) ApplicationStatus.getLastTrackedFocusedActivity());
             }
         }
     }
