@@ -499,7 +499,7 @@ std::string PublisherInfoDatabase::GetDiagnosticInfo(int extended_error,
   return db_.GetDiagnosticInfo(extended_error, statement);
 }
 
-sql::Connection& PublisherInfoDatabase::GetDB() {
+sql::Database& PublisherInfoDatabase::GetDB() {
   return db_;
 }
 

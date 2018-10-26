@@ -17,7 +17,7 @@
 #include "base/strings/string_number_conversions.h"
 #include "base/strings/utf_string_conversions.h"
 #include "base/task_runner_util.h"
-#include "base/task_scheduler/post_task.h"
+#include "base/task/post_task.h"
 #include "base/threading/sequenced_task_runner_handle.h"
 #include "bat/ledger/ledger.h"
 #include "bat/ledger/publisher_info.h"
@@ -206,7 +206,7 @@ BraveRewardsServiceImpl::BraveRewardsServiceImpl(Profile* profile) :
     profile_(profile),
     ledger_(ledger::Ledger::CreateInstance(this)),
     file_task_runner_(base::CreateSequencedTaskRunnerWithTraits(
-        {base::MayBlock(), base::TaskPriority::BACKGROUND,
+        {base::MayBlock(), base::TaskPriority::BEST_EFFORT,
          base::TaskShutdownBehavior::BLOCK_SHUTDOWN})),
     ledger_state_path_(profile_->GetPath().Append("ledger_state")),
     publisher_state_path_(profile_->GetPath().Append("publisher_state")),
