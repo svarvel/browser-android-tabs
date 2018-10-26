@@ -29,7 +29,8 @@ export class RewardsPanel extends React.Component<Props, State> {
   }
 
   componentDidMount () {
-    //chrome.windows.getCurrent({}, this.onWindowCallback)
+    // ToDo ryanml, replace with call from web_ui()
+    // chrome.windows.getCurrent({}, this.onWindowCallback)
   }
 
   onWindowCallback = (window: chrome.windows.Window) => {

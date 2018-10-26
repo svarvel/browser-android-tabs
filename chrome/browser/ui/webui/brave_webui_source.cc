@@ -54,6 +54,19 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
   };
   AddResourcePaths(source, resources[name]);
 
+  static std::map<std::string, std::vector<WebUISimpleItem> > panel_localized_strings = {
+    {
+      std::string("rewards-panel"), {
+        { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
+        { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
+        { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
+        { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
+        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO }
+      }
+    }
+  };
+  AddLocalizedStringsBulk(source, panel_localized_strings[name]);
+
   static std::map<std::string, std::vector<WebUISimpleItem> > localized_strings = {
     {
       std::string("rewards"), {

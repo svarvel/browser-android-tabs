@@ -29,6 +29,9 @@ declare global {
       walletCreated: () => void
       walletCreateFailed: () => void
     }
+    brave_rewards_panel: {
+      initialize: () => void
+    }
     brave_welcome: {
       initialize: () => void
     }
