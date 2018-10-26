@@ -132,7 +132,7 @@ class PageWallet extends React.Component<Props, State> {
                   name: getLocale('panelAddFunds'),
                   action: this.toggleAddFunds,
                   icon: <WalletAddIcon />
-                },
+                }
               ]}
               compact={true}
               isMobile={true}
