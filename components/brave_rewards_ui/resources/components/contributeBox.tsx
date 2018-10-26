@@ -243,11 +243,15 @@ class ContributeBox extends React.Component<Props, State> {
             {getLocale('contributionVisitSome')}
           </TableContribute>
         </StyledListContent>
-        <StyledSitesNum>
-          <StyledSitesLink onClick={this.onSitesShownToggle}>
-            {prefix} {numRows} sites
-          </StyledSitesLink>
-        </StyledSitesNum>
+        {
+          numRows > 0
+          ? <StyledSitesNum>
+              <StyledSitesLink onClick={this.onSitesShownToggle}>
+                {prefix} {numRows} sites
+              </StyledSitesLink>
+            </StyledSitesNum>
+          : null
+        }
       </BoxMobile>
     )
   }
