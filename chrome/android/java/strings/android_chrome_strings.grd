@@ -4318,6 +4318,9 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
         'Installing Assistant for Chrome…').">
   Google Assistant in Chrome
       </message>
+      <message name="IDS_BRAVE_REWARDS" desc="Menu item for 'Brave Rewards'">
+        Brave Rewards
+      </message>
     </messages>
   </release>
 </grit>
