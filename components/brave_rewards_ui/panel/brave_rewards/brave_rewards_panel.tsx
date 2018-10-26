@@ -17,15 +17,27 @@ require('../../../fonts/poppins.css')
 // Components
 import App from './components/app'
 
-// Utils
-import { getUIMessages } from './background/api/locale_api'
+window.cr.define('brave_rewards_panel', function () {
+  'use strict'
 
-initLocale(getUIMessages())
+  function initialize () {
+    window.i18nTemplate.process(window.document, window.loadTimeData)
+    if (window.loadTimeData && window.loadTimeData.data_) {
+      initLocale(window.loadTimeData.data_)
+    }
 
-render(
-  <Provider store={store}>
-    <ThemeProvider theme={Theme}>
-      <App />
-    </ThemeProvider>
-  </Provider>,
-  document.getElementById('root'))
+	render(
+	  <Provider store={store}>
+	    <ThemeProvider theme={Theme}>
+	      <App />
+	    </ThemeProvider>
+	  </Provider>,
+	  document.getElementById('root'))
+  }
+
+  return {
+    initialize
+  }
+})
+
+document.addEventListener('DOMContentLoaded', window.brave_rewards_panel.initialize)
