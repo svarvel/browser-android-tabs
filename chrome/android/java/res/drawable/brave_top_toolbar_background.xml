@@ -3,7 +3,11 @@
      Use of this source code is governed by a BSD-style license that can be
      found in the LICENSE file. -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="UnusedResources"
+  >
     <item android:top="-3dp" android:left="-2dp" android:right="-2dp">
         <shape android:shape="rectangle">
           <stroke android:width="2dp" android:color="#CECECE" />
