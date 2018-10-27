@@ -52,18 +52,27 @@
 
         <ImageButton android:id="@+id/brave_shields_button"
             style="@style/ToolbarButton"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/modern_grey_100"
             android:src="@drawable/btn_brave"
             android:layout_gravity="center"
             android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
 
         <ImageButton android:id="@+id/brave_rewards_button"
             style="@style/ToolbarButton"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/modern_grey_100"
             android:src="@drawable/btn_bat"
             android:layout_gravity="center"
             android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
 
         <ImageButton android:id="@+id/brave_rewards_verified_button"
             style="@style/ToolbarButton"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/modern_grey_100"
             android:src="@drawable/btn_bat_custom"
             android:visibility="gone"
             android:layout_gravity="center"
