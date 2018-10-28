@@ -50,36 +50,65 @@
             android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default"
             android:visibility="gone" />
 
-        <ImageButton android:id="@+id/brave_shields_button"
-            style="@style/ToolbarButton"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+        <FrameLayout
+            android:layout_width="@dimen/toolbar_button_width"
+            android:orientation="vertical"
             android:background="@color/modern_grey_100"
-            android:src="@drawable/btn_brave"
-            android:layout_gravity="center"
-            android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
+            android:layout_marginTop="8dp"
+            android:layout_height="40dp" >
+            <ImageButton android:id="@+id/brave_shields_button"
+                style="@style/ToolbarButton"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/btn_brave"
+                android:layout_gravity="center"
+                android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
 
-        <ImageButton android:id="@+id/brave_rewards_button"
-            style="@style/ToolbarButton"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/modern_grey_100"
-            android:src="@drawable/btn_bat"
-            android:layout_gravity="center"
-            android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+            <org.chromium.chrome.browser.BraveBadge
+                  android:id="@+id/brave_shields_badge"
+                  android:layout_width="16dp"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginStart="12dp"
+                  android:textColor="@color/modern_blue_600"
+                  android:translationZ="5dp"
+                  android:textSize="12sp" />
+        </FrameLayout>
 
-        <ImageButton android:id="@+id/brave_rewards_verified_button"
-            style="@style/ToolbarButton"
+        <FrameLayout
+            android:layout_width="@dimen/toolbar_button_width"
+            android:orientation="vertical"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/modern_grey_100"
-            android:src="@drawable/btn_bat_custom"
-            android:visibility="gone"
-            android:layout_gravity="center"
-            android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/modern_toolbar_background_white_end_segment"
+            android:layout_height="40dp" >
+            <ImageButton android:id="@+id/brave_rewards_button"
+                style="@style/ToolbarButton"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/btn_bat"
+                android:layout_gravity="center"
+                android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+
+            <ImageButton android:id="@+id/brave_rewards_verified_button"
+                style="@style/ToolbarButton"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/btn_bat_custom"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
+
+            <org.chromium.chrome.browser.BraveBadge
+                  android:id="@+id/brave_rewards_badge"
+                  android:layout_width="16dp"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:textColor="@color/modern_blue_600"
+                  android:translationZ="5dp"
+                  android:textSize="12sp" />
+        </FrameLayout>
 
         <include layout="@layout/menu_button"/>
-
     </LinearLayout>
-
 </org.chromium.chrome.browser.toolbar.top.ToolbarPhone>
