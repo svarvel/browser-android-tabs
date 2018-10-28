@@ -17,8 +17,8 @@ import org.chromium.chrome.R;
 public class BraveBadge extends TextView {
   /**
    * Update by using the following
-   * BraveBadge braveRewardsBadge = (BraveBadge) findViewById(R.id.brave_rewards_badge);
-   * braveRewardsBadge.update(5);
+   * BraveBadge.update(this, BraveBadge.BadgeType.REWARDS, 77);
+   * BraveBadge.update(this, BraveBadge.BadgeType.SHIELDS, 88);
    */
 
     public enum BadgeType {
