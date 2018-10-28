@@ -19,6 +19,15 @@
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:background="@drawable/modern_toolbar_background_selected"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" />
+
     <!-- The 12dp padding on the left comes from the fact that the microphone is 24dp x 24dp,
          and sits in a 48dp x 48dp box.  This means there's an implied 12dp of padding
          around the entire microphone. -->

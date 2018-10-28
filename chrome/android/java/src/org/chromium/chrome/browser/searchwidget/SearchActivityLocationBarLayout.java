@@ -39,7 +39,7 @@ public class SearchActivityLocationBarLayout extends LocationBarLayout {
     public SearchActivityLocationBarLayout(Context context, AttributeSet attrs) {
         super(context, attrs, R.layout.location_bar_base);
         setUrlBarFocusable(true);
-        setBackground(ToolbarPhone.createModernLocationBarBackground(getResources()));
+        setBackground(ToolbarPhone.createModernLocationBarBackground(getResources(), R.drawable.modern_toolbar_background_white));
 
         mPendingSearchPromoDecision = LocaleManager.getInstance().needToCheckForSearchEnginePromo();
         getAutocompleteCoordinator().setShouldPreventOmniboxAutocomplete(
