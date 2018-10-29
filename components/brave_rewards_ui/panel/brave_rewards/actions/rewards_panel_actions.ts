@@ -37,3 +37,10 @@ export const getCurrentReport = () => action(types.GET_CURRENT_REPORT, {})
 export const onCurrentReport = (properties: RewardsExtension.Report) => action(types.ON_CURRENT_REPORT, {
   properties
 })
+
+export const getCurrentWindowId = () => action(types.CURRENT_WINDOW_ID, {})
+
+export const onCurrentWindowId = (windowId: number) => action(types.ON_CURRENT_WINDOW_ID, {
+  windowId
+})
+
