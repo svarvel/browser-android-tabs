@@ -29,7 +29,8 @@ const defaultState: RewardsExtension.State = {
     total: '0'
   },
   notifications: {},
-  currentNotification: undefined
+  currentNotification: undefined,
+  currentWindowId: -1
 }
 
 const cleanData = (state: RewardsExtension.State) => {

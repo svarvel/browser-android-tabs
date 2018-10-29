@@ -6,10 +6,14 @@ import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './background/store'
+import { bindActionCreators } from 'redux'
 
 import Theme from 'brave-ui/theme/brave-default'
 import { ThemeProvider } from 'brave-ui/theme'
 import { initLocale } from 'brave-ui/helpers'
+import { getActions as getUtilActions, setActions } from '../../resources/utils'
+import * as rewardsPanelActions from './actions/rewards_panel_actions'
+
 require('emptykit.css')
 require('../../../fonts/muli.css')
 require('../../../fonts/poppins.css')
@@ -35,8 +39,23 @@ window.cr.define('brave_rewards_panel', function () {
 	  document.getElementById('root'))
   }
 
+  function getActions () {
+    const actions: any = getUtilActions()
+    if (actions) {
+      return actions
+    }
+    const newActions = bindActionCreators(rewardsPanelActions, store.dispatch.bind(store))
+    setActions(newActions)
+    return newActions
+  }
+
+  function currentWindowId (windowId: number) {
+    getActions().onCurrentWindowId(windowId)
+  }
+
   return {
-    initialize
+    initialize,
+    currentWindowId
   }
 })
 

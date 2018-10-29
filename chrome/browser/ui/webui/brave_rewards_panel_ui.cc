@@ -38,6 +38,7 @@ class RewardsDOMHandler : public WebUIMessageHandler,
   void RegisterMessages() override;
 
 private:
+   void GetCurrentWindowId(const base::ListValue* args);
    brave_rewards::BraveRewardsService* rewards_service_;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
@@ -50,15 +51,24 @@ RewardsDOMHandler::~RewardsDOMHandler() {
 }
 
 void RewardsDOMHandler::RegisterMessages() {
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentWindowId",
+      base::BindRepeating(&RewardsDOMHandler::GetCurrentWindowId,
+                          base::Unretained(this)));
 }
 
+void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
+  if (web_ui()->CanCallJavascript()) {
+    int temp_window_id = 1;
+    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentWindowId", base::Value(temp_window_id));
+  }
+}
 
 void RewardsDOMHandler::Init() {
   Profile* profile = Profile::FromWebUI(web_ui());
   rewards_service_ = BraveRewardsServiceFactory::GetForProfile(profile);
   if (rewards_service_)
     rewards_service_->AddObserver(this);
-}
+ }
 }  // namespace
 
 ///////////////////////////////////////////////////////////////////////////////

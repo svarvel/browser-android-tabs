@@ -29,20 +29,16 @@ export class RewardsPanel extends React.Component<Props, State> {
   }
 
   componentDidMount () {
-    // ToDo ryanml, replace with call from web_ui()
-    // chrome.windows.getCurrent({}, this.onWindowCallback)
-  }
-
-  onWindowCallback = (window: chrome.windows.Window) => {
-    this.setState({
-      windowId: window.id
-    })
+    this.props.actions.getCurrentWindowId()
   }
 
   render () {
     const { rewardsPanelData, actions } = this.props
 
     const walletCreated = rewardsPanelData.walletCreated || false
+    const windowId = rewardsPanelData.currentWindowId === this.state.windowId
+      ? this.state.windowId
+      : rewardsPanelData.currentWindowId
     return (
       <>
         {
@@ -52,7 +48,7 @@ export class RewardsPanel extends React.Component<Props, State> {
             optInErrorAction={actions.onWalletCreateFailed}
             optInAction={actions.createWallet}
           />
-          : <Panel windowId={this.state.windowId} />
+          : <Panel windowId={windowId || -1} />
         }
       </>
     )
