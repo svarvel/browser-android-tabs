@@ -21,7 +21,31 @@ transpile_web_ui("ui") {
     "resources/storage.ts",
     "resources/store.ts",
     "resources/utils.ts",
+
+    #sources of the rewads panel page
+    "panel/brave_rewards/actions/rewards_panel_actions.ts",
+    "panel/brave_rewards/background.ts",
+    "panel/brave_rewards/background/actions/rewardsPanelActions.ts",
+    "panel/brave_rewards/background/api/locale_api.ts",
+    "panel/brave_rewards/background/api/tabs_api.ts",
+    "panel/brave_rewards/background/events/rewardsEvents.ts",
+    "panel/brave_rewards/background/events/tabEvents.ts",
+    "panel/brave_rewards/background/reducers/index.ts",
+    "panel/brave_rewards/background/reducers/rewards_panel_reducer.ts",
+    "panel/brave_rewards/background/storage.ts",
+    "panel/brave_rewards/background/store.ts",
+    "panel/brave_rewards/brave_rewards_panel.html",
+    "panel/brave_rewards/brave_rewards_panel.tsx",
+    "panel/brave_rewards/components/app.tsx",
+    "panel/brave_rewards/components/panel.tsx",
+    "panel/brave_rewards/constants/rewards_panel_types.ts",
+    "panel/brave_rewards/utils.ts",
   ]
 
   bundle_names = ["brave_rewards.bundle.js"]
+
+#  we don't use `deps` here: all the targets are listed in components/webpack/*.config.js
+#  deps = [
+#    "panel/brave_rewards:brave_rewards_panel",
+#  ]
 }
