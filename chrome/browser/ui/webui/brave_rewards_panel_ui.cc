@@ -8,6 +8,8 @@
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 
+#include "chrome/browser/ui/browser_list.h"
+#include "chrome/browser/ui/browser_window.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
 #include "components/grit/components_resources.h"
@@ -59,8 +61,9 @@ void RewardsDOMHandler::RegisterMessages() {
 
 void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
   if (web_ui()->CanCallJavascript()) {
-    int temp_window_id = 1;
-    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentWindowId", base::Value(temp_window_id));
+    Browser* active_window = BrowserList::GetInstance()->GetLastActive();
+    int window_id = active_window->session_id().id();
+    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentWindowId", base::Value(window_id));
   }
 }
 
