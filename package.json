@@ -10,7 +10,8 @@
     "lint": "npm run lint-ts-rewards",
     "lint-ts-rewards": "tslint --project tsconfig.json 'components/brave_rewards_ui/**/*.{ts,tsx}'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "web-ui": "webpack --config components/webpack/prod.config.js --progress --profile --colors"
+    "web-ui": "webpack --config components/webpack/prod.config.js --progress --profile --colors",
+    "web-ui-dev": "webpack --config components/webpack/dev.config.js --progress --profile --colors"
   },
   "repository": {
     "type": "git",

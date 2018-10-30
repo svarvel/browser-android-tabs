@@ -1,33 +1,22 @@
 const path = require('path')
 const webpack = require('webpack')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
+  devtool: '#inline-source-map',
   entry: {
     brave_rewards: path.join(__dirname, '../brave_rewards_ui/resources/brave_rewards'),
     brave_rewards_panel: path.join(__dirname, '../brave_rewards_ui/panel/brave_rewards/brave_rewards_panel'),
-    brave_rewards_panel_background: path.join(__dirname, '../brave_rewards/panel/brave_rewards/background')
+    brave_rewards_panel_background: path.join(__dirname, '../brave_rewards_ui/panel/brave_rewards/background')
   },
   output: {
     path: process.env.TARGET_GEN_DIR,
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     chunkFilename: '[id].chunk.js'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.IgnorePlugin(/[^/]+\/[\S]+.dev$/),
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        warnings: false,
-        output: {
-          comments: false
-        },
-        compress: {
-          warnings: false
-        }
-      }
-    })
+    new webpack.IgnorePlugin(/[^/]+\/[\S]+.dev$/)    
   ],
   resolve: {
     extensions: ['.js', '.tsx', '.ts', '.json'],

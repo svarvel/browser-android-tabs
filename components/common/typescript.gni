@@ -16,7 +16,7 @@ template("transpile_web_ui") {
     if (defined(invoker.output_dir)) {
       output_dir = invoker.output_dir
     } else {
-      output_dir = "$root_gen_dir/brave"
+      output_dir = "$root_gen_dir/dist"
     }
 
     outputs = []

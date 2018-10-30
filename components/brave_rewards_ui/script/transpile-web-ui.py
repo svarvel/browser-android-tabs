@@ -8,13 +8,11 @@ if sys.platform in ['win32', 'cygwin']:
   NPM += '.cmd'
 
 def main():
-  print("!!!here1")
   args = parse_args()
   transpile_web_uis(args.production, args.target_gen_dir[0])
 
 
 def parse_args():
-  print("!!!here2")
   parser = argparse.ArgumentParser(description='Transpile web-uis')
   parser.add_argument('-p', '--production',
                       action='store_true',
@@ -25,7 +23,6 @@ def parse_args():
 
 
 def transpile_web_uis(production, target_gen_dir, env=None):
-  print("!!!here3")
   if env is None:
     env = os.environ.copy()
 
