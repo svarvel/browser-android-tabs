@@ -60,7 +60,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
     // Maps to ProgressBar default style
     private static final int CIRCLE_DIAMETER = 40;
     private static final float CENTER_RADIUS = 8.75f; //should add up to 10 when + stroke_width
-    private static final float STROKE_WIDTH = 1.5f;
+    private static final float STROKE_WIDTH = 2.5f;
 
     // Maps to ProgressBar.Large style
     private static final int CIRCLE_DIAMETER_LARGE = 56;
@@ -574,11 +574,9 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
                 // ignored a starting negative rotation. This appears to have
                 // been fixed as of API 21.
                 mArrow.moveTo(0, 0);
-                /*mArrow.lineTo(mArrowWidth * mArrowScale, 0);
+                mArrow.lineTo(mArrowWidth * mArrowScale, 0);
                 mArrow.lineTo((mArrowWidth * mArrowScale / 2f), (mArrowHeight * mArrowScale));
-                mArrow.offset(x - inset, y);*/
-                // We want circle instead of arrow
-                mArrow.addCircle(x, y, (mArrowHeight * mArrowScale) / 2f, Path.Direction.CW);
+                mArrow.offset(x - inset, y);
                 mArrow.close();
                 // draw a triangle
                 mArrowPaint.setColor(mCurrentColor);
