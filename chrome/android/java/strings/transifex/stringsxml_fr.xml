@@ -21,7 +21,7 @@
     <string name="fingerprinting_protection_title">Protection par empreintes digitales</string>
     <string name="fingerprinting_protection_summary">Empêche le navigateur de prendre des empreintes digitales</string>
     <string name="brave_shields_fingerprints_blocked">Méthodes par empreintes digitales bloquées</string>
-    <string name="brave_shields_block_fingerprints_switch">Protection contre les prises d'empreinte</string>
+    <string name="brave_shields_block_fingerprints_switch">Protection contre les prises d\'empreinte</string>
 
     <string name="ad_block_regional_title">Pub régionale bloquée</string>
     <string name="ad_block_regional_summary">Empêche les publicités régionales de se télécharger</string>
@@ -66,20 +66,20 @@ Economisé</string>
     <string name="desktop_mode_title">Mode Bureau</string>
     <string name="website_settings_category_desktop_view_enabled_summary">Privilégier la version bureau des sites</string>
     <string name="website_settings_category_desktop_view_disabled_summary">Privilégier la version mobiles des sites </string>
-    <string name="website_settings_category_desktop_view_enabled">Activer l'Aperçu Bureau pour les nouveaux onglets</string>
+    <string name="website_settings_category_desktop_view_enabled">Activer l\'Aperçu Bureau pour les nouveaux onglets</string>
     <string name="website_settings_category_desktop_view_disabled">Utiliser les versions mobiles des sites pour les nouveaux onglets (recommandé)</string>
 
     <string name="brave_shields_first_group_title">Blocage du moniteur</string>
     <string name="brave_shields_second_group_title">Commandes individuelles</string>
     <string name="brave_shields">Boucliers</string>
     <string name="brave_shields_ads_and_trackers">Publicités et pistages</string>
-    <string name="brave_shields_fingerprint_methods">Méthodes de prise d'empreinte</string>
+    <string name="brave_shields_fingerprint_methods">Méthodes de prise d\'empreinte</string>
     <string name="brave_shields_block_phishing_switch">Bloquer le hameçonnage</string>
 
     <string name="play_video_in_background_title">Lecture vidéo en arrière-plan</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Activé</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Désactivé</string>
-    <string name="website_settings_category_play_video_in_background_enabled">Expérimental. Active la lecture audio à partir d'une vidéo en arrière-plan lorsque l'onglet est inactif ou l'écran de l'appareil éteint. Tentez de passer en mode bureau si cette fonctionnalité n'est pas opérationnelle.</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Expérimental. Active la lecture audio à partir d\'une vidéo en arrière-plan lorsque l\'onglet est inactif ou l\'écran de l\'appareil éteint. Tentez de passer en mode bureau si cette fonctionnalité n\'est pas opérationnelle.</string>
     <string name="settings_require_relaunch_notice">Vos changements prendront effet lors du prochain démarrage de Brave</string>
     <string name="settings_require_relaunch_now">REDÉMARRER MAINTENANT</string>
     <string name="settings_require_relaunch_later">PLUS TARD</string>
@@ -87,16 +87,16 @@ Economisé</string>
     <string name="play_yt_video_in_browser_title">Lecture vidéo dans Brave</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Activée</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Désactivée</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">Si ce paramètre est activé, les vidéos seront lues dans Brave au lieu de l'application correspondante</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Si ce paramètre est activé, les vidéos seront lues dans Brave au lieu de l\'application correspondante</string>
 
     <string name="close_tabs_on_exit_title">Fermez les onglets en quittant</string>
     <string name="close_tabs_on_exit_summary">Ne faites pas persister les onglets entre les sessions de navigation</string>
 
     <string name="open_pages_in_custom_tabs_title">Ouvrir les onglets dans la section Personnalisation des onglets</string>
-    <string name="open_pages_in_custom_tabs_summary">Proposer d'ouvrir les onglets dans la section Personnalisation des onglets</string>
+    <string name="open_pages_in_custom_tabs_summary">Proposer d\'ouvrir les onglets dans la section Personnalisation des onglets</string>
 
     <string name="ddg_offer_title">Recherche privée avec DuckDuckGo ?</string>
-    <string name="ddg_offer_text">Avec la recherche privée, Brave utilisera DuckDuckGo pour répondre à vos recherches alors que vous vous trouvez sur cet onglet privé. DuckDuckGo est un moteur de recherche qui ne traque pas votre historique de recherche, vous permettant d'effectuer des recherches confidentiellement. </string>
+    <string name="ddg_offer_text">Avec la recherche privée, Brave utilisera DuckDuckGo pour répondre à vos recherches alors que vous vous trouvez sur cet onglet privé. DuckDuckGo est un moteur de recherche qui ne traque pas votre historique de recherche, vous permettant d\'effectuer des recherches confidentiellement. </string>
     <string name="ddg_offer_positive">Oui</string>
     <string name="ddg_offer_negative">Non</string>
     <string name="ddg_offer_link">Informez-vous à propos de la recherche privée avec DuckDuckGo</string>
