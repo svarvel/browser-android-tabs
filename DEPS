@@ -319,6 +319,7 @@ deps = {
     Var("chromium_git") + "/external/llvm.org/libunwind.git" + "@" +
     Var("libunwind_revision"),
 
+  'src/brave': "https://github.com/brave/brave-core.git@62356fe5786d342449a6b1a0550cb74f36fe95a4",
   'src/chrome/browser/resources/media_router/extension/src':
     Var('chromium_git') + '/media_router.git' + '@' + '29324b698ccd8920bc81c71d42dadc6310f0ad0f',
 
@@ -2870,6 +2871,7 @@ hooks = [
 ]
 
 recursedeps = [
+  'src/brave',
   # ANGLE manages DEPS that it also owns the build files for, such as dEQP.
   "src/third_party/angle",
   'src/third_party/openscreen/src',

@@ -4,8 +4,9 @@
 
 #include "chrome/browser/ui/webui/brave_rewards_panel_ui.h"
 
-#include "chrome/browser/braveRewards/brave_rewards_service.h"
-#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
+#include "brave/components/brave_rewards/browser/rewards_service.h"
+#include "brave/components/brave_rewards/browser/rewards_service_factory.h"
+#include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
@@ -27,7 +28,7 @@ namespace {
 
 // The handler for Javascript messages for the chrome://rewards-panel page.
 class RewardsDOMHandler : public WebUIMessageHandler,
-                          public brave_rewards::BraveRewardsServiceObserver {
+                          public brave_rewards::RewardsServiceObserver {
  public:
   RewardsDOMHandler() {};
   ~RewardsDOMHandler() override;
@@ -39,7 +40,7 @@ class RewardsDOMHandler : public WebUIMessageHandler,
 
 private:
    void GetCurrentWindowId(const base::ListValue* args);
-   brave_rewards::BraveRewardsService* rewards_service_;
+   brave_rewards::RewardsService* rewards_service_;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
@@ -65,7 +66,7 @@ void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
 
 void RewardsDOMHandler::Init() {
   Profile* profile = Profile::FromWebUI(web_ui());
-  rewards_service_ = BraveRewardsServiceFactory::GetForProfile(profile);
+  rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(profile);
   if (rewards_service_)
     rewards_service_->AddObserver(this);
  }

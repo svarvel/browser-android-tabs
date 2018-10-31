@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: process.env.TARGET_GEN_DIR,
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
   plugins: [

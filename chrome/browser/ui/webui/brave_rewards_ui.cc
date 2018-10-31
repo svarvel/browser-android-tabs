@@ -705,7 +705,7 @@ void RewardsDOMHandler::HandleGetContributionAmount(
 
 BraveRewardsUI::BraveRewardsUI(content::WebUI* web_ui, const std::string& name)
     : BasicUI(web_ui, name, chrome::kRewardsJS,
-        IDR_BRAVE_REWARDS_UI_JS, IDR_BRAVE_REWARDS_UI_HTML) {
+        IDR_BRAVE_REWARDS_JS, IDR_BRAVE_REWARDS_HTML) {
 
   auto handler_owner = std::make_unique<RewardsDOMHandler>();
   RewardsDOMHandler * handler = handler_owner.get();

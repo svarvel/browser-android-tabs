@@ -105,6 +105,7 @@ template("chrome_extra_paks") {
       "$root_gen_dir/net/net_resources.pak",
       "$root_gen_dir/third_party/blink/public/resources/blink_resources.pak",
       "$root_gen_dir/ui/resources/webui_resources.pak",
+      "$root_gen_dir/components/brave_components_strings.pak",
     ]
     deps = [
       "//chrome/app/theme:chrome_unscaled_resources",
@@ -121,6 +122,7 @@ template("chrome_extra_paks") {
       "//net:net_resources",
       "//third_party/blink/public:resources",
       "//ui/resources",
+      "//brave/components/resources:strings",
     ]
     if (defined(invoker.deps)) {
       deps += invoker.deps
@@ -130,8 +132,12 @@ template("chrome_extra_paks") {
     }
 
     if (is_android) {
-      sources += [ "$root_gen_dir/chrome/webapks_ui_resources.pak" ]
-      deps += [ "//chrome/browser/resources:webapks_ui_resources" ]
+      sources += [ 
+        "$root_gen_dir/chrome/webapks_ui_resources.pak",
+      ]
+      deps += [ 
+        "//chrome/browser/resources:webapks_ui_resources",
+      ]
     } else {
       # New paks should be added here by default.
       sources += [
