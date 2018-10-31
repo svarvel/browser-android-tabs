@@ -64,7 +64,6 @@ public class StatsUpdater {
     // 5 minutes just for testing
     //private static final long MILLISECONDS_IN_A_DAY = 5 * 60 * 1000;
     private static final long MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
-    private static final long MILLISECONDS_IN_A_WEEK = 7 * MILLISECONDS_IN_A_DAY;
     private static final long MILLISECONDS_IN_A_MONTH = 30 * MILLISECONDS_IN_A_DAY;
     private static final long MILLISECONDS_IN_90_DAYS = 90 * MILLISECONDS_IN_A_DAY;
 
@@ -125,7 +124,16 @@ public class StatsUpdater {
                       || milliSecondsOfTheCurrentDay < milliSeconds - previousObject.mMilliSeconds) {
                     daily = true;
                 }
-                if (milliSeconds - previousObject.mMilliSecondsForWeeklyStat >= MILLISECONDS_IN_A_WEEK) {
+                int currentDayOfWeek = currentTime.get(Calendar.DAY_OF_WEEK);
+                Calendar startOfWeek = Calendar.getInstance();
+                startOfWeek.setTimeInMillis(milliSeconds);
+                // SUNDAY is exception as it equals 1
+                startOfWeek.add(Calendar.DAY_OF_MONTH, (currentDayOfWeek == Calendar.SUNDAY ? 6 : currentDayOfWeek - Calendar.MONDAY) * -1);
+                startOfWeek.set(Calendar.HOUR_OF_DAY, 0);
+                startOfWeek.set(Calendar.MINUTE, 0);
+                startOfWeek.set(Calendar.SECOND, 0);
+                startOfWeek.set(Calendar.MILLISECOND, 0);
+                if (previousObject.mMilliSecondsForWeeklyStat < startOfWeek.getTimeInMillis()) {
                     weekly = true;
                 }
                 if (currentTime.get(Calendar.MONTH) != previousObject.mMonth || currentTime.get(Calendar.YEAR) != previousObject.mYear) {
