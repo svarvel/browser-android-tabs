@@ -16,7 +16,7 @@ def SyncTranslationsToTransifex():
     e = xml.etree.ElementTree.parse(base_strings_file).getroot()
     for string_tag in e.findall('string'):
         string_name = string_tag.get('name')
-        string_value = string_tag.text    
+        string_value = string_tag.text
         if not string_name:
             sys.exit('String name is empty')
         if not string_value:
@@ -137,7 +137,7 @@ def SyncTransifexToTranslations():
                     translations_file_was_changed = False
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')
-                        string_value = string_tag.text
+                        string_value = string_tag.text.replace("\\'", "'")
                         if string_name in brave_strings:
                             # we have its translation id, lets look for it in .xtb file
                             translation_id_found = False                        
