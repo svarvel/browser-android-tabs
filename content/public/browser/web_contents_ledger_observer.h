@@ -8,7 +8,7 @@
 #include "web_contents_observer.h"
 
 namespace brave_rewards {
-  class BraveRewardsService;
+  class RewardsService;
 }
 
 namespace content {
@@ -36,7 +36,7 @@ public:
 
 private:
   WebContents* web_contents_;
-  brave_rewards::BraveRewardsService* brave_rewards_service_;
+  brave_rewards::RewardsService* brave_rewards_service_;
   bool is_being_destroyed_;
 };
 

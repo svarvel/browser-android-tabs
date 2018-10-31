@@ -307,37 +307,10 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 # Ignore IntelliJ files.
 .idea/
 
-# Adblock and tracking protection lib copied from submodules
-chrome/browser/net/blockers/ad_block_client.cc
-chrome/browser/net/blockers/ad_block_client.h
-chrome/browser/net/blockers/BloomFilter.cpp
-chrome/browser/net/blockers/BloomFilter.h
-chrome/browser/net/blockers/hash_item.h
-chrome/browser/net/blockers/hash_set.cc
-chrome/browser/net/blockers/hash_set.h
-chrome/browser/net/blockers/bad_fingerprint.h
-chrome/browser/net/blockers/bad_fingerprints.h
-chrome/browser/net/blockers/base.h
-chrome/browser/net/blockers/cosmetic_filter.cc
-chrome/browser/net/blockers/cosmetic_filter.h
-chrome/browser/net/blockers/filter.cc
-chrome/browser/net/blockers/filter.h
-chrome/browser/net/blockers/hashFn.cpp
-chrome/browser/net/blockers/hashFn.h
-chrome/browser/net/blockers/FirstPartyHost.h
-chrome/browser/net/blockers/FirstPartyHost.cpp
-chrome/browser/net/blockers/TrackerData.h
-chrome/browser/net/blockers/TrackerData.cpp
-chrome/browser/net/blockers/TPParser.h
-chrome/browser/net/blockers/TPParser.cpp
-chrome/browser/net/blockers/no_fingerprint_domain.h
-chrome/browser/net/blockers/no_fingerprint_domain.cc
-chrome/browser/net/blockers/protocol.h
-chrome/browser/net/blockers/protocol.cc
-
 # Build configs
 scripts/gn/argsReleaseArmClassic.gn
 scripts/gn/argsReleaseArmModern.gn
 scripts/gn/argsReleaseArmMono.gn
 scripts/gn/argsReleaseX86Classic.gn
 scripts/gn/argsReleaseX86Modern.gn
+/brave

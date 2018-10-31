@@ -24,11 +24,11 @@
 #include "base/sequenced_task_runner.h"
 #include "base/time/time.h"
 #include "brave_src/browser/brave_tab_url_web_contents_observer.h"
-#include "bat-native-ledger/include/bat/ledger/ledger.h"
+#include "brave/vendor/bat-native-ledger/include/bat/ledger/ledger.h"
 #include "build/build_config.h"
-#include "chrome/browser/braveRewards/brave_rewards_service.h"
-#include "chrome/browser/braveRewards/brave_rewards_service_impl.h"
-#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
+#include "brave/components/brave_rewards/browser/rewards_service.h"
+#include "brave/components/brave_rewards/browser/rewards_service_impl.h"
+#include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/content_settings/cookie_settings_factory.h"
 #include "chrome/browser/content_settings/tab_specific_content_settings.h"
@@ -67,6 +67,10 @@
 #include "net/log/net_log_with_source.h"
 #include "net/url_request/url_request.h"
 #include "chrome/browser/net/blockers/shields_config.h"
+
+#include "chrome/browser/sessions/session_tab_helper.h"
+#include "content/public/browser/websocket_handshake_request_info.h"
+#include "content/public/browser/web_contents.h"
 
 #if defined(OS_ANDROID)
 #include "base/android/path_utils.h"
@@ -218,6 +222,50 @@ private:
   std::set<uint64_t> pending_requests_;
   //no need synchronization, should be executed in the same thread content::BrowserThread::IO
 };
+
+void GetRenderFrameInfo(net::URLRequest* request,
+                        int* render_frame_id,
+                        int* render_process_id,
+                        int* frame_tree_node_id) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+  *render_frame_id = -1;
+  *render_process_id = -1;
+  *frame_tree_node_id = -1;
+
+  // PlzNavigate requests have a frame_tree_node_id, but no render_process_id
+  auto* request_info = content::ResourceRequestInfo::ForRequest(request);
+  if (request_info) {
+    *frame_tree_node_id = request_info->GetFrameTreeNodeId();
+  }
+  if (!content::ResourceRequestInfo::GetRenderFrameForRequest(
+          request, render_process_id, render_frame_id)) {
+    const content::WebSocketHandshakeRequestInfo* websocket_info =
+      content::WebSocketHandshakeRequestInfo::ForRequest(request);
+    if (websocket_info) {
+      *render_frame_id = websocket_info->GetRenderFrameId();
+      *render_process_id = websocket_info->GetChildId();
+    }
+  }
+}
+
+content::WebContents* GetWebContents(
+    int render_process_id,
+    int render_frame_id,
+    int frame_tree_node_id) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
+  content::WebContents* web_contents =
+      content::WebContents::FromFrameTreeNodeId(frame_tree_node_id);
+  if (!web_contents) {
+    content::RenderFrameHost* rfh =
+        content::RenderFrameHost::FromID(render_process_id, render_frame_id);
+    if (!rfh) {
+      return nullptr;
+    }
+    web_contents =
+        content::WebContents::FromRenderFrameHost(rfh);
+  }
+  return web_contents;
+}
 
 struct OnBeforeURLRequestContext
 {
@@ -462,17 +510,29 @@ void ChromeNetworkDelegate::GetIOThreadResetBlocker(net::URLRequest* request,
 }
 
 void ChromeNetworkDelegate::NotifyLedger(const GURL& url, const std::string& urlQuery,
-     const std::string& last_first_party_url, const std::string& referrer) {
+     const GURL& last_first_party_url, const std::string& referrer,
+     int render_process_id, int render_frame_id, int frame_tree_node_id) {
   /*content::BrowserThread::PostTask(
         content::BrowserThread::IO, FROM_HERE,
         base::Bind(&NotifyLedgerIOThread, g_browser_process->io_thread(), url, urlQuery,
           type, incognito_));*/
-  brave_rewards::BraveRewardsService* brave_rewards_service = BraveRewardsServiceFactory::GetForProfile(
+  auto* web_contents = GetWebContents(render_process_id,
+                                      render_frame_id,
+                                      frame_tree_node_id);
+  if (!web_contents)
+    return;
+
+  auto* tab_helper = SessionTabHelper::FromWebContents(web_contents);
+  if (!tab_helper)
+    return;
+
+  brave_rewards::RewardsService* brave_rewards_service = brave_rewards::RewardsServiceFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
   if (!brave_rewards_service) {
     return;
   }
-  brave_rewards_service->OnPostData(url, last_first_party_url, referrer, urlQuery);
+  brave_rewards_service->OnPostData(tab_helper->session_id(), url, last_first_party_url, 
+    GURL(referrer), urlQuery);
 }
 
 void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* request,
@@ -727,7 +787,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
 
   // Notify ledger if we have YouTube or Twitch links
   //std::string linkType = GetLinkType(request, last_first_party_url_.spec());
-  if (brave_rewards::BraveRewardsServiceImpl::IsMediaLink(request->url().spec(), last_first_party_url_.spec(), request->referrer())) {
+  if (brave_rewards::IsMediaLink(request->url(), last_first_party_url_, GURL(request->referrer()))) {
     if (request->get_upload()) {
       std::string urlQuery;
       for (size_t i = 0; i < (*(request->get_upload())->GetElementReaders()).size(); i++) {
@@ -736,11 +796,15 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
         std::string upload_data(reader->bytes(), reader->length());
         urlQuery += upload_data;
       }
+      int render_process_id, render_frame_id, frame_tree_node_id;
+      GetRenderFrameInfo(request, &render_frame_id, &render_process_id,
+          &frame_tree_node_id);
       content::BrowserThread::PostTask(
-      content::BrowserThread::UI, FROM_HERE,
-      base::Bind(&ChromeNetworkDelegate::NotifyLedger,
-          base::Unretained(this), request->url(), urlQuery, 
-          last_first_party_url_.spec(), request->referrer()));
+        content::BrowserThread::UI, FROM_HERE,
+        base::Bind(&ChromeNetworkDelegate::NotifyLedger,
+            base::Unretained(this), request->url(), urlQuery, 
+            last_first_party_url_, request->referrer(),
+            render_process_id, render_frame_id, frame_tree_node_id));
     }
   }
   /*if (!linkType.empty()) {

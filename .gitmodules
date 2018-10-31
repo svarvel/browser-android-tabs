@@ -19,18 +19,3 @@
 [submodule "niceware"]
 	path = niceware
 	url = https://github.com/diracdeltas/niceware.git
-[submodule "anonize2"]
-	path = bat-native-anonize
-	url = https://github.com/brave-intl/bat-native-anonize.git
-[submodule "bip39wally-core"]
-	path = bip39wally-core-native
-	url = https://github.com/brave-intl/bip39wally-core-native.git
-[submodule "braveLedger"]
-	path = bat-native-ledger
-	url = https://github.com/brave-intl/bat-native-ledger.git
-[submodule "bat-native-tweetnacl"]
-	path = bat-native-tweetnacl
-	url = https://github.com/brave-intl/bat-native-tweetnacl.git
-[submodule "bat-native-rapidjson"]
-	path = bat-native-rapidjson
-	url = https://github.com/brave-intl/bat-native-rapidjson.git

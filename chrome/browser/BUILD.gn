@@ -1821,24 +1821,18 @@ jumbo_split_static_library("browser") {
     "//sql",
   ]
 
-  include_dirs = [
-  #  "//anonize2/anon",
-  #  "//anonize2/relic/include",
-  #  "//anonize2/relic/include/low",
-    "//bat-native-ledger/src",
-    "//bat-native-ledger/include",
-  #  "//bip39wally-core/include",
-  ]
-
   deps = [
     ":active_use_util",
     ":ntp_background_proto",
     ":resource_prefetch_predictor_proto",
     "//ad-block/brave:ad-block",
-    "//bat-native-ledger",
+    "//brave/vendor/bat-native-ledger",
     "//base:i18n",
     "//base/allocator:buildflags",
     "//brave_src/browser:browser_process",
+    "//brave/common",
+    "//brave/components/brave_rewards/browser",
+    "//brave/components/resources:strings",
     "//cc",
     "//chrome:extra_resources",
     "//chrome:resources",
@@ -1846,7 +1840,6 @@ jumbo_split_static_library("browser") {
     "//chrome/app:chrome_service_manifests",
     "//chrome/app/resources:platform_locale_settings",
     "//chrome/app/theme:theme_resources",
-    "//chrome/browser/braveRewards",
     "//chrome/browser/devtools",
     "//chrome/browser/media:media_engagement_preload_proto",
     "//chrome/browser/media:mojo_bindings",

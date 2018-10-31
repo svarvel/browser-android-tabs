@@ -7,6 +7,7 @@
 #include <map>
 
 #include "components/grit/components_resources.h"
+#include "components/grit/brave_components_strings.h"
 #include "content/public/browser/web_ui_data_source.h"
 
 namespace {
@@ -115,6 +116,12 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "proveHuman",  IDS_BRAVE_REWARDS_LOCAL_PROVE_HUMAN },
         { "serverNotResponding",  IDS_BRAVE_REWARDS_LOCAL_SERVER_NOT_RESPONDING },
         { "uhOh",  IDS_BRAVE_REWARDS_LOCAL_UH_OH },
+        { "grantGoneTitle",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_TITLE },
+        { "grantGoneButton",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_BUTTON },
+        { "grantGoneText",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_TEXT },
+        { "grantGeneralErrorTitle",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TITLE },
+        { "grantGeneralErrorButton",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_BUTTON },
+        { "grantGeneralErrorText",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TEXT },
 
         { "about", IDS_BRAVE_UI_ABOUT },
         { "accept", IDS_BRAVE_UI_ACCEPT },
@@ -133,7 +140,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "braveContributeDesc", IDS_BRAVE_UI_BRAVE_CONTRIBUTE_DESC },
         { "braveContributeTitle", IDS_BRAVE_UI_BRAVE_CONTRIBUTE_TITLE },
         { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
-        { "braveRewardsCreatingText", IDS_BRAVE_UI_REWARDS_CREATING_TEXT },
+        { "braveRewardsCreatingText", IDS_BRAVE_UI_BRAVE_REWARDS_CREATING_TEXT },
         { "braveRewardsDesc", IDS_BRAVE_UI_BRAVE_REWARDS_DESC },
         { "braveRewardsOptInText", IDS_BRAVE_UI_BRAVE_REWARDS_OPT_IN_TEXT },
         { "braveRewardsSubTitle", IDS_BRAVE_UI_BRAVE_REWARDS_SUB_TITLE },
@@ -155,6 +162,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "dndCaptchaText2", IDS_BRAVE_UI_DND_CAPTCHA_TEXT_2 },
         { "donation", IDS_BRAVE_UI_DONATION },
         { "donationAmount", IDS_BRAVE_UI_DONATION_AMOUNT },
+        { "donationTips", IDS_BRAVE_REWARDS_LOCAL_DONAT_TITLE },
         { "donateMonthly", IDS_BRAVE_UI_DONATE_MONTHLY },
         { "donateNow", IDS_BRAVE_UI_DONATE_NOW },
         { "done", IDS_BRAVE_UI_DONE },
@@ -259,11 +267,13 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "turnOnRewardsTitle", IDS_BRAVE_UI_TURN_ON_REWARDS_TITLE },
         { "type", IDS_BRAVE_UI_TYPE },
         { "verifiedPublisher", IDS_BRAVE_UI_VERIFIED_PUBLISHER },
-        { "viewDetails" , IDS_BRAVE_UI_VIEW_DETAILS },
         { "viewMonthly", IDS_BRAVE_UI_VIEW_MONTHLY },
         { "walletActivity", IDS_BRAVE_UI_WALLET_ACTIVITY },
         { "walletAddress", IDS_BRAVE_UI_WALLET_ADDRESS },
         { "walletBalance", IDS_BRAVE_UI_WALLET_BALANCE },
+        { "walletFailedButton", IDS_BRAVE_UI_WALLET_FAILED_BUTTON },
+        { "walletFailedTitle", IDS_BRAVE_UI_WALLET_FAILED_TITLE },
+        { "walletFailedText", IDS_BRAVE_UI_WALLET_FAILED_TEXT },
         { "welcome", IDS_BRAVE_UI_WELCOME },
         { "welcomeButtonTextOne", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_ONE},
         { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO},
@@ -274,10 +284,8 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "welcomeHeaderOne", IDS_BRAVE_UI_WELCOME_HEADER_ONE},
         { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO},
         { "whyBraveRewards", IDS_BRAVE_UI_WHY_BRAVE_REWARDS },
-        { "whyBraveRewardsDesc", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC },
         { "whyBraveRewardsDesc1", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_1 },
         { "whyBraveRewardsDesc2", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_2 },
-        { "whyBraveRewardsDesc3", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_3 },
         { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET }
       }
     }

@@ -12,7 +12,7 @@
     <includes first_id="38000">
       <include name="IDR_BRAVE_REWARDS_LOCALES_EN" file="brave_rewards/_locales/en/messages.json" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_PANEL_HTML" file="brave_rewards/brave_rewards_panel.html" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_PANEL_BUNDLE_JS" file="brave_rewards/out/brave_rewards_panel.bundle.js" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_PANEL_BUNDLE_JS" file="brave_rewards/out/brave_rewards_panel.js" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_PANEL_BACKGROUND_JS" file="brave_rewards/out/brave_rewards_panel_background.bundle.js" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_ICON_16" file="brave_rewards/img/bat-16.png" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_ICON_32" file="brave_rewards/img/bat-32.png" type="BINDATA" />

@@ -3,8 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #include "bat/ledger/ledger.h"
-#include "chrome/browser/braveRewards/brave_rewards_service.h"
-#include "chrome/browser/braveRewards/brave_rewards_service_factory.h"
+#include "brave/components/brave_rewards/browser/rewards_service.h"
+#include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/io_thread.h"
 #include "chrome/browser/profiles/profile.h"
@@ -29,7 +29,7 @@ WebContentsLedgerObserver::WebContentsLedgerObserver(WebContents* web_contents)
     web_contents_(web_contents),
     brave_rewards_service_(nullptr),
     is_being_destroyed_(false) {
-  brave_rewards_service_ = BraveRewardsServiceFactory::GetForProfile(
+  brave_rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
 }
 
@@ -44,15 +44,15 @@ void WebContentsLedgerObserver::OnVisibilityChanged(Visibility visibility) {
   }
 
   if (Visibility::VISIBLE == visibility) {
-    brave_rewards_service_->OnShow(SessionTabHelper::IdForTab(web_contents_).id());
+    brave_rewards_service_->OnShow(SessionTabHelper::IdForTab(web_contents_));
   } else if (Visibility::HIDDEN == visibility) {
-    brave_rewards_service_->OnHide(SessionTabHelper::IdForTab(web_contents_).id());
+    brave_rewards_service_->OnHide(SessionTabHelper::IdForTab(web_contents_));
   }
 }
 
 void WebContentsLedgerObserver::WebContentsDestroyed() {
   if (brave_rewards_service_) {
-    brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_).id());
+    brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_));
   }
   is_being_destroyed_ = true;
 }
@@ -63,15 +63,8 @@ void WebContentsLedgerObserver::DidFinishLoad(RenderFrameHost* render_frame_host
     return;
   }
 
-  const std::string tld =
-    GetDomainAndRegistry(validated_url.host(), net::registry_controlled_domains::INCLUDE_PRIVATE_REGISTRIES);
-
-  if (tld == "") {
-    return;
-  }
-  brave_rewards_service_->OnLoad(tld, 
-    validated_url.host(), validated_url.spec(),
-    SessionTabHelper::IdForTab(web_contents_).id());
+  brave_rewards_service_->OnLoad(SessionTabHelper::IdForTab(web_contents_),
+    validated_url);
 }
 
 void WebContentsLedgerObserver::DidUpdateFaviconURL(const std::vector<FaviconURL>& candidates) {
@@ -93,7 +86,7 @@ void WebContentsLedgerObserver::DidUpdateFaviconURL(const std::vector<FaviconURL
 
 void WebContentsLedgerObserver::DidAttachInterstitialPage() {
   if (brave_rewards_service_)
-    brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_).id());
+    brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_));
 }
 
 void WebContentsLedgerObserver::DidFinishNavigation(content::NavigationHandle* navigation_handle) {
@@ -104,7 +97,7 @@ void WebContentsLedgerObserver::DidFinishNavigation(content::NavigationHandle* n
     return;
   }
 
-  brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_).id()); 
+  brave_rewards_service_->OnUnload(SessionTabHelper::IdForTab(web_contents_)); 
 }
 
 void WebContentsLedgerObserver::ResourceLoadComplete(
@@ -121,8 +114,9 @@ void WebContentsLedgerObserver::ResourceLoadComplete(
       resource_load_info.resource_type == content::RESOURCE_TYPE_SCRIPT) {
 
     // TODO fill first_party_url and referrer with actual values
-    brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_).id(), resource_load_info.url, 
-      render_frame_host->GetLastCommittedURL().host(), resource_load_info.referrer.spec());
+    brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_), 
+      resource_load_info.url, render_frame_host->GetLastCommittedURL(), 
+      resource_load_info.referrer);
   }
 }
 
