@@ -59,10 +59,13 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
     {
       std::string("rewards-panel"), {
         { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
+        { "braveRewardsCreatingText", IDS_BRAVE_UI_REWARDS_CREATING_TEXT },
+        { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
         { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
         { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
         { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
-        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO }
+        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
+        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET }
       }
     }
   };
