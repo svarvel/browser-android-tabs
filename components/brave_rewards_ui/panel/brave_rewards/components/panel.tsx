@@ -153,14 +153,15 @@ export class Panel extends React.Component<Props, State> {
   render () {
     const { balance, rates, grants } = this.props.rewardsPanelData.walletProperties
     const publisher: RewardsExtension.Publisher | undefined = this.getPublisher()
-    const converted = utils.convertBalance(balance.toString(), rates)
+    const balanceP = balance || 0
+    const converted = utils.convertBalance(balanceP.toString(), rates)
 
     return (
       <WalletWrapper
         compact={true}
         contentPadding={false}
         gradientTop={this.gradientColor}
-        balance={balance.toFixed(1)}
+        balance={balanceP.toFixed(1)}
         converted={utils.formatConverted(converted)}
         actions={[
           {

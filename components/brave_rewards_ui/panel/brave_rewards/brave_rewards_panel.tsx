@@ -53,8 +53,28 @@ window.cr.define('brave_rewards_panel', function () {
     getActions().onCurrentWindowId(windowId)
   }
 
+  function walletCreated () {
+    getActions().onWalletCreated()
+  }
+
+  function walletCreateFailed () {
+    getActions().onWalletCreateFailed()
+  }
+
+  function balanceReports (reports: Record<string, Rewards.Report>) {
+    getActions().onBalanceReports(reports)
+  }
+
+  function walletProperties (properties: {status: number, wallet: Rewards.WalletProperties}) {
+    getActions().onWalletProperties(properties)
+  }
+
   return {
     initialize,
+    balanceReports,
+    walletCreated,
+    walletCreateFailed,
+    walletProperties,
     currentWindowId
   }
 })
