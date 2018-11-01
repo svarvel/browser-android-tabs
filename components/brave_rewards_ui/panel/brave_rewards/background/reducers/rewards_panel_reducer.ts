@@ -16,7 +16,7 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
   const payload = action.payload
   switch (action.type) {
     case types.CREATE_WALLET:
-      chrome.braveRewards.createWallet()
+      chrome.send('brave_rewards_panel.createWalletRequested', [])
       break
     case types.ON_WALLET_CREATED:
       state = { ...state }
@@ -39,6 +39,7 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
       }
       break
     case types.ON_TAB_RETRIEVED:
+    /*
       const tab: chrome.tabs.Tab = payload.tab
       if (
         !tab ||
@@ -53,7 +54,9 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
       state = { ...state }
       chrome.braveRewards.getPublisherData(tab.windowId, tab.url)
       break
+    */
     case types.ON_PUBLISHER_DATA:
+    /*
       {
         let publisher = payload.publisher
         let publishers: Record<string, RewardsExtension.Publisher> = state.publishers
@@ -70,8 +73,9 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         }
         break
       }
+    */
     case types.GET_WALLET_PROPERTIES:
-      chrome.braveRewards.getWalletProperties()
+      chrome.send('brave_rewards_panel.getWalletProperties', [])
       break
     case types.ON_WALLET_PROPERTIES:
       {
@@ -80,7 +84,7 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         break
       }
     case types.GET_CURRENT_REPORT:
-      chrome.braveRewards.getCurrentReport()
+      chrome.send('brave_rewards_panel.getCurrentReport', [])
       break
     case types.ON_CURRENT_REPORT:
       {
