@@ -588,7 +588,7 @@ Jos haluat muokata asetusta, <ph name="BEGIN_LINK" />nollaa synkronointi<ph name
 <translation id="5363230136052241468">Napauta aloitusnäyttöpainiketta ladataksesi uusi välilehti ‑sivun.</translation>
 <translation id="5368958499335451666">{OPEN_TABS,plural, =1{<ph name="OPEN_TABS_ONE" /> avoin välilehti, vaihda välilehteä napauttamalla}other{<ph name="OPEN_TABS_MANY" /> avointa välilehteä, vaihda välilehteä napauttamalla}}</translation>
 <translation id="5391532827096253100">Sivustolle muodostamasi yhteys ei ole turvallinen. Sivuston tiedot</translation>
-<translation id="5400569084694353794">Käyttämällä sovellusta hyväksyt Chromen <ph name="BEGIN_LINK1" />käyttöehdot<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />tietosuojailmoituksen<ph name="END_LINK2" />.</translation>
+<translation id="2700285883409956633">Käyttämällä sovellusta hyväksyt Chromen <ph name="BEGIN_LINK1" />käyttöehdot<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />tietosuojailmoituksen<ph name="END_LINK2" />.</translation>
 <translation id="5403644198645076998">Salli vain tietyt sivustot</translation>
 <translation id="5414836363063783498">Vahvistetaan…</translation>
 <translation id="5423934151118863508">Käydyimmät sivusi näkyvät täällä</translation>
@@ -1055,7 +1055,7 @@ Jotkin verkkosivustot voivat vastata tähän pyyntöön esimerkiksi näyttämäl
 <translation id="869891660844655955">Vanhenemispäivämäärä</translation>
 <translation id="8719023831149562936">Nykyistä välilehteä ei voi jakaa</translation>
 <translation id="8725066075913043281">Yritä uudelleen</translation>
-<translation id="8728487861892616501">Käyttämällä tätä sovellusta hyväksyt Chromen <ph name="BEGIN_LINK1" />käyttöehdot<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />tietosuojailmoituksen<ph name="END_LINK2" /> sekä <ph name="BEGIN_LINK3" />Family Linkin kautta hallittavia Google-tilejä koskevan tietosuojailmoituksen<ph name="END_LINK3" />.</translation>
+<translation id="7247433043977983806">Käyttämällä tätä sovellusta hyväksyt Chromen <ph name="BEGIN_LINK1" />käyttöehdot<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />tietosuojailmoituksen<ph name="END_LINK2" /> sekä <ph name="BEGIN_LINK3" />Family Linkin kautta hallittavia Google-tilejä koskevan tietosuojailmoituksen<ph name="END_LINK3" />.</translation>
 <translation id="8730621377337864115">Valmis</translation>
 <translation id="8748850008226585750">Sisältö piilotettu</translation>
 <translation id="8751914237388039244">Valitse kuva</translation>

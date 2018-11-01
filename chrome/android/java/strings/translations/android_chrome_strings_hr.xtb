@@ -588,7 +588,7 @@ Da biste promijenili tu postavku, <ph name="BEGIN_LINK" />poništite sinkronizac
 <translation id="5363230136052241468">Dodirnite gumb početnog zaslona za učitavanje web-stranice nove kartice</translation>
 <translation id="5368958499335451666">{OPEN_TABS,plural, =1{<ph name="OPEN_TABS_ONE" /> otvorena kartica, dodirnite da biste prešli na drugu karticu}one{<ph name="OPEN_TABS_MANY" /> otvorena kartica, dodirnite da biste prešli na drugu karticu}few{<ph name="OPEN_TABS_MANY" /> otvorene kartice, dodirnite da biste prešli na drugu karticu}other{<ph name="OPEN_TABS_MANY" /> otvorenih kartica, dodirnite da biste prešli na drugu karticu}}</translation>
 <translation id="5391532827096253100">Veza s web-lokacijom nije sigurna. Informacije o web-lokaciji</translation>
-<translation id="5400569084694353794">Upotrebom te aplikacije prihvaćate Chromeove <ph name="BEGIN_LINK1" />Uvjete pružanja usluge<ph name="END_LINK1" /> i <ph name="BEGIN_LINK2" />Obavijest o privatnosti<ph name="END_LINK2" />.</translation>
+<translation id="2700285883409956633">Upotrebom te aplikacije prihvaćate Chromeove <ph name="BEGIN_LINK1" />Uvjete pružanja usluge<ph name="END_LINK1" /> i <ph name="BEGIN_LINK2" />Obavijest o privatnosti<ph name="END_LINK2" />.</translation>
 <translation id="5403644198645076998">Dopusti samo određene web-lokacije</translation>
 <translation id="5414836363063783498">Potvrđivanje…</translation>
 <translation id="5423934151118863508">Najposjećenije stranice prikazivat će se ovdje</translation>
@@ -1055,7 +1055,7 @@ Na primjer, neke web-lokacije na taj zahtjev mogu odgovoriti tako da vam prikaž
 <translation id="869891660844655955">Datum isteka</translation>
 <translation id="8719023831149562936">Trenutačnu karticu nije moguće emitirati</translation>
 <translation id="8725066075913043281">Pokušajte ponovo</translation>
-<translation id="8728487861892616501">Upotrebom ove aplikacije prihvaćate Chromeove <ph name="BEGIN_LINK1" />uvjete pružanja usluge<ph name="END_LINK1" /> i <ph name="BEGIN_LINK2" />obavijest o privatnosti<ph name="END_LINK2" /> te <ph name="BEGIN_LINK3" />obavijest o privatnosti za Google račune kojima se upravlja putem Family Linka<ph name="END_LINK3" />.</translation>
+<translation id="7247433043977983806">Upotrebom ove aplikacije prihvaćate Chromeove <ph name="BEGIN_LINK1" />uvjete pružanja usluge<ph name="END_LINK1" /> i <ph name="BEGIN_LINK2" />obavijest o privatnosti<ph name="END_LINK2" /> te <ph name="BEGIN_LINK3" />obavijest o privatnosti za Google račune kojima se upravlja putem Family Linka<ph name="END_LINK3" />.</translation>
 <translation id="8730621377337864115">Gotovo</translation>
 <translation id="8748850008226585750">Sadržaj je skriven</translation>
 <translation id="8751914237388039244">Odaberite sliku</translation>
