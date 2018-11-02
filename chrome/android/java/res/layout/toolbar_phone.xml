@@ -76,7 +76,7 @@
                   android:visibility="invisible"
                   android:background="@drawable/brave_badge_shields_background_small"
                   android:textColor="@android:color/white"
-                  android:translationZ="5dp"
+                  android:translationZ="1dp"
                   android:fontFamily="sans-serif-bold"
                   android:textSize="10sp" />
 
@@ -90,7 +90,7 @@
                   android:visibility="invisible"
                   android:background="@drawable/brave_badge_shields_background_large"
                   android:textColor="@android:color/white"
-                  android:translationZ="5dp"
+                  android:translationZ="1dp"
                   android:fontFamily="sans-serif-bold"
                   android:textSize="10sp" />
         </FrameLayout>
@@ -100,7 +100,7 @@
             android:orientation="vertical"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/modern_toolbar_background_white_end_segment"
+            android:background="@drawable/modern_toolbar_background_grey_end_segment"
             android:layout_height="40dp" >
             <ImageButton android:id="@+id/brave_rewards_button"
                 style="@style/ToolbarButton"
@@ -130,7 +130,7 @@
                   android:background="@drawable/brave_badge_rewards_background_small"
                   android:textColor="@android:color/white"
                   android:fontFamily="sans-serif-bold"
-                  android:translationZ="5dp"
+                  android:translationZ="1dp"
                   android:textSize="10sp" />
 
             <org.chromium.chrome.browser.BraveBadge
@@ -144,7 +144,7 @@
                   android:background="@drawable/brave_badge_rewards_background_large"
                   android:textColor="@android:color/white"
                   android:fontFamily="sans-serif-bold"
-                  android:translationZ="5dp"
+                  android:translationZ="1dp"
                   android:textSize="10sp" />
         </FrameLayout>
 

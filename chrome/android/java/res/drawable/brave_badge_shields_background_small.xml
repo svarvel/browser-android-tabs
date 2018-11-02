@@ -6,7 +6,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
       <shape android:shape="oval" >
-        <solid android:color="#662D91" />
+        <solid android:color="#343546" />
       </shape>
     </item>
     <!-- (Albert Wang) We might re-add borders
