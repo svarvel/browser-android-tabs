@@ -42,6 +42,10 @@ export class RewardsPanel extends React.Component<Props, State> {
     // ToDo, replace chrome.query
   }
 
+  openRewardsPage () {
+    window.open('chrome://rewards')
+  }
+
   onCreate = () => {
     this.setState({
       creating: true
@@ -81,6 +85,7 @@ export class RewardsPanel extends React.Component<Props, State> {
           !walletCreated
           ? <PanelWelcome
             variant={'two'}
+            moreLink={this.openRewardsPage}
             creating={this.state.creating}
             optInErrorAction={actions.onWalletCreateFailed}
             optInAction={this.onCreate}
