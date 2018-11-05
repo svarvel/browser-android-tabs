@@ -126,9 +126,7 @@ export class Panel extends React.Component<Props, State> {
   }
 
   openRewardsPage () {
-    chrome.tabs.create({
-      url: 'chrome://rewards'
-    })
+    window.open('chrome://rewards')
   }
 
   showDonateToSiteDetail = () => {
