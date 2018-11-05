@@ -45,9 +45,9 @@ private:
    void HandleCreateWalletRequested(const base::ListValue* args);
    void GetWalletProperties(const base::ListValue* args);
 
-   void OnWalletInitialized(brave_rewards::BraveRewardsService* rewards_service,
+   void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
-   void OnWalletProperties(brave_rewards::BraveRewardsService* rewards_service,
+   void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
                            int error_code,
                            std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
 
@@ -101,7 +101,7 @@ void RewardsDOMHandler::GetWalletProperties(const base::ListValue* args) {
 }
 
 void RewardsDOMHandler::OnWalletInitialized(
-    brave_rewards::BraveRewardsService* rewards_service,
+    brave_rewards::RewardsService* rewards_service,
     int error_code) {
   if (!web_ui()->CanCallJavascript())
     return;
@@ -113,7 +113,7 @@ void RewardsDOMHandler::OnWalletInitialized(
 }
 
 void RewardsDOMHandler::OnWalletProperties(
-    brave_rewards::BraveRewardsService* rewards_service,
+    brave_rewards::RewardsService* rewards_service,
     int error_code,
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
 
