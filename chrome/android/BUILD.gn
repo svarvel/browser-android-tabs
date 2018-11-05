@@ -41,6 +41,12 @@ if (enable_vr) {
 manifest_package = "com.brave.browser"
 test_manifest_package = "org.chromium.chrome.tests"
 
+if (android_channel == "stable") {
+  manifest_package = "com.brave.browser"
+} else if (android_channel == "default") {
+  manifest_package = "com.brave.browser_default"
+}
+
 chrome_public_jinja_variables = default_chrome_public_jinja_variables +
                                 [ "manifest_package=$manifest_package" ]
 chrome_public_android_manifest =
@@ -1013,7 +1019,12 @@ if (enable_vr || enable_arcore) {
 
 # Overrides icon / name defined in chrome_app_java_resources.
 android_resources("chrome_public_apk_resources") {
-  resource_dirs = [ "java/res_brave" ]
+
+  if (android_channel == "stable") {
+    resource_dirs = [ "java/res_brave" ]
+  } else if (android_channel == "default") {
+    resource_dirs = [ "java/res_brave_default" ]
+  }
 
   # Dep needed to ensure override works properly.
   deps = [
