@@ -65,7 +65,19 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
         { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
         { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
-        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET }
+        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
+        { "monthApr", IDS_BRAVE_UI_MONTH_APR },
+        { "monthAug", IDS_BRAVE_UI_MONTH_AUG },
+        { "monthDec", IDS_BRAVE_UI_MONTH_DEC },
+        { "monthFeb", IDS_BRAVE_UI_MONTH_FEB },
+        { "monthJan", IDS_BRAVE_UI_MONTH_JAN },
+        { "monthJul", IDS_BRAVE_UI_MONTH_JUL },
+        { "monthJun", IDS_BRAVE_UI_MONTH_JUN },
+        { "monthMar", IDS_BRAVE_UI_MONTH_MAR },
+        { "monthMay", IDS_BRAVE_UI_MONTH_MAY },
+        { "monthNov", IDS_BRAVE_UI_MONTH_NOV },
+        { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
+        { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
       }
     }
   };
