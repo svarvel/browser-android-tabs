@@ -2,6 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+#include "chrome/browser/android/tab_android.h"
+#include "chrome/browser/sessions/session_tab_helper.h"
+#include "chrome/browser/ui/android/tab_model/tab_model.h"
+#include "chrome/browser/ui/android/tab_model/tab_model_list.h"
 #include "chrome/browser/ui/webui/brave_rewards_panel_ui.h"
 
 #include "brave/components/brave_rewards/browser/rewards_service.h"
@@ -19,6 +23,7 @@
 #include "content/public/browser/web_ui.h"
 #include "content/public/browser/web_ui_data_source.h"
 #include "content/public/browser/web_ui_message_handler.h"
+
 
 using content::WebContents;
 using content::WebUIMessageHandler;
@@ -44,6 +49,7 @@ private:
    void GetBalanceReports(const base::ListValue* args);
    void HandleCreateWalletRequested(const base::ListValue* args);
    void GetWalletProperties(const base::ListValue* args);
+   void GetCurrentActiveTabInfo(const base::ListValue* args);
 
    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
@@ -71,8 +77,35 @@ void RewardsDOMHandler::RegisterMessages() {
       base::BindRepeating(&RewardsDOMHandler::GetCurrentWindowId,
                           base::Unretained(this)));
   web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentReport",
-                                    base::BindRepeating(&RewardsDOMHandler::GetBalanceReports,
-                                                        base::Unretained(this)));
+      base::BindRepeating(&RewardsDOMHandler::GetBalanceReports,
+                          base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentActiveTabInfo",
+      base::BindRepeating(&RewardsDOMHandler::GetCurrentActiveTabInfo,
+                          base::Unretained(this)));
+}
+
+void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
+  if (!web_ui()->CanCallJavascript()) {
+    return;
+  }
+
+  for (TabModelList::const_iterator iter = TabModelList::begin(); iter < TabModelList::end(); iter++) {
+    TabModel* model = *iter;
+    if (!model) {
+      continue;
+    }
+    content::WebContents* web_contents = model->GetActiveWebContents();
+    // Check are we on incognito TabModel
+    if (web_contents && web_contents->GetBrowserContext()->IsOffTheRecord()) {
+      continue;
+    }
+    TabAndroid* tabAndroid = model->GetTabAt(model->GetActiveIndex());
+    base::DictionaryValue currentTabInfo;
+    currentTabInfo.SetInteger("id", SessionTabHelper::IdForTab(web_contents).id());
+    currentTabInfo.SetString("url", tabAndroid->GetURL().spec());
+
+    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentActiveTabInfo", currentTabInfo);
+  }
 }
 
 void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
@@ -81,6 +114,7 @@ void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
     //FIX: BrowserList is not available for Android. 
     //Browser* active_window = BrowserList::GetInstance()->GetLastActive();
     //int window_id = active_window->session_id().id();
+    // SZ: We always have only one window on Android.
     int window_id = 0;
     web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentWindowId", base::Value(window_id));
   }
