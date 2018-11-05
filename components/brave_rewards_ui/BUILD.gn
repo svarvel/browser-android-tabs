@@ -42,7 +42,7 @@ transpile_web_ui("ui") {
     "panel/brave_rewards/utils.ts",
   ]
 
-  bundle_names = ["brave_rewards.bundle.js"]
+  bundle_names = ["brave_rewards.js"]
 
 #  we don't use `deps` here: all the targets are listed in components/webpack/*.config.js
 #  deps = [
