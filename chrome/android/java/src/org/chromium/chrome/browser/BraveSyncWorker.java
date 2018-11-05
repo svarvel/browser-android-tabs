@@ -38,6 +38,7 @@ import org.chromium.components.embedder_support.view.ContentView;
 import org.chromium.content_public.browser.ViewEventSink;
 import org.chromium.content.browser.ViewEventSinkImpl;
 import org.chromium.chrome.browser.ChromeVersionInfo;
+import org.chromium.ui.base.ActivityWindowAndroid;
 import org.chromium.ui.base.ViewAndroidDelegate;
 
 import org.json.JSONArray;
@@ -757,6 +758,8 @@ public class BraveSyncWorker {
             if (null == mWebContents) {
                 mWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mWebContents) {
+                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mWebContents);
+                    mWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new ActivityWindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
                     mViewEventSink = ViewEventSinkImpl.from(mWebContents);
                     if (null != mViewEventSink) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -2529,6 +2532,8 @@ public class BraveSyncWorker {
             if (null == mJSWebContents) {
                 mJSWebContents = WebContentsFactory.createWebContents(false, true);
                 if (null != mJSWebContents) {
+                    ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mJSWebContents);
+                    mJSWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new ActivityWindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
                     mJSViewEventSink = ViewEventSinkImpl.from(mJSWebContents);
                     if (null != mJSViewEventSink) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
