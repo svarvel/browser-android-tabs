@@ -209,6 +209,7 @@ without changes to the corresponding grd file. -->
         <part file="cr_components/cr_components_images.grdp" />
         <part file="cr_elements_images.grdp" />
       </if>
+      <part file="brave_webui_resources.grdp" />
     </includes>
     <structures>
       <structure name="IDR_WEBUI_CSS_ACTION_LINK"
