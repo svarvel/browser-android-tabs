@@ -2,16 +2,17 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import * as React from 'react'
+ // @ts-ignore until react type includes Suspense
+import React, { Suspense } from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import SettingsPage from './settingsPage'
+const SettingsPage = React.lazy<any>(() => import('./settingsPage'))
+const WelcomePage = React.lazy<any>(() => import('./welcomePage'))
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
-import { WelcomePage } from 'brave-ui/features/rewards'
 
 interface Props extends Rewards.ComponentProps {
 }
@@ -71,16 +72,16 @@ export class App extends React.Component<Props, State> {
       <div id='rewardsPage'>
         {
           !rewardsData.walletCreated
-          ? <WelcomePage
+          ? <Suspense fallback={<div>Loading...</div>}><WelcomePage
             creating={this.state.creating}
             optInAction={this.onCreateWalletClicked}
             {...props}
-          />
+          /></Suspense>
           : null
         }
         {
           rewardsData.walletCreated
-          ? <SettingsPage />
+          ? <Suspense fallback={<div>Loading...</div>}><SettingsPage /></Suspense>
           : null
         }
       </div>

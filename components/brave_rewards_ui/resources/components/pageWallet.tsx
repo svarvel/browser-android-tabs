@@ -16,6 +16,7 @@ import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './s
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 import * as utils from '../utils'
+import { convertProbiToFixed } from '../../../common/probiUtils'
 
 interface State {
   addFundsShown?: boolean
@@ -60,7 +61,7 @@ class PageWallet extends React.Component<Props, State> {
 
     return grants.map((grant: Rewards.Grant) => {
       return {
-        tokens: utils.convertProbiToFixed(grant.probi),
+        tokens: convertProbiToFixed(grant.probi),
         expireDate: new Date(grant.expiryTime * 1000).toLocaleDateString()
       }
     })
@@ -71,7 +72,7 @@ class PageWallet extends React.Component<Props, State> {
 
     if (walletServerProblem) {
       return {
-        node: <><b>{getLocale('uhOh')}</b> {getLocale('serverNotResponding')}</>,
+        node: <React.Fragment><b>{getLocale('uhOh')}</b> {getLocale('serverNotResponding')}</React.Fragment>,
         type: 'error'
       }
     }
@@ -93,7 +94,7 @@ class PageWallet extends React.Component<Props, State> {
         const item = report[key]
 
         if (item.length > 1 && key !== 'total') {
-          const tokens = utils.convertProbiToFixed(item)
+          const tokens = convertProbiToFixed(item)
           props[key] = {
             tokens,
             converted: utils.convertBalance(tokens, rates)
@@ -118,7 +119,7 @@ class PageWallet extends React.Component<Props, State> {
     }
 
     return (
-      <>
+      <React.Fragment>
         <StyledWalletOverlay>
           <StyledWalletClose>
             <CloseStrokeIcon onClick={toggleAction}/>
@@ -152,7 +153,7 @@ class PageWallet extends React.Component<Props, State> {
             : null
           }
         </StyledWalletOverlay>
-      </>
+      </React.Fragment>
     )
   }
 }
