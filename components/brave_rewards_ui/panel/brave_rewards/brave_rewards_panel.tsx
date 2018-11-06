@@ -15,8 +15,6 @@ import { getActions as getUtilActions, setActions } from '../../resources/utils'
 import * as rewardsPanelActions from './actions/rewards_panel_actions'
 
 require('emptykit.css')
-require('../../../fonts/muli.css')
-require('../../../fonts/poppins.css')
 
 // Components
 import App from './components/app'
