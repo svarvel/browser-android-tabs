@@ -15,7 +15,7 @@ import {
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
-import { convertProbiToFixed } from '../utils'
+import { convertProbiToFixed } from '../../../common/probiUtils'
 
 type Step = '' | 'complete'
 
@@ -70,7 +70,7 @@ class Grant extends React.Component<Props, State> {
     }
 
     return (
-      <>
+      <React.Fragment>
         {
           this.state.grantShown
           ? <GrantClaim
@@ -96,7 +96,7 @@ class Grant extends React.Component<Props, State> {
             </GrantWrapper>
             : null
         }
-      </>
+      </React.Fragment>
     )
   }
 }

@@ -2,6 +2,7 @@ brave_common_typescript_includes = [
   rebase_path("classSet.ts"),
   rebase_path("debounce.ts"),
   rebase_path("locale.ts"),
+  rebase_path("probiUtils.ts"),
 ]
 
 template("transpile_web_ui") {
@@ -9,6 +10,10 @@ template("transpile_web_ui") {
     script = "//components/brave_rewards_ui/script/transpile-web-ui.py"
 
     inputs = brave_common_typescript_includes
+    inputs += [
+      rebase_path("../webpack/prod.config.js"),
+      rebase_path("../webpack/dev.config.js"),
+    ]
     if (defined(invoker.inputs)) {
       inputs += invoker.inputs
     }

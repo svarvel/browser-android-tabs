@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { initLocale } from 'brave-ui'
+import { initLocale } from 'brave-ui/helpers'
 import { bindActionCreators } from 'redux'
 require('emptykit.css')
 
@@ -126,5 +126,10 @@ window.cr.define('brave_rewards', function () {
     contributionAmount
   }
 })
-
+if (document.readyState === "complete"
+     || document.readyState === "interactive") {
+     // document has at least been parsed
+     window.brave_rewards.initialize()
+} else {
 document.addEventListener('DOMContentLoaded', window.brave_rewards.initialize)
+}

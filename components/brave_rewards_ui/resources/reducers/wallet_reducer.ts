@@ -6,7 +6,7 @@ import { Reducer } from 'redux'
 
 // Constant
 import { types } from '../constants/rewards_types'
-import { generateQR } from '../utils'
+import { generateQR } from '../qrUtils'
 
 const createWallet = (state: Rewards.State) => {
   state.walletCreated = true

@@ -29,7 +29,7 @@ interface State {
   walletShown: boolean
 }
 
-interface Props extends Rewards.ComponentProps {
+export interface Props extends Rewards.ComponentProps {
   rewardsEnabled?: boolean
 }
 
@@ -68,7 +68,7 @@ class SettingsPage extends React.Component<Props, State> {
     }
 
     this.actions.getWalletProperties()
-    this.balanceTimerId = setInterval(() => {
+    this.balanceTimerId = window.setInterval(() => {
       this.actions.getWalletProperties()
     }, 60000)
 
@@ -76,7 +76,7 @@ class SettingsPage extends React.Component<Props, State> {
   }
 
   componentWillUnmount () {
-    clearInterval(this.balanceTimerId)
+    window.clearInterval(this.balanceTimerId)
   }
 
   render () {

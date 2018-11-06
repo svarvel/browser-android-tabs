@@ -1,20 +1,28 @@
 {
   "compilerOptions": {
+
+    // leave JSX as it is
+    "jsx": "react",
+    // resolve modules as you would expect
+    "moduleResolution": "node",
+    // leave imports as they are
+    "module": "esnext",
+    // do not transpile stuff like classes, async/await, ...
+    "target": "esnext",
+    // produce a source map
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "lib": [
       "es6",
       "dom",
       "es7"
     ],
-    "target": "es5",
     "allowJs": true,
-    "jsx": "react",
-    "moduleResolution": "node",
     "typeRoots": [
       "./node_modules/@types",
-      "./components/definitions"
+      "./components/definitions/"
     ],
     // optional
     "forceConsistentCasingInFileNames": true,

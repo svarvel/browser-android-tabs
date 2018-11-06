@@ -33,9 +33,28 @@ void AddResourcePaths(content::WebUIDataSource* html_source,
   }
 }
 
+void AddCommonResourcePaths(content::WebUIDataSource* source) {
+  source->AddResourcePath("0.chunk.js", IDR_BRAVE_COMMON_UI_JS_0);
+  source->AddResourcePath("1.chunk.js", IDR_BRAVE_COMMON_UI_JS_1);
+  source->AddResourcePath("2.chunk.js", IDR_BRAVE_COMMON_UI_JS_2);
+  source->AddResourcePath("3.chunk.js", IDR_BRAVE_COMMON_UI_JS_3);
+  source->AddResourcePath("4.chunk.js", IDR_BRAVE_COMMON_UI_JS_4);
+  source->AddResourcePath("5.chunk.js", IDR_BRAVE_COMMON_UI_JS_5);
+  source->AddResourcePath("6.chunk.js", IDR_BRAVE_COMMON_UI_JS_6);
+  source->AddResourcePath("7.chunk.js", IDR_BRAVE_COMMON_UI_JS_7);
+  source->AddResourcePath("8.chunk.js", IDR_BRAVE_COMMON_UI_JS_8);
+  source->AddResourcePath("9.chunk.js", IDR_BRAVE_COMMON_UI_JS_9);
+  source->AddResourcePath("10.chunk.js", IDR_BRAVE_COMMON_UI_JS_10);
+}
+
+
 }  // namespace
 
 void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource* source) {
+  // Optional resources common to all pages
+  AddCommonResourcePaths(source);
+
+  // Resources specific to each page
   static std::map<std::string, std::vector<WebUISimpleItem> > resources = {
     {
       std::string("rewards"), {

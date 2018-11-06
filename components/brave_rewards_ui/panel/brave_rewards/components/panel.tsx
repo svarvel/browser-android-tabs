@@ -12,6 +12,7 @@ import { Provider } from 'brave-ui/features/rewards/profile'
 // Utils
 import * as rewardsPanelActions from '../actions/rewards_panel_actions'
 import * as utils from '../utils'
+import { convertProbiToFixed } from '../../../../common/probiUtils'
 
 interface Props extends RewardsExtension.ComponentProps {
   tabId: string
@@ -106,7 +107,7 @@ export class Panel extends React.Component<Props, State> {
 
     return grants.map((grant: RewardsExtension.Grant) => {
       return {
-        tokens: utils.convertProbiToFixed(grant.probi),
+        tokens: convertProbiToFixed(grant.probi),
         expireDate: new Date(grant.expiryTime * 1000).toLocaleDateString()
       }
     })
@@ -123,7 +124,7 @@ export class Panel extends React.Component<Props, State> {
         const item = report[key]
 
         if (item.length > 1 && key !== 'total') {
-          const tokens = utils.convertProbiToFixed(item)
+          const tokens = convertProbiToFixed(item)
           props[key] = {
             tokens,
             converted: utils.convertBalance(tokens, rates)
