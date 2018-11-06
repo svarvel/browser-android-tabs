@@ -11,6 +11,9 @@
 #include "content/public/browser/web_ui_message_handler.h"
 #include "content/public/common/bindings_policy.h"
 
+#include "content/public/browser/url_data_source.h"
+#include "chrome/browser/ui/webui/favicon_source.h"
+
 using content::WebUIMessageHandler;
 
 namespace {
@@ -68,6 +71,8 @@ BasicUI::BasicUI(content::WebUI* web_ui,
   content::WebUIDataSource* source = CreateBasicUIHTMLSource(profile, name,
       js_file, js_resource_id, html_resource_id);
   content::WebUIDataSource::Add(profile, source);
+
+  content::URLDataSource::Add(profile, std::make_unique<FaviconSource>(profile));
 }
 
 BasicUI::~BasicUI() {
