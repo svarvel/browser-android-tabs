@@ -30,13 +30,14 @@ window.cr.define('brave_rewards_panel', function () {
       initLocale(window.loadTimeData.data_)
     }
 
-	render(
-	  <Provider store={store}>
-	    <ThemeProvider theme={Theme}>
-	      <App />
-	    </ThemeProvider>
-	  </Provider>,
-	  document.getElementById('root'))
+    render(
+      <Provider store={store}>
+        <ThemeProvider theme={Theme}>
+          <App />
+        </ThemeProvider>
+      </Provider>,
+      document.getElementById('root')
+    )
   }
 
   function getActions () {
