@@ -8,6 +8,7 @@ export const enum types {
   ON_WALLET_CREATE_FAILED = '@@rewards_panel/ON_WALLET_CREATE_FAILED',
   ON_TAB_ID = '@@rewards_panel/ON_TAB_ID',
   ON_TAB_RETRIEVED = '@@rewards_panel/ON_TAB_RETRIEVED',
+  GET_PUBLISHER_DATA = '@@rewards_panel/GET_PUBLISHER_DATA',
   ON_PUBLISHER_DATA = '@@rewards_panel/ON_PUBLISHER_DATA',
   GET_WALLET_PROPERTIES = '@@rewards_panel/GET_WALLET_PROPERTIES',
   ON_WALLET_PROPERTIES = '@@rewards_panel/ON_WALLET_PROPERTIES',
