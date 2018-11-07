@@ -26,13 +26,6 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
       state = { ...state }
       state.walletCreateFailed = true
       break
-    case types.CURRENT_WINDOW_ID:
-      chrome.send('brave_rewards_panel.getCurrentWindowId', [])
-      break
-    case types.ON_CURRENT_WINDOW_ID:
-      state = { ...state }
-      state.currentWindowId = parseInt(payload.windowId)
-      break
     case types.ON_TAB_ID:
       if (payload.tabId) {
         getTabData(payload.tabId)
