@@ -44,7 +44,6 @@ class RewardsDOMHandler : public WebUIMessageHandler,
   void RegisterMessages() override;
 
 private:
-   void GetCurrentWindowId(const base::ListValue* args);
    brave_rewards::RewardsService* rewards_service_;
    void GetBalanceReports(const base::ListValue* args);
    void HandleCreateWalletRequested(const base::ListValue* args);
@@ -72,9 +71,6 @@ void RewardsDOMHandler::RegisterMessages() {
                           base::Unretained(this)));
   web_ui()->RegisterMessageCallback("brave_rewards_panel.getWalletProperties",
       base::BindRepeating(&RewardsDOMHandler::GetWalletProperties,
-                          base::Unretained(this)));
-  web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentWindowId",
-      base::BindRepeating(&RewardsDOMHandler::GetCurrentWindowId,
                           base::Unretained(this)));
   web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentReport",
       base::BindRepeating(&RewardsDOMHandler::GetBalanceReports,
@@ -105,18 +101,6 @@ void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
     currentTabInfo.SetString("url", tabAndroid->GetURL().spec());
 
     web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentActiveTabInfo", currentTabInfo);
-  }
-}
-
-void RewardsDOMHandler::GetCurrentWindowId(const base::ListValue* args) {
-  if (web_ui()->CanCallJavascript()) {
-
-    //FIX: BrowserList is not available for Android. 
-    //Browser* active_window = BrowserList::GetInstance()->GetLastActive();
-    //int window_id = active_window->session_id().id();
-    // SZ: We always have only one window on Android.
-    int window_id = 0;
-    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentWindowId", base::Value(window_id));
   }
 }
 

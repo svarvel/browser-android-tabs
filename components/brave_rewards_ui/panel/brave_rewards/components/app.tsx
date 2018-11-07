@@ -34,10 +34,6 @@ export class RewardsPanel extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  componentDidMount () {
-    this.props.actions.getCurrentWindowId()
-  }
-
   getTabData () {
     // ToDo, replace chrome.query
   }
@@ -74,11 +70,8 @@ export class RewardsPanel extends React.Component<Props, State> {
 
   render () {
     const { rewardsPanelData, actions } = this.props
-
     const walletCreated = rewardsPanelData.walletCreated || false
-    const windowId = rewardsPanelData.currentWindowId === this.state.windowId
-      ? this.state.windowId
-      : rewardsPanelData.currentWindowId
+
     return (
       <>
         {
@@ -90,7 +83,7 @@ export class RewardsPanel extends React.Component<Props, State> {
             optInErrorAction={actions.onWalletCreateFailed}
             optInAction={this.onCreate}
           />
-          : <Panel windowId={windowId || -1} />
+          : <Panel windowId={-1} />
         }
       </>
     )
