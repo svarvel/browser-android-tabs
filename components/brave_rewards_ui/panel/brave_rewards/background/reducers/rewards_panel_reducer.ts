@@ -31,6 +31,10 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         getTabData(payload.tabId)
       }
       break
+    case types.GET_PUBLISHER_DATA:
+      console.log('calling brave_rewards_panel.getPublisherData')
+      //chrome.send('brave_rewards_panel.getPublisherData', [])
+      break
     case types.ON_TAB_RETRIEVED:
     /*
       const tab: chrome.tabs.Tab = payload.tab
@@ -55,9 +59,9 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         let publishers: Record<string, RewardsExtension.Publisher> = state.publishers
 
         if (publisher && !publisher.publisher_key) {
-          delete publishers[payload.windowId.toString()]
+          delete publishers[payload.tabId.toString()]
         } else {
-          publishers[payload.windowId.toString()] = payload.publisher
+          publishers[payload.tabId.toString()] = payload.publisher
         }
 
         state = {

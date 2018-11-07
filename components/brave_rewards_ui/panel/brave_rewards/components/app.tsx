@@ -34,6 +34,7 @@ export class RewardsPanel extends React.Component<Props, State> {
 
   componentDidMount () {
     this.props.actions.currentTabInfo()
+    this.props.actions.getPublisherData()
   }
 
   getTabData () {
