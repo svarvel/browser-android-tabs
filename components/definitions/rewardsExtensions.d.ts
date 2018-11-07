@@ -1,7 +1,8 @@
 declare namespace RewardsExtension {
   interface State {
     currentNotification?: string
-    currentWindowId?: number
+    currentTabId?: number
+    currentTabUrl?: string
     notifications: Record<number, Notification>
     publishers: Record<string, Publisher>
     report: Report

@@ -41,3 +41,9 @@ export const getCurrentReport = () => action(types.GET_CURRENT_REPORT, {})
 export const onCurrentReport = (properties: RewardsExtension.Report) => action(types.ON_CURRENT_REPORT, {
   properties
 })
+
+export const currentTabInfo = () => action(types.GET_CURRENT_TAB_INFO, {})
+
+export const onCurrentTabInfo = (currentTabInfo: {id: number, url: string}) => action(types.ON_CURRENT_TAB_INFO, {
+  currentTabInfo
+})

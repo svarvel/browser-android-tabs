@@ -50,8 +50,8 @@ window.cr.define('brave_rewards_panel', function () {
     return newActions
   }
 
-  function currentWindowId (windowId: number) {
-    getActions().onCurrentWindowId(windowId)
+  function currentTabInfo (currentTabInfo: {id: number, url: string}) {
+    getActions().onCurrentTabInfo(currentTabInfo)
   }
 
   function walletCreated () {
@@ -76,7 +76,7 @@ window.cr.define('brave_rewards_panel', function () {
     walletCreated,
     walletCreateFailed,
     walletProperties,
-    currentWindowId
+    currentTabInfo
   }
 })
 

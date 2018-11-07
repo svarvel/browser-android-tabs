@@ -85,6 +85,16 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         state.report = payload.properties
         break
       }
+    case types.GET_CURRENT_TAB_INFO:
+      chrome.send('brave_rewards_panel.getCurrentActiveTabInfo', [])
+      break
+    case types.ON_CURRENT_TAB_INFO:
+      {
+        state = { ...state }
+        state.currentTabId = parseInt(payload.currentTabInfo.id)
+        state.currentTabUrl = payload.currentTabInfo.url
+        break
+      }
   }
 
   if (state !== startingState) {

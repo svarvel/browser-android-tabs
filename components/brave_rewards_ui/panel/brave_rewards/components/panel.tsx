@@ -14,7 +14,7 @@ import * as rewardsPanelActions from '../actions/rewards_panel_actions'
 import * as utils from '../utils'
 
 interface Props extends RewardsExtension.ComponentProps {
-  windowId: number
+  tabId: number
 }
 
 interface State {
@@ -72,13 +72,13 @@ export class Panel extends React.Component<Props, State> {
   }
 
   getPublisher = () => {
-    const windowId = this.props.windowId
+    const tabId = this.props.tabId
 
-    if (!windowId) {
+    if (!tabId) {
       return undefined
     }
 
-    return this.props.rewardsPanelData.publishers[windowId]
+    return this.props.rewardsPanelData.publishers[tabId]
   }
 
   onSliderToggle = () => {
