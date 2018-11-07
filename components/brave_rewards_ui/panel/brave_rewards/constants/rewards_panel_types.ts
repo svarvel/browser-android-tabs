@@ -12,5 +12,7 @@ export const enum types {
   GET_WALLET_PROPERTIES = '@@rewards_panel/GET_WALLET_PROPERTIES',
   ON_WALLET_PROPERTIES = '@@rewards_panel/ON_WALLET_PROPERTIES',
   GET_CURRENT_REPORT = '@@rewards_panel/GET_CURRENT_REPORT',
-  ON_CURRENT_REPORT = '@@rewards_panel/ON_CURRENT_REPORT'
+  ON_CURRENT_REPORT = '@@rewards_panel/ON_CURRENT_REPORT',
+  GET_CURRENT_TAB_INFO = '@@rewards_panel/GET_CURRENT_TAB_INFO',
+  ON_CURRENT_TAB_INFO = '@@rewards_panel/ON_CURRENT_TAB_INFO'
 }

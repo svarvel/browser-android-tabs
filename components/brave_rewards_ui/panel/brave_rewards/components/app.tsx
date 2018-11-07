@@ -17,7 +17,6 @@ interface Props extends RewardsExtension.ComponentProps {
 }
 
 interface State {
-  windowId: number
   creating: boolean
 }
 
@@ -25,13 +24,16 @@ export class RewardsPanel extends React.Component<Props, State> {
   constructor (props: Props) {
     super(props)
     this.state = {
-      windowId: -1,
       creating: false
     }
   }
 
   get actions () {
     return this.props.actions
+  }
+
+  componentDidMount () {
+    this.props.actions.currentTabInfo()
   }
 
   getTabData () {
@@ -71,6 +73,7 @@ export class RewardsPanel extends React.Component<Props, State> {
   render () {
     const { rewardsPanelData, actions } = this.props
     const walletCreated = rewardsPanelData.walletCreated || false
+    const currentTabId = rewardsPanelData.currentTabId || -1
 
     return (
       <>
@@ -83,7 +86,7 @@ export class RewardsPanel extends React.Component<Props, State> {
             optInErrorAction={actions.onWalletCreateFailed}
             optInAction={this.onCreate}
           />
-          : <Panel windowId={-1} />
+          : <Panel tabId={currentTabId} />
         }
       </>
     )
