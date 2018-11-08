@@ -11,6 +11,7 @@
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
+#include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
 
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
@@ -49,12 +50,19 @@ private:
    void HandleCreateWalletRequested(const base::ListValue* args);
    void GetWalletProperties(const base::ListValue* args);
    void GetCurrentActiveTabInfo(const base::ListValue* args);
+   void DonateToSite(const base::ListValue* args);
+   void GetPublisherData(const base::ListValue* args);
 
    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
    void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
                            int error_code,
                            std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
+   void OnGetPublisherActivityFromUrl(
+      brave_rewards::RewardsService* rewards_service,
+      int error_code,
+      ledger::PublisherInfo* info,
+      uint64_t tabId) override;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
@@ -78,6 +86,65 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("brave_rewards_panel.getCurrentActiveTabInfo",
       base::BindRepeating(&RewardsDOMHandler::GetCurrentActiveTabInfo,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.donateToSite",
+      base::BindRepeating(&RewardsDOMHandler::DonateToSite,
+                          base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.getPublisherData",
+      base::BindRepeating(&RewardsDOMHandler::GetPublisherData,
+                          base::Unretained(this)));
+}
+
+void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
+  std::string tabIdStr;
+  std::string publisherKey;
+  args->GetString(0, &tabIdStr);
+  args->GetString(1, &publisherKey);
+  std::stringstream tempTabId(tabIdStr);
+  SessionID::id_type tabId = -1;
+  tempTabId >> tabId;
+
+  // TODO hook up brave_donate_ui
+}
+
+void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
+  std::string tabIdStr;
+  std::string publisherKey;
+  std::string favIcon;
+  args->GetString(0, &tabIdStr);
+  args->GetString(1, &publisherKey);
+  args->GetString(2, &favIcon);
+  std::stringstream tempTabId(tabIdStr);
+  SessionID::id_type tabId = -1;
+  tempTabId >> tabId;
+
+  if (rewards_service_) {
+    rewards_service_->GetPublisherActivityFromUrl(tabId,
+                                                  publisherKey,
+                                                  favIcon);
+  }
+}
+
+void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
+      brave_rewards::RewardsService* rewards_service,
+      int error_code,
+      ledger::PublisherInfo* info,
+      uint64_t tabId) {
+  if (!info || !web_ui()->CanCallJavascript()) {
+    return;
+  }
+
+  base::DictionaryValue data;
+  data.SetString("tabId", std::to_string(tabId));
+  data.SetInteger("percent", info->percent);
+  data.SetBoolean("verified", info->verified);
+  data.SetBoolean("excluded", info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED);
+  data.SetString("name", info->name);
+  data.SetString("url", info->url);
+  data.SetString("provider", info->provider);
+  data.SetString("favicon_url", info->favicon_url);
+  data.SetString("publisher_key", info->id);
+
+  web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.publisherData", data);
 }
 
 void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
@@ -134,7 +201,6 @@ void RewardsDOMHandler::OnWalletProperties(
     brave_rewards::RewardsService* rewards_service,
     int error_code,
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
-
   if (web_ui()->CanCallJavascript()) {
     base::DictionaryValue result;
     result.SetInteger("status", error_code);
