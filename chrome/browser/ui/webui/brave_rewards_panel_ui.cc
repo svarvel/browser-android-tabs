@@ -109,18 +109,16 @@ void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
 void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
   std::string tabIdStr;
   std::string publisherKey;
-  std::string favIcon;
-  args->GetString(0, &tabIdStr);
+    args->GetString(0, &tabIdStr);
   args->GetString(1, &publisherKey);
-  args->GetString(2, &favIcon);
-  std::stringstream tempTabId(tabIdStr);
+    std::stringstream tempTabId(tabIdStr);
   SessionID::id_type tabId = -1;
   tempTabId >> tabId;
 
   if (rewards_service_) {
     rewards_service_->GetPublisherActivityFromUrl(tabId,
                                                   publisherKey,
-                                                  favIcon);
+                                                  "");
   }
 }
 
