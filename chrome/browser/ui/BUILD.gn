@@ -373,6 +373,7 @@ jumbo_split_static_library("ui") {
     "//base",
     "//base:i18n",
     "//base/allocator:buildflags",
+    "//brave/vendor/bat-native-ledger",
     "//cc/paint",
     "//chrome:extra_resources",
     "//chrome:resources",
