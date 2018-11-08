@@ -162,7 +162,7 @@ void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
     }
     TabAndroid* tabAndroid = model->GetTabAt(model->GetActiveIndex());
     base::DictionaryValue currentTabInfo;
-    currentTabInfo.SetInteger("id", SessionTabHelper::IdForTab(web_contents).id());
+    currentTabInfo.SetString("id", std::to_string(SessionTabHelper::IdForTab(web_contents).id()));
     currentTabInfo.SetString("url", tabAndroid->GetURL().spec());
 
     web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentTabInfo", currentTabInfo);
