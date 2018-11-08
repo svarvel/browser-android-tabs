@@ -74,7 +74,7 @@ export class RewardsPanel extends React.Component<Props, State> {
   render () {
     const { rewardsPanelData, actions } = this.props
     const walletCreated = rewardsPanelData.walletCreated || false
-    const currentTabId = rewardsPanelData.currentTabId || -1
+    const currentTabId = rewardsPanelData.currentTabId || '-1'
 
     return (
       <>

@@ -14,7 +14,7 @@ import * as rewardsPanelActions from '../actions/rewards_panel_actions'
 import * as utils from '../utils'
 
 interface Props extends RewardsExtension.ComponentProps {
-  tabId: number
+  tabId: string
 }
 
 interface State {
