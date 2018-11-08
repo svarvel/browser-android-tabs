@@ -35,7 +35,6 @@ interface MonthlyChoice {
 }
 
 interface Props extends Rewards.ComponentProps {
-  enabledContribute?: boolean
 }
 
 class ContributeBox extends React.Component<Props, State> {
@@ -172,9 +171,10 @@ class ContributeBox extends React.Component<Props, State> {
     const {
       walletInfo,
       contributionMonthly,
-      enabledContribute,
+      enabledMain,
       reconcileStamp,
-      autoContributeList
+      autoContributeList,
+      enabledContribute
     } = this.props.rewardsData
     const prefix = this.state.allSitesShown ? 'Hide all' : 'Show all'
     const monthlyList: MonthlyChoice[] = utils.generateContributionMonthly(walletInfo.choices, walletInfo.rates)
@@ -187,7 +187,7 @@ class ContributeBox extends React.Component<Props, State> {
         title={getLocale('contributionTitle')}
         type={'contribute'}
         description={getLocale('contributionDesc')}
-        toggle={enabledContribute}
+        toggle={enabledMain}
         checked={enabledContribute}
         settingsChild={this.contributeSettings(monthlyList)}
         toggleAction={this.onToggleContribution}
