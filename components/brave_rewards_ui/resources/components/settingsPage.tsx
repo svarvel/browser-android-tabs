@@ -113,9 +113,7 @@ class SettingsPage extends React.Component<Props, State> {
           converted={`${convertedBalance} USD`}
         />
         <AdsBox />
-        <ContributeBox
-          enabledContribute={enabledMain}
-        />
+        <ContributeBox />
         <DonationBox />
         <PageWallet
           toggleAction={this.onToggleWallet}
