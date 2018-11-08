@@ -95,7 +95,7 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
     case types.ON_CURRENT_TAB_INFO:
       {
         state = { ...state }
-        state.currentTabId = parseInt(payload.currentTabInfo.id)
+        state.currentTabId = payload.currentTabInfo.id
         state.currentTabUrl = payload.currentTabInfo.url
         break
       }
