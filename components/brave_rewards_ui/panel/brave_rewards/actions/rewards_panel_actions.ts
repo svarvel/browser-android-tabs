@@ -30,9 +30,8 @@ export const getPublisherData = (tabId: string, url: string) => action(types.GET
   url
 })
 
-export const onPublisherData = (tabId: string, publisher: RewardsExtension.Publisher) => action(types.ON_PUBLISHER_DATA, {
-  tabId,
-  publisher
+export const onPublisherData = (info: RewardsExtension.PublisherPayload) => action(types.ON_PUBLISHER_DATA, {
+  info
 })
 
 export const getWalletProperties = () => action(types.GET_WALLET_PROPERTIES, {})

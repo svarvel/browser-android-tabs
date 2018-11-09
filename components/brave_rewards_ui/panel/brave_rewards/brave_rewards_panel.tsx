@@ -54,8 +54,8 @@ window.cr.define('brave_rewards_panel', function () {
     getActions().onCurrentTabInfo(currentTabInfo)
   }
 
-  function publisherData (tabId: string, publisher: RewardsExtension.Publisher) {
-    getActions().onPublisherData(tabId, publisher)
+  function publisherData (info: RewardsExtension.PublisherPayload) {
+    getActions().onPublisherData(info)
   }
 
   function walletCreated () {
