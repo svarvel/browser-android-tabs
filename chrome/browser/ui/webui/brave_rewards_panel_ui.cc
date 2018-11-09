@@ -132,7 +132,7 @@ void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
   }
 
   base::DictionaryValue data;
-  data.SetString("tabId", std::to_string(tabId));
+  data.SetString("tabId", std::to_string(tabId).c_str());
   data.SetInteger("percent", info->percent);
   data.SetBoolean("verified", info->verified);
   data.SetBoolean("excluded", info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED);
@@ -162,7 +162,7 @@ void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
     }
     TabAndroid* tabAndroid = model->GetTabAt(model->GetActiveIndex());
     base::DictionaryValue currentTabInfo;
-    currentTabInfo.SetString("id", std::to_string(SessionTabHelper::IdForTab(web_contents).id()));
+    currentTabInfo.SetString("id", std::to_string(SessionTabHelper::IdForTab(web_contents).id()).c_str());
     currentTabInfo.SetString("url", tabAndroid->GetURL().spec());
 
     web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.currentTabInfo", currentTabInfo);
