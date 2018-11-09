@@ -34,7 +34,6 @@ export class RewardsPanel extends React.Component<Props, State> {
 
   componentDidMount () {
     this.props.actions.currentTabInfo()
-    this.props.actions.getPublisherData()
   }
 
   getTabData () {
@@ -74,7 +73,8 @@ export class RewardsPanel extends React.Component<Props, State> {
   render () {
     const { rewardsPanelData, actions } = this.props
     const walletCreated = rewardsPanelData.walletCreated || false
-    const currentTabId = rewardsPanelData.currentTabId || '-1'
+    const currentTabId = rewardsPanelData.currentTabId || ''
+    const currentTabUrl = rewardsPanelData.currentTabUrl || ''
 
     return (
       <>
@@ -87,7 +87,12 @@ export class RewardsPanel extends React.Component<Props, State> {
             optInErrorAction={actions.onWalletCreateFailed}
             optInAction={this.onCreate}
           />
-          : <Panel tabId={currentTabId} />
+          : currentTabId && currentTabUrl
+            ? <Panel
+                url={currentTabUrl}
+                tabId={currentTabId}
+            />
+            : null
         }
       </>
     )
