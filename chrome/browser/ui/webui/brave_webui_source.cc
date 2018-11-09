@@ -60,12 +60,9 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
       std::string("rewards-panel"), {
         { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
         { "braveRewardsCreatingText", IDS_BRAVE_UI_REWARDS_CREATING_TEXT },
-        { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
-        { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
-        { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
-        { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
-        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
-        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
+        { "donateMonthly", IDS_BRAVE_UI_DONATE_MONTHLY },
+        { "donateNow", IDS_BRAVE_UI_DONATE_NOW },
+        { "includeInAuto", IDS_BRAVE_UI_INCLUDE_IN_AUTO },
         { "monthApr", IDS_BRAVE_UI_MONTH_APR },
         { "monthAug", IDS_BRAVE_UI_MONTH_AUG },
         { "monthDec", IDS_BRAVE_UI_MONTH_DEC },
@@ -78,6 +75,13 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "monthNov", IDS_BRAVE_UI_MONTH_NOV },
         { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
         { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
+        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },
+        { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
+        { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
+        { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
+        { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
+        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
+        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
       }
     }
   };
