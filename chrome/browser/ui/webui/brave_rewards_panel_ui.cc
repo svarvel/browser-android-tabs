@@ -133,14 +133,16 @@ void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
 
   base::DictionaryValue data;
   data.SetString("tabId", std::to_string(tabId).c_str());
-  data.SetInteger("percent", info->percent);
-  data.SetBoolean("verified", info->verified);
-  data.SetBoolean("excluded", info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED);
-  data.SetString("name", info->name);
-  data.SetString("url", info->url);
-  data.SetString("provider", info->provider);
-  data.SetString("favicon_url", info->favicon_url);
-  data.SetString("publisher_key", info->id);
+  auto publisher = std::make_unique<base::DictionaryValue>();
+  publisher->SetInteger("percent", info->percent);
+  publisher->SetBoolean("verified", info->verified);
+  publisher->SetBoolean("excluded", info->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED);
+  publisher->SetString("name", info->name);
+  publisher->SetString("url", info->url);
+  publisher->SetString("provider", info->provider);
+  publisher->SetString("favicon_url", info->favicon_url);
+  publisher->SetString("publisher_key", info->id);
+  data.SetDictionary("publisher", std::move(publisher));
 
   web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.publisherData", data);
 }
