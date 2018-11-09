@@ -25,9 +25,12 @@ export const onTabRetrieved = (tab: chrome.tabs.Tab) => action(types.ON_TAB_RETR
   tab
 })
 
-export const getPublisherData = () => action(types.GET_PUBLISHER_DATA, {})
+export const getPublisherData = (tabId: string, url: string) => action(types.GET_PUBLISHER_DATA, {
+  tabId,
+  url
+})
 
-export const onPublisherData = (tabId: number, publisher: RewardsExtension.Publisher) => action(types.ON_PUBLISHER_DATA, {
+export const onPublisherData = (tabId: string, publisher: RewardsExtension.Publisher) => action(types.ON_PUBLISHER_DATA, {
   tabId,
   publisher
 })

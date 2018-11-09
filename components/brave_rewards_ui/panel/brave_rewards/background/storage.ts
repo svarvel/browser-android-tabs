@@ -30,7 +30,7 @@ const defaultState: RewardsExtension.State = {
   },
   notifications: {},
   currentNotification: undefined,
-  currentTabId: '-1',
+  currentTabId: '',
   currentTabUrl: ''
 }
 
