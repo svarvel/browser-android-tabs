@@ -32,6 +32,9 @@ declare global {
     brave_rewards_panel: {
       initialize: () => void
     }
+    brave_rewards_donate: {
+      initialize: () => void
+    }
     brave_welcome: {
       initialize: () => void
     }

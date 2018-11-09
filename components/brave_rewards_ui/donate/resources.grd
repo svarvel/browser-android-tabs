@@ -13,7 +13,6 @@
       <include name="IDR_BRAVE_REWARDS_LOCALES_EN" file="brave_rewards/_locales/en/messages.json" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_DONATE_HTML" file="brave_rewards/brave_rewards_donate.html" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_DONATE_BUNDLE_JS" file="brave_rewards/out/brave_rewards_donate.js" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_DONATE_BACKGROUND_JS" file="brave_rewards/out/brave_rewards_donate_background.bundle.js" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_ICON_16" file="brave_rewards/img/bat-16.png" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_ICON_32" file="brave_rewards/img/bat-32.png" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_ICON_48" file="brave_rewards/img/bat-48.png" type="BINDATA" />
