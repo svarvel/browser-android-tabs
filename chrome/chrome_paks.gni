@@ -105,7 +105,6 @@ template("chrome_extra_paks") {
       "$root_gen_dir/net/net_resources.pak",
       "$root_gen_dir/third_party/blink/public/resources/blink_resources.pak",
       "$root_gen_dir/ui/resources/webui_resources.pak",
-      "$root_gen_dir/components/brave_components_strings.pak",
     ]
     deps = [
       "//chrome/app/theme:chrome_unscaled_resources",
@@ -122,7 +121,6 @@ template("chrome_extra_paks") {
       "//net:net_resources",
       "//third_party/blink/public:resources",
       "//ui/resources",
-      "//brave/components/resources:strings",
     ]
     if (defined(invoker.deps)) {
       deps += invoker.deps
