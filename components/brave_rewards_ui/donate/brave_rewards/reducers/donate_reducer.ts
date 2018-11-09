@@ -2,24 +2,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import { Reducer } from 'redux'
-
-// Constant
-//import * as storage from '../storage'
 import { types } from '../constants/donate_types'
+import * as storage from '../storage'
 
-export const defaultState: RewardsDonate.State = {
-  finished: false,
-  error: false,
-  publisher: undefined,
-  walletInfo: {
-    balance: 0,
-    choices: [],
-    probi: '0'
+export const rewardsDonateReducer = (state: RewardsDonate.State | undefined, action: any) => {
+  if (state === undefined) {
+    state = storage.load()
   }
-}
 
-const publishersReducer: Reducer<RewardsDonate.State> = (state: RewardsDonate.State = defaultState, action) => {
+  const startingState = state
   const payload = action.payload
 
   switch (action.type) {
@@ -63,11 +54,13 @@ const publishersReducer: Reducer<RewardsDonate.State> = (state: RewardsDonate.St
       break
     case types.ON_RECURRING_DONATIONS:
       state = { ...state }
-      state.recurringList = action.payload.list
+      state.recurringList = payload.list
       break
+  }
+
+  if (state !== startingState) {
+    storage.debouncedSave(state)
   }
 
   return state
 }
-
-export default publishersReducer
