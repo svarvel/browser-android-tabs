@@ -36,15 +36,13 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
       break
     case types.ON_PUBLISHER_DATA:
       {
-        // ToDo: Primary index should not be tabId
-        let publisher = payload.tabId
-        let tabId = payload.tabId.tabId
+        let publisher = payload.info.publisher
         let publishers: Record<string, RewardsExtension.Publisher> = state.publishers
 
         if (publisher && !publisher.publisher_key) {
-          delete publishers[tabId]
+          delete publishers[payload.info.tabId]
         } else {
-          publishers[tabId] = publisher
+          publishers[payload.info.tabId] = publisher
         }
 
         state = {

@@ -31,6 +31,11 @@ declare namespace RewardsExtension {
     verified: boolean
   }
 
+  interface PublisherPayload {
+    tabId: string,
+    publisher: Publisher
+  }
+
   export interface Grant {
     altcurrency: string
     probi: string
