@@ -12,6 +12,7 @@
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
+#include "brave/components/brave_rewards/browser/wallet_properties.h"
 
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
@@ -57,7 +58,7 @@ private:
                             int error_code) override;
    void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
                            int error_code,
-                           std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
+                           brave_rewards::WalletProperties* wallet_properties) override;
    void OnGetPublisherActivityFromUrl(
       brave_rewards::RewardsService* rewards_service,
       int error_code,
@@ -200,6 +201,7 @@ void RewardsDOMHandler::OnWalletInitialized(
 void RewardsDOMHandler::OnWalletProperties(
     brave_rewards::RewardsService* rewards_service,
     int error_code,
+<<<<<<< HEAD
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
   if (web_ui()->CanCallJavascript()) {
     base::DictionaryValue result;
@@ -236,12 +238,52 @@ void RewardsDOMHandler::OnWalletProperties(
         grants->Append(std::move(grant));
       }
       walletInfo->SetList("grants", std::move(grants));
-    }
-
-    result.SetDictionary("wallet", std::move(walletInfo));
-
-    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletProperties", result);
+=======
+    brave_rewards::WalletProperties* wallet_properties) {
+  if (!wallet_properties || !web_ui()->CanCallJavascript()) {
+    return;
   }
+
+  base::DictionaryValue result;
+  result.SetInteger("status", error_code);
+  auto walletInfo = std::make_unique<base::DictionaryValue>();
+
+  if (error_code == 0 && wallet_properties) {
+    walletInfo->SetDouble("balance", wallet_properties->balance);
+    walletInfo->SetString("probi", wallet_properties->probi);
+
+    auto rates = std::make_unique<base::DictionaryValue>();
+    for (auto const& rate : wallet_properties->rates) {
+      rates->SetDouble(rate.first, rate.second);
+>>>>>>> 5ed4069abf3... fixed build after brave-core bump
+    }
+    walletInfo->SetDictionary("rates", std::move(rates));
+
+    auto choices = std::make_unique<base::ListValue>();
+    for (double const& choice : wallet_properties->parameters_choices) {
+      choices->AppendDouble(choice);
+    }
+    walletInfo->SetList("choices", std::move(choices));
+
+    auto range = std::make_unique<base::ListValue>();
+    for (double const& value : wallet_properties->parameters_range) {
+      range->AppendDouble(value);
+    }
+    walletInfo->SetList("range", std::move(range));
+
+    auto grants = std::make_unique<base::ListValue>();
+    for (auto const& item : wallet_properties->grants) {
+      auto grant = std::make_unique<base::DictionaryValue>();
+      grant->SetString("probi", item.probi);
+      grant->SetInteger("expiryTime", item.expiryTime);
+      grants->Append(std::move(grant));
+    }
+    walletInfo->SetList("grants", std::move(grants));
+  }
+
+  result.SetDictionary("wallet", std::move(walletInfo));
+
+  web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletProperties", result);
 }
 
 void RewardsDOMHandler::GetBalanceReports(const base::ListValue* args) {

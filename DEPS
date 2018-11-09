@@ -359,7 +359,7 @@ deps = {
     'condition': 'host_os == "win"',
   },
 
-  'src/brave': "https://github.com/brave/brave-core.git@62dfbc2fa38bafdd50cea24c91cbf0e9152587e9",
+  'src/brave': "https://github.com/brave/brave-core.git@81de5994569d7fa6b3698002228c7f9460bc5c75",
   'src/chrome/browser/resources/media_router/extension/src':
     Var('chromium_git') + '/media_router.git' + '@' + '29324b698ccd8920bc81c71d42dadc6310f0ad0f',
 
