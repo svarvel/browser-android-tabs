@@ -100,12 +100,16 @@ class SettingsPage extends React.Component<Props, State> {
                 {getLocale('whyBraveRewardsDesc1')}
               </StyledText>
               <StyledText>
-                {getLocale('whyBraveRewardsDesc3')}
+                {getLocale('whyBraveRewardsDesc2')}
               </StyledText>
             </StyledDisabledContent>
           : null
         }
-        <Grant />
+        {
+          enabledMain
+          ? <Grant />
+          : null
+        }
         <WalletInfoHeader
           onClick={this.onToggleWallet}
           balance={balance.toString()}
