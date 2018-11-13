@@ -70,6 +70,10 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         break
       }
     case types.GET_CURRENT_TAB_INFO:
+      state = { ...state }
+      // Clear out old tab info
+      state.currentTabId = ''
+      state.currentTabUrl = ''
       chrome.send('brave_rewards_panel.getCurrentActiveTabInfo', [])
       break
     case types.ON_CURRENT_TAB_INFO:
