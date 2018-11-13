@@ -85,7 +85,8 @@ export const StyledWalletWrapper = styled<{}, 'div'>('div')`
   height: 90vh;
   overflow-y: scroll;
   width: 90%;
-  margin-top: 40px;
+  position: absolute;
+  top: 50px;
 `
 
 export const StyledWalletClose = styled<{}, 'div'>('div')`
