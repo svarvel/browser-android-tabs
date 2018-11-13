@@ -1626,7 +1626,7 @@ chrome_public_apk_or_module_tmpl("chrome_public_apk") {
 
 chrome_public_apk_or_module_tmpl("chrome_modern_public_apk") {
   target_type = "android_apk"
-  apk_name = "ChromeModernPublic"
+  apk_name = "BraveModern"
   is_modern = true
 }
 
