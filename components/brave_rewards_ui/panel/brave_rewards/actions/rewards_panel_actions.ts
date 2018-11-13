@@ -51,3 +51,8 @@ export const currentTabInfo = () => action(types.GET_CURRENT_TAB_INFO, {})
 export const onCurrentTabInfo = (currentTabInfo: {id: string, url: string}) => action(types.ON_CURRENT_TAB_INFO, {
   currentTabInfo
 })
+
+export const donateToSite = (tabId: string, publisherKey: string) => action(types.DONATE_TO_SITE, {
+  tabId,
+  publisherKey
+})

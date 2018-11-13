@@ -79,6 +79,11 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         state.currentTabUrl = payload.currentTabInfo.url
         break
       }
+    case types.DONATE_TO_SITE:
+      {
+        chrome.send('brave_rewards_panel.donateToSite', [action.payload.tabId, action.payload.publisherKey])
+        break
+      }
   }
 
   if (state !== startingState) {
