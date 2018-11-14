@@ -85,8 +85,14 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
       }
     case types.DONATE_TO_SITE:
       {
-        chrome.send('brave_rewards_panel.donateToSite', [action.payload.tabId, action.payload.publisherKey])
+        chrome.send('brave_rewards_panel.donateToSite', [payload.tabId, payload.publisherKey])
         break
+      }
+    case types.INCLUDE_IN_AUTO_CONTRIBUTION:
+      {
+        const { publisherKey, excluded, tabId } = payload
+        const packet = [publisherKey, excluded.toString(), tabId]
+        chrome.send('brave_rewards_panel.includeInAutoContribution', packet)
       }
   }
 
