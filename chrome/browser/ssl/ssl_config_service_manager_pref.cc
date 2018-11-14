@@ -179,7 +179,10 @@ SSLConfigServiceManagerPref::SSLConfigServiceManagerPref(
   } else if (tls13_variant == "draft23") {
     tls13_value = switches::kTLS13VariantDraft23;
     version_value = switches::kSSLVersionTLSv13;
-  } else if (tls13_variant == "final") {
+  } else if (tls13_variant == "final" ||
+             // If the experimental flag for TLS1.3 is set to default,
+             // then assume we do want to use TLS1.3
+             tls13_variant.empty()) {
     tls13_value = switches::kTLS13VariantFinal;
     version_value = switches::kSSLVersionTLSv13;
   }
