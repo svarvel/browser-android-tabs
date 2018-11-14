@@ -54,6 +54,7 @@ private:
    void DonateToSite(const base::ListValue* args);
    void GetPublisherData(const base::ListValue* args);
    void IncludeInAutoContribution(const base::ListValue* args);
+   void WalletExists(const base::ListValue* args);
 
    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
@@ -97,6 +98,9 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("brave_rewards_panel.includeInAutoContribution",
       base::BindRepeating(&RewardsDOMHandler::IncludeInAutoContribution,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.checkWalletExistence",
+                                    base::BindRepeating(&RewardsDOMHandler::WalletExists,
+                                                        base::Unretained(this)));
 }
 
 void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
@@ -126,6 +130,13 @@ void RewardsDOMHandler::IncludeInAutoContribution(const base::ListValue* args) {
 
   if (rewards_service_) {
     rewards_service_->SetContributionAutoInclude(publisherKey, excluded, tabId);
+  }
+}
+
+void RewardsDOMHandler::WalletExists(const base::ListValue* args) {
+  if (rewards_service_ && web_ui()->CanCallJavascript()) {
+    bool exist = rewards_service_->IsWalletCreated();
+    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletExists", base::Value(exist));
   }
 }
 

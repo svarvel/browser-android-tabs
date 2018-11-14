@@ -33,11 +33,10 @@ export class RewardsPanel extends React.Component<Props, State> {
   }
 
   componentDidMount () {
-    this.props.actions.currentTabInfo()
-  }
-
-  getTabData () {
-    // ToDo, replace chrome.query
+    if (!this.props.rewardsPanelData.walletCreated) {
+      this.actions.checkWalletExistence()
+    }
+    this.actions.currentTabInfo()
   }
 
   openRewardsPage () {
@@ -52,13 +51,6 @@ export class RewardsPanel extends React.Component<Props, State> {
   }
 
   componentDidUpdate = (prevProps: Props, prevState: State) => {
-    if (
-      !prevProps.rewardsPanelData.walletCreated &&
-      this.props.rewardsPanelData.walletCreated
-    ) {
-      this.getTabData()
-    }
-
     if (
       this.state.creating &&
       !prevProps.rewardsPanelData.walletCreateFailed &&
