@@ -378,7 +378,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
                   @Override
                   public void onCodeWordsReceived(String[] codeWords) {
-                      Log.i(TAG, "onCodeWordsReceived");
                       try {
                           if (null == getActivity()) {
                               return;
@@ -410,7 +409,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                               @Override
                               public void run() {
                                   if (View.VISIBLE != mScrollViewSyncDone.getVisibility()) {
-                                      Log.i(TAG, "No need to load devices for other pages");
+                                      Log.w(TAG, "No need to load devices for other pages");
                                       return;
                                   }
                                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
@@ -421,7 +420,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                       new Thread(new Runnable() {
                                           @Override
                                           public void run() {
-                                              ArrayList<BraveSyncWorker.ResolvedRecordsToApply> devices = application.mBraveSyncWorker.GetAllDevices();
+                                              ArrayList<BraveSyncWorker.ResolvedRecordToApply> devices = application.mBraveSyncWorker.GetAllDevices();
                                               if (null == getActivity()) {
                                                   return;
                                               }
@@ -432,7 +431,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                       insertPoint.removeAllViews();
                                                       cancelTimeoutTimer();
                                                       int index = 0;
-                                                      for (BraveSyncWorker.ResolvedRecordsToApply device : devices) {
+                                                      for (BraveSyncWorker.ResolvedRecordToApply device : devices) {
                                                           View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
                                                           View listItemView = (View) mInflater.inflate(R.layout.brave_sync_device, null);
                                                           if (null != listItemView && null != separator && null != insertPoint) {
@@ -459,7 +458,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                                   } else {
                                                                       deleteButton.setTag(device);
                                                                       deleteButton.setOnClickListener(v -> {
-                                                                          BraveSyncWorker.ResolvedRecordsToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordsToApply) v.getTag();
+                                                                          BraveSyncWorker.ResolvedRecordToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordToApply) v.getTag();
                                                                           deleteDeviceDialog(deviceToDelete.mDeviceName, deviceToDelete.mDeviceId, deviceToDelete.mObjectId, v);
                                                                       });
                                                                   }
@@ -490,7 +489,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
                   @Override
                   public void onResetSync() {
-                      Log.i(TAG, "onResetSync");
                       try {
                           if (null == getActivity()) {
                               return;
@@ -827,7 +825,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               });
           }
       } else if (mRemoveDeviceButton == v) {
-          BraveSyncWorker.ResolvedRecordsToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordsToApply) mRemoveDeviceButton.getTag();
+          BraveSyncWorker.ResolvedRecordToApply deviceToDelete = (BraveSyncWorker.ResolvedRecordToApply) mRemoveDeviceButton.getTag();
           deleteDeviceDialog(deviceToDelete.mDeviceName, deviceToDelete.mDeviceId, deviceToDelete.mObjectId, mRemoveDeviceButton);
       } else if (mAddDeviceButton == v) {
           setNewChainLayout();
@@ -914,7 +912,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           // isOperational() can be used to check if the required native libraries are currently
           // available.  The detectors will automatically become operational once the library
           // downloads complete on device.
-          Log.i(TAG, "Detector dependencies are not yet available.");
+          Log.w(TAG, "Detector dependencies are not yet available.");
       }
 
       // Creates and starts the camera.  Note that this uses a higher resolution in comparison
@@ -1139,7 +1137,6 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           @Override
           public void onClick(DialogInterface dialog, int button) {
               if (button == AlertDialog.BUTTON_POSITIVE) {
-                  Log.i(TAG, "Removing device '" + deviceName + "' with id '" + deviceId + "'");
                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
                   if (null != application && null != application.mBraveSyncWorker) {
                       application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
