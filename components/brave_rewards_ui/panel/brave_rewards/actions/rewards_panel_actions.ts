@@ -62,3 +62,9 @@ export const includeInAutoContribution = (publisherKey: string, excluded: boolea
   excluded,
   tabId
 })
+
+export const checkWalletExistence = () => action(types.CHECK_WALLET_EXISTENCE)
+
+export const onWalletExists = (exists: boolean) => action(types.ON_WALLET_EXISTS, {
+  exists
+})

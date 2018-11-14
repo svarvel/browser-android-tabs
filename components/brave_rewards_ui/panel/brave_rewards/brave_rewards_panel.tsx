@@ -74,6 +74,10 @@ window.cr.define('brave_rewards_panel', function () {
     getActions().onWalletProperties(properties)
   }
 
+  function walletExists (exists: boolean) {
+    getActions().onWalletExists(exists)
+  }
+
   return {
     initialize,
     balanceReports,
@@ -81,7 +85,8 @@ window.cr.define('brave_rewards_panel', function () {
     walletCreateFailed,
     walletProperties,
     currentTabInfo,
-    publisherData
+    publisherData,
+    walletExists
   }
 })
 
