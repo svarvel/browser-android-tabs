@@ -1,0 +1,17 @@
+target_os = "android"
+target_cpu = "arm"
+is_debug = false
+
+android_channel = "stable"
+is_official_build = true
+is_component_build = false
+is_clang = true
+symbol_level = 1
+use_unofficial_version_number = false
+# android_default_version_code range is 10XX...1499 to be less than
+# version code for argsReleaseArmModernClassic.gn
+android_default_version_code = "1XXX"
+android_default_version_name = "1.0.0"
+v8_use_external_startup_data = true
+fieldtrial_testing_like_official_build = true
+icu_use_data_file = false
