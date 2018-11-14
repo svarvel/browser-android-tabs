@@ -16,5 +16,6 @@ export const enum types {
   ON_CURRENT_REPORT = '@@rewards_panel/ON_CURRENT_REPORT',
   GET_CURRENT_TAB_INFO = '@@rewards_panel/GET_CURRENT_TAB_INFO',
   ON_CURRENT_TAB_INFO = '@@rewards_panel/ON_CURRENT_TAB_INFO',
-  DONATE_TO_SITE = '@@rewards_panel/DONATE_TO_SITE'
+  DONATE_TO_SITE = '@@rewards_panel/DONATE_TO_SITE',
+  INCLUDE_IN_AUTO_CONTRIBUTION = '@@rewards_panel/INCLUDE_IN_AUTO_CONTRIBUTION'
 }

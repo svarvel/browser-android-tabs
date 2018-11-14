@@ -83,6 +83,16 @@ export class Panel extends React.Component<Props, State> {
     return this.props.rewardsPanelData.publishers[tabId]
   }
 
+  switchAutoContribute = () => {
+    const publisher: RewardsExtension.Publisher | undefined = this.getPublisher()
+
+    if (!publisher) {
+      return
+    }
+
+    this.props.actions.includeInAutoContribution(publisher.publisher_key, !publisher.excluded, this.props.tabId)
+  }
+
   onSliderToggle = () => {
     this.setState({
       showSummary: !this.state.showSummary
@@ -211,7 +221,7 @@ export class Panel extends React.Component<Props, State> {
               onToggleTips={this.doNothing}
               donationAction={this.showDonateToSiteDetail}
               onAmountChange={this.doNothing}
-              onIncludeInAuto={this.doNothing}
+              onIncludeInAuto={this.switchAutoContribute}
             />
             : null
           }

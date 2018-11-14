@@ -53,6 +53,7 @@ private:
    void GetCurrentActiveTabInfo(const base::ListValue* args);
    void DonateToSite(const base::ListValue* args);
    void GetPublisherData(const base::ListValue* args);
+   void IncludeInAutoContribution(const base::ListValue* args);
 
    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
@@ -93,6 +94,9 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("brave_rewards_panel.getPublisherData",
       base::BindRepeating(&RewardsDOMHandler::GetPublisherData,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_panel.includeInAutoContribution",
+      base::BindRepeating(&RewardsDOMHandler::IncludeInAutoContribution,
+                          base::Unretained(this)));
 }
 
 void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
@@ -105,6 +109,24 @@ void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
   tempTabId >> tabId;
 
   // TODO hook up brave_donate_ui
+}
+
+void RewardsDOMHandler::IncludeInAutoContribution(const base::ListValue* args) {
+  std::string publisherKey;
+  std::string excludedStr;
+  std::string tabIdStr;
+  args->GetString(0, &publisherKey);
+  args->GetString(1, &excludedStr);
+  args->GetString(2, &tabIdStr);
+  std::stringstream tempTabId(tabIdStr);
+  SessionID::id_type tabId = -1;
+  tempTabId >> tabId;
+
+  bool excluded = excludedStr == "true" ? true : false;
+
+  if (rewards_service_) {
+    rewards_service_->SetContributionAutoInclude(publisherKey, excluded, tabId);
+  }
 }
 
 void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {

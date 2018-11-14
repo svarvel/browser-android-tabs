@@ -56,3 +56,9 @@ export const donateToSite = (tabId: string, publisherKey: string) => action(type
   tabId,
   publisherKey
 })
+
+export const includeInAutoContribution = (publisherKey: string, excluded: boolean, tabId: string) => action(types.INCLUDE_IN_AUTO_CONTRIBUTION, {
+  publisherKey,
+  excluded,
+  tabId
+})
