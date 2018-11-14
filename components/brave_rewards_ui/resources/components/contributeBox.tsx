@@ -231,6 +231,7 @@ class ContributeBox extends React.Component<Props, State> {
         <StyledListContent>
           <TableContribute
             header={[
+              getLocale('site'),
               getLocale('rewardsContributeAttention')
             ]}
             rows={shownRows}
@@ -239,12 +240,13 @@ class ContributeBox extends React.Component<Props, State> {
             headerColor={true}
             showRemove={true}
             showRowAmount={true}
+            isMobile={true}
           >
             {getLocale('contributionVisitSome')}
           </TableContribute>
         </StyledListContent>
         {
-          numRows > 0
+          numRows > 5
           ? <StyledSitesNum>
               <StyledSitesLink onClick={this.onSitesShownToggle}>
                 {prefix} {numRows} sites

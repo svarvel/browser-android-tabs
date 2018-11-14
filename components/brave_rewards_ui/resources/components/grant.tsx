@@ -87,7 +87,12 @@ class Grant extends React.Component<Props, State> {
               title={'It’s your lucky day!'}
               text={'Your token grant is on its way.'}
             >
-              <GrantComplete onClose={this.onSuccess} amount={tokens} date={new Date(grant.expiryTime).toLocaleDateString()} />
+              <GrantComplete
+                isMobile={true}
+                onClose={this.onSuccess}
+                amount={tokens}
+                date={new Date(grant.expiryTime).toLocaleDateString()}
+              />
             </GrantWrapper>
             : null
         }

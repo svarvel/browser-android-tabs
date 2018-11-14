@@ -93,6 +93,7 @@ export const rewardsPanelReducer = (state: RewardsExtension.State | undefined, a
         const { publisherKey, excluded, tabId } = payload
         const packet = [publisherKey, excluded.toString(), tabId]
         chrome.send('brave_rewards_panel.includeInAutoContribution', packet)
+        break
       }
     case types.CHECK_WALLET_EXISTENCE:
       {

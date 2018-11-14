@@ -28,8 +28,6 @@ transpile_web_ui("ui") {
     "panel/brave_rewards/background/actions/rewardsPanelActions.ts",
     "panel/brave_rewards/background/api/locale_api.ts",
     "panel/brave_rewards/background/api/tabs_api.ts",
-    "panel/brave_rewards/background/events/rewardsEvents.ts",
-    "panel/brave_rewards/background/events/tabEvents.ts",
     "panel/brave_rewards/background/reducers/index.ts",
     "panel/brave_rewards/background/reducers/rewards_panel_reducer.ts",
     "panel/brave_rewards/background/storage.ts",
