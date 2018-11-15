@@ -11,6 +11,7 @@
       <part file="about_ui_resources.grdp" />
       <part file="brave_rewards_ui_resources.grdp" />
       <part file="brave_rewards_panel_ui_resources.grdp" />
+      <part file="brave_rewards_donate_ui_resources.grdp" />
       <part file="crash_resources.grdp" />
       <part file="dom_distiller_resources.grdp" />
       <part file="flags_ui_resources.grdp" />
@@ -31,17 +32,19 @@
       <part file="version_ui_resources.grdp" />
       
       <!-- WebUI rewards resources -->
-      <include name="IDR_BRAVE_REWARDS_IMG_ADS_DISABLED" file="../img/rewards/ads_disabled.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_CONTRIBUTE_DISABLED" file="../img/rewards/contribute_disabled.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_DONATE_DISABLED" file="../img/rewards/donate_disabled.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_WALLET_BG" file="../img/rewards/wallet_bg.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_CAPTCHA_BAT" file="../img/rewards/captcha_bat.png" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_WELCOME_BG" file="../img/rewards/welcome_bg.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_BART_TEMP" file="../img/rewards/temp/bartBaker.jpeg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_BAT" file="../img/rewards/BAT.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_BTC" file="../img/rewards/BTC.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_ETH" file="../img/rewards/ETH.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_REWARDS_IMG_LTC" file="../img/rewards/LTC.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_ADS_DISABLED" file="../../brave/components/brave_rewards/resources/img/ads_disabled.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_CONTRIBUTE_DISABLED" file="../../brave/components/brave_rewards/resources/img/contribute_disabled.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_DONATE_DISABLED" file="../../brave/components/brave_rewards/resources/img/donate_disabled.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_WALLET_BG" file="../../brave/components/brave_rewards/resources/img/wallet_bg.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_CAPTCHA_BAT" file="../../brave/components/brave_rewards/resources/img/captcha_bat.png" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_WELCOME_BG" file="../../brave/components/brave_rewards/resources/img/welcome_bg.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_BART_TEMP" file="../../brave/components/brave_rewards/resources/img/temp/bartBaker.jpeg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_BAT" file="../../brave/components/brave_rewards/resources/img/BAT.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_BTC" file="../../brave/components/brave_rewards/resources/img/BTC.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_ETH" file="../../brave/components/brave_rewards/resources/img/ETH.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_REWARDS_IMG_LTC" file="../../brave/components/brave_rewards/resources/img/LTC.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_DONATE_BG_1" file="../../brave/components/brave_rewards/resources/img/donate_bg_1.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_DONATE_BG_2" file="../../brave/components/brave_rewards/resources/img/donate_bg_2.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_NICEWARE_LIST" file="../../brave/vendor/bat-native-ledger/niceware/wordlist" type="BINDATA" />
     </includes>
 

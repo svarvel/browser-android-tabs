@@ -296,7 +296,15 @@ public class TabWebContentsDelegateAndroid extends WebContentsDelegateAndroid {
     @Override
     public void openNewTab(String url, String extraHeaders, ResourceRequestBody postData,
             int disposition, boolean isRendererInitiated) {
+<<<<<<< HEAD
         mTab.openNewTab(url, null, extraHeaders, postData, disposition, true, isRendererInitiated);
+=======
+        if (!url.equals("chrome://rewards-donate/")) {
+            mTab.openNewTab(url, extraHeaders, postData, disposition, true, isRendererInitiated);
+        } else {
+            PopupActivity.show(mTab.getActivity(), url);
+        }
+>>>>>>> 538592ef602... Donate HTML page
     }
 
     protected TabModel getTabModel() {
