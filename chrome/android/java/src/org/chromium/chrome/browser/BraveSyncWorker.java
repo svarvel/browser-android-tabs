@@ -157,6 +157,10 @@ public class BraveSyncWorker {
         public static String GetJSArray() {
             return "['" + BOOKMARKS + "', '" + PREFERENCES + "']";//"', '" + HISTORY + "', '" + PREFERENCES + "']";
         }
+
+        public static String GetPreferencesOnly() {
+            return "['" + PREFERENCES + "']";
+        }
     }
 
     public static class SyncObjectData {
@@ -1006,6 +1010,8 @@ public class BraveSyncWorker {
             }
             SetUpdateDeleteDeviceName(CREATE_RECORD, mDeviceName, mDeviceId, "");
             SendAllLocalBookmarks();
+            // Initial fetch of devices only
+            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetPreferencesOnly(), 0, FETCH_RECORDS_CHUNK_SIZE)));
             try {
                 Thread.sleep(BraveSyncWorker.INTERVAL_TO_FETCH_RECORDS);
             } catch (InterruptedException e) {
