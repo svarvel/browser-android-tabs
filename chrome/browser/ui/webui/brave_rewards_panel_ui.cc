@@ -22,6 +22,7 @@
 #include "components/strings/grit/components_strings.h"
 
 #include "content/public/browser/web_contents.h"
+#include "content/public/browser/web_contents_delegate.h"
 #include "content/public/browser/web_ui.h"
 #include "content/public/browser/web_ui_data_source.h"
 #include "content/public/browser/web_ui_message_handler.h"
@@ -113,6 +114,11 @@ void RewardsDOMHandler::DonateToSite(const base::ListValue* args) {
   tempTabId >> tabId;
 
   // TODO hook up brave_donate_ui
+  web_ui()->GetWebContents()->GetDelegate()->OpenURLFromTab(
+      web_ui()->GetWebContents(),
+      content::OpenURLParams(GURL("chrome://rewards-donate"), content::Referrer(),
+                             WindowOpenDisposition::NEW_FOREGROUND_TAB,
+                             ui::PAGE_TRANSITION_AUTO_TOPLEVEL, false));
 }
 
 void RewardsDOMHandler::IncludeInAutoContribution(const base::ListValue* args) {

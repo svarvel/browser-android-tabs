@@ -25,16 +25,22 @@ import org.chromium.content_public.browser.LoadUrlParams;
  */
 public class PopupActivity extends SingleTabActivity {
     private static final String TAG = "PopupActivity";
+    private static final String POPUP_URL = "com.android.brave.popup_URL";
     private static final String EXTRA_POPUP_Y_SHIFT = "com.android.brave.popup_y_shift";
     private static final int DEFAULT_POPUP_Y_SHIFT = 100;
 
+    private String mUrl;
+
     @Override
     public void preInflationStartup() {
+        mUrl = IntentUtils.safeGetStringExtra(getIntent(), POPUP_URL);
         if (getWindow() != null) {
             WindowManager.LayoutParams windowParams = getWindow().getAttributes();
             windowParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            windowParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
-            windowParams.gravity = android.view.Gravity.END | android.view.Gravity.FILL_VERTICAL;
+            if (mUrl.equals("chrome://rewards-panel")) {
+                windowParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+                windowParams.gravity = android.view.Gravity.FILL_VERTICAL | android.view.Gravity.END;
+            }
             getWindow().setAttributes(windowParams);
         }
         super.preInflationStartup();
@@ -79,11 +85,11 @@ public class PopupActivity extends SingleTabActivity {
                             TabModel.TabLaunchType.FROM_CHROME_UI, null, null);
 
         tab.initialize(null, getTabContentManager(), createTabDelegateFactory(), false, false);
-        tab.loadUrl(new LoadUrlParams("chrome://rewards-panel"));
+        tab.loadUrl(new LoadUrlParams(mUrl));
         return tab;
     }
 
-    public static void show(ChromeActivity activity) {
+    public static void show(ChromeActivity activity, String url) {
         int y_shift = DEFAULT_POPUP_Y_SHIFT;
         View anchor = activity.findViewById(R.id.toolbar_shadow);
         if (anchor != null) {
@@ -94,6 +100,7 @@ public class PopupActivity extends SingleTabActivity {
         Intent intent = new Intent();
         intent.setClass(activity, PopupActivity.class);
         intent.putExtra(EXTRA_POPUP_Y_SHIFT, y_shift);
+        intent.putExtra(POPUP_URL, url);
         intent.putExtra(IntentHandler.EXTRA_PARENT_COMPONENT, activity.getComponentName());
         intent.putExtra(Browser.EXTRA_APPLICATION_ID, activity.getPackageName());
         intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);

@@ -51,41 +51,15 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "7d9f0ededf215a4702ae5c457f7779ae.svg", IDR_BRAVE_REWARDS_IMG_ETH },
         { "2c6f798a519beabb327149c349912f5f.svg", IDR_BRAVE_REWARDS_IMG_LTC },
       }
-    }
-  };
-  AddResourcePaths(source, resources[name]);
-
-  static std::map<std::string, std::vector<WebUISimpleItem> > panel_localized_strings = {
+    },
     {
-      std::string("rewards-panel"), {
-        { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
-        { "braveRewardsCreatingText", IDS_BRAVE_UI_REWARDS_CREATING_TEXT },
-        { "donateMonthly", IDS_BRAVE_UI_DONATE_MONTHLY },
-        { "donateNow", IDS_BRAVE_UI_DONATE_NOW },
-        { "includeInAuto", IDS_BRAVE_UI_INCLUDE_IN_AUTO },
-        { "monthApr", IDS_BRAVE_UI_MONTH_APR },
-        { "monthAug", IDS_BRAVE_UI_MONTH_AUG },
-        { "monthDec", IDS_BRAVE_UI_MONTH_DEC },
-        { "monthFeb", IDS_BRAVE_UI_MONTH_FEB },
-        { "monthJan", IDS_BRAVE_UI_MONTH_JAN },
-        { "monthJul", IDS_BRAVE_UI_MONTH_JUL },
-        { "monthJun", IDS_BRAVE_UI_MONTH_JUN },
-        { "monthMar", IDS_BRAVE_UI_MONTH_MAR },
-        { "monthMay", IDS_BRAVE_UI_MONTH_MAY },
-        { "monthNov", IDS_BRAVE_UI_MONTH_NOV },
-        { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
-        { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
-        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },
-        { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
-        { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
-        { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
-        { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
-        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
-        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
+      std::string("rewards-donate"), {
+        { "2e7994eaf768ee4a99272ea96cb39849.svg", IDR_BRAVE_DONATE_BG_1 },
+        { "4364e454dba7ea966b117f643832e871.svg", IDR_BRAVE_DONATE_BG_2 },
       }
     }
   };
-  AddLocalizedStringsBulk(source, panel_localized_strings[name]);
+  AddResourcePaths(source, resources[name]);
 
   static std::map<std::string, std::vector<WebUISimpleItem> > localized_strings = {
     {
@@ -307,6 +281,51 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "whyBraveRewardsDesc2", IDS_BRAVE_UI_WHY_BRAVE_REWARDS_DESC_2 },
         { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
         { "viewDetails", IDS_BRAVE_UI_VIEW_DETAILS }
+      }
+    },
+    {
+      std::string("rewards-panel"), {
+        { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
+        { "braveRewardsCreatingText", IDS_BRAVE_UI_REWARDS_CREATING_TEXT },
+        { "donateMonthly", IDS_BRAVE_UI_DONATE_MONTHLY },
+        { "donateNow", IDS_BRAVE_UI_DONATE_NOW },
+        { "includeInAuto", IDS_BRAVE_UI_INCLUDE_IN_AUTO },
+        { "monthApr", IDS_BRAVE_UI_MONTH_APR },
+        { "monthAug", IDS_BRAVE_UI_MONTH_AUG },
+        { "monthDec", IDS_BRAVE_UI_MONTH_DEC },
+        { "monthFeb", IDS_BRAVE_UI_MONTH_FEB },
+        { "monthJan", IDS_BRAVE_UI_MONTH_JAN },
+        { "monthJul", IDS_BRAVE_UI_MONTH_JUL },
+        { "monthJun", IDS_BRAVE_UI_MONTH_JUN },
+        { "monthMar", IDS_BRAVE_UI_MONTH_MAR },
+        { "monthMay", IDS_BRAVE_UI_MONTH_MAY },
+        { "monthNov", IDS_BRAVE_UI_MONTH_NOV },
+        { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
+        { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
+        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },
+        { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
+        { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
+        { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },
+        { "welcomeFooterTextTwo", IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO },
+        { "welcomeHeaderTwo", IDS_BRAVE_UI_WELCOME_HEADER_TWO },
+        { "yourWallet", IDS_BRAVE_UI_YOUR_WALLET },
+      }
+    },
+    {
+      std::string("rewards-donate"), {
+        { "about", IDS_BRAVE_UI_ABOUT },
+        { "addFunds", IDS_BRAVE_UI_ADD_FUNDS },
+        { "donationAmount", IDS_BRAVE_UI_DONATION_AMOUNT },
+        { "doMonthly", IDS_BRAVE_UI_DO_MONTHLY },
+        { "makeMonthly", IDS_BRAVE_UI_MAKE_MONTHLY },
+        { "notEnoughTokens", IDS_BRAVE_UI_NOT_ENOUGH_TOKENS },
+        { "rewardsBannerText1", IDS_BRAVE_UI_REWARDS_BANNER_TEXT1 },
+        { "rewardsBannerText2", IDS_BRAVE_UI_REWARDS_BANNER_TEXT2 },
+        { "sendDonation", IDS_BRAVE_UI_SEND_DONATION },
+        { "thankYou", IDS_BRAVE_UI_THANK_YOU },
+        { "tokens", IDS_BRAVE_UI_TOKENS },
+        { "walletBalance", IDS_BRAVE_UI_WALLET_BALANCE },
+        { "welcome", IDS_BRAVE_UI_WELCOME },
       }
     }
   };
