@@ -41,6 +41,8 @@ class RewardsDOMHandler : public WebUIMessageHandler,
 private:
   brave_rewards::RewardsService* rewards_service_;
 
+  void GetPublisherDonateData(const base::ListValue* args);
+  void OnDonate(const base::ListValue* args);
   void GetWalletProperties(const base::ListValue* args);
 	void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
 	                         int error_code,
@@ -49,6 +51,8 @@ private:
 
   void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
                                   brave_rewards::ContentSiteList) override;
+  void OnPublisherBanner(brave_rewards::RewardsService* rewards_service,
+                         const brave_rewards::PublisherBanner banner) override;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
@@ -66,6 +70,66 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("brave_rewards_donate.getRecurringDonations",
       base::BindRepeating(&RewardsDOMHandler::GetRecurringDonations,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_donate.getPublisherBanner",
+      base::BindRepeating(&RewardsDOMHandler::GetPublisherDonateData,
+                          base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_donate.onDonate",
+      base::BindRepeating(&RewardsDOMHandler::OnDonate,
+                          base::Unretained(this)));
+}
+
+void RewardsDOMHandler::GetPublisherDonateData(const base::ListValue* args) {
+  std::string publisher_key;
+  args->GetString(0, &publisher_key);
+  rewards_service_->GetPublisherBanner(publisher_key);
+}
+
+void RewardsDOMHandler::OnDonate(const base::ListValue* args) {
+  if (!rewards_service_ || !args)
+    return;
+
+  std::string publisher_key;
+  int amount;
+  bool recurring;
+  args->GetString(0, &publisher_key);
+  args->GetInteger(1, &amount);
+  args->GetBoolean(2, &recurring);
+
+  if (publisher_key.empty() || amount < 1) {
+    // TODO add error
+    return;
+  }
+
+  rewards_service_->OnDonate(publisher_key, amount, recurring);
+}
+
+void RewardsDOMHandler::OnPublisherBanner(brave_rewards::RewardsService* rewards_service,
+                                                const brave_rewards::PublisherBanner banner) {
+  if (!web_ui()->CanCallJavascript()) {
+     return;
+  }
+
+  base::DictionaryValue result;
+  result.SetString("publisherKey", banner.publisher_key);
+  result.SetString("title", banner.title);
+  result.SetString("name", banner.name);
+  result.SetString("description", banner.description);
+  result.SetString("background", banner.background);
+  result.SetString("logo", banner.logo);
+
+  auto amounts = std::make_unique<base::ListValue>();
+  for (int const& value : banner.amounts) {
+    amounts->AppendInteger(value);
+  }
+  result.SetList("amounts", std::move(amounts));
+
+  auto social = std::make_unique<base::DictionaryValue>();
+  for (auto const& item : banner.social) {
+    social->SetString(item.first, item.second);
+  }
+  result.SetDictionary("social", std::move(social));
+
+  web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_donate.publisherBanner", result);
 }
 
 void RewardsDOMHandler::GetWalletProperties(const base::ListValue* args) {
