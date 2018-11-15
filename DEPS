@@ -319,7 +319,7 @@ deps = {
     Var("chromium_git") + "/external/llvm.org/libunwind.git" + "@" +
     Var("libunwind_revision"),
 
-  'src/brave': "https://github.com/brave/brave-core.git@81de5994569d7fa6b3698002228c7f9460bc5c75",
+  'src/brave': "https://github.com/brave/brave-core.git@bc3ac425f7991016800b37950d8c92fc1161a40c",
   'src/chrome/browser/resources/media_router/extension/src':
     Var('chromium_git') + '/media_router.git' + '@' + '29324b698ccd8920bc81c71d42dadc6310f0ad0f',
 
