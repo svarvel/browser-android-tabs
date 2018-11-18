@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grit-part>
-  <include name="IDR_BRAVE_REWARDS_HTML" file="../brave_rewards_ui/resources/brave_rewards.html" flattenhtml="true" type="BINDATA" compress="gzip" />
-  <include name="IDR_BRAVE_REWARDS_JS" file="../../${root_gen_dir}/dist/brave_rewards.js" type="BINDATA" compress="gzip" skip_minify="true" />
-
-  <include name="IDR_BRAVE_COMMON_UI_JS_0" file="../../${root_gen_dir}/dist/0.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_1" file="../../${root_gen_dir}/dist/1.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_2" file="../../${root_gen_dir}/dist/2.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_3" file="../../${root_gen_dir}/dist/3.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_4" file="../../${root_gen_dir}/dist/4.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_5" file="../../${root_gen_dir}/dist/5.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_6" file="../../${root_gen_dir}/dist/6.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_7" file="../../${root_gen_dir}/dist/7.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_8" file="../../${root_gen_dir}/dist/8.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_9" file="../../${root_gen_dir}/dist/9.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
-  <include name="IDR_BRAVE_COMMON_UI_JS_10" file="../../${root_gen_dir}/dist/10.chunk.js" type="BINDATA" compress="gzip" skip_minify="true" />
+  <include name="IDR_BRAVE_REWARDS_HTML" file="../brave_rewards_ui/resources/brave_rewards.html" type="BINDATA" />
 </grit-part>

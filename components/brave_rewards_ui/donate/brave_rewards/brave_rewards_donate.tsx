@@ -11,8 +11,6 @@ import { bindActionCreators } from 'redux'
 // Components
 import App from './components/app'
 require('emptykit.css')
-require('../../../fonts/muli.css')
-require('../../../fonts/poppins.css')
 
 // Utils
 import Theme from 'brave-ui/theme/brave-default'

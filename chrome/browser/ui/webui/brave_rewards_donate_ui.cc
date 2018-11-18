@@ -8,7 +8,7 @@
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
-
+#include "components/brave_rewards/donate/resources/grit/brave_rewards_donate_generated_map.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
 #include "components/grit/components_resources.h"
@@ -222,8 +222,8 @@ void RewardsDOMHandler::Init() {
 ///////////////////////////////////////////////////////////////////////////////
 
 BraveRewardsDonateUI::BraveRewardsDonateUI(content::WebUI* web_ui, const std::string& name)
-    : BasicUI(web_ui, name, chrome::kRewardsDonateJS,
-        IDR_BRAVE_REWARDS_DONATE_BUNDLE_JS, IDR_BRAVE_REWARDS_DONATE_HTML) {
+    : BasicUI(web_ui, name, kBraveRewardsDonateGenerated,
+        kBraveRewardsDonateGeneratedSize, IDR_BRAVE_REWARDS_DONATE_HTML) {
 
   auto handler_owner = std::make_unique<RewardsDOMHandler>();
   RewardsDOMHandler * handler = handler_owner.get();

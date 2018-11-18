@@ -1,0 +1,13 @@
+# Resource ids starting at 31000 are reserved for projects built on Chromium.
+{
+  "SRCDIR": "../..",
+  "<(ROOT_GEN_DIR)/android-brave/web-ui-brave_rewards_settings/brave_rewards_settings.grd": {
+    "includes": [32000],
+  },
+  "<(ROOT_GEN_DIR)/android-brave/web-ui-brave_rewards_panel/brave_rewards_panel.grd": {
+    "includes": [32100],
+  },
+  "<(ROOT_GEN_DIR)/android-brave/web-ui-brave_rewards_donate/brave_rewards_donate.grd": {
+    "includes": [32200],
+  }
+}
