@@ -1,6 +1,9 @@
 import("//components/common/typescript.gni")
+import("//tools/grit/repack.gni")
 
-transpile_web_ui("ui") {
+
+transpile_web_ui("transpile_settings") {
+  # TODO: move this target local to the settings UI
   inputs = [
     "resources/actions/rewards_actions.ts",
     "resources/brave_rewards.html",
@@ -40,10 +43,51 @@ transpile_web_ui("ui") {
     "panel/brave_rewards/utils.ts",
   ]
 
-  bundle_names = ["brave_rewards.js"]
+  # what is the output bundle called and what is the entry point file
+  entry_points = [
+    ["brave_rewards_settings", rebase_path("resources/brave_rewards.tsx")]
+  ]
 
-#  we don't use `deps` here: all the targets are listed in components/webpack/*.config.js
-#  deps = [
-#    "panel/brave_rewards:brave_rewards_panel",
-#  ]
+  # what is the directory / pack name
+  resource_name = "brave_rewards_settings"
+}
+
+pack_web_resources("settings_generated_resources") {
+  resource_name = "brave_rewards_settings"
+  output_dir = "$root_gen_dir/components/brave_rewards/settings/resources"
+  deps = [
+    ":transpile_settings"
+  ]
+}
+
+pack_web_resources("panel_generated_resources") {
+  resource_name = "brave_rewards_panel"
+  output_dir = "$root_gen_dir/components/brave_rewards/panel/resources"
+  deps = [
+    "panel/brave_rewards:ui"
+  ]
+}
+
+pack_web_resources("donate_generated_resources") {
+  resource_name = "brave_rewards_donate"
+  output_dir = "$root_gen_dir/components/brave_rewards/donate/resources"
+  deps = [
+    "donate/brave_rewards:ui"
+  ]
+}
+
+repack("ui") {
+  deps = [
+    ":settings_generated_resources",
+    ":panel_generated_resources",
+    ":donate_generated_resources",
+  ]
+
+  sources = [
+    "$root_gen_dir/components/brave_rewards/settings/resources/brave_rewards_settings_generated.pak",
+    "$root_gen_dir/components/brave_rewards/panel/resources/brave_rewards_panel_generated.pak",
+    "$root_gen_dir/components/brave_rewards/donate/resources/brave_rewards_donate_generated.pak",
+  ]
+
+  output = "$root_gen_dir/components/brave_rewards/resources/brave_rewards_resources.pak"
 }

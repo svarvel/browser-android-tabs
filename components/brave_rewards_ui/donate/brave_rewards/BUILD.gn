@@ -1,6 +1,6 @@
-import("//brave/components/common/typescript.gni")
+import("//components/common/typescript.gni")
 
-transpile_web_ui("donate") {
+transpile_web_ui("ui") {
   inputs = [
     "actions/donate_actions.ts",
     "brave_rewards_donate.html",
@@ -14,5 +14,11 @@ transpile_web_ui("donate") {
     "utils.ts",
   ]
 
-  bundle_names = ["brave_rewards_donate.bundle.js"]
+  # what is the output bundle called and what is the entry point file
+  entry_points = [
+    ["brave_rewards_donate", rebase_path("brave_rewards_donate.tsx")]
+  ]
+
+  # what is the directory / pack name
+  resource_name = "brave_rewards_donate"
 }

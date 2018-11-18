@@ -16,6 +16,7 @@
 
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/common/webui_url_constants.h"
+#include "components/brave_rewards/panel/resources/grit/brave_rewards_panel_generated_map.h"
 #include "components/grit/components_resources.h"
 #include "components/grit/components_scaled_resources.h"
 #include "components/strings/grit/components_chromium_strings.h"
@@ -369,8 +370,8 @@ void RewardsDOMHandler::Init() {
 ///////////////////////////////////////////////////////////////////////////////
 
 BraveRewardsPanelUI::BraveRewardsPanelUI(content::WebUI* web_ui, const std::string& name)
-    : BasicUI(web_ui, name, chrome::kRewardsPanelJS,
-        IDR_BRAVE_REWARDS_PANEL_UI_JS, IDR_BRAVE_REWARDS_PANEL_UI_HTML) {
+    : BasicUI(web_ui, name, kBraveRewardsPanelGenerated,
+        kBraveRewardsPanelGeneratedSize, IDR_BRAVE_REWARDS_PANEL_UI_HTML) {
 
   auto handler_owner = std::make_unique<RewardsDOMHandler>();
   RewardsDOMHandler * handler = handler_owner.get();

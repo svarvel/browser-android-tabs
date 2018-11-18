@@ -1,9 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 
-module.exports = {
-  mode: 'production',
-  devtool: 'sourcemap',
+module.exports = (env, argv) => ({
+  devtool: argv.mode === 'development' ? '#inline-source-map' : false,
   entry: {
     brave_rewards: path.join(__dirname, '../brave_rewards_ui/resources/brave_rewards'),
     brave_rewards_donate: path.join(__dirname, '../brave_rewards_ui/donate/brave_rewards/brave_rewards_donate'),
@@ -49,4 +48,4 @@ module.exports = {
   node: {
     fs: 'empty'
   }
-}
+})

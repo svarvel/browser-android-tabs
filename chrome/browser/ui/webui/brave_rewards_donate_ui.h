@@ -4,7 +4,7 @@
 #ifndef BRAVE_BROWSER_UI_WEBUI_REWARDS_DONATE_UI_H_
 #define BRAVE_BROWSER_UI_WEBUI_REWARDS_DONATE_UI_H_
 
-#include "chrome/browser/ui/webui/basic_ui.h"
+#include "brave/browser/ui/webui/basic_ui.h"
 
 class BraveRewardsDonateUI : public BasicUI {
  public:

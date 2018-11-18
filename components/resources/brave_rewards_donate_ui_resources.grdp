@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grit-part>
-  <include name="IDR_BRAVE_REWARDS_DONATE_HTML" file="../brave_rewards_ui/donate/brave_rewards/brave_rewards_donate.html" flattenhtml="true" type="BINDATA" compress="gzip" />
-  <include name="IDR_BRAVE_REWARDS_DONATE_BUNDLE_JS" file="../../${root_gen_dir}/dist/brave_rewards_donate.js" type="BINDATA" compress="gzip" />
+  <include name="IDR_BRAVE_REWARDS_DONATE_HTML" file="../brave_rewards_ui/donate/brave_rewards/brave_rewards_donate.html" type="BINDATA" />
 </grit-part>

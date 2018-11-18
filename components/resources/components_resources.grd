@@ -30,8 +30,9 @@
       <part file="translate_resources.grdp" />
       <part file="user_actions_ui_resources.grdp" />
       <part file="version_ui_resources.grdp" />
-      
+
       <!-- WebUI rewards resources -->
+      <!-- TODO: remove in favor of webpack dynamic output as imported via JS -->
       <include name="IDR_BRAVE_REWARDS_IMG_ADS_DISABLED" file="../../brave/components/brave_rewards/resources/img/ads_disabled.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_IMG_CONTRIBUTE_DISABLED" file="../../brave/components/brave_rewards/resources/img/contribute_disabled.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_IMG_DONATE_DISABLED" file="../../brave/components/brave_rewards/resources/img/donate_disabled.svg" type="BINDATA" />

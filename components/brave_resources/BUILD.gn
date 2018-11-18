@@ -1,0 +1,12 @@
+import("//tools/grit/repack.gni")
+
+repack("brave_resources") {
+  deps = [
+    "//components/brave_rewards_ui:ui",
+  ]
+  sources = [
+    "$root_gen_dir/components/brave_rewards/resources/brave_rewards_resources.pak",
+  ]
+  # Match the name that chromium is expecting
+  output = "$root_gen_dir/components/brave_resources.pak"
+}
