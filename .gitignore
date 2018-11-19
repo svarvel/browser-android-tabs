@@ -328,3 +328,9 @@ chrome/browser/net/blockers/no_fingerprint_domain.h
 chrome/browser/net/blockers/no_fingerprint_domain.cc
 chrome/browser/net/blockers/protocol.h
 chrome/browser/net/blockers/protocol.cc
+
+# Build configs
+scripts/gn/argsReleaseArmClassic.gn
+scripts/gn/argsReleaseArmModern.gn
+scripts/gn/argsReleaseX86Classic.gn
+scripts/gn/argsReleaseX86Modern.gn
