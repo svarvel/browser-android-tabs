@@ -29,6 +29,9 @@ else
 	echo "build ARM release classic succeeded"
 	mv out/DefaultR/apks/Brave_aligned.apk out/DefaultR/apks/Bravearm.apk
 fi
+echo "packing symbols for ARM release classic"
+rm out/DefaultRArmClassic.tar.7z
+sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmClassic
 
 echo "---------------------------------"
 echo "build ARM release modern"
@@ -42,6 +45,9 @@ else
 	echo "build ARM release modern succeeded"
 	mv out/DefaultR/apks/BraveModern_aligned.apk out/DefaultR/apks/BraveModernarm.apk
 fi
+echo "packing symbols for ARM release modern"
+rm out/DefaultRArmModern.tar.7z
+sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmModern
 
 echo "---------------------------------"
 echo "build X86 release classic"
@@ -56,6 +62,9 @@ else
 	echo "build X86 release classic succeeded"
 	mv out/Defaultx86/apks/Brave_aligned.apk out/Defaultx86/apks/Bravex86.apk
 fi
+rm out/Defaultx86Classic.tar.7z
+echo "packing symbols for X86 release classic"
+sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Classic
 
 echo "---------------------------------"
 echo "build X86 release modern"
@@ -70,6 +79,9 @@ else
 	echo "build X86 release modern succeeded"
 	mv out/Defaultx86/apks/BraveModern_aligned.apk out/Defaultx86/apks/BraveModernx86.apk
 fi
+rm out/Defaultx86Modern.tar.7z
+echo "packing symbols for X86 modern"
+sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Modern
 
 echo "---------------------------------"
 echo "all builds arm and x86, classic and modern succeeded"
