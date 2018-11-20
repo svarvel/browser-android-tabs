@@ -17,6 +17,7 @@
 #include "components/strings/grit/components_strings.h"
 
 #include "content/public/browser/web_contents.h"
+#include "content/public/browser/web_contents_delegate.h"
 #include "content/public/browser/web_ui.h"
 #include "content/public/browser/web_ui_data_source.h"
 #include "content/public/browser/web_ui_message_handler.h"
@@ -53,6 +54,7 @@ private:
                                   brave_rewards::ContentSiteList) override;
   void OnPublisherBanner(brave_rewards::RewardsService* rewards_service,
                          const brave_rewards::PublisherBanner banner) override;
+  void OnDialogClosed(const base::ListValue* args);
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
@@ -76,6 +78,16 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("brave_rewards_donate.onDonate",
       base::BindRepeating(&RewardsDOMHandler::OnDonate,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("dialogClose", 
+      base::BindRepeating(&RewardsDOMHandler::OnDialogClosed,
+                          base::Unretained(this)));
+}
+
+void RewardsDOMHandler::OnDialogClosed(const base::ListValue* args) {
+  content::WebContentsDelegate* delegate = web_ui()->GetWebContents()->GetDelegate();
+  if (delegate) {
+    delegate->CloseContents(web_ui()->GetWebContents());
+  }
 }
 
 void RewardsDOMHandler::GetPublisherDonateData(const base::ListValue* args) {
