@@ -81,6 +81,14 @@
 
 4. Sign apk using [these steps](https://github.com/brave/browser-android-tabs/wiki/Sign-in-an-apk).
 
+#### Build release apks with ./scripts/buildReleasesAllAndModern.sh
+To run build release script and compress symbols, `pv` and `7z` are required:
+```
+sudo apt-get update
+sudo apt-get install pv
+sudo apt-get install p7zip-full
+```
+
 ### Known Limitations
 
 - The browser will not compile in an encrypted file system.
