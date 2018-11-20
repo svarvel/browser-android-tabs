@@ -312,6 +312,8 @@ public class ChromeTabbedActivity
     // Time at which an intent was received and handled.
     private long mIntentHandlingTimeMs;
 
+    private boolean mPartnerPageIsLoaded = false;
+
     private final IncognitoTabHost mIncognitoTabHost = new IncognitoTabHost() {
 
         @Override
@@ -1275,6 +1277,18 @@ public class ChromeTabbedActivity
                         }, INITIAL_TAB_CREATION_TIMEOUT_MS);
             }
 
+            ThreadUtils.runOnUiThread(
+                    () -> {
+                        StatsUpdater.WaitForUpdate();
+                        String partnerOfferPage = StatsUpdater.GetPartnerOfferPage();
+                        if (null != partnerOfferPage && !partnerOfferPage.isEmpty()) {
+                            getTabCreator(false).launchUrl(partnerOfferPage, TabLaunchType.FROM_CHROME_UI);
+                            // Clean up once it is loaded
+                            StatsUpdater.SetPartnerOfferPage(null);
+                            mPartnerPageIsLoaded = true;
+                        }
+                    });
+
             RecordHistogram.recordBooleanHistogram(
                     "MobileStartup.ColdStartupIntent", mIntentWithEffect);
         } finally {
@@ -1286,6 +1300,9 @@ public class ChromeTabbedActivity
      * Create an initial tab for cold start without restored tabs.
      */
     private void createInitialTab() {
+        if (mPartnerPageIsLoaded) {
+            return;
+        }
         String url = HomepageManager.getHomepageUri();
         if (TextUtils.isEmpty(url)) {
             url = UrlConstants.NTP_URL;
@@ -1300,16 +1317,7 @@ public class ChromeTabbedActivity
             RecordHistogram.recordBooleanHistogram(
                     "MobileStartup.LoadedHomepageOnColdStart", startupHomepageIsNtp);
         }
-        StatsUpdater.WaitForUpdate();
-        String partnerOfferPage = StatsUpdater.GetPartnerOfferPage();
-        if (null != partnerOfferPage && !partnerOfferPage.isEmpty()) {
-            url = partnerOfferPage;
-        }
         getTabCreator(false).launchUrl(url, TabLaunchType.FROM_CHROME_UI);
-        if (null != partnerOfferPage && !partnerOfferPage.isEmpty()) {
-            // Clean up once it is loaded
-            StatsUpdater.SetPartnerOfferPage(null);
-        }
     }
 
     @Override
