@@ -4,6 +4,12 @@
 
 #include "chrome/browser/ui/webui/brave_rewards_donate_ui.h"
 
+#include "chrome/browser/android/tab_android.h"
+#include "chrome/browser/sessions/session_tab_helper.h"
+#include "chrome/browser/ui/android/tab_model/tab_model.h"
+#include "chrome/browser/ui/android/tab_model/tab_model_list.h"
+#include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
+
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
@@ -42,6 +48,8 @@ class RewardsDOMHandler : public WebUIMessageHandler,
 private:
   brave_rewards::RewardsService* rewards_service_;
 
+  void GetPublisherData(const base::ListValue* args);
+  void GetCurrentActiveTabInfo(const base::ListValue* args);
   void GetPublisherDonateData(const base::ListValue* args);
   void OnDonate(const base::ListValue* args);
   void GetWalletProperties(const base::ListValue* args);
@@ -55,7 +63,11 @@ private:
   void OnPublisherBanner(brave_rewards::RewardsService* rewards_service,
                          const brave_rewards::PublisherBanner banner) override;
   void OnDialogClosed(const base::ListValue* args);
-
+  void OnGetPublisherActivityFromUrl(
+     brave_rewards::RewardsService* rewards_service,
+     int error_code,
+     ledger::PublisherInfo* info,
+     uint64_t tabId) override;
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
 
@@ -81,6 +93,68 @@ void RewardsDOMHandler::RegisterMessages() {
   web_ui()->RegisterMessageCallback("dialogClose", 
       base::BindRepeating(&RewardsDOMHandler::OnDialogClosed,
                           base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_donate.getCurrentActiveTabInfo",
+      base::BindRepeating(&RewardsDOMHandler::GetCurrentActiveTabInfo,
+                          base::Unretained(this)));
+  web_ui()->RegisterMessageCallback("brave_rewards_donate.getPublisherData",
+      base::BindRepeating(&RewardsDOMHandler::GetPublisherData,
+                          base::Unretained(this)));
+}
+
+void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
+  std::string tabIdStr;
+  std::string url;
+  args->GetString(0, &tabIdStr);
+  args->GetString(1, &url);
+  std::stringstream tempTabId(tabIdStr);
+  SessionID::id_type tabId = -1;
+  tempTabId >> tabId;
+
+  if (rewards_service_) {
+    rewards_service_->GetPublisherActivityFromUrl(tabId, url, "");
+  }
+}
+
+void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
+      brave_rewards::RewardsService* rewards_service,
+      int error_code,
+      ledger::PublisherInfo* info,
+      uint64_t tabId) {
+  if (!info || !web_ui()->CanCallJavascript()) {
+    return;
+  }
+
+  base::DictionaryValue data;
+  data.SetString("tabId", std::to_string(tabId).c_str());
+  auto publisher = std::make_unique<base::DictionaryValue>();
+  publisher->SetString("publisher_key", info->id);
+  data.SetDictionary("publisher", std::move(publisher));
+
+  web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_donate.publisherData", data);
+}
+
+void RewardsDOMHandler::GetCurrentActiveTabInfo(const base::ListValue* args) {
+  if (!web_ui()->CanCallJavascript()) {
+    return;
+  }
+
+  for (TabModelList::const_iterator iter = TabModelList::begin(); iter < TabModelList::end(); iter++) {
+    TabModel* model = *iter;
+    if (!model) {
+      continue;
+    }
+    content::WebContents* web_contents = model->GetActiveWebContents();
+    // Check are we on incognito TabModel
+    if (web_contents && web_contents->GetBrowserContext()->IsOffTheRecord()) {
+      continue;
+    }
+    TabAndroid* tabAndroid = model->GetTabAt(model->GetActiveIndex());
+    base::DictionaryValue currentTabInfo;
+    currentTabInfo.SetString("id", std::to_string(SessionTabHelper::IdForTab(web_contents).id()).c_str());
+    currentTabInfo.SetString("url", tabAndroid->GetURL().spec());
+
+    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_donate.currentTabInfo", currentTabInfo);
+  }
 }
 
 void RewardsDOMHandler::OnDialogClosed(const base::ListValue* args) {

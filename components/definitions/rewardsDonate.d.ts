@@ -27,6 +27,11 @@ declare namespace RewardsDonate {
     social: Record<string, string>
   }
 
+  interface PublisherPayload {
+    tabId: string
+    publisher: string
+  }
+
   export interface WalletProperties {
     balance: number
     choices: number[]

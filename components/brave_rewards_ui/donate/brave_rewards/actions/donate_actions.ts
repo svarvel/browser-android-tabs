@@ -31,3 +31,18 @@ export const getRecurringDonations = () => action(types.GET_RECURRING_DONATIONS)
 export const onRecurringDonations = (list: string[]) => action(types.ON_RECURRING_DONATIONS, {
   list
 })
+
+export const currentTabInfo = () => action(types.GET_CURRENT_TAB_INFO, {})
+
+export const onCurrentTabInfo = (currentTabInfo: {id: string, url: string}) => action(types.ON_CURRENT_TAB_INFO, {
+  currentTabInfo
+})
+
+export const getPublisherData = (tabId: string, url: string) => action(types.GET_PUBLISHER_DATA, {
+  tabId,
+  url
+})
+
+export const onPublisherData = (info: RewardsExtension.PublisherPayload) => action(types.ON_PUBLISHER_DATA, {
+  info
+})
