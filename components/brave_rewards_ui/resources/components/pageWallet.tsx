@@ -13,6 +13,7 @@ import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
 // Utils
+const clipboardCopy = require('clipboard-copy')
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 import * as utils from '../utils'
@@ -29,6 +30,8 @@ interface Props extends Rewards.ComponentProps {
 }
 
 class PageWallet extends React.Component<Props, State> {
+  private backupFileName: string = 'brave_wallet_recovery.txt'
+
   constructor (props: Props) {
     super(props)
 
@@ -70,15 +73,37 @@ class PageWallet extends React.Component<Props, State> {
   }
 
   onModalBackupOnCopy = (backupKey: string) => {
-    console.log(`copying ${backupKey}`)
+    const success = clipboardCopy(backupKey)
+    console.log(success ? 'Copy successful' : 'Copy failed')
   }
 
   onModalBackupOnPrint = (backupKey: string) => {
-    console.log(`printing ${backupKey}`)
+    if (!document.location) {
+      return
+    }
+
+    const documentWindow = window.open(document.location.href)
+    if (documentWindow) {
+      documentWindow.document.body.innerText = this.getBackupString(backupKey)
+      documentWindow.print()
+      documentWindow.close()
+    }
   }
 
   onModalBackupOnSaveFile = (backupKey: string) => {
-    console.log(`saving ${backupKey}`)
+    const backupString = this.getBackupString(backupKey)
+    const blob = new Blob([backupString], { type: 'plain/test' })
+    const fileUrl = window.URL.createObjectURL(blob)
+
+    const saveAnchor = document.createElement('a')
+    saveAnchor.style.display = 'none'
+    saveAnchor.href = fileUrl
+    saveAnchor.download = this.backupFileName
+    document.body.appendChild(saveAnchor)
+
+    saveAnchor.click()
+    window.URL.revokeObjectURL(fileUrl)
+    document.body.removeChild(saveAnchor)
   }
 
   onModalBackupOnRestore = (backupKey: string | MouseEvent) => {
@@ -91,6 +116,10 @@ class PageWallet extends React.Component<Props, State> {
 
   onModalBackupOnImport = () => {
     console.log('To be implemented')
+  }
+
+  getBackupString = (key: string) => {
+    return utils.constructBackupString(key)
   }
 
   getConversion = () => {
