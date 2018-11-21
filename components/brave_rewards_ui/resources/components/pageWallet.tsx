@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 // Components
 import { AlertWallet } from 'brave-ui/features/rewards/walletWrapper'
-import { ModalAddFunds, WalletSummary, WalletWrapper } from 'brave-ui/features/rewards'
+import { ModalAddFunds, ModalBackupRestore, WalletSummary, WalletWrapper } from 'brave-ui/features/rewards'
 import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
@@ -19,6 +19,7 @@ import * as utils from '../utils'
 import { convertProbiToFixed } from '../../../common/probiUtils'
 
 interface State {
+  activeTabId: number
   addFundsShown?: boolean
 }
 
@@ -32,6 +33,7 @@ class PageWallet extends React.Component<Props, State> {
     super(props)
 
     this.state = {
+      activeTabId: 0,
       addFundsShown: false
     }
   }
@@ -46,6 +48,49 @@ class PageWallet extends React.Component<Props, State> {
 
   toggleAddFunds = () => {
     this.setState({ addFundsShown: !this.state.addFundsShown })
+  }
+
+  onModalBackupOpen = () => {
+    const { recoveryKey } = this.props.rewardsData
+    if (recoveryKey.length === 0) {
+      this.actions.getWalletPassphrase()
+    }
+    this.actions.onModalBackupOpen()
+  }
+
+  onModalBackupClose = () => {
+    this.actions.onModalBackupClose()
+  }
+
+  onModalBackupTabChange = () => {
+    const newTabId = this.state.activeTabId === 0 ? 1 : 0
+    this.setState({
+      activeTabId: newTabId
+    })
+  }
+
+  onModalBackupOnCopy = (backupKey: string) => {
+    console.log(`copying ${backupKey}`)
+  }
+
+  onModalBackupOnPrint = (backupKey: string) => {
+    console.log(`printing ${backupKey}`)
+  }
+
+  onModalBackupOnSaveFile = (backupKey: string) => {
+    console.log(`saving ${backupKey}`)
+  }
+
+  onModalBackupOnRestore = (backupKey: string | MouseEvent) => {
+    console.log(`restoring ${backupKey}`)
+  }
+
+  pullRecoveryKeyFromFile = (backupKey: string) => {
+    console.log(`pulling ${backupKey}`)
+  }
+
+  onModalBackupOnImport = () => {
+    console.log('To be implemented')
   }
 
   getConversion = () => {
@@ -110,7 +155,8 @@ class PageWallet extends React.Component<Props, State> {
 
   render () {
     const { visible, toggleAction } = this.props
-    const { connectedWallet, addresses, walletInfo } = this.props.rewardsData
+    const { connectedWallet, addresses, walletInfo, recoveryKey, ui } = this.props.rewardsData
+    const { walletRecoverySuccess, modalBackup } = ui
     const { balance } = walletInfo
     const addressArray = utils.getAddresses(addresses)
 
@@ -137,7 +183,7 @@ class PageWallet extends React.Component<Props, State> {
               ]}
               compact={true}
               isMobile={true}
-              onSettingsClick={this.notImplemented}
+              onSettingsClick={this.onModalBackupOpen}
               onActivityClick={this.notImplemented}
               showSecActions={true}
               grants={this.getGrants()}
@@ -146,6 +192,21 @@ class PageWallet extends React.Component<Props, State> {
             >
               <WalletSummary {...this.getWalletSummary()}/>
             </WalletWrapper>
+            {
+              modalBackup
+              ? <ModalBackupRestore
+                activeTabId={this.state.activeTabId}
+                backupKey={recoveryKey}
+                onTabChange={this.onModalBackupTabChange}
+                onClose={this.onModalBackupClose}
+                onCopy={this.onModalBackupOnCopy}
+                onPrint={this.onModalBackupOnPrint}
+                onSaveFile={this.onModalBackupOnSaveFile}
+                onRestore={this.onModalBackupOnRestore}
+                error={walletRecoverySuccess === false ? getLocale('walletRecoveryFail') : ''}
+                />
+              : null
+            }
           </StyledWalletWrapper>
           {
             this.state.addFundsShown
