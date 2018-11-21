@@ -38,14 +38,8 @@ window.cr.define('brave_rewards_donate', function () {
       document.getElementById('root')
     )
 
-    // TODO call rewards service to get dialog data
-    const dialogArgsRaw = chrome.getVariableValue('dialogArguments')
-    try {
-      const args = JSON.parse(dialogArgsRaw)
-      chrome.send('brave_rewards_donate.getPublisherBanner', [args.publisherKey])
-    } catch (e) {
-      console.error('Error parsing incoming dialog args', dialogArgsRaw, e)
-    }
+    // Get active tab info
+    getActions().currentTabInfo()
   }
 
   function getActions () {
@@ -69,11 +63,21 @@ window.cr.define('brave_rewards_donate', function () {
     getActions().onRecurringDonations(list)
   }
 
+  function currentTabInfo (currentTabInfo: {id: number, url: string}) {
+    getActions().onCurrentTabInfo(currentTabInfo)
+  }
+
+  function publisherData (info: RewardsDonate.PublisherPayload) {
+    getActions().onPublisherData(info)
+  }
+
   return {
     initialize,
     publisherBanner,
     walletProperties,
-    recurringDonations
+    recurringDonations,
+    currentTabInfo,
+    publisherData
   }
 })
 

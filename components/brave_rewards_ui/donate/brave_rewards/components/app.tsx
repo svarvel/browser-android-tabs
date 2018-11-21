@@ -41,6 +41,7 @@ export class App extends React.Component<Props, {}> {
 
   render () {
     const { finished, error, publisher } = this.props.rewardsDonateData
+
     return (
       <>
         {

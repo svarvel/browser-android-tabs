@@ -49,6 +49,29 @@ export const rewardsDonateReducer = (state: RewardsDonate.State | undefined, act
         }
         break
       }
+    case types.GET_CURRENT_TAB_INFO:
+      {
+        state = { ...state }
+        chrome.send('brave_rewards_donate.getCurrentActiveTabInfo', [])
+        break
+      }
+    case types.ON_CURRENT_TAB_INFO:
+      {
+        state = { ...state }
+        chrome.send('brave_rewards_donate.getPublisherData', [payload.currentTabInfo.id, payload.currentTabInfo.url])
+        break
+      }
+    case types.ON_PUBLISHER_DATA:
+      {
+        let publisherKey = payload.info.publisher.publisher_key
+
+        if (!publisherKey) {
+          break
+        }
+
+        chrome.send('brave_rewards_donate.getPublisherBanner', [publisherKey])
+        break
+      }
     case types.GET_RECURRING_DONATIONS:
       chrome.send('brave_rewards_donate.getRecurringDonations')
       break
