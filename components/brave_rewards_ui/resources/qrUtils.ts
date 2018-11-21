@@ -7,7 +7,8 @@ import { actions } from './utils'
 // module should be dynamic imported due to it's Buffer reference.
 import * as qr from 'qr-image'
 
-export const generateQR = async function (addresses: Record<Rewards.AddressesType, string>) {
+// generateQR does not work as an async function with the current flow, for now it will be kept synchronous
+export const generateQR = (addresses: Record<Rewards.AddressesType, string>) => {
   let url = null
   const generate = (type: Rewards.AddressesType, address: string) => {
     switch (type) {
