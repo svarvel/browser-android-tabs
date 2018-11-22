@@ -84,6 +84,7 @@ public class StatsUpdater {
     private static final String URP_IS_FINALIZED = "URPIsFinalized";
     private static final String CUSTOM_HEADERS_NAME = "URPCustomHeaders";
     private static final String PARTNER_OFFER_PAGE_NAME = "URPOfferPage";
+    private static final String PARTNER_OFFER_PAGE_LOADED_NAME = "URPOfferPageLoaded";
     private static final String OFFER_HEADER_NAME = "X-Brave-Access-Key";
 
     private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable&woi=%6$s&ref=%7$s";
@@ -592,8 +593,10 @@ public class StatsUpdater {
         SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
         SharedPreferences.Editor editor = sharedPref.edit();
         if (null != offerPage) {
+            editor.putBoolean(PARTNER_OFFER_PAGE_LOADED_NAME, false);
             editor.putString(PARTNER_OFFER_PAGE_NAME, offerPage);
         } else {
+            editor.putBoolean(PARTNER_OFFER_PAGE_LOADED_NAME, true);
             editor.remove(PARTNER_OFFER_PAGE_NAME);
         }
         editor.apply();
@@ -606,6 +609,12 @@ public class StatsUpdater {
             offerPage = "";
         }
         return offerPage;
+    }
+
+    public static boolean GetPartnerOfferPageLoaded() {
+        SharedPreferences sharedPref = ContextUtils.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+        boolean offerPageLoaded = sharedPref.getBoolean(PARTNER_OFFER_PAGE_LOADED_NAME, false);
+        return offerPageLoaded;
     }
 
     public static String GetCustomHeaders() {
