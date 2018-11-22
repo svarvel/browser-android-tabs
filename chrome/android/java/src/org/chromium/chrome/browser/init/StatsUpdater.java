@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
+import android.os.ConditionVariable;
 
 import java.util.Calendar;
 import java.io.BufferedInputStream;
@@ -96,6 +97,8 @@ public class StatsUpdater {
     private static final String URPC_PLATFORM = "android";
 
     private static Semaphore mAvailable = new Semaphore(1);
+    // To indicate that UpdateStats was called at least once
+    private static ConditionVariable mStatsUpdated = new ConditionVariable(false);
     private static String mCustomHeaders = null;
     private static HashMap<String, String> mCustomHeadersMap = null;
 
@@ -175,6 +178,7 @@ public class StatsUpdater {
                 }
             } finally {
                 mAvailable.release();
+                mStatsUpdated.open();
             }
         } catch (InterruptedException exc) {
         }
@@ -718,13 +722,7 @@ public class StatsUpdater {
     }
 
     public static void WaitForUpdate() {
-        try {
-            mAvailable.acquire();
-        } catch (InterruptedException exc) {
-            Log.w(TAG, "WaitForUpdate was interrupted");
-        } finally {
-            mAvailable.release();
-        }
+        mStatsUpdated.block();
     }
 
     public static String GetCurrentCountry() {
