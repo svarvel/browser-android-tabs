@@ -4139,6 +4139,12 @@ However, you aren’t invisible. Going private doesn’t hide your browsing from
       <message name="IDS_AUTOFILL_ASSISTANT_GOOGLE_TERMS_URL" desc="URL for Google Autofill Assistant Terms of Service" translateable="false">
         http://support.google.com/assistant?p=fast_checkout
       </message>
+      <message name="IDS_UPDATE_NOTIFICATION_TITLE" desc="Title of notification on application update.">
+        Brave update
+      </message>
+      <message name="IDS_UPDATE_NOTIFICATION_TEXT" desc="Text of notification on application update.">
+        The new Brave browser is <ph name="PERCENT">%1$s<ex>22%</ex></ph> faster
+      </message>
     </messages>
   </release>
 </grit>
