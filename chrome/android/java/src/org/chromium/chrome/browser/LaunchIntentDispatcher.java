@@ -11,6 +11,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -56,6 +57,7 @@ import org.chromium.ui.widget.Toast;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
 import java.util.UUID;
 
 /**
@@ -76,6 +78,10 @@ public class LaunchIntentDispatcher implements IntentHandler.IntentHandlerDelega
             "org.chromium.chrome.browser.document.IS_ALLOWED_TO_RETURN_TO_PARENT";
 
     private static final String TAG = "ActivitiyDispatcher";
+
+    private static final String UPDATE_EXTRA_PARAM = "org.chromium.chrome.browser.upgrade.UPDATE_NOTIFICATION";
+    private static final String PREF_NAME = "org.chromium.chrome.browser.upgrade.NotificationUpdateTimeStampPreferences";
+    private static final String MILLISECONDS_NAME = "org.chromium.chrome.browser.upgrade.Milliseconds";
 
     /**
      * Timeout in ms for reading PartnerBrowserCustomizations provider. We do not trust third party
@@ -167,6 +173,11 @@ public class LaunchIntentDispatcher implements IntentHandler.IntentHandlerDelega
 
         int tabId = IntentUtils.safeGetIntExtra(
                 mIntent, IntentHandler.TabOpenType.BRING_TAB_TO_FRONT_STRING, Tab.INVALID_TAB_ID);
+        boolean notificationUpdate = IntentUtils.safeGetBooleanExtra(
+                mIntent, UPDATE_EXTRA_PARAM, false);
+        if (notificationUpdate) {
+            SetUpdatePreferences();
+        }
         boolean incognito =
                 mIntent.getBooleanExtra(IntentHandler.EXTRA_OPEN_NEW_INCOGNITO_TAB, false);
 
@@ -226,6 +237,17 @@ public class LaunchIntentDispatcher implements IntentHandler.IntentHandlerDelega
         }
 
         return Action.CONTINUE;
+    }
+
+    private void SetUpdatePreferences() {
+        Calendar currentTime = Calendar.getInstance();
+        long milliSeconds = currentTime.getTimeInMillis();
+
+        SharedPreferences sharedPref = mActivity.getApplicationContext().getSharedPreferences(PREF_NAME, 0);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putLong(MILLISECONDS_NAME, milliSeconds);
+        editor.apply();
     }
 
     @Override
