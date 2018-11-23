@@ -30,34 +30,31 @@ import java.util.Locale;
  */
 public class NotificationIntent {
     private static final String TAG = "NotificationIntent";
-    private static final String NOTIFICATION_CHANNEL_ID = "notification_update_channel";
-    private static final String PREF_NAME = "NotificationUpdateTimeStampPreferences";
-    private static final String MILLISECONDS_NAME = "Milliseconds";
+    private static final String NOTIFICATION_TAG = "8f162e76-052d-449b-b3e8-2da3c891b7c2";
+    private static final String NOTIFICATION_CHANNEL_ID = "7299a8d0-0f7a-4c29-9369-c22425d35341";
+    private static final String UPDATE_EXTRA_PARAM = "org.chromium.chrome.browser.upgrade.UPDATE_NOTIFICATION";
+    private static final String PREF_NAME = "org.chromium.chrome.browser.upgrade.NotificationUpdateTimeStampPreferences";
+    private static final String MILLISECONDS_NAME = "org.chromium.chrome.browser.upgrade.Milliseconds";
     private static final String URL = "https://brave.com/new-brave-22-percent-faster/";
     private static final List<String> mWhitelistedRegionalLocales = Arrays.asList("en", "ru", "uk", "be", "pt", "fr");
+    private static final int NOTIFICATION_ID = 632;
     //private static final String NOTIFICATION_TITLE = "Brave update";
     //private static final String NOTIFICATION_TEXT = "The new Brave browser is 22% faster";
 
     public static void fireNotificationIfNecessary(Context context) {
-        Log.i("TAG", "!!!fireNotificationIfNecessary begin");
         String notification_text = String.format(context.getString(R.string.update_notification_text),
                                      "22%");
-        Log.i(TAG, "!!!title == " + context.getString(R.string.update_notification_title));
-        Log.i(TAG, "!!!text == " + notification_text);
         if (!ShouldNotify(context)) {
-            Log.i(TAG, "!!!ShouldNotify == false");
             return;
         }
         NotificationManager mNotificationManager =
             (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Log.i("TAG", "!!!before set channel");
             NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,
                     "Channel for notifications",
                     NotificationManager.IMPORTANCE_DEFAULT);
             mNotificationManager.createNotificationChannel(channel);
-            Log.i("TAG", "!!!after set channel");
         }
 
         NotificationCompat.Builder mBuilder =
@@ -65,8 +62,8 @@ public class NotificationIntent {
 
         //Create the intent that’ll fire when the user taps the notification//
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+        intent.putExtra(UPDATE_EXTRA_PARAM, true);
         intent.setPackage(context.getPackageName());
-        Log.i(TAG, "!!!sendNotification packageName == " + context.getPackageName());
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         mBuilder.setContentIntent(pendingIntent);
@@ -76,32 +73,17 @@ public class NotificationIntent {
         mBuilder.setContentTitle(context.getString(R.string.update_notification_title));
         mBuilder.setContentText(notification_text);
 
-        mNotificationManager.notify(001, mBuilder.build());
-        SetPreferences(context);
-        Log.i("TAG", "!!!fireNotificationIfNecessary end");
+        mNotificationManager.notify(NOTIFICATION_TAG, NOTIFICATION_ID, mBuilder.build());
     }
 
     public static boolean ShouldNotify(Context context) {
         String deviceLanguage = Locale.getDefault().getLanguage();
-        Log.i(TAG, "!!!deviceLanguage == " + deviceLanguage);
         if (GetPreferences(context) != 0
               || !mWhitelistedRegionalLocales.contains(new Locale(deviceLanguage).getLanguage())) {
             return false;
         }
-        Log.i(TAG, "!!!ShouldNotify == true");
 
         return true;
-    }
-
-    public static void SetPreferences(Context context) {
-        Calendar currentTime = Calendar.getInstance();
-        long milliSeconds = currentTime.getTimeInMillis();
-
-        SharedPreferences sharedPref = context.getSharedPreferences(PREF_NAME, 0);
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        editor.putLong(MILLISECONDS_NAME, milliSeconds);
-        editor.apply();
     }
 
     public static long GetPreferences(Context context) {
