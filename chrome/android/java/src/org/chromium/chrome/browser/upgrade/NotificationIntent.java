@@ -38,8 +38,7 @@ public class NotificationIntent {
     private static final String URL = "https://brave.com/new-brave-22-percent-faster/";
     private static final List<String> mWhitelistedRegionalLocales = Arrays.asList("en", "ru", "uk", "be", "pt", "fr");
     private static final int NOTIFICATION_ID = 632;
-    //private static final String NOTIFICATION_TITLE = "Brave update";
-    //private static final String NOTIFICATION_TEXT = "The new Brave browser is 22% faster";
+    private static final String NOTIFICATION_DISMISS_EXTRA = "org.chromium.chrome.browser.upgrade.NotificationUpgrade";
 
     public static void fireNotificationIfNecessary(Context context) {
         String notification_text = String.format(context.getString(R.string.update_notification_text),
@@ -60,7 +59,7 @@ public class NotificationIntent {
         NotificationCompat.Builder mBuilder =
             new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID);
 
-        //Create the intent that’ll fire when the user taps the notification//
+        // Create the intent that’ll fire when the user taps the notification
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
         intent.putExtra(UPDATE_EXTRA_PARAM, true);
         intent.setPackage(context.getPackageName());
@@ -68,6 +67,14 @@ public class NotificationIntent {
 
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setAutoCancel(true);
+
+        Intent dismissIntent = new Intent(context, NotificationUpgradeDismissedReceiver.class);
+        dismissIntent.putExtra(NOTIFICATION_DISMISS_EXTRA, NOTIFICATION_ID);
+
+        PendingIntent pendingDismissIntent =
+               PendingIntent.getBroadcast(context.getApplicationContext(), 
+                                          NOTIFICATION_ID, dismissIntent, 0);
+        mBuilder.setDeleteIntent(pendingDismissIntent);
 
         mBuilder.setSmallIcon(R.drawable.ic_chrome);
         mBuilder.setContentTitle(context.getString(R.string.update_notification_title));

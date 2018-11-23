@@ -399,6 +399,9 @@ by a child template that "extends" this file.
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
+        <receiver android:name="org.chromium.chrome.browser.upgrade.NotificationUpgradeDismissedReceiver"
+            android:exported="false">
+        </receiver>
 
         <!-- Locale related -->
         <receiver android:name="org.chromium.chrome.browser.locale.LocaleChangedBroadcastReceiver"
