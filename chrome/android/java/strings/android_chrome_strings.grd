@@ -4143,7 +4143,7 @@ However, you aren’t invisible. Going private doesn’t hide your browsing from
         Brave update
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_TEXT" desc="Text of notification on application update.">
-        The new Brave browser is <ph name="PERCENT">%1$s<ex>22%</ex></ph> faster
+        The new Brave browser is 22% faster
       </message>
     </messages>
   </release>

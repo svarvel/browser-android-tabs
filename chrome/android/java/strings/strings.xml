@@ -108,4 +108,7 @@ Saved</string>
     <string name="brave_new_tab_private_header">This is a Private Tab</string>
     <string name="brave_new_tab_private_message">Even though sites you visit in private tabs are not saved locally, they do not make you anonymous or invisible to your ISP, your employer, or to the sites you are visiting.</string>
 
+    <string name="update_notification_title">Brave update</string>
+    <string name="update_notification_text">The new Brave browser is 22% faster</string>
+
 </resources>
