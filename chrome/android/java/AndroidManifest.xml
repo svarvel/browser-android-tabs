@@ -35,7 +35,8 @@ by a child template that "extends" this file.
     {% endif %}
     <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH"/>
     <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>
+    <!-- Not used in Brave -->
+    <!--<uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>-->
     <uses-permission-sdk-23 android:name="android.permission.REORDER_TASKS"/>
     <!-- notouch build doesn't support downloads home and shouldn't need this permission -->
     {% set notouch_build = notouch_build|default(0) %}
