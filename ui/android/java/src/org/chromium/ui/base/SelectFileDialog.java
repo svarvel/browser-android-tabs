@@ -157,11 +157,11 @@ public class SelectFileDialog
                         new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION));
 
         List<String> missingPermissions = new ArrayList<>();
-        if (shouldUseContactsPicker()) {
+        /*if (shouldUseContactsPicker()) {
             if (!window.hasPermission(Manifest.permission.READ_CONTACTS)) {
                 missingPermissions.add(Manifest.permission.READ_CONTACTS);
             }
-        } else if (shouldUsePhotoPicker()) {
+        } else */if (shouldUsePhotoPicker()) {
             if (BuildInfo.isAtLeastQ()) {
                 String newImagePermission = "android.permission.READ_MEDIA_IMAGES";
                 if (!window.hasPermission(newImagePermission)) {
@@ -333,9 +333,11 @@ public class SelectFileDialog
      *   3.) There is a valid Android Activity associated with the file request.
      */
     private boolean shouldUseContactsPicker() {
-        if (mFileTypes.size() != 1) return false;
+        // Not used in Brave
+        return false;
+        /*if (mFileTypes.size() != 1) return false;
         if (!mFileTypes.get(0).equals("text/json+contacts")) return false;
-        return UiUtils.shouldShowContactsPicker() && mWindowAndroid.getActivity().get() != null;
+        return UiUtils.shouldShowContactsPicker() && mWindowAndroid.getActivity().get() != null;*/
     }
 
     /**
