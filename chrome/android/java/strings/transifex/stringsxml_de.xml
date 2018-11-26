@@ -109,4 +109,7 @@ gespart</string>
     <string name="brave_new_tab_private_header">Dies ist ein privater Tab.</string>
     <string name="brave_new_tab_private_message">Selbst wenn Seiten, die Sie in privaten Tabs aufrufen, nicht lokal gespeichert werden, sind Sie nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den Seiten, die Sie besuchen.</string>
 
+    <string name="update_notification_title">Brave-Update</string>
+    <string name="update_notification_text">Der neue Brave-Browser ist 22 % schneller</string>
+
 </resources>

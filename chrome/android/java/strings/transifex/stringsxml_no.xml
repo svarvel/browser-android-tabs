@@ -107,4 +107,7 @@ Lagret</string>
     <string name="brave_new_tab_private_header">Dette er en privat fane</string>
     <string name="brave_new_tab_private_message">Selv om nettsteder du besøker i private faner, ikke lagres lokalt, gjør de deg ikke anonym eller usynlig overfor internettleverandøren din, arbeidsgiveren din eller nettstedene du besøker.</string>
 
+    <string name="update_notification_title">Brave-oppdatering</string>
+    <string name="update_notification_text">Den nye nettleseren til Brave er 22 % raskere</string>
+
 </resources>

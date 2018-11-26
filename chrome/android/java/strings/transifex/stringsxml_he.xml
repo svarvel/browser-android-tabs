@@ -109,4 +109,7 @@ HTTPS</string>
     <string name="brave_new_tab_private_header">זו לשונית פרטית</string>
     <string name="brave_new_tab_private_message">למרות שאתרים שבהם ביקרתם בעזרת לשונית פרטית אינם נשמרים במחשב שלכם, הם אינם הופכים אתכם לאנונימיים או לבלתי נראים בפני ספק שירות האינטרנט שלכם, המעביד שלכם או האתרים שבהם אתם מבקרים.</string>
 
+    <string name="update_notification_title">עדכון Brave</string>
+    <string name="update_notification_text">דפדפן ה-Brave החדש מהיר יותר ב-22%</string>
+
 </resources>

@@ -103,4 +103,7 @@
     <string name="brave_new_tab_private_header">Това е поверителен раздел</string>
     <string name="brave_new_tab_private_message">Въпреки че сайтовете, които посещавате в поверителните раздели, не се запазват локално, те не ви правят анонимни или невидими за вашия интернет доставчик, работодател или за сайтовете, които посещавате.</string>
 
+    <string name="update_notification_title">Актуализация на Brave</string>
+    <string name="update_notification_text">Новият браузър Brave е с 22% по-бърз</string>
+
 </resources>

@@ -109,4 +109,7 @@ Bespaard</string>
     <string name="brave_new_tab_private_header">Dit is een privétabblad</string>
     <string name="brave_new_tab_private_message">Alhoewel de websites die je via een privétabblad bezoekt niet lokaal worden opgeslagen, maken ze je niet anoniem of onzichtbaar voor je internetprovider, werkgever, of andere websites die je bezoekt.</string>
 
+    <string name="update_notification_title">Brave-update</string>
+    <string name="update_notification_text">De nieuwe Brave-browser is 22% sneller</string>
+
 </resources>

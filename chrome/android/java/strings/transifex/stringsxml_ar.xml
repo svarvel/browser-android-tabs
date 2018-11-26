@@ -112,4 +112,7 @@ HTTPS</string>
     <string name="brave_new_tab_private_header">هذه علامة تبويب خاصة</string>
     <string name="brave_new_tab_private_message">على الرغم من أن المواقع التي تزورها في علامات التبويب الخاصة لا يتم حفظها محلياً، إلا أنها لا تجعلك مجهولاً أو غير مرئياً بالنسبة لمزود خدمة الإنترنت أو صاحب العمل الخاص بك أو المواقع التي تزورها.</string>
 
+    <string name="update_notification_title">تحديث Brave</string>
+    <string name="update_notification_text">متصفح Brave الجديد أسرع بنسبة 22% </string>
+
 </resources>

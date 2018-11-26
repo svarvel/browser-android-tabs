@@ -109,4 +109,7 @@ besparelse</string>
     <string name="brave_new_tab_private_header">Dette er et Privat Faneblad</string>
     <string name="brave_new_tab_private_message">Selvom hjemmesider du besøger i private faneblade ikke bliver gemt lokalt, gør de dig ikke anonym eller usynlig over for din ISP, chef eller for hjemmesiderne du bsøger.</string>
 
+    <string name="update_notification_title">Brave opdatering </string>
+    <string name="update_notification_text">Den nye Brave browser er 22% hurtigere </string>
+
 </resources>

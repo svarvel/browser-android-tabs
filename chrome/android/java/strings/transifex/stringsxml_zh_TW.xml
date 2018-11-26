@@ -105,4 +105,7 @@
     <string name="brave_new_tab_private_header">這是隱私分頁</string>
     <string name="brave_new_tab_private_message">雖然在隱私分頁中所到訪的網站不會儲存於本機，但不會讓您在您的 ISP、雇主或到訪的網站匿名或隱身。</string>
 
+    <string name="update_notification_title">Brave 更新</string>
+    <string name="update_notification_text">新的 Brave 瀏覽器快了 22%</string>
+
 </resources>

@@ -110,4 +110,7 @@
     <string name="brave_new_tab_private_header">Це приватна вкладка</string>
     <string name="brave_new_tab_private_message">Хоча сайти, на які ви заходите у приватних вкладках, не зберігаються, ви не є анонімними чи невидимими для свого Інтернет-провайдера, начальника чи сайтів, на які ви заходите.</string>
 
+    <string name="update_notification_title">Оновлення Brave</string>
+    <string name="update_notification_text">Новий Brave браузер на 22% швидше</string>
+
 </resources>

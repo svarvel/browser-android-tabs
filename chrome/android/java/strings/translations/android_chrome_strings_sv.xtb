@@ -1093,16 +1093,16 @@ Vissa webbplatser kan till exempel svara på begäran genom att visa annonser so
 <translation id="2706462751667573066">På</translation>
 <translation id="4339730410920731698">Annonser och trackers är blockerade</translation>
 <translation id="2313532038420432247">HTTPS-uppgraderingar</translation>
-<translation id="7461425058443653485">Skript är blockerat</translation>
+<translation id="7461425058443653485">Skript är blockerade</translation>
 <translation id="7835726359440951858">Blockera annonser och tracking</translation>
 <translation id="520895744850022668">HTTPS överallt</translation>
-<translation id="94154759592465111">Blockera Skript</translation>
+<translation id="94154759592465111">Blockera skript</translation>
 <translation id="7307834434086582547">Aktivera/Inaktivera Brave Shields</translation>
-<translation id="6132506775968708399">Blockera 3: e parts cookies</translation>
+<translation id="6132506775968708399">Blockera cookies från 3:e part</translation>
 <translation id="8710614491157212477">Öppnar webbplatser som använder HTTPS i stället för HTTP när det är möjligt</translation>
 <translation id="5758129336814690876">Spårningsskyddsläge</translation>
 <translation id="4609637183310787528">Förhindrar resurser som spårar dig från att laddas</translation>
-<translation id="8387201461264842096">Annons blockad</translation>
+<translation id="8387201461264842096">Blockera annonser</translation>
 <translation id="1934885595886623674">Förhindrar annonser från att laddas</translation>
 <translation id="7458422973722236530">Fingeravtrycksskydd</translation>
 <translation id="5787084571334399599">Hindrar webbläsaren från att ta fingeravtryck</translation>
@@ -1116,7 +1116,7 @@ Vissa webbplatser kan till exempel svara på begäran genom att visa annonser so
 ett säkert sätt med Brave Sync,
 inget konto krävs.
 Klicka nedan för att börja.</translation>
-<translation id="4807681603968503084">I har redan en synk-kod</translation>
+<translation id="4807681603968503084">Jag har redan en synk-kod</translation>
 <translation id="3082265116777145081">Lägg till enhetsnamn</translation>
 <translation id="9024091168371687561">Ange ett alternativt namn för denna enhet</translation>
 <translation id="3998827900918661986">Android-enhet</translation>
@@ -1131,7 +1131,7 @@ enhet och få synkroniseringskoden.</translation>
 <translation id="8985635554450124959">Sync kunde inte ställas in</translation>
 <translation id="7713465482966886648">Inställningarna för synk är klara</translation>
 <translation id="1068083442730715531">Återställ Sync...</translation>
-<translation id="6761015334234690567">Är du säker på att du vill återställa Syncinställningarna för denna enhet?</translation>
+<translation id="6761015334234690567">Är du säker på att du vill återställa Sync-inställningarna för denna enhet?</translation>
 <translation id="6244065453125065109">Blockerade
 spårare</translation>
 <translation id="2547939855139473800">Blockerad
@@ -1143,7 +1143,7 @@ tid</translation>
 <translation id="991605024067283917">Skicka värden</translation>
 <translation id="6572660632052512096">Skrivbordsläge</translation>
 <translation id="4479934682648362332">Föredrar skrivbordsversioner av webbplatser</translation>
-<translation id="807636106793708118">Föredrar mobilversion av webbplatser</translation>
+<translation id="807636106793708118">Föredra mobilversion av webbplatser</translation>
 <translation id="1340503115760585811">Aktivera skrivbordsvy för nya flikar</translation>
 <translation id="7924540991929826186">Använd mobilversioner av webbplatser för nya flikar (rekommenderas)</translation>
 <translation id="3834924998750356151">Blockerar övervakning</translation>
@@ -1167,11 +1167,13 @@ tid</translation>
 <translation id="213787746370741250">Öppna flikar i Anpassade flikar</translation>
 <translation id="3544772668823934222">Erbjud öppnande av flikar i Anpassade flikar </translation>
 <translation id="4501702055016678577">Privat sökning med DuckDuckGo?</translation>
-<translation id="910419239800579753">Med privat sökning använder Brave DuckDuckGo för att besvara din sökning medan du är i den privata fliken. DuckDuckGo är en sökmotor som inte spårar din sökhistoria, vilket låter dig söka privat.</translation>
+<translation id="910419239800579753">Med privat sökning använder Brave DuckDuckGo för att besvara din sökning medan du är i den privata fliken. DuckDuckGo är en sökmotor som inte spårar din sökhistorik, vilket låter dig söka privat.</translation>
 <translation id="1426410128494586442">Ja</translation>
 <translation id="4250680216510889253">Nej</translation>
 <translation id="5628466560184522265">Lär dig mer om privat sökning med DuckDuckGo</translation>
 <translation id="1468415711258933398">Standardflik</translation>
 <translation id="6199596294742117349">Detta är en privat flik</translation>
 <translation id="5858455511731621847">Även om webbsidor du besöker i privata flikar inte sparas lokalt gör de dig inte anonym eller osynlig för din ISP, din arbetsgivare, eller de webbsidor du besöker.</translation>
+<translation id="2339273275658335597">Brave-uppdatering</translation>
+<translation id="8395234238259738935">Nya Brave-webbläsaren är 22 % snabbare</translation>
 </translationbundle>

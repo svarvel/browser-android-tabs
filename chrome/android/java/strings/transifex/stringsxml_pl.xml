@@ -109,4 +109,7 @@ zaoszczędzony czas</string>
     <string name="brave_new_tab_private_header">To jest prywatna karta</string>
     <string name="brave_new_tab_private_message">Pomimo że strony, które odwiedzasz w prywatnej karcie nie są zapisywane lokalnie, nie czyni cię to ani anonimowym ani niewidocznym względem dostawcy usług internetowych, twojego pracodawcy lub stron, które odwiedzasz.</string>
 
+    <string name="update_notification_title">Aktualizacja przeglądarki Brave</string>
+    <string name="update_notification_text">Nowa przeglądarka Brave działa o 22% szybciej</string>
+
 </resources>

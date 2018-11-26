@@ -108,4 +108,7 @@ Tallennettu</string>
     <string name="brave_new_tab_private_header">Tämä on yksityinen välilehti</string>
     <string name="brave_new_tab_private_message">Vaikka sivustoja, joilla vierailemiseen käytät yksityisiä välilehtiä, ei tallennetakaan paikallisesti, et kuitenkaan ole anonyymi tai näkymätön Internet-palveluntarjoajallesi, työnantajallesi tai vierailemillesi sivustoille.</string>
 
+    <string name="update_notification_title">Brave-selaimen päivitys</string>
+    <string name="update_notification_text">Uusi Brave-selain on 22 % nopeampi</string>
+
 </resources>

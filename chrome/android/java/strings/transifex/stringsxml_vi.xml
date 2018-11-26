@@ -109,4 +109,7 @@ HTTPS</string>
     <string name="brave_new_tab_private_header">Đây là một tab riêng tư</string>
     <string name="brave_new_tab_private_message">Mặc dù các trang web bạn truy cập trong các tab riêng tư không được lưu cục bộ, chúng không giúp bạn ẩn danh hoặc vô hình với ISP (Nhà cung cấp dịch vụ Internet) hay nhà tuyển dụng của bạn hoặc các trang web mà bạn đang truy cập.</string>
 
+    <string name="update_notification_title">Cập nhật Brave</string>
+    <string name="update_notification_text">Trình duyệt Brave mới nhanh hơn 22%</string>
+
 </resources>

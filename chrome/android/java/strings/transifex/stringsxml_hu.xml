@@ -110,4 +110,7 @@ idő</string>
     <string name="brave_new_tab_private_header">Ez egy Privát Fül</string>
     <string name="brave_new_tab_private_message">Bár a privát fülekben felkeresett oldalak helyileg nem mentődnek el, nem garantálják a névtelenséget vagy láthatatlanságot ISP-d, alkalmazód vagy a felkeresett oldalak előtt.</string>
 
+    <string name="update_notification_title">Brave frissítés</string>
+    <string name="update_notification_text">Az új Brave böngésző 22%-kal gyorsabb</string>
+
 </resources>
