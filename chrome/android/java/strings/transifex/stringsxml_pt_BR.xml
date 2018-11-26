@@ -109,4 +109,7 @@ Salvo</string>
     <string name="brave_new_tab_private_header">Esta é uma Guia Privada</string>
     <string name="brave_new_tab_private_message">Mesmo que os sites que você acessa em guias privadas não sejam salvos localmente, eles não deixam você anônimo ou invisível para seu provedor de internet, seu patrão ou os sites que você está acessando.</string>
 
+    <string name="update_notification_title">Atualize o Brave</string>
+    <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
+
 </resources>

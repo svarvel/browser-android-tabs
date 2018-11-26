@@ -107,4 +107,7 @@
     <string name="brave_new_tab_private_header">이것은 비밀 탭입니다</string>
     <string name="brave_new_tab_private_message">귀하께서 비밀 탭들로 방문한 사이트들이 위치상으로 저장되지는 않지만, 귀하를 익명으로 만들거나 귀하의 ISP, 귀하의 고용주 혹은 귀하께서 방문하고 계신 사이트들에 보이지 않도록 만들지 않습니다.</string>
 
+    <string name="update_notification_title">Brave 업데이트</string>
+    <string name="update_notification_text">새로운 Brave 브라우저는 22% 더 빠릅니다</string>
+
 </resources>

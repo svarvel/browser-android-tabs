@@ -109,4 +109,7 @@ Economisé</string>
     <string name="brave_new_tab_private_header">Ceci est un onglet privé</string>
     <string name="brave_new_tab_private_message">Même si les sites que vous visitez dans des onglets privés ne sont pas sauvegardés localement, ces derniers ne vous rendent pas anonyme ou invisible auprès de votre fournisseur de services internet, de votre employeur, ou des sites que vous visitez.</string>
 
+    <string name="update_notification_title">Mise à jour du navigateur Brave</string>
+    <string name="update_notification_text">Le nouvel navigateur Brave est 22% plus rapide</string>
+
 </resources>

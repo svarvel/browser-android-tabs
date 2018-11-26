@@ -110,4 +110,7 @@ Sačuvano</string>
     <string name="brave_new_tab_private_header">Ovo je privatna kartica</string>
     <string name="brave_new_tab_private_message">Iako se lokacije koje posećujete na privatnim karticama ne čuvaju lokalno, to vas ne čini anonimnim ili nevidljivim za vaš ISP, vašeg poslodavca, ili za lokacije koje posećujete.</string>
 
+    <string name="update_notification_title">Brave ažuriranje</string>
+    <string name="update_notification_text">Novi Brave pregledač je 22% brži</string>
+
 </resources>

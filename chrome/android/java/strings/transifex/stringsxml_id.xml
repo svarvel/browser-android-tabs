@@ -112,4 +112,7 @@ Dihemat</string>
     <string name="brave_new_tab_private_header">Ini adalah Tab Pribadi</string>
     <string name="brave_new_tab_private_message">Meski situs yang Anda kunjungi melalui tab pribadi tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, bos Anda, atau situs yang Anda kunjungi.</string>
 
+    <string name="update_notification_title">Pembaruan Brave</string>
+    <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
+
 </resources>

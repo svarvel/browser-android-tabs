@@ -105,4 +105,7 @@ Guardado</string>
     <string name="brave_new_tab_private_header">Este é um Separador Privado</string>
     <string name="brave_new_tab_private_message">Apesar dos sítios que visita nos separadores privados não ficarem guardados localmente, os separadores privados não asseguram o seu anonimato e não o tornam invisível em relação ao seu ISP (fornecedor de Internet), ao seu empregador, ou em relação aos próprios sítios que visita.</string>
 
+    <string name="update_notification_title">Atualize o Brave</string>
+    <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
+
 </resources>

@@ -110,4 +110,7 @@ Salvat</string>
     <string name="brave_new_tab_private_header">Aceasta este o filă privată</string>
     <string name="brave_new_tab_private_message">Cu toate că site-urile pe care le vizitați în file private nu sunt salvate local, acestea nu vă fac anonim sau invizibil pentru furnizorul dvs. de internet, angajatorul dvs. sau site-urile pe care le vizitați.</string>
 
+    <string name="update_notification_title">Actualizare Brave</string>
+    <string name="update_notification_text">Noul browser Brave este cu 22% mai rapid</string>
+
 </resources>

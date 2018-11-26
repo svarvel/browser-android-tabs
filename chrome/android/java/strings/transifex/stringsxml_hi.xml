@@ -107,4 +107,7 @@
     <string name="brave_new_tab_private_header">यह एक निजी टैब है</string>
     <string name="brave_new_tab_private_message">भले ही आप द्वारा निजी  टैब्स में देखी जाने वाली साइटें स्थानीय रूप से सहेजी नहीं जाती हैं, फिर भी वे आपको आपके ISP, आपके नियोक्ता, या आप द्वारा देखी गई साइटों के लिए अज्ञातकृत या अदृश्य नहीं बनाती हैं।</string>
 
+    <string name="update_notification_title">Brave अपडेट</string>
+    <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
+
 </resources>
