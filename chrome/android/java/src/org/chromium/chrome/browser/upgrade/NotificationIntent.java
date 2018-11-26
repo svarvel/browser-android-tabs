@@ -41,8 +41,7 @@ public class NotificationIntent {
     private static final String NOTIFICATION_DISMISS_EXTRA = "org.chromium.chrome.browser.upgrade.NotificationUpgrade";
 
     public static void fireNotificationIfNecessary(Context context) {
-        String notification_text = String.format(context.getString(R.string.update_notification_text),
-                                     "22%");
+        String notification_text = context.getString(R.string.update_notification_text);
         if (!ShouldNotify(context)) {
             return;
         }
