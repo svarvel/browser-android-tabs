@@ -303,6 +303,45 @@ Still reading?
     <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-pt-rBR/android_chrome_strings.xml"/>
     <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-sv/android_chrome_strings.xml"/>
     <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-tl/android_chrome_strings.xml"/>
+    <!-- Brave specific exceptions -->
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ar/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-sl/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-uk/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ru/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-lt/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-sk/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-iw/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-sr/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ro/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-lv/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-hr/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-in/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-bg/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-it/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-hu/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-fa/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-es/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-de/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-vi/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-tr/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-sw/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-nl/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-fr/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-es-rUS/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-el/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ca/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-pt-rPT/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-fi/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-am/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-th/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-nb/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ko/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-hi/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-en-rGB/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-ja/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-zh-rTW/android_chrome_strings.xml"/>
+    <ignore regexp="chrome/android/chrome_strings_grd.resources.zip/values-zh-rCN/android_chrome_strings.xml"/>
   </issue>
   <!-- We have many C++ enums that we don't care about in java -->
   <issue id="SwitchIntDef" severity="ignore"/>
