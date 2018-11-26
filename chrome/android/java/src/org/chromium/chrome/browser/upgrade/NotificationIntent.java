@@ -36,7 +36,7 @@ public class NotificationIntent {
     private static final String PREF_NAME = "org.chromium.chrome.browser.upgrade.NotificationUpdateTimeStampPreferences";
     private static final String MILLISECONDS_NAME = "org.chromium.chrome.browser.upgrade.Milliseconds";
     private static final String URL = "https://brave.com/new-brave-22-percent-faster/";
-    private static final List<String> mWhitelistedRegionalLocales = Arrays.asList("en", "ru", "uk", "be", "pt", "fr", "es");
+    //private static final List<String> mWhitelistedRegionalLocales = Arrays.asList("en", "ru", "uk", "be", "pt", "fr", "es");
     private static final int NOTIFICATION_ID = 632;
     private static final String NOTIFICATION_DISMISS_EXTRA = "org.chromium.chrome.browser.upgrade.NotificationUpgrade";
 
@@ -83,9 +83,9 @@ public class NotificationIntent {
     }
 
     public static boolean ShouldNotify(Context context) {
-        String deviceLanguage = Locale.getDefault().getLanguage();
-        if (GetPreferences(context) != 0
-              || !mWhitelistedRegionalLocales.contains(new Locale(deviceLanguage).getLanguage())) {
+        //String deviceLanguage = Locale.getDefault().getLanguage();
+        if (GetPreferences(context) != 0/*
+              || !mWhitelistedRegionalLocales.contains(new Locale(deviceLanguage).getLanguage())*/) {
             return false;
         }
 
