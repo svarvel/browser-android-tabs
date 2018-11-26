@@ -103,4 +103,7 @@ Uložen</string>
     <string name="brave_new_tab_private_header">Toto je soukromá karta </string>
     <string name="brave_new_tab_private_message">Přestože stránky, které jste navštívili v anonymním okně, nejsou ukládány lokálně, nezaručují vám anonymitu ani neviditelnost u vašeho poskytovatele internetu, zaměstnavatele ani navštěvovaných stránek.</string>
 
+    <string name="update_notification_title">Aktualizace Brave</string>
+    <string name="update_notification_text">Nový prohlížeč Brave je o 22 % rychlejší</string>
+
 </resources>

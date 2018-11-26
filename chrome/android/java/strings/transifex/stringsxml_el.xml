@@ -109,4 +109,7 @@ HTTPS</string>
     <string name="brave_new_tab_private_header">Αυτή είναι μια Ιδιωτική Καρτέλα</string>
     <string name="brave_new_tab_private_message">Αν και οι ιστότοποι που επισκέπτεστε σε ιδιωτικές καρτέλες δεν αποθηκεύονται τοπικά, δεν σας κάνουν ανώνυμους ή αόρατους στον ISP σας, στον εργοδότη σας ή στους ιστότοπους που επισκέπτεστε.</string>
 
+    <string name="update_notification_title">Ενημέρωση Brave</string>
+    <string name="update_notification_text">Η νέα εφαρμογή περιήγησης Brave είναι 22% πιο γρήγορη</string>
+
 </resources>

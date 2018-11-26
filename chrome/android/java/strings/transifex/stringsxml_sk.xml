@@ -110,4 +110,7 @@ ušetrený čas</string>
     <string name="brave_new_tab_private_header">Toto je súkromná karta</string>
     <string name="brave_new_tab_private_message">Aj napriek tomu, že stránky, ktoré navštevujete na súkromných kartách, sa lokálne neukladajú, Vaša aktivita je stále viditeľná pre Vášho zamestnávateľa, poskytovateľa internetového pripojenia alebo vlastníkov navštevovaných stránok.</string>
 
+    <string name="update_notification_title">Aktualizácia prehliadača Brave</string>
+    <string name="update_notification_text">Nový prehliadač Brave je o 22 % rýchlejší</string>
+
 </resources>

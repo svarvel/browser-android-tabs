@@ -109,4 +109,7 @@ estimado</string>
     <string name="brave_new_tab_private_header">Esta es una Pestaña Privada</string>
     <string name="brave_new_tab_private_message">A pesar de que los sitios que visitas utilizando pestañas privadas no son guardados localmente, estos no te hacen anónimo o invicible a tu Proveedor de Internet, tu empleador, o a los sitios que visitas.</string>
 
+    <string name="update_notification_title">Actualización del navegador Brave</string>
+    <string name="update_notification_text">El navegador nuevo Brave es 22% más rápido</string>
+
 </resources>

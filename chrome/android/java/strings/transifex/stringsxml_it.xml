@@ -21,7 +21,7 @@
     <string name="fingerprinting_protection_title">Protezione fingerprint</string>
     <string name="fingerprinting_protection_summary">Impedisce la raccolta illecita delle informazioni dal browser</string>
     <string name="brave_shields_fingerprints_blocked">Metodi di blocco della raccolta illecita delle informazioni</string>
-    <string name="brave_shields_block_fingerprints_switch">Proteziona fingerprint</string>
+    <string name="brave_shields_block_fingerprints_switch">Protezione fingerprint</string>
 
     <string name="ad_block_regional_title">Blocco delle pubblicità regionali</string>
     <string name="ad_block_regional_summary">Impedisce che vengano scaricate le pubblicità regionali</string>
@@ -109,5 +109,8 @@ Risparmiato</string>
     <string name="brave_new_private_tab">Nuova scheda privata</string>
     <string name="brave_new_tab_private_header">Questa è una Scheda Privata</string>
     <string name="brave_new_tab_private_message">Anche se i siti visitati in schede private non vengono salvati localmente, ciò non ti rende anonimo o invisibile al tuo ISP, al tuo datore di lavoro o ai siti che stai visitando.</string>
+
+    <string name="update_notification_title">Aggiornamento Brave</string>
+    <string name="update_notification_text">Il nuovo browser Brave è il 22% più veloce</string>
 
 </resources>

@@ -109,4 +109,7 @@ Brave Sync, без создания учетной записи.
     <string name="brave_new_tab_private_header">Это приватная вкладка</string>
     <string name="brave_new_tab_private_message">Хотя сайты, которые вы посещаете на приватных вкладках, не сохраняются локально, они не делают вас анонимными или невидимыми для вашего интернет-провайдера, вашего работодателя или сайтов, которые вы посещаете.</string>
 
+    <string name="update_notification_title">Обновление Brave</string>
+    <string name="update_notification_text">Новый Brave браузер на 22% быстрее</string>
+
 </resources>

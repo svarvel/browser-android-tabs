@@ -109,4 +109,7 @@ Kaydedildi</string>
     <string name="brave_new_tab_private_header">Bu bir Gizli Sekme</string>
     <string name="brave_new_tab_private_message">Gizli sekmelerde ziyaret ettiğiniz siteler yerel olarak kaydedilmese de anonim olarak kalmazsınız ve bu siteler internet servis sağlayıcınız, işvereniniz veya ziyaret ettiğiniz siteler tarafından görülebilir.</string>
 
+    <string name="update_notification_title">Brave güncellemesi</string>
+    <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
+
 </resources>

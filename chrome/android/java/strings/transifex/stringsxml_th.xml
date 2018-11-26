@@ -107,4 +107,7 @@ EST แล้ว</string>
     <string name="brave_new_tab_private_header">นี่คือแท็บส่วนตัว</string>
     <string name="brave_new_tab_private_message">แม้ว่าเว็บไซต์ที่คุณเข้าชมในแท็บส่วนตัวจะไม่บันทึกลงในเครื่อง แต่วิธีนี้ไม่ทำให้คุณไม่มีตัวตนหรือหายไปจากผู้ให้บริการอินเทอร์เน็ต, นายจ้าง หรือเว็บไซต์ที่คุณเข้าชม</string>
 
+    <string name="update_notification_title">อัปเดตของ Brave</string>
+    <string name="update_notification_text">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</string>
+
 </resources>
