@@ -28,6 +28,9 @@ public class PopupActivity extends SingleTabActivity {
     private static final String POPUP_URL = "com.android.brave.popup_URL";
     private static final String EXTRA_POPUP_Y_SHIFT = "com.android.brave.popup_y_shift";
     private static final int DEFAULT_POPUP_Y_SHIFT = 100;
+    private static final String EXTRA_POPUP_BOTTOM_SHIFT = "com.android.brave.popup_bottom_shift";
+    private static final int DEFAULT_POPUP_BOTTOM_SHIFT = 160;
+
 
     private String mUrl;
 
@@ -56,7 +59,8 @@ public class PopupActivity extends SingleTabActivity {
         if (compositor instanceof ViewGroup) {
             setTransparentBackground((View)compositor);
             int y_shift = IntentUtils.safeGetIntExtra(getIntent(), EXTRA_POPUP_Y_SHIFT, DEFAULT_POPUP_Y_SHIFT);
-            ((View)compositor).setPadding(0, y_shift, 10, 10);
+            int bottom_shift = IntentUtils.safeGetIntExtra(getIntent(), EXTRA_POPUP_BOTTOM_SHIFT, DEFAULT_POPUP_BOTTOM_SHIFT);
+            ((View)compositor).setPadding(0, y_shift, 10, bottom_shift);
             View parent = (View) compositor.getParent();
             if (parent != null) {
                 parent.setClickable(true);
@@ -97,9 +101,17 @@ public class PopupActivity extends SingleTabActivity {
             anchor.getLocationOnScreen(xy);
             y_shift = xy[1];
         }
+
+        int bottom_shift = DEFAULT_POPUP_BOTTOM_SHIFT;
+        View bottom_anchor = activity.findViewById(R.id.bottom_toolbar);
+        if (bottom_anchor != null) {
+            bottom_shift = bottom_anchor.getHeight();
+        }
+
         Intent intent = new Intent();
         intent.setClass(activity, PopupActivity.class);
         intent.putExtra(EXTRA_POPUP_Y_SHIFT, y_shift);
+        intent.putExtra(EXTRA_POPUP_BOTTOM_SHIFT, bottom_shift);
         intent.putExtra(POPUP_URL, url);
         intent.putExtra(IntentHandler.EXTRA_PARENT_COMPONENT, activity.getComponentName());
         intent.putExtra(Browser.EXTRA_APPLICATION_ID, activity.getPackageName());
