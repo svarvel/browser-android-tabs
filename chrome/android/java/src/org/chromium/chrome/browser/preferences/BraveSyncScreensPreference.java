@@ -1129,32 +1129,37 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void deleteDeviceDialog(String deviceName, String deviceId, String deviceObjectId, View v) {
-      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
-      if (null == alert) {
-          return;
-      }
-      DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
-          @Override
-          public void onClick(DialogInterface dialog, int button) {
-              if (button == AlertDialog.BUTTON_POSITIVE) {
-                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                  if (null != application && null != application.mBraveSyncWorker) {
-                      application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
-                      application.mBraveSyncWorker.InterruptSyncSleep();
-                      v.setEnabled(false);
-                      startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_delete_sent));
-                  }
-              }
-          }
-      };
-      AlertDialog alertDialog = alert
-              .setTitle(getResources().getString(R.string.brave_sync_remove_device_text))
-              .setMessage(getString(R.string.brave_sync_delete_device, deviceName))
-              .setPositiveButton(R.string.ok, onClickListener)
-              .setNegativeButton(R.string.cancel, onClickListener)
-              .create();
-      alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
-      alertDialog.show();
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+        if (null == alert) {
+            return;
+        }
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int button) {
+                if (button == AlertDialog.BUTTON_POSITIVE) {
+                    ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                    if (null != application && null != application.mBraveSyncWorker) {
+                        new Thread() {
+                            @Override
+                            public void run() {
+                                application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
+                                application.mBraveSyncWorker.InterruptSyncSleep();
+                            }
+                        }.start();
+                        v.setEnabled(false);
+                        startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_delete_sent));
+                    }
+                }
+            }
+        };
+        AlertDialog alertDialog = alert
+                .setTitle(getResources().getString(R.string.brave_sync_remove_device_text))
+                .setMessage(getString(R.string.brave_sync_delete_device, deviceName))
+                .setPositiveButton(R.string.ok, onClickListener)
+                .setNegativeButton(R.string.cancel, onClickListener)
+                .create();
+        alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
+        alertDialog.show();
   }
 
   private void setJoinExistingChainLayout() {
