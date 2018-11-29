@@ -6,6 +6,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
+
+import org.chromium.base.SysUtils;
 import org.chromium.chrome.R;
 
 
@@ -68,6 +70,10 @@ public class BraveRewardsPanelPopup {
         this.preShow();
 
         this.window.setAnimationStyle(R.style.OverflowMenuAnim);
+
+        if (SysUtils.isLowEndDevice()) {
+            this.window.setAnimationStyle(0);
+        }
 
         this.window.showAsDropDown(this.anchor, xOffset, yOffset);
     }
