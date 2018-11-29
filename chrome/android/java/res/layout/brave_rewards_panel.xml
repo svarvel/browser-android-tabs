@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_brave_rewards_panel"
     android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
         android:background="@drawable/bat_outline">
 
         <GridLayout
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="35dp"
@@ -101,4 +101,4 @@
                 android:layout_row="6"/>
         </GridLayout>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>
