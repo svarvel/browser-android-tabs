@@ -813,8 +813,8 @@ public class BraveSyncWorker {
                 if (null == mWebContents) {
                     mWebContents = WebContentsFactory.createWebContents(false, true);
                     if (null != mWebContents) {
-                        ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mWebContents);
-                        mWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new ActivityWindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
+                        ContentView cv = ContentView.createContentView(mContext, mWebContents);
+                        mWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid(), WebContents.createDefaultInternalsHolder());
                         mViewEventSink = ViewEventSinkImpl.from(mWebContents);
                         if (null != mViewEventSink) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -1057,7 +1057,7 @@ public class BraveSyncWorker {
             }
             mInterruptSyncSleep = false;
             String fetchToRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
-            Log.i(TAG, "FetchSyncRecords: " + fetchToRequest);
+            //Log.i(TAG, "FetchSyncRecords: " + fetchToRequest);
             CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), fetchToRequest, FETCH_RECORDS_CHUNK_SIZE)));
             mTimeLastFetchExecuted = currentTime.getTimeInMillis();
             if (!lastRecordFetchTime.isEmpty()) {
@@ -2702,8 +2702,8 @@ public class BraveSyncWorker {
                 if (null == mJSWebContents) {
                     mJSWebContents = WebContentsFactory.createWebContents(false, true);
                     if (null != mJSWebContents) {
-                        ContentView cv = ContentView.createContentView((ChromeActivity)mContext, mJSWebContents);
-                        mJSWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new ActivityWindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
+                        ContentView cv = ContentView.createContentView(mContext, mJSWebContents);
+                        mJSWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid(), WebContents.createDefaultInternalsHolder());
                         mJSViewEventSink = ViewEventSinkImpl.from(mJSWebContents);
                         if (null != mJSViewEventSink) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
