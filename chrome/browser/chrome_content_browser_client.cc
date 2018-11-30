@@ -31,6 +31,7 @@
 #include "base/task/post_task.h"
 #include "base/threading/thread_task_runner_handle.h"
 #include "brave_src/browser/brave_tab_url_web_contents_observer.h"
+#include "brave/components/brave_ads/browser/buildflags/buildflags.h"
 #include "build/build_config.h"
 #include "chrome/app/chrome_content_browser_overlay_manifest.h"
 #include "chrome/app/chrome_content_gpu_overlay_manifest.h"
@@ -605,6 +606,10 @@
 
 #if BUILDFLAG(ENABLE_ISOLATED_XR_SERVICE)
 #include "device/vr/public/mojom/isolated_xr_service.mojom.h"
+#endif
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+#include "brave/components/services/bat_ads/public/interfaces/bat_ads.mojom.h"
 #endif
 
 using base::FileDescriptor;
@@ -3944,6 +3949,11 @@ void ChromeContentBrowserClient::RegisterOutOfProcessServices(
         base::BindRepeating(&base::ASCIIToUTF16, "Mirroring Service");
   }
 #endif
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+  (*services)[bat_ads::mojom::kServiceName] = base::BindRepeating(
+    []() -> base::string16 { return base::ASCIIToUTF16("Bat Ads Service"); });
+#endif    
 }
 
 void ChromeContentBrowserClient::HandleServiceRequest(
