@@ -13,6 +13,7 @@
 #include "base/trace_event/trace_event.h"
 #include "brave_src/browser/brave_tab_helpers.h"
 #include "build/build_config.h"
+#include "brave/components/brave_ads/browser/ads_tab_helper.h"
 #include "chrome/browser/bookmarks/bookmark_model_factory.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/client_hints/client_hints_observer.h"
@@ -196,6 +197,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_contents) {
       g_browser_process->GetApplicationLocale(),
       autofill::AutofillManager::ENABLE_AUTOFILL_DOWNLOAD_MANAGER);
   brave::AttachTabHelpers(web_contents);
+  brave_ads::AdsTabHelper::CreateForWebContents(web_contents);
   chrome_browser_net::NetErrorTabHelper::CreateForWebContents(web_contents);
   ChromePasswordManagerClient::CreateForWebContentsWithAutofillClient(
       web_contents,
