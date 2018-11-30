@@ -2,6 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import("//brave/components/brave_ads/browser/buildflags/buildflags.gni")
 import("//build/config/crypto.gni")
 import("//build/config/features.gni")
 import("//build/config/sysroot.gni")
@@ -229,6 +230,10 @@ static_library("utility") {
       "//services/content/simple_browser",
       "//services/content/simple_browser/public/mojom",
     ]
+  }
+
+  if (brave_ads_enabled) {
+    deps += [ "//brave/components/services/bat_ads:lib" ]
   }
 }
 
