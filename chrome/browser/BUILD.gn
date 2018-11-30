@@ -2152,6 +2152,8 @@ jumbo_split_static_library("browser") {
       "android/autofill_assistant/client_android.h",
       "android/autofill_assistant/ui_controller_android.cc",
       "android/autofill_assistant/ui_controller_android.h",
+      "android/brave_rewards_native_worker.cc",
+      "android/brave_rewards_native_worker.h",
       "android/background_sync_launcher_android.cc",
       "android/background_sync_launcher_android.h",
       "android/background_tab_manager.cc",
