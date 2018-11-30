@@ -156,7 +156,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     }
 
     @Override
-    public void OnWalletCreated() {
-      Log.i("TAG", "!!!in observer OnWalletCreated");
+    public void OnWalletInitialized(int error_code) {
+      Log.i("TAG", "!!!in observer OnWalletInitialized error_code == " + error_code);
     }
 }

@@ -5,5 +5,5 @@
 package org.chromium.chrome.browser;
 
 public interface BraveRewardsObserver {
-  public void OnWalletCreated();
+  public void OnWalletInitialized(int error_code);
 }
