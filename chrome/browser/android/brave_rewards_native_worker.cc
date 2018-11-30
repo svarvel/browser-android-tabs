@@ -20,6 +20,9 @@ BraveRewardsNativeWorker::BraveRewardsNativeWorker(JNIEnv* env, const base::andr
 
   brave_rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  if (brave_rewards_service_) {
+    brave_rewards_service_->AddObserver(this);
+  }
 }
 
 BraveRewardsNativeWorker::~BraveRewardsNativeWorker() {
@@ -27,12 +30,24 @@ BraveRewardsNativeWorker::~BraveRewardsNativeWorker() {
 
 void BraveRewardsNativeWorker::Destroy(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->RemoveObserver(this);
+  }
   delete this;
 }
 
 void BraveRewardsNativeWorker::CreateWallet(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->CreateWallet();
+  }
+}
 
+void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
+        int error_code) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+  return Java_BraveRewardsNativeWorker_OnWalletInitialized(env, 
+        weak_java_brave_rewards_native_worker_.get(env), error_code);
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const

@@ -7,6 +7,7 @@
 
 #include <jni.h>
 #include "base/android/jni_weak_ref.h"
+#include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 
 namespace brave_rewards {
   class RewardsService;
@@ -15,16 +16,19 @@ namespace brave_rewards {
 namespace chrome {
 namespace android {
 
-class BraveRewardsNativeWorker {
+class BraveRewardsNativeWorker : public brave_rewards::RewardsServiceObserver {
 public:
     BraveRewardsNativeWorker(JNIEnv* env, const base::android::JavaRef<jobject>& obj);
-    ~BraveRewardsNativeWorker();
+    ~BraveRewardsNativeWorker() override;
 
     void Destroy(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
 
     void CreateWallet(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
+
+    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
+        int error_code) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;

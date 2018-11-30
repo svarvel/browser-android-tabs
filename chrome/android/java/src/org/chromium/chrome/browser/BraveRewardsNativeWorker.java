@@ -54,12 +54,12 @@ public class BraveRewardsNativeWorker {
         mNativeBraveRewardsNativeWorker = nativePtr;
     }
 
-    /*@CalledByNative
-    public void OnWalletCreated() {
+    @CalledByNative
+    public void OnWalletInitialized(int error_code) {
         for(BraveRewardsObserver observer : observers_) {
-            observer.OnWalletCreated();
+            observer.OnWalletInitialized(error_code);
         }
-    }*/
+    }
 
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
