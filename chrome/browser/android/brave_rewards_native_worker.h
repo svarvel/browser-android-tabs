@@ -8,6 +8,7 @@
 #include <jni.h>
 #include "base/android/jni_weak_ref.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
+#include "brave/components/brave_rewards/browser/wallet_properties.h"
 
 namespace brave_rewards {
   class RewardsService;
@@ -30,12 +31,24 @@ public:
     bool WalletExist(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
 
+    void GetWalletProperties(JNIEnv* env, const
+        base::android::JavaParamRef<jobject>& jcaller);
+
+    double GetWalletBalance(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    double GetWalletRate(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& rate);
+
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
+
+    void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
+        int error_code, brave_rewards::WalletProperties* wallet_properties) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
+    brave_rewards::WalletProperties wallet_properties_;
 };
 }
 }
