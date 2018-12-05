@@ -6,12 +6,14 @@ package org.chromium.chrome.browser;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.chromium.base.ApplicationStatus;
@@ -35,6 +37,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private final BraveRewardsPanelPopup thisObject;
     private View root;
     private Button btJoinRewards;
+    private Button btAddFunds;
+    private Button btRewardsSettings;
     private TextView tvLearnMore;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
 
@@ -78,14 +82,24 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.brave_rewards_panel, null);
         setContentView(root);
+        if (mBraveRewardsNativeWorker != null && mBraveRewardsNativeWorker.WalletExist()) {
+          ShowWebSiteView();
+        }
         btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("TAG", "!!!onClick bt");
                 if (mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.CreateWallet();
+                }
+                Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
+                btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_rewards_creating_text));
+                btJoinRewards.setClickable(false);
+                btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.brave_rewards_loader, 0);
+                AnimationDrawable drawable = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
+                if (drawable != null) {
+                  drawable.start();
                 }
             }
           }));
@@ -95,7 +109,27 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           tvLearnMore.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("TAG", "!!!onClick tv");
+                launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
+                dismiss();
+            }
+          }));
+        }
+
+        btAddFunds = (Button)root.findViewById(R.id.br_add_funds);
+        if (btAddFunds != null) {
+          btAddFunds.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
+                dismiss();
+            }
+          }));
+        }
+        btRewardsSettings = (Button)root.findViewById(R.id.br_rewards_settings);
+        if (btRewardsSettings != null) {
+          btRewardsSettings.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
                 dismiss();
             }
@@ -155,8 +189,31 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         return tab;
     }
 
+    public void ShowWebSiteView() {
+      ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText("0.0");
+      String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.0");
+      ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
+      String currentMonth = BraveRewardsHelper.getCurrentMonth(this.root.getResources());
+      String currentYear = BraveRewardsHelper.getCurrentYear(this.root.getResources());
+      ((TextView)this.root.findViewById(R.id.rewards_summary_month)).setText(
+        String.format(this.root.getResources().getString(R.string.brave_ui_month_year), currentMonth,
+          currentYear));
+
+      ScrollView sv = (ScrollView)this.root.findViewById(R.id.activity_brave_rewards_panel);
+      sv.setVisibility(View.GONE);
+      ScrollView sv_new = (ScrollView)this.root.findViewById(R.id.sv_no_website);
+      sv_new.setVisibility(View.VISIBLE);
+    }
+
     @Override
     public void OnWalletInitialized(int error_code) {
       Log.i("TAG", "!!!in observer OnWalletInitialized error_code == " + error_code);
+
+      if (error_code == 0) {
+        // Wallet created
+        ShowWebSiteView();
+      } else if (error_code == 1) {
+        // TODO error handling
+      }
     }
 }
