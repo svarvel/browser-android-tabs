@@ -11,7 +11,7 @@ import org.chromium.chrome.browser.init.StatsUpdater;
 
 public class StatsUpdaterWorker {
 
-    private static final int INTERVAL_TO_UPDATE = 1000 * 60 * 20;    // Milliseconds
+    private static final int INTERVAL_TO_UPDATE = 1000 * 60 * 5;    // Milliseconds
 
     private UpdateThread mUpdateThread = null;
 
