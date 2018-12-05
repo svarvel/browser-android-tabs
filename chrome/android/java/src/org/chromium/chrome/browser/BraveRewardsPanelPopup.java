@@ -29,18 +29,25 @@ import org.chromium.chrome.R;
 import org.chromium.content_public.browser.LoadUrlParams;
 
 import java.lang.ref.WeakReference;
+import java.text.DecimalFormat;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class BraveRewardsPanelPopup implements BraveRewardsObserver {
+    private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
+
     protected final View anchor;
     private final PopupWindow window;
     private final BraveRewardsPanelPopup thisObject;
+    private final ChromeTabbedActivity mActivity;
     private View root;
     private Button btJoinRewards;
     private Button btAddFunds;
     private Button btRewardsSettings;
     private TextView tvLearnMore;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
+    private Timer balanceUpdater;
 
     public BraveRewardsPanelPopup(View anchor) {
         this.anchor = anchor;
@@ -66,14 +73,32 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                 mBraveRewardsNativeWorker.RemoveObserver(thisObject);
             }
         });
-        ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-        mBraveRewardsNativeWorker = activity.getBraveRewardsNativeWorker();
+        mActivity = BraveRewardsHelper.GetChromeTabbedActivity();
+        mBraveRewardsNativeWorker = mActivity.getBraveRewardsNativeWorker();
         if (mBraveRewardsNativeWorker != null) {
           mBraveRewardsNativeWorker.Init();
           mBraveRewardsNativeWorker.AddObserver(thisObject);
         }
+        balanceUpdater = new Timer();
 
         onCreate();
+    }
+
+    private void CreateUpdateBalanceTask() {
+      balanceUpdater.schedule(new TimerTask() {
+        @Override
+        public void run() {
+          if (thisObject.mBraveRewardsNativeWorker == null) {
+            return;
+          }
+          mActivity.runOnUiThread(new Runnable() {
+              @Override
+              public void run() {
+                  thisObject.mBraveRewardsNativeWorker.GetWalletProperties();
+              }
+          });
+        }
+      }, 0, 60000);
     }
 
     protected void onCreate() {
@@ -178,10 +203,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     }
 
     private Tab launchTabInRunningTabbedActivity(LoadUrlParams loadUrlParams) {
-        ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-        if (activity == null || activity.getTabModelSelector() == null) return null;
+        if (mActivity == null || mActivity.getTabModelSelector() == null) return null;
 
-        TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) activity.getTabModelSelector();
+        TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) mActivity.getTabModelSelector();
         Tab tab = tabbedModeTabModelSelector.openNewTab(
                 loadUrlParams, TabLaunchType.FROM_BROWSER_ACTIONS, null, false);
         assert tab != null;
@@ -190,8 +214,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     }
 
     public void ShowWebSiteView() {
-      ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText("0.0");
-      String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.0");
+      ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(String.format("%.2f", 0.0));
+      String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.00");
       ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
       String currentMonth = BraveRewardsHelper.getCurrentMonth(this.root.getResources());
       String currentYear = BraveRewardsHelper.getCurrentYear(this.root.getResources());
@@ -203,17 +227,33 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       sv.setVisibility(View.GONE);
       ScrollView sv_new = (ScrollView)this.root.findViewById(R.id.sv_no_website);
       sv_new.setVisibility(View.VISIBLE);
+      CreateUpdateBalanceTask();
     }
 
     @Override
     public void OnWalletInitialized(int error_code) {
-      Log.i("TAG", "!!!in observer OnWalletInitialized error_code == " + error_code);
-
       if (error_code == 0) {
         // Wallet created
         ShowWebSiteView();
       } else if (error_code == 1) {
         // TODO error handling
       }
+    }
+
+    @Override
+    public void OnWalletProperties(int error_code) {
+      if (error_code == 0) {
+        if (mBraveRewardsNativeWorker != null) {
+          double balance = mBraveRewardsNativeWorker.GetWalletBalance();
+          ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(
+            String.format("%.2f", balance));
+          double usdValue = balance * mBraveRewardsNativeWorker.GetWalletRate("USD");
+          String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), 
+            String.format("%.2f", usdValue));
+          ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
+        }
+      } else if (error_code == 1) {
+        // TODO error handling
+      } 
     }
 }
