@@ -50,6 +50,15 @@ void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService
         weak_java_brave_rewards_native_worker_.get(env), error_code);
 }
 
+bool BraveRewardsNativeWorker::WalletExist(JNIEnv* env, const
+        base::android::JavaParamRef<jobject>& jcaller) {
+  if (brave_rewards_service_) {
+    return brave_rewards_service_->IsWalletCreated();
+  }
+
+  return false;
+}
+
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
     base::android::JavaParamRef<jobject>& jcaller) {
   new BraveRewardsNativeWorker(env, jcaller);

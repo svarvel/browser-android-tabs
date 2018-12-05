@@ -4338,6 +4338,42 @@ content creators.
       <message name="IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO" desc="">
         Learn More
       </message>
+      <message name="IDS_BRAVE_UI_REWARDS_CREATING_TEXT" desc="">
+        Creating wallet
+      </message>
+      <message name="IDS_BRAVE_UI_YOUR_WALLET" desc="">
+        Your wallet
+      </message>
+      <message name="IDS_BRAVE_UI_BAT" desc="">
+        BAT
+      </message>
+      <message name="IDS_BRAVE_UI_USD" desc="">
+        <ph name="VALUE">%1$s<ex>0.0</ex></ph> USD
+      </message>
+      <message name="IDS_BRAVE_REWARDS_LOCAL_PANEL_ADD_FUNDS" desc="">
+        Add Funds
+      </message>
+      <message name="IDS_BRAVE_UI_SETTINGS" desc="">
+        Rewards settings
+      </message>
+      <message name="IDS_BRAVE_UI_REWARDS_SUMMARY" desc="">
+        REWARDS SUMMARY
+      </message>
+      <message name="IDS_BRAVE_UI_MONTH_JAN" desc="">JANUARY</message>
+      <message name="IDS_BRAVE_UI_MONTH_FEB" desc="">FEBRUARY</message>
+      <message name="IDS_BRAVE_UI_MONTH_MAR" desc="">MARCH</message>
+      <message name="IDS_BRAVE_UI_MONTH_APR" desc="">APRIL</message>
+      <message name="IDS_BRAVE_UI_MONTH_MAY" desc="">MAY</message>
+      <message name="IDS_BRAVE_UI_MONTH_JUN" desc="">JUNE</message>
+      <message name="IDS_BRAVE_UI_MONTH_JUL" desc="">JULY</message>
+      <message name="IDS_BRAVE_UI_MONTH_AUG" desc="">AUGUST</message>
+      <message name="IDS_BRAVE_UI_MONTH_SEP" desc="">SEPTEMBER</message>
+      <message name="IDS_BRAVE_UI_MONTH_OCT" desc="">OCTOBER</message>
+      <message name="IDS_BRAVE_UI_MONTH_NOV" desc="">NOVEMBER</message>
+      <message name="IDS_BRAVE_UI_MONTH_DEC" desc="">DECEMBER</message>
+      <message name="IDS_BRAVE_UI_MONTH_YEAR" desc="">
+        <ph name="MONTH">%1$s<ex>DECEMBER</ex></ph> <ph name="YEAR">%2$s<ex>2018</ex></ph>
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>

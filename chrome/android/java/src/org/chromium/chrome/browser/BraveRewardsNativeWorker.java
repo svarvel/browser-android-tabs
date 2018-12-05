@@ -48,6 +48,10 @@ public class BraveRewardsNativeWorker {
       nativeCreateWallet(mNativeBraveRewardsNativeWorker);
     }
 
+    public boolean WalletExist() {
+      return nativeWalletExist(mNativeBraveRewardsNativeWorker);
+    }
+
     @CalledByNative
     private void setNativePtr(long nativePtr) {
         assert mNativeBraveRewardsNativeWorker == 0;
@@ -64,4 +68,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
+    private native boolean nativeWalletExist(long nativeBraveRewardsNativeWorker);
 }
