@@ -60,13 +60,14 @@ ChromeRenderMessageFilter::ChromeRenderMessageFilter(int render_process_id,
                            base::size(kRenderFilteredMessageClasses)),
       render_process_id_(render_process_id),
       preconnect_manager_initialized_(false),
-      cookie_settings_(CookieSettingsFactory::GetForProfile(profile)) {
+      cookie_settings_(CookieSettingsFactory::GetForProfile(profile)),
+      profile_(profile) {
   if (!ChromeRenderMessageFilter::enable_fingerprinting_protection_) {
     std::lock_guard<std::mutex> guard(enable_fingerprinting_protection_init_mutex_);
     ChromeRenderMessageFilter::enable_fingerprinting_protection_ = new BooleanPrefMember();
-    ChromeRenderMessageFilter::enable_fingerprinting_protection_->Init(prefs::kFingerprintingProtectionEnabled,  profile_->GetPrefs());
+    ChromeRenderMessageFilter::enable_fingerprinting_protection_->Init(prefs::kFingerprintingProtectionEnabled,  profile->GetPrefs());
     ChromeRenderMessageFilter::enable_fingerprinting_protection_->MoveToThread(
-      BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+      base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
   }
   auto* loading_predictor =
       predictors::LoadingPredictorFactory::GetForProfile(profile);

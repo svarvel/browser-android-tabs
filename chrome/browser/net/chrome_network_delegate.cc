@@ -293,22 +293,22 @@ void ChromeNetworkDelegate::InitializePrefsOnUIThread(
   if (enable_httpse) {
     enable_httpse->Init(prefs::kHTTPSEEnabled, pref_service);
     enable_httpse->MoveToThread(
-        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+        base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
   }
   if (enable_tracking_protection) {
     enable_tracking_protection->Init(prefs::kTrackingProtectionEnabled, pref_service);
     enable_tracking_protection->MoveToThread(
-        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+        base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
   }
   if (enable_ad_block) {
     enable_ad_block->Init(prefs::kAdBlockEnabled, pref_service);
     enable_ad_block->MoveToThread(
-        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+        base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
   }
   if (enable_ad_block_regional) {
     enable_ad_block_regional->Init(prefs::kAdBlockRegionalEnabled, pref_service);
     enable_ad_block_regional->MoveToThread(
-        BrowserThread::GetTaskRunnerForThread(BrowserThread::IO));
+        base::CreateSingleThreadTaskRunnerWithTraits({BrowserThread::IO}));
   }
 }
 
@@ -408,8 +408,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
   int rv = net::ERR_IO_PENDING;
   if (reload_adblocker_) {
     reload_adblocker_ = false;
-    content::BrowserThread::PostTask(
-      content::BrowserThread::UI, FROM_HERE,
+    base::PostTaskWithTraits(FROM_HERE, {BrowserThread::UI},
       base::Bind(&ChromeNetworkDelegate::GetIOThread,
           base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
     if (nullptr != shieldsConfig) {
@@ -420,8 +419,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
   } else {
     rv = OnBeforeURLRequest_TpBlockPreFileWork(request, std::move(callback), new_url, ctx);
     // Check do we need to reload adblocker. We will do that on next call
-    content::BrowserThread::PostTask(
-      content::BrowserThread::IO, FROM_HERE,
+    base::PostTaskWithTraits(FROM_HERE, {BrowserThread::IO},
       base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::CheckAdBlockerReload),
           base::Unretained(this), shieldsConfig));
   }
@@ -454,8 +452,7 @@ void ChromeNetworkDelegate::ResetBlocker(IOThread* io_thread, net::URLRequest* r
     std::shared_ptr<OnBeforeURLRequestContext> ctx) {
   blockers_worker_ = io_thread->ResetBlockersWorker();
 
-  content::BrowserThread::PostTask(
-    content::BrowserThread::IO, FROM_HERE,
+  base::PostTaskWithTraits(FROM_HERE, {BrowserThread::IO},
     base::Bind(base::IgnoreResult(&ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPostFileWork),
         base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx)
       );

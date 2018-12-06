@@ -37,7 +37,6 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.init.ShieldsConfig;
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
 import org.chromium.chrome.browser.ChromeApplication;
-import org.chromium.chrome.browser.widget.TintedImageButton;
 //import org.chromium.chrome.browser.MixPanelWorker;
 import org.chromium.ui.base.LocalizationUtils;
 import org.chromium.ui.interpolators.BakedBezierInterpolator;
@@ -772,18 +771,5 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
 
     static class CustomMenuItemViewHolder extends StandardMenuItemViewHolder {
         public TextView summary;
-    }
-
-    static class ThreeButtonMenuItemViewHolder {
-        public TintedImageButton[] buttons = new TintedImageButton[3];
-    }
-
-    static class FourButtonMenuItemViewHolder {
-        public TintedImageButton[] buttons = new TintedImageButton[4];
-    }
-
-    static class TitleButtonMenuItemViewHolder {
-        public TextView title;
-        public TintedImageButton button;
     }
 }
