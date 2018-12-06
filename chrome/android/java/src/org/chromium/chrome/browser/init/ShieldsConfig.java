@@ -6,7 +6,7 @@ package org.chromium.chrome.browser.init;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 
 import java.io.File;
 import java.io.FileNotFoundException;

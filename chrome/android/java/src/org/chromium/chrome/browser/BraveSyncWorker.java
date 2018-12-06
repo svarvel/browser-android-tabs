@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
 import android.util.Base64;
