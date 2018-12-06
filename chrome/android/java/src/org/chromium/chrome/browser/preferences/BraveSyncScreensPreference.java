@@ -20,7 +20,7 @@ import android.content.res.Configuration;
 import android.content.SharedPreferences;
 import android.hardware.Camera;
 import android.hardware.SensorManager;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
@@ -51,7 +51,7 @@ import android.widget.LinearLayout;
 
 import org.chromium.base.Log;
 import org.chromium.chrome.R;
-import org.chromium.ui.UiUtils;
+import org.chromium.ui.KeyboardVisibilityDelegate;
 
 import org.chromium.base.ContextUtils;
 import org.chromium.chrome.browser.ChromeApplication;
@@ -769,7 +769,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
           @Override
           public void onShow(DialogInterface dialog) {
-              UiUtils.showKeyboard(input);
+            KeyboardVisibilityDelegate.getInstance().showKeyboard(input);
           }
       });
       alertDialog.show();

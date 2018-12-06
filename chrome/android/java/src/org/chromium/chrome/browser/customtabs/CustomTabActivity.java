@@ -291,7 +291,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
         // initialized prior to inflation.
         if (mMainTab != null) {
             ViewGroup bottomContainer = (ViewGroup) findViewById(R.id.bottom_container);
-            mMainTab.getInfoBarContainer().setParentView(bottomContainer);
+            InfoBarContainer.get(mMainTab).setParentView(bottomContainer);
         }
 
         // Setting task title and icon to be null will preserve the client app's title and icon.

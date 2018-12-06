@@ -10,7 +10,7 @@ import android.accounts.Account;
 import android.accounts.AuthenticatorDescription;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 import android.os.Process;
 
 import org.chromium.base.Callback;

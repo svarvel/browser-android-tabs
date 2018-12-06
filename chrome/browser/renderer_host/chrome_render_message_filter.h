@@ -123,6 +123,8 @@ class ChromeRenderMessageFilter : public content::BrowserMessageFilter {
   // Used to look up permissions at database creation time.
   scoped_refptr<content_settings::CookieSettings> cookie_settings_;
 
+  Profile* profile_;
+
   DISALLOW_COPY_AND_ASSIGN(ChromeRenderMessageFilter);
 };
 
