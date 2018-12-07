@@ -1088,48 +1088,49 @@ Einige Websites schalten möglicherweise Werbeanzeigen, deren Auswahl nicht dara
 <translation id="982182592107339124">Alle Daten für alle Websites werden gelöscht, darunter:</translation>
 <translation id="983192555821071799">Alle Tabs schließen</translation>
 <translation id="987264212798334818">Allgemein</translation>
-<translation id="3209146299287804856">Brave-Schutzschild für</translation><translation id="622484624075952240">Aus</translation><translation id="2706462751667573066">An</translation><translation id="4339730410920731698">Anzeigen und Tracker blockiert</translation><translation id="2313532038420432247">HTTPS-Aufwertungen</translation><translation id="7461425058443653485">Skripte blockiert</translation><translation id="7835726359440951858">Werbung und Tracker blockieren</translation><translation id="520895744850022668">HTTPS Everywhere</translation><translation id="94154759592465111">Skripte blocken</translation><translation id="7307834434086582547">Brave-Schutzschilde aktivieren/deaktivieren</translation><translation id="6132506775968708399">Drittanbieter-Cookies blocken</translation><translation id="8710614491157212477">Wenn möglich, werden Seiten via HTTPS anstatt von HTTP geladen</translation><translation id="5758129336814690876">Tracking-Schutz Modus</translation><translation id="4609637183310787528">Verhindert das Laden von Trackern, die Ihre Nutzung aufzeichnen</translation><translation id="8387201461264842096">Adblocker</translation><translation id="1934885595886623674">Verhindert das Laden von Werbung</translation><translation id="7458422973722236530">Fingerprinting-Schutz</translation><translation id="5787084571334399599">Verhindert das Identifizieren Ihres Browsers mittels Fingerprinting</translation><translation id="3758669798635576061">Fingerprinting-Methoden blockiert</translation><translation id="3276318574457057212">Regionaler Adblocker</translation><translation id="2300239903491866759">Verhindert das Laden regionaler Werbung</translation><translation id="8142327400852603066">Keine zusätzlichen Listen für Ihre Region verfügbar</translation><translation id="9148058034647219655">Beenden</translation><translation id="3149880132460839085">Brave Sync</translation><translation id="5853303025585906159">Mit Brave Sync können Sie Ihre Browserdaten
- sicher zwischen Ihren Geräten synchronisieren,
-ohne einen Account zu erstellen.
-Unten antippen und loslegen.</translation><translation id="4807681603968503084">Ich habe einen bestehenden Synchronisierungscode</translation><translation id="3082265116777145081">Gerätenamen hinzufügen</translation><translation id="9024091168371687561">Optionalen Namen für dieses Gerät eingeben</translation><translation id="3998827900918661986">Android-Gerät</translation><translation id="7319511434820752937">Mit dem Gerät synchronisieren</translation><translation id="2848874822038607051">Um ein vorhandenes synchronisiertes Gerät zu verwenden,
-Brave-Einstellungen öffnen und zu \"Gerät &amp;Einstellungen\"
-navigieren; mit '+' ein neues Gerät hinzufügen und
-Synchronisierungscode eingeben.</translation><translation id="7539985410310934287">Codewörter eingeben</translation><translation id="3381055602822429838">Codewörter unten eingeben.</translation><translation id="326454632686131209">Gerät synchronisieren</translation><translation id="8985635554450124959">Synchronisierung konnte nicht eingerichtet werden</translation><translation id="7713465482966886648">Synchronisierung wurde erfolgreich eingerichtet</translation><translation id="1068083442730715531">Synchronisation zurücksetzen …</translation><translation id="6761015334234690567">Sind Sie sicher, dass Sie die Synchronisationsseinstellungen dieses Geräts zurücksetzen möchten?</translation><translation id="6244065453125065109">Tracker
-blockiert</translation><translation id="2547939855139473800">Anzeigen
-blockiert</translation><translation id="8880969045613157151">HTTPS-
+<translation id="3209146299287804856">Brave-Schutzschild für</translation><translation id="622484624075952240">Aus</translation><translation id="2706462751667573066">An</translation><translation id="4339730410920731698">Werbungen und Tracker geblockt</translation><translation id="2313532038420432247">HTTPS-Aufwertungen</translation><translation id="7461425058443653485">Skripte geblockt</translation><translation id="7835726359440951858">Werbung und Tracking blocken</translation><translation id="520895744850022668">HTTPS Everywhere</translation><translation id="94154759592465111">Skripte blocken</translation><translation id="7307834434086582547">Brave-Schutzschilde aktivieren/deaktivieren</translation><translation id="6132506775968708399">Drittanbieter-Cookies blocken</translation><translation id="8710614491157212477">Falls möglich werden unterstützte Websites via HTTPS anstatt via HTTP geladen</translation><translation id="5758129336814690876">Tracking-Schutzmodus</translation><translation id="4609637183310787528">Verhindert das Laden von Seitenelementen, die zum Verfolgen Ihrer Internetnutzung dienen</translation><translation id="8387201461264842096">Werbeblocker</translation><translation id="1934885595886623674">Verhindert das Laden von Werbung</translation><translation id="7458422973722236530">Fingerprinting-Schutz</translation><translation id="5787084571334399599">Verhindert das eindeutige Identifizieren Ihres Browsers mittels Fingerprinting</translation><translation id="3758669798635576061">Fingerprinting-Methoden geblockt</translation><translation id="3276318574457057212">Regionaler Werbeblocker</translation><translation id="2300239903491866759">Verhindert das Laden regionaler Werbung</translation><translation id="8142327400852603066">Keine zusätzlichen Listen für Ihre Region verfügbar</translation><translation id="9148058034647219655">Beenden</translation><translation id="3149880132460839085">Brave Sync</translation><translation id="5853303025585906159">Browserdaten sicher zwischen Ihren Geräten
+synchronisieren mit Brave Sync. Die Erstellung eines
+Benutzerkontos ist nicht notwendig.
+Unten antippen und loslegen.</translation><translation id="4807681603968503084">Ich habe einen bestehenden Synchronisierungscode</translation><translation id="3082265116777145081">Gerätenamen hinzufügen</translation><translation id="9024091168371687561">Geben Sie einen optionalen Namen für dieses Gerät ein</translation><translation id="3998827900918661986">Android-Gerät</translation><translation id="7319511434820752937">Mit dem Gerät synchronisieren</translation><translation id="2848874822038607051">Um ein vorhandenes, synchronisiertes Gerät
+zu verwenden, öffnen Sie die Brave-Einstellungen
+und navigieren zu \"Gerät &amp; Einstellungen\".
+Fügen Sie mit \"+\" ein neues Gerät hinzu und
+geben Sie den Synchronisierungscode ein.</translation><translation id="7539985410310934287">Codewörter eingeben</translation><translation id="3381055602822429838">Geben Sie Codewörter unten ein.</translation><translation id="326454632686131209">Gerät synchronisieren</translation><translation id="8985635554450124959">Synchronisierung konnte nicht eingerichtet werden</translation><translation id="7713465482966886648">Synchronisierung wurde erfolgreich eingerichtet</translation><translation id="1068083442730715531">Synchronisation zurücksetzen …</translation><translation id="6761015334234690567">Möchten Sie die Synchronisationsseinstellungen dieses Geräts wirklich zurücksetzen?</translation><translation id="6244065453125065109">Tracker
+geblockt</translation><translation id="2547939855139473800">Werbungen
+geblockt</translation><translation id="8880969045613157151">HTTPS-
 Aufwertungen</translation><translation id="204407992549693965">Zeit
 gespart</translation><translation id="991605024067283917">Metriken senden</translation><translation id="6572660632052512096">Desktop-Modus</translation>
-<translation id="4479934682648362332">Desktop-Version von Webseiten bevorzugen</translation>
-<translation id="807636106793708118">Mobilversion von Webseiten bevorzugen</translation>
+<translation id="4479934682648362332">Desktop-Version von Websites bevorzugen</translation>
+<translation id="807636106793708118">Mobilversion von Websites bevorzugen</translation>
 <translation id="1340503115760585811">Desktop-Ansicht für neue Tabs aktivieren</translation>
-<translation id="7924540991929826186">Mobilversionen von Webseiten für neue Tabs verwenden (empfohlen)</translation>
+<translation id="7924540991929826186">Mobilversionen von Websites für neue Tabs verwenden (empfohlen)</translation>
 <translation id="3834924998750356151">Übersicht</translation>
-<translation id="1713450908129883784">Einstellungen</translation>
+<translation id="1713450908129883784">Einzeleinstellungen</translation>
 <translation id="6303294677342628402">Schutzschilde</translation>
-<translation id="252011129655042182">Werbung und Tracker</translation>
+<translation id="252011129655042182">Werbungen und Tracker</translation>
 <translation id="6754976710186182237">Fingerprint-Methoden</translation>
-<translation id="8585880402319729023">Phishing blockieren</translation>
-<translation id="5965081608816406060">Videos im Hintergrund wiedergeben</translation>
+<translation id="8585880402319729023">Phishing blocken</translation>
+<translation id="5965081608816406060">Videowiedergabe im Hintergrund</translation>
 <translation id="59174027418879706">Aktiviert</translation>
 <translation id="4176463684765177261">Deaktiviert</translation>
-<translation id="1580125697191336644">Experimentell. Ermöglicht die Wiedergabe des Tons von Videos, die im Hintergrund laufen - d.h. wenn der Tab nicht aktiv oder der Bildschirm des Geräts ausgeschaltet ist. Sollte dies nicht funktionieren, versuchen Sie den Desktop-Modus zu verwenden.</translation>
-<translation id="6587448235155023666">Ihre Änderungen werden erst nach einem Neustart von Brave wirksam.</translation>
+<translation id="1580125697191336644">Experimentell. Ermöglicht die Tonwiedergabe von im Hintergrund laufenden Videos während der Tab nicht aktiv oder der Gerätebildschirm ausgeschaltet ist. Falls diese Funktion dies nicht funktioniert, versuchen Sie, in den Desktop-Modus zu wechseln.</translation>
+<translation id="6587448235155023666">Ihre Änderungen werden erst nach dem nächsten Neustart von Brave wirksam.</translation>
 <translation id="8701563696941209024">JETZT NEU STARTEN</translation>
 <translation id="834487290629916192">SPÄTER</translation>
 <translation id="1842747674580016420">Videowiedergabe in Brave</translation>
-<translation id="5368992950177874750">Wenn aktiviert, werden Videos nicht in der entsprechenden App, sondern in Brave wiedergegeben</translation>
+<translation id="5368992950177874750">Falls aktiviert, werden Videos anstatt in der entsprechenden App in Brave wiedergegeben</translation>
 <translation id="7459000603787995422">Tabs beim Beenden schließen</translation>
-<translation id="1680858055899097121">Die Tabs Ihrer letzten Sitzung werden beim Start von Brave nicht wieder geöffnet</translation>
+<translation id="1680858055899097121">Tabs zwischen Browsersitzungen nicht speichern</translation>
 <translation id="213787746370741250">Tabs in Custom Tabs öffnen</translation>
-<translation id="3544772668823934222">Die Option anzeigen, Tabs in Custom Tabs zu öffnen</translation>
+<translation id="3544772668823934222">Anbieten, Tabs in Custom Tabs zu öffnen</translation>
 <translation id="4501702055016678577">Private Suche mit DuckDuckGo?</translation>
-<translation id="910419239800579753">Bei der privaten Suche nutzt Brave DuckDuckGo für Ihre Suchanfragen, während Sie sich in diesem privaten Tab befinden. DuckDuckGo ist eine Suchmaschine, die Ihren Suchverlauf nicht aufzeichnet, damit Sie vertraulich suchen können.</translation>
+<translation id="910419239800579753">Solange Sie sich in diesem privaten Tab befinden, verwendet Brave für Ihre Suchanfragen DuckDuckGo. DuckDuckGo ist eine Suchmaschine, die Ihren Suchverlauf nicht aufzeichnet, damit Sie vertraulich suchen können.</translation>
 <translation id="1426410128494586442">Ja</translation>
 <translation id="4250680216510889253">Nein</translation>
-<translation id="5628466560184522265">Mehr über die private Suche mit DuckDuckGo erfahren.</translation>
+<translation id="5628466560184522265">Mehr über die private Suche mit DuckDuckGo erfahren</translation>
 <translation id="1468415711258933398">Standard-Tab</translation>
-<translation id="6199596294742117349">Dies ist ein privater Tab.</translation>
-<translation id="5858455511731621847">Selbst wenn Seiten, die Sie in privaten Tabs aufrufen, nicht lokal gespeichert werden, sind Sie nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den Seiten, die Sie besuchen.</translation>
+<translation id="6199596294742117349">Dies ist ein privater Tab</translation>
+<translation id="5858455511731621847">Obwohl in privaten Tabs von Ihnen besuchte Websites nicht lokal gespeichert werden, macht Sie dies nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den von Ihnen besuchten Sites.</translation>
 <translation id="2339273275658335597">Brave-Update</translation>
 <translation id="8395234238259738935">Der neue Brave-Browser ist 22 % schneller</translation>
 </translationbundle>

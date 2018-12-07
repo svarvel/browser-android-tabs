@@ -3,27 +3,27 @@
     <string name="brave_settings_title">Brave-Schutzschild für</string>
     <string name="brave_shields_down">Aus</string>
     <string name="brave_shields_up">An</string>
-    <string name="brave_shields_ads_trackers">Anzeigen und Tracker blockiert</string>
+    <string name="brave_shields_ads_trackers">Werbungen und Tracker geblockt</string>
     <string name="brave_shields_https_upgrades">HTTPS-Aufwertungen</string>
-    <string name="brave_shields_scripts_blocked">Skripte blockiert</string>
-    <string name="brave_shields_ads_tracking_switch">Werbung und Tracker blockieren</string>
+    <string name="brave_shields_scripts_blocked">Skripte geblockt</string>
+    <string name="brave_shields_ads_tracking_switch">Werbung und Tracking blocken</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Skripte blocken</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave-Schutzschilde aktivieren/deaktivieren</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Drittanbieter-Cookies blocken</string>
 
-    <string name="httpse_summary">Wenn möglich, werden Seiten via HTTPS anstatt von HTTP geladen</string>
-    <string name="tracking_protection_title">Tracking-Schutz Modus</string>
-    <string name="tracking_protection_summary">Verhindert das Laden von Trackern, die Ihre Nutzung aufzeichnen</string>
-    <string name="ad_block_title">Adblocker</string>
+    <string name="httpse_summary">Falls möglich werden unterstützte Websites via HTTPS anstatt via HTTP geladen</string>
+    <string name="tracking_protection_title">Tracking-Schutzmodus</string>
+    <string name="tracking_protection_summary">Verhindert das Laden von Seitenelementen, die zum Verfolgen Ihrer Internetnutzung dienen</string>
+    <string name="ad_block_title">Werbeblocker</string>
     <string name="ad_block_summary">Verhindert das Laden von Werbung</string>
 
     <string name="fingerprinting_protection_title">Fingerprinting-Schutz</string>
-    <string name="fingerprinting_protection_summary">Verhindert das Identifizieren Ihres Browsers mittels Fingerprinting</string>
-    <string name="brave_shields_fingerprints_blocked">Fingerprinting-Methoden blockiert</string>
+    <string name="fingerprinting_protection_summary">Verhindert das eindeutige Identifizieren Ihres Browsers mittels Fingerprinting</string>
+    <string name="brave_shields_fingerprints_blocked">Fingerprinting-Methoden geblockt</string>
     <string name="brave_shields_block_fingerprints_switch">Fingerprinting-Schutz</string>
 
-    <string name="ad_block_regional_title">Regionaler Adblocker</string>
+    <string name="ad_block_regional_title">Regionaler Werbeblocker</string>
     <string name="ad_block_regional_summary">Verhindert das Laden regionaler Werbung</string>
 
     <string name="ad_block_regional_summary_no_list">Keine zusätzlichen Listen für Ihre Region verfügbar</string>
@@ -31,31 +31,32 @@
     <string name="menu_exit">Beenden</string>
 
     <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Mit Brave Sync können Sie Ihre Browserdaten
- sicher zwischen Ihren Geräten synchronisieren,
-ohne einen Account zu erstellen.
+    <string name="brave_sync_description">Browserdaten sicher zwischen Ihren Geräten
+synchronisieren mit Brave Sync. Die Erstellung eines
+Benutzerkontos ist nicht notwendig.
 Unten antippen und loslegen.</string>
     <string name="brave_sync_have_existing_code">Ich habe einen bestehenden Synchronisierungscode</string>
     <string name="sync_settings_add_device_name_title">Gerätenamen hinzufügen</string>
-    <string name="sync_settings_add_device_name_label">Optionalen Namen für dieses Gerät eingeben</string>
+    <string name="sync_settings_add_device_name_label">Geben Sie einen optionalen Namen für dieses Gerät ein</string>
     <string name="sync_example_device_name">Android-Gerät</string>
     <string name="brave_sync_qrcode">Mit dem Gerät synchronisieren</string>
-    <string name="brave_sync_qrcode_message">Um ein vorhandenes synchronisiertes Gerät zu verwenden,
-Brave-Einstellungen öffnen und zu \"Gerät &amp;Einstellungen\"
-navigieren; mit \'+\' ein neues Gerät hinzufügen und
-Synchronisierungscode eingeben.</string>
+    <string name="brave_sync_qrcode_message">Um ein vorhandenes, synchronisiertes Gerät
+zu verwenden, öffnen Sie die Brave-Einstellungen
+und navigieren zu \"Gerät &amp; Einstellungen\".
+Fügen Sie mit \"+\" ein neues Gerät hinzu und
+geben Sie den Synchronisierungscode ein.</string>
     <string name="enter_code_words_sync">Codewörter eingeben</string>
-    <string name="enter_code_words_below_sync">Codewörter unten eingeben.</string>
+    <string name="enter_code_words_below_sync">Geben Sie Codewörter unten ein.</string>
     <string name="sync_device">Gerät synchronisieren</string>
     <string name="sync_device_failure">Synchronisierung konnte nicht eingerichtet werden</string>
     <string name="sync_device_success">Synchronisierung wurde erfolgreich eingerichtet</string>
-    <string name="reset_sync">Synchronisation zurücksetzen …</string>
-    <string name="resetting_sync">Sind Sie sicher, dass Sie die Synchronisationsseinstellungen dieses Geräts zurücksetzen möchten?</string>
+    <string name="reset_sync">Synchronisation zurücksetzen …</string>
+    <string name="resetting_sync">Möchten Sie die Synchronisationsseinstellungen dieses Geräts wirklich zurücksetzen?</string>
 
     <string name="brave_stats_text_trackers">Tracker
-blockiert</string>
-    <string name="brave_stats_text_ads">Anzeigen
-blockiert</string>
+geblockt</string>
+    <string name="brave_stats_text_ads">Werbungen
+geblockt</string>
     <string name="brave_stats_text_https">HTTPS-
 Aufwertungen</string>
     <string name="brave_stats_text_time">Zeit
@@ -64,50 +65,50 @@ gespart</string>
     <string name="send_metrics_title">Metriken senden</string>
 
     <string name="desktop_mode_title">Desktop-Modus</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Desktop-Version von Webseiten bevorzugen</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Mobilversion von Webseiten bevorzugen</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Desktop-Version von Websites bevorzugen</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Mobilversion von Websites bevorzugen</string>
     <string name="website_settings_category_desktop_view_enabled">Desktop-Ansicht für neue Tabs aktivieren</string>
-    <string name="website_settings_category_desktop_view_disabled">Mobilversionen von Webseiten für neue Tabs verwenden (empfohlen)</string>
+    <string name="website_settings_category_desktop_view_disabled">Mobilversionen von Websites für neue Tabs verwenden (empfohlen)</string>
 
     <string name="brave_shields_first_group_title">Übersicht</string>
-    <string name="brave_shields_second_group_title">Einstellungen</string>
+    <string name="brave_shields_second_group_title">Einzeleinstellungen</string>
     <string name="brave_shields">Schutzschilde</string>
-    <string name="brave_shields_ads_and_trackers">Werbung und Tracker</string>
+    <string name="brave_shields_ads_and_trackers">Werbungen und Tracker</string>
     <string name="brave_shields_fingerprint_methods">Fingerprint-Methoden</string>
-    <string name="brave_shields_block_phishing_switch">Phishing blockieren</string>
+    <string name="brave_shields_block_phishing_switch">Phishing blocken</string>
 
-    <string name="play_video_in_background_title">Videos im Hintergrund wiedergeben</string>
+    <string name="play_video_in_background_title">Videowiedergabe im Hintergrund</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Aktiviert</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Deaktiviert</string>
-    <string name="website_settings_category_play_video_in_background_enabled">Experimentell. Ermöglicht die Wiedergabe des Tons von Videos, die im Hintergrund laufen - d.h. wenn der Tab nicht aktiv oder der Bildschirm des Geräts ausgeschaltet ist. Sollte dies nicht funktionieren, versuchen Sie den Desktop-Modus zu verwenden.</string>
-    <string name="settings_require_relaunch_notice">Ihre Änderungen werden erst nach einem Neustart von Brave wirksam.</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimentell. Ermöglicht die Tonwiedergabe von im Hintergrund laufenden Videos während der Tab nicht aktiv oder der Gerätebildschirm ausgeschaltet ist. Falls diese Funktion dies nicht funktioniert, versuchen Sie, in den Desktop-Modus zu wechseln.</string>
+    <string name="settings_require_relaunch_notice">Ihre Änderungen werden erst nach dem nächsten Neustart von Brave wirksam.</string>
     <string name="settings_require_relaunch_now">JETZT NEU STARTEN</string>
     <string name="settings_require_relaunch_later">SPÄTER</string>
 
     <string name="play_yt_video_in_browser_title">Videowiedergabe in Brave</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Aktiviert</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Deaktiviert</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">Wenn aktiviert, werden Videos nicht in der entsprechenden App, sondern in Brave wiedergegeben</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Falls aktiviert, werden Videos anstatt in der entsprechenden App in Brave wiedergegeben</string>
 
     <string name="close_tabs_on_exit_title">Tabs beim Beenden schließen</string>
-    <string name="close_tabs_on_exit_summary">Die Tabs Ihrer letzten Sitzung werden beim Start von Brave nicht wieder geöffnet</string>
+    <string name="close_tabs_on_exit_summary">Tabs zwischen Browsersitzungen nicht speichern</string>
 
     <string name="open_pages_in_custom_tabs_title">Tabs in Custom Tabs öffnen</string>
-    <string name="open_pages_in_custom_tabs_summary">Die Option anzeigen, Tabs in Custom Tabs zu öffnen</string>
+    <string name="open_pages_in_custom_tabs_summary">Anbieten, Tabs in Custom Tabs zu öffnen</string>
 
     <string name="ddg_offer_title">Private Suche mit DuckDuckGo?</string>
-    <string name="ddg_offer_text">Bei der privaten Suche nutzt Brave DuckDuckGo für Ihre Suchanfragen, während Sie sich in diesem privaten Tab befinden. DuckDuckGo ist eine Suchmaschine, die Ihren Suchverlauf nicht aufzeichnet, damit Sie vertraulich suchen können.</string>
+    <string name="ddg_offer_text">Solange Sie sich in diesem privaten Tab befinden, verwendet Brave für Ihre Suchanfragen DuckDuckGo. DuckDuckGo ist eine Suchmaschine, die Ihren Suchverlauf nicht aufzeichnet, damit Sie vertraulich suchen können.</string>
     <string name="ddg_offer_positive">Ja</string>
     <string name="ddg_offer_negative">Nein</string>
-    <string name="ddg_offer_link">Mehr über die private Suche mit DuckDuckGo erfahren.</string>
+    <string name="ddg_offer_link">Mehr über die private Suche mit DuckDuckGo erfahren</string>
     <string name="prefs_standard_search_engine">Standard-Tab</string>
     <string name="prefs_private_search_engine">Privater Tab</string>
 
     <string name="brave_open_in_private_tab">In privatem Tab öffnen</string>
     <string name="brave_close_all_private_tabs">Private Tabs schließen</string>
     <string name="brave_new_private_tab">Neuer privater Tab</string>
-    <string name="brave_new_tab_private_header">Dies ist ein privater Tab.</string>
-    <string name="brave_new_tab_private_message">Selbst wenn Seiten, die Sie in privaten Tabs aufrufen, nicht lokal gespeichert werden, sind Sie nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den Seiten, die Sie besuchen.</string>
+    <string name="brave_new_tab_private_header">Dies ist ein privater Tab</string>
+    <string name="brave_new_tab_private_message">Obwohl in privaten Tabs von Ihnen besuchte Websites nicht lokal gespeichert werden, macht Sie dies nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den von Ihnen besuchten Sites.</string>
 
     <string name="update_notification_title">Brave-Update</string>
     <string name="update_notification_text">Der neue Brave-Browser ist 22 % schneller</string>
