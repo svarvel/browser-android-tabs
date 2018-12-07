@@ -33,6 +33,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatImageView;
 import android.text.Editable;
 import android.text.format.DateUtils;
 import android.text.SpannableString;
@@ -84,7 +85,6 @@ import org.chromium.chrome.browser.qrreader.BarcodeTracker;
 import org.chromium.chrome.browser.qrreader.BarcodeTrackerFactory;
 import org.chromium.chrome.browser.qrreader.CameraSource;
 import org.chromium.chrome.browser.qrreader.CameraSourcePreview;
-import org.chromium.chrome.browser.widget.TintedImageButton;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.MultiProcessor;
@@ -439,7 +439,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                               if (null != textView) {
                                                                   textView.setText(device.mDeviceName);
                                                               }
-                                                              TintedImageButton deleteButton = (TintedImageButton) listItemView.findViewById(R.id.brave_sync_remove_device);
+                                                              AppCompatImageView deleteButton = (AppCompatImageView) listItemView.findViewById(R.id.brave_sync_remove_device);
                                                               if (null != deleteButton) {
                                                                   if (currentDeviceId.equals(device.mDeviceId)) {
                                                                       // Current device is deleted by button on the bottom
