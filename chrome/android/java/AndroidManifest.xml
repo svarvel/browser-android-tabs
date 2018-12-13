@@ -640,6 +640,14 @@ by a child template that "extends" this file.
         </activity>
         {% endif %}
 
+         <!--Test Activities -->
+         <activity android:name="org.chromium.chrome.browser.BraveRewardsDonationSentActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+         <activity android:name="org.chromium.chrome.browser.BraveRewardsSiteBannerActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
         <activity android:name="org.chromium.chrome.browser.sync.ui.PassphraseActivity"
             android:theme="@style/Theme.Chromium.Activity"
             android:autoRemoveFromRecents="true">

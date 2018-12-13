@@ -50,6 +50,8 @@ Still reading?
   </issue>
   <issue id="ContentDescription" severity="Error">
     <ignore regexp="chromecast/internal"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_donation_sent.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="DefaultLocale">
     <ignore regexp="clank"/>
@@ -99,6 +101,7 @@ Still reading?
   <issue id="HardcodedText" severity="Error">
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="remoting/android/host/res/layout/main.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="IconColors" severity="Error">
     <ignore regexp="tools/android/audio_focus_grabber/java/res/drawable-hdpi/notification_icon.png"/>
@@ -408,6 +411,7 @@ Still reading?
     <ignore regexp="android_webview/tools/system_webview_shell/apk/res/layout/activity_webview_browser.xml"/>
     <ignore regexp="chrome/android/java/res/layout/data_usage_breakdown.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_sync_layout.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_shields_3rd_party_cookies_blocked_switcher.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_shields_ads_tracking_switcher.xml"/>
@@ -450,5 +454,12 @@ Still reading?
     <ignore regexp="chrome/android/java/src/org/chromium/chrome/browser/SSLClientCertificateRequest.java"/>
     <ignore regexp="chrome/android/java/src/org/chromium/chrome/browser/widget/prefeditor/EditorDialog.java"/>
     <ignore regexp="third_party/android_data_chart/java/src/org/chromium/third_party/android/datausagechart/ChartDataUsageView.java"/>
+  </issue>
+  <issue id="RelativeOverlap">
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_donation_sent.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+  </issue>
+  <issue id="NestedWeights">
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
   </issue>
 </lint>

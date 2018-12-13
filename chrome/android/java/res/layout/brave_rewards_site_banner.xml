@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AA3b3b3b"
+    android:orientation="vertical">
+
+    <!-- Header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+
+        <!-- Hearts, BATs, etc-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#D1D1DB"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:src="@drawable/bg_hearts"
+                android:scaleType="fitEnd"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:src="@drawable/bg_bats"
+                android:scaleType="fitStart"/>
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/header_scrollView"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#eaeeff"
+            android:orientation="vertical">
+
+
+            <!-- Social networks buttons-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/chat_button"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/chat" />
+
+                <ImageView
+                    android:id="@+id/youtube_button"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_margin="5dp"
+                    android:layout_toStartOf="@id/chat_button"
+                    android:src="@drawable/youtube" />
+
+                <ImageView
+                    android:id="@+id/twitter_button"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_margin="5dp"
+                    android:layout_toStartOf="@id/youtube_button"
+                    android:src="@drawable/twitter" />
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:text="@string/brave_ui_site_banner_welcome"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#4B4C5C" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:text="@string/brave_ui_site_banner_message1"
+                android:textColor="#686978"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:text="@string/brave_ui_site_banner_message2"
+                android:textColor="#686978"
+                android:textSize="16sp"/>
+        </LinearLayout> <!--Welcome-->
+
+        </ScrollView>
+    </LinearLayout> <!--Header-->
+
+
+    <!-- Middle transparent area-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <!-- Footer-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:background="#696FDC">        
+
+        <!--Row # 1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/tip_amount_text"
+                android:layout_gravity="start|top"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif"
+                android:text="@string/brave_ui_site_banner_tip_amount"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="end|top"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/wallet_amount_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif"
+                    android:text="0.10 BAT"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/wallet_amount_text"
+                    android:layout_toStartOf="@id/wallet_amount_text"
+                    android:layout_marginEnd="2dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/brave_ui_site_banner_wallet_balance"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!--Row # 2-->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:background="@android:color/transparent">
+
+            <ToggleButton
+                android:id="@+id/one_bat_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="2"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/tip_amount"
+                android:drawableStart="@drawable/small_bat"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textOff="1.0 BAT"
+                android:textOn="1.0 BAT"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif"
+                android:text="0.30 USD"
+                android:textSize="12sp" />
+
+
+            <ToggleButton
+                android:id="@+id/five_bat_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="2"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/tip_amount"
+                android:drawableStart="@drawable/small_bat"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textOff="5.0 BAT"
+                android:textOn="5.0 BAT"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif"
+                android:text="0.30 USD"
+                android:textSize="12sp" />
+
+            <ToggleButton
+                android:id="@+id/ten_bat_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="2"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/tip_amount"
+                android:drawableStart="@drawable/small_bat"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textOff="10.0 BAT"
+                android:textOn="10.0 BAT"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif"
+                android:text="0.30 USD"
+                android:textSize="12sp" />
+
+        </GridLayout>
+        <!--Row # 3-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@android:color/transparent">
+
+            <TextView
+                android:id="@+id/make_monthly_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_ui_site_banner_make_monthly"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"/>
+
+            <CheckBox
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:scaleType="fitXY"
+                android:button="@drawable/plain_checkbox"
+                android:background="@android:color/transparent"
+                android:layout_toStartOf="@id/make_monthly_text"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <!--Row # 4-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <Button
+                android:id="@+id/send_donation_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="#4c54d2"
+                android:drawableStart="@drawable/paper_plane"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="@string/brave_ui_site_banner_send_donation"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="visible"/>
+
+
+            <Button
+                android:id="@+id/not_enough_funds_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:background="@android:color/black"
+                android:fontFamily="sans-serif"
+                android:singleLine="true"
+                android:text="@string/brave_ui_site_banner_not_enough_tokens"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:drawableStart="@drawable/silly"/>
+
+        </RelativeLayout>
+    </LinearLayout> <!--Footer-->
+</LinearLayout>
