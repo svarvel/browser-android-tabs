@@ -34,6 +34,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
+//TODO: test imports/////////////////////////////
+import org.chromium.chrome.browser.BraveRewardsDonationSentActivity;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import org.chromium.base.ContextUtils;
+//////////////////////////////////////////////
+
+
+
 public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
 
@@ -160,6 +170,33 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
             }
           }));
         }
+
+       //TODO: test buttons onClick handlers/////////////////////////////////////////////
+       Button btTestTipSent = (Button)root.findViewById(R.id.brave_ui_tip_sent_test_button);
+        if (btTestTipSent != null) {
+          btTestTipSent.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                Intent intent = new Intent(app, BraveRewardsDonationSentActivity.class);
+                mActivity.startActivity(intent);
+            }
+          }));
+        }
+
+        Button btTestSiteBanner = (Button)root.findViewById(R.id.brave_ui_site_banner_test_button);
+        if (btTestSiteBanner != null) {
+          btTestSiteBanner.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                Intent intent = new Intent(app, BraveRewardsSiteBannerActivity.class);
+                mActivity.startActivity(intent);
+            }
+          }));
+        }
+       ///////////////////////////////////////////////////////////////////////////////////////
+
     }
 
     protected void onShow() {}

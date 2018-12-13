@@ -4271,6 +4271,46 @@ content creators.
       <message name="IDS_BRAVE_UI_REWARDS_SUMMARY" desc="">
         REWARDS SUMMARY
       </message>
+
+      <message name="IDS_BRAVE_UI_SITE_BANNER_WELCOME" desc="">
+        Welcome!
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_MESSAGE1" desc="">
+        Thanks for stopping by. We joined Brave’s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be!
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_MESSAGE2" desc="">
+        Your donation is much appreciated and it encourages us to continue to improve our content.
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_TIP_AMOUNT" desc="">
+        Tip amount
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_WALLET_BALANCE" desc="">
+        wallet balance:
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_MAKE_MONTHLY" desc="">
+        Make this monthly
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_SEND_DONATION" desc="">
+        SEND MY DONATION
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_NOT_ENOUGH_TOKENS" desc="">
+        Not enough tokens. Please add funds.
+      </message>
+
+      
+      <!--Test strings: please remove when not needed" -->
+      <message name="IDS_BRAVE_UI_SITE_BANNER_TEST" desc="">
+        Site Banner Test
+      </message>
+      <message name="IDS_BRAVE_UI_TIP_SENT_TEST" desc="">
+        &quot;Donation sent&quot; test
+      </message>     
+
+      <message name="IDS_BRAVE_UI_DONATION_SENT" desc="">
+        Donation sent!
+      </message>
+
+
       <message name="IDS_BRAVE_UI_MONTH_JAN" desc="">JANUARY</message>
       <message name="IDS_BRAVE_UI_MONTH_FEB" desc="">FEBRUARY</message>
       <message name="IDS_BRAVE_UI_MONTH_MAR" desc="">MARCH</message>
