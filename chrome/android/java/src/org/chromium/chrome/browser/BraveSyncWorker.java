@@ -476,6 +476,14 @@ public class BraveSyncWorker {
         if (null == bookmarks || 0 == bookmarks.length || !mSyncIsReady.IsReady() || !IsSyncBookmarksEnabled()) {
             return;
         }
+
+        // alexeyb: this means we had acquired mNewBookmarkModel
+        // and we cannot acquire mNewBookmarkModel in GetBookmarkIdRunnable
+        // because we will wait GetBookmarkIdRunnable completion
+        // acuiring of mNewBookmarkModel happens above on call-tree
+        // in SendAllLocalBookmarks on initial sync
+        final boolean newBookmarkModelAcquiredByThisRunnableWaiter = isInitialSync;
+
         final String actionFinal = action;
         final HashSet<Long> processedFolderIds = new HashSet<Long>();
         final long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
@@ -490,7 +498,8 @@ public class BraveSyncWorker {
                 }
                 int currentSize = bookmarksParentFolders.size();
                 if (!processedFolderIds.contains(processedId)) {
-                    BookmarkItem item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
+                    BookmarkItem item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId), newBookmarkModelAcquiredByThisRunnableWaiter) :
+                        BookmarkItemByBookmarkId(processedId, newBookmarkModelAcquiredByThisRunnableWaiter);
                     while (item != null && !item.getTitle().isEmpty()) {
                         processedFolderIds.add(processedId);
                         bookmarksParentFolders.add(currentSize, item);
@@ -501,7 +510,8 @@ public class BraveSyncWorker {
                         if (defaultFolderId == processedId) {
                             break;
                         }
-                        item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId)) : BookmarkItemByBookmarkId(processedId);
+                        item = !uiThread ? GetBookmarkItemByLocalId(String.valueOf(processedId), newBookmarkModelAcquiredByThisRunnableWaiter) :
+                            BookmarkItemByBookmarkId(processedId, newBookmarkModelAcquiredByThisRunnableWaiter);
                     }
                 }
             }
@@ -615,7 +625,21 @@ public class BraveSyncWorker {
                 if (!objectExist) {
                     //Log.i(TAG, "Saving object [" + bookmarkItem.getId().getId() + ", " + bookmarkItem.isFolder() + ", " + order + "]: " + objectId);
                     SaveObjectId(String.valueOf(bookmarkItem.getId().getId()), objectId, order, true);
-                    ReorderBookmarks();
+                    // alexeyb - dont do reorder here
+                    // when device is connected to sync and already has some bookmarks,
+                    // code in formRequestByBookmarkItem gets order for current bookmarkItem
+                    // and some bookmarks will not have order
+                    // but ReorderBookmarks expects all items have the order
+                    // either disable ReorderBookmarks below or make it ready to accept empty orders
+
+                    // alexeyb: on initial sync if device already has some bookmarks,
+                    // code in formRequestByBookmarkItem gets order for current bookmarkItem
+                    // and some bookmarks will not have order
+                    // but ReorderBookmarks expects all items have the order
+                    // other way is to make ReorderBookmarks accept empty orders
+                    if (!isInitialSync) {
+                      ReorderBookmarks();
+                    }
                 }
                 // We will delete the objectId when we ensure that records were transferred
                 /*else if (action.equals(DELETE_RECORD)) {
@@ -1349,7 +1373,7 @@ public class BraveSyncWorker {
                 bookmarkRecord.mBookmarkInternal.mTitle, bookmarkRecord.mBookmarkInternal.mIsFolder, defaultFolderId, "[" + bookmarkRecord.mBookmarkInternal.mParentFolderObjectId + "]",
                 bookmarkRecord.mBookmarkInternal.mCustomTitle, bookmarkRecord.mBookmarkInternal.mLastAccessedTime, bookmarkRecord.mBookmarkInternal.mCreationTime,
                 bookmarkRecord.mBookmarkInternal.mFavIcon, bookmarkRecord.mBookmarkInternal.mOrder)).append(" }");
-            BookmarkItem bookmarkItem = GetBookmarkItemByLocalId(localId);
+            BookmarkItem bookmarkItem = GetBookmarkItemByLocalId(localId, false);
             if (null != bookmarkItem) {
                 String order = GetBookmarkOrder(localId, false);
                 // TODO pass always CREATE_RECORD, it means action is create
@@ -1438,7 +1462,7 @@ public class BraveSyncWorker {
         return null;
     }
 
-    private BookmarkItem GetBookmarkItemByLocalId(String localId) {
+    private BookmarkItem GetBookmarkItemByLocalId(String localId, boolean newBookmarkModelAcquired) {
         if (0 == localId.length()) {
             return null;
         }
@@ -1450,6 +1474,9 @@ public class BraveSyncWorker {
            }
            synchronized (bookmarkRunnable)
            {
+               if (newBookmarkModelAcquired) {
+                  bookmarkRunnable.SetNewBookmarkModelAcquiredByThisRunnableWaiter();
+               }
                // Execute code on UI thread
                ((Activity)mContext).runOnUiThread(bookmarkRunnable);
 
@@ -2227,7 +2254,7 @@ public class BraveSyncWorker {
         public void run() {
             if (null != mBookmarkIds) {
                 for (Long id: mBookmarkIds) {
-                    BookmarkItem bookmarkItem = BookmarkItemByBookmarkId(id);
+                    BookmarkItem bookmarkItem = BookmarkItemByBookmarkId(id, /*newBookmarkModelAcquiredByThisRunnableWaiter*/false);
                     if (null != bookmarkItem) {
                         mBookmarkItems.add(bookmarkItem);
                     } else if (mAction.equals(DELETE_RECORD)) {
@@ -2248,15 +2275,20 @@ public class BraveSyncWorker {
     class GetBookmarkIdRunnable implements Runnable {
         public BookmarkItem mBookmarkItem = null;
         private long mBookmarkId;
+        private boolean mNewBookmarkModelAcquiredByThisRunnableWaiter;
 
         public GetBookmarkIdRunnable(long bookmarkId) {
             mBookmarkId = bookmarkId;
             mBookmarkItem = null;
         }
 
+        public void SetNewBookmarkModelAcquiredByThisRunnableWaiter() {
+          mNewBookmarkModelAcquiredByThisRunnableWaiter = true;
+        }
+
         @Override
         public void run() {
-            mBookmarkItem = BookmarkItemByBookmarkId(mBookmarkId);
+            mBookmarkItem = BookmarkItemByBookmarkId(mBookmarkId, mNewBookmarkModelAcquiredByThisRunnableWaiter);
 
             synchronized (this)
             {
@@ -2265,14 +2297,27 @@ public class BraveSyncWorker {
         }
     }
 
-    private BookmarkItem BookmarkItemByBookmarkId(long lBookmarkId) {
+    private BookmarkItem BookmarkItemByBookmarkId(long lBookmarkId, boolean newBookmarkModelAcquiredByThisRunnableWaiter) {
         BookmarkItem bookmarkItem = null;
         BookmarkId bookmarkId = new BookmarkId(lBookmarkId, BookmarkType.NORMAL);
         if (null != mNewBookmarkModel && null != bookmarkId) {
-            synchronized (mNewBookmarkModel) {
-                if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
-                    bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
-                }
+            // alexeyb:
+            // In this case it is safe to ignore acquiring of mNewBookmarkModel
+            // because it is acquired by caller and the caller does not do
+            // anything until GetBookmarkIdRunnable completes.
+            // In any other cases `newBookmarkModelAcquiredByThisRunnableWaiter`
+            // should be used with complete understanding what is going on and
+            // why it is safe.
+            if (false == newBookmarkModelAcquiredByThisRunnableWaiter) {
+              synchronized (mNewBookmarkModel) {
+                  if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
+                      bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
+                    }
+             }
+            } else {
+              if (mNewBookmarkModel.doesBookmarkExist(bookmarkId)) {
+                  bookmarkItem = mNewBookmarkModel.getBookmarkById(bookmarkId);
+              }
             }
         }
 
