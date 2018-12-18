@@ -29,7 +29,8 @@ class NotificationHandler {
     TRANSIENT = 4,  // A generic type for any notification that does not outlive
                     // the browser instance and is controlled by a
                     // NotificationDelegate.
-    MAX = TRANSIENT,
+    BRAVE_ADS = 4,
+    MAX = BRAVE_ADS,
   };
 
   virtual ~NotificationHandler();
