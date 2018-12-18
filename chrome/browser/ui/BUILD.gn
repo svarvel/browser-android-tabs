@@ -221,6 +221,8 @@ jumbo_split_static_library("ui") {
     "//brave/browser/ui/webui/brave_rewards_ui.h",
     "//brave/browser/ui/webui/basic_ui.cc",
     "//brave/browser/ui/webui/basic_ui.h",
+    "//brave/browser/ui/webui/brave_rewards_source.h",
+    "//brave/browser/ui/webui/brave_rewards_source.cc",
     "webui/brave_rewards_panel_ui.cc",
     "webui/brave_rewards_panel_ui.h",
     "webui/brave_rewards_donate_ui.cc",

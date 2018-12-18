@@ -55,7 +55,7 @@ private:
   void GetWalletProperties(const base::ListValue* args);
 	void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
 	                         int error_code,
-	                         brave_rewards::WalletProperties* wallet_properties) override;
+	                         std::unique_ptr<brave_rewards::WalletProperties>  wallet_properties) override;
   void GetRecurringDonations(const base::ListValue* args);
 
   void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
@@ -67,7 +67,7 @@ private:
      brave_rewards::RewardsService* rewards_service,
      int error_code,
      ledger::PublisherInfo* info,
-     uint64_t tabId) override;
+     uint64_t tabId);
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
 
@@ -228,7 +228,7 @@ void RewardsDOMHandler::GetWalletProperties(const base::ListValue* args) {
 void RewardsDOMHandler::OnWalletProperties(
     brave_rewards::RewardsService* rewards_service,
     int error_code,
-    brave_rewards::WalletProperties* wallet_properties) {
+    std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
   if (!wallet_properties || !web_ui()->CanCallJavascript()) {
     return;
   }
