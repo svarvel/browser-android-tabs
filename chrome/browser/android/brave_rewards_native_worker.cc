@@ -60,8 +60,9 @@ void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService
 }
 
 void BraveRewardsNativeWorker::OnWalletProperties(brave_rewards::RewardsService* rewards_service,
-        int error_code, brave_rewards::WalletProperties* wallet_properties) {
-  wallet_properties_ = *wallet_properties;
+        int error_code, 
+        std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
+  wallet_properties_.reset(wallet_properties.release());
 
   JNIEnv* env = base::android::AttachCurrentThread();
   Java_BraveRewardsNativeWorker_OnWalletProperties(env, 
@@ -70,15 +71,15 @@ void BraveRewardsNativeWorker::OnWalletProperties(brave_rewards::RewardsService*
 
 double BraveRewardsNativeWorker::GetWalletBalance(JNIEnv* env, 
     const base::android::JavaParamRef<jobject>& obj) {
-  return wallet_properties_.balance;
+  return wallet_properties_->balance;
 }
 
 double BraveRewardsNativeWorker::GetWalletRate(JNIEnv* env, 
     const base::android::JavaParamRef<jobject>& obj,
     const base::android::JavaParamRef<jstring>& rate) {
-  std::map<std::string, double>::const_iterator iter = wallet_properties_.rates.find(
+  std::map<std::string, double>::const_iterator iter = wallet_properties_->rates.find(
     base::android::ConvertJavaStringToUTF8(env, rate));
-  if (iter != wallet_properties_.rates.end()) {
+  if (iter != wallet_properties_->rates.end()) {
     return iter->second;
   }
 

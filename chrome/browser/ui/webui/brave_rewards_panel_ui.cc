@@ -60,14 +60,16 @@ private:
 
    void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
                             int error_code) override;
+
    void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
                            int error_code,
-                           brave_rewards::WalletProperties* wallet_properties) override;
+                           std::unique_ptr<brave_rewards::WalletProperties> properties) override;
+
    void OnGetPublisherActivityFromUrl(
       brave_rewards::RewardsService* rewards_service,
       int error_code,
       ledger::PublisherInfo* info,
-      uint64_t tabId) override;
+      uint64_t tabId) ;
 
   DISALLOW_COPY_AND_ASSIGN(RewardsDOMHandler);
 };
@@ -241,85 +243,7 @@ void RewardsDOMHandler::OnWalletInitialized(
 void RewardsDOMHandler::OnWalletProperties(
     brave_rewards::RewardsService* rewards_service,
     int error_code,
-<<<<<<< HEAD
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
-  if (web_ui()->CanCallJavascript()) {
-    base::DictionaryValue result;
-    result.SetInteger("status", error_code);
-    auto walletInfo = std::make_unique<base::DictionaryValue>();
-
-    if (error_code == 0 && wallet_properties) {
-      walletInfo->SetDouble("balance", wallet_properties->balance);
-      walletInfo->SetString("probi", wallet_properties->probi);
-
-      auto rates = std::make_unique<base::DictionaryValue>();
-      for (auto const& rate : wallet_properties->rates) {
-        rates->SetDouble(rate.first, rate.second);
-      }
-      walletInfo->SetDictionary("rates", std::move(rates));
-
-      auto choices = std::make_unique<base::ListValue>();
-      for (double const& choice : wallet_properties->parameters_choices) {
-        choices->AppendDouble(choice);
-      }
-      walletInfo->SetList("choices", std::move(choices));
-
-      auto range = std::make_unique<base::ListValue>();
-      for (double const& value : wallet_properties->parameters_range) {
-        range->AppendDouble(value);
-      }
-      walletInfo->SetList("range", std::move(range));
-
-      auto grants = std::make_unique<base::ListValue>();
-      for (auto const& item : wallet_properties->grants) {
-        auto grant = std::make_unique<base::DictionaryValue>();
-        grant->SetString("probi", item.probi);
-        grant->SetInteger("expiryTime", item.expiryTime);
-        grants->Append(std::move(grant));
-      }
-      walletInfo->SetList("grants", std::move(grants));
-=======
-    brave_rewards::WalletProperties* wallet_properties) {
-  if (!wallet_properties || !web_ui()->CanCallJavascript()) {
-    return;
-  }
-
-  base::DictionaryValue result;
-  result.SetInteger("status", error_code);
-  auto walletInfo = std::make_unique<base::DictionaryValue>();
-
-  if (error_code == 0 && wallet_properties) {
-    walletInfo->SetDouble("balance", wallet_properties->balance);
-    walletInfo->SetString("probi", wallet_properties->probi);
-
-    auto rates = std::make_unique<base::DictionaryValue>();
-    for (auto const& rate : wallet_properties->rates) {
-      rates->SetDouble(rate.first, rate.second);
->>>>>>> 5ed4069abf3... fixed build after brave-core bump
-    }
-    walletInfo->SetDictionary("rates", std::move(rates));
-
-    auto choices = std::make_unique<base::ListValue>();
-    for (double const& choice : wallet_properties->parameters_choices) {
-      choices->AppendDouble(choice);
-    }
-    walletInfo->SetList("choices", std::move(choices));
-
-    auto range = std::make_unique<base::ListValue>();
-    for (double const& value : wallet_properties->parameters_range) {
-      range->AppendDouble(value);
-    }
-    walletInfo->SetList("range", std::move(range));
-
-    auto grants = std::make_unique<base::ListValue>();
-    for (auto const& item : wallet_properties->grants) {
-      auto grant = std::make_unique<base::DictionaryValue>();
-      grant->SetString("probi", item.probi);
-      grant->SetInteger("expiryTime", item.expiryTime);
-      grants->Append(std::move(grant));
-    }
-    walletInfo->SetList("grants", std::move(grants));
-  }
 
   result.SetDictionary("wallet", std::move(walletInfo));
 

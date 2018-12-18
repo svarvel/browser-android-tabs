@@ -1832,6 +1832,7 @@ jumbo_split_static_library("browser") {
     "//brave_src/browser:browser_process",
     "//brave/common",
     "//brave/components/brave_rewards/browser",
+    "//brave/components/brave_ads/browser",
     "//brave/components/resources:strings",
     "//cc",
     "//chrome:extra_resources",

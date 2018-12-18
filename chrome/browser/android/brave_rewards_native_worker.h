@@ -6,6 +6,8 @@
 #define BRAVE_REWARDS_NATIVE_WORKER_H_
 
 #include <jni.h>
+#include <memory>
+
 #include "base/android/jni_weak_ref.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
@@ -43,12 +45,13 @@ public:
         int error_code) override;
 
     void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
-        int error_code, brave_rewards::WalletProperties* wallet_properties) override;
+        int error_code, 
+        std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
-    brave_rewards::WalletProperties wallet_properties_;
+    std::unique_ptr<brave_rewards::WalletProperties> wallet_properties_;
 };
 }
 }
