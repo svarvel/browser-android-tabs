@@ -17,6 +17,7 @@ import android.view.View;
 
 import org.chromium.base.Log;
 import org.chromium.base.ThreadUtils;
+import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService;
 import org.chromium.chrome.R;
 
 import java.util.Arrays;
@@ -80,6 +81,14 @@ public class NotificationIntent {
         mBuilder.setContentText(notification_text);
 
         mNotificationManager.notify(NOTIFICATION_TAG, NOTIFICATION_ID, mBuilder.build());
+        fireBraveSetDefaultBrowserNotification(context);
+    }
+
+    private static void fireBraveSetDefaultBrowserNotification(Context context) {
+        Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
+        intent.putExtra(BraveSetDefaultBrowserNotificationService.INTENT_TYPE, BraveSetDefaultBrowserNotificationService.BROWSER_UPDATED);
+        intent.setAction(BraveSetDefaultBrowserNotificationService.BROWSER_UPDATED);
+        context.sendBroadcast(intent);
     }
 
     public static boolean ShouldNotify(Context context) {
