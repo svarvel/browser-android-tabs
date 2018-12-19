@@ -7,6 +7,7 @@ package org.chromium.chrome.browser;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -17,6 +18,7 @@ import org.chromium.base.ApplicationStatus.ApplicationStateListener;
 import org.chromium.base.Callback;
 import org.chromium.base.ContextUtils;
 import org.chromium.base.LocaleUtils;
+import org.chromium.base.Log;
 import org.chromium.base.ThreadUtils;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordHistogram;
@@ -42,6 +44,8 @@ import java.util.Locale;
 public class ChromeActivitySessionTracker {
 
     private static final String PREF_LOCALE = "locale";
+    public static final String SESSION_START_TIME = "session_start_time";
+    public static final String TOTAL_LIFETIME_USAGE = "total_lifetime_usage";
 
     @SuppressLint("StaticFieldLeak")
     private static ChromeActivitySessionTracker sInstance;
@@ -130,6 +134,7 @@ public class ChromeActivitySessionTracker {
      */
     private void onForegroundSessionStart() {
         UmaUtils.recordForegroundStartTime();
+        recordSessionStart();
         updatePasswordEchoState();
         FontSizePrefs.getInstance().onSystemFontScaleChanged();
         recordWhetherSystemAndAppLanguagesDiffer();
@@ -153,6 +158,7 @@ public class ChromeActivitySessionTracker {
     private void onForegroundSessionEnd() {
         if (!mIsStarted) return;
         UmaUtils.recordBackgroundTime();
+        updateLifetimeSessionLength();
         ProfileManagerUtils.flushPersistentDataForAllProfiles();
         mIsStarted = false;
         mPowerBroadcastReceiver.onForegroundSessionEnd();
@@ -172,6 +178,20 @@ public class ChromeActivitySessionTracker {
         }
         RecordHistogram.recordCountHistogram(
                 "Tab.TotalTabCount.BeforeLeavingApp", totalTabCount);
+    }
+
+    private void recordSessionStart() {
+        SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putLong(SESSION_START_TIME, SystemClock.uptimeMillis());
+        editor.apply();
+    }
+
+    private void updateLifetimeSessionLength() {
+        SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putLong(TOTAL_LIFETIME_USAGE, prefs.getLong(TOTAL_LIFETIME_USAGE, 0) + SystemClock.uptimeMillis() - prefs.getLong(SESSION_START_TIME, SystemClock.uptimeMillis()));
+        editor.apply();
     }
 
     private void onForegroundActivityDestroyed() {

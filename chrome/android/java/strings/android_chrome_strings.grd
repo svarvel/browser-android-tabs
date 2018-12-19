@@ -2918,6 +2918,29 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
         Welcome to Chrome
       </message>
 
+      <!-- Brave as default browser strings -->
+      <message name="IDS_BRAVE_ALREADY_SET_AS_DEFAULT_BROWSER" desc="Toast message for those whom have already set Brave as default browser">
+        Brave is already set\nas your default browser.
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_GO_TO_SETTINGS" desc="Toast message for those without 7.0 to go to settings to change default browser">
+        You've already set a default browser.\nYou may change default browser in your app settings.
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_ACTION_SETTINGS" desc="Notification action with payload to take users to default app settings">
+        Settings
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_TITLE" desc="Default browser notification title for users with an existing browser">
+        Set as Default Browser
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_BODY" desc="Default browser notification body">
+        Enjoying Brave Browser' speed? You may set Brave as the default browser by clicking on the triple dot settings.
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_EXISTING_NOTIFICATION_TITLE" desc="Default browser notification title for users with an existing browser">
+        Set as Default Browser
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_EXISTING_NOTIFICATION_BODY" desc="Default browser notification body">
+        In the Default apps menu on your device, select Brave for Browser App.
+      </message>
+
       <!-- Account Signin Strings -->
       <message name="IDS_CHOOSE_ACCOUNT_SIGN_IN" desc="Sign in button for choose google account dialog [CHAR-LIMIT=20]">
         Sign in
@@ -3287,7 +3310,12 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <message name="IDS_MENU_SEND_FEEDBACK" desc="Menu item for sending feedback. [CHAR-LIMIT=27]">
         Send feedback
       </message>
-
+      <message name="IDS_BRAVE_SET_DEFAULT_BROWSER" desc="Menu item for opening the 'Setting default browser' page.">
+        Set as default browser
+      </message>
+      <message name="IDS_BRAVE_SET_DEFAULT_BROWSER_DIALOG_TEXT" desc="Dialog for setting default browser">
+        Select Brave Browser from the list and tap 'Always'
+      </message>
       <!-- Bookmarks strings -->
       <message name="IDS_BOOKMARKS" desc="Title of the bookmarks page, which shows a list of the user's bookmarks. [CHAR-LIMIT=18]">
         Bookmarks

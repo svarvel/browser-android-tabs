@@ -161,6 +161,14 @@ by a child template that "extends" this file.
            </intent-filter>
          </receiver>
 
+        <!-- Brave's Set Default Browser -->
+        <receiver android:name="org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="DEEP_LINK"/>
+            </intent-filter>
+        </receiver>
+
         <!-- MixPanel proxy server -->
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
               android:value="https://metric-proxy.brave.com/track" />-->

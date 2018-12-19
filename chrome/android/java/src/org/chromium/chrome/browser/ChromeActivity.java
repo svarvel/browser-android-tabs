@@ -7,13 +7,17 @@ package org.chromium.chrome.browser;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.SearchManager;
 import android.app.assist.AssistContent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -23,6 +27,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Process;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.support.annotation.CallSuper;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -31,6 +36,7 @@ import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.KeyEvent;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -124,6 +130,7 @@ import org.chromium.chrome.browser.metrics.LaunchMetrics;
 import org.chromium.chrome.browser.metrics.UmaSessionStats;
 import org.chromium.chrome.browser.modaldialog.AppModalPresenter;
 import org.chromium.chrome.browser.multiwindow.MultiWindowUtils;
+import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService;
 import org.chromium.chrome.browser.nfc.BeamController;
 import org.chromium.chrome.browser.ntp.NewTabPage;
 import org.chromium.chrome.browser.ntp.NewTabPageUma;
@@ -266,6 +273,13 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
      * Timeout in ms for reading PartnerBrowserCustomizations provider.
      */
     private static final int PARTNER_BROWSER_CUSTOMIZATIONS_TIMEOUT_MS = 10000;
+
+    /**
+     * Settings for sending local notification reminders.
+     */
+    public static final String BRAVE_PRODUCTION_PACKAGE_NAME = "com.brave.browser";
+    public static final String BRAVE_DEVELOPMENT_PACKAGE_NAME = "com.brave.browser_default";
+    public static final String CHANNEL_ID = "com.brave.browser";
 
     private static AppMenuHandlerFactory sAppMenuHandlerFactory =
             (activity, delegate, menuResourceId) -> new AppMenuHandler(activity, delegate,
@@ -480,6 +494,11 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             if (intent != null && getSavedInstanceState() == null) {
                 VrModuleProvider.getDelegate().maybeHandleVrIntentPreNative(this, intent);
             }
+            /*
+            if (intent != null && intent.hasExtra(BraveSetDefaultBrowserNotificationService.DEEP_LINK)) {
+                handleBraveSetDefaultBrowserDeepLink(intent);
+            }
+            */
 
             mSnackbarManager = new SnackbarManager(this, null);
 
@@ -556,6 +575,37 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         if (null != app) {
             app.mBraveSyncWorker = new BraveSyncWorker(this);
         }*/
+
+        createNotificationChannel();
+        setupBraveSetDefaultBrowserNotification();
+    }
+
+    private void createNotificationChannel() {
+        Context context = ContextUtils.getApplicationContext();
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Brave Browser";
+            String description = "Notification channel for Brave Browser";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void setupBraveSetDefaultBrowserNotification() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        Context context = ContextUtils.getApplicationContext();
+        if (isBraveSetAsDefaultBrowser() || sharedPref.getBoolean(BraveSetDefaultBrowserNotificationService.HAS_ASKED_AT_FIFTEEN_MINUTES, false)) {
+          // Don't ask again
+          return;
+        }
+        Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
+        context.sendBroadcast(intent);
     }
 
     @Override
@@ -2475,12 +2525,80 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             RecordUserAction.record("MobileMenuRequestDesktopSite");
         } else if (id == R.id.reader_mode_prefs_id) {
             DomDistillerUIUtils.openSettings(currentTab.getWebContents());
+        } else if (id == R.id.brave_set_default_browser) {
+          handleBraveSetDefaultBrowserDialog();
         } else if (id == R.id.exit_id) {
             ApplicationLifetime.terminate(false);
         } else {
             return false;
         }
         return true;
+    }
+
+    public boolean isBraveSetAsDefaultBrowser() {
+        Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));
+        boolean supportsDefault = Build.VERSION.SDK_INT >= 24;
+        ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent, supportsDefault ? PackageManager.MATCH_DEFAULT_ONLY : 0);
+        return resolveInfo.activityInfo.packageName.equals(BRAVE_PRODUCTION_PACKAGE_NAME) || resolveInfo.activityInfo.packageName.equals(BRAVE_DEVELOPMENT_PACKAGE_NAME);
+    }
+
+    /*
+    private void handleBraveSetDefaultBrowserDeepLink(Intent intent) {
+        Bundle bundle = intent.getExtras();
+        if (bundle.getString(BraveSetDefaultBrowserNotificationService.DEEP_LINK).equals(BraveSetDefaultBrowserNotificationService.SHOW_DEFAULT_APP_SETTINGS)) {
+            Context context = ContextUtils.getApplicationContext();
+            Intent settingsIntent = new Intent(Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
+            settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(settingsIntent);
+        }
+    }
+    */
+
+    private void handleBraveSetDefaultBrowserDialog() {
+        /* (Albert Wang): Default app settings didn't get added until API 24
+         * https://developer.android.com/reference/android/provider/Settings#ACTION_MANAGE_DEFAULT_APPS_SETTINGS
+         */
+        Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));
+        boolean supportsDefault = Build.VERSION.SDK_INT >= 24;
+        ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent, supportsDefault ? PackageManager.MATCH_DEFAULT_ONLY : 0);
+        Context context = ContextUtils.getApplicationContext();
+        if (isBraveSetAsDefaultBrowser()) {
+            Toast toast = Toast.makeText(context, R.string.brave_already_set_as_default_browser, Toast.LENGTH_LONG);
+            toast.show();
+            return;
+        }
+        if (supportsDefault) {
+            if (resolveInfo.activityInfo.packageName.equals("com.google.android.setupwizard") || resolveInfo.activityInfo.packageName.equals("android")) {
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.brave_set_default_browser_dialog, (ViewGroup) findViewById(R.id.brave_set_default_browser_toast_container));
+
+                Toast toast = new Toast(context);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
+                toast.setGravity(Gravity.TOP, 0, 40);
+                toast.show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.brave.com/blog"));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            } else {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_DEFAULT_APPS_SETTINGS);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        } else {
+            if (resolveInfo.activityInfo.packageName.equals("com.google.android.setupwizard") || resolveInfo.activityInfo.packageName.equals("android")) {
+                // (Albert Wang): From what I've experimented on 6.0,
+                // default browser popup is in the middle of the screen for
+                // these versions. So we shouldn't show the toast.
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.brave.com/blog"));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            } else {
+                Toast toast = Toast.makeText(context, R.string.brave_default_browser_go_to_settings, Toast.LENGTH_LONG);
+                toast.show();
+                return;
+            }
+        }
     }
 
     /**
