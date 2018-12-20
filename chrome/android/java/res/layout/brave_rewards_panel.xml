@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="end|top">
 
+    <!--Join Rewards screen-->
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_brave_rewards_panel"
@@ -113,6 +114,7 @@
     </ScrollView>
 
 
+    <!--Your wallet screen-->
     <ScrollView
         android:id="@+id/sv_no_website"
         android:layout_width="wrap_content"
@@ -125,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bat_panel_slider_gradient">
+            android:background="#e9ebff">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -256,16 +258,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:visibility="gone">
+                android:orientation="vertical" >
 
-                <GridLayout                    
+                <GridLayout
+                    android:id="@+id/website_summary_grid"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="25dp"
-                    android:columnCount="2">
+                    android:columnCount="2"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_height="wrap_content"
@@ -387,10 +391,23 @@
                         android:alpha=".5"/>
 
                 </GridLayout>
+
+                <Button
+                    android:id="@+id/rewards_summary"
+                    android:layout_height="50dp"
+                    android:layout_width="fill_parent"
+                    android:background="#e9ebff"
+                    android:text="@string/brave_ui_rewards_summary"
+                    android:gravity="start|center"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"
+                    android:textColor="#4c54d2"/>
+
             </LinearLayout>
 
             <!--Layout when we are not on a valid webpage-->
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/no_website_summary"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
@@ -429,8 +446,7 @@
                         android:alpha=".5"
                         android:layout_row="1"/>
 
-                   <!--Test buttons-->
-		   <!--<Button
+		   <Button
                         android:id="@+id/brave_ui_site_banner_test_button"
                         android:layout_height="wrap_content"
                         android:layout_width="fill_parent"
@@ -456,10 +472,10 @@
                         android:alpha=".5"
                         android:layout_row="3"
                         android:background="@android:color/black"
-                        android:layout_marginTop="5dp"/> -->
+                        android:layout_marginTop="5dp"/>
                 </GridLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
