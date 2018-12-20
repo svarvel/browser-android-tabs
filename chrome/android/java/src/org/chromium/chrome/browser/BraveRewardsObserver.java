@@ -7,4 +7,5 @@ package org.chromium.chrome.browser;
 public interface BraveRewardsObserver {
   public void OnWalletInitialized(int error_code);
   public void OnWalletProperties(int error_code);
+  public void OnPublisherInfo(int tabId);
 }

@@ -7,10 +7,11 @@
 
 #include <jni.h>
 #include <memory>
-
+#include <map>
 #include "base/android/jni_weak_ref.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
+#include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
 
 namespace brave_rewards {
   class RewardsService;
@@ -36,10 +37,35 @@ public:
     void GetWalletProperties(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
 
+    void GetPublisherInfo(JNIEnv* env, const
+        base::android::JavaParamRef<jobject>& jcaller, int tabId,
+        const base::android::JavaParamRef<jstring>& host);
+
     double GetWalletBalance(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
     double GetWalletRate(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& rate);
+
+    base::android::ScopedJavaLocalRef<jstring> GetPublisherURL(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
+
+    base::android::ScopedJavaLocalRef<jstring> GetPublisherFavIconURL(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
+
+    base::android::ScopedJavaLocalRef<jstring> GetPublisherName(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
+
+    int GetPublisherPercent(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        uint64_t tabId);
+
+    bool GetPublisherExcluded(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        uint64_t tabId);
+
+    void IncludeInAutoContribution(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        uint64_t tabId, bool exclude);
+
+    void RemovePublisherFromMap(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
@@ -48,10 +74,17 @@ public:
         int error_code, 
         std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
 
+    void OnGetPublisherActivityFromUrl(
+        brave_rewards::RewardsService* rewards_service,
+        int error_code,
+        ledger::PublisherInfo* info,
+        uint64_t tabId) override;
+
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties_;
+    std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_;
 };
 }
 }

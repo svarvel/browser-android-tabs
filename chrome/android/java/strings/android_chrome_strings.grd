@@ -4233,8 +4233,8 @@ Save battery and load web pages faster
       
       <!--It's just temporary. We will need to pull rewards strings from brave-core-->
       <message name="IDS_BRAVE_UI_WELCOME_HEADER_TWO" desc="">
-        Get ready to experience the next
-Internet.
+        Get ready to experience
+the next Internet.
       </message>
       <message name="IDS_BRAVE_REWARDS_MESSAGE" desc="">
         Brave Rewards&#8482;
@@ -4266,7 +4266,7 @@ content creators.
         Add Funds
       </message>
       <message name="IDS_BRAVE_UI_SETTINGS" desc="">
-        Rewards settings
+        Settings
       </message>
       <message name="IDS_BRAVE_UI_REWARDS_SUMMARY" desc="">
         REWARDS SUMMARY
@@ -4299,12 +4299,12 @@ content creators.
 
       
       <!--Test strings: please remove when not needed" -->
-      <message name="IDS_BRAVE_UI_SITE_BANNER_TEST" desc="">
+      <!--<message name="IDS_BRAVE_UI_SITE_BANNER_TEST" desc="">
         Site Banner Test
       </message>
       <message name="IDS_BRAVE_UI_TIP_SENT_TEST" desc="">
         &quot;Donation sent&quot; test
-      </message>     
+      </message>-->     
 
       <message name="IDS_BRAVE_UI_DONATION_SENT" desc="">
         Donation sent!
@@ -4325,6 +4325,15 @@ content creators.
       <message name="IDS_BRAVE_UI_MONTH_DEC" desc="">DECEMBER</message>
       <message name="IDS_BRAVE_UI_MONTH_YEAR" desc="">
         <ph name="MONTH">%1$s<ex>DECEMBER</ex></ph> <ph name="YEAR">%2$s<ex>2018</ex></ph>
+      </message>
+      <message name="IDS_BRAVE_UI_ATTENTION" desc="">
+        Attention
+      </message>
+      <message name="IDS_BRAVE_UI_AUTO_CONTRIBUTE" desc="">
+        Include in Auto-Contribute
+      </message>
+      <message name="IDS_BRAVE_UI_SEND_A_TIP" desc="">
+        Send a tip...
       </message>
       <!--End of rewards temporary section.-->
     </messages>
