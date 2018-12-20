@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -411,6 +412,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         ll.setVisibility(View.GONE);
         ll = (LinearLayout)this.root.findViewById(R.id.website_summary);
         ll.setVisibility(View.VISIBLE);
+        ll = (LinearLayout)this.root.findViewById(R.id.br_central_layout);
+        ll.setBackgroundColor(Color.WHITE);
+
         String pubName = thisObject.mBraveRewardsNativeWorker.GetPublisherName(currentTabId);
         TextView tv = (TextView)thisObject.root.findViewById(R.id.publisher_name);
         tv.setText(pubName);
