@@ -8,6 +8,8 @@
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/browser/profiles/profile_manager.h"
+//#include "chrome/browser/ui/webui/favicon_source.h"
+#include "content/public/browser/url_data_source.h"
 #include "jni/BraveRewardsNativeWorker_jni.h"
 
 namespace chrome {
@@ -24,6 +26,10 @@ BraveRewardsNativeWorker::BraveRewardsNativeWorker(JNIEnv* env, const base::andr
   if (brave_rewards_service_) {
     brave_rewards_service_->AddObserver(this);
   }
+  // For favicons cache
+  //content::URLDataSource::Add(ProfileManager::GetActiveUserProfile()->GetOriginalProfile(), 
+   // std::make_unique<FaviconSource>(ProfileManager::GetActiveUserProfile()->GetOriginalProfile()));
+  //
 }
 
 BraveRewardsNativeWorker::~BraveRewardsNativeWorker() {
@@ -48,6 +54,113 @@ void BraveRewardsNativeWorker::GetWalletProperties(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller) {
   if (brave_rewards_service_) {
     brave_rewards_service_->FetchWalletProperties();
+  }
+}
+
+void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
+        base::android::JavaParamRef<jobject>& jcaller, int tabId,
+        const base::android::JavaParamRef<jstring>& host) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetPublisherActivityFromUrl(tabId,
+      base::android::ConvertJavaStringToUTF8(env, host), "");
+  }
+}
+
+void BraveRewardsNativeWorker::OnGetPublisherActivityFromUrl(
+      brave_rewards::RewardsService* rewards_service,
+      int error_code,
+      ledger::PublisherInfo* info,
+      uint64_t tabId) {
+  if (!info) {
+    return;
+  }
+
+  map_publishers_info_[tabId] = *info;
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_BraveRewardsNativeWorker_OnPublisherInfo(env, 
+        weak_java_brave_rewards_native_worker_.get(env), tabId);
+}
+
+base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherURL(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  base::android::ScopedJavaLocalRef<jstring> res;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second.url);
+  }
+
+  return res;
+}
+
+base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherFavIconURL(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  base::android::ScopedJavaLocalRef<jstring> res;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second.favicon_url);
+  }
+
+  return res; 
+}
+
+base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherName(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  base::android::ScopedJavaLocalRef<jstring> res;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second.name);
+  }
+
+  return res;
+}
+
+int BraveRewardsNativeWorker::GetPublisherPercent(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  int res = 0;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = iter->second.percent;
+  }
+
+  return res;
+}
+
+bool BraveRewardsNativeWorker::GetPublisherExcluded(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  bool res = false;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = iter->second.excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED;
+  }
+
+  return res;
+}
+
+void BraveRewardsNativeWorker::IncludeInAutoContribution(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId, bool exclude) {
+  std::map<uint64_t, ledger::PublisherInfo>::iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    if (exclude) {
+      iter->second.excluded = ledger::PUBLISHER_EXCLUDE::EXCLUDED;
+    } else {
+      iter->second.excluded = ledger::PUBLISHER_EXCLUDE::INCLUDED;
+    }
+    if (brave_rewards_service_) {
+      brave_rewards_service_->SetContributionAutoInclude(iter->second.id, exclude, tabId);
+    }
+  }
+}
+
+void BraveRewardsNativeWorker::RemovePublisherFromMap(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    map_publishers_info_.erase(iter);
   }
 }
 

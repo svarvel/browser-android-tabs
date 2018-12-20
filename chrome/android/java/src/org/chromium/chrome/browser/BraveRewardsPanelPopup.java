@@ -6,29 +6,44 @@ package org.chromium.chrome.browser;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.URLUtil;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 
+import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.ApplicationStatus;
+import org.chromium.base.AsyncTask;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
+import org.chromium.chrome.browser.favicon.FaviconHelper;
 import org.chromium.chrome.browser.tab.Tab;
+import org.chromium.chrome.browser.tabmodel.TabModelImpl;
 import org.chromium.chrome.browser.tabmodel.TabModel.TabLaunchType;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorImpl;
 import org.chromium.chrome.R;
 import org.chromium.content_public.browser.LoadUrlParams;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.lang.ref.WeakReference;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -46,6 +61,7 @@ import org.chromium.base.ContextUtils;
 
 public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
+    private static final String FAV_ICON_URL = "chrome://favicon/size/48@2x/";
 
     protected final View anchor;
     private final PopupWindow window;
@@ -55,11 +71,16 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private Button btJoinRewards;
     private Button btAddFunds;
     private Button btRewardsSettings;
+    private Switch btAutoContribute;
     private TextView tvLearnMore;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private Timer balanceUpdater;
+    private FaviconHelper mFavIconHelper;
+    private int currentTabId;
+    private OnCheckedChangeListener autoContributeSwitchListener;
 
     public BraveRewardsPanelPopup(View anchor) {
+        currentTabId = -1;
         this.anchor = anchor;
         this.window = new PopupWindow(anchor.getContext());
         thisObject = this;
@@ -68,7 +89,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_OUTSIDE) {
-                    BraveRewardsPanelPopup.this.window.dismiss();
+                    thisObject.dismiss();
                     return true;
                 }
                 return false;
@@ -77,10 +98,15 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         this.window.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
-                if (mBraveRewardsNativeWorker == null) {
-                  return;
+                if (mBraveRewardsNativeWorker != null) {
+                  mBraveRewardsNativeWorker.RemoveObserver(thisObject);
                 }
-                mBraveRewardsNativeWorker.RemoveObserver(thisObject);
+                if (mFavIconHelper != null) {
+                  mFavIconHelper.destroy();
+                }
+                if (currentTabId != -1) {
+                  mBraveRewardsNativeWorker.RemovePublisherFromMap(currentTabId);
+                }
             }
         });
         mActivity = BraveRewardsHelper.GetChromeTabbedActivity();
@@ -90,6 +116,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           mBraveRewardsNativeWorker.AddObserver(thisObject);
         }
         balanceUpdater = new Timer();
+        mFavIconHelper = new FaviconHelper();
 
         onCreate();
     }
@@ -171,8 +198,22 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           }));
         }
 
+        btAutoContribute = (Switch)root.findViewById(R.id.brave_ui_auto_contribute);
+
+        if (btAutoContribute != null) {
+          autoContributeSwitchListener = new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,
+              boolean isChecked) {
+                thisObject.mBraveRewardsNativeWorker.IncludeInAutoContribution(currentTabId, !isChecked);
+                Log.i("TAG", "!!!isChecked == " + isChecked);
+            }
+          };
+          btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
+        }
+
        //TODO: test buttons onClick handlers/////////////////////////////////////////////
-       Button btTestTipSent = (Button)root.findViewById(R.id.brave_ui_tip_sent_test_button);
+       /*Button btTestTipSent = (Button)root.findViewById(R.id.brave_ui_tip_sent_test_button);
         if (btTestTipSent != null) {
           btTestTipSent.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -194,7 +235,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                 mActivity.startActivity(intent);
             }
           }));
-        }
+        }*/
        ///////////////////////////////////////////////////////////////////////////////////////
 
     }
@@ -250,6 +291,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         return tab;
     }
 
+    private Tab currentActiveTab() {
+      if (mActivity == null || mActivity.getTabModelSelector() == null) return null;
+
+      return mActivity.getActivityTab();
+        //TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) mActivity.getTabModelSelector();
+        //TabModelImpl model = (TabModelImpl)tabbedModeTabModelSelector.getModel();
+    }
+
     public void ShowWebSiteView() {
       ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(String.format("%.2f", 0.0));
       String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.00");
@@ -265,6 +314,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       ScrollView sv_new = (ScrollView)this.root.findViewById(R.id.sv_no_website);
       sv_new.setVisibility(View.VISIBLE);
       CreateUpdateBalanceTask();
+      Tab currentActiveTab = currentActiveTab();
+      if (currentActiveTab != null && !currentActiveTab.isIncognito()) {
+        String url = currentActiveTab.getUrl();
+        if (URLUtil.isValidUrl(url)) {
+            mBraveRewardsNativeWorker.GetPublisherInfo(currentActiveTab.getId(), url);
+        }
+      }
     }
 
     @Override
@@ -292,5 +348,79 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       } else if (error_code == 1) {
         // TODO error handling
       } 
+    }
+
+    public class FaviconFetcher implements FaviconHelper.FaviconImageCallback {
+        @CalledByNative
+        @Override
+        public void onFaviconAvailable(Bitmap image, String iconUrl) {
+          final Bitmap bmp = image;
+          mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                SetFavIcon(bmp);
+            }
+          });
+        }
+    }
+
+    private void SetFavIcon(Bitmap bmp) {
+        ImageView iv = (ImageView)thisObject.root.findViewById(R.id.publisher_favicon);
+        iv.setImageBitmap(bmp);
+    }
+
+    @Override
+    public void OnPublisherInfo(int tabId) {
+        currentTabId = tabId;
+        (new Runnable() {
+            @Override
+            public void run() {
+                String faviconURL = thisObject.mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
+                if (faviconURL.isEmpty()) {
+                    Tab currentActiveTab = currentActiveTab();
+                    mFavIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
+                      thisObject.mBraveRewardsNativeWorker.GetPublisherURL(currentTabId),
+                      64, new FaviconFetcher());
+                } else {
+                    new AsyncTask<Void>() {
+                      @Override
+                      protected Void doInBackground() {
+                          try {
+                              Log.i("TAG", "!!!faviconURL == " + faviconURL);
+                              URL url = new URL(faviconURL);
+                              Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                              mActivity.runOnUiThread(new Runnable() {
+                                  @Override
+                                  public void run() {
+                                      Log.i("TAG", "!!!setting the icon");
+                                      SetFavIcon(bmp);
+                                  }
+                              });
+                          } catch (MalformedURLException exc) {
+                          } catch (IOException exc) {
+                          }
+
+                          return null;
+                      }
+                    }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                }
+            }
+        }).run();
+
+        LinearLayout ll = (LinearLayout)this.root.findViewById(R.id.no_website_summary);
+        ll.setVisibility(View.GONE);
+        ll = (LinearLayout)this.root.findViewById(R.id.website_summary);
+        ll.setVisibility(View.VISIBLE);
+        String pubName = thisObject.mBraveRewardsNativeWorker.GetPublisherName(currentTabId);
+        TextView tv = (TextView)thisObject.root.findViewById(R.id.publisher_name);
+        tv.setText(pubName);
+        tv = (TextView)thisObject.root.findViewById(R.id.publisher_attention);
+        String percent = Integer.toString(thisObject.mBraveRewardsNativeWorker.GetPublisherPercent(currentTabId)) + "%";
+        tv.setText(percent);
+        if (btAutoContribute != null) {
+            btAutoContribute.setOnCheckedChangeListener(null);
+            btAutoContribute.setChecked(!thisObject.mBraveRewardsNativeWorker.GetPublisherExcluded(currentTabId));
+            btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
+        }
     }
 }

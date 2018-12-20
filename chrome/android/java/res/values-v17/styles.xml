@@ -953,6 +953,9 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">16sp</item>
     </style>
+    <style name="BraveRewardsSwitchTheme">
+        <item name="colorControlActivated">@color/brave_rewards_theme_color</item>
+    </style>
 
     <style name="BraveSyncToggleOffButtonLeft">
         <item name="android:textColor">@color/brave_theme_color</item>

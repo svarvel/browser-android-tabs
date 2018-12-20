@@ -45,23 +45,55 @@ public class BraveRewardsNativeWorker {
     }
 
     public void CreateWallet() {
-      nativeCreateWallet(mNativeBraveRewardsNativeWorker);
+        nativeCreateWallet(mNativeBraveRewardsNativeWorker);
     }
 
     public boolean WalletExist() {
-      return nativeWalletExist(mNativeBraveRewardsNativeWorker);
+        return nativeWalletExist(mNativeBraveRewardsNativeWorker);
     }
 
     public void GetWalletProperties() {
-      nativeGetWalletProperties(mNativeBraveRewardsNativeWorker);
+        nativeGetWalletProperties(mNativeBraveRewardsNativeWorker);
     }
 
     public double GetWalletBalance() {
-      return nativeGetWalletBalance(mNativeBraveRewardsNativeWorker);
+        return nativeGetWalletBalance(mNativeBraveRewardsNativeWorker);
     }
 
     public double GetWalletRate(String rate) {
-      return nativeGetWalletRate(mNativeBraveRewardsNativeWorker, rate);
+        return nativeGetWalletRate(mNativeBraveRewardsNativeWorker, rate);
+    }
+
+    public void GetPublisherInfo(int tabId, String host) {
+        nativeGetPublisherInfo(mNativeBraveRewardsNativeWorker, tabId, host);
+    }
+
+    public String GetPublisherURL(int tabId) {
+        return nativeGetPublisherURL(mNativeBraveRewardsNativeWorker, tabId);
+    }
+
+    public String GetPublisherFavIconURL(int tabId) {
+        return nativeGetPublisherFavIconURL(mNativeBraveRewardsNativeWorker, tabId);
+    }
+
+    public String GetPublisherName(int tabId) {
+        return nativeGetPublisherName(mNativeBraveRewardsNativeWorker, tabId);
+    }
+
+    public int GetPublisherPercent(int tabId) {
+        return nativeGetPublisherPercent(mNativeBraveRewardsNativeWorker, tabId); 
+    }
+
+    public boolean GetPublisherExcluded(int tabId) {
+        return nativeGetPublisherExcluded(mNativeBraveRewardsNativeWorker, tabId); 
+    }
+
+    public void IncludeInAutoContribution(int tabId, boolean exclude) {
+      nativeIncludeInAutoContribution(mNativeBraveRewardsNativeWorker, tabId, exclude);
+    }
+
+    public void RemovePublisherFromMap(int tabId) {
+        nativeRemovePublisherFromMap(mNativeBraveRewardsNativeWorker, tabId);
     }
 
     @CalledByNative
@@ -74,6 +106,13 @@ public class BraveRewardsNativeWorker {
     public void OnWalletInitialized(int error_code) {
         for(BraveRewardsObserver observer : observers_) {
             observer.OnWalletInitialized(error_code);
+        }
+    }
+
+    @CalledByNative
+    public void OnPublisherInfo(int tabId) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnPublisherInfo(tabId);
         }
     }
 
@@ -91,4 +130,13 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetWalletProperties(long nativeBraveRewardsNativeWorker);
     private native double nativeGetWalletBalance(long nativeBraveRewardsNativeWorker);
     private native double nativeGetWalletRate(long nativeBraveRewardsNativeWorker, String rate);
+    private native void nativeGetPublisherInfo(long nativeBraveRewardsNativeWorker, int tabId, String host);
+    private native String nativeGetPublisherURL(long nativeBraveRewardsNativeWorker, int tabId);
+    private native String nativeGetPublisherFavIconURL(long nativeBraveRewardsNativeWorker, int tabId);
+    private native String nativeGetPublisherName(long nativeBraveRewardsNativeWorker, int tabId);
+    private native int nativeGetPublisherPercent(long nativeBraveRewardsNativeWorker, int tabId);
+    private native boolean nativeGetPublisherExcluded(long nativeBraveRewardsNativeWorker, int tabId);
+    private native void nativeIncludeInAutoContribution(long nativeBraveRewardsNativeWorker, int tabId,
+      boolean exclude);
+    private native void nativeRemovePublisherFromMap(long nativeBraveRewardsNativeWorker, int tabId);
 }

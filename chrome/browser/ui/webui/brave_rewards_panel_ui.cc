@@ -158,6 +158,7 @@ void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
   SessionID::id_type tabId = -1;
   tempTabId >> tabId;
 
+  LOG(ERROR) << "!!!GetPublisherData " << url;
   if (rewards_service_) {
     rewards_service_->GetPublisherActivityFromUrl(tabId,
                                                   url,
@@ -173,6 +174,12 @@ void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
   if (!info || !web_ui()->CanCallJavascript()) {
     return;
   }
+
+  LOG(ERROR) << "!!!info->name == " << info->name;
+  LOG(ERROR) << "!!!info->url == " << info->url;
+  LOG(ERROR) << "!!!info->provider == " << info->provider;
+  LOG(ERROR) << "!!!info->favicon_url == " << info->favicon_url;
+  LOG(ERROR) << "!!!info->publisher_key == " << info->id;
 
   base::DictionaryValue data;
   data.SetString("tabId", std::to_string(tabId).c_str());

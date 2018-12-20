@@ -273,6 +273,9 @@ Still reading?
   <issue id="PrivateApi" severity="ignore"/>
   <!-- Chrome is a system app. -->
   <issue id="ProtectedPermissions" severity="ignore"/>
+  <issue id="PxUsage">
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
+  </issue>
   <issue id="Recycle" severity="ignore"/>
   <issue id="Registered" severity="ignore"/>
   <issue id="ResourceAsColor" severity="ignore"/>
@@ -406,6 +409,7 @@ Still reading?
   <issue id="UseCompoundDrawables">
     <!-- Upscaling 24dp to 48dp doesn't work as expected with a TextView compound drawable. -->
     <ignore regexp="chrome/android/java/res/layout/photo_picker_bitmap_view.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
   </issue>
   <issue id="UselessParent">
     <ignore regexp="android_webview/tools/system_webview_shell/apk/res/layout/activity_webview_browser.xml"/>
