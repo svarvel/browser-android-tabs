@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
@@ -79,8 +81,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private FaviconHelper mFavIconHelper;
     private int currentTabId;
     private OnCheckedChangeListener autoContributeSwitchListener;
+    private Button btRewardsSummary;
+    private boolean publisherExist;
 
     public BraveRewardsPanelPopup(View anchor) {
+        publisherExist = false;
         currentTabId = -1;
         this.anchor = anchor;
         this.window = new PopupWindow(anchor.getContext());
@@ -213,6 +218,34 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
         }
 
+        btRewardsSummary = (Button)root.findViewById(R.id.rewards_summary);
+        if (btRewardsSummary != null) {
+          btRewardsSummary.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //publisherExist
+                GridLayout gl = (GridLayout)thisObject.root.findViewById(R.id.website_summary_grid);
+                LinearLayout ll = (LinearLayout)thisObject.root.findViewById(R.id.br_central_layout);
+                if (gl == null || ll == null) {
+                    return;
+                }
+                if (gl.getVisibility() == View.VISIBLE) {
+                    gl.setVisibility(View.GONE);
+                    ll.setBackgroundColor(((ColorDrawable)btRewardsSummary.getBackground()).getColor());
+                    SetRewardsSummaryMonthYear();
+                } else {
+                    if (publisherExist) {
+                        gl.setVisibility(View.VISIBLE);
+                        ll.setBackgroundColor(Color.WHITE);
+                        RemoveRewardsSummaryMonthYear();
+                    }
+                }
+            }
+          }));
+        }
+
+        SetRewardsSummaryMonthYear();
+
        //TODO: test buttons onClick handlers/////////////////////////////////////////////
        /*Button btTestTipSent = (Button)root.findViewById(R.id.brave_ui_tip_sent_test_button);
         if (btTestTipSent != null) {
@@ -239,6 +272,27 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         }*/
        ///////////////////////////////////////////////////////////////////////////////////////
 
+    }
+
+    private void SetRewardsSummaryMonthYear() {
+        if (btRewardsSummary == null) {
+            return;
+        }
+        String currentMonth = BraveRewardsHelper.getCurrentMonth(this.root.getResources());
+        String currentYear = BraveRewardsHelper.getCurrentYear(this.root.getResources());
+        String rewardsText = this.root.getResources().getString(R.string.brave_ui_rewards_summary);
+        rewardsText += "\n" + String.format(this.root.getResources().getString(R.string.brave_ui_month_year), currentMonth,
+            currentYear);
+        btRewardsSummary.setText(rewardsText);
+        btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.slide_down, 0);
+    }
+
+    private void RemoveRewardsSummaryMonthYear() {
+        if (btRewardsSummary == null) {
+            return;
+        }
+        btRewardsSummary.setText(this.root.getResources().getString(R.string.brave_ui_rewards_summary));
+        btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.slide_up, 0);
     }
 
     protected void onShow() {}
@@ -304,11 +358,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(String.format("%.2f", 0.0));
       String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.00");
       ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
-      String currentMonth = BraveRewardsHelper.getCurrentMonth(this.root.getResources());
-      String currentYear = BraveRewardsHelper.getCurrentYear(this.root.getResources());
-      ((TextView)this.root.findViewById(R.id.rewards_summary_month)).setText(
-        String.format(this.root.getResources().getString(R.string.brave_ui_month_year), currentMonth,
-          currentYear));
 
       ScrollView sv = (ScrollView)this.root.findViewById(R.id.activity_brave_rewards_panel);
       sv.setVisibility(View.GONE);
@@ -372,7 +421,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
 
     @Override
     public void OnPublisherInfo(int tabId) {
+        publisherExist = true;
         currentTabId = tabId;
+        RemoveRewardsSummaryMonthYear();
         (new Runnable() {
             @Override
             public void run() {
@@ -408,11 +459,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
             }
         }).run();
 
-        LinearLayout ll = (LinearLayout)this.root.findViewById(R.id.no_website_summary);
-        ll.setVisibility(View.GONE);
-        ll = (LinearLayout)this.root.findViewById(R.id.website_summary);
-        ll.setVisibility(View.VISIBLE);
-        ll = (LinearLayout)this.root.findViewById(R.id.br_central_layout);
+        //LinearLayout ll = (LinearLayout)this.root.findViewById(R.id.no_website_summary);
+        //ll.setVisibility(View.GONE);
+        GridLayout gl = (GridLayout)this.root.findViewById(R.id.website_summary_grid);
+        gl.setVisibility(View.VISIBLE);
+        LinearLayout ll = (LinearLayout)this.root.findViewById(R.id.br_central_layout);
         ll.setBackgroundColor(Color.WHITE);
 
         String pubName = thisObject.mBraveRewardsNativeWorker.GetPublisherName(currentTabId);
