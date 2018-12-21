@@ -257,11 +257,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                 mActivity.startActivity(intent);
             }
           }));
-        }
+        }*/
 
-        Button btTestSiteBanner = (Button)root.findViewById(R.id.brave_ui_site_banner_test_button);
-        if (btTestSiteBanner != null) {
-          btTestSiteBanner.setOnClickListener((new View.OnClickListener() {
+        Button btSendATip = (Button)root.findViewById(R.id.send_a_tip);
+        if (btSendATip != null) {
+          btSendATip.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
@@ -269,7 +269,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                 mActivity.startActivity(intent);
             }
           }));
-        }*/
+        }
        ///////////////////////////////////////////////////////////////////////////////////////
 
     }
