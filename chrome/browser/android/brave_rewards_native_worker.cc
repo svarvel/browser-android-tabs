@@ -25,6 +25,7 @@ BraveRewardsNativeWorker::BraveRewardsNativeWorker(JNIEnv* env, const base::andr
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
   if (brave_rewards_service_) {
     brave_rewards_service_->AddObserver(this);
+    brave_rewards_service_->AddPrivateObserver(this);
   }
   // For favicons cache
   //content::URLDataSource::Add(ProfileManager::GetActiveUserProfile()->GetOriginalProfile(), 
@@ -39,6 +40,7 @@ void BraveRewardsNativeWorker::Destroy(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller) {
   if (brave_rewards_service_) {
     brave_rewards_service_->RemoveObserver(this);
+    brave_rewards_service_->RemovePrivateObserver(this);
   }
   delete this;
 }
@@ -61,6 +63,7 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller, int tabId,
         const base::android::JavaParamRef<jstring>& host) {
   if (brave_rewards_service_) {
+    LOG(ERROR) << "!!!getting publusher info";
     brave_rewards_service_->GetPublisherActivityFromUrl(tabId,
       base::android::ConvertJavaStringToUTF8(env, host), "");
   }
@@ -69,8 +72,9 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
 void BraveRewardsNativeWorker::OnGetPublisherActivityFromUrl(
       brave_rewards::RewardsService* rewards_service,
       int error_code,
-      ledger::PublisherInfo* info,
+      std::unique_ptr<ledger::PublisherInfo> info,
       uint64_t tabId) {
+  LOG(ERROR) << "!!!in OnGetPublisherActivityFromUrl info == " << info.get();
   if (!info) {
     return;
   }
