@@ -10,6 +10,7 @@
 #include <map>
 #include "base/android/jni_weak_ref.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
+#include "brave/components/brave_rewards/browser/rewards_service_private_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
 #include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
 
@@ -20,7 +21,8 @@ namespace brave_rewards {
 namespace chrome {
 namespace android {
 
-class BraveRewardsNativeWorker : public brave_rewards::RewardsServiceObserver {
+class BraveRewardsNativeWorker : public brave_rewards::RewardsServiceObserver,
+    public brave_rewards::RewardsServicePrivateObserver {
 public:
     BraveRewardsNativeWorker(JNIEnv* env, const base::android::JavaRef<jobject>& obj);
     ~BraveRewardsNativeWorker() override;
@@ -77,7 +79,7 @@ public:
     void OnGetPublisherActivityFromUrl(
         brave_rewards::RewardsService* rewards_service,
         int error_code,
-        ledger::PublisherInfo* info,
+        std::unique_ptr<ledger::PublisherInfo> info,
         uint64_t tabId) override;
 
 private:
