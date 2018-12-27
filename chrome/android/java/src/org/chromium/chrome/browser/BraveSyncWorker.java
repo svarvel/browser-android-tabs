@@ -81,7 +81,6 @@ public class BraveSyncWorker {
     private static final int INTERVAL_TO_FETCH_RECORDS = 1000 * 60;    // Milliseconds
     private static final int INTERVAL_TO_SEND_SYNC_RECORDS = 1000 * 60;    // Milliseconds
     private static final int INTERVAL_TO_REFETCH_RECORDS = 10000 * 60;    // Milliseconds
-    private static final int LAST_RECORDS_COUNT = 980;
     private static final int SEND_RECORDS_COUNT_LIMIT = 1000;
     private static final int FETCH_RECORDS_CHUNK_SIZE = 300;
     private static final String PREF_SYNC_SWITCH = "sync_switch";
@@ -145,6 +144,7 @@ public class BraveSyncWorker {
     private boolean mReorderBookmarks;
     private int mAttepmtsBeforeSendingNotSyncedRecords = ATTEMPTS_BEFORE_SENDING_NOT_SYNCED_RECORDS;
     private String mBulkBookmarkOperations = "";
+    private String mLatestFetchRequest = "";
 
     enum NotSyncedRecordsOperation {
         GetItems, AddItems, DeleteItems
@@ -1186,9 +1186,9 @@ public class BraveSyncWorker {
                 return;
             }
             mInterruptSyncSleep = false;
-            String fetchToRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
-            //Log.i(TAG, "FetchSyncRecords: " + fetchToRequest);
-            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), fetchToRequest, FETCH_RECORDS_CHUNK_SIZE)));
+            mLatestFetchRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
+            //Log.i(TAG, "FetchSyncRecords: " + mLatestFetchRequest);
+            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), mLatestFetchRequest, FETCH_RECORDS_CHUNK_SIZE)));
             mTimeLastFetchExecuted = currentTime.getTimeInMillis();
             if (!lastRecordFetchTime.isEmpty()) {
                 try {
@@ -1846,7 +1846,7 @@ public class BraveSyncWorker {
                 mReorderBookmarks = false;
             }
         } else {
-            FetchSyncRecords(mLatestRecordTimeStampt);
+            FetchSyncRecords(mLatestFetchRequest);
         }
     }
 
