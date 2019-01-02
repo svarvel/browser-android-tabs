@@ -1,47 +1,40 @@
-**Did you search for similar issues before submitting this one?**
+<!-- Have you searched for similar issues? Before submitting this issue, please check the open issues and add a note before logging a new issue. 
+
+PLEASE USE THE TEMPLATE BELOW TO PROVIDE INFORMATION ABOUT THE ISSUE. 
+INSUFFICIENT INFO WILL GET THE ISSUE CLOSED. IT WILL ONLY BE REOPENED AFTER SUFFICIENT INFO IS PROVIDED-->
+
+## Description <!--Provide a brief description of the issue-->
 
 
-**Description:**
+## Steps to Reproduce <!--Please add a series of steps to reproduce the issue-->
+
+   1. 
+   2. 
+   3. 
+
+## Actual result: <!--Please add screenshots if needed-->
 
 
-**Device Details:**
+## Expected result:
+
+
+## Issue reproduces how often: <!--[Easily reproduced/Intermittent issue/No steps to reproduce]-->
+
+## Issue happens on: <!-- Mention yes or no -->
+   - Current Playstore version?
+   - Beta build?
+
+## Device Details:
    - Install Type(ARM, x86):
    - Device(Phone, Tablet, Phablet):
-   - Android Version: 
-    
-**Brave Version:**
+   - Android Version:
+   
+## Brave version:
 
 
-**Steps to reproduce:**
-    1.
-    2.
-    3.
+### Website problems only:  
+- Does the issue resolve itself when disabling Brave Shields? 
+- Is the issue reproducible on the latest version of Chrome? 
 
-**Actual Behavior**
-
-
-**Expected Behavior**
-
-
-**Is this an issue with Beta build?**
-
-
-**Is this an issue in the currently released version?**
-
-
-**Can this issue be consistently reproduced?**
-
-
-**Extra QA steps:**
-    1. 
-    2. 
-    3.
-
-**Website problems only:**
-  - did you check with Brave Shields down?
-  - did you check in Chrome for same behavior?
-
-**Screenshot if needed:**
-
-
-**Any related issues:**
+### Additional Information
+<!--Any additional information, related issues, extra QA steps, configuration or data that might be necessary to reproduce the issue-->
