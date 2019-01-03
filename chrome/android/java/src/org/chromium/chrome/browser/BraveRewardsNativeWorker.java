@@ -88,12 +88,27 @@ public class BraveRewardsNativeWorker {
         return nativeGetPublisherExcluded(mNativeBraveRewardsNativeWorker, tabId); 
     }
 
+    public boolean GetPublisherVerified(int tabId) {
+        return nativeGetPublisherVerified(mNativeBraveRewardsNativeWorker, tabId); 
+    }
+
     public void IncludeInAutoContribution(int tabId, boolean exclude) {
       nativeIncludeInAutoContribution(mNativeBraveRewardsNativeWorker, tabId, exclude);
     }
 
     public void RemovePublisherFromMap(int tabId) {
         nativeRemovePublisherFromMap(mNativeBraveRewardsNativeWorker, tabId);
+    }
+
+    public void GetCurrentBalanceReport() {
+        nativeGetCurrentBalanceReport(mNativeBraveRewardsNativeWorker);
+    }
+
+    @CalledByNative
+    public void OnGetCurrentBalanceReport(String[] report) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetCurrentBalanceReport(report);
+        }
     }
 
     @CalledByNative
@@ -136,7 +151,9 @@ public class BraveRewardsNativeWorker {
     private native String nativeGetPublisherName(long nativeBraveRewardsNativeWorker, int tabId);
     private native int nativeGetPublisherPercent(long nativeBraveRewardsNativeWorker, int tabId);
     private native boolean nativeGetPublisherExcluded(long nativeBraveRewardsNativeWorker, int tabId);
+    private native boolean nativeGetPublisherVerified(long nativeBraveRewardsNativeWorker, int tabId);
     private native void nativeIncludeInAutoContribution(long nativeBraveRewardsNativeWorker, int tabId,
       boolean exclude);
     private native void nativeRemovePublisherFromMap(long nativeBraveRewardsNativeWorker, int tabId);
+    private native void nativeGetCurrentBalanceReport(long nativeBraveRewardsNativeWorker);
 }

@@ -11,6 +11,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -223,7 +226,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           btRewardsSummary.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //publisherExist
                 GridLayout gl = (GridLayout)thisObject.root.findViewById(R.id.website_summary_grid);
                 LinearLayout ll = (LinearLayout)thisObject.root.findViewById(R.id.br_central_layout);
                 if (gl == null || ll == null) {
@@ -233,11 +235,28 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                     gl.setVisibility(View.GONE);
                     ll.setBackgroundColor(((ColorDrawable)btRewardsSummary.getBackground()).getColor());
                     SetRewardsSummaryMonthYear();
+                    ShowRewardsSummary();
                 } else {
+                    TextView tv = (TextView)thisObject.root.findViewById(R.id.br_no_activities_yet);
+                    GridLayout glActivities = (GridLayout)thisObject.root.findViewById(R.id.br_activities);
                     if (publisherExist) {
                         gl.setVisibility(View.VISIBLE);
                         ll.setBackgroundColor(Color.WHITE);
                         RemoveRewardsSummaryMonthYear();
+                        if (tv != null && glActivities != null) {
+                          tv.setVisibility(View.GONE);
+                          glActivities.setVisibility(View.GONE);
+                        }
+                    } else if (tv != null) {
+                      if (tv.getVisibility() == View.VISIBLE || 
+                          glActivities.getVisibility() == View.VISIBLE) {
+                        tv.setVisibility(View.GONE);
+                        glActivities.setVisibility(View.GONE);
+                        btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.slide_up, 0);
+                      } else {
+                        ShowRewardsSummary();
+                        btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.slide_down, 0);
+                      }
                     }
                 }
             }
@@ -271,7 +290,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
           }));
         }
        ///////////////////////////////////////////////////////////////////////////////////////
-
     }
 
     private void SetRewardsSummaryMonthYear() {
@@ -354,6 +372,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         //TabModelImpl model = (TabModelImpl)tabbedModeTabModelSelector.getModel();
     }
 
+    public void ShowRewardsSummary() {
+      if (mBraveRewardsNativeWorker != null) {
+        mBraveRewardsNativeWorker.GetCurrentBalanceReport();
+      }
+    }
+
     public void ShowWebSiteView() {
       ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(String.format("%.2f", 0.0));
       String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.00");
@@ -364,6 +388,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       ScrollView sv_new = (ScrollView)this.root.findViewById(R.id.sv_no_website);
       sv_new.setVisibility(View.VISIBLE);
       CreateUpdateBalanceTask();
+      ShowRewardsSummary();
       Tab currentActiveTab = currentActiveTab();
       if (currentActiveTab != null && !currentActiveTab.isIncognito()) {
         String url = currentActiveTab.getUrl();
@@ -476,6 +501,92 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
             btAutoContribute.setOnCheckedChangeListener(null);
             btAutoContribute.setChecked(!thisObject.mBraveRewardsNativeWorker.GetPublisherExcluded(currentTabId));
             btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
+        }
+        if (thisObject.mBraveRewardsNativeWorker.GetPublisherVerified(currentTabId)) {
+            tv = (TextView)root.findViewById(R.id.publisher_verified);
+            tv.setVisibility(View.VISIBLE);
+        }
+        tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
+        gl = (GridLayout)thisObject.root.findViewById(R.id.br_activities);
+        if (tv != null && gl != null) {
+          tv.setVisibility(View.GONE);
+          gl.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void OnGetCurrentBalanceReport(String[] report) {
+        boolean no_activity = true;
+        for (int i = 0; i < report.length; i++) {
+          TextView tv = null;
+          TextView tvUSD = null;
+          String text = "";
+          String textUSD = "";
+          double usdValue = Double.parseDouble(report[i]) * mBraveRewardsNativeWorker.GetWalletRate("USD");
+          switch (i) {
+            case 0:
+            case 1:
+            case 2:
+              break;
+            case 3:
+              tv = (TextView)root.findViewById(R.id.br_grants_claimed_bat);
+              tvUSD = (TextView)root.findViewById(R.id.br_grants_claimed_usd);
+              text = "<font color=#8E2995>" + report[i] + "</font><font color=#000000> BAT</font>";
+              textUSD = String.format("%.2f", usdValue) + " USD";
+              break;
+            case 4:
+              tv = (TextView)root.findViewById(R.id.br_earnings_ads_bat);
+              tvUSD = (TextView)root.findViewById(R.id.br_earnings_ads_usd);
+              text = "<font color=#8E2995>" + report[i] + "</font><font color=#000000> BAT</font>";
+              textUSD = String.format("%.2f", usdValue) + " USD";
+              break;
+            case 5:
+              tv = (TextView)root.findViewById(R.id.br_auto_contribute_bat);
+              tvUSD = (TextView)root.findViewById(R.id.br_auto_contribute_usd);
+              text = "<font color=#6537AD>" + report[i] + "</font><font color=#000000> BAT</font>";
+              textUSD = String.format("%.2f", usdValue) + " USD";
+              break;
+            case 6:
+              tv = (TextView)root.findViewById(R.id.br_recurring_donation_bat);
+              tvUSD = (TextView)root.findViewById(R.id.br_recurring_donation_usd);
+              text = "<font color=#392DD1>" + report[i] + "</font><font color=#000000> BAT</font>";
+              textUSD = String.format("%.2f", usdValue) + " USD";
+              break;
+            case 7:
+              tv = (TextView)root.findViewById(R.id.br_one_time_donation_bat);
+              tvUSD = (TextView)root.findViewById(R.id.br_one_time_donation_usd);
+              text = "<font color=#392DD1>" + report[i] + "</font><font color=#000000> BAT</font>";
+              textUSD = String.format("%.2f", usdValue) + " USD";
+              break;
+            case 8:
+              break;
+          }
+          if (tv != null && tvUSD != null &&
+              !text.isEmpty() && !textUSD.isEmpty()) {
+            Context appContext = ContextUtils.getApplicationContext();
+            Spanned toInsert;
+            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                toInsert = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY);
+            } else {
+                toInsert = Html.fromHtml(text);
+            }
+            tv.setText(toInsert);
+            tvUSD.setText(textUSD);
+          }
+          if (!report[i].equals("0")) {
+            no_activity = false;
+          }
+        }
+        TextView tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
+        GridLayout gr= (GridLayout)root.findViewById(R.id.br_activities);
+        if (tv != null && gr != null) {
+          if (no_activity) {
+              tv.setVisibility(View.VISIBLE);
+              gr.setVisibility(View.GONE);
+          } else {
+              tv.setVisibility(View.GONE);
+              gr.setVisibility(View.VISIBLE);
+          }
         }
     }
 }

@@ -9,6 +9,7 @@
 #include <memory>
 #include <map>
 #include "base/android/jni_weak_ref.h"
+#include "brave/components/brave_rewards/browser/balance_report.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/rewards_service_private_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
@@ -63,6 +64,11 @@ public:
     bool GetPublisherExcluded(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         uint64_t tabId);
 
+    bool GetPublisherVerified(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        uint64_t tabId);
+
+    void GetCurrentBalanceReport(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
     void IncludeInAutoContribution(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         uint64_t tabId, bool exclude);
 
@@ -81,6 +87,9 @@ public:
         int error_code,
         std::unique_ptr<ledger::PublisherInfo> info,
         uint64_t tabId) override;
+
+    void OnGetCurrentBalanceReport(brave_rewards::RewardsService* rewards_service,
+        const brave_rewards::BalanceReport& balance_report) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
