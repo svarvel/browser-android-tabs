@@ -4248,7 +4248,7 @@ content creators.
         JOIN REWARDS
       </message>
       <message name="IDS_BRAVE_UI_WELCOME_FOOTER_TEXT_TWO" desc="">
-        Learn More
+        LEARN MORE
       </message>
       <message name="IDS_BRAVE_UI_REWARDS_CREATING_TEXT" desc="">
         Creating wallet
@@ -4334,6 +4334,28 @@ content creators.
       </message>
       <message name="IDS_BRAVE_UI_SEND_A_TIP" desc="">
         Send a tip...
+      </message>
+      <message name="IDS_BRAVE_UI_NO_ACTIVITIES" desc="">
+        No activities yet this
+month...
+      </message>
+      <message name="IDS_BRAVE_UI_TOKEN_GRANT" desc="">
+        Token Grants Claimed
+      </message>
+      <message name="IDS_BRAVE_UI_EARNINGS_ADS" desc="">
+        Earnings from Ads
+      </message>
+      <message name="IDS_BRAVE_UI_REWARDS_CONTRIBUTE" desc="">
+        Auto-Contribute
+      </message>
+      <message name="IDS_BRAVE_UI_ONE_TIME_DONATION" desc="">
+        One-time Tips
+      </message>
+      <message name="IDS_BRAVE_UI_RECURRING_DONATION" desc="">
+        Monthly Tips
+      </message>
+      <message name="IDS_BRAVE_UI_VERIFIED_PUBLISHER" desc="">
+        Brave Verified Publisher
       </message>
       <!--End of rewards temporary section.-->
     </messages>

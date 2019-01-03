@@ -4,6 +4,7 @@
 #include "brave_rewards_native_worker.h"
 #include "base/android/jni_android.h"
 #include "base/android/jni_string.h"
+#include "base/android/jni_array.h"
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "chrome/browser/profiles/profile.h"
@@ -74,7 +75,6 @@ void BraveRewardsNativeWorker::OnGetPublisherActivityFromUrl(
       int error_code,
       std::unique_ptr<ledger::PublisherInfo> info,
       uint64_t tabId) {
-  LOG(ERROR) << "!!!in OnGetPublisherActivityFromUrl info == " << info.get();
   if (!info) {
     return;
   }
@@ -145,6 +145,18 @@ bool BraveRewardsNativeWorker::GetPublisherExcluded(JNIEnv* env,
   return res;
 }
 
+bool BraveRewardsNativeWorker::GetPublisherVerified(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  bool res = false;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = iter->second.verified;
+  }
+
+  return res;
+}
+
 void BraveRewardsNativeWorker::IncludeInAutoContribution(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId, bool exclude) {
   std::map<uint64_t, ledger::PublisherInfo>::iterator iter(map_publishers_info_.find(tabId));
@@ -203,13 +215,42 @@ double BraveRewardsNativeWorker::GetWalletRate(JNIEnv* env,
   return 0.0;
 }
 
-bool BraveRewardsNativeWorker::WalletExist(JNIEnv* env, const
-        base::android::JavaParamRef<jobject>& jcaller) {
+bool BraveRewardsNativeWorker::WalletExist(JNIEnv* env,
+        const base::android::JavaParamRef<jobject>& jcaller) {
   if (brave_rewards_service_) {
     return brave_rewards_service_->IsWalletCreated();
   }
 
   return false;
+}
+
+void BraveRewardsNativeWorker::GetCurrentBalanceReport(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    return brave_rewards_service_->GetCurrentBalanceReport();
+  }
+}
+
+void BraveRewardsNativeWorker::OnGetCurrentBalanceReport(
+        brave_rewards::RewardsService* rewards_service,
+        const brave_rewards::BalanceReport& balance_report) {
+  std::vector<std::string> values;
+  values.push_back(balance_report.opening_balance);
+  values.push_back(balance_report.closing_balance);
+  values.push_back(balance_report.deposits);
+  values.push_back(balance_report.grants);
+  values.push_back(balance_report.earning_from_ads);
+  values.push_back(balance_report.auto_contribute);
+  values.push_back(balance_report.recurring_donation);
+  values.push_back(balance_report.one_time_donation);
+  values.push_back(balance_report.total);
+
+  JNIEnv* env = base::android::AttachCurrentThread();
+  base::android::ScopedJavaLocalRef<jobjectArray> java_array =
+      base::android::ToJavaArrayOfStrings(env, values);
+
+  Java_BraveRewardsNativeWorker_OnGetCurrentBalanceReport(env, 
+        weak_java_brave_rewards_native_worker_.get(env), java_array);
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
