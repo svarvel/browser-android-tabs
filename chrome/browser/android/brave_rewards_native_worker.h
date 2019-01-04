@@ -78,6 +78,9 @@ public:
     void RemovePublisherFromMap(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
 
+    void Donate(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher_key, int amount, bool recurring);
+
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
 
