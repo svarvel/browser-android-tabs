@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".site_banner2"
     android:orientation="vertical"
-    android:clickable="true">
+    android:background="@android:color/transparent"
+    android:id="@+id/floater">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/sent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tip_sent_float">
 
-        <TextView
-            android:id="@+id/donation_sent_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:text="@string/brave_ui_donation_sent"
-            android:textColor="@android:color/white"
-            android:fontFamily="sans-serif" 
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+                <ImageView
+                    android:id="@+id/tip_sent_plane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:src="@drawable/plane_large"
+                    android:layout_centerInParent="true"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="5dp"
-            android:layout_toStartOf="@id/donation_sent_text"
-            android:src="@drawable/flight" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:padding="10dp"
+                android:text="@string/brave_ui_donation_sent"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@id/tip_sent_plane"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
-    </RelativeLayout>
-    <View
-        android:id="@+id/donation_sent_transparent_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:clickable="true"/>
-</LinearLayout>
+</RelativeLayout>
