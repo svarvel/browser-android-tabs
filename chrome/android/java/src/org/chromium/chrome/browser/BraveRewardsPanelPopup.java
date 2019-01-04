@@ -266,18 +266,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
 
         SetRewardsSummaryMonthYear();
 
-       //TODO: test buttons onClick handlers/////////////////////////////////////////////
-       /*Button btTestTipSent = (Button)root.findViewById(R.id.brave_ui_tip_sent_test_button);
-        if (btTestTipSent != null) {
-          btTestTipSent.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-                Intent intent = new Intent(app, BraveRewardsDonationSentActivity.class);
-                mActivity.startActivity(intent);
-            }
-          }));
-        }*/
 
         Button btSendATip = (Button)root.findViewById(R.id.send_a_tip);
         if (btSendATip != null) {
@@ -286,11 +274,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
             public void onClick(View v) {
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 Intent intent = new Intent(app, BraveRewardsSiteBannerActivity.class);
+                intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId);
                 mActivity.startActivity(intent);
             }
           }));
         }
-       ///////////////////////////////////////////////////////////////////////////////////////
     }
 
     private void SetRewardsSummaryMonthYear() {
