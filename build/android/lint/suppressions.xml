@@ -466,4 +466,7 @@ Still reading?
   <issue id="NestedWeights">
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
   </issue>
+  <issue id="SmallSp">
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+  </issue>
 </lint>
