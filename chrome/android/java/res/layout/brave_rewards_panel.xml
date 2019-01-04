@@ -400,7 +400,7 @@
                         android:layout_height="50dp"
                         android:layout_width="fill_parent"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="19dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:background="@drawable/rewards_button_purple_border"

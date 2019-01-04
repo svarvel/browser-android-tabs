@@ -46,7 +46,6 @@ public class BraveRewardsSiteBannerActivity extends Activity {
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private final int PUBLISHER_ICON_SIDE_LEN= 56; //56 dp fits into 80 dp radius circle
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -122,7 +121,21 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
         mBraveRewardsNativeWorker = activity.getBraveRewardsNativeWorker();
         retrieveFavIcon();
+        activity = BraveRewardsHelper.GetChromeTabbedActivity();
+        mBraveRewardsNativeWorker = activity.getBraveRewardsNativeWorker();
+        double balance = mBraveRewardsNativeWorker.GetWalletBalance();
+        String walletAmount = String.format("%.2f", balance) + " BAT";
+        ((TextView)findViewById(R.id.wallet_amount_text)).setText(walletAmount);
 
+        double usdValue = mBraveRewardsNativeWorker.GetWalletRate("USD");
+        double fiveBat = 5 * usdValue;
+        double tenBat = 10 * usdValue;
+        String oneBatRate = String.format("%.2f", usdValue) + " USD";
+        String fiveBatRate = String.format("%.2f", fiveBat) + " USD";
+        String tenBatRate = String.format("%.2f", tenBat) + " USD";
+        ((TextView)findViewById(R.id.one_bat_rate)).setText(oneBatRate);
+        ((TextView)findViewById(R.id.five_bat_rate)).setText(fiveBatRate);
+        ((TextView)findViewById(R.id.ten_bat_rate)).setText(tenBatRate);
     }
 
 
