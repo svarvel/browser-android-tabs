@@ -124,7 +124,7 @@
             android:layout_height="80dp"
             android:layout_width="80dp"
             android:contentDescription="@null"
-            android:scaleType="fitCenter"
+            android:scaleType="center"
             android:background="@drawable/publisher_favicon_background"
             android:layout_marginHorizontal="22dp"
             android:layout_marginVertical="22dp"

@@ -9,8 +9,10 @@ import org.chromium.chrome.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
@@ -42,6 +44,7 @@ public class BraveRewardsSiteBannerActivity extends Activity {
     private int currentTabId_ = -1;
     private FaviconHelper mFavIconHelper;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
+    private final int PUBLISHER_ICON_SIDE_LEN= 56; //56 dp fits into 80 dp radius circle
 
 
     @Override
@@ -168,14 +171,14 @@ public class BraveRewardsSiteBannerActivity extends Activity {
                         @Override
                         protected Void doInBackground() {
                             try {
-                                //Log.i("TAG", "!!!faviconURL == " + faviconURL);
+                                Log.i("TAG", "!!!faviconURL == " + faviconURL);
                                 URL url = new URL(faviconURL);
                                 Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
                                 ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
                                 activity.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        //Log.i("TAG", "!!!setting the icon");
+                                        Log.i("TAG", "!!!setting the icon");
                                         SetFavIcon(bmp);
                                     }
                                 });
@@ -200,7 +203,13 @@ public class BraveRewardsSiteBannerActivity extends Activity {
 
     private void SetFavIcon(Bitmap bmp) {
         ImageView iv = (ImageView)findViewById(R.id.publisher_favicon);
-        iv.setImageBitmap(bmp);
+
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
+        int dp = Math.round(px);
+
+        Bitmap resized = Bitmap.createScaledBitmap(bmp, dp, dp, true);
+        iv.setImageBitmap(resized);
     }
 
     public class FaviconFetcher implements FaviconHelper.FaviconImageCallback {
