@@ -108,6 +108,10 @@ public class BraveRewardsNativeWorker {
         nativeGetCurrentBalanceReport(mNativeBraveRewardsNativeWorker);
     }
 
+    public void Donate(String publisher_key, int amount, boolean recurring) {
+        nativeDonate(mNativeBraveRewardsNativeWorker, publisher_key, amount, recurring);
+    }
+
     @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
@@ -161,4 +165,6 @@ public class BraveRewardsNativeWorker {
       boolean exclude);
     private native void nativeRemovePublisherFromMap(long nativeBraveRewardsNativeWorker, int tabId);
     private native void nativeGetCurrentBalanceReport(long nativeBraveRewardsNativeWorker);
+    private native void nativeDonate(long nativeBraveRewardsNativeWorker, String publisher_key, 
+        int amount, boolean recurring);
 }

@@ -16,6 +16,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -89,33 +90,6 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         findViewById(R.id.ten_bat_option).setOnClickListener(radio_clicker);
 
 
-        //set tip button onClick
-        View.OnClickListener send_tip_clicker = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean enough_funds = true;
-
-                //proceed to tipping
-                if (true == enough_funds) {
-                    Intent intent = new Intent(getApplicationContext(), BraveRewardsDonationSentActivity.class);
-                    startActivityForResult(intent,TIP_SENT_REQUEST_CODE);
-                }
-                //not enough funds
-                else {
-                    TextView send_tip = (TextView) findViewById(R.id.send_donation_button);
-                    send_tip.setVisibility(View.GONE);
-                    View animatedView = findViewById(R.id.not_enough_funds_text);
-                    TranslateAnimation animate = new TranslateAnimation(0,0,findViewById(R.id.send_donation_button).getHeight(),0);
-                    animate.setDuration(FADE_OUT_DURATION);
-                    animate.setFillAfter(true);
-                    animatedView.startAnimation(animate);
-                    animatedView.setVisibility(View.VISIBLE);
-                }
-            }
-        };
-
-        findViewById(R.id.send_donation_button).setOnClickListener (send_tip_clicker);
-
         mFavIconHelper = new FaviconHelper();
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
         ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
@@ -136,6 +110,52 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         ((TextView)findViewById(R.id.one_bat_rate)).setText(oneBatRate);
         ((TextView)findViewById(R.id.five_bat_rate)).setText(fiveBatRate);
         ((TextView)findViewById(R.id.ten_bat_rate)).setText(tenBatRate);
+
+        //set tip button onClick
+        View.OnClickListener send_tip_clicker = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double balance = mBraveRewardsNativeWorker.GetWalletBalance();
+                int amount = 0;
+                for (ToggleButton tb : radio_tip_amount){
+                    if (tb.isChecked()) {
+                        int id = tb.getId();
+                        if (id == R.id.one_bat_option) {
+                            amount = 1;
+                        } else if (id == R.id.five_bat_option) {
+                            amount = 5;
+                        } else if (id == R.id.ten_bat_option) {
+                            amount = 10;
+                        } 
+
+                        break;
+                    }
+                }
+                boolean enough_funds = ((balance - amount) > 0);
+
+                //proceed to tipping
+                if (true == enough_funds) {
+                    CheckBox monthly = (CheckBox)findViewById(R.id.make_monthly_checkbox);
+                    mBraveRewardsNativeWorker.Donate(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_),
+                        amount, monthly.isChecked());
+                    Intent intent = new Intent(getApplicationContext(), BraveRewardsDonationSentActivity.class);
+                    startActivityForResult(intent,TIP_SENT_REQUEST_CODE);
+                }
+                //not enough funds
+                else {
+                    TextView send_tip = (TextView) findViewById(R.id.send_donation_button);
+                    send_tip.setVisibility(View.GONE);
+                    View animatedView = findViewById(R.id.not_enough_funds_text);
+                    TranslateAnimation animate = new TranslateAnimation(0,0,findViewById(R.id.send_donation_button).getHeight(),0);
+                    animate.setDuration(FADE_OUT_DURATION);
+                    animate.setFillAfter(true);
+                    animatedView.startAnimation(animate);
+                    animatedView.setVisibility(View.VISIBLE);
+                }
+            }
+        };
+
+        findViewById(R.id.send_donation_button).setOnClickListener (send_tip_clicker);
     }
 
 

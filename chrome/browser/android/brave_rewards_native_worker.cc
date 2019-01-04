@@ -264,6 +264,17 @@ void BraveRewardsNativeWorker::OnGetCurrentBalanceReport(
         weak_java_brave_rewards_native_worker_.get(env), java_array);
 }
 
+void BraveRewardsNativeWorker::Donate(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher_key, 
+        int amount, bool recurring) {
+  if (brave_rewards_service_) {
+    LOG(ERROR) << "!!!sent donation";
+    brave_rewards_service_->OnDonate(base::android::ConvertJavaStringToUTF8(env, publisher_key), 
+      amount, recurring);
+  }
+}
+
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
     base::android::JavaParamRef<jobject>& jcaller) {
   new BraveRewardsNativeWorker(env, jcaller);

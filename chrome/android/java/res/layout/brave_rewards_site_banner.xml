@@ -340,6 +340,7 @@
                     android:paddingStart="10dp"/>
 
                 <CheckBox
+                    android:id="@+id/make_monthly_checkbox"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_centerHorizontal="true"
