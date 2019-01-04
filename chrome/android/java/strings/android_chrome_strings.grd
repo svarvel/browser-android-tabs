@@ -4445,6 +4445,12 @@ month...
       <message name="IDS_BRAVE_UI_VERIFIED_PUBLISHER" desc="">
         Brave Verified Publisher
       </message>
+      <message name="IDS_BRAVE_UI_ON_YOUTUBE" desc="">
+        on YouTube
+      </message>
+      <message name="IDS_BRAVE_UI_ON_TWITCH" desc="">
+        on Twitch
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>

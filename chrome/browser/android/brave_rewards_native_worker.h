@@ -58,6 +58,9 @@ public:
     base::android::ScopedJavaLocalRef<jstring> GetPublisherName(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
 
+    base::android::ScopedJavaLocalRef<jstring> GetPublisherId(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId);
+
     int GetPublisherPercent(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         uint64_t tabId);
 
