@@ -194,7 +194,7 @@
                     android:layout_gravity="start|bottom"
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
-                    android:text="0.10 BAT"
+                    android:text="0.00 BAT"
                     android:textColor="@android:color/white"
                     android:textSize="12sp"
                     android:textStyle="bold" />
@@ -234,6 +234,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/one_bat_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="1"
@@ -243,7 +244,7 @@
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
                     android:paddingTop="2dp"
-                    android:text="0.30 USD"
+                    android:text="0.00 USD"
                     android:textSize="10sp" />
 
 
@@ -268,6 +269,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/five_bat_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="1"
@@ -277,7 +279,7 @@
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
                     android:paddingTop="2dp"
-                    android:text="0.30 USD"
+                    android:text="0.00 USD"
                     android:textSize="10sp" />
 
                 <ToggleButton
@@ -301,6 +303,7 @@
                     android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/ten_bat_rate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="1"
@@ -310,7 +313,7 @@
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
                     android:paddingTop="2dp"
-                    android:text="0.30 USD"
+                    android:text="0.00 USD"
                     android:textSize="10sp" />
 
             </GridLayout>

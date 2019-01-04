@@ -265,8 +265,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         }
 
         SetRewardsSummaryMonthYear();
-
-
+        // Starts Send a tip Activity
         Button btSendATip = (Button)root.findViewById(R.id.send_a_tip);
         if (btSendATip != null) {
           btSendATip.setOnClickListener((new View.OnClickListener() {
