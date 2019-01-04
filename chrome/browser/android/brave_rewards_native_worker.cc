@@ -64,7 +64,6 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller, int tabId,
         const base::android::JavaParamRef<jstring>& host) {
   if (brave_rewards_service_) {
-    LOG(ERROR) << "!!!getting publusher info";
     brave_rewards_service_->GetPublisherActivityFromUrl(tabId,
       base::android::ConvertJavaStringToUTF8(env, host), "");
   }
@@ -116,6 +115,18 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
   std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
     res = base::android::ConvertUTF8ToJavaString(env, iter->second.name);
+  }
+
+  return res;
+}
+
+base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherId(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
+  base::android::ScopedJavaLocalRef<jstring> res;
+
+  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  if (iter != map_publishers_info_.end()) {
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second.id);
   }
 
   return res;

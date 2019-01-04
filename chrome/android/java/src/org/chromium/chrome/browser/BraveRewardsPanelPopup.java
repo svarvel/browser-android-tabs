@@ -67,7 +67,8 @@ import org.chromium.base.ContextUtils;
 
 public class BraveRewardsPanelPopup implements BraveRewardsObserver {
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
-    private static final String FAV_ICON_URL = "chrome://favicon/size/48@2x/";
+    private static final String YOUTUBE_TYPE = "youtube#";
+    private static final String TWITCH_TYPE = "twitch#";
 
     protected final View anchor;
     private final PopupWindow window;
@@ -492,8 +493,16 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         ll.setBackgroundColor(Color.WHITE);
 
         String pubName = thisObject.mBraveRewardsNativeWorker.GetPublisherName(currentTabId);
+        String pubId = thisObject.mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
+        String pubSuffix = "";
+        if (pubId.startsWith(YOUTUBE_TYPE)) {
+            pubSuffix = thisObject.root.getResources().getString(R.string.brave_ui_on_youtube);
+        } else if (pubName.startsWith(TWITCH_TYPE)) {
+            pubSuffix = thisObject.root.getResources().getString(R.string.brave_ui_on_twitch);
+        }
+        pubName = "<b>" + pubName + "</b> " + pubSuffix;
         TextView tv = (TextView)thisObject.root.findViewById(R.id.publisher_name);
-        tv.setText(pubName);
+        tv.setText(Html.fromHtml(pubName));
         tv = (TextView)thisObject.root.findViewById(R.id.publisher_attention);
         String percent = Integer.toString(thisObject.mBraveRewardsNativeWorker.GetPublisherPercent(currentTabId)) + "%";
         tv.setText(percent);

@@ -80,6 +80,10 @@ public class BraveRewardsNativeWorker {
         return nativeGetPublisherName(mNativeBraveRewardsNativeWorker, tabId);
     }
 
+    public String GetPublisherId(int tabId) {
+        return nativeGetPublisherId(mNativeBraveRewardsNativeWorker, tabId);
+    }
+
     public int GetPublisherPercent(int tabId) {
         return nativeGetPublisherPercent(mNativeBraveRewardsNativeWorker, tabId); 
     }
@@ -149,6 +153,7 @@ public class BraveRewardsNativeWorker {
     private native String nativeGetPublisherURL(long nativeBraveRewardsNativeWorker, int tabId);
     private native String nativeGetPublisherFavIconURL(long nativeBraveRewardsNativeWorker, int tabId);
     private native String nativeGetPublisherName(long nativeBraveRewardsNativeWorker, int tabId);
+    private native String nativeGetPublisherId(long nativeBraveRewardsNativeWorker, int tabId);
     private native int nativeGetPublisherPercent(long nativeBraveRewardsNativeWorker, int tabId);
     private native boolean nativeGetPublisherExcluded(long nativeBraveRewardsNativeWorker, int tabId);
     private native boolean nativeGetPublisherVerified(long nativeBraveRewardsNativeWorker, int tabId);
