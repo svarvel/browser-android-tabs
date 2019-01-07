@@ -8,4 +8,5 @@ public class ConfigAPIs {
     public static final String MIXPANEL_TOKEN = "";
     public static final String URPC_API_KEY = "";
     public static final String REFERRER_CODE = "";
+    public static final String GS_API_KEY = "";
 }

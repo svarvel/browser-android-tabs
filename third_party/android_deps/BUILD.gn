@@ -185,6 +185,12 @@ java_group("google_play_services_fido_java") {
   ]
 }
 
+java_group("google_play_services_safetynet_java") {
+  deps = [
+    ":com_google_android_gms_play_services_safetynet_java",
+  ]
+}
+
 # The dependencies below don't seem to be used but break downstream builds
 # when not defined.
 java_group("android_support_v7_preference_java") {
@@ -549,6 +555,14 @@ android_aar_prebuilt("com_google_android_gms_play_services_vision_java") {
     ":com_google_android_gms_play_services_base_java",
     ":com_google_android_gms_play_services_basement_java",
     ":com_google_android_gms_play_services_vision_common_java",
+  ]
+}
+
+android_aar_prebuilt("com_google_android_gms_play_services_safetynet_java") {
+  aar_path = "libs/com_google_android_gms_play_services_safetynet/play-services-safetynet-15.0.1.aar"
+  info_path = "libs/com_google_android_gms_play_services_safetynet/com_google_android_gms_play_services_safetynet.info"
+  deps = [
+    ":com_google_android_gms_play_services_base_java",
   ]
 }
 

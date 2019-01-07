@@ -42,6 +42,7 @@ class Grant extends React.Component<Props, State> {
   }
 
   onClaim = () => {
+    this.actions.getGrantCaptcha()
     this.setState({ grantStep: 'complete' })
   }
 
