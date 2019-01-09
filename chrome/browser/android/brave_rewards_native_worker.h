@@ -100,7 +100,7 @@ public:
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
-    std::unique_ptr<brave_rewards::WalletProperties> wallet_properties_;
+    brave_rewards::WalletProperties wallet_properties_;
     std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_;
 };
 }

@@ -42,7 +42,7 @@ public class BraveRewardsNativeWorker {
 
     @Override
     protected void finalize() {
-      Destroy();
+        Destroy();
     }
 
     private void Destroy() {
@@ -53,81 +53,117 @@ public class BraveRewardsNativeWorker {
     }
 
     public void AddObserver(BraveRewardsObserver observer) {
-        // TODO add synchronization if ever use it from diff threads
-        observers_.add(observer);
+        synchronized(lock) {
+            observers_.add(observer);
+        }
     }
 
     public void RemoveObserver(BraveRewardsObserver observer) {
-        // TODO add synchronization if ever use it from diff threads
-        observers_.remove(observer);
+        synchronized(lock) {
+            observers_.remove(observer);
+        }
     }
 
     public void CreateWallet() {
-        nativeCreateWallet(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeCreateWallet(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public boolean WalletExist() {
-        return nativeWalletExist(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            return nativeWalletExist(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public void GetWalletProperties() {
-        nativeGetWalletProperties(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetWalletProperties(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public double GetWalletBalance() {
-        return nativeGetWalletBalance(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            return nativeGetWalletBalance(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public double GetWalletRate(String rate) {
-        return nativeGetWalletRate(mNativeBraveRewardsNativeWorker, rate);
+        synchronized(lock) {
+            return nativeGetWalletRate(mNativeBraveRewardsNativeWorker, rate);
+        }
     }
 
     public void GetPublisherInfo(int tabId, String host) {
-        nativeGetPublisherInfo(mNativeBraveRewardsNativeWorker, tabId, host);
+        synchronized(lock) {
+            nativeGetPublisherInfo(mNativeBraveRewardsNativeWorker, tabId, host);
+        }
     }
 
     public String GetPublisherURL(int tabId) {
-        return nativeGetPublisherURL(mNativeBraveRewardsNativeWorker, tabId);
+        synchronized(lock) {
+            return nativeGetPublisherURL(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public String GetPublisherFavIconURL(int tabId) {
-        return nativeGetPublisherFavIconURL(mNativeBraveRewardsNativeWorker, tabId);
+        synchronized(lock) {
+            return nativeGetPublisherFavIconURL(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public String GetPublisherName(int tabId) {
-        return nativeGetPublisherName(mNativeBraveRewardsNativeWorker, tabId);
+        synchronized(lock) {
+            return nativeGetPublisherName(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public String GetPublisherId(int tabId) {
-        return nativeGetPublisherId(mNativeBraveRewardsNativeWorker, tabId);
+        synchronized(lock) {
+            return nativeGetPublisherId(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public int GetPublisherPercent(int tabId) {
-        return nativeGetPublisherPercent(mNativeBraveRewardsNativeWorker, tabId); 
+        synchronized(lock) {
+            return nativeGetPublisherPercent(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public boolean GetPublisherExcluded(int tabId) {
-        return nativeGetPublisherExcluded(mNativeBraveRewardsNativeWorker, tabId); 
+        synchronized(lock) {
+            return nativeGetPublisherExcluded(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public boolean GetPublisherVerified(int tabId) {
-        return nativeGetPublisherVerified(mNativeBraveRewardsNativeWorker, tabId); 
+        synchronized(lock) {
+            return nativeGetPublisherVerified(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public void IncludeInAutoContribution(int tabId, boolean exclude) {
-      nativeIncludeInAutoContribution(mNativeBraveRewardsNativeWorker, tabId, exclude);
+        synchronized(lock) {
+            nativeIncludeInAutoContribution(mNativeBraveRewardsNativeWorker, tabId, exclude);
+        }
     }
 
     public void RemovePublisherFromMap(int tabId) {
-        nativeRemovePublisherFromMap(mNativeBraveRewardsNativeWorker, tabId);
+        synchronized(lock) {
+            nativeRemovePublisherFromMap(mNativeBraveRewardsNativeWorker, tabId);
+        }
     }
 
     public void GetCurrentBalanceReport() {
-        nativeGetCurrentBalanceReport(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetCurrentBalanceReport(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public void Donate(String publisher_key, int amount, boolean recurring) {
-        nativeDonate(mNativeBraveRewardsNativeWorker, publisher_key, amount, recurring);
+        synchronized(lock) {
+            nativeDonate(mNativeBraveRewardsNativeWorker, publisher_key, amount, recurring);
+        }
     }
 
     @CalledByNative
