@@ -114,15 +114,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
                 if (mFavIconHelper != null) {
                   mFavIconHelper.destroy();
                 }
-                if (currentTabId != -1) {
+                if (currentTabId != -1 && mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.RemovePublisherFromMap(currentTabId);
                 }
             }
         });
         mActivity = BraveRewardsHelper.GetChromeTabbedActivity();
-        mBraveRewardsNativeWorker = mActivity.getBraveRewardsNativeWorker();
+        mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         if (mBraveRewardsNativeWorker != null) {
-          mBraveRewardsNativeWorker.Init();
           mBraveRewardsNativeWorker.AddObserver(thisObject);
         }
         balanceUpdater = new Timer();

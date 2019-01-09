@@ -92,11 +92,8 @@ public class BraveRewardsSiteBannerActivity extends Activity {
 
         mFavIconHelper = new FaviconHelper();
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
-        ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-        mBraveRewardsNativeWorker = activity.getBraveRewardsNativeWorker();
+        mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         retrieveFavIcon();
-        activity = BraveRewardsHelper.GetChromeTabbedActivity();
-        mBraveRewardsNativeWorker = activity.getBraveRewardsNativeWorker();
         double balance = mBraveRewardsNativeWorker.GetWalletBalance();
         String walletAmount = String.format("%.2f", balance) + " BAT";
         ((TextView)findViewById(R.id.wallet_amount_text)).setText(walletAmount);
