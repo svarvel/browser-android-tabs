@@ -17,17 +17,35 @@ public class BraveRewardsNativeWorker {
     private List<BraveRewardsObserver> observers_;
     private long mNativeBraveRewardsNativeWorker;
 
-    public BraveRewardsNativeWorker() {
+    private static BraveRewardsNativeWorker instance;
+    private static final Object lock = new Object();
+
+    public static  BraveRewardsNativeWorker getInstance(){
+        synchronized(lock) {
+          if(instance == null){
+              instance = new BraveRewardsNativeWorker();
+              instance.Init();
+          }
+        }
+        return instance;
+    }
+
+    private BraveRewardsNativeWorker() {
         observers_ = new ArrayList<BraveRewardsObserver>();
     }
 
-    public void Init() {
+    private void Init() {
       if (mNativeBraveRewardsNativeWorker == 0) {
           nativeInit();
       }
     }
 
-    public void Destroy() {
+    @Override
+    protected void finalize() {
+      Destroy();
+    }
+
+    private void Destroy() {
         if (mNativeBraveRewardsNativeWorker != 0) {
             nativeDestroy(mNativeBraveRewardsNativeWorker);
             mNativeBraveRewardsNativeWorker = 0;
