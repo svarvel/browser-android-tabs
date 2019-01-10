@@ -202,7 +202,9 @@ void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService
 void BraveRewardsNativeWorker::OnWalletProperties(brave_rewards::RewardsService* rewards_service,
         int error_code, 
         std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
-  wallet_properties_ = *wallet_properties;
+  if (wallet_properties) {
+    wallet_properties_ = *wallet_properties;
+  }
 
   JNIEnv* env = base::android::AttachCurrentThread();
   Java_BraveRewardsNativeWorker_OnWalletProperties(env, 
