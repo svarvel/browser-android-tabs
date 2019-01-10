@@ -127,7 +127,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
     public static final String TRI_STATE_TOGGLE_KEY = "tri_state_toggle";
 
     // Keys for category-specific preferences (toggle, link, button etc.), dynamically shown.
-    public static final String THIRD_PARTY_COOKIES_TOGGLE_KEY = "third_party_cookies";
     public static final String NOTIFICATIONS_VIBRATE_TOGGLE_KEY = "notifications_vibrate";
     public static final String EXPLAIN_PROTECTED_MEDIA_KEY = "protected_content_learn_more";
     private static final String ADD_EXCEPTION_KEY = "add_exception";
@@ -467,11 +466,7 @@ public class SingleCategoryPreferences extends PreferenceFragment
                 prefServiceBridge.setCategoryEnabled(
                         SiteSettingsCategory.contentSettingsType(type), (boolean) newValue);
 
-                // Third-party cookies toggle doesn't exist in touchless. Refer to crbug/951850.
-                if (type == SiteSettingsCategory.Type.COOKIES
-                        && !FeatureUtilities.isNoTouchModeEnabled()) {
-                    updateThirdPartyCookiesCheckBox();
-                } else if (type == SiteSettingsCategory.Type.NOTIFICATIONS) {
+                if (type == SiteSettingsCategory.Type.NOTIFICATIONS) {
                     updateNotificationsVibrateCheckBox();
                 } else if (type == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND) {
                     AskForRelaunch();
@@ -511,8 +506,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
             int setting = (int) newValue;
             prefServiceBridge.setContentSetting(mCategory.getContentSettingsType(), setting);
             getInfoForOrigins();
-        } else if (THIRD_PARTY_COOKIES_TOGGLE_KEY.equals(preference.getKey())) {
-            prefServiceBridge.setBlockThirdPartyCookiesEnabled(((boolean) newValue));
         } else if (NOTIFICATIONS_VIBRATE_TOGGLE_KEY.equals(preference.getKey())) {
             prefServiceBridge.setNotificationsVibrateEnabled((boolean) newValue);
         }
@@ -823,7 +816,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
                 (ChromeSwitchPreference) screen.findPreference(BINARY_TOGGLE_KEY);
         TriStateSiteSettingsPreference triStateToggle =
                 (TriStateSiteSettingsPreference) screen.findPreference(TRI_STATE_TOGGLE_KEY);
-        Preference thirdPartyCookies = screen.findPreference(THIRD_PARTY_COOKIES_TOGGLE_KEY);
         Preference notificationsVibrate = screen.findPreference(NOTIFICATIONS_VIBRATE_TOGGLE_KEY);
         Preference explainProtectedMediaKey = screen.findPreference(EXPLAIN_PROTECTED_MEDIA_KEY);
         PreferenceGroup allowedGroup = (PreferenceGroup) screen.findPreference(ALLOWED_GROUP);
@@ -854,7 +846,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
         }
 
         if (hideSecondaryToggles) {
-            screen.removePreference(thirdPartyCookies);
             screen.removePreference(notificationsVibrate);
             screen.removePreference(explainProtectedMediaKey);
             screen.removePreference(allowedGroup);
@@ -863,16 +854,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
             // Since all preferences are hidden, there's nothing to do further and we can
             // simply return.
             return;
-        }
-
-        // Configure/hide the third-party cookies toggle, as needed.
-        // We don't need this toggle in touchless. Refer to crbug/951850.
-        if (mCategory.showSites(SiteSettingsCategory.Type.COOKIES)
-                && !FeatureUtilities.isNoTouchModeEnabled()) {
-            thirdPartyCookies.setOnPreferenceChangeListener(this);
-            updateThirdPartyCookiesCheckBox();
-        } else {
-            screen.removePreference(thirdPartyCookies);
         }
 
         // Configure/hide the notifications vibrate toggle, as needed.
@@ -970,18 +951,6 @@ public class SingleCategoryPreferences extends PreferenceFragment
         } else {
             binaryToggle.setChecked(PrefServiceBridge.getInstance().isCategoryEnabled(contentType));
         }
-    }
-
-    private void updateThirdPartyCookiesCheckBox() {
-        ChromeBaseCheckBoxPreference thirdPartyCookiesPref =
-                (ChromeBaseCheckBoxPreference) getPreferenceScreen().findPreference(
-                        THIRD_PARTY_COOKIES_TOGGLE_KEY);
-        thirdPartyCookiesPref.setChecked(
-                PrefServiceBridge.getInstance().isBlockThirdPartyCookiesEnabled());
-        thirdPartyCookiesPref.setEnabled(PrefServiceBridge.getInstance().isCategoryEnabled(
-                ContentSettingsType.CONTENT_SETTINGS_TYPE_COOKIES));
-        thirdPartyCookiesPref.setManagedPreferenceDelegate(
-                preference -> PrefServiceBridge.getInstance().isBlockThirdPartyCookiesManaged());
     }
 
     private void updateNotificationsVibrateCheckBox() {
