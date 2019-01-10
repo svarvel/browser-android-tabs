@@ -808,6 +808,13 @@ ChromeNetworkDelegate::OnAuthRequired(net::URLRequest* request,
 bool ChromeNetworkDelegate::OnCanGetCookies(const net::URLRequest& request,
                                             const net::CookieList& cookie_list,
                                             bool allowed_from_caller) {
+  if (allowed_from_caller) {
+    bool allowed_from_shields = cookie_settings_->IsCookieAccessAllowed(
+        request.url(), request.site_for_cookies());
+    if (!allowed_from_shields) {
+      return false;
+    }
+  }
   ResourceRequestInfo* info = ResourceRequestInfo::ForRequest(&request);
   if (info) {
     base::PostTaskWithTraits(
@@ -824,6 +831,13 @@ bool ChromeNetworkDelegate::OnCanSetCookie(const net::URLRequest& request,
                                            const net::CanonicalCookie& cookie,
                                            net::CookieOptions* options,
                                            bool allowed_from_caller) {
+  if (allowed_from_caller) {
+    bool allowed_from_shields = cookie_settings_->IsCookieAccessAllowed(
+        request.url(), request.site_for_cookies());
+    if (!allowed_from_shields) {
+      return false;
+    }
+  }
   ResourceRequestInfo* info = ResourceRequestInfo::ForRequest(&request);
   if (info) {
     base::PostTaskWithTraits(
