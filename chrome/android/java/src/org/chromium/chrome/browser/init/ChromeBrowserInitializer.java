@@ -129,13 +129,9 @@ public class ChromeBrowserInitializer {
       // Download tracking protection, adblock annd HTTPSE files lists
       PathUtils.setPrivateDataDirectorySuffix(ADBlockUtils.PRIVATE_DATA_DIRECTORY_SUFFIX);
       new UpdateADBlockAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-      boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_ALLOW_3RD_PARTY_COOKIES_SWITCHED, false);
-      if (!alreadySwitched) {
-        PrefServiceBridge.getInstance().setBlockThirdPartyCookiesEnabled(true);
-        ContextUtils.getAppSharedPreferences().edit()
-          .putBoolean(PREF_ALLOW_3RD_PARTY_COOKIES_SWITCHED, true)
-          .apply();
-      }
+      // Set Chromium BlockThirdPartyCookies pref to false, because it will be
+      // hidden and completely managed by Brave shields settings
+      PrefServiceBridge.getInstance().setBlockThirdPartyCookiesEnabled(false);
       Log.i(TAG, "Started AdBlock async tasks");
     }
 

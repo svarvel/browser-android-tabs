@@ -32,6 +32,17 @@ source_set("common_constants") {
   ]
 }
 
+source_set("url_pattern") {
+  sources = [
+    "url_pattern.cc",
+    "url_pattern.h",
+  ]
+
+  deps = [
+    "//base",
+  ]
+}
+
 if (enable_extensions) {
   mojom("mojo") {
     # We don't want Blink variants of bindings to be generated.

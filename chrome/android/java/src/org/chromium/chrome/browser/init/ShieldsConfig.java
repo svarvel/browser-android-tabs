@@ -376,7 +376,8 @@ public class ShieldsConfig {
     public boolean block3rdPartyCookies(boolean incognitoTab, String host) {
         String settings = getHostSettings(incognitoTab, host);
         if (null == settings || settings.length() <= 8) {
-            return PrefServiceBridge.getInstance().isBlockThirdPartyCookiesEnabled();
+            // Default value is block and does not depend on Chromium prefs.
+            return true;
         }
         if ('0' == settings.charAt(8)) {
             return false;
