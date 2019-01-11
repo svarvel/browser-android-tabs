@@ -29,6 +29,10 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+
 
 import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.ApplicationStatus;
@@ -45,6 +49,7 @@ import org.chromium.chrome.browser.tabmodel.TabModel.TabLaunchType;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorImpl;
 import org.chromium.chrome.R;
 import org.chromium.content_public.browser.LoadUrlParams;
+import org.chromium.base.ContextUtils;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -55,17 +60,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-//TODO: test imports/////////////////////////////
-import org.chromium.chrome.browser.BraveRewardsDonationSentActivity;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.Intent;
-import org.chromium.base.ContextUtils;
-//////////////////////////////////////////////
-
-
-
-public class BraveRewardsPanelPopup implements BraveRewardsObserver {
+public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelper.FaviconImageCallback {
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
@@ -351,13 +346,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
         return tab;
     }
 
-    private Tab currentActiveTab() {
-      if (mActivity == null || mActivity.getTabModelSelector() == null) return null;
 
-      return mActivity.getActivityTab();
-        //TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) mActivity.getTabModelSelector();
-        //TabModelImpl model = (TabModelImpl)tabbedModeTabModelSelector.getModel();
-    }
 
     public void ShowRewardsSummary() {
       if (mBraveRewardsNativeWorker != null) {
@@ -376,7 +365,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       sv_new.setVisibility(View.VISIBLE);
       CreateUpdateBalanceTask();
       ShowRewardsSummary();
-      Tab currentActiveTab = currentActiveTab();
+      Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
       if (currentActiveTab != null && !currentActiveTab.isIncognito()) {
         String url = currentActiveTab.getUrl();
         if (URLUtil.isValidUrl(url)) {
@@ -412,64 +401,33 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver {
       } 
     }
 
-    public class FaviconFetcher implements FaviconHelper.FaviconImageCallback {
-        @CalledByNative
+
+    //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
+    //it has to set up the received icon on UI thread
+    @CalledByNative
+    @Override
+    public void onFaviconAvailable(Bitmap image, String iconUrl) {
+      final Bitmap bmp = image;
+      mActivity.runOnUiThread(new Runnable() {
         @Override
-        public void onFaviconAvailable(Bitmap image, String iconUrl) {
-          final Bitmap bmp = image;
-          mActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                SetFavIcon(bmp);
-            }
-          });
+        public void run() {
+            ImageView iv = (ImageView)thisObject.root.findViewById(R.id.publisher_favicon);
+            iv.setImageBitmap(bmp);
         }
+      });
     }
 
-    private void SetFavIcon(Bitmap bmp) {
-        ImageView iv = (ImageView)thisObject.root.findViewById(R.id.publisher_favicon);
-        iv.setImageBitmap(bmp);
-    }
 
     @Override
     public void OnPublisherInfo(int tabId) {
         publisherExist = true;
         currentTabId = tabId;
         RemoveRewardsSummaryMonthYear();
-        (new Runnable() {
-            @Override
-            public void run() {
-                String faviconURL = thisObject.mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
-                if (faviconURL.isEmpty()) {
-                    Tab currentActiveTab = currentActiveTab();
-                    mFavIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
-                      thisObject.mBraveRewardsNativeWorker.GetPublisherURL(currentTabId),
-                      64, new FaviconFetcher());
-                } else {
-                    new AsyncTask<Void>() {
-                      @Override
-                      protected Void doInBackground() {
-                          try {
-                              Log.i("TAG", "!!!faviconURL == " + faviconURL);
-                              URL url = new URL(faviconURL);
-                              Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                              mActivity.runOnUiThread(new Runnable() {
-                                  @Override
-                                  public void run() {
-                                      Log.i("TAG", "!!!setting the icon");
-                                      SetFavIcon(bmp);
-                                  }
-                              });
-                          } catch (MalformedURLException exc) {
-                          } catch (IOException exc) {
-                          }
 
-                          return null;
-                      }
-                    }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                }
-            }
-        }).run();
+        String publisherURL = mBraveRewardsNativeWorker.GetPublisherURL(currentTabId);
+        String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
+        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, publisherURL, publisherFavIconURL);
+
 
         //LinearLayout ll = (LinearLayout)this.root.findViewById(R.id.no_website_summary);
         //ll.setVisibility(View.GONE);
