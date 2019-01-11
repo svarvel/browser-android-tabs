@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.math.BigInteger;
 import java.util.Calendar;
 
 public class BraveRewardsHelper {
@@ -126,4 +127,14 @@ public class BraveRewardsHelper {
     }).run();
   }
 
+  static String probiToNumber(String probi) {
+    if (probi.equals("0")) {
+      return probi;
+    }
+
+    BigInteger probiInteger = new BigInteger(probi, 10);
+    BigInteger dividerInteger = new BigInteger("1000000000000000000", 10);
+
+    return probiInteger.divide(dividerInteger).toString();
+  }
 }

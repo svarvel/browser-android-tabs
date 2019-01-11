@@ -166,6 +166,10 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public void GetAllNotifications() {
+        nativeGetAllNotifications(mNativeBraveRewardsNativeWorker);
+    }
+
     @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
@@ -200,6 +204,21 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    @CalledByNative
+    public void OnNotificationAdded(String id, int type, int timestamp,
+            String[] args) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnNotificationAdded(id, type, timestamp, args);
+        }
+    }
+
+    @CalledByNative
+    public void OnNotificationsCount(int count) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnNotificationsCount(count);
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -221,4 +240,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetCurrentBalanceReport(long nativeBraveRewardsNativeWorker);
     private native void nativeDonate(long nativeBraveRewardsNativeWorker, String publisher_key, 
         int amount, boolean recurring);
+    private native void nativeGetAllNotifications(long nativeBraveRewardsNativeWorker);
 }

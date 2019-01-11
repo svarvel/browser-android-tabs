@@ -9,7 +9,6 @@
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/browser/profiles/profile_manager.h"
-//#include "chrome/browser/ui/webui/favicon_source.h"
 #include "content/public/browser/url_data_source.h"
 #include "jni/BraveRewardsNativeWorker_jni.h"
 
@@ -27,11 +26,12 @@ BraveRewardsNativeWorker::BraveRewardsNativeWorker(JNIEnv* env, const base::andr
   if (brave_rewards_service_) {
     brave_rewards_service_->AddObserver(this);
     brave_rewards_service_->AddPrivateObserver(this);
+    brave_rewards::RewardsNotificationService* notification_service = 
+      brave_rewards_service_->GetNotificationService();
+    if (notification_service) {
+      notification_service->AddObserver(this);
+    }
   }
-  // For favicons cache
-  //content::URLDataSource::Add(ProfileManager::GetActiveUserProfile()->GetOriginalProfile(), 
-   // std::make_unique<FaviconSource>(ProfileManager::GetActiveUserProfile()->GetOriginalProfile()));
-  //
 }
 
 BraveRewardsNativeWorker::~BraveRewardsNativeWorker() {
@@ -42,6 +42,11 @@ void BraveRewardsNativeWorker::Destroy(JNIEnv* env, const
   if (brave_rewards_service_) {
     brave_rewards_service_->RemoveObserver(this);
     brave_rewards_service_->RemovePrivateObserver(this);
+    brave_rewards::RewardsNotificationService* notification_service = 
+      brave_rewards_service_->GetNotificationService();
+    if (notification_service) {
+      notification_service->RemoveObserver(this);
+    }
   }
   delete this;
 }
@@ -271,10 +276,44 @@ void BraveRewardsNativeWorker::Donate(JNIEnv* env,
         const base::android::JavaParamRef<jstring>& publisher_key, 
         int amount, bool recurring) {
   if (brave_rewards_service_) {
-    LOG(ERROR) << "!!!sent donation";
     brave_rewards_service_->OnDonate(base::android::ConvertJavaStringToUTF8(env, publisher_key), 
       amount, recurring);
   }
+}
+
+void BraveRewardsNativeWorker::GetAllNotifications(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj) {
+  brave_rewards::RewardsNotificationService* notification_service = 
+    brave_rewards_service_->GetNotificationService();
+  if (notification_service) {
+    notification_service->GetAllNotifications();
+  }
+}
+
+void BraveRewardsNativeWorker::OnNotificationAdded(
+      brave_rewards::RewardsNotificationService* rewards_notification_service,
+      const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnNotificationAdded(env, 
+        weak_java_brave_rewards_native_worker_.get(env),
+        base::android::ConvertUTF8ToJavaString(env, notification.id_), 
+        notification.type_,
+        notification.timestamp_,
+        base::android::ToJavaArrayOfStrings(env, notification.args_));
+}
+
+void BraveRewardsNativeWorker::OnGetAllNotifications(
+      brave_rewards::RewardsNotificationService* rewards_notification_service,
+      const brave_rewards::RewardsNotificationService::RewardsNotificationsList&
+          notifications_list) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+  
+  // Notify about notifications count
+  Java_BraveRewardsNativeWorker_OnNotificationsCount(env, 
+        weak_java_brave_rewards_native_worker_.get(env),
+        notifications_list.size());
+  // TODO pass the most recent notification
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
