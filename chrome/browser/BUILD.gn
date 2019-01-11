@@ -1825,6 +1825,7 @@ jumbo_split_static_library("browser") {
     "//ad-block/brave:ad-block",
     "//base:i18n",
     "//base/allocator:buildflags",
+    "//brave_src/browser:browser_process",
     "//cc",
     "//chrome:extra_resources",
     "//chrome:resources",
