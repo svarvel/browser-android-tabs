@@ -52,8 +52,8 @@ import org.chromium.content_public.browser.LoadUrlParams;
 import org.chromium.base.ContextUtils;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.lang.ref.WeakReference;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Timer;
@@ -475,7 +475,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           TextView tvUSD = null;
           String text = "";
           String textUSD = "";
-          double usdValue = Double.parseDouble(report[i]) * mBraveRewardsNativeWorker.GetWalletRate("USD");
+          String value = BraveRewardsHelper.probiToNumber(report[i]);
+          double usdValue = Double.parseDouble(value) * mBraveRewardsNativeWorker.GetWalletRate("USD");
           switch (i) {
             case 0:
             case 1:
@@ -484,31 +485,31 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             case 3:
               tv = (TextView)root.findViewById(R.id.br_grants_claimed_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_grants_claimed_usd);
-              text = "<font color=#8E2995>" + report[i] + "</font><font color=#000000> BAT</font>";
+              text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = String.format("%.2f", usdValue) + " USD";
               break;
             case 4:
               tv = (TextView)root.findViewById(R.id.br_earnings_ads_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_earnings_ads_usd);
-              text = "<font color=#8E2995>" + report[i] + "</font><font color=#000000> BAT</font>";
+              text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = String.format("%.2f", usdValue) + " USD";
               break;
             case 5:
               tv = (TextView)root.findViewById(R.id.br_auto_contribute_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_auto_contribute_usd);
-              text = "<font color=#6537AD>" + report[i] + "</font><font color=#000000> BAT</font>";
+              text = "<font color=#6537AD>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = String.format("%.2f", usdValue) + " USD";
               break;
             case 6:
               tv = (TextView)root.findViewById(R.id.br_recurring_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_recurring_donation_usd);
-              text = "<font color=#392DD1>" + report[i] + "</font><font color=#000000> BAT</font>";
+              text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = String.format("%.2f", usdValue) + " USD";
               break;
             case 7:
               tv = (TextView)root.findViewById(R.id.br_one_time_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_one_time_donation_usd);
-              text = "<font color=#392DD1>" + report[i] + "</font><font color=#000000> BAT</font>";
+              text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = String.format("%.2f", usdValue) + " USD";
               break;
             case 8:
@@ -542,4 +543,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           }
         }
     }
+
+    @Override
+    public void OnNotificationAdded(String id, int type, int timestamp,
+          String[] args) { 
+        // TODO show it in the panel
+    }
+
+    @Override
+    public void OnNotificationsCount(int count) {}
 }

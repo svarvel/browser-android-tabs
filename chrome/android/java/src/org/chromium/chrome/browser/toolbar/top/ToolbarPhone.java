@@ -53,6 +53,8 @@ import org.chromium.base.ApplicationStatus;
 import org.chromium.base.TraceEvent;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.BraveRewardsNativeWorker;
+import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
@@ -92,7 +94,7 @@ import java.util.List;
  */
 public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, OnClickListener,
                                                            NewTabPage.OnSearchBoxScrollListener,
-                                                           TabCountObserver {
+                                                           TabCountObserver, BraveRewardsObserver {
     /** The amount of time transitioning from one theme color to another should take in ms. */
     public static final long THEME_COLOR_TRANSITION_DURATION = 250;
 
@@ -144,6 +146,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     protected ImageView mToolbarShadow;
     private @Nullable ImageButton mExperimentalButton;
     private ImageView mBraveRewardsPanelButton;
+    private TextView mBraveRewardsNotificationsCount;
+    private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
 
     private ObjectAnimator mTabSwitcherModeAnimation;
     private ObjectAnimator mDelayedTabSwitcherModeAnimation;
@@ -453,6 +457,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         if (mBraveRewardsPanelButton != null) {
             mBraveRewardsPanelButton.setClickable(true);
         }
+        mBraveRewardsNotificationsCount = (TextView) findViewById(R.id.br_notifications_count);
     }
 
     private void enableTabSwitchingResources() {
@@ -516,6 +521,11 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         setTabSwitcherAnimationMenuDrawable();
         setBraveShieldsAnimationMenuDrawable();
         updateVisualsForLocationBarState();
+        mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.AddObserver(this);
+            mBraveRewardsNativeWorker.GetAllNotifications();
+        }
     }
 
     @Override
@@ -1901,6 +1911,54 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         } else {
             updateViewsForTabSwitcherMode();
         }
+    }
+
+    @Override
+    public void destroy() {
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.RemoveObserver(this);
+        }
+    }
+
+    @Override
+    public void OnWalletInitialized(int error_code) {}
+
+    @Override
+    public void OnWalletProperties(int error_code) {}
+
+    @Override
+    public void OnPublisherInfo(int tabId) {}
+
+    @Override
+    public void OnGetCurrentBalanceReport(String[] report) {}
+
+    @Override
+    public void OnNotificationAdded(String id, int type, int timestamp,
+            String[] args) {
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.GetAllNotifications();
+        }
+    }
+
+    @Override
+    public void OnNotificationsCount(int count) {
+        if (mBraveRewardsNotificationsCount != null) {
+            if (count != 0) {
+                String value = Integer.toString(count);
+                if (count > 99) {
+                    mBraveRewardsNotificationsCount.setBackground(
+                        getResources().getDrawable(R.drawable.brave_rewards_rectangle));
+                    value = "99+";
+                } else {
+                    mBraveRewardsNotificationsCount.setBackground(
+                        getResources().getDrawable(R.drawable.brave_rewards_circle));
+                }
+                mBraveRewardsNotificationsCount.setText(value);
+                mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
+            } else {
+                mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+            }
+        }   
     }
 
     @Override
