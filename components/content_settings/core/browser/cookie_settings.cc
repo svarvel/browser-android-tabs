@@ -152,10 +152,10 @@ void CookieSettings::OnBlockThirdPartyCookiesChanged() {
 
 bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url,
     const GURL& subresource_url) const {
-  if (net::blockers::IsWhitelistedCookieExeption(first_party_url,
-      subresource_url)) {
-    return false;
-  }
+  // if (net::blockers::IsWhitelistedCookieExeption(first_party_url,
+  //     subresource_url)) {
+  //   return false;
+  // }
   base::AutoLock auto_lock(lock_);
   net::blockers::ShieldsConfig* shieldsConfig =
     net::blockers::ShieldsConfig::getShieldsConfig();
