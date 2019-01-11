@@ -35,7 +35,7 @@ import org.chromium.base.annotations.CalledByNative;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-public class BraveRewardsSiteBannerActivity extends Activity {
+public class BraveRewardsSiteBannerActivity extends Activity implements FaviconHelper.FaviconImageCallback {
 
     private  ToggleButton radio_tip_amount[] = new ToggleButton [3];
     private final int TIP_SENT_REQUEST_CODE = 2;
@@ -93,7 +93,11 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         mFavIconHelper = new FaviconHelper();
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
-        retrieveFavIcon();
+
+        String publisherURL = mBraveRewardsNativeWorker.GetPublisherURL(currentTabId_);
+        String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
+        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, publisherURL, publisherFavIconURL);
+
         double balance = mBraveRewardsNativeWorker.GetWalletBalance();
         String walletAmount = String.format("%.2f", balance) + " BAT";
         ((TextView)findViewById(R.id.wallet_amount_text)).setText(walletAmount);
@@ -186,50 +190,6 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         }
     }
 
-    private void retrieveFavIcon() {
-        (new Runnable() {
-            @Override
-            public void run() {
-                String faviconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
-                if (faviconURL.isEmpty()) {
-                    Tab currentActiveTab = currentActiveTab();
-                    mFavIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
-                            mBraveRewardsNativeWorker.GetPublisherURL(currentTabId_),
-                            64, new FaviconFetcher());
-                } else {
-                    new AsyncTask<Void>() {
-                        @Override
-                        protected Void doInBackground() {
-                            try {
-                                Log.i("TAG", "!!!faviconURL == " + faviconURL);
-                                URL url = new URL(faviconURL);
-                                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                                ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-                                activity.runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Log.i("TAG", "!!!setting the icon");
-                                        SetFavIcon(bmp);
-                                    }
-                                });
-                            } catch (MalformedURLException exc) {
-                            } catch (IOException exc) {
-                            }
-
-                            return null;
-                        }
-                    }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                }
-            }
-        }).run();
-    }
-
-    private Tab currentActiveTab() {
-        ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-        if (activity == null || activity.getTabModelSelector() == null) return null;
-        return activity.getActivityTab();
-    }
-
 
     private void SetFavIcon(Bitmap bmp) {
         ImageView iv = (ImageView)findViewById(R.id.publisher_favicon);
@@ -242,19 +202,18 @@ public class BraveRewardsSiteBannerActivity extends Activity {
         iv.setImageBitmap(resized);
     }
 
-    public class FaviconFetcher implements FaviconHelper.FaviconImageCallback {
-        @CalledByNative
-        @Override
-        public void onFaviconAvailable(Bitmap image, String iconUrl) {
-            final Bitmap bmp = image;
-            ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    SetFavIcon(bmp);
-                }
-            });
-        }
+    //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
+    //it has to set up the received icon on UI thread
+    @CalledByNative
+    @Override
+    public void onFaviconAvailable(Bitmap image, String iconUrl) {
+        final Bitmap bmp = image;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                SetFavIcon(bmp);
+            }
+        });
     }
 
 }

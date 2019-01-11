@@ -6,14 +6,24 @@ package org.chromium.chrome.browser;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 
 import org.chromium.base.ApplicationStatus;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
+import org.chromium.chrome.browser.favicon.FaviconHelper;
+import org.chromium.chrome.browser.tab.Tab;
+import org.chromium.chrome.browser.tabmodel.TabModelImpl;
+import org.chromium.base.AsyncTask;
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Calendar;
 
 public class BraveRewardsHelper {
@@ -74,7 +84,46 @@ public class BraveRewardsHelper {
 
   static public String getCurrentYear(Resources resources) {
     Calendar currentTime = Calendar.getInstance();
-
     return Integer.toString(currentTime.get(Calendar.YEAR));
   }
+
+  public static Tab currentActiveTab() {
+    ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
+    if (activity == null || activity.getTabModelSelector() == null){
+      return null;
+    }
+    return activity.getActivityTab();
+  }
+
+  static public void retrieveFavIcon( FaviconHelper favIconHelper, FaviconHelper.FaviconImageCallback parent, String publisherURL, String publisherFavIconURL){
+    (new Runnable() {
+      @Override
+      public void run() {
+
+        if (publisherFavIconURL.isEmpty()) {
+          Tab currentActiveTab = currentActiveTab();
+          if (currentActiveTab != null) {
+            favIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
+                    publisherURL, 64, parent);
+          }
+        } else {
+          new AsyncTask<Void>() {
+            @Override
+            protected Void doInBackground() {
+              try {
+                URL url = new URL(publisherFavIconURL);
+                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                parent.onFaviconAvailable(bmp, publisherFavIconURL);
+              } catch (MalformedURLException exc) {
+              } catch (IOException exc) {
+              }
+
+              return null;
+            }
+          }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+      }
+    }).run();
+  }
+
 }
