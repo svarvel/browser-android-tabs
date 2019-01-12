@@ -30,6 +30,7 @@
 #include "base/system/sys_info.h"
 #include "base/task/post_task.h"
 #include "base/threading/thread_task_runner_handle.h"
+#include "brave_src/browser/brave_tab_url_web_contents_observer.h"
 #include "build/build_config.h"
 #include "chrome/app/chrome_content_browser_overlay_manifest.h"
 #include "chrome/app/chrome_content_gpu_overlay_manifest.h"
@@ -2382,6 +2383,26 @@ bool ChromeContentBrowserClient::AllowSharedWorker(
   return allow;
 }
 
+namespace {
+
+GURL GetTabUrl(
+  const GURL& first_party,
+  int render_process_id,
+  int render_frame_id) {
+  GURL tab_url;
+  if (!first_party.is_empty()) {
+    tab_url = first_party;
+  } else {
+    tab_url = brave::BraveTabUrlWebContentsObserver::
+        GetTabURLFromRenderFrameInfo(
+            render_process_id, render_frame_id, -1).GetOrigin();
+  }
+
+  return tab_url;
+}
+
+}  // namespace
+
 bool ChromeContentBrowserClient::AllowGetCookie(
     const GURL& url,
     const GURL& first_party,
@@ -2391,8 +2412,9 @@ bool ChromeContentBrowserClient::AllowGetCookie(
     int render_frame_id) {
   DCHECK_CURRENTLY_ON(BrowserThread::IO);
   ProfileIOData* io_data = ProfileIOData::FromResourceContext(context);
+  GURL tab_url = GetTabUrl(first_party, render_process_id, render_frame_id);
   bool allow =
-      io_data->GetCookieSettings()->IsCookieAccessAllowed(url, first_party);
+      io_data->GetCookieSettings()->IsCookieAccessAllowed(url, tab_url);
   OnCookiesRead(render_process_id, render_frame_id, url, first_party,
                 cookie_list, !allow);
 
@@ -2408,9 +2430,10 @@ bool ChromeContentBrowserClient::AllowSetCookie(
     int render_frame_id) {
   DCHECK_CURRENTLY_ON(BrowserThread::IO);
   ProfileIOData* io_data = ProfileIOData::FromResourceContext(context);
+  GURL tab_url = GetTabUrl(first_party, render_process_id, render_frame_id);
   content_settings::CookieSettings* cookie_settings =
       io_data->GetCookieSettings();
-  bool allow = cookie_settings->IsCookieAccessAllowed(url, first_party);
+  bool allow = cookie_settings->IsCookieAccessAllowed(url, tab_url);
 
   OnCookieChange(render_process_id, render_frame_id, url, first_party, cookie,
                  !allow);
