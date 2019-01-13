@@ -152,19 +152,17 @@ void CookieSettings::OnBlockThirdPartyCookiesChanged() {
 
 bool CookieSettings::ShouldBlockThirdPartyCookies(const GURL& first_party_url,
     const GURL& subresource_url) const {
-  // if (net::blockers::IsWhitelistedCookieExeption(first_party_url,
-  //     subresource_url)) {
-  //   return false;
-  // }
+  if (net::blockers::IsWhitelistedCookieExeption(first_party_url,
+      subresource_url)) {
+    return false;
+  }
+  if (first_party_url.is_empty()) {
+    return true;
+  }
   base::AutoLock auto_lock(lock_);
   net::blockers::ShieldsConfig* shieldsConfig =
     net::blockers::ShieldsConfig::getShieldsConfig();
   std::string host = first_party_url.host();
-  if (0 == host.length()) {
-    host = previous_first_party_host_;
-  } else {
-    previous_first_party_host_ = host;
-  }
 
   if (nullptr != shieldsConfig && 0 != host.length()) {
     std::string hostConfig = shieldsConfig->getHostSettings(incognito_, host);
