@@ -19,41 +19,19 @@ bool IsWhitelistedCookieExeption(const GURL& first_party_url,
   // Note that there's already an exception for TLD+1, so don't add those here.
   // Check with the security team before adding exceptions.
 
-  if (first_party_url.is_empty()) {
-    static std::vector<URLPattern> htcs =
-    {
-      URLPattern(URLPattern::SCHEME_ALL,
-          "https://www.htcsense.com/assets/*"),
-      URLPattern(URLPattern::SCHEME_ALL,
-          "https://www.htcsense.com/htcaccount.js"),
-      URLPattern(URLPattern::SCHEME_ALL,
-          "https://www.htcsense.com/htcaccount/*"),
-    };
-
-    bool ret = std::any_of(htcs.begin(), htcs.end(),
-        [&subresource_url](const URLPattern& pattern) {
-          return pattern.MatchesURL(subresource_url);
-        });
-    return ret;
+  if (first_party_url.is_empty() || subresource_url.is_empty()) {
+    return false;
   }
-
-  DCHECK(!subresource_url.is_empty());
 
   static std::vector<std::pair<URLPattern,
       std::vector<URLPattern>>> whitelist_patterns =
   {
     {
       URLPattern(URLPattern::SCHEME_ALL,
-          "https://estore.htc.com/tw/buy/zh-TW/shop/LogonForm?*"),
+          "https://estore.htc.com/*"),
       {
         URLPattern(URLPattern::SCHEME_ALL,
-            "https://www.htcsense.com/htcaccount/remotemethod.html?*"),
-        URLPattern(URLPattern::SCHEME_ALL,
-            "https://www.htcsense.com/htcaccount.js"),
-        URLPattern(URLPattern::SCHEME_ALL,
-            "https://www.htcsense.com/assets/htcaccount/*"),
-        URLPattern(URLPattern::SCHEME_ALL,
-            "https://www.htcsense.com/$WS$/Services/OAuth/Authorize?*"),
+            "https://www.htcsense.com/*"),
       }
     },
   };
