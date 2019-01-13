@@ -103,7 +103,7 @@ public class BraveRewardsHelper {
 
         if (publisherFavIconURL.isEmpty()) {
           Tab currentActiveTab = currentActiveTab();
-          if (currentActiveTab != null) {
+          if (currentActiveTab != null && !publisherURL.isEmpty()) {
             favIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
                     publisherURL, 64, parent);
           }

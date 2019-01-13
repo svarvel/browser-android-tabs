@@ -91,7 +91,7 @@ void BraveRewardsNativeWorker::OnGetPublisherActivityFromUrl(
 
 base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherURL(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
-  base::android::ScopedJavaLocalRef<jstring> res;
+  base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
   std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
@@ -103,7 +103,7 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
 
 base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherFavIconURL(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
-  base::android::ScopedJavaLocalRef<jstring> res;
+  base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
   std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
@@ -115,7 +115,7 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
 
 base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherName(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
-  base::android::ScopedJavaLocalRef<jstring> res;
+  base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
   std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
@@ -127,7 +127,7 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
 
 base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublisherId(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
-  base::android::ScopedJavaLocalRef<jstring> res;
+  base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
   std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
