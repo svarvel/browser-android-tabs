@@ -108,8 +108,6 @@ class CookieSettings : public CookieSettingsBase,
 
   bool block_third_party_cookies_;
 
-  mutable std::string previous_first_party_host_;
-
   bool incognito_;
 
   DISALLOW_COPY_AND_ASSIGN(CookieSettings);
