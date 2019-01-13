@@ -103,6 +103,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         this.window.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
+                if (balanceUpdater != null) {
+                  balanceUpdater.cancel();
+                }
+
                 if (mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.RemoveObserver(thisObject);
                 }
