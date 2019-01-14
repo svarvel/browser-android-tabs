@@ -580,9 +580,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             }
         } else if (mBraveRewardsPanelButton == v) {
             if (null != mBraveRewardsPanelButton) {
-                //PopupActivity.show((ChromeActivity) ApplicationStatus.getLastTrackedFocusedActivity(), 
-                //    "chrome://rewards-panel");
-
                 BraveRewardsPanelPopup rewardsPopup = new BraveRewardsPanelPopup(v);
                 rewardsPopup.showLikePopDownMenu();
             }
