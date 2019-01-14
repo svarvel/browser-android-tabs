@@ -88,6 +88,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         currentTabId = -1;
         this.anchor = anchor;
         this.window = new PopupWindow(anchor.getContext());
+        this.window.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        this.window.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         thisObject = this;
 
         this.window.setTouchInterceptor(new View.OnTouchListener() {
