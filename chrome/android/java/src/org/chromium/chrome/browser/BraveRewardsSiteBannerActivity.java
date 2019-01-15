@@ -157,6 +157,19 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
         };
 
         findViewById(R.id.send_donation_button).setOnClickListener (send_tip_clicker);
+
+
+        //set 'add funds' button onClick
+        View.OnClickListener add_funds_clicker = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent returnIntent = new Intent();
+		        setResult(ChromeTabbedActivity.SITE_BANNER_ADD_FUNDS_RESULT_CODE, returnIntent);
+		        finish();
+            }
+        };
+        findViewById(R.id.not_enough_funds_text).setOnClickListener (add_funds_clicker);
     }
 
 
