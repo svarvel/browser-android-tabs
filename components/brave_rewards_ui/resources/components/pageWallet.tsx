@@ -45,6 +45,25 @@ class PageWallet extends React.Component<Props, State> {
     return this.props.actions
   }
 
+  componentDidMount () {
+    this.isAddFundsUrl()
+  }
+
+  isAddFundsUrl = () => {
+    if (window &&
+        window.location &&
+        window.location.hash &&
+        window.location.hash === '#add-funds') {
+      this.setState({
+        addFundsShown: true
+      })
+    } else {
+      this.setState({
+        addFundsShown: false
+      })
+    }
+  }
+
   notImplemented = () => {
     // Feature not implemented
   }
