@@ -65,7 +65,7 @@ public class SafetyNetCheck {
             Activity activity = ApplicationStatus.getLastTrackedFocusedActivity();
             if (activity == null) return false;
             if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(activity) == ConnectionResult.SUCCESS) {
-                byte[] nonce = nonceData.isEmpty() ? getRequestNonce("brave_nonce" + System.currentTimeMillis()) : nonceData.getBytes();
+                byte[] nonce = nonceData.isEmpty() ? getRequestNonce() : nonceData.getBytes();
                 SafetyNetClient client = SafetyNet.getClient(activity);
                 Task<SafetyNetApi.AttestationResponse> attestTask = client.attest(nonce, ConfigAPIs.GS_API_KEY);                
                 attestTask.addOnSuccessListener(activity,
@@ -90,21 +90,13 @@ public class SafetyNetCheck {
     }
 
     /**
-    * Generates a 16-byte nonce with additional data.
+    * Generates a random 24-byte nonce.
     */
-    private byte[] getRequestNonce(String data) {
-        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+    private byte[] getRequestNonce() {
         byte[] bytes = new byte[24];
         Random random = new SecureRandom();
         random.nextBytes(bytes);
-        try {
-            byteStream.write(bytes);
-            byteStream.write(data.getBytes());
-        } catch (IOException e) {
-            return null;
-        }
-
-        return byteStream.toByteArray();
+        return bytes;
     }
 
     /**
