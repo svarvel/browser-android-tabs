@@ -118,6 +118,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 if (currentTabId != -1 && mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.RemovePublisherFromMap(currentTabId);
                 }
+
+                mActivity.OnRewardsPanelDismiss();
             }
         });
         mActivity = BraveRewardsHelper.GetChromeTabbedActivity();
@@ -181,7 +183,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           tvLearnMore.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
+                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
                 dismiss();
             }
           }));
@@ -192,7 +194,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           btAddFunds.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
+                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.ADD_FUNDS_URL));
                 dismiss();
             }
           }));
@@ -202,7 +204,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           btRewardsSettings.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams("chrome://rewards"));
+                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
                 dismiss();
             }
           }));
@@ -274,7 +276,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 Intent intent = new Intent(app, BraveRewardsSiteBannerActivity.class);
                 intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId);
-                mActivity.startActivity(intent);
+                mActivity.startActivityForResult(intent,ChromeTabbedActivity.SITE_BANNER_REQUEST_CODE);
             }
           }));
         }

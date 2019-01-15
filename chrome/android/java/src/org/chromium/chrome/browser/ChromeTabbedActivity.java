@@ -173,6 +173,7 @@ import org.chromium.ui.base.PageTransition;
 import org.chromium.ui.base.WindowAndroid;
 import org.chromium.ui.modaldialog.ModalDialogManager;
 import org.chromium.ui.widget.Toast;
+import org.chromium.chrome.browser.toolbar.Toolbar;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -235,6 +236,17 @@ public class ChromeTabbedActivity
      */
     private static final String ACTION_CLOSE_TABS =
             "com.google.android.apps.chrome.ACTION_CLOSE_TABS";
+
+
+    /**
+      Brave site banner activity request code
+    */
+    public static final int SITE_BANNER_REQUEST_CODE = 33;
+    public static final int SITE_BANNER_ADD_FUNDS_RESULT_CODE = SITE_BANNER_REQUEST_CODE;
+    public static final String ADD_FUNDS_URL = "chrome://rewards/#add-funds";
+
+    public static final String REWARDS_SETTINGS_URL = "chrome://rewards";
+
 
     @VisibleForTesting
     static final String LAST_BACKGROUNDED_TIME_MS_PREF = "ChromeTabbedActivity.BackgroundTimeMs";
@@ -2712,5 +2724,31 @@ public class ChromeTabbedActivity
     @Override
     protected PageViewTimer createPageViewTimer() {
         return new PageViewTimer(mTabModelSelectorImpl, mLayoutManager);
+    }
+
+    public void OnRewardsPanelDismiss() {
+       Toolbar t = getToolbarManager().getToolbar();
+       t.onRewardsPanelDismiss();
+    }
+
+    public void dismissRewardsPanel() {
+       Toolbar t = getToolbarManager().getToolbar();
+       t.dismissRewardsPanel();
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(SITE_BANNER_REQUEST_CODE == requestCode)
+        {
+            if (resultCode == SITE_BANNER_ADD_FUNDS_RESULT_CODE) {
+                dismissRewardsPanel();
+                TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) getTabModelSelector();
+                Tab tab = tabbedModeTabModelSelector.openNewTab(new LoadUrlParams(ADD_FUNDS_URL),
+                    TabLaunchType.FROM_BROWSER_ACTIONS, null, false);
+           }
+        }
     }
 }
