@@ -57,7 +57,8 @@ public final class FirstRunSignInProcessor {
         // would not have gone through the FRE:
         // - FRE is disabled, or
         // - FRE hasn't been completed, but the user has already seen the ToS in the Setup Wizard.
-        if (!FirstRunStatus.getFirstRunFlowComplete()) {
+        // Skip First Run Experience
+        /*if (!FirstRunStatus.getFirstRunFlowComplete()) {
             return;
         }
 
@@ -92,7 +93,7 @@ public final class FirstRunSignInProcessor {
                 // accepted the terms of service.
                 setFirstRunFlowSignInComplete(true);
             }
-        });
+        });*/
     }
 
     /**
