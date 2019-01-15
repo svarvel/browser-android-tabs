@@ -79,19 +79,20 @@ public abstract class FirstRunFlowSequencer  {
      * Once finished, calls onFlowIsKnown().
      */
     public void start() {
-        if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
-                || ApiCompatibilityUtils.isDemoUser(mActivity)) {
+        // Skip First Run Experience
+        /*if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
+                || ApiCompatibilityUtils.isDemoUser(mActivity)) */{
             onFlowIsKnown(null);
             return;
         }
 
-        new AndroidEduAndChildAccountHelper() {
+        /*new AndroidEduAndChildAccountHelper() {
             @Override
             public void onParametersReady() {
                 initializeSharedState(isAndroidEduDevice(), getChildAccountStatus());
                 processFreEnvironmentPreNative();
             }
-        }.start();
+        }.start();*/
     }
 
     @VisibleForTesting
@@ -243,15 +244,16 @@ public abstract class FirstRunFlowSequencer  {
     public static boolean checkIfFirstRunIsNecessary(
             Context context, Intent fromIntent, boolean preferLightweightFre) {
         // If FRE is disabled (e.g. in tests), proceed directly to the intent handling.
-        if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
-                || ApiCompatibilityUtils.isDemoUser(context)) {
+        // Skip First Run Experience
+        /*if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
+                || ApiCompatibilityUtils.isDemoUser(context)) */{
             return false;
         }
 
         // If Chrome isn't opened via the Chrome icon, and the user accepted the ToS
         // in the Setup Wizard, skip any First Run Experience screens and proceed directly
         // to the intent handling.
-        final boolean fromChromeIcon =
+        /*final boolean fromChromeIcon =
                 fromIntent != null && TextUtils.equals(fromIntent.getAction(), Intent.ACTION_MAIN);
         if (!fromChromeIcon && ToSAckedReceiver.checkAnyUserHasSeenToS()) return false;
 
@@ -261,7 +263,7 @@ public abstract class FirstRunFlowSequencer  {
         }
         return !preferLightweightFre
                 || (!FirstRunStatus.shouldSkipWelcomePage()
-                           && !FirstRunStatus.getLightweightFirstRunFlowComplete());
+                           && !FirstRunStatus.getLightweightFirstRunFlowComplete());*/
     }
 
     /**
