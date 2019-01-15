@@ -61,13 +61,14 @@ public final class FirstRunSignInProcessor {
         // We skip signin and the FRE if
         // - FRE is disabled, or
         // - FRE hasn't been completed, but the user has already seen the ToS in the Setup Wizard.
-        if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
+        // Skip First Run Experience
+        /*if (CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)
                 || ApiCompatibilityUtils.isDemoUser(activity)
-                || (!firstRunFlowComplete && ToSAckedReceiver.checkAnyUserHasSeenToS())) {
+                || (!firstRunFlowComplete && ToSAckedReceiver.checkAnyUserHasSeenToS())) */{
             return;
         }
 
-        if (!firstRunFlowComplete) {
+        /*if (!firstRunFlowComplete) {
             // Force trigger the FRE.
             requestToFireIntentAndFinish(activity);
             return;
@@ -104,7 +105,7 @@ public final class FirstRunSignInProcessor {
                 // accepted the terms of service.
                 setFirstRunFlowSignInComplete(true);
             }
-        });
+        });*/
     }
 
     /**
