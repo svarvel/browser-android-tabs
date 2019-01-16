@@ -208,7 +208,7 @@ class PageWallet extends React.Component<Props, State> {
     const { balance } = walletInfo
     const addressArray = utils.getAddresses(addresses)
 
-    if (!visible) {
+    if (!visible && !this.state.addFundsShown) {
       return null
     }
 
