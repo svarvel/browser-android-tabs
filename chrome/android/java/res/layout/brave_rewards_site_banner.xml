@@ -53,7 +53,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingTop="12dp">
+                        android:paddingTop="12dp"
+                        android:visibility="invisible">
 
                         <ImageView
                             android:id="@+id/chat_button"
@@ -391,12 +392,11 @@
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
                     android:singleLine="true"
-                    android:text="@string/brave_ui_site_banner_not_enough_tokens"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
             </RelativeLayout>
         </LinearLayout>

@@ -4382,18 +4382,14 @@ content creators.
         SEND MY DONATION
       </message>
       <message name="IDS_BRAVE_UI_SITE_BANNER_NOT_ENOUGH_TOKENS" desc="">
-        Not enough tokens. Please add funds.
+        not enough tokens
       </message>
-
-      
-      <!--Test strings: please remove when not needed" -->
-      <!--<message name="IDS_BRAVE_UI_SITE_BANNER_TEST" desc="">
-        Site Banner Test
+      <message name="IDS_BRAVE_UI_PLEASE" desc="">
+        please
       </message>
-      <message name="IDS_BRAVE_UI_TIP_SENT_TEST" desc="">
-        &quot;Donation sent&quot; test
-      </message>-->     
-
+      <message name="IDS_BRAVE_UI_ADD_FUNDS" desc="">
+        add funds
+      </message>
       <message name="IDS_BRAVE_UI_DONATION_SENT" desc="">
         tip sent!
       </message>

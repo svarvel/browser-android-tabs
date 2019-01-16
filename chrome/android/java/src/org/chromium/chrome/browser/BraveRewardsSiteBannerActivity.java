@@ -20,6 +20,10 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.text.Html;
+import android.text.Spanned;
+import android.content.Context;
+import android.os.Build;
 import org.chromium.chrome.browser.util.IntentUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
@@ -34,6 +38,7 @@ import android.graphics.BitmapFactory;
 import org.chromium.base.annotations.CalledByNative;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import org.chromium.base.ContextUtils;
 
 public class BraveRewardsSiteBannerActivity extends Activity implements FaviconHelper.FaviconImageCallback {
 
@@ -169,7 +174,33 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
 		        finish();
             }
         };
-        findViewById(R.id.not_enough_funds_text).setOnClickListener (add_funds_clicker);
+
+        TextView not_enough_funds_btn = (TextView)findViewById(R.id.not_enough_funds_text);
+        not_enough_funds_btn.setOnClickListener (add_funds_clicker);
+
+        String part1 = getResources().getString(R.string.brave_ui_site_banner_not_enough_tokens);
+        String part2 = getResources().getString(R.string.brave_ui_please);
+        String part3 = getResources().getString(R.string.brave_ui_add_funds);
+
+        part1 = part1.substring(0,1).toUpperCase() + part1.substring(1);
+        part2 = part2.substring(0,1).toUpperCase() + part2.substring(1);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(part1);
+        sb.append(". ");
+        sb.append(part2);
+        sb.append(" <u>");
+        sb.append(part3);
+        sb.append("</u>.");
+
+        Spanned toInsert;
+        Context appContext = ContextUtils.getApplicationContext();
+        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            toInsert = Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            toInsert = Html.fromHtml(sb.toString());
+        }
+        not_enough_funds_btn.setText(toInsert);
     }
 
 
