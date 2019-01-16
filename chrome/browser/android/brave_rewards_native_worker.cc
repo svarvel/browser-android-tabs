@@ -333,7 +333,6 @@ void BraveRewardsNativeWorker::OnGetAllNotifications(
     });
 
   if (iter != notifications_list.end()) {
-    LOG(ERROR) << "!!!iter->args_.size() == " << iter->args_.size();
     Java_BraveRewardsNativeWorker_OnGetLatestNotification(env, 
         weak_java_brave_rewards_native_worker_.get(env),
         base::android::ConvertUTF8ToJavaString(env, iter->id_), 

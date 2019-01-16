@@ -209,7 +209,7 @@ public class BraveRewardsNativeWorker {
     }
 
     @CalledByNative
-    public void OnNotificationAdded(String id, int type, int timestamp,
+    public void OnNotificationAdded(String id, int type, long timestamp,
             String[] args) {
         for(BraveRewardsObserver observer : observers_) {
             observer.OnNotificationAdded(id, type, timestamp, args);
@@ -224,7 +224,7 @@ public class BraveRewardsNativeWorker {
     }
 
     @CalledByNative
-    public void OnGetLatestNotification(String id, int type, int timestamp,
+    public void OnGetLatestNotification(String id, int type, long timestamp,
             String[] args) {
         for(BraveRewardsObserver observer : observers_) {
             observer.OnGetLatestNotification(id, type, timestamp, args);

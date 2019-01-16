@@ -57,6 +57,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Calendar;
+import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -423,7 +424,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
       }
     }
 
-    private void ShowNotification(String id, int type, int timestamp,
+    private void ShowNotification(String id, int type, long timestamp,
             String[] args) {
         currentNotificationId = id;
         LinearLayout ll = (LinearLayout)root.findViewById(R.id.header_layout);
@@ -432,9 +433,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         gl.setVisibility(View.GONE);
         ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
         ll.setVisibility(View.VISIBLE);
-        Log.i("TAG", "!!!timestamp == " + timestamp);
-        Calendar calTime = Calendar.getInstance();
-        calTime.setTimeInMillis(timestamp);
+        TimeZone utc = TimeZone.getTimeZone("UTC");
+        Calendar calTime = Calendar.getInstance(utc);
+        calTime.setTimeInMillis(timestamp * 1000);
         String currentMonth = BraveRewardsHelper.getCurrentMonth(calTime,
           root.getResources(), false);
         String currentDay = Integer.toString(calTime.get(Calendar.DAY_OF_MONTH));
@@ -649,7 +650,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     }
 
     @Override
-    public void OnNotificationAdded(String id, int type, int timestamp,
+    public void OnNotificationAdded(String id, int type, long timestamp,
           String[] args) { 
         // Do nothing here as we will receive the most recent notification
         // in OnGetLatestNotification
@@ -659,7 +660,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     public void OnNotificationsCount(int count) {}
 
     @Override
-    public void OnGetLatestNotification(String id, int type, int timestamp,
+    public void OnGetLatestNotification(String id, int type, long timestamp,
             String[] args) {
         ShowNotification(id, type, timestamp, args);
     }
