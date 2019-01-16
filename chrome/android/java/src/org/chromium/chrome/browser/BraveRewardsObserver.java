@@ -9,10 +9,10 @@ public interface BraveRewardsObserver {
   public void OnWalletProperties(int error_code);
   public void OnPublisherInfo(int tabId);
   public void OnGetCurrentBalanceReport(String[] report);
-  public void OnNotificationAdded(String id, int type, int timestamp,
+  public void OnNotificationAdded(String id, int type, long timestamp,
         String[] args);
   public void OnNotificationsCount(int count);
-  public void OnGetLatestNotification(String id, int type, int timestamp,
+  public void OnGetLatestNotification(String id, int type, long timestamp,
             String[] args);
   public void OnNotificationDeleted(String id);
 }
