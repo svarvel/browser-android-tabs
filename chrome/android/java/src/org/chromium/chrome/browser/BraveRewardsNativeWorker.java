@@ -170,6 +170,10 @@ public class BraveRewardsNativeWorker {
         nativeGetAllNotifications(mNativeBraveRewardsNativeWorker);
     }
 
+    public void DeleteNotification(String notification_id) {
+        nativeDeleteNotification(mNativeBraveRewardsNativeWorker, notification_id);
+    }
+
     @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
@@ -219,6 +223,21 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    @CalledByNative
+    public void OnGetLatestNotification(String id, int type, int timestamp,
+            String[] args) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetLatestNotification(id, type, timestamp, args);
+        }
+    }
+
+    @CalledByNative
+    public void OnNotificationDeleted(String id) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnNotificationDeleted(id);
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -241,4 +260,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeDonate(long nativeBraveRewardsNativeWorker, String publisher_key, 
         int amount, boolean recurring);
     private native void nativeGetAllNotifications(long nativeBraveRewardsNativeWorker);
+    private native void nativeDeleteNotification(long nativeBraveRewardsNativeWorker, 
+        String notification_id);
 }

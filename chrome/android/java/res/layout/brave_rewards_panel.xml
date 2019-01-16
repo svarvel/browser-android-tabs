@@ -130,6 +130,7 @@
             android:background="#e9ebff">
 
             <LinearLayout
+                android:id="@+id/header_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/header">
@@ -140,7 +141,7 @@
                     android:gravity="center">
 
                     <GridLayout
-                        android:id="@+id/no_website_gridlayout"
+                        android:id="@+id/wallet_info_gridlayout"
                         android:layout_height="wrap_content"
                         android:layout_width="fill_parent"
                         android:layout_marginTop="5dp"
@@ -149,7 +150,6 @@
                         android:columnCount="2">
 
                         <TextView
-                            android:id="@+id/your_wallet_id"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:layout_gravity="start|top"
@@ -249,6 +249,60 @@
                             android:layout_column="1"/>
 
                     </GridLayout>
+
+                    <LinearLayout
+                        android:id="@+id/notification_info_layout"
+                        android:layout_height="wrap_content"
+                        android:layout_width="fill_parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/br_notification_close"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text=""
+                            android:layout_gravity="top|end"
+                            android:clickable="true"
+                            android:drawableStart="@drawable/icon_close_notification"/>
+
+                        <ImageView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/grant_icon"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center"
+                            tools:ignore="ContentDescription"/>
+
+                        <TextView
+                            android:id="@+id/br_notification_description"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text=""
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"/>
+
+                        <Button
+                            android:id="@+id/br_claim_button"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_height="40dp"
+                            android:layout_width="wrap_content"
+                            android:background="@drawable/rewards_button_orange"
+                            android:text="@string/brave_ui_claim"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:textSize="14sp"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
 

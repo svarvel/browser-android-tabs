@@ -56,6 +56,7 @@ import java.lang.ref.WeakReference;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -82,8 +83,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private OnCheckedChangeListener autoContributeSwitchListener;
     private Button btRewardsSummary;
     private boolean publisherExist;
+    private String currentNotificationId;
 
     public BraveRewardsPanelPopup(View anchor) {
+        currentNotificationId = "";
         publisherExist = false;
         currentTabId = -1;
         this.anchor = anchor;
@@ -280,13 +283,51 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             }
           }));
         }
+        SetupNotificationsControls();
+    }
+
+    private void SetupNotificationsControls() {
+        // Check for notifications
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.GetAllNotifications();
+        }
+
+        TextView tvCloseNotification = (TextView)root.findViewById(R.id.br_notification_close);
+        if (tvCloseNotification != null) {
+            tvCloseNotification.setOnClickListener((new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  if (currentNotificationId.isEmpty()) {
+                    assert false;
+
+                    return;
+                  }
+                  if (mBraveRewardsNativeWorker != null) {
+                      mBraveRewardsNativeWorker.DeleteNotification(currentNotificationId);
+                  }
+              }
+            }));
+        }
+        Button btClaimOk = (Button)root.findViewById(R.id.br_claim_button);
+        if (btClaimOk != null) {
+          btClaimOk.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              // TODO call a real claim or ok functionality
+              if (mBraveRewardsNativeWorker != null) {
+                  mBraveRewardsNativeWorker.DeleteNotification(currentNotificationId);
+              }
+            }
+          }));
+        }
     }
 
     private void SetRewardsSummaryMonthYear() {
         if (btRewardsSummary == null) {
             return;
         }
-        String currentMonth = BraveRewardsHelper.getCurrentMonth(this.root.getResources());
+        String currentMonth = BraveRewardsHelper.getCurrentMonth(Calendar.getInstance(),
+          this.root.getResources(), true);
         String currentYear = BraveRewardsHelper.getCurrentYear(this.root.getResources());
         String rewardsText = this.root.getResources().getString(R.string.brave_ui_rewards_summary);
         rewardsText += "\n" + String.format(this.root.getResources().getString(R.string.brave_ui_month_year), currentMonth,
@@ -380,6 +421,61 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             mBraveRewardsNativeWorker.GetPublisherInfo(currentActiveTab.getId(), url);
         }
       }
+    }
+
+    private void ShowNotification(String id, int type, int timestamp,
+            String[] args) {
+        currentNotificationId = id;
+        LinearLayout ll = (LinearLayout)root.findViewById(R.id.header_layout);
+        ll.setBackgroundResource(R.drawable.notification_header);
+        GridLayout gl = (GridLayout)root.findViewById(R.id.wallet_info_gridlayout);
+        gl.setVisibility(View.GONE);
+        ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
+        ll.setVisibility(View.VISIBLE);
+        Log.i("TAG", "!!!timestamp == " + timestamp);
+        Calendar calTime = Calendar.getInstance();
+        calTime.setTimeInMillis(timestamp);
+        String currentMonth = BraveRewardsHelper.getCurrentMonth(calTime,
+          root.getResources(), false);
+        String currentDay = Integer.toString(calTime.get(Calendar.DAY_OF_MONTH));
+        String notificationTime = currentMonth + " " + currentDay;
+        String title = "";
+        String description = "";
+        // TODO other types of notifications
+        switch (type) {
+          case 2:
+            // Grants notification
+            title = root.getResources().getString(R.string.brave_ui_new_token_grant);
+            description = root.getResources().getString(R.string.brave_ui_new_grant);
+            break;
+        }
+        String stringToInsert = "<b>" + title + "</b>" + " | " + description + 
+          "  <font color=#a9aab4>" + notificationTime + "</font>";
+        Spanned toInsert;
+        Context appContext = ContextUtils.getApplicationContext();
+        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            toInsert = Html.fromHtml(stringToInsert, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            toInsert = Html.fromHtml(stringToInsert);
+        }
+        TextView tv = (TextView)root.findViewById(R.id.br_notification_description);
+        tv.setText(toInsert);
+    }
+
+    private void DismissNotification(String id) {
+        if (!currentNotificationId.equals(id)) {
+          return;
+        }
+        LinearLayout ll = (LinearLayout)root.findViewById(R.id.header_layout);
+        ll.setBackgroundResource(R.drawable.header);
+        GridLayout gl = (GridLayout)root.findViewById(R.id.wallet_info_gridlayout);
+        gl.setVisibility(View.VISIBLE);
+        ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
+        ll.setVisibility(View.GONE);
+        currentNotificationId = "";
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.GetAllNotifications();
+        }
     }
 
     @Override
@@ -540,7 +636,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           }
         }
         TextView tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
-        GridLayout gr= (GridLayout)root.findViewById(R.id.br_activities);
+        GridLayout gr = (GridLayout)root.findViewById(R.id.br_activities);
         if (tv != null && gr != null) {
           if (no_activity) {
               tv.setVisibility(View.VISIBLE);
@@ -555,9 +651,21 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     @Override
     public void OnNotificationAdded(String id, int type, int timestamp,
           String[] args) { 
-        // TODO show it in the panel
+        // Do nothing here as we will receive the most recent notification
+        // in OnGetLatestNotification
     }
 
     @Override
     public void OnNotificationsCount(int count) {}
+
+    @Override
+    public void OnGetLatestNotification(String id, int type, int timestamp,
+            String[] args) {
+        ShowNotification(id, type, timestamp, args);
+    }
+
+    @Override
+    public void OnNotificationDeleted(String id) {
+        DismissNotification(id);
+    }
 }

@@ -38,8 +38,8 @@ public class BraveRewardsHelper {
     return null;
   }
 
-  static public String getCurrentMonth(Resources resources) {
-    Calendar currentTime = Calendar.getInstance();
+  static public String getCurrentMonth(Calendar currentTime,
+      Resources resources, boolean upper_case) {
     String month = resources.getString(R.string.brave_ui_month_jan);
     switch (currentTime.get(Calendar.MONTH)) {
       case Calendar.JANUARY:
@@ -78,6 +78,9 @@ public class BraveRewardsHelper {
       case Calendar.DECEMBER:
         month = resources.getString(R.string.brave_ui_month_dec);
         break;
+    }
+    if (!upper_case && !month.isEmpty()) {
+      return month.substring(0, 1) + month.substring(1).toLowerCase();
     }
 
     return month;

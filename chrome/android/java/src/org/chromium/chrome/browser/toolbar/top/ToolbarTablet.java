@@ -475,6 +475,13 @@ public class ToolbarTablet extends ToolbarLayout
         }   
     }
 
+    @Override
+    public void OnGetLatestNotification(String id, int type, int timestamp,
+            String[] args) {}
+
+    @Override
+    public void OnNotificationDeleted(String id) {}
+
     /**
      * Called when the currently visible New Tab Page changes.
      */

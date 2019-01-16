@@ -12,4 +12,7 @@ public interface BraveRewardsObserver {
   public void OnNotificationAdded(String id, int type, int timestamp,
         String[] args);
   public void OnNotificationsCount(int count);
+  public void OnGetLatestNotification(String id, int type, int timestamp,
+            String[] args);
+  public void OnNotificationDeleted(String id);
 }

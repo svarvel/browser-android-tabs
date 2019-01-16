@@ -290,6 +290,17 @@ void BraveRewardsNativeWorker::GetAllNotifications(JNIEnv* env,
   }
 }
 
+void BraveRewardsNativeWorker::DeleteNotification(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& notification_id) {
+  brave_rewards::RewardsNotificationService* notification_service = 
+    brave_rewards_service_->GetNotificationService();
+  if (notification_service) {
+    notification_service->DeleteNotification(
+      base::android::ConvertJavaStringToUTF8(env, notification_id));
+  }
+}
+
 void BraveRewardsNativeWorker::OnNotificationAdded(
       brave_rewards::RewardsNotificationService* rewards_notification_service,
       const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {
@@ -313,7 +324,33 @@ void BraveRewardsNativeWorker::OnGetAllNotifications(
   Java_BraveRewardsNativeWorker_OnNotificationsCount(env, 
         weak_java_brave_rewards_native_worker_.get(env),
         notifications_list.size());
-  // TODO pass the most recent notification
+
+  brave_rewards::RewardsNotificationService::RewardsNotificationsList::const_iterator iter = 
+    std::max_element(notifications_list.begin(), notifications_list.end(),
+      [](const brave_rewards::RewardsNotificationService::RewardsNotification& notification_a,
+        const brave_rewards::RewardsNotificationService::RewardsNotification& notification_b) {
+      return notification_a.timestamp_ > notification_b.timestamp_;
+    });
+
+  if (iter != notifications_list.end()) {
+    LOG(ERROR) << "!!!iter->args_.size() == " << iter->args_.size();
+    Java_BraveRewardsNativeWorker_OnGetLatestNotification(env, 
+        weak_java_brave_rewards_native_worker_.get(env),
+        base::android::ConvertUTF8ToJavaString(env, iter->id_), 
+        iter->type_,
+        iter->timestamp_,
+        base::android::ToJavaArrayOfStrings(env, iter->args_));
+  }
+}
+
+void BraveRewardsNativeWorker::OnNotificationDeleted(
+      brave_rewards::RewardsNotificationService* rewards_notification_service,
+      const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnNotificationDeleted(env, 
+        weak_java_brave_rewards_native_worker_.get(env),
+        base::android::ConvertUTF8ToJavaString(env, notification.id_));
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
