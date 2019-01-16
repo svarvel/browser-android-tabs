@@ -4359,6 +4359,15 @@ month...
       <message name="IDS_BRAVE_UI_ON_TWITCH" desc="">
         on Twitch
       </message>
+      <message name="IDS_BRAVE_UI_NEW_GRANT" desc="">
+        A free token grant is available.
+      </message>
+      <message name="IDS_BRAVE_UI_NEW_TOKEN_GRANT" desc="">
+        Free Token Grant
+      </message>
+      <message name="IDS_BRAVE_UI_CLAIM" desc="">
+        Claim
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>
