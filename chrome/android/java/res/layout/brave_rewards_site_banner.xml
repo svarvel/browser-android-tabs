@@ -47,6 +47,33 @@
                     android:background="#eaeeff"
                     android:orientation="vertical">
 
+                    <!-- Non verified warning-->
+                    <LinearLayout
+                        android:id="@+id/not_verified_warning_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginEnd="22dp"
+                        android:background="@android:color/white"
+                        android:visibility="gone">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icn_unverified_alert"
+                            android:padding="10dp"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:id="@+id/not_verified_warning_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#686978"
+                            android:textSize="14sp"
+                            android:padding="10dp"
+                            android:text="@string/brave_ui_site_banner_not_verified"/>
+                    </LinearLayout>
 
                     <!-- Social networks buttons-->
                     <RelativeLayout
@@ -54,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:paddingTop="12dp"
-                        android:visibility="invisible">
+                        android:visibility="gone">
 
                         <ImageView
                             android:id="@+id/chat_button"
@@ -85,12 +112,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_gravity="center_vertical|center_horizontal"
                         android:text="@string/brave_ui_site_banner_welcome"
                         android:textColor="#4B4C5C"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textAlignment="center"
+                        android:paddingTop="22dp"
                         android:paddingStart="12dp"
                         android:paddingBottom="12dp"
                         android:paddingEnd="12dp"/>
@@ -112,6 +140,7 @@
                         android:paddingStart="12dp"
                         android:paddingTop="12dp"
                         android:paddingEnd="12dp"
+                        android:paddingBottom="12dp"
                         android:text="@string/brave_ui_site_banner_message2"
                         android:textColor="#686978"
                         android:textSize="14sp" />
@@ -206,7 +235,7 @@
             <android.support.v7.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2.2"
+                android:layout_weight="2.4"
                 android:background="@android:color/transparent"
                 app:columnCount="3"
                 app:orientation="horizontal"
