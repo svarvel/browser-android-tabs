@@ -4380,6 +4380,11 @@ month...
       <message name="IDS_BRAVE_UI_CHANGE_AUTO_CONTRIBUTION" desc="">
         Change Auto-Contribute settings.
       </message>
+      <message name="IDS_BRAVE_UI_NOT_VERIFIED_PUBLISHER_SUMMARY" desc="">
+        You've designated <ph name="BAT_VALUE">%1$s<ex>50</ex></ph> BAT for creators who haven't
+        yet signed up to receive contributions. Your browser will keep trying to contribute
+        until they verify, or until 90 days have passed.
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>
