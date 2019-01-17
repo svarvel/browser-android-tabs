@@ -301,6 +301,12 @@ void BraveRewardsNativeWorker::DeleteNotification(JNIEnv* env,
   }
 }
 
+void BraveRewardsNativeWorker::GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetGrantViaSafetynetCheck();
+  }
+}
+
 void BraveRewardsNativeWorker::OnNotificationAdded(
       brave_rewards::RewardsNotificationService* rewards_notification_service,
       const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {
@@ -350,6 +356,11 @@ void BraveRewardsNativeWorker::OnNotificationDeleted(
   Java_BraveRewardsNativeWorker_OnNotificationDeleted(env, 
         weak_java_brave_rewards_native_worker_.get(env),
         base::android::ConvertUTF8ToJavaString(env, notification.id_));
+}
+
+void BraveRewardsNativeWorker::OnGrant(brave_rewards::RewardsService* rewards_service, 
+      unsigned int result, brave_rewards::Grant grant) {
+  // TODO what we need to do here? We receive notification about deletion
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const

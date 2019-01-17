@@ -174,6 +174,10 @@ public class BraveRewardsNativeWorker {
         nativeDeleteNotification(mNativeBraveRewardsNativeWorker, notification_id);
     }
 
+    public void GetGrant() {
+        nativeGetGrant(mNativeBraveRewardsNativeWorker);
+    }
+
     @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
@@ -262,4 +266,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetAllNotifications(long nativeBraveRewardsNativeWorker);
     private native void nativeDeleteNotification(long nativeBraveRewardsNativeWorker, 
         String notification_id);
+    private native void nativeGetGrant(long nativeBraveRewardsNativeWorker);
 }
