@@ -85,6 +85,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private Button btRewardsSummary;
     private boolean publisherExist;
     private String currentNotificationId;
+    private TextView tvPublisherNotVerified;
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -205,27 +206,26 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         }
         btRewardsSettings = (Button)root.findViewById(R.id.br_rewards_settings);
         if (btRewardsSettings != null) {
-          btRewardsSettings.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
-                dismiss();
-            }
-          }));
-        }
+            btRewardsSettings.setOnClickListener((new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
+                  dismiss();
+              }
+            }));
+          }
 
         btAutoContribute = (Switch)root.findViewById(R.id.brave_ui_auto_contribute);
 
         if (btAutoContribute != null) {
-          autoContributeSwitchListener = new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-              boolean isChecked) {
-                thisObject.mBraveRewardsNativeWorker.IncludeInAutoContribution(currentTabId, !isChecked);
-                Log.i("TAG", "!!!isChecked == " + isChecked);
-            }
-          };
-          btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
+            autoContributeSwitchListener = new OnCheckedChangeListener() {
+              @Override
+              public void onCheckedChanged(CompoundButton buttonView,
+                boolean isChecked) {
+                  thisObject.mBraveRewardsNativeWorker.IncludeInAutoContribution(currentTabId, !isChecked);
+              }
+            };
+            btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
         }
 
         btRewardsSummary = (Button)root.findViewById(R.id.rewards_summary);
@@ -284,6 +284,32 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             }
           }));
         }
+        tvPublisherNotVerified = (TextView)root.findViewById(R.id.publisher_not_verified);
+        tvPublisherNotVerified.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    int offset = tvPublisherNotVerified.getOffsetForPosition(
+                      motionEvent.getX(), motionEvent.getY());
+                    findWord(tvPublisherNotVerified.getText().toString(), offset);
+                }
+                return false;
+            }
+
+            private void findWord(String text, int offset) {
+                int firstOffset = text.indexOf(".\n");
+                int secondOffset = text.indexOf(". ");
+                if (offset > firstOffset) {
+                    // We are on change auto-contribute settings
+                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
+                    dismiss();
+                } else if (offset <= firstOffset && offset > secondOffset) {
+                    // We are on learn more
+                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL));
+                    dismiss();
+                }
+            }
+        });
         SetupNotificationsControls();
     }
 
@@ -560,10 +586,33 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             btAutoContribute.setChecked(!thisObject.mBraveRewardsNativeWorker.GetPublisherExcluded(currentTabId));
             btAutoContribute.setOnCheckedChangeListener(autoContributeSwitchListener);
         }
+        String verified_text = "";
+        TextView tvVerified = (TextView)root.findViewById(R.id.publisher_verified);
         if (thisObject.mBraveRewardsNativeWorker.GetPublisherVerified(currentTabId)) {
-            tv = (TextView)root.findViewById(R.id.publisher_verified);
+            verified_text = root.getResources().getString(R.string.brave_ui_verified_publisher);
+        } else {
+            verified_text = root.getResources().getString(R.string.brave_ui_not_verified_publisher);
+            tv = (TextView)root.findViewById(R.id.publisher_not_verified);
+            String verified_description = 
+                root.getResources().getString(R.string.brave_ui_not_verified_publisher_description);
+            verified_description += " <font color=#73CBFF>" + 
+              root.getResources().getString(R.string.learn_more) + ".</font><br/>";
+            verified_description += "<b>" + 
+              root.getResources().getString(R.string.brave_ui_change_auto_contribution) + "</b>";
+            Context appContext = ContextUtils.getApplicationContext();
+            Spanned toInsert;
+            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                toInsert = Html.fromHtml(verified_description, Html.FROM_HTML_MODE_LEGACY);
+            } else {
+                toInsert = Html.fromHtml(verified_description);
+            }
+            tv.setText(toInsert);
             tv.setVisibility(View.VISIBLE);
+            tvVerified.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icn_unverified, 0, 0, 0);
         }
+        tvVerified.setText(verified_text);
+        tvVerified.setVisibility(View.VISIBLE);
+
         tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
         gl = (GridLayout)thisObject.root.findViewById(R.id.br_activities);
         if (tv != null && gl != null) {

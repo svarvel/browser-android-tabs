@@ -4353,6 +4353,12 @@ month...
       <message name="IDS_BRAVE_UI_VERIFIED_PUBLISHER" desc="">
         Brave Verified Publisher
       </message>
+      <message name="IDS_BRAVE_UI_NOT_VERIFIED_PUBLISHER" desc="">
+        Not yet verified
+      </message>
+      <message name="IDS_BRAVE_UI_NOT_VERIFIED_PUBLISHER_DESCRIPTION" desc="">
+        This creator has not yet signed up to receive contributions from Brave users.
+      </message>
       <message name="IDS_BRAVE_UI_ON_YOUTUBE" desc="">
         on YouTube
       </message>
@@ -4367,6 +4373,9 @@ month...
       </message>
       <message name="IDS_BRAVE_UI_CLAIM" desc="">
         Claim
+      </message>
+      <message name="IDS_BRAVE_UI_CHANGE_AUTO_CONTRIBUTION" desc="">
+        Change Auto-Contribute settings.
       </message>
       <!--End of rewards temporary section.-->
     </messages>

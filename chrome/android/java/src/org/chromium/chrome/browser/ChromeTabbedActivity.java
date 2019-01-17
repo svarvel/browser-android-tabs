@@ -244,9 +244,8 @@ public class ChromeTabbedActivity
     public static final int SITE_BANNER_REQUEST_CODE = 33;
     public static final int SITE_BANNER_ADD_FUNDS_RESULT_CODE = SITE_BANNER_REQUEST_CODE;
     public static final String ADD_FUNDS_URL = "chrome://rewards/#add-funds";
-
     public static final String REWARDS_SETTINGS_URL = "chrome://rewards";
-
+    public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq-rewards/#unclaimed-funds";
 
     @VisibleForTesting
     public static final String LAST_BACKGROUNDED_TIME_MS_PREF =
