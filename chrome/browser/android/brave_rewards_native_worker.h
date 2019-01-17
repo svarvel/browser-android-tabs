@@ -88,6 +88,8 @@ public:
     void DeleteNotification(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& notification_id);
 
+    void GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
@@ -117,6 +119,9 @@ public:
     void OnNotificationDeleted(
       brave_rewards::RewardsNotificationService* rewards_notification_service,
       const brave_rewards::RewardsNotificationService::RewardsNotification& notification) override;
+
+    void OnGrant(brave_rewards::RewardsService* rewards_service, unsigned int result,
+        brave_rewards::Grant grant) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;

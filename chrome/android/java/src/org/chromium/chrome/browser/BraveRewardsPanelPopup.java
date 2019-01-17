@@ -342,7 +342,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             public void onClick(View v) {
               // TODO call a real claim or ok functionality
               if (mBraveRewardsNativeWorker != null) {
-                  mBraveRewardsNativeWorker.DeleteNotification(currentNotificationId);
+                  mBraveRewardsNativeWorker.GetGrant();
               }
             }
           }));
@@ -717,5 +717,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     @Override
     public void OnNotificationDeleted(String id) {
         DismissNotification(id);
+        mBraveRewardsNativeWorker.GetWalletProperties();
     }
 }
