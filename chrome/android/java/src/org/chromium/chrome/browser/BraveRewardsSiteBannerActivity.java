@@ -24,6 +24,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.content.Context;
 import android.os.Build;
+import android.view.MotionEvent;
 import org.chromium.chrome.browser.util.IntentUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
@@ -47,6 +48,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
     private final int FADE_OUT_DURATION = 750;
     private final float LANDSCAPE_HEADER_WEIGHT = 2.0f;
     public static final String TAB_ID_EXTRA = "currentTabId";
+
     private int currentTabId_ = -1;
     private FaviconHelper mFavIconHelper;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
@@ -201,6 +203,47 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
             toInsert = Html.fromHtml(sb.toString());
         }
         not_enough_funds_btn.setText(toInsert);
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        boolean verified = mBraveRewardsNativeWorker.GetPublisherVerified(currentTabId_);
+        if (!verified) {
+            findViewById(R.id.not_verified_warning_layout ).setVisibility(View.VISIBLE);
+
+            part1 = getResources().getString(R.string.brave_ui_site_banner_not_verified);
+            part2 = getResources().getString(R.string.learn_more);
+
+            final StringBuilder sb1 = new StringBuilder();
+            sb1.append(part1);
+            sb1.append(" <font color=#00afff>");
+            sb1.append(part2);
+            sb1.append("</font>");
+
+            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                toInsert = Html.fromHtml(sb1.toString(), Html.FROM_HTML_MODE_LEGACY);
+            } else {
+                toInsert = Html.fromHtml(sb1.toString());
+            }
+            TextView not_verified_warning_text = (TextView )findViewById(R.id.not_verified_warning_text );
+            not_verified_warning_text.setText(toInsert);
+            final int learn_more_start_index = toInsert.length() - part2.length();
+
+            not_verified_warning_text.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                        int offset = not_verified_warning_text.getOffsetForPosition(
+                                motionEvent.getX(), motionEvent.getY());
+                        if (offset >= learn_more_start_index){
+                            // We are on learn more
+                            Intent returnIntent = new Intent();
+                            setResult(ChromeTabbedActivity.SITE_BANNER_NOT_VERIFIED_LEARN_MORE_RESULT_CODE, returnIntent);
+                            finish();
+                        }
+                    }
+                    return false;
+                }
+            });
+        }
     }
 
 
