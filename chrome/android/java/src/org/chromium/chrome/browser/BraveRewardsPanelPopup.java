@@ -87,6 +87,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private boolean publisherExist;
     private String currentNotificationId;
     private TextView tvPublisherNotVerified;
+    private TextView tvPublisherNotVerifiedSummary;
     private int currentFavIconFetch;
 
     public BraveRewardsPanelPopup(View anchor) {
@@ -164,6 +165,27 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.brave_rewards_panel, null);
         setContentView(root);
+        tvPublisherNotVerifiedSummary = (TextView)root.findViewById(R.id.publisher_not_verified_summary);
+        tvPublisherNotVerifiedSummary.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    int offset = tvPublisherNotVerifiedSummary.getOffsetForPosition(
+                      motionEvent.getX(), motionEvent.getY());
+                    findWord(tvPublisherNotVerifiedSummary.getText().toString(), offset);
+                }
+                return false;
+            }
+
+            private void findWord(String text, int offset) {
+                int firstOffset = text.indexOf(". ");
+                if (offset > firstOffset) {
+                    // We are on learn more
+                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL));
+                    dismiss();
+                }
+            }
+        });
         if (mBraveRewardsNativeWorker != null && mBraveRewardsNativeWorker.WalletExist()) {
           ShowWebSiteView();
         }
@@ -313,6 +335,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 }
             }
         });
+
         SetupNotificationsControls();
     }
 
@@ -693,6 +716,21 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             no_activity = false;
           }
         }
+        // TODO debug, get real value of BAT designated to non verified publishers
+        String non_verified_summary = 
+          String.format(root.getResources().getString(
+            R.string.brave_ui_not_verified_publisher_summary), "52") + 
+          " <font color=#73CBFF>" + root.getResources().getString(R.string.learn_more) + 
+          ".</font>";;
+        Context appContext = ContextUtils.getApplicationContext();
+        Spanned toInsert;
+        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            toInsert = Html.fromHtml(non_verified_summary, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            toInsert = Html.fromHtml(non_verified_summary);
+        }
+        tvPublisherNotVerifiedSummary.setText(toInsert);
+        //
         TextView tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
         GridLayout gr = (GridLayout)root.findViewById(R.id.br_activities);
         if (tv != null && gr != null) {

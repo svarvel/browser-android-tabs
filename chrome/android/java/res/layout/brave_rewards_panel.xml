@@ -775,6 +775,23 @@
                             android:layout_row="8"
                             android:layout_column="2"/>
 
+                        <TextView
+                            android:id="@+id/publisher_not_verified_summary"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="5dp"
+                            android:text=""
+                            android:fontFamily="sans-serif"
+                            android:gravity="start"
+                            android:textSize="12sp"
+                            android:background="@drawable/brave_rewards_not_verified_rectangle"
+                            android:visibility="gone"
+                            android:layout_row="9"
+                            android:layout_columnSpan="3"/>
+
                     </GridLayout>
                 </LinearLayout>
             </LinearLayout>
