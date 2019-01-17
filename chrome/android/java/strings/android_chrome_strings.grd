@@ -4361,13 +4361,13 @@ content creators.
       </message>
 
       <message name="IDS_BRAVE_UI_SITE_BANNER_WELCOME" desc="">
-        Welcome!
+        Thanks for stopping by!
       </message>
       <message name="IDS_BRAVE_UI_SITE_BANNER_MESSAGE1" desc="">
-        Thanks for stopping by. We joined Brave’s vision of protecting your privacy because we believe that fans like you would support us in our effort to keep the web a clean and safe place to be!
+        You can support this site by sending a tip. It's a way of thanking them for making great content. Verified content creators get paid for their tips during the first week of each calendar month.
       </message>
       <message name="IDS_BRAVE_UI_SITE_BANNER_MESSAGE2" desc="">
-        Your donation is much appreciated and it encourages us to continue to improve our content.
+        If you like, you can schedule monthly tips to support this site on a continuous basis.
       </message>
       <message name="IDS_BRAVE_UI_SITE_BANNER_TIP_AMOUNT" desc="">
         Tip amount
@@ -4383,6 +4383,9 @@ content creators.
       </message>
       <message name="IDS_BRAVE_UI_SITE_BANNER_NOT_ENOUGH_TOKENS" desc="">
         not enough tokens
+      </message>
+      <message name="IDS_BRAVE_UI_SITE_BANNER_NOT_VERIFIED" desc="">
+        NOTE: This creator has not yet signed up to receive contributions from Brave users. We\'ll keep trying to contribute until they verify, or until 90 days have passed.
       </message>
       <message name="IDS_BRAVE_UI_PLEASE" desc="">
         please
