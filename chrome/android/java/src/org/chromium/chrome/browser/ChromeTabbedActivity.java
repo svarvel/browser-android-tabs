@@ -243,6 +243,7 @@ public class ChromeTabbedActivity
     */
     public static final int SITE_BANNER_REQUEST_CODE = 33;
     public static final int SITE_BANNER_ADD_FUNDS_RESULT_CODE = SITE_BANNER_REQUEST_CODE;
+    public static final int SITE_BANNER_NOT_VERIFIED_LEARN_MORE_RESULT_CODE = SITE_BANNER_REQUEST_CODE + 1;
     public static final String ADD_FUNDS_URL = "chrome://rewards/#add-funds";
     public static final String REWARDS_SETTINGS_URL = "chrome://rewards";
     public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq-rewards/#unclaimed-funds";
@@ -2742,10 +2743,14 @@ public class ChromeTabbedActivity
         super.onActivityResult(requestCode, resultCode, data);
         if(SITE_BANNER_REQUEST_CODE == requestCode)
         {
-            if (resultCode == SITE_BANNER_ADD_FUNDS_RESULT_CODE) {
+            if (resultCode == SITE_BANNER_ADD_FUNDS_RESULT_CODE ||
+                    resultCode == SITE_BANNER_NOT_VERIFIED_LEARN_MORE_RESULT_CODE ) {
+
+                String url = (resultCode == SITE_BANNER_ADD_FUNDS_RESULT_CODE )? ADD_FUNDS_URL :
+                        REWARDS_LEARN_MORE_URL;
                 dismissRewardsPanel();
                 TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) getTabModelSelector();
-                Tab tab = tabbedModeTabModelSelector.openNewTab(new LoadUrlParams(ADD_FUNDS_URL),
+                Tab tab = tabbedModeTabModelSelector.openNewTab(new LoadUrlParams(url),
                     TabLaunchType.FROM_BROWSER_ACTIONS, null, false);
            }
         }
