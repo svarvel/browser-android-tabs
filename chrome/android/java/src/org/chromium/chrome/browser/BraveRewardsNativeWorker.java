@@ -178,6 +178,14 @@ public class BraveRewardsNativeWorker {
         nativeGetGrant(mNativeBraveRewardsNativeWorker);
     }
 
+    public int GetCurrentGrantsCount() {
+        return nativeGetCurrentGrantsCount(mNativeBraveRewardsNativeWorker);
+    }
+
+    public String[] GetCurrentGrant(int position) {
+        return nativeGetCurrentGrant(mNativeBraveRewardsNativeWorker, position);
+    }
+
     @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
@@ -267,4 +275,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeDeleteNotification(long nativeBraveRewardsNativeWorker, 
         String notification_id);
     private native void nativeGetGrant(long nativeBraveRewardsNativeWorker);
+    private native int nativeGetCurrentGrantsCount(long nativeBraveRewardsNativeWorker);
+    private native String[] nativeGetCurrentGrant(long nativeBraveRewardsNativeWorker, int position);
 }

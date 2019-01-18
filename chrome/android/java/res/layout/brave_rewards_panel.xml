@@ -138,7 +138,7 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
-                    android:gravity="center">
+                    android:gravity="top|center">
 
                     <GridLayout
                         android:id="@+id/wallet_info_gridlayout"
@@ -176,6 +176,7 @@
                                 android:gravity="center"
                                 android:layout_gravity="center"
                                 android:columnCount="2">
+
                                 <TextView
                                     android:id="@+id/br_bat_wallet"
                                     android:layout_height="wrap_content"
@@ -199,6 +200,7 @@
                                     android:alpha=".5"
                                     android:layout_row="0"
                                     android:layout_column="1"/>
+
                             </GridLayout>
                         </LinearLayout>
 
@@ -213,40 +215,80 @@
                             android:textColor="#FFFFFF"
                             android:alpha=".5"
                             android:layout_row="2"
-                            android:layout_columnSpan="2"
-                            android:layout_rowSpan="2"/>
+                            android:layout_columnSpan="2"/>
 
-                        <Button
-                            android:id="@+id/br_add_funds"
-                            android:layout_height="wrap_content"
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rewards_image_button"
-                            android:text="@string/brave_rewards_local_panel_add_funds"
-                            android:layout_gravity="end"
-                            android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:textColor="#FFFFFF"
-                            android:drawableStart="@drawable/add_funds"
-                            android:drawablePadding="5sp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:layout_gravity="top|center"
+                            android:orientation="vertical"
                             android:layout_row="3"
-                            android:layout_column="0"/>
+                            android:layout_columnSpan="2">
 
-                        <Button
-                            android:id="@+id/br_rewards_settings"
-                            android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:background="@drawable/rewards_image_button"
-                            android:text="@string/brave_ui_settings"
-                            android:layout_gravity="end"
-                            android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:textColor="#FFFFFF"
-                            android:drawableStart="@drawable/rewards_settings"
-                            android:drawablePadding="5sp"
-                            android:layout_row="3"
-                            android:layout_column="1"/>
+                            <Button
+                                android:id="@+id/grants_dropdown"
+                                android:layout_height="25dp"
+                                android:layout_width="wrap_content"
+                                android:background="@drawable/rewards_button"
+                                android:text="@string/brave_ui_grants"
+                                android:fontFamily="sans-serif"
+                                android:textSize="8sp"
+                                android:textColor="#FFFFFF"
+                                android:visibility="gone"
+                                android:alpha=".5"/>
+
+                            <ListView 
+                                 android:id="@+id/grants_listview" 
+                                 android:layout_height="wrap_content"
+                                 android:layout_width="fill_parent"
+                                 android:layout_marginBottom="-15dp"
+                                 android:divider="@null"
+                                 android:dividerHeight="0dp"
+                                 android:visibility="gone" />
+
+                            <GridLayout
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:columnCount="2">
+
+                                <Button
+                                    android:id="@+id/br_add_funds"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:background="@drawable/rewards_image_button"
+                                    android:text="@string/brave_rewards_local_panel_add_funds"
+                                    android:layout_gravity="end"
+                                    android:fontFamily="sans-serif"
+                                    android:textSize="12sp"
+                                    android:textColor="#FFFFFF"
+                                    android:drawableStart="@drawable/add_funds"
+                                    android:drawablePadding="5sp"
+                                    android:layout_row="0"
+                                    android:layout_column="0"/>
+
+                                <Button
+                                    android:id="@+id/br_rewards_settings"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:background="@drawable/rewards_image_button"
+                                    android:text="@string/brave_ui_settings"
+                                    android:layout_gravity="end"
+                                    android:fontFamily="sans-serif"
+                                    android:textSize="12sp"
+                                    android:textColor="#FFFFFF"
+                                    android:drawableStart="@drawable/rewards_settings"
+                                    android:drawablePadding="5sp"
+                                    android:layout_row="0"
+                                    android:layout_column="1"/>
+
+                                </GridLayout>
+
+
+                        </LinearLayout>
 
                     </GridLayout>
 

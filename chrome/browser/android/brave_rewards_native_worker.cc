@@ -307,6 +307,24 @@ void BraveRewardsNativeWorker::GetGrant(JNIEnv* env, const base::android::JavaPa
   }
 }
 
+int BraveRewardsNativeWorker::GetCurrentGrantsCount(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj) {
+  return wallet_properties_.grants.size();
+}
+
+base::android::ScopedJavaLocalRef<jobjectArray> BraveRewardsNativeWorker::GetCurrentGrant(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        int position) {
+  if ((size_t)position > wallet_properties_.grants.size() - 1) {
+    return base::android::ScopedJavaLocalRef<jobjectArray>();
+  }
+  std::vector<std::string> values;
+  values.push_back(wallet_properties_.grants[position].probi);
+  values.push_back(std::to_string(wallet_properties_.grants[position].expiryTime));
+
+  return base::android::ToJavaArrayOfStrings(env, values);
+}
+
 void BraveRewardsNativeWorker::OnNotificationAdded(
       brave_rewards::RewardsNotificationService* rewards_notification_service,
       const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {

@@ -19,12 +19,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Switch;
@@ -297,6 +299,27 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 }
             }
           }));
+        }
+
+        Button btGrants = (Button)this.root.findViewById(R.id.grants_dropdown);
+        if (btGrants != null) {
+            btGrants.setOnClickListener((new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ListView listView = (ListView)thisObject.root.findViewById(R.id.grants_listview);
+                    Button btGrants = (Button)thisObject.root.findViewById(R.id.grants_dropdown);
+                    if (listView == null || btGrants == null) {
+                      return;
+                    }
+                    if (listView.getVisibility() == View.VISIBLE) {
+                      btGrants.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.down_icon, 0);
+                      listView.setVisibility(View.GONE);
+                    } else {
+                      btGrants.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.up_icon, 0);
+                      listView.setVisibility(View.VISIBLE);
+                    }
+                }
+            }));
         }
 
         SetRewardsSummaryMonthYear();
@@ -614,6 +637,44 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), 
             String.format("%.2f", usdValue));
           ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
+
+          int currentGrantsCount = mBraveRewardsNativeWorker.GetCurrentGrantsCount();
+          Button btGrants = (Button)this.root.findViewById(R.id.grants_dropdown);
+          if (currentGrantsCount != 0) {
+              btGrants.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.down_icon, 0);
+              btGrants.setVisibility(View.VISIBLE);
+
+              ListView listView = (ListView)this.root.findViewById(R.id.grants_listview);
+        
+              ArrayAdapter<Spanned> adapter = new ArrayAdapter<Spanned>(
+                ContextUtils.getApplicationContext(), R.layout.brave_rewards_grants_list_item);
+              for (int i = 0; i < currentGrantsCount; i++) {
+                  String[] grant = mBraveRewardsNativeWorker.GetCurrentGrant(i);
+                  if (grant.length < 2) {
+                    continue;
+                  }
+                  String toInsert = "<b><font color=#ffffff>" + BraveRewardsHelper.probiToNumber(grant[0]) + " BAT</font></b> ";
+                  Log.i("TAG", "!!!grant[1] == " + grant[1]);
+                  TimeZone utc = TimeZone.getTimeZone("UTC");
+                  Calendar calTime = Calendar.getInstance(utc);
+                  calTime.setTimeInMillis(Long.parseLong(grant[1]) * 1000);
+                  String date = Integer.toString(calTime.get(Calendar.MONTH) + 1) + "/" +
+                      Integer.toString(calTime.get(Calendar.DAY_OF_MONTH)) + "/" +
+                      Integer.toString(calTime.get(Calendar.YEAR));
+                  toInsert += String.format(this.root.getResources().getString(R.string.brave_ui_grant_info), 
+                    date);
+
+                  Context appContext = ContextUtils.getApplicationContext();
+                  if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                      adapter.add(Html.fromHtml(toInsert, Html.FROM_HTML_MODE_LEGACY));
+                  } else {
+                      adapter.add(Html.fromHtml(toInsert));
+                  }                  
+              }
+              listView.setAdapter(adapter);
+          } else {
+            btGrants.setVisibility(View.GONE);
+          }
         }
       } else if (error_code == 1) {
         // TODO error handling
@@ -621,8 +682,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     }
 
 
-    //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
-    //it has to set up the received icon on UI thread
+    // onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
+    // it has to set up the received icon on UI thread
     @CalledByNative
     @Override
     public void onFaviconAvailable(Bitmap image, String iconUrl) {

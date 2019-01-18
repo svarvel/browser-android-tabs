@@ -4490,6 +4490,12 @@ month...
       <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_CONTR_ERROR" desc="">
         There was a problem processing your contribution.
       </message>
+      <message name="IDS_BRAVE_UI_GRANTS" desc="">
+        Grants
+      </message>
+      <message name="IDS_BRAVE_UI_GRANT_INFO" desc="">
+        expires on <ph name="DATE">%1$s<ex>4/14/2019</ex></ph>
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>
