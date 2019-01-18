@@ -498,6 +498,48 @@ void BookmarkBridge::SetBookmarkUrl(JNIEnv* env,
       GURL(base::android::ConvertJavaStringToUTF16(env, url)));
 }
 
+void BookmarkBridge::SetNodeMetaInfo(JNIEnv* env,
+                                    const JavaParamRef<jobject>& obj,
+                                    jlong id,
+                                    jint type,
+                                    const JavaParamRef<jstring>& key,
+                                    const JavaParamRef<jstring>& value) {
+  DCHECK(IsLoaded());
+  bookmark_model_->SetNodeMetaInfo(
+      GetNodeByID(id, type),
+      base::android::ConvertJavaStringToUTF8(env, key),
+      base::android::ConvertJavaStringToUTF8(env, value));
+}
+
+ScopedJavaLocalRef<jstring> BookmarkBridge::GetNodeMetaInfo(JNIEnv* env,
+                                      const JavaParamRef<jobject>& obj,
+                                      jlong id,
+                                      jint type,
+                                      const JavaParamRef<jstring>& key) {
+  std::string meta_info;
+
+  const BookmarkNode* node = GetNodeByID(id, type);
+  DCHECK(node);
+  if (node) {
+    node->GetMetaInfo(
+        base::android::ConvertJavaStringToUTF8(env, key),
+        &meta_info);
+  }
+
+  return base::android::ConvertUTF8ToJavaString(env, meta_info);
+}
+
+void BookmarkBridge::DeleteNodeMetaInfo(JNIEnv* env,
+                                    const JavaParamRef<jobject>& obj,
+                                    jlong id,
+                                    jint type,
+                                    const JavaParamRef<jstring>& key) {
+  DCHECK(IsLoaded());
+  bookmark_model_->DeleteNodeMetaInfo(
+      GetNodeByID(id, type),
+      base::android::ConvertJavaStringToUTF8(env, key));
+}
+
 bool BookmarkBridge::DoesBookmarkExist(JNIEnv* env,
                                         const JavaParamRef<jobject>& obj,
                                         jlong id,
@@ -865,6 +907,8 @@ bool BookmarkBridge::IsReachable(const BookmarkNode* node) const {
 }
 
 bool BookmarkBridge::IsLoaded() const {
+LOG(INFO) <<"[BookmDb] " << __func__ << " bookmark_model_->loaded()="<<bookmark_model_->loaded();
+LOG(INFO) <<"[BookmDb] " << __func__ << " partner_bookmarks_shim_->IsLoaded()="<<partner_bookmarks_shim_->IsLoaded();
   return (bookmark_model_->loaded() && partner_bookmarks_shim_->IsLoaded());
 }
 
@@ -883,13 +927,35 @@ bool BookmarkBridge::IsFolderAvailable(
 }
 
 void BookmarkBridge::NotifyIfDoneLoading() {
-  if (!IsLoaded())
+LOG(INFO) <<"[BookmDb] " << __func__;
+  if (!IsLoaded()) {
+    LOG(INFO) <<"[BookmDb] " << __func__ << " skip because !IsLoaded()";
     return;
+  }
   JNIEnv* env = AttachCurrentThread();
   ScopedJavaLocalRef<jobject> obj = weak_java_ref_.get(env);
-  if (obj.is_null())
+  if (obj.is_null()){
+    LOG(INFO) <<"[BookmDb] " << __func__ << " skip because obj.is_null()";
     return;
+  }
+  LOG(INFO) <<"[BookmDb] " << __func__ << " do actual notify";
   Java_BookmarkBridge_bookmarkModelLoaded(env, obj);
+}
+
+void BookmarkBridge::NotifyIfIdsReassigned(bool ids_reassigned) {
+LOG(INFO) <<"[BookmDb] " << __func__;
+  if (!IsLoaded()) {
+    LOG(INFO) <<"[BookmDb] " << __func__ << " skip because !IsLoaded()";
+    return;
+  }
+  JNIEnv* env = AttachCurrentThread();
+  ScopedJavaLocalRef<jobject> obj = weak_java_ref_.get(env);
+  if (obj.is_null()){
+    LOG(INFO) <<"[BookmDb] " << __func__ << " skip because obj.is_null()";
+    return;
+  }
+  LOG(INFO) <<"[BookmDb] " << __func__ << " do actual notify";
+  Java_BookmarkBridge_bookmarkIdsReassigned(env, obj, ids_reassigned);
 }
 
 // ------------- Observer-related methods ------------- //
@@ -909,7 +975,12 @@ void BookmarkBridge::BookmarkModelChanged() {
 
 void BookmarkBridge::BookmarkModelLoaded(BookmarkModel* model,
                                           bool ids_reassigned) {
+LOG(INFO) <<"[BookmDb] " << __func__ << " ids_reassigned="<<ids_reassigned;
   NotifyIfDoneLoading();
+  // if (ids_reassigned) {
+  //   NotifyIfIdsReassigned();
+  // }
+  NotifyIfIdsReassigned(ids_reassigned);
 }
 
 void BookmarkBridge::BookmarkModelBeingDeleted(BookmarkModel* model) {

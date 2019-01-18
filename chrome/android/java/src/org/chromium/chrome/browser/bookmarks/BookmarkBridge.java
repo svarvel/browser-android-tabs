@@ -147,6 +147,9 @@ public class BookmarkBridge {
             bookmarkModelChanged();
         }
 
+        public void bookmarkIdsReassigned(boolean idsReassigned) {
+        }
+
         /**
          * Invoked when bookmarks became editable or non-editable.
          */
@@ -254,6 +257,10 @@ public class BookmarkBridge {
      * @param profile Profile instance corresponding to the active profile.
      */
     public BookmarkBridge(Profile profile) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge CTOR(Profile), tid=" + Thread.currentThread().getId());
+Log.i("TAG_BookmDb", "[BookmDb] stack="+Log.getStackTraceString(new Exception()));
+Log.i("TAG_BookmDb", "[BookmDb] -----------------------------------");
+
         mProfile = profile;
         mNativeBookmarkBridge = nativeInit(profile);
         mIsDoingExtensiveChanges = nativeIsDoingExtensiveChanges(mNativeBookmarkBridge);
@@ -286,6 +293,7 @@ public class BookmarkBridge {
      * @param observer The observer to be added.
      */
     public void addObserver(BookmarkModelObserver observer) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge.addObserver, tid=" + Thread.currentThread().getId());
         mObservers.addObserver(observer);
     }
 
@@ -294,6 +302,7 @@ public class BookmarkBridge {
      * @param observer The observer to be removed.
      */
     public void removeObserver(BookmarkModelObserver observer) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge.removeObserver, tid=" + Thread.currentThread().getId());
         mObservers.removeObserver(observer);
     }
 
@@ -549,6 +558,30 @@ public class BookmarkBridge {
     }
 
     /**
+     * Set meta info for the given bookmark.
+     */
+    public void SetNodeMetaInfo(BookmarkId id, String key, String value) {
+        assert mIsNativeBookmarkModelLoaded;
+        nativeSetNodeMetaInfo(mNativeBookmarkBridge, id.getId(), id.getType(), key, value);
+    }
+
+    /**
+     * Get meta info for the given bookmark.
+     */
+    public String GetNodeMetaInfo(BookmarkId id, String key) {
+        assert mIsNativeBookmarkModelLoaded;
+        return nativeGetNodeMetaInfo(mNativeBookmarkBridge, id.getId(), id.getType(), key);
+    }
+
+    /**
+     * Removes meta info for the given bookmark.
+     */
+    public void DeleteNodeMetaInfo(BookmarkId id, String key) {
+        assert mIsNativeBookmarkModelLoaded;
+        nativeDeleteNodeMetaInfo(mNativeBookmarkBridge, id.getId(), id.getType(), key);
+    }
+
+    /**
      * @return Whether the given bookmark exist in the current bookmark model, e.g., not deleted.
      */
     public boolean doesBookmarkExist(BookmarkId id) {
@@ -718,6 +751,7 @@ public class BookmarkBridge {
      * Notifies the observer that bookmark model has been loaded.
      */
     protected void notifyBookmarkModelLoaded() {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge.notifyBookmarkModelLoaded isBookmarkModelLoaded()="+isBookmarkModelLoaded());
         // Call isBookmarkModelLoaded() to do the check since it could be overridden by the child
         // class to add the addition logic.
         if (isBookmarkModelLoaded()) {
@@ -729,6 +763,7 @@ public class BookmarkBridge {
 
     @CalledByNative
     private void bookmarkModelLoaded() {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge.bookmarkModelLoaded()");
         mIsNativeBookmarkModelLoaded = true;
 
         notifyBookmarkModelLoaded();
@@ -740,6 +775,16 @@ public class BookmarkBridge {
             mDelayedBookmarkCallbacks.clear();
         }
     }
+
+    /**/
+    @CalledByNative
+    private void bookmarkIdsReassigned(boolean idsReassigned) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkBridge.bookmarkIdsReassigned(" +idsReassigned+ ")");
+      for (BookmarkModelObserver observer : mObservers) {
+          observer.bookmarkIdsReassigned(idsReassigned);
+      }
+    }
+
 
     @CalledByNative
     private void bookmarkModelDeleted() {
@@ -921,6 +966,14 @@ public class BookmarkBridge {
             String title);
     private native void nativeSetBookmarkUrl(long nativeBookmarkBridge, long id, int type,
             String url);
+
+    private native void nativeSetNodeMetaInfo(long nativeBookmarkBridge, long id, int type,
+            String key, String value);
+    private native String nativeGetNodeMetaInfo(long nativeBookmarkBridge, long id, int type,
+            String key);
+    private native void nativeDeleteNodeMetaInfo(long nativeBookmarkBridge, long id, int type,
+            String key);
+
     private native boolean nativeDoesBookmarkExist(long nativeBookmarkBridge, long id, int type);
     private native void nativeGetBookmarksForFolder(long nativeBookmarkBridge,
             BookmarkId folderId, BookmarksCallback callback,

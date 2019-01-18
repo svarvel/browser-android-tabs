@@ -183,6 +183,7 @@ void PartnerBookmarksShim::SetPartnerBookmarksRoot(
   DCHECK_CURRENTLY_ON(BrowserThread::UI);
   g_partner_model_keeper.Get().partner_bookmarks_root = std::move(root_node);
   g_partner_model_keeper.Get().loaded = true;
+LOG(INFO) <<"[BookmDb] " << __func__ << " g_partner_model_keeper.Get().loaded = true";
   for (PartnerBookmarksShim::Observer& observer : observers_)
     observer.PartnerShimLoaded(this);
 }

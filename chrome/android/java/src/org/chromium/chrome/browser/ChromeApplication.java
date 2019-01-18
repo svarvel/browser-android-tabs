@@ -37,7 +37,8 @@ import org.chromium.chrome.browser.dependency_injection.ChromeAppComponent;
 import org.chromium.chrome.browser.dependency_injection.ChromeAppModule;
 import org.chromium.chrome.browser.dependency_injection.DaggerChromeAppComponent;
 import org.chromium.chrome.browser.dependency_injection.ModuleFactoryOverrides;
-import org.chromium.chrome.browser.BraveSyncWorker;
+import org.chromium.chrome.browser.BraveSyncLoader;
+//import org.chromium.chrome.browser.BraveSyncWorker;
 import org.chromium.chrome.browser.StatsUpdaterWorker;
 import org.chromium.chrome.browser.ADBlockUpdaterWorker;
 import org.chromium.chrome.browser.init.InvalidStartupDialog;
@@ -62,7 +63,8 @@ public class ChromeApplication extends Application {
     private DiscardableReferencePool mReferencePool;
     private ShieldsConfig mShieldsConfig;
     // Sync worker
-    public BraveSyncWorker mBraveSyncWorker = null;
+    public BraveSyncLoader mBraveSyncLoader = null;
+//    public BraveSyncWorker mBraveSyncWorker = null;
     // Stats updater
     public StatsUpdaterWorker mStatsUpdaterWorker = null;
     // ADBlock updater

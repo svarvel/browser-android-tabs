@@ -45,11 +45,13 @@ public class BookmarkModel extends BookmarkBridge {
      */
     public BookmarkModel() {
         this(Profile.getLastUsedProfile().getOriginalProfile());
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkModel CTOR default called, tid=" + Thread.currentThread().getId());
     }
 
     @VisibleForTesting
     public BookmarkModel(Profile profile) {
         super(profile);
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkModel CTOR(Profile) called, tid=" + Thread.currentThread().getId());
     }
 
     /**
@@ -70,6 +72,7 @@ public class BookmarkModel extends BookmarkBridge {
      * @param observer The observer to add.
      */
     void addDeleteObserver(BookmarkDeleteObserver observer) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkModel.addDeleteObserver, tid=" + Thread.currentThread().getId());
         mDeleteObservers.addObserver(observer);
     }
 
@@ -78,6 +81,7 @@ public class BookmarkModel extends BookmarkBridge {
      * @param observer The observer to remove.
      */
     void removeDeleteObserver(BookmarkDeleteObserver observer) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkModel.removeDeleteObserver, tid=" + Thread.currentThread().getId());
         mDeleteObservers.removeObserver(observer);
     }
 
@@ -145,15 +149,17 @@ public class BookmarkModel extends BookmarkBridge {
         BookmarkItem[] bookmarksToMove = new BookmarkItem[bookmarkIds.size()];
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         for (int i = 0; i < bookmarkIds.size(); ++i) {
-            if (null != app && null != app.mBraveSyncWorker && app.mBraveSyncWorker.SyncBookmarkModelIsReady()) {
-                app.mBraveSyncWorker.SyncedMoveBookmark(bookmarkIds.get(i), newParentId);
+            if (null != app && null != app.mBraveSyncLoader &&
+                null != app.mBraveSyncLoader.mBraveSyncWorker &&
+                app.mBraveSyncLoader.mBraveSyncWorker.SyncBookmarkModelIsReady()) {
+                app.mBraveSyncLoader.mBraveSyncWorker.SyncedMoveBookmark(bookmarkIds.get(i), newParentId);
             } else {
                 moveBookmark(bookmarkIds.get(i), newParentId, appenedIndex + i);
             }
             bookmarksToMove[i] = getBookmarkById(bookmarkIds.get(i));
         }
-        if (null != app && null != app.mBraveSyncWorker && null != newParentId) {
-            app.mBraveSyncWorker.CreateUpdateDeleteBookmarks(BraveSyncWorker.UPDATE_RECORD, bookmarksToMove, true, false);
+        if (null != app && null != app.mBraveSyncLoader && null != app.mBraveSyncLoader.mBraveSyncWorker && null != newParentId) {
+            app.mBraveSyncLoader.mBraveSyncWorker.CreateUpdateDeleteBookmarks(BraveSyncWorker.UPDATE_RECORD, bookmarksToMove, true, false);
         }
     }
 

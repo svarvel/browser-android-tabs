@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 
 import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.Callback;
+import org.chromium.base.Log;
 import org.chromium.base.ThreadUtils;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.CachedMetrics.ActionEvent;
@@ -608,6 +609,17 @@ public class ToolbarManager implements ToolbarTabController, UrlFocusChangeListe
             @Override
             public void bookmarkModelChanged() {
                 updateBookmarkButtonStatus();
+            }
+
+    //         @Override
+    //         public void bookmarkModelLoaded() {
+    // Log.i("TAG_BookmDb", "[BookmDb] ToolbarManager.BookmarkModelObserver.bookmarkModelLoaded tid=" + Thread.currentThread().getId());
+    //         }
+
+            @Override
+            public void bookmarkIdsReassigned(boolean idsReassigned) {
+    Log.i("TAG_BookmDb", "[BookmDb] ToolbarManager...bookmarkIdsReassigned idsReassigned="+idsReassigned
++" tid=" + Thread.currentThread().getId());
             }
         };
 
@@ -1619,6 +1631,10 @@ public class ToolbarManager implements ToolbarTabController, UrlFocusChangeListe
             if (profile != null) {
                 mBookmarkBridge = new BookmarkBridge(profile);
                 mBookmarkBridge.addObserver(mBookmarksObserver);
+Log.i("TAG_BookmDb", "[BookmDb] ToolbarManager done mBookmarkBridge.addObserver tid=" + Thread.currentThread().getId());
+/*
+this is most earlier place ???
+*/
                 mAppMenuPropertiesDelegate.setBookmarkBridge(mBookmarkBridge);
                 mLocationBar.setAutocompleteProfile(profile);
             }

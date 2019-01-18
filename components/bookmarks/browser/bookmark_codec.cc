@@ -121,8 +121,17 @@ bool BookmarkCodec::Decode(const base::Value& value,
   FinalizeChecksum();
   // If either the checksums differ or some IDs were missing/not unique,
   // reassign IDs.
-  if (!ids_valid_ || computed_checksum() != stored_checksum())
+  if (!ids_valid_ || computed_checksum() != stored_checksum()) {
     ReassignIDs(bb_node, other_folder_node, mobile_folder_node);
+    LOG(INFO) <<"[BookmDb] " << __func__ << " do ReassignIDs";
+  } else {
+    //TODO(alexeyb): do not merge this from branch, this is for dev only
+    LOG(INFO) <<"[BookmDb] " << __func__ << " skip ReassignIDs maximum_id_="<<maximum_id_;
+    if (maximum_id_ > 1000) {
+      LOG(INFO) <<"[BookmDb] " << __func__ << " force call ReassignIDs";
+      ReassignIDs(bb_node, other_folder_node, mobile_folder_node);
+    }
+  }
   *max_id = maximum_id_ + 1;
   return success;
 }
@@ -472,6 +481,7 @@ void BookmarkCodec::ReassignIDs(BookmarkNode* bb_node,
   ReassignIDsHelper(other_node);
   ReassignIDsHelper(mobile_node);
   ids_reassigned_ = true;
+LOG(INFO) <<"[BookmDb] " << __func__ << " ids_reassigned_ = true";
 }
 
 void BookmarkCodec::ReassignIDsHelper(BookmarkNode* node) {

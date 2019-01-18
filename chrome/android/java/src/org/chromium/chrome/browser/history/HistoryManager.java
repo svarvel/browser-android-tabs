@@ -100,6 +100,7 @@ public class HistoryManager implements OnMenuItemClickListener, SignInStateObser
     @SuppressWarnings("unchecked") // mSelectableListLayout
     public HistoryManager(Activity activity, boolean isSeparateActivity,
             SnackbarManager snackbarManager, boolean isIncognito) {
+assert false; // AB: test crash              
         mShouldShowInfoHeader =
                 ContextUtils.getAppSharedPreferences().getBoolean(PREF_SHOW_HISTORY_INFO, true);
         mActivity = activity;

@@ -57,6 +57,7 @@ import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordHistogram;
 import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
+import org.chromium.chrome.browser.BraveSyncLoader;
 import org.chromium.chrome.browser.BraveSyncWorker;
 import org.chromium.chrome.browser.StatsUpdaterWorker;
 import org.chromium.chrome.browser.ADBlockUpdaterWorker;
@@ -1457,9 +1458,16 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
         // Stop SyncWorker
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-        if (null != app && null != app.mBraveSyncWorker) {
-            app.mBraveSyncWorker.Stop();
-            app.mBraveSyncWorker = null;
+        // if (null != app && null != app.mBraveSyncWorker) {
+        //     app.mBraveSyncWorker.Stop();
+        //     app.mBraveSyncWorker = null;
+        // }
+        if (null != app && null != app.mBraveSyncLoader) {
+          if (null != app.mBraveSyncLoader.mBraveSyncWorker) {
+            app.mBraveSyncLoader.mBraveSyncWorker.Stop();
+            app.mBraveSyncLoader.mBraveSyncWorker = null;
+          }
+          app.mBraveSyncLoader = null;
         }
         if (null != app && null != app.mStatsUpdaterWorker) {
             app.mStatsUpdaterWorker.Stop();
@@ -1640,7 +1648,8 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // Starting Brave Sync
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
-            app.mBraveSyncWorker = new BraveSyncWorker(this);
+            app.mBraveSyncLoader = new BraveSyncLoader(this);
+            //app.mBraveSyncWorker = new BraveSyncWorker(this, false);
             app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
             app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
             //MixPanelWorker.SendBraveAppStartEvent();
@@ -1830,8 +1839,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 }
                 BookmarkModel newBookmarkModel = new BookmarkModel();
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-                if (null != app && null != app.mBraveSyncWorker && null != newBookmarkId && null != newBookmarkModel) {
-                    app.mBraveSyncWorker.CreateUpdateBookmark(bCreateBookmark, newBookmarkModel.getBookmarkById(newBookmarkId));
+                if (null != app && null != app.mBraveSyncLoader &&
+                    null != app.mBraveSyncLoader.mBraveSyncWorker && null != newBookmarkId && null != newBookmarkModel) {
+                    app.mBraveSyncLoader.mBraveSyncWorker.CreateUpdateBookmark(bCreateBookmark, newBookmarkModel.getBookmarkById(newBookmarkId));
                     newBookmarkModel.destroy();
                 }
                 if (null != newBookmarkModel) {

@@ -126,6 +126,7 @@ PartnerBookmarksReader::~PartnerBookmarksReader() {}
 void PartnerBookmarksReader::PartnerBookmarksCreationComplete(
     JNIEnv*,
     const JavaParamRef<jobject>&) {
+LOG(INFO) <<"[BookmDb] " << __func__ << " call SetPartnerBookmarksRoot";
   DCHECK_CURRENTLY_ON(BrowserThread::UI);
   partner_bookmarks_shim_->SetPartnerBookmarksRoot(
       std::move(wip_partner_bookmarks_root_));

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.base.ObserverList;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordUserAction;
@@ -117,10 +118,12 @@ public class BookmarkManager implements BookmarkDelegate, SearchDelegate,
     private final Runnable mModelLoadedRunnable = new Runnable() {
         @Override
         public void run() {
+Log.i("TAG_BookmDb", "[BookmDb] mModelLoadedRunnable.run, tid=" + Thread.currentThread().getId());
             ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-            if (null != app && null != app.mBraveSyncWorker) {
-                mBookmarkModel.addObserver(app.mBraveSyncWorker.mBookmarkModelObserver);
-                app.mBraveSyncWorker.mBookmarkModelObserver.braveBookmarkModelLoaded(mBookmarkModel);
+            if (null != app && null != app.mBraveSyncLoader && null != app.mBraveSyncLoader.mBraveSyncWorker) {
+Log.i("TAG_BookmDb", "[BookmDb] mModelLoadedRunnable.run, addObserver(braveSync)  tid=" + Thread.currentThread().getId());
+                mBookmarkModel.addObserver(app.mBraveSyncLoader.mBraveSyncWorker.mBookmarkModelObserver);
+                app.mBraveSyncLoader.mBraveSyncWorker.mBookmarkModelObserver.braveBookmarkModelLoaded(mBookmarkModel);
             }
         }
     };
@@ -133,6 +136,7 @@ public class BookmarkManager implements BookmarkDelegate, SearchDelegate,
      * @param snackbarManager The {@link SnackbarManager} used to display snackbars.
      */
     public BookmarkManager(Activity activity, boolean isDialogUi, SnackbarManager snackbarManager) {
+Log.i("TAG_BookmDb", "[BookmDb] BookmarkManager CTOR, tid=" + Thread.currentThread().getId());
         mActivity = activity;
         mIsDialogUi = isDialogUi;
 

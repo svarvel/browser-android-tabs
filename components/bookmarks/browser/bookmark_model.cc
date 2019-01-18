@@ -819,10 +819,12 @@ void BookmarkModel::DoneLoading(std::unique_ptr<BookmarkLoadDetails> details) {
       store_ ? base::BindRepeating(&BookmarkStorage::ScheduleSave,
                                    base::Unretained(store_.get()))
              : base::DoNothing());
-
+LOG(INFO) <<"[BookmDb] " << __func__ << " (MODEL) details->ids_reassigned()="<<details->ids_reassigned();
+LOG(INFO) <<"[BookmDb] " << __func__ << " (MODEL) invoking all observer.BookmarkModelLoaded";
   // Notify our direct observers.
   for (BookmarkModelObserver& observer : observers_)
     observer.BookmarkModelLoaded(this, details->ids_reassigned());
+LOG(INFO) <<"[BookmDb] " << __func__ << " (MODEL) done invoking observer.BookmarkModelLoaded";
 }
 
 BookmarkNode* BookmarkModel::AddNode(BookmarkNode* parent,

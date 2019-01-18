@@ -22,6 +22,7 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/BackgroundSyncLauncher.java",
   "java/src/org/chromium/chrome/browser/BitmapCache.java",
   "java/src/org/chromium/chrome/browser/BluetoothChooserDialog.java",
+  "java/src/org/chromium/chrome/browser/BraveSyncLoader.java",
   "java/src/org/chromium/chrome/browser/BraveSyncWorker.java",
   "java/src/org/chromium/chrome/browser/BrowserRestartActivity.java",
   "java/src/org/chromium/chrome/browser/ChromeActionModeCallback.java",

@@ -31,6 +31,16 @@ void CreateOpenDatabase() {
     std::lock_guard<std::mutex> guard(*g_pLevel_db_init_mutex);
 
     if (nullptr == g_level_db) {
+        LOG(INFO) <<"[BookmDb] " << __func__ << " Opening leveldb db";
+        LOG(INFO) <<"[BookmDb] " << __func__ << " Stack: " << base::debug::StackTrace().ToString();
+        LOG(INFO) <<"[BookmDb] " << __func__ << " Stack: ---- done";
+/*
+Stack may be:
+02f7ff09  brave_sync_storage::CreateOpenDatabase()                                                                                                                              /home/alexey/Projects/mast
+v------>  brave_sync_storage::JNI_BraveSyncWorker_GetObjectIdByLocalId(_JNIEnv*, base::android::JavaParamRef<_jobject*> const&, base::android::JavaParamRef<_jstring*> const&)  /home/alexey/Projects/mast
+02f7fa91  Java_org_chromium_chrome_browser_BraveSyncWorker_nativeGetObjectIdByLocalId                                                                                           /home/alexey/Projects/mast
+*/
+
         base::FilePath app_data_path;
         base::PathService::Get(base::DIR_ANDROID_APP_DATA, &app_data_path);
         base::FilePath dbFilePath = app_data_path.Append(DB_FILE_NAME);

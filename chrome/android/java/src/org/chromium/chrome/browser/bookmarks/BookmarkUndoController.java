@@ -55,8 +55,9 @@ public class BookmarkUndoController extends BookmarkModelObserver implements
 
     private void syncDeletedBookmarks() {
         ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-        if (null != application && null != application.mBraveSyncWorker && mBookmarks != null && mBookmarks.size() > 0) {
-            application.mBraveSyncWorker.DeleteBookmarks(mBookmarks.toArray(new BookmarkItem[mBookmarks.size()]));
+        if (null != application && null != application.mBraveSyncLoader &&
+            null != application.mBraveSyncLoader.mBraveSyncWorker && mBookmarks != null && mBookmarks.size() > 0) {
+            application.mBraveSyncLoader.mBraveSyncWorker.DeleteBookmarks(mBookmarks.toArray(new BookmarkItem[mBookmarks.size()]));
             mBookmarks.clear();
         }
     }

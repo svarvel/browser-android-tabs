@@ -250,7 +250,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
       // Initialize mSyncScreensObserver
       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-      if (null != application && null != application.mBraveSyncWorker) {
+      if (null != application && null != application.mBraveSyncLoader &&
+          null != application.mBraveSyncLoader.mBraveSyncWorker) {
           if (null == mSyncScreensObserver) {
               mSyncScreensObserver = new BraveSyncScreensObserver() {
                   @Override
@@ -297,9 +298,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                   public void run() {
                                       cancelTimeoutTimer();
                                       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                                      if (null != application && null != application.mBraveSyncWorker) {
-                                          application.mBraveSyncWorker.SetSyncEnabled(true);
-                                          application.mBraveSyncWorker.InitSync(true, false);
+                                      if (null != application && null != application.mBraveSyncLoader
+                                          && null != application.mBraveSyncLoader.mBraveSyncWorker) {
+                                          application.mBraveSyncLoader.mBraveSyncWorker.SetSyncEnabled(true);
+                                          application.mBraveSyncLoader.mBraveSyncWorker.InitSync(true, false);
                                       }
                                       setAppropriateView();
                                   }
@@ -348,7 +350,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                   @Override
                                                   public void run() {
                                                       cancelTimeoutTimer();
-                                                      application.mBraveSyncWorker.SetSyncEnabled(true);
+                                                      application.mBraveSyncLoader.mBraveSyncWorker.SetSyncEnabled(true);
                                                       mQRCodeImage.setImageBitmap(bitmap);
                                                       mQRCodeImage.invalidate();
                                                   }
@@ -362,7 +364,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                       getActivity().runOnUiThread(new Runnable() {
                                           @Override
                                           public void run() {
-                                              application.mBraveSyncWorker.GetCodeWords();
+                                              application.mBraveSyncLoader.mBraveSyncWorker.GetCodeWords();
                                           }
                                       });
                                   }
@@ -386,7 +388,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                               @Override
                               public void run() {
                                   cancelTimeoutTimer();
-                                  application.mBraveSyncWorker.SetSyncEnabled(true);
+                                  application.mBraveSyncLoader.mBraveSyncWorker.SetSyncEnabled(true);
                                   String words = "";
                                   for (int i = 0; i < codeWords.length; i++) {
                                       words = words + " " + codeWords[i].trim();
@@ -416,11 +418,12 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                   String currentDeviceId = sharedPref.getString(BraveSyncWorker.PREF_DEVICE_ID, "");
                                   // Load other devices in chain
                                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                                  if (null != application && null != application.mBraveSyncWorker) {
+                                  if (null != application && null != application.mBraveSyncLoader &&
+                                      null != application.mBraveSyncLoader.mBraveSyncWorker) {
                                       new Thread(new Runnable() {
                                           @Override
                                           public void run() {
-                                              ArrayList<BraveSyncWorker.ResolvedRecordToApply> devices = application.mBraveSyncWorker.GetAllDevices();
+                                              ArrayList<BraveSyncWorker.ResolvedRecordToApply> devices = application.mBraveSyncLoader.mBraveSyncWorker.GetAllDevices();
                                               if (null == getActivity()) {
                                                   return;
                                               }
@@ -506,7 +509,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                   }
               };
           }
-          application.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
+          application.mBraveSyncLoader.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
       }
 
       mSyncSwitchBookmarks = (Switch) getView().findViewById(R.id.sync_bookmarks_switch);
@@ -773,11 +776,12 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               }
               return;
           }
-          if (null != application && null != application.mBraveSyncWorker && null != words) {
+          if (null != application && null != application.mBraveSyncLoader &&
+              null != application.mBraveSyncLoader.mBraveSyncWorker && null != words) {
               for (int i = 0; i < words.length; i++) {
                   words[i] = words[i].trim();
               }
-              application.mBraveSyncWorker.GetNumber(words);
+              application.mBraveSyncLoader.mBraveSyncWorker.GetNumber(words);
           }
       } else if (mEnterCodeWordsButton == v) {
           getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
@@ -840,9 +844,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           return;
       }
       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-      if (null != application && null != application.mBraveSyncWorker) {
+      if (null != application && null != application.mBraveSyncLoader &&
+          null != application.mBraveSyncLoader.mBraveSyncWorker) {
           if (buttonView == mSyncSwitchBookmarks) {
-              application.mBraveSyncWorker.SetSyncBookmarksEnabled(isChecked);
+              application.mBraveSyncLoader.mBraveSyncWorker.SetSyncBookmarksEnabled(isChecked);
           } else if (buttonView == mSyncSwitchTabs && null != mPrefSwitchTabs) {
               mPrefSwitchTabs.setChecked(isChecked);
           } else if (buttonView == mSyncSwitchHistory && null != mPrefSwitchHistory) {
@@ -1039,9 +1044,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               @Override
               public void run() {
                   ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                  if (null != application && null != application.mBraveSyncWorker) {
-                      application.mBraveSyncWorker.SetSyncEnabled(true);
-                      application.mBraveSyncWorker.InitSync(true, false);
+                  if (null != application && null != application.mBraveSyncLoader &&
+                      null != application.mBraveSyncLoader.mBraveSyncWorker) {
+                      application.mBraveSyncLoader.mBraveSyncWorker.SetSyncEnabled(true);
+                      application.mBraveSyncLoader.mBraveSyncWorker.InitSync(true, false);
                   }
                   setAppropriateView();
               }
@@ -1138,12 +1144,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
             public void onClick(DialogInterface dialog, int button) {
                 if (button == AlertDialog.BUTTON_POSITIVE) {
                     ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-                    if (null != application && null != application.mBraveSyncWorker) {
+                    if (null != application && null != application.mBraveSyncLoader &&
+                        null != application.mBraveSyncLoader.mBraveSyncWorker) {
                         new Thread() {
                             @Override
                             public void run() {
-                                application.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
-                                application.mBraveSyncWorker.InterruptSyncSleep();
+                                application.mBraveSyncLoader.mBraveSyncWorker.SetUpdateDeleteDeviceName(BraveSyncWorker.DELETE_RECORD, deviceName, deviceId, deviceObjectId);
+                                application.mBraveSyncLoader.mBraveSyncWorker.InterruptSyncSleep();
                             }
                         }.start();
                         v.setEnabled(false);
@@ -1245,13 +1252,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           @Override
           public void run() {
               ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-              if (null != application && null != application.mBraveSyncWorker) {
+              if (null != application && null != application.mBraveSyncLoader &&
+                  null != application.mBraveSyncLoader.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
                       startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
-                      application.mBraveSyncWorker.InitSync(true, true);
+                      application.mBraveSyncLoader.mBraveSyncWorker.InitSync(true, true);
                   } else {
                       mSyncScreensObserver.onSeedReceived(seed, false, true);
                   }
@@ -1287,13 +1295,14 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           @Override
           public void run() {
               ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-              if (null != application && null != application.mBraveSyncWorker) {
+              if (null != application && null != application.mBraveSyncLoader &&
+                  null != application.mBraveSyncLoader.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
                   if (null == seed || seed.isEmpty()) {
                       startTimeoutTimerWithPopup(getResources().getString(R.string.brave_sync_loading_data_title));
                       // Init to receive new seed
-                      application.mBraveSyncWorker.InitSync(true, true);
+                      application.mBraveSyncLoader.mBraveSyncWorker.InitSync(true, true);
                   } else {
                       mSyncScreensObserver.onSeedReceived(seed, false, true);
                   }
@@ -1331,9 +1340,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           mScrollViewSyncDone.setVisibility(View.VISIBLE);
       }
       ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
-      if (null != application && null != application.mBraveSyncWorker) {
+      if (null != application && null != application.mBraveSyncLoader.mBraveSyncWorker &&
+          null != application.mBraveSyncLoader.mBraveSyncWorker) {
           if (null != mSyncSwitchBookmarks) {
-              mSyncSwitchBookmarks.setChecked(application.mBraveSyncWorker.IsSyncBookmarksEnabled());
+              mSyncSwitchBookmarks.setChecked(application.mBraveSyncLoader.mBraveSyncWorker.IsSyncBookmarksEnabled());
           }
           if (null != mSyncSwitchTabs) {
               if (null != mPrefSwitchTabs) {
@@ -1360,9 +1370,10 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           // It should become visible as soon as we get all devices info
           mRemoveDeviceButton.setVisibility(View.GONE);
       }
-      if (null != application && null != application.mBraveSyncWorker) {
+      if (null != application && null != application.mBraveSyncLoader &&
+          null != application.mBraveSyncLoader.mBraveSyncWorker) {
           mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_loading_devices_title));
-          application.mBraveSyncWorker.InterruptSyncSleep();
+          application.mBraveSyncLoader.mBraveSyncWorker.InterruptSyncSleep();
       }
       if (null != mSyncScreensObserver) {
           mSyncScreensObserver.onDevicesAvailable();

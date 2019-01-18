@@ -211,8 +211,9 @@ public class BookmarkAddEditFolderActivity extends SynchronousInitializationActi
 
             BookmarkId newFolder = mModel.addFolder(mParentId, 0, mFolderTitle.getTrimmedText());
             ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-            if (null != app && null != app.mBraveSyncWorker && null != newFolder && null != mModel) {
-                app.mBraveSyncWorker.CreateUpdateBookmark(mIsAddMode, mModel.getBookmarkById(newFolder));
+            if (null != app && null != app.mBraveSyncLoader &&
+                null != app.mBraveSyncLoader.mBraveSyncWorker && null != newFolder && null != mModel) {
+                app.mBraveSyncLoader.mBraveSyncWorker.CreateUpdateBookmark(mIsAddMode, mModel.getBookmarkById(newFolder));
             }
             Intent intent = new Intent();
             intent.putExtra(INTENT_CREATED_BOOKMARK, newFolder.toString());
@@ -241,8 +242,8 @@ public class BookmarkAddEditFolderActivity extends SynchronousInitializationActi
             }
             mModel.setBookmarkTitle(mFolderId, mFolderTitle.getTrimmedText());
             ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-            if (null != app && null != app.mBraveSyncWorker && updateSync) {
-                app.mBraveSyncWorker.CreateUpdateBookmark(false, mModel.getBookmarkById(mFolderId));
+            if (null != app && null != app.mBraveSyncLoader && null != app.mBraveSyncLoader.mBraveSyncWorker && updateSync) {
+                app.mBraveSyncLoader.mBraveSyncWorker.CreateUpdateBookmark(false, mModel.getBookmarkById(mFolderId));
             }
         }
 

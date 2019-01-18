@@ -180,6 +180,10 @@ public class PartnerBookmarksReader {
      * down the bookmark reader.
      */
     protected void onBookmarksRead() {
+Log.i("TAG_BookmDb", "[BookmDb] PartnerBookmarksReader.onBookmarksRead() will call nativePartnerBookmarksCreationComplete(...)");
+Log.i("TAG_BookmDb", "[BookmDb] stack="+Log.getStackTraceString(new Exception()));
+Log.i("TAG_BookmDb", "[BookmDb] -----------------------------------");
+
         nativePartnerBookmarksCreationComplete(mNativePartnerBookmarksReader);
         mFinishedReading = true;
         synchronized (mProgressLock) {
