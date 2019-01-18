@@ -370,8 +370,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           btClaimOk.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              // TODO call a real claim or ok functionality
-              if (mBraveRewardsNativeWorker != null) {
+              Button claimOk = (Button)v;
+              if (claimOk.getText().toString().equals(
+                root.getResources().getString(R.string.ok))) {
+                  if (mBraveRewardsNativeWorker != null) {
+                      mBraveRewardsNativeWorker.DeleteNotification(currentNotificationId);
+                  }
+              }
+              else if (mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.GetGrant();
               }
             }
@@ -498,10 +504,48 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         String notificationTime = currentMonth + " " + currentDay;
         String title = "";
         String description = "";
+        Button btClaimOk = (Button)root.findViewById(R.id.br_claim_button);
+        ImageView notification_icon = (ImageView)root.findViewById(R.id.br_notification_icon);
         // TODO other types of notifications
         switch (type) {
+          case 1:
+            // Auto contribution successful
+            btClaimOk.setText(root.getResources().getString(R.string.ok));
+            notification_icon.setImageResource(R.drawable.contribute_icon);
+            title = root.getResources().getString(R.string.brave_ui_rewards_contribute);
+            if (args.length >= 4) {
+              String result = args[1];
+              // Results
+              // 0 - success
+              // 1 - general error
+              // 15 - not enough funds
+              // 16 - error while tipping
+              switch (result) {
+                case "0":
+                  description = String.format(
+                    root.getResources().getString(R.string.brave_ui_rewards_contribute_description),
+                    BraveRewardsHelper.probiToNumber(args[3]), args[2]);
+                  break;
+                case "15":
+                  description = 
+                    root.getResources().getString(R.string.brave_ui_notification_desc_no_funds);
+                  break;
+                case "16":
+                  description = 
+                    root.getResources().getString(R.string.brave_ui_notification_desc_tip_error);
+                  break;
+                default:
+                  description = 
+                    root.getResources().getString(R.string.brave_ui_notification_desc_contr_error);
+              }
+            } else {
+              assert false;
+            }
+            break;
           case 2:
             // Grants notification
+            btClaimOk.setText(root.getResources().getString(R.string.brave_ui_claim));
+            notification_icon.setImageResource(R.drawable.grant_icon);
             title = root.getResources().getString(R.string.brave_ui_new_token_grant);
             description = root.getResources().getString(R.string.brave_ui_new_grant);
             break;

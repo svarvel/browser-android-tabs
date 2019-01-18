@@ -271,6 +271,7 @@
                             android:drawableStart="@drawable/icon_close_notification"/>
 
                         <ImageView
+                            android:id="@+id/br_notification_icon"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:src="@drawable/grant_icon"
@@ -285,6 +286,8 @@
                             android:layout_width="wrap_content"
                             android:text=""
                             android:gravity="center"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="5dp"
                             android:layout_gravity="center"
                             android:layout_marginBottom="5dp"/>
 
