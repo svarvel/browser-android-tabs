@@ -111,3 +111,14 @@ export const onNumExcludedSites = (num: string) => action(types.ON_NUM_EXCLUDED_
 export const onContributionAmount = (amount: number) => action(types.ON_CONTRIBUTION_AMOUNT, {
   amount
 })
+
+export const getAdsData = () => action(types.GET_ADS_DATA)
+
+export const onAdsData = (adsData: Rewards.AdsData) => action(types.ON_ADS_DATA, {
+  adsData
+})
+
+export const onAdsSettingSave = (key: string, value: any) => action(types.ON_ADS_SETTING_SAVE, {
+  key,
+  value
+})

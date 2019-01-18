@@ -10,7 +10,6 @@ const keyName = 'rewards-data'
 export const defaultState: Rewards.State = {
   createdTimestamp: null,
   enabledMain: false,
-  enabledAds: true,
   enabledContribute: true,
   firstLoad: null,
   walletCreated: false,
@@ -36,6 +35,11 @@ export const defaultState: Rewards.State = {
     emptyWallet: true,
     walletServerProblem: false,
     modalBackup: false
+  },
+  adsData: {
+    adsEnabled: false,
+    adsPerHour: 0,
+    adsUIEnabled: false
   },
   autoContributeList: [],
   reports: {}
