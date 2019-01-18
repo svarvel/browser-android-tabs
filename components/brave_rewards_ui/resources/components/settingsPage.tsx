@@ -73,6 +73,7 @@ class SettingsPage extends React.Component<Props, State> {
     }, 60000)
 
     this.actions.getGrant()
+    this.actions.getAdsData()
   }
 
   componentWillUnmount () {

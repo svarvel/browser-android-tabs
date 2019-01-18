@@ -18,9 +18,9 @@ declare namespace Rewards {
 
   export interface State {
     addresses?: Record<AddressesType, Address>
+    adsData: AdsData
     createdTimestamp: number | null
     enabledMain: boolean
-    enabledAds: boolean
     enabledContribute: boolean
     firstLoad: boolean | null
     walletCreated: boolean
@@ -117,5 +117,11 @@ declare namespace Rewards {
   export interface Captcha {
     image: string
     hint: string
+  }
+
+  export interface AdsData {
+    adsEnabled: boolean
+    adsPerHour: number
+    adsUIEnabled: boolean
   }
 }

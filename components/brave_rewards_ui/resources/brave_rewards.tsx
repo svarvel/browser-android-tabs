@@ -107,6 +107,10 @@ window.cr.define('brave_rewards', function () {
     getActions().onContributionAmount(amount)
   }
 
+  function adsData (adsData: Rewards.AdsData) {
+    getActions().onAdsData(adsData)
+  }
+
   return {
     initialize,
     walletCreated,
@@ -123,7 +127,8 @@ window.cr.define('brave_rewards', function () {
     numExcludedSites,
     balanceReports,
     walletExists,
-    contributionAmount
+    contributionAmount,
+    adsData
   }
 })
 if (document.readyState === "complete"

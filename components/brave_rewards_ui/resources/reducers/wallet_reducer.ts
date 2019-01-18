@@ -11,7 +11,6 @@ import { generateQR } from '../qrUtils'
 const createWallet = (state: Rewards.State) => {
   state.walletCreated = true
   state.enabledMain = true
-  state.enabledAds = true
   state.enabledContribute = true
   state.createdTimestamp = new Date().getTime()
   chrome.send('brave_rewards.getReconcileStamp', [])
