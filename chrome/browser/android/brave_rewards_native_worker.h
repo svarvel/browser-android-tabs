@@ -90,6 +90,11 @@ public:
 
     void GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    int GetCurrentGrantsCount(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+    base::android::ScopedJavaLocalRef<jobjectArray> GetCurrentGrant(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        int position);
+
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
