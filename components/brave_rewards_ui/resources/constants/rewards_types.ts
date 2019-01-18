@@ -39,4 +39,5 @@ export const enum types {
   GET_ADS_DATA = '@@rewards/GET_ADS_DATA',
   ON_ADS_DATA = '@@rewards/ON_ADS_DATA',
   ON_ADS_SETTING_SAVE = '@@rewards/ON_ADS_SETTING_SAVE'
+  INIT_AUTOCONTRIBUTE_SETTINGS = '@@rewards/INIT_AUTOCONTRIBUTE_SETTINGS'
 }

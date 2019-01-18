@@ -122,3 +122,7 @@ export const onAdsSettingSave = (key: string, value: any) => action(types.ON_ADS
   key,
   value
 })
+
+export const onInitAutoContributeSettings = (properties: any) => action(types.INIT_AUTOCONTRIBUTE_SETTINGS, {
+  properties
+})

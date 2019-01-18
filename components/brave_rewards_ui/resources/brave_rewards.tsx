@@ -111,6 +111,10 @@ window.cr.define('brave_rewards', function () {
     getActions().onAdsData(adsData)
   }
 
+  function initAutoContributeSettings (properties: any) {
+    getActions().onInitAutoContributeSettings(properties)
+  }
+
   return {
     initialize,
     walletCreated,
@@ -128,7 +132,8 @@ window.cr.define('brave_rewards', function () {
     balanceReports,
     walletExists,
     contributionAmount,
-    adsData
+    adsData,
+    initAutoContributeSettings
   }
 })
 if (document.readyState === "complete"
