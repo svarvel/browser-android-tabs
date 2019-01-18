@@ -4308,6 +4308,10 @@ content creators.
       <message name="IDS_BRAVE_UI_DONATION_SENT" desc="">
         tip sent!
       </message>
+      <message name="IDS_BRAVE_UI_ERROR_INIT_WALLET" desc="">
+        Please try again later.
+      </message>
+
 
 
       <message name="IDS_BRAVE_UI_MONTH_JAN" desc="">JANUARY</message>

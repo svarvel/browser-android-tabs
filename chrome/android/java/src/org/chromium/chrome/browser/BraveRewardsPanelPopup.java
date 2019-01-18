@@ -32,6 +32,7 @@ import android.widget.TextView;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.widget.Toast;
 
 
 import org.chromium.base.annotations.CalledByNative;
@@ -89,6 +90,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private TextView tvPublisherNotVerified;
     private TextView tvPublisherNotVerifiedSummary;
     private int currentFavIconFetch;
+    private boolean walletInitialized;
+    AnimationDrawable wallet_init_animation;
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -187,7 +190,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             }
         });
         if (mBraveRewardsNativeWorker != null && mBraveRewardsNativeWorker.WalletExist()) {
-          ShowWebSiteView();
+            walletInitialized = true;
+            ShowWebSiteView();
         }
         btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
@@ -201,9 +205,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_rewards_creating_text));
                 btJoinRewards.setClickable(false);
                 btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.brave_rewards_loader, 0);
-                AnimationDrawable drawable = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
-                if (drawable != null) {
-                  drawable.start();
+                wallet_init_animation = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
+                if (wallet_init_animation != null) {
+                    wallet_init_animation.start();
                 }
             }
           }));
@@ -535,10 +539,24 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     public void OnWalletInitialized(int error_code) {
       if (error_code == 0) {
         // Wallet created
-        ShowWebSiteView();
-      } else if (error_code == 1) {
-        // TODO error handling
+          walletInitialized = true;
+          ShowWebSiteView();
       }
+      else {
+          Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
+          btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_welcome_button_text_two));
+          btJoinRewards.setClickable(true);
+          btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+          if (wallet_init_animation != null) {
+              wallet_init_animation.stop();
+          }
+
+          Context context = ContextUtils.getApplicationContext();
+          Toast toast = Toast.makeText(context, root.getResources().getString(R.string.brave_ui_error_init_wallet), Toast.LENGTH_SHORT);
+          toast.show();
+
+      }
+        wallet_init_animation = null;
     }
 
     @Override
