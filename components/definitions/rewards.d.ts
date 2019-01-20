@@ -45,7 +45,8 @@ declare namespace Rewards {
       walletServerProblem: boolean
       modalBackup: boolean
     }
-    autoContributeList: Publisher[]
+    autoContributeList: Publisher[],
+    safetyNetFailed: boolean
   }
 
   export interface ComponentProps {
