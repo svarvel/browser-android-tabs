@@ -42,7 +42,8 @@ export const defaultState: Rewards.State = {
     adsUIEnabled: false
   },
   autoContributeList: [],
-  reports: {}
+  reports: {},
+  safetyNetFailed: false
 }
 
 const cleanData = (state: Rewards.State) => state
