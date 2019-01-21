@@ -188,7 +188,7 @@ class ContributeBox extends React.Component<Props, State> {
         type={'contribute'}
         description={getLocale('contributionDesc')}
         toggle={enabledMain}
-        checked={enabledContribute}
+        checked={enabledMain && enabledContribute}
         settingsChild={this.contributeSettings(monthlyList)}
         toggleAction={this.onToggleContribution}
       >
