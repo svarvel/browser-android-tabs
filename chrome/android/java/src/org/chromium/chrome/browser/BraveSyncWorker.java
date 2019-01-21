@@ -159,8 +159,15 @@ public class BraveSyncWorker {
             return "['" + BOOKMARKS + "', '" + PREFERENCES + "']";//"', '" + HISTORY + "', '" + PREFERENCES + "']";
         }
 
-        public static String GetPreferencesOnly() {
-            return "['" + PREFERENCES + "']";
+        public static String GetRecordTypeJSArray(String recordType) {
+            if (recordType.isEmpty()) {
+                return GetJSArray();
+            }
+            if (!recordType.equals(BOOKMARKS) && !recordType.equals(HISTORY) &&
+                !recordType.equals(PREFERENCES)) {
+                assert false;
+            }
+            return "['" + recordType + "']";
         }
     }
 
@@ -518,11 +525,11 @@ public class BraveSyncWorker {
         }
         final BookmarkItem[] bookmarksFinal = bookmarks;
 
-        new AsyncTask<Void>() {
+        new Thread() {
             @Override
-            protected Void doInBackground() {
+            public void run() {
                 if (!mSyncIsReady.IsReady()) {
-                    return null;
+                    return;
                 }
 
                 ArrayList<String> ids = new ArrayList<String>();
@@ -544,12 +551,10 @@ public class BraveSyncWorker {
                 }
                 if (bookmarkRequest.length() == 0) {
                     // Nothing to send
-                    return null;
+                    return;
                 }
                 //Log.i(TAG, "!!!bookmarkRequest == " + bookmarkRequest);
                 SendSyncRecords(SyncRecordType.BOOKMARKS, bookmarkRequest, actionFinal, ids);
-
-                return null;
             }
 
             private void formRequestForParrentFolders(List<BookmarkItem> bookmarksParentFolders, boolean isInitialSync, boolean comesFromPreviousSeed,
@@ -648,7 +653,7 @@ public class BraveSyncWorker {
 
                 return bookmarkRequest;
             }
-        }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }.start();
     }
 
     public void DeleteBookmarks(BookmarkItem[] bookmarks) {
@@ -1040,7 +1045,7 @@ public class BraveSyncWorker {
         }
     }
 
-    private void SendBulkBookmarks () {
+    private void SendBulkBookmarks() {
         synchronized (mSendSyncDataThread) {
             if (!mSyncIsReady.IsReady() || mBulkBookmarkOperations.length() == 0) {
                 return;
@@ -1157,7 +1162,7 @@ public class BraveSyncWorker {
       }
     }
 
-    private void FetchSyncRecords(String lastRecordFetchTime) {
+    private void FetchSyncRecords(String lastRecordFetchTime, String category) {
         synchronized (mSyncThread) {
             if (!mSyncIsReady.IsReady()) {
                 //Log.i(TAG, "!!!Sync is not ready");
@@ -1174,7 +1179,8 @@ public class BraveSyncWorker {
                 SetUpdateDeleteDeviceName(CREATE_RECORD, mDeviceName, mDeviceId, "");
                 SendAllLocalBookmarks();
                 // Initial fetch of devices only
-                CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetPreferencesOnly(), 0, FETCH_RECORDS_CHUNK_SIZE)));
+                CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)",
+                    SyncRecordType.GetRecordTypeJSArray(SyncRecordType.PREFERENCES), 0, FETCH_RECORDS_CHUNK_SIZE)));
                 try {
                     Thread.sleep(BraveSyncWorker.INTERVAL_TO_FETCH_RECORDS);
                 } catch (InterruptedException e) {
@@ -1187,8 +1193,8 @@ public class BraveSyncWorker {
             }
             mInterruptSyncSleep = false;
             mLatestFetchRequest = (lastRecordFetchTime.isEmpty() ? String.valueOf(mTimeLastFetch) : lastRecordFetchTime);
-            //Log.i(TAG, "FetchSyncRecords: " + mLatestFetchRequest);
-            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)", SyncRecordType.GetJSArray(), mLatestFetchRequest, FETCH_RECORDS_CHUNK_SIZE)));
+            CallScript(new StringBuilder(String.format("javascript:callbackList['fetch-sync-records'](null, %1$s, %2$s, %3$s)",
+                SyncRecordType.GetRecordTypeJSArray(category), mLatestFetchRequest, FETCH_RECORDS_CHUNK_SIZE)));
             mTimeLastFetchExecuted = currentTime.getTimeInMillis();
             if (!lastRecordFetchTime.isEmpty()) {
                 try {
@@ -1401,7 +1407,7 @@ public class BraveSyncWorker {
         }
         if (!isTruncated) {
             // We finished fetch in chunks;
-            //Log.i(TAG, "!!!finished fetch in chunks");
+            //Log.i(TAG, "!!!finished fetch in chunks: " + categoryName);
             mLatestRecordTimeStampt = "";
         }
         for (Map.Entry<String, ArrayList<String>> entry : syncedRecordsMap.entrySet()) {
@@ -1846,12 +1852,14 @@ public class BraveSyncWorker {
                 mReorderBookmarks = false;
             }
         } else {
-            FetchSyncRecords(mLatestFetchRequest);
+            FetchSyncRecords(mLatestFetchRequest, categoryName);
         }
     }
 
     private void ReorderBookmarks() {
-        if (null == mNewBookmarkModel) {
+        // Bookmarks reodering will be triggered once fetch operation is finished
+        // So no need in it during fetch
+        if (null == mNewBookmarkModel || mFetchInProgress) {
             return;
         }
         synchronized (mNewBookmarkModel) {
@@ -1860,8 +1868,8 @@ public class BraveSyncWorker {
             for (BookmarkItem bookmark : localBookmarks) {
                 String order = GetBookmarkOrder(String.valueOf(bookmark.getId().getId()));
                 if (order.isEmpty()) {
-                    Log.e(TAG, "ReorderBookmarks empty order for " + bookmark.getId().getId());
-                    assert false;
+                    Log.w(TAG, "ReorderBookmarks skipping bookmark due to empty order for " + bookmark.getId().getId());
+                    continue;
                 }
                 OrderedBookmark orderedBookmark = new OrderedBookmark(bookmark, order);
                 orderedBookmarks.add(orderedBookmark);
@@ -2557,7 +2565,7 @@ public class BraveSyncWorker {
                         long timeLastFetch = currentTime.getTimeInMillis();
                         if (!mFetchInProgress || timeLastFetch - mTimeLastFetchExecuted > INTERVAL_TO_REFETCH_RECORDS) {
                             mFetchInProgress = false;
-                            FetchSyncRecords("");
+                            FetchSyncRecords("", "");
                         }
                     }
                     for (int i = 0; i < BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT; i++) {
@@ -2633,6 +2641,7 @@ public class BraveSyncWorker {
         mDeviceId = null;
         mDeviceName = null;
         mBaseOrder = null;
+        mLastOrder = null;
         mTimeLastFetch = 0;
         mTimeLastFetchExecuted = 0;
         if (null != mSyncScreensObserver) {
@@ -2697,9 +2706,9 @@ public class BraveSyncWorker {
                 SaveInitData(arg1, arg2);
                 break;
               case "sync-debug":
-                /*if (null != arg1) {
+                if (null != arg1) {
                     Log.i(TAG, "!!!sync-debug: " + arg1);
-                }*/
+                }
                 break;
               case "fetch-sync-records":
                 mSyncIsReady.mFetchRecordsReady = true;
@@ -2969,7 +2978,7 @@ public class BraveSyncWorker {
         new Thread() {
             @Override
             public void run() {
-                FetchSyncRecords("");
+                FetchSyncRecords("", "");
             }
         }.start();
     }
