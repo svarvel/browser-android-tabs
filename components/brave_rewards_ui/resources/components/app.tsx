@@ -3,7 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
  // @ts-ignore until react type includes Suspense
-import React, { Suspense } from 'react'
+import React from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
@@ -72,16 +72,16 @@ export class App extends React.Component<Props, State> {
       <div id='rewardsPage'>
         {
           !rewardsData.walletCreated
-          ? <Suspense fallback={<div>Loading...</div>}><WelcomePage
+          ? <WelcomePage
             creating={this.state.creating}
             optInAction={this.onCreateWalletClicked}
             {...props}
-          /></Suspense>
+          />
           : null
         }
         {
           rewardsData.walletCreated
-          ? <Suspense fallback={<div>Loading...</div>}><SettingsPage /></Suspense>
+          ? <SettingsPage />
           : null
         }
       </div>
