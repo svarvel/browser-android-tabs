@@ -81,7 +81,7 @@ class AdsBox extends React.Component<Props, {}> {
         description={getLocale('adsDesc')}
         settingsChild={this.adsSettings(adsEnabled && enabledMain)}
         toggle={toggle}
-        checked={adsEnabled}
+        checked={enabledMain && adsEnabled}
         toggleAction={this.onAdsSettingChange.bind(this, 'adsEnabled', '')}
       />
     )
