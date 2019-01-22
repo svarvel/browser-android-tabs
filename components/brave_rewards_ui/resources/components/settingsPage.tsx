@@ -16,7 +16,7 @@ import {
   MainToggleMobile,
   SettingsPageMobile,
   WalletInfoHeader
-} from 'brave-ui/features/rewards/mobile'
+} from 'brave-ui/src/features/rewards/mobile'
 import { StyledDisabledContent, StyledHeading, StyledText } from './style'
 
 // Utils

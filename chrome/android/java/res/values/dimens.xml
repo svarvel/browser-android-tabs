@@ -287,9 +287,9 @@
     <dimen name="bottom_toolbar_height_with_shadow">56dp</dimen>
     <dimen name="bottom_toolbar_start_padding">12dp</dimen>
     <dimen name="bottom_toolbar_end_padding">8dp</dimen>
-    <dimen name="search_accelerator_width">64dp</dimen>
+    <!--<dimen name="search_accelerator_width">64dp</dimen>
     <dimen name="search_accelerator_height">36dp</dimen>
-    <dimen name="search_accelerator_height_padding">6dp</dimen>
+    <dimen name="search_accelerator_height_padding">6dp</dimen>-->
 
     <!-- Modern toolbar dimensions -->
     <dimen name="modern_toolbar_background_size">40dp</dimen>

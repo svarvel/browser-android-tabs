@@ -39,7 +39,7 @@ import android.widget.Toast;
 
 import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.ApplicationStatus;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;

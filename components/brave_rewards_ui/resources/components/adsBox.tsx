@@ -7,8 +7,8 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { BoxMobile } from 'brave-ui/features/rewards/mobile'
-import { Column, Grid, Select, ControlWrapper } from 'brave-ui/components'
+import { BoxMobile } from 'brave-ui/src/features/rewards/mobile'
+import { Column, Grid, Select, ControlWrapper } from 'brave-ui/src/components'
 
 // Utils
 import { getLocale } from '../../../common/locale'

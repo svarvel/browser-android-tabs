@@ -8,7 +8,7 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 import * as rewardsPanelActions from '../actions/rewards_panel_actions'
-import { PanelWelcome } from 'brave-ui/features/rewards'
+import { PanelWelcome } from 'brave-ui/src/features/rewards'
 
 const Panel = React.lazy<any>(() => import('./panel'))
 

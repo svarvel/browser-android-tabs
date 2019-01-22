@@ -1,1 +1,1 @@
-export { WelcomePage as default } from 'brave-ui/features/rewards'
+export { WelcomePage as default } from 'brave-ui/src/features/rewards'

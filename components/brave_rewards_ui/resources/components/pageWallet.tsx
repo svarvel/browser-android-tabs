@@ -7,9 +7,9 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { AlertWallet } from 'brave-ui/features/rewards/walletWrapper'
-import { ModalAddFunds, ModalBackupRestore, WalletSummary, WalletWrapper } from 'brave-ui/features/rewards'
-import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/components/icons'
+import { AlertWallet } from 'brave-ui/src/features/rewards/walletWrapper'
+import { ModalAddFunds, ModalBackupRestore, WalletSummary, WalletWrapper } from 'brave-ui/src/features/rewards'
+import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/src/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
 // Utils

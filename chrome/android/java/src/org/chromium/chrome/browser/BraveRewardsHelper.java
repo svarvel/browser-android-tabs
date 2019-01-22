@@ -18,7 +18,7 @@ import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.favicon.FaviconHelper;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.tabmodel.TabModelImpl;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;

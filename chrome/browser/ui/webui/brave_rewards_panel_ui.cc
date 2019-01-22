@@ -252,9 +252,9 @@ void RewardsDOMHandler::OnWalletProperties(
     int error_code,
     std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) {
 
-  result.SetDictionary("wallet", std::move(walletInfo));
+  //result.SetDictionary("wallet", std::move(walletInfo));
 
-  web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletProperties", result);
+  //web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletProperties", result);
 }
 
 void RewardsDOMHandler::GetBalanceReports(const base::ListValue* args) {
