@@ -8,8 +8,8 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-const SettingsPage = React.lazy<any>(() => import('./settingsPage'))
-const WelcomePage = React.lazy<any>(() => import('./welcomePage'))
+import SettingsPage from './settingsPage'
+import WelcomePage from './welcomePage'
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
