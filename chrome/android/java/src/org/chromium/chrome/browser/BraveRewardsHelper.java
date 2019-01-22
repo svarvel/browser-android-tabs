@@ -4,10 +4,13 @@
 
 package org.chromium.chrome.browser;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.View;
 
 
 import org.chromium.base.ApplicationStatus;
@@ -129,6 +132,51 @@ public class BraveRewardsHelper {
       }
     }).run();
   }
+
+
+  /**
+   *
+   * @param fadeout: can be null
+   * @param fadein: can be null
+   * @param fade_out_visibility: View.INVISIBLE or View.GONE
+   */
+  public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility) {
+    final int FADE_OUT_TIME = 2000; //ms
+
+    final int fade_out_visibility_local =
+    (fade_out_visibility != View.GONE && fade_out_visibility != View.INVISIBLE) ?
+      View.GONE : fade_out_visibility;
+
+    // Set the content view to 0% opacity but visible, so that it is visible
+    // (but fully transparent) during the animation.
+    if (fadein != null) {
+      fadein.setAlpha(0f);
+      fadein.setVisibility(View.VISIBLE);
+
+      // Animate the content view to 100% opacity, and clear any animation
+      // listener set on the view.
+      fadein.animate()
+              .alpha(1f)
+              .setDuration(FADE_OUT_TIME)
+              .setListener(null);
+    }
+
+    // Animate the loading view to 0% opacity. After the animation ends,
+    // set its visibility to GONE as an optimization step (it won't
+    // participate in layout passes, etc.)
+    if (fadeout != null) {
+      fadeout.animate()
+              .alpha(0f)
+              .setDuration(FADE_OUT_TIME)
+              .setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                  fadeout.setVisibility(fade_out_visibility_local);
+                }
+              });
+    }
+  }
+
 
   static String probiToNumber(String probi) {
     if (probi.equals("0")) {

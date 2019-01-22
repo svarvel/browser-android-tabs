@@ -92,8 +92,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private TextView tvPublisherNotVerified;
     private TextView tvPublisherNotVerifiedSummary;
     private int currentFavIconFetch;
-    private boolean walletInitialized;
-    AnimationDrawable wallet_init_animation;
+    private boolean walletInitialized;          //flag: wallet is initialized
+    private boolean walletDetailsReceived;      //flag: wallet details received
+    private AnimationDrawable wallet_init_animation;
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -627,7 +628,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
 
     @Override
     public void OnWalletProperties(int error_code) {
-      if (error_code == 0) {
+        boolean  former_walletDetailsReceived = walletDetailsReceived;
+        if (error_code == 0) {
         if (mBraveRewardsNativeWorker != null) {
           double balance = mBraveRewardsNativeWorker.GetWalletBalance();
           ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(
@@ -675,14 +677,38 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             btGrants.setVisibility(View.GONE);
           }
         }
-      } else if (error_code == 1) {
-        // TODO error handling
-      } 
+        walletDetailsReceived = true;
+      } else {
+            walletDetailsReceived = false;
+      }
+
+      if (former_walletDetailsReceived != walletDetailsReceived) {
+          EnableWalletDetails(walletDetailsReceived);
+      }
+    }
+
+    /**
+     *The 'progress_wallet_update' substitutes 'br_bat_wallet' when not initialized
+     *The 'br_usd_wallet' is invisible when not initialized
+     * @param enable
+     */
+    private void EnableWalletDetails(boolean enable) {
+        View fadein  = enable ? root.findViewById(R.id.br_bat_wallet) : root.findViewById(R.id.progress_wallet_update);
+        View fadeout  = enable ? root.findViewById(R.id.progress_wallet_update) : root.findViewById(R.id.br_bat_wallet);
+        BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE);
+
+        View usd = root.findViewById(R.id.br_usd_wallet);
+        if (enable) {
+            BraveRewardsHelper.crossfade(null, usd, 0);
+        }
+        else {
+            BraveRewardsHelper.crossfade(usd, null, View.INVISIBLE);
+        }
     }
 
 
-    // onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
-    // it has to set up the received icon on UI thread
+    //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
+    //it has to set up the received icon on UI thread
     @CalledByNative
     @Override
     public void onFaviconAvailable(Bitmap image, String iconUrl) {
