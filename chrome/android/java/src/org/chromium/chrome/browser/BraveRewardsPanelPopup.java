@@ -475,7 +475,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
 
         TabModelSelectorImpl tabbedModeTabModelSelector = (TabModelSelectorImpl) mActivity.getTabModelSelector();
         Tab tab = tabbedModeTabModelSelector.openNewTab(
-                loadUrlParams, TabLaunchType.FROM_BROWSER_ACTIONS, null, false);
+                loadUrlParams, TabLaunchType.FROM_CHROME_UI, null, false);
         assert tab != null;
 
         return tab;
