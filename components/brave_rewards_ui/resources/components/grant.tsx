@@ -11,7 +11,7 @@ import {
   GrantClaim,
   GrantComplete,
   GrantWrapper
-} from 'brave-ui/features/rewards'
+} from 'brave-ui/src/features/rewards'
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'

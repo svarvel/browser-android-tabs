@@ -8,9 +8,9 @@ import { connect } from 'react-redux'
 
 // Components
 import { StyledListContent } from './style'
-import { BoxMobile } from 'brave-ui/features/rewards/mobile'
-import { TableDonation, Tokens, List } from 'brave-ui/features/rewards'
-import { Column, Grid, Checkbox, ControlWrapper } from 'brave-ui/components'
+import { BoxMobile } from 'brave-ui/src/features/rewards/mobile'
+import { TableDonation, Tokens, List } from 'brave-ui/src/features/rewards'
+import { Column, Grid, Checkbox, ControlWrapper } from 'brave-ui/src/components'
 
 // Utils
 import { getLocale } from '../../../common/locale'

@@ -5,7 +5,7 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { initLocale } from 'brave-ui/helpers'
+import { initLocale } from 'brave-ui/src/helpers'
 import { bindActionCreators } from 'redux'
 require('emptykit.css')
 
@@ -14,8 +14,8 @@ import App from './components/app'
 
 // Utils
 import store from './store'
-import { ThemeProvider } from 'brave-ui/theme'
-import Theme from 'brave-ui/theme/brave-default'
+import { ThemeProvider } from 'brave-ui/src/theme'
+import Theme from 'brave-ui/src/theme/brave-default'
 import { getActions as getUtilActions, setActions } from './utils'
 import * as rewardsActions from './actions/rewards_actions'
 

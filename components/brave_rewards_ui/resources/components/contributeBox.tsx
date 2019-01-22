@@ -15,10 +15,10 @@ import {
   StyledSupportSites,
   StyledSitesLink
 } from './style'
-import { List, NextContribution, TableContribute, Tokens } from 'brave-ui/features/rewards'
-import { BoxMobile } from 'brave-ui/features/rewards/mobile'
-import { Column, Grid, Select, ControlWrapper, Checkbox } from 'brave-ui/components'
-import { Provider } from 'brave-ui/features/rewards/profile'
+import { List, NextContribution, TableContribute, Tokens } from 'brave-ui/src/features/rewards'
+import { BoxMobile } from 'brave-ui/src/features/rewards/mobile'
+import { Column, Grid, Select, ControlWrapper, Checkbox } from 'brave-ui/src/components'
+import { Provider } from 'brave-ui/src/features/rewards/profile'
 
 // Utils
 import { getLocale } from '../../../common/locale'

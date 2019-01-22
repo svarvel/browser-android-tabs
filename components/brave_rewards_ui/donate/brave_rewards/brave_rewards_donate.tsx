@@ -13,9 +13,9 @@ import App from './components/app'
 require('emptykit.css')
 
 // Utils
-import Theme from 'brave-ui/theme/brave-default'
-import { ThemeProvider } from 'brave-ui/theme'
-import { initLocale } from 'brave-ui/helpers'
+import Theme from 'brave-ui/src/theme/brave-default'
+import { ThemeProvider } from 'brave-ui/src/theme'
+import { initLocale } from 'brave-ui/src/helpers'
 import * as rewardsActions from './actions/donate_actions'
 
 let actions: any

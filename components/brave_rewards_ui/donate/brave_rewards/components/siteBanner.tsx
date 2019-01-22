@@ -7,7 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { SiteBanner } from 'brave-ui/features/rewards'
+import { SiteBanner } from 'brave-ui/src/features/rewards'
 
 // Utils
 import * as donateActions from '../actions/donate_actions'
@@ -59,21 +59,21 @@ class Banner extends React.Component<Props, State> {
     })
   }
 
-  onAmountSelection = (tokens: number) => {
-    this.setState({
+  onAmountSelection = (tokens: string) => {
+    /*this.setState({
       currentAmount: tokens
-    })
+    })*/
   }
 
-  onDonate = (amount: number, recurring: boolean) => {
-    const { publisher, walletInfo } = this.props.rewardsDonateData
+  onDonate = (amount: string, recurring: boolean) => {
+    /*const { publisher, walletInfo } = this.props.rewardsDonateData
     const { balance } = walletInfo
 
     if (publisher && publisher.publisherKey && balance >= parseInt(amount.toString(), 10)) {
       this.actions.onDonate(publisher.publisherKey, amount, recurring)
     } else {
       // TODO return error
-    }
+    }*/
   }
 
   generateSocialLinks = () => {
@@ -142,7 +142,7 @@ class Banner extends React.Component<Props, State> {
         logoBgColor={''}
         onDonate={this.onDonate}
         onAmountSelection={this.onAmountSelection}
-        currentAmount={this.state.currentAmount}
+        currentAmount={'@this.state.currentAmount'}
         onClose={this.onClose}
         social={this.generateSocialLinks()}
       >

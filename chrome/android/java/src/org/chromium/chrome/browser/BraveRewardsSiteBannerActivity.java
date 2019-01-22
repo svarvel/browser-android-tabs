@@ -34,7 +34,7 @@ import android.widget.ImageView;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.favicon.FaviconHelper;
 import java.net.URL;
-import org.chromium.base.AsyncTask;
+import org.chromium.base.task.AsyncTask;
 import android.graphics.BitmapFactory;
 import org.chromium.base.annotations.CalledByNative;
 import java.io.IOException;

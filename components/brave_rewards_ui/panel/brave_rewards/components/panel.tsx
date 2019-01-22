@@ -5,9 +5,9 @@
 import * as React from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
-import { WalletAddIcon, BatColorIcon } from 'brave-ui/components/icons'
-import { WalletWrapper, WalletSummary, WalletSummarySlider, WalletPanel } from 'brave-ui/features/rewards'
-import { Provider } from 'brave-ui/features/rewards/profile'
+import { WalletAddIcon, BatColorIcon } from 'brave-ui/src/components/icons'
+import { WalletWrapper, WalletSummary, WalletSummarySlider, WalletPanel } from 'brave-ui/src/features/rewards'
+import { Provider } from 'brave-ui/src/features/rewards/profile'
 
 // Utils
 import * as rewardsPanelActions from '../actions/rewards_panel_actions'
@@ -194,7 +194,7 @@ export class Panel extends React.Component<Props, State> {
               platform={publisher.provider as Provider}
               publisherName={publisher.name}
               publisherImg={publisher.favicon_url || `chrome://favicon/size/48@2x/${publisher.url}`}
-              monthlyAmount={10}
+              monthlyAmount={'10'}
               isVerified={publisher.verified}
               tipsEnabled={true}
               includeInAuto={!publisher.excluded}

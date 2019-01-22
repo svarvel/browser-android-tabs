@@ -102,7 +102,7 @@
         android:layout_gravity="center_vertical|end"
         android:layout_marginEnd="42dp"
         android:contentDescription="@string/accessibility_toolbar_btn_brave_shields" />
-    <org.chromium.chrome.browser.widget.TintedImageButton
+    <android.support.v7.widget.AppCompatImageButton
         android:id="@+id/menu_button"
         style="@style/ToolbarButton"
         android:layout_gravity="center_vertical|end"

@@ -472,7 +472,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PreBlockersWork(
   if (reload_adblocker_) {
     reload_adblocker_ = false;
     base::PostTaskWithTraits(FROM_HERE, {BrowserThread::UI},
-      base::Bind(&ChromeNetworkDelegate::GetIOThread,
+      base::Bind(&ChromeNetworkDelegate::GetIOThreadResetBlocker,
           base::Unretained(this), base::Unretained(request), base::Passed(&callback), new_url, ctx));
     if (nullptr != shieldsConfig) {
       shieldsConfig->resetUpdateAdBlockerFlag();
@@ -799,12 +799,19 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
       int render_process_id, render_frame_id, frame_tree_node_id;
       GetRenderFrameInfo(request, &render_frame_id, &render_process_id,
           &frame_tree_node_id);
-      content::BrowserThread::PostTask(
+      /*content::BrowserThread::PostTask(
         content::BrowserThread::UI, FROM_HERE,
         base::Bind(&ChromeNetworkDelegate::NotifyLedger,
             base::Unretained(this), request->url(), urlQuery, 
             last_first_party_url_, request->referrer(),
-            render_process_id, render_frame_id, frame_tree_node_id));
+            render_process_id, render_frame_id, frame_tree_node_id));*/
+
+
+      base::PostTaskWithTraits(FROM_HERE, {BrowserThread::UI},
+        base::Bind(&ChromeNetworkDelegate::NotifyLedger,
+              base::Unretained(this), request->url(), urlQuery, 
+              last_first_party_url_, request->referrer(),
+              render_process_id, render_frame_id, frame_tree_node_id));
     }
   }
   /*if (!linkType.empty()) {
