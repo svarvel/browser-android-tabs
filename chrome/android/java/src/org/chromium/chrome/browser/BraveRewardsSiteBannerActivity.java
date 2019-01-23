@@ -279,7 +279,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
 
 
     private void SetFavIcon(Bitmap bmp) {
-        ImageView iv = (ImageView)findViewById(R.id.publisher_favicon);
+        if (bmp == null){
+            bmp = BitmapFactory.decodeResource(getResources(), R.drawable.btn_brave);
+        }
+
+        ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
 
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
@@ -287,6 +291,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
 
         Bitmap resized = Bitmap.createScaledBitmap(bmp, dp, dp, true);
         iv.setImageBitmap(resized);
+
     }
 
     //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
