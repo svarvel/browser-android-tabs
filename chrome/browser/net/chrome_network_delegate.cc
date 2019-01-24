@@ -526,8 +526,13 @@ void ChromeNetworkDelegate::NotifyLedger(const GURL& url, const std::string& url
   if (!tab_helper)
     return;
 
-  brave_rewards::RewardsService* brave_rewards_service = brave_rewards::RewardsServiceFactory::GetForProfile(
+  brave_rewards::RewardsService* brave_rewards_service = nullptr;
+  bool incognito = web_contents->GetBrowserContext()->IsOffTheRecord();
+  if (incognito == false){
+    brave_rewards_service = brave_rewards::RewardsServiceFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  }
+
   if (!brave_rewards_service) {
     return;
   }

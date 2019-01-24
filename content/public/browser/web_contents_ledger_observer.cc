@@ -29,8 +29,11 @@ WebContentsLedgerObserver::WebContentsLedgerObserver(WebContents* web_contents)
     web_contents_(web_contents),
     brave_rewards_service_(nullptr),
     is_being_destroyed_(false) {
-  brave_rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(
-      ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  bool incognito = web_contents->GetBrowserContext()->IsOffTheRecord();
+  if (incognito == false){
+    brave_rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(
+     ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  }
 }
 
 WebContentsLedgerObserver::~WebContentsLedgerObserver() {
@@ -38,8 +41,6 @@ WebContentsLedgerObserver::~WebContentsLedgerObserver() {
 
 void WebContentsLedgerObserver::OnVisibilityChanged(Visibility visibility) {
   if (!brave_rewards_service_) {
-    DCHECK(brave_rewards_service_);
-
     return;
   }
 
