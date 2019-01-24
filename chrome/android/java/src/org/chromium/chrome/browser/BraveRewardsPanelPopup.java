@@ -191,9 +191,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 }
             }
         });
-        if (mBraveRewardsNativeWorker != null && mBraveRewardsNativeWorker.WalletExist()) {
-            walletInitialized = true;
-            ShowWebSiteView();
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.WalletExist();
         }
         btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
@@ -887,5 +886,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     public void OnNotificationDeleted(String id) {
         DismissNotification(id);
         mBraveRewardsNativeWorker.GetWalletProperties();
+    }
+
+    @Override
+    public void OnIsWalletCreated(boolean created) {
+        if (created) {
+            walletInitialized = true;
+            ShowWebSiteView();
+        }
     }
 }

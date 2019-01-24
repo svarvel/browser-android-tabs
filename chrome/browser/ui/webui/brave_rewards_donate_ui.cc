@@ -110,9 +110,9 @@ void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
   SessionID::id_type tabId = -1;
   tempTabId >> tabId;
 
-  if (rewards_service_) {
-    rewards_service_->GetPublisherActivityFromUrl(tabId, url, "");
-  }
+  //if (rewards_service_) {
+  //  rewards_service_->GetPublisherActivityFromUrl(tabId, url, "");
+  //}
 }
 
 void RewardsDOMHandler::OnGetPublisherActivityFromUrl(

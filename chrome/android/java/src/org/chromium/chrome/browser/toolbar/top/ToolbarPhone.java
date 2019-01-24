@@ -1980,6 +1980,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnNotificationDeleted(String id) {}
 
     @Override
+    public void OnIsWalletCreated(boolean created) {}
+
+    @Override
     public void setOnTabSwitcherClickHandler(OnClickListener listener) {
         if (mToggleTabStackButton != null) {
             mToggleTabStackButton.setOnTabSwitcherClickHandler(listener);

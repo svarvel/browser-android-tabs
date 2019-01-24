@@ -17,7 +17,8 @@ namespace android {
 
 BraveRewardsNativeWorker::BraveRewardsNativeWorker(JNIEnv* env, const base::android::JavaRef<jobject>& obj):
     weak_java_brave_rewards_native_worker_(env, obj),
-    brave_rewards_service_(nullptr) {
+    brave_rewards_service_(nullptr),
+    weak_factory_(this) {
 
   Java_BraveRewardsNativeWorker_setNativePtr(env, obj, reinterpret_cast<intptr_t>(this));
 
@@ -69,8 +70,9 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller, int tabId,
         const base::android::JavaParamRef<jstring>& host) {
   if (brave_rewards_service_) {
+    // TODO fill publisher_blob
     brave_rewards_service_->GetPublisherActivityFromUrl(tabId,
-      base::android::ConvertJavaStringToUTF8(env, host), "");
+      base::android::ConvertJavaStringToUTF8(env, host), "", "");
   }
 }
 
@@ -233,13 +235,19 @@ double BraveRewardsNativeWorker::GetWalletRate(JNIEnv* env,
   return 0.0;
 }
 
-bool BraveRewardsNativeWorker::WalletExist(JNIEnv* env,
+void BraveRewardsNativeWorker::WalletExist(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& jcaller) {
   if (brave_rewards_service_) {
-    return brave_rewards_service_->IsWalletCreated();
+    brave_rewards_service_->IsWalletCreated(
+      base::Bind(&BraveRewardsNativeWorker::OnIsWalletCreated,
+          weak_factory_.GetWeakPtr()));
   }
+}
 
-  return false;
+void BraveRewardsNativeWorker::OnIsWalletCreated(bool created) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_BraveRewardsNativeWorker_OnIsWalletCreated(env, 
+        weak_java_brave_rewards_native_worker_.get(env), created);
 }
 
 void BraveRewardsNativeWorker::GetCurrentBalanceReport(JNIEnv* env, 

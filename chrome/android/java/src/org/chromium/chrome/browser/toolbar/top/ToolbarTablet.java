@@ -469,6 +469,9 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnNotificationDeleted(String id) {}
 
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
     /**
      * Called when the currently visible New Tab Page changes.
      */
