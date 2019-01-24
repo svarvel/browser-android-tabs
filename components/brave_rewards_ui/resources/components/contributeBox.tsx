@@ -198,7 +198,7 @@ class ContributeBox extends React.Component<Props, State> {
               floating={true}
               title={getLocale('contributionMonthly')}
               onChange={this.onSelectSettingChange.bind(this, 'contributionMonthly')}
-              value={(contributionMonthly || '').toString()}
+              value={parseFloat((contributionMonthly.toString() || '0')).toFixed(1)}
             >
               {
                 monthlyList.map((choice: MonthlyChoice) => {
