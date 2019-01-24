@@ -184,6 +184,13 @@
             android:layout_width="match_parent"
             android:visibility="invisible" />
 
+        <Button android:id="@+id/brave_sync_btn_cancel_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:visibility="gone"
+            style="@style/BraveSyncButton" />
+
         <Button android:id="@+id/brave_sync_btn_add_device"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
