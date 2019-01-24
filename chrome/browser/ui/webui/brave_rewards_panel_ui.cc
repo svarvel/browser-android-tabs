@@ -143,14 +143,14 @@ void RewardsDOMHandler::IncludeInAutoContribution(const base::ListValue* args) {
 }
 
 void RewardsDOMHandler::WalletExists(const base::ListValue* args) {
-  if (rewards_service_ && web_ui()->CanCallJavascript()) {
-    bool exist = rewards_service_->IsWalletCreated();
-    web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletExists", base::Value(exist));
-  }
+  //if (rewards_service_ && web_ui()->CanCallJavascript()) {
+//    bool exist = rewards_service_->IsWalletCreated();
+    //web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.walletExists", base::Value(exist));
+  //}
 }
 
 void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
-  std::string tabIdStr;
+  /*std::string tabIdStr;
   std::string url;
   args->GetString(0, &tabIdStr);
   args->GetString(1, &url);
@@ -163,7 +163,7 @@ void RewardsDOMHandler::GetPublisherData(const base::ListValue* args) {
     rewards_service_->GetPublisherActivityFromUrl(tabId,
                                                   url,
                                                   "");
-  }
+  }*/
 }
 
 void RewardsDOMHandler::OnGetPublisherActivityFromUrl(
@@ -258,7 +258,7 @@ void RewardsDOMHandler::OnWalletProperties(
 }
 
 void RewardsDOMHandler::GetBalanceReports(const base::ListValue* args) {
-  if (rewards_service_ && web_ui()->CanCallJavascript()) {
+  /*if (rewards_service_ && web_ui()->CanCallJavascript()) {
     std::map<std::string, brave_rewards::BalanceReport> reports = rewards_service_->GetAllBalanceReports();
 
     if (reports.empty()) {
@@ -283,7 +283,7 @@ void RewardsDOMHandler::GetBalanceReports(const base::ListValue* args) {
     }
 
     web_ui()->CallJavascriptFunctionUnsafe("brave_rewards_panel.balanceReports", newReports);
-  }
+  }*/
 }
 
 void RewardsDOMHandler::Init() {

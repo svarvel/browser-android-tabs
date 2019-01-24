@@ -15,4 +15,5 @@ public interface BraveRewardsObserver {
   public void OnGetLatestNotification(String id, int type, long timestamp,
             String[] args);
   public void OnNotificationDeleted(String id);
+  public void OnIsWalletCreated(boolean created);
 }

@@ -9,6 +9,7 @@
 #include <memory>
 #include <map>
 #include "base/android/jni_weak_ref.h"
+#include "base/memory/weak_ptr.h"
 #include "brave/components/brave_rewards/browser/balance_report.h"
 #include "brave/components/brave_rewards/browser/rewards_service_observer.h"
 #include "brave/components/brave_rewards/browser/rewards_notification_service_observer.h"
@@ -36,7 +37,7 @@ public:
     void CreateWallet(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
 
-    bool WalletExist(JNIEnv* env, const
+    void WalletExist(JNIEnv* env, const
         base::android::JavaParamRef<jobject>& jcaller);
 
     void GetWalletProperties(JNIEnv* env, const
@@ -95,6 +96,8 @@ public:
         const base::android::JavaParamRef<jobject>& obj,
         int position);
 
+    void OnIsWalletCreated(bool created);
+
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;
@@ -133,6 +136,8 @@ private:
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;
     std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_;
+
+    base::WeakPtrFactory<BraveRewardsNativeWorker> weak_factory_;
 };
 }
 }

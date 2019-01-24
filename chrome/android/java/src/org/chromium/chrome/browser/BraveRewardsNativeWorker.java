@@ -70,9 +70,9 @@ public class BraveRewardsNativeWorker {
         }
     }
 
-    public boolean WalletExist() {
+    public void WalletExist() {
         synchronized(lock) {
-            return nativeWalletExist(mNativeBraveRewardsNativeWorker);
+            nativeWalletExist(mNativeBraveRewardsNativeWorker);
         }
     }
 
@@ -187,6 +187,13 @@ public class BraveRewardsNativeWorker {
     }
 
     @CalledByNative
+    public void OnIsWalletCreated(boolean created) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnIsWalletCreated(created);
+        }
+    }
+
+    @CalledByNative
     public void OnGetCurrentBalanceReport(String[] report) {
         for(BraveRewardsObserver observer : observers_) {
             observer.OnGetCurrentBalanceReport(report);
@@ -253,7 +260,7 @@ public class BraveRewardsNativeWorker {
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
-    private native boolean nativeWalletExist(long nativeBraveRewardsNativeWorker);
+    private native void nativeWalletExist(long nativeBraveRewardsNativeWorker);
     private native void nativeGetWalletProperties(long nativeBraveRewardsNativeWorker);
     private native double nativeGetWalletBalance(long nativeBraveRewardsNativeWorker);
     private native double nativeGetWalletRate(long nativeBraveRewardsNativeWorker, String rate);
