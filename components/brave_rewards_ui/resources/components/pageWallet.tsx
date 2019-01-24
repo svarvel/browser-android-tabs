@@ -69,6 +69,13 @@ class PageWallet extends React.Component<Props, State> {
   }
 
   toggleAddFunds = () => {
+    if (this.state.addFundsShown) {
+      if (window &&
+          window.location &&
+          window.location.href) {
+        window.location.href = 'chrome://rewards'
+      }
+    }
     this.setState({ addFundsShown: !this.state.addFundsShown })
   }
 
