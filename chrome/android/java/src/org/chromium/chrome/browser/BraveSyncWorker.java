@@ -20,6 +20,7 @@ import org.chromium.base.annotations.JNINamespace;
 import org.chromium.base.task.AsyncTask;
 import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
+import org.chromium.base.ThreadUtils;
 import org.chromium.components.bookmarks.BookmarkId;
 import org.chromium.components.bookmarks.BookmarkType;
 import org.chromium.components.url_formatter.UrlFormatter;
@@ -930,21 +931,39 @@ public class BraveSyncWorker {
         return res;
     }
 
+    private void ResetSyncWebContents() {
+        synchronized (mSyncIsReady) {
+            mSyncIsReady.mShouldResetSync = true;
+            ThreadUtils.runOnUiThreadBlocking(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        ResetSyncWebContentsImpl();
+                    }
+                }
+            );
+        }
+    }
+
+    private void ResetSyncWebContentsImpl() {
+        if (mSyncIsReady.mShouldResetSync) {
+            if (null != mWebContentsInjector) {
+                mWebContentsInjector.removeInterface("injectedObject");
+            }
+            if (null != mWebContents) {
+                mWebContents.destroy();
+            }
+            mWebContents = null;
+            mViewEventSink = null;
+            mWebContentsInjector = null;
+            mSyncIsReady.mShouldResetSync = false;
+        }
+    }
+
     private void TrySync() {
         try {
             synchronized (mSyncIsReady) {
-                if (mSyncIsReady.mShouldResetSync) {
-                    if (null != mWebContentsInjector) {
-                        mWebContentsInjector.removeInterface("injectedObject");
-                    }
-                    if (null != mWebContents) {
-                        mWebContents.destroy();
-                    }
-                    mWebContents = null;
-                    mViewEventSink = null;
-                    mWebContentsInjector = null;
-                    mSyncIsReady.mShouldResetSync = false;
-                }
+                ResetSyncWebContentsImpl();
                 if (null == mWebContents) {
                     mWebContents = WebContentsFactory.createWebContents(false, true);
                     if (null != mWebContents) {
@@ -2624,6 +2643,7 @@ public class BraveSyncWorker {
     }
 
     public void ResetSync() {
+        ResetSyncWebContents();
         SetSyncEnabled(false);
         mSyncIsReady.Reset();
         mSyncIsReady.mShouldResetSync = true;

@@ -73,6 +73,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 
 import org.chromium.base.Log;
+import org.chromium.base.ThreadUtils;
 import org.chromium.chrome.R;
 import org.chromium.ui.base.DeviceFormFactor;
 import org.chromium.ui.KeyboardVisibilityDelegate;
@@ -95,6 +96,8 @@ import java.io.IOException;
 import java.lang.Runnable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Settings fragment that allows to control Sync functionality.
@@ -116,6 +119,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private static final int MAX_HEIGHT = 1024;
   // Wait time out
   private static final int WAIT_TIMEOUT = 120000;
+  // Timeout to show cancel button while loading devices on sync chain creation
+  private static final int CANCEL_LOAD_BUTTON_TIMEOUT = 15*1000;
 
   private ChromeSwitchPreference mPrefSwitchTabs;
   private ChromeSwitchPreference mPrefSwitchHistory;
@@ -139,6 +144,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   private ImageButton mPasteButton;
   private Button mCopyButton;
   private Button mAddDeviceButton;
+  private Button mCancelLoadingButton;
+  private Timer mCancelLoadingButtonUpdater;
   private Button mRemoveDeviceButton;
   private Button mQRCodeButton;
   private Button mCodeWordsButton;
@@ -469,6 +476,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                                           }
                                                       }
                                                       if (index > 0) {
+                                                          dismissCancelLoadingButton();
                                                           mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_devices_title));
                                                           View separator = (View) mInflater.inflate(R.layout.menu_separator, null);
                                                           if (null != insertPoint && null != separator) {
@@ -623,6 +631,11 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           mAddDeviceButton.setOnClickListener(this);
       }
 
+      mCancelLoadingButton = (Button) getView().findViewById(R.id.brave_sync_btn_cancel_loading);
+      if (null != mCancelLoadingButton) {
+          mCancelLoadingButton.setOnClickListener(this);
+      }
+
       mRemoveDeviceButton = (Button) getView().findViewById(R.id.brave_sync_btn_remove_device);
       if (null != mRemoveDeviceButton) {
           mRemoveDeviceButton.setOnClickListener(this);
@@ -729,7 +742,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           && v != mEnterCodeWordsButton && v != mDoneButton && v != mDoneLaptopButton
           && v != mUseCameraButton && v != mConfirmCodeWordsButton && v != mMobileButton && v != mLaptopButton
           && v != mPasteButton && v != mCopyButton && v != mRemoveDeviceButton && v != mAddDeviceButton
-          && v != mQRCodeButton && v != mCodeWordsButton)) return;
+          && v != mCancelLoadingButton && v != mQRCodeButton && v != mCodeWordsButton)) return;
 
       if (mScanChainCodeButton == v) {
           showAddDeviceNameDialog(false);
@@ -829,6 +842,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           deleteDeviceDialog(deviceToDelete.mDeviceName, deviceToDelete.mDeviceId, deviceToDelete.mObjectId, mRemoveDeviceButton);
       } else if (mAddDeviceButton == v) {
           setNewChainLayout();
+      } else if (mCancelLoadingButton == v) {
+          cancelLoadingResetAndBack();
       }
   }
 
@@ -1218,6 +1233,13 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       adjustImageButtons(getActivity().getApplicationContext().getResources().getConfiguration().orientation);
   }
 
+  private void cancelLoadingResetAndBack() {
+      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      if (null != application && null != application.mBraveSyncWorker) {
+          application.mBraveSyncWorker.ResetSync();
+      }
+  }
+
   private void setAddMobileDeviceLayout() {
       getActivity().setTitle(R.string.brave_sync_btn_mobile);
       if (null != mBraveSyncTextViewAddMobileDevice) {
@@ -1302,6 +1324,33 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       });
   }
 
+  private void scheduleCancelButton() {
+      SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
+      String deviceId = sharedPref.getString(BraveSyncWorker.PREF_DEVICE_ID, null);
+      boolean syncChainExists = (deviceId != null && !deviceId.isEmpty());
+      if (!syncChainExists) {
+          mCancelLoadingButtonUpdater = new Timer();
+          mCancelLoadingButtonUpdater.schedule(new TimerTask() {
+              @Override
+              public void run() {
+                  ThreadUtils.runOnUiThread(new Runnable() {
+                      @Override
+                      public void run() {
+                          mCancelLoadingButton.setVisibility(View.VISIBLE);
+                      }
+                  });
+              }
+          }, CANCEL_LOAD_BUTTON_TIMEOUT);
+      }
+  }
+
+  private void dismissCancelLoadingButton() {
+      mCancelLoadingButton.setVisibility(View.GONE);
+      if (mCancelLoadingButtonUpdater != null) {
+          mCancelLoadingButtonUpdater.cancel();
+      }
+  }
+
   private void setSyncDoneLayout() {
       getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
       getActivity().setTitle(R.string.prefs_sync);
@@ -1364,6 +1413,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           mBraveSyncTextDevicesTitle.setText(getResources().getString(R.string.brave_sync_loading_devices_title));
           application.mBraveSyncWorker.InterruptSyncSleep();
       }
+
+      scheduleCancelButton();
+
       if (null != mSyncScreensObserver) {
           mSyncScreensObserver.onDevicesAvailable();
       }
