@@ -30,6 +30,7 @@
       },
       "requires": {
         "bat_ads": [ "bat_ads" ],
+        "bat_ledger": [ "bat_ledger" ],
         "apps": [ "app_registry" ],
         "ash": [ "system_ui", "test", "display" ],
         // Only used in classic ash case.

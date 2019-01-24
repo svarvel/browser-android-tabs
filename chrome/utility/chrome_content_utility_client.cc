@@ -113,6 +113,9 @@
 #include "brave/components/services/bat_ads/bat_ads_app.h"
 #endif
 
+#include "brave/components/services/bat_ledger/bat_ledger_app.h"
+#include "brave/components/services/bat_ledger/public/interfaces/bat_ledger.mojom.h"
+
 namespace {
 
 base::LazyInstance<ChromeContentUtilityClient::NetworkBinderCreationCallback>::
@@ -350,6 +353,11 @@ void ChromeContentUtilityClient::RegisterServices(
       &bat_ads::BatAdsApp::CreateService);
   services->emplace(bat_ads::mojom::kServiceName, bat_ads_service);
 #endif
+
+  service_manager::EmbeddedServiceInfo bat_ledger_info;
+  bat_ledger_info.factory = base::BindRepeating(
+    &bat_ledger::BatLedgerApp::CreateService);
+  services->emplace(bat_ledger::mojom::kServiceName, bat_ledger_info);
 }
 
 void ChromeContentUtilityClient::RegisterNetworkBinders(

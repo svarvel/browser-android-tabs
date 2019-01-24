@@ -721,6 +721,9 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnNotificationDeleted(String id) {}
 
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
 
     private void setToolbarButtonsVisible(boolean visible) {
         if (mToolbarButtonsVisible == visible) return;

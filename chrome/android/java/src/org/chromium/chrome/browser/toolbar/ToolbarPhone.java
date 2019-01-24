@@ -3179,6 +3179,9 @@ public class ToolbarPhone
     @Override
     public void OnNotificationDeleted(String id) {}
 
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
     /**
      * Custom drawable that allows sharing the NTP search box drawable between the toolbar and the
      * NTP.  This allows animations to continue as the drawable is switched between the two owning

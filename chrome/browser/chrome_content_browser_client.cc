@@ -303,6 +303,8 @@
 #include "url/gurl.h"
 #include "url/origin.h"
 
+#include "brave/components/services/bat_ledger/public/interfaces/bat_ledger.mojom.h"
+
 #if defined(OS_WIN)
 #include "base/strings/string_tokenizer.h"
 #include "chrome/browser/chrome_browser_main_win.h"
@@ -3856,7 +3858,9 @@ void ChromeContentBrowserClient::RegisterOutOfProcessServices(
 #if BUILDFLAG(BRAVE_ADS_ENABLED)
   (*services)[bat_ads::mojom::kServiceName] = base::BindRepeating(
     []() -> base::string16 { return base::ASCIIToUTF16("Bat Ads Service"); });
-#endif    
+#endif
+  (*services)[bat_ledger::mojom::kServiceName] = base::BindRepeating(
+    []() -> base::string16 { return base::ASCIIToUTF16("Bat Ledger Service"); });
 }
 
 bool ChromeContentBrowserClient::ShouldTerminateOnServiceQuit(
