@@ -187,7 +187,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 int firstOffset = text.indexOf(". ");
                 if (offset > firstOffset) {
                     // We are on learn more
-                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL));
+                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
                     dismiss();
                 }
             }
@@ -219,7 +219,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           tvLearnMore.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
+                mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_SETTINGS_URL);
                 dismiss();
             }
           }));
@@ -230,7 +230,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
           btAddFunds.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.ADD_FUNDS_URL));
+                mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.ADD_FUNDS_URL);
                 dismiss();
             }
           }));
@@ -240,7 +240,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             btRewardsSettings.setOnClickListener((new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
+                  mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_SETTINGS_URL);
                   dismiss();
               }
             }));
@@ -353,11 +353,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 int secondOffset = text.indexOf(". ");
                 if (offset > firstOffset) {
                     // We are on change auto-contribute settings
-                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_SETTINGS_URL));
+                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_SETTINGS_URL);
                     dismiss();
                 } else if (offset <= firstOffset && offset > secondOffset) {
                     // We are on learn more
-                    launchTabInRunningTabbedActivity(new LoadUrlParams(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL));
+                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
                     dismiss();
                 }
             }

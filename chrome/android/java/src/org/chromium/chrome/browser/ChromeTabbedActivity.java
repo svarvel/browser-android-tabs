@@ -245,7 +245,7 @@ public class ChromeTabbedActivity
     public static final int SITE_BANNER_ADD_FUNDS_RESULT_CODE = SITE_BANNER_REQUEST_CODE;
     public static final int SITE_BANNER_NOT_VERIFIED_LEARN_MORE_RESULT_CODE = SITE_BANNER_REQUEST_CODE + 1;
     public static final String ADD_FUNDS_URL = "chrome://rewards/#add-funds";
-    public static final String REWARDS_SETTINGS_URL = "chrome://rewards";
+    public static final String REWARDS_SETTINGS_URL = "chrome://rewards/";
     public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq-rewards/#unclaimed-funds";
 
     @VisibleForTesting
@@ -2837,6 +2837,27 @@ public class ChromeTabbedActivity
                 Tab tab = tabbedModeTabModelSelector.openNewTab(new LoadUrlParams(url),
                     TabLaunchType.FROM_BROWSER_ACTIONS, null, false);
            }
+        }
+    }
+
+    public void openNewOrSelectExistingTab(String url){
+        TabModel tabModel = getCurrentTabModel();
+        int tabRewardsIndex = TabModelUtils.getTabIndexByUrl(tabModel, url);
+
+        //find if tab exists
+        if (tabRewardsIndex != TabModel.INVALID_TAB_INDEX){
+            Tab tab = tabModel.getTabAt(tabRewardsIndex);
+            //moving tab forward
+            if (! getActivityTab().equals(tab)){
+                tabModel.moveTab(tab.getId(), tabModel.getCount());
+                tabModel.setIndex(
+                        TabModelUtils.getTabIndexById(tabModel, tab.getId()),
+                        TabSelectionType.FROM_USER);
+            }
+        }
+        //open a new tab
+        else{
+            getTabCreator(false).launchUrl(url, TabLaunchType.FROM_CHROME_UI);
         }
     }
 }
