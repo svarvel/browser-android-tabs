@@ -73,7 +73,7 @@ class SettingsPage extends React.Component<Props, State> {
       this.actions.getWalletProperties()
     }, 60000)
 
-    if (!this.props.rewardsData.safetyNetFailed) {
+    if (!this.props.rewardsData.safetyNetFailed && !this.props.rewardsData.grant) {
       this.actions.getGrant()
     }
     this.actions.getAdsData()
