@@ -29,6 +29,9 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
     case types.ON_RESTORE_PUBLISHERS:
       chrome.send('brave_rewards.restorePublishers', [])
       break
+    case types.GET_CONTRIBUTE_LIST:
+      chrome.send('brave_rewards.getContributionList')
+      break
   }
 
   return state
