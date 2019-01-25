@@ -409,6 +409,7 @@ service_manifest("chrome_content_packaged_services_manifest_overlay") {
       "//chrome/browser/chrome_content_packaged_services_manifest_overlay.json"
   packaged_services = [
     ":chrome_manifest",
+    "//brave/components/services/bat_ledger:manifest",
     "//components/services/patch:manifest",
     "//components/services/unzip:manifest",
     "//chrome/services/file_util:manifest",
