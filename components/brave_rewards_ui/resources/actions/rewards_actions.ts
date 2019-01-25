@@ -84,6 +84,8 @@ export const onQRGenerated = (type: Rewards.AddressesType, image: string) => act
   image
 })
 
+export const getContributeList = () => action(types.GET_CONTRIBUTE_LIST)
+
 export const onContributeList = (list: Rewards.Publisher[]) => action(types.ON_CONTRIBUTE_LIST, {
   list
 })
