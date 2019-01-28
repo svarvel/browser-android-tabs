@@ -227,7 +227,7 @@ public class ToolbarManager
     private boolean mInitializedWithNative;
     private Runnable mOnInitializedRunnable;
 
-    private boolean mShouldUpdateToolbarPrimaryColor = true;
+    private boolean mShouldUpdateToolbarPrimaryColor = false;
     private int mCurrentThemeColor;
 
     private OmniboxStartupMetrics mOmniboxStartupMetrics;
