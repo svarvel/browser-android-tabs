@@ -3970,16 +3970,8 @@ However, you aren’t invisible. Going private doesn’t hide your browsing from
       </message>
 
       <message name="IDS_BRAVE_SYNC" desc="Brave sync main screen message title.">
-        Brave Sync (beta)
+        Brave (beta) Sync
       </message>
-      <!--<message name="IDS_BRAVE_SYNC_DESCRIPTION" desc="Brave sync main screen message.">
-        Sync browser data between your devices
-securely using Brave Sync, no account
-creation required. Tap below to get started.
-</message>
-      <message name="IDS_BRAVE_SYNC_HAVE_EXISTING_CODE" desc="Button for have existing sync code button. [CHAR-LIMT=32]">
-        I have an existing sync code
-      </message>-->
       <message name="IDS_SYNC_SETTINGS_ADD_DEVICE_NAME_TITLE" desc="The title for the dialog where the user can type a sync device name.">
         Add device name
       </message>
@@ -3989,36 +3981,15 @@ creation required. Tap below to get started.
       <message name="IDS_SYNC_EXAMPLE_DEVICE_NAME" desc="The hint for a sync device name field, showing an example device name.">
         Android device
       </message>
-      <!--<message name="IDS_BRAVE_SYNC_QRCODE" desc="Brave sync main screen QRCode message title.">
-        Sync to device
-      </message>
-      <message name="IDS_BRAVE_SYNC_QRCODE_MESSAGE" desc="Brave sync main screen QRCode message.">
-        Using existing synced device open Brave
-Settings and navigate to "Device &amp;
-Settings", tap `+` to add a new device and
-reveal sync code.
-</message>-->
       <message name="IDS_ENTER_CODE_WORDS_SYNC" desc="Button for enter code words. [CHAR-LIMT=32]">
         Enter code words
       </message>
-      <!--<message name="IDS_ENTER_CODE_WORDS_BELOW_SYNC" desc="Message for enter code words. [CHAR-LIMT=32]">
-        Enter code words below.
-      </message>-->
       <message name="IDS_SYNC_DEVICE" desc="The title for the dialog where the user notified about sync setup result.">
         Sync device
       </message>
       <message name="IDS_SYNC_DEVICE_FAILURE" desc="The message for the dialog where the user notified about sync setup failure.">
         Sync could not be setup
       </message>
-      <!--<message name="IDS_SYNC_DEVICE_SUCCESS" desc="The message for the dialog where the user notified about sync setup success.">
-        The sync setup has completed successfully
-      </message>
-      <message name="IDS_RESET_SYNC" desc="Button for reset sync. [CHAR-LIMT=32]">
-        Reset Sync...
-      </message>
-      <message name="IDS_RESETTING_SYNC" desc="Question about restting sync.">
-        Are you sure you want to reset this device Sync settings?
-      </message>-->
 
       <!-- Brave stats -->
       <message name="IDS_BRAVE_STATS_TEXT_TRACKERS" desc="Text for blocked trackers stats on new tab page.">
@@ -4168,7 +4139,7 @@ Saved
         Sync (beta)
       </message>
       <message name="IDS_BRAVE_SYNC_DESCRIPTION_PAGE_1_PART_1" desc="Brave sync main screen message (part 1).">
-        Brave Sync allows you to sync bookmarks data privately between your Brave Browsers on your various devices.
+        Brave (beta) Sync allows you to sync bookmarks data privately between your Brave Browsers on your various devices.
       </message>
       <message name="IDS_BRAVE_SYNC_DESCRIPTION_PAGE_1_PART_2" desc="Brave sync main screen message (part 2).">
         Simply scan the code from your sync chain that you created on another device. Or start a new sync chain.
