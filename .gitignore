@@ -169,6 +169,8 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /clank
 /cloud_print/cloud_print_version_resources.xml
 /components/chrome_settings_proto_generated_compile.xml
+/components/cronet/android/maven/.gradle/
+/components/cronet/android/maven/.settings/
 /components/cloud_policy_proto_generated_compile.xml
 /components/gcm_driver.xml
 /components/leveldb_proto_test_support.xml
@@ -268,6 +270,7 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /testserver.log
 # See third_party/.gitignore for entries covering src/third_party.
 /tools/.bisect-builds-cache.json
+/tools/android/roll/android_deps/.settings/
 /tools/cygprofile/*.wprgo
 /tools/clang/dsymutil/bin/dsymutil
 /tools/distcc
