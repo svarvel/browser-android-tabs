@@ -32,6 +32,7 @@
 #include "chrome/browser/net/blockers/blockers_worker.h"
 #include "chrome/browser/net/chrome_extensions_network_delegate.h"
 #include "chrome/browser/profiles/profile_manager.h"
+#include "chrome/browser/stats_updater.h"
 #include "chrome/browser/task_manager/task_manager_interface.h"
 #include "chrome/common/buildflags.h"
 #include "chrome/common/net/safe_search_util.h"
@@ -732,10 +733,42 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
   return rv;
 }
 
+namespace {
+
+void SetCustomHeaders(
+    net::URLRequest* request,
+    net::HttpRequestHeaders* headers) {
+  if (request && headers) {
+    // Look for and setup custom headers
+    std::string customHeaders = stats_updater::GetCustomHeadersForHost(
+        request->url().host());
+    if (customHeaders.size()) {
+      std::string key;
+      std::string value;
+      size_t pos = customHeaders.find("\n");
+      if (pos == std::string::npos) {
+          key = customHeaders;
+          value = "";
+      } else {
+          key = customHeaders.substr(0, pos);
+          value = customHeaders.substr(pos + 1);
+      }
+      if (key.size()) {
+          headers->SetHeader(key, value);
+      }
+    }
+  }
+}
+
+}  // namespace
+
 int ChromeNetworkDelegate::OnBeforeStartTransaction(
     net::URLRequest* request,
     net::CompletionOnceCallback callback,
     net::HttpRequestHeaders* headers) {
+
+  SetCustomHeaders(request, headers);
+
   return extensions_delegate_->NotifyBeforeStartTransaction(
       request, std::move(callback), headers);
 }
