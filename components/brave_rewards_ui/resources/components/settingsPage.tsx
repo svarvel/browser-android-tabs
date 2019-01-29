@@ -79,6 +79,23 @@ class SettingsPage extends React.Component<Props, State> {
     this.actions.getAdsData()
   }
 
+  componentDidUpdate (prevProps: Props) {
+    if (
+      !prevProps.rewardsData.enabledMain &&
+      this.props.rewardsData.enabledMain
+    ) {
+      this.actions.getContributeList()
+      this.actions.getWalletProperties()
+    }
+
+    if (
+      !prevProps.rewardsData.enabledContribute &&
+      this.props.rewardsData.enabledContribute
+    ) {
+      this.actions.getContributeList()
+    }
+  }
+
   componentWillUnmount () {
     window.clearInterval(this.balanceTimerId)
   }
