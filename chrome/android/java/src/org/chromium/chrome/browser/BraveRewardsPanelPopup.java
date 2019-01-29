@@ -94,6 +94,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private int currentFavIconFetch;
     private boolean walletInitialized;          //flag: wallet is initialized
     private boolean walletDetailsReceived;      //flag: wallet details received
+    private boolean showRewardsSummary;        //flag: we don't want OnGetCurrentBalanceReport always opens up Rewards Summary window
     private AnimationDrawable wallet_init_animation;
 
     public BraveRewardsPanelPopup(View anchor) {
@@ -485,7 +486,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
 
     public void ShowRewardsSummary() {
       if (mBraveRewardsNativeWorker != null) {
-        mBraveRewardsNativeWorker.GetCurrentBalanceReport();
+          showRewardsSummary =  true;
+          mBraveRewardsNativeWorker.GetCurrentBalanceReport();
       }
     }
 
@@ -878,17 +880,20 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             toInsert = Html.fromHtml(non_verified_summary);
         }
         tvPublisherNotVerifiedSummary.setText(toInsert);
-        //
-        TextView tv = (TextView)root.findViewById(R.id.br_no_activities_yet);
-        GridLayout gr = (GridLayout)root.findViewById(R.id.br_activities);
-        if (tv != null && gr != null) {
-          if (no_activity) {
-              tv.setVisibility(View.VISIBLE);
-              gr.setVisibility(View.GONE);
-          } else {
-              tv.setVisibility(View.GONE);
-              gr.setVisibility(View.VISIBLE);
-          }
+
+        if (showRewardsSummary) {
+            showRewardsSummary = false;
+            TextView tv = (TextView) root.findViewById(R.id.br_no_activities_yet);
+            GridLayout gr = (GridLayout) root.findViewById(R.id.br_activities);
+            if (tv != null && gr != null) {
+                if (no_activity) {
+                    tv.setVisibility(View.VISIBLE);
+                    gr.setVisibility(View.GONE);
+                } else {
+                    tv.setVisibility(View.GONE);
+                    gr.setVisibility(View.VISIBLE);
+                }
+            }
         }
     }
 
