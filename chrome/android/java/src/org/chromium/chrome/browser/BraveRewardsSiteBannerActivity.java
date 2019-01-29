@@ -92,9 +92,12 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
             }
         };
 
-        findViewById(R.id.one_bat_option).setOnClickListener(radio_clicker);
-        findViewById(R.id.five_bat_option).setOnClickListener(radio_clicker);
-        findViewById(R.id.ten_bat_option).setOnClickListener(radio_clicker);
+        for (ToggleButton tb : radio_tip_amount){
+            tb.setOnClickListener(radio_clicker);
+        }
+
+        //set default tip amount
+        radio_tip_amount[1].setChecked(true);
 
 
         mFavIconHelper = new FaviconHelper();
