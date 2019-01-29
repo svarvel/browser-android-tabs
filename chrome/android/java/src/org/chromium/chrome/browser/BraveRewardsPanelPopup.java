@@ -68,6 +68,8 @@ import java.util.TimerTask;
 public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelper.FaviconImageCallback {
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
     private static final int FAVICON_FETCH_COUNT = 3;
+    private static final int PUBLISHER_INFO_FETCH_RETRY = 3 * 1000; // In milliseconds
+    private static final int PUBLISHER_FETCHES_COUNT = 3;
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
 
@@ -83,6 +85,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private TextView tvLearnMore;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private Timer balanceUpdater;
+    private Timer mPublisherFetcher;
+    private int publisherFetchesCount;
     private FaviconHelper mFavIconHelper;
     private int currentTabId;
     private OnCheckedChangeListener autoContributeSwitchListener;
@@ -100,6 +104,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
         publisherExist = false;
+        publisherFetchesCount = 0;
         currentTabId = -1;
         this.anchor = anchor;
         this.window = new PopupWindow(anchor.getContext());
@@ -122,6 +127,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             public void onDismiss() {
                 if (balanceUpdater != null) {
                   balanceUpdater.cancel();
+                }
+
+                if (mPublisherFetcher != null) {
+                    mPublisherFetcher.cancel();
                 }
 
                 if (mBraveRewardsNativeWorker != null) {
@@ -507,9 +516,44 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         String url = currentActiveTab.getUrl();
         if (URLUtil.isValidUrl(url)) {
             mBraveRewardsNativeWorker.GetPublisherInfo(currentActiveTab.getId(), url);
+            mPublisherFetcher = new Timer();
+            mPublisherFetcher.schedule(new PublisherFetchTimer(currentActiveTab.getId(), url),
+                PUBLISHER_INFO_FETCH_RETRY, PUBLISHER_INFO_FETCH_RETRY);
         }
       }
     }
+
+    class PublisherFetchTimer extends TimerTask {
+
+        private final int tabId;
+        private final String url;
+
+        PublisherFetchTimer(int tabId, String url) {
+          this.tabId = tabId;
+          this.url = url;
+        }
+
+        @Override
+        public void run() {
+          if (thisObject.publisherExist || publisherFetchesCount >= PUBLISHER_FETCHES_COUNT) {
+            mPublisherFetcher.cancel();
+            mPublisherFetcher = null;
+
+            return;
+          }
+          if (thisObject.mBraveRewardsNativeWorker == null) {
+            return;
+          }
+          mActivity.runOnUiThread(new Runnable() {
+              @Override
+              public void run() {
+                  thisObject.mBraveRewardsNativeWorker.GetPublisherInfo(tabId, url);
+              }
+          });
+          publisherFetchesCount++;
+        }
+    }
+
 
     private void ShowNotification(String id, int type, long timestamp,
             String[] args) {
@@ -657,7 +701,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                     continue;
                   }
                   String toInsert = "<b><font color=#ffffff>" + BraveRewardsHelper.probiToNumber(grant[0]) + " BAT</font></b> ";
-                  Log.i("TAG", "!!!grant[1] == " + grant[1]);
                   TimeZone utc = TimeZone.getTimeZone("UTC");
                   Calendar calTime = Calendar.getInstance(utc);
                   calTime.setTimeInMillis(Long.parseLong(grant[1]) * 1000);
