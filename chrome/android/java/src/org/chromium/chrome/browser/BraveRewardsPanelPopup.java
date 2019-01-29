@@ -381,11 +381,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 int secondOffset = text.indexOf(". ");
                 if (offset > firstOffset) {
                     // We are on change auto-contribute settings
-                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_SETTINGS_URL);
+                    mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_AC_SETTINGS_URL);
                     dismiss();
                 } else if (offset <= firstOffset && offset > secondOffset) {
                     // We are on learn more
-                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
+                    mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
                     dismiss();
                 }
             }
