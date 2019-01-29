@@ -14,6 +14,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -66,12 +67,29 @@ import java.util.TimerTask;
 
 
 public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelper.FaviconImageCallback {
+    private static final String TAG = "BraveRewards";
     private static final int UPDATE_BALANCE_INTERVAL = 60000;  // In milliseconds
     private static final int FAVICON_FETCH_COUNT = 3;
     private static final int PUBLISHER_INFO_FETCH_RETRY = 3 * 1000; // In milliseconds
     private static final int PUBLISHER_FETCHES_COUNT = 3;
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
+
+    // Rewards notifications
+    // Taken from components/brave_rewards/browser/rewards_notification_service.h
+    private static final int REWARDS_NOTIFICATION_INVALID = 0;
+    private static final int REWARDS_NOTIFICATION_AUTO_CONTRIBUTE = 1;
+    private static final int REWARDS_NOTIFICATION_GRANT = 2;
+    private static final int REWARDS_NOTIFICATION_FAILED_CONTRIBUTION = 3;
+    private static final int REWARDS_NOTIFICATION_IMPENDING_CONTRIBUTION = 4;
+    private static final int REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS = 5;
+    private static final int REWARDS_NOTIFICATION_BACKUP_WALLET = 6;
+
+    // Auto contribute results
+    private static final String AUTO_CONTRIBUTE_SUCCESS = "0";
+    private static final String AUTO_CONTRIBUTE_GENERAL_ERROR = "1";
+    private static final String AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS = "15";
+    private static final String AUTO_CONTRIBUTE_TIPPING_ERROR = "16";
 
     protected final View anchor;
     private final PopupWindow window;
@@ -558,11 +576,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
     private void ShowNotification(String id, int type, long timestamp,
             String[] args) {
         currentNotificationId = id;
-        LinearLayout ll = (LinearLayout)root.findViewById(R.id.header_layout);
-        ll.setBackgroundResource(R.drawable.notification_header);
+        LinearLayout hl = (LinearLayout)root.findViewById(R.id.header_layout);
+        hl.setBackgroundResource(R.drawable.notification_header);
         GridLayout gl = (GridLayout)root.findViewById(R.id.wallet_info_gridlayout);
         gl.setVisibility(View.GONE);
-        ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
+        LinearLayout ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
         ll.setVisibility(View.VISIBLE);
         TimeZone utc = TimeZone.getTimeZone("UTC");
         Calendar calTime = Calendar.getInstance(utc);
@@ -574,53 +592,89 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         String title = "";
         String description = "";
         Button btClaimOk = (Button)root.findViewById(R.id.br_claim_button);
+        btClaimOk.setVisibility(View.VISIBLE);
         ImageView notification_icon = (ImageView)root.findViewById(R.id.br_notification_icon);
+        LinearLayout nit = (LinearLayout)root.findViewById(R.id.notification_image_text);
+        nit.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)nit.getLayoutParams();
+        params.setMargins(params.leftMargin, 5, params.rightMargin, params.bottomMargin);
+        nit.setLayoutParams(params);
+        TextView tv = (TextView)root.findViewById(R.id.br_notification_description);
+        tv.setGravity(Gravity.CENTER);
         // TODO other types of notifications
         switch (type) {
-          case 1:
-            // Auto contribution successful
-            btClaimOk.setText(root.getResources().getString(R.string.ok));
-            notification_icon.setImageResource(R.drawable.contribute_icon);
-            title = root.getResources().getString(R.string.brave_ui_rewards_contribute);
-            if (args.length >= 4) {
-              String result = args[1];
-              // Results
-              // 0 - success
-              // 1 - general error
-              // 15 - not enough funds
-              // 16 - error while tipping
-              switch (result) {
-                case "0":
-                  description = String.format(
-                    root.getResources().getString(R.string.brave_ui_rewards_contribute_description),
-                    BraveRewardsHelper.probiToNumber(args[3]), args[2]);
-                  break;
-                case "15":
-                  description = 
-                    root.getResources().getString(R.string.brave_ui_notification_desc_no_funds);
-                  break;
-                case "16":
-                  description = 
-                    root.getResources().getString(R.string.brave_ui_notification_desc_tip_error);
-                  break;
-                default:
-                  description = 
-                    root.getResources().getString(R.string.brave_ui_notification_desc_contr_error);
-              }
-            } else {
-              assert false;
-            }
-            break;
-          case 2:
-            // Grants notification
-            btClaimOk.setText(root.getResources().getString(R.string.brave_ui_claim));
-            notification_icon.setImageResource(R.drawable.grant_icon);
-            title = root.getResources().getString(R.string.brave_ui_new_token_grant);
-            description = root.getResources().getString(R.string.brave_ui_new_grant);
-            break;
+            case REWARDS_NOTIFICATION_AUTO_CONTRIBUTE:
+                if (args.length >= 4) {
+                    // TODO find the case where it is used
+                    notification_icon.setImageResource(R.drawable.icon_validated_notification);
+                    String result = args[1];
+                    switch (result) {
+                        case AUTO_CONTRIBUTE_SUCCESS:
+                            btClaimOk.setText(root.getResources().getString(R.string.ok));
+                            title = root.getResources().getString(R.string.brave_ui_rewards_contribute);
+                            notification_icon.setImageResource(R.drawable.contribute_icon);
+                            hl.setBackgroundResource(R.drawable.notification_header_normal);
+                            description = String.format(
+                                root.getResources().getString(R.string.brave_ui_rewards_contribute_description),
+                                BraveRewardsHelper.probiToNumber(args[3]), args[2]);
+                            break;
+                        case AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS:
+                            title = "";
+                            notification_icon.setImageResource(R.drawable.icon_warning_notification);
+                            hl.setBackgroundResource(R.drawable.notification_header_warning);
+                            description =
+                                root.getResources().getString(R.string.brave_ui_notification_desc_no_funds);
+                            break;
+                        case AUTO_CONTRIBUTE_TIPPING_ERROR:
+                            title = "";
+                            notification_icon.setImageResource(R.drawable.icon_error_notification);
+                            hl.setBackgroundResource(R.drawable.notification_header_error);
+                            description =
+                                root.getResources().getString(R.string.brave_ui_notification_desc_tip_error);
+                            break;
+                        default:
+                            title = "";
+                            notification_icon.setImageResource(R.drawable.icon_error_notification);
+                            hl.setBackgroundResource(R.drawable.notification_header_error);
+                            description =
+                                root.getResources().getString(R.string.brave_ui_notification_desc_contr_error);
+                    }
+                    if (title.isEmpty()) {
+                        btClaimOk.setVisibility(View.GONE);
+                        nit.setOrientation(LinearLayout.HORIZONTAL);
+                        params.setMargins(params.leftMargin, 30, params.rightMargin, params.bottomMargin);
+                        nit.setLayoutParams(params);
+                        tv.setGravity(Gravity.START);
+                    }
+                } else {
+                    assert false;
+                }
+                break;
+            case REWARDS_NOTIFICATION_GRANT:
+                btClaimOk.setText(root.getResources().getString(R.string.brave_ui_claim));
+                notification_icon.setImageResource(R.drawable.grant_icon);
+                title = root.getResources().getString(R.string.brave_ui_new_token_grant);
+                description = root.getResources().getString(R.string.brave_ui_new_grant);
+                break;
+            case REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS:
+                btClaimOk.setText(root.getResources().getString(R.string.ok));
+                notification_icon.setImageResource(R.drawable.notification_icon);
+                title = root.getResources().getString(R.string.brave_ui_insufficient_funds_msg);
+                description = root.getResources().getString(R.string.brave_ui_insufficient_funds_desc);
+                break;
+            case REWARDS_NOTIFICATION_BACKUP_WALLET:
+                btClaimOk.setText(root.getResources().getString(R.string.ok));
+                notification_icon.setImageResource(R.drawable.notification_icon);
+                title = root.getResources().getString(R.string.brave_ui_backup_wallet_msg);
+                description = root.getResources().getString(R.string.brave_ui_backup_wallet_desc);
+                break;
+            default:
+                Log.e(TAG, "This notification type is either invalid or not handled yet: " + type);
+                assert false;
+                break;
         }
-        String stringToInsert = "<b>" + title + "</b>" + " | " + description + 
-          "  <font color=#a9aab4>" + notificationTime + "</font>";
+        String stringToInsert = (title.isEmpty() ? "" : ("<b>" + title + "</b>" + " | ")) + description +
+          (title.isEmpty() ? "" : ("  <font color=#a9aab4>" + notificationTime + "</font>"));
         Spanned toInsert;
         Context appContext = ContextUtils.getApplicationContext();
         if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -628,7 +682,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         } else {
             toInsert = Html.fromHtml(stringToInsert);
         }
-        TextView tv = (TextView)root.findViewById(R.id.br_notification_description);
         tv.setText(toInsert);
     }
 
@@ -715,7 +768,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                       adapter.add(Html.fromHtml(toInsert, Html.FROM_HTML_MODE_LEGACY));
                   } else {
                       adapter.add(Html.fromHtml(toInsert));
-                  }                  
+                  }
               }
               listView.setAdapter(adapter);
           } else {

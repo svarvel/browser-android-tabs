@@ -4496,6 +4496,18 @@ month...
       <message name="IDS_BRAVE_UI_GRANT_INFO" desc="">
         expires on <ph name="DATE">%1$s<ex>4/14/2019</ex></ph>
       </message>
+      <message name="IDS_BRAVE_UI_INSUFFICIENT_FUNDS_MSG" desc="">
+        Insufficient Funds
+      </message>
+      <message name="IDS_BRAVE_UI_INSUFFICIENT_FUNDS_DESC" desc="">
+        Your Brave Payments account is waiting for a deposit.
+      </message>
+      <message name="IDS_BRAVE_UI_BACKUP_WALLET_MSG" desc="">
+        Backup Wallet
+      </message>
+      <message name="IDS_BRAVE_UI_BACKUP_WALLET_DESC" desc="">
+        Please backup your Brave wallet.
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>
