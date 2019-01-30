@@ -14,8 +14,10 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
       break
     case types.ON_GRANT:
       state = { ...state }
-      // TODO NZ check why enum can't be used inside Rewards namespace
-      if (action.payload.properties.status === 1) {
+      // Set grant to undefined if general error or
+      // if one is not found.
+      if (action.payload.properties.status === 1 ||
+          action.payload.properties.status === 13) {
         state.grant = undefined
         break
       }
