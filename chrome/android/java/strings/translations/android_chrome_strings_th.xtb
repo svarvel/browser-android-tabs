@@ -92,7 +92,7 @@
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{นำ 1 รายการที่เลือกออก}other{นำ # รายการที่เลือกออก}}</translation>
 <translation id="1641113438599504367">Safe Browsing</translation>
 <translation id="164269334534774161">คุณกำลังดูสำเนาออฟไลน์ของหน้านี้จากวันที่ <ph name="CREATION_TIME" /></translation>
-<translation id="1644574205037202324">ประวัติการเข้าชม</translation>
+<translation id="1644574205037202324">ประวัติ</translation>
 <translation id="1647391597548383849">เข้าถึงกล้องถ่ายรูป</translation>
 <translation id="1660204651932907780">อนุญาตให้ไซต์เล่นเสียง (แนะนำ)</translation>
 <translation id="1670399744444387456">พื้นฐาน</translation>
@@ -1174,4 +1174,43 @@ EST แล้ว</translation>
 <translation id="5858455511731621847">แม้ว่าเว็บไซต์ที่คุณเข้าชมในแท็บส่วนตัวจะไม่บันทึกลงในเครื่อง แต่วิธีนี้ไม่ทำให้คุณไม่มีตัวตนหรือหายไปจากผู้ให้บริการอินเทอร์เน็ต, นายจ้าง หรือเว็บไซต์ที่คุณเข้าชม</translation>
 <translation id="2339273275658335597">อัปเดตของ Brave</translation>
 <translation id="8395234238259738935">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</translation>
+<translation id="7497839443041994908">Brave (เบต้า) Sync</translation>
+<translation id="391177677159359824">Sync (เบต้า)</translation>
+<translation id="3680755684186855422">Brave Sync ให้คุณซิงค์ข้อมูลบุ๊กมาร์กระหว่าง Brave Browser บนอุปกรณ์ต่างๆ ของคุณได้อย่างเป็นส่วนตัว</translation>
+<translation id="3735228155296883311">เพียงสแกนรหัสจากกลุ่มการซิงค์ที่คุณสร้างไว้บนอีกอุปกรณ์หนึ่ง หรือเริ่มกลุ่มการซิงค์ใหม่</translation>
+<translation id="7745082336226088126">สแกนหรือป้อนรหัสการซิงค์</translation>
+<translation id="1602067095281698985">เริ่มกลุ่มการซิงค์ใหม่</translation>
+<translation id="4690880825349994619">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า &gt; ซิงค์ เลือก \"เพิ่มอุปกรณ์\" แล้วสแกนรหัส QR ที่แสดงอยู่บนหน้าจอ</translation>
+<translation id="6270614677029463366">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า &gt; ซิงค์ เลือก \"เพิ่มอุปกรณ์\" จากนั้นเลือก \"แสดงข้อความรหัสแทน\"</translation>
+<translation id="1475223680121592371">เพิ่มอุปกรณ์เคลื่อนที่</translation>
+<translation id="2965377893636908578">เพิ่มคอมพิวเตอร์</translation>
+<translation id="65315202420929965">สแกนรหัสการซิงค์นี้</translation>
+<translation id="6604289897677913048">หากต้องการใช้โทรศัพท์หรือแท็บเล็ตเครื่องที่สอง ให้นำทางไปยัง การตั้งค่า Brave &gt; ซิงค์ &gt; สแกน</translation>
+<translation id="3405078156498254717">จับภาพรหัส QR (ที่กล่าวถึงข้างต้น) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</translation>
+<translation id="8076492880354921740">แท็บ</translation>
+<translation id="5706430066167764107">ป้อนอัตโนมัติ/รหัสผ่าน</translation>
+<translation id="1164234435773528579">การตั้งค่า Brave Payment</translation>
+<translation id="6174119914106813304">ซิงค์บนอุปกรณ์นี้</translation>
+<translation id="6776430845975754238">การเปลี่ยนแปลงการตั้งค่าจะมีผลเฉพาะกับข้อมูลที่อุปกรณ์นี้แชร์กับอุปกรณ์อื่นๆ</translation>
+<translation id="8193724030871339658">อุปกรณ์อื่นๆ ในกลุ่ม</translation>
+<translation id="279635009973773843">กำลังโหลดอุปกรณ์...</translation>
+<translation id="6450924769151530465">เพิ่มอีกอุปกรณ์</translation>
+<translation id="2004365171440701679">ลบอุปกรณ์นี้</translation>
+<translation id="2731921493694251495">ป้อนรหัสกลุ่มการซิงค์</translation>
+<translation id="2590683710114839102">บนคอมพิวเตอร์ของคุณ ให้นำทางไปยัง การตั้งค่า Brave &gt; ซิงค์ เลือก \"ป้อนรหัสกลุ่มการซิงค์\"</translation>
+<translation id="1732271215616957850">ป้อนข้อความรหัสที่กล่าวถึงข้างต้น รวมช่องว่าง</translation>
+<translation id="3951555451708119590">คุณแน่ใจหรือไม่ว่าต้องการลบอุปกรณ์ '</translation>
+<translation id="9154490620151093733">ส่งคำขอลบแล้ว อุปกรณ์จะถูกลบในไม่ช้า</translation>
+<translation id="544873101641618162">กำลังโหลดข้อมูล...</translation>
+<translation id="6779408765480516895">มีบางอย่างผิดปกติ ดูเหมือนคำขอของคุณจะหมดเวลา</translation>
+<translation id="4973653569293835178">ฉันจะใช้กล้องของฉัน...</translation>
+<translation id="8131740175452115882">ยืนยัน</translation>
+<translation id="6854481134066832782">จำนวนคำ: </translation>
+<translation id="4282642752844565114">จำนวนคำไม่ถูกต้อง</translation>
+<translation id="2175927920773552910">รหัส QR</translation>
+<translation id="8653433343015102968">ข้อความรหัส</translation>
+<translation id="8624315169751085215">คัดลอกไปยังคลิปบอร์ด</translation>
+<translation id="5241263629636958324">คัดลอกไปยังคลิปบอร์ดแล้ว</translation>
+<translation id="222883304157347087">(อุปกรณ์นี้)</translation>
+<translation id="7820683005702098135">Brave (เบต้า) Sync</translation>
 </translationbundle>

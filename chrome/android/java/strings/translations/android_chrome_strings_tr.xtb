@@ -627,7 +627,7 @@ Yine de, görünmez olmazsınız. Gizli moda geçmeniz web'de yaptıklarınızı
 <translation id="5793665092639000975"><ph name="SPACE_USED" /> / <ph name="SPACE_AVAILABLE" /> kullanılıyor</translation>
 <translation id="5804241973901381774">İzinler</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# saat önce}other{# saat önce}}</translation>
-<translation id="5817918615728894473">Eşle</translation>
+<translation id="5817918615728894473">Eşleştir</translation>
 <translation id="583281660410589416">Bilinmiyor</translation>
 <translation id="5833397272224757657">Kişiselleştirme için ziyaret ettiğiniz sitelerin içeriğinin yanı sıra tarayıcı etkinliğini ve etkileşimlerini kullanır</translation>
 <translation id="5833984609253377421">Bağlantıyı paylaş</translation>
@@ -1176,4 +1176,43 @@ Kaydedildi</translation>
 <translation id="5858455511731621847">Gizli sekmelerde ziyaret ettiğiniz siteler yerel olarak kaydedilmese de anonim olarak kalmazsınız ve bu siteler internet servis sağlayıcınız, işvereniniz veya ziyaret ettiğiniz siteler tarafından görülebilir.</translation>
 <translation id="2339273275658335597">Brave güncellemesi</translation>
 <translation id="8395234238259738935">Yeni Brave tarayıcı %22 daha hızlı</translation>
+<translation id="7497839443041994908">Brave Sync (beta)</translation>
+<translation id="391177677159359824">Sync (beta)</translation>
+<translation id="3680755684186855422">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</translation>
+<translation id="3735228155296883311">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</translation>
+<translation id="7745082336226088126">Senkronizasyon kodu tara veya gir</translation>
+<translation id="1602067095281698985">Yeni bir senkronizasyon zinciri başlat</translation>
+<translation id="4690880825349994619">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini seçin ve ekranda görüntülenen QR Kodunu tarayın.</translation>
+<translation id="6270614677029463366">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini ve ardından \"Bunun yerine kod kelimelerini görüntüle\" öğesini seçin.</translation>
+<translation id="1475223680121592371">Mobil Cihaz Ekle</translation>
+<translation id="2965377893636908578">Bilgisayar Ekle</translation>
+<translation id="65315202420929965">Bu senkronizasyon kodunu tara</translation>
+<translation id="6604289897677913048">İkinci bir telefon veya tablet kullanarak Brave Ayarları &gt; Senkronizasyon &gt; Tara öğesine gidin.</translation>
+<translation id="3405078156498254717">İkinci cihazınızla (yukarıdaki) QR kodunu çekin veya kamera mevcut değilse kod kelimelerini girin.</translation>
+<translation id="8076492880354921740">Sekmeler</translation>
+<translation id="5706430066167764107">Otomatik Doldurma/Parolalar</translation>
+<translation id="1164234435773528579">Brave Ödeme Ayarları</translation>
+<translation id="6174119914106813304">BU CİHAZDA SENKRONİZASYON</translation>
+<translation id="6776430845975754238">Ayarların değiştirilmesi yalnızca bu cihazın diğerleriyle paylaştığı verileri etkileyecektir.</translation>
+<translation id="8193724030871339658">ZİNCİRDEKİ DİĞER CİHAZLAR</translation>
+<translation id="279635009973773843">CİHAZLAR YÜKLENİYOR...</translation>
+<translation id="6450924769151530465">Başka cihaz ekle</translation>
+<translation id="2004365171440701679">Bu cihazı kaldır</translation>
+<translation id="2731921493694251495">Senkronizasyon zinciri kodunu gir</translation>
+<translation id="2590683710114839102">Bilgisayarınızda Brave Ayarları &gt; Senkronizasyon öğesine gidin. \"Senkronizasyon Zinciri Kodu Gir\" öğesini seçin.</translation>
+<translation id="1732271215616957850">Yukarıdaki kod kelimelerini boşluklar dahil girin.</translation>
+<translation id="3951555451708119590">\"</translation>
+<translation id="9154490620151093733">Silme talebi gönderildi. Cihaz kısa süre içinde kaldırılacak.</translation>
+<translation id="544873101641618162">Veri yükleniyor...</translation>
+<translation id="6779408765480516895">Bir hata oluştu, görünüşe göre talebiniz zaman aşımına uğradı.</translation>
+<translation id="4973653569293835178">Kameramı kullanacağım...</translation>
+<translation id="8131740175452115882">Onayla</translation>
+<translation id="6854481134066832782">Kelime sayısı: </translation>
+<translation id="4282642752844565114">Yanlış kelime sayısı</translation>
+<translation id="2175927920773552910">QR Kodu</translation>
+<translation id="8653433343015102968">Kod Kelimeleri</translation>
+<translation id="8624315169751085215">Panoya Kopyala</translation>
+<translation id="5241263629636958324">Panoya Kopyalandı</translation>
+<translation id="222883304157347087">(bu cihaz)</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
 </translationbundle>

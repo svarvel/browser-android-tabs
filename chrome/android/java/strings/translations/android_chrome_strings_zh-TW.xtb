@@ -92,7 +92,7 @@
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{移除 1 個選取的項目}other{移除 # 個選取的項目}}</translation>
 <translation id="1641113438599504367">安全瀏覽</translation>
 <translation id="164269334534774161">您目前瀏覽的是這個網頁的離線複本 (建立時間：<ph name="CREATION_TIME" />)</translation>
-<translation id="1644574205037202324">歷史記錄</translation>
+<translation id="1644574205037202324">記錄</translation>
 <translation id="1647391597548383849">存取您的攝影機</translation>
 <translation id="1660204651932907780">允許網站播放音訊 (建議)</translation>
 <translation id="1670399744444387456">基本</translation>
@@ -1172,4 +1172,43 @@
 <translation id="5858455511731621847">雖然在隱私分頁中所到訪的網站不會儲存於本機，但不會讓您在您的 ISP、雇主或到訪的網站匿名或隱身。</translation>
 <translation id="2339273275658335597">Brave 更新</translation>
 <translation id="8395234238259738935">新的 Brave 瀏覽器快了 22%</translation>
+<translation id="7497839443041994908">Brave (測試版) Sync</translation>
+<translation id="391177677159359824">Sync (測試版)</translation>
+<translation id="3680755684186855422">Brave Sync 可讓您私下同步各種裝置上 Brave 瀏覽器的書籤資料。</translation>
+<translation id="3735228155296883311">只要掃瞄您在其他裝置上建立的同步鏈代碼即可。或者，您也可以建立新的同步鏈。</translation>
+<translation id="7745082336226088126">掃描或輸入同步代碼</translation>
+<translation id="1602067095281698985">建立新的同步鏈</translation>
+<translation id="4690880825349994619">使用現有的同步裝置開啟 Brave 設定，並依序瀏覽至「設定 &gt; 同步」。選擇「新增裝置」並掃描螢幕上顯示的 QR 碼。</translation>
+<translation id="6270614677029463366">使用現有的同步裝置開啟 Brave 設定，並依序瀏覽至「設定 &gt; 同步」。選擇「新增裝置」，然後選擇「改為顯示代碼」。</translation>
+<translation id="1475223680121592371">新增行動裝置</translation>
+<translation id="2965377893636908578">新增電腦</translation>
+<translation id="65315202420929965">掃描此同步代碼</translation>
+<translation id="6604289897677913048">使用第二部手機或平板電腦，依序瀏覽至「Brave 設定 &gt; 同步 &gt; 掃描」。</translation>
+<translation id="3405078156498254717">使用第二部裝置擷取 QR 碼 (請見上方)；若裝置沒有相機功能，則可改為輸入代碼。</translation>
+<translation id="8076492880354921740">分頁</translation>
+<translation id="5706430066167764107">自動填入/密碼</translation>
+<translation id="1164234435773528579">Brave 付款設定</translation>
+<translation id="6174119914106813304">在本裝置上同步</translation>
+<translation id="6776430845975754238">變更設定只會影響本裝置與其他裝置共用的資料。</translation>
+<translation id="8193724030871339658">同步鏈中的其他裝置</translation>
+<translation id="279635009973773843">正在載入裝置...</translation>
+<translation id="6450924769151530465">新增其他裝置</translation>
+<translation id="2004365171440701679">移除本裝置</translation>
+<translation id="2731921493694251495">輸入同步鏈代碼</translation>
+<translation id="2590683710114839102">在電腦上依序瀏覽至「Brave 設定 &gt; 同步」，接著選擇「輸入同步鏈代碼」。 </translation>
+<translation id="1732271215616957850">輸入上方代碼，包括空格。</translation>
+<translation id="3951555451708119590">確定要刪除裝置「</translation>
+<translation id="9154490620151093733">刪除要求已送出，系統很快就會移除裝置。</translation>
+<translation id="544873101641618162">正在載入資料...</translation>
+<translation id="6779408765480516895">發生錯誤，您的要求似乎已逾時。</translation>
+<translation id="4973653569293835178">我要使用我的相機...</translation>
+<translation id="8131740175452115882">確認</translation>
+<translation id="6854481134066832782">字數統計：</translation>
+<translation id="4282642752844565114">字數不正確</translation>
+<translation id="2175927920773552910">QR 碼</translation>
+<translation id="8653433343015102968">代碼</translation>
+<translation id="8624315169751085215">複製到剪貼簿</translation>
+<translation id="5241263629636958324">已複製到剪貼簿</translation>
+<translation id="222883304157347087">(本裝置)</translation>
+<translation id="7820683005702098135">Brave (測試版) Sync</translation>
 </translationbundle>

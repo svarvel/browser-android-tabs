@@ -30,27 +30,12 @@
 
     <string name="menu_exit">יְצִיאָה</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים
- באמצעות Brave Sync. אין צורך ליצור
- חשבון. הקש להלן כדי להתחיל.</string>
-    <string name="brave_sync_have_existing_code">יש לי קוד סנכרון קיים</string>
     <string name="sync_settings_add_device_name_title">הוסף שם מכשיר</string>
     <string name="sync_settings_add_device_name_label">הזן שם אופציונלי עבור מכשיר זה</string>
     <string name="sync_example_device_name">מכשיר Android</string>
-    <string name="brave_sync_qrcode">סנכרן למכשיר</string>
-    <string name="brave_sync_qrcode_message">באמצעות מכשיר מסונכרן קיים,
- פתח את Brave Settings (הגדרות Brave),
- ונווט אל Device &amp;Settings"
- (הגדרות מכשירים), הקש על '+' כדי
- להוסיף מכשיר חדש ולהציג את קוד הסנכרון.</string>
     <string name="enter_code_words_sync">הזן מילות קוד</string>
-    <string name="enter_code_words_below_sync">הזן את מילות הקוד להלן.</string>
     <string name="sync_device">סנכרן מכשיר</string>
     <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
-    <string name="sync_device_success">הגדרת הסנכרון הושלמה בהצלחה</string>
-    <string name="reset_sync">איפוס הסנכרון...</string>
-    <string name="resetting_sync">אתה בטוח שברצונך לאפס את הגדרות הסנכרון של מכשיר זה?</string>
 
     <string name="brave_stats_text_trackers">כל מעקב
 שנחסמו</string>

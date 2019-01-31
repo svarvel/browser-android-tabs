@@ -1,16 +1,16 @@
 <resources>
 
-    <string name="brave_settings_title">Ustawienia zabezpieczeń strony Brave dla</string>
-    <string name="brave_shields_down">Nieaktywne</string>
-    <string name="brave_shields_up">Aktywne</string>
+    <string name="brave_settings_title">Ustawienia tarczy Brave dla strony</string>
+    <string name="brave_shields_down">Wyłączone</string>
+    <string name="brave_shields_up">Włączone</string>
     <string name="brave_shields_ads_trackers">Zablokowane reklamy i oprogramowanie śledzące</string>
     <string name="brave_shields_https_upgrades">Aktualizacje HTTPS</string>
     <string name="brave_shields_scripts_blocked">Zablokowane skrypty</string>
     <string name="brave_shields_ads_tracking_switch">Blokuj reklamy i śledzenie</string>
     <string name="brave_shields_https_everywhere_switch">Wymuszaj HTTPS</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuj skrypty</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Aktywuj/dezaktywuj zabezpieczenia Brave</string>
-    <string name="brave_shields_block_3rd_party_cookies_switch">Blokuj pliki cookie z witryn osób trzecich</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Włącz/Wyłącz tarczę Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokuj pliki cookie stron trzecich</string>
 
     <string name="httpse_summary">Wymusza użycie HTTPS, jeśli jest to możliwe</string>
     <string name="tracking_protection_title">Ochrona przed śledzeniem</string>
@@ -23,34 +23,20 @@
     <string name="brave_shields_fingerprints_blocked">Zablokowane metody zbierania odcisków palców</string>
     <string name="brave_shields_block_fingerprints_switch">Ochrona przed zabieraniem odcisków palców</string>
 
-    <string name="ad_block_regional_title">Lokalny Ad Block</string>
+    <string name="ad_block_regional_title">Blokada reklam regionalnych</string>
     <string name="ad_block_regional_summary">Zapobiega wyświetlaniu się lokalnych reklam</string>
 
     <string name="ad_block_regional_summary_no_list">Brak dostępnych dodatkowych list dla Twojej lokalizacji</string>
 
     <string name="menu_exit">Wyjście</string>
 
-    <string name="brave_sync">Synchronizacja Brave</string>
-    <string name="brave_sync_description">Synchronizuj bezpiecznie dane między urządzeniami za
-pomocą funkcji Synchronizacja Brave.
-Nie potrzebujesz do tego tworzyć konta.
-Aby zacząć, dotknij pola niżej.</string>
-    <string name="brave_sync_have_existing_code">Mam już istniejący kod synchronizacji</string>
+    <string name="brave_sync">Synchronizacja Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Dodaj nazwę urządzenia</string>
     <string name="sync_settings_add_device_name_label">Wpisz opcjonalną nazwę tego urządzenia</string>
     <string name="sync_example_device_name">Urządzenie Android</string>
-    <string name="brave_sync_qrcode">Synchronizuj z urządzeniem</string>
-    <string name="brave_sync_qrcode_message">Za pomocą zsynchronizowanego już urządzenia otwórz
-ustawienia Brave, przejdź do sekcji Urządzenie
-i dotknij przycisku +, aby dodać nowe urządzenie
-i odsłonić hasło synchronizacji.</string>
     <string name="enter_code_words_sync">Wpisz hasła</string>
-    <string name="enter_code_words_below_sync">Wpisz hasła poniżej.</string>
     <string name="sync_device">Synchronizuj urządzenie</string>
     <string name="sync_device_failure">Nie można skonfigurować synchronizacji</string>
-    <string name="sync_device_success">Ustawianie synchronizacji zakończyło się pomyślnie</string>
-    <string name="reset_sync">Resetuj synchronizację…</string>
-    <string name="resetting_sync">Czy na pewno chcesz zresetować ustawienia synchronizacji w tym urządzeniu?</string>
 
     <string name="brave_stats_text_trackers">Zablokowane
 oprogramowanie śledzące</string>
@@ -111,5 +97,46 @@ zaoszczędzony czas</string>
 
     <string name="update_notification_title">Aktualizacja przeglądarki Brave</string>
     <string name="update_notification_text">Nowa przeglądarka Brave działa o 22% szybciej</string>
+
+    <string name="prefs_sync">Synchronizacja (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Synchronizacja Brave pozwala na prywatną synchronizację danych zakładek w Twoich przeglądarkach Brave na różnych urządzeniach.</string>
+    <string name="brave_sync_description_page_1_part_2">Po prostu zeskanuj kod z łańcucha synchronizacji utworzonego na innym urządzeniu lub utwórz nowy łańcuch synchronizacji.</string>
+    <string name="brave_sync_scan_chain_code">Zeskanuj lub wprowadź kod synchronizacji</string>
+    <string name="brave_sync_start_new_chain">Utwórz nowy łańcuch synchronizacji</string>
+    <string name="brave_sync_qrcode_message_v2">Za pomocą zsynchronizowanego już urządzenia otwórz ustawienia Brave, przejdź do sekcji Ustawienia > Synchronizacja. Wybierz opcję „Dodaj urządzenie” i zeskanuj kod QR wyświetlony na ekranie.</string>
+    <string name="brave_sync_codewords_message">Za pomocą zsynchronizowanego już urządzenia otwórz ustawienia Brave, przejdź do sekcji Ustawienia > Synchronizacja. Wybierz opcję „Dodaj urządzenie”, a następnie „Wyświetl hasło”.</string>
+    <string name="brave_sync_btn_mobile">Dodaj urządzenie mobilne</string>
+    <string name="brave_sync_btn_laptop">Dodaj komputer</string>
+    <string name="brave_sync_scan_sync_code">Skanuj ten kod synchronizacji</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Za pomocą drugiego telefonu lub tabletu, przejdź do ustawień Brave > Synchronizacja > Skanuj.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Zarejestruj kod QR (powyżej) drugim urządzeniem lub wprowadź hasło, jeśli aparat fotograficzny jest niedostępny.</string>
+    <string name="brave_sync_btn_done">Gotowe</string>
+    <string name="brave_sync_tabs_text">Karty</string>
+    <string name="brave_sync_history_text">Historia</string>
+    <string name="brave_sync_autofill_passwords_text">Automatyczne uzupełnianie / hasła</string>
+    <string name="brave_sync_payment_settings_text">Ustawienia płatności Brave</string>
+    <string name="brave_sync_settings_title">SYNCHRONIZUJ Z TYM URZĄDZENIEM</string>
+    <string name="brave_sync_settings_description">Zmiana ustawień wpłynie wyłącznie na dane udostępniane przez tę usługę.</string>
+    <string name="brave_sync_devices_title">INNE URZĄDZENIA W ŁAŃCUCHU</string>
+    <string name="brave_sync_loading_devices_title">WCZYTYWANIE URZĄDZEŃ…</string>
+    <string name="brave_sync_add_device_text">Dodaj kolejne urządzenie</string>
+    <string name="brave_sync_remove_device_text">Usuń to urządzenie</string>
+    <string name="brave_sync_code_words_title">Paruj</string>
+    <string name="brave_sync_add_laptop_text_title">Wprowadź kod łańcucha synchronizacji</string>
+    <string name="brave_sync_add_laptop_text_part_1">Na komputerze przejdź do ustawień Brave > Synchronizacja. Wybierz „Wprowadź kod synchronizacji łańcucha”.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Wprowadź hasło powyżej, uwzględniając spacje.</string>
+    <string name="brave_sync_delete_device">Czy na pewno chcesz usunąć urządzenie „<ph name="DEVICE_NAME">%1$s</ph>”?</string>
+    <string name="brave_sync_delete_sent">Wysłano zapytanie o usunięcie. Urządzenie zostanie wkrótce usunięte.</string>
+    <string name="brave_sync_loading_data_title">Wczytywanie danych…</string>
+    <string name="brave_sync_time_out_message">Coś poszło nie tak, wygląda na to, że Twoje zapytanie wygasło.</string>
+    <string name="brave_sync_use_camera_text">Skorzystam z aparatu…</string>
+    <string name="brave_sync_confirm_code_words_text">Potwierdź</string>
+    <string name="brave_sync_word_count_text">Liczba słów: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Nieprawidłowa liczba słów</string>
+    <string name="brave_sync_qr_code">Kod QR</string>
+    <string name="brave_sync_code_words">Hasło</string>
+    <string name="brave_sync_copy_button_text">Kopiuj do schowka</string>
+    <string name="brave_sync_copied_text">Skopiowano do schowka</string>
+    <string name="brave_sync_this_device_text">(to urządzenie)</string>
 
 </resources>

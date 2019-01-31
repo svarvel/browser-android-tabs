@@ -92,7 +92,7 @@ Du er imidlertid ikke usynlig. Privat-modusen skjuler ikke surfingen din for arb
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{Fjern 1 valgt element}other{Fjern # valgte elementer}}</translation>
 <translation id="1641113438599504367">Safe Browsing</translation>
 <translation id="164269334534774161">Du ser en lokal kopi av denne siden fra <ph name="CREATION_TIME" /></translation>
-<translation id="1644574205037202324">Logg</translation>
+<translation id="1644574205037202324">Historikk</translation>
 <translation id="1647391597548383849">Tilgang til kameraet ditt</translation>
 <translation id="1660204651932907780">Tillat nettsteder å spille av lyd (anbefalt)</translation>
 <translation id="1670399744444387456">Enkle</translation>
@@ -627,7 +627,7 @@ Du er imidlertid ikke usynlig. Inkognito-modusen skjuler ikke surfingen din for 
 <translation id="5793665092639000975">Bruker <ph name="SPACE_USED" /> av <ph name="SPACE_AVAILABLE" /></translation>
 <translation id="5804241973901381774">Tillatelser</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{for # time siden}other{for # timer siden}}</translation>
-<translation id="5817918615728894473">Koble sammen</translation>
+<translation id="5817918615728894473">Par</translation>
 <translation id="583281660410589416">Ukjent</translation>
 <translation id="5833397272224757657">Bruker innhold fra nettsteder du besøker, nettleseraktivitet og andre interaksjoner for å gi ting et personlig preg</translation>
 <translation id="5833984609253377421">Del en link</translation>
@@ -1174,4 +1174,43 @@ Lagret</translation>
 <translation id="5858455511731621847">Selv om nettsteder du besøker i private faner, ikke lagres lokalt, gjør de deg ikke anonym eller usynlig overfor internettleverandøren din, arbeidsgiveren din eller nettstedene du besøker.</translation>
 <translation id="2339273275658335597">Brave-oppdatering</translation>
 <translation id="8395234238259738935">Den nye nettleseren til Brave er 22 % raskere</translation>
+<translation id="7497839443041994908">Brave Sync (beta)</translation>
+<translation id="391177677159359824">Sync (beta)</translation>
+<translation id="3680755684186855422">Med Brave Sync kan du synkronisere Brave-nettlesere på ulike enheter slik at du får de samme private bokmerkene på alle.</translation>
+<translation id="3735228155296883311">Skann helt enkelt koden fra synkkjeden du laget på en annen enhet, eller start en ny synkkjede.</translation>
+<translation id="7745082336226088126">Skann eller angi synkkode</translation>
+<translation id="1602067095281698985">Start en ny synkkjede</translation>
+<translation id="4690880825349994619">Bruk en synkronisert enhet og åpne Brave Settings. Gå deretter til Settings &gt; Sync. Velg «Add Device», og skann QR-koden du ser på skjermen.</translation>
+<translation id="6270614677029463366">Bruk en synkronisert enhet og åpne Brave Settings. Gå deretter til Settings &gt; Sync. Velg «Add Device», og så «Display code words instead».</translation>
+<translation id="1475223680121592371">Legg til en mobilenhet</translation>
+<translation id="2965377893636908578">Legg til en datamaskin</translation>
+<translation id="65315202420929965">Skann denne synkkoden</translation>
+<translation id="6604289897677913048">Bruk en annen telefon eller nettbrett, og gå til Brave Settings &gt; Sync &gt; Scan.</translation>
+<translation id="3405078156498254717">Ta bilde av QR-koden (over) med den andre enheten, eller skriv inn kodeord hvis du ikke kan bruke kameraet.</translation>
+<translation id="8076492880354921740">Faner</translation>
+<translation id="5706430066167764107">Automatisk utfylling / passord</translation>
+<translation id="1164234435773528579">Betalingsinnstillinger for Brave</translation>
+<translation id="6174119914106813304">SYNK DENNE ENHETEN</translation>
+<translation id="6776430845975754238">Det å endre innstillingene har bare innvirkning på dataene som denne enheten deler med andre.</translation>
+<translation id="8193724030871339658">ANDRE ENHETER I KJEDEN</translation>
+<translation id="279635009973773843">LASTER INN ENHETER …</translation>
+<translation id="6450924769151530465">Legg til en ny enhet</translation>
+<translation id="2004365171440701679">Fjern denne enheten</translation>
+<translation id="2731921493694251495">Angi synkkjedekoden</translation>
+<translation id="2590683710114839102">Bruk datamaskinen din og gå til Brave Settings &gt; Sync. Velg «Enter a Sync Chain Code».</translation>
+<translation id="1732271215616957850">Skriv inn kodeordene over (ta med mellomrommene).</translation>
+<translation id="3951555451708119590">Er du sikker på at du vil slette enheten «</translation>
+<translation id="9154490620151093733">Forespørselen om sletting er sendt. Enheten vil snart fjernes.</translation>
+<translation id="544873101641618162">Laster inn data …</translation>
+<translation id="6779408765480516895">Det oppsto en feil. Det ser ut som forespørselen fikk tidsavbrudd.</translation>
+<translation id="4973653569293835178">Jeg bruker kameraet …</translation>
+<translation id="8131740175452115882">Bekreft</translation>
+<translation id="6854481134066832782">Ordtelling: </translation>
+<translation id="4282642752844565114">Feil antall ord</translation>
+<translation id="2175927920773552910">QR-kode</translation>
+<translation id="8653433343015102968">Kodeord</translation>
+<translation id="8624315169751085215">Kopier til utklippstavlen</translation>
+<translation id="5241263629636958324">Kopiert til utklippstavlen</translation>
+<translation id="222883304157347087">(denne enheten)</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
 </translationbundle>

@@ -30,28 +30,13 @@
 
     <string name="menu_exit">Východ</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Bezpečne synchronizujte údaje prehliadača medzi
-vašimi zariadeniami pomocou Brave Sync,
-nie je potrebné vytvárať účet.
-Kliknite nižšie na odštartovanie.</string>
-    <string name="brave_sync_have_existing_code">Mám existujúci synchronizačný kód</string>
+    <string name="brave_sync">Brave Sync (beta verzia)</string>
     <string name="sync_settings_add_device_name_title">Pridajte názov zariadenia</string>
     <string name="sync_settings_add_device_name_label">Zadajte nepovinný názov pre toto zariadenie</string>
     <string name="sync_example_device_name">Android zariadenie</string>
-    <string name="brave_sync_qrcode">Synchronizácia so zariadením</string>
-    <string name="brave_sync_qrcode_message">Pomocou existujúceho synchronizovaného zariadenia
-otvorte Brave Settings a prejdite na
-"Device &amp;Settings" (nastavenia zariadenia),
-kliknite na "+" na pridanie nového zariadenia
-a zobrazenie synchronizačného kódu.</string>
     <string name="enter_code_words_sync">Zadajte kódové slová</string>
-    <string name="enter_code_words_below_sync">Zadajte nižšie kódové slová.</string>
     <string name="sync_device">Synchronizované zariadenie</string>
     <string name="sync_device_failure">Synchronizáciu nie je možné nastaviť</string>
-    <string name="sync_device_success">Nastavovanie synchronizácie bolo úspešne ukončené</string>
-    <string name="reset_sync">Reštartovať synchronizácie...</string>
-    <string name="resetting_sync">Ste si istí, že chcete resetovať nastavenia synchronizácie tohto zariadenia?</string>
 
     <string name="brave_stats_text_trackers">Sledovanie
 zablokované</string>
@@ -112,5 +97,46 @@ ušetrený čas</string>
 
     <string name="update_notification_title">Aktualizácia prehliadača Brave</string>
     <string name="update_notification_text">Nový prehliadač Brave je o 22 % rýchlejší</string>
+
+    <string name="prefs_sync">Sync (beta verzia)</string>
+    <string name="brave_sync_description_page_1_part_1">Aplikácia Brave Sync vám umožňuje súkromne synchronizovať údaje záložiek medzi prehliadačmi Brave na rôznych zariadeniach.</string>
+    <string name="brave_sync_description_page_1_part_2">Jednoducho naskenujte kód zo synchronizačného reťazca, ktorý ste vytvorili na inom zariadení. Alebo začnite nový synchronizačný reťazec.</string>
+    <string name="brave_sync_scan_chain_code">Naskenujte alebo zadajte synchronizačný kód</string>
+    <string name="brave_sync_start_new_chain">Začať nový synchronizačný reťazec</string>
+    <string name="brave_sync_qrcode_message_v2">Pomocou existujúceho synchronizovaného zariadenia otvorte položku Brave Settings (Nastavenia Brave) a prejdite na položku Settings (Nastavenia) > Sync (Synchronizácia). Vyberte položku „Add Device“ (Pridať zariadenie) a naskenujte QR kód zobrazený na obrazovke.</string>
+    <string name="brave_sync_codewords_message">Pomocou existujúceho synchronizovaného zariadenia otvorte položku Brave Settings (Nastavenia Brave) a prejdite na položku Settings (Nastavenia) > Sync (Synchronizácia). Vyberte položku „Add Device“ (Pridať zariadenie) a následne položku „Display code words instead“ (Zobraziť slová kódu).</string>
+    <string name="brave_sync_btn_mobile">Pridať mobilné zariadenie</string>
+    <string name="brave_sync_btn_laptop">Pridať počítač</string>
+    <string name="brave_sync_scan_sync_code">Naskenovať tento synchronizačný kód</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Pomocou druhého telefónu alebo tabletu prejdite na položku Brave Settings (Nastavenia Brave) > Sync (Synchronizácia) > Scan (Skenovať).</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Nasnímajte QR kód (vyššie) pomocou vášho druhého zariadenia alebo zadajte slová kódu, ak nemáte k dispozícii fotoaparát.</string>
+    <string name="brave_sync_btn_done">Hotovo</string>
+    <string name="brave_sync_tabs_text">Karty</string>
+    <string name="brave_sync_history_text">História</string>
+    <string name="brave_sync_autofill_passwords_text">Automaticky vyplniť/heslá</string>
+    <string name="brave_sync_payment_settings_text">Nastavenia platieb Brave</string>
+    <string name="brave_sync_settings_title">SYNCHRONIZOVAŤ NA TOMTO ZARIADENÍ</string>
+    <string name="brave_sync_settings_description">Zmena nastavení ovplyvní iba údaje, ktoré toto zariadenie zdieľa s inými zariadeniami.</string>
+    <string name="brave_sync_devices_title">ĎALŠIE ZARIADENIA V REŤAZCI</string>
+    <string name="brave_sync_loading_devices_title">PREBIEHA NAČÍTANIE ZARIADENÍ...</string>
+    <string name="brave_sync_add_device_text">Pridať ďalšie zariadenie</string>
+    <string name="brave_sync_remove_device_text">Odstrániť toto zariadenie</string>
+    <string name="brave_sync_code_words_title">Spárovať</string>
+    <string name="brave_sync_add_laptop_text_title">Zadať kód synchronizačného reťazca</string>
+    <string name="brave_sync_add_laptop_text_part_1">Na počítači prejdite na položku Brave Settings (Nastavenia Brave) > Sync (Synchronizácia). Vyberte položku „Enter a Sync Chain Code“ (Zadať kód synchronizačného reťazca).</string>
+    <string name="brave_sync_add_laptop_text_part_2">Zadajte vyššie uvedené slová kódu vrátane medzier.</string>
+    <string name="brave_sync_delete_device">Naozaj chcete odstrániť zariadenie „<ph name="DEVICE_NAME">%1$s</ph>“?</string>
+    <string name="brave_sync_delete_sent">Žiadosť o odstránenie sa odoslala. Zariadenie sa čoskoro odstráni.</string>
+    <string name="brave_sync_loading_data_title">Prebieha načítanie údajov...</string>
+    <string name="brave_sync_time_out_message">Došlo k chybe, zdá sa, že skončila platnosť vašej žiadosti.</string>
+    <string name="brave_sync_use_camera_text">Použijem svoju kameru...</string>
+    <string name="brave_sync_confirm_code_words_text">Potvrdiť</string>
+    <string name="brave_sync_word_count_text">Počet slov: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Nesprávny počet slov</string>
+    <string name="brave_sync_qr_code">QR kód</string>
+    <string name="brave_sync_code_words">Slová kódu</string>
+    <string name="brave_sync_copy_button_text">Skopírovať do schránky</string>
+    <string name="brave_sync_copied_text">Skopírované do schránky</string>
+    <string name="brave_sync_this_device_text">(toto zariadenie)</string>
 
 </resources>

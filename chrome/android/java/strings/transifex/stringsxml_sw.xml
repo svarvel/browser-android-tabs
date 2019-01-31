@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Mlango wa kutoka</string>
 
-    <string name="brave_sync">Ulandanishaji wa Brave</string>
-    <string name="brave_sync_description">Landanisha data ya kivinjari kati ya
-vifaa vyako kwa usalama kutumia Ulandanishaji
-wa Brave, hakuna uundaji akaunti unaohitajika.
-Donoa hapa chini ili kuanza.</string>
-    <string name="brave_sync_have_existing_code">Nina msimbo wa ulandanishaji uliopo</string>
+    <string name="brave_sync">Uoanishaji wa Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Ongeza jina la kifaa</string>
     <string name="sync_settings_add_device_name_label">Ingiza jina la hiari la kifaa hiki</string>
     <string name="sync_example_device_name">Kifaa cha Android</string>
-    <string name="brave_sync_qrcode">Landanisha kwenye kifaa</string>
-    <string name="brave_sync_qrcode_message">Kutumia kifaa kiliopo kilicholandanishwa kunafungua
-Mipangilio ya Brave na kuabiri kwenye "Kifaa na Mipangilio",
-donoa `+` ili kuongeza kifaa kipya
-na kutambua msimbo wa ulandanishaji.</string>
     <string name="enter_code_words_sync">Ingiza maneno ya msimbo</string>
-    <string name="enter_code_words_below_sync">Ingiza maneno ya msimbo hapa chini.</string>
     <string name="sync_device">Landanisha kifaa</string>
     <string name="sync_device_failure">Ulandanishaji usingesanidiwa</string>
-    <string name="sync_device_success">Usanidi wa ulandanishaji umekamilika kwa mafanikio</string>
-    <string name="reset_sync">Weka upya Ulandanishaji...</string>
-    <string name="resetting_sync">Una uhakika unataka kuweka upya kifaa hiki na mipangilio ya Ulandanishaji?</string>
 
     <string name="brave_stats_text_trackers">Vifuatiliaji
 Vimezuiwa</string>
@@ -58,4 +44,99 @@ Vimezuiwa</string>
 Vimezuiwa</string>
     <string name="brave_stats_text_https">Uboreshaji
 wa HTTPS</string>
-    </resources>
+    <string name="brave_stats_text_time">Muda Kadiriwa
+Umehifadhiwa</string>
+
+    <string name="send_metrics_title">Tuma vipimo</string>
+
+    <string name="desktop_mode_title">Mwonekano wa Kompyuta</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Unapendelea tovuti katika mwonekano wa kompyuta</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Unapendelea tovuti katika mwonekano wa simu</string>
+    <string name="website_settings_category_desktop_view_enabled">Wezesha Mwonekano wa Kompyuta kwa vichupo vipya</string>
+    <string name="website_settings_category_desktop_view_disabled">Tumia tovuti katika mwonekano wa kompyuta kwa vichupo vipya (inapendekezwa)</string>
+
+    <string name="brave_shields_first_group_title">Inaziba Monita</string>
+    <string name="brave_shields_second_group_title">Vidhibiti Binafsi</string>
+    <string name="brave_shields">Ngao</string>
+    <string name="brave_shields_ads_and_trackers">Matangazo na Vifuatiliaji</string>
+    <string name="brave_shields_fingerprint_methods">Mbinu za Alama za Vidole</string>
+    <string name="brave_shields_block_phishing_switch">Zuia Udukuzi</string>
+
+    <string name="play_video_in_background_title">Sauti ya video ya nyuma</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Imewezeshwa</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Imelemazwa</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Ya kimajaribo. Husaidia sauti kutoka kwenye video wakati kichupo hakifanyi kazi au skrini ya kifaa imezimwa. Jaribu kutumia mwonekano wa kompyuta ikiwa kipengele hiki hakifanyi kazi.</string>
+    <string name="settings_require_relaunch_notice">Mabadiliko yako yataonekana wakati utakapofungua tena Brave</string>
+    <string name="settings_require_relaunch_now">FUNGUA TENA SASA</string>
+    <string name="settings_require_relaunch_later">BAADAYE</string>
+
+    <string name="play_yt_video_in_browser_title">Video inayocheza kwenye Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Imewezeshwa</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Imelemazwa</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Ikiwa imewezeshwa, video zitachezwa kwenye Brave badala ya programu tumishi</string>
+
+    <string name="close_tabs_on_exit_title">Funga vichupo unapotoka</string>
+    <string name="close_tabs_on_exit_summary">Usiache vichupo vikiwa amilifu wakati ukiwa unavinjari</string>
+
+    <string name="open_pages_in_custom_tabs_title">Fungua vichupo kwenye Custom Tabs</string>
+    <string name="open_pages_in_custom_tabs_summary">Kubali kufungua vichupo kwenye Custom Tabs</string>
+
+    <string name="ddg_offer_title">Utafutaji binafsi na DuckDuckGo?</string>
+    <string name="ddg_offer_text">Kwa utafutaji binafsi, Brave itatumia DuckDuckGo kujibu utafutaji wako huku ukiwa katika kichupo hiki binafsi. DuckDuckGo ni kivinjari ambacho hakifuatilii historia yako ya utafutaji, ikikuwezesha kuvinjari binafsi.</string>
+    <string name="ddg_offer_positive">Ndiyo</string>
+    <string name="ddg_offer_negative">Hapana</string>
+    <string name="ddg_offer_link">Jifunze kuhusu utafutaji binafsi na DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Kichupo cha Kawaida</string>
+    <string name="prefs_private_search_engine">Kichupo Binafsi</string>
+
+    <string name="brave_open_in_private_tab">Fungua kwenye kichupo binafsi</string>
+    <string name="brave_close_all_private_tabs">Funga vichupo binafsi</string>
+    <string name="brave_new_private_tab">Kichupo binafsi kipya</string>
+    <string name="brave_new_tab_private_header">Hiki ni Kichupo Binafsi</string>
+    <string name="brave_new_tab_private_message">Ingawa tovuti unazozitembelea hazihifadhiwi kimahalia, hazifichi utambulisho wako kwa ISP yako, mwajiri wako, au tovuti unayoitembelea.</string>
+
+    <string name="update_notification_title">Sasisho la Brave</string>
+    <string name="update_notification_text">Kivinjari kipya cha Brave kina kasi kubwa kwa 22%</string>
+
+    <string name="prefs_sync">Uoanishaji (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Uoanishaji hukuwezesha kuoanisha data za kumbukumbu kibinafsi kati ya Vivinjari vya Brave katika vifaa vyako mbalimbali.</string>
+    <string name="brave_sync_description_page_1_part_2">Unachotakiwa kufanya ni kuskani msimbo kutoka kwenye mnyororo wako wa kuoanisha ambao umeutengeneza kwenye kifaa kingine. Au anza mnyororo mpya wa kuoanisha.</string>
+    <string name="brave_sync_scan_chain_code">Skani au ingiza msimbo wa kuoanisha</string>
+    <string name="brave_sync_start_new_chain">Anza mnyororo mpya wa kuoanisha</string>
+    <string name="brave_sync_qrcode_message_v2">Kwa kutumia kifaa kilichooanishwa, fungua Mipangilio ya Brave na nenda kwenye Mipangilio > Uoanishaji. Chagua \"Ongeza Kifaa\" na skani Msimbo wa QR ulioonyeshwa kwenye skrini.</string>
+    <string name="brave_sync_codewords_message">Kwa kutumia kifaa kilichooanishwa, fungua Mipangilio ya Brave na nenda kwenye Mipangilio > Uoanishaji. Chagua \"Ongeza Kifaa\" kisha \"Onyesha maneno ya msimbo badala yake.\"</string>
+    <string name="brave_sync_btn_mobile">Ongeza Kifaa Simu</string>
+    <string name="brave_sync_btn_laptop">Ongeza Kompyuta</string>
+    <string name="brave_sync_scan_sync_code">Skani msimbo huu wa kuoanisha</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Kwa kutumia simu ya pili au tabuleti, nenda kwenye Mipangilio ya Brave > Oanisha > Skani</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Nasa msimbo wa QR (hapo juu) kwa simu yako ya pili, au ingiza maneno ya msimbo ikiwa hakuna kamera.</string>
+    <string name="brave_sync_btn_done">Imekamilika</string>
+    <string name="brave_sync_tabs_text">Vichupo</string>
+    <string name="brave_sync_history_text">Historia</string>
+    <string name="brave_sync_autofill_passwords_text">Kujaza kiotomati/Nywila</string>
+    <string name="brave_sync_payment_settings_text">Mipangilio ya Brave Malipo</string>
+    <string name="brave_sync_settings_title">OANISHA KWENYE KIFAA HIKI</string>
+    <string name="brave_sync_settings_description">Kubadilisha mipangilio kutaathiri tu data ambazo kifaa hiki kitashiriki na vingine</string>
+    <string name="brave_sync_devices_title">VIFAA VINGINE KATIKA MNYORORO</string>
+    <string name="brave_sync_loading_devices_title">INAPAKIA VIFAA...</string>
+    <string name="brave_sync_add_device_text">Ongeza kifaa kingine</string>
+    <string name="brave_sync_remove_device_text">Ondoa kifaa hiki</string>
+    <string name="brave_sync_code_words_title">Unganisha</string>
+    <string name="brave_sync_add_laptop_text_title">Ingiza msimbo wa mnyororo wa kuoanisha</string>
+    <string name="brave_sync_add_laptop_text_part_1">Kwenye kompyuta yako, nenda kwenye Mipangilio ya Brave > Uoanishaj. Chagua \"Ingiza Msimbo wa Mnyororo wa Kuoanisha.\"</string>
+    <string name="brave_sync_add_laptop_text_part_2">Ingiza maneno ya msimbo hapo juu, pamoja na nafasi.</string>
+    <string name="brave_sync_delete_device">Una uhakika unataka kufuta kifaa \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Ombi la kufuta limetumwa. Kifaa kitaondolewa hivi karibuni.</string>
+    <string name="brave_sync_loading_data_title">Inapakia data...</string>
+    <string name="brave_sync_time_out_message">Kuna kitu hakiko sawa, inaonekana ombi lako limekwisha muda wake.</string>
+    <string name="brave_sync_use_camera_text">Nitatumia kamera yangu...</string>
+    <string name="brave_sync_confirm_code_words_text">Thibitisha</string>
+    <string name="brave_sync_word_count_text">Idadi ya maneno: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Idadi ya maneno isiyo sahihi</string>
+    <string name="brave_sync_qr_code">Msimbo wa QR</string>
+    <string name="brave_sync_code_words">Maneno ya Msimbo</string>
+    <string name="brave_sync_copy_button_text">Nakili kwenye Clipboard</string>
+    <string name="brave_sync_copied_text">Imenakiliwa kwenye Clipboard</string>
+    <string name="brave_sync_this_device_text">(kifaa hiki)</string>
+
+</resources>

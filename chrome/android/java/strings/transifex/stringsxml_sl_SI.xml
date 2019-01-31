@@ -23,12 +23,10 @@
     <string name="sync_settings_add_device_name_title">Dodaj ime naprave</string>
     <string name="sync_settings_add_device_name_label">Vnesite dodatno ime za to napravo</string>
     <string name="sync_example_device_name">Naprava Android</string>
-    <string name="brave_sync_qrcode">Uskladi z napravo</string>
     <string name="enter_code_words_sync">Vnesite kodne besede</string>
-    <string name="enter_code_words_below_sync">Spodaj vnesite kodne besede.</string>
     <string name="sync_device">Uskladi napravo</string>
     <string name="sync_device_failure">Usklajevanja ni mogoče nastaviti</string>
-    <string name="reset_sync">Ponastavi usklajevanje ...</string>
+
     <string name="brave_stats_text_trackers">blokiranih
 sledilnikov</string>
     <string name="brave_stats_text_ads">blokiranih
@@ -69,4 +67,4 @@ prihranek časa</string>
     <string name="update_notification_title">Posodobitev Brave</string>
     <string name="update_notification_text">Novi brskalnik Brave je 22 % hitrejši</string>
 
-</resources>
+    </resources>

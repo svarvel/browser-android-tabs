@@ -30,28 +30,13 @@
 
     <string name="menu_exit">Ieșire</string>
 
-    <string name="brave_sync">Sincronizare Brave</string>
-    <string name="brave_sync_description">Sincronizarea securizată a datelor de navigare
-între dispozitive, folosind sincronizare Brave.
-Nu este necesară crearea unui cont.
-Apăsați mai jos pentru pornire.</string>
-    <string name="brave_sync_have_existing_code">Am un cod de sincronizare deja existent</string>
+    <string name="brave_sync">Sincronizare Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Adăugare nume dispozitiv</string>
     <string name="sync_settings_add_device_name_label">Introduceți un nume opțional pentru acest dispozitiv</string>
     <string name="sync_example_device_name">Dispozitiv Android</string>
-    <string name="brave_sync_qrcode">Sincronizarea dispozitivului</string>
-    <string name="brave_sync_qrcode_message">Utilizând dispozitivul sincronizat existent,
-deschideți Setările Brave și navigați la
-„Device &amp;Settings", apăsați pe „+” pentru
-a adăuga un nou dispozitiv și obține
-codul de sincronizare.</string>
     <string name="enter_code_words_sync">Introducere cuvânt codat</string>
-    <string name="enter_code_words_below_sync">Introduceți cuvântul codat mai jos</string>
     <string name="sync_device">Dispozitiv de sincronizat</string>
     <string name="sync_device_failure">Sincronizarea nu poate fi realizată</string>
-    <string name="sync_device_success">Sincronizarea a fost realizată cu succes</string>
-    <string name="reset_sync">Reinițializare sincronizare...</string>
-    <string name="resetting_sync">Sunteți sigur(ă) că doriți să reinițializați parametrii de sincronizare dispozitivului?</string>
 
     <string name="brave_stats_text_trackers">Urmărire
 blocate</string>
@@ -112,5 +97,46 @@ Salvat</string>
 
     <string name="update_notification_title">Actualizare Brave</string>
     <string name="update_notification_text">Noul browser Brave este cu 22% mai rapid</string>
+
+    <string name="prefs_sync">Sincronizare (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Sincronizare Beta vă permite să sincronizați în mod privat date privind marcajele între Browserele Brave de pe diverse dispozitive.</string>
+    <string name="brave_sync_description_page_1_part_2">Scanați codul de pe lanțul de sincronizare pe care l-ați creat pe un alt dispozitiv. Sau inițiați un lanț nou de sincronizare.</string>
+    <string name="brave_sync_scan_chain_code">Scanați sau introduceți codul de sincronizare</string>
+    <string name="brave_sync_start_new_chain">Inițiați un nou lanț de sincronizare</string>
+    <string name="brave_sync_qrcode_message_v2">Pe dispozitivul sincronizat existent, deschideți Setări Brave și accesați Setări  > Sincronizare. Alegeți „Adăugare dispozitiv” și scanați codul QR afișat pe ecran.</string>
+    <string name="brave_sync_codewords_message">Pe dispozitivul sincronizat existent, deschideți Setări Brave și accesați Setări  > Sincronizare. Alegeți „Adăugare dispozitiv” și apoi „Afișare cuvinte cod în schimb”.</string>
+    <string name="brave_sync_btn_mobile">Adăugare dispozitiv mobil</string>
+    <string name="brave_sync_btn_laptop">Adăugare computer</string>
+    <string name="brave_sync_scan_sync_code">Scanați acest cod de sincronizare</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Pe o a doua tabletă sau un al doilea telefon, accesați Setări Brave  > Sincronizare  > Scanare.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Scanați codul QR (de mai sus) cu un al doilea dispozitiv sau introduceți cuvintele cod dacă nu este disponibilă camera.</string>
+    <string name="brave_sync_btn_done">Efectuat</string>
+    <string name="brave_sync_tabs_text">File</string>
+    <string name="brave_sync_history_text">Istoric</string>
+    <string name="brave_sync_autofill_passwords_text">Completare automată/parole</string>
+    <string name="brave_sync_payment_settings_text">Setări plăți Brave</string>
+    <string name="brave_sync_settings_title">SINCRONIZEAZĂ PE ACEST DISPOZITIV</string>
+    <string name="brave_sync_settings_description">Modificarea setărilor va afecta numai datele pe care acest dispozitiv le partajează cu altele.</string>
+    <string name="brave_sync_devices_title">ALTE DISPOZITIVE DIN LANȚ</string>
+    <string name="brave_sync_loading_devices_title">SE ÎNCARCĂ DISPOZITIVELE...</string>
+    <string name="brave_sync_add_device_text">Adăugați un alt dispozitiv</string>
+    <string name="brave_sync_remove_device_text">Eliminați acest dispozitiv</string>
+    <string name="brave_sync_code_words_title">Asociere</string>
+    <string name="brave_sync_add_laptop_text_title">Introducere cod lanț sincronizare</string>
+    <string name="brave_sync_add_laptop_text_part_1">Pe computer, accesați Setări Brave  >Sincronizare. Selectați „Introducere cod lanț sincronizare”.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Introduceți cuvintele cod de mai sus, inclusiv spațiile.</string>
+    <string name="brave_sync_delete_device">Sigur ștergeți dispozitivul \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Solicitarea de șterge a fost trimisă. Dispozitivul va fi eliminat în curând.</string>
+    <string name="brave_sync_loading_data_title">Se încarcă datele...</string>
+    <string name="brave_sync_time_out_message">Ceva nu a funcționat corect; solicitarea a expirat.</string>
+    <string name="brave_sync_use_camera_text">Voi utiliza camera....</string>
+    <string name="brave_sync_confirm_code_words_text">Confirmați</string>
+    <string name="brave_sync_word_count_text">Număr de cuvinte: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Număr de cuvinte incorect</string>
+    <string name="brave_sync_qr_code">Cod QR</string>
+    <string name="brave_sync_code_words">Cuvinte cod</string>
+    <string name="brave_sync_copy_button_text">Copiere în clipboard</string>
+    <string name="brave_sync_copied_text">Copiat în Clipboard</string>
+    <string name="brave_sync_this_device_text">(acest dispozitiv)</string>
 
 </resources>

@@ -627,7 +627,7 @@
 <translation id="5793665092639000975"><ph name="SPACE_AVAILABLE" /> 中 <ph name="SPACE_USED" /> を使用中</translation>
 <translation id="5804241973901381774">権限</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# 時間前}other{# 時間前}}</translation>
-<translation id="5817918615728894473">ペア設定</translation>
+<translation id="5817918615728894473">ペア</translation>
 <translation id="583281660410589416">不明</translation>
 <translation id="5833397272224757657">ユーザーがアクセスしたサイトのコンテンツと、ブラウザのアクティビティおよび操作をカスタマイズに使用します</translation>
 <translation id="5833984609253377421">リンクを共有</translation>
@@ -1173,4 +1173,43 @@
 <translation id="5858455511731621847">プライベートタブで訪れたサイトはローカルに保存されませんが、ISPや雇用主、又は訪れたサイトに対して、あなたを匿名に保ったり、身元が分からない状態にはしません。</translation>
 <translation id="2339273275658335597">Braveアプデート</translation>
 <translation id="8395234238259738935">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</translation>
+<translation id="7497839443041994908">Brave (beta版) Sync</translation>
+<translation id="391177677159359824">Sync (beta版)</translation>
+<translation id="3680755684186855422">Brave Sync は、さまざまな端末上の Brave ブラウザ間でのブックマークデータの同期を可能にします。</translation>
+<translation id="3735228155296883311">別の端末で作成した同期チェーンからコードをスキャンするだけ。または新しい同期チェーンを開始します。</translation>
+<translation id="7745082336226088126">同期コードをスキャンまたは入力</translation>
+<translation id="1602067095281698985">新しい同期チェーンを開始</translation>
+<translation id="4690880825349994619">同期された既存の端末を使って Brave 設定を開き、 [設定] &gt; [同期] に移動します。[デバイスを追加] を選択し、画面に表示された QR コードをスキャンします。</translation>
+<translation id="6270614677029463366">同期された既存の端末を使ってBrave 設定を開き、 [設定] &gt; [同期] に移動します。[デバイスを追加] 、次に [代わりにコードの単語を表示] を選択します。</translation>
+<translation id="1475223680121592371">モバイル端末を追加</translation>
+<translation id="2965377893636908578">コンピュータを追加</translation>
+<translation id="65315202420929965">この同期コードをスキャン</translation>
+<translation id="6604289897677913048">2 つ目の電話またはタブレットを使用して、[Brave 設定] &gt; [同期] &gt; {スキャン} に移動します。</translation>
+<translation id="3405078156498254717">2 つ目のデバイスで QR コード (上記) を読み込むか、カメラが利用できない場合はコードの単語を入力します。</translation>
+<translation id="8076492880354921740">タブ</translation>
+<translation id="5706430066167764107">自動入力/パスワード</translation>
+<translation id="1164234435773528579">Brave 支払い設定</translation>
+<translation id="6174119914106813304">この端末で同期</translation>
+<translation id="6776430845975754238">設定の変更はこの端末が他の端末と共有したデータにのみ影響します。</translation>
+<translation id="8193724030871339658">チェーン上のその他の端末</translation>
+<translation id="279635009973773843">端末を読み込み中...</translation>
+<translation id="6450924769151530465">別の端末を追加する</translation>
+<translation id="2004365171440701679">この端末を削除</translation>
+<translation id="2731921493694251495">同期チェーンコードを入力</translation>
+<translation id="2590683710114839102">お使いのコンピューターで、[Brave 設定] &gt; {同期} に移動します。[同期チェーンコードを入力] を選択します。</translation>
+<translation id="1732271215616957850">上記のコードの単語を、スペースも含めて入力します。</translation>
+<translation id="3951555451708119590">端末「</translation>
+<translation id="9154490620151093733">削除リクエストが送信されました。端末はまもなく削除されます。</translation>
+<translation id="544873101641618162">データを読み込み中...</translation>
+<translation id="6779408765480516895">問題が発生しました。リクエストが時間切れになったようです。</translation>
+<translation id="4973653569293835178">カメラを使用します...</translation>
+<translation id="8131740175452115882">確認</translation>
+<translation id="6854481134066832782">文字数: </translation>
+<translation id="4282642752844565114">不正確な文字数</translation>
+<translation id="2175927920773552910">QR コード</translation>
+<translation id="8653433343015102968">コードの単語</translation>
+<translation id="8624315169751085215">クリップボードにコピー</translation>
+<translation id="5241263629636958324">クリップボードにコピー済み</translation>
+<translation id="222883304157347087">(この端末)</translation>
+<translation id="7820683005702098135">Brave (beta版) Sync</translation>
 </translationbundle>

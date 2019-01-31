@@ -30,25 +30,13 @@
 
     <string name="menu_exit">종료</string>
 
-    <string name="brave_sync">Brave 싱크</string>
-    <string name="brave_sync_description">Brave 싱크를 사용하여 장치 간의 브라우저
-데이터를 안전하게 싱크합니다. 계정을 생성할 필요는 없습니다.
-시작하려면 아래를 탭하십시오.</string>
-    <string name="brave_sync_have_existing_code">기존의 싱크 코드가 있습니다</string>
+    <string name="brave_sync">Brave(베타) 싱크</string>
     <string name="sync_settings_add_device_name_title">장치 이름을 추가합니다</string>
     <string name="sync_settings_add_device_name_label">이 장치에 대한 별명을 입력합니다</string>
     <string name="sync_example_device_name">Android 장치</string>
-    <string name="brave_sync_qrcode">장치로 싱크합니다</string>
-    <string name="brave_sync_qrcode_message">싱크된 장치를 사용하여 Brave 설정을 연 다음 "장치
-설정"에서 '+'를 탭하여 새 장치를 추가하고
-싱크 코드를 확인합니다.</string>
     <string name="enter_code_words_sync">코드 문자를 입력합니다</string>
-    <string name="enter_code_words_below_sync">아래에 코드 문자를 입력합니다.</string>
     <string name="sync_device">장치 싱크</string>
     <string name="sync_device_failure">싱크를 설정할 수 없습니다</string>
-    <string name="sync_device_success">싱크 설정이 완료되었습니다</string>
-    <string name="reset_sync">싱크를 리셋합니다...</string>
-    <string name="resetting_sync">이 장치의 싱크 설정을 리셋합니까?</string>
 
     <string name="brave_stats_text_trackers">추적기
 차단됨</string>
@@ -109,5 +97,46 @@
 
     <string name="update_notification_title">Brave 업데이트</string>
     <string name="update_notification_text">새로운 Brave 브라우저는 22% 더 빠릅니다</string>
+
+    <string name="prefs_sync">싱크(베타)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave 싱크를 사용하면 여러 장치에서 Brave 브라우저 간에 있는 책갈피 데이터를 비공개로 싱크할 수 있습니다.</string>
+    <string name="brave_sync_description_page_1_part_2">다른 장치에서 만든 싱크 체인의 코드를 스캔하면 됩니다. 또는 싱크 체인을 새로 시작해도 됩니다.</string>
+    <string name="brave_sync_scan_chain_code">싱크 코드 스캔 또는 입력</string>
+    <string name="brave_sync_start_new_chain">새 싱크 체인 시작</string>
+    <string name="brave_sync_qrcode_message_v2">기존 싱크 장치를 사용하여 Brave 설정을 열고 설정 > 싱크로 이동합니다. \'장치 추가\'를 선택한 후 화면에 표시되는 QR 코드를 스캔하세요.</string>
+    <string name="brave_sync_codewords_message">기존 싱크 장치를 사용하여 Brave 설정을 열고 설정 > 싱크로 이동합니다. \'장치 추가\',  \'대신 코드 단어 표시\'를 차례로 선택합니다.</string>
+    <string name="brave_sync_btn_mobile">모바일 장치 추가</string>
+    <string name="brave_sync_btn_laptop">컴퓨터 추가</string>
+    <string name="brave_sync_scan_sync_code">이 싱크 코드 스캔</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">두 번째 전화기 또는 태블릿을 사용하여 Brave 설정 > 싱크 > 스캔으로 이동합니다.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">두 번째 기기에서 QR 코드(위)를 캡처합니다. 카메라를 사용할 수 없는 경우에는 코드 단어를 입력하세요.</string>
+    <string name="brave_sync_btn_done">완료</string>
+    <string name="brave_sync_tabs_text">탭</string>
+    <string name="brave_sync_history_text">내역</string>
+    <string name="brave_sync_autofill_passwords_text">자동 채우기/암호</string>
+    <string name="brave_sync_payment_settings_text">Brave 결제 설정</string>
+    <string name="brave_sync_settings_title">이 장치에서 싱크</string>
+    <string name="brave_sync_settings_description">설정을 변경하면 이 장치에서 다른 사람들과 공유하는 데이터에만 영향을 미칩니다.</string>
+    <string name="brave_sync_devices_title">체인의 다른 장치</string>
+    <string name="brave_sync_loading_devices_title">장치 로드 중...</string>
+    <string name="brave_sync_add_device_text">다른 장치 추가</string>
+    <string name="brave_sync_remove_device_text">이 장치 삭제</string>
+    <string name="brave_sync_code_words_title">페어링</string>
+    <string name="brave_sync_add_laptop_text_title">싱크 체인 코드 입력</string>
+    <string name="brave_sync_add_laptop_text_part_1">컴퓨터에서 Brave 설정 > 싱크로 이동합니다. \'싱크 체인 코드 입력\'을 선택합니다.</string>
+    <string name="brave_sync_add_laptop_text_part_2">위 코드 단어(공백 포함)를 입력하세요.</string>
+    <string name="brave_sync_delete_device">\'<ph name="DEVICE_NAME">%1$s</ph>\' 기기를 삭제하시겠습니까?</string>
+    <string name="brave_sync_delete_sent">삭제 요청이 전송되었습니다. 장치가 곧 삭제됩니다.</string>
+    <string name="brave_sync_loading_data_title">데이터 로드 중...</string>
+    <string name="brave_sync_time_out_message">문제가 발생했습니다. 요청 시간이 초과되었습니다.</string>
+    <string name="brave_sync_use_camera_text">내 카메라 사용...</string>
+    <string name="brave_sync_confirm_code_words_text">확인</string>
+    <string name="brave_sync_word_count_text">단어 수: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">올바르지 않은 단어 수</string>
+    <string name="brave_sync_qr_code">QR 코드</string>
+    <string name="brave_sync_code_words">코드 단어</string>
+    <string name="brave_sync_copy_button_text">클립보드에 복사</string>
+    <string name="brave_sync_copied_text">클립보드에 복사됨</string>
+    <string name="brave_sync_this_device_text">(이 장치)</string>
 
 </resources>
