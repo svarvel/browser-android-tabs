@@ -3970,7 +3970,7 @@ However, you aren’t invisible. Going private doesn’t hide your browsing from
       </message>
 
       <message name="IDS_BRAVE_SYNC" desc="Brave sync main screen message title.">
-        Brave (beta) Sync
+        Brave Sync (beta)
       </message>
       <message name="IDS_SYNC_SETTINGS_ADD_DEVICE_NAME_TITLE" desc="The title for the dialog where the user can type a sync device name.">
         Add device name

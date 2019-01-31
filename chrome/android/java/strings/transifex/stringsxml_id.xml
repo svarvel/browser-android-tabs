@@ -30,27 +30,12 @@
 
     <string name="menu_exit">Keluar</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sinkronkan data peramban antar perangkat Anda
-dengan aman menggunakan Brave Sync.
-Anda tidak perlu membuat akun.
-Ketuk di bawah ini untuk memulai.</string>
-    <string name="brave_sync_have_existing_code">Saya sudah memiliki kode sinkronisasi</string>
     <string name="sync_settings_add_device_name_title">Tambahkan nama perangkat</string>
     <string name="sync_settings_add_device_name_label">Masukkan nama opsional untuk perangkat ini</string>
     <string name="sync_example_device_name">Perangkat Android</string>
-    <string name="brave_sync_qrcode">Sinkronkan ke perangkat</string>
-    <string name="brave_sync_qrcode_message">Gunakan perangkat tersinkronisasi yang ada,
-Buka Pengaturan Brave dan navigasikan ke
-\"Perangkat dan Pengaturan\", ketuk `+` untuk menambahkan
-perangkat baru dan membuka kode sinkronisasi.</string>
     <string name="enter_code_words_sync">Masukkan kode kata</string>
-    <string name="enter_code_words_below_sync">Masukkan kata-kata kode di bawah ini.</string>
     <string name="sync_device">Sinkronkan perangkat</string>
     <string name="sync_device_failure">Sinkronisasi tidak dapat disiapkan</string>
-    <string name="sync_device_success">Penyiapan sinkronisasi telah selesai.</string>
-    <string name="reset_sync">Atur Ulang Sinkronisasi...</string>
-    <string name="resetting_sync">Yakin ingin mengatur ulang pengaturan Sinkronisasi perangkat ini?</string>
 
     <string name="brave_stats_text_trackers">Pelacak
 Diblokir</string>
@@ -115,4 +100,4 @@ Dihemat</string>
     <string name="update_notification_title">Pembaruan Brave</string>
     <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
 
-</resources>
+    </resources>

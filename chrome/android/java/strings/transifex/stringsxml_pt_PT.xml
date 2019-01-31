@@ -30,26 +30,12 @@
 
     <string name="menu_exit">Sair</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sincronizar dados entre os seus dispositivo
-em segurança através de Brave Sync. Não
-requer conta. toque abaixo para continuar.</string>
-    <string name="brave_sync_have_existing_code">Tenho um código de sincronização</string>
     <string name="sync_settings_add_device_name_title"> Adicionar nome do dispositivo</string>
     <string name="sync_settings_add_device_name_label">Digite um nome opcional para o dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
-    <string name="brave_sync_qrcode">Sincronizar com o dispositivo</string>
-    <string name="brave_sync_qrcode_message">Ao utilizar o dispositivo sincronizado existente,
-abra as Configurações Brave e navegue até
-"Configurações do Dispositivo", toque `+` para adicionar
-um novo dispositivo e revelar o código de sincronização.</string>
     <string name="enter_code_words_sync">Digite o código</string>
-    <string name="enter_code_words_below_sync">Digite o código em baixo.</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">Incapaz de configurar o Sync</string>
-    <string name="sync_device_success">A configuração foi terminada com sucesso</string>
-    <string name="reset_sync">Repor Sync...</string>
-    <string name="resetting_sync">Tem a certeza de que deseja repor as definições do Sync?</string>
 
     <string name="brave_stats_text_trackers">Rastreios
 bloqueados</string>

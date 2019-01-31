@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Çıkış</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Tarayıcı verilerini, Brave Sync'i kullanarak
-cihazlarınız arasında güvenli bir şekilde senkronize edin,
-hiçbir hesap oluşturulması gerekli değildir.
-Başlamak için aşağıya dokunun.</string>
-    <string name="brave_sync_have_existing_code">Mevcut bir senkronizasyon kodum var</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Cihaz adı ekle</string>
     <string name="sync_settings_add_device_name_label">Bu cihaz için isteğe bağlı bir ad girin</string>
     <string name="sync_example_device_name">Android cihazı</string>
-    <string name="brave_sync_qrcode">Cihazı senkronize etme</string>
-    <string name="brave_sync_qrcode_message"> Cihazı senkronize kullanma Brave Settings ayarlarını
-açar ve Cihaz ve amp;Ayarlar"ına yönlendirir,
-yeni bir cihaz eklemek için ve senkronizasyon
-kodu ortaya çıkarmak için"+" üzerine dokunun.</string>
     <string name="enter_code_words_sync">Kod kelimeleri ekle</string>
-    <string name="enter_code_words_below_sync">Aşağıdaki kod kelimelerini girin.</string>
     <string name="sync_device">Senkronizasyon cihazı</string>
     <string name="sync_device_failure">Senk. sıfırlanamadı.</string>
-    <string name="sync_device_success">Senkronizasyon başarıyla tamamlandı</string>
-    <string name="reset_sync">Senkronizasyonu sıfırlayın</string>
-    <string name="resetting_sync">Bu cihazı Senk. ayarlarını sıfırlamak istediğinizden emin misiniz?</string>
 
     <string name="brave_stats_text_trackers">Takipçiler
 Engellendi</string>
@@ -111,5 +97,46 @@ Kaydedildi</string>
 
     <string name="update_notification_title">Brave güncellemesi</string>
     <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</string>
+    <string name="brave_sync_description_page_1_part_2">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</string>
+    <string name="brave_sync_scan_chain_code">Senkronizasyon kodu tara veya gir</string>
+    <string name="brave_sync_start_new_chain">Yeni bir senkronizasyon zinciri başlat</string>
+    <string name="brave_sync_qrcode_message_v2">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları\'nı açın ve Ayarlar > Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini seçin ve ekranda görüntülenen QR Kodunu tarayın.</string>
+    <string name="brave_sync_codewords_message">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları\'nı açın ve Ayarlar > Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini ve ardından \"Bunun yerine kod kelimelerini görüntüle\" öğesini seçin.</string>
+    <string name="brave_sync_btn_mobile">Mobil Cihaz Ekle</string>
+    <string name="brave_sync_btn_laptop">Bilgisayar Ekle</string>
+    <string name="brave_sync_scan_sync_code">Bu senkronizasyon kodunu tara</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">İkinci bir telefon veya tablet kullanarak Brave Ayarları > Senkronizasyon > Tara öğesine gidin.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">İkinci cihazınızla (yukarıdaki) QR kodunu çekin veya kamera mevcut değilse kod kelimelerini girin.</string>
+    <string name="brave_sync_btn_done">Bitti</string>
+    <string name="brave_sync_tabs_text">Sekmeler</string>
+    <string name="brave_sync_history_text">Geçmiş</string>
+    <string name="brave_sync_autofill_passwords_text">Otomatik Doldurma/Parolalar</string>
+    <string name="brave_sync_payment_settings_text">Brave Ödeme Ayarları</string>
+    <string name="brave_sync_settings_title">BU CİHAZDA SENKRONİZASYON</string>
+    <string name="brave_sync_settings_description">Ayarların değiştirilmesi yalnızca bu cihazın diğerleriyle paylaştığı verileri etkileyecektir.</string>
+    <string name="brave_sync_devices_title">ZİNCİRDEKİ DİĞER CİHAZLAR</string>
+    <string name="brave_sync_loading_devices_title">CİHAZLAR YÜKLENİYOR...</string>
+    <string name="brave_sync_add_device_text">Başka cihaz ekle</string>
+    <string name="brave_sync_remove_device_text">Bu cihazı kaldır</string>
+    <string name="brave_sync_code_words_title">Eşleştir</string>
+    <string name="brave_sync_add_laptop_text_title">Senkronizasyon zinciri kodunu gir</string>
+    <string name="brave_sync_add_laptop_text_part_1">Bilgisayarınızda Brave Ayarları > Senkronizasyon öğesine gidin. \"Senkronizasyon Zinciri Kodu Gir\" öğesini seçin.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Yukarıdaki kod kelimelerini boşluklar dahil girin.</string>
+    <string name="brave_sync_delete_device">\"<ph name="DEVICE_NAME">%1$s</ph>\" cihazını silmek istediğinizden emin misiniz?</string>
+    <string name="brave_sync_delete_sent">Silme talebi gönderildi. Cihaz kısa süre içinde kaldırılacak.</string>
+    <string name="brave_sync_loading_data_title">Veri yükleniyor...</string>
+    <string name="brave_sync_time_out_message">Bir hata oluştu, görünüşe göre talebiniz zaman aşımına uğradı.</string>
+    <string name="brave_sync_use_camera_text">Kameramı kullanacağım...</string>
+    <string name="brave_sync_confirm_code_words_text">Onayla</string>
+    <string name="brave_sync_word_count_text">Kelime sayısı: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Yanlış kelime sayısı</string>
+    <string name="brave_sync_qr_code">QR Kodu</string>
+    <string name="brave_sync_code_words">Kod Kelimeleri</string>
+    <string name="brave_sync_copy_button_text">Panoya Kopyala</string>
+    <string name="brave_sync_copied_text">Panoya Kopyalandı</string>
+    <string name="brave_sync_this_device_text">(bu cihaz)</string>
 
 </resources>

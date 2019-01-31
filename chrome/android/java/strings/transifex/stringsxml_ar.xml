@@ -30,33 +30,20 @@
 
     <string name="menu_exit">ىخرج</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">قم بمزامنة بيانات المتصفح بين أجهزتك
- بصورة آمنه باستخدام Brave Sync، لا
- يتطلب إنشاء حساب. انقر أدناه للبدء.</string>
-    <string name="brave_sync_have_existing_code">يوجد لديّ رمز مزامنة حالي</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">إضافة اسم جهاز</string>
     <string name="sync_settings_add_device_name_label">أدخل اسمًا اختياريًا لهذا الجهاز</string>
     <string name="sync_example_device_name">جهاز أندرويد</string>
-    <string name="brave_sync_qrcode">المزامنة مع الجهاز</string>
-    <string name="brave_sync_qrcode_message">باستخدام الجهاز المتزامن
-حاليًا، افتح إعدادات Brave وانتقل إلى
-"إعدادات&amp;الجهاز" وانقر على الرمز `+`
- لإضافة جهاز جديد وإظهار رمز المزامنة.</string>
     <string name="enter_code_words_sync">أدخل كلمات الرمز</string>
-    <string name="enter_code_words_below_sync">أدخل كلمات الرمز أدناه.</string>
     <string name="sync_device">مزامنة الجهاز</string>
     <string name="sync_device_failure">تعذر إعداد المزامنة</string>
-    <string name="sync_device_success">أكتملت عملية إعداد المزامنة بنجاح</string>
-    <string name="reset_sync">إعادة تعيين المزامنة...</string>
-    <string name="resetting_sync">هل ترغب بالتأكيد في إعادة تعيين إعدادات مزامنة هذا الجهاز والتطبيقات؟</string>
 
     <string name="brave_stats_text_trackers">تم حظر
 المتتبعات
 </string>
     <string name="brave_stats_text_ads">تم حظر
 الإعلانات</string>
-    <string name="brave_stats_text_https">ترقيات 
+    <string name="brave_stats_text_https">ترقيات
 HTTPS</string>
     <string name="brave_stats_text_time">حُفِظ
 توقيت الساحل الشرقي
@@ -114,5 +101,46 @@ HTTPS</string>
 
     <string name="update_notification_title">تحديث Brave</string>
     <string name="update_notification_text">متصفح Brave الجديد أسرع بنسبة 22% </string>
+
+    <string name="prefs_sync">مزامنة (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">يتيح لك Brave Sync مزامنة بيانات الإشارات المرجعية بخصوصية بين متصفحات Brave الخاصة بك على أجهزتك المختلفة.</string>
+    <string name="brave_sync_description_page_1_part_2">ليس عليك إلا المسح الضوئي للرمز من سلسلة المزامنة الخاصة بك الذي أنشأته على جهازٍ آخر، أو ابدأ سلسلة مزامنة جديدة.</string>
+    <string name="brave_sync_scan_chain_code">امسح ضوئيًا أو أدخل رمز المزامنة</string>
+    <string name="brave_sync_start_new_chain">بدء سلسلة مزامنة جديدة</string>
+    <string name="brave_sync_qrcode_message_v2">باستخدام جهاز متزامن حاليًا، افتح إعدادات Brave وانتقل إلى الإعدادات > مزامنة. اختر \"إضافة جهاز\" وامسح ضوئيًا رمز الاستجابة السريعة المعروض على الشاشة.</string>
+    <string name="brave_sync_codewords_message">باستخدام جهاز متزامن حاليًا، افتح إعدادات Brave وانتقل إلى الإعدادات > مزامنة. اختر \"إضافة جهاز\" ثم \"عرض كلمات الرمز كبديل\".</string>
+    <string name="brave_sync_btn_mobile">إضافة جهاز محمول</string>
+    <string name="brave_sync_btn_laptop">إضافة كمبيوتر</string>
+    <string name="brave_sync_scan_sync_code">مسح رمز المزامنة هذا ضوئيًا</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">باستخدام هاتف أو حاسب لوحي ثانٍ، انتقل إلى إعدادات Brave > مزامنة > مسح ضوئي.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">التقط صورة رمز الاستجابة السريعة (أعلاه) باستخدام جهازك الثاني، أو أدخل كلمات الرمز إذا لم تتوفر كاميرا.</string>
+    <string name="brave_sync_btn_done">تم</string>
+    <string name="brave_sync_tabs_text">علامات التبويب</string>
+    <string name="brave_sync_history_text">السجل</string>
+    <string name="brave_sync_autofill_passwords_text">التعبئة التلقائية/كلمات المرور</string>
+    <string name="brave_sync_payment_settings_text">إعدادات دفع Brave</string>
+    <string name="brave_sync_settings_title">مزامنة على هذا الجهاز</string>
+    <string name="brave_sync_settings_description">سيؤثر تغيير الإعدادات فقط على البيانات التي يشاركها هذا الجهاز مع الأجهزة الأخرى.</string>
+    <string name="brave_sync_devices_title">أجهزة أخرى على السلسلة</string>
+    <string name="brave_sync_loading_devices_title">جارٍ تحميل الأجهزة...</string>
+    <string name="brave_sync_add_device_text">إضافة جهاز آخر</string>
+    <string name="brave_sync_remove_device_text">إزالة هذا الجهاز</string>
+    <string name="brave_sync_code_words_title">إقران</string>
+    <string name="brave_sync_add_laptop_text_title">إدخال رمز سلسلة المزامنة</string>
+    <string name="brave_sync_add_laptop_text_part_1">على الكمبيوتر الخاص بك، انتقل إلى إعدادات Brave > مزامنة. اختر \"إدخال رمز سلسلة المزامنة\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">أدخل كلمات الرمز أعلاه، بما فيها المسافات.</string>
+    <string name="brave_sync_delete_device">هل أنت متأكد من رغبتك في حذف الجهاز \'<ph name="DEVICE_NAME">%1$s</ph>\'؟</string>
+    <string name="brave_sync_delete_sent">تم إرسال طلب الحذف. ستتم إزالة الجهاز بعد قليل.</string>
+    <string name="brave_sync_loading_data_title">جارٍ تحميل البيانات...</string>
+    <string name="brave_sync_time_out_message">حدث خطأ ما، يبدو أن طلبك انتهت مهلته.</string>
+    <string name="brave_sync_use_camera_text">سأستخدم كاميرتي...</string>
+    <string name="brave_sync_confirm_code_words_text">تأكيد</string>
+    <string name="brave_sync_word_count_text">عدد الكلمات: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">عدد كلمات غير صحيح</string>
+    <string name="brave_sync_qr_code">رمز الاستجابة السريعة</string>
+    <string name="brave_sync_code_words">كلمات الرمز</string>
+    <string name="brave_sync_copy_button_text">نسخ إلى الحافظة</string>
+    <string name="brave_sync_copied_text">تم النسخ إلى الحافظة</string>
+    <string name="brave_sync_this_device_text">(هذا الجهاز)</string>
 
 </resources>

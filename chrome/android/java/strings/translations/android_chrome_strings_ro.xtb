@@ -627,7 +627,7 @@ Totuși, nu ești invizibil(ă). Trecerea în modul incognito nu ascunde activit
 <translation id="5793665092639000975">Se utilizează <ph name="SPACE_USED" /> din <ph name="SPACE_AVAILABLE" /></translation>
 <translation id="5804241973901381774">Permisiuni</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{Acum # oră}few{Acum # ore}other{Acum # de ore}}</translation>
-<translation id="5817918615728894473">Asociază</translation>
+<translation id="5817918615728894473">Asociere</translation>
 <translation id="583281660410589416">Necunoscut</translation>
 <translation id="5833397272224757657">Folosește conținutul de pe site-urile pe care le accesezi, activitatea browserului și interacțiunile pentru personalizare</translation>
 <translation id="5833984609253377421">Trimite linkul</translation>
@@ -1014,7 +1014,7 @@ Pentru licențe noi, conectează-te la internet și redă conținutul descărcat
 <translation id="8719023831149562936">Fila actuală nu poate fi transmisă</translation>
 <translation id="8725066075913043281">Încearcă din nou</translation>
 <translation id="7247433043977983806">Dacă folosești aplicația, accepți <ph name="BEGIN_LINK1" />Termenii și condițiile<ph name="END_LINK1" /> și <ph name="BEGIN_LINK2" />Notificarea privind confidențialitatea<ph name="END_LINK2" /> Brave și <ph name="BEGIN_LINK3" />Notificarea privind confidențialitatea pentru Conturile Google gestionate cu Family Link<ph name="END_LINK3" />.</translation>
-<translation id="8730621377337864115">Terminat</translation>
+<translation id="8730621377337864115">Efectuat</translation>
 <translation id="8748850008226585750">Conținutul este ascuns</translation>
 <translation id="8751914237388039244">Selectează o imagine</translation>
 <translation id="8788968922598763114">Redeschide ultima filă închisă</translation>
@@ -1174,4 +1174,43 @@ Salvat</translation>
 <translation id="5858455511731621847">Cu toate că site-urile pe care le vizitați în file private nu sunt salvate local, acestea nu vă fac anonim sau invizibil pentru furnizorul dvs. de internet, angajatorul dvs. sau site-urile pe care le vizitați.</translation>
 <translation id="2339273275658335597">Actualizare Brave</translation>
 <translation id="8395234238259738935">Noul browser Brave este cu 22% mai rapid</translation>
+<translation id="7497839443041994908">Sincronizare Brave (beta)</translation>
+<translation id="391177677159359824">Sincronizare (beta)</translation>
+<translation id="3680755684186855422">Sincronizare Beta vă permite să sincronizați în mod privat date privind marcajele între Browserele Brave de pe diverse dispozitive.</translation>
+<translation id="3735228155296883311">Scanați codul de pe lanțul de sincronizare pe care l-ați creat pe un alt dispozitiv. Sau inițiați un lanț nou de sincronizare.</translation>
+<translation id="7745082336226088126">Scanați sau introduceți codul de sincronizare</translation>
+<translation id="1602067095281698985">Inițiați un nou lanț de sincronizare</translation>
+<translation id="4690880825349994619">Pe dispozitivul sincronizat existent, deschideți Setări Brave și accesați Setări  &gt; Sincronizare. Alegeți „Adăugare dispozitiv” și scanați codul QR afișat pe ecran.</translation>
+<translation id="6270614677029463366">Pe dispozitivul sincronizat existent, deschideți Setări Brave și accesați Setări  &gt; Sincronizare. Alegeți „Adăugare dispozitiv” și apoi „Afișare cuvinte cod în schimb”.</translation>
+<translation id="1475223680121592371">Adăugare dispozitiv mobil</translation>
+<translation id="2965377893636908578">Adăugare computer</translation>
+<translation id="65315202420929965">Scanați acest cod de sincronizare</translation>
+<translation id="6604289897677913048">Pe o a doua tabletă sau un al doilea telefon, accesați Setări Brave  &gt; Sincronizare  &gt; Scanare.</translation>
+<translation id="3405078156498254717">Scanați codul QR (de mai sus) cu un al doilea dispozitiv sau introduceți cuvintele cod dacă nu este disponibilă camera.</translation>
+<translation id="8076492880354921740">File</translation>
+<translation id="5706430066167764107">Completare automată/parole</translation>
+<translation id="1164234435773528579">Setări plăți Brave</translation>
+<translation id="6174119914106813304">SINCRONIZEAZĂ PE ACEST DISPOZITIV</translation>
+<translation id="6776430845975754238">Modificarea setărilor va afecta numai datele pe care acest dispozitiv le partajează cu altele.</translation>
+<translation id="8193724030871339658">ALTE DISPOZITIVE DIN LANȚ</translation>
+<translation id="279635009973773843">SE ÎNCARCĂ DISPOZITIVELE...</translation>
+<translation id="6450924769151530465">Adăugați un alt dispozitiv</translation>
+<translation id="2004365171440701679">Eliminați acest dispozitiv</translation>
+<translation id="2731921493694251495">Introducere cod lanț sincronizare</translation>
+<translation id="2590683710114839102">Pe computer, accesați Setări Brave  &gt;Sincronizare. Selectați „Introducere cod lanț sincronizare”.</translation>
+<translation id="1732271215616957850">Introduceți cuvintele cod de mai sus, inclusiv spațiile.</translation>
+<translation id="3951555451708119590">Sigur ștergeți dispozitivul '</translation>
+<translation id="9154490620151093733">Solicitarea de șterge a fost trimisă. Dispozitivul va fi eliminat în curând.</translation>
+<translation id="544873101641618162">Se încarcă datele...</translation>
+<translation id="6779408765480516895">Ceva nu a funcționat corect; solicitarea a expirat.</translation>
+<translation id="4973653569293835178">Voi utiliza camera....</translation>
+<translation id="8131740175452115882">Confirmați</translation>
+<translation id="6854481134066832782">Număr de cuvinte: </translation>
+<translation id="4282642752844565114">Număr de cuvinte incorect</translation>
+<translation id="2175927920773552910">Cod QR</translation>
+<translation id="8653433343015102968">Cuvinte cod</translation>
+<translation id="8624315169751085215">Copiere în clipboard</translation>
+<translation id="5241263629636958324">Copiat în Clipboard</translation>
+<translation id="222883304157347087">(acest dispozitiv)</translation>
+<translation id="7820683005702098135">Sincronizare Brave (beta)</translation>
 </translationbundle>

@@ -30,23 +30,13 @@
 
     <string name="menu_exit">退出</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">使用 Brave Sync 在您的设备之间同步浏览器数据，
-无需创建账户。点击下面开始。</string>
-    <string name="brave_sync_have_existing_code">我已有同步代码</string>
+    <string name="brave_sync">Brave（beta）同步</string>
     <string name="sync_settings_add_device_name_title">添加设备名称</string>
     <string name="sync_settings_add_device_name_label">为此设备输入可选名称</string>
     <string name="sync_example_device_name">Android 设备</string>
-    <string name="brave_sync_qrcode">同步到设备</string>
-    <string name="brave_sync_qrcode_message">使用已有的同步设备，打开 Brave 设置，然后点击“设备和设置”，
-点击“+”添加新的设备并显示同步码。</string>
     <string name="enter_code_words_sync">输入同步代码</string>
-    <string name="enter_code_words_below_sync">在下面输入同步代码。</string>
     <string name="sync_device">同步设备</string>
     <string name="sync_device_failure">无法设置同步</string>
-    <string name="sync_device_success">同步设置完毕</string>
-    <string name="reset_sync">重置同步...</string>
-    <string name="resetting_sync">确定要重置此设备的同步设置吗？</string>
 
     <string name="brave_stats_text_trackers">跟踪器
 已屏蔽</string>
@@ -107,5 +97,46 @@
 
     <string name="update_notification_title">更新 Brave</string>
     <string name="update_notification_text">新版Brave浏览器快了22%</string>
+
+    <string name="prefs_sync">同步（beta）</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync允许您在不同设备上的Brave浏览器之间自行同步书签数据。</string>
+    <string name="brave_sync_description_page_1_part_2">只需从另一个设备上创建的同步链中扫描代码。或者启动一个新的同步链。</string>
+    <string name="brave_sync_scan_chain_code">扫描或输入同步代码</string>
+    <string name="brave_sync_start_new_chain">启动一个新的同步链</string>
+    <string name="brave_sync_qrcode_message_v2">使用现有的同步设备，打开Brave设置然后导航到设置>同步。选择“添加设备”，扫描屏幕上显示的二维码。</string>
+    <string name="brave_sync_codewords_message">使用现有的同步设备，打开Brave设置和导航到设置>同步。选择“添加设备”，然后选择“替换显示码字”。</string>
+    <string name="brave_sync_btn_mobile">添加移动设备</string>
+    <string name="brave_sync_btn_laptop">添加计算机</string>
+    <string name="brave_sync_scan_sync_code">扫描此同步代码</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">使用第二部手机或平板电脑，导航到Brave设置>同步>扫描。</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">用第二台设备捕捉二维码（上图），若无可用摄像头，则输入码字。</string>
+    <string name="brave_sync_btn_done">完成</string>
+    <string name="brave_sync_tabs_text">选项卡</string>
+    <string name="brave_sync_history_text">历史</string>
+    <string name="brave_sync_autofill_passwords_text">自动填充/密码</string>
+    <string name="brave_sync_payment_settings_text">Brave支付设置</string>
+    <string name="brave_sync_settings_title">在此设备上同步</string>
+    <string name="brave_sync_settings_description">更改设置只会影响此设备与其他人共享的数据。</string>
+    <string name="brave_sync_devices_title">链上其他设备</string>
+    <string name="brave_sync_loading_devices_title">加载设备...</string>
+    <string name="brave_sync_add_device_text">添加另一台设备</string>
+    <string name="brave_sync_remove_device_text">删除此设备</string>
+    <string name="brave_sync_code_words_title">一对</string>
+    <string name="brave_sync_add_laptop_text_title">输入同步链代码</string>
+    <string name="brave_sync_add_laptop_text_part_1">在您的计算机上，导航到Brave设置>同步。选择“输入同步链代码”。</string>
+    <string name="brave_sync_add_laptop_text_part_2">输入上面的码字，包括空格。</string>
+    <string name="brave_sync_delete_device">您确定要删除设备“<ph name="DEVICE_NAME">%1$s</ph>”？</string>
+    <string name="brave_sync_delete_sent">已发送删除请求。设备将在短时间内移除。</string>
+    <string name="brave_sync_loading_data_title">加载数据...</string>
+    <string name="brave_sync_time_out_message">出了点问题，您的请求似乎超时了。</string>
+    <string name="brave_sync_use_camera_text">我将使用照相机...</string>
+    <string name="brave_sync_confirm_code_words_text">确认</string>
+    <string name="brave_sync_word_count_text">字数：<ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">字数不正确</string>
+    <string name="brave_sync_qr_code">二维码</string>
+    <string name="brave_sync_code_words">码字</string>
+    <string name="brave_sync_copy_button_text">复制到剪贴板</string>
+    <string name="brave_sync_copied_text">已复制到剪贴板</string>
+    <string name="brave_sync_this_device_text">（此设备）</string>
 
 </resources>

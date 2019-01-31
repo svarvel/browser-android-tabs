@@ -7,7 +7,7 @@
     <string name="brave_shields_https_upgrades">एचटीटीपीएस उन्नयन</string>
     <string name="brave_shields_scripts_blocked">लिपिया अवरुद्</string>
     <string name="brave_shields_ads_tracking_switch">अवस्र्द्ध विज्ञापन और निगाह रखना</string>
-    <string name="brave_shields_https_everywhere_switch">एचटीटीपीएस सब जगह</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS  सब जगह</string>
     <string name="brave_shields_blocks_scripts_switch">अवस्र्द्ध लिपिया </string>
     <string name="accessibility_toolbar_btn_brave_shields">ब्रेव कवच को सक्षम/अक्षम करें </string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3सरे दल बन को अवस्र्द्ध करें </string>
@@ -30,33 +30,21 @@
 
     <string name="menu_exit">निकास</string>
 
-    <string name="brave_sync">ब्रेव सिंक </string>
-    <string name="brave_sync_description">ब्रेव सिंक का सुरक्षित रूप से प्रयोग करते हुये अपने उपकरणों के
-बीच ब्राउज़र आंकड़ा सिंक करें, कोई खाता बनाने की
-आवश्यकता नहीं है। आरम्भ करने हेतु नीचे टैप करें </string>
-    <string name="brave_sync_have_existing_code">मेरे पास एक मौजूदा सिंक कोड है। </string>
+    <string name="brave_sync">Brave (बीटा) सिंक</string>
     <string name="sync_settings_add_device_name_title">उपकरण का नाम जोड़ें </string>
     <string name="sync_settings_add_device_name_label">इस उपकरण के लिए कोई वैकल्पिक नाम एंटर करें </string>
     <string name="sync_example_device_name">ऐन्ड्रॉइड उपकरण </string>
-    <string name="brave_sync_qrcode">उपकरण पर सिंक करें </string>
-    <string name="brave_sync_qrcode_message">सिंक किये गये मौजूदा उपकरण का प्रयोग करते हुये ब्रेव सैटिंग्स खोलें और
-"Device &amp;Settings" पर जायें व एक नया उपकरण जोड़ने
-और सिंक कोड दिखाने हेतु `+` पर टैप करें। </string>
     <string name="enter_code_words_sync">कोड शब्द एंटर करें </string>
-    <string name="enter_code_words_below_sync">नीचे कोड शब्द एंटर करें </string>
     <string name="sync_device">सिंक उपकरण</string>
     <string name="sync_device_failure">सिंक सैट-अप नहीं किया जा सका </string>
-    <string name="sync_device_success">सिंक सैट-अप सफलतापूर्वक पूरा हो गया है। </string>
-    <string name="reset_sync">सिंक को पुन:सेट करें... </string>
-    <string name="resetting_sync">क्या आप वास्तव में इस उपकरण और सिंक सैटिंग्स को पुन:सैट करना चाहते हैं?</string>
 
-    <string name="brave_stats_text_trackers">ट्रैकर 
+    <string name="brave_stats_text_trackers">ट्रैकर
 ब्लॉक किया गया  </string>
-    <string name="brave_stats_text_ads">विज्ञापन 
+    <string name="brave_stats_text_ads">विज्ञापन
 ब्लॉक किया गया  </string>
-    <string name="brave_stats_text_https">एचटीटीपीएस 
+    <string name="brave_stats_text_https">एचटीटीपीएस
 अपग्रेड </string>
-    <string name="brave_stats_text_time">स्थापित   समय 
+    <string name="brave_stats_text_time">स्थापित   समय
 सेव किया गया </string>
 
     <string name="send_metrics_title">मेट्रिक्स भेजें </string>
@@ -109,5 +97,46 @@
 
     <string name="update_notification_title">Brave अपडेट</string>
     <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
+
+    <string name="prefs_sync">Brave (बीटा)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</string>
+    <string name="brave_sync_description_page_1_part_2">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</string>
+    <string name="brave_sync_scan_chain_code">सिंक चेन को स्कैन करें या दर्ज़ करें</string>
+    <string name="brave_sync_start_new_chain">किसी नई सिंक चेन की शुरुआत करें</string>
+    <string name="brave_sync_qrcode_message_v2">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और \'सेटिंग्स > सिंक करें\' पर जाएं। \"डिवाइस जोड़ें\" चुनें और स्क्रीन पर दिखाया गया QR कोड स्कैन करें।</string>
+    <string name="brave_sync_codewords_message">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और \'सेटिंग्स > सिंक करें\' पर जाएं। \"डिवाइस जोड़ें\" चुनकर \"इसकी जगह कोड वर्ड दिखाएं\" चुनें।</string>
+    <string name="brave_sync_btn_mobile">कोई मोबाइल डिवाइस जोड़ें</string>
+    <string name="brave_sync_btn_laptop">कोई कंप्यूटर जोड़ें</string>
+    <string name="brave_sync_scan_sync_code">यह सिंक कोड स्कैन करें</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">किसी दूसरे फोन या टैबलेट का उपयोग करके, \'Brave सेटिंग्स > सिंक करें > स्कैन करें\' पर जाएं।</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">अपने दूसरे डिवाइस से QR कोड (ऊपर बताया गया) को कैप्चर करें या कोई कैमरा मौजूद नहीं होने पर कोड वर्ड दर्ज़ करें।</string>
+    <string name="brave_sync_btn_done">हो गया</string>
+    <string name="brave_sync_tabs_text">टैब</string>
+    <string name="brave_sync_history_text">इतिहास</string>
+    <string name="brave_sync_autofill_passwords_text">अपने आप भरें/पासवर्ड</string>
+    <string name="brave_sync_payment_settings_text">Brave भुगतान सेटिंग्स</string>
+    <string name="brave_sync_settings_title">इस उपकरण पर सिंक करें</string>
+    <string name="brave_sync_settings_description">सेटिंग्स बदलने से केवल उस डेटा पर असर पड़ेगा, जिसे आपका डिवाइस दूसरे डिवाइस के साथ साझा करता है।</string>
+    <string name="brave_sync_devices_title">चेन के दूसरे डिवाइस</string>
+    <string name="brave_sync_loading_devices_title">डिवाइस लोड किया जा रहा है...</string>
+    <string name="brave_sync_add_device_text">कोई दूसरा डिवाइस जोड़ें</string>
+    <string name="brave_sync_remove_device_text">यह डिवाइस हटाएँ</string>
+    <string name="brave_sync_code_words_title">युग्‍मित करें</string>
+    <string name="brave_sync_add_laptop_text_title">सिंक चेन कोड को दर्ज़ करें</string>
+    <string name="brave_sync_add_laptop_text_part_1">अपने कंप्यूटर में, \'Brave सेटिंग्स > सिंक करें\' पर जाएं। \"कोई सिंक चेन कोड दर्ज करें\" चुनें।</string>
+    <string name="brave_sync_add_laptop_text_part_2">स्पेस के साथ ऊपर दिया गया कोड वर्ड दर्ज़ करें।</string>
+    <string name="brave_sync_delete_device">क्या आप वाकई डिवाइस \'<ph name="DEVICE_NAME">%1$s</ph>\' को हटाना चाहते हैं?</string>
+    <string name="brave_sync_delete_sent">हटाने का अनुरोध भेजा गया। डिवाइस को जल्द ही हटा दिया जाएगा।</string>
+    <string name="brave_sync_loading_data_title">डेटा लोड हो रहा है...</string>
+    <string name="brave_sync_time_out_message">कुछ गलत हो गया है, ऐसा लगता है कि आपके अनुरोध की समय-सीमा समाप्त हो गई है।</string>
+    <string name="brave_sync_use_camera_text">मैं अपने कैमरे का उपयोग करूंगा...</string>
+    <string name="brave_sync_confirm_code_words_text">पुष्टि करें</string>
+    <string name="brave_sync_word_count_text">शब्दों की संख्या: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">शब्दों की संख्या गलत है</string>
+    <string name="brave_sync_qr_code">QR कोड</string>
+    <string name="brave_sync_code_words">कोड वर्ड</string>
+    <string name="brave_sync_copy_button_text">क्लिपबोर्ड पर कॉपी करें</string>
+    <string name="brave_sync_copied_text">क्लिपबोर्ड पर कॉपी किया गया</string>
+    <string name="brave_sync_this_device_text">(यह डिवाइस)</string>
 
 </resources>
