@@ -142,7 +142,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
                         break;
                     }
                 }
-                boolean enough_funds = ((balance - amount) > 0);
+                boolean enough_funds = ((balance - amount) >= 0);
 
                 //proceed to tipping
                 if (true == enough_funds) {
