@@ -616,7 +616,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                             hl.setBackgroundResource(R.drawable.notification_header_normal);
                             description = String.format(
                                 root.getResources().getString(R.string.brave_ui_rewards_contribute_description),
-                                BraveRewardsHelper.probiToNumber(args[3]), args[2]);
+                                BraveRewardsHelper.probiToNumber(args[3]));
                             break;
                         case AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS:
                             title = "";
