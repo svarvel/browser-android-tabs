@@ -164,11 +164,11 @@ public class BrowsingModeBottomToolbarCoordinator {
         //mSearchAccelerator.setThemeColorProvider(themeColorProvider);
 
         mTabSwitcherButtonCoordinator.setTabSwitcherListener(tabSwitcherListener);
-        mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
+        // mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
         mTabSwitcherButtonCoordinator.setTabCountProvider(tabCountProvider);
 
         mMenuButton.setTouchListener(menuButtonHelper);
-        mMenuButton.setThemeColorProvider(themeColorProvider);
+        // mMenuButton.setThemeColorProvider(themeColorProvider);
         mMenuButton.setAccessibilityDelegate(menuButtonHelper);
     }
 
