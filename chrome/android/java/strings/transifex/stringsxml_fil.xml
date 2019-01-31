@@ -1,3 +1,142 @@
 <resources>
 
-    </resources>
+    <string name="brave_settings_title">Mga setting ng shield ng Brave site para sa</string>
+    <string name="brave_shields_down">Pababa</string>
+    <string name="brave_shields_up">Pataas</string>
+    <string name="brave_shields_ads_trackers">Na-block ang Mga Ad at Tracker</string>
+    <string name="brave_shields_https_upgrades">Mga Pag-upgrade sa HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Na-block ang Mga Script</string>
+    <string name="brave_shields_ads_tracking_switch">I-block ang Mga Ad at Pag-track</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS sa Lahat ng Lugar</string>
+    <string name="brave_shields_blocks_scripts_switch">I-block ang Mga Script</string>
+    <string name="accessibility_toolbar_btn_brave_shields">I-enable/I-disable ang Mga Shield ng Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">I-block ang cookies ng 3rd party</string>
+
+    <string name="httpse_summary">Binubuksan ang mga sinusuportahang site gamit ang HTTPS sa halip na HTTP hangga\'t maaari</string>
+    <string name="tracking_protection_title">Tracking Protection Mode</string>
+    <string name="tracking_protection_summary">Pinipigilan ang pag-load ng mga resource na nagta-track sa iyo</string>
+    <string name="ad_block_title">Pag-block ng Ad</string>
+    <string name="ad_block_summary">Pinipigilan ang pag-load ng mga ad</string>
+
+    <string name="fingerprinting_protection_title">Proteksyon sa Fingerprinting</string>
+    <string name="fingerprinting_protection_summary">Pinipigilan ang fingerprinting ng browser</string>
+    <string name="brave_shields_fingerprints_blocked">Na-block ang Mga Pamamaraan sa Fingerprinting</string>
+    <string name="brave_shields_block_fingerprints_switch">Proteksyon sa Fingerprinting</string>
+
+    <string name="ad_block_regional_title">Pag-block ng Panrehiyong Ad</string>
+    <string name="ad_block_regional_summary">Pinipigilan ang pag-load ng mga panrehiyong ad</string>
+
+    <string name="ad_block_regional_summary_no_list">Walang karagdagang listahang available para sa iyong lokal</string>
+
+    <string name="menu_exit">Lumabas</string>
+
+    <string name="brave_sync">Pag-sync ng Brave (beta)</string>
+    <string name="sync_settings_add_device_name_title">Magdagdag ng pangalan ng device</string>
+    <string name="sync_settings_add_device_name_label">Maglagay ng opsyonal na pangalan para sa device na ito</string>
+    <string name="sync_example_device_name">Android device</string>
+    <string name="enter_code_words_sync">Maglagay ng mga code na salita</string>
+    <string name="sync_device">I-sync ang device</string>
+    <string name="sync_device_failure">Hindi ma-set up ang pag-sync</string>
+
+    <string name="brave_stats_text_trackers">Na-block ang
+Mga Tracker</string>
+    <string name="brave_stats_text_ads">Na-block ang
+Mga Ad</string>
+    <string name="brave_stats_text_https">Mga Pag-upgrade sa
+HTTPS</string>
+    <string name="brave_stats_text_time">Tinatayang Oras
+na Natipid</string>
+
+    <string name="send_metrics_title">Magpadala ng mga sukatan</string>
+
+    <string name="desktop_mode_title">Desktop Mode</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Mas gusto ang desktop na bersyon ng mga site</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Mas gusto ang mobile na bersyon ng mga site</string>
+    <string name="website_settings_category_desktop_view_enabled">I-enable ang Desktop View para sa mga bagong tab</string>
+    <string name="website_settings_category_desktop_view_disabled">Gumamit ng mga mobile na bersyon ng mga site para sa mga bagong tab (inirerekomenda)</string>
+
+    <string name="brave_shields_first_group_title">Pagsubaybay sa Pag-block</string>
+    <string name="brave_shields_second_group_title">Mga Indibidwal na Kontrol</string>
+    <string name="brave_shields">Mga Shield</string>
+    <string name="brave_shields_ads_and_trackers">Mga Ad at Tracker</string>
+    <string name="brave_shields_fingerprint_methods">Mga Pamamaraan para sa Fingerprint</string>
+    <string name="brave_shields_block_phishing_switch">I-block ang Phishing</string>
+
+    <string name="play_video_in_background_title">Pag-playback ng video sa background</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Naka-enable</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Naka-disable</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Pang-eksperimento. Ine-enable ang pag-play ng audio mula sa video sa background kapag hindi aktibo ang tab o naka-off ang screen ng device. Subukang lumipat sa desktop mode kung hindi gumagana ang feature na ito.</string>
+    <string name="settings_require_relaunch_notice">Malalapat ang iyong mga pagbabago sa susunod na pagkakataong muli mong ilulunsad ang Brave</string>
+    <string name="settings_require_relaunch_now">MULING ILUNSAD NGAYON</string>
+    <string name="settings_require_relaunch_later">SA IBANG PAGKAKATAON</string>
+
+    <string name="play_yt_video_in_browser_title">Pag-playback ng video sa Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Naka-enable</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Naka-disable</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Kung naka-enable, mape-play ang mga video sa Brave sa halip na sa kaukulang app</string>
+
+    <string name="close_tabs_on_exit_title">Isara ang mga tab sa paglabas</string>
+    <string name="close_tabs_on_exit_summary">Huwag panatilihin ang mga tab sa pagitan ng mga session ng pag-browse</string>
+
+    <string name="open_pages_in_custom_tabs_title">Buksan ang mga tab sa Mga Custom na Tab</string>
+    <string name="open_pages_in_custom_tabs_summary">Nag-aalok na buksan ang mga tab sa Mga Custom na Tab</string>
+
+    <string name="ddg_offer_title">Pribadong maghanap sa DuckDuckGo?</string>
+    <string name="ddg_offer_text">Sa pribadong paghahanap, gagamitin ng Brave ang DuckDuckGo para tugunan ang iyong mga paghahanap habang ikaw ay nasa pribadong tab na ito. Ang DuckDuckGo ay isang search engine na hindi sinusubaybayan ang iyong history sa paghahanap, kung kaya nabibigyang-daan kang maghanap sa pribadong paraan.</string>
+    <string name="ddg_offer_positive">Oo</string>
+    <string name="ddg_offer_negative">Hindi</string>
+    <string name="ddg_offer_link">Alamin ang tungkol sa pribadong paghahanap sa DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Karaniwang Tab</string>
+    <string name="prefs_private_search_engine">Pribadong Tab</string>
+
+    <string name="brave_open_in_private_tab">Buksan sa pribadong tab</string>
+    <string name="brave_close_all_private_tabs">Isara ang mga pribadong tab</string>
+    <string name="brave_new_private_tab">Bagong pribadong tab</string>
+    <string name="brave_new_tab_private_header">Isa itong Pribadong Tab</string>
+    <string name="brave_new_tab_private_message">Bagama\'t hindi lokal na nase-save ang mga site na binibisita mo sa mga pribadong tab, hindi ka nito ginagawang anonymous o invisible sa iyong ISP, sa iyong employer, o sa mga site na binibisita mo.</string>
+
+    <string name="update_notification_title">Update sa Brave</string>
+    <string name="update_notification_text">Ang bagong Brave browser ay 22% mas mabilis</string>
+
+    <string name="prefs_sync">Pag-sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Ang Pag-sync ng Brave ay nagbibigay-daan sa iyong i-sync nang pribado ang data ng mga bookmark sa pagitan ng iyong Mga Brave Browser sa iba\'t ibang device mo.</string>
+    <string name="brave_sync_description_page_1_part_2">I-scan lang ang code mula sa iyong chain ng pag-sync na ginawa mo sa ibang device. O kaya, magsimula ng bagong chain ng pag-sync.</string>
+    <string name="brave_sync_scan_chain_code">I-scan o ilagay ang code sa pag-sync</string>
+    <string name="brave_sync_start_new_chain">Magsimula ng bagong chain ng pag-sync</string>
+    <string name="brave_sync_qrcode_message_v2">Gamit ang kasalukuyang naka-sync na device, buksan ang Mga Setting ng Brave at mag-navigate sa Mga Setting > Pag-sync. Piliin ang \"Magdagdag ng Device\" at i-scan ang QR Code na ipinapakita sa screen.</string>
+    <string name="brave_sync_codewords_message">Gamit ang kasalukuyang naka-sync na device, buksan ang Mga Setting ng Brave at mag-navigate sa Mga Setting > Pag-sync. Piliin ang \"Magdagdag ng Device\" pagkatapos ay \"Ipakita na lang ang mga code na salita\".</string>
+    <string name="brave_sync_btn_mobile">Magdagdag ng Mobile Device</string>
+    <string name="brave_sync_btn_laptop">Magdagdag ng Computer</string>
+    <string name="brave_sync_scan_sync_code">I-scan ang code sa pag-sync na ito</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Gamit ang pangalawang telepono o tablet, mag-navigate sa Mga Setting ng Brave > Pag-sync > Mag-scan.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">I-capture ang QR code (sa itaas) gamit ang iyong pangalawang device, o ilagay ang mga code na salita kung walang available na camera.</string>
+    <string name="brave_sync_btn_done">Tapos na</string>
+    <string name="brave_sync_tabs_text">Mga Tab</string>
+    <string name="brave_sync_history_text">History</string>
+    <string name="brave_sync_autofill_passwords_text">Autofill/Mga Password</string>
+    <string name="brave_sync_payment_settings_text">Mga Setting ng Pagbabayad sa Brave</string>
+    <string name="brave_sync_settings_title">MAG-SYNC SA DEVICE NA ITO</string>
+    <string name="brave_sync_settings_description">Kapag binago ang mga setting, ang data lang na ibinabahagi ng device na ito sa iba ang maaapektuhan.</string>
+    <string name="brave_sync_devices_title">IBA PANG DEVICE SA CHAIN</string>
+    <string name="brave_sync_loading_devices_title">NILO-LOAD ANG MGA DEVICE...</string>
+    <string name="brave_sync_add_device_text">Magdagdag ng ibang device</string>
+    <string name="brave_sync_remove_device_text">Alisin ang device na ito</string>
+    <string name="brave_sync_code_words_title">Pares</string>
+    <string name="brave_sync_add_laptop_text_title">Ilagay ang code sa chain ng pag-sync</string>
+    <string name="brave_sync_add_laptop_text_part_1">Sa iyong computer, mag-navigate sa Mga Setting ng Brave > Pag-sync. Piliin ang \"Maglagay ng Code sa Chain ng Pag-sync\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Ilagay ang mga code na salita sa itaas, kasama ang mga puwang.</string>
+    <string name="brave_sync_delete_device">Sigurado ka bang gusto mong i-delete ang device na \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Naipadala na ang kahilingan sa pag-delete. Aalisin ang device sa loob ng ilang sandali.</string>
+    <string name="brave_sync_loading_data_title">Nilo-load ang data...</string>
+    <string name="brave_sync_time_out_message">Nagkaproblema, mukhang nag-time out ang iyong kahilingan.</string>
+    <string name="brave_sync_use_camera_text">Gagamitin ko ang aking camera...</string>
+    <string name="brave_sync_confirm_code_words_text">Kumpirmahin</string>
+    <string name="brave_sync_word_count_text">Bilang ng salita: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Maling bilang ng mga salita</string>
+    <string name="brave_sync_qr_code">QR Code</string>
+    <string name="brave_sync_code_words">Mga Code na Salita</string>
+    <string name="brave_sync_copy_button_text">Kopyahin sa Clipboard</string>
+    <string name="brave_sync_copied_text">Kinopya sa Clipboard</string>
+    <string name="brave_sync_this_device_text">(ang device na ito)</string>
+
+</resources>

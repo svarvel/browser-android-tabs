@@ -1,0 +1,142 @@
+<resources>
+
+    <string name="brave_settings_title">Rregullime mburoje Brave sajti për</string>
+    <string name="brave_shields_down">Poshtë</string>
+    <string name="brave_shields_up">Sipër</string>
+    <string name="brave_shields_ads_trackers">Reklama dhe Gjurmues të Bllokuar</string>
+    <string name="brave_shields_https_upgrades">Përmirësime HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Programthe të Bllokuar</string>
+    <string name="brave_shields_ads_tracking_switch">Bllokoni Reklama dhe Gjurmues</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Bllokoni Skripte</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktivizoni/Çaktivizoni Mburoja Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blloko cookies palësh të treta</string>
+
+    <string name="httpse_summary">Sajtet që e mbulojnë këtë akt, i hap duke përdorur HTTPS, në vend se HTTP, kur kjo është e mundur</string>
+    <string name="tracking_protection_title">Mënyra Mbrojtje Nga Gjurmimi</string>
+    <string name="tracking_protection_summary">Pengon ngarkimin e burimeve që ju ndjekin</string>
+    <string name="ad_block_title">Bllokim Reklamash</string>
+    <string name="ad_block_summary">Pengon ngarkim reklamash</string>
+
+    <string name="fingerprinting_protection_title">Mbrojtje Nga Fingerprinting</string>
+    <string name="fingerprinting_protection_summary">Pengoji shfletuesit të kryejnë fingerprinting</string>
+    <string name="brave_shields_fingerprints_blocked">U bllokuan Metoda Fingerprinting-u</string>
+    <string name="brave_shields_block_fingerprints_switch">Mbrojtje Nga Fingerprinting</string>
+
+    <string name="ad_block_regional_title">Bllokim Reklamash Rajonale</string>
+    <string name="ad_block_regional_summary">Pengon ngarkimin e reklamave rajonale</string>
+
+    <string name="ad_block_regional_summary_no_list">S\’ka lista shtesë të gatshme për vendoren tuaj</string>
+
+    <string name="menu_exit">Dilni</string>
+
+    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="sync_settings_add_device_name_title">Shtoni emër pajisjeje</string>
+    <string name="sync_settings_add_device_name_label">Jepni një emër opsional për këtë pajisje</string>
+    <string name="sync_example_device_name">Pajisje Android</string>
+    <string name="enter_code_words_sync">Jepni fjalë kod</string>
+    <string name="sync_device">Njëkohësoni pajisje</string>
+    <string name="sync_device_failure">S\’u rregullua dot njëkohësim</string>
+
+    <string name="brave_stats_text_trackers">U bllokuan
+Gjurmues</string>
+    <string name="brave_stats_text_ads">U bllokuan
+Reklama</string>
+    <string name="brave_stats_text_https">Përmirësime
+HTTPS-je</string>
+    <string name="brave_stats_text_time">Kohë e Kursyes
+Afërsisht</string>
+
+    <string name="send_metrics_title">Dërgo matje</string>
+
+    <string name="desktop_mode_title">Mënyra Desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Parapëlqe version të sajtit për desktop</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Parapëlqe version të sajtit për celular</string>
+    <string name="website_settings_category_desktop_view_enabled">Për skeda të reja aktivizo Pamjen Desktop</string>
+    <string name="website_settings_category_desktop_view_disabled">Për skeda të reja përdor versione sajti për celular (e këshilluar)</string>
+
+    <string name="brave_shields_first_group_title">Bllokim Monitori</string>
+    <string name="brave_shields_second_group_title">Kontrolle Individuale</string>
+    <string name="brave_shields">Mburoja</string>
+    <string name="brave_shields_ads_and_trackers">Reklama dhe Gjurmues</string>
+    <string name="brave_shields_fingerprint_methods">Metoda Fingerprinting-u</string>
+    <string name="brave_shields_block_phishing_switch">Blloko Karremëzim</string>
+
+    <string name="play_video_in_background_title">Luajtje videosh në prapaskenë</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">E aktivizuar</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">E çaktivizuar</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentale. Bën të mundur luajtje audioje prej videosh në prapaskenë, kur skeda s\’është aktive ose kur ekrani i pajisjes është i fikur. Nëse kjo veçori nuk funksionon, provoni të kaloni te desktopi.</string>
+    <string name="settings_require_relaunch_notice">Ndryshimet tuaja do të hyjnë në fuqi herës tjetër që do të rinisni Brave-in</string>
+    <string name="settings_require_relaunch_now">RINISENI TANI</string>
+    <string name="settings_require_relaunch_later">MË VONË</string>
+
+    <string name="play_yt_video_in_browser_title">Luajtje videosh në Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">E aktivizuar</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">E çaktivizuar</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Në u aktivizoftë, videot do të luhen në brave, në vend se te aplikacioni përkatës</string>
+
+    <string name="close_tabs_on_exit_title">Mbylli skeda gjatë daljes</string>
+    <string name="close_tabs_on_exit_summary">Mos mbaj skeda të dikurshme mes sesionesh shfletimi</string>
+
+    <string name="open_pages_in_custom_tabs_title">Skedat hapi në Skeda Vetjake</string>
+    <string name="open_pages_in_custom_tabs_summary">Ofro hapjen e skedave në Skeda Vetjake</string>
+
+    <string name="ddg_offer_title">Kërkim privat me DuckDuckGo?</string>
+    <string name="ddg_offer_text">Nën kërkim privat, Brave-i do të përdorë DuckDuckGo për t\’iu përgjigjur kërkimeve tuaja, teksa gjendeni në këtë skedë private. DuckDuckGo është një motor kërkimesh që nuk e ndjek historikun e kërkimeve tuaja, duke bërë kështu të mundur të kërkoni privatisht.</string>
+    <string name="ddg_offer_positive">Po</string>
+    <string name="ddg_offer_negative">Jo</string>
+    <string name="ddg_offer_link">Mësoni rreth kërkimit privat me DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Skedë Standarde</string>
+    <string name="prefs_private_search_engine">Skedë Private</string>
+
+    <string name="brave_open_in_private_tab">Hape në skedë private</string>
+    <string name="brave_close_all_private_tabs">Mbylli skedat private</string>
+    <string name="brave_new_private_tab">Skedë e re private</string>
+    <string name="brave_new_tab_private_header">Kjo është një Skedë Private</string>
+    <string name="brave_new_tab_private_message">Edhe pse sajtet që vizitoni në skeda private nuk ruhen lokalisht, këto nuk ju bëjnë anonim apo të padukshëm për ISP-në tuaj, për punëdhënësin tuaj, apo për sajtet që vizitoni.</string>
+
+    <string name="update_notification_title">Përditësim Brave-i</string>
+    <string name="update_notification_text">Shfletuesi i ri Brave është 22% më i shpejtë</string>
+
+    <string name="prefs_sync">Njëkohësim (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync ju lejon të njëkohësoni privatisht të dhëna faqerojtësish mes Shfletuesve tuaj Brave në pajisje të ndryshme.</string>
+    <string name="brave_sync_description_page_1_part_2">Thjesht skanoni kodin prej zinxhirit tuaj të njëkohësimit që keni krijuar në pajisje tjetër. Ose nisni një zinxhir të ri.</string>
+    <string name="brave_sync_scan_chain_code">Skanoni ose jepni kod njëkohësimi</string>
+    <string name="brave_sync_start_new_chain">Nisni një zinxhir të ri njëkohësimi</string>
+    <string name="brave_sync_qrcode_message_v2">Duke përdorur një pajisje ekzistuese të njëkohësuar, hapni Rregullime Brave-i dhe kaloni te Rregullime > Njëkohësim. Zgjidhni \"Shtoni Pajisje\" dhe skanoni kodin QR të shfaqur në ekran.</string>
+    <string name="brave_sync_codewords_message">Duke përdorur një pajisje ekzistuese të njëkohësuar, hapni Rregullime Brave-i dhe kaloni te Rregullime > Njëkohësim. Zgjidhni \"Shtoni Pajisje\", mandej \"Shfaq fjalë kodi, më mirë\".</string>
+    <string name="brave_sync_btn_mobile">Shtoni një Pajisje Celulare</string>
+    <string name="brave_sync_btn_laptop">Shtoni një Kompjuter</string>
+    <string name="brave_sync_scan_sync_code">Skanoni këtë kod njëkohësimi</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Duke përdorur një telefon apo tablet të dytë, kaloni te Rregullime Brave-i > Njëkohësim > Skanim.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Fiksoni kodin QR (më sipër) me pajisjen tuaj të dytë, ose jepni fjalë kodi, nëse s’ka kamera të përdorshme.</string>
+    <string name="brave_sync_btn_done">U bë</string>
+    <string name="brave_sync_tabs_text">Skeda</string>
+    <string name="brave_sync_history_text">Historik</string>
+    <string name="brave_sync_autofill_passwords_text">Vetëplotësim/Fjalëkalime</string>
+    <string name="brave_sync_payment_settings_text">Rregullime Pagesash Brave</string>
+    <string name="brave_sync_settings_title">NJËKOHËSO NË KËTË PAJISJE</string>
+    <string name="brave_sync_settings_description">Ndryshimi i rregullimeve do të prekë vetëm të dhëna që kjo pajisje i ndan me të tjerët.</string>
+    <string name="brave_sync_devices_title">TË TJERA PAJISJE NË ZINXHIR</string>
+    <string name="brave_sync_loading_devices_title">PO NGARKOHEN PAJISJE…</string>
+    <string name="brave_sync_add_device_text">Shtoni pajisje tjetër</string>
+    <string name="brave_sync_remove_device_text">Hiqe këtë pajisje</string>
+    <string name="brave_sync_code_words_title">Çiftoje</string>
+    <string name="brave_sync_add_laptop_text_title">Jepni kodin e njëkohësimit të zinxhirit</string>
+    <string name="brave_sync_add_laptop_text_part_1">Në kompjuterin tuaj, kaloni te Rregullime Brave-i > Njëkohësime. Zgjidhni \"Jepni një Kod Njëkohësimi Zinxhiri\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Jepni fjalët e kodit më sipër, përfshi hapësira.</string>
+    <string name="brave_sync_delete_device">Jeni i sigurt se doni të fshihet pajisja \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Kërkesa për fshirje u dërgua. Pajisja do të hiqet së shpejti.</string>
+    <string name="brave_sync_loading_data_title">Po ngarkohen të dhëna…</string>
+    <string name="brave_sync_time_out_message">Diç shkoi ters, duket sikur kërkesës tuaj i mbaroi koha.</string>
+    <string name="brave_sync_use_camera_text">Do të përdor kamerën time…</string>
+    <string name="brave_sync_confirm_code_words_text">Ripohojeni</string>
+    <string name="brave_sync_word_count_text">Numër fjalësh: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Numër  fjalësh i pasaktë</string>
+    <string name="brave_sync_qr_code">Kod QR</string>
+    <string name="brave_sync_code_words">Fjalë Kodi</string>
+    <string name="brave_sync_copy_button_text">Kopjoje në Të papastër</string>
+    <string name="brave_sync_copied_text">U kopjua në Të papastër</string>
+    <string name="brave_sync_this_device_text">(këtë pajisje)</string>
+
+</resources>

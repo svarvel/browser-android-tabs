@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Avsluta</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synka browser data mellan dina enheter på
-ett säkert sätt med Brave Sync,
-inget konto krävs.
-Klicka nedan för att börja.</string>
-    <string name="brave_sync_have_existing_code">Jag har redan en synk-kod</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Lägg till enhetsnamn</string>
     <string name="sync_settings_add_device_name_label">Ange ett alternativt namn för denna enhet</string>
     <string name="sync_example_device_name">Android-enhet</string>
-    <string name="brave_sync_qrcode">Synka med enhet</string>
-    <string name="brave_sync_qrcode_message">Använd den befintliga synkroniserade enheten,
-öppna Brave Settings och gå till "Enhet &amp; inställningar",
-tryck på `+` för att lägga till en ny
-enhet och få synkroniseringskoden.</string>
     <string name="enter_code_words_sync">Ange kodord</string>
-    <string name="enter_code_words_below_sync">Ange kodord nedan</string>
     <string name="sync_device">Sync-enhet</string>
     <string name="sync_device_failure">Sync kunde inte ställas in</string>
-    <string name="sync_device_success">Inställningarna för synk är klara</string>
-    <string name="reset_sync">Återställ Sync...</string>
-    <string name="resetting_sync">Är du säker på att du vill återställa Sync-inställningarna för denna enhet?</string>
 
     <string name="brave_stats_text_trackers">Blockerade
 spårare</string>
@@ -111,5 +97,46 @@ tid</string>
 
     <string name="update_notification_title">Brave-uppdatering</string>
     <string name="update_notification_text">Nya Brave-webbläsaren är 22 % snabbare</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync är ett säkert sätt att synkronisera bokmärken mellan Brave-webbläsare på dina olika enheter.</string>
+    <string name="brave_sync_description_page_1_part_2">Skanna koden från synkroniseringskedjan du skapade på en annan enhet, eller starta en ny synkroniseringskedja.</string>
+    <string name="brave_sync_scan_chain_code">Skanna eller ange synkroniseringskod</string>
+    <string name="brave_sync_start_new_chain">Starta en ny synkroniseringskedja</string>
+    <string name="brave_sync_qrcode_message_v2">Öppna Brave på en synkroniserad enhet och gå till Inställningar > Synkronisering. Välj \"Lägg till enhet\" och skanna QR-koden som visas på skärmen.</string>
+    <string name="brave_sync_codewords_message">Öppna Brave på en synkroniserad enhet och gå till Inställningar > Synkronisering. Välj \"Lägg till enhet\" och sedan \"Visa kodord i stället\".</string>
+    <string name="brave_sync_btn_mobile">Lägg till en mobil enhet</string>
+    <string name="brave_sync_btn_laptop">Lägg till en dator</string>
+    <string name="brave_sync_scan_sync_code">Skanna den här synkroniseringskoden</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Öppna Brave på en annan mobil eller surfplatta och gå till Inställningar > Synkronisering > Skanna.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Läs av QR-koden (ovan) med den andra enheten eller ange kodorden om den saknar kamera.</string>
+    <string name="brave_sync_btn_done">Klar</string>
+    <string name="brave_sync_tabs_text">Flikar</string>
+    <string name="brave_sync_history_text">Historik</string>
+    <string name="brave_sync_autofill_passwords_text">Autofyll/lösenord</string>
+    <string name="brave_sync_payment_settings_text">Inställningar för betalning i Brave</string>
+    <string name="brave_sync_settings_title">SYNKRONISERA PÅ DEN HÄR ENHETEN</string>
+    <string name="brave_sync_settings_description">Om du gör ändringar i inställningarna kommer de att påverka de data som enheten delar med andra.</string>
+    <string name="brave_sync_devices_title">ANDRA ENHETER I KEDJAN</string>
+    <string name="brave_sync_loading_devices_title">LADDAR ENHETER ...</string>
+    <string name="brave_sync_add_device_text">Lägg till en enhet</string>
+    <string name="brave_sync_remove_device_text">Ta bort enheten</string>
+    <string name="brave_sync_code_words_title">Parkoppla</string>
+    <string name="brave_sync_add_laptop_text_title">Ange synkroniseringskoden</string>
+    <string name="brave_sync_add_laptop_text_part_1">Öppna Brave på datorn och gå till Inställningar > Synkronisering. Välj \"Ange en synkroniseringskod\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Ange kodorden ovan, inklusive mellanslag.</string>
+    <string name="brave_sync_delete_device">Vill du ta bort enheten <ph name="DEVICE_NAME">%1$s</ph>?</string>
+    <string name="brave_sync_delete_sent">Borttagningen har loggats. Enheten tas bort inom kort.</string>
+    <string name="brave_sync_loading_data_title">Laddar data ...</string>
+    <string name="brave_sync_time_out_message">Någonting blev fel. Begäran tog för lång tid.</string>
+    <string name="brave_sync_use_camera_text">Jag använder kameran ...</string>
+    <string name="brave_sync_confirm_code_words_text">Bekräfta</string>
+    <string name="brave_sync_word_count_text">Antal ord: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Fel antal ord</string>
+    <string name="brave_sync_qr_code">QR-kod</string>
+    <string name="brave_sync_code_words">Kodord</string>
+    <string name="brave_sync_copy_button_text">Kopiera till urklipp</string>
+    <string name="brave_sync_copied_text">Kopierades till urklipp</string>
+    <string name="brave_sync_this_device_text">(den här enheten)</string>
 
 </resources>

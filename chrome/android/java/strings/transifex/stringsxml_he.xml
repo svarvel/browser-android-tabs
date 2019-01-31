@@ -30,27 +30,13 @@
 
     <string name="menu_exit">יציאה</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">סנכרן את נתוני הדפדפן בין המכשירים
-באמצעות Brave Sync. אין צורך ליצור
-חשבון. הקש להלן כדי להתחיל.</string>
-    <string name="brave_sync_have_existing_code">יש לי קוד סנכרון קיים</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">נא להוסיף שם מכשיר</string>
     <string name="sync_settings_add_device_name_label">נא להזין שם אופציונלי עבור מכשיר זה</string>
     <string name="sync_example_device_name">מכשיר אנדרואיד</string>
-    <string name="brave_sync_qrcode">לסנכרן למכשיר</string>
-    <string name="brave_sync_qrcode_message">במכשיר מסונכרן קיים,
-פתח את הגדרות Brave,
-ונווט אל הגדרות מכשיר,
-ולחץ + להוספת מכשיר חדש
-והצגת קוד הסנכרון.</string>
     <string name="enter_code_words_sync">נא להזין מילות קוד</string>
-    <string name="enter_code_words_below_sync">נא להזין את מילות הקוד להלן.</string>
     <string name="sync_device">לסנכרן מכשיר</string>
     <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
-    <string name="sync_device_success">הגדרת הסנכרון הושלמה בהצלחה</string>
-    <string name="reset_sync">איפוס הסנכרון...</string>
-    <string name="resetting_sync">האם ברצונך באמת לאפס את הגדרות הסנכרון של מכשיר זה?</string>
 
     <string name="brave_stats_text_trackers">כלי מעקב
 שנחסמו</string>
@@ -111,5 +97,46 @@ HTTPS</string>
 
     <string name="update_notification_title">עדכון Brave</string>
     <string name="update_notification_text">דפדפן ה-Brave החדש מהיר יותר ב-22%</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync מאפשר לסנכרן נתוני סימניות בפרטיות בין Brave Browsers במכשירים השונים שלך.</string>
+    <string name="brave_sync_description_page_1_part_2">פשוט סרוק את הקוד משרשרת הסנכרון שיצרת במכשיר אחר. או התחל שרשרת סנכרון חדשה.</string>
+    <string name="brave_sync_scan_chain_code">סרוק או הזן קוד סנכרון</string>
+    <string name="brave_sync_start_new_chain">התחל שרשרת סנכרון חדשה</string>
+    <string name="brave_sync_qrcode_message_v2">באמצעות מכשיר מסונכרן קיים, פתח את הגדרות Brave ונווט אל  הגדרות > סנכרון. הקש על \"הוסף מכשיר\" וסרוק את קוד ה-QR המוצג על המסך.</string>
+    <string name="brave_sync_codewords_message">באמצעות מכשיר מסונכרן קיים, פתח את הגדרות Brave ונווט אל  הגדרות > סנכרון. הקש על \"הוסף מכשיר\" ואז \"הצג מילות קוד במקום\".</string>
+    <string name="brave_sync_btn_mobile">הוסף מכשיר נייד</string>
+    <string name="brave_sync_btn_laptop">הוסף מחשב</string>
+    <string name="brave_sync_scan_sync_code">סרוק את קוד הסנכרון</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">באמצעות מכשיר טלפון שני או טאבלט, נווט אל הגדרות Brave> סנכרון > סריקה.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">לכוד את קוד ה-QR (כפי שמוזכר מעלה) באמצעות המכשיר השני, או הזן מילות קוד אם המצלמה אינה זמינה.</string>
+    <string name="brave_sync_btn_done">סיום</string>
+    <string name="brave_sync_tabs_text">כרטיסיות</string>
+    <string name="brave_sync_history_text">היסטוריה</string>
+    <string name="brave_sync_autofill_passwords_text">מילוי אוטומטי/סיסמה</string>
+    <string name="brave_sync_payment_settings_text">הגדרות תשלום של Brave</string>
+    <string name="brave_sync_settings_title">סנכרן במכשיר זה</string>
+    <string name="brave_sync_settings_description">שינוי הגדרות ישפיע אך ורק על נתונים שמכשיר זה משתף עם אחרים.</string>
+    <string name="brave_sync_devices_title">מכשירים אחרים בשרשרת</string>
+    <string name="brave_sync_loading_devices_title">טוען מכשירים...</string>
+    <string name="brave_sync_add_device_text">הוסף מכשיר אחר</string>
+    <string name="brave_sync_remove_device_text">הסר את מכשיר זה</string>
+    <string name="brave_sync_code_words_title">צימוד</string>
+    <string name="brave_sync_add_laptop_text_title">הזן קוד שרשרת סנכרון</string>
+    <string name="brave_sync_add_laptop_text_part_1">במחשב שלך, נווט אל הגדרות Brave > סנכרון. בחר \"הזן קוד שרשרת סנכרון\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">הזן את מילות הקוד המופיעות מעלה, כולל רווחים.</string>
+    <string name="brave_sync_delete_device">האם ברצונך למחוק את המכשיר \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">בקשת מחיקה נשלחה. המכשיר יוסר במהרה.</string>
+    <string name="brave_sync_loading_data_title">טוען נתונים...</string>
+    <string name="brave_sync_time_out_message">משהו השתבש, נראה כי הזמן לבקשתך תם.</string>
+    <string name="brave_sync_use_camera_text">אני אשתמש במצלמה שלי...</string>
+    <string name="brave_sync_confirm_code_words_text">אשר</string>
+    <string name="brave_sync_word_count_text">מספר מילים: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">מספר שגוי של מילים</string>
+    <string name="brave_sync_qr_code">קוד QR</string>
+    <string name="brave_sync_code_words">מילות קוד</string>
+    <string name="brave_sync_copy_button_text">העתק ל-Clipboard</string>
+    <string name="brave_sync_copied_text">בוצעה העתקה ל-Clipboard</string>
+    <string name="brave_sync_this_device_text">(מכשיר זה)</string>
 
 </resources>

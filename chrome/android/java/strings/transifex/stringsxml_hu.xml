@@ -30,28 +30,13 @@
 
     <string name="menu_exit">Kilépés</string>
 
-    <string name="brave_sync">Brave szinkronizálás</string>
-    <string name="brave_sync_description">Szinkronizálja a böngésző adatait az eszközei
-között a Brave Sync használatával,
-fiók létrehozása nem szükséges.
-Bökjön az alábbira az indításhoz.</string>
-    <string name="brave_sync_have_existing_code">Rendelkezek szinkronizációs kóddal</string>
+    <string name="brave_sync">Brave (béta) Sync</string>
     <string name="sync_settings_add_device_name_title">Eszköznév hozzáadása</string>
     <string name="sync_settings_add_device_name_label">Adjon egy elfogadható nevet ennek az eszköznek</string>
     <string name="sync_example_device_name">Android eszköz</string>
-    <string name="brave_sync_qrcode">Szinkronizálás eszközre</string>
-    <string name="brave_sync_qrcode_message">Meglévő szinkronizált eszköz használatakor nyissa meg
-a Brave Beállításokat és navigáljon az
-"Eszközök és beállítások" elemhez, bökjön `+`
-jelre az új eszköz hozzáadásához és a
-szinkronizációs kód felfedéséhez.</string>
     <string name="enter_code_words_sync">Kódszavak hozzáadása</string>
-    <string name="enter_code_words_below_sync">Írja be a lenti kódszavakat.</string>
     <string name="sync_device">Eszköz szinkronizálása</string>
     <string name="sync_device_failure">A szinkronizálást nem lehetett beállítani</string>
-    <string name="sync_device_success">A szinkronizálás sikeresen végrehajtva</string>
-    <string name="reset_sync">Szinkronizálás visszaállítása...</string>
-    <string name="resetting_sync">Biztos benne, hogy visszaállítja ennek az eszköznek a szinkronizációs beállításait?</string>
 
     <string name="brave_stats_text_trackers">Követések
 blokkolva</string>
@@ -112,5 +97,46 @@ idő</string>
 
     <string name="update_notification_title">Brave frissítés</string>
     <string name="update_notification_text">Az új Brave böngésző 22%-kal gyorsabb</string>
+
+    <string name="prefs_sync">Sync (béta)</string>
+    <string name="brave_sync_description_page_1_part_1">A Brave Sync segítségével privát szinkronizálhatja különböző eszközeinek könyvjelzőadatait Brave böngészőiben.</string>
+    <string name="brave_sync_description_page_1_part_2">Csak olvassa be a kódot a szinkronizálási láncból, amelyet az egyik eszközén létrehozott. Vagy kezdjen új szinkronizálási láncot.</string>
+    <string name="brave_sync_scan_chain_code">Olvassa be vagy adja meg a szinkronizálási kódot</string>
+    <string name="brave_sync_start_new_chain">Új szinkronizálási lánc kezdése</string>
+    <string name="brave_sync_qrcode_message_v2">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások > Szinkronizálás útvonalat. Válassza az \"Eszköz hozzáadása\" lehetőséget és olvassa be a képernyőn megjelenő QR-kódot.</string>
+    <string name="brave_sync_codewords_message">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások > Szinkronizálás útvonalat. Válassza az \"Eszköz hozzáadása\" lehetőséget és a \"Kód megjelenítése\" lehetőséget.</string>
+    <string name="brave_sync_btn_mobile">Mobileszköz hozzáadása</string>
+    <string name="brave_sync_btn_laptop">Számítógép hozzáadása</string>
+    <string name="brave_sync_scan_sync_code">Szinkronizációs kód beolvasása</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Második telefon vagy tablet használatakor kövesse a Beállítások > Szinkronizálás > Beolvasás útvonalat.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">A második eszközzel rögzítse a fenti QR-kódot, vagy adja meg a kódszavakat, ha fényképező nem áll rendelkezésre.</string>
+    <string name="brave_sync_btn_done">Kész</string>
+    <string name="brave_sync_tabs_text">Fülek</string>
+    <string name="brave_sync_history_text">Előzmények</string>
+    <string name="brave_sync_autofill_passwords_text">Automatikus kitöltés/jelszavak</string>
+    <string name="brave_sync_payment_settings_text">Brave fizetési beállítások</string>
+    <string name="brave_sync_settings_title">SZINKRONIZÁLÁS EZEN AZ ESZKÖZÖN</string>
+    <string name="brave_sync_settings_description">A beállítások módosítása csak azon adatokat érinti, amelyeket ez az eszköz oszt meg másokkal.</string>
+    <string name="brave_sync_devices_title">A LÁNC EGYÉB ESZKÖZEI</string>
+    <string name="brave_sync_loading_devices_title">ESZKÖZÖK BETÖLTÉSE...</string>
+    <string name="brave_sync_add_device_text">Másik eszköz hozzáadása</string>
+    <string name="brave_sync_remove_device_text">Eszköz eltávolítása</string>
+    <string name="brave_sync_code_words_title">Párosítás</string>
+    <string name="brave_sync_add_laptop_text_title">Szinkronizálási lánc kódjának megadása</string>
+    <string name="brave_sync_add_laptop_text_part_1">Számítógépén kövesse a Brave beállítások > Szinkronizálás útvonalat. Válassza a \"Szinkronizálási lánc kódjának megadása\" lehetőséget.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Adja meg a fenti kódszavakat, a szóközökkel együtt.</string>
+    <string name="brave_sync_delete_device">Biztosan törli \'<ph name="DEVICE_NAME">%1$s</ph>\' eszközt?</string>
+    <string name="brave_sync_delete_sent">A törlési kérés elküldve. Az eszközt hamarosan eltávolítjuk.</string>
+    <string name="brave_sync_loading_data_title">Adatok betöltése...</string>
+    <string name="brave_sync_time_out_message">Hiba történt, úgy tűnik a kérése lejárt.</string>
+    <string name="brave_sync_use_camera_text">Használom a fényképezőt...</string>
+    <string name="brave_sync_confirm_code_words_text">Megerősítés</string>
+    <string name="brave_sync_word_count_text">Szószám: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">A szavak száma helytelen</string>
+    <string name="brave_sync_qr_code">QR-kód</string>
+    <string name="brave_sync_code_words">Kódszavak</string>
+    <string name="brave_sync_copy_button_text">Másolás vágólapra</string>
+    <string name="brave_sync_copied_text">Másolva a vágólapra</string>
+    <string name="brave_sync_this_device_text">(ez az eszköz)</string>
 
 </resources>

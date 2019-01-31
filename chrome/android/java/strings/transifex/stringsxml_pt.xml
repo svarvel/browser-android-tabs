@@ -30,23 +30,13 @@
 
     <string name="menu_exit">Sair</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sincronize dados do navegador entre os seus dispositivos
-em segurança com o Brave Sync, não é necessário
-criar uma conta. Toque abaixo para começar.</string>
-    <string name="brave_sync_have_existing_code">Tenho um código de sincronização existente</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Adicionar nome do dispositivo</string>
     <string name="sync_settings_add_device_name_label">Introduza um nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
-    <string name="brave_sync_qrcode">Sincronizar com o dispositivo</string>
-    <string name="brave_sync_qrcode_message">Utilizando o dispositivo sincronizado existente abra as Definições Brave e navegue para \"Dispositivo e Definições\", toque `+` para adicionar um novo dispositivo e o código de revelação da sincronização .</string>
     <string name="enter_code_words_sync">Introduza as palavras de código</string>
-    <string name="enter_code_words_below_sync">Introduza as palavras de código abaixo.</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">Não foi possível configurar o Sync</string>
-    <string name="sync_device_success">A configuração de sincronização foi concluída com sucesso</string>
-    <string name="reset_sync">Repor o Sync...</string>
-    <string name="resetting_sync">Tem a certeza de que quer repor as definições do Sync neste dispositivo?</string>
 
     <string name="brave_stats_text_trackers">Controladores
 Bloqueados</string>
@@ -107,5 +97,46 @@ Guardado</string>
 
     <string name="update_notification_title">Atualize o Brave</string>
     <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">O Brave Sync permite-lhe sincronizar dados de marcadores de modo privado entre os seus navegadores Brave em vários dispositivos.</string>
+    <string name="brave_sync_description_page_1_part_2">Basta digitalizar o código da cadeia de sincronização criada noutro dispositivo ou iniciar uma nova cadeia de sincronização.</string>
+    <string name="brave_sync_scan_chain_code">Digitalizar ou introduzir código de sincronização</string>
+    <string name="brave_sync_start_new_chain">Iniciar uma nova cadeia de sincronização</string>
+    <string name="brave_sync_qrcode_message_v2">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sync. Selecione \"Adicionar dispositivo\" e digitalize o código QR apresentado no ecrã.</string>
+    <string name="brave_sync_codewords_message">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sync. Selecione \"Adicionar dispositivo\" e, em seguida, \"Apresentar palavras de código em alternativa\".</string>
+    <string name="brave_sync_btn_mobile">Adicionar um dispositivo móvel</string>
+    <string name="brave_sync_btn_laptop">Adicionar um computador</string>
+    <string name="brave_sync_scan_sync_code">Digitalizar este código de sincronização</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Com um segundo telefone ou tablet, aceda no Brave a Definições > Sync > Digitalizar.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Capture o código QR (acima) com o segundo dispositivo ou introduza as palavras do código se não existir uma câmara disponível.</string>
+    <string name="brave_sync_btn_done">Concluído</string>
+    <string name="brave_sync_tabs_text">Separadores</string>
+    <string name="brave_sync_history_text">Histórico</string>
+    <string name="brave_sync_autofill_passwords_text">Preenchimento automático/Palavras-passe</string>
+    <string name="brave_sync_payment_settings_text">Definições de pagamento do Brave</string>
+    <string name="brave_sync_settings_title">SINCRONIZAR NESTE DISPOSITIVO</string>
+    <string name="brave_sync_settings_description">Alterar as definições irá apenas afetar os dados que este dispositivo partilhar com outros.</string>
+    <string name="brave_sync_devices_title">OUTROS DISPOSITIVOS NA CADEIA</string>
+    <string name="brave_sync_loading_devices_title">A CARREGAR DISPOSITIVOS...</string>
+    <string name="brave_sync_add_device_text">Adicionar outro dispositivo</string>
+    <string name="brave_sync_remove_device_text">Remover este dispositivo</string>
+    <string name="brave_sync_code_words_title">Emparelhar</string>
+    <string name="brave_sync_add_laptop_text_title">Introduzir o código da cadeia de sincronização</string>
+    <string name="brave_sync_add_laptop_text_part_1">No seu computador,  aceda ao Brave a Definições > Sync. Selecione \"Introduzir um código de cadeia de sincronização\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Introduza as palavras do código acima, incluindo espaços.</string>
+    <string name="brave_sync_delete_device">Tem a certeza de que pretende eliminar o dispositivo \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">O pedido de eliminação foi enviado. O dispositivo será removido em breve.</string>
+    <string name="brave_sync_loading_data_title">A carregar dados...</string>
+    <string name="brave_sync_time_out_message">Ocorreu um erro. Aparentemente, o pedido excedeu o tempo limite.</string>
+    <string name="brave_sync_use_camera_text">Vou usar a câmara...</string>
+    <string name="brave_sync_confirm_code_words_text">Confirmar</string>
+    <string name="brave_sync_word_count_text">Contagem de palavras: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Número de palavras incorreto</string>
+    <string name="brave_sync_qr_code">Código QR</string>
+    <string name="brave_sync_code_words">Palavras do código</string>
+    <string name="brave_sync_copy_button_text">Copiar para a área de transferência</string>
+    <string name="brave_sync_copied_text">Copiado para a área de transferência</string>
+    <string name="brave_sync_this_device_text">(este dispositivo)</string>
 
 </resources>

@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
+
+    <string name="brave_settings_title">Налады шчытоў Brave для</string>
+    <string name="brave_shields_down">Выкл</string>
+    <string name="brave_shields_up">Укл</string>
+    <string name="brave_shields_ads_trackers">Аб\'яў ці трэкераў заблакавана</string>
+    <string name="brave_shields_https_upgrades">HTTPS-павышэнняў</string>
+    <string name="brave_shields_scripts_blocked">Скрыптоў заблакавана</string>
+    <string name="brave_shields_ads_tracking_switch">Блакаваць аб\'явы і трэкінг</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Блакаваць скрыпты</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Укл/Выкл шчыты Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Блакаваць cookie 3іх бакоў</string>
+
+    <string name="httpse_summary">Адкрывае сайты выкарыстоўваючы HTTPS замест HTTP, калі гэта магчыма</string>
+    <string name="tracking_protection_title">Рэжым абароны ад трэкінгу</string>
+    <string name="tracking_protection_summary">Блакуе рэсурсы якія якія адсочваюць вас</string>
+    <string name="ad_block_title">Блакаванне аб\'яў</string>
+    <string name="ad_block_summary">Блакуе загрузку аб\'яў</string>
+
+    <string name="fingerprinting_protection_title">Абарона адбітка</string>
+    <string name="fingerprinting_protection_summary">Прадухіляе вызначэнне адбітка</string>
+    <string name="brave_shields_fingerprints_blocked">Блакавана адбіткаў</string>
+    <string name="brave_shields_block_fingerprints_switch">Абарона адбітка браўзара</string>
+
+    <string name="ad_block_regional_title">Блакаванне рэгіянальных аб\'яў</string>
+    <string name="ad_block_regional_summary">Прадухіляе загрузку рэгіянальных аб\'яў</string>
+
+    <string name="ad_block_regional_summary_no_list">Не выяўлена дадатковых спісаў для вашага рэгіёна</string>
+
+    <string name="menu_exit">Выхад</string>
+
+    <string name="sync_settings_add_device_name_title">Даданне імя прылады</string>
+    <string name="sync_settings_add_device_name_label">Увядзіце імя для гэтай прылады (апцыянальна)</string>
+    <string name="sync_example_device_name">Android прылада</string>
+    <string name="enter_code_words_sync">Увод кодавых словаў</string>
+    <string name="sync_device">Сінхранізацыя прылады</string>
+    <string name="sync_device_failure">Сінхранізацыю не атрымалася наладзіць</string>
+
+    <string name="brave_stats_text_trackers">Трэкераў
+блакавана</string>
+    <string name="brave_stats_text_ads">Аб\'яў
+блакавана</string>
+    <string name="brave_stats_text_https">HTTPS
+павышэнняў</string>
+    <string name="brave_stats_text_time">Захавана
+часу</string>
+
+    <string name="send_metrics_title">Адпраўленне метрык</string>
+
+    <string name="desktop_mode_title">Поўная версія сайта</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Аддаваць перавагу версію сайта для кампутара</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Аддаваць перавагу мабільнай версіі сайта</string>
+    <string name="website_settings_category_desktop_view_enabled">Уключыць поўную версію сайта для новых укладак</string>
+    <string name="website_settings_category_desktop_view_disabled">Ужыць мабільную версію сайта для новых укладак (рэкамендуецца)</string>
+
+    <string name="brave_shields_first_group_title">Манітор блакавання</string>
+    <string name="brave_shields_second_group_title">Індывідуальныя элементы кіравання</string>
+    <string name="brave_shields">Шчыты</string>
+    <string name="brave_shields_ads_and_trackers">Аб\'явы і трэкеры</string>
+    <string name="brave_shields_fingerprint_methods">Метады вызначэння адбітка</string>
+    <string name="brave_shields_block_phishing_switch">Блакаваць фішынг</string>
+
+    <string name="play_video_in_background_title">Прайграванне відэа ў фоне</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Дазволена</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Забаронена</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Эксперыментальна. Уключае прайграванне гуку з відэа ў фонавым рэжыме, калі ўкладка не актыўная ці экран прылады выключаны. Паспрабуйце перамкнуцца ў рэжым працоўнага стала, калі гэта функцыя не працуе</string>
+    <string name="settings_require_relaunch_notice">Вашы змены набудуць моц пры наступным запуску Brave</string>
+    <string name="settings_require_relaunch_now">ПЕРАЗАПУСЦІЦЬ ЗАРАЗ</string>
+    <string name="settings_require_relaunch_later">ПАЗНЕЙ</string>
+
+    <string name="play_yt_video_in_browser_title">Прайграванне відэа ў Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Уключана</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Адключана</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Калі ўключана, відэа будзе прайгравацца ў Brave замест адпаведнай праграмы</string>
+
+    <string name="close_tabs_on_exit_title">Закрываць укладкі пры выхадзе</string>
+    <string name="close_tabs_on_exit_summary">Не захоўваць укладкі паміж сесіямі</string>
+
+    <string name="open_pages_in_custom_tabs_title">Адкрыць ўкладкі ў карыстальніцкіх укладках</string>
+    <string name="open_pages_in_custom_tabs_summary">Прапанаваць адкрыць укладкі ў карыстальніцкіх укладках</string>
+
+    <string name="ddg_offer_title">Прыватны пошук з дапамогай DuckDuckGo?</string>
+    <string name="ddg_offer_text">Пры прыватным пошуку, Brave будзе выкарыстоўваць DuckDuckGo для адказу на вашы пошукавыя запыты, калі вы знаходзіцеся на гэтай прыватнай укладцы. DuckDuckGo — гэта пошукавая сістэма, якая не адсочвае гісторыю пошуку, дазваляючы вам выконваць пошук прыватна.</string>
+    <string name="ddg_offer_positive">Так</string>
+    <string name="ddg_offer_negative">Не</string>
+    <string name="ddg_offer_link">Даведайцеся пра прыватны пошук з дапамогай DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Звычайная ўкладка</string>
+    <string name="prefs_private_search_engine">Прыватная ўкладка</string>
+
+    <string name="brave_open_in_private_tab">Адкрыць у прыватнай укладцы</string>
+    <string name="brave_close_all_private_tabs">Закрыць прыватныя ўкладкі</string>
+    <string name="brave_new_private_tab">Новая прыватная ўкладка</string>
+    <string name="brave_new_tab_private_header">Гэта прыватная ўкладка</string>
+    <string name="brave_new_tab_private_message">Нават калі сайты, якія вы наведваеце ў прыватных укладках, не захоўваюцца лакальна, яны не робяць вас ананімным ці нябачным для вашага інтэрнэт-правайдара, вашага працадаўцы ці для сайтаў, якія вы наведваеце.</string>
+
+    <string name="update_notification_title">Абнаўленне Brave</string>
+    <string name="update_notification_text">Новы Brave браўзар на 22% хутчэй</string>
 
     </resources>

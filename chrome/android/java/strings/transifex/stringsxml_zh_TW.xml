@@ -30,23 +30,13 @@
 
     <string name="menu_exit">離開</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">使用 Brave Sync 在您的裝置間安全同步瀏覽器資料，
-無須建立帳戶。點擊下方即可開始。</string>
-    <string name="brave_sync_have_existing_code">我已經取得同步代碼</string>
+    <string name="brave_sync">Brave (測試版) Sync</string>
     <string name="sync_settings_add_device_name_title">新增裝置名稱</string>
     <string name="sync_settings_add_device_name_label">命名此裝置</string>
     <string name="sync_example_device_name">Android 裝置</string>
-    <string name="brave_sync_qrcode">同步到裝置</string>
-    <string name="brave_sync_qrcode_message">使用已同步的裝置開啟 Brave 設定，選擇「裝置和設定」，
-輕觸「+」即可新增裝置並取得同步代碼。</string>
     <string name="enter_code_words_sync">輸入代碼</string>
-    <string name="enter_code_words_below_sync">在下方輸入代碼。</string>
     <string name="sync_device">同步裝置</string>
     <string name="sync_device_failure">無法建立同步</string>
-    <string name="sync_device_success">成功建立同步</string>
-    <string name="reset_sync">重設同步...</string>
-    <string name="resetting_sync">您確定要重設此設備的同步設定？</string>
 
     <string name="brave_stats_text_trackers">追蹤器
 已阻擋</string>
@@ -107,5 +97,46 @@
 
     <string name="update_notification_title">Brave 更新</string>
     <string name="update_notification_text">新的 Brave 瀏覽器快了 22%</string>
+
+    <string name="prefs_sync">Sync (測試版)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync 可讓您私下同步各種裝置上 Brave 瀏覽器的書籤資料。</string>
+    <string name="brave_sync_description_page_1_part_2">只要掃瞄您在其他裝置上建立的同步鏈代碼即可。或者，您也可以建立新的同步鏈。</string>
+    <string name="brave_sync_scan_chain_code">掃描或輸入同步代碼</string>
+    <string name="brave_sync_start_new_chain">建立新的同步鏈</string>
+    <string name="brave_sync_qrcode_message_v2">使用現有的同步裝置開啟 Brave 設定，並依序瀏覽至「設定 > 同步」。選擇「新增裝置」並掃描螢幕上顯示的 QR 碼。</string>
+    <string name="brave_sync_codewords_message">使用現有的同步裝置開啟 Brave 設定，並依序瀏覽至「設定 > 同步」。選擇「新增裝置」，然後選擇「改為顯示代碼」。</string>
+    <string name="brave_sync_btn_mobile">新增行動裝置</string>
+    <string name="brave_sync_btn_laptop">新增電腦</string>
+    <string name="brave_sync_scan_sync_code">掃描此同步代碼</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">使用第二部手機或平板電腦，依序瀏覽至「Brave 設定 > 同步 > 掃描」。</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">使用第二部裝置擷取 QR 碼 (請見上方)；若裝置沒有相機功能，則可改為輸入代碼。</string>
+    <string name="brave_sync_btn_done">完成</string>
+    <string name="brave_sync_tabs_text">分頁</string>
+    <string name="brave_sync_history_text">記錄</string>
+    <string name="brave_sync_autofill_passwords_text">自動填入/密碼</string>
+    <string name="brave_sync_payment_settings_text">Brave 付款設定</string>
+    <string name="brave_sync_settings_title">在本裝置上同步</string>
+    <string name="brave_sync_settings_description">變更設定只會影響本裝置與其他裝置共用的資料。</string>
+    <string name="brave_sync_devices_title">同步鏈中的其他裝置</string>
+    <string name="brave_sync_loading_devices_title">正在載入裝置...</string>
+    <string name="brave_sync_add_device_text">新增其他裝置</string>
+    <string name="brave_sync_remove_device_text">移除本裝置</string>
+    <string name="brave_sync_code_words_title">配對</string>
+    <string name="brave_sync_add_laptop_text_title">輸入同步鏈代碼</string>
+    <string name="brave_sync_add_laptop_text_part_1">在電腦上依序瀏覽至「Brave 設定 > 同步」，接著選擇「輸入同步鏈代碼」。 </string>
+    <string name="brave_sync_add_laptop_text_part_2">輸入上方代碼，包括空格。</string>
+    <string name="brave_sync_delete_device">確定要刪除裝置「<ph name="DEVICE_NAME">%1$s</ph>」嗎？</string>
+    <string name="brave_sync_delete_sent">刪除要求已送出，系統很快就會移除裝置。</string>
+    <string name="brave_sync_loading_data_title">正在載入資料...</string>
+    <string name="brave_sync_time_out_message">發生錯誤，您的要求似乎已逾時。</string>
+    <string name="brave_sync_use_camera_text">我要使用我的相機...</string>
+    <string name="brave_sync_confirm_code_words_text">確認</string>
+    <string name="brave_sync_word_count_text">字數統計：<ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">字數不正確</string>
+    <string name="brave_sync_qr_code">QR 碼</string>
+    <string name="brave_sync_code_words">代碼</string>
+    <string name="brave_sync_copy_button_text">複製到剪貼簿</string>
+    <string name="brave_sync_copied_text">已複製到剪貼簿</string>
+    <string name="brave_sync_this_device_text">(本裝置)</string>
 
 </resources>

@@ -30,25 +30,13 @@
 
     <string name="menu_exit">ทางออก</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">ซิงค์ข้อมูลเบราเซอร์ระหว่างอุปกรณ์ของคุณอย่างปลอดภัยโดยใช้
-Brave Sync โดยไม่จำเป็นต้องสร้างบัญชี
-แตะที่ด้านล่างเพื่อเริ่มต้น</string>
-    <string name="brave_sync_have_existing_code">ฉันมีรหัสการซิงค์แล้ว</string>
+    <string name="brave_sync">Brave (เบต้า) Sync</string>
     <string name="sync_settings_add_device_name_title">เพิ่มชื่ออุปกรณ์</string>
     <string name="sync_settings_add_device_name_label">ป้อนชื่อเพิ่มเติมสำหรับอุปกรณ์นี้</string>
     <string name="sync_example_device_name">อุปกรณ์ Android</string>
-    <string name="brave_sync_qrcode">ซิงค์ไปยังอุปกรณ์</string>
-    <string name="brave_sync_qrcode_message">การใช้อุปกรณ์ที่มีการซิงค์อยู่แล้วจะเปิดการตั้งค่า Brave และนำทางไปยัง
-"การตั้งค่า &amp;อุปกรณ์" แตะ `+`
-เพื่อเพิ่มอุปกรณ์ใหม่และแสดงรหัสการซิงค์</string>
     <string name="enter_code_words_sync">ป้อนคำรหัส</string>
-    <string name="enter_code_words_below_sync">ป้อนคำรหัสด้านล่าง</string>
     <string name="sync_device">ซิงค์อุปกรณ์</string>
     <string name="sync_device_failure">ไม่สามารถตั้งค่าการซิงค์ได้</string>
-    <string name="sync_device_success">การตั้งค่าการซิงค์เสร็จสมบูรณ์แล้ว</string>
-    <string name="reset_sync">รีเซ็ตซิงค์...</string>
-    <string name="resetting_sync">คุณแน่ใจหรือว่าต้องการรีเซ็ตการตั้งค่าการซิงค์ อุปกรณ์นี้?</string>
 
     <string name="brave_stats_text_trackers">บล็อก
 ตัวติดตามแล้ว</string>
@@ -109,5 +97,46 @@ EST แล้ว</string>
 
     <string name="update_notification_title">อัปเดตของ Brave</string>
     <string name="update_notification_text">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</string>
+
+    <string name="prefs_sync">Sync (เบต้า)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync ให้คุณซิงค์ข้อมูลบุ๊กมาร์กระหว่าง Brave Browser บนอุปกรณ์ต่างๆ ของคุณได้อย่างเป็นส่วนตัว</string>
+    <string name="brave_sync_description_page_1_part_2">เพียงสแกนรหัสจากกลุ่มการซิงค์ที่คุณสร้างไว้บนอีกอุปกรณ์หนึ่ง หรือเริ่มกลุ่มการซิงค์ใหม่</string>
+    <string name="brave_sync_scan_chain_code">สแกนหรือป้อนรหัสการซิงค์</string>
+    <string name="brave_sync_start_new_chain">เริ่มกลุ่มการซิงค์ใหม่</string>
+    <string name="brave_sync_qrcode_message_v2">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า > ซิงค์ เลือก \"เพิ่มอุปกรณ์\" แล้วสแกนรหัส QR ที่แสดงอยู่บนหน้าจอ</string>
+    <string name="brave_sync_codewords_message">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า > ซิงค์ เลือก \"เพิ่มอุปกรณ์\" จากนั้นเลือก \"แสดงข้อความรหัสแทน\"</string>
+    <string name="brave_sync_btn_mobile">เพิ่มอุปกรณ์เคลื่อนที่</string>
+    <string name="brave_sync_btn_laptop">เพิ่มคอมพิวเตอร์</string>
+    <string name="brave_sync_scan_sync_code">สแกนรหัสการซิงค์นี้</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">หากต้องการใช้โทรศัพท์หรือแท็บเล็ตเครื่องที่สอง ให้นำทางไปยัง การตั้งค่า Brave > ซิงค์ > สแกน</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">จับภาพรหัส QR (ที่กล่าวถึงข้างต้น) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</string>
+    <string name="brave_sync_btn_done">เสร็จสิ้น</string>
+    <string name="brave_sync_tabs_text">แท็บ</string>
+    <string name="brave_sync_history_text">ประวัติ</string>
+    <string name="brave_sync_autofill_passwords_text">ป้อนอัตโนมัติ/รหัสผ่าน</string>
+    <string name="brave_sync_payment_settings_text">การตั้งค่า Brave Payment</string>
+    <string name="brave_sync_settings_title">ซิงค์บนอุปกรณ์นี้</string>
+    <string name="brave_sync_settings_description">การเปลี่ยนแปลงการตั้งค่าจะมีผลเฉพาะกับข้อมูลที่อุปกรณ์นี้แชร์กับอุปกรณ์อื่นๆ</string>
+    <string name="brave_sync_devices_title">อุปกรณ์อื่นๆ ในกลุ่ม</string>
+    <string name="brave_sync_loading_devices_title">กำลังโหลดอุปกรณ์...</string>
+    <string name="brave_sync_add_device_text">เพิ่มอีกอุปกรณ์</string>
+    <string name="brave_sync_remove_device_text">ลบอุปกรณ์นี้</string>
+    <string name="brave_sync_code_words_title">จับคู่</string>
+    <string name="brave_sync_add_laptop_text_title">ป้อนรหัสกลุ่มการซิงค์</string>
+    <string name="brave_sync_add_laptop_text_part_1">บนคอมพิวเตอร์ของคุณ ให้นำทางไปยัง การตั้งค่า Brave > ซิงค์ เลือก \"ป้อนรหัสกลุ่มการซิงค์\"</string>
+    <string name="brave_sync_add_laptop_text_part_2">ป้อนข้อความรหัสที่กล่าวถึงข้างต้น รวมช่องว่าง</string>
+    <string name="brave_sync_delete_device">คุณแน่ใจหรือไม่ว่าต้องการลบอุปกรณ์ \'<ph name="DEVICE_NAME">%1$s</ph>\'</string>
+    <string name="brave_sync_delete_sent">ส่งคำขอลบแล้ว อุปกรณ์จะถูกลบในไม่ช้า</string>
+    <string name="brave_sync_loading_data_title">กำลังโหลดข้อมูล...</string>
+    <string name="brave_sync_time_out_message">มีบางอย่างผิดปกติ ดูเหมือนคำขอของคุณจะหมดเวลา</string>
+    <string name="brave_sync_use_camera_text">ฉันจะใช้กล้องของฉัน...</string>
+    <string name="brave_sync_confirm_code_words_text">ยืนยัน</string>
+    <string name="brave_sync_word_count_text">จำนวนคำ: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">จำนวนคำไม่ถูกต้อง</string>
+    <string name="brave_sync_qr_code">รหัส QR</string>
+    <string name="brave_sync_code_words">ข้อความรหัส</string>
+    <string name="brave_sync_copy_button_text">คัดลอกไปยังคลิปบอร์ด</string>
+    <string name="brave_sync_copied_text">คัดลอกไปยังคลิปบอร์ดแล้ว</string>
+    <string name="brave_sync_this_device_text">(อุปกรณ์นี้)</string>
 
 </resources>

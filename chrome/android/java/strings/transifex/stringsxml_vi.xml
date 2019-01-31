@@ -30,27 +30,12 @@
 
     <string name="menu_exit">Lối thoát</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Đồng bộ dữ liệu trình duyệt giữa các thiết bị của bạn
-một cách an toàn bằng cách sử dụng Brave Sync,
-không cần tạo tài khoản.
-Nhấn vào dưới đây để bắt đầu.</string>
-    <string name="brave_sync_have_existing_code">Tôi có mã đồng bộ hiện tại</string>
     <string name="sync_settings_add_device_name_title">Thêm tên thiết bị</string>
     <string name="sync_settings_add_device_name_label">Nhập tên tùy chọn cho thiết bị này</string>
     <string name="sync_example_device_name">Thiết bị Android</string>
-    <string name="brave_sync_qrcode">Đồng bộ với thiết bị</string>
-    <string name="brave_sync_qrcode_message">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave
-và điều hướng tới "Thiết bị &amp; Cài đặt",
-nhấn `+` để thêm thiết bị mới
-và tiết lộ mã đồng bộ.</string>
     <string name="enter_code_words_sync">Nhập các từ mã</string>
-    <string name="enter_code_words_below_sync">Nhập các từ mã dưới đây.</string>
     <string name="sync_device">Thiết bị đồng bộ</string>
     <string name="sync_device_failure">Không thể thiết lập đồng bộ</string>
-    <string name="sync_device_success">Cài đặt đồng bộ đã hoàn tất thành công</string>
-    <string name="reset_sync">Đặt lại Đồng bộ...</string>
-    <string name="resetting_sync">Bạn có chắc muốn đặt lại cài đặt Đồng bộ của thiết bị này không?</string>
 
     <string name="brave_stats_text_trackers">Trình theo dõi
 Đã chặn</string>
@@ -112,4 +97,4 @@ HTTPS</string>
     <string name="update_notification_title">Cập nhật Brave</string>
     <string name="update_notification_text">Trình duyệt Brave mới nhanh hơn 22%</string>
 
-</resources>
+    </resources>
