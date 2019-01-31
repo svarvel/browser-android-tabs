@@ -30,27 +30,12 @@
 
     <string name="menu_exit">Afsluiten</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synchroniseer browserdata tussen jouw apparaat op een
-veilige manier met Brave Sync,
-je hoeft geen account aan te maken.
-Klik hieronder om te beginnen.</string>
-    <string name="brave_sync_have_existing_code">Ik heb een bestaande synchronisatiecode</string>
     <string name="sync_settings_add_device_name_title">Voeg naam apparaat toe</string>
     <string name="sync_settings_add_device_name_label">Voor een optionele naam voor dit apparaat in</string>
     <string name="sync_example_device_name">Android-apparaat</string>
-    <string name="brave_sync_qrcode">Synchroniseer met apparaat</string>
-    <string name="brave_sync_qrcode_message">Gebruikt geopende Brave Instellingen van bestaand
-gesynchroniseerd apparaat. Ga naar "Device &amp;Settings",
-tap `+` om een nieuw apparaat toe te
-voegen en de synchronisatiecode te tonen.</string>
     <string name="enter_code_words_sync">Voer codewoorden in</string>
-    <string name="enter_code_words_below_sync">Voer codewoorden hieronder in.</string>
     <string name="sync_device">Synchroniseer apparaat</string>
     <string name="sync_device_failure">Synchronisatie kon niet worden gestart</string>
-    <string name="sync_device_success">De synchronisatie is succesvol afgerond</string>
-    <string name="reset_sync">Reset Synchronisatie...</string>
-    <string name="resetting_sync">Weet je zeker dat je deze apparaat Synchronisatie Instellingen wilt resetten?</string>
 
     <string name="brave_stats_text_trackers">Trackers
 geblokkeerd</string>
@@ -112,4 +97,4 @@ Bespaard</string>
     <string name="update_notification_title">Brave-update</string>
     <string name="update_notification_text">De nieuwe Brave-browser is 22% sneller</string>
 
-</resources>
+    </resources>

@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Sortida</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sincronitzeu les dades dels navegadors dels vostres dispositius
-de forma segura amb Brave Sync; podeu fer-ho
-sense crear-vos un compte.
-Feu clic a sota per començar.</string>
-    <string name="brave_sync_have_existing_code">Tinc un codi de sincronització existent</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Afegiu el nom del dispositiu</string>
     <string name="sync_settings_add_device_name_label">Introduïu un nom opcional per a aquest dispositiu</string>
     <string name="sync_example_device_name">Dispositiu Android</string>
-    <string name="brave_sync_qrcode">Sincronitza al dispositiu</string>
-    <string name="brave_sync_qrcode_message">Des d'un dispositiu sincronitzat existent, obriu l'opció de
-configuració de Brave, aneu a «Dispositiu &amp;Configuració»
-i feu clic al símbol + per afegir un dispositiu
-nou i revelar el codi de sincronització.</string>
     <string name="enter_code_words_sync">Introduïu les paraules del codi</string>
-    <string name="enter_code_words_below_sync">Introduïu les paraules del codi a sota.</string>
     <string name="sync_device">Sincronitza el dispositiu</string>
     <string name="sync_device_failure">No s'ha pogut configurar la sincronització</string>
-    <string name="sync_device_success">S'ha completat correctament la configuració</string>
-    <string name="reset_sync">Reinicialitza la sincronització...</string>
-    <string name="resetting_sync">Esteu segur/a que voleu restablir la configuració de sincronització d'aquest dispositiu?</string>
 
     <string name="brave_stats_text_trackers">Seguiments
 blocats</string>
@@ -69,16 +55,88 @@ Desat</string>
     <string name="website_settings_category_desktop_view_enabled">Habilita la vista d\'escriptori a les noves pestanyes</string>
     <string name="website_settings_category_desktop_view_disabled">Fes servir la versió mòbil a les noves pestanyes (recomanat)</string>
 
+    <string name="brave_shields_first_group_title">Monitor de bloqueig</string>
+    <string name="brave_shields_second_group_title">Controls individuals</string>
     <string name="brave_shields">Escuts</string>
     <string name="brave_shields_ads_and_trackers">Anuncis i seguiment</string>
     <string name="brave_shields_fingerprint_methods">Mètodes d\'empremta digital</string>
     <string name="brave_shields_block_phishing_switch">Bloca el phishing</string>
 
+    <string name="play_video_in_background_title">Reproducció de vídeo de fons</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Activat</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Desactivat</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Activa la reproducció d\'àudio d\'un vídeo de fons quan la pestanya no està activa o la pantalla del dispositiu està apagada. Si aquesta característica no funciona, prova de canviar al mode d\'escriptori.</string>
+    <string name="settings_require_relaunch_notice">Els teus canvis tindran efecte la pròxima vegada que tornis a executar Brave</string>
     <string name="settings_require_relaunch_now">REEMPRÈN ARA</string>
     <string name="settings_require_relaunch_later">DESPRÉS</string>
 
+    <string name="play_yt_video_in_browser_title">Reproducció de vídeo a Brave</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Activat</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desactivat</string>
-    </resources>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Si s\'activa aquesta opció, els vídeos es reproduiran a Brave en comptes de l\'aplicació corresponent</string>
+
+    <string name="close_tabs_on_exit_title">Tanca les pestanyes en sortir</string>
+    <string name="close_tabs_on_exit_summary">No conservis les pestanyes en canviar de sessió de navegador</string>
+
+    <string name="open_pages_in_custom_tabs_title">Obre les pestanyes de Pestanyes personalitzades</string>
+    <string name="open_pages_in_custom_tabs_summary">Ofereix obrir les pestanyes de Pestanyes personalitzades</string>
+
+    <string name="ddg_offer_title">Cerca privada amb DuckDuckGo?</string>
+    <string name="ddg_offer_text">Amb la cerca privada, Brave farà les teves cerques amb DuckDuckGo quan estiguis en aquesta pestanya privada. DuckDuckGo és un motor de cerca que no rastreja el teu historial de cerca, per la qual cosa pots fer cerques privades.</string>
+    <string name="ddg_offer_positive">Sí</string>
+    <string name="ddg_offer_negative">No</string>
+    <string name="ddg_offer_link">Més informació sobre la cerca privada amb DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Pestanya estàndard</string>
+    <string name="prefs_private_search_engine">Pestanya privada</string>
+
+    <string name="brave_open_in_private_tab">Obre en una pestanya privada</string>
+    <string name="brave_close_all_private_tabs">Tanca les pestanyes privades</string>
+    <string name="brave_new_private_tab">Pestanya privada nova</string>
+    <string name="brave_new_tab_private_header">Aquesta és una pestanya privada</string>
+    <string name="brave_new_tab_private_message">Tot i que els llocs que visites a les pestanyes privades no es desen localment, no et fan anònim ni invisible de cara al teu proveïdor de serveis d\'Internet, el teu ocupador o els llocs que visites.</string>
+
+    <string name="update_notification_title">Actualització de Brave</string>
+    <string name="update_notification_text">El navegador nou de Brave és un 22% més ràpid</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync et permet sincronitzar dades de marcadors de manera privada entre els teus navegadors de Brave en diversos dispositius.</string>
+    <string name="brave_sync_description_page_1_part_2">Simplement escaneja el codi de la cadena de sincronització  que vas crear en un altre dispositiu o comença una altra cadena de sincronització.</string>
+    <string name="brave_sync_scan_chain_code">Escaneja o introdueix un codi de sincronització</string>
+    <string name="brave_sync_start_new_chain">Comença una cadena de sincronització nova</string>
+    <string name="brave_sync_qrcode_message_v2">Des d\'un dispositiu de sincronització existent, obre l\'opció de configuració de Brave i ves a Configuració > Sync. Tria \"Afegeix dispositiu\" i escaneja el codi QR que es mostra a la pantalla.</string>
+    <string name="brave_sync_codewords_message">Des d\'un dispositiu de sincronització existent, obre l\'opció de configuració de Brave i ves a Configuració > Sync. Tria \"Afegeix dispositiu\" i, a continuació, \"Mostra les paraules del codi\".</string>
+    <string name="brave_sync_btn_mobile">Afegeix un dispositiu mòbil</string>
+    <string name="brave_sync_btn_laptop">Afegeix un ordinador</string>
+    <string name="brave_sync_scan_sync_code">Escaneja aquest codi de sincronització</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Des d\'un altre telèfon mòbil o una tauleta, ves a l\'opció de Configuració de Brave > Sync > Escaneja.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Captura el codi QR (a dalt) amb l\'altre dispositiu o introdueix les paraules del codi si no tens cap càmera disponible.</string>
+    <string name="brave_sync_btn_done">Fet</string>
+    <string name="brave_sync_tabs_text">Pestanyes</string>
+    <string name="brave_sync_history_text">Historial</string>
+    <string name="brave_sync_autofill_passwords_text">Emplenament automàtic/Contrasenyes</string>
+    <string name="brave_sync_payment_settings_text">Configuració del pagament de Brave</string>
+    <string name="brave_sync_settings_title">SINCRONITZA EN AQUEST DISPOSITIU</string>
+    <string name="brave_sync_settings_description">Si canvies la configuració, només es veuran afectades les dades que aquest dispositiu comparteix amb altres.</string>
+    <string name="brave_sync_devices_title">ALTRES DISPOSITIUS DE LA CADENA</string>
+    <string name="brave_sync_loading_devices_title">S\'ESTAN CARREGANT ELS DISPOSITIUS...</string>
+    <string name="brave_sync_add_device_text">Afegeix un altre dispositiu</string>
+    <string name="brave_sync_remove_device_text">Suprimeix aquest dispositiu</string>
+    <string name="brave_sync_code_words_title">Aparella</string>
+    <string name="brave_sync_add_laptop_text_title">Introdueix el codi de la cadena de sincronització</string>
+    <string name="brave_sync_add_laptop_text_part_1">Des del teu ordinador, ves a l\'opció de configuració de Brave > Sync. Tria \"Introdueix un codi de cadena de sincronització\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Introdueix les paraules del codi a dalt, amb espais.</string>
+    <string name="brave_sync_delete_device">Estàs segur que vols suprimir el dispositiu \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">S\'ha enviat la petició de supressió. El dispositiu se suprimirà de seguida.</string>
+    <string name="brave_sync_loading_data_title">S\'estan carregant les dades...</string>
+    <string name="brave_sync_time_out_message">S\'ha produït un error; sembla que la teva sol·licitud ha expirat.</string>
+    <string name="brave_sync_use_camera_text">Faré servir la càmera...</string>
+    <string name="brave_sync_confirm_code_words_text">Confirma</string>
+    <string name="brave_sync_word_count_text">Recompte de paraules: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Nombre de paraules incorrecte</string>
+    <string name="brave_sync_qr_code">Codi QR</string>
+    <string name="brave_sync_code_words">Paraules del codi</string>
+    <string name="brave_sync_copy_button_text">Copia al porta-retalls</string>
+    <string name="brave_sync_copied_text">S\'ha copiat al porta-retalls</string>
+    <string name="brave_sync_this_device_text">(aquest dispositiu)</string>
+
+</resources>

@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Izeja</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Sinhronizējiet pārlūka datus savu ierīču starpā,
-droši izmantojot Brave Sync, bez nepieciešamības
-izveidot kontu.
-Pieskarieties zemāk, lai sāktu.</string>
-    <string name="brave_sync_have_existing_code">Man ir spēkā esošs sinhronizācijas kods</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Pievienojiet ierīces nosaukumu</string>
     <string name="sync_settings_add_device_name_label">Ievadiet izvēles nosaukumu šai ierīcei</string>
     <string name="sync_example_device_name">Android ierīce</string>
-    <string name="brave_sync_qrcode">Sinhronizācija ar ierīci</string>
-    <string name="brave_sync_qrcode_message">Izmantojot esošo sinhronizēto ierīci, atveriet Brave
-iestatījumus un dodieties uz „Ierīce Iestatījumi”,
-pieskarieties `+`, lai pievienotu jaunu ierīci
-un atklātu sinhronizācijas kodu.</string>
     <string name="enter_code_words_sync">Ievadiet koda vārdus</string>
-    <string name="enter_code_words_below_sync">Ievadiet koda vārdus zemāk</string>
     <string name="sync_device">Sinhronizācijas ierīce</string>
     <string name="sync_device_failure">Sinhronizāciju nevarēja iestatīt</string>
-    <string name="sync_device_success">Sinhronizācijas iestatīšana veiksmīgi pabeigta</string>
-    <string name="reset_sync">Sinhronizācijas atiestate...</string>
-    <string name="resetting_sync">Vai tiešām vēlaties atiestatīt šīs ierīces sinhronizācijas iestatījumus?</string>
 
     <string name="brave_stats_text_trackers">Izsekotāji
 ir bloķēti</string>
@@ -69,4 +55,88 @@ Saglabāts</string>
     <string name="website_settings_category_desktop_view_enabled">Iespējot Darbvirsmas skatu jaunām cilnēm</string>
     <string name="website_settings_category_desktop_view_disabled">Jaunām cilnēm izmantot vietņu mobilās versijas (ieteicams)</string>
 
-    </resources>
+    <string name="brave_shields_first_group_title">Bloķēšanas pārraudzītājs</string>
+    <string name="brave_shields_second_group_title">Individuāla vadība</string>
+    <string name="brave_shields">Vairogi</string>
+    <string name="brave_shields_ads_and_trackers">Reklāmas un izsekotāji</string>
+    <string name="brave_shields_fingerprint_methods">Identificējošās ciparvirknes veidošanas metodes</string>
+    <string name="brave_shields_block_phishing_switch">Bloķēt pikšķerēšanu</string>
+
+    <string name="play_video_in_background_title">Video atskaņošana fonā</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Iespējota</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Atspējota</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentāla funkcija. Iespējo skaņas atskaņošanu no video fonā, kamēr cilne nav aktīva vai ierīces ekrāns ir izslēgts. Mēģiniet pārslēgties darbvirsmas režīmā, ja šī funkcija nedarbojas.</string>
+    <string name="settings_require_relaunch_notice">Veiktās izmaiņas stāsies spēkā, kad nākamreiz palaidīsiet Brave</string>
+    <string name="settings_require_relaunch_now">PALAIST ATKĀRTOTI TAGAD</string>
+    <string name="settings_require_relaunch_later">VĒLĀK</string>
+
+    <string name="play_yt_video_in_browser_title">Video atskaņošana Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Iespējota</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Atspējota</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Ja šī funkcija ir iespējota, video tiks atskaņoti Brave nevis attiecīgajā lietotnē</string>
+
+    <string name="close_tabs_on_exit_title">Aizvērt cilnes izejot</string>
+    <string name="close_tabs_on_exit_summary">Nesaglabāt cilnes starp pārlūkošanas sesijām</string>
+
+    <string name="open_pages_in_custom_tabs_title">Atvērt cilnes pielāgotajās cilnēs</string>
+    <string name="open_pages_in_custom_tabs_summary">Piedāvāt atvērt cilnes pielāgotajās cilnēs</string>
+
+    <string name="ddg_offer_title">Vai veikt privātu meklēšanu ar DuckDuckGo?</string>
+    <string name="ddg_offer_text">Veicot privātu meklēšanu, Brave meklēšanai izmantos DuckDuckGo, kamēr esat šajā privātajā cilnē. DuckDuckGo ir meklētājprogramma, kas neizseko jūsu meklēšanas vēsturi, ļaujot meklēt privāti.</string>
+    <string name="ddg_offer_positive">Jā</string>
+    <string name="ddg_offer_negative">Nē</string>
+    <string name="ddg_offer_link">Uzzināt vairāk par privāto meklēšanu ar DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Standarta cilne</string>
+    <string name="prefs_private_search_engine">Privāta cilne</string>
+
+    <string name="brave_open_in_private_tab">Atvērt privātā cilnē</string>
+    <string name="brave_close_all_private_tabs">Aizvērt privātās cilnes</string>
+    <string name="brave_new_private_tab">Jauna privātā cilne</string>
+    <string name="brave_new_tab_private_header">Šī ir privāta cilne</string>
+    <string name="brave_new_tab_private_message">Kaut arī privātajās cilnēs apmeklētās vietnes netiek saglabātas lokāli, tās jūs nepadara anonīmus vai neredzamus jūsu interneta pakalpojumu sniedzējam, darba devējam vai apmeklētajām vietnēm.</string>
+
+    <string name="update_notification_title">Brave atjauninājums</string>
+    <string name="update_notification_text">Jaunais Brave pārlūks ir par 22 % ātrāks</string>
+
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync ļauj privāti sinhronizēt grāmatzīmju datus jūsu Brave pārlūkos dažādās ierīcēs.</string>
+    <string name="brave_sync_description_page_1_part_2">Vienkārši skenējiet kodu jūsu sinhronizācijas ķēdē, ko izveidojāt citā ierīcē. Vai sāciet jaunu sinhronizācijas ķēdi.</string>
+    <string name="brave_sync_scan_chain_code">Skenēt vai ievadīt sinhronizācijas kodu</string>
+    <string name="brave_sync_start_new_chain">Sākt jaunu sinhronizācijas ķēdi</string>
+    <string name="brave_sync_qrcode_message_v2">Lietojot jau sinhronizētu ierīci, atveriet Brave iestatījumus un dodieties uz „Iestatījumi” > „Sync”. Atlasiet „Pievienot ierīci” un skenējiet QR kodu, kas redzams ekrānā.</string>
+    <string name="brave_sync_codewords_message">Lietojot jau sinhronizētu ierīci, atveriet Brave iestatījumus un dodieties uz „Iestatījumi” > „Sync”. Atlasiet „Pievienot ierīci” un pēc tam „Parādīt koda vārdus”.</string>
+    <string name="brave_sync_btn_mobile">Pievienot mobilo ierīci</string>
+    <string name="brave_sync_btn_laptop">Pievienot datoru</string>
+    <string name="brave_sync_scan_sync_code">Skenējiet šo sinhronizācijas kodu</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Lietojot otru tālruni vai planšetdatoru, dodieties uz „Brave iestatījumi” > „Sync” > „Skenēt”.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Lietojot otru ierīci, skenējiet QR kodu (augstāk) vai, ja kamera nav pieejama, ievadiet koda vārdus.</string>
+    <string name="brave_sync_btn_done">Gatavs</string>
+    <string name="brave_sync_tabs_text">Cilnes</string>
+    <string name="brave_sync_history_text">Vēsture</string>
+    <string name="brave_sync_autofill_passwords_text">Automātiska ievade/paroles</string>
+    <string name="brave_sync_payment_settings_text">Brave maksājumu iestatījumi</string>
+    <string name="brave_sync_settings_title">SINHRONIZĒT ŠAJĀ IERĪCĒ</string>
+    <string name="brave_sync_settings_description">Iestatījumu maiņa ietekmēs tikai datus, kurus šī ierīce koplieto ar citām ierīcēm.</string>
+    <string name="brave_sync_devices_title">CITA IERĪCES ĶĒDĒ</string>
+    <string name="brave_sync_loading_devices_title">NOTIEK IERĪČU IELĀDE...</string>
+    <string name="brave_sync_add_device_text">Pievienot citu ierīci</string>
+    <string name="brave_sync_remove_device_text">Noņemt šo ierīci</string>
+    <string name="brave_sync_code_words_title">Savienot pārī</string>
+    <string name="brave_sync_add_laptop_text_title">Ievadiet sinhronizācijas ķēdes kodu</string>
+    <string name="brave_sync_add_laptop_text_part_1">Savā datorā dodieties uz „Brave iestatījumi” > „Sync”. Atlasiet „Ievadīt sinhronizācijas ķēdes kodu”.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Ievadiet augstāk redzamos koda vārdus, tajā skaitā atstarpes.</string>
+    <string name="brave_sync_delete_device">Vai tiešām vēlaties dzēst ierīci „<ph name="DEVICE_NAME">%1$s</ph>”?</string>
+    <string name="brave_sync_delete_sent">Dzēšanas pieprasījums ir nosūtīts. Ierīce tiks drīzumā noņemta.</string>
+    <string name="brave_sync_loading_data_title">Notiek datu ielāde...</string>
+    <string name="brave_sync_time_out_message">Radās kāda problēma, jūsu pieprasījumam iestājās taimauts.</string>
+    <string name="brave_sync_use_camera_text">Lietošu kameru...</string>
+    <string name="brave_sync_confirm_code_words_text">Apstiprināt</string>
+    <string name="brave_sync_word_count_text">Vārdu skaits: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Nepareizs vārdu skaits</string>
+    <string name="brave_sync_qr_code">QR kods</string>
+    <string name="brave_sync_code_words">Koda vārdi</string>
+    <string name="brave_sync_copy_button_text">Kopēt starpliktuvē</string>
+    <string name="brave_sync_copied_text">Kopēts starpliktuvē</string>
+    <string name="brave_sync_this_device_text">(šī ierīce)</string>
+
+</resources>

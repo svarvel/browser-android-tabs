@@ -30,21 +30,12 @@
 
     <string name="menu_exit">出口</string>
 
-    <string name="brave_sync">Brave 同步</string>
-    <string name="brave_sync_description">使用 Brave 同步功能可在您的设备之间安全地同步浏览器数据，不需要创建账号。点击下方开始。</string>
-    <string name="brave_sync_have_existing_code">我有同步码</string>
     <string name="sync_settings_add_device_name_title">添加设备名称</string>
     <string name="sync_settings_add_device_name_label">为该设备输入一个可选名称</string>
     <string name="sync_example_device_name">Android 设备</string>
-    <string name="brave_sync_qrcode">同步到设备</string>
-    <string name="brave_sync_qrcode_message">使用现有的经过同步的设备打开 Brave 设置并前往“设备&amp;设置”，点击“+”添加新的设备并显示同步编码。</string>
     <string name="enter_code_words_sync">输入密语</string>
-    <string name="enter_code_words_below_sync">在下方输入密语。</string>
     <string name="sync_device">同步设备</string>
     <string name="sync_device_failure">无法设置 Sync</string>
-    <string name="sync_device_success">已成功完成同步设置</string>
-    <string name="reset_sync">重置同步……</string>
-    <string name="resetting_sync">您确定想要重置该设备的同步设置吗？</string>
 
     <string name="brave_stats_text_trackers">追踪程序
 已拦截</string>

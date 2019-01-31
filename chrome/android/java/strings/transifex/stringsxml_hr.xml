@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Izlaženje</string>
 
-    <string name="brave_sync">Sinkronizacija Brave</string>
-    <string name="brave_sync_description">Sigurno sinkronizirajte podatke u pregledniku između
-svojih uređaja pomoću sinkronizacije Brave,
-ne zahtijeva stvaranje računa.
-Dodirnite ispod da biste započeli.</string>
-    <string name="brave_sync_have_existing_code">Imam postojeći sinkronizacijski kod</string>
+    <string name="brave_sync">Sinkronizacija aplikacije Brave (inačica beta)</string>
     <string name="sync_settings_add_device_name_title">Dodaj naziv uređaja</string>
     <string name="sync_settings_add_device_name_label">Unesi neobavezni naziv za ovaj uređaj</string>
     <string name="sync_example_device_name">Uređaj Android</string>
-    <string name="brave_sync_qrcode">Sinkroniziraj s uređajem</string>
-    <string name="brave_sync_qrcode_message">Koristeći se sinkroniziranim uređajem otvorite
-postavke za Brave te idite na "Postavke &amp;uređaja",
-i dodirnite `+` da biste dodali novi uređaj
-i da se prikaže sinkronizacijski kod.</string>
     <string name="enter_code_words_sync">Unesi kodne riječi</string>
-    <string name="enter_code_words_below_sync">Unesi kodne riječi ispod.</string>
     <string name="sync_device">Sinkroniziraj uređaj</string>
     <string name="sync_device_failure">Postavljanje sinkronizacije nije uspjelo</string>
-    <string name="sync_device_success">Postavljanje sinkronizacije uspješno je dovršeno</string>
-    <string name="reset_sync">Ponovno postavi sinkronizaciju</string>
-    <string name="resetting_sync">Jeste li sigurni da želite ponovno postaviti sinkronizacijske postavke ovog uređaja?</string>
 
     <string name="brave_stats_text_trackers">Obilježivači
 blokirani</string>
@@ -69,4 +55,88 @@ Spaseno</string>
     <string name="website_settings_category_desktop_view_enabled">Omogućite pregled s desktopa za nove jezičke</string>
     <string name="website_settings_category_desktop_view_disabled">Rabite mobilne inačice stranica za nove jezičke (preporučeno)</string>
 
-    </resources>
+    <string name="brave_shields_first_group_title">Blokirajući zaslon</string>
+    <string name="brave_shields_second_group_title">Pojedinačni upravljački elementi</string>
+    <string name="brave_shields">Štitnici</string>
+    <string name="brave_shields_ads_and_trackers">Oglasi i obilježivači</string>
+    <string name="brave_shields_fingerprint_methods">Načini otiska prsta</string>
+    <string name="brave_shields_block_phishing_switch">Blokiraj pokušaj krađe identiteta</string>
+
+    <string name="play_video_in_background_title">Reproduciranje videozapisa u pozadini</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Omogućeno</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Onemogućeno</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentalno. Omogućava se reproduciranje zvuka videozapisa u pozadini kada kartica nije aktivna ili je zaslon uređaja isključen. Pokušajte se prebaciti na način radne površine ako ova značajka ne radi.</string>
+    <string name="settings_require_relaunch_notice">Vaše promjene primjenjuju se sljedeći puta kada pokrenete aplikaciju Brave.</string>
+    <string name="settings_require_relaunch_now">PONOVNO POKRENI SADA</string>
+    <string name="settings_require_relaunch_later">KASNIJE</string>
+
+    <string name="play_yt_video_in_browser_title">Reproduciranje videozapisa u aplikaciji Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Omogućeno</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Onemogućeno</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Ako se značajka omogući, videozapisi se reproduciraju unutar aplikacije Brave umjesto unutar pripadajuće aplikacije</string>
+
+    <string name="close_tabs_on_exit_title">Zatvori kartice prilikom izlaza</string>
+    <string name="close_tabs_on_exit_summary">Ne zadržavaj kartice između sesija pregledavanja</string>
+
+    <string name="open_pages_in_custom_tabs_title">Otvori u prilagođenim karticama</string>
+    <string name="open_pages_in_custom_tabs_summary">Ponudi otvaranje kartica u prilagođenim karticama</string>
+
+    <string name="ddg_offer_title">Privatno pretraživanje uporabom tražilice DuckDuckGo?</string>
+    <string name="ddg_offer_text">Uporabom privatnog pretraživanja aplikacija se Brave koristi tražilicom DuckDuckGo kako bi se pronašli odgovori na vaša pretraživanja dok ste u ovoj privatnoj kartici. DuckDuckGo je tražilica kojom se ne zapisuje vaša povijest pretraživanja što vam omogućava privatno pretraživanje.</string>
+    <string name="ddg_offer_positive">Da</string>
+    <string name="ddg_offer_negative">Ne</string>
+    <string name="ddg_offer_link">Saznajte više o privatnom pretraživanju tražilicom DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Uobičajena kartica</string>
+    <string name="prefs_private_search_engine">Privatna kartica</string>
+
+    <string name="brave_open_in_private_tab">Otvori u privatnoj kartici</string>
+    <string name="brave_close_all_private_tabs">Zatvori privatne kartice</string>
+    <string name="brave_new_private_tab">Nova privatna kartica</string>
+    <string name="brave_new_tab_private_header">Ovo je privatna kartica</string>
+    <string name="brave_new_tab_private_message">Iako se mrežna mjesta, koja posjećujete uporabom privatnih kartica, ne spremaju lokalno, uporabom privatnih kartica niste anonimni ili nevidljivi vašem pružatelju internetskih usluga, vašem poslodavcu ili mrežnim mjestima koje posjećujete.</string>
+
+    <string name="update_notification_title">Ažuriranje aplikacije Brave</string>
+    <string name="update_notification_text">Novi je preglednik Brave 22 % brži</string>
+
+    <string name="prefs_sync">Sinkroniziranje (inačica beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Značajkom Sinkroniziranje aplikacije Brave omogućava vam se privatno sinkroniziranje podataka knjižnih oznaka između preglednika Brave na različitim uređajima koje posjedujete.</string>
+    <string name="brave_sync_description_page_1_part_2">Jednostavno skenirajte kôd na nizu za sinkroniziranje koji ste stvorili drugim uređajem. Ili započnite novi niz za sinkroniziranje.</string>
+    <string name="brave_sync_scan_chain_code">Skeniraj ili upiši kôd za sinkroniziranje</string>
+    <string name="brave_sync_start_new_chain">Pokreni novi lanac za sinkroniziranje</string>
+    <string name="brave_sync_qrcode_message_v2">Uporabom postojećeg sinkroniziranog uređaja otvorite postavke aplikacije Brave i idite u stavku Postavke > Sinkroniziranje. Odaberite „Dodaj uređaj” i skenirajte kôd QR koji se prikazuje na zaslonu.</string>
+    <string name="brave_sync_codewords_message">Uporabom postojećeg sinkroniziranog uređaja otvorite postavke aplikacije Brave i idite u stavku Postavke > Sinkroniziranje. Odaberite „Dodaj uređaj”, a zatim „Umjesto toga prikaži riječi kôda”.</string>
+    <string name="brave_sync_btn_mobile">Dodaj mobilni uređaj</string>
+    <string name="brave_sync_btn_laptop">Dodaj računalo</string>
+    <string name="brave_sync_scan_sync_code">Skeniraj ovaj kôd za sinkroniziranje</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Uporabom drugog telefona ili tableta idite u postavke aplikacije Brave > Sinkroniziranje > Skeniraj.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Snimite kôd QR (iznad) svojim drugim uređajem ili upišite riječi kôda ako kamera nije dostupna.</string>
+    <string name="brave_sync_btn_done">Završeno</string>
+    <string name="brave_sync_tabs_text">Kartice</string>
+    <string name="brave_sync_history_text">Povijest</string>
+    <string name="brave_sync_autofill_passwords_text">Automatski ispuni/Lozinke</string>
+    <string name="brave_sync_payment_settings_text">Postavke plaćanja Brave</string>
+    <string name="brave_sync_settings_title">SINKRONIZIRAJ NA OVAJ UREĐAJ</string>
+    <string name="brave_sync_settings_description">Mijenjanjem se postavki obuhvaćaju samo podatci koji se ovim uređajem dijele s drugima.</string>
+    <string name="brave_sync_devices_title">DRUGI UREĐAJI U NIZU</string>
+    <string name="brave_sync_loading_devices_title">UČITAVANJE UREĐAJA...</string>
+    <string name="brave_sync_add_device_text">Dodaj drugi uređaj</string>
+    <string name="brave_sync_remove_device_text">Ukloni ovaj uređaj</string>
+    <string name="brave_sync_code_words_title">Upari</string>
+    <string name="brave_sync_add_laptop_text_title">Upiši kôd niza za sinkroniziranje</string>
+    <string name="brave_sync_add_laptop_text_part_1">Na računalu idite u stavku Postavke aplikacije Brave > Sinkroniziranje. Odaberite „Upiši kôd niza za sinkroniziranje”.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Upišite riječi kôda uključujući razmake.</string>
+    <string name="brave_sync_delete_device">Sigurno želite izbrisati uređaj „<ph name="DEVICE_NAME">%1$s</ph>”?</string>
+    <string name="brave_sync_delete_sent">Zahtjev za brisanjem poslan je. Uređaj se uskoro uklanja.</string>
+    <string name="brave_sync_loading_data_title">Učitavanje podataka...</string>
+    <string name="brave_sync_time_out_message">Nešto je pošlo po zlu. Čini se da je vaš zahtjev istekao.</string>
+    <string name="brave_sync_use_camera_text">Upotrijebit ću moju kameru...</string>
+    <string name="brave_sync_confirm_code_words_text">Potvrdi</string>
+    <string name="brave_sync_word_count_text">Broj riječi: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Netočan broj riječi</string>
+    <string name="brave_sync_qr_code">Kôd QR</string>
+    <string name="brave_sync_code_words">Riječi kôda</string>
+    <string name="brave_sync_copy_button_text">Kopiraj u međuspremnik</string>
+    <string name="brave_sync_copied_text">Kopirano u međuspremnik</string>
+    <string name="brave_sync_this_device_text">(ovaj uređaj)</string>
+
+</resources>

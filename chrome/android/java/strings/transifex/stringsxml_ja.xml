@@ -30,24 +30,13 @@
 
     <string name="menu_exit">出口</string>
 
-    <string name="brave_sync">Brace Sync</string>
-    <string name="brave_sync_description">Brave Sync なら、端末間で安全にブラウザーデータの同期ができます。
-アカウント作成は不要です。下をタップして開始してください。</string>
-    <string name="brave_sync_have_existing_code">すでに同期コードを持っています</string>
+    <string name="brave_sync">Brave (beta版) Sync</string>
     <string name="sync_settings_add_device_name_title">端末名を追加</string>
     <string name="sync_settings_add_device_name_label">この端末のオプション名を入力</string>
     <string name="sync_example_device_name">Android 端末</string>
-    <string name="brave_sync_qrcode">端末に同期</string>
-    <string name="brave_sync_qrcode_message">同期されている既存の端末で、Brave 設定を開き、
-「端末と設定」から、「+」マークをタップして、
-同期コードを表示してください。</string>
     <string name="enter_code_words_sync">コードの単語を入力</string>
-    <string name="enter_code_words_below_sync">下のコードの単語を入力してください</string>
     <string name="sync_device">Sync 端末</string>
     <string name="sync_device_failure">同期をセットアップできませでした</string>
-    <string name="sync_device_success">同期設定が完了しました</string>
-    <string name="reset_sync">同期のリセット中...</string>
-    <string name="resetting_sync">この端末の同期設定をリセットしてよろしいですか？</string>
 
     <string name="brave_stats_text_trackers">トラッカー
 ブロックされました</string>
@@ -108,5 +97,46 @@
 
     <string name="update_notification_title">Braveアプデート</string>
     <string name="update_notification_text">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</string>
+
+    <string name="prefs_sync">Sync (beta版)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync は、さまざまな端末上の Brave ブラウザ間でのブックマークデータの同期を可能にします。</string>
+    <string name="brave_sync_description_page_1_part_2">別の端末で作成した同期チェーンからコードをスキャンするだけ。または新しい同期チェーンを開始します。</string>
+    <string name="brave_sync_scan_chain_code">同期コードをスキャンまたは入力</string>
+    <string name="brave_sync_start_new_chain">新しい同期チェーンを開始</string>
+    <string name="brave_sync_qrcode_message_v2">同期された既存の端末を使って Brave 設定を開き、 [設定] > [同期] に移動します。[デバイスを追加] を選択し、画面に表示された QR コードをスキャンします。</string>
+    <string name="brave_sync_codewords_message">同期された既存の端末を使ってBrave 設定を開き、 [設定] > [同期] に移動します。[デバイスを追加] 、次に [代わりにコードの単語を表示] を選択します。</string>
+    <string name="brave_sync_btn_mobile">モバイル端末を追加</string>
+    <string name="brave_sync_btn_laptop">コンピュータを追加</string>
+    <string name="brave_sync_scan_sync_code">この同期コードをスキャン</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">2 つ目の電話またはタブレットを使用して、[Brave 設定] > [同期] > {スキャン} に移動します。</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">2 つ目のデバイスで QR コード (上記) を読み込むか、カメラが利用できない場合はコードの単語を入力します。</string>
+    <string name="brave_sync_btn_done">完了</string>
+    <string name="brave_sync_tabs_text">タブ</string>
+    <string name="brave_sync_history_text">履歴</string>
+    <string name="brave_sync_autofill_passwords_text">自動入力/パスワード</string>
+    <string name="brave_sync_payment_settings_text">Brave 支払い設定</string>
+    <string name="brave_sync_settings_title">この端末で同期</string>
+    <string name="brave_sync_settings_description">設定の変更はこの端末が他の端末と共有したデータにのみ影響します。</string>
+    <string name="brave_sync_devices_title">チェーン上のその他の端末</string>
+    <string name="brave_sync_loading_devices_title">端末を読み込み中...</string>
+    <string name="brave_sync_add_device_text">別の端末を追加する</string>
+    <string name="brave_sync_remove_device_text">この端末を削除</string>
+    <string name="brave_sync_code_words_title">ペア</string>
+    <string name="brave_sync_add_laptop_text_title">同期チェーンコードを入力</string>
+    <string name="brave_sync_add_laptop_text_part_1">お使いのコンピューターで、[Brave 設定] > {同期} に移動します。[同期チェーンコードを入力] を選択します。</string>
+    <string name="brave_sync_add_laptop_text_part_2">上記のコードの単語を、スペースも含めて入力します。</string>
+    <string name="brave_sync_delete_device">端末「<ph name="DEVICE_NAME">%1$s</ph>」を削除してよろしいですか？</string>
+    <string name="brave_sync_delete_sent">削除リクエストが送信されました。端末はまもなく削除されます。</string>
+    <string name="brave_sync_loading_data_title">データを読み込み中...</string>
+    <string name="brave_sync_time_out_message">問題が発生しました。リクエストが時間切れになったようです。</string>
+    <string name="brave_sync_use_camera_text">カメラを使用します...</string>
+    <string name="brave_sync_confirm_code_words_text">確認</string>
+    <string name="brave_sync_word_count_text">文字数: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">不正確な文字数</string>
+    <string name="brave_sync_qr_code">QR コード</string>
+    <string name="brave_sync_code_words">コードの単語</string>
+    <string name="brave_sync_copy_button_text">クリップボードにコピー</string>
+    <string name="brave_sync_copied_text">クリップボードにコピー済み</string>
+    <string name="brave_sync_this_device_text">(この端末)</string>
 
 </resources>

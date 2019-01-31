@@ -30,27 +30,13 @@
 
     <string name="menu_exit">Εξοδος</string>
 
-    <string name="brave_sync">Συγχρονισμός Brave</string>
-    <string name="brave_sync_description">Τα δεδομένα συγχρονισμού περιήγησης μεταξύ των συσκευών
-σας χρησιμοποιούν με ασφάλεια τον Συγχρονισμό Brave,
-δεν απαιτείται δημιουργία λογαριασμού.
-Πατήστε παρακάτω για να ξεκινήσετε.</string>
-    <string name="brave_sync_have_existing_code">Έχω ήδη έναν κωδικό συγχρονισμού</string>
+    <string name="brave_sync">Συγχρονισμός Brave (δοκιμαστική έκδοση)</string>
     <string name="sync_settings_add_device_name_title">Προσθήκη ονόματος συσκευής</string>
     <string name="sync_settings_add_device_name_label">Εισαγάγετε ένα προαιρετικό όνομα για αυτή τη συσκευή</string>
     <string name="sync_example_device_name">Συσκευή Android</string>
-    <string name="brave_sync_qrcode">Συγχρονισμός στη συσκευή</string>
-    <string name="brave_sync_qrcode_message">Χρησιμοποιήστε την τρέχουσα συσκευή συγχρονισμού ανοίξτε
-τις Ρυθμίσεις Βrave και κάντε περιήγηση στο "Συσκευή &amp;Ρυθμίσεις",
-πατήστε `+` για να προσθέσετε μια νέα συσκευή και
-να αποκαλύψετε τον κωδικό συγχρονισμού.</string>
     <string name="enter_code_words_sync">Εισαγωγή κωδικών λέξεων </string>
-    <string name="enter_code_words_below_sync">Εισαγάγετε λέξεις κωδικούς παρακάτω.</string>
     <string name="sync_device">Συσκευή συγχρονισμού</string>
     <string name="sync_device_failure">Δεν ήταν δυνατή η ρύθμιση του συγχρονισμού</string>
-    <string name="sync_device_success">Η εγκατάσταση του συγχρονισμού ολοκληρώθηκε με επιτυχία</string>
-    <string name="reset_sync">Επαναφορά συγχρονισμού...</string>
-    <string name="resetting_sync">Θέλετε σίγουρα να επαναφέρετε τις ρυθμίσεις συγχρονισμού αυτής της συσκευής;</string>
 
     <string name="brave_stats_text_trackers">Ιχνηλάτες που
 Αποκλείστηκαν</string>
@@ -111,5 +97,46 @@ HTTPS</string>
 
     <string name="update_notification_title">Ενημέρωση Brave</string>
     <string name="update_notification_text">Η νέα εφαρμογή περιήγησης Brave είναι 22% πιο γρήγορη</string>
+
+    <string name="prefs_sync">Συγχρονισμός (δοκιμαστική έκδοση)</string>
+    <string name="brave_sync_description_page_1_part_1">Ο συγχρονισμός Brave σας επιτρέπει να συγχρονίσετε τα δεδομένα σελιδοδεικτών ιδιωτικά μεταξύ των περιηγητών Brave σας στις διάφορες συσκευές σας.</string>
+    <string name="brave_sync_description_page_1_part_2">Σαρώστε τον κωδικό από την αλυσίδα συγχρονισμού που δημιουργήσατε σε άλλη συσκευή. Ή ξεκινήστε μία νέα αλυσίδα συγχρονισμού.</string>
+    <string name="brave_sync_scan_chain_code">Σάρωση ή εισαγωγή του κωδικού συγχρονισμού</string>
+    <string name="brave_sync_start_new_chain">Έναρξη νέας αλυσίδας συγχρονισμού</string>
+    <string name="brave_sync_qrcode_message_v2">Χρησιμοποιώντας την υπάρχουσα συγχρονισμένη συσκευή, ανοίξτε τις Ρυθμίσεις Brave και κάντε περιήγηση στις Ρυθμίσεις > Συγχρονισμός. Επιλέξτε \"Προσθήκη συσκευής\" και σαρώστε τον κωδικό QR που εμφανίζεται στην οθόνη.</string>
+    <string name="brave_sync_codewords_message">Χρησιμοποιώντας την υπάρχουσα συγχρονισμένη συσκευή, ανοίξτε τις Ρυθμίσεις Brave και κάντε περιήγηση στις Ρυθμίσεις > Συγχρονισμός. Επιλέξτε \"Προσθήκη συσκευής\" και στη συνέχεια \"Εμφάνιση λέξεων κωδικού\".</string>
+    <string name="brave_sync_btn_mobile">Προσθήκη κινητής συσκευής </string>
+    <string name="brave_sync_btn_laptop">Προσθήκη υπολογιστή</string>
+    <string name="brave_sync_scan_sync_code">Σαρώστε αυτόν τον κωδικό συγχρονισμού</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Χρησιμοποιώντας ένα δεύτερο τηλέφωνο ή tablet, περιηγηθείτε στις Ρυθμίσεις Brave > Συγχρονισμός > Σάρωση.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Τραβήξτε φωτογραφία τον κωδικό QR (από πάνω) με τη δεύτερη συσκευή σας ή εισαγάγετε τις λέξεις του κωδικού αν δεν είναι διαθέσιμη η φωτογραφική κάμερα.</string>
+    <string name="brave_sync_btn_done">Τέλος</string>
+    <string name="brave_sync_tabs_text">Καρτέλες</string>
+    <string name="brave_sync_history_text">Ιστορικό</string>
+    <string name="brave_sync_autofill_passwords_text">Αυτόματη συμπλήρωση/Κωδικοί πρόσβασης</string>
+    <string name="brave_sync_payment_settings_text">Ρυθμίσεις πληρωμών Brave</string>
+    <string name="brave_sync_settings_title">ΣΥΓΧΡΟΝΙΣΜΟΣ ΣΕ ΑΥΤΗ ΤΗ ΣΥΣΚΕΥΗ</string>
+    <string name="brave_sync_settings_description">Η αλλαγή των ρυθμίσεων θα επηρεάσει μόνο τα δεδομένα που αυτή η συσκευή μοιράζεται με άλλες συσκευές.</string>
+    <string name="brave_sync_devices_title">ΑΛΛΕΣ ΣΥΣΚΕΥΕΣ ΣΕ ΑΛΥΣΙΔΑ</string>
+    <string name="brave_sync_loading_devices_title">ΦΟΡΤΩΣΗ ΣΥΣΚΕΥΩΝ...</string>
+    <string name="brave_sync_add_device_text">Προσθέστε μια άλλη συσκευή</string>
+    <string name="brave_sync_remove_device_text">Αφαιρέστε αυτή τη συσκευή</string>
+    <string name="brave_sync_code_words_title">Ζεύξη</string>
+    <string name="brave_sync_add_laptop_text_title">Εισαγάγετε τον κωδικό αλυσίδας συγχρονισμού</string>
+    <string name="brave_sync_add_laptop_text_part_1">Στον υπολογιστή σας, περιηγηθείτε στις Ρυθμίσεις Brave > Συγχρονισμός. Επιλέξτε \"Εισαγάγετε ΄έναν κωδικό αλυσίδας συγχρονισμού\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Εισαγάγετε τις λέξεις του παραπάνω κωδικού, μαζί με τα κενά.</string>
+    <string name="brave_sync_delete_device">Είστε σίγουρος/η ότι θέλετε να διαγράψετε τη συσκευή \"<ph name="DEVICE_NAME">%1$s</ph>\";</string>
+    <string name="brave_sync_delete_sent">Το αίτημα διαγραφής έχει σταλεί. Η συσκευή θα αφαιρεθεί σύντομα.</string>
+    <string name="brave_sync_loading_data_title">Φόρτωση δεδομένων...</string>
+    <string name="brave_sync_time_out_message">Κάτι πήγε στραβά. Απ\' ότι φαίνεται, το αίτημά σας έληξε.</string>
+    <string name="brave_sync_use_camera_text">Θα χρησιμοποιήσω τη φωτογραφική κάμερα...</string>
+    <string name="brave_sync_confirm_code_words_text">Επιβεβαίωση</string>
+    <string name="brave_sync_word_count_text">Καταμέτρηση λέξεων: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Λανθασμένος αριθμός λέξεων</string>
+    <string name="brave_sync_qr_code">Κωδικός QR</string>
+    <string name="brave_sync_code_words">Λέξεις κωδικού</string>
+    <string name="brave_sync_copy_button_text">Αντιγραφή στο Πρόχειρο</string>
+    <string name="brave_sync_copied_text">Αντιγράφηκε στο Πρόχειρο</string>
+    <string name="brave_sync_this_device_text">(αυτή η συσκευή)</string>
 
 </resources>

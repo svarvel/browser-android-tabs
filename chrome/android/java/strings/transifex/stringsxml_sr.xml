@@ -30,28 +30,13 @@
 
     <string name="menu_exit">Izlaz</string>
 
-    <string name="brave_sync">Brave sinhronizacija</string>
-    <string name="brave_sync_description">Bezbedna sinhronizacija podataka pretraživača
-između uređaja uz pomoć Brave sinhronizacije,
-bez obaveze kreiranja naloga.
-Dodirnite dole da biste počeli.</string>
-    <string name="brave_sync_have_existing_code">Imam postojeći kod za sinhronizaciju</string>
+    <string name="brave_sync">Brave (beta) sinhronizacija</string>
     <string name="sync_settings_add_device_name_title">Dodajte naziv uređaja</string>
     <string name="sync_settings_add_device_name_label">Unesite opciono ime za ovaj uređaj</string>
     <string name="sync_example_device_name">Android uređaj</string>
-    <string name="brave_sync_qrcode">Sinhronizujte sa uređajem</string>
-    <string name="brave_sync_qrcode_message">Koristeći postojeći sinhronizovani uređaj,
-otvorite Brave podešavanja i idite do
-"Device &amp;Settings", odaberite `+`
-da biste dodali novi uređaj i dobili
-kod za sinhronizaciju.</string>
     <string name="enter_code_words_sync">Unesite reči koda</string>
-    <string name="enter_code_words_below_sync">Unesite reči koda dole.</string>
     <string name="sync_device">Sinhronizacija uređaja</string>
     <string name="sync_device_failure">Sinhronizacija se ne može instalirati</string>
-    <string name="sync_device_success">Instalacija sinhronizacije je uspešno obavljena</string>
-    <string name="reset_sync">Resetovanje sinhronizacije...</string>
-    <string name="resetting_sync">Da li ste sigurni da želite da resetujes ova uređaja podešavanja za sinhronizaciju?</string>
 
     <string name="brave_stats_text_trackers">Trekeri
 blokirani</string>
@@ -112,5 +97,46 @@ Sačuvano</string>
 
     <string name="update_notification_title">Brave ažuriranje</string>
     <string name="update_notification_text">Novi Brave pregledač je 22% brži</string>
+
+    <string name="prefs_sync">Sinhronizacija (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave sinhronizacija vam omogućava da diskretno sinhronizujete podatke o obeleživačima stranica između pregledača Brave i različitih uređaja koje koristite.</string>
+    <string name="brave_sync_description_page_1_part_2">Jednostavno skenirajte kod iz lanca sihnronizacije koji ste kreirali na drugom uređaju. Ili, započnite novi lanac sihronizacije.</string>
+    <string name="brave_sync_scan_chain_code">Skenirajte ili unesite kod sinhronizacije</string>
+    <string name="brave_sync_start_new_chain">Započnite novi lanac sinhronizacije</string>
+    <string name="brave_sync_qrcode_message_v2">Koristeći postojeći sinhronizovani uređaj, otvorite Brave podešavanja i idite na „Settings > Sync”. Odaberite „Add Device” da dodate uređaj i skenirajte QR kod prikazan na ekranu.</string>
+    <string name="brave_sync_codewords_message">Koristeći postojeći sinhronizovani uređaj, otvorite Brave podešavanja i idite na „Settings > Sync”. Odaberite „Add Device” da dodate uređaj a zatim „Display coder words instead” za prikaz kodnih reči.</string>
+    <string name="brave_sync_btn_mobile">Dodaj mobilni uređaj</string>
+    <string name="brave_sync_btn_laptop">Dodaj računar</string>
+    <string name="brave_sync_scan_sync_code">Skenirajte ovaj kod sinhronizacije</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Na drugom telefonu ili tabletu idite na Brave Settings > Sync > Scan.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Snimite QR kod (iznad) pomoću drugog uređaja ili unesite kodne reči ako nemate dostupnu kameru.</string>
+    <string name="brave_sync_btn_done">Gotovo</string>
+    <string name="brave_sync_tabs_text">Kartice</string>
+    <string name="brave_sync_history_text">Istorija</string>
+    <string name="brave_sync_autofill_passwords_text">Automatsko popunjavanje/Lozinke</string>
+    <string name="brave_sync_payment_settings_text">Brave postavke plaćanja</string>
+    <string name="brave_sync_settings_title">SINHRONIZACIJA NA OVOM UREĐAJU</string>
+    <string name="brave_sync_settings_description">Promena podešavanja uticaće samo na podatke koje ovaj uređaj deli sa drugim uređajima.</string>
+    <string name="brave_sync_devices_title">OSTALI UREĐAJI U LANCU</string>
+    <string name="brave_sync_loading_devices_title">UČITAVANJE UREĐAJA...</string>
+    <string name="brave_sync_add_device_text">Dodaj novi uređaj</string>
+    <string name="brave_sync_remove_device_text">Ukloni ovaj uređaj</string>
+    <string name="brave_sync_code_words_title">Par</string>
+    <string name="brave_sync_add_laptop_text_title">Unesite kod lanca sinhronizacije</string>
+    <string name="brave_sync_add_laptop_text_part_1">Na vašem računaru idite na Brave Settings > Sync. Odaberite „Enter a Sync Chain Code”.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Unesite kodne reči iznad, uključujući razmake.</string>
+    <string name="brave_sync_delete_device">Da li sigurno želite da obrišete uređaj \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Zahtev za brisanje je poslat. Uređaj će ubrzo biti uklonjen.</string>
+    <string name="brave_sync_loading_data_title">Učitavanje podataka...</string>
+    <string name="brave_sync_time_out_message">Nešto nije u redu, izgleda da je vaš zahtev istekao.</string>
+    <string name="brave_sync_use_camera_text">Upotrebiću kameru...</string>
+    <string name="brave_sync_confirm_code_words_text">Potvrda</string>
+    <string name="brave_sync_word_count_text">Broj reči: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Netačan broj reči</string>
+    <string name="brave_sync_qr_code">QR kod</string>
+    <string name="brave_sync_code_words">Kodne reči</string>
+    <string name="brave_sync_copy_button_text">Kopiraj</string>
+    <string name="brave_sync_copied_text">Kopirano</string>
+    <string name="brave_sync_this_device_text">(ovaj uređaj)</string>
 
 </resources>
