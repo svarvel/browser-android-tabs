@@ -96,6 +96,9 @@ public:
         const base::android::JavaParamRef<jobject>& obj,
         int position);
 
+    void GetPendingContributionsTotal(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+    void OnGetPendingContributionsTotal(double amount);
+
     void OnIsWalletCreated(bool created);
 
 

@@ -16,4 +16,5 @@ public interface BraveRewardsObserver {
             String[] args);
   public void OnNotificationDeleted(String id);
   public void OnIsWalletCreated(boolean created);
+  public void OnGetPendingContributionsTotal(double amount);
 }

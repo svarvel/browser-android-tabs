@@ -962,20 +962,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
             no_activity = false;
           }
         }
-        // TODO debug, get real value of BAT designated to non verified publishers
-        String non_verified_summary = 
-          String.format(root.getResources().getString(
-            R.string.brave_ui_not_verified_publisher_summary), "52") + 
-          " <font color=#73CBFF>" + root.getResources().getString(R.string.learn_more) + 
-          ".</font>";;
-        Context appContext = ContextUtils.getApplicationContext();
-        Spanned toInsert;
-        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            toInsert = Html.fromHtml(non_verified_summary, Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            toInsert = Html.fromHtml(non_verified_summary);
-        }
-        tvPublisherNotVerifiedSummary.setText(toInsert);
 
         if (showRewardsSummary) {
             showRewardsSummary = false;
@@ -991,6 +977,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 }
             }
         }
+
+        mBraveRewardsNativeWorker.GetPendingContributionsTotal();
     }
 
     @Override
@@ -1020,6 +1008,28 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         if (created) {
             walletInitialized = true;
             ShowWebSiteView();
+        }
+    }
+
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {
+        if (amount > 0.0) {
+            String non_verified_summary = 
+              String.format(root.getResources().getString(
+                R.string.brave_ui_not_verified_publisher_summary), String.format("%.2f", amount)) + 
+              " <font color=#73CBFF>" + root.getResources().getString(R.string.learn_more) + 
+              ".</font>";
+            Context appContext = ContextUtils.getApplicationContext();
+            Spanned toInsert;
+            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                toInsert = Html.fromHtml(non_verified_summary, Html.FROM_HTML_MODE_LEGACY);
+            } else {
+                toInsert = Html.fromHtml(non_verified_summary);
+            }
+            tvPublisherNotVerifiedSummary.setText(toInsert);
+            tvPublisherNotVerifiedSummary.setVisibility(View.VISIBLE);
+        } else {
+            tvPublisherNotVerifiedSummary.setVisibility(View.GONE);
         }
     }
 }
