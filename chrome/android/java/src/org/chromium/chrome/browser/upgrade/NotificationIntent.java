@@ -83,13 +83,14 @@ public class NotificationIntent {
     }
 
     public static boolean ShouldNotify(Context context) {
-        //String deviceLanguage = Locale.getDefault().getLanguage();
-        if (GetPreferences(context) != 0/*
-              || !mWhitelistedRegionalLocales.contains(new Locale(deviceLanguage).getLanguage())*/) {
-            return false;
-        }
+        // SergZ: we will uncomment it when we need the notification
+        // if (GetPreferences(context) != 0) {
+        //     return false;
+        // }
 
-        return true;
+        // return true;
+
+        return false;
     }
 
     public static long GetPreferences(Context context) {
