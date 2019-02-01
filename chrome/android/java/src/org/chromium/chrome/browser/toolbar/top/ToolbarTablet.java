@@ -472,6 +472,9 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnIsWalletCreated(boolean created) {}
 
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
     /**
      * Called when the currently visible New Tab Page changes.
      */
