@@ -496,7 +496,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockPreFileWork(
 }
 
 void ChromeNetworkDelegate::OnBeforeURLRequest_TpBlockFileWork() {
-  base::AssertBlockingAllowed();
+  base::internal::AssertBlockingAllowed();
   blockers_worker_->InitTP();
 }
 
@@ -572,7 +572,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
 }
 
 void ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shared_ptr<OnBeforeURLRequestContext> ctx) {
-  base::AssertBlockingAllowed();
+  base::internal::AssertBlockingAllowed();
   blockers_worker_->InitAdBlock();
 
   if (ctx->isAdBlockRegionalEnabled &&
@@ -655,7 +655,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_HttpsePreFileWork(
 
 void ChromeNetworkDelegate::OnBeforeURLRequest_HttpseFileWork(net::URLRequest* request, std::shared_ptr<OnBeforeURLRequestContext> ctx)
 {
-  base::AssertBlockingAllowed();
+  base::internal::AssertBlockingAllowed();
   DCHECK(ctx->request_identifier != 0);
   ctx->newURL = blockers_worker_->getHTTPSURL(&ctx->UrlCopy, ctx->request_identifier);
 }

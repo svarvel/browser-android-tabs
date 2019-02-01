@@ -71,11 +71,11 @@ public class ChromeApplication extends Application {
 
     private ShieldsConfig mShieldsConfig;
     // Sync worker
-    public BraveSyncWorker mBraveSyncWorker = null;
+    public BraveSyncWorker mBraveSyncWorker;
     // Stats updater
-    public StatsUpdaterWorker mStatsUpdaterWorker = null;
+    public StatsUpdaterWorker mStatsUpdaterWorker;
     // ADBlock updater
-    public ADBlockUpdaterWorker mADBlockUpdaterWorker = null;
+    public ADBlockUpdaterWorker mADBlockUpdaterWorker;
     // Mixpanel global object
     //public MixpanelAPI mMixpanelInstance = null;
 

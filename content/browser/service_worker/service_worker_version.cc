@@ -1607,7 +1607,7 @@ void ServiceWorkerVersion::StartWorkerInternal() {
   params->scope = scope_;
   params->script_url = script_url_;
   params->script_type = script_type_;
-  params->user_agent = GetContentClient()->browser()->GetUserAgent();
+  params->user_agent = GetContentClient()->browser()->GetUserAgent("");
   params->is_installed = IsInstalled(status_);
   params->pause_after_download = pause_after_download();
 

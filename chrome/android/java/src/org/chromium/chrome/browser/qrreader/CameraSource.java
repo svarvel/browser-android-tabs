@@ -137,8 +137,8 @@ public class CameraSource {
     private int mRequestedPreviewHeight = 768;
 
 
-    private String mFocusMode = null;
-    private String mFlashMode = null;
+    private String mFocusMode;
+    private String mFlashMode;
 
     // These instances need to be held onto to avoid GC of their underlying resources.  Even though
     // these aren't used outside of the method that creates them, they still must have hard
@@ -1068,7 +1068,7 @@ public class CameraSource {
 
         // These pending variables hold the state associated with the new frame awaiting processing.
         private long mPendingTimeMillis;
-        private int mPendingFrameId = 0;
+        private int mPendingFrameId;
         private ByteBuffer mPendingFrameData;
 
         FrameProcessingRunnable(Detector<?> detector) {

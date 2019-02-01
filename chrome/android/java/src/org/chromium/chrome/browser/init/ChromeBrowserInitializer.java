@@ -79,10 +79,10 @@ public class ChromeBrowserInitializer {
     private boolean mNativeInitializationComplete;
     private boolean mNetworkChangeNotifierInitializationComplete;
 
-    private boolean mAdBlockInitCalled = false;
-    private boolean mUpdateStatsCalled = false;
-    private boolean mInstallationSourceChecked = false;
-    private boolean mSearchSuggestSwitched = false;
+    private boolean mAdBlockInitCalled;
+    private boolean mUpdateStatsCalled;
+    private boolean mInstallationSourceChecked;
+    private boolean mSearchSuggestSwitched;
 
     // Public to allow use in ChromeBackupAgent
     public static final String PRIVATE_DATA_DIRECTORY_SUFFIX = "chrome";
