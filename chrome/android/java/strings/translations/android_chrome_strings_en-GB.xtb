@@ -1088,4 +1088,41 @@ For example, some websites may respond to this request by showing you ads that a
 <translation id="982182592107339124">This will clear data for all sites, including:</translation>
 <translation id="983192555821071799">Close all tabs</translation>
 <translation id="987264212798334818">General</translation>
-<translation id="3209146299287804856">Brave site shield settings for</translation><translation id="622484624075952240">Down</translation><translation id="2706462751667573066">Up</translation><translation id="4339730410920731698">Ads and Trackers Blocked</translation><translation id="2313532038420432247">HTTPS Upgrades</translation><translation id="7461425058443653485">Scripts Blocked</translation><translation id="7835726359440951858">Block Ads and Tracking</translation><translation id="520895744850022668">HTTPS Everywhere</translation><translation id="94154759592465111">Block Scripts</translation><translation id="7307834434086582547">Enable/Disable Brave Shields</translation><translation id="6132506775968708399">Block 3rd party cookies</translation></translationbundle>
+<translation id="3209146299287804856">Brave site shield settings for</translation><translation id="622484624075952240">Down</translation><translation id="2706462751667573066">Up</translation><translation id="4339730410920731698">Ads and Trackers Blocked</translation><translation id="2313532038420432247">HTTPS Upgrades</translation><translation id="7461425058443653485">Scripts Blocked</translation><translation id="7835726359440951858">Block Ads and Tracking</translation><translation id="520895744850022668">HTTPS Everywhere</translation><translation id="94154759592465111">Block Scripts</translation><translation id="7307834434086582547">Enable/Disable Brave Shields</translation><translation id="6132506775968708399">Block 3rd party cookies</translation><translation id="8710614491157212477">Opens supported sites using HTTPS instead of HTTP when possible</translation>
+<translation id="5758129336814690876">Tracking Protection Mode</translation>
+<translation id="4609637183310787528">Prevents resources that track you from loading</translation>
+<translation id="8387201461264842096">Ad Block</translation>
+<translation id="1934885595886623674">Prevents ads from loading</translation>
+<translation id="7458422973722236530">Fingerprinting Protection</translation>
+<translation id="5787084571334399599">Prevents browser from fingerprinting</translation>
+<translation id="3758669798635576061">Fingerprinting Methods Blocked</translation>
+<translation id="3276318574457057212">Regional Ad Block</translation>
+<translation id="2300239903491866759">Prevents regional ads from loading</translation>
+<translation id="8142327400852603066">No additional lists available for your locale</translation>
+<translation id="9148058034647219655">Exit</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
+<translation id="3082265116777145081">Add device name</translation>
+<translation id="9024091168371687561">Enter an optional name for this device</translation>
+<translation id="3998827900918661986">Android device</translation>
+<translation id="7539985410310934287">Enter code words</translation>
+<translation id="326454632686131209">Sync device</translation>
+<translation id="8985635554450124959">Sync could not be setup</translation>
+<translation id="6244065453125065109">Trackers
+Blocked</translation>
+<translation id="2547939855139473800">Ads
+Blocked</translation>
+<translation id="8880969045613157151">HTTPS
+Upgrades</translation>
+<translation id="204407992549693965">Est. Time
+Saved</translation>
+<translation id="991605024067283917">Send metrics</translation>
+<translation id="6572660632052512096">Desktop Mode</translation>
+<translation id="4479934682648362332">Prefer desktop version of sites</translation>
+<translation id="807636106793708118">Prefer mobile version of sites</translation>
+<translation id="1340503115760585811">Enable Desktop View for new tabs</translation>
+<translation id="7924540991929826186">Use mobile versions of sites for new tabs (recommended)</translation>
+<translation id="3834924998750356151">Blocking Monitor</translation>
+<translation id="1713450908129883784">Individual Controls</translation>
+<translation id="6303294677342628402">Shields</translation>
+<translation id="252011129655042182">Ads and Trackers</translation>
+</translationbundle>
