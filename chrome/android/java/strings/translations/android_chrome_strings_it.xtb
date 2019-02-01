@@ -627,7 +627,7 @@ Tuttavia, le tue attività non sono invisibili. L'attivazione della modalità di
 <translation id="5793665092639000975">Spazio utilizzato: <ph name="SPACE_USED" /> di <ph name="SPACE_AVAILABLE" /></translation>
 <translation id="5804241973901381774">Autorizzazioni</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# ora fa}other{# ore fa}}</translation>
-<translation id="5817918615728894473">Accoppia</translation>
+<translation id="5817918615728894473">Associa</translation>
 <translation id="583281660410589416">Sconosciuto</translation>
 <translation id="5833397272224757657">Utilizza i contenuti dei siti visitati oltre ad attività e interazioni relative al browser per la personalizzazione</translation>
 <translation id="5833984609253377421">Condividi link</translation>
@@ -1014,7 +1014,7 @@ Per ottenere nuove licenze, connettiti a Internet e riproduci i contenuti scaric
 <translation id="8719023831149562936">Impossibile trasmettere scheda corrente</translation>
 <translation id="8725066075913043281">Riprova</translation>
 <translation id="7247433043977983806">Utilizzando questa applicazione, accetti i <ph name="BEGIN_LINK1" />Termini di servizio<ph name="END_LINK1" /> di Brave, le <ph name="BEGIN_LINK2" />Norme sulla privacy<ph name="END_LINK2" /> e le <ph name="BEGIN_LINK3" />Norme sulla privacy per gli account Google gestiti tramite Family Link<ph name="END_LINK3" />.</translation>
-<translation id="8730621377337864115">Fine</translation>
+<translation id="8730621377337864115">Operazione completata</translation>
 <translation id="8748850008226585750">Contenuti nascosti</translation>
 <translation id="8751914237388039244">Seleziona un'immagine</translation>
 <translation id="8788968922598763114">Riapri l'ultima scheda chiusa</translation>
@@ -1174,4 +1174,43 @@ Risparmiato</translation>
 <translation id="5858455511731621847">Anche se i siti visitati in schede private non vengono salvati localmente, ciò non ti rende anonimo o invisibile al tuo ISP, al tuo datore di lavoro o ai siti che stai visitando.</translation>
 <translation id="2339273275658335597">Aggiornamento Brave</translation>
 <translation id="8395234238259738935">Il nuovo browser Brave è il 22% più veloce</translation>
+<translation id="7497839443041994908">Brave (versione beta) Sync</translation>
+<translation id="391177677159359824">Sync (versione beta)</translation>
+<translation id="3680755684186855422">Brave Sync ti consente di sincronizzare i dati dei segnalibri privatamente tra i browser Brave su vari dispositivi.</translation>
+<translation id="3735228155296883311">È sufficiente eseguire la scansione del codice dalla catena di sincronizzazione che hai creato su un altro dispositivo. In alternativa, puoi avviare una nuova catena di sincronizzazione.</translation>
+<translation id="7745082336226088126">Esegui scansione del codice di sincronizzazione o immettine uno</translation>
+<translation id="1602067095281698985">Avvia una nuova catena di sincronizzazione</translation>
+<translation id="4690880825349994619">Utilizzando un dispositivo sincronizzato esistente, apri le impostazioni di Brave e vai alle impostazioni, quindi alla sincronizzazione. Scegli l’opzione per aggiungere un dispositivo ed esegui la scansione del codice QR visualizzato sullo schermo.</translation>
+<translation id="6270614677029463366">Utilizzando un dispositivo sincronizzato esistente, apri le impostazioni di Brave e passa alle impostazioni, quindi alla sincronizzazione. Scegli l’opzione per aggiungere un dispositivo, quindi quella per visualizzare le parole del codice.</translation>
+<translation id="1475223680121592371">Aggiungi un dispositivo mobile</translation>
+<translation id="2965377893636908578">Aggiungi un computer</translation>
+<translation id="65315202420929965">Esegui scansione del codice di sincronizzazione</translation>
+<translation id="6604289897677913048">Utilizzando un secondo telefono o tablet, vai alle impostazioni di Brave, quindi alla sincronizzazione e all’opzione di scansione.</translation>
+<translation id="3405078156498254717">Acquisisci il codice QR (sopra) con il secondo dispositivo oppure, se la fotocamera non è disponibile, inserisci le parole del codice.</translation>
+<translation id="8076492880354921740">Schede</translation>
+<translation id="5706430066167764107">Riempimento automatico/Password</translation>
+<translation id="1164234435773528579">Impostazioni pagamento Brave</translation>
+<translation id="6174119914106813304">ESEGUI SINCRONIZZAZIONE SU QUESTO DISPOSITIVO</translation>
+<translation id="6776430845975754238">La modifica delle impostazioni interesserà solo i dati condivisi tra questo e altri dispositivi.</translation>
+<translation id="8193724030871339658">ALTRI DISPOSITIVI SULLA CATENA</translation>
+<translation id="279635009973773843">CARICAMENTO DISPOSITIVI...</translation>
+<translation id="6450924769151530465">Aggiungi un altro dispositivo</translation>
+<translation id="2004365171440701679">Rimuovi questo dispositivo</translation>
+<translation id="2731921493694251495">Inserisci il codice della catena di sincronizzazione</translation>
+<translation id="2590683710114839102">Sul computer, vai alle impostazioni di Brave, quindi alla sincronizzazione. Scegli l’opzione per inserire un codice della catena di sincronizzazione.</translation>
+<translation id="1732271215616957850">Inserisci le parole del codice sopra, inclusi gli spazi.</translation>
+<translation id="3951555451708119590">Vuoi davvero eliminare il dispositivo '</translation>
+<translation id="9154490620151093733">La richiesta di eliminazione è stata inviata. Il dispositivo verrà eliminato a breve.</translation>
+<translation id="544873101641618162">Caricamento dei dati...</translation>
+<translation id="6779408765480516895">Si è verificato un errore. Sembra che si sia verificato il timeout della richiesta.</translation>
+<translation id="4973653569293835178">Utilizzerò la mia fotocamera...</translation>
+<translation id="8131740175452115882">Conferma</translation>
+<translation id="6854481134066832782">Conteggio parole: </translation>
+<translation id="4282642752844565114">Numero di parole non corretto </translation>
+<translation id="2175927920773552910">Codice QR</translation>
+<translation id="8653433343015102968">Parole del codice</translation>
+<translation id="8624315169751085215">Copia negli Appunti</translation>
+<translation id="5241263629636958324">Copiata negli Appunti</translation>
+<translation id="222883304157347087">(questo dispositivo)</translation>
+<translation id="7820683005702098135">Brave (versione beta) Sync</translation>
 </translationbundle>

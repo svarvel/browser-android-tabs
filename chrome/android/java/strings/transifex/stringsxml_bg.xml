@@ -30,21 +30,12 @@
 
     <string name="menu_exit">Изход</string>
 
-    <string name="brave_sync">Синхронизация на Brave </string>
-    <string name="brave_sync_description">Синхронизирайте надеждно данни между вашите устройства като използвате Brave Sync, няма нужда от създаване на акаунт. Натиснете долу, за да започнете.</string>
-    <string name="brave_sync_have_existing_code">Имам вече наличен синхронизиращ код</string>
     <string name="sync_settings_add_device_name_title">Добавете име на устройство</string>
     <string name="sync_settings_add_device_name_label">Въведете опционно име за това устройство</string>
     <string name="sync_example_device_name">Android устройство</string>
-    <string name="brave_sync_qrcode">Синхронизиране към устройство</string>
-    <string name="brave_sync_qrcode_message">Използвайки съществуващото синхронизирано устройство, отворете \"Brave Settings\" и отидете на \"Device &amp; Settings\", натиснете `+` за да добавите ново устройство и да се покаже кода за синхронизиране.</string>
     <string name="enter_code_words_sync">Въведете кодовите думи</string>
-    <string name="enter_code_words_below_sync">Въведете кодовите думи по-долу.</string>
     <string name="sync_device">Синхронизиране на устройство</string>
     <string name="sync_device_failure">Синхронизирането не може да се настрои</string>
-    <string name="sync_device_success">Настройката на синхронизирането беше завършена успешно</string>
-    <string name="reset_sync">Нулиране на синхронизирането...</string>
-    <string name="resetting_sync">Сигурни ли сте, че искате да нулиране настройките за синхронизиране на това устройство?</string>
 
     <string name="brave_stats_text_trackers">Проследяването
 Блокирано</string>
@@ -106,4 +97,4 @@
     <string name="update_notification_title">Актуализация на Brave</string>
     <string name="update_notification_text">Новият браузър Brave е с 22% по-бърз</string>
 
-</resources>
+    </resources>

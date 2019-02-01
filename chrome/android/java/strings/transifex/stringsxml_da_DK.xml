@@ -30,26 +30,12 @@
 
     <string name="menu_exit">Afslut</string>
 
-    <string name="brave_sync">Brave Sync</string>
-    <string name="brave_sync_description">Synkroniser browserdata mellem dine enheder
-sikkert ved hjælp af  Brave Sync, ingen kontooprettelse
-kræves. Tryk nedenfor for at komme i gang.</string>
-    <string name="brave_sync_have_existing_code">Jeg har en eksisterende synkroniseringskode</string>
     <string name="sync_settings_add_device_name_title">Tilføj enhedens navn</string>
     <string name="sync_settings_add_device_name_label">Indtast et valgfrit navn til denne enhed</string>
     <string name="sync_example_device_name">Android enhed</string>
-    <string name="brave_sync_qrcode">Synkroniser til enhed</string>
-    <string name="brave_sync_qrcode_message">Bruger eksisterende og synkroniseret enhed
-åbn Brave Indstillinger og gå til \"Enhed &amp;
-Indstillinger\", tryk `+` for at tilføje en ny enhed
-og se synkroniseringskoden.</string>
     <string name="enter_code_words_sync">Indtast kodeord</string>
-    <string name="enter_code_words_below_sync">Indtast kodeord nedenfor.</string>
     <string name="sync_device">Synkroniser enhed</string>
     <string name="sync_device_failure">Synkronisering kunne ikke opsættes</string>
-    <string name="sync_device_success">Opsætning af synkronisering er udført med succes</string>
-    <string name="reset_sync">Nulstil Synkronisering...</string>
-    <string name="resetting_sync">Er du sikker på, at du vil nulstille denne enhedssynkroniseringsindstillinger?</string>
 
     <string name="brave_stats_text_trackers">Sporere er
 blokeret</string>

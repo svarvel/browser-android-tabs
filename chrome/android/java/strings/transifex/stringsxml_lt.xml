@@ -20,6 +20,7 @@
 
     <string name="fingerprinting_protection_title">Apsauga nuo būdingų bruožų atpažinimo</string>
     <string name="fingerprinting_protection_summary">Neleidžia naršyklei atpažinti jums būdingus bruožus</string>
+    <string name="brave_shields_fingerprints_blocked">Pirštų atspaudų metodai blokuoti</string>
     <string name="brave_shields_block_fingerprints_switch">Apsauga nuo būdingų bruožų atpažinimo</string>
 
     <string name="ad_block_regional_title">Regioninės reklamos blokavimas</string>
@@ -29,27 +30,13 @@
 
     <string name="menu_exit">Išeiti</string>
 
-    <string name="brave_sync">„Brave Sync“</string>
-    <string name="brave_sync_description">Saugiai sinchronizuokite duomenis tarp savo
-įrenginių naudodami „Brave Sync“ – tam nereikia
-kurti paskyros. Jei norite pradėti,
-bakstelėkite apačioje.</string>
-    <string name="brave_sync_have_existing_code">Turiu sinchronizavimo kodą</string>
+    <string name="brave_sync">„Brave Sync“ (beta versija)</string>
     <string name="sync_settings_add_device_name_title">Įrašykite įrenginio pavadinimą</string>
     <string name="sync_settings_add_device_name_label">Įveskite pasirinktinį šio įrenginio pavadinimą</string>
     <string name="sync_example_device_name">„Android“ įrenginys</string>
-    <string name="brave_sync_qrcode">Sinchronizuoti įrenginį</string>
-    <string name="brave_sync_qrcode_message">Sinchronizuotame įrenginyje pereikite į „Brave Settings“ (nustatymai),
-ten eikite į „Device &amp;Settings“ (prietaisas ir nustatymai),
-kur palieskite „+“, kad įrašytumėte naują prietaisą
-ir pamatytumėte sinchronizavo kodą.</string>
     <string name="enter_code_words_sync">Įveskite žodinį kodą</string>
-    <string name="enter_code_words_below_sync">Apačioje įveskite žodinį kodą.</string>
     <string name="sync_device">Sinchronizuoti įrenginį</string>
     <string name="sync_device_failure">Nepavyko nustatyti sinchronizavimo</string>
-    <string name="sync_device_success">Sinchronizavimas atliktas sėkmingai</string>
-    <string name="reset_sync">Atstatyti sinchronizavimą...</string>
-    <string name="resetting_sync">Ar tikrai norite atstatyti šio įrenginio sinchronizavo nustatymus?</string>
 
     <string name="brave_stats_text_trackers">Blokuota
 sekimo failų</string>
@@ -68,22 +55,34 @@ maždaug laiko</string>
     <string name="website_settings_category_desktop_view_enabled">Naujoms kortelėms įjungti darbalaukio rodinį</string>
     <string name="website_settings_category_desktop_view_disabled">Naujoms kortelėms naudoti mobiliąsias svetainių versijas (rekomenduojama)</string>
 
+    <string name="brave_shields_first_group_title">Blokavimo monitorius</string>
     <string name="brave_shields_second_group_title">Atskiri valdikliai</string>
     <string name="brave_shields">Skydai</string>
     <string name="brave_shields_ads_and_trackers">Reklamos ir sekliai</string>
+    <string name="brave_shields_fingerprint_methods">Pirštų atspaudų metodai</string>
     <string name="brave_shields_block_phishing_switch">Blokuoti sukčiavimą</string>
 
     <string name="play_video_in_background_title">Foninis vaizdo atkūrimas</string>
     <string name="website_settings_category_play_video_in_background_enabled_summary">Įjungta</string>
     <string name="website_settings_category_play_video_in_background_disabled_summary">Išjungta</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Eksperimentinė funkcija. Suteikia galimybę leisti foninio vaizdo įrašo garsą, kai kortelė nėra aktyvi arba įrenginio ekranas išjungtas. Jei ši funkcija neveikia, pabandykite perjungti į darbalaukio režimą.</string>
     <string name="settings_require_relaunch_notice">Pakeitimai įsigalios, kai kitą kartą paleisite Brave</string>
     <string name="settings_require_relaunch_now">PALEISTI IŠ NAUJO DABAR</string>
     <string name="settings_require_relaunch_later">VĖLIAU</string>
 
+    <string name="play_yt_video_in_browser_title">Vaizdo įrašų atkūrimas naršyklėje „Brave“</string>
     <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Įjungta</string>
     <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Išjungta</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Jei įjungta, vaizdo įrašai bus leidžiami naršyklėje „Brave“, o ne atitinkamoje programoje</string>
+
     <string name="close_tabs_on_exit_title">Išeinant, užverti korteles</string>
+    <string name="close_tabs_on_exit_summary">Neišlaikyti kortelių per naršymo seansus</string>
+
+    <string name="open_pages_in_custom_tabs_title">Atverti korteles pritaikytų kortelių rodinyje</string>
+    <string name="open_pages_in_custom_tabs_summary">Pasiūlyti atverti korteles pritaikytų kortelių rodinyje</string>
+
     <string name="ddg_offer_title">Privati paieška, naudojant DuckDuckGo?</string>
+    <string name="ddg_offer_text">Vykdant privačią paiešką, jūsų paieškos užklausoms „Brave“ naudos „DuckDuckGo“, kol būsite šioje privačioje kortelėje. „DuckDuckGo“ yra paieškos modulis, kuris neseka jūsų paieškos istorijos, todėl galite ieškoti privačiai.</string>
     <string name="ddg_offer_positive">Taip</string>
     <string name="ddg_offer_negative">Ne</string>
     <string name="ddg_offer_link">Sužinokite apie privačią paiešką, naudojant DuckDuckGo</string>
@@ -94,4 +93,50 @@ maždaug laiko</string>
     <string name="brave_close_all_private_tabs">Užverti privačias korteles</string>
     <string name="brave_new_private_tab">Nauja privati kortelė</string>
     <string name="brave_new_tab_private_header">Tai yra privati kortelė</string>
-    </resources>
+    <string name="brave_new_tab_private_message">Net jei svetainės, kuriose lankotės per privačias korteles, nėra įrašomos vietiniame įrenginyje, jos nepadaro jūsų nežinomo ar nematomo jūsų interneto paslaugų teikėjui, jūsų darbdaviui ar svetainėms, kuriose lankotės.</string>
+
+    <string name="update_notification_title">„Brave“ naujinimas</string>
+    <string name="update_notification_text">Naujoji naršyklė „Brave“ yra 22 % spartesnė</string>
+
+    <string name="prefs_sync">„Sync“  (beta versija)</string>
+    <string name="brave_sync_description_page_1_part_1">„Brave Sync“ suteikia galimybę privačiai sinchronizuoti adresyno įrašus tarp „Brave“ naršyklių įvairiuose jūsų įrenginiuose.</string>
+    <string name="brave_sync_description_page_1_part_2">Tiesiog nuskaitykite kodą sinchronizavimo grandinėje, kurią sukūrėte kitame įrenginyje. Taip pat galite pradėti naują grandinę.</string>
+    <string name="brave_sync_scan_chain_code">Nuskaitykite arba įveskite sinchronizavimo kodą</string>
+    <string name="brave_sync_start_new_chain">Pradėti naują sinchronizavimo grandinę</string>
+    <string name="brave_sync_qrcode_message_v2">Sinchronizuotame įrenginyje atverkite „Brave“ Settings“ („Brave“ nustatymai), ten eikite į Settings > Sync (nustatymai > „Sync“). Pasirinkite „Add Device“ (pridėti įrenginį) ir nuskaitykite ekrane rodomą QR kodą.</string>
+    <string name="brave_sync_codewords_message">Sinchronizuotame įrenginyje atverkite „Brave“ Settings“ („Brave“ nustatymai), ten eikite į Settings > Sync (nustatymai > „Sync“). Pasirinkite „Add Device“ (pridėti įrenginį) ir „Display code words instead“ (rodyti žodinį kodą).</string>
+    <string name="brave_sync_btn_mobile">Pridėti mobilųjį įrenginį</string>
+    <string name="brave_sync_btn_laptop">Pridėti kompiuterį</string>
+    <string name="brave_sync_scan_sync_code">Nuskaityti šį sinchronizavimo kodą</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Antrame telefone ar planšetėje nueikite į „Brave“ Settings > Sync > Scan („Brave“ nustatymai > „Sync“ > nuskaityti).</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Antruoju įrenginiu nuskaitykite QR kodą (viršuje) arba įveskite žodinį kodą, jei fotoaparatas neveikia.</string>
+    <string name="brave_sync_btn_done">Atlikta</string>
+    <string name="brave_sync_tabs_text">Kortelės</string>
+    <string name="brave_sync_history_text">Istorija</string>
+    <string name="brave_sync_autofill_passwords_text">Automatinis užpildymas / slaptažodžiai</string>
+    <string name="brave_sync_payment_settings_text">„Brave Payment“ nustatymai</string>
+    <string name="brave_sync_settings_title">SINCHRONIZUOTI ŠIAME ĮRENGINYJE</string>
+    <string name="brave_sync_settings_description">Nustatymų pakeitimas turės įtakos tik tiems duomenims, kuriuos šis įrenginys bendrina kitiems.</string>
+    <string name="brave_sync_devices_title">KITI GRANDINĖS ĮRENGINIAI</string>
+    <string name="brave_sync_loading_devices_title">ĮKELIAMI ĮRENGINIAI...</string>
+    <string name="brave_sync_add_device_text">Pridėti kitą įrenginį</string>
+    <string name="brave_sync_remove_device_text">Šalinti šį įrenginį</string>
+    <string name="brave_sync_code_words_title">Suporuoti</string>
+    <string name="brave_sync_add_laptop_text_title">Įvesti sinchronizavimo grandinės kodą</string>
+    <string name="brave_sync_add_laptop_text_part_1">Kompiuteryje nueikite į „Brave“ Settings > Sync („Brave“ nustatymai > „Sync“). Pasirinkite „Enter a Sync Chain Code“ (įvesti sinchronizavimo grandinės kodą).</string>
+    <string name="brave_sync_add_laptop_text_part_2">Viršuje įveskite žodinį kodą su tarpeliais.</string>
+    <string name="brave_sync_delete_device">Ar tikrai norite pašalinti įrenginį „<ph name="DEVICE_NAME">%1$s</ph>“?</string>
+    <string name="brave_sync_delete_sent">Prašymas pašalinti išsiųstas. Įrenginys netrukus bus pašalintas.</string>
+    <string name="brave_sync_loading_data_title">Įkeliami duomenys...</string>
+    <string name="brave_sync_time_out_message">Kažkas nutiko, atrodo, kad pasibaigė jūsų užklausos laikas.</string>
+    <string name="brave_sync_use_camera_text">Aš naudosiu savo kamerą...</string>
+    <string name="brave_sync_confirm_code_words_text">Patvirtinti</string>
+    <string name="brave_sync_word_count_text">Žodžių skaičius: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Netikslus žodžių skaičius</string>
+    <string name="brave_sync_qr_code">QR kodas</string>
+    <string name="brave_sync_code_words">Žodinis kodas</string>
+    <string name="brave_sync_copy_button_text">Kopijuoti į iškarpinę</string>
+    <string name="brave_sync_copied_text">Nukopijuota į iškarpinę</string>
+    <string name="brave_sync_this_device_text">(šis įrenginys)</string>
+
+</resources>

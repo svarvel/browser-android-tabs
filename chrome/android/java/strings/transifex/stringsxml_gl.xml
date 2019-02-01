@@ -2,12 +2,12 @@
 
     <string name="menu_exit">Saír</string>
 
-    <string name="brave_sync">Sincronizar Brave</string>
     <string name="sync_settings_add_device_name_title">Engadir o nome do dispositivo</string>
-    <string name="sync_settings_add_device_name_label">Insire un nome opcional para este dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Introduza un nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">A sincronización non se puido configurar</string>
+
     <string name="settings_require_relaunch_later">MÁIS TARDE</string>
 
     </resources>

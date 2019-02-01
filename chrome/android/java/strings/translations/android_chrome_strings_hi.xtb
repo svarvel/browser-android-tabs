@@ -1014,7 +1014,7 @@
 <translation id="8719023831149562936">वर्तमान टैब को बीम नहीं किया जा सकता</translation>
 <translation id="8725066075913043281">पुन: प्रयास करें</translation>
 <translation id="7247433043977983806">इस ऐप्लिकेशन का उपयोग करके, आप Brave की <ph name="BEGIN_LINK1" />सेवा की शर्तों<ph name="END_LINK1" /> और <ph name="BEGIN_LINK2" />निजता सूचना<ph name="END_LINK2" /> और <ph name="BEGIN_LINK3" />Family Link से प्रबंधित होने वाले Google खातों के लिए निजता सूचना<ph name="END_LINK3" /> से सहमत होते हैं.</translation>
-<translation id="8730621377337864115">पूर्ण</translation>
+<translation id="8730621377337864115">हो गया</translation>
 <translation id="8748850008226585750">छिपी हुई सामग्री</translation>
 <translation id="8751914237388039244">इमेज चुनें</translation>
 <translation id="8788968922598763114">अभी बंद किया हुआ टैब खोलें</translation>
@@ -1092,7 +1092,7 @@
 <translation id="2313532038420432247">एचटीटीपीएस उन्नयन</translation>
 <translation id="7461425058443653485">लिपिया अवरुद्</translation>
 <translation id="7835726359440951858">अवस्र्द्ध विज्ञापन और निगाह रखना</translation>
-<translation id="520895744850022668">एचटीटीपीएस सब जगह</translation>
+<translation id="520895744850022668">HTTPS  सब जगह</translation>
 <translation id="94154759592465111">अवस्र्द्ध लिपिया </translation>
 <translation id="7307834434086582547">ब्रेव कवच को सक्षम/अक्षम करें </translation>
 <translation id="6132506775968708399">3सरे दल बन को अवस्र्द्ध करें </translation>
@@ -1127,13 +1127,13 @@
 <translation id="7713465482966886648">सिंक सैट-अप सफलतापूर्वक पूरा हो गया है। </translation>
 <translation id="1068083442730715531">सिंक को पुन:सेट करें... </translation>
 <translation id="6761015334234690567">क्या आप वास्तव में इस उपकरण और सिंक सैटिंग्स को पुन:सैट करना चाहते हैं?</translation>
-<translation id="6244065453125065109">ट्रैकर 
+<translation id="6244065453125065109">ट्रैकर
 ब्लॉक किया गया  </translation>
-<translation id="2547939855139473800">विज्ञापन 
+<translation id="2547939855139473800">विज्ञापन
 ब्लॉक किया गया  </translation>
-<translation id="8880969045613157151">एचटीटीपीएस 
+<translation id="8880969045613157151">एचटीटीपीएस
 अपग्रेड </translation>
-<translation id="204407992549693965">स्थापित   समय 
+<translation id="204407992549693965">स्थापित   समय
 सेव किया गया </translation>
 <translation id="991605024067283917">मेट्रिक्स भेजें </translation>
 <translation id="6572660632052512096">डेस्कटॉप मोड </translation>
@@ -1170,4 +1170,43 @@
 <translation id="5858455511731621847">भले ही आप द्वारा निजी  टैब्स में देखी जाने वाली साइटें स्थानीय रूप से सहेजी नहीं जाती हैं, फिर भी वे आपको आपके ISP, आपके नियोक्ता, या आप द्वारा देखी गई साइटों के लिए अज्ञातकृत या अदृश्य नहीं बनाती हैं।</translation>
 <translation id="2339273275658335597">Brave अपडेट</translation>
 <translation id="8395234238259738935">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</translation>
+<translation id="7497839443041994908">Brave (बीटा) सिंक</translation>
+<translation id="391177677159359824">Brave (बीटा)</translation>
+<translation id="3680755684186855422">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</translation>
+<translation id="3735228155296883311">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</translation>
+<translation id="7745082336226088126">सिंक चेन को स्कैन करें या दर्ज़ करें</translation>
+<translation id="1602067095281698985">किसी नई सिंक चेन की शुरुआत करें</translation>
+<translation id="4690880825349994619">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और 'सेटिंग्स &gt; सिंक करें' पर जाएं। \"डिवाइस जोड़ें\" चुनें और स्क्रीन पर दिखाया गया QR कोड स्कैन करें।</translation>
+<translation id="6270614677029463366">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और 'सेटिंग्स &gt; सिंक करें' पर जाएं। \"डिवाइस जोड़ें\" चुनकर \"इसकी जगह कोड वर्ड दिखाएं\" चुनें।</translation>
+<translation id="1475223680121592371">कोई मोबाइल डिवाइस जोड़ें</translation>
+<translation id="2965377893636908578">कोई कंप्यूटर जोड़ें</translation>
+<translation id="65315202420929965">यह सिंक कोड स्कैन करें</translation>
+<translation id="6604289897677913048">किसी दूसरे फोन या टैबलेट का उपयोग करके, 'Brave सेटिंग्स &gt; सिंक करें &gt; स्कैन करें' पर जाएं।</translation>
+<translation id="3405078156498254717">अपने दूसरे डिवाइस से QR कोड (ऊपर बताया गया) को कैप्चर करें या कोई कैमरा मौजूद नहीं होने पर कोड वर्ड दर्ज़ करें।</translation>
+<translation id="8076492880354921740">टैब</translation>
+<translation id="5706430066167764107">अपने आप भरें/पासवर्ड</translation>
+<translation id="1164234435773528579">Brave भुगतान सेटिंग्स</translation>
+<translation id="6174119914106813304">इस उपकरण पर सिंक करें</translation>
+<translation id="6776430845975754238">सेटिंग्स बदलने से केवल उस डेटा पर असर पड़ेगा, जिसे आपका डिवाइस दूसरे डिवाइस के साथ साझा करता है।</translation>
+<translation id="8193724030871339658">चेन के दूसरे डिवाइस</translation>
+<translation id="279635009973773843">डिवाइस लोड किया जा रहा है...</translation>
+<translation id="6450924769151530465">कोई दूसरा डिवाइस जोड़ें</translation>
+<translation id="2004365171440701679">यह डिवाइस हटाएँ</translation>
+<translation id="2731921493694251495">सिंक चेन कोड को दर्ज़ करें</translation>
+<translation id="2590683710114839102">अपने कंप्यूटर में, 'Brave सेटिंग्स &gt; सिंक करें' पर जाएं। \"कोई सिंक चेन कोड दर्ज करें\" चुनें।</translation>
+<translation id="1732271215616957850">स्पेस के साथ ऊपर दिया गया कोड वर्ड दर्ज़ करें।</translation>
+<translation id="3951555451708119590">क्या आप वाकई डिवाइस '</translation>
+<translation id="9154490620151093733">हटाने का अनुरोध भेजा गया। डिवाइस को जल्द ही हटा दिया जाएगा।</translation>
+<translation id="544873101641618162">डेटा लोड हो रहा है...</translation>
+<translation id="6779408765480516895">कुछ गलत हो गया है, ऐसा लगता है कि आपके अनुरोध की समय-सीमा समाप्त हो गई है।</translation>
+<translation id="4973653569293835178">मैं अपने कैमरे का उपयोग करूंगा...</translation>
+<translation id="8131740175452115882">पुष्टि करें</translation>
+<translation id="6854481134066832782">शब्दों की संख्या: </translation>
+<translation id="4282642752844565114">शब्दों की संख्या गलत है</translation>
+<translation id="2175927920773552910">QR कोड</translation>
+<translation id="8653433343015102968">कोड वर्ड</translation>
+<translation id="8624315169751085215">क्लिपबोर्ड पर कॉपी करें</translation>
+<translation id="5241263629636958324">क्लिपबोर्ड पर कॉपी किया गया</translation>
+<translation id="222883304157347087">(यह डिवाइस)</translation>
+<translation id="7820683005702098135">Brave (बीटा) सिंक</translation>
 </translationbundle>
