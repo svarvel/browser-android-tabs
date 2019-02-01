@@ -23,7 +23,7 @@ public class ADBlockUpdater {
     private static final String TAG = "ADBLOCK";
     private static Semaphore mAvailable = new Semaphore(1);
     private static List<String> mWhitelistedRegionalLocales = Arrays.asList("ru", "uk", "be", "hi");
-    private static boolean mReceivedAnUpdate = false;
+    private static boolean mReceivedAnUpdate;
     private static final String UPDATE_ADBLOCKER = "update_adblocker";
 
     public static void UpdateADBlock(Context context, boolean initShieldsConfig) {

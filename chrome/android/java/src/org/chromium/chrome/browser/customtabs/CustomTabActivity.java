@@ -593,8 +593,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
             }
 
             @Override
-            public void onPageLoadFinished(Tab tab) {
-                String url = tab.getUrl();
+            public void onPageLoadFinished(Tab tab, String url) {
                 if (getActivityTab() == tab) {
                     try {
                         URL urlCheck = new URL(url);

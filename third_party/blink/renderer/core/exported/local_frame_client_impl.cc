@@ -304,17 +304,17 @@ bool LocalFrameClientImpl::HasWebView() const {
 
 void LocalFrameClientImpl::DeniedScript()
 {
-  GetContentSettingsClient().DeniedScript();
+  GetContentSettingsClient()->DeniedScript();
 }
 
 bool LocalFrameClientImpl::AllowFingerprinting()
 {
-  return GetContentSettingsClient().AllowFingerprinting();
+  return GetContentSettingsClient()->AllowFingerprinting();
 }
 
 void LocalFrameClientImpl::DeniedFingerprinting()
 {
-  GetContentSettingsClient().DeniedFingerprinting();
+  GetContentSettingsClient()->DeniedFingerprinting();
 }
 
 bool LocalFrameClientImpl::InShadowTree() const {

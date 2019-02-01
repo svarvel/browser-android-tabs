@@ -46,7 +46,7 @@ public class ShieldsConfig {
     private HashMap<String, String> mSettings = new HashMap<String, String>();
     private HashMap<String, String> mSettingsIncognito = new HashMap<String, String>();
     private ReentrantReadWriteLock mLock = new ReentrantReadWriteLock();
-    private Context mContext = null;
+    private Context mContext;
     private TabModelSelectorTabObserver mTabModelSelectorTabObserver;
     private final SharedPreferences mSharedPreferences;
 

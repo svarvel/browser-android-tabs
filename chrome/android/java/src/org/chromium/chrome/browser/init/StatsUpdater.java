@@ -99,8 +99,8 @@ public class StatsUpdater {
     private static Semaphore mAvailable = new Semaphore(1);
     // To indicate that UpdateStats was called at least once
     private static ConditionVariable mStatsUpdated = new ConditionVariable(false);
-    private static String mCustomHeaders = null;
-    private static HashMap<String, String> mCustomHeadersMap = null;
+    private static String mCustomHeaders;
+    private static HashMap<String, String> mCustomHeadersMap;
 
     public static void UpdateStats(Context context) {
         try {

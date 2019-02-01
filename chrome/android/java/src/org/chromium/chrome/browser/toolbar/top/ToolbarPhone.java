@@ -603,7 +603,6 @@ public class ToolbarPhone
         } else if (mBraveShieldsButton == v) {
             if (null != mBraveShieldsButton) {
                 mBraveShieldsListener.onClick(mBraveShieldsButton);
-                RecordUserAction.record("MobileToolbarShowBraveShields");
             }
         }
     }

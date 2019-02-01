@@ -102,8 +102,7 @@
 
     <style name="BraveDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="windowNoTitle">true</item>
-        <item name="buttonBarStyle">@style/ModalDialogButtonBarStyle</item>
-        <item name="buttonBarButtonStyle">@style/ModalDialogButtonStyle</item>
+        <item name="buttonBarButtonStyle">@style/SigninDialogButtonStyle</item>
     </style>
 
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">

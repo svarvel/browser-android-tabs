@@ -13,12 +13,13 @@ public class ADBlockUpdaterWorker {
 
     private static final int INTERVAL_TO_UPDATE = 1000 * 60 * 120;    // Milliseconds
 
-    private UpdateThread mUpdateThread = null;
+    private UpdateThread mUpdateThread;
 
     private Context mContext;
-    private boolean mStopThread = false;
+    private boolean mStopThread;
 
     public ADBlockUpdaterWorker(Context context) {
+        mStopThread = false;
         mContext = context;
         mUpdateThread = new UpdateThread();
         if (null != mUpdateThread) {

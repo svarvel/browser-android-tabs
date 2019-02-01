@@ -873,12 +873,6 @@ Your Google account may have other forms of browsing history like searches and a
       <message name="IDS_COOKIES_TITLE" desc="Title for the Cookies settings screen [CHAR-LIMIT=32]">
         Cookies
       </message>
-      <message name="IDS_BLOCK_THIRD_PARTY_COOKIES_TITLE" desc="Title for Block Third Party Cookies preference">
-        Block third-party cookies
-      </message>
-      <message name="IDS_BLOCK_THIRD_PARTY_COOKIES_SUMMARY" desc="Summary text for Block Third Party Cookies preference">
-        Prevent third-party websites from saving and reading cookie data
-      </message>
       <message name="IDS_JAVASCRIPT_PERMISSION_TITLE" desc="Title of the permission to run javascript [CHAR-LIMIT=32]">
         JavaScript
       </message>
@@ -2628,14 +2622,6 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
         Search your history
       </message>
 
-      <!-- Document mode messages -->
-      <message name="IDS_CLOSE_ALL_INCOGNITO_NOTIFICATION" desc="Message on the notification that closes all incognito tabs in document mode">
-        Close all incognito tabs
-      </message>
-      <message name="IDS_CLOSE_ALL_PRIVATE_NOTIFICATION" desc="Message on the notification that closes all private tabs in document mode">
-        Close all private tabs
-      </message>
-
       <!-- Autofill/Wallet integration prompt -->
       <message name="IDS_CARD_UNMASK_INPUT_HINT" desc="Hint text for an input field containing the user's credit card CVC (card verification code).">
         CVC
@@ -3407,16 +3393,6 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       </message>
       <message name="IDS_NEW_TAB_PRIVATE_HEADER" desc="Header shown when a user opens an incognito tab explaining private mode">
         You’ve gone private.
-      </message>
-      <message name="IDS_NEW_TAB_INCOGNITO_MESSAGE" desc="Message shown when a user opens an incognito tab explaining incognito mode">
-        Pages you view in incognito tabs won’t stick around in your browser’s history, cookie store, or search history after you’ve closed all of your incognito tabs. Any files you download or bookmarks you create will be kept.
-
-However, you aren’t invisible. Going incognito doesn’t hide your browsing from your employer, your internet service provider, or the websites you visit.
-      </message>
-      <message name="IDS_NEW_TAB_PRIVATE_MESSAGE" desc="Message shown when a user opens an incognito tab explaining private mode">
-        Pages you view in private tabs won’t stick around in your browser’s history, cookie store, or search history after you’ve closed all of your private tabs. Any files you download or bookmarks you create will be kept.
-
-However, you aren’t invisible. Going private doesn’t hide your browsing from your employer, your internet service provider, or the websites you visit.
       </message>
 
       <!-- Contextual Search -->

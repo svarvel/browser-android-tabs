@@ -182,7 +182,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitAdBlock() {
-        base::AssertBlockingAllowed();
+        base::internal::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(adblock_init_mutex_);
 
         if (adblock_parser_) {
@@ -207,7 +207,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitAdBlockRegional() {
-        base::AssertBlockingAllowed();
+        base::internal::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(adblock_regional_init_mutex_);
 
         if (0 != adblock_regional_parsers_.size()) {
@@ -248,7 +248,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitTP() {
-        base::AssertBlockingAllowed();
+        base::internal::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(tp_init_mutex_);
 
         if (tp_parser_) {
@@ -284,7 +284,7 @@ namespace blockers {
     }
 
     bool BlockersWorker::InitHTTPSE() {
-        base::AssertBlockingAllowed();
+        base::internal::AssertBlockingAllowed();
         std::lock_guard<std::mutex> guard(httpse_init_mutex_);
 
         if (level_db_) {
@@ -506,7 +506,7 @@ namespace blockers {
     }
 
     std::string BlockersWorker::getHTTPSURL(const GURL* url, const uint64_t &request_identifier) {
-        base::AssertBlockingAllowed();
+        base::internal::AssertBlockingAllowed();
 
         if (nullptr == url) {
             return "";
@@ -743,7 +743,7 @@ namespace blockers {
     bool BlockersWorker::ShouldSetReferrer(bool allow_referrers, bool shields_up,
         const GURL& original_referrer, const GURL& tab_origin,
         const GURL& target_url, const GURL& new_referrer_url,
-        blink::WebReferrerPolicy policy, content::Referrer *output_referrer) {
+        network::mojom::ReferrerPolicy policy, content::Referrer *output_referrer) {
       return false;
       /*if (!output_referrer ||
           allow_referrers ||

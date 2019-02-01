@@ -109,18 +109,18 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
     private int mCurrentDisplayWidth;
     private String mHost;
 
-    private Switch mBraveShieldsAdsTrackingSwitch = null;
-    private OnCheckedChangeListener mBraveShieldsAdsTrackingChangeListener = null;
-    private Switch mBraveShieldsHTTPSEverywhereSwitch = null;
-    private OnCheckedChangeListener mBraveShieldsHTTPSEverywhereChangeListener = null;
-    private Switch mBraveShieldsBlocking3rdPartyCookiesSwitch = null;
-    private OnCheckedChangeListener mBraveShieldsBlocking3rdPartyCookiesChangeListener = null;
-    private Switch mBraveShieldsBlockingScriptsSwitch = null;
-    private OnCheckedChangeListener mBraveShieldsBlockingScriptsChangeListener = null;
-    private Switch mBraveShieldsFingerprintsSwitch = null;
-    private OnCheckedChangeListener mBraveShieldsFingerprintsChangeListener = null;
+    private Switch mBraveShieldsAdsTrackingSwitch;
+    private OnCheckedChangeListener mBraveShieldsAdsTrackingChangeListener;
+    private Switch mBraveShieldsHTTPSEverywhereSwitch;
+    private OnCheckedChangeListener mBraveShieldsHTTPSEverywhereChangeListener;
+    private Switch mBraveShieldsBlocking3rdPartyCookiesSwitch;
+    private OnCheckedChangeListener mBraveShieldsBlocking3rdPartyCookiesChangeListener;
+    private Switch mBraveShieldsBlockingScriptsSwitch;
+    private OnCheckedChangeListener mBraveShieldsBlockingScriptsChangeListener;
+    private Switch mBraveShieldsFingerprintsSwitch;
+    private OnCheckedChangeListener mBraveShieldsFingerprintsChangeListener;
 
-    private boolean mIncognitoTab = false;
+    private boolean mIncognitoTab;
     public void setIncognitoTab(final boolean incognitoTab) {
         mIncognitoTab = incognitoTab;
     }
@@ -130,6 +130,7 @@ class BraveShieldsMenuAdapter extends BaseAdapter {
             BraveShieldsMenuObserver menuObserver,
             ListPopupWindow popup,
             int currentDisplayWidth) {
+        mIncognitoTab = false;
         mMenuItems = menuItems;
         mInflater = inflater;
         mDpToPx = inflater.getContext().getResources().getDisplayMetrics().density;

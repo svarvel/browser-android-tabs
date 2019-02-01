@@ -295,7 +295,7 @@ public class ChromeTabbedActivity
     // Time at which an intent was received and handled.
     private long mIntentHandlingTimeMs;
 
-    private boolean mPartnerPageIsLoaded = false;
+    private boolean mPartnerPageIsLoaded;
 
     private final IncognitoTabHost mIncognitoTabHost = new IncognitoTabHost() {
 
@@ -417,6 +417,7 @@ public class ChromeTabbedActivity
      * Constructs a ChromeTabbedActivity.
      */
     public ChromeTabbedActivity() {
+        mPartnerPageIsLoaded = false;
         mActivityStopMetrics = new ActivityStopMetrics();
         mMainIntentMetrics = new MainIntentBehaviorMetrics(this);
         mAppIndexingUtil = new AppIndexingUtil();
@@ -1566,9 +1567,8 @@ public class ChromeTabbedActivity
                 tab.clearBraveShieldsCount();
             }
             @Override
-            public void onPageLoadFinished(final Tab tab) {
+            public void onPageLoadFinished(final Tab tab, String url) {
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
-                String url = tab.getUrl();
                 if (getActivityTab() == tab) {
                     try {
                         URL urlCheck = new URL(url);

@@ -323,7 +323,7 @@ ChromeContentUtilityClient::HandleServiceRequest(
 
 #if BUILDFLAG(ENABLE_PRINTING)
   if (service_name == printing::mojom::kServiceName) {
-    return printing::CreatePdfCompositorService(GetUserAgent(),
+    return printing::CreatePdfCompositorService(GetUserAgent(""),
                                                 std::move(request));
   }
 #endif
