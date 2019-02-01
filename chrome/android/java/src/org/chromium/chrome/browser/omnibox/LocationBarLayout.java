@@ -808,13 +808,17 @@ public class LocationBarLayout extends FrameLayout
             case NavigationButtonType.PAGE:
                 Drawable page = TintedDrawable.constructTintedDrawable(getContext(),
                         R.drawable.ic_omnibox_page,
-                        mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint);
+                        // (Albert Wang): navigation button exists in the location bar and should be using dark mode tint
+                        // mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint);
+                        R.color.dark_mode_tint);
                 mNavigationButton.setImageDrawable(page);
                 break;
             case NavigationButtonType.MAGNIFIER:
                 Drawable search = TintedDrawable.constructTintedDrawable(getContext(),
                         R.drawable.omnibox_search,
-                        mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint);
+                        // (Albert Wang): navigation button exists in the location bar and should be using dark mode tint
+                        // mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint);
+                        R.color.dark_mode_tint);
                 mNavigationButton.setImageDrawable(search);
                 break;
             case NavigationButtonType.EMPTY:
@@ -1427,7 +1431,9 @@ public class LocationBarLayout extends FrameLayout
     @Override
     public void updateVisualsForState() {
         if (updateUseDarkColors()) updateSecurityIcon();
-        int id = mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint;
+        // (Albert Wang): Always use dark_mode_tint
+        // int id = mUseDarkColors ? R.color.dark_mode_tint : R.color.light_mode_tint;
+        int id = R.color.dark_mode_tint;
         ColorStateList colorStateList = AppCompatResources.getColorStateList(getContext(), id);
         ApiCompatibilityUtils.setImageTintList(mMicButton, colorStateList);
         ApiCompatibilityUtils.setImageTintList(mDeleteButton, colorStateList);

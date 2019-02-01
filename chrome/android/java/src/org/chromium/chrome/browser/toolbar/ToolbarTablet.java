@@ -454,8 +454,11 @@ public class ToolbarTablet extends ToolbarLayout
             ApiCompatibilityUtils.setImageTintList(
                     mSaveOfflineButton, incognito ? mLightModeTint : mDarkModeTint);
             if (incognito) {
+              /** (Albert Wang): We want to keep the LocationBar white
                 mLocationBar.getContainerView().getBackground().setAlpha(
                         ToolbarPhone.LOCATION_BAR_TRANSPARENT_BACKGROUND_ALPHA);
+                        */
+                mLocationBar.getContainerView().getBackground().setAlpha(255);
             } else {
                 mLocationBar.getContainerView().getBackground().setAlpha(255);
             }
@@ -560,16 +563,25 @@ public class ToolbarTablet extends ToolbarLayout
         if (isBookmarked) {
             mBookmarkButton.setImageResource(R.drawable.btn_star_filled);
             // Non-incognito mode shows a blue filled star.
+            // (Albert Wang): Always use non-incognito asset as we're using all-white LocationBar
+            /*
             ApiCompatibilityUtils.setImageTintList(mBookmarkButton,
                     isIncognito() ? mLightModeTint
                                   : AppCompatResources.getColorStateList(
                                             getContext(), R.color.blue_mode_tint));
+            */
+            ApiCompatibilityUtils.setImageTintList(mBookmarkButton, 
+                    AppCompatResources.getColorStateList(
+                                  getContext(), R.color.blue_mode_tint));
             mBookmarkButton.setContentDescription(getContext().getString(
                     R.string.edit_bookmark));
         } else {
             mBookmarkButton.setImageResource(R.drawable.btn_star);
+            // (Albert Wang): Always use non-incognito asset as we're using all-white LocationBar
+            /* ApiCompatibilityUtils.setImageTintList(
+                    mBookmarkButton, isIncognito() ? mLightModeTint : mDarkModeTint); */
             ApiCompatibilityUtils.setImageTintList(
-                    mBookmarkButton, isIncognito() ? mLightModeTint : mDarkModeTint);
+                    mBookmarkButton, mDarkModeTint);
             mBookmarkButton.setContentDescription(getContext().getString(
                     R.string.accessibility_menu_bookmark));
         }
