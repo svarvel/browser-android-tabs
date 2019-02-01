@@ -333,6 +333,22 @@ base::android::ScopedJavaLocalRef<jobjectArray> BraveRewardsNativeWorker::GetCur
   return base::android::ToJavaArrayOfStrings(env, values);
 }
 
+void BraveRewardsNativeWorker::GetPendingContributionsTotal(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetPendingContributionsTotal(base::Bind(
+          &BraveRewardsNativeWorker::OnGetPendingContributionsTotal,
+          weak_factory_.GetWeakPtr()));
+  }
+}
+
+void BraveRewardsNativeWorker::OnGetPendingContributionsTotal(double amount) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnGetPendingContributionsTotal(env, 
+        weak_java_brave_rewards_native_worker_.get(env), amount);
+}
+
 void BraveRewardsNativeWorker::OnNotificationAdded(
       brave_rewards::RewardsNotificationService* rewards_notification_service,
       const brave_rewards::RewardsNotificationService::RewardsNotification& notification) {

@@ -3201,6 +3201,9 @@ public class ToolbarPhone
     @Override
     public void OnIsWalletCreated(boolean created) {}
 
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
     /**
      * Custom drawable that allows sharing the NTP search box drawable between the toolbar and the
      * NTP.  This allows animations to continue as the drawable is switched between the two owning

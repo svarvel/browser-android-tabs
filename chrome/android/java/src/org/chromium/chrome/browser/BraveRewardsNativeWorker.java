@@ -186,6 +186,10 @@ public class BraveRewardsNativeWorker {
         return nativeGetCurrentGrant(mNativeBraveRewardsNativeWorker, position);
     }
 
+    public void GetPendingContributionsTotal() {
+        nativeGetPendingContributionsTotal(mNativeBraveRewardsNativeWorker);
+    }
+
     @CalledByNative
     public void OnIsWalletCreated(boolean created) {
         for(BraveRewardsObserver observer : observers_) {
@@ -257,6 +261,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    @CalledByNative
+    public void OnGetPendingContributionsTotal(double amount) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetPendingContributionsTotal(amount);
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -284,4 +295,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetGrant(long nativeBraveRewardsNativeWorker);
     private native int nativeGetCurrentGrantsCount(long nativeBraveRewardsNativeWorker);
     private native String[] nativeGetCurrentGrant(long nativeBraveRewardsNativeWorker, int position);
+    private native void nativeGetPendingContributionsTotal(long nativeBraveRewardsNativeWorker);
 }

@@ -751,6 +751,9 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnIsWalletCreated(boolean created) {}
 
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
 
     private void setToolbarButtonsVisible(boolean visible) {
         if (mToolbarButtonsVisible == visible) return;
