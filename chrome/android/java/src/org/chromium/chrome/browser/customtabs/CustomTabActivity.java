@@ -310,7 +310,54 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
 
     @Override
     protected TabModelSelector createTabModelSelector() {
-        return mTabFactory.createTabModelSelector();
+        TabModelSelectorImpl tabModelSelectorImpl = mTabFactory.createTabModelSelector();
+
+        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(tabModelSelectorImpl) {
+
+            private boolean mIsFirstPageLoadStart = true;
+
+            @Override
+            public void onPageLoadStarted(Tab tab, String url) {
+                // Discard startup navigation measurements when the user interfered and started the
+                // 2nd navigation (in activity lifetime) in parallel.
+                if (mIsFirstPageLoadStart) {
+                    mIsFirstPageLoadStart = false;
+                }
+                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                if ((null != app) && (null != app.getShieldsConfig())) {
+                    app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
+                }
+                if (getActivityTab() == tab) {
+                    try {
+                        URL urlCheck = new URL(url);
+                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
+                    }
+                }
+                tab.clearBraveShieldsCount();
+            }
+
+            @Override
+            public void onPageLoadFinished(Tab tab, String url) {
+                if (getActivityTab() == tab) {
+                    try {
+                        URL urlCheck = new URL(url);
+                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
+                    } catch (Exception e) {
+                        setBraveShieldsBlackAndWhite();
+                    }
+                }
+            }
+
+            @Override
+            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
+                    int scriptsBlocked, int fingerprintsBlocked) {
+                braveShieldsCountUpdate(url, adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
+            }
+        };
+
+        return  tabModelSelectorImpl;
     }
 
     @Override

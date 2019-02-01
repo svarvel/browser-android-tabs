@@ -943,7 +943,7 @@ void NetworkContext::QueueReport(const std::string& type,
   if (reported_user_agent.empty() &&
       request_context->http_user_agent_settings() != nullptr) {
     reported_user_agent =
-        request_context->http_user_agent_settings()->GetUserAgent();
+        request_context->http_user_agent_settings()->GetUserAgent("");
   }
 
   // Send the crash report to the Reporting API.

@@ -108,40 +108,40 @@ public class BraveSyncWorker {
     public static final int NICEWARE_WORD_COUNT = 16;
     public static final int BIP39_WORD_COUNT = 24;
 
-    private SyncThread mSyncThread = null;
-    private SendSyncDataThread mSendSyncDataThread = null;
+    private SyncThread mSyncThread;
+    private SendSyncDataThread mSendSyncDataThread;
 
     private Context mContext;
-    private boolean mStopThread = false;
+    private boolean mStopThread;
     private SyncIsReady mSyncIsReady;
 
-    private String mSeed = null;
-    private String mDeviceId = null;
-    private String mDeviceName = null;
-    private String mApiVersion = "0";
-    private String mBaseOrder = null;
-    private String mLastOrder = null;
+    private String mSeed;
+    private String mDeviceId;
+    private String mDeviceName;
+    private String mApiVersion;
+    private String mBaseOrder;
+    private String mLastOrder;
     //private String mServerUrl = "https://sync-staging.brave.com";
     private String mServerUrl = "https://sync.brave.com";
     private String mDebug = "true";
-    private long mTimeLastFetch = 0;   // In milliseconds
-    private long mTimeLastFetchExecuted = 0;   // In milliseconds
+    private long mTimeLastFetch;   // In milliseconds
+    private long mTimeLastFetchExecuted;   // In milliseconds
     private String mLatestRecordTimeStampt = "";
-    private boolean mFetchInProgress = false;
-    private BookmarkId mDefaultFolder = null;
-    private BookmarkModel mNewBookmarkModel = null;
-    private boolean mInterruptSyncSleep = false;
+    private boolean mFetchInProgress;
+    private BookmarkId mDefaultFolder;
+    private BookmarkModel mNewBookmarkModel;
+    private boolean mInterruptSyncSleep;
 
     private BraveSyncScreensObserver mSyncScreensObserver;
 
     private ArrayList<ResolvedRecordToApply> mOrphanBookmarks = new ArrayList<ResolvedRecordToApply>();
 
-    private WebContents mWebContents = null;
-    private JavascriptInjector mWebContentsInjector = null;
-    private ViewEventSinkImpl mViewEventSink = null;
-    private WebContents mJSWebContents = null;
-    private JavascriptInjector mJSWebContentsInjector = null;
-    private ViewEventSinkImpl mJSViewEventSink = null;
+    private WebContents mWebContents;
+    private JavascriptInjector mWebContentsInjector;
+    private ViewEventSinkImpl mViewEventSink;
+    private WebContents mJSWebContents;
+    private JavascriptInjector mJSWebContentsInjector;
+    private ViewEventSinkImpl mJSViewEventSink;
     private boolean mReorderBookmarks;
     private int mAttepmtsBeforeSendingNotSyncedRecords = ATTEMPTS_BEFORE_SENDING_NOT_SYNCED_RECORDS;
     private String mBulkBookmarkOperations = "";
@@ -181,14 +181,25 @@ public class BraveSyncWorker {
 
     class SyncIsReady {
 
-        public boolean mFetchRecordsReady = false;
-        public boolean mResolveRecordsReady = false;
-        public boolean mSendRecordsReady = false;
-        public boolean mDeleteUserReady = false;
-        public boolean mDeleteCategoryReady = false;
-        public boolean mDeleteSiteSettingsReady = false;
-        public boolean mReady = false;
-        public boolean mShouldResetSync = false;
+        public boolean mFetchRecordsReady;
+        public boolean mResolveRecordsReady;
+        public boolean mSendRecordsReady;
+        public boolean mDeleteUserReady;
+        public boolean mDeleteCategoryReady;
+        public boolean mDeleteSiteSettingsReady;
+        public boolean mReady;
+        public boolean mShouldResetSync;
+
+        public SyncIsReady() {
+            mFetchRecordsReady = false;
+            mResolveRecordsReady = false;
+            mSendRecordsReady = false;
+            mDeleteUserReady = false;
+            mDeleteCategoryReady = false;
+            mDeleteSiteSettingsReady = false;
+            mReady = false;
+            mShouldResetSync = false;
+        }
 
         public boolean IsReady() {
             return mReady && mFetchRecordsReady && mResolveRecordsReady
@@ -212,11 +223,17 @@ public class BraveSyncWorker {
         public String mTitle = "";
         public String mCustomTitle = "";
         public String mParentFolderObjectId = "";
-        public boolean mIsFolder = false;
-        public long mLastAccessedTime = 0;
-        public long mCreationTime = 0;
+        public boolean mIsFolder;
+        public long mLastAccessedTime;
+        public long mCreationTime;
         public String mFavIcon = "";
         public String mOrder = "";
+
+        public BookmarkInternal() {
+            mIsFolder = false;
+            mLastAccessedTime = 0;
+            mCreationTime = 0;
+        }
 
         public JSONObject toJSONObject() {
             JSONObject jsonObject = new JSONObject();
@@ -400,8 +417,7 @@ public class BraveSyncWorker {
     }
 
     public final BookmarkModelObserver mBookmarkModelObserver = new BookmarkModelObserver() {
-
-        private BookmarkBridge mBridge = null;
+        private BookmarkBridge mBridge;
 
         @Override
         public void bookmarkModelChanged() {
@@ -438,9 +454,26 @@ public class BraveSyncWorker {
 
 
     public BraveSyncWorker(Context context) {
+        mStopThread = false;
+        mSeed = null;
+        mDeviceId = null;
+        mDeviceName = null;
+        mApiVersion = "0";
+        mBaseOrder = null;
+        mLastOrder = null;
         mReorderBookmarks = false;
         mContext = context;
+        mTimeLastFetch = 0;
         mTimeLastFetchExecuted = 0;
+        mFetchInProgress = false;
+        mNewBookmarkModel = null;
+        mInterruptSyncSleep = false;
+        mWebContents = null;
+        mWebContentsInjector = null;
+        mViewEventSink = null;
+        mJSWebContents = null;
+        mJSWebContentsInjector = null;
+        mJSViewEventSink = null;
         mSharedPreferences = ContextUtils.getAppSharedPreferences();
         mSyncIsReady = new SyncIsReady();
         mSendSyncDataThread = new SendSyncDataThread();
@@ -451,9 +484,7 @@ public class BraveSyncWorker {
         if (null != mSyncThread) {
             mSyncThread.start();
         }
-        if (null == mDefaultFolder) {
-            GetDefaultFolderId();
-        }
+        GetDefaultFolderId();
     }
 
     private String convertStreamToString(InputStream is) {
@@ -1573,7 +1604,7 @@ public class BraveSyncWorker {
 
     class DeleteBookmarkRunnable implements Runnable {
         private long mBookmarkId;
-        public List<BookmarkItem> mBookmarksItems = null;
+        public List<BookmarkItem> mBookmarksItems;
 
         public DeleteBookmarkRunnable(long bookmarkId) {
             mBookmarkId = bookmarkId;
@@ -1711,7 +1742,7 @@ public class BraveSyncWorker {
     }
 
     class GetBookmarkItemsRunnable implements Runnable {
-        private List<BookmarkItem> mBookmarksItems = null;
+        private List<BookmarkItem> mBookmarksItems;
 
         public GetBookmarkItemsRunnable() {
         }
@@ -2267,7 +2298,7 @@ public class BraveSyncWorker {
     }
 
     class GetBookmarkItemsByLocalIdsRunnable implements Runnable {
-        public ArrayList<BookmarkItem> mBookmarkItems = null;
+        public ArrayList<BookmarkItem> mBookmarkItems;
         private ArrayList<Long> mBookmarkIds;
         private String mAction;
 
@@ -2300,7 +2331,7 @@ public class BraveSyncWorker {
     }
 
     class GetBookmarkIdRunnable implements Runnable {
-        public BookmarkItem mBookmarkItem = null;
+        public BookmarkItem mBookmarkItem;
         private long mBookmarkId;
         private boolean mNewBookmarkModelAcquiredByThisRunnableWaiter;
 
@@ -2504,7 +2535,7 @@ public class BraveSyncWorker {
     }
 
     class AddBookmarkRunnable implements Runnable {
-        private BookmarkId mBookmarkId = null;
+        private BookmarkId mBookmarkId;
         private String mUrl;
         private String mTitle;
         private boolean misFolder;

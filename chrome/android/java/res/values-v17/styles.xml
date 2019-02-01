@@ -145,6 +145,11 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="BraveDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="buttonBarButtonStyle">@style/SigninDialogButtonStyle</item>
+    </style>
+
     <style name="Theme.Chromium.Preferences.ManageSpace">
         <!-- Action bar color. This is intentionally a dark color. See crbug.com/871193. -->
         <item name="colorPrimary">@color/dark_action_bar_color</item>
