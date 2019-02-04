@@ -2062,6 +2062,8 @@ public class ChromeTabbedActivity
             RecordUserAction.record("MobileTabClosedUndoShortCut");
         } else if (id == R.id.enter_vr_id) {
             VrModuleProvider.getDelegate().enterVrIfNecessary();
+        } else if (id == R.id.brave_rewards_id) {
+            openNewOrSelectExistingTab(REWARDS_SETTINGS_URL);
         } else {
             return super.onMenuOrKeyboardAction(id, fromMenu);
         }
@@ -2841,23 +2843,21 @@ public class ChromeTabbedActivity
         }
     }
 
-    public void openNewOrSelectExistingTab(String url){
+    public void openNewOrSelectExistingTab(String url) {
         TabModel tabModel = getCurrentTabModel();
         int tabRewardsIndex = TabModelUtils.getTabIndexByUrl(tabModel, url);
 
-        //find if tab exists
+        // Find if tab exists
         if (tabRewardsIndex != TabModel.INVALID_TAB_INDEX){
             Tab tab = tabModel.getTabAt(tabRewardsIndex);
-            //moving tab forward
-            if (! getActivityTab().equals(tab)){
+            // Moving tab forward
+            if (!getActivityTab().equals(tab)){
                 tabModel.moveTab(tab.getId(), tabModel.getCount());
                 tabModel.setIndex(
                         TabModelUtils.getTabIndexById(tabModel, tab.getId()),
                         TabSelectionType.FROM_USER);
             }
-        }
-        //open a new tab
-        else{
+        } else { // Open a new tab
             getTabCreator(false).launchUrl(url, TabLaunchType.FROM_CHROME_UI);
         }
     }
