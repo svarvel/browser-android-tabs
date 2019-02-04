@@ -9,8 +9,8 @@
 <translation id="10614374240317010">一律不保存</translation>
 <translation id="1067922213147265141">其他 Google 服务</translation>
 <translation id="1068672505746868501">一律不翻译源语言为<ph name="SOURCE_LANGUAGE" />的网页</translation>
-<translation id="1080790410959514870">您要退出某个由 <ph name="DOMAIN_NAME" /> 管理的帐号。这会导致系统删除此设备上存储的 Chrome 数据，但这些数据仍会保留在您的 Google 帐号中。</translation>
-<translation id="1099080783256647258">开启流量节省程序后，Chrome 会使用 Google 服务器加快网页的加载速度并压缩加载的网页。在加载速度特别慢的网页上，流量节省程序会重写网页以仅加载必要内容。流量节省程序不会优化在无痕模式下加载的网页。</translation>
+<translation id="1080790410959514870">您要退出某个由 <ph name="DOMAIN_NAME" /> 管理的帐号。这会导致系统删除此设备上存储的 Brave 数据，但这些数据仍会保留在您的 Google 帐号中。</translation>
+<translation id="1099080783256647258">开启流量节省程序后，Brave 会使用 Google 服务器加快网页的加载速度并压缩加载的网页。在加载速度特别慢的网页上，流量节省程序会重写网页以仅加载必要内容。流量节省程序不会优化在无痕模式下加载的网页。</translation>
 <translation id="1105960400813249514">屏幕截图</translation>
 <translation id="1111673857033749125">您在其他设备上保存的书签将列在此处。</translation>
 <translation id="1113597929977215864">显示简化版视图</translation>
@@ -19,7 +19,7 @@
 <translation id="1141800923049248244">{FILE_COUNT,plural, =1{有 1 项下载尚待处理。}other{有 # 项下载尚待处理。}}</translation>
 <translation id="1145536944570833626">删除现有数据。</translation>
 <translation id="1146678959555564648">进入 VR</translation>
-<translation id="114721135501989771">在 Chrome 中畅享 Google 的智能技术</translation>
+<translation id="114721135501989771">在 Brave 中畅享 Google 的智能技术</translation>
 <translation id="1157102636231978136">您的浏览数据和活动，会同步到您的 Google 帐号</translation>
 <translation id="116280672541001035">已耗用</translation>
 <translation id="1172593791219290334">启动页</translation>
@@ -48,9 +48,9 @@
 <translation id="1285320974508926690">一律不翻译此网站</translation>
 <translation id="1291207594882862231">清除历史记录、Cookie、网站数据、缓存内容…</translation>
 <translation id="129553762522093515">最近关闭的标签页</translation>
-<translation id="1326317727527857210">要在您的其他设备上访问您的标签页，请登录 Chrome。</translation>
-<translation id="1331212799747679585">Chrome 无法更新。更多选项</translation>
-<translation id="1332501820983677155">Google Chrome 功能快捷键</translation>
+<translation id="1326317727527857210">要在您的其他设备上访问您的标签页，请登录 Brave。</translation>
+<translation id="1331212799747679585">Brave 无法更新。更多选项</translation>
+<translation id="1332501820983677155">Brave 功能快捷键</translation>
 <translation id="1360432990279830238">退出帐号并关闭同步功能？</translation>
 <translation id="136248372334525878">预加载网页，以便更快地加载并实现离线阅读</translation>
 <translation id="1369915414381695676">网站 <ph name="SITE_NAME" /> 已添加</translation>
@@ -70,7 +70,7 @@
 <translation id="1414981605391750300">正在连接到 Google，请稍等片刻…</translation>
 <translation id="1416550906796893042">应用版本</translation>
 <translation id="1430915738399379752">打印</translation>
-<translation id="1445680696957526815">Chrome 的组件互不兼容。Chrome 可能正在升级，请过几分钟后重试。如果问题仍然存在，请尝试卸载并重新安装 Chrome。</translation>
+<translation id="1445680696957526815">Brave 的组件互不兼容。Brave 可能正在升级，请过几分钟后重试。如果问题仍然存在，请尝试卸载并重新安装 Brave。</translation>
 <translation id="1446450296470737166">允许全面控制 MIDI 设备</translation>
 <translation id="145097072038377568">已在 Android 设置中停用</translation>
 <translation id="1477626028522505441">未能成功下载 <ph name="FILE_NAME" />，因为服务器出现了问题。</translation>
@@ -79,14 +79,14 @@
 <translation id="1513352483775369820">书签和网络历史记录</translation>
 <translation id="1513858653616922153">删除密码</translation>
 <translation id="1516229014686355813">“点按搜索”功能会将所选字词和当前页面（作为上下文）一起发送给 Google 搜索。您可在<ph name="BEGIN_LINK" />设置<ph name="END_LINK" />中关闭该功能。</translation>
-<translation id="1539064842193522527">已在 Chrome 中打开此链接</translation>
+<translation id="1539064842193522527">已在 Brave 中打开此链接</translation>
 <translation id="1549000191223877751">移至其他窗口</translation>
-<translation id="1553358976309200471">更新 Chrome</translation>
+<translation id="1553358976309200471">更新 Brave</translation>
 <translation id="1566400915470565838">若想使用“<ph name="APP_NAME" />”，请连接到互联网。</translation>
 <translation id="1569387923882100876">连接的设备</translation>
 <translation id="1571304935088121812">复制用户名</translation>
 <translation id="1576370611341449972">仅在连接到 Wi-Fi 网络时下载</translation>
-<translation id="1612196535745283361">Chrome 需要拥有位置信息使用权才能扫描设备。<ph name="BEGIN_LINK" />此设备的位置信息使用权已被停用<ph name="END_LINK" />。</translation>
+<translation id="1612196535745283361">Brave 需要拥有位置信息使用权才能扫描设备。<ph name="BEGIN_LINK" />此设备的位置信息使用权已被停用<ph name="END_LINK" />。</translation>
 <translation id="1620510694547887537">摄像头</translation>
 <translation id="1623104350909869708">阻止此页创建其他对话框</translation>
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{移除 1 个所选项}other{移除 # 个所选项}}</translation>
@@ -114,24 +114,24 @@
 <translation id="1821253160463689938">使用 Cookie 记住您的偏好设置（即使您不访问这些网页）</translation>
 <translation id="1829244130665387512">在网页中查找</translation>
 <translation id="1853692000353488670">打开新的无痕式标签页</translation>
-<translation id="1868024384445905608">Chrome 现可更快速地下载文件</translation>
+<translation id="1868024384445905608">Brave 现可更快速地下载文件</translation>
 <translation id="187628348035757895">开发者选项</translation>
-<translation id="1880072593381090678">Chrome 中的热门网页</translation>
+<translation id="1880072593381090678">Brave 中的热门网页</translation>
 <translation id="1883903952484604915">我的文件</translation>
 <translation id="1887786770086287077">此设备的位置信息使用权已关闭；若想开启这项权限，请转到 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />。</translation>
-<translation id="1891331835972267886"><ph name="APP_NAME" />将在 Chrome 中打开。继续操作即表示您同意 Chrome 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />。</translation>
+<translation id="1891331835972267886"><ph name="APP_NAME" />将在 Brave 中打开。继续操作即表示您同意 Brave 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />。</translation>
 <translation id="189172778771606813">关闭抽屉式导航栏</translation>
 <translation id="1919345977826869612">广告</translation>
 <translation id="1919950603503897840">选择联系人</translation>
 <translation id="1923695749281512248">已下载 <ph name="BYTES_DOWNLOADED_WITH_UNITS" />，共 <ph name="FILE_SIZE_WITH_UNITS" /></translation>
 <translation id="1933845786846280168">所选的标签页</translation>
 <translation id="1938981467853765413">提供反馈</translation>
-<translation id="194341124344773587">在 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />中为 Chrome 启用这项权限。</translation>
+<translation id="194341124344773587">在 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />中为 Brave 启用这项权限。</translation>
 <translation id="1943432128510653496">保存密码</translation>
 <translation id="1946005195648379376">控制 Google 如何使用您的浏览记录对 Google 搜索和其他 Google 服务进行个性化设置。</translation>
 <translation id="1952172573699511566">网站将尽可能以您的首选语言显示文字。</translation>
 <translation id="195283394249132567">个性化的 Google 服务</translation>
-<translation id="1960290143419248813">此版本的 Android 不再支持 Chrome 更新</translation>
+<translation id="1960290143419248813">此版本的 Android 不再支持 Brave 更新</translation>
 <translation id="1966710179511230534">请更新您的登录详细信息。</translation>
 <translation id="1974060860693918893">高级</translation>
 <translation id="1984937141057606926">允许（第三方除外）</translation>
@@ -150,14 +150,14 @@
 <translation id="2063713494490388661">点按搜索</translation>
 <translation id="2079545284768500474">撤消</translation>
 <translation id="2082238445998314030">第 <ph name="RESULT_NUMBER" /> 条结果，共 <ph name="TOTAL_RESULTS" /> 条</translation>
-<translation id="2086652334978798447">要获取 Google 推荐的个性化内容，请登录 Chrome。</translation>
+<translation id="2086652334978798447">要获取 Google 推荐的个性化内容，请登录 Brave。</translation>
 <translation id="2091887806945687916">声音</translation>
 <translation id="2096012225669085171">在所有设备上保持同步并进行个性化设置</translation>
 <translation id="2100273922101894616">自动登录</translation>
 <translation id="2111511281910874386">转至相关网页</translation>
 <translation id="2120297377148151361">活动和互动行为</translation>
 <translation id="2122601567107267586">无法打开此应用</translation>
-<translation id="2126426811489709554">由 Chrome 提供支持</translation>
+<translation id="2126426811489709554">由 Brave 提供支持</translation>
 <translation id="2131665479022868825">节省了 <ph name="DATA" /></translation>
 <translation id="213279576345780926">已关闭“<ph name="TAB_TITLE" />”</translation>
 <translation id="2139186145475833000">添加到主屏幕</translation>
@@ -181,10 +181,10 @@
 <translation id="2321086116217818302">正在准备密码…</translation>
 <translation id="2321958826496381788">拖动该滑块，将文字调整到适合您阅读的大小。点按两次某段落后，显示的文字至少应是这么大。</translation>
 <translation id="2323763861024343754">网站存储数据</translation>
-<translation id="2325181368089033281">您或您的父母随时可以自定义<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />。Google 可能会根据您访问的网站上的内容、您在浏览器中的互动行为和活动，为您提供个性化的 Chrome 体验和其他 Google 服务体验（例如翻译、搜索和广告）。</translation>
+<translation id="2325181368089033281">您或您的父母随时可以自定义<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />。Google 可能会根据您访问的网站上的内容、您在浏览器中的互动行为和活动，为您提供个性化的 Brave 体验和其他 Google 服务体验（例如翻译、搜索和广告）。</translation>
 <translation id="2328985652426384049">无法登录</translation>
-<translation id="2342981853652716282">登录 Chrome 即可将您的书签、密码等同步到您的所有设备上。</translation>
-<translation id="2349710944427398404">Chrome 所使用的数据总量，包括帐号、书签和已保存的设置</translation>
+<translation id="2342981853652716282">登录 Brave 即可将您的书签、密码等同步到您的所有设备上。</translation>
+<translation id="2349710944427398404">Brave 所使用的数据总量，包括帐号、书签和已保存的设置</translation>
 <translation id="2351097562818989364">您的翻译设置已重置。</translation>
 <translation id="2359808026110333948">继续</translation>
 <translation id="2369533728426058518">打开的标签页</translation>
@@ -193,16 +193,16 @@
 <translation id="2410754283952462441">选择帐号</translation>
 <translation id="2414672073755873541">此处没有任何内容</translation>
 <translation id="2414886740292270097">深色调</translation>
-<translation id="2416359993254398973">Chrome 需要获得相应权限，才能允许此网站使用您的摄像头。</translation>
+<translation id="2416359993254398973">Brave 需要获得相应权限，才能允许此网站使用您的摄像头。</translation>
 <translation id="2426805022920575512">选择其他帐号</translation>
 <translation id="2433507940547922241">外观</translation>
 <translation id="2434158240863470628">下载完成 <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
-<translation id="2436117022029368436">与 Google 通信，以便改进浏览功能和 Chrome</translation>
+<translation id="2436117022029368436">与 Google 通信，以便改进浏览功能和 Brave</translation>
 <translation id="2440823041667407902">位置信息使用权</translation>
 <translation id="2450083983707403292">要重新开始下载 <ph name="FILE_NAME" /> 吗？</translation>
 <translation id="2476578072172137802">网站设置</translation>
 <translation id="2482878487686419369">通知</translation>
-<translation id="2494974097748878569">Chrome 中的 Google 助理</translation>
+<translation id="2494974097748878569">Brave 中的 Google 助理</translation>
 <translation id="2496180316473517155">浏览记录</translation>
 <translation id="2498359688066513246">帮助和反馈</translation>
 <translation id="2501278716633472235">返回</translation>
@@ -215,7 +215,7 @@
 <translation id="2567385386134582609">图片</translation>
 <translation id="2570922361219980984">此设备的位置信息使用权也已关闭；若想开启这项权限，请转到 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />。</translation>
 <translation id="257931822824936280">已展开 - 点击此处即可收起。</translation>
-<translation id="2581165646603367611">这会清除 Chrome 认为不重要的网站的 Cookie、缓存和其他数据。</translation>
+<translation id="2581165646603367611">这会清除 Brave 认为不重要的网站的 Cookie、缓存和其他数据。</translation>
 <translation id="2586657967955657006">剪贴板</translation>
 <translation id="2587052924345400782">新版本已推出</translation>
 <translation id="2593272815202181319">等宽</translation>
@@ -236,7 +236,7 @@
 <translation id="271033894570825754">新建</translation>
 <translation id="2728754400939377704">按网站排序</translation>
 <translation id="2744248271121720757">点按某个字词可立即开始搜索或查看相关操作</translation>
-<translation id="2760323196215778921">您还需为 Chrome 启用这项权限。请参阅 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />了解详情。</translation>
+<translation id="2760323196215778921">您还需为 Brave 启用这项权限。请参阅 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />了解详情。</translation>
 <translation id="2762000892062317888">刚刚</translation>
 <translation id="2777555524387840389">还剩 <ph name="SECONDS" /> 秒</translation>
 <translation id="2779651927720337254">失败</translation>
@@ -249,18 +249,18 @@
 <translation id="2842985007712546952">父文件夹</translation>
 <translation id="2870560284913253234">网站</translation>
 <translation id="2874939134665556319">上一曲</translation>
-<translation id="2876764156902388290">Chrome 向您显示此网页时消耗的数据流量更少</translation>
-<translation id="2888126860611144412">关于 Chrome</translation>
+<translation id="2876764156902388290">Brave 向您显示此网页时消耗的数据流量更少</translation>
+<translation id="2888126860611144412">关于 Brave</translation>
 <translation id="2891154217021530873">停止加载网页</translation>
 <translation id="2900528713135656174">创建活动</translation>
-<translation id="2902702728133930130">由于出现意外错误，Chrome 启动失败。</translation>
+<translation id="2902702728133930130">由于出现意外错误，Brave 启动失败。</translation>
 <translation id="290376772003165898">网页的源语言不是<ph name="LANGUAGE" />？</translation>
 <translation id="2910701580606108292">在允许网站播放受保护内容前先询问</translation>
 <translation id="2913331724188855103">允许网站保存和读取 Cookie 数据（推荐）</translation>
 <translation id="2932150158123903946">Google <ph name="APP_NAME" /> 存储数据</translation>
-<translation id="2943166482989655199">将系统信息和使用情况数据发送给 Google，帮助改进 Chrome 并提高其安全性</translation>
+<translation id="2943166482989655199">将系统信息和使用情况数据发送给 Google，帮助改进 Brave 并提高其安全性</translation>
 <translation id="2956410042958133412">该帐号由 <ph name="PARENT_NAME_1" /> 和 <ph name="PARENT_NAME_2" /> 管理。</translation>
-<translation id="2960796085439532066">版权所有 <ph name="YEAR" /> Google Inc. 保留所有权利。</translation>
+<translation id="2960796085439532066">版权所有 <ph name="YEAR" /> Brave Software Inc. 保留所有权利。</translation>
 <translation id="2962095958535813455">已切换到隐身标签页</translation>
 <translation id="2968755619301702150">证书查看器</translation>
 <translation id="2979025552038692506">所选的隐身标签页</translation>
@@ -275,14 +275,14 @@
 <translation id="305593374596241526">位置信息功能现处于关闭状态；请在 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />中开启此项功能。</translation>
 <translation id="307908932405420782">我们很快将会为您奉上更多文章，伴您度过美好的晨间时光！</translation>
 <translation id="3089395242580810162">在隐身标签页中打开</translation>
-<translation id="311456632243022227">已在 Chrome 中打开多个链接</translation>
+<translation id="311456632243022227">已在 Brave 中打开多个链接</translation>
 <translation id="3115898365077584848">显示信息</translation>
 <translation id="3123473560110926937">已禁止部分网站显示广告</translation>
 <translation id="3137521801621304719">退出隐身模式</translation>
-<translation id="3148434565183091099">要将您的书签同步到您所有的设备上，请登录 Chrome。</translation>
+<translation id="3148434565183091099">要将您的书签同步到您所有的设备上，请登录 Brave。</translation>
 <translation id="3157842584138209013">通过“更多选项”按钮查看您已节省多少数据流量</translation>
 <translation id="3166827708714933426">标签页和窗口快捷键</translation>
-<translation id="3190152372525844641">在 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />中为 Chrome 启用这些权限。</translation>
+<translation id="3190152372525844641">在 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />中为 Brave 启用这些权限。</translation>
 <translation id="3198916472715691905">已存储 <ph name="STORAGE_AMOUNT" /> 数据</translation>
 <translation id="3207960819495026254">已加书签</translation>
 <translation id="321773570071367578">如果您忘记了密码或想更改此设置，请<ph name="BEGIN_LINK" />重置同步设置<ph name="END_LINK" /></translation>
@@ -295,12 +295,12 @@
 <translation id="3259831549858767975">缩小网页上的所有内容</translation>
 <translation id="3269093882174072735">加载图片</translation>
 <translation id="3269956123044984603">要获取您在其他设备上的标签页，请在 Android 帐号设置部分开启“自动同步数据”。</translation>
-<translation id="3282568296779691940">登录 Chrome</translation>
+<translation id="3282568296779691940">登录 Brave</translation>
 <translation id="32895400574683172">允许显示通知</translation>
 <translation id="3295602654194328831">隐藏信息</translation>
 <translation id="3298243779924642547">精简版</translation>
 <translation id="3303414029551471755">要开始下载该内容吗？</translation>
-<translation id="3306398118552023113">此应用正在 Chrome 中运行</translation>
+<translation id="3306398118552023113">此应用正在 Brave 中运行</translation>
 <translation id="3328801116991980348">网站信息</translation>
 <translation id="3341058695485821946">查看您已节省多少数据流量</translation>
 <translation id="3350687908700087792">关闭所有隐身标签页</translation>
@@ -324,19 +324,19 @@
 <translation id="3527085408025491307">文件夹</translation>
 <translation id="3542235761944717775">可用空间：<ph name="KILOBYTES" /> KB</translation>
 <translation id="3549657413697417275">搜索您的历史记录</translation>
-<translation id="3552151358455404883">在<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />中管理 Chrome 同步和个性化</translation>
+<translation id="3552151358455404883">在<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />中管理 Brave 同步和个性化</translation>
 <translation id="3557336313807607643">添加到通讯录</translation>
 <translation id="3568688522516854065">要访问您在其他设备上打开的标签页，请登录您的帐号并开启同步功能</translation>
 <translation id="3587482841069643663">全部</translation>
 <translation id="358794129225322306">允许网站自动下载多个文件。</translation>
-<translation id="3590487821116122040">Chrome 认为不重要的网站（例如未保存任何设置的网站或您不常访问的网站）存储的数据</translation>
+<translation id="3590487821116122040">Brave 认为不重要的网站（例如未保存任何设置的网站或您不常访问的网站）存储的数据</translation>
 <translation id="3599863153486145794">清除所有登录过的设备上的历史记录。您的 Google 帐号在 <ph name="BEGIN_LINK" />myactivity.google.com<ph name="END_LINK" /> 上可能有其他形式的浏览记录。</translation>
 <translation id="3600792891314830896">将播放声音的网站静音</translation>
-<translation id="360207483134687714">帮助我们改进 Chrome 中的虚拟现实体验</translation>
+<translation id="360207483134687714">帮助我们改进 Brave 中的虚拟现实体验</translation>
 <translation id="3604604794717279723">我接受</translation>
 <translation id="3616113530831147358">音频</translation>
 <translation id="3620176948598597475">这项重置操作会清空流量节省程序的历史记录，包括曾访问过的网站的列表。</translation>
-<translation id="3630011985153972676">在“设置”中允许 Chrome 在连接到 Wi-Fi 网络时为您下载文章。</translation>
+<translation id="3630011985153972676">在“设置”中允许 Brave 在连接到 Wi-Fi 网络时为您下载文章。</translation>
 <translation id="3632295766818638029">显示密码</translation>
 <translation id="363596933471559332">使用存储的凭据自动登录网站。当该功能处于停用状态时，系统会在您每次登录网站之前要求您进行验证。</translation>
 <translation id="3662546969139119822">此处没有任何历史记录</translation>
@@ -344,7 +344,7 @@
 <translation id="3692944402865947621">未能成功下载“<ph name="FILE_NAME" />”，因为无法访问它的存储位置。</translation>
 <translation id="3712575778697986964">重置流量节省程序？</translation>
 <translation id="3714981814255182093">打开查找栏</translation>
-<translation id="3716182511346448902">此网页占用的内存过多，因此 Chrome 已将其暂停。</translation>
+<translation id="3716182511346448902">此网页占用的内存过多，因此 Brave 已将其暂停。</translation>
 <translation id="3724958268700778519">Google 助理可帮助您在网站上快速结算，从而节省您的时间。</translation>
 <translation id="3739899004075612870">已在 <ph name="PRODUCT_NAME" /> 中添加书签</translation>
 <translation id="3744111309925758534">其他应用已占用的空间：<ph name="MEGABYTES" /> MB</translation>
@@ -396,7 +396,7 @@
 <translation id="4084712963632273211">来自 <ph name="PUBLISHER_ORIGIN" /> - <ph name="BEGIN_DEEMPHASIZED" />由 Google 提供<ph name="END_DEEMPHASIZED" /></translation>
 <translation id="4084836577264234537">下载内容已占用的空间：<ph name="MEGABYTES" /> MB</translation>
 <translation id="4095146165863963773">要删除应用数据吗？</translation>
-<translation id="4099578267706723511">将使用情况统计信息和崩溃报告发送给 Google，帮助我们完善 Chrome。</translation>
+<translation id="4099578267706723511">将使用情况统计信息和崩溃报告发送给 Google，帮助我们完善 Brave。</translation>
 <translation id="410351446219883937">自动播放</translation>
 <translation id="4113030288477039509">由您的管理员管理</translation>
 <translation id="4116038641877404294">下载网页以便离线查看</translation>
@@ -415,7 +415,7 @@
 <translation id="423219824432660969">自 <ph name="TIME" />起，使用 Google 密码加密已同步的数据</translation>
 <translation id="4242533952199664413">打开“设置”</translation>
 <translation id="4243710787042215766">在私密标签页中打开</translation>
-<translation id="424864128008805179">退出 Chrome？</translation>
+<translation id="424864128008805179">退出 Brave？</translation>
 <translation id="4256782883801055595">开放源代码许可</translation>
 <translation id="4259722352634471385">已屏蔽 <ph name="URL" /></translation>
 <translation id="4262028915562328938">同步时出现错误，点按可了解详情。</translation>
@@ -439,12 +439,12 @@
 <translation id="4453340223357552416">已在 <ph name="PRODUCT_NAME" /> 中下载 <ph name="FILE_NAME" /></translation>
 <translation id="4468959413250150279">将某个特定网站静音。</translation>
 <translation id="4472118726404937099">要在您的所有设备上保持同步并进行个性化设置，请登录您的帐号并开启同步功能</translation>
-<translation id="447252321002412580">帮助我们改进 Chrome 的功能和性能</translation>
+<translation id="447252321002412580">帮助我们改进 Brave 的功能和性能</translation>
 <translation id="4479647676395637221">在允许网站使用您的摄像头前先询问（推荐）</translation>
-<translation id="4487967297491345095">Chrome 的所有应用数据都将被永久删除，其中包括所有文件、设置、帐号、数据库等。</translation>
+<translation id="4487967297491345095">Brave 的所有应用数据都将被永久删除，其中包括所有文件、设置、帐号、数据库等。</translation>
 <translation id="4513387527876475750">{DAYS,plural, =1{# 天前}other{# 天前}}</translation>
 <translation id="451872707440238414">搜索书签</translation>
-<translation id="4521489764227272523">所选数据已从 Chrome 和同步的设备中移除。
+<translation id="4521489764227272523">所选数据已从 Brave 和同步的设备中移除。
 
 不过，您的 Google 帐号在 <ph name="BEGIN_LINK" />myactivity.google.com<ph name="END_LINK" /> 上可能还有其他形式的浏览记录（例如，在其他 Google 服务中的搜索记录和活动记录）。</translation>
 <translation id="4532845899244822526">选择文件夹</translation>
@@ -468,13 +468,13 @@
 <translation id="4684427112815847243">同步所有数据类型</translation>
 <translation id="4695891336199304370">{SHIPPING_OPTIONS,plural, =1{<ph name="SHIPPING_OPTION_PREVIEW" />\u2026以及另外 <ph name="NUMBER_OF_ADDITIONAL_SHIPPING_OPTIONS" /> 种送货方式}other{<ph name="SHIPPING_OPTION_PREVIEW" />\u2026以及另外 <ph name="NUMBER_OF_ADDITIONAL_SHIPPING_OPTIONS" /> 种送货方式}}</translation>
 <translation id="4698034686595694889">在 <ph name="APP_NAME" /> 中离线查看</translation>
-<translation id="4698413471314543145">缺少运行 Chrome 所需的关键功能；您可能未完成 Chrome 安装过程，或者 Chrome 与此版本的 Android 不兼容。</translation>
+<translation id="4698413471314543145">缺少运行 Brave 所需的关键功能；您可能未完成 Brave 安装过程，或者 Brave 与此版本的 Android 不兼容。</translation>
 <translation id="4699172675775169585">缓存的图片和文件</translation>
 <translation id="4714588616299687897">最多可为您节省 60% 的数据流量</translation>
 <translation id="4719927025381752090">提供翻译</translation>
 <translation id="4720023427747327413">在<ph name="PRODUCT_NAME" />中打开</translation>
-<translation id="4720982865791209136">欢迎帮助我们改进 Chrome。<ph name="BEGIN_LINK" />参与调查<ph name="END_LINK" /></translation>
-<translation id="4730876730346568982">您正要将同步帐号从 <ph name="ACCOUNT_EMAIL_OLD" /> 切换到 <ph name="ACCOUNT_EMAIL_NEW" />。您现有的 Chrome 数据由 <ph name="MANAGED_DOMAIN" /> 管理。切换同步帐号后，您的数据将从这台设备上删除，但仍会保留在 <ph name="ACCOUNT_EMAIL_OLD" /> 中。</translation>
+<translation id="4720982865791209136">欢迎帮助我们改进 Brave。<ph name="BEGIN_LINK" />参与调查<ph name="END_LINK" /></translation>
+<translation id="4730876730346568982">您正要将同步帐号从 <ph name="ACCOUNT_EMAIL_OLD" /> 切换到 <ph name="ACCOUNT_EMAIL_NEW" />。您现有的 Brave 数据由 <ph name="MANAGED_DOMAIN" /> 管理。切换同步帐号后，您的数据将从这台设备上删除，但仍会保留在 <ph name="ACCOUNT_EMAIL_OLD" /> 中。</translation>
 <translation id="473775607612524610">更新</translation>
 <translation id="4738836084190194332">上次同步时间：<ph name="WHEN" /></translation>
 <translation id="4749960740855309258">打开新标签页</translation>
@@ -502,7 +502,7 @@
 <translation id="488187801263602086">重命名文件</translation>
 <translation id="4882831918239250449">控制 Google 如何利用您的浏览记录为您提供个性化的搜索、广告和其他服务</translation>
 <translation id="4883379392681899581">退出私密模式</translation>
-<translation id="4885273946141277891">Chrome 实例数量已超出上限。</translation>
+<translation id="4885273946141277891">Brave 实例数量已超出上限。</translation>
 <translation id="4910889077668685004">付款应用</translation>
 <translation id="4913161338056004800">重置统计信息</translation>
 <translation id="4913169188695071480">停止刷新</translation>
@@ -511,7 +511,7 @@
 <translation id="4958708863221495346"><ph name="URL_OF_THE_CURRENT_TAB" /> 正在共享您的屏幕</translation>
 <translation id="4961107849584082341">将此页面翻译成任何语言</translation>
 <translation id="4961334780091921942">您所有设备上的密码、历史记录等信息</translation>
-<translation id="4961700429721424617">您正要退出由 <ph name="MANAGED_DOMAIN" /> 管理的帐号。退出后，您的 Chrome 数据将从这台设备上删除，但仍会保留在您的 Google 帐号中。</translation>
+<translation id="4961700429721424617">您正要退出由 <ph name="MANAGED_DOMAIN" /> 管理的帐号。退出后，您的 Brave 数据将从这台设备上删除，但仍会保留在您的 Google 帐号中。</translation>
 <translation id="497421865427891073">前进</translation>
 <translation id="4988210275050210843">正在下载文件（<ph name="MEGABYTES" /> MB）。</translation>
 <translation id="4988526792673242964">页码</translation>
@@ -537,14 +537,14 @@
 <translation id="5161254044473106830">必须提供标题</translation>
 <translation id="5162754098604580781">{FILE_COUNT,plural, =1{1 项下载失败。}other{# 项下载失败。}}</translation>
 <translation id="5168917394043976756">打开抽屉式导航栏</translation>
-<translation id="5184329579814168207">在 Chrome 中打开</translation>
+<translation id="5184329579814168207">在 Brave 中打开</translation>
 <translation id="5199929503336119739">工作资料</translation>
 <translation id="5210286577605176222">跳转到上一个标签页</translation>
 <translation id="5210365745912300556">关闭标签页</translation>
 <translation id="5222676887888702881">退出</translation>
 <translation id="5224771365102442243">包含视频</translation>
 <translation id="5233638681132016545">打开新的标签页</translation>
-<translation id="5264003212305142034">您随时可以自定义<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />。Google 可能会根据您访问的网站上的内容、您在浏览器中的活动和互动行为，为您提供个性化的 Chrome 体验和其他 Google 服务体验（例如翻译、搜索和广告）。</translation>
+<translation id="5264003212305142034">您随时可以自定义<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />。Google 可能会根据您访问的网站上的内容、您在浏览器中的活动和互动行为，为您提供个性化的 Brave 体验和其他 Google 服务体验（例如翻译、搜索和广告）。</translation>
 <translation id="526421993248218238">无法加载此页面</translation>
 <translation id="5271967389191913893">设备无法打开要下载的内容。</translation>
 <translation id="528192093759286357">从顶部向下拖动并触摸“返回”按钮，即可退出全屏模式。</translation>
@@ -552,7 +552,7 @@
 <translation id="5301954838959518834">知道了</translation>
 <translation id="5304593522240415983">此字段不能为空</translation>
 <translation id="5308380583665731573">连接</translation>
-<translation id="5308603654685598744">该功能处于开启状态时，Chrome 将使用 Google 翻译对其他语言的网页进行翻译。</translation>
+<translation id="5308603654685598744">该功能处于开启状态时，Brave 将使用 Google 翻译对其他语言的网页进行翻译。</translation>
 <translation id="5313967007315987356">添加网站</translation>
 <translation id="5317780077021120954">保存</translation>
 <translation id="5324858694974489420">家长设置</translation>
@@ -562,7 +562,7 @@
 <translation id="5363230136052241468">点按“首页”按钮即可加载新标签页</translation>
 <translation id="5372829067651257087">已复制网址。</translation>
 <translation id="5391532827096253100">您与此网站之间建立的连接不安全。网站信息</translation>
-<translation id="5400569084694353794">使用此应用即表示您同意遵守 Chrome 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />。</translation>
+<translation id="5400569084694353794">使用此应用即表示您同意遵守 Brave 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />。</translation>
 <translation id="5403644198645076998">只允许访问某些网站</translation>
 <translation id="5414836363063783498">正在验证…</translation>
 <translation id="5423934151118863508">您最常访问的网页将列在此处</translation>
@@ -579,20 +579,20 @@
 <translation id="5487521232677179737">清除数据</translation>
 <translation id="5494752089476963479">禁止会展示侵扰性或误导性广告的网站显示广告</translation>
 <translation id="5494920125229734069">全选</translation>
-<translation id="550684401320795253">正在更新 Chrome…</translation>
+<translation id="550684401320795253">正在更新 Brave…</translation>
 <translation id="5512137114520586844">该帐号由 <ph name="PARENT_NAME" /> 管理。</translation>
 <translation id="5514904542973294328">已被此设备的管理员停用</translation>
 <translation id="5515439363601853141">需解锁才能查看您的密码</translation>
 <translation id="5517095782334947753">您有来自 <ph name="FROM_ACCOUNT" /> 的书签、历史记录、密码及其他设置。</translation>
 <translation id="5524843473235508879">已阻止重定向。</translation>
-<translation id="5527082711130173040">Chrome 需要拥有位置信息使用权才能扫描设备。请<ph name="BEGIN_LINK1" />更新权限<ph name="END_LINK1" />。<ph name="BEGIN_LINK2" />此设备的位置信息使用权也已被停用<ph name="END_LINK2" />。</translation>
+<translation id="5527082711130173040">Brave 需要拥有位置信息使用权才能扫描设备。请<ph name="BEGIN_LINK1" />更新权限<ph name="END_LINK1" />。<ph name="BEGIN_LINK2" />此设备的位置信息使用权也已被停用<ph name="END_LINK2" />。</translation>
 <translation id="5527111080432883924">在允许网站读取剪贴板中的文字和图片前询问您（推荐）</translation>
 <translation id="5530766185686772672">关闭隐身标签页</translation>
 <translation id="5534640966246046842">已复制网站</translation>
-<translation id="5537099431952529648">您和您的父母可以在<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />中管理 Chrome 同步和个性化</translation>
+<translation id="5537099431952529648">您和您的父母可以在<ph name="BEGIN_LINK1" />设置<ph name="END_LINK1" />中管理 Brave 同步和个性化</translation>
 <translation id="5556459405103347317">重新加载</translation>
 <translation id="5561549206367097665">正在等待连接到网络…</translation>
-<translation id="557283862590186398">Chrome 需要获得相应权限，才能允许此网站使用您的麦克风。</translation>
+<translation id="557283862590186398">Brave 需要获得相应权限，才能允许此网站使用您的麦克风。</translation>
 <translation id="55737423895878184">允许使用位置信息以及显示通知</translation>
 <translation id="5578795271662203820">在<ph name="SEARCH_ENGINE" />中搜索此图片</translation>
 <translation id="5595485650161345191">修改地址</translation>
@@ -619,7 +619,7 @@
 <translation id="572328651809341494">最近打开的标签页</translation>
 <translation id="5726692708398506830">放大网页上的所有内容</translation>
 <translation id="5748802427693696783">已切换到标准标签页</translation>
-<translation id="5749068826913805084">Chrome 需要具备存储空间使用权限，才能下载文件。</translation>
+<translation id="5749068826913805084">Brave 需要具备存储空间使用权限，才能下载文件。</translation>
 <translation id="5763382633136178763">隐身标签页</translation>
 <translation id="5763514718066511291">点按即可复制该应用的网址</translation>
 <translation id="5765780083710877561">说明：</translation>
@@ -634,7 +634,7 @@
 <translation id="584427517463557805">所选的私密标签页</translation>
 <translation id="5853623416121554550">已暂停</translation>
 <translation id="5854790677617711513">30 天之前的</translation>
-<translation id="5858741533101922242">Chrome 无法开启蓝牙适配器</translation>
+<translation id="5858741533101922242">Brave 无法开启蓝牙适配器</translation>
 <translation id="5860033963881614850">关闭</translation>
 <translation id="5862731021271217234">要访问您在其他设备上打开的标签页，请开启同步功能</translation>
 <translation id="5864174910718532887">详细信息：按网站名称排序</translation>
@@ -649,7 +649,7 @@
 <translation id="5939518447894949180">重置</translation>
 <translation id="5942872142862698679">目前使用的搜索引擎是 Google</translation>
 <translation id="5952764234151283551">将您尝试访问的网页的网址发送给 Google</translation>
-<translation id="5956665950594638604">在新标签页中打开 Chrome 帮助中心</translation>
+<translation id="5956665950594638604">在新标签页中打开 Brave 帮助中心</translation>
 <translation id="5958275228015807058">在“下载内容”中查找您的文件和网页</translation>
 <translation id="5962718611393537961">点按即可收起</translation>
 <translation id="5990142338020175451">畅享更加个性化的 Google 服务，例如更贴合个人需求的网页建议</translation>
@@ -673,7 +673,7 @@
 <translation id="6154478581116148741">需在“设置”部分中开启屏幕锁定功能，才能从此设备中导出您的密码</translation>
 <translation id="6159335304067198720">节省 <ph name="PERCENT" /> 的数据流量</translation>
 <translation id="6165508094623778733">了解详情</translation>
-<translation id="6171019622954353983">继续操作即表示您同意：Chrome 可将 Chrome 自动填充功能所保存的数据以及相应网站的网址和内容发送给 Google，以便为您提供此项服务。\n\n若想关闭 Chrome 中的 Google 助理和 Chrome 自动填充功能，请访问 Chrome 设置。<ph name="BEGIN_LINK" />了解详情<ph name="END_LINK" /></translation>
+<translation id="6171019622954353983">继续操作即表示您同意：Brave 可将 Brave 自动填充功能所保存的数据以及相应网站的网址和内容发送给 Google，以便为您提供此项服务。\n\n若想关闭 Brave 中的 Google 助理和 Brave 自动填充功能，请访问 Brave 设置。<ph name="BEGIN_LINK" />了解详情<ph name="END_LINK" /></translation>
 <translation id="6177111841848151710">已设为不可供当前的搜索引擎使用</translation>
 <translation id="6177390657002841081">启用流量节省程序</translation>
 <translation id="6181444274883918285">添加例外网站</translation>
@@ -692,7 +692,7 @@
 <translation id="6277522088822131679">打印该页面时出现问题，请重试。</translation>
 <translation id="6295158916970320988">所有网站</translation>
 <translation id="629730747756840877">帐号</translation>
-<translation id="6302269476990306341">Chrome 中的 Google 助理即将停止工作</translation>
+<translation id="6302269476990306341">Brave 中的 Google 助理即将停止工作</translation>
 <translation id="6303969859164067831">退出帐号并关闭同步功能</translation>
 <translation id="6316139424528454185">Android 版本不受支持</translation>
 <translation id="6320088164292336938">振动</translation>
@@ -709,7 +709,7 @@
 <translation id="6383961787135158834">清除网站存储数据…</translation>
 <translation id="6388207532828177975">清除并重置</translation>
 <translation id="6393156038355142111">建议一个安全系数高的密码</translation>
-<translation id="6393863479814692971">Chrome 需要获得相应权限，才能允许此网站使用您的摄像头和麦克风。</translation>
+<translation id="6393863479814692971">Brave 需要获得相应权限，才能允许此网站使用您的摄像头和麦克风。</translation>
 <translation id="6395288395575013217">链接</translation>
 <translation id="6404511346730675251">修改书签</translation>
 <translation id="6406506848690869874">同步</translation>
@@ -730,14 +730,14 @@
 <translation id="654446541061731451">选择要传输的标签页</translation>
 <translation id="6545017243486555795">清除所有数据</translation>
 <translation id="6560414384669816528">改用搜狗搜索</translation>
-<translation id="6566259936974865419">Chrome 已为您保存的数据量：<ph name="GIGABYTES" /> GB</translation>
+<translation id="6566259936974865419">Brave 已为您保存的数据量：<ph name="GIGABYTES" /> GB</translation>
 <translation id="6567212464587185774">可节省多达 60% 的数据量，并可加快网页加载速度。</translation>
 <translation id="6573096386450695060">一律允许</translation>
-<translation id="6573431926118603307">您在其他设备上的 Chrome 中打开的标签页将列在此处。</translation>
+<translation id="6573431926118603307">您在其他设备上的 Brave 中打开的标签页将列在此处。</translation>
 <translation id="6583199322650523874">为当前网页添加书签</translation>
 <translation id="6584721918629302382">AR</translation>
 <translation id="6593061639179217415">桌面版网站</translation>
-<translation id="6600954340915313787">已复制到 Chrome</translation>
+<translation id="6600954340915313787">已复制到 Brave</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
 <translation id="6610147964972079463">关闭私密标签页</translation>
 <translation id="6612358246767739896">受保护的内容</translation>
@@ -745,14 +745,14 @@
 <translation id="6643016212128521049">清除</translation>
 <translation id="6643649862576733715">按已节省的数据流量排序</translation>
 <translation id="6648977384226967773">{CONTACT,plural, =1{<ph name="CONTACT_PREVIEW" />\u2026以及另外 <ph name="NUMBER_OF_ADDITIONAL_CONTACTS" /> 个联系人}other{<ph name="CONTACT_PREVIEW" />\u2026以及另外 <ph name="NUMBER_OF_ADDITIONAL_CONTACTS" /> 个联系人}}</translation>
-<translation id="6656545060687952787">Chrome 需要拥有位置信息权限才能扫描设备。<ph name="BEGIN_LINK" />更新权限<ph name="END_LINK" /></translation>
+<translation id="6656545060687952787">Brave 需要拥有位置信息权限才能扫描设备。<ph name="BEGIN_LINK" />更新权限<ph name="END_LINK" /></translation>
 <translation id="6657585470893396449">密码</translation>
 <translation id="6659594942844771486">Tab</translation>
 <translation id="666268767214822976">当您在地址栏中输入查询内容时，使用联想查询服务显示相关查询和热门网站</translation>
 <translation id="666731172850799929">在 <ph name="APP_NAME" />中打开</translation>
-<translation id="666981079809192359">Chrome 隐私权声明</translation>
+<translation id="666981079809192359">Brave 隐私权声明</translation>
 <translation id="6697492270171225480">找不到相应网页时，显示有关类似网页的建议</translation>
-<translation id="6697947395630195233">Chrome 需要获得位置权限，才能将您的位置信息共享给此网站。</translation>
+<translation id="6697947395630195233">Brave 需要获得位置权限，才能将您的位置信息共享给此网站。</translation>
 <translation id="6698801883190606802">管理已同步的数据</translation>
 <translation id="6699370405921460408">Google 服务器会优化您访问的网页。</translation>
 <translation id="6709133671862442373">资讯</translation>
@@ -830,7 +830,7 @@
 <translation id="7250468141469952378">已选择 <ph name="ITEM_COUNT" /> 项</translation>
 <translation id="7253272406652746122">请在设备的“设置”应用中，通过“帐号”页面添加 Google 帐号。</translation>
 <translation id="7274013316676448362">禁止访问的网站</translation>
-<translation id="7291387454912369099">使用 Chrome 中的 Google 助理结帐</translation>
+<translation id="7291387454912369099">使用 Brave 中的 Google 助理结帐</translation>
 <translation id="729975465115245577">您的设备上没有可以存储密码文件的应用。</translation>
 <translation id="7302081693174882195">详细信息：按已节省的数据流量排序</translation>
 <translation id="7333031090786104871">仍在添加先前的网站</translation>
@@ -841,13 +841,13 @@
 <translation id="7375125077091615385">类型：</translation>
 <translation id="7396940094317457632"><ph name="FILE_NAME" />。</translation>
 <translation id="7400418766976504921">网址</translation>
-<translation id="7403691278183511381">Chrome 首次运行体验</translation>
+<translation id="7403691278183511381">Brave 首次运行体验</translation>
 <translation id="741204030948306876">立即启用</translation>
 <translation id="7413229368719586778">开始日期：<ph name="DATE" /></translation>
 <translation id="7423098979219808738">先询问</translation>
 <translation id="7423538860840206698">已阻止读取剪贴板中的内容</translation>
 <translation id="7431991332293347422">控制 Google 如何利用您的浏览记录为您提供个性化的 Google 搜索和其他 Google 服务</translation>
-<translation id="7437998757836447326">退出 Chrome</translation>
+<translation id="7437998757836447326">退出 Brave</translation>
 <translation id="7444811645081526538">更多类别</translation>
 <translation id="7445411102860286510">允许网站自动播放静音的视频（推荐）</translation>
 <translation id="7454641608352164238">空间不足</translation>
@@ -866,23 +866,23 @@
 <translation id="7521387064766892559">JavaScript</translation>
 <translation id="7542481630195938534">无法获取建议</translation>
 <translation id="7562080006725997899">正在清除浏览数据</translation>
-<translation id="756809126120519699">已清除 Chrome 数据</translation>
+<translation id="756809126120519699">已清除 Brave 数据</translation>
 <translation id="757524316907819857">禁止网站播放受保护内容</translation>
 <translation id="7589445247086920869">不适用于当前的搜索引擎</translation>
-<translation id="7593557518625677601">打开 Android 设置，重新启用 Android 系统同步功能以开始 Chrome 同步</translation>
+<translation id="7593557518625677601">打开 Android 设置，重新启用 Android 系统同步功能以开始 Brave 同步</translation>
 <translation id="7596558890252710462">操作系统</translation>
 <translation id="7605594153474022051">同步功能无法正常运行</translation>
 <translation id="7612619742409846846">已使用以下帐号登录 Google：</translation>
 <translation id="7619072057915878432">未能成功下载 <ph name="FILE_NAME" />，因为出现了网络故障。</translation>
 <translation id="7624880197989616768"><ph name="BEGIN_LINK1" />获取帮助<ph name="END_LINK1" />或<ph name="BEGIN_LINK2" />重新扫描<ph name="END_LINK2" /></translation>
-<translation id="7626032353295482388">欢迎使用 Chrome</translation>
+<translation id="7626032353295482388">欢迎使用 Brave</translation>
 <translation id="7638584964844754484">密码不正确</translation>
 <translation id="7641339528570811325">清除浏览数据…</translation>
 <translation id="7648422057306047504">使用 Google 凭据加密密码</translation>
 <translation id="7649070708921625228">帮助</translation>
 <translation id="7658239707568436148">取消</translation>
 <translation id="7665369617277396874">添加帐号</translation>
-<translation id="7670842975141217779">Chrome 中的\nGoogle 助理</translation>
+<translation id="7670842975141217779">Brave 中的\nGoogle 助理</translation>
 <translation id="7682724950699840886">请尝试按以下提示操作：确保您的设备上有足够的空间，然后重新尝试导出。</translation>
 <translation id="7698359219371678927">在 <ph name="APP_NAME" /> 中创建电子邮件</translation>
 <translation id="7704317875155739195">自动填充搜索字词和网址</translation>
@@ -917,7 +917,7 @@
 <translation id="7981313251711023384">预加载网页，以便实现更快速的浏览和搜索</translation>
 <translation id="79859296434321399">要查看增强现实内容，请安装 ARCore</translation>
 <translation id="7986741934819883144">选择联系人</translation>
-<translation id="7987073022710626672">Chrome 服务条款</translation>
+<translation id="7987073022710626672">Brave 服务条款</translation>
 <translation id="7998918019931843664">重新打开关闭的标签页</translation>
 <translation id="7999064672810608036">确定要清除该网站的所有本地数据（包括 Cookie）并重置该网站的所有权限吗？</translation>
 <translation id="8004582292198964060">浏览器</translation>
@@ -931,9 +931,9 @@
 <translation id="8037750541064988519">还剩 <ph name="DAYS" /> 天</translation>
 <translation id="804335162455518893">找不到 SD 卡</translation>
 <translation id="805047784848435650">根据您的浏览记录</translation>
-<translation id="8051303708327298699">您还需为 Chrome 启用这些权限。请参阅 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />了解详情。</translation>
+<translation id="8051303708327298699">您还需为 Brave 启用这些权限。请参阅 <ph name="BEGIN_LINK" />Android 设置<ph name="END_LINK" />了解详情。</translation>
 <translation id="8051695050440594747"><ph name="MEGABYTES" /> MB 可用</translation>
-<translation id="8058746566562539958">在新的 Chrome 标签页中打开</translation>
+<translation id="8058746566562539958">在新的 Brave 标签页中打开</translation>
 <translation id="8063895661287329888">无法添加书签。</translation>
 <translation id="806745655614357130">单独保存我的数据</translation>
 <translation id="8068648041423924542">无法选择证书。</translation>
@@ -955,7 +955,7 @@
 <translation id="8220488350232498290">下载内容已占用的空间：<ph name="GIGABYTES" /> GB</translation>
 <translation id="8249310407154411074">移至顶部</translation>
 <translation id="8250920743982581267">文档</translation>
-<translation id="825412236959742607">此网页占用的内存过多，因此 Chrome 移除了部分内容。</translation>
+<translation id="825412236959742607">此网页占用的内存过多，因此 Brave 移除了部分内容。</translation>
 <translation id="8260126382462817229">请尝试重新登录</translation>
 <translation id="8261506727792406068">删除</translation>
 <translation id="8266862848225348053">下载内容保存位置</translation>
@@ -974,7 +974,7 @@
 <translation id="8428213095426709021">设置</translation>
 <translation id="8438566539970814960">改善搜索和浏览体验</translation>
 <translation id="8441146129660941386">后退</translation>
-<translation id="8443209985646068659">Chrome 无法更新</translation>
+<translation id="8443209985646068659">Brave 无法更新</translation>
 <translation id="8445448999790540984">无法导出密码</translation>
 <translation id="8447861592752582886">撤消设备权限</translation>
 <translation id="8461694314515752532">使用您自己的同步密码加密已同步的数据</translation>
@@ -985,11 +985,11 @@
 <translation id="8493948351860045254">释放空间</translation>
 <translation id="8496140788721644230">已安装 AR 模块</translation>
 <translation id="8497726226069778601">目前还未列出任何网页…</translation>
-<translation id="8503559462189395349">Chrome 密码</translation>
+<translation id="8503559462189395349">Brave 密码</translation>
 <translation id="8503813439785031346">用户名</translation>
 <translation id="8504988642345501642">当您向上滚动屏幕时，系统会显示指向相关页面的快速链接。您所访问的网页的网址会被发送给 Google。</translation>
 <translation id="8507520749471379845">有可用密码</translation>
-<translation id="8514477925623180633">导出存储在 Chrome 中的密码</translation>
+<translation id="8514477925623180633">导出存储在 Brave 中的密码</translation>
 <translation id="8514577642972634246">进入隐身模式</translation>
 <translation id="851751545965956758">禁止网站连接到设备</translation>
 <translation id="8523928698583292556">删除存储的密码</translation>
@@ -1016,14 +1016,14 @@
 <translation id="869891660844655955">截止日期</translation>
 <translation id="8719023831149562936">无法传输当前的标签页</translation>
 <translation id="8725066075913043281">重试</translation>
-<translation id="8728487861892616501">使用此应用即表示您同意 Chrome 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />，以及<ph name="BEGIN_LINK3" />针对通过 Family Link 管理的 Google 帐号的隐私权声明<ph name="END_LINK3" />。</translation>
+<translation id="8728487861892616501">使用此应用即表示您同意 Brave 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />，以及<ph name="BEGIN_LINK3" />针对通过 Family Link 管理的 Google 帐号的隐私权声明<ph name="END_LINK3" />。</translation>
 <translation id="8730621377337864115">完成</translation>
 <translation id="8748850008226585750">内容已隐藏</translation>
 <translation id="8751914237388039244">选择图片</translation>
 <translation id="8788968922598763114">重新打开上次关闭的标签页</translation>
 <translation id="8801436777607969138">禁止特定网站运行 JavaScript。</translation>
 <translation id="8812260976093120287">在某些网站上，您可以使用自己的设备通过上述支持的付款应用付款。</translation>
-<translation id="8816439037877937734"><ph name="APP_NAME" />将在 Chrome 中打开。继续操作即表示您同意 Chrome 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />，以及<ph name="BEGIN_LINK3" />针对通过 Family Link 管理的 Google 帐号的隐私权声明<ph name="END_LINK3" />。</translation>
+<translation id="8816439037877937734"><ph name="APP_NAME" />将在 Brave 中打开。继续操作即表示您同意 Brave 的<ph name="BEGIN_LINK1" />服务条款<ph name="END_LINK1" />和<ph name="BEGIN_LINK2" />隐私权声明<ph name="END_LINK2" />，以及<ph name="BEGIN_LINK3" />针对通过 Family Link 管理的 Google 帐号的隐私权声明<ph name="END_LINK3" />。</translation>
 <translation id="8820817407110198400">书签</translation>
 <translation id="8833831881926404480">网站正在共享您的屏幕</translation>
 <translation id="883806473910249246">下载此内容时出错。</translation>
@@ -1040,7 +1040,7 @@
 <translation id="8922289737868596582">通过“更多选项”按钮下载网页以供离线查看</translation>
 <translation id="8941729603749328384">www.example.com</translation>
 <translation id="8942627711005830162">在其他窗口中打开</translation>
-<translation id="8951232171465285730">Chrome 已为您保存的数据量：<ph name="MEGABYTES" /> MB</translation>
+<translation id="8951232171465285730">Brave 已为您保存的数据量：<ph name="MEGABYTES" /> MB</translation>
 <translation id="8958424370300090006">阻止特定网站使用 Cookie。</translation>
 <translation id="8959122750345127698">无法访问 <ph name="URL" /></translation>
 <translation id="8965591936373831584">待下载</translation>
@@ -1050,7 +1050,7 @@
 <translation id="8983677657449185470">帮助我们改进安全浏览功能</translation>
 <translation id="8986494364107987395">将使用情况统计信息和崩溃报告自动发送给 Google</translation>
 <translation id="8993760627012879038">在无痕模式下打开新标签页</translation>
-<translation id="8998729206196772491">您正要登录由 <ph name="MANAGED_DOMAIN" /> 管理的帐号，并要授权其管理员控制您的 Chrome 数据。您的数据将与此帐号永久关联。退出 Chrome 后，您的数据将从这台设备上删除，但仍会保留在您的 Google 帐号中。</translation>
+<translation id="8998729206196772491">您正要登录由 <ph name="MANAGED_DOMAIN" /> 管理的帐号，并要授权其管理员控制您的 Brave 数据。您的数据将与此帐号永久关联。退出 Brave 后，您的数据将从这台设备上删除，但仍会保留在您的 Google 帐号中。</translation>
 <translation id="9019902583201351841">由您父母管理</translation>
 <translation id="9040142327097499898">允许显示通知。但此设备的位置信息功能已关闭。</translation>
 <translation id="9050666287014529139">密码</translation>
@@ -1080,7 +1080,7 @@
 <translation id="945522503751344254">发送反馈</translation>
 <translation id="945632385593298557">使用您的麦克风</translation>
 <translation id="951339005376969845">删除现有数据。您可通过切换回 <ph name="FROM_ACCOUNT" /> 来获取现有数据。</translation>
-<translation id="95817756606698420">在中国，Chrome 可以使用<ph name="BEGIN_BOLD" />搜狗<ph name="END_BOLD" />作为搜索引擎。如果需要，您可以在<ph name="BEGIN_LINK" />设置<ph name="END_LINK" />中进行更改。</translation>
+<translation id="95817756606698420">在中国，Brave 可以使用<ph name="BEGIN_BOLD" />搜狗<ph name="END_BOLD" />作为搜索引擎。如果需要，您可以在<ph name="BEGIN_LINK" />设置<ph name="END_LINK" />中进行更改。</translation>
 <translation id="965817943346481315">屏蔽会展示侵扰性或误导性广告的网站（推荐）</translation>
 <translation id="970715775301869095">还剩 <ph name="MINUTES" /> 分钟</translation>
 <translation id="974555521953189084">输入密码以开始同步</translation>

@@ -9,8 +9,8 @@
 <translation id="10614374240317010">Ei ole kunagi salvestatud</translation>
 <translation id="1067922213147265141">Muud Google'i teenused</translation>
 <translation id="1068672505746868501">Ära tõlgi kunagi <ph name="SOURCE_LANGUAGE" /> keeles olevaid lehti</translation>
-<translation id="1080790410959514870">Logite välja kontolt, mida haldab <ph name="DOMAIN_NAME" />. Selle tulemusel kustutatakse seadmesse salvestatud Chrome'i andmed, kuid need säilivad teie Google'i kontol.</translation>
-<translation id="1099080783256647258">Kui andmemahu säästja on sisse lülitatud, kasutab Chrome lehtede tihendamiseks ja kiiremaks laadimiseks Google'i servereid. Eriti aeglaste lehtede puhul koostab andmemahu säästja lehed uuesti, et laadida ainult esmatähtis sisu. Andmemahu säästja ei optimeeri inkognito režiimis laaditud lehti.</translation>
+<translation id="1080790410959514870">Logite välja kontolt, mida haldab <ph name="DOMAIN_NAME" />. Selle tulemusel kustutatakse seadmesse salvestatud Brave'i andmed, kuid need säilivad teie Google'i kontol.</translation>
+<translation id="1099080783256647258">Kui andmemahu säästja on sisse lülitatud, kasutab Brave lehtede tihendamiseks ja kiiremaks laadimiseks Google'i servereid. Eriti aeglaste lehtede puhul koostab andmemahu säästja lehed uuesti, et laadida ainult esmatähtis sisu. Andmemahu säästja ei optimeeri inkognito režiimis laaditud lehti.</translation>
 <translation id="1105960400813249514">Kuva jäädvustamine</translation>
 <translation id="1111673857033749125">Siin kuvatakse teie teistes seadmetes salvestatud järjehoidjad.</translation>
 <translation id="1113597929977215864">Kuva lihtsustatud vaade</translation>
@@ -19,7 +19,7 @@
 <translation id="1141800923049248244">{FILE_COUNT,plural, =1{1 allalaadimine on ootel.}other{# allalaadimist on ootel.}}</translation>
 <translation id="1145536944570833626">Kustutage olemasolevad andmed.</translation>
 <translation id="1146678959555564648">Ava VR</translation>
-<translation id="114721135501989771">Google'i nutikus Chrome'is</translation>
+<translation id="114721135501989771">Google'i nutikus Brave'is</translation>
 <translation id="1157102636231978136">Teie sirvimisandmed ja -tegevused, mis on sünkroonitud teie Google'i kontoga</translation>
 <translation id="116280672541001035">Kasutatud</translation>
 <translation id="1172593791219290334">Käivitamisel avatav leht</translation>
@@ -48,9 +48,9 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="1285320974508926690">Ära kunagi seda saiti tõlgi</translation>
 <translation id="1291207594882862231">Ajaloo, küpsiste, saidiandmete, vahemälu kustutamine …</translation>
 <translation id="129553762522093515">Viimati suletud</translation>
-<translation id="1326317727527857210">Vahelehtede hankimiseks oma teistest seadmetest logige Chrome'i sisse.</translation>
-<translation id="1331212799747679585">Chrome'i ei saa värskendada. Rohkem valikuid</translation>
-<translation id="1332501820983677155">Google Chrome'i funktsioonide otseteed</translation>
+<translation id="1326317727527857210">Vahelehtede hankimiseks oma teistest seadmetest logige Brave'i sisse.</translation>
+<translation id="1331212799747679585">Brave'i ei saa värskendada. Rohkem valikuid</translation>
+<translation id="1332501820983677155">Brave'i funktsioonide otseteed</translation>
 <translation id="1360432990279830238">Login välja ja keelan sünkroonimise?</translation>
 <translation id="136248372334525878">Eellaaditakse lehti kiiremaks laadimiseks ja võrguühenduseta lugemiseks</translation>
 <translation id="1369915414381695676"><ph name="SITE_NAME" /> on lisatud</translation>
@@ -70,7 +70,7 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="1414981605391750300">Google'iga ühenduse võtmine. See võib natuke aega võtta …</translation>
 <translation id="1416550906796893042">Rakenduse versioon</translation>
 <translation id="1430915738399379752">Printimine</translation>
-<translation id="1445680696957526815">Chrome'i komponendid on omavahel vastuolus. Chrome'i võidakse täiendada, proovige uuesti mõne minuti pärast. Kui probleem ei lahene, proovige Chrome desinstallida ja seejärel uuesti installida.</translation>
+<translation id="1445680696957526815">Brave'i komponendid on omavahel vastuolus. Brave'i võidakse täiendada, proovige uuesti mõne minuti pärast. Kui probleem ei lahene, proovige Brave desinstallida ja seejärel uuesti installida.</translation>
 <translation id="1446450296470737166">MIDI-seadm. täieliku juht. lub.</translation>
 <translation id="145097072038377568">Android-seadetes välja lülitatud</translation>
 <translation id="1477626028522505441">Faili <ph name="FILE_NAME" /> allalaadimine ebaõnnestus serveriprobleemide tõttu.</translation>
@@ -79,14 +79,14 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="1513352483775369820">Järjehoidjad ja veebiajalugu</translation>
 <translation id="1513858653616922153">Kustuta parool</translation>
 <translation id="1516229014686355813">Puudutamine otsimiseks saadab valitud sõna ja praeguse lehe kontekstina Google'i otsingusse. Selle saab välja lülitada jaotises <ph name="BEGIN_LINK" />Seaded<ph name="END_LINK" />.</translation>
-<translation id="1539064842193522527">Link on Chrome'is avatud</translation>
+<translation id="1539064842193522527">Link on Brave'is avatud</translation>
 <translation id="1549000191223877751">Teisalda teise aknasse</translation>
-<translation id="1553358976309200471">Värskenda Chrome'i</translation>
+<translation id="1553358976309200471">Värskenda Brave'i</translation>
 <translation id="1566400915470565838">Rakenduse <ph name="APP_NAME" /> kasutamiseks looge ühendus Internetiga.</translation>
 <translation id="1569387923882100876">Ühendatud seade</translation>
 <translation id="1571304935088121812">Kasutajanime kopeerimine</translation>
 <translation id="1576370611341449972">Sisu laaditakse alla ainult WiFi-ühenduse kaudu</translation>
-<translation id="1612196535745283361">Chrome vajab seadmete otsimiseks juurdepääsu teie asukohale. Juurdepääs asukohale on <ph name="BEGIN_LINK" />selles seadmes välja lülitatud<ph name="END_LINK" />.</translation>
+<translation id="1612196535745283361">Brave vajab seadmete otsimiseks juurdepääsu teie asukohale. Juurdepääs asukohale on <ph name="BEGIN_LINK" />selles seadmes välja lülitatud<ph name="END_LINK" />.</translation>
 <translation id="1620510694547887537">Kaamera</translation>
 <translation id="1623104350909869708">Keela sellel lehel lisadialoogide loomine</translation>
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{Eemalda 1 valitud üksus}other{Eemalda # valitud üksust}}</translation>
@@ -114,24 +114,24 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="1821253160463689938">Kasutage küpsisefaile oma eelistuste meelespidamiseks isegi siis, kui te neid lehti ei külasta</translation>
 <translation id="1829244130665387512">Otsi leheküljelt</translation>
 <translation id="1853692000353488670">Uus inkognito vaheleht</translation>
-<translation id="1868024384445905608">Chrome laadib nüüd faile kiiremini alla</translation>
+<translation id="1868024384445905608">Brave laadib nüüd faile kiiremini alla</translation>
 <translation id="187628348035757895">Arendaja valikud</translation>
-<translation id="1880072593381090678">Populaarsed lehed Chrome'ist</translation>
+<translation id="1880072593381090678">Populaarsed lehed Brave'ist</translation>
 <translation id="1883903952484604915">Minu failid</translation>
 <translation id="1887786770086287077">Juurdepääs asukohale on selle seadme puhul välja lülitatud. Lülitage see sisse <ph name="BEGIN_LINK" />Androidi seadetes<ph name="END_LINK" />.</translation>
-<translation id="1891331835972267886"><ph name="APP_NAME" /> avaneb Chrome'is. Jätkates nõustute Chrome'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatised<ph name="END_LINK2" />.</translation>
+<translation id="1891331835972267886"><ph name="APP_NAME" /> avaneb Brave'is. Jätkates nõustute Brave'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatised<ph name="END_LINK2" />.</translation>
 <translation id="189172778771606813">Sule navigeerimissahtel</translation>
 <translation id="1919345977826869612">Reklaamid</translation>
 <translation id="1919950603503897840">Kontaktide valimine</translation>
 <translation id="1923695749281512248"><ph name="BYTES_DOWNLOADED_WITH_UNITS" /> / <ph name="FILE_SIZE_WITH_UNITS" /></translation>
 <translation id="1933845786846280168">Valitud vaheleht</translation>
 <translation id="1938981467853765413">Saatke tagasisidet</translation>
-<translation id="194341124344773587">Lülita <ph name="BEGIN_LINK" />Android-seadetes<ph name="END_LINK" /> sisse luba Chrome'ile.</translation>
+<translation id="194341124344773587">Lülita <ph name="BEGIN_LINK" />Android-seadetes<ph name="END_LINK" /> sisse luba Brave'ile.</translation>
 <translation id="1943432128510653496">Paroolide salvestamine</translation>
 <translation id="1946005195648379376">Saate juhtida seda, kuidas Google kasutab teie sirvimisajalugu otsingu ja muude Google'i teenuste isikupärastamiseks.</translation>
 <translation id="1952172573699511566">Veebisaidid kuvavad teksti võimaluse korral teie eelistatud keeles.</translation>
 <translation id="195283394249132567">Isikupärastatud Google'i teenused</translation>
-<translation id="1960290143419248813">Selles Androidi versioonis ei toetata enam Chrome'i värskendusi</translation>
+<translation id="1960290143419248813">Selles Androidi versioonis ei toetata enam Brave'i värskendusi</translation>
 <translation id="1966710179511230534">Värskendage oma sisselogimisandmeid.</translation>
 <translation id="1974060860693918893">Täpsemad</translation>
 <translation id="1984937141057606926">Lubatud, välja arvatud kolmanda osapoole küpsised</translation>
@@ -150,14 +150,14 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="2063713494490388661">Puudutage otsimiseks</translation>
 <translation id="2079545284768500474">Võta tagasi</translation>
 <translation id="2082238445998314030">Tulemus <ph name="RESULT_NUMBER" />/<ph name="TOTAL_RESULTS" /></translation>
-<translation id="2086652334978798447">Google'i soovitatud isikupärastatud sisu hankimiseks logige Chrome'i sisse.</translation>
+<translation id="2086652334978798447">Google'i soovitatud isikupärastatud sisu hankimiseks logige Brave'i sisse.</translation>
 <translation id="2091887806945687916">Heli</translation>
 <translation id="2096012225669085171">Seadmete vahel sünkroonimine ja isikupärastamine</translation>
 <translation id="2100273922101894616">Automaatne sisselogimine</translation>
 <translation id="2111511281910874386">Minge lehele</translation>
 <translation id="2120297377148151361">Tegevused ja interaktsioonid</translation>
 <translation id="2122601567107267586">Rakendust ei õnnestunud avada</translation>
-<translation id="2126426811489709554">Chrome'i toega</translation>
+<translation id="2126426811489709554">Brave'i toega</translation>
 <translation id="2131665479022868825"><ph name="DATA" /> salvestati</translation>
 <translation id="213279576345780926"><ph name="TAB_TITLE" /> suleti</translation>
 <translation id="2139186145475833000">Avaekraanile lisamine</translation>
@@ -181,10 +181,10 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="2321086116217818302">Paroolide ettevalmistamine …</translation>
 <translation id="2321958826496381788">Lohistage liugurit, kuni saate seda mugavalt lugeda. Lõigu topeltkoputamisel peab tekst olema vähemalt nii suur.</translation>
 <translation id="2323763861024343754">Saidi salvestusruum</translation>
-<translation id="2325181368089033281">Sina või su vanemad saavad <ph name="BEGIN_LINK1" />seadeid<ph name="END_LINK1" /> igal ajal kohandada. Google võib kasutada teie külastatavate saitide sisu, brauseri interaktsioone ja tegevusi Chrome'i ja Google'i teenuste, näiteks tõlke, otsingu ja reklaamide täiustamiseks.</translation>
+<translation id="2325181368089033281">Sina või su vanemad saavad <ph name="BEGIN_LINK1" />seadeid<ph name="END_LINK1" /> igal ajal kohandada. Google võib kasutada teie külastatavate saitide sisu, brauseri interaktsioone ja tegevusi Brave'i ja Google'i teenuste, näiteks tõlke, otsingu ja reklaamide täiustamiseks.</translation>
 <translation id="2328985652426384049">Ei saa sisse logida</translation>
-<translation id="2342981853652716282">Logige Chrome'i sisse, et kõikides oma seadmetes kasutada järjehoidjaid, paroole ja muud.</translation>
-<translation id="2349710944427398404">Chrome'i kasutatav andmemaht kokku, sh kontod, järjehoidjad ja salvestatud seaded</translation>
+<translation id="2342981853652716282">Logige Brave'i sisse, et kõikides oma seadmetes kasutada järjehoidjaid, paroole ja muud.</translation>
+<translation id="2349710944427398404">Brave'i kasutatav andmemaht kokku, sh kontod, järjehoidjad ja salvestatud seaded</translation>
 <translation id="2351097562818989364">Teie tõlkeseaded on lähtestatud.</translation>
 <translation id="2359808026110333948">Jätka</translation>
 <translation id="2369533728426058518">avatud vahelehed</translation>
@@ -193,16 +193,16 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="2410754283952462441">Konto valimine</translation>
 <translation id="2414672073755873541">Siin pole sisu</translation>
 <translation id="2414886740292270097">Tume</translation>
-<translation id="2416359993254398973">Chrome vajab selle saidi puhul luba, et teie kaamerale juurde pääseda.</translation>
+<translation id="2416359993254398973">Brave vajab selle saidi puhul luba, et teie kaamerale juurde pääseda.</translation>
 <translation id="2426805022920575512">Vali muu konto</translation>
 <translation id="2433507940547922241">Välimus</translation>
 <translation id="2434158240863470628">Allalaadimine jõudis lõpule: <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
-<translation id="2436117022029368436">Antakse Google'ile tagasisidet, et sirvimist ja Chrome'i paremaks muuta</translation>
+<translation id="2436117022029368436">Antakse Google'ile tagasisidet, et sirvimist ja Brave'i paremaks muuta</translation>
 <translation id="2440823041667407902">Juurdepääs asukohale</translation>
 <translation id="2450083983707403292">Kas soovite faili <ph name="FILE_NAME" /> allalaadimist uuesti alustada?</translation>
 <translation id="2476578072172137802">Saidi seaded</translation>
 <translation id="2482878487686419369">Märguanded</translation>
-<translation id="2494974097748878569">Google'i assistent Chrome'is</translation>
+<translation id="2494974097748878569">Google'i assistent Brave'is</translation>
 <translation id="2496180316473517155">Sirvimise ajalugu</translation>
 <translation id="2498359688066513246">Abi ja tagasiside</translation>
 <translation id="2501278716633472235">Mine tagasi</translation>
@@ -215,7 +215,7 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="2567385386134582609">KUJUTIS</translation>
 <translation id="2570922361219980984">Ka juurdepääs asukohale on selle seadme puhul välja lülitatud. Lülitage see sisse <ph name="BEGIN_LINK" />Androidi seadetes<ph name="END_LINK" />.</translation>
 <translation id="257931822824936280">Laiendatud – ahendamiseks klõpsake.</translation>
-<translation id="2581165646603367611">See tühjendab vahemälu, kustutab küpsised ja muud andmed, mis pärinevad Chrome'i arvates ebatähtsatelt saitidelt.</translation>
+<translation id="2581165646603367611">See tühjendab vahemälu, kustutab küpsised ja muud andmed, mis pärinevad Brave'i arvates ebatähtsatelt saitidelt.</translation>
 <translation id="2586657967955657006">Lõikelaud</translation>
 <translation id="2587052924345400782">Saadaval on uuem versioon</translation>
 <translation id="2593272815202181319">Püsisammkiri</translation>
@@ -236,7 +236,7 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="271033894570825754">Uus</translation>
 <translation id="2728754400939377704">Sordi saidi alusel</translation>
 <translation id="2744248271121720757">Puudutage sõna, et kohe otsida või seotud toiminguid näha</translation>
-<translation id="2760323196215778921">Samuti tuleb teil see luba Chrome'i jaoks sisse lülitada. Vaadake üksikasju <ph name="BEGIN_LINK" />Androidi seadetest<ph name="END_LINK" />.</translation>
+<translation id="2760323196215778921">Samuti tuleb teil see luba Brave'i jaoks sisse lülitada. Vaadake üksikasju <ph name="BEGIN_LINK" />Androidi seadetest<ph name="END_LINK" />.</translation>
 <translation id="2762000892062317888">just praegu</translation>
 <translation id="2777555524387840389">Jäänud on <ph name="SECONDS" /> sekundit</translation>
 <translation id="2779651927720337254">ebaõnnestus</translation>
@@ -249,18 +249,18 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="2842985007712546952">Emakaust</translation>
 <translation id="2870560284913253234">Sait</translation>
 <translation id="2874939134665556319">Eelmine lugu</translation>
-<translation id="2876764156902388290">Chrome kasutab selle lehe kuvamiseks vähem andmeid</translation>
-<translation id="2888126860611144412">Teave Chrome'i kohta</translation>
+<translation id="2876764156902388290">Brave kasutab selle lehe kuvamiseks vähem andmeid</translation>
+<translation id="2888126860611144412">Teave Brave'i kohta</translation>
 <translation id="2891154217021530873">Peata lehe laadimine</translation>
 <translation id="2900528713135656174">Looge sündmus</translation>
-<translation id="2902702728133930130">Käivitamisel ilmnes Chrome'is ootamatu viga.</translation>
+<translation id="2902702728133930130">Käivitamisel ilmnes Brave'is ootamatu viga.</translation>
 <translation id="290376772003165898">Kas leht ei ole <ph name="LANGUAGE" /> keeles?</translation>
 <translation id="2910701580606108292">Küsi enne saitidel kaitstud sisu esitamise lubamist</translation>
 <translation id="2913331724188855103">Lubab saitidel salvestada küpsiseid ja lugeda küpsiste andmeid (soovitatav)</translation>
 <translation id="2932150158123903946">Rakenduse Google <ph name="APP_NAME" /> salvestusruum</translation>
-<translation id="2943166482989655199">Täiustage Chrome'i ja selle turvalisust, saates Google'ile süsteemi- ja kasutusteavet</translation>
+<translation id="2943166482989655199">Täiustage Brave'i ja selle turvalisust, saates Google'ile süsteemi- ja kasutusteavet</translation>
 <translation id="2956410042958133412">Seda kontot haldavad <ph name="PARENT_NAME_1" /> ja <ph name="PARENT_NAME_2" />.</translation>
-<translation id="2960796085439532066">Autoriõigus <ph name="YEAR" /> Google Inc. Kõik õigused on kaitstud.</translation>
+<translation id="2960796085439532066">Autoriõigus <ph name="YEAR" /> Brave Software Inc. Kõik õigused on kaitstud.</translation>
 <translation id="2962095958535813455">Inkognito režiimi vahelehed on aktiveeritud</translation>
 <translation id="2968755619301702150">Sertifikaadikuvaja</translation>
 <translation id="2979025552038692506">Valitud inkognito vaheleht</translation>
@@ -275,14 +275,14 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="305593374596241526">Asukoht on välja lülitatud. Lülitage see sisse <ph name="BEGIN_LINK" />Androidi seadetes<ph name="END_LINK" />.</translation>
 <translation id="307908932405420782">Peagi kuvatakse rohkem artikleid. Head hommikut!</translation>
 <translation id="3089395242580810162">Ava inkognito vahelehel</translation>
-<translation id="311456632243022227">Mitu linki on Chrome'is avatud</translation>
+<translation id="311456632243022227">Mitu linki on Brave'is avatud</translation>
 <translation id="3115898365077584848">Kuva teave</translation>
 <translation id="3123473560110926937">Blokeeritud teatud saitidel</translation>
 <translation id="3137521801621304719">Inkognito režiimist väljumine</translation>
-<translation id="3148434565183091099">Järjehoidjate hankimiseks kõikidesse seadmetesse logige Chrome'i sisse.</translation>
+<translation id="3148434565183091099">Järjehoidjate hankimiseks kõikidesse seadmetesse logige Brave'i sisse.</translation>
 <translation id="3157842584138209013">Nupu Rohkem valikuid abil saate vaadata, kui palju andmemahtu olete säästnud</translation>
 <translation id="3166827708714933426">Vahelehe ja akna otseteed</translation>
-<translation id="3190152372525844641">Lülita <ph name="BEGIN_LINK" />Android-seadetes<ph name="END_LINK" /> sisse load Chrome'ile.</translation>
+<translation id="3190152372525844641">Lülita <ph name="BEGIN_LINK" />Android-seadetes<ph name="END_LINK" /> sisse load Brave'ile.</translation>
 <translation id="3198916472715691905"><ph name="STORAGE_AMOUNT" /> salvestatud andmeid</translation>
 <translation id="3207960819495026254">Järjehoidjatesse lisatud</translation>
 <translation id="321773570071367578">Kui unustasite parooli või soovite seda seadet muuta, <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END_LINK" /></translation>
@@ -295,12 +295,12 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="3259831549858767975">Lehel kuvatud sisu vähendamine</translation>
 <translation id="3269093882174072735">Laadi kujutis</translation>
 <translation id="3269956123044984603">Vahelehtede hankimiseks oma teistest seadmetest lülitage Androidi kontoseadetes sisse valik „Andmete automaatne sünkroonimine”.</translation>
-<translation id="3282568296779691940">Chrome'i sisselogimine</translation>
+<translation id="3282568296779691940">Brave'i sisselogimine</translation>
 <translation id="32895400574683172">Märguanded on lubatud</translation>
 <translation id="3295602654194328831">Peida teave</translation>
 <translation id="3298243779924642547">Lite</translation>
 <translation id="3303414029551471755">Kas soovite jätkata sisu allalaadimist?</translation>
-<translation id="3306398118552023113">Rakendus töötab Chrome'is</translation>
+<translation id="3306398118552023113">Rakendus töötab Brave'is</translation>
 <translation id="3328801116991980348">Saiditeave</translation>
 <translation id="3341058695485821946">Vaadake, kui palju andmemahtu olete säästnud</translation>
 <translation id="3350687908700087792">Kõigi inkognito vahelehtede sulgemine</translation>
@@ -324,19 +324,19 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="3527085408025491307">Kaust</translation>
 <translation id="3542235761944717775"><ph name="KILOBYTES" /> kB on saadaval</translation>
 <translation id="3549657413697417275">Otsige oma ajaloost</translation>
-<translation id="3552151358455404883">Chrome'i sünkroonimist ja isikupärastamist saate hallata jaotises <ph name="BEGIN_LINK1" />Seaded<ph name="END_LINK1" /></translation>
+<translation id="3552151358455404883">Brave'i sünkroonimist ja isikupärastamist saate hallata jaotises <ph name="BEGIN_LINK1" />Seaded<ph name="END_LINK1" /></translation>
 <translation id="3557336313807607643">Kontaktide lisamine</translation>
 <translation id="3568688522516854065">Oma teistest seadmetest vahelehtede hankimiseks logige sisse ja lülitage sünkroonimine sisse</translation>
 <translation id="3587482841069643663">Kõik</translation>
 <translation id="358794129225322306">Lubab saidil automaatselt mitut faili alla laadida.</translation>
-<translation id="3590487821116122040">Saitide salvestusruum, mida Chrome peab ebatähtsaks (nt saidid, mida külastate harva või millel ei ole salvestatud seadeid)</translation>
+<translation id="3590487821116122040">Saitide salvestusruum, mida Brave peab ebatähtsaks (nt saidid, mida külastate harva või millel ei ole salvestatud seadeid)</translation>
 <translation id="3599863153486145794">Kustutab ajaloo kõigist sisselogitud seadmetest. Aadressil <ph name="BEGIN_LINK" />myactivity.google.com<ph name="END_LINK" /> võib teie Google'i kontol olla muus vormis sirvimisajalugu.</translation>
 <translation id="3600792891314830896">Heli esitavad saidid vaigistatakse</translation>
-<translation id="360207483134687714">Aidake Chrome'is VR-i kasutuskogemust täiustada</translation>
+<translation id="360207483134687714">Aidake Brave'is VR-i kasutuskogemust täiustada</translation>
 <translation id="3604604794717279723">Nõustun</translation>
 <translation id="3616113530831147358">Heli</translation>
 <translation id="3620176948598597475">Lähtestamisel kustutatakse andmemahu säästja ajalugu, sh külastatud saitide loend.</translation>
-<translation id="3630011985153972676">Seadetes saate Chrome'il lubada WiFi-võrgus olles teie jaoks artikleid alla laadida.</translation>
+<translation id="3630011985153972676">Seadetes saate Brave'il lubada WiFi-võrgus olles teie jaoks artikleid alla laadida.</translation>
 <translation id="3632295766818638029">Parooli kuvamine</translation>
 <translation id="363596933471559332">Teid logitakse salvestatud mandaadiga veebisaitidele automaatselt sisse. Kui funktsioon on välja lülitatud, palutakse teilt kinnitust iga kord enne veebisaidile sisselogimist.</translation>
 <translation id="3662546969139119822">Ajalugu puudub</translation>
@@ -344,7 +344,7 @@ Te ei ole siiski nähtamatu. Privaatse režiimi kasutamine ei varja teie sirvimi
 <translation id="3692944402865947621">Faili <ph name="FILE_NAME" /> allalaadimine nurjus, kuna salvestuskoht ei ole saadaval.</translation>
 <translation id="3712575778697986964">Kas lähtestada andmemahu säästja?</translation>
 <translation id="3714981814255182093">Leiuriba avamine</translation>
-<translation id="3716182511346448902">Chrome peatas selle lehe, kuna see kasutab liiga palju mälu.</translation>
+<translation id="3716182511346448902">Brave peatas selle lehe, kuna see kasutab liiga palju mälu.</translation>
 <translation id="3724958268700778519">Google'i assistent säästab teie aega, võimaldades teil veebisaidi kassas kiirelt maksta.</translation>
 <translation id="3739899004075612870">Teenuses <ph name="PRODUCT_NAME" /> järjehoidj. lisatud</translation>
 <translation id="3744111309925758534"><ph name="MEGABYTES" /> MB – muud rakendused</translation>
@@ -396,7 +396,7 @@ Otsingutermini korrigeerimiseks vajutage valimiseks pikalt. Otsingu täpsustamis
 <translation id="4084712963632273211">Avaldajalt <ph name="PUBLISHER_ORIGIN" /> – <ph name="BEGIN_DEEMPHASIZED" />sisu pakub Google<ph name="END_DEEMPHASIZED" /></translation>
 <translation id="4084836577264234537"><ph name="MEGABYTES" /> MB on alla laaditud</translation>
 <translation id="4095146165863963773">Kas kustutada rakenduse andmed?</translation>
-<translation id="4099578267706723511">Aidake muuta Chrome'i paremaks, saates Google'ile kasutusstatistikat ja krahhiaruandeid.</translation>
+<translation id="4099578267706723511">Aidake muuta Brave'i paremaks, saates Google'ile kasutusstatistikat ja krahhiaruandeid.</translation>
 <translation id="410351446219883937">Automaatesitus</translation>
 <translation id="4113030288477039509">Seda haldab teie administraator</translation>
 <translation id="4116038641877404294">Laadige lehed alla, et neid võrguühenduseta kasutada</translation>
@@ -415,7 +415,7 @@ Otsingutermini korrigeerimiseks vajutage valimiseks pikalt. Otsingu täpsustamis
 <translation id="423219824432660969">Krüpteeri sünkroonitud andmed Google'i parooli abil <ph name="TIME" /> seisuga</translation>
 <translation id="4242533952199664413">Ava seaded</translation>
 <translation id="4243710787042215766">Ava privaatsel vahelehel</translation>
-<translation id="424864128008805179">Kas logida Chrome'ist välja?</translation>
+<translation id="424864128008805179">Kas logida Brave'ist välja?</translation>
 <translation id="4256782883801055595">Avatud lähtekoodi litsentsid</translation>
 <translation id="4259722352634471385">Navigeerimine on blokeeritud: <ph name="URL" /></translation>
 <translation id="4262028915562328938">Ilmnes sünkroonimisviga, puudutage üksikasjade nägemiseks.</translation>
@@ -439,12 +439,12 @@ Otsingutermini korrigeerimiseks vajutage valimiseks pikalt. Otsingu täpsustamis
 <translation id="4453340223357552416">Fail <ph name="FILE_NAME" /> laaditi alla teenuses <ph name="PRODUCT_NAME" /></translation>
 <translation id="4468959413250150279">Konkreetse saidi heli vaigistamine.</translation>
 <translation id="4472118726404937099">Seadmete vahel sisu sünkroonimiseks ja isikupärastamiseks logige sisse ja lülitage sünkroonimine sisse.</translation>
-<translation id="447252321002412580">Aidake täiustada Chrome'i funktsioone ja toimivust</translation>
+<translation id="447252321002412580">Aidake täiustada Brave'i funktsioone ja toimivust</translation>
 <translation id="4479647676395637221">Küsi enne saitidele minu kaamera kasutamiseks juurdepääsu lubamist (soovitatav)</translation>
-<translation id="4487967297491345095">Kõik Chrome'i rakenduse andmed kustutatakse jäädavalt. See hõlmab kõiki faile, seadeid, kontosid, andmebaase jms.</translation>
+<translation id="4487967297491345095">Kõik Brave'i rakenduse andmed kustutatakse jäädavalt. See hõlmab kõiki faile, seadeid, kontosid, andmebaase jms.</translation>
 <translation id="4513387527876475750">{DAYS,plural, =1{# päev tagasi}other{# päeva tagasi}}</translation>
 <translation id="451872707440238414">Otsi järjehoidjatest</translation>
-<translation id="4521489764227272523">Valitud andmed eemaldati Chrome'ist ja teie sünkroonitud seadmetest.
+<translation id="4521489764227272523">Valitud andmed eemaldati Brave'ist ja teie sünkroonitud seadmetest.
 
 Veebisaidil <ph name="BEGIN_LINK" />myactivity.google.com<ph name="END_LINK" /> võib teie Google'i kontol olla muus vormis sirvimisajalugu, nt otsingud ja tegevused muudes Google'i teenustes.</translation>
 <translation id="4532845899244822526">Kausta valimine</translation>
@@ -468,13 +468,13 @@ Veebisaidil <ph name="BEGIN_LINK" />myactivity.google.com<ph name="END_LINK" /> 
 <translation id="4684427112815847243">Sünkrooni kõik</translation>
 <translation id="4695891336199304370">{SHIPPING_OPTIONS,plural, =1{<ph name="SHIPPING_OPTION_PREVIEW" />\u2026 ja veel <ph name="NUMBER_OF_ADDITIONAL_SHIPPING_OPTIONS" />}other{<ph name="SHIPPING_OPTION_PREVIEW" />\u2026 ja veel <ph name="NUMBER_OF_ADDITIONAL_SHIPPING_OPTIONS" />}}</translation>
 <translation id="4698034686595694889">Võrguühenduseta kuvamine rakenduses <ph name="APP_NAME" /></translation>
-<translation id="4698413471314543145">Puudub Chrome'i käitamiseks vajalik oluline funktsionaalsus. Teie Chrome'i install on puudulik või ei ühildu Androidi selle versiooniga.</translation>
+<translation id="4698413471314543145">Puudub Brave'i käitamiseks vajalik oluline funktsionaalsus. Teie Brave'i install on puudulik või ei ühildu Androidi selle versiooniga.</translation>
 <translation id="4699172675775169585">Vahemällu salvestatud kujutised ja failid</translation>
 <translation id="4714588616299687897">Säästke kuni 60% andmemahtu</translation>
 <translation id="4719927025381752090">Paku tõlkimist</translation>
 <translation id="4720023427747327413">Ava teenuses <ph name="PRODUCT_NAME" /></translation>
-<translation id="4720982865791209136">Aidake Chrome'i täiustada. <ph name="BEGIN_LINK" />Vastake küsitlusele<ph name="END_LINK" /></translation>
-<translation id="4730876730346568982">Asendate sünkroonimiskonto <ph name="ACCOUNT_EMAIL_OLD" /> kontoga <ph name="ACCOUNT_EMAIL_NEW" />. Teie olemasolevaid Chrome'i andmeid haldab <ph name="MANAGED_DOMAIN" />. Selle tulemusel kustutatakse seadmes olevad andmed, kuid need jäävad kontole <ph name="ACCOUNT_EMAIL_OLD" /> alles.</translation>
+<translation id="4720982865791209136">Aidake Brave'i täiustada. <ph name="BEGIN_LINK" />Vastake küsitlusele<ph name="END_LINK" /></translation>
+<translation id="4730876730346568982">Asendate sünkroonimiskonto <ph name="ACCOUNT_EMAIL_OLD" /> kontoga <ph name="ACCOUNT_EMAIL_NEW" />. Teie olemasolevaid Brave'i andmeid haldab <ph name="MANAGED_DOMAIN" />. Selle tulemusel kustutatakse seadmes olevad andmed, kuid need jäävad kontole <ph name="ACCOUNT_EMAIL_OLD" /> alles.</translation>
 <translation id="473775607612524610">Värskenda</translation>
 <translation id="4738836084190194332">Viimati sünkroonitud: <ph name="WHEN" /></translation>
 <translation id="4749960740855309258">Uue vahelehe avamine</translation>
@@ -502,7 +502,7 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="488187801263602086">Faili ümbernimetamine</translation>
 <translation id="4882831918239250449">Juhtige, kuidas teie sirvimisajalugu kasutatakse otsingu, reklaamide ja muu isikupärastamiseks</translation>
 <translation id="4883379392681899581">Välju privaatsest režiimist</translation>
-<translation id="4885273946141277891">Toetamata arv Chrome'i eksemplare.</translation>
+<translation id="4885273946141277891">Toetamata arv Brave'i eksemplare.</translation>
 <translation id="4910889077668685004">Makserakendused</translation>
 <translation id="4913161338056004800">Lähtesta statistika</translation>
 <translation id="4913169188695071480">Peata värskendamine</translation>
@@ -511,7 +511,7 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="4958708863221495346"><ph name="URL_OF_THE_CURRENT_TAB" /> jagab teie ekraani</translation>
 <translation id="4961107849584082341">Tõlkige leht mis tahes keelde</translation>
 <translation id="4961334780091921942">Teie paroolid, ajalugu ja muud andmed kõigis seadmetes</translation>
-<translation id="4961700429721424617">Logite välja kontolt, mida haldab <ph name="MANAGED_DOMAIN" />. Selle tulemusel kustutatakse seadmes olevad Chrome'i andmed, kuid need jäävad alles teie Google'i kontole.</translation>
+<translation id="4961700429721424617">Logite välja kontolt, mida haldab <ph name="MANAGED_DOMAIN" />. Selle tulemusel kustutatakse seadmes olevad Brave'i andmed, kuid need jäävad alles teie Google'i kontole.</translation>
 <translation id="497421865427891073">Edasiminek</translation>
 <translation id="4988210275050210843">Faili allalaadimine (<ph name="MEGABYTES" />).</translation>
 <translation id="4988526792673242964">Leheküljed</translation>
@@ -537,14 +537,14 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="5161254044473106830">Pealkiri on kohustuslik</translation>
 <translation id="5162754098604580781">{FILE_COUNT,plural, =1{1 allalaadimine ebaõnnestus.}other{# allalaadimist ebaõnnestus.}}</translation>
 <translation id="5168917394043976756">Ava navigeerimissahtel</translation>
-<translation id="5184329579814168207">Ava Chrome'is</translation>
+<translation id="5184329579814168207">Ava Brave'is</translation>
 <translation id="5199929503336119739">Tööprofiil</translation>
 <translation id="5210286577605176222">Eelmisele vahelehele liikumine</translation>
 <translation id="5210365745912300556">Sule vaheleht</translation>
 <translation id="5222676887888702881">Logi välja</translation>
 <translation id="5224771365102442243">Videoga</translation>
 <translation id="5233638681132016545">Uus vaheleht</translation>
-<translation id="5264003212305142034"><ph name="BEGIN_LINK1" />Seadeid<ph name="END_LINK1" /> saab igal ajal kohandada. Google võib kasutada teie külastatavate saitide sisu ning brauseri interaktsioone ja tegevusi Chrome'i ja muude Google'i teenuste, näiteks tõlke, otsingu ja reklaamide täiustamiseks.</translation>
+<translation id="5264003212305142034"><ph name="BEGIN_LINK1" />Seadeid<ph name="END_LINK1" /> saab igal ajal kohandada. Google võib kasutada teie külastatavate saitide sisu ning brauseri interaktsioone ja tegevusi Brave'i ja muude Google'i teenuste, näiteks tõlke, otsingu ja reklaamide täiustamiseks.</translation>
 <translation id="526421993248218238">Seda lehte ei saa laadida</translation>
 <translation id="5271967389191913893">Seade ei saa allalaaditavat sisu avada.</translation>
 <translation id="528192093759286357">Täisekraanilt väljumiseks lohistage ülaservast alla ja puudutage tagasinuppu.</translation>
@@ -552,7 +552,7 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="5301954838959518834">Selge, sain aru</translation>
 <translation id="5304593522240415983">See väli ei tohi olla tühi</translation>
 <translation id="5308380583665731573">Ühendamine</translation>
-<translation id="5308603654685598744">Kui see funktsioon on sisse lülitatud, siis pakub Chrome võimalust tõlkida teistes keeltes kirjutatud lehti, kasutades teenust Google'i tõlge.</translation>
+<translation id="5308603654685598744">Kui see funktsioon on sisse lülitatud, siis pakub Brave võimalust tõlkida teistes keeltes kirjutatud lehti, kasutades teenust Google'i tõlge.</translation>
 <translation id="5313967007315987356">Lisa sait</translation>
 <translation id="5317780077021120954">Salvesta</translation>
 <translation id="5324858694974489420">Vanemlikud seaded</translation>
@@ -562,7 +562,7 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="5363230136052241468">Puudutage uue vahelehe laadimiseks avaekraani nuppu</translation>
 <translation id="5372829067651257087">URL on kopeeritud.</translation>
 <translation id="5391532827096253100">Teie ühendus selle saidiga ei ole turvaline. Saidi teave</translation>
-<translation id="5400569084694353794">Seda rakendust kasutades nõustute Chrome'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" />.</translation>
+<translation id="5400569084694353794">Seda rakendust kasutades nõustute Brave'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" />.</translation>
 <translation id="5403644198645076998">Luba ainult teatud saidid</translation>
 <translation id="5414836363063783498">Kinnitamine ...</translation>
 <translation id="5423934151118863508">Teie enim külastatud lehed ilmuvad siin</translation>
@@ -579,20 +579,20 @@ Seade muutmiseks <ph name="BEGIN_LINK" />lähtestage sünkroonimine<ph name="END
 <translation id="5487521232677179737">Kustuta andmed</translation>
 <translation id="5494752089476963479">Blokeeri reklaamid saitidel, mis kuvavad sekkuvaid või eksitavaid reklaame</translation>
 <translation id="5494920125229734069">Valige kõik</translation>
-<translation id="550684401320795253">Chrome’i värskendamine …</translation>
+<translation id="550684401320795253">Brave’i värskendamine …</translation>
 <translation id="5512137114520586844">Seda kontot haldab <ph name="PARENT_NAME" />.</translation>
 <translation id="5514904542973294328">Keelas selle seadme administraator</translation>
 <translation id="5515439363601853141">Avage oma parooli vaatamiseks</translation>
 <translation id="5517095782334947753">Teil on järjehoidjad, ajalugu, paroolid ja muud seaded kontolt <ph name="FROM_ACCOUNT" />.</translation>
 <translation id="5524843473235508879">Ümbersuunamine blokeeriti.</translation>
-<translation id="5527082711130173040">Chrome vajab seadmete otsimiseks juurdepääsu teie asukohale. <ph name="BEGIN_LINK1" />Värskendage lube<ph name="END_LINK1" />. Juurdepääs asukohale on samuti <ph name="BEGIN_LINK2" />selles seadmes välja lülitatud<ph name="END_LINK2" />.</translation>
+<translation id="5527082711130173040">Brave vajab seadmete otsimiseks juurdepääsu teie asukohale. <ph name="BEGIN_LINK1" />Värskendage lube<ph name="END_LINK1" />. Juurdepääs asukohale on samuti <ph name="BEGIN_LINK2" />selles seadmes välja lülitatud<ph name="END_LINK2" />.</translation>
 <translation id="5527111080432883924">Küsi luba, kui sait soovib lugeda lõikelaual olevat teksti ja pilte (soovitatav)</translation>
 <translation id="5530766185686772672">Inkognito vahelehtede sulgemine</translation>
 <translation id="5534640966246046842">Sait on kopeeritud</translation>
-<translation id="5537099431952529648">Teie (ja teie vanemad) saate Chrome'i sünkroonimist ning isikupärastamist hallata jaotises <ph name="BEGIN_LINK1" />Seaded<ph name="END_LINK1" /></translation>
+<translation id="5537099431952529648">Teie (ja teie vanemad) saate Brave'i sünkroonimist ning isikupärastamist hallata jaotises <ph name="BEGIN_LINK1" />Seaded<ph name="END_LINK1" /></translation>
 <translation id="5556459405103347317">Laadi uuesti</translation>
 <translation id="5561549206367097665">Võrguühenduse ootamine …</translation>
-<translation id="557283862590186398">Chrome vajab selle saidi puhul luba, et teie mikrofonile juurde pääseda.</translation>
+<translation id="557283862590186398">Brave vajab selle saidi puhul luba, et teie mikrofonile juurde pääseda.</translation>
 <translation id="55737423895878184">Asukoht ja märguanded on lubatud</translation>
 <translation id="5578795271662203820">Otsi otsingust <ph name="SEARCH_ENGINE" /> kujutist</translation>
 <translation id="5595485650161345191">Muuda aadressi</translation>
@@ -619,7 +619,7 @@ Te ei ole siiski nähtamatu. Inkognito režiimi kasutamine ei varja teie sirvimi
 <translation id="572328651809341494">Hiljutised vahelehed</translation>
 <translation id="5726692708398506830">Lehel kuvatud sisu suurendamine</translation>
 <translation id="5748802427693696783">Tavapärased vahelehed on aktiveeritud</translation>
-<translation id="5749068826913805084">Chrome vajab failide allalaadimiseks juurdepääsu salvestusruumile.</translation>
+<translation id="5749068826913805084">Brave vajab failide allalaadimiseks juurdepääsu salvestusruumile.</translation>
 <translation id="5763382633136178763">Inkognito režiimi vahekaardid</translation>
 <translation id="5763514718066511291">Puudutage URL-i kopeerimiseks selle rakenduse jaoks</translation>
 <translation id="5765780083710877561">Kirjeldus:</translation>
@@ -634,7 +634,7 @@ Te ei ole siiski nähtamatu. Inkognito režiimi kasutamine ei varja teie sirvimi
 <translation id="584427517463557805">Valitud privaatne vaheleht</translation>
 <translation id="5853623416121554550">peatatud</translation>
 <translation id="5854790677617711513">Vanemad kui 30 päeva</translation>
-<translation id="5858741533101922242">Chrome ei saa Bluetoothi adapterit sisse lülitada</translation>
+<translation id="5858741533101922242">Brave ei saa Bluetoothi adapterit sisse lülitada</translation>
 <translation id="5860033963881614850">Väljas</translation>
 <translation id="5862731021271217234">Vahelehtede hankimiseks oma teistest seadmetest lülitage sünkroonimine sisse</translation>
 <translation id="5864174910718532887">Üksikasjad: sorditud saidi nime alusel</translation>
@@ -649,7 +649,7 @@ Te ei ole siiski nähtamatu. Inkognito režiimi kasutamine ei varja teie sirvimi
 <translation id="5939518447894949180">Lähtesta</translation>
 <translation id="5942872142862698679">Otsimiseks kasutatakse Google'it</translation>
 <translation id="5952764234151283551">Saadab Google'ile teie soovitud lehe URL-i</translation>
-<translation id="5956665950594638604">Chrome'i abikeskuse avamine uuel vahelehel</translation>
+<translation id="5956665950594638604">Brave'i abikeskuse avamine uuel vahelehel</translation>
 <translation id="5958275228015807058">Leidke oma failid ja lehed jaotisest Allalaadimised</translation>
 <translation id="5962718611393537961">Ahendamiseks puudutage</translation>
 <translation id="5990142338020175451">Isiklikumad Google'i teenused, nt paremad lehesoovitused</translation>
@@ -673,7 +673,7 @@ Te ei ole siiski nähtamatu. Inkognito režiimi kasutamine ei varja teie sirvimi
 <translation id="6154478581116148741">Seadmes olevate paroolide eksportimiseks lülitage seadetes ekraanilukk sisse.</translation>
 <translation id="6159335304067198720">Andmemahu kokkuhoid: <ph name="PERCENT" /></translation>
 <translation id="6165508094623778733">Lisateave</translation>
-<translation id="6171019622954353983">Jätkates nõustute, et Chrome saadab selle teenuse osutamiseks Google’ile andmeid Chrome’i automaattäite, saidi URLi ja selle sisu kohta.\n\nGoogle’i assistendi väljalülitamiseks Chrome’is ja Chrome’i automaattäites avage Chrome’i seaded.  <ph name="BEGIN_LINK" />Lisateave<ph name="END_LINK" /></translation>
+<translation id="6171019622954353983">Jätkates nõustute, et Brave saadab selle teenuse osutamiseks Google’ile andmeid Brave’i automaattäite, saidi URLi ja selle sisu kohta.\n\nGoogle’i assistendi väljalülitamiseks Brave’is ja Brave’i automaattäites avage Brave’i seaded.  <ph name="BEGIN_LINK" />Lisateave<ph name="END_LINK" /></translation>
 <translation id="6177111841848151710">Praeguse otsingumootori puhul blokeeritud</translation>
 <translation id="6177390657002841081">Lülita andmemahu säästja sisse</translation>
 <translation id="6181444274883918285">Lisa saidi erand</translation>
@@ -692,7 +692,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="6277522088822131679">Lehe printimisel ilmnes probleem. Proovige uuesti.</translation>
 <translation id="6295158916970320988">Kõik saidid</translation>
 <translation id="629730747756840877">Konto</translation>
-<translation id="6302269476990306341">Chrome'ile mõeldud Google'i assistenti peatatakse</translation>
+<translation id="6302269476990306341">Brave'ile mõeldud Google'i assistenti peatatakse</translation>
 <translation id="6303969859164067831">Logi välja ja lülita sünkroonimine välja</translation>
 <translation id="6316139424528454185">Seda Androidi versiooni ei toetata</translation>
 <translation id="6320088164292336938">Vibreerimine</translation>
@@ -709,7 +709,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="6383961787135158834">Tühj. saidi salvestusr.</translation>
 <translation id="6388207532828177975">Kustuta ja lähtesta</translation>
 <translation id="6393156038355142111">Soovita tugevat parooli</translation>
-<translation id="6393863479814692971">Chrome vajab selle saidi puhul luba, et teie kaamerale ja mikrofonile juurde pääseda.</translation>
+<translation id="6393863479814692971">Brave vajab selle saidi puhul luba, et teie kaamerale ja mikrofonile juurde pääseda.</translation>
 <translation id="6395288395575013217">LINK</translation>
 <translation id="6404511346730675251">Muuda järjehoidjat</translation>
 <translation id="6406506848690869874">Sünkroonimine</translation>
@@ -730,14 +730,14 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="654446541061731451">Valige kiirega edastatav vaheleht</translation>
 <translation id="6545017243486555795">Kustuta kõik andmed</translation>
 <translation id="6560414384669816528">Otsi teenusega Sogou</translation>
-<translation id="6566259936974865419">Chrome aitas teil säästa <ph name="GIGABYTES" /> GB andmemahtu</translation>
+<translation id="6566259936974865419">Brave aitas teil säästa <ph name="GIGABYTES" /> GB andmemahtu</translation>
 <translation id="6567212464587185774">Kasutage kuni 60% vähem andmemahtu ja muutke veeb kiiremaks.</translation>
 <translation id="6573096386450695060">Luba alati</translation>
-<translation id="6573431926118603307">Siin kuvatakse teie teistes seadmetes Chrome'is avatud vahelehed.</translation>
+<translation id="6573431926118603307">Siin kuvatakse teie teistes seadmetes Brave'is avatud vahelehed.</translation>
 <translation id="6583199322650523874">Praeguse lehe lisamine järjehoidjatesse</translation>
 <translation id="6584721918629302382">AR</translation>
 <translation id="6593061639179217415">Arvutisait</translation>
-<translation id="6600954340915313787">Chrome'i kopeeritud</translation>
+<translation id="6600954340915313787">Brave'i kopeeritud</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
 <translation id="6610147964972079463">Sule privaatsed vahelehed</translation>
 <translation id="6612358246767739896">Kaitstud sisu</translation>
@@ -745,14 +745,14 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="6643016212128521049">Tühjenda</translation>
 <translation id="6643649862576733715">Sordi säästetud andmemahu alusel</translation>
 <translation id="6648977384226967773">{CONTACT,plural, =1{<ph name="CONTACT_PREVIEW" />\u2026 ja veel <ph name="NUMBER_OF_ADDITIONAL_CONTACTS" />}other{<ph name="CONTACT_PREVIEW" />\u2026 ja veel <ph name="NUMBER_OF_ADDITIONAL_CONTACTS" />}}</translation>
-<translation id="6656545060687952787">Chrome vajab seadmete skannimiseks juurdepääsu teie asukohale. <ph name="BEGIN_LINK" />Värskendage lube<ph name="END_LINK" /></translation>
+<translation id="6656545060687952787">Brave vajab seadmete skannimiseks juurdepääsu teie asukohale. <ph name="BEGIN_LINK" />Värskendage lube<ph name="END_LINK" /></translation>
 <translation id="6657585470893396449">Parool</translation>
 <translation id="6659594942844771486">Vaheleht</translation>
 <translation id="666268767214822976">Aadressiribale teksti sisestamisel ennustusteenuse abil seotud päringute ja populaarsete veebisaitide kuvamine</translation>
 <translation id="666731172850799929">Ava rakenduses <ph name="APP_NAME" /></translation>
-<translation id="666981079809192359">Chrome'i privaatsusteatis</translation>
+<translation id="666981079809192359">Brave'i privaatsusteatis</translation>
 <translation id="6697492270171225480">Kui lehte ei leita, kuvatakse sarnaste lehtede soovitusi</translation>
-<translation id="6697947395630195233">Chrome vajab juurdepääsu teie asukohale, et seda selle saidiga jagada.</translation>
+<translation id="6697947395630195233">Brave vajab juurdepääsu teie asukohale, et seda selle saidiga jagada.</translation>
 <translation id="6698801883190606802">Sünkroonitud andmete haldamine</translation>
 <translation id="6699370405921460408">Google'i serverid optimeerivad teie külastatavaid lehti.</translation>
 <translation id="6709133671862442373">Uudised</translation>
@@ -841,13 +841,13 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="7375125077091615385">Tüüp:</translation>
 <translation id="7396940094317457632"><ph name="FILE_NAME" />.</translation>
 <translation id="7400418766976504921">URL</translation>
-<translation id="7403691278183511381">Chrome'i esmakordse käitamise kasutuskogemus</translation>
+<translation id="7403691278183511381">Brave'i esmakordse käitamise kasutuskogemus</translation>
 <translation id="741204030948306876">Jah, sobib</translation>
 <translation id="7413229368719586778">Alguskuupäev: <ph name="DATE" /></translation>
 <translation id="7423098979219808738">Esmalt küsib</translation>
 <translation id="7423538860840206698">Lõikelaua lugemine on blokeeritud</translation>
 <translation id="7431991332293347422">Juhtige, kuidas kasutatakse teie sirvimisajalugu otsingu ja muu isikupärastamiseks</translation>
-<translation id="7437998757836447326">Chrome'ist väljalogimine</translation>
+<translation id="7437998757836447326">Brave'ist väljalogimine</translation>
 <translation id="7444811645081526538">Rohkem kategooriaid</translation>
 <translation id="7445411102860286510">Luba saitidel vaigistatud videoid automaatselt esitada (soovitatav)</translation>
 <translation id="7454641608352164238">Pole piisavalt ruumi</translation>
@@ -866,23 +866,23 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="7521387064766892559">Javascript</translation>
 <translation id="7542481630195938534">Soovitusi ei saa hankida</translation>
 <translation id="7562080006725997899">Sirvimisandmete kustutamine</translation>
-<translation id="756809126120519699">Chrome'i andmed kustutati</translation>
+<translation id="756809126120519699">Brave'i andmed kustutati</translation>
 <translation id="757524316907819857">Saitidel kaitstud sisu esitamise blokeerimine</translation>
 <translation id="7589445247086920869">Blokeerib praeguse otsingumootori puhul</translation>
-<translation id="7593557518625677601">Chrome'i sünkroonimise alustamiseks avage Androidi seaded ja lubage uuesti Androidi süsteemi sünkroonimine</translation>
+<translation id="7593557518625677601">Brave'i sünkroonimise alustamiseks avage Androidi seaded ja lubage uuesti Androidi süsteemi sünkroonimine</translation>
 <translation id="7596558890252710462">Operatsioonisüsteem</translation>
 <translation id="7605594153474022051">Sünkroonimine ei tööta</translation>
 <translation id="7612619742409846846">Google'isse sisse logitud kasutajana</translation>
 <translation id="7619072057915878432">Faili <ph name="FILE_NAME" /> allalaadimine ebaõnnestus võrguvea tõttu.</translation>
 <translation id="7624880197989616768"><ph name="BEGIN_LINK1" />Hankige abi<ph name="END_LINK1" /> või <ph name="BEGIN_LINK2" />otsige uuesti<ph name="END_LINK2" /></translation>
-<translation id="7626032353295482388">Tere tulemast Chrome'i</translation>
+<translation id="7626032353295482388">Tere tulemast Brave'i</translation>
 <translation id="7638584964844754484">Vale parool</translation>
 <translation id="7641339528570811325">Sirvimisandmete kustutamine …</translation>
 <translation id="7648422057306047504">Paroolide krüpteerimine Google'i mandaatidega</translation>
 <translation id="7649070708921625228">Abi</translation>
 <translation id="7658239707568436148">Tühista</translation>
 <translation id="7665369617277396874">Konto lisamine</translation>
-<translation id="7670842975141217779">Google’i assistent\nChrome’is</translation>
+<translation id="7670842975141217779">Google’i assistent\nBrave’is</translation>
 <translation id="7682724950699840886">Järgige neid nõuandeid: veenduge, et seadmes oleks piisavalt ruumi, seejärel proovige uuesti eksportida.</translation>
 <translation id="7698359219371678927">Looge meil rakenduses <ph name="APP_NAME" /></translation>
 <translation id="7704317875155739195">Otsingute ja URL-ide automaatne täitmine</translation>
@@ -917,7 +917,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="7981313251711023384">Eellaaditakse lehti kiiremaks sirvimiseks ja otsimiseks</translation>
 <translation id="79859296434321399">Liitreaalsuse sisu vaatamiseks installige ARCore</translation>
 <translation id="7986741934819883144">Kontakti valimine</translation>
-<translation id="7987073022710626672">Chrome'i teenusetingimused</translation>
+<translation id="7987073022710626672">Brave'i teenusetingimused</translation>
 <translation id="7998918019931843664">Suletud vahelehe uuesti avamine</translation>
 <translation id="7999064672810608036">Kas soovite kindlasti kustutada kõik kohalikud andmed (sh küpsised) ja lähtestada kõik selle veebisaidi load?</translation>
 <translation id="8004582292198964060">Brauser</translation>
@@ -931,9 +931,9 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="8037750541064988519">Jäänud on <ph name="DAYS" /> päeva</translation>
 <translation id="804335162455518893">SD-kaarti ei leitud</translation>
 <translation id="805047784848435650">Teie sirvimisajaloo põhjal</translation>
-<translation id="8051303708327298699">Samuti tuleb teil need load Chrome'i jaoks sisse lülitada. Vaadake üksikasju jaotisest <ph name="BEGIN_LINK" />Androidi seaded<ph name="END_LINK" />.</translation>
+<translation id="8051303708327298699">Samuti tuleb teil need load Brave'i jaoks sisse lülitada. Vaadake üksikasju jaotisest <ph name="BEGIN_LINK" />Androidi seaded<ph name="END_LINK" />.</translation>
 <translation id="8051695050440594747"><ph name="MEGABYTES" /> MB on saadaval</translation>
-<translation id="8058746566562539958">Ava uuel Chrome'i vahelehel</translation>
+<translation id="8058746566562539958">Ava uuel Brave'i vahelehel</translation>
 <translation id="8063895661287329888">Järjehoidja lisamine ebaõnnestus.</translation>
 <translation id="806745655614357130">Hoia minu andmed eraldi</translation>
 <translation id="8068648041423924542">Sertifikaati ei saa valida.</translation>
@@ -955,7 +955,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="8220488350232498290"><ph name="GIGABYTES" /> GB on alla laaditud</translation>
 <translation id="8249310407154411074">Teisalda kõige üles</translation>
 <translation id="8250920743982581267">Dokumendid</translation>
-<translation id="825412236959742607">Chrome eemaldas osa sisust, kuna leht kasutab liiga palju mälu.</translation>
+<translation id="825412236959742607">Brave eemaldas osa sisust, kuna leht kasutab liiga palju mälu.</translation>
 <translation id="8260126382462817229">Proovige uuesti sisse logida</translation>
 <translation id="8261506727792406068">Kustuta</translation>
 <translation id="8266862848225348053">Allalaadimise asukoht</translation>
@@ -985,11 +985,11 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="8493948351860045254">Vabasta ruum</translation>
 <translation id="8496140788721644230">AR-moodul installiti</translation>
 <translation id="8497726226069778601">Siin pole midagi vaadata ... veel</translation>
-<translation id="8503559462189395349">Chrome'i paroolid</translation>
+<translation id="8503559462189395349">Brave'i paroolid</translation>
 <translation id="8503813439785031346">Kasutajanimi</translation>
 <translation id="8504988642345501642">Üleskerimisel kuvatakse kiirlingid seotud lehtede juurde. Külastatavate lehtede URL-id saadetakse Google'ile.</translation>
 <translation id="8507520749471379845">Paroolid on saadaval</translation>
-<translation id="8514477925623180633">Chrome'i salvestatud paroolide eksportimine</translation>
+<translation id="8514477925623180633">Brave'i salvestatud paroolide eksportimine</translation>
 <translation id="8514577642972634246">Inkognito režiimi sisenemine</translation>
 <translation id="851751545965956758">Blokeeri saitidel seadmetega ühenduse loomine</translation>
 <translation id="8523928698583292556">Salvestatud parooli kustutamine</translation>
@@ -1016,14 +1016,14 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="869891660844655955">Aegumiskuupäev</translation>
 <translation id="8719023831149562936">Seda vahelehte ei saa kiirega edastada</translation>
 <translation id="8725066075913043281">Proovi uuesti</translation>
-<translation id="8728487861892616501">Rakendust kasutades nõustute Chrome’i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" /> ning <ph name="BEGIN_LINK3" />Family Linkiga hallatavate Google'i kontode privaatsusteatisega<ph name="END_LINK3" />.</translation>
+<translation id="8728487861892616501">Rakendust kasutades nõustute Brave’i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" /> ning <ph name="BEGIN_LINK3" />Family Linkiga hallatavate Google'i kontode privaatsusteatisega<ph name="END_LINK3" />.</translation>
 <translation id="8730621377337864115">Valmis</translation>
 <translation id="8748850008226585750">Sisu on peidetud</translation>
 <translation id="8751914237388039244">Kujutise valimine</translation>
 <translation id="8788968922598763114">Viimati suletud vahelehe uuesti avamine</translation>
 <translation id="8801436777607969138">JavaScripti blokeerimine konkreetsel saidil.</translation>
 <translation id="8812260976093120287">Mõnel veebisaidil saate maksta ülalolevate teie seadmes toetatud makserakendustega.</translation>
-<translation id="8816439037877937734"><ph name="APP_NAME" /> avaneb Chrome'is. Jätkates nõustute Chrome'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" /> ning <ph name="BEGIN_LINK3" />Family Linkiga hallatavate Google'i kontode privaatsusteatisega<ph name="END_LINK3" />.</translation>
+<translation id="8816439037877937734"><ph name="APP_NAME" /> avaneb Brave'is. Jätkates nõustute Brave'i <ph name="BEGIN_LINK1" />teenusetingimuste<ph name="END_LINK1" /> ja <ph name="BEGIN_LINK2" />privaatsusteatisega<ph name="END_LINK2" /> ning <ph name="BEGIN_LINK3" />Family Linkiga hallatavate Google'i kontode privaatsusteatisega<ph name="END_LINK3" />.</translation>
 <translation id="8820817407110198400">Järjehoidjad</translation>
 <translation id="8833831881926404480">Sait jagab teie ekraani</translation>
 <translation id="883806473910249246">Sisu allalaadimisel ilmnes viga.</translation>
@@ -1040,7 +1040,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="8922289737868596582">Laadige lehed alla nupu Rohkem valikuid abil, et neid võrguühenduseta kasutada</translation>
 <translation id="8941729603749328384">www.example.com</translation>
 <translation id="8942627711005830162">Ava teises aknas</translation>
-<translation id="8951232171465285730">Chrome aitas teil säästa <ph name="MEGABYTES" /> MB andmemahtu</translation>
+<translation id="8951232171465285730">Brave aitas teil säästa <ph name="MEGABYTES" /> MB andmemahtu</translation>
 <translation id="8958424370300090006">Blokeerige konkreetse saidi küpsisefailid.</translation>
 <translation id="8959122750345127698">Navigeerimine ei ole saadaval: <ph name="URL" /></translation>
 <translation id="8965591936373831584">ootel</translation>
@@ -1050,7 +1050,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="8983677657449185470">Aidake ohutut sirvimist paremaks muuta</translation>
 <translation id="8986494364107987395">Saada kasutusstatistika ja krahhiaruanded automaatselt Google'ile</translation>
 <translation id="8993760627012879038">Uue vahelehe avamine inkognito režiimis</translation>
-<translation id="8998729206196772491">Logite sisse kontoga, mida haldab <ph name="MANAGED_DOMAIN" />, ja annate selle administraatorile üle Chrome'i andmete juhtimise. Teie andmed seotakse jäädavalt selle kontoga. Chrome'ist väljalogimisel kustutatakse teie andmed sellest seadmest, kuid need jäävad alles teie Google'i kontole.</translation>
+<translation id="8998729206196772491">Logite sisse kontoga, mida haldab <ph name="MANAGED_DOMAIN" />, ja annate selle administraatorile üle Brave'i andmete juhtimise. Teie andmed seotakse jäädavalt selle kontoga. Brave'ist väljalogimisel kustutatakse teie andmed sellest seadmest, kuid need jäävad alles teie Google'i kontole.</translation>
 <translation id="9019902583201351841">Vanemate hallatud</translation>
 <translation id="9040142327097499898">Märguanded on lubatud. Asukoht on selle seadme puhul välja lülitatud.</translation>
 <translation id="9050666287014529139">Parool</translation>
@@ -1080,7 +1080,7 @@ Näiteks võivad mõned veebisaidid taotlusele reageerida nii, et näitavad teil
 <translation id="945522503751344254">Saada tagasisidet</translation>
 <translation id="945632385593298557">Juurdepääs mikrofonile</translation>
 <translation id="951339005376969845">Kustutage olemasolevad andmed. Need saate hankida, kui lülitate tagasi kontole <ph name="FROM_ACCOUNT" />.</translation>
-<translation id="95817756606698420">Chrome saab Hiinas otsimiseks kasutada teenust <ph name="BEGIN_BOLD" />Sogou<ph name="END_BOLD" />. Seda saate muuta menüüs <ph name="BEGIN_LINK" />Seaded<ph name="END_LINK" />.</translation>
+<translation id="95817756606698420">Brave saab Hiinas otsimiseks kasutada teenust <ph name="BEGIN_BOLD" />Sogou<ph name="END_BOLD" />. Seda saate muuta menüüs <ph name="BEGIN_LINK" />Seaded<ph name="END_LINK" />.</translation>
 <translation id="965817943346481315">Blokeeri, kui sait kuvab sekkuvaid või eksitavaid reklaame (soovitatav)</translation>
 <translation id="970715775301869095">Jäänud on <ph name="MINUTES" /> minutit</translation>
 <translation id="974555521953189084">Sünkroonimise alustamiseks sisestage parool</translation>
