@@ -307,7 +307,7 @@ Sin embargo, no vas a pasar completamente desapercibido. El modo de navegación 
 <translation id="3353615205017136254">Google proporcionó la página básica. Para cargar la original, presiona el botón.</translation>
 <translation id="3365671512111106261">No está disponible cuando la función Ahorro de datos está activada</translation>
 <translation id="3367813778245106622">Volver a acceder para iniciar la sincronización</translation>
-<translation id="3377025655491224618">Pestaña privada</translation>
+<translation id="3377025655491224618">Pestaña Privada</translation>
 <translation id="3384347053049321195">Compartir imagen</translation>
 <translation id="3386292677130313581">Preguntar antes de permitir que los sitios conozcan tu ubicación (recomendado)</translation>
 <translation id="3387650086002190359"><ph name="FILE_NAME" /> no se pudo descargar debido a errores del sistema de archivos.</translation>
@@ -414,7 +414,7 @@ Para ajustar el término de búsqueda, mantén presionado el texto y seleccióna
 <translation id="4226663524361240545">Es posible que las notificaciones hagan vibrar el dispositivo</translation>
 <translation id="423219824432660969">Encriptar los datos sincronizados con la contraseña de Google a partir del <ph name="TIME" /></translation>
 <translation id="4242533952199664413">Abrir la configuración</translation>
-<translation id="4243710787042215766">Abrir en una pestaña privada</translation>
+<translation id="4243710787042215766">Abrir en pestaña privada</translation>
 <translation id="424864128008805179">¿Quieres salir de Brave?</translation>
 <translation id="4256782883801055595">Licencias de código abierto</translation>
 <translation id="4259722352634471385">Navegación bloqueada: <ph name="URL" /></translation>
@@ -627,7 +627,7 @@ Sin embargo, no vas a pasar completamente desapercibido. El modo de navegación 
 <translation id="5793665092639000975"><ph name="SPACE_USED" /> de <ph name="SPACE_AVAILABLE" /> en uso</translation>
 <translation id="5804241973901381774">Permisos</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{Hace # hora}other{Hace # horas}}</translation>
-<translation id="5817918615728894473">Sincronizar</translation>
+<translation id="5817918615728894473">Par</translation>
 <translation id="583281660410589416">Desconocido</translation>
 <translation id="5833397272224757657">Usa el contenido de los sitios que visitas, tus interacciones y actividad de navegación para personalizar las opciones</translation>
 <translation id="5833984609253377421">Compartir vínculo</translation>
@@ -739,7 +739,7 @@ Por ejemplo, algunos sitios web pueden responder a la solicitud mediante anuncio
 <translation id="6593061639179217415">Sitio de escritorio</translation>
 <translation id="6600954340915313787">Se copió en Brave.</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
-<translation id="6610147964972079463">Cerrar pestañas privadas</translation>
+<translation id="6610147964972079463">Cerrar las pestañas privadas</translation>
 <translation id="6612358246767739896">Contenido protegido</translation>
 <translation id="6627583120233659107">Editar la carpeta</translation>
 <translation id="6643016212128521049">Borrar</translation>
@@ -1161,4 +1161,56 @@ estimado</translation>
 <translation id="834487290629916192">LUEGO</translation>
 <translation id="1842747674580016420">Reproducción de video en Brave</translation>
 <translation id="5368992950177874750">Si habilitado, los videos se reproducirán en Brave en lugar de la aplicación correspondiente</translation>
+<translation id="7820683005702098135">Sincronización de Brave (beta)</translation>
+<translation id="7459000603787995422">Cerrar pestañas al salir</translation>
+<translation id="1680858055899097121">No persistir las pestañas entre sesiones de navegación</translation>
+<translation id="213787746370741250">Abrir pestañas en Pestañas Personalizadas</translation>
+<translation id="3544772668823934222">Ofrecer abrir las pestañas en Pestañas Personalizadas</translation>
+<translation id="4501702055016678577">¿Deseas la búsqueda privada con DuckDuckGo?</translation>
+<translation id="910419239800579753">Con la búsqueda privada, Brave usará DuckDuckGo para respoender a tus búsquedas cuando usas una pestaña privada. DuckDuckGo es un motor de búsqueda que no realiza un seguimiento de tu historial de búsquedas, permitiéndote navegar privadamente.</translation>
+<translation id="1426410128494586442">Si</translation>
+<translation id="4250680216510889253">No</translation>
+<translation id="5628466560184522265">Conoce más acerca de la búsqueda privada con DuckDuckGo</translation>
+<translation id="1468415711258933398">Pestaña Estándard</translation>
+<translation id="6199596294742117349">Esta es una Pestaña Privada</translation>
+<translation id="5858455511731621847">A pesar de que los sitios que visitas utilizando pestañas privadas no son guardados localmente, estos no te hacen anónimo o invicible a tu Proveedor de Internet, tu empleador, o a los sitios que visitas.</translation>
+<translation id="2339273275658335597">Actualización del navegador Brave</translation>
+<translation id="8395234238259738935">El navegador nuevo Brave es 22% más rápido</translation>
+<translation id="391177677159359824">Sincronización (beta)</translation>
+<translation id="3680755684186855422">La Sincronización de Brave te permite sincronizar de manera privada los datos de los marcadores entre tus navegadores Brave en tus diferentes dispositivos.</translation>
+<translation id="3735228155296883311">Simplemente escanea el código de tu cadena de sincronización que creaste en otro dispositivo o inicia una cadena de sincronización nueva.</translation>
+<translation id="7745082336226088126">Escanear o introducir el código de sincronización</translation>
+<translation id="1602067095281698985">Iniciar una cadena de sincronización nueva</translation>
+<translation id="4690880825349994619">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona \"Añadir dispositivo\" y escanea el código QR que se muestra en la pantalla.</translation>
+<translation id="6270614677029463366">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona \"Añadir dispositivo\" y luego \"Mostrar palabras del código en su lugar\".</translation>
+<translation id="1475223680121592371">Añadir un dispositivo móvil</translation>
+<translation id="2965377893636908578">Añadir una computadora</translation>
+<translation id="65315202420929965">Escanear este código de sincronización</translation>
+<translation id="6604289897677913048">Desde un segundo teléfono o tableta, navega hasta Configuración de Brave &gt; Sincronización &gt; Escaneo.</translation>
+<translation id="3405078156498254717">Captura el código QR (arriba) con tu segundo dispositivo o introduce las palabras del código si no hay una cámara disponible.</translation>
+<translation id="8076492880354921740">Pestañas</translation>
+<translation id="5706430066167764107">Opción de autocompletar/Contraseñas</translation>
+<translation id="1164234435773528579">Configuración de pago de Brave</translation>
+<translation id="6174119914106813304">SINCRONIZAR EN ESTE DISPOSITIVO</translation>
+<translation id="6776430845975754238">Al cambiar la configuración, solo se verán afectados los datos que este dispositivo comparta con otros.</translation>
+<translation id="8193724030871339658">OTROS DISPOSITIVOS EN CADENA</translation>
+<translation id="279635009973773843">CARGANDO DISPOSITIVOS...</translation>
+<translation id="6450924769151530465">Añadir otro dispositivo</translation>
+<translation id="2004365171440701679">Eliminar este dispositivo</translation>
+<translation id="2731921493694251495">Introducir el código de cadena de sincronización</translation>
+<translation id="2590683710114839102">Desde tu computadora, navega hasta Configuración de Brave &gt; Sincronización. Elige \"Introducir un código de cadena de sincronización\".</translation>
+<translation id="1732271215616957850">Introduce las palabras del código de arriba incluyendo los espacios.</translation>
+<translation id="3951555451708119590">¿Estás seguro de que quieres eliminar el dispositivo \"</translation>
+<translation id="9154490620151093733">Se envió la solicitud de eliminación. El dispositivo se eliminará a la brevedad.</translation>
+<translation id="544873101641618162">Cargando datos...</translation>
+<translation id="6779408765480516895">Se produjo un error: parece que tu solicitud ha caducado.</translation>
+<translation id="4973653569293835178">Usaré mi cámara...</translation>
+<translation id="8131740175452115882">Confirmar</translation>
+<translation id="6854481134066832782">Cantidad de palabras: </translation>
+<translation id="4282642752844565114">La cantidad de palabras es incorrecta.</translation>
+<translation id="2175927920773552910">Código QR</translation>
+<translation id="8653433343015102968">Palabras del código</translation>
+<translation id="8624315169751085215">Copiar al portapapeles</translation>
+<translation id="5241263629636958324">Se copió al portapapeles.</translation>
+<translation id="222883304157347087">(este dispositivo)</translation>
 </translationbundle>

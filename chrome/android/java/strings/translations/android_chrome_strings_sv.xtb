@@ -414,7 +414,7 @@ Om du vill ändra söktermen trycker du länge för att välja. Om du vill finju
 <translation id="4226663524361240545">Aviseringar kan göra att enheten vibrerar</translation>
 <translation id="423219824432660969">Kryptera synkroniserad data med Google-lösenordet från <ph name="TIME" /></translation>
 <translation id="4242533952199664413">Öppna Inställningar</translation>
-<translation id="4243710787042215766">Öppna på privat flik</translation>
+<translation id="4243710787042215766">Öppna i privat flik</translation>
 <translation id="424864128008805179">Vill du logga ut från Brave?</translation>
 <translation id="4256782883801055595">Licenser för öppen källkod</translation>
 <translation id="4259722352634471385">Webbadressen har blockerats: <ph name="URL" /></translation>
@@ -627,7 +627,7 @@ Du är dock inte osynlig. Trots inkognitoläget kan din arbetsgivare, din intern
 <translation id="5793665092639000975"><ph name="SPACE_USED" /> av <ph name="SPACE_AVAILABLE" /> används</translation>
 <translation id="5804241973901381774">Behörigheter</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{för # timme sedan}other{för # timmar sedan}}</translation>
-<translation id="5817918615728894473">Koppla</translation>
+<translation id="5817918615728894473">Parkoppla</translation>
 <translation id="583281660410589416">Okänd</translation>
 <translation id="5833397272224757657">Använder innehåll på webbplatser du besöker, samt aktivitet i och interaktion med webbläsaren, i anpassningssyfte</translation>
 <translation id="5833984609253377421">Dela länk</translation>
@@ -1017,7 +1017,7 @@ Vissa webbplatser kan till exempel svara på begäran genom att visa annonser so
 <translation id="8719023831149562936">Den aktuella fliken kan inte överföras</translation>
 <translation id="8725066075913043281">Försök igen</translation>
 <translation id="7247433043977983806">Genom att fortsätta att använda programmet godkänner du Braves <ph name="BEGIN_LINK1" />användarvillkor<ph name="END_LINK1" />, <ph name="BEGIN_LINK2" />sekretessmeddelande<ph name="END_LINK2" /> och <ph name="BEGIN_LINK3" />sekretessmeddelandet för Google-konton som hanteras via Family Link<ph name="END_LINK3" />.</translation>
-<translation id="8730621377337864115">Klart</translation>
+<translation id="8730621377337864115">Klar</translation>
 <translation id="8748850008226585750">Innehållet har dolts</translation>
 <translation id="8751914237388039244">Välj en bild</translation>
 <translation id="8788968922598763114">Öppna den senast stängda fliken igen</translation>
@@ -1176,4 +1176,42 @@ tid</translation>
 <translation id="5858455511731621847">Även om webbsidor du besöker i privata flikar inte sparas lokalt gör de dig inte anonym eller osynlig för din ISP, din arbetsgivare, eller de webbsidor du besöker.</translation>
 <translation id="2339273275658335597">Brave-uppdatering</translation>
 <translation id="8395234238259738935">Nya Brave-webbläsaren är 22 % snabbare</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
+<translation id="391177677159359824">Sync (beta)</translation>
+<translation id="3680755684186855422">Brave Sync är ett säkert sätt att synkronisera bokmärken mellan Brave-webbläsare på dina olika enheter.</translation>
+<translation id="3735228155296883311">Skanna koden från synkroniseringskedjan du skapade på en annan enhet, eller starta en ny synkroniseringskedja.</translation>
+<translation id="7745082336226088126">Skanna eller ange synkroniseringskod</translation>
+<translation id="1602067095281698985">Starta en ny synkroniseringskedja</translation>
+<translation id="4690880825349994619">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj \"Lägg till enhet\" och skanna QR-koden som visas på skärmen.</translation>
+<translation id="6270614677029463366">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj \"Lägg till enhet\" och sedan \"Visa kodord i stället\".</translation>
+<translation id="1475223680121592371">Lägg till en mobil enhet</translation>
+<translation id="2965377893636908578">Lägg till en dator</translation>
+<translation id="65315202420929965">Skanna den här synkroniseringskoden</translation>
+<translation id="6604289897677913048">Öppna Brave på en annan mobil eller surfplatta och gå till Inställningar &gt; Synkronisering &gt; Skanna.</translation>
+<translation id="3405078156498254717">Läs av QR-koden (ovan) med den andra enheten eller ange kodorden om den saknar kamera.</translation>
+<translation id="8076492880354921740">Flikar</translation>
+<translation id="5706430066167764107">Autofyll/lösenord</translation>
+<translation id="1164234435773528579">Inställningar för betalning i Brave</translation>
+<translation id="6174119914106813304">SYNKRONISERA PÅ DEN HÄR ENHETEN</translation>
+<translation id="6776430845975754238">Om du gör ändringar i inställningarna kommer de att påverka de data som enheten delar med andra.</translation>
+<translation id="8193724030871339658">ANDRA ENHETER I KEDJAN</translation>
+<translation id="279635009973773843">LADDAR ENHETER ...</translation>
+<translation id="6450924769151530465">Lägg till en enhet</translation>
+<translation id="2004365171440701679">Ta bort enheten</translation>
+<translation id="2731921493694251495">Ange synkroniseringskoden</translation>
+<translation id="2590683710114839102">Öppna Brave på datorn och gå till Inställningar &gt; Synkronisering. Välj \"Ange en synkroniseringskod\".</translation>
+<translation id="1732271215616957850">Ange kodorden ovan, inklusive mellanslag.</translation>
+<translation id="3951555451708119590">Vill du ta bort enheten </translation>
+<translation id="9154490620151093733">Borttagningen har loggats. Enheten tas bort inom kort.</translation>
+<translation id="544873101641618162">Laddar data ...</translation>
+<translation id="6779408765480516895">Någonting blev fel. Begäran tog för lång tid.</translation>
+<translation id="4973653569293835178">Jag använder kameran ...</translation>
+<translation id="8131740175452115882">Bekräfta</translation>
+<translation id="6854481134066832782">Antal ord: </translation>
+<translation id="4282642752844565114">Fel antal ord</translation>
+<translation id="2175927920773552910">QR-kod</translation>
+<translation id="8653433343015102968">Kodord</translation>
+<translation id="8624315169751085215">Kopiera till urklipp</translation>
+<translation id="5241263629636958324">Kopierades till urklipp</translation>
+<translation id="222883304157347087">(den här enheten)</translation>
 </translationbundle>
