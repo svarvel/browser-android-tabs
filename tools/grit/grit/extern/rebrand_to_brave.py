@@ -108,12 +108,28 @@ def ReplaceIds(folder):
                     f.close()
     print('Brave ids successfully updated in ' + folder)
 
+# Generate message id from message text and meaning string (optional),
+# both in utf-8 encoding
+#
+def GenerateMessageId(message, meaning=''):
+    fp = FP.FingerPrint(message)
+    if meaning:
+        # combine the fingerprints of message and meaning
+        fp2 = FP.FingerPrint(meaning)
+        if fp < 0:
+            fp = fp2 + (fp << 1) + 1
+        else:
+            fp = fp2 + (fp << 1)
+    # To avoid negative ids we strip the high-order bit
+    return fp & 0x7fffffffffffffffL
+
 # Check for Brave branded strings in grd file, calculate their ids and update them in xtb files (instead of Chrome, Google Chrome and Chromium)
 def UpdateBraveIds(grd_file):
     messages = xml.etree.ElementTree.parse(grd_file).getroot().find('release').find('messages')
     for message_tag in messages.findall('message'):
         brave_string = message_tag.text
         brave_string_phs = message_tag.findall('ph')
+        meaning = (message_tag.get('meaning') if 'meaning' in message_tag.attrib else None)
         for brave_string_ph in brave_string_phs:
             brave_string = brave_string + brave_string_ph.get('name').upper() + brave_string_ph.tail
         if brave_string is None:
@@ -121,24 +137,23 @@ def UpdateBraveIds(grd_file):
         brave_string = brave_string.strip().encode('utf-8')
         if brave_company in brave_string:
             # Calculate Brave string id
-            brave_string_fp = FP.FingerPrint(brave_string) & 0x7fffffffffffffffL
+            brave_string_fp = GenerateMessageId(brave_string, meaning)
             print(str(brave_string_fp) + ' - ' + brave_string)
             chrome_string = brave_string.replace(brave_company, google_company)
             # Calculate Chrome string id
-            # Todo: it gets incorrect id here, need to figure out why next time, for now it is replaced it manually
-            chrome_string_fp = FP.FingerPrint(chrome_string) & 0x7fffffffffffffffL
+            chrome_string_fp = GenerateMessageId(chrome_string, meaning)
             print(str(chrome_string_fp) + ' - ' + chrome_string)
             if not chrome_string_fp in brave_ids:
                 brave_ids[chrome_string_fp] = brave_string_fp
             print('\n')
         elif brave_brand_string in brave_string:
             # Calculate Brave string id
-            brave_string_fp = FP.FingerPrint(brave_string) & 0x7fffffffffffffffL
+            brave_string_fp = GenerateMessageId(brave_string, meaning)
             print(str(brave_string_fp) + ' - ' + brave_string)
             for chrome_brand_string in chrome_brand_strings:
                 chrome_string = brave_string.replace(brave_brand_string, chrome_brand_string)
                 # Calculate Chrome string id
-                chrome_string_fp = FP.FingerPrint(chrome_string) & 0x7fffffffffffffffL
+                chrome_string_fp = GenerateMessageId(chrome_string, meaning)
                 print(str(chrome_string_fp) + ' - ' + chrome_string)
                 if not chrome_string_fp in brave_ids:
                     brave_ids[chrome_string_fp] = brave_string_fp
