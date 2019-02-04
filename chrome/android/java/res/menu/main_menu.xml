@@ -76,6 +76,8 @@
             android:icon="@drawable/reader_mode_prefs_icon" />
         <item android:id="@+id/brave_set_default_browser"
             android:title="@string/brave_set_default_browser" />
+        <item android:id="@+id/brave_rewards_id"
+            android:title="@string/menu_brave_rewards" />
         <item android:id="@+id/preferences_id"
             android:title="@string/menu_preferences" />
         <item android:id="@+id/enter_vr_id"
