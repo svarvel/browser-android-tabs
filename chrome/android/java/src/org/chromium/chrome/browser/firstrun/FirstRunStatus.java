@@ -36,11 +36,12 @@ public class FirstRunStatus {
      * includes ToS and Sign In pages if necessary.
      */
     public static boolean getFirstRunFlowComplete() {
-        if (ContextUtils.getAppSharedPreferences().getBoolean(FIRST_RUN_FLOW_COMPLETE, false)) {
-            return true;
-        }
-        return CommandLine.getInstance().hasSwitch(
-                ChromeSwitches.FORCE_FIRST_RUN_FLOW_COMPLETE_FOR_TESTING);
+        return true;
+        // if (ContextUtils.getAppSharedPreferences().getBoolean(FIRST_RUN_FLOW_COMPLETE, false)) {
+        //     return true;
+        // }
+        // return CommandLine.getInstance().hasSwitch(
+        //         ChromeSwitches.FORCE_FIRST_RUN_FLOW_COMPLETE_FOR_TESTING);
     }
 
     /**
