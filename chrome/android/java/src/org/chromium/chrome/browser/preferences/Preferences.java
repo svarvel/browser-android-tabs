@@ -241,7 +241,6 @@ public class Preferences extends AppCompatActivity implements OnPreferenceStartF
         Fragment activeFragment = getFragmentManager().findFragmentById(android.R.id.content);
         if (activeFragment != null && activeFragment.onOptionsItemSelected(item)) return true;
         if (item.getItemId() == android.R.id.home) {
-            Log.i(TAG, "SAM: android.R.id.home clicked");
             if (getFragmentForTest() instanceof BraveSyncScreensPreference) {
                 BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
                 if (pref.onBackPressed()) {
