@@ -9,10 +9,12 @@ import { connect } from 'react-redux'
 // Components
 import { StyledListContent } from './style'
 import { BoxMobile } from 'brave-ui/src/features/rewards/mobile'
-import { TableDonation, Tokens, List } from 'brave-ui/src/features/rewards'
-import { Column, Grid, Checkbox, ControlWrapper } from 'brave-ui/src/components'
+import { TableDonation, Tokens, List, NextContribution } from 'brave-ui/src/features/rewards'
+import { DetailRow } from 'brave-ui/src/features/rewards/tableDonation'
+import { Provider } from 'brave-ui/src/features/rewards/profile'
 
 // Utils
+import * as utils from '../utils'
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 
@@ -24,64 +26,118 @@ class DonationBox extends React.Component<Props, {}> {
     return this.props.actions
   }
 
-  onCheckSettingChange = (key: string, selected: boolean) => {
-    this.actions.onSettingSave(key, selected)
-  }
+  getTotal = () => {
+    const { reports } = this.props.rewardsData
 
-  donationSettings = () => {
-    const {
-      donationAbilityYT,
-      donationAbilityTwitter,
-      enabledMain
-    } = this.props.rewardsData
+    const currentTime = new Date()
+    const reportKey = `${currentTime.getFullYear()}_${currentTime.getMonth() + 1}`
+    const report: Rewards.Report = reports[reportKey]
 
-    if (!enabledMain) {
-      return null
+    if (report) {
+      return utils.donationTotal(report)
     }
 
-    return (
-      <Grid columns={1} customStyle={{ maxWidth: '270px', margin: '0 auto' }}>
-        <Column size={1} customStyle={{ justifyContent: 'center', flexWrap: 'wrap' }}>
-          <ControlWrapper text={getLocale('donationAbility')}>
-            <Checkbox
-              value={{
-                donationAbilityYT,
-                donationAbilityTwitter
-              }}
-              multiple={true}
-              onChange={this.onCheckSettingChange}
-            >
-              <div data-key='donationAbilityYT'>{getLocale('donationAbilityYT')}</div>
-              <div data-key='donationAbilityTwitter'>{getLocale('donationAbilityTwitter')}</div>
-            </Checkbox>
-          </ControlWrapper>
-        </Column>
-      </Grid>
-    )
+    return '0.0'
   }
 
-  getDonationRows = () => []
+  getDonationRows = () => {
+    const { walletInfo, recurringList, tipsList } = this.props.rewardsData
+
+    let recurring: DetailRow[] = []
+    if (recurringList) {
+      recurring = recurringList.map((item: Rewards.Publisher) => {
+        let faviconUrl = `chrome://favicon/size/48@1x/${item.url}`
+        if (item.favIcon && item.verified) {
+          faviconUrl = `chrome://favicon/size/48@1x/${item.favIcon}`
+        }
+
+        return {
+          profile: {
+            name: item.name,
+            verified: item.verified,
+            provider: (item.provider ? item.provider : undefined) as Provider,
+            src: faviconUrl
+          },
+          contribute: {
+            tokens: item.percentage.toFixed(1),
+            converted: utils.convertBalance(item.percentage.toString(), walletInfo.rates)
+          },
+          url: item.url,
+          type: 'recurring' as any,
+          onRemove: () => { this.actions.removeRecurring(item.id) }
+        }
+      })
+    }
+
+    let tips: DetailRow[] = []
+    if (tipsList) {
+      tips = tipsList.map((item: Rewards.Publisher) => {
+        let faviconUrl = `chrome://favicon/size/48@1x/${item.url}`
+        if (item.favIcon && item.verified) {
+          faviconUrl = `chrome://favicon/size/48@1x/${item.favIcon}`
+        }
+
+        const token = utils.convertProbiToFixed(item.percentage.toString())
+
+        return {
+          profile: {
+            name: item.name,
+            verified: item.verified,
+            provider: (item.provider ? item.provider : undefined) as Provider,
+            src: faviconUrl
+          },
+          contribute: {
+            tokens: token,
+            converted: utils.convertBalance(token, walletInfo.rates)
+          },
+          url: item.url,
+          text: item.tipDate ? new Date(item.tipDate * 1000).toLocaleDateString() : undefined,
+          type: 'donation' as any,
+          onRemove: () => { this.actions.removeRecurring(item.id) }
+        }
+      })
+    }
+
+    return recurring.concat(tips)
+  }
 
   render () {
-    const { rewardsData } = this.props
+    const {
+      walletInfo,
+      enabledMain,
+      recurringList,
+      reconcileStamp
+    } = this.props.rewardsData
     const donationRows = this.getDonationRows()
     const numRows = donationRows.length
     const allSites = !(numRows > 5)
+    const total = this.getTotal()
+    const converted = utils.convertBalance(total, walletInfo.rates)
 
     return (
       <BoxMobile
         title={getLocale('donationTitle')}
         type={'donation'}
         toggle={false}
-        checked={rewardsData.enabledMain}
+        checked={enabledMain}
         description={getLocale('donationDesc')}
-        settingsChild={this.donationSettings()}
       >
         <List title={<StyledListContent>{getLocale('donationTotalDonations')}</StyledListContent>}>
           <StyledListContent>
-            <Tokens value={'0.0'} converted={'0.00'} />
+            <Tokens value={total} converted={converted} />
           </StyledListContent>
         </List>
+        {
+          recurringList && recurringList.length > 0
+          ? <List title={getLocale('contributionNextDate')}>
+            <StyledListContent>
+              <NextContribution>
+                {new Date(reconcileStamp * 1000).toLocaleDateString()}
+              </NextContribution>
+            </StyledListContent>
+          </List>
+          : null
+        }
         <StyledListContent>
           <TableDonation
             rows={donationRows}

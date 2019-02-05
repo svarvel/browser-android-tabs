@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+import BigNumber from 'bignumber.js'
 import { Address } from 'brave-ui/src/features/rewards/modalAddFunds'
 
 export let actions: any = null
@@ -39,6 +40,25 @@ export const generateContributionMonthly = (list: number[], rates: Record<string
       converted: convertBalance(item.toString(), rates)
     }
   })
+}
+
+export const donationTotal = (report: Rewards.Report) => {
+  if (!report) {
+    return '0.0'
+  }
+
+  const tips = new BigNumber(report.tips)
+  return new BigNumber(report.donation).plus(tips).dividedBy('1e18').toFixed(1, BigNumber.ROUND_DOWN)
+}
+
+export const convertProbiToFixed = (probi: string, places: number = 1) => {
+  const result = new BigNumber(probi).dividedBy('1e18').toFixed(places, BigNumber.ROUND_DOWN)
+
+  if (result === 'NaN') {
+    return '0.0'
+  }
+
+  return result
 }
 
 export const getAddresses = (addresses?: Record<Rewards.AddressesType, Rewards.Address>) => {

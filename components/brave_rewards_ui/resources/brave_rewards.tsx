@@ -115,6 +115,14 @@ window.cr.define('brave_rewards', function () {
     getActions().onInitAutoContributeSettings(properties)
   }
 
+  function recurringDonationUpdate (list: Rewards.Publisher[]) {
+    getActions().onRecurringDonationUpdate(list)
+  }
+
+  function currentTips (list: Rewards.Publisher[]) {
+    getActions().onCurrentTips(list)
+  }
+
   return {
     initialize,
     walletCreated,
@@ -133,7 +141,9 @@ window.cr.define('brave_rewards', function () {
     walletExists,
     contributionAmount,
     adsData,
-    initAutoContributeSettings
+    initAutoContributeSettings,
+    recurringDonationUpdate,
+    currentTips
   }
 })
 if (document.readyState === "complete"

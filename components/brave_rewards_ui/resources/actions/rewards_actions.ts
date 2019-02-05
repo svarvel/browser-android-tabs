@@ -128,3 +128,13 @@ export const onAdsSettingSave = (key: string, value: any) => action(types.ON_ADS
 export const onInitAutoContributeSettings = (properties: any) => action(types.INIT_AUTOCONTRIBUTE_SETTINGS, {
   properties
 })
+
+export const getDonationTable = () => action(types.GET_DONATION_TABLE)
+
+export const onRecurringDonationUpdate = (list: Rewards.Publisher[]) => action(types.ON_RECURRING_DONATION_UPDATE, {
+  list
+})
+
+export const onCurrentTips = (list: Rewards.Publisher[]) => action(types.ON_CURRENT_TIPS, {
+  list
+})

@@ -43,7 +43,11 @@ export const defaultState: Rewards.State = {
   },
   autoContributeList: [],
   reports: {},
-  safetyNetFailed: false
+  safetyNetFailed: false,
+  recurringList: [],
+  tipsList: [],
+  tipsLoad: false,
+  recurringLoad: false
 }
 
 const cleanData = (state: Rewards.State) => state
