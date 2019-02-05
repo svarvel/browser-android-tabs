@@ -32,6 +32,24 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
     case types.GET_CONTRIBUTE_LIST:
       chrome.send('brave_rewards.getContributionList')
       break
+    case types.ON_CURRENT_TIPS:
+      state = { ...state }
+      if (state.tipsLoad) {
+        state.firstLoad = false
+      } else {
+        state.tipsLoad = true
+      }
+      state.tipsList = action.payload.list
+      break
+    case types.ON_RECURRING_DONATION_UPDATE:
+      state = { ...state }
+      if (state.recurringLoad) {
+        state.firstLoad = false
+      } else {
+        state.recurringLoad = true
+      }
+      state.recurringList = action.payload.list
+      break
   }
 
   return state

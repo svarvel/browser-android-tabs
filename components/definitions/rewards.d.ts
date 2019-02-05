@@ -47,6 +47,10 @@ declare namespace Rewards {
     }
     autoContributeList: Publisher[],
     safetyNetFailed: boolean
+    recurringList: Publisher[]
+    tipsList: Publisher[]
+    tipsLoad: boolean
+    recurringLoad: boolean
   }
 
   export interface ComponentProps {
@@ -101,6 +105,7 @@ declare namespace Rewards {
     provider: string
     favIcon: string
     id: string
+    tipDate?: number
   }
 
   export interface Report {
