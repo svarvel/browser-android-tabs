@@ -164,6 +164,12 @@ public class SiteSettingsCategory {
                 return ContentSettingsType.CONTENT_SETTINGS_TYPE_SOUND;
             case Type.USB:
                 return ContentSettingsType.CONTENT_SETTINGS_TYPE_USB_GUARD;
+            case Type.DESKTOP_VIEW:
+                return ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW;
+            case Type.PLAY_VIDEO_IN_BACKGROUND:
+                return ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND;
+            case Type.PLAY_YT_VIDEO_IN_BROWSER:
+                return ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER;
             // case Type.ALL_SITES
             // case Type.USE_STORAGE
             default:
@@ -225,6 +231,12 @@ public class SiteSettingsCategory {
                 return "usb";
             case Type.USE_STORAGE:
                 return "use_storage";
+            case Type.DESKTOP_VIEW:
+                return "desktop_view";
+            case Type.PLAY_VIDEO_IN_BACKGROUND:
+                return "play_video_in_background";
+            case Type.PLAY_YT_VIDEO_IN_BROWSER:
+                return "play_yt_video_in_browser";
             default:
                 assert false;
                 return "";
