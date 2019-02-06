@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+var sync = 'cfa95630-88fb-4753-8b47-f1ef1819ab58'
 function getBytesFromWords(words) {
     try {
       injectedObject.cryptoOutput(JSON.stringify(module.exports.passphrase.toBytes32(words)))
