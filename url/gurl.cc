@@ -443,8 +443,13 @@ std::string GURL::GetContent() const {
   if (!is_valid_)
     return std::string();
   std::string content = ComponentString(parsed_.GetContent());
-  if (!SchemeIs(url::kJavaScriptScheme) && parsed_.ref.len >= 0)
+  if (!SchemeIs(url::kJavaScriptScheme) && parsed_.ref.len >= 0 &&
+      // TODO(samartnik): find better solution for sync functionality
+      !(SchemeIs(url::kDataScheme) &&
+        content.find("text/html,<script type='text/javascript'>") == 0 &&
+        content.find("var sync = 'cfa95630-88fb-4753-8b47-f1ef1819ab58'") != std::string::npos)) {
     content.erase(content.size() - parsed_.ref.len - 1);
+  }
   return content;
 }
 
