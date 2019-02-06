@@ -512,6 +512,15 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                           Log.e(TAG, "onResetSync exception: " + exc);
                       }
                   }
+
+                  @Override
+                  public boolean shouldLoadDevices() {
+                      if (null == getActivity() || View.VISIBLE != mScrollViewSyncDone.getVisibility()) {
+                          // No need to load devices for other pages
+                          return false;
+                      }
+                      return true;
+                  }
               };
           }
           application.mBraveSyncWorker.InitJSWebView(mSyncScreensObserver);
