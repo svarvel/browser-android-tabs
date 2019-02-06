@@ -5,6 +5,7 @@
 'use strict';
 
 var callbackList = {}; /* message name to callback function */
+var sync = 'cfa95630-88fb-4753-8b47-f1ef1819ab58'
 
 if (!self.chrome || !self.chrome.ipc) {
     self.chrome = {};

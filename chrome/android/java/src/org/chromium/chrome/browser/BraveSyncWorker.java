@@ -506,7 +506,12 @@ public class BraveSyncWorker {
             mSendSyncDataThread.interrupt();
             mSendSyncDataThread = null;
         }
-        nativeClear();
+        new Thread() {
+            @Override
+            public void run() {
+                nativeClear();
+            }
+        }.start();
     }
 
     public void CreateUpdateDeleteBookmarks(String action, BookmarkItem[] bookmarks, final boolean addIdsToNotSynced,
@@ -2912,9 +2917,9 @@ public class BraveSyncWorker {
 
                             String toLoad = "<script type='text/javascript'>";
                             try {
-                                String script = convertStreamToString(mContext.getAssets().open(CRYPTO_JS));
+                                String script = convertStreamToString(mContext.getAssets().open(ANDROID_SYNC_WORDS_JS));
                                 toLoad += script.replace("%", "%25").replace("\n", "%0A") + "</script><script type='text/javascript'>";
-                                script = convertStreamToString(mContext.getAssets().open(ANDROID_SYNC_WORDS_JS));
+                                script = convertStreamToString(mContext.getAssets().open(CRYPTO_JS));
                                 toLoad += script.replace("%", "%25").replace("\n", "%0A") + "</script>";
                             } catch (IOException exc) {}
                             LoadUrlParams loadUrlParams = LoadUrlParams.createLoadDataParamsWithBaseUrl(toLoad, "text/html", false, "file:///android_asset/", null);
