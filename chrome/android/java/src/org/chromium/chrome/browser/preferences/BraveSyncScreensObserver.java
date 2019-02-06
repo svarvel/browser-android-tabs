@@ -32,4 +32,9 @@ public interface BraveSyncScreensObserver {
      * Informs when the sync is reset
      */
     public void onResetSync();
+
+    /**
+     * Returns true if sync settings with devices list is currently shown
+     */
+    public boolean shouldLoadDevices();
 }

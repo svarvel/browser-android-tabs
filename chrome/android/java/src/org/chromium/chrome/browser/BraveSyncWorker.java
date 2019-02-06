@@ -848,9 +848,7 @@ public class BraveSyncWorker {
 
     public ArrayList<ResolvedRecordToApply> GetAllDevices() {
         ArrayList<ResolvedRecordToApply> result_devices = new ArrayList<ResolvedRecordToApply>();
-        if (!mSyncIsReady.IsReady()) {
-            return result_devices;
-        }
+
         String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
         if (object.isEmpty()) {
             return result_devices;
@@ -1991,9 +1989,14 @@ public class BraveSyncWorker {
     private void DeviceResolver(List<ResolvedRecordToApply> resolvedRecords) {
         //Log.i(TAG, "DeviceResolver: resolvedRecords.size(): " + resolvedRecords.size());
         assert null != resolvedRecords;
-        if (0 == resolvedRecords.size()) {
+
+        if (0 == resolvedRecords.size() &&
+            (mSyncScreensObserver == null || !mSyncScreensObserver.shouldLoadDevices())) {
+            // When there are no changes in devices from sync cloud, but devices
+            // page is currently opened in sync settings, reload in anyway devices list
             return;
         }
+
         String object = nativeGetObjectIdByLocalId(DEVICES_NAMES);
 
         List<ResolvedRecordToApply> existingRecords = new ArrayList<ResolvedRecordToApply>();
