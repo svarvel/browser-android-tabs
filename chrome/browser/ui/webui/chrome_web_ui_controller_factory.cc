@@ -260,20 +260,6 @@ WebUIController* NewWebUI<BraveRewardsUI>(WebUI* web_ui, const GURL& url) {
   return new BraveRewardsUI(web_ui, url.host());
 }
 
-// Special case for BraveRewardsPanelUI
-template<>
-WebUIController* NewWebUI<BraveRewardsPanelUI>(WebUI* web_ui, const GURL& url) {
-  return new BraveRewardsPanelUI(web_ui, url.host());
-}
-
-// Special case for BraveRewardsPanelUI
-template<>
-WebUIController* NewWebUI<BraveRewardsDonateUI>(WebUI* web_ui, const GURL& url) {
-  return new BraveRewardsDonateUI(web_ui, url.host());
-}
-
-
-
 #if !defined(OS_ANDROID)
 template <>
 WebUIController* NewWebUI<PageNotAvailableForGuestUI>(WebUI* web_ui,
@@ -379,10 +365,6 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   // print dialog.
   if (url.host_piece() == chrome::kBraveRewardsHost)
     return &NewWebUI<BraveRewardsUI>;
-  if (url.host_piece() == chrome::kBraveRewardsPanelHost)  
-    return &NewWebUI<BraveRewardsPanelUI>; 
-  if (url.host_piece() == chrome::kBraveRewardsDonateHost)  
-    return &NewWebUI<BraveRewardsDonateUI>;  
   if (url.host_piece() == chrome::kChromeUIAccessibilityHost)
     return &NewWebUI<AccessibilityUI>;
   if (url.host_piece() == chrome::kChromeUIAutofillInternalsHost)

@@ -24,23 +24,6 @@ transpile_web_ui("transpile_settings") {
     "resources/storage.ts",
     "resources/store.ts",
     "resources/utils.ts",
-
-    #sources of the rewads panel page
-    "panel/brave_rewards/actions/rewards_panel_actions.ts",
-    "panel/brave_rewards/background.ts",
-    "panel/brave_rewards/background/actions/rewardsPanelActions.ts",
-    "panel/brave_rewards/background/api/locale_api.ts",
-    "panel/brave_rewards/background/api/tabs_api.ts",
-    "panel/brave_rewards/background/reducers/index.ts",
-    "panel/brave_rewards/background/reducers/rewards_panel_reducer.ts",
-    "panel/brave_rewards/background/storage.ts",
-    "panel/brave_rewards/background/store.ts",
-    "panel/brave_rewards/brave_rewards_panel.html",
-    "panel/brave_rewards/brave_rewards_panel.tsx",
-    "panel/brave_rewards/components/app.tsx",
-    "panel/brave_rewards/components/panel.tsx",
-    "panel/brave_rewards/constants/rewards_panel_types.ts",
-    "panel/brave_rewards/utils.ts",
   ]
 
   # what is the output bundle called and what is the entry point file
@@ -60,33 +43,13 @@ pack_web_resources("settings_generated_resources") {
   ]
 }
 
-pack_web_resources("panel_generated_resources") {
-  resource_name = "brave_rewards_panel"
-  output_dir = "$root_gen_dir/components/brave_rewards/panel/resources"
-  deps = [
-    "panel/brave_rewards:ui"
-  ]
-}
-
-pack_web_resources("donate_generated_resources") {
-  resource_name = "brave_rewards_donate"
-  output_dir = "$root_gen_dir/components/brave_rewards/donate/resources"
-  deps = [
-    "donate/brave_rewards:ui"
-  ]
-}
-
 repack("ui") {
   deps = [
     ":settings_generated_resources",
-    ":panel_generated_resources",
-    ":donate_generated_resources",
   ]
 
   sources = [
     "$root_gen_dir/components/brave_rewards/settings/resources/brave_rewards_settings_generated.pak",
-    "$root_gen_dir/components/brave_rewards/panel/resources/brave_rewards_panel_generated.pak",
-    "$root_gen_dir/components/brave_rewards/donate/resources/brave_rewards_donate_generated.pak",
   ]
 
   output = "$root_gen_dir/components/brave_rewards/resources/brave_rewards_resources.pak"
