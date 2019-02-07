@@ -17,7 +17,7 @@ def SetJsMinifier(minifier):
 
 def Minify(source, filename):
   file_type = path.splitext(filename)[1]
-  if not file_type == '.js' or not __js_minifier:
+  if not file_type == '.js' or not __js_minifier or filename == 'gen/android-brave/web-ui-brave_rewards_settings/brave_rewards_settings.js':
     return source
   p = subprocess.Popen(
       __js_minifier,
