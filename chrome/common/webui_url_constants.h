@@ -179,10 +179,6 @@ extern const char kRewardsDonateJS[];
 #if defined(OS_ANDROID)
 extern const char kBraveRewardsURL[];
 extern const char kBraveRewardsHost[];
-extern const char kBraveRewardsDonateURL[];
-extern const char kBraveRewardsDonateHost[];
-extern const char kBraveRewardsPanelURL[];
-extern const char kBraveRewardsPanelHost[];
 extern const char kChromeUIEocInternalsHost[];
 extern const char kChromeUIJavaCrashURL[];
 extern const char kChromeUINativeBookmarksURL[];
