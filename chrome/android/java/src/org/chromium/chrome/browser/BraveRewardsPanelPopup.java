@@ -819,9 +819,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
                 iv.setImageBitmap(bmp);
             } else if (currentFavIconFetch < FAVICON_FETCH_COUNT) {
                 currentFavIconFetch++;
-                String publisherURL = mBraveRewardsNativeWorker.GetPublisherURL(currentTabId);
                 String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
-                BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, thisObject, publisherURL, publisherFavIconURL);
+
+                Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
+                String url = currentActiveTab.getUrl();
+                String favicon_url = (publisherFavIconURL.isEmpty()) ? url : publisherFavIconURL;
+                BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, thisObject, favicon_url);
             }
         }
       });
@@ -835,9 +838,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
         currentTabId = tabId;
         RemoveRewardsSummaryMonthYear();
 
-        String publisherURL = mBraveRewardsNativeWorker.GetPublisherURL(currentTabId);
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
-        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, publisherURL, publisherFavIconURL);
+
+        Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
+        String url = currentActiveTab.getUrl();
+        String favicon_url = (publisherFavIconURL.isEmpty()) ? url : publisherFavIconURL;
+
+        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, favicon_url);
 
         GridLayout gl = (GridLayout)this.root.findViewById(R.id.website_summary_grid);
         gl.setVisibility(View.VISIBLE);

@@ -104,9 +104,13 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
 
-        String publisherURL = mBraveRewardsNativeWorker.GetPublisherURL(currentTabId_);
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
-        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, publisherURL, publisherFavIconURL);
+        Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
+        String url = currentActiveTab.getUrl();
+        String favicon_url = (publisherFavIconURL.isEmpty()) ? url : publisherFavIconURL;
+
+
+        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, favicon_url);
 
         double balance = mBraveRewardsNativeWorker.GetWalletBalance();
         String walletAmount = String.format("%.2f", balance) + " BAT";
