@@ -24,8 +24,6 @@
 #include "chrome/browser/search/suggestions/suggestions_ui.h"
 #include "chrome/browser/ui/webui/about_ui.h"
 #include "chrome/browser/ui/webui/bluetooth_internals/bluetooth_internals_ui.h"
-#include "chrome/browser/ui/webui/brave_rewards_donate_ui.h"
-#include "chrome/browser/ui/webui/brave_rewards_panel_ui.h"
 #include "chrome/browser/ui/webui/components_ui.h"
 #include "chrome/browser/ui/webui/constrained_web_dialog_ui.h"
 #include "chrome/browser/ui/webui/crashes_ui.h"

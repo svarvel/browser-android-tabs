@@ -10,8 +10,6 @@
     <includes>
       <part file="about_ui_resources.grdp" />
       <part file="brave_rewards_ui_resources.grdp" />
-      <part file="brave_rewards_panel_ui_resources.grdp" />
-      <part file="brave_rewards_donate_ui_resources.grdp" />
       <part file="crash_resources.grdp" />
       <part file="dom_distiller_resources.grdp" />
       <part file="flags_ui_resources.grdp" />
