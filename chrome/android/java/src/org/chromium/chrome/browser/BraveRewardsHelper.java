@@ -102,32 +102,14 @@ public class BraveRewardsHelper {
     return activity.getActivityTab();
   }
 
-  static public void retrieveFavIcon( FaviconHelper favIconHelper, FaviconHelper.FaviconImageCallback parent, String publisherURL, String publisherFavIconURL){
+  static public void retrieveFavIcon( FaviconHelper favIconHelper, FaviconHelper.FaviconImageCallback parent, String favIconURL){
     (new Runnable() {
       @Override
       public void run() {
-
-        if (publisherFavIconURL.isEmpty()) {
-          Tab currentActiveTab = currentActiveTab();
-          if (currentActiveTab != null && !publisherURL.isEmpty()) {
-            favIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
-                    publisherURL, 64, parent);
-          }
-        } else {
-          new AsyncTask<Void>() {
-            @Override
-            protected Void doInBackground() {
-              try {
-                URL url = new URL(publisherFavIconURL);
-                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                parent.onFaviconAvailable(bmp, publisherFavIconURL);
-              } catch (MalformedURLException exc) {
-              } catch (IOException exc) {
-              }
-
-              return null;
-            }
-          }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        Tab currentActiveTab = currentActiveTab();
+        if (currentActiveTab != null && !favIconURL.isEmpty() ){
+          favIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
+                  favIconURL, 0, parent);
         }
       }
     }).run();
