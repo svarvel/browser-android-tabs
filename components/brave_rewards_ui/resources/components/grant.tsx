@@ -15,7 +15,7 @@ import {
 
 // Utils
 import * as rewardsActions from '../actions/rewards_actions'
-import { convertProbiToFixed } from '../../../common/probiUtils'
+import { convertProbiToFixed } from '../utils'
 
 type Step = '' | 'complete'
 

@@ -85,7 +85,8 @@ declare namespace Rewards {
 
   export interface GrantFinish {
     result: Result,
-    statusCode: number,
+    probi: string,
+    status: number,
     expiryTime: number
   }
 
