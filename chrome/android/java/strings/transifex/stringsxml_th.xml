@@ -109,7 +109,7 @@ EST แล้ว</string>
     <string name="brave_sync_btn_laptop">เพิ่มคอมพิวเตอร์</string>
     <string name="brave_sync_scan_sync_code">สแกนรหัสการซิงค์นี้</string>
     <string name="brave_sync_add_mobile_device_text_part_1">หากต้องการใช้โทรศัพท์หรือแท็บเล็ตเครื่องที่สอง ให้นำทางไปยัง การตั้งค่า Brave > ซิงค์ > สแกน</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">จับภาพรหัส QR (ที่กล่าวถึงข้างต้น) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">จับภาพรหัส QR (ด้านล่าง) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</string>
     <string name="brave_sync_btn_done">เสร็จสิ้น</string>
     <string name="brave_sync_tabs_text">แท็บ</string>
     <string name="brave_sync_history_text">ประวัติ</string>

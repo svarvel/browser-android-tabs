@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Çıkış</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Brave (beta) Senkronizasyon</string>
     <string name="sync_settings_add_device_name_title">Cihaz adı ekle</string>
     <string name="sync_settings_add_device_name_label">Bu cihaz için isteğe bağlı bir ad girin</string>
     <string name="sync_example_device_name">Android cihazı</string>
@@ -98,7 +98,7 @@ Kaydedildi</string>
     <string name="update_notification_title">Brave güncellemesi</string>
     <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Senkronizasyon (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</string>
     <string name="brave_sync_description_page_1_part_2">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</string>
     <string name="brave_sync_scan_chain_code">Senkronizasyon kodu tara veya gir</string>
@@ -107,7 +107,7 @@ Kaydedildi</string>
     <string name="brave_sync_codewords_message">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları\'nı açın ve Ayarlar > Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini ve ardından \"Bunun yerine kod kelimelerini görüntüle\" öğesini seçin.</string>
     <string name="brave_sync_btn_mobile">Mobil Cihaz Ekle</string>
     <string name="brave_sync_btn_laptop">Bilgisayar Ekle</string>
-    <string name="brave_sync_scan_sync_code">Bu senkronizasyon kodunu tara</string>
+    <string name="brave_sync_scan_sync_code">Bu senkronizasyon kodunu tarayın</string>
     <string name="brave_sync_add_mobile_device_text_part_1">İkinci bir telefon veya tablet kullanarak Brave Ayarları > Senkronizasyon > Tara öğesine gidin.</string>
     <string name="brave_sync_add_mobile_device_text_part_2">İkinci cihazınızla (yukarıdaki) QR kodunu çekin veya kamera mevcut değilse kod kelimelerini girin.</string>
     <string name="brave_sync_btn_done">Bitti</string>

@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Sortida</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Sincronització de Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Afegiu el nom del dispositiu</string>
     <string name="sync_settings_add_device_name_label">Introduïu un nom opcional per a aquest dispositiu</string>
     <string name="sync_example_device_name">Dispositiu Android</string>
@@ -98,13 +98,13 @@ Desat</string>
     <string name="update_notification_title">Actualització de Brave</string>
     <string name="update_notification_text">El navegador nou de Brave és un 22% més ràpid</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Sincronització (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync et permet sincronitzar dades de marcadors de manera privada entre els teus navegadors de Brave en diversos dispositius.</string>
     <string name="brave_sync_description_page_1_part_2">Simplement escaneja el codi de la cadena de sincronització  que vas crear en un altre dispositiu o comença una altra cadena de sincronització.</string>
     <string name="brave_sync_scan_chain_code">Escaneja o introdueix un codi de sincronització</string>
     <string name="brave_sync_start_new_chain">Comença una cadena de sincronització nova</string>
     <string name="brave_sync_qrcode_message_v2">Des d\'un dispositiu de sincronització existent, obre l\'opció de configuració de Brave i ves a Configuració > Sync. Tria \"Afegeix dispositiu\" i escaneja el codi QR que es mostra a la pantalla.</string>
-    <string name="brave_sync_codewords_message">Des d\'un dispositiu de sincronització existent, obre l\'opció de configuració de Brave i ves a Configuració > Sync. Tria \"Afegeix dispositiu\" i, a continuació, \"Mostra les paraules del codi\".</string>
+    <string name="brave_sync_codewords_message">Des d\'un dispositiu de sincronització existent, obre l\'opció de configuració de Brave i ves a Configuració > Sincronització. Tria \"Afegeix dispositiu\" i, a continuació, \"Mostra les paraules del codi\".</string>
     <string name="brave_sync_btn_mobile">Afegeix un dispositiu mòbil</string>
     <string name="brave_sync_btn_laptop">Afegeix un ordinador</string>
     <string name="brave_sync_scan_sync_code">Escaneja aquest codi de sincronització</string>

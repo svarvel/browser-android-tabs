@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Sair</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Brave (beta) Sincronização</string>
     <string name="sync_settings_add_device_name_title">Adicionar nome do dispositivo</string>
     <string name="sync_settings_add_device_name_label">Introduza um nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
@@ -98,13 +98,13 @@ Guardado</string>
     <string name="update_notification_title">Atualize o Brave</string>
     <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Sincronização (beta)</string>
     <string name="brave_sync_description_page_1_part_1">O Brave Sync permite-lhe sincronizar dados de marcadores de modo privado entre os seus navegadores Brave em vários dispositivos.</string>
     <string name="brave_sync_description_page_1_part_2">Basta digitalizar o código da cadeia de sincronização criada noutro dispositivo ou iniciar uma nova cadeia de sincronização.</string>
     <string name="brave_sync_scan_chain_code">Digitalizar ou introduzir código de sincronização</string>
     <string name="brave_sync_start_new_chain">Iniciar uma nova cadeia de sincronização</string>
     <string name="brave_sync_qrcode_message_v2">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sync. Selecione \"Adicionar dispositivo\" e digitalize o código QR apresentado no ecrã.</string>
-    <string name="brave_sync_codewords_message">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sync. Selecione \"Adicionar dispositivo\" e, em seguida, \"Apresentar palavras de código em alternativa\".</string>
+    <string name="brave_sync_codewords_message">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sincronizar. Selecione \"Adicionar dispositivo\" e, em seguida, \"Apresentar palavras de código em alternativa\".</string>
     <string name="brave_sync_btn_mobile">Adicionar um dispositivo móvel</string>
     <string name="brave_sync_btn_laptop">Adicionar um computador</string>
     <string name="brave_sync_scan_sync_code">Digitalizar este código de sincronização</string>

@@ -115,7 +115,7 @@ estimado</string>
     <string name="brave_sync_history_text">Historial</string>
     <string name="brave_sync_autofill_passwords_text">Opción de autocompletar/Contraseñas</string>
     <string name="brave_sync_payment_settings_text">Configuración de pago de Brave</string>
-    <string name="brave_sync_settings_title">SINCRONIZAR EN ESTE DISPOSITIVO</string>
+    <string name="brave_sync_settings_title">SINCRONIZACIÓN EN ESTE DISPOSITIVO</string>
     <string name="brave_sync_settings_description">Al cambiar la configuración, solo se verán afectados los datos que este dispositivo comparta con otros.</string>
     <string name="brave_sync_devices_title">OTROS DISPOSITIVOS EN CADENA</string>
     <string name="brave_sync_loading_devices_title">CARGANDO DISPOSITIVOS...</string>

@@ -30,6 +30,7 @@
 
     <string name="menu_exit">خروج</string>
 
+    <string name="brave_sync">همگام‌سازی Brave (بتا)</string>
     <string name="sync_settings_add_device_name_title">نام دستگاه را اضافه کنید</string>
     <string name="sync_settings_add_device_name_label">یک نام اختیاری برای این دستگاه وارد کنید</string>
     <string name="sync_example_device_name">دستگاه اندروید</string>
@@ -37,4 +38,105 @@
     <string name="sync_device">دستگاه را همگام سازی کنید</string>
     <string name="sync_device_failure">همگام سازی تنظیم نشد</string>
 
-    </resources>
+    <string name="brave_stats_text_trackers">ردیاب‌ها
+مسدود شدند</string>
+    <string name="brave_stats_text_ads">آگهی‌ها
+مسدود شدند</string>
+    <string name="brave_stats_text_https">ارتقاهای
+HTTPS</string>
+    <string name="brave_stats_text_time">زمان تقریبی
+ذخیره شد</string>
+
+    <string name="send_metrics_title">ارسال معیارها</string>
+
+    <string name="desktop_mode_title">حالت رایانه</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">نسخه رایانه‌ای سایت‌ها ترجیح داده می‌شود</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">نسخه دستگاه همراه سایت‌ها ترجیح داده می‌شود</string>
+    <string name="website_settings_category_desktop_view_enabled">فعال کردن نمای رایانه‌ای برای برگه‌های جدید</string>
+    <string name="website_settings_category_desktop_view_disabled">استفاده از نسخه‌های دستگاه همراه سایت‌ها برای برگه‌های جدید (توصیه می‌شود)</string>
+
+    <string name="brave_shields_first_group_title">پایش مسدود کردن</string>
+    <string name="brave_shields_second_group_title">کنترل‌های تکی</string>
+    <string name="brave_shields">سپرها</string>
+    <string name="brave_shields_ads_and_trackers">آگهی‌ها و ردیاب‌ها</string>
+    <string name="brave_shields_fingerprint_methods">روش‌های مبتنی بر اثر انگشت</string>
+    <string name="brave_shields_block_phishing_switch">مسدود کردن فیشینگ</string>
+
+    <string name="play_video_in_background_title">پخش ویدیو در پس‌زمینه</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">فعال</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">غیرفعال</string>
+    <string name="website_settings_category_play_video_in_background_enabled">آزمایشی. وقتی برگه پخش ویدیو فعال نیست یا صفحه‌نمایش دستگاه خاموش می‌شود، صدای ویدیو را در پس‌زمینه پخش می‌کند. اگر این ویژگی کار نمی‌کند، به حالت رایانه جابه‌جا شوید.</string>
+    <string name="settings_require_relaunch_notice">با راه‌اندازی مجدد Brave، تغییراتتان اعمال خواهند شد.</string>
+    <string name="settings_require_relaunch_now">راه‌اندازی در همین لحظه</string>
+    <string name="settings_require_relaunch_later">بعداً</string>
+
+    <string name="play_yt_video_in_browser_title">پخش ویدیو در Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">فعال</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">غیرفعال</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">اگر فعال باشد، ویدیوها به‌جای اینکه در برنامه مربوطه پخش شوند در Brave پخش می‌شوند.</string>
+
+    <string name="close_tabs_on_exit_title">بسته شدن برگه‌ها هنگام خروج</string>
+    <string name="close_tabs_on_exit_summary">برگه‌ها در فاصله بین جلسه‌های مرور باقی نمانند</string>
+
+    <string name="open_pages_in_custom_tabs_title">باز کردن برگه‌ها در «برگه‌های سفارشی»</string>
+    <string name="open_pages_in_custom_tabs_summary">پیشنهاد باز کردن برگه‌ها در «برگه‌های سفارشی»</string>
+
+    <string name="ddg_offer_title">جستجوی خصوصی با DuckDuckGo انجام شود؟</string>
+    <string name="ddg_offer_text">هنگام فعال بودن جستجوی خصوصی، Brave با استفاده از DuckDuckGo به جستجوهایتان در این برگه خصوصی پاسخ خواهد داد. DuckDuckGo موتور جستجویی است که سابقه مرورتان را ردیابی نمی‌کند و به شما امکان می‌دهد مروری خصوصی داشته باشید.</string>
+    <string name="ddg_offer_positive">بله</string>
+    <string name="ddg_offer_negative">نه</string>
+    <string name="ddg_offer_link">با جستجوی خصوصی با DuckDuckGo بیشتر آشنا شوید</string>
+    <string name="prefs_standard_search_engine">برگه استاندارد</string>
+    <string name="prefs_private_search_engine">برگه خصوصی</string>
+
+    <string name="brave_open_in_private_tab">باز کردن در برگه خصوصی</string>
+    <string name="brave_close_all_private_tabs">بستن برگه‌های خصوصی</string>
+    <string name="brave_new_private_tab">برگه خصوصی جدید</string>
+    <string name="brave_new_tab_private_header">این یک برگه خصوصی است</string>
+    <string name="brave_new_tab_private_message">اگرچه سایت‌هایی که در برگه‌های خصوصی بازدید می‌کنید به‌صورت محلی ذخیره نمی‌شوند، اما باعث نمی‌شود برای ISP، کارفرما، یا سایت‌هایی که بازدید می‌کنید، ناشناس یا نامرئی شوید.</string>
+
+    <string name="update_notification_title">به‌روزرسانی Brave</string>
+    <string name="update_notification_text">سرعت مرورگر جدید Brave ‏22% بیشتر شده است</string>
+
+    <string name="prefs_sync">همگام‌سازی (بتا)</string>
+    <string name="brave_sync_description_page_1_part_1">«همگام‌سازی Brave» به شما امکان می‌دهد داده‌های نشانک‌هایتان را به‌طور خصوصی میان مرورگرهای Brave خود در دستگاه‌های مختلفتان ذخیره کنید.</string>
+    <string name="brave_sync_description_page_1_part_2">کافی است کد را از زنجیره همگام‌سازی که در دستگاه دیگر ساخته‌اید اسکن کنید، یا زنجیره همگام‌سازی جدیدی بسازید.</string>
+    <string name="brave_sync_scan_chain_code">اسکن کردن یا ساختن کد همگام‌سازی</string>
+    <string name="brave_sync_start_new_chain">شروع زنجیره همگام‌سازی جدید</string>
+    <string name="brave_sync_qrcode_message_v2">با استفاده از دستگاهی که قبلاً همگام‌سازی‌شده است، «تنظیمات Brave» را باز کنید و به «تنظیمات > همگام‌سازی» بروید. «افزودن دستگاه» را انتخاب کنید و کد QR نشان داده‌شده روی صفحه را اسکن کنید.</string>
+    <string name="brave_sync_codewords_message">با استفاده از دستگاهی که قبلاً همگام‌سازی‌شده است، «تنظیمات Brave» را باز کنید و به «تنظیمات > همگام‌سازی» بروید. «افزودن دستگاه» و سپس «به‌جای آن کلمات کد نشان داده شود» را انتخاب کنید.</string>
+    <string name="brave_sync_btn_mobile">افزودن دستگاه همراه</string>
+    <string name="brave_sync_btn_laptop">افزودن رایانه</string>
+    <string name="brave_sync_scan_sync_code">اسکن کردن این کد همگام‌سازی</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">با استفاده از تلفن یا تبلت دیگری، به «تنظیمات Brave > همگام‌سازی > اسکن» بروید.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">کد QR (بالا) را با دستگاه دیگر اسکن کنید، یا اگر دوربین دردسترس نیست کلمات کد را وارد کنید.</string>
+    <string name="brave_sync_btn_done">تمام</string>
+    <string name="brave_sync_tabs_text">برگه‌ها</string>
+    <string name="brave_sync_history_text">سابقه</string>
+    <string name="brave_sync_autofill_passwords_text">تکمیل خودکار/گذرواژه‌ها</string>
+    <string name="brave_sync_payment_settings_text">تنظیمات پرداخت Brave</string>
+    <string name="brave_sync_settings_title">همگام‌سازی در این دستگاه</string>
+    <string name="brave_sync_settings_description">تغییر دادن تنظیمات فقط داده‌هایی را که این دستگاه با دستگاه‌های دیگر به‌اشتراک می‌گذارد، تحت تأثیر قرار می‌دهد.</string>
+    <string name="brave_sync_devices_title">سایر دستگاه‌های زنجیره</string>
+    <string name="brave_sync_loading_devices_title">درحال بارگیری دستگاه‌ها...</string>
+    <string name="brave_sync_add_device_text">افزودن دستگاه دیگر</string>
+    <string name="brave_sync_remove_device_text">برداشتن این دستگاه</string>
+    <string name="brave_sync_code_words_title">جفت کردن</string>
+    <string name="brave_sync_add_laptop_text_title">وارد کردن کد زنجیره همگام‌سازی</string>
+    <string name="brave_sync_add_laptop_text_part_1">در رایانه، به «تنظیمات Brave > همگام‌سازی» بروید. «وارد کردن کد زنجیره همگام‌سازی» را انتخاب کنید.</string>
+    <string name="brave_sync_add_laptop_text_part_2">کلمات کد بالا را وارد کنید (ازجمله فاصله‌ها).</string>
+    <string name="brave_sync_delete_device">مطمئنید می‌خواهید دستگاه «<ph name="DEVICE_NAME">%1$s</ph>» را حذف کنید؟</string>
+    <string name="brave_sync_delete_sent">درخواست حذف ارسال شد. دستگاه به‌زودی برداشته خواهد شد.</string>
+    <string name="brave_sync_loading_data_title">درحال بارگیری داده‌ها...</string>
+    <string name="brave_sync_time_out_message">مشکلی پیش آمد؛ به نظر می‌رسد مهلت زمانی درخواستتان تمام شده است.</string>
+    <string name="brave_sync_use_camera_text">از دوربین استفاده خواهم کرد...</string>
+    <string name="brave_sync_confirm_code_words_text">تأیید</string>
+    <string name="brave_sync_word_count_text">تعداد کلمات: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">تعداد کلمات درست نیست</string>
+    <string name="brave_sync_qr_code">کد QR</string>
+    <string name="brave_sync_code_words">کلمات کد</string>
+    <string name="brave_sync_copy_button_text">کپی کردن در کلیپ‌بورد</string>
+    <string name="brave_sync_copied_text">در کلیپ‌بورد کپی شد</string>
+    <string name="brave_sync_this_device_text">(این دستگاه)</string>
+
+</resources>

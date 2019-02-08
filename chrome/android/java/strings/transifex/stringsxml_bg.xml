@@ -30,6 +30,7 @@
 
     <string name="menu_exit">Изход</string>
 
+    <string name="brave_sync">Brave (бета) синхронизация</string>
     <string name="sync_settings_add_device_name_title">Добавете име на устройство</string>
     <string name="sync_settings_add_device_name_label">Въведете опционно име за това устройство</string>
     <string name="sync_example_device_name">Android устройство</string>
@@ -97,4 +98,45 @@
     <string name="update_notification_title">Актуализация на Brave</string>
     <string name="update_notification_text">Новият браузър Brave е с 22% по-бърз</string>
 
-    </resources>
+    <string name="prefs_sync">Синхронизация (бета)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync позволява поверително синхронизиране на данни за отметки между Вашите браузъри Brave върху различни устройства.</string>
+    <string name="brave_sync_description_page_1_part_2">Просто сканирайте кода от Вашата синхронизираща верига, която сте създали на друго устройство. Или стартирайте нова синхронизираща верига.</string>
+    <string name="brave_sync_scan_chain_code">Сканиране или въвеждане на код за синхронизация</string>
+    <string name="brave_sync_start_new_chain">Стартиране на нова синхронизираща верига</string>
+    <string name="brave_sync_qrcode_message_v2">Използвайки съществуващото синхронизирано устройство, отворете Настройки на Brave и отидете на Настройки > Синхронизиране. Изберете \"Добавяне на устройство\" и сканирайте QR кода на екрана.</string>
+    <string name="brave_sync_codewords_message">Използвайки съществуващото синхронизирано устройство, отворете Настройки на Brave и отидете на Настройки > Синхронизиране. Изберете \"Добавяне на устройство\" и \"Показване на кодови думи\".</string>
+    <string name="brave_sync_btn_mobile">Добавяне на мобилно устройство</string>
+    <string name="brave_sync_btn_laptop">Добавяне на компютър</string>
+    <string name="brave_sync_scan_sync_code">Сканирайте този код за синхронизация</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Използвайки втори телефон или таблет, отидете на Настройки на Brave > Синхронизиране > Сканиране.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Заснемете QR кода (по-горе) с второто устройство или въведете кодовите думи, ако не разполагате с камера.</string>
+    <string name="brave_sync_btn_done">Готово</string>
+    <string name="brave_sync_tabs_text">Раздели</string>
+    <string name="brave_sync_history_text">Хронология</string>
+    <string name="brave_sync_autofill_passwords_text">Автоматично попълване/пароли</string>
+    <string name="brave_sync_payment_settings_text">Настройки на Brave за плащане</string>
+    <string name="brave_sync_settings_title">СИНХРОНИЗИРАЙ НА ТОВА УСТРОЙСТВО</string>
+    <string name="brave_sync_settings_description">Промяната на настройките засяга само данни, които това устройство споделя с другите.</string>
+    <string name="brave_sync_devices_title">ДРУГИ УСТРОЙСТВА ВЪВ ВЕРИГАТА</string>
+    <string name="brave_sync_loading_devices_title">ЗАРЕЖДАНЕ НА УСТРОЙСТВА...</string>
+    <string name="brave_sync_add_device_text">Добавяне на друго устройство</string>
+    <string name="brave_sync_remove_device_text">Премахване на това устройство</string>
+    <string name="brave_sync_code_words_title">Сдвояване</string>
+    <string name="brave_sync_add_laptop_text_title">Въвеждане на кода на синхронизиращата верига</string>
+    <string name="brave_sync_add_laptop_text_part_1">Използвайки компютъра си, отидете на Настройки на Brave > Синхронизиране. Изберете \"Въвеждане на код на синхронизираща верига\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Въведете кодовите думи по-горе, заедно с интервалите.</string>
+    <string name="brave_sync_delete_device">Сигурни ли сте, че искате да изтриете устройство \"<ph name="DEVICE_NAME">%1$s</ph>\"?</string>
+    <string name="brave_sync_delete_sent">Изпратена е заявка за изтриване. Скоро устройството ще бъде премахнато.</string>
+    <string name="brave_sync_loading_data_title">Зареждане на данни...</string>
+    <string name="brave_sync_time_out_message">Нещо се обърка, изглежда времето на заявката изтече.</string>
+    <string name="brave_sync_use_camera_text">Ще използвам камера...</string>
+    <string name="brave_sync_confirm_code_words_text">Потвърди</string>
+    <string name="brave_sync_word_count_text">Брой думи: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Грешен брой думи</string>
+    <string name="brave_sync_qr_code">QR код</string>
+    <string name="brave_sync_code_words">Кодови думи</string>
+    <string name="brave_sync_copy_button_text">Копирай в клипборда</string>
+    <string name="brave_sync_copied_text">Копирано в клипборда</string>
+    <string name="brave_sync_this_device_text">(това устройство)</string>
+
+</resources>

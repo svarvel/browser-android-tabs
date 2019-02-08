@@ -30,6 +30,7 @@
 
     <string name="menu_exit">ውጣ</string>
 
+    <string name="brave_sync">Brave (ቤታ) ሲንክ</string>
     <string name="sync_settings_add_device_name_title">የኤሌክትሮኒክ መሳሪያ ስም ይደምሩ</string>
     <string name="sync_settings_add_device_name_label">ለዚህ መሳሪያ ስም ያስገቡ (አማስገባት ይቻላል)</string>
     <string name="sync_example_device_name">አንድሮይድ የሚጠቀም መሳሪያ</string>
@@ -37,4 +38,101 @@
     <string name="sync_device">መሳሪያውን ያጣምሩ</string>
     <string name="sync_device_failure">ለማጣመር አልተቻለም</string>
 
-    </resources>
+    <string name="brave_stats_text_trackers">መከታተያዎች ተከልክለዋል</string>
+    <string name="brave_stats_text_ads">ማስታወቂያዎች ተከልክለዋል</string>
+    <string name="brave_stats_text_https">የ HTTPS እደሳዎች</string>
+    <string name="brave_stats_text_time">ማትረፍ የተቻለ ግዜ መጠን ግምት</string>
+
+    <string name="send_metrics_title">ልኬቶችን ላክ</string>
+
+    <string name="desktop_mode_title">ዴስክቶፕ ሞድ</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">የድህረ ገፆችን  ዴስክቶፕ ስሪት ቅድሚያ ስጥ</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">በድረገጾች ላይ የሞባይል እይታን ቅድሚያ ስጥ</string>
+    <string name="website_settings_category_desktop_view_enabled">በአዳዲስ ታቦች ላይ የዴስክቶፕ እይታን አስችል</string>
+    <string name="website_settings_category_desktop_view_disabled"> ለአዳዲስ ታቦች የሞባይል ስሪቶችን ተጠቀም (ይህ ይመከራል)</string>
+
+    <string name="brave_shields_first_group_title">ከልካይ ተቆጣጣሪ</string>
+    <string name="brave_shields_second_group_title">የግል መቆጣጠሪያዎች</string>
+    <string name="brave_shields">መከላከያዎች</string>
+    <string name="brave_shields_ads_and_trackers">ማስታወቂያዎች እና መከታተያዎች</string>
+    <string name="brave_shields_fingerprint_methods">የጣት አሻራ ዘዴዎች</string>
+    <string name="brave_shields_block_phishing_switch">ማጭበርበርን ከልክል</string>
+
+    <string name="play_video_in_background_title">የጀርባ ቪዲዮ ማጫወት</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">በርቷል</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">ስራ አቁሟል</string>
+    <string name="website_settings_category_play_video_in_background_enabled">በሙከራ ላይ ያለ። ታብ በስራ ላይ በማይሆንበት ጊዜ ወይም የመሳሪያው ማያ በሚጠፋበት ጊዜ በቪዲዮ ላይ ያለ ድምጽ በጀርባ አንዲሰማ ያደርጋል። ይህ የማይሰራ ከሆነ ወደ ዴስክቶፕ ሞድ ለመቀየር ይሞክሩ።</string>
+    <string name="settings_require_relaunch_notice">በሚቀጥለው ጊዜ Braveን ሲያበሩ ያደረጉት ቅያሬ መስራት ይጀምራል።</string>
+    <string name="settings_require_relaunch_now">አሁን ተዘግቶ ይከፈት</string>
+    <string name="settings_require_relaunch_later">በኋላ</string>
+
+    <string name="play_yt_video_in_browser_title">በ Brave ቪዲዮን ማጫወት</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">ጀምሯል</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">ስራ አቁሟል</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">በስራ ላይ ከሆነ፣ ቪዲዮዎች ከሌሎች መተግበሪያዎች ይልቅ በ Brave ላይ ይጫወታሉ።</string>
+
+    <string name="close_tabs_on_exit_title">ሲወጡ ታቦችን ይዝጉ</string>
+    <string name="close_tabs_on_exit_summary">በማሰስ ክፍለ ጊዜዎች ላይ ታቦች ላይ ጫና አያብዙ</string>
+
+    <string name="open_pages_in_custom_tabs_title">ታቦችን በከስተም ታብ ይክፈቱ</string>
+    <string name="open_pages_in_custom_tabs_summary">ታቦች በከስተም ታብ እንዲከፈቱ ያድርጉ</string>
+
+    <string name="ddg_offer_title">በ DuckDuckGo የግል ፍለጋ ይደረግ?</string>
+    <string name="ddg_offer_text">በግል ፍለጋ። DuckDuckGoን በመጠቀም Brave በዚህ የግል ታብ ላይ እያሉ ለፍለጋዎ መልስ ይሰጣል። DuckDuckGo የፍለጋ ታሪክዎን የማይከታተል የፍለጋ ሞተር ሲሆን ግለኝነትዎን ጠብቀው ማሰስ እንዲችሉ ያደርግዎታል።</string>
+    <string name="ddg_offer_positive">አዎ</string>
+    <string name="ddg_offer_negative">አይ</string>
+    <string name="ddg_offer_link">በ DuckDuckGo ግለኝነቱን የጠበቀ ፍለጋ እንዴት ማድረግ እንደሚችሉ ይማሩ</string>
+    <string name="prefs_standard_search_engine">መስፈርቱን የጠበቀ ታብ</string>
+    <string name="prefs_private_search_engine">የግል ታብ</string>
+
+    <string name="brave_open_in_private_tab">በግል ታብ ክፈት</string>
+    <string name="brave_close_all_private_tabs">የግል ታብን ዝጋ</string>
+    <string name="brave_new_private_tab">አዲስ የግል ታብ</string>
+    <string name="brave_new_tab_private_header">ይህ የግል ታብ ነው</string>
+    <string name="brave_new_tab_private_message">በግል ታቦች የሚጎበኙዋቸው ድረገጾች እዚያው ላይ የማይቀመጡ ቢሆንም፣ ለበይነመረብ አገልግሎት አቅራቢዎ፣ ቀጣሪዎ ወይም የሚጎበኙዋቸው ድረገጾች ማንነትዎ እንዳይታወቅ አያደርጉም።</string>
+
+    <string name="update_notification_title">የBrave እደሳ</string>
+    <string name="update_notification_text">አዲሱ የBrave ማሰሻ በ 22% ይፈጥናል</string>
+
+    <string name="prefs_sync">ሲንክ (ቤታ)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave ሲንክ የቡክማርክ ውሂብን በ Brave ማሰሻዎ በተለያዩ መሳሪያዎችዎ ላይ ሲንክ ማድረግ ይችሉ ዘንድ ያደርጋል።</string>
+    <string name="brave_sync_description_page_1_part_2">በቀላሉ በሌላ መሳሪያ ላይ የተፈጠረውን ኮድ ከሲክዎ ላይ ስካን ያድርጉ። ወይም አዲስ የሲንክ ሰንሰለት ይጀምሩ።</string>
+    <string name="brave_sync_scan_chain_code">ስካን ያድርጉ ወይም አዲስ ኮድ ያስገቡ</string>
+    <string name="brave_sync_start_new_chain">አዲስ የሲንክ ሰንሰለት ይጀምሩ</string>
+    <string name="brave_sync_qrcode_message_v2">አሁን ያለን የስንክ መሳሪያ መጠቀም፣ የ Brave ቅንብርን ይክፈቱ እና ወደ ቅንብሮች > ሲንክ ይሂዱ ከዚያም \"መሳሪያ ጨምር\" የሚለውን ይምረጡ እና በማያው ላይ ያለውን QR ኮድ ይጨምሩ።</string>
+    <string name="brave_sync_codewords_message">አሁን ያለውን ሲንክ የተደረገ መሳሪያ በመጠቀም የ Brave ቀንብርን ይክፈቱ እና ወደ ቅንብሮች >ሲንክ ይሂዱ ከዚያም \" መሳሪያ ጨምር\" የሚለውን መርጠው \"የኮድ ቃላትን ምረጥ የሚለውን ይምረጡ\"</string>
+    <string name="brave_sync_btn_mobile">የሞባይል መሳሪያን ይጨምሩ</string>
+    <string name="brave_sync_btn_laptop">ኮምፒውተር ይጨምሩ</string>
+    <string name="brave_sync_scan_sync_code">ይህንን የሲንክ ኮድ ይጨምሩ</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">ሁለተኛ ስልክን ወይም ታብሌትን ጥቅም ላይ በማዋል፣ ወደ Brave> ቅንብሮች > ሲንክ > ስካን ይሂዱ።</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">(ከላይ) ያለውን QR ኮድ በሁለተኛው መሳሪያ ጥቅም ላይ በማዋል ያንሱ ወይም ካሜራ ለማግኘት የማይቻል ከሆነ የኮድ ቃላትን ያስገቡ።</string>
+    <string name="brave_sync_btn_done">አልቋል</string>
+    <string name="brave_sync_tabs_text">ታቦች</string>
+    <string name="brave_sync_history_text">ታሪክ</string>
+    <string name="brave_sync_autofill_passwords_text">በራስሙላ/የይለፍ ቃሎች</string>
+    <string name="brave_sync_payment_settings_text">Brave የክፍያ ቅንብር</string>
+    <string name="brave_sync_settings_title">በዚህ መሳሪያ ላይ ሲንክ አድርግ</string>
+    <string name="brave_sync_settings_description">ቅንብርን መቀየር ይህ መሳሪያ ከሌሎች ጋር የሚጋራውን ውሂብ ብቻ ነው የሚቀይረው።</string>
+    <string name="brave_sync_devices_title">በሰንሰለቱ ውስጥ ያሉ ሌሎች መሳሪያዎች</string>
+    <string name="brave_sync_loading_devices_title">መሳሪያዎችን በመጫን ላይ•••</string>
+    <string name="brave_sync_add_device_text">ሌላ መሳሪያ ጨምር</string>
+    <string name="brave_sync_remove_device_text">ይህንን መሳሪያ አስወግድ</string>
+    <string name="brave_sync_code_words_title">አጣምር</string>
+    <string name="brave_sync_add_laptop_text_title">የሲንክ ሰንሰለት ኮድን አስገባ</string>
+    <string name="brave_sync_add_laptop_text_part_1">በኮምፒውተርዎ ላይ፣ ወደ Brave ቅንብር > ሲንክ ሄደው \"የሲንክ ሰንሰለት ኮድን አስገባ\" የሚለውን ይምረጡ።</string>
+    <string name="brave_sync_add_laptop_text_part_2">ከላይ ያለውን የቃላት ኮድ ክፍት ቦታዎችን ጨምረው ያስገቡ።</string>
+    <string name="brave_sync_delete_device">መሳሪያውን ለማጥፋት እንደሚፈልጉ እርግጠኛ ነዎት<ph name="DEVICE_NAME">%1$s</ph>?</string>
+    <string name="brave_sync_delete_sent">እንጠፋ ያቀረቡት ጥያቄ ተላፏል። መሳሪያወ በአጭር ጊዜ ውስጥ ይወገዳል።</string>
+    <string name="brave_sync_loading_data_title">ዳታን በመጫን ላይ. . . . </string>
+    <string name="brave_sync_time_out_message">አንድ ነገር ተበላሽቷል፣ ጥያቄዎ ለጊዜው አልተሳካም።</string>
+    <string name="brave_sync_use_camera_text">ካሜራዬን እጠቀማለሁ. . . </string>
+    <string name="brave_sync_confirm_code_words_text">አረጋግጥ</string>
+    <string name="brave_sync_word_count_text">የቃላት ብዛት<ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">ትክክለኛ ያልሆነ የቃላት ብዛት </string>
+    <string name="brave_sync_qr_code">QR ኮድ</string>
+    <string name="brave_sync_code_words">የኮድ ቃላት</string>
+    <string name="brave_sync_copy_button_text">ወደ ክሊፕቦርድ ገልብጥ</string>
+    <string name="brave_sync_copied_text">ወደ ክሊፕቦርድ ተገልብጧል</string>
+    <string name="brave_sync_this_device_text">(ይህ መሳሪያ)</string>
+
+</resources>

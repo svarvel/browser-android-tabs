@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Salir</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Sincronización Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Añade el nombre del dispositivo</string>
     <string name="sync_settings_add_device_name_label">Ingresa un nombre opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
@@ -98,7 +98,7 @@ Guardado</string>
     <string name="update_notification_title">Actualización del navegador Brave</string>
     <string name="update_notification_text">El navegador nuevo Brave es 22% más rápido</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Sincronización (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Con Brave Sync, puedes sincronizar los datos de los marcadores con los navegadores Brave en todos tus dispositivos de forma privada.</string>
     <string name="brave_sync_description_page_1_part_2">Para ello, solo tienes que escanear el código de la cadena de sincronización que creaste en otro dispositivo o, si lo prefieres, iniciar una nueva cadena de sincronización.</string>
     <string name="brave_sync_scan_chain_code">Escanear o introducir el código de sincronización</string>
@@ -107,7 +107,7 @@ Guardado</string>
     <string name="brave_sync_codewords_message">Si usas el dispositivo sincronizado, abre la configuración de Brave y dirígete a Configuración > Sincronización. Selecciona \"Añadir dispositivo\" y, a continuación, \"Mostrar palabras clave\".</string>
     <string name="brave_sync_btn_mobile">Añadir un dispositivo móvil</string>
     <string name="brave_sync_btn_laptop">Añadir un ordenador</string>
-    <string name="brave_sync_scan_sync_code">Escanear este código de sincronización</string>
+    <string name="brave_sync_scan_sync_code">Escanea este código de sincronización</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Si usas otro teléfono o tableta, dirígete a Configuración de Brave > Sincronización > Escanear.</string>
     <string name="brave_sync_add_mobile_device_text_part_2">Hazle una captura al código QR (arriba) con ese segundo dispositivo o, en caso de que no tenga cámara, introduce las palabras clave.</string>
     <string name="brave_sync_btn_done">Hecho</string>

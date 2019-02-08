@@ -30,7 +30,7 @@
 
     <string name="menu_exit">ىخرج</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">مزامنة Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">إضافة اسم جهاز</string>
     <string name="sync_settings_add_device_name_label">أدخل اسمًا اختياريًا لهذا الجهاز</string>
     <string name="sync_example_device_name">جهاز أندرويد</string>
@@ -43,7 +43,7 @@
 </string>
     <string name="brave_stats_text_ads">تم حظر
 الإعلانات</string>
-    <string name="brave_stats_text_https">ترقيات
+    <string name="brave_stats_text_https">ترقيات 
 HTTPS</string>
     <string name="brave_stats_text_time">حُفِظ
 توقيت الساحل الشرقي

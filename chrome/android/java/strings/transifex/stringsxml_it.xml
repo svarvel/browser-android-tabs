@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Uscita</string>
 
-    <string name="brave_sync">Brave (versione beta) Sync</string>
+    <string name="brave_sync">Sincronizzazione Brave (versione beta)</string>
     <string name="sync_settings_add_device_name_title">Aggiungi il nome del dispositivo</string>
     <string name="sync_settings_add_device_name_label">Inserisci un nome opzionale per questo dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
@@ -98,7 +98,7 @@ Risparmiato</string>
     <string name="update_notification_title">Aggiornamento Brave</string>
     <string name="update_notification_text">Il nuovo browser Brave è il 22% più veloce</string>
 
-    <string name="prefs_sync">Sync (versione beta)</string>
+    <string name="prefs_sync">Sincronizzazione (versione beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync ti consente di sincronizzare i dati dei segnalibri privatamente tra i browser Brave su vari dispositivi.</string>
     <string name="brave_sync_description_page_1_part_2">È sufficiente eseguire la scansione del codice dalla catena di sincronizzazione che hai creato su un altro dispositivo. In alternativa, puoi avviare una nuova catena di sincronizzazione.</string>
     <string name="brave_sync_scan_chain_code">Esegui scansione del codice di sincronizzazione o immettine uno</string>
@@ -136,7 +136,7 @@ Risparmiato</string>
     <string name="brave_sync_qr_code">Codice QR</string>
     <string name="brave_sync_code_words">Parole del codice</string>
     <string name="brave_sync_copy_button_text">Copia negli Appunti</string>
-    <string name="brave_sync_copied_text">Copiata negli Appunti</string>
+    <string name="brave_sync_copied_text">Copiato negli Appunti</string>
     <string name="brave_sync_this_device_text">(questo dispositivo)</string>
 
 </resources>

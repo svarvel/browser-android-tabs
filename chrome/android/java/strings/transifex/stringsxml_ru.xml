@@ -100,14 +100,14 @@
 
     <string name="prefs_sync">Синхронизация (бета-версия)</string>
     <string name="brave_sync_description_page_1_part_1">С помощью функции «Синхронизация» вы можете синхронизировать данные закладок в браузерах Brave на разных устройствах, сохраняя конфиденциальность.</string>
-    <string name="brave_sync_description_page_1_part_2">Просто сканируйте код из цепочки синхронизации, созданной на другом устройстве, или запустите новую цепочку.</string>
+    <string name="brave_sync_description_page_1_part_2">Просто отсканируйте код из цепочки синхронизации, созданной на другом устройстве, или запустите новую цепочку.</string>
     <string name="brave_sync_scan_chain_code">Сканировать или ввести код синхронизации</string>
     <string name="brave_sync_start_new_chain">Запустить новую цепочку синхронизации</string>
     <string name="brave_sync_qrcode_message_v2">Выберите «Синхронизация» в настройках Brave на синхронизированном устройстве. Нажмите «Добавить устройство» и отсканируйте QR-код, показанный на экране.</string>
     <string name="brave_sync_codewords_message">Выберите «Синхронизация» в настройках Brave на синхронизированном устройстве. Нажмите «Добавить устройство» > «Показать кодовые слова».</string>
     <string name="brave_sync_btn_mobile">Добавить мобильное устройство</string>
     <string name="brave_sync_btn_laptop">Добавить компьютер</string>
-    <string name="brave_sync_scan_sync_code">Сканировать этот код синхронизации</string>
+    <string name="brave_sync_scan_sync_code">Отсканируйте этот код синхронизации</string>
     <string name="brave_sync_add_mobile_device_text_part_1">В настройках Brave на втором телефоне или планшете выберите «Синхронизация» > «Сканировать».</string>
     <string name="brave_sync_add_mobile_device_text_part_2">Отсканируйте QR-код (см. выше), используя второе устройство. Если камера недоступна, введите кодовые слова.</string>
     <string name="brave_sync_btn_done">Готово</string>
@@ -121,7 +121,7 @@
     <string name="brave_sync_loading_devices_title">ЗАГРУЗКА УСТРОЙСТВ…</string>
     <string name="brave_sync_add_device_text">Добавить другое устройство</string>
     <string name="brave_sync_remove_device_text">Удалить это устройство</string>
-    <string name="brave_sync_code_words_title">Выполнить сопряжение</string>
+    <string name="brave_sync_code_words_title">Связать устройства</string>
     <string name="brave_sync_add_laptop_text_title">Введите код цепочки синхронизации</string>
     <string name="brave_sync_add_laptop_text_part_1">Откройте настройки Brave на компьютере и выберите «Синхронизация» > «Ввести код цепочки синхронизации».</string>
     <string name="brave_sync_add_laptop_text_part_2">Введите кодовые слова, указанные выше, включая пробелы.</string>
