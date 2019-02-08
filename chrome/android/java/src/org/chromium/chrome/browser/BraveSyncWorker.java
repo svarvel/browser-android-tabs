@@ -1657,33 +1657,36 @@ public class BraveSyncWorker {
             return;
         }
         try {
-           long llocalId = Long.parseLong(localId);
-           long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
-           long lparentLocalId = defaultFolderId;
-           if (!parentLocalId.isEmpty()) {
-                lparentLocalId = Long.parseLong(parentLocalId);
-           }
-           EditBookmarkRunnable bookmarkRunnable = new EditBookmarkRunnable(llocalId, url, title, lparentLocalId);
-           if (null == bookmarkRunnable) {
-              return;
-           }
-           synchronized (bookmarkRunnable)
-           {
-               // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+            long llocalId = Long.parseLong(localId);
+            long defaultFolderId = (null != mDefaultFolder ? mDefaultFolder.getId() : 0);
+            long lparentLocalId = defaultFolderId;
+            if (!parentLocalId.isEmpty()) {
+                    lparentLocalId = Long.parseLong(parentLocalId);
+            }
+            EditBookmarkRunnable bookmarkRunnable = new EditBookmarkRunnable(llocalId, url, title, lparentLocalId);
+            if (null == bookmarkRunnable) {
+                return;
+            }
+            synchronized (bookmarkRunnable)
+            {
+                // Execute code on UI thread
+                ((Activity)mContext).runOnUiThread(bookmarkRunnable);
 
-               // Wait until runnable is finished
-               try {
-                   bookmarkRunnable.wait();
-               } catch (InterruptedException e) {
-                  Log.e(TAG, "EditBookmarkByLocalId error: " + e);
-               }
-           }
+                // Wait until runnable is finished
+                try {
+                    bookmarkRunnable.wait();
+                } catch (InterruptedException e) {
+                    Log.e(TAG, "EditBookmarkByLocalId error: " + e);
+                }
+            }
         } catch (NumberFormatException e) {
             Log.e(TAG, "EditBookmarkByLocalId error: " + e);
         }
+        String oldOrder = GetBookmarkOrder(localId);
         SaveObjectId(localId, objectId, order, true);
-        mReorderBookmarks = true;
+        if (!oldOrder.equals(order)) {
+            mReorderBookmarks = true;
+        }
         return;
     }
 
@@ -1931,8 +1934,10 @@ public class BraveSyncWorker {
             ((Activity)mContext).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    for (OrderedBookmark orderedBookmark : orderedBookmarks) {
-                        mNewBookmarkModel.moveBookmark(orderedBookmark.Bookmark().getId(), orderedBookmark.Bookmark().getParentId());
+                    synchronized (mNewBookmarkModel) {
+                        for (OrderedBookmark orderedBookmark : orderedBookmarks) {
+                            mNewBookmarkModel.moveBookmark(orderedBookmark.Bookmark().getId(), orderedBookmark.Bookmark().getParentId());
+                        }
                     }
                 }
             });
