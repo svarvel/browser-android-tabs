@@ -38,13 +38,13 @@
     <string name="sync_device">सिंक उपकरण</string>
     <string name="sync_device_failure">सिंक सैट-अप नहीं किया जा सका </string>
 
-    <string name="brave_stats_text_trackers">ट्रैकर
+    <string name="brave_stats_text_trackers">ट्रैकर 
 ब्लॉक किया गया  </string>
-    <string name="brave_stats_text_ads">विज्ञापन
+    <string name="brave_stats_text_ads">विज्ञापन 
 ब्लॉक किया गया  </string>
-    <string name="brave_stats_text_https">एचटीटीपीएस
+    <string name="brave_stats_text_https">एचटीटीपीएस 
 अपग्रेड </string>
-    <string name="brave_stats_text_time">स्थापित   समय
+    <string name="brave_stats_text_time">स्थापित   समय 
 सेव किया गया </string>
 
     <string name="send_metrics_title">मेट्रिक्स भेजें </string>
@@ -98,7 +98,7 @@
     <string name="update_notification_title">Brave अपडेट</string>
     <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
 
-    <string name="prefs_sync">Brave (बीटा)</string>
+    <string name="prefs_sync">सिंक (बीटा)</string>
     <string name="brave_sync_description_page_1_part_1">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</string>
     <string name="brave_sync_description_page_1_part_2">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</string>
     <string name="brave_sync_scan_chain_code">सिंक चेन को स्कैन करें या दर्ज़ करें</string>

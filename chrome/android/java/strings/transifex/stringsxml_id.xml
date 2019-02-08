@@ -30,6 +30,7 @@
 
     <string name="menu_exit">Keluar</string>
 
+    <string name="brave_sync">Brave (beta) Sync</string>
     <string name="sync_settings_add_device_name_title">Tambahkan nama perangkat</string>
     <string name="sync_settings_add_device_name_label">Masukkan nama opsional untuk perangkat ini</string>
     <string name="sync_example_device_name">Perangkat Android</string>
@@ -100,4 +101,45 @@ Dihemat</string>
     <string name="update_notification_title">Pembaruan Brave</string>
     <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
 
-    </resources>
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync memungkinkan Anda mensinkronisasi data bookmarks secara pribadi antara Browser Brave Anda di perangkat yang berbeda-beda.</string>
+    <string name="brave_sync_description_page_1_part_2">Cukup pindai kode dari rantai sinkronisasi yang Anda buat pada perangkat lain. Atau mulai rantai sinkronisasi baru.</string>
+    <string name="brave_sync_scan_chain_code">Pindai atau masukkan kode sinkronisasi</string>
+    <string name="brave_sync_start_new_chain">Mulai rantai sinkronisasi baru</string>
+    <string name="brave_sync_qrcode_message_v2">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan > Sinkronisasi. Pilih \"Tambah Perangkat\" dan pindai Kode QR yang ditampilkan di layar.</string>
+    <string name="brave_sync_codewords_message">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan > Sinkronisasi. Pilih \"Tambah Perangkat\" lalu \"Tampilkan kata-kata kode\".</string>
+    <string name="brave_sync_btn_mobile">Tambah Perangkat Seluler</string>
+    <string name="brave_sync_btn_laptop">Tambah Komputer</string>
+    <string name="brave_sync_scan_sync_code">Pindai kode sinkronisasi ini</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Menggunakan ponsel kedua atau tablet, bernavigasi ke Pengaturan Brave > Sinkronisasi > Pindai.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Tangkap kode QR (di atas) dengan perangkat kedua Anda, atau masukkan kata-kata kode jika tidak ada kamera.</string>
+    <string name="brave_sync_btn_done">Selesai</string>
+    <string name="brave_sync_tabs_text">Tab</string>
+    <string name="brave_sync_history_text">Riwayat</string>
+    <string name="brave_sync_autofill_passwords_text">Isi otomatis/Kata sandi</string>
+    <string name="brave_sync_payment_settings_text">Pengaturan Pembayaran Brave</string>
+    <string name="brave_sync_settings_title">SINKRONISASIKAN DI PERANGKAT INI</string>
+    <string name="brave_sync_settings_description">Mengubah pengaturan hanya akan mempengaruhi data yang dibagikan perangkat ini dengan orang lain.</string>
+    <string name="brave_sync_devices_title">PERANGKAT LAIN DALAM RANTAI</string>
+    <string name="brave_sync_loading_devices_title">MEMUAT PERANGKAT...</string>
+    <string name="brave_sync_add_device_text">Tambah perangkat lain</string>
+    <string name="brave_sync_remove_device_text">Hapus perangkat ini</string>
+    <string name="brave_sync_code_words_title">Sambungkan</string>
+    <string name="brave_sync_add_laptop_text_title">Masukkan kode rantai sinkronisasi</string>
+    <string name="brave_sync_add_laptop_text_part_1">Pada komputer Anda, bernavigasi ke Pengaturan Brave > Sinkronisasi. Pilih \"Masukkan Kode Rantai Sinkronisasi\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Masukkan kata-kata kode di bawah ini, termasuk spasi.</string>
+    <string name="brave_sync_delete_device">Yakin ingin menghapus perangkat \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Permintaan penghapusan telah dikirim. Perangkat akan dihapus sebentar lagi.</string>
+    <string name="brave_sync_loading_data_title">Memuat data...</string>
+    <string name="brave_sync_time_out_message">Ada yang salah, sepertinya permintaan Anda kehabisan waktu.</string>
+    <string name="brave_sync_use_camera_text">Saya akan gunakan kamera saya...</string>
+    <string name="brave_sync_confirm_code_words_text">Konfirmasi</string>
+    <string name="brave_sync_word_count_text">Jumlah kata: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Jumlah kata salah</string>
+    <string name="brave_sync_qr_code">Kode QR</string>
+    <string name="brave_sync_code_words">Kata-kata Kode</string>
+    <string name="brave_sync_copy_button_text">Salin ke Clipboard</string>
+    <string name="brave_sync_copied_text">Telah Disalin ke Clipboard</string>
+    <string name="brave_sync_this_device_text">(perangkat ini)</string>
+
+</resources>

@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Utgang</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Brave-synkronisering (beta)</string>
     <string name="sync_settings_add_device_name_title">Legg til enhetsnavn</string>
     <string name="sync_settings_add_device_name_label">Skriv inn et valgfritt navn for denne enheten</string>
     <string name="sync_example_device_name">Android enhet</string>
@@ -98,18 +98,18 @@ Lagret</string>
     <string name="update_notification_title">Brave-oppdatering</string>
     <string name="update_notification_text">Den nye nettleseren til Brave er 22 % raskere</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
-    <string name="brave_sync_description_page_1_part_1">Med Brave Sync kan du synkronisere Brave-nettlesere på ulike enheter slik at du får de samme private bokmerkene på alle.</string>
+    <string name="prefs_sync">Synkronisering (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Med Brave-synkronisering kan du synkronisere Brave-nettlesere på ulike enheter slik at du får de samme private bokmerkene på alle.</string>
     <string name="brave_sync_description_page_1_part_2">Skann helt enkelt koden fra synkkjeden du laget på en annen enhet, eller start en ny synkkjede.</string>
     <string name="brave_sync_scan_chain_code">Skann eller angi synkkode</string>
     <string name="brave_sync_start_new_chain">Start en ny synkkjede</string>
-    <string name="brave_sync_qrcode_message_v2">Bruk en synkronisert enhet og åpne Brave Settings. Gå deretter til Settings > Sync. Velg «Add Device», og skann QR-koden du ser på skjermen.</string>
-    <string name="brave_sync_codewords_message">Bruk en synkronisert enhet og åpne Brave Settings. Gå deretter til Settings > Sync. Velg «Add Device», og så «Display code words instead».</string>
+    <string name="brave_sync_qrcode_message_v2">Bruk en synkronisert enhet og åpne Innstillingene i Brave. Gå deretter til Innstillinger > Synkroniser. Velg «Legg til enhet», og skann QR-koden du ser på skjermen.</string>
+    <string name="brave_sync_codewords_message">Bruk en synkronisert enhet og åpne Innstillinger i Brave. Gå deretter til Innstillinger > Synkroniser Velg «Legg til enhet» og så «Vis kodeord i stedet».</string>
     <string name="brave_sync_btn_mobile">Legg til en mobilenhet</string>
     <string name="brave_sync_btn_laptop">Legg til en datamaskin</string>
-    <string name="brave_sync_scan_sync_code">Skann denne synkkoden</string>
-    <string name="brave_sync_add_mobile_device_text_part_1">Bruk en annen telefon eller nettbrett, og gå til Brave Settings > Sync > Scan.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Ta bilde av QR-koden (over) med den andre enheten, eller skriv inn kodeord hvis du ikke kan bruke kameraet.</string>
+    <string name="brave_sync_scan_sync_code">Skann synkkoden</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Bruk en annen telefon eller nettbrett, og gå til Innstillinger i Brave > Synkroniser > Skann.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Ta bilde av QR-koden med den andre enheten, eller skriv inn kodeord hvis du ikke kan bruke kameraet.</string>
     <string name="brave_sync_btn_done">Ferdig</string>
     <string name="brave_sync_tabs_text">Faner</string>
     <string name="brave_sync_history_text">Historikk</string>
@@ -123,7 +123,7 @@ Lagret</string>
     <string name="brave_sync_remove_device_text">Fjern denne enheten</string>
     <string name="brave_sync_code_words_title">Par</string>
     <string name="brave_sync_add_laptop_text_title">Angi synkkjedekoden</string>
-    <string name="brave_sync_add_laptop_text_part_1">Bruk datamaskinen din og gå til Brave Settings > Sync. Velg «Enter a Sync Chain Code».</string>
+    <string name="brave_sync_add_laptop_text_part_1">Bruk datamaskinen din og gå til Innstillinger i Brave > Synkroniser. Velg «Angi synkkjedekoden».</string>
     <string name="brave_sync_add_laptop_text_part_2">Skriv inn kodeordene over (ta med mellomrommene).</string>
     <string name="brave_sync_delete_device">Er du sikker på at du vil slette enheten «<ph name="DEVICE_NAME">%1$s</ph>»?</string>
     <string name="brave_sync_delete_sent">Forespørselen om sletting er sendt. Enheten vil snart fjernes.</string>

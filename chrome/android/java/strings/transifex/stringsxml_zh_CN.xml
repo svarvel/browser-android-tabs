@@ -104,7 +104,7 @@
     <string name="brave_sync_scan_chain_code">扫描或输入同步代码</string>
     <string name="brave_sync_start_new_chain">启动一个新的同步链</string>
     <string name="brave_sync_qrcode_message_v2">使用现有的同步设备，打开Brave设置然后导航到设置>同步。选择“添加设备”，扫描屏幕上显示的二维码。</string>
-    <string name="brave_sync_codewords_message">使用现有的同步设备，打开Brave设置和导航到设置>同步。选择“添加设备”，然后选择“替换显示码字”。</string>
+    <string name="brave_sync_codewords_message">使用现有的同步设备，打开 Brave 设置和导航到设置>同步。选择“添加设备”，然后选择“替换显示码字”。</string>
     <string name="brave_sync_btn_mobile">添加移动设备</string>
     <string name="brave_sync_btn_laptop">添加计算机</string>
     <string name="brave_sync_scan_sync_code">扫描此同步代码</string>
@@ -121,7 +121,7 @@
     <string name="brave_sync_loading_devices_title">加载设备...</string>
     <string name="brave_sync_add_device_text">添加另一台设备</string>
     <string name="brave_sync_remove_device_text">删除此设备</string>
-    <string name="brave_sync_code_words_title">一对</string>
+    <string name="brave_sync_code_words_title">配对</string>
     <string name="brave_sync_add_laptop_text_title">输入同步链代码</string>
     <string name="brave_sync_add_laptop_text_part_1">在您的计算机上，导航到Brave设置>同步。选择“输入同步链代码”。</string>
     <string name="brave_sync_add_laptop_text_part_2">输入上面的码字，包括空格。</string>

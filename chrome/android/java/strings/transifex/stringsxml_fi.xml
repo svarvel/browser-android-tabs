@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Poistua</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Brave (beta) -synkronointi</string>
     <string name="sync_settings_add_device_name_title">Lisää laitteen nimi</string>
     <string name="sync_settings_add_device_name_label">Anna laitteelle vaihtoehtoinen nimi</string>
     <string name="sync_example_device_name">Android-laite</string>
@@ -98,7 +98,7 @@ Tallennettu</string>
     <string name="update_notification_title">Brave-selaimen päivitys</string>
     <string name="update_notification_text">Uusi Brave-selain on 22 % nopeampi</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Synkronoi (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Syncin avulla voit synkronoida kirjanmerkkitietoja yksityisesti Brave-selaintesi välillä eri laitteissasi.</string>
     <string name="brave_sync_description_page_1_part_2">Yksinkertaisesti skannaa koodi synkronointiketjusta, jonka loit toisessa laitteessa. Tai aloita uusi synkronointiketju.</string>
     <string name="brave_sync_scan_chain_code">Skannaa tai anna synkronointikoodi</string>

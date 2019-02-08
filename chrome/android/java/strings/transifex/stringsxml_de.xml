@@ -30,7 +30,7 @@
 
     <string name="menu_exit">Beenden</string>
 
-    <string name="brave_sync">Brave Sync (beta)</string>
+    <string name="brave_sync">Brave-Synchronisierung (beta)</string>
     <string name="sync_settings_add_device_name_title">Gerätenamen hinzufügen</string>
     <string name="sync_settings_add_device_name_label">Geben Sie einen optionalen Namen für dieses Gerät ein</string>
     <string name="sync_example_device_name">Android-Gerät</string>
@@ -98,7 +98,7 @@ gespart</string>
     <string name="update_notification_title">Brave-Update</string>
     <string name="update_notification_text">Der neue Brave-Browser ist 22 % schneller</string>
 
-    <string name="prefs_sync">Sync (beta)</string>
+    <string name="prefs_sync">Synchronisierung (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Mit Brave Sync können Sie Lesezeichendaten privat zwischen Ihren Brave-Browsern auf verschiedenen Geräten synchronisieren.</string>
     <string name="brave_sync_description_page_1_part_2">Scannen Sie einfach den Code aus Ihrer Synchronisierungskette, die Sie auf einem anderen Gerät erstellt haben. Oder beginnen Sie eine neue Synchronisierungskette.</string>
     <string name="brave_sync_scan_chain_code">Synchronisierungscode scannen oder eingeben</string>
@@ -118,7 +118,7 @@ gespart</string>
     <string name="brave_sync_settings_title">AUF DIESEM GERÄT SYNCHRONISIEREN</string>
     <string name="brave_sync_settings_description">Geänderte Einstellungen wirken sich nur auf Daten aus, die dieses Gerät mit anderen teilt.</string>
     <string name="brave_sync_devices_title">ANDERE GERÄTE IN DER KETTE</string>
-    <string name="brave_sync_loading_devices_title">Geräte werden geladen …</string>
+    <string name="brave_sync_loading_devices_title">GERÄTE WERDEN GELADEN …</string>
     <string name="brave_sync_add_device_text">Weiteres Gerät hinzufügen</string>
     <string name="brave_sync_remove_device_text">Dieses Gerät entfernen</string>
     <string name="brave_sync_code_words_title">Koppeln</string>
@@ -127,7 +127,7 @@ gespart</string>
     <string name="brave_sync_add_laptop_text_part_2">Geben Sie die oben stehenden Codewörter einschließlich Leerzeichen ein.</string>
     <string name="brave_sync_delete_device">Möchten Sie das Gerät „<ph name="DEVICE_NAME">%1$s</ph>“ wirklich löschen?</string>
     <string name="brave_sync_delete_sent">Die Löschanfrage wurde gesendet. Das Gerät wird in Kürze entfernt.</string>
-    <string name="brave_sync_loading_data_title">Daten werden geladen …</string>
+    <string name="brave_sync_loading_data_title">Daten werden geladen …</string>
     <string name="brave_sync_time_out_message">Etwas ist schiefgelaufen. Anscheinend ist Ihre Anfrage abgelaufen.</string>
     <string name="brave_sync_use_camera_text">Ich nutze meine Kamera …</string>
     <string name="brave_sync_confirm_code_words_text">Bestätigen</string>

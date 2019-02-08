@@ -127,7 +127,10 @@ def SyncTransifexToTranslations():
                 elif lang_id == 'iw':
                     lang_id = 'he'
                 elif lang_id == 'cs':
-                    lang_id = 'cs_CZ'            
+                    lang_id = 'cs_CZ'
+                elif lang_id == 'ml' or lang_id == 'mr' or lang_id == 'ms' or lang_id == 'bn' or lang_id == 'te' or lang_id == 'ta' or lang_id == 'et' or lang_id == 'kn' or lang_id == 'gu':
+                    print('Skipping language "' + lang_id)
+                    continue
                 print('Processing language "' + lang_id + '"...')
                 # find appropriate xml file in transifex folder
                 xml_file_name = transifex_folder + '/stringsxml_' + lang_id + '.xml'

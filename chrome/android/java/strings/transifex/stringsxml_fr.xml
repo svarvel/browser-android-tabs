@@ -101,8 +101,8 @@ Economisé</string>
     <string name="prefs_sync">Synchronisation (bêta)</string>
     <string name="brave_sync_description_page_1_part_1">La synchronisation Brave vous permet de synchroniser de manière privée les données de vos favoris entre vos navigateurs Brave, sur vos différents appareils.</string>
     <string name="brave_sync_description_page_1_part_2">Il vous suffit de scanner le code de la chaîne de synchronisation que vous avez créée sur un autre appareil ou d\'en démarrer une nouvelle.</string>
-    <string name="brave_sync_scan_chain_code">Scannez ou saisissez le code de synchronisation</string>
-    <string name="brave_sync_start_new_chain">Démarrez une nouvelle chaîne de synchronisation</string>
+    <string name="brave_sync_scan_chain_code">Scanner ou saisir un code de synchronisation</string>
+    <string name="brave_sync_start_new_chain">Démarrer une nouvelle chaîne de synchronisation</string>
     <string name="brave_sync_qrcode_message_v2">Sur un appareil synchronisé existant, ouvrez les paramètres Brave et accédez à Paramètres > Synchronisation. Choisissez « Ajouter un appareil » et scannez le code QR qui s\'affiche à l\'écran.</string>
     <string name="brave_sync_codewords_message">Sur un appareil synchronisé existant, ouvrez les paramètres Brave et accédez à Paramètres > Synchronisation. Choisissez « Ajouter un appareil », puis « Afficher plutôt des mots codés ».</string>
     <string name="brave_sync_btn_mobile">Ajouter un appareil mobile</string>
