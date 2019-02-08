@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grit-part>
+  <include name="IDR_BRAVE_REWARDS_FAVICON" file="../brave_rewards_ui/resources/img/favicon.ico" type="BINDATA" />
   <include name="IDR_BRAVE_REWARDS_HTML" file="../brave_rewards_ui/resources/brave_rewards.html" type="BINDATA" />
 </grit-part>
