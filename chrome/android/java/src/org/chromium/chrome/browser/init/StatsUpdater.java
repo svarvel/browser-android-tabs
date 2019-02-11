@@ -13,6 +13,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.ConditionVariable;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -85,6 +86,7 @@ public class StatsUpdater {
     private static final String PARTNER_OFFER_PAGE_NAME = "URPOfferPage";
     private static final String PARTNER_OFFER_PAGE_LOADED_NAME = "URPOfferPageLoaded";
     private static final String OFFER_HEADER_NAME = "X-Brave-Access-Key";
+    private static final String BRAVE_PARTNER_HEADER_NAME = "X-Brave-Partner";
 
     private static final String SERVER_REQUEST = "https://laptop-updates.brave.com/1/usage/android?daily=%1$s&weekly=%2$s&monthly=%3$s&platform=android&version=%4$s&first=%5$s&channel=stable&woi=%6$s&ref=%7$s";
     private static final String SERVER_REQUEST_URPC_INITIALIZE = "https://laptop-updates.brave.com/promo/initialize/nonua";
@@ -635,10 +637,42 @@ public class StatsUpdater {
 
         editor.putString(CUSTOM_HEADERS_NAME, customHeaders);
         editor.apply();
-        mCustomHeaders = customHeaders;
+        mCustomHeaders = FilteredCustomHeaders(customHeaders);
         if (null != mCustomHeadersMap) {
             mCustomHeadersMap.clear();
         }
+    }
+
+    private static String FilteredCustomHeaders(String customHeaders) {
+        try {
+            JSONArray elements = new JSONArray(customHeaders);
+            for (int i = 0; i < elements.length(); i++) {
+                JSONObject element = elements.getJSONObject(i);
+                JSONObject headers = element.getJSONObject("headers");
+                Iterator<String> keys = headers.keys();
+                ArrayList<String> keysToRemove = new ArrayList<String>();
+                while(keys.hasNext()) {
+                    String key = keys.next();
+                    if (!key.equals(BRAVE_PARTNER_HEADER_NAME)) {
+                        Log.e(TAG, "Attempt to pass incorrect header: " + key);
+                        keysToRemove.add(key);
+                    }
+                }
+                if (keysToRemove.size() == headers.length()) {
+                    // Remove whole element
+                    elements.remove(i--);
+                } else if (keysToRemove.size() > 0) {
+                    // Remove specific incorrect headers
+                    for (String key : keysToRemove) {
+                        headers.remove(key);
+                    }
+                }
+            }
+            return elements.toString();
+        } catch (JSONException e) {
+            Log.e(TAG, "CustomHeaders JSON error: " + e);
+        }
+        return "";
     }
 
     @CalledByNative
@@ -666,9 +700,9 @@ public class StatsUpdater {
                         String domain = domains.getString(j);
                         String domainHeader = "";
                         JSONObject hed = header.getJSONObject("headers");
-                        Iterator<?> keys = hed.keys();
-                        if(keys.hasNext()) {
-                            String key = (String)keys.next();
+                        Iterator<String> keys = hed.keys();
+                        while(keys.hasNext()) {
+                            String key = keys.next();
                             if (key.isEmpty()) {
                                 // We can't add empty header, so just skip it
                                 continue;
