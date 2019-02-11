@@ -106,7 +106,7 @@ public class LauncherShortcutActivity extends Activity {
                 new ShortcutInfo.Builder(context, DYNAMIC_OPEN_NEW_INCOGNITO_TAB_ID)
                         .setShortLabel(context.getResources().getString(
                                 useAlternativeIncognitoStrings
-                                        ? R.string.accessibility_tabstrip_private_identifier
+                                        ? R.string.brave_new_private_tab
                                         : R.string.accessibility_tabstrip_incognito_identifier))
                         .setLongLabel(context.getResources().getString(R.string.brave_new_private_tab))
                         .setIcon(Icon.createWithResource(context, R.drawable.shortcut_incognito))
