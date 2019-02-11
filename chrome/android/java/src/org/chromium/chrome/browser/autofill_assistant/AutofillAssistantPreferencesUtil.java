@@ -23,7 +23,7 @@ class AutofillAssistantPreferencesUtil {
     /** Checks whether the Autofill Assistant switch preference in settings is on. */
     static boolean isAutofillAssistantSwitchOn() {
         return ContextUtils.getAppSharedPreferences().getBoolean(
-                AutofillAssistantPreferences.PREF_AUTOFILL_ASSISTANT_SWITCH, true);
+                AutofillAssistantPreferences.PREF_AUTOFILL_ASSISTANT_SWITCH, false);
     }
 
     /** Checks whether the Autofill Assistant onboarding has been accepted. */
