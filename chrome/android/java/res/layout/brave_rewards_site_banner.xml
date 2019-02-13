@@ -162,6 +162,9 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="22dp"
+            android:layout_marginVertical="22dp"
             android:visibility="visible"/>
 
         <!-- Publisher's icon-->
@@ -177,7 +180,8 @@
             android:adjustViewBounds="true"
             android:baselineAlignBottom="true"
             android:layout_marginTop="12dp"
-            android:cropToPadding="true"/>
+            android:cropToPadding="true"
+            android:visibility="gone"/>
         </FrameLayout>
 
 
