@@ -32,7 +32,7 @@ import org.chromium.chrome.browser.ChromeTabbedActivity;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 import org.chromium.chrome.browser.tab.Tab;
-import org.chromium.chrome.browser.favicon.FaviconHelper;
+import org.chromium.chrome.browser.widget.RoundedIconGenerator;
 import java.net.URL;
 import org.chromium.base.task.AsyncTask;
 import android.graphics.BitmapFactory;
@@ -41,7 +41,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import org.chromium.base.ContextUtils;
 
-public class BraveRewardsSiteBannerActivity extends Activity implements FaviconHelper.FaviconImageCallback {
+public class BraveRewardsSiteBannerActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback {
 
     private  ToggleButton radio_tip_amount[] = new ToggleButton [3];
     private final int TIP_SENT_REQUEST_CODE = 2;
@@ -50,9 +50,9 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
     public static final String TAB_ID_EXTRA = "currentTabId";
 
     private int currentTabId_ = -1;
-    private FaviconHelper mFavIconHelper;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private final int PUBLISHER_ICON_SIDE_LEN= 56; //56 dp fits into 80 dp radius circle
+    private BraveRewardsHelper mIconFetcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,8 +99,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
         //set default tip amount
         radio_tip_amount[1].setChecked(true);
 
-
-        mFavIconHelper = new FaviconHelper();
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
 
@@ -108,9 +106,8 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
         Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
         String url = currentActiveTab.getUrl();
         String favicon_url = (publisherFavIconURL.isEmpty()) ? url : publisherFavIconURL;
-
-
-        BraveRewardsHelper.retrieveFavIcon(mFavIconHelper, this, favicon_url);
+        mIconFetcher = new BraveRewardsHelper();
+        mIconFetcher.retrieveLargeIcon(favicon_url, this);
 
         double balance = mBraveRewardsNativeWorker.GetWalletBalance();
         String walletAmount = String.format("%.2f", balance) + " BAT";
@@ -279,40 +276,28 @@ public class BraveRewardsSiteBannerActivity extends Activity implements FaviconH
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        if (mFavIconHelper != null) {
-            mFavIconHelper.destroy();
+
+        if (mIconFetcher != null) {
+            mIconFetcher.detach();
         }
     }
 
 
     private void SetFavIcon(Bitmap bmp) {
-        if (bmp == null){
-            bmp = BitmapFactory.decodeResource(getResources(), R.drawable.btn_brave);
+        if (bmp != null){
+            runOnUiThread(
+                new Runnable(){
+                    @Override
+                    public void run() {
+                        ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
+                        iv.setImageBitmap(bmp);
+                    }
+                });
         }
-
-        ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
-
-        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
-        int dp = Math.round(px);
-
-        Bitmap resized = Bitmap.createScaledBitmap(bmp, dp, dp, true);
-        iv.setImageBitmap(resized);
-
     }
 
-    //onFaviconAvailable implementation of FaviconHelper.FaviconImageCallback
-    //it has to set up the received icon on UI thread
-    @CalledByNative
     @Override
-    public void onFaviconAvailable(Bitmap image, String iconUrl) {
-        final Bitmap bmp = image;
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                SetFavIcon(bmp);
-            }
-        });
+    public void onLargeIconReady(Bitmap icon){
+        SetFavIcon(icon);
     }
-
 }
