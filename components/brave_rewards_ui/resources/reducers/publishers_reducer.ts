@@ -50,6 +50,12 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
       }
       state.recurringList = action.payload.list
       break
+    case types.ON_REMOVE_RECURRING:
+      if (!action.payload.publisherKey) {
+        break
+      }
+      chrome.send('brave_rewards.removeRecurring', [action.payload.publisherKey])
+      break
   }
 
   return state
