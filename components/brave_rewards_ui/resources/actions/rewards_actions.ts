@@ -138,3 +138,7 @@ export const onRecurringDonationUpdate = (list: Rewards.Publisher[]) => action(t
 export const onCurrentTips = (list: Rewards.Publisher[]) => action(types.ON_CURRENT_TIPS, {
   list
 })
+
+export const removeRecurring = (publisherKey: string) => action(types.ON_REMOVE_RECURRING, {
+  publisherKey
+})
