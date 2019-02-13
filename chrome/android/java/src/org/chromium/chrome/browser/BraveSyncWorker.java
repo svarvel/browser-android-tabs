@@ -70,7 +70,7 @@ import java.io.UnsupportedEncodingException;
 
 @JNINamespace("brave_sync_storage")
 public class BraveSyncWorker {
-    private static final String TAG = "SYNC";
+    public static final String TAG = "SYNC";
     public static final String PREF_NAME = "SyncPreferences";
     private static final String PREF_LAST_FETCH_NAME = "TimeLastFetch";
     public static final String PREF_DEVICE_ID = "DeviceId";

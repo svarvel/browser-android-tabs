@@ -1487,26 +1487,6 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             mDidAddPolicyChangeListener = false;
         }
 
-        // Stop SyncWorker
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-        if (null != app && null != app.mBraveSyncWorker) {
-            app.mBraveSyncWorker.Stop();
-            app.mBraveSyncWorker = null;
-        }
-        if (null != app && null != app.mStatsUpdaterWorker) {
-            app.mStatsUpdaterWorker.Stop();
-            app.mStatsUpdaterWorker = null;
-        }
-        if (null != app && null != app.mADBlockUpdaterWorker) {
-            app.mADBlockUpdaterWorker.Stop();
-            app.mADBlockUpdaterWorker = null;
-        }
-        /*if (null != app && null != app.mMixpanelInstance) {
-            app.mMixpanelInstance.flush();
-            app.mMixpanelInstance = null;
-        }*/
-
-
         if (mTabContentManager != null) {
             mTabContentManager.destroy();
             mTabContentManager = null;
@@ -1642,13 +1622,19 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             getComponent().resolveContextualSuggestionsCoordinator();
         }
 
-        // Starting Brave Sync
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
-            app.mBraveSyncWorker = new BraveSyncWorker(this);
+            if (this instanceof ChromeTabbedActivity) {
+                if (app.mBraveSyncWorker != null) {
+                    Log.e(BraveSyncWorker.TAG, "There should be only one ChromeTabbedActivity. Find out why it happens.");
+                    assert false;
+                }
+                // Starting Brave Sync
+                app.mBraveSyncWorker = new BraveSyncWorker(this);
+                app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
+                //MixPanelWorker.SendBraveAppStartEvent();
+            }
             app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
-            app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
-            //MixPanelWorker.SendBraveAppStartEvent();
         }
     }
 
