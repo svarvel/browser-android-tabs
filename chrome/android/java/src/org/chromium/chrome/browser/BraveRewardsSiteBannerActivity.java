@@ -51,7 +51,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
     private int currentTabId_ = -1;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
-    private final int PUBLISHER_ICON_SIDE_LEN= 56; //56 dp fits into 80 dp radius circle
+    private final int PUBLISHER_ICON_SIDE_LEN= 70;
     private BraveRewardsHelper mIconFetcher;
 
     @Override
@@ -290,7 +290,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     @Override
                     public void run() {
                         ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
-                        iv.setImageBitmap(bmp);
+                        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+                        float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
+                        int nPx = Math.round(px);
+                        Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
+                        iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(resized));
                     }
                 });
         }
