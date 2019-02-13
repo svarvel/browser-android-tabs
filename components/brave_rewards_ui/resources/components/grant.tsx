@@ -70,6 +70,9 @@ class Grant extends React.Component<Props, State> {
       tokens = convertProbiToFixed(grant.probi)
     }
 
+    // Guard against null grant statuses
+    const validGrant = (tokens !== '0.0' && grant.expiryTime)
+
     return (
       <React.Fragment>
         {
@@ -81,7 +84,7 @@ class Grant extends React.Component<Props, State> {
           : null
         }
         {
-          this.state.grantStep === 'complete'
+          this.state.grantStep === 'complete' && validGrant
             ? <GrantWrapper
               fullScreen={true}
               onClose={this.onGrantHide}
