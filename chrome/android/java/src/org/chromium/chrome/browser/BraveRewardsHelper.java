@@ -10,18 +10,23 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 
 import org.chromium.base.ApplicationStatus;
+import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
-import org.chromium.chrome.browser.favicon.FaviconHelper;
+import org.chromium.chrome.browser.favicon.IconType;
+import org.chromium.chrome.browser.favicon.LargeIconBridge;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.tabmodel.TabModelImpl;
-import org.chromium.base.task.AsyncTask;
+import org.chromium.chrome.browser.widget.RoundedIconGenerator;
+
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -30,8 +35,94 @@ import java.net.URL;
 import java.math.BigInteger;
 import java.util.Calendar;
 
-public class BraveRewardsHelper {
-  static public ChromeTabbedActivity GetChromeTabbedActivity() {
+
+public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
+    private static final int FAVICON_CIRCLE_MEASUREMENTS = 70; // dp
+    private static final int FAVICON_TEXT_SIZE = 50; // dp
+    private static final int FAVICON_FETCH_INTERVAL = 500; // In milliseconds
+    private static final int FAVICON_DESIRED_SIZE = 64; // px
+    private static LargeIconBridge mLargeIconBridge;
+
+    private String mFaviconUrl;
+    private LargeIconReadyCallback mCallback;
+    private final Handler mHandler = new Handler();
+    private int mFetchCount;
+    private final int MAX_FAVICON_FETCH_COUNT = 30;
+
+
+    public interface LargeIconReadyCallback {
+        void onLargeIconReady(Bitmap icon);
+    }
+
+    public BraveRewardsHelper (){
+        if (mLargeIconBridge == null) {
+            mLargeIconBridge = new LargeIconBridge(currentActiveTab().getProfile());
+        }
+    }
+
+    /**
+     *  we don't destroy mLargeIconBridge sisnce it's static
+     */
+    private void destroy(){
+        if (mLargeIconBridge != null) {
+            mLargeIconBridge.destroy();
+            mLargeIconBridge = null;
+        }
+        mCallback =  null;
+    }
+
+
+    public void detach(){
+        mCallback =  null;
+    }
+
+    public void retrieveLargeIcon(String favIconURL, LargeIconReadyCallback callback){
+        mCallback = callback;
+        mFaviconUrl = favIconURL;
+        retrieveLargeIconInternal(favIconURL);
+    }
+
+    private void retrieveLargeIconInternal(String favIconURL){
+        mFetchCount ++;
+        if (mLargeIconBridge!= null && mCallback != null && !favIconURL.isEmpty() ){
+            mLargeIconBridge.getLargeIconForUrl(mFaviconUrl,FAVICON_DESIRED_SIZE, this);
+        }
+    }
+
+    @Override
+    @CalledByNative("LargeIconCallback")
+    public void onLargeIconAvailable(@Nullable Bitmap icon, int fallbackColor,
+                                     boolean isFallbackColorDefault, @IconType int iconType){
+        if (mFaviconUrl.isEmpty()){
+            return;
+        }
+
+        if (  mFetchCount == MAX_FAVICON_FETCH_COUNT  || (icon == null && false == isFallbackColorDefault) ){
+            RoundedIconGenerator mIconGenerator = new RoundedIconGenerator(Resources.getSystem(),
+                    FAVICON_CIRCLE_MEASUREMENTS, FAVICON_CIRCLE_MEASUREMENTS,
+                    FAVICON_CIRCLE_MEASUREMENTS, fallbackColor, FAVICON_TEXT_SIZE);
+
+            mIconGenerator.setBackgroundColor(fallbackColor);
+            icon = mIconGenerator.generateIconForUrl(mFaviconUrl);
+        }
+        else if (icon == null && true == isFallbackColorDefault) {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    retrieveLargeIconInternal(mFaviconUrl);
+                }
+            }, FAVICON_FETCH_INTERVAL);
+            return;
+        }
+        //else: icon is available
+
+        if (mCallback != null) {
+            mCallback.onLargeIconReady(icon);
+        }
+    }
+
+
+    static public ChromeTabbedActivity GetChromeTabbedActivity() {
     for (WeakReference<Activity> ref : ApplicationStatus.getRunningActivities()) {
         if (!(ref.get() instanceof ChromeTabbedActivity)) continue;
 
@@ -101,20 +192,6 @@ public class BraveRewardsHelper {
     }
     return activity.getActivityTab();
   }
-
-  static public void retrieveFavIcon( FaviconHelper favIconHelper, FaviconHelper.FaviconImageCallback parent, String favIconURL){
-    (new Runnable() {
-      @Override
-      public void run() {
-        Tab currentActiveTab = currentActiveTab();
-        if (currentActiveTab != null && !favIconURL.isEmpty() ){
-          favIconHelper.getLocalFaviconImageForURL(currentActiveTab.getProfile(),
-                  favIconURL, 0, parent);
-        }
-      }
-    }).run();
-  }
-
 
   /**
    *
