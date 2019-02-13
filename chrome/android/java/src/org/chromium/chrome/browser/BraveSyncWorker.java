@@ -105,6 +105,7 @@ public class BraveSyncWorker {
     private static final String ORIGINAL_SEED_KEY = "originalSeed";
     private static final String DEVICES_NAMES = "devicesNames";
     private static final String ORPHAN_BOOKMARKS = "orphanBookmarks";
+    private static final String THIS_DEVICE_OBJECT_ID = "thisDeviceObjectId";
     public static final int NICEWARE_WORD_COUNT = 16;
     public static final int BIP39_WORD_COUNT = 24;
 
@@ -943,11 +944,8 @@ public class BraveSyncWorker {
         }
     }
 
-    private String GenerateObjectId(String localId) {
-        String res = GetObjectId(localId);
-        if (0 != res.length()) {
-            return res;
-        }
+    private String GenerateObjectIdInternal() {
+        String res = "";
         // Generates 16 random 8 bits numbers
         Random random = new Random();
         for (int i = 0; i < 16; i++) {
@@ -962,6 +960,15 @@ public class BraveSyncWorker {
             }
         }
 
+        return res;
+    }
+
+    private String GenerateObjectId(String localId) {
+        String res = GetObjectId(localId);
+        if (0 != res.length()) {
+            return res;
+        }
+        res = GenerateObjectIdInternal();
         return res;
     }
 
@@ -1182,7 +1189,11 @@ public class BraveSyncWorker {
 
     public void SetUpdateDeleteDeviceName(String action, String deviceName, String deviceId, String objectId) {
         if (action.equals(CREATE_RECORD)) {
-            objectId = GenerateObjectId("deviceName");
+            objectId = GetObjectId(THIS_DEVICE_OBJECT_ID);
+            if (0 == objectId.length()) {
+                objectId = GenerateObjectIdInternal();
+                SaveObjectId(THIS_DEVICE_OBJECT_ID, objectId, "", false);
+            }
         }
         assert !objectId.isEmpty();
         if (objectId.isEmpty()) {
@@ -2723,6 +2734,7 @@ public class BraveSyncWorker {
               nativeResetSync(SyncRecordType.PREFERENCES + DELETE_RECORD);
               nativeResetSync(DEVICES_NAMES);
               nativeResetSync(ORPHAN_BOOKMARKS);
+              nativeResetSync(THIS_DEVICE_OBJECT_ID);
               mOrphanBookmarks.clear();
               SaveObjectId(ORIGINAL_SEED_KEY, seed, "", true);
               // TODO for other categories type
@@ -2757,9 +2769,9 @@ public class BraveSyncWorker {
     class JsObject {
         @JavascriptInterface
         public void handleMessage(String message, String arg1, String arg2, String arg3, boolean arg4) {
-            /*if (!message.equals("sync-debug")) {
+            if (!message.equals("sync-debug")) {
                 Log.i(TAG, "!!!message == " + message);
-            }*/
+            }
             switch (message) {
               case "get-init-data":
                 break;
