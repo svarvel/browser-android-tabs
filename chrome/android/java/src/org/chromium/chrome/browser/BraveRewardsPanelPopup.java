@@ -812,6 +812,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                     public void run() {
                         ImageView iv = (ImageView) thisObject.root.findViewById(R.id.publisher_favicon);
                         iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(bmp));
+
+                        View fadeout  = thisObject.root.findViewById(R.id.publisher_favicon_update);
+                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE);
                     }
                 });
         }

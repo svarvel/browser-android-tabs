@@ -148,6 +148,22 @@
             </ScrollView>
         </LinearLayout> <!--Header-->
 
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
+        <ProgressBar
+            android:id="@+id/publisher_favicon_update"
+            android:indeterminateDrawable="@drawable/progress_indeterminate"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+
         <!-- Publisher's icon-->
         <ImageView
             android:id="@+id/publisher_favicon"
@@ -162,8 +178,10 @@
             android:baselineAlignBottom="true"
             android:layout_marginTop="12dp"
             android:cropToPadding="true"/>
-    </FrameLayout>
+        </FrameLayout>
 
+
+    </FrameLayout>
 
     <!-- Footer-->
     <ScrollView
