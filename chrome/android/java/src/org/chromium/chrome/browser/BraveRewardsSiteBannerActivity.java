@@ -294,6 +294,9 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                         float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
                         int nPx = Math.round(px);
                         Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
+
+                        View fadeout  = findViewById(R.id.publisher_favicon_update);
+                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE);
                         iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(resized));
                     }
                 });

@@ -407,11 +407,27 @@
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content">
 
-                            <ImageView
-                                android:id="@+id/publisher_favicon"
-                                android:layout_height="60dp"
-                                android:layout_width="60dp"
-                                android:contentDescription="@null"/>
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent">
+
+                                <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
+                                <ProgressBar
+                                    android:id="@+id/publisher_favicon_update"
+                                    android:indeterminateDrawable="@drawable/progress_indeterminate"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="center"
+                                    android:visibility="visible"/>
+
+                                <ImageView
+                                    android:id="@+id/publisher_favicon"
+                                    android:layout_height="60dp"
+                                    android:layout_width="60dp"
+                                    android:contentDescription="@null"
+                                    android:visibility="gone"/>
+                            </FrameLayout>
 
                             <LinearLayout
                                 android:layout_height="wrap_content"
