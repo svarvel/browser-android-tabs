@@ -1625,16 +1625,18 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
             if (this instanceof ChromeTabbedActivity) {
-                if (app.mBraveSyncWorker != null) {
-                    Log.e(BraveSyncWorker.TAG, "There should be only one ChromeTabbedActivity. Find out why it happens.");
-                    assert false;
+                if (app.mBraveSyncWorker == null) {
+                    // Starting Brave Sync
+                    app.mBraveSyncWorker = new BraveSyncWorker(app);
                 }
-                // Starting Brave Sync
-                app.mBraveSyncWorker = new BraveSyncWorker(this);
-                app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(this);
+                if (app.mADBlockUpdaterWorker == null) {
+                    app.mADBlockUpdaterWorker = new ADBlockUpdaterWorker(app);
+                }
                 //MixPanelWorker.SendBraveAppStartEvent();
             }
-            app.mStatsUpdaterWorker = new StatsUpdaterWorker(this);
+            if (app.mStatsUpdaterWorker == null) {
+                app.mStatsUpdaterWorker = new StatsUpdaterWorker(app);
+            }
         }
     }
 
