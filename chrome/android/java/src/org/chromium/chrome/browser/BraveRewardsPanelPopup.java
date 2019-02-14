@@ -85,6 +85,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String AUTO_CONTRIBUTE_GENERAL_ERROR = "1";
     private static final String AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS = "15";
     private static final String AUTO_CONTRIBUTE_TIPPING_ERROR = "16";
+    private static final String ERROR_CONVERT_PROBI = "ERROR";
 
     protected final View anchor;
     private final PopupWindow window;
@@ -609,9 +610,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                             title = root.getResources().getString(R.string.brave_ui_rewards_contribute);
                             notification_icon.setImageResource(R.drawable.contribute_icon);
                             hl.setBackgroundResource(R.drawable.notification_header_normal);
+
+                            double  probiDouble = BraveRewardsHelper.probiToDouble(args[3]);
+                            String probiString = Double.isNaN(probiDouble) ? ERROR_CONVERT_PROBI : String.format("%.2f", probiDouble);
                             description = String.format(
                                 root.getResources().getString(R.string.brave_ui_rewards_contribute_description),
-                                BraveRewardsHelper.probiToNumber(args[3]));
+                                    probiString);
                             break;
                         case AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS:
                             title = "";
@@ -747,7 +751,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   if (grant.length < 2) {
                     continue;
                   }
-                  String toInsert = "<b><font color=#ffffff>" + BraveRewardsHelper.probiToNumber(grant[0]) + " BAT</font></b> ";
+
+                  double  probiDouble = BraveRewardsHelper.probiToDouble(grant[0]);
+                  String probiString = Double.isNaN(probiDouble) ? ERROR_CONVERT_PROBI : String.format("%.2f", probiDouble);
+                  String toInsert = "<b><font color=#ffffff>" + probiString + " BAT</font></b> ";
                   TimeZone utc = TimeZone.getTimeZone("UTC");
                   Calendar calTime = Calendar.getInstance(utc);
                   calTime.setTimeInMillis(Long.parseLong(grant[1]) * 1000);
@@ -901,8 +908,16 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           TextView tvUSD = null;
           String text = "";
           String textUSD = "";
-          String value = BraveRewardsHelper.probiToNumber(report[i]);
-          double usdValue = Double.parseDouble(value) * mBraveRewardsNativeWorker.GetWalletRate("USD");
+
+          double  probiDouble = BraveRewardsHelper.probiToDouble(report[i]);
+          String value = Double.isNaN(probiDouble) ? ERROR_CONVERT_PROBI : String.format("%.2f", probiDouble);
+
+          String usdValue = ERROR_CONVERT_PROBI;
+          if (! Double.isNaN(probiDouble)){
+              double usdValueDouble = probiDouble * mBraveRewardsNativeWorker.GetWalletRate("USD");
+              usdValue = String.format("%.2f USD", usdValueDouble);
+          }
+
           switch (i) {
             case 0:
             case 1:
@@ -912,31 +927,31 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
               tv = (TextView)root.findViewById(R.id.br_grants_claimed_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_grants_claimed_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
-              textUSD = String.format("%.2f", usdValue) + " USD";
+              textUSD = usdValue;
               break;
             case 4:
               tv = (TextView)root.findViewById(R.id.br_earnings_ads_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_earnings_ads_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
-              textUSD = String.format("%.2f", usdValue) + " USD";
+              textUSD = usdValue;
               break;
             case 5:
               tv = (TextView)root.findViewById(R.id.br_auto_contribute_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_auto_contribute_usd);
               text = "<font color=#6537AD>" + value + "</font><font color=#000000> BAT</font>";
-              textUSD = String.format("%.2f", usdValue) + " USD";
+              textUSD = usdValue;
               break;
             case 6:
               tv = (TextView)root.findViewById(R.id.br_recurring_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_recurring_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
-              textUSD = String.format("%.2f", usdValue) + " USD";
+              textUSD = usdValue;
               break;
             case 7:
               tv = (TextView)root.findViewById(R.id.br_one_time_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_one_time_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
-              textUSD = String.format("%.2f", usdValue) + " USD";
+              textUSD = usdValue;
               break;
             case 8:
               break;
