@@ -35,6 +35,7 @@ import org.chromium.chrome.browser.widget.RoundedIconGenerator;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.math.BigDecimal;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.math.BigInteger;
@@ -275,14 +276,17 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
   }
 
 
-  static String probiToNumber(String probi) {
-    if (probi.equals("0")) {
-      return probi;
-    }
-
-    BigInteger probiInteger = new BigInteger(probi, 10);
-    BigInteger dividerInteger = new BigInteger("1000000000000000000", 10);
-
-    return probiInteger.divide(dividerInteger).toString();
+  static double probiToDouble(String probi) {
+      final String PROBI_POWER = "1000000000000000000";
+      double val = Double.NaN;
+      try {
+          BigDecimal probiNumber = new BigDecimal(probi);
+          BigDecimal dividerNumber = new BigDecimal(PROBI_POWER);
+          val = probiNumber.divide(dividerNumber).doubleValue();
+      }
+      catch(NumberFormatException e){
+          val = Double.NaN;
+      }
+      return val;
   }
 }
