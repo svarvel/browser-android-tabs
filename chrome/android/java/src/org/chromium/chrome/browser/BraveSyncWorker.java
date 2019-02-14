@@ -41,6 +41,7 @@ import org.chromium.content.browser.ViewEventSinkImpl;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.ui.base.ActivityWindowAndroid;
 import org.chromium.ui.base.ViewAndroidDelegate;
+import org.chromium.ui.base.WindowAndroid;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -1009,7 +1010,7 @@ public class BraveSyncWorker {
                     mWebContents = WebContentsFactory.createWebContents(false, true);
                     if (null != mWebContents) {
                         ContentView cv = ContentView.createContentView(mContext, mWebContents);
-                        mWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid(), WebContents.createDefaultInternalsHolder());
+                        mWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new WindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
                         mViewEventSink = ViewEventSinkImpl.from(mWebContents);
                         if (null != mViewEventSink) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -1046,7 +1047,7 @@ public class BraveSyncWorker {
     }
 
     private void CallScript(StringBuilder strCall) {
-        ((Activity)mContext).runOnUiThread(new EjectedRunnable(strCall));
+        ThreadUtils.runOnUiThread(new EjectedRunnable(strCall));
     }
 
     private void GotInitData() {
@@ -1515,7 +1516,7 @@ public class BraveSyncWorker {
            synchronized (bookmarkRunnable)
            {
                // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+               ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                // Wait until runnable is finished
                try {
@@ -1548,7 +1549,7 @@ public class BraveSyncWorker {
                   bookmarkRunnable.SetNewBookmarkModelAcquiredByThisRunnableWaiter();
                }
                // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+               ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                // Wait until runnable is finished
                try {
@@ -1595,7 +1596,7 @@ public class BraveSyncWorker {
            synchronized (bookmarkRunnable)
            {
                // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+               ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                // Wait until runnable is finished
                try {
@@ -1681,7 +1682,7 @@ public class BraveSyncWorker {
             synchronized (bookmarkRunnable)
             {
                 // Execute code on UI thread
-                ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+                ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                 // Wait until runnable is finished
                 try {
@@ -1715,7 +1716,7 @@ public class BraveSyncWorker {
            synchronized (bookmarkRunnable)
            {
                // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+               ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                // Wait until runnable is finished
                try {
@@ -1742,7 +1743,7 @@ public class BraveSyncWorker {
            synchronized (bookmarkRunnable)
            {
                // Execute code on UI thread
-               ((Activity)mContext).runOnUiThread(bookmarkRunnable);
+               ThreadUtils.runOnUiThread(bookmarkRunnable);
 
                // Wait until runnable is finished
                try {
@@ -1942,7 +1943,7 @@ public class BraveSyncWorker {
                 orderedBookmarks.add(orderedBookmark);
             }
             Collections.sort(orderedBookmarks);
-            ((Activity)mContext).runOnUiThread(new Runnable() {
+            ThreadUtils.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     synchronized (mNewBookmarkModel) {
@@ -2438,7 +2439,7 @@ public class BraveSyncWorker {
         synchronized (extensiveOperationRunnable)
         {
             // Execute code on UI thread
-            ((Activity)mContext).runOnUiThread(extensiveOperationRunnable);
+            ThreadUtils.runOnUiThread(extensiveOperationRunnable);
 
             // Wait until runnable is finished
             try {
@@ -2477,7 +2478,7 @@ public class BraveSyncWorker {
         synchronized (folderIdRunnable)
         {
             // Execute code on UI thread
-            ((Activity)mContext).runOnUiThread(folderIdRunnable);
+            ThreadUtils.runOnUiThread(folderIdRunnable);
 
             // Wait until runnable is finished
             try {
@@ -2645,7 +2646,7 @@ public class BraveSyncWorker {
                     for (int i = 0; i < BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT; i++) {
                         if (i == BraveSyncWorker.SYNC_SLEEP_ATTEMPTS_COUNT / 2) {
                             // SZ: preventing from page been frozen, we do that on the middle of the loop
-                            ((Activity)mContext).runOnUiThread(new Runnable() {
+                            ThreadUtils.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     synchronized (mSyncIsReady) {
@@ -2755,7 +2756,7 @@ public class BraveSyncWorker {
           }
           // Init sync WebView
           if (!calledFromUIThread) {
-              ((Activity)mContext).runOnUiThread(new Runnable() {
+            ThreadUtils.runOnUiThread(new Runnable() {
                   @Override
                   public void run() {
                      TrySync();
@@ -2926,7 +2927,7 @@ public class BraveSyncWorker {
                     mJSWebContents = WebContentsFactory.createWebContents(false, true);
                     if (null != mJSWebContents) {
                         ContentView cv = ContentView.createContentView(mContext, mJSWebContents);
-                        mJSWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, ((ChromeActivity)mContext).getWindowAndroid(), WebContents.createDefaultInternalsHolder());
+                        mJSWebContents.initialize(null, ViewAndroidDelegate.createBasicDelegate(cv), cv, new WindowAndroid(mContext), WebContents.createDefaultInternalsHolder());
                         mJSViewEventSink = ViewEventSinkImpl.from(mJSWebContents);
                         if (null != mJSViewEventSink) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
