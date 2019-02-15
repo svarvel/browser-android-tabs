@@ -114,14 +114,4 @@ public interface Toolbar {
      * @return The primary color to use for the background drawable.
      */
     int getPrimaryColor();
-
-    /**
-     'Rewards Panel is dismissed' notification
-    */
-    void onRewardsPanelDismiss();
-
-    /**
-     Dismiss Rewards Panel if visible
-    */
-    void dismissRewardsPanel();
 }

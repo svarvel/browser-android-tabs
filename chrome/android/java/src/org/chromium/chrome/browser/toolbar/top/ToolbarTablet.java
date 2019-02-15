@@ -351,16 +351,16 @@ public class ToolbarTablet extends ToolbarLayout
     }
 
     @Override
-    public  void onRewardsPanelDismiss() {
-          mRewardsPopup = null;
+    public void onRewardsPanelDismiss() {
+        mRewardsPopup = null;
     }
 
     @Override
-    public  void dismissRewardsPanel() {
-          if ( null != mRewardsPopup ) {
-             mRewardsPopup.dismiss();
-             mRewardsPopup = null;
-          }
+    public void dismissRewardsPanel() {
+        if ( null != mRewardsPopup ) {
+            mRewardsPopup.dismiss();
+            mRewardsPopup = null;
+        }
     }
 
     @Override
