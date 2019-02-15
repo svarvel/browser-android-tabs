@@ -55,6 +55,7 @@ import org.chromium.base.VisibleForTesting;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsObserver;
+import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
@@ -407,7 +408,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         Resources res = getResources();
         mLocationBarBackgroundVerticalInset =
                 res.getDimensionPixelSize(R.dimen.location_bar_vertical_margin);
-        mLocationBarBackground = createModernLocationBarBackground(getResources());
+        mLocationBarBackground = createModernLocationBarBackground(getResources(),
+            R.drawable.modern_toolbar_background_white);
 
         int lateralPadding = res.getDimensionPixelOffset(R.dimen.location_bar_lateral_padding);
         mLocationBar.setPadding(lateralPadding, 0, lateralPadding, 0);
@@ -418,7 +420,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     /**
      * @return The drawable for the modern location bar background.
      */
-    public static Drawable createModernLocationBarBackground(Resources resources) {
+    public static Drawable createModernLocationBarBackground(Resources resources, int drawableId) {
         Drawable drawable = ApiCompatibilityUtils.getDrawable(
                 resources, R.drawable.modern_toolbar_text_box_background_with_primary_color);
         drawable.mutate();
@@ -470,7 +472,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 } else {
                     return getCurrentTabView();
                 }
-            }
 
             @Override
             public View getNextFocusBackward() {
@@ -583,7 +584,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public  void onRewardsPanelDismiss() {
         mRewardsPopup = null;
     }
-
 
     @Override
     public  void dismissRewardsPanel() {
@@ -1034,6 +1034,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         locationBarBaseTranslationX *= 1f
                 - (mExperimentalButtonAnimationRunning ? mLocBarWidthChangePercent
                                                        : mUrlExpansionPercent);
+
+        mLocationBarBackground = createModernLocationBarBackground(getResources(), getToolbarButtonVisibility() == VISIBLE ? R.drawable.modern_toolbar_background_white : R.drawable.modern_toolbar_background_selected);
+        mLocationBarBackground.mutate();
+        mActiveLocationBarBackground = mLocationBarBackground;
 
         mLocationBarBackgroundNtpOffset.setEmpty();
         mLocationBarNtpOffsetLeft = 0;

@@ -817,4 +817,14 @@ public abstract class ToolbarLayout extends FrameLayout {
      * it.
      */
     void setTabModelSelector(TabModelSelector selector) {}
+
+    // /**
+    //  'Rewards Panel is dismissed' notification
+    // */
+    public void onRewardsPanelDismiss() {}
+
+    // /**
+    //  Dismiss Rewards Panel if visible
+    // */
+    public void dismissRewardsPanel() {}
 }

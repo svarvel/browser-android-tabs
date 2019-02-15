@@ -36,7 +36,7 @@ public class BrowsingModeBottomToolbarCoordinator {
     private final HomeButton mHomeButton;
 
     /** The share button that lives in the bottom toolbar. */
-    private final ShareButton mShareButton;
+    //private final ShareButton mShareButton;
 
     /** The search accelerator that lives in the bottom toolbar. */
     private final SearchAccelerator mSearchAccelerator;
@@ -71,12 +71,12 @@ public class BrowsingModeBottomToolbarCoordinator {
         mHomeButton.setOnClickListener(homeButtonListener);
         mHomeButton.setActivityTabProvider(tabProvider);
 
-        mShareButton = toolbarRoot.findViewById(R.id.share_button);
-        mShareButton.setOnClickListener(shareButtonListener);
-        mShareButton.setActivityTabProvider(tabProvider);
+        //mShareButton = toolbarRoot.findViewById(R.id.share_button);
+        //mShareButton.setOnClickListener(shareButtonListener);
+        //mShareButton.setActivityTabProvider(tabProvider);
 
-        mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
-        mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
+        //mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
+        //mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
 
@@ -114,8 +114,8 @@ public class BrowsingModeBottomToolbarCoordinator {
         mMediator.setThemeColorProvider(themeColorProvider);
 
         mHomeButton.setThemeColorProvider(themeColorProvider);
-        mShareButton.setThemeColorProvider(themeColorProvider);
-        mSearchAccelerator.setThemeColorProvider(themeColorProvider);
+        //mShareButton.setThemeColorProvider(themeColorProvider);
+        //mSearchAccelerator.setThemeColorProvider(themeColorProvider);
 
         mTabSwitcherButtonCoordinator.setTabSwitcherListener(tabSwitcherListener);
         mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
@@ -159,8 +159,8 @@ public class BrowsingModeBottomToolbarCoordinator {
     public void destroy() {
         mMediator.destroy();
         mHomeButton.destroy();
-        mShareButton.destroy();
-        mSearchAccelerator.destroy();
+        //mShareButton.destroy();
+        //mSearchAccelerator.destroy();
         mTabSwitcherButtonCoordinator.destroy();
         mMenuButton.destroy();
     }

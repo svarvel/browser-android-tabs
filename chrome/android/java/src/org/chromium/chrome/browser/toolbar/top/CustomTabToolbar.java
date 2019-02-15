@@ -843,9 +843,9 @@ public class CustomTabToolbar
     @Override
     public void setUnfocusedWidth(int unfocusedWidth) {}
 
-    @Override
-    public  void onRewardsPanelDismiss() {}
+    //@Override
+    //public  void onRewardsPanelDismiss() {}
 
-    @Override
-    public  void dismissRewardsPanel() {}
+    //@Override
+    //public  void dismissRewardsPanel() {}
 }
