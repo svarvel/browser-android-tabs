@@ -703,8 +703,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, FaviconHelp
 
     @Override
     public void OnWalletInitialized(int error_code) {
-      if (error_code == 0) {
-        // Wallet created
+      if (error_code == 12) {   // Wallet created code
           walletInitialized = true;
           ShowWebSiteView();
       }

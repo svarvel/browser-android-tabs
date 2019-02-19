@@ -109,7 +109,7 @@ public:
         int error_code, 
         std::unique_ptr<brave_rewards::WalletProperties> wallet_properties) override;
 
-    void OnGetPublisherActivityFromUrl(
+    void OnPanelPublisherInfo(
         brave_rewards::RewardsService* rewards_service,
         int error_code,
         std::unique_ptr<ledger::PublisherInfo> info,
