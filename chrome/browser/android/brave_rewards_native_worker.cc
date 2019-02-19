@@ -76,7 +76,7 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
   }
 }
 
-void BraveRewardsNativeWorker::OnGetPublisherActivityFromUrl(
+void BraveRewardsNativeWorker::OnPanelPublisherInfo(
       brave_rewards::RewardsService* rewards_service,
       int error_code,
       std::unique_ptr<ledger::PublisherInfo> info,
@@ -294,7 +294,7 @@ void BraveRewardsNativeWorker::GetAllNotifications(JNIEnv* env,
   brave_rewards::RewardsNotificationService* notification_service = 
     brave_rewards_service_->GetNotificationService();
   if (notification_service) {
-    notification_service->GetAllNotifications();
+    notification_service->GetNotifications();
   }
 }
 
