@@ -50,6 +50,22 @@ rm out/DefaultRArmModern.tar.7z
 sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmModern
 
 echo "---------------------------------"
+echo "build ARM release mono"
+sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmMono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+rc=$?
+if [ $rc != 0 ]
+then
+	echo "build ARM release mono failed ($rc)"
+	exit $rc
+else
+	echo "build ARM release mono succeeded"
+	mv out/DefaultR/apks/BraveMono_aligned.apk out/DefaultR/apks/BraveMonoarm.apk
+fi
+echo "packing symbols for ARM release mono"
+rm out/DefaultRArmMono.tar.7z
+sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmMono
+
+echo "---------------------------------"
 echo "build X86 release classic"
 sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Classic.gn chrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
 rc=$?

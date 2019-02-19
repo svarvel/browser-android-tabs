@@ -335,5 +335,6 @@ chrome/browser/net/blockers/protocol.cc
 # Build configs
 scripts/gn/argsReleaseArmClassic.gn
 scripts/gn/argsReleaseArmModern.gn
+scripts/gn/argsReleaseArmMono.gn
 scripts/gn/argsReleaseX86Classic.gn
 scripts/gn/argsReleaseX86Modern.gn

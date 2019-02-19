@@ -24,11 +24,14 @@ KEYPASSWORD=$6
 if [ "$TARGET_NAME" = "chrome_public_apk" ] ;
 then
 	APK_FILE_NAME="Brave"
+elif [ "$TARGET_NAME" = "monochrome_public_apk" ] ;
+then
+	APK_FILE_NAME="BraveMono"
 elif [ "$TARGET_NAME" = "chrome_modern_public_apk" ] ;
 then
 	APK_FILE_NAME="BraveModern"
 else
-	echo "3rd argument target name can be only chrome_public_apk or chrome_modern_public_apk"
+	echo "3rd argument target name can be only chrome_public_apk, chrome_modern_public_apk or monochrome_public_apk"
 	exit 3
 fi
 
