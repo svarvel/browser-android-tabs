@@ -24,7 +24,7 @@ class AwHttpUserAgentSettings : public net::HttpUserAgentSettings {
 
   // net::HttpUserAgentSettings implementation
   std::string GetAcceptLanguage() const override;
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& host) const override;
 
  private:
   // Avoid re-processing by caching the last value from the locale and the
@@ -38,4 +38,3 @@ class AwHttpUserAgentSettings : public net::HttpUserAgentSettings {
 }  // namespace android_webview
 
 #endif  // ANDROID_WEBVIEW_BROWSER_NET_AW_HTTP_USER_AGENT_SETTINGS_H_
-
