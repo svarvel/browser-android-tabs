@@ -1088,6 +1088,16 @@
       "encoding": "windows-1250",
       "type": "SEARCH_ENGINE_ZOZNAM",
       "id": 85
+    },
+
+    "startpage": {
+      "name": "StartPage",
+      "keyword": "startpage.com",
+      "favicon_url": "https://www.startpage.com/graphics/favicon/sp-favicon-16x16.png",
+      "search_url": "https://www.startpage.com/do/dsearch?query={searchTerms}&cat=web&pl=opensearch",
+      "suggest_url": "https://www.startpage.com/cgi-bin/csuggest?query={searchTerms}&limit=10&format=json",
+      "type": "SEARCH_ENGINE_STARTPAGE",
+      "id": 22
     }
   }
 }

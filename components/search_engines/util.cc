@@ -16,7 +16,9 @@
 #include <vector>
 
 #include "base/logging.h"
+#include "base/strings/utf_string_conversions.h"
 #include "base/time/time.h"
+#include "chrome/browser/search_engines/template_url_service_android.h"
 #include "components/prefs/pref_service.h"
 #include "components/search_engines/template_url.h"
 #include "components/search_engines/template_url_prepopulate_data.h"
@@ -295,13 +297,17 @@ ActionsFromPrepopulateData CreateActionsFromCurrentPrepopulateData(
   // We assume that this entry is equivalent to the DSE if its prepopulate ID
   // and keyword both match. If the prepopulate ID _does_ match all properties
   // will be replaced with those from |default_search_provider| anyway.
+  std::string standard_dse = TemplateUrlServiceAndroid::GetDefaultSearchEngineNamePref(false);
+  std::string private_dse = TemplateUrlServiceAndroid::GetDefaultSearchEngineNamePref(true);
   for (auto i = id_to_turl.begin(); i != id_to_turl.end(); ++i) {
     TemplateURL* template_url = i->second;
     if ((template_url->safe_for_autoreplace()) &&
         (!default_search_provider ||
          (template_url->prepopulate_id() !=
              default_search_provider->prepopulate_id()) ||
-         (template_url->keyword() != default_search_provider->keyword())))
+         (template_url->keyword() != default_search_provider->keyword())) &&
+        (base::UTF16ToUTF8(template_url->short_name()) != standard_dse) &&
+        (base::UTF16ToUTF8(template_url->short_name()) != private_dse))
       actions.removed_engines.push_back(template_url);
   }
 
