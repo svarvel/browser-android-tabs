@@ -401,6 +401,11 @@ public class TemplateUrlService {
         }
     }
 
+    @CalledByNative
+    public static String getDefaultSearchEngineNamePref(boolean is_private) {
+        return ContextUtils.getAppSharedPreferences().getString(is_private ? PREF_PRIVATE_SEARCH_ENGINE : PREF_STANDARD_SEARCH_ENGINE, DSE_NAME);
+    }
+
     private native long nativeInit();
     private native void nativeLoad(long nativeTemplateUrlServiceAndroid);
     private native boolean nativeIsLoaded(long nativeTemplateUrlServiceAndroid);
