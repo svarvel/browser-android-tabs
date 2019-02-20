@@ -2888,6 +2888,8 @@ static void AppendCompositorCommandLineFlags(base::CommandLine* command_line) {
     command_line->AppendSwitch(cc::switches::kEnableMainFrameBeforeActivation);
 }
 
+bool NeedPlayVideoInBackgroundForActiveProfile();
+
 void RenderProcessHostImpl::AppendRendererCommandLine(
     base::CommandLine* command_line) {
   // Pass the process type first, so it shows first in process listings.
@@ -2924,7 +2926,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
       base::NumberToString(display::win::GetDPIScale()));
 #endif
 
-  if (NeedPlayVideoInBackground()) {
+  if (NeedPlayVideoInBackgroundForActiveProfile()) {
     command_line->AppendSwitch(switches::kDisableMediaSuspend);
   }
 
@@ -2940,13 +2942,6 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
     // Disable V8 code mitigations if renderer processes are site-isolated.
     command_line->AppendSwitch(switches::kNoV8UntrustedCodeMitigations);
   }
-}
-
-bool RenderProcessHostImpl::NeedPlayVideoInBackground() const {
-  bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
-      ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
-      GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, NULL) == CONTENT_SETTING_ALLOW;
-  return play_video_in_background_enabled;
 }
 
 void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(

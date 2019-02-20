@@ -355,6 +355,7 @@ jumbo_split_static_library("browser") {
     "conflicts/third_party_metrics_recorder_win.h",
     "consent_auditor/consent_auditor_factory.cc",
     "consent_auditor/consent_auditor_factory.h",
+    "content_settings/active_profile_settings.cc",
     "content_settings/chrome_content_settings_utils.cc",
     "content_settings/chrome_content_settings_utils.h",
     "content_settings/cookie_settings_factory.cc",
