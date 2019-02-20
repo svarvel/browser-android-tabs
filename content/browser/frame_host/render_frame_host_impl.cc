@@ -222,6 +222,11 @@ using base::TimeDelta;
 
 namespace content {
 
+// TODO(alexeyb): remove this workaround for release monochrome_public_apk
+#if defined(OS_ANDROID)
+bool NeedPlayVideoInBackgroundForActiveProfile();
+#endif  // OS_ANDROID
+
 namespace {
 
 #if defined(OS_ANDROID)
@@ -920,24 +925,13 @@ RenderFrameHostImpl::RenderFrameHostImpl(SiteInstance* site_instance,
                                    : frame_tree_node_->opener();
   if (frame_owner)
     CSPContext::SetSelf(frame_owner->current_origin());
-<<<<<<< HEAD
-=======
-
-  // Hook up the Resource Coordinator edges to the associated process and
-  // parent frame, if any.
-  frame_resource_coordinator_.SetProcess(
-      *GetProcess()->GetProcessResourceCoordinator());
-  if (parent_) {
-    parent_->GetFrameResourceCoordinator()->AddChildFrame(
-        frame_resource_coordinator_);
-  }
+}
 
 #if defined(OS_ANDROID)
-  if (NeedPlayVideoInBackground()) {
+  if (NeedPlayVideoInBackgroundForActiveProfile()) {
     AllowInjectingJavaScript();
   }
 #endif
->>>>>>> ea422021dee... separate settings, fix for mobile youtube
 }
 
 RenderFrameHostImpl::~RenderFrameHostImpl() {
@@ -6624,6 +6618,7 @@ void RenderFrameHostImpl::SendCommitFailedNavigation(
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Called when the renderer navigates.  For every frame loaded, we'll get this
 // notification containing parameters identifying the navigation.
 void RenderFrameHostImpl::DidCommitNavigation(
@@ -6823,13 +6818,6 @@ bool RenderFrameHostImpl::MaybeInterceptCommitCallback(
         navigation_request, validated_params, interface_params);
   }
   return true;
-=======
-bool RenderFrameHostImpl::NeedPlayVideoInBackground() const {
-  bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
-      ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
-      GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, NULL) == CONTENT_SETTING_ALLOW;
-  return play_video_in_background_enabled;
->>>>>>> ea422021dee... separate settings, fix for mobile youtube
 }
 
 void RenderFrameHostImpl::PostMessageEvent(int32_t source_routing_id,

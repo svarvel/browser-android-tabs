@@ -93,6 +93,10 @@
 #include "url/url_constants.h"
 
 namespace content {
+
+// TODO(alexeyb): remove this workaround for release monochrome_public_apk
+bool IsGlobalDesktopSettingsOnForActiveProfile();
+
 namespace {
 
 // Invoked when entries have been pruned, or removed. For example, if the
@@ -134,19 +138,11 @@ void ConfigureEntriesForRestore(
   }
 }
 
-// Gets the global settings value for Desktop Mode
-bool IsGlobalDesktopSettingsOn() {
-  bool is_desktop_settings_on = HostContentSettingsMapFactory::GetForProfile(
-    ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
-    GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, NULL) == CONTENT_SETTING_ALLOW;
-  return is_desktop_settings_on;
-}
-
 // Determines whether or not we should be carrying over a user agent override
 // between two NavigationEntries.
 bool ShouldKeepOverride(NavigationEntry* last_entry) {
   if (!last_entry) {
-    return IsGlobalDesktopSettingsOn();
+    return IsGlobalDesktopSettingsOnForActiveProfile();
   }
   return last_entry->GetIsOverridingUserAgent();
 }
@@ -500,7 +496,7 @@ std::unique_ptr<NavigationEntry> NavigationController::CreateNavigationEntry(
   entry->set_user_typed_url(virtual_url);
   entry->set_update_virtual_url_with_url(reverse_on_redirect);
   entry->set_extra_headers(extra_headers);
-  entry->SetIsOverridingUserAgent(IsGlobalDesktopSettingsOn());
+  entry->SetIsOverridingUserAgent(IsGlobalDesktopSettingsOnForActiveProfile());
   return base::WrapUnique(entry);
 }
 

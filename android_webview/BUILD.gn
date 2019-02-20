@@ -397,6 +397,7 @@ source_set("webview_entry_point") {
   ]
   sources = [
     "lib/webview_entry_point.cc",
+    "lib/profile_content_stubs.cc",
   ]
 }
 
