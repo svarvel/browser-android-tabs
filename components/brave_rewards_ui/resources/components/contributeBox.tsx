@@ -10,9 +10,7 @@ import { connect } from 'react-redux'
 import {
   StyledListContent,
   StyledSitesNum,
-  StyledSupport,
   StyledTotalContent,
-  StyledSupportSites,
   StyledSitesLink
 } from './style'
 import { List, NextContribution, TableContribute, Tokens } from 'brave-ui/src/features/rewards'
@@ -218,16 +216,14 @@ class ContributeBox extends React.Component<Props, State> {
             <NextContribution>{new Date(reconcileStamp * 1000).toLocaleDateString()}</NextContribution>
           </StyledListContent>
         </List>
-        <StyledSupport>
-          <List title={<StyledSupportSites>{getLocale('contributionSites')}</StyledSupportSites>}>
-            <StyledTotalContent>
-              {getLocale('total')} &nbsp;<Tokens
-                value={numRows.toString()}
-                hideText={true}
-              />
-            </StyledTotalContent>
-          </List>
-        </StyledSupport>
+        <List title={<StyledListContent>{getLocale('contributionSites')}</StyledListContent>}>
+          <StyledTotalContent>
+            {getLocale('total')} &nbsp;<Tokens
+              value={numRows.toString()}
+              hideText={true}
+            />
+          </StyledTotalContent>
+        </List>
         <StyledListContent>
           <TableContribute
             header={[
