@@ -48,6 +48,7 @@ const walletReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State,
           ui.walletServerProblem = true
         } else {
           // TODO NZ don't just assign directly
+          state.contributionMonthly = action.payload.properties.monthlyAmount
           state.walletInfo = action.payload.properties.wallet
           ui.walletServerProblem = false
         }
