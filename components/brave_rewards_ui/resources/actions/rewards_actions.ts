@@ -143,3 +143,13 @@ export const onCurrentTips = (list: Rewards.Publisher[]) => action(types.ON_CURR
 export const removeRecurring = (publisherKey: string) => action(types.ON_REMOVE_RECURRING, {
   publisherKey
 })
+
+export const onRewardsEnabled = (enabled: boolean) => action(types.ON_REWARDS_ENABLED, {
+  enabled
+})
+
+export const getPendingContributionsTotal = () => action(types.GET_PENDING_CONTRIBUTION_TOTAL)
+
+export const onPendingContributionTotal = (amount: number) => action(types.ON_PENDING_CONTRIBUTION_TOTAL, {
+  amount
+})
