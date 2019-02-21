@@ -123,6 +123,20 @@ window.cr.define('brave_rewards', function () {
     getActions().onCurrentTips(list)
   }
 
+  function rewardsEnabled (enabled: boolean) {
+    getActions().onRewardsEnabled(enabled)
+  }
+
+  function pendingContributionTotal (amount: number) {
+    getActions().onPendingContributionTotal(amount)
+  }
+
+  function onPendingContributionSaved (result: number) {
+    if (result === 0) {
+      getActions().getPendingContributionsTotal()
+    }
+  }
+
   return {
     initialize,
     walletCreated,
@@ -143,7 +157,10 @@ window.cr.define('brave_rewards', function () {
     adsData,
     initAutoContributeSettings,
     recurringDonationUpdate,
-    currentTips
+    currentTips,
+    rewardsEnabled,
+    pendingContributionTotal,
+    onPendingContributionSaved
   }
 })
 if (document.readyState === "complete"

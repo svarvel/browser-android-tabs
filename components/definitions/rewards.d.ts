@@ -51,6 +51,7 @@ declare namespace Rewards {
     tipsList: Publisher[]
     tipsLoad: boolean
     recurringLoad: boolean
+    pendingContributionTotal: number
   }
 
   export interface ComponentProps {
