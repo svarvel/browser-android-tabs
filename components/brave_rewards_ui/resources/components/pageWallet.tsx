@@ -8,7 +8,14 @@ import { connect } from 'react-redux'
 
 // Components
 import { AlertWallet } from 'brave-ui/src/features/rewards/walletWrapper'
-import { ModalAddFunds, ModalBackupRestore, WalletSummary, WalletWrapper } from 'brave-ui/src/features/rewards'
+import {
+  ModalAddFunds,
+  ModalBackupRestore,
+  WalletSummary,
+  WalletWrapper,
+  WalletEmpty,
+  WalletOff
+} from 'brave-ui/src/features/rewards'
 import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/src/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
@@ -194,7 +201,7 @@ class PageWallet extends React.Component<Props, State> {
         const item = report[key]
 
         if (item.length > 1 && key !== 'total') {
-          const tokens = convertProbiToFixed(item)
+          const tokens = utils.convertProbiToFixed(item)
           props[key] = {
             tokens,
             converted: utils.convertBalance(tokens, rates)
@@ -210,10 +217,19 @@ class PageWallet extends React.Component<Props, State> {
 
   render () {
     const { visible, toggleAction } = this.props
-    const { connectedWallet, addresses, walletInfo, recoveryKey, ui } = this.props.rewardsData
-    const { walletRecoverySuccess, modalBackup } = ui
+    const {
+      enabledMain,
+      connectedWallet,
+      addresses,
+      walletInfo,
+      recoveryKey,
+      ui,
+      pendingContributionTotal
+    } = this.props.rewardsData
+    const { walletRecoverySuccess, modalBackup, emptyWallet } = ui
     const { balance } = walletInfo
     const addressArray = utils.getAddresses(addresses)
+    const pendingTotal = parseFloat((pendingContributionTotal || 0).toFixed(1))
 
     if (!visible && !this.state.addFundsShown) {
       return null
@@ -245,7 +261,17 @@ class PageWallet extends React.Component<Props, State> {
               alert={this.walletAlerts()}
               connectedWallet={connectedWallet}
             >
-              <WalletSummary {...this.getWalletSummary()}/>
+              {
+                enabledMain
+                ? emptyWallet
+                  ? <WalletEmpty />
+                  : <WalletSummary
+                    reservedAmount={pendingTotal}
+                    reservedMoreLink={'https://brave.com/faq-rewards/#unclaimed-funds'}
+                    {...this.getWalletSummary()}
+                  />
+                : <WalletOff/>
+              }
             </WalletWrapper>
             {
               modalBackup
