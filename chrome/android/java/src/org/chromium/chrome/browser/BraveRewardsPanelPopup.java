@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
@@ -284,6 +285,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         }
 
         btRewardsSummary = (Button)root.findViewById(R.id.rewards_summary);
+        //btRewardsSummary.setBackgroundColor(Color.parseColor("#e9ebff"));
+        btRewardsSummary.getBackground().setColorFilter(Color.parseColor("#e9ebff"), PorterDuff.Mode.SRC);
         if (btRewardsSummary != null) {
           btRewardsSummary.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -295,7 +298,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 }
                 if (gl.getVisibility() == View.VISIBLE) {
                     gl.setVisibility(View.GONE);
-                    ll.setBackgroundColor(((ColorDrawable)btRewardsSummary.getBackground()).getColor());
+                    ll.setBackgroundColor(Color.parseColor("#e9ebff")/*((ColorDrawable)btRewardsSummary.getBackground()).getColor()*/);
                     SetRewardsSummaryMonthYear();
                     ShowRewardsSummary();
                 } else {
