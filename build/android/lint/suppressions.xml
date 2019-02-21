@@ -39,6 +39,7 @@ Still reading?
   </issue>
   <issue id="ButtonStyle" severity="Error">
     <ignore regexp="remoting/android/host/res/layout/main.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
   </issue>
   <!-- Found in generated android_chrome_strings.xml. -->
   <issue id="ByteOrderMark" severity="Error">
