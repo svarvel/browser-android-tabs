@@ -220,10 +220,6 @@ public class StatsUpdater {
             ref = urpc;
         }
 
-        if (!ConfigAPIs.REFERRER_CODE.isEmpty()) {
-            ref = ConfigAPIs.REFERRER_CODE;
-        }
-
         String strQuery = String.format(SERVER_REQUEST, daily, weekly, monthly,
             versionNumber, firstRun, woi, ref);
 
@@ -258,7 +254,12 @@ public class StatsUpdater {
     public static void UpdateUrpc(Context context, long currentTimeInMillis) {
         String urpc = GetUrpc(context);
         if (urpc.isEmpty()) {
-            return;
+            if (ConfigAPIs.REFERRER_CODE.isEmpty()) {
+                return;
+            }
+            urpc = ConfigAPIs.REFERRER_CODE;
+            SetUrpc(context, urpc);
+            SetIsFinalized(context, "true");
         }
         PackageInfo info = null;
         try {
