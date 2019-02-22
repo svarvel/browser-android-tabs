@@ -531,6 +531,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             mPublisherFetcher = new Timer();
             mPublisherFetcher.schedule(new PublisherFetchTimer(currentActiveTab.getId(), url),
                 PUBLISHER_INFO_FETCH_RETRY, PUBLISHER_INFO_FETCH_RETRY);
+        } else {
+            btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            btRewardsSummary.setClickable(false);
         }
       }
     }
@@ -831,6 +834,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         publisherExist = true;
         currentTabId = tabId;
         RemoveRewardsSummaryMonthYear();
+        if (btRewardsSummary != null) {
+            btRewardsSummary.setClickable(true);
+        }
 
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId);
         Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
