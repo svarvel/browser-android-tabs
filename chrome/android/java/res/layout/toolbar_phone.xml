@@ -114,7 +114,7 @@
                 style="@style/ToolbarButton"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/btn_bat_custom"
+                android:src="@drawable/btn_bat"
                 android:layout_gravity="center"
                 android:contentDescription="@string/accessibility_toolbar_btn_brave_rewards" />
 
