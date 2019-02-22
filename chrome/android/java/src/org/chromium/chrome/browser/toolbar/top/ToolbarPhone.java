@@ -440,9 +440,13 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      * Set the background color of the location bar to appropriately match the theme color.
      */
     private void updateModernLocationBarColor(int color) {
+        // (Albert Wang): We want to preserve the LocationBar color across all pages and in incognito mode
+        return;
+        /*
         if (mCurrentLocationBarColor == color) return;
         mCurrentLocationBarColor = color;
         mLocationBarBackground.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        */
     }
 
     /**

@@ -146,7 +146,8 @@ public class BrowsingModeBottomToolbarCoordinator {
         mSearchAccelerator.setIncognitoStateProvider(incognitoStateProvider);
 
         mTabSwitcherButtonCoordinator.setTabSwitcherListener(tabSwitcherListener);
-        mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
+        // (Albert Wang): Don't use theme changes
+        // mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
         mTabSwitcherButtonCoordinator.setTabCountProvider(tabCountProvider);
 
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
