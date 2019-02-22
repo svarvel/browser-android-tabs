@@ -4455,6 +4455,7 @@ month...
       </message>
       <message name="IDS_BRAVE_UI_NOT_VERIFIED_PUBLISHER_DESCRIPTION" desc="">
         This creator has not yet signed up to receive contributions from Brave users.
+        Any tips you send will remain in your wallet until they verify.
       </message>
       <message name="IDS_BRAVE_UI_ON_YOUTUBE" desc="">
         on YouTube
@@ -4470,9 +4471,6 @@ month...
       </message>
       <message name="IDS_BRAVE_UI_CLAIM" desc="">
         Claim
-      </message>
-      <message name="IDS_BRAVE_UI_CHANGE_AUTO_CONTRIBUTION" desc="">
-        Change Auto-Contribute settings.
       </message>
       <message name="IDS_BRAVE_UI_NOT_VERIFIED_PUBLISHER_SUMMARY" desc="">
         You've designated <ph name="BAT_VALUE">%1$s<ex>50</ex></ph> BAT for creators who haven't
