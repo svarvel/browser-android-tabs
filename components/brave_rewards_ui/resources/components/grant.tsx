@@ -78,6 +78,7 @@ class Grant extends React.Component<Props, State> {
         {
           this.state.grantShown
           ? <GrantClaim
+            type={'ugp'}
             isMobile={true}
             onClaim={this.onClaim}
           />
