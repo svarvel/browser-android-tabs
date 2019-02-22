@@ -7,17 +7,21 @@ package org.chromium.chrome.browser.toolbar.bottom;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ActivityTabProvider;
 import org.chromium.chrome.browser.ActivityTabProvider.HintlessActivityTabObserver;
 import org.chromium.chrome.browser.ThemeColorProvider;
+import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.appmenu.AppMenuButtonHelper;
+import org.chromium.chrome.browser.bookmarks.BookmarkUtils;
 import org.chromium.chrome.browser.compositor.layouts.OverviewModeBehavior;
 import org.chromium.chrome.browser.feature_engagement.TrackerFactory;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.toolbar.HomeButton;
 import org.chromium.chrome.browser.toolbar.MenuButton;
+import org.chromium.chrome.browser.toolbar.NewTabButton;
 import org.chromium.chrome.browser.toolbar.TabCountProvider;
 import org.chromium.chrome.browser.toolbar.TabSwitcherButtonCoordinator;
 import org.chromium.components.feature_engagement.Tracker;
@@ -35,8 +39,8 @@ public class BrowsingModeBottomToolbarCoordinator {
     /** The home button that lives in the bottom toolbar. */
     private final HomeButton mHomeButton;
 
-    /** The share button that lives in the bottom toolbar. */
-    //private final ShareButton mShareButton;
+    /** The bookmarks button that lives in the bottom toolbar. */
+    private final ImageButton mBookmarksButton;
 
     /** The search accelerator that lives in the bottom toolbar. */
     private final SearchAccelerator mSearchAccelerator;
@@ -46,6 +50,8 @@ public class BrowsingModeBottomToolbarCoordinator {
 
     /** The menu button that lives in the browsing mode bottom toolbar. */
     private final MenuButton mMenuButton;
+
+    private final ScrollingBottomViewResourceFrameLayout mToolbarRoot;
 
     /**
      * Build the coordinator that manages the browsing mode bottom toolbar.
@@ -71,12 +77,14 @@ public class BrowsingModeBottomToolbarCoordinator {
         mHomeButton.setOnClickListener(homeButtonListener);
         mHomeButton.setActivityTabProvider(tabProvider);
 
-        //mShareButton = toolbarRoot.findViewById(R.id.share_button);
-        //mShareButton.setOnClickListener(shareButtonListener);
-        //mShareButton.setActivityTabProvider(tabProvider);
+        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmarks_button);
+        mBookmarksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BookmarkUtils.showBookmarkManager((ChromeActivity) v.getContext());
+            }
+        });
 
-        //mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
-        //mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
 
@@ -123,6 +131,9 @@ public class BrowsingModeBottomToolbarCoordinator {
 
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
         mMenuButton.setThemeColorProvider(themeColorProvider);
+
+        mNewTabButton = mToolbarRoot.findViewById(R.id.new_tab_button);
+        mNewTabButton.setOnClickListener(newTabClickListener);
     }
 
     /**
