@@ -377,13 +377,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
             private void findWord(String text, int offset) {
                 int firstOffset = text.indexOf(".\n");
-                int secondOffset = text.indexOf(". ");
                 if (offset > firstOffset) {
                     // We are on change auto-contribute settings
-                    mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_AC_SETTINGS_URL);
-                    dismiss();
-                } else if (offset <= firstOffset && offset > secondOffset) {
-                    // We are on learn more
                     mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
                     dismiss();
                 }
@@ -877,10 +872,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             tv = (TextView)root.findViewById(R.id.publisher_not_verified);
             String verified_description = 
                 root.getResources().getString(R.string.brave_ui_not_verified_publisher_description);
-            verified_description += " <font color=#73CBFF>" + 
-              root.getResources().getString(R.string.learn_more) + ".</font><br/>";
-            verified_description += "<b>" + 
-              root.getResources().getString(R.string.brave_ui_change_auto_contribution) + "</b>";
+            verified_description += "<br/><font color=#73CBFF>" + 
+              root.getResources().getString(R.string.learn_more) + ".</font>";
             Context appContext = ContextUtils.getApplicationContext();
             Spanned toInsert;
             if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
