@@ -1021,6 +1021,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             walletInitialized = true;
             ShowWebSiteView();
         }
+        else {
+            //wallet hasn't been created yet: show 'Join Rewards' button
+            View fadein  = root.findViewById(R.id.join_rewards_id);
+            View fadeout  = root.findViewById(R.id.progress_join_rewards);
+            BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE);
+        }
     }
 
     @Override

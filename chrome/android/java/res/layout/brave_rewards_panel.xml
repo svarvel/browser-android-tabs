@@ -81,11 +81,30 @@
                     android:alpha=".5"
                     android:layout_row="3"/>
 
+
+
+                <!-- The 'progress_join_rewards' substitutes 'join_rewards_id' when not initialized-->
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_row="4"
+                    android:layout_marginBottom="19dp">
+
+                <ProgressBar
+                    android:id="@+id/progress_join_rewards"
+                    android:indeterminateDrawable="@drawable/progress_indeterminate"
+                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:alpha=".5"
+                    android:visibility="visible"/>
+
                 <Button
                     android:id="@+id/join_rewards_id"
                     android:layout_height="50dp"
                     android:layout_width="fill_parent"
-                    android:layout_marginBottom="19dp"
                     android:background="@drawable/rewards_button"
                     android:text="@string/brave_ui_welcome_button_text_two"
                     android:gravity="center"
@@ -95,8 +114,9 @@
                     android:textColor="#FFFFFF"
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
-                    android:layout_row="4"
-                    android:alpha=".5"/>
+                    android:alpha=".5"
+                    android:visibility="gone"/>
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/learn_more_id"
