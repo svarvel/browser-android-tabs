@@ -2826,7 +2826,7 @@ public class ChromeTabbedActivity
         ToolbarLayout layout = (ToolbarLayout)findViewById(R.id.toolbar);
         assert layout != null;
         if (layout != null) {
-            layout.onRewardsPanelDismiss();
+            layout.dismissRewardsPanel();
         }
     }
 
