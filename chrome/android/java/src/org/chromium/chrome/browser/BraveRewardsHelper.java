@@ -45,7 +45,7 @@ import java.util.Calendar;
 public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private static final int FAVICON_CIRCLE_MEASUREMENTS = 70; // dp
     private static final int FAVICON_TEXT_SIZE = 50; // dp
-    private static final int FAVICON_FETCH_INTERVAL = 500; // In milliseconds
+    private static final int FAVICON_FETCH_INTERVAL = 1500; // In milliseconds
     private static final int FAVICON_DESIRED_SIZE = 64; // px
     private static LargeIconBridge mLargeIconBridge;
 
@@ -53,7 +53,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private LargeIconReadyCallback mCallback;
     private final Handler mHandler = new Handler();
     private int mFetchCount;
-    private final int MAX_FAVICON_FETCH_COUNT = 30;
+    private final int MAX_FAVICON_FETCH_COUNT = 20;
 
 
     public interface LargeIconReadyCallback {
@@ -85,12 +85,31 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     public void retrieveLargeIcon(String favIconURL, LargeIconReadyCallback callback){
         mCallback = callback;
         mFaviconUrl = favIconURL;
-        retrieveLargeIconInternal(favIconURL);
+        retrieveLargeIconInternal();
     }
 
-    private void retrieveLargeIconInternal(String favIconURL){
+    private void retrieveLargeIconInternal(){
         mFetchCount ++;
-        if (mLargeIconBridge!= null && mCallback != null && !favIconURL.isEmpty() ){
+
+        //favIconURL (or content URL) is still not available, try to read it again
+        if (mFaviconUrl == null || mFaviconUrl.isEmpty() || mFaviconUrl.equals("clear") ){
+            Tab tab  = currentActiveTab();
+            if (tab != null){
+                mFaviconUrl = tab.getUrl();
+            }
+
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    retrieveLargeIconInternal();
+                }
+            }, FAVICON_FETCH_INTERVAL);
+
+            return;
+        }
+
+        //get the icon
+        if (mLargeIconBridge!= null && mCallback != null && !mFaviconUrl.isEmpty() ){
             mLargeIconBridge.getLargeIconForUrl(mFaviconUrl,FAVICON_DESIRED_SIZE, this);
         }
     }
@@ -115,7 +134,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    retrieveLargeIconInternal(mFaviconUrl);
+                    retrieveLargeIconInternal();
                 }
             }, FAVICON_FETCH_INTERVAL);
             return;
