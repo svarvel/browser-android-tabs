@@ -424,6 +424,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
               }
               else if (mBraveRewardsNativeWorker != null) {
                   mBraveRewardsNativeWorker.GetGrant();
+
+                  walletDetailsReceived = false; //re-read wallet status
+                  EnableWalletDetails(false);
+
               }
             }
           }));
