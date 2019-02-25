@@ -799,14 +799,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private void EnableWalletDetails(boolean enable) {
         View fadein  = enable ? root.findViewById(R.id.br_bat_wallet) : root.findViewById(R.id.progress_wallet_update);
         View fadeout  = enable ? root.findViewById(R.id.progress_wallet_update) : root.findViewById(R.id.br_bat_wallet);
-        BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE);
+        BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE, 1f);
 
         View usd = root.findViewById(R.id.br_usd_wallet);
         if (enable) {
-            BraveRewardsHelper.crossfade(null, usd, 0);
+            BraveRewardsHelper.crossfade(null, usd, 0,1f );
         }
         else {
-            BraveRewardsHelper.crossfade(usd, null, View.INVISIBLE);
+            BraveRewardsHelper.crossfade(usd, null, View.INVISIBLE, 1f);
         }
     }
 
@@ -826,7 +826,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                         iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(bmp));
 
                         View fadeout  = thisObject.root.findViewById(R.id.publisher_favicon_update);
-                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE);
+                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE, 1f);
                     }
                 });
         }
@@ -1029,7 +1029,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             //wallet hasn't been created yet: show 'Join Rewards' button
             View fadein  = root.findViewById(R.id.join_rewards_id);
             View fadeout  = root.findViewById(R.id.progress_join_rewards);
-            BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE);
+            BraveRewardsHelper.crossfade(fadeout, fadein, View.GONE, .5f);
         }
     }
 

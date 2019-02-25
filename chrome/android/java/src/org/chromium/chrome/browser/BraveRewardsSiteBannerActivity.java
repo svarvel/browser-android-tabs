@@ -296,7 +296,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                         Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
 
                         View fadeout  = findViewById(R.id.publisher_favicon_update);
-                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE);
+                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE, 1f);
                         iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(resized));
                     }
                 });

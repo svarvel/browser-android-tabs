@@ -257,8 +257,12 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
    * @param fadein: can be null
    * @param fade_out_visibility: View.INVISIBLE or View.GONE
    */
-  public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility) {
+  public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility, float fadeInAlpha) {
     final int FADE_OUT_TIME = 2000; //ms
+
+    if (fadeInAlpha < 0 || fadeInAlpha > 1  ){
+        fadeInAlpha= 1f;
+    }
 
     final int fade_out_visibility_local =
     (fade_out_visibility != View.GONE && fade_out_visibility != View.INVISIBLE) ?
@@ -273,7 +277,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
       // Animate the content view to 100% opacity, and clear any animation
       // listener set on the view.
       fadein.animate()
-              .alpha(1f)
+              .alpha(fadeInAlpha)
               .setDuration(FADE_OUT_TIME)
               .setListener(null);
     }
