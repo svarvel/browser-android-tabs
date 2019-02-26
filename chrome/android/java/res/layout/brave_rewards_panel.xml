@@ -455,7 +455,7 @@
                             <LinearLayout
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
-                                android:layout_marginStart="2dp"
+                                android:layout_marginStart="5dp"
                                 android:layout_gravity="center"
                                 android:orientation="vertical">
 
@@ -477,7 +477,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_gravity="start|center"
                                     android:text="@string/brave_ui_verified_publisher"
-                                    android:drawableStart="@drawable/icn_verify"
+                                    android:drawableStart="@drawable/icn_verified"
                                     android:fontFamily="sans-serif"
                                     android:gravity="start"
                                     android:textSize="14sp"
