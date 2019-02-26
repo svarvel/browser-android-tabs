@@ -376,6 +376,32 @@ public class ChromeTabbedActivity
         }
     }
 
+    // [MV]
+    // @param power_mode -- boolean controlling if we are in power saving mode or not
+    // @param opt - string that control how power mode should be used
+    private boolean screenBrightnessRestore(boolean power_mode, String opt){
+        // to be tested first 
+        /*
+        if (power_mode){
+            switch(opt){
+                case "naive":
+                    //COMPLETE
+                    break; 
+                case "": 
+                    break;
+                default:
+                    // see how to do some logging 
+                    break;;
+            }
+        }
+        */
+        // get and log current brightness level
+        Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
+        Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
+
+    }
+
+
     /**
      * Return whether the passed in class name matches any of the supported tabbed mode activities.
      */
@@ -1552,6 +1578,9 @@ public class ChromeTabbedActivity
         mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelectorImpl) {
             @Override
             public void onPageLoadStarted(Tab tab, String url) {
+                // [MV] bring back screen to original value 
+                screenBrightnessRestore(power_mode, "naive")
+                
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
@@ -1568,6 +1597,8 @@ public class ChromeTabbedActivity
             }
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
+                // [MV] bring back screen to original value 
+                screenBrightnessRestore(power_mode, "naive")
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 if (getActivityTab() == tab) {
                     try {
