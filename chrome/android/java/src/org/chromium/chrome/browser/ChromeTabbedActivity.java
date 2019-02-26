@@ -1579,7 +1579,7 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadStarted(Tab tab, String url) {
                 // [MV] bring back screen to original value 
-                screenBrightnessRestore(power_mode, "naive")
+                screenBrightnessRestore(power_mode, "naive");
                 
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 if ((null != app) && (null != app.getShieldsConfig())) {
@@ -1598,7 +1598,7 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value 
-                screenBrightnessRestore(power_mode, "naive")
+                screenBrightnessRestore(power_mode, "naive");
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 if (getActivityTab() == tab) {
                     try {
