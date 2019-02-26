@@ -334,6 +334,28 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     /** Whether or not the activity is in started state. */
     private boolean mStarted;
 
+
+    /*
+    // [MV]
+    // @param power_mode -- boolean controlling if we are in power saving mode or not
+    @param opt - string that control how power mode should be used
+    private boolean screenBrightnessRestore(boolean power_mode, String opt){
+        if (power_mode){
+            switch(opt){
+                case "naive":
+                    //COMPLETE
+                    break; 
+                case "": 
+                    break;
+                default:
+                    // see how to do some logging 
+                    break;;
+            }
+        }
+    }
+    */
+
+
     /**
      * @param factory The {@link AppMenuHandlerFactory} for creating {@link #mAppMenuHandler}
      */
@@ -826,16 +848,22 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             @Override
             public void onLoadStopped(Tab tab, boolean toDifferentDocument) {
                 postDeferredStartupIfNeeded();
+                // [MV] something to do with screen here
+                // screenBrightnessRestore(power_mode, "naive")   
+                // screenBrightnessRestore(power_mode, "naive")   // accept how it should 
             }
 
             @Override
             public void onPageLoadFinished(Tab tab, String url) {
                 postDeferredStartupIfNeeded();
                 OfflinePageUtils.showOfflineSnackbarIfNecessary(tab);
+                // [MV] bring back screen to original value 
+                // screenBrightnessRestore(power_mode, "naive")   
             }
 
             @Override
             public void onUrlUpdated(Tab tab){
+              // [MV] Q: is this the right place where to dim the screen? 
               DisableVideoPauseOnBackground.Execute(tab);
             }
 

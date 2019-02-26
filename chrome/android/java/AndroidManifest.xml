@@ -37,6 +37,9 @@ by a child template that "extends" this file.
     <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- Not used in Brave -->
     <!--<uses-permission-sdk-23 android:name="android.permission.READ_CONTACTS"/>-->
+
+    <!-- MV testing with power saving mode -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission-sdk-23 android:name="android.permission.REORDER_TASKS"/>
     <uses-permission-sdk-23 android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
