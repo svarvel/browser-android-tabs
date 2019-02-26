@@ -379,7 +379,7 @@ public class ChromeTabbedActivity
     // [MV]
     // @param power_mode -- boolean controlling if we are in power saving mode or not
     // @param opt - string that control how power mode should be used
-    private boolean screenBrightnessRestore(boolean power_mode, String opt){
+    private boolean screenBrightnessRestore(boolean power_mode, String opt, Context appContext){
         // to be tested first 
         /*
         if (power_mode){
@@ -396,8 +396,12 @@ public class ChromeTabbedActivity
         }
         */
         // get and log current brightness level
-        Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
-        Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
+        if (null != appContext) {
+            Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
+            Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
+        } else {
+            Log.d(TAG, "App context is null"); 
+        }
 
     }
 
@@ -1578,10 +1582,14 @@ public class ChromeTabbedActivity
         mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelectorImpl) {
             @Override
             public void onPageLoadStarted(Tab tab, String url) {
+                // [MV] added one step to get Context available -- see if needed
+                Context appContext = ContextUtils.getApplicationContext();
+                ChromeApplication app = (ChromeApplication)appContext; 
+
                 // [MV] bring back screen to original value 
-                screenBrightnessRestore(power_mode, "naive");
-                
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                boolean power_mode = true;
+                screenBrightnessRestore(power_mode, "naive", appContext);
+                /////////
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
                 }
@@ -1598,7 +1606,11 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value 
-                screenBrightnessRestore(power_mode, "naive");
+                boolean power_mode = true;
+                Context appContext = ContextUtils.getApplicationContext();
+                screenBrightnessRestore(power_mode, "naive", appContext);
+                ////////
+
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 if (getActivityTab() == tab) {
                     try {
