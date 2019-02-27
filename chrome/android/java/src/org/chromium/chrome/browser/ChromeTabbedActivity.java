@@ -555,7 +555,6 @@ public class ChromeTabbedActivity
             Context appContext = ContextUtils.getApplicationContext();
             previousBrightness = reportScreenBrightness(appContext); 
 
-
             TraceEvent.begin("ChromeTabbedActivity.initializeCompositor");
             super.initializeCompositor();
 
@@ -840,6 +839,10 @@ public class ChromeTabbedActivity
 
     @Override
     public ChromeTabCreator getTabCreator(boolean incognito) {
+        // [MV] lower current screen brightness
+        adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
+        Log.d(SUBTAG, "getTabCreator");
+        //
         return (ChromeTabCreator) super.getTabCreator(incognito);
     }
 
@@ -2183,8 +2186,8 @@ public class ChromeTabbedActivity
     private void toggleOverview() {
 
         // [MV] lower current screen brightness
-        adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
-        Log.d(SUBTAG, "toggleOverview");
+        //adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
+        //Log.d(SUBTAG, "toggleOverview");
         ////
  
         Tab currentTab = getActivityTab();
