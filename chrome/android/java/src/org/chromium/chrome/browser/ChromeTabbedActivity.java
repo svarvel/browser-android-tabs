@@ -402,8 +402,10 @@ public class ChromeTabbedActivity
             Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
             */
             Log.d(TAG, "App context is NOT null");
+            return true; 
         } else {
             Log.d(TAG, "App context is null"); 
+            return false; 
         }
 
     }
