@@ -199,10 +199,14 @@ public class ChromeTabbedActivity
         int NUM_ENTRIES = 9;
     }
 
-    private static final String TAG = "ChromeTabbedActivity";
-    // [MV] my own logging TAG
+    // [MV] adding variables needed
+    // my own logging TAG
     private static final String SUBTAG = "MATTEO"; 
+    // keep info on screen brightness 
+    private int previousBrightness = -1; 
     /////
+
+    private static final String TAG = "ChromeTabbedActivity";
 
     private static final String HELP_URL_PREFIX = "https://support.google.com/chrome/";
 
@@ -443,6 +447,8 @@ public class ChromeTabbedActivity
                 brightnessVal = -1;
             }
             Log.d(SUBTAG, "Page load finished. Current Brightness: " + String.valueOf(brightnessVal));
+            // keep a copy of last known value 
+            previousBrightness = brightnessVal; 
             return true; 
         } else {
             Log.d(SUBTAG, "App context is null"); 
@@ -451,14 +457,14 @@ public class ChromeTabbedActivity
     }
 
     // [MV] lower screen brightness
-    private boolean lowerScreenBrightness(Context appContext){
+    private boolean adjustScreenBrightness(Context appContext, int targetBrightness, String pageEvent){
         // reduce screen brightness to zero 
         if (null != appContext) {
             // FIXME -- add a check for permission? 
              Settings.System.putInt(appContext.getContentResolver(),
                     Settings.System.SCREEN_BRIGHTNESS,
-                    0); 
-            Log.d(SUBTAG, "Page load start. Lowering screen brightness to zero"); 
+                    targetBrightness); 
+            Log.d(SUBTAG, pageEvent + "Setting screen brightness to: " + targetBrightness); 
             return true; 
         } else {
             Log.d(SUBTAG, "App context is null"); 
@@ -1647,7 +1653,7 @@ public class ChromeTabbedActivity
                 ChromeApplication app = (ChromeApplication)appContext; 
 
                 // [MV] lower current screen brightness
-                lowerScreenBrightness(appContext);
+                adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
                 ////
 
                 if ((null != app) && (null != app.getShieldsConfig())) {
@@ -1668,7 +1674,7 @@ public class ChromeTabbedActivity
                 // [MV] bring back screen to original value 
                 boolean power_mode = true;
                 Context appContext = ContextUtils.getApplicationContext();
-                //screenBrightnessRestore(power_mode, "naive", appContext);
+                adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");
                 reportScreenBrightness(appContext); 
                 ////////
 
