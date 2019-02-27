@@ -81,6 +81,7 @@ public class ChromeLauncherActivity extends Activity {
 
     // [MV] handle request for writing permission 
     //  Q: better spot where to do this? 
+    //  Q: permission acceptance does not become visible 
     public boolean maybeRequestPermission(Activity activity) {
         
         // nothing to do for old SDKs

@@ -196,7 +196,10 @@ public class ChromeTabbedActivity
     }
 
     private static final String TAG = "ChromeTabbedActivity";
-
+    // [MV] my own logging TAG
+    private static final String SUBTAG = "MATTEO"; 
+    /////
+    
     private static final String HELP_URL_PREFIX = "https://support.google.com/chrome/";
 
     private static final String WINDOW_INDEX = "window_index";
@@ -401,10 +404,10 @@ public class ChromeTabbedActivity
             Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
             Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
             */
-            Log.d(TAG, "App context is NOT null");
+            Log.d(SUBTAG, "App context is NOT null");
             return true; 
         } else {
-            Log.d(TAG, "App context is null"); 
+            Log.d(SUBTAG, "App context is null"); 
             return false; 
         }
 
