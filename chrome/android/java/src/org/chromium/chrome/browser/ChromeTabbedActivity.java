@@ -840,6 +840,7 @@ public class ChromeTabbedActivity
     @Override
     public ChromeTabCreator getTabCreator(boolean incognito) {
         // [MV] lower current screen brightness
+        Context appContext = ContextUtils.getApplicationContext();
         adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
         Log.d(SUBTAG, "getTabCreator");
         //
@@ -2184,11 +2185,6 @@ public class ChromeTabbedActivity
     }
 
     private void toggleOverview() {
-
-        // [MV] lower current screen brightness
-        //adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
-        //Log.d(SUBTAG, "toggleOverview");
-        ////
  
         Tab currentTab = getActivityTab();
         // If we don't have a current tab, show the overview mode.
