@@ -1647,7 +1647,7 @@ public class ChromeTabbedActivity
                 ChromeApplication app = (ChromeApplication)appContext; 
 
                 // [MV] lower current screen brightness
-                lowerScreenBrightness(true, appContext);
+                lowerScreenBrightness(appContext);
                 ////
 
                 if ((null != app) && (null != app.getShieldsConfig())) {
