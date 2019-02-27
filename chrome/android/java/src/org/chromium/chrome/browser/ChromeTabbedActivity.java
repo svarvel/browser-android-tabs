@@ -203,7 +203,7 @@ public class ChromeTabbedActivity
     // my own logging TAG
     private static final String SUBTAG = "MATTEO"; 
     // keep info on screen brightness 
-    private int previousBrightness = 200;  //FIXME -- this needs to be learn at launch? 
+    private int previousBrightness = -1;  
     /////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -387,71 +387,28 @@ public class ChromeTabbedActivity
         }
     }
 
-    // [MV]
-    // @param power_mode -- boolean controlling if we are in power saving mode or not
-    // @param opt - string that control how power mode should be used
-    private boolean screenBrightnessRestore(boolean power_mode, String opt, Context appContext){
-        // to be tested first 
-        /*
-        if (power_mode){
-            switch(opt){
-                case "naive":
-                    //COMPLETE
-                    break; 
-                case "": 
-                    break;
-                default:
-                    // see how to do some logging 
-                    break;;
-            }
-        }
-        */
-        // get and log current brightness level
-        if (null != appContext) {
-            /* ISSUE -- this is not visible here for some reason
-            Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
-            Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
-            */
-            // testing getting brightness info
-            Integer brightnessVal;
-            try {
-                brightnessVal = Settings.System.getInt(
-                        appContext.getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS
-                );
-            } catch (Settings.SettingNotFoundException e) {
-                Log.d(SUBTAG, "SettingNotFoundException");
-                brightnessVal = -1;
-            }
-            Log.d(SUBTAG, "App context is NOT null. Brightness: " + String.valueOf(brightnessVal));
-            return true; 
-        } else {
-            Log.d(SUBTAG, "App context is null"); 
-            return false; 
-        }
-
-    }
-
     // [MV] simple function to log current screen brightness
-    private boolean reportScreenBrightness(Context appContext){
+    private int reportScreenBrightness(Context appContext){
+        // local parameters 
+        Integer brightnessVal = -1; 
+            
         // get and log current brightness level
         if (null != appContext) {
-            Integer brightnessVal;
             try {
                 brightnessVal = Settings.System.getInt(
                         appContext.getContentResolver(),
                         Settings.System.SCREEN_BRIGHTNESS
                 );
+                Log.d(SUBTAG, "Current Brightness: " + String.valueOf(brightnessVal));
             } catch (Settings.SettingNotFoundException e) {
                 Log.d(SUBTAG, "SettingNotFoundException");
-                brightnessVal = -1;
             }
-            Log.d(SUBTAG, "Page load finished. Current Brightness: " + String.valueOf(brightnessVal));
-            return true; 
         } else {
             Log.d(SUBTAG, "App context is null"); 
-            return false; 
         }
+
+        // all good 
+        return brightnessVal; 
     }
 
     // [MV] lower screen brightness
@@ -593,6 +550,12 @@ public class ChromeTabbedActivity
     @Override
     public void initializeCompositor() {
         try {
+
+            // [MV] keep track of current screen brightness
+            Context appContext = ContextUtils.getApplicationContext();
+            previousBrightness = reportScreenBrightness(appContext); 
+
+
             TraceEvent.begin("ChromeTabbedActivity.initializeCompositor");
             super.initializeCompositor();
 
@@ -1673,7 +1636,6 @@ public class ChromeTabbedActivity
                 boolean power_mode = true;
                 Context appContext = ContextUtils.getApplicationContext();
                 adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");
-                reportScreenBrightness(appContext); 
                 ////////
 
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
