@@ -169,6 +169,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.net.URL;
 
+// [MV] extra import needed to enable writing to setting option 
+// required to manipulate screen settings 
+import android.provider.Settings;
+
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
  * are accessible via a chrome specific tab switching UI.
@@ -199,7 +203,7 @@ public class ChromeTabbedActivity
     // [MV] my own logging TAG
     private static final String SUBTAG = "MATTEO"; 
     /////
-    
+
     private static final String HELP_URL_PREFIX = "https://support.google.com/chrome/";
 
     private static final String WINDOW_INDEX = "window_index";
@@ -404,7 +408,18 @@ public class ChromeTabbedActivity
             Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
             Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
             */
-            Log.d(SUBTAG, "App context is NOT null");
+            // testing getting brightness info
+            Integer brightnessVal;
+            try {
+                brightnessVal = Settings.System.getInt(
+                        appContext.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS
+                );
+            } catch (Settings.SettingNotFoundException e) {
+                Log.d(SUBTAG, "SettingNotFoundException");
+                brightnessVal = -1;
+            }
+            Log.d(SUBTAG, "App context is NOT null. Brightness: " + String.valueOf(brightnessVal));
             return true; 
         } else {
             Log.d(SUBTAG, "App context is null"); 
