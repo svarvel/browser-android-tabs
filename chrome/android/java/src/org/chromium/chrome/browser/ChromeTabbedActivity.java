@@ -203,7 +203,7 @@ public class ChromeTabbedActivity
     // my own logging TAG
     private static final String SUBTAG = "MATTEO"; 
     // keep info on screen brightness 
-    private int previousBrightness = -1; 
+    private int previousBrightness = 200;  //FIXME -- this needs to be learn at launch? 
     /////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -447,8 +447,6 @@ public class ChromeTabbedActivity
                 brightnessVal = -1;
             }
             Log.d(SUBTAG, "Page load finished. Current Brightness: " + String.valueOf(brightnessVal));
-            // keep a copy of last known value 
-            previousBrightness = brightnessVal; 
             return true; 
         } else {
             Log.d(SUBTAG, "App context is null"); 
