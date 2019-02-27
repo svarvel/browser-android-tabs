@@ -401,7 +401,7 @@ public class ChromeTabbedActivity
             Integer brightnessVal = ScreenBrightnessModule.getSystemBrightness(appContext);
             Log.d(TAG, "Current Brightness: " + String.valueOf(brightnessVal));
             */
-            Log.d(TAG, "App context is NOT null")
+            Log.d(TAG, "App context is NOT null");
         } else {
             Log.d(TAG, "App context is null"); 
         }
