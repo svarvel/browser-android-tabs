@@ -104,11 +104,11 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
             }
             chrome.send('brave_rewards.getWalletProperties', [])
           }
-        } else if (properties.status === 18) {
+        } else if (properties.status === 19) {
           if (state.grant) {
             state.safetyNetFailed = true
           }
-        } else {
+        } else if (properties.status === 6) {
           state = { ...state }
           if (state.grant) {
             let grant = state.grant
