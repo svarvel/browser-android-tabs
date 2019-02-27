@@ -841,8 +841,7 @@ public class ChromeTabbedActivity
     public ChromeTabCreator getTabCreator(boolean incognito) {
         // [MV] lower current screen brightness
         Context appContext = ContextUtils.getApplicationContext();
-        adjustScreenBrightness(appContext, 0, "onPageLoadStarted"); 
-        Log.d(SUBTAG, "getTabCreator");
+        adjustScreenBrightness(appContext, 0, "ChromeTabCreator"); 
         //
         return (ChromeTabCreator) super.getTabCreator(incognito);
     }
@@ -1640,6 +1639,7 @@ public class ChromeTabbedActivity
                 boolean power_mode = true;
                 Context appContext = ContextUtils.getApplicationContext();
                 adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");
+                Log.d(SUBTAG, "Load finished. URL: " + url); 
                 ////////
 
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
