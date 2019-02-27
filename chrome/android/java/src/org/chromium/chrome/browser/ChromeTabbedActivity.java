@@ -1636,10 +1636,11 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value 
-                boolean power_mode = true;
-                Context appContext = ContextUtils.getApplicationContext();
-                adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");
                 Log.d(SUBTAG, "Load finished. URL: " + url); 
+                if (url.equals(UrlConstants.NTP_URL){
+                    Context appContext = ContextUtils.getApplicationContext();
+                    adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");            
+                }
                 ////////
 
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
