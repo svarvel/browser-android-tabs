@@ -22,6 +22,7 @@ type Step = '' | 'complete'
 interface State {
   grantShown: boolean
   grantStep: Step
+  loading: boolean
 }
 
 interface Props extends Rewards.ComponentProps {
@@ -33,7 +34,8 @@ class Grant extends React.Component<Props, State> {
     super(props)
     this.state = {
       grantShown: true,
-      grantStep: ''
+      grantStep: '',
+      loading: false
     }
   }
 
@@ -42,20 +44,40 @@ class Grant extends React.Component<Props, State> {
   }
 
   onClaim = () => {
+    this.setState({ loading: true })
     this.actions.getGrantCaptcha()
     this.setState({ grantStep: 'complete' })
   }
 
   onGrantHide = () => {
     this.actions.onResetGrant()
-    this.setState({ grantStep: '' })
+    this.setState({
+      grantStep: '',
+      loading: false
+    })
   }
 
   onSuccess = () => {
     this.setState({
-      grantShown: false
+      grantShown: false,
+      loading: false
     })
     this.actions.onDeleteGrant()
+  }
+
+  validateGrant = (tokens?: string) => {
+    const { grant, safetyNetFailed } = this.props.rewardsData
+
+    if (!tokens || !grant) {
+      return false
+    }
+
+    if (safetyNetFailed) {
+      this.setState({ loading: false })
+      return false
+    }
+
+    return (tokens !== '0.0' && grant.expiryTime)
   }
 
   render () {
@@ -71,7 +93,7 @@ class Grant extends React.Component<Props, State> {
     }
 
     // Guard against null grant statuses
-    const validGrant = (tokens !== '0.0' && grant.expiryTime)
+    const validGrant = this.validateGrant(tokens)
 
     return (
       <React.Fragment>
@@ -81,6 +103,7 @@ class Grant extends React.Component<Props, State> {
             type={'ugp'}
             isMobile={true}
             onClaim={this.onClaim}
+            loading={this.state.loading}
           />
           : null
         }
