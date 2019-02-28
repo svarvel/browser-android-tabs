@@ -190,6 +190,14 @@ public class BraveRewardsNativeWorker {
         nativeGetPendingContributionsTotal(mNativeBraveRewardsNativeWorker);
     }
 
+    public void GetRecurringDonations() {
+        nativeGetRecurringDonations(mNativeBraveRewardsNativeWorker);
+    }
+
+    public boolean IsCurrentPublisherInRecurrentDonations(String publisher) {
+        return nativeIsCurrentPublisherInRecurrentDonations(mNativeBraveRewardsNativeWorker, publisher);
+    }
+
     @CalledByNative
     public void OnIsWalletCreated(boolean created) {
         for(BraveRewardsObserver observer : observers_) {
@@ -296,4 +304,7 @@ public class BraveRewardsNativeWorker {
     private native int nativeGetCurrentGrantsCount(long nativeBraveRewardsNativeWorker);
     private native String[] nativeGetCurrentGrant(long nativeBraveRewardsNativeWorker, int position);
     private native void nativeGetPendingContributionsTotal(long nativeBraveRewardsNativeWorker);
+    private native void nativeGetRecurringDonations(long nativeBraveRewardsNativeWorker);
+    private native boolean nativeIsCurrentPublisherInRecurrentDonations(long nativeBraveRewardsNativeWorker,
+        String publisher);
 }

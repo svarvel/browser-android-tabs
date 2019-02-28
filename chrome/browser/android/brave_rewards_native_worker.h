@@ -92,11 +92,20 @@ public:
     void GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
     int GetCurrentGrantsCount(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
     base::android::ScopedJavaLocalRef<jobjectArray> GetCurrentGrant(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj,
         int position);
 
     void GetPendingContributionsTotal(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    void GetRecurringDonations(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    bool IsCurrentPublisherInRecurrentDonations(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher);
+
+
     void OnGetPendingContributionsTotal(double amount);
 
     void OnIsWalletCreated(bool created);
@@ -134,11 +143,15 @@ public:
     void OnGrant(brave_rewards::RewardsService* rewards_service, unsigned int result,
         brave_rewards::Grant grant) override;
 
+    void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
+        brave_rewards::ContentSiteList) override;
+
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;
-    std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_;
+    std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_; // <tabId, PublisherInfo>
+    std::map<std::string, uint64_t> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
 
     base::WeakPtrFactory<BraveRewardsNativeWorker> weak_factory_;
 };

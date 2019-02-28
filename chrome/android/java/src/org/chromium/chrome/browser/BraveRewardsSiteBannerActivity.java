@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.text.Html;
@@ -254,6 +255,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     return false;
                 }
             });
+        }
+        if (mBraveRewardsNativeWorker.IsCurrentPublisherInRecurrentDonations(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_))) {
+            ((RelativeLayout)findViewById(R.id.monthly_contribution)).setVisibility(View.GONE);
+        } else {
+            ((RelativeLayout)findViewById(R.id.monthly_contribution)).setVisibility(View.VISIBLE);
         }
     }
 
