@@ -1637,7 +1637,7 @@ public class ChromeTabbedActivity
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value 
                 Log.d(SUBTAG, "Load finished. URL: " + url); 
-                if (url.equals(UrlConstants.NTP_URL){
+                if (url.equals(UrlConstants.NTP_URL)){
                     Context appContext = ContextUtils.getApplicationContext();
                     adjustScreenBrightness(appContext, previousBrightness, "onPageLoadFinished");            
                 }
