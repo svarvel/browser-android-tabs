@@ -82,6 +82,12 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         View.OnClickListener radio_clicker = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ToggleButton tb_pressed = (ToggleButton)view;
+                if ( tb_pressed.isChecked() == false){
+                    tb_pressed.setChecked(true);
+                    return;
+                }
+
                 int id = view.getId();
                 for (ToggleButton tb : radio_tip_amount){
                     if (tb.getId() == id){
@@ -151,6 +157,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     mBraveRewardsNativeWorker.Donate(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_),
                         amount, monthly.isChecked());
                     Intent intent = new Intent(getApplicationContext(), BraveRewardsDonationSentActivity.class);
+                    intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId_);
                     startActivityForResult(intent,TIP_SENT_REQUEST_CODE);
                 }
                 //not enough funds
@@ -296,7 +303,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                         Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
 
                         View fadeout  = findViewById(R.id.publisher_favicon_update);
-                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE, 1f);
+                        BraveRewardsHelper.crossfade(fadeout, iv, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
                         iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(resized));
                     }
                 });

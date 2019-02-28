@@ -54,6 +54,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private final Handler mHandler = new Handler();
     private int mFetchCount;
     private final int MAX_FAVICON_FETCH_COUNT = 20;
+    public static final int CROSS_FADE_DURATION = 1500; //ms
 
 
     public interface LargeIconReadyCallback {
@@ -256,9 +257,13 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
    * @param fadeout: can be null
    * @param fadein: can be null
    * @param fade_out_visibility: View.INVISIBLE or View.GONE
+   * @param fadeInAlpha: fade in alpha level
+   * @param fade_out_visibility: fade in/out time (ms)
    */
-  public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility, float fadeInAlpha) {
-    final int FADE_OUT_TIME = 2000; //ms
+  public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility, float fadeInAlpha, int fade_time) {
+    if (fade_time < 0 ){
+        fade_time = 0;
+    }
 
     if (fadeInAlpha < 0 || fadeInAlpha > 1  ){
         fadeInAlpha= 1f;
@@ -278,7 +283,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
       // listener set on the view.
       fadein.animate()
               .alpha(fadeInAlpha)
-              .setDuration(FADE_OUT_TIME)
+              .setDuration(fade_time)
               .setListener(null);
     }
 
@@ -288,7 +293,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     if (fadeout != null) {
       fadeout.animate()
               .alpha(0f)
-              .setDuration(FADE_OUT_TIME)
+              .setDuration(fade_time)
               .setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
