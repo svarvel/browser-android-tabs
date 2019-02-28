@@ -91,6 +91,8 @@ export const onContributeList = (list: Rewards.Publisher[]) => action(types.ON_C
   list
 })
 
+export const getCurrentReport = () => action(types.GET_CURRENT_REPORT, {})
+
 export const onBalanceReports = (reports: Record<string, Rewards.Report>) => action(types.ON_BALANCE_REPORTS, {
   reports
 })
