@@ -904,6 +904,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           tv.setVisibility(View.GONE);
           gl.setVisibility(View.GONE);
         }
+        thisObject.mBraveRewardsNativeWorker.GetRecurringDonations();
     }
 
     @Override

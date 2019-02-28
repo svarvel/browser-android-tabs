@@ -342,6 +342,20 @@ void BraveRewardsNativeWorker::GetPendingContributionsTotal(JNIEnv* env,
   }
 }
 
+void BraveRewardsNativeWorker::GetRecurringDonations(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->UpdateRecurringDonationsList();
+  }
+}
+
+bool BraveRewardsNativeWorker::IsCurrentPublisherInRecurrentDonations(JNIEnv* env, 
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher) {
+  return map_recurrent_publishers_.find(base::android::ConvertJavaStringToUTF8(env, publisher)) !=
+    map_recurrent_publishers_.end();
+}
+
 void BraveRewardsNativeWorker::OnGetPendingContributionsTotal(double amount) {
   JNIEnv* env = base::android::AttachCurrentThread();
 
@@ -402,7 +416,15 @@ void BraveRewardsNativeWorker::OnNotificationDeleted(
 
 void BraveRewardsNativeWorker::OnGrant(brave_rewards::RewardsService* rewards_service, 
       unsigned int result, brave_rewards::Grant grant) {
-  // TODO what we need to do here? We receive notification about deletion
+  // TODO what do we need to do here? We receive notification about deletion
+}
+
+void BraveRewardsNativeWorker::OnRecurringDonationUpdated(
+      brave_rewards::RewardsService* rewards_service, brave_rewards::ContentSiteList list) {
+  map_recurrent_publishers_.clear();
+  for (size_t i = 0; i < list.size(); i++) {
+    map_recurrent_publishers_[list[i].id] = list[i].reconcile_stamp;
+  }
 }
 
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
