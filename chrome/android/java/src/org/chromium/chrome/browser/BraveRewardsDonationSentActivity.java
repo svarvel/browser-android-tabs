@@ -7,6 +7,8 @@ package org.chromium.chrome.browser;
 import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -14,16 +16,36 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 
-public class BraveRewardsDonationSentActivity extends Activity {
+import org.chromium.chrome.browser.util.IntentUtils;
+import org.chromium.chrome.browser.tab.Tab;
+import org.chromium.chrome.browser.BraveRewardsHelper;
+import org.chromium.chrome.browser.BraveRewardsNativeWorker;
+import org.chromium.chrome.browser.BraveRewardsSiteBannerActivity;
 
-    private final int SLIDE_UP_DURATION = 3000;
-    private final int FADE_OUT_DURATION = 1500;
+public class BraveRewardsDonationSentActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback {
+
+    private final int SLIDE_UP_DURATION = 2000;
+    private final int PUBLISHER_ICON_SIDE_LEN= 70;
+    private int currentTabId_ = -1;
+    private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
+    private BraveRewardsHelper mIconFetcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.brave_rewards_donation_sent);
+        currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, -1);
+
+
+        mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
+        String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
+        Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
+        String url = currentActiveTab.getUrl();
+        String favicon_url = (publisherFavIconURL.isEmpty()) ? url : publisherFavIconURL;
+        mIconFetcher = new org.chromium.chrome.browser.BraveRewardsHelper();
+        mIconFetcher.retrieveLargeIcon(favicon_url, this);
 
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         int height = metrics.heightPixels;
@@ -45,7 +67,7 @@ public class BraveRewardsDonationSentActivity extends Activity {
                 Animation fadeOut = new AlphaAnimation(1, 0);
                 fadeOut.setInterpolator(new AccelerateInterpolator());
                 fadeOut.setStartOffset(0);
-                fadeOut.setDuration(FADE_OUT_DURATION);
+                fadeOut.setDuration(BraveRewardsHelper.CROSS_FADE_DURATION);
 
                 fadeOut.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -62,5 +84,31 @@ public class BraveRewardsDonationSentActivity extends Activity {
             }
         });
         floater.startAnimation(animate);
+    }
+
+
+    private void SetFavIcon(Bitmap bmp) {
+        if (bmp != null){
+            runOnUiThread(
+                    new Runnable(){
+                        @Override
+                        public void run() {
+                            ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
+                            DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+                            float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
+                            int nPx = Math.round(px);
+                            Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
+
+                            View fadeout  = findViewById(R.id.publisher_favicon_update);
+                            BraveRewardsHelper.crossfade(fadeout, iv, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
+                            iv.setImageBitmap(BraveRewardsHelper.getCircularBitmap(resized));
+                        }
+                    });
+        }
+    }
+
+    @Override
+    public void onLargeIconReady(Bitmap icon){
+        SetFavIcon(icon);
     }
 }
