@@ -129,7 +129,7 @@ class DonationBox extends React.Component<Props, {}> {
         </List>
         {
           recurringList && recurringList.length > 0
-          ? <List title={<StyledListContent>getLocale('contributionNextDate')</StyledListContent>}>
+          ? <List title={<StyledListContent>{getLocale('contributionNextDate')}</StyledListContent>}>
             <StyledListContent>
               <NextContribution>
                 {new Date(reconcileStamp * 1000).toLocaleDateString()}
