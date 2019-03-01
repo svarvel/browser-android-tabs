@@ -475,6 +475,10 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnGetPendingContributionsTotal(double amount) {}
 
+    @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {}
+    
+
     /**
      * Called when the currently visible New Tab Page changes.
      */

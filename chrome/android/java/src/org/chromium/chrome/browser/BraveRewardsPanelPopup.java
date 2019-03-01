@@ -6,6 +6,7 @@ package org.chromium.chrome.browser;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -40,9 +41,10 @@ import android.widget.Toast;
 
 import org.chromium.base.annotations.CalledByNative;
 import org.chromium.base.ApplicationStatus;
-import org.chromium.base.task.AsyncTask;
+import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
+import org.chromium.base.task.AsyncTask;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
@@ -70,6 +72,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final int PUBLISHER_FETCHES_COUNT = 3;
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
+
+    private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
 
     // Rewards notifications
     // Taken from components/brave_rewards/browser/rewards_notification_service.h
@@ -218,7 +222,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             }
         });
         if (mBraveRewardsNativeWorker != null) {
-            mBraveRewardsNativeWorker.WalletExist();
+            mBraveRewardsNativeWorker.GetRewardsMainEnabled();
         }
         btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
@@ -385,6 +389,17 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             }
         });
 
+        Button btEnableRewards = (Button)root.findViewById(R.id.enable_rewards_id);
+        if (btEnableRewards != null) {
+            btEnableRewards.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                thisObject.mBraveRewardsNativeWorker.SetRewardsMainEnabled(true);
+                thisObject.mBraveRewardsNativeWorker.GetRewardsMainEnabled();
+            }
+          }));
+        }
+
         SetupNotificationsControls();
     }
 
@@ -516,29 +531,36 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
       }
     }
 
-    public void ShowWebSiteView() {
+    public void ShowWebSiteView(boolean returning_to_rewards) {
       ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(String.format("%.2f", 0.0));
       String usdText = String.format(this.root.getResources().getString(R.string.brave_ui_usd), "0.00");
       ((TextView)this.root.findViewById(R.id.br_usd_wallet)).setText(usdText);
 
       ScrollView sv = (ScrollView)this.root.findViewById(R.id.activity_brave_rewards_panel);
       sv.setVisibility(View.GONE);
+      CreateUpdateBalanceTask();
       ScrollView sv_new = (ScrollView)this.root.findViewById(R.id.sv_no_website);
       sv_new.setVisibility(View.VISIBLE);
-      CreateUpdateBalanceTask();
-      ShowRewardsSummary();
-      Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
-      if (currentActiveTab != null && !currentActiveTab.isIncognito()) {
-        String url = currentActiveTab.getUrl();
-        if (URLUtil.isValidUrl(url)) {
-            mBraveRewardsNativeWorker.GetPublisherInfo(currentActiveTab.getId(), url);
-            mPublisherFetcher = new Timer();
-            mPublisherFetcher.schedule(new PublisherFetchTimer(currentActiveTab.getId(), url),
-                PUBLISHER_INFO_FETCH_RETRY, PUBLISHER_INFO_FETCH_RETRY);
-        } else {
-            btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-            btRewardsSummary.setClickable(false);
-        }
+      if (!returning_to_rewards) {
+          ((LinearLayout)this.root.findViewById(R.id.website_summary)).setVisibility(View.VISIBLE);
+          ((LinearLayout)this.root.findViewById(R.id.rewards_welcome_back)).setVisibility(View.GONE);
+          ShowRewardsSummary();
+          Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
+          if (currentActiveTab != null && !currentActiveTab.isIncognito()) {
+            String url = currentActiveTab.getUrl();
+            if (URLUtil.isValidUrl(url)) {
+                mBraveRewardsNativeWorker.GetPublisherInfo(currentActiveTab.getId(), url);
+                mPublisherFetcher = new Timer();
+                mPublisherFetcher.schedule(new PublisherFetchTimer(currentActiveTab.getId(), url),
+                    PUBLISHER_INFO_FETCH_RETRY, PUBLISHER_INFO_FETCH_RETRY);
+            } else {
+                btRewardsSummary.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                btRewardsSummary.setClickable(false);
+            }
+          }
+      } else {
+        ((LinearLayout)this.root.findViewById(R.id.website_summary)).setVisibility(View.GONE);
+        ((LinearLayout)this.root.findViewById(R.id.rewards_welcome_back)).setVisibility(View.VISIBLE);
       }
     }
 
@@ -709,7 +731,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     public void OnWalletInitialized(int error_code) {
       if (error_code == 12) {   // Wallet created code
           walletInitialized = true;
-          ShowWebSiteView();
+          ShowWebSiteView(false);
       }
       else {
           Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
@@ -1024,7 +1046,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     public void OnIsWalletCreated(boolean created) {
         if (created) {
             walletInitialized = true;
-            ShowWebSiteView();
+            ShowWebSiteView(false);
+
+            // Set preferences that Brave Rewards was turned On
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            sharedPreferencesEditor.putBoolean(PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
+            sharedPreferencesEditor.apply();
+            //
         }
         else {
             //wallet hasn't been created yet: show 'Join Rewards' button
@@ -1053,6 +1082,18 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             tvPublisherNotVerifiedSummary.setVisibility(View.VISIBLE);
         } else {
             tvPublisherNotVerifiedSummary.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        boolean wasTurnedOn = sharedPreferences.getBoolean(
+                PREF_WAS_BRAVE_REWARDS_TURNED_ON, false);
+        if (!enabled && wasTurnedOn) {
+            ShowWebSiteView(true);
+        } else {
+            mBraveRewardsNativeWorker.WalletExist();
         }
     }
 }

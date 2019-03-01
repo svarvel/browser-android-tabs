@@ -198,6 +198,21 @@ public class BraveRewardsNativeWorker {
         return nativeIsCurrentPublisherInRecurrentDonations(mNativeBraveRewardsNativeWorker, publisher);
     }
 
+    public void SetRewardsMainEnabled(boolean enabled) {
+        nativeSetRewardsMainEnabled(mNativeBraveRewardsNativeWorker, enabled);
+    }
+
+    public void GetRewardsMainEnabled() {
+        nativeGetRewardsMainEnabled(mNativeBraveRewardsNativeWorker);
+    }
+
+    @CalledByNative
+    public void OnGetRewardsMainEnabled(boolean enabled) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetRewardsMainEnabled(enabled);
+        }
+    }
+
     @CalledByNative
     public void OnIsWalletCreated(boolean created) {
         for(BraveRewardsObserver observer : observers_) {
@@ -307,4 +322,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetRecurringDonations(long nativeBraveRewardsNativeWorker);
     private native boolean nativeIsCurrentPublisherInRecurrentDonations(long nativeBraveRewardsNativeWorker,
         String publisher);
+    private native void nativeGetRewardsMainEnabled(long nativeBraveRewardsNativeWorker);
+    private native void nativeSetRewardsMainEnabled(long nativeBraveRewardsNativeWorker, boolean enabled);
 }
