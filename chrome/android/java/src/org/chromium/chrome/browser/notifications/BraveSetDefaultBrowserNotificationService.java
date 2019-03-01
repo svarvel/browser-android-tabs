@@ -50,6 +50,8 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     public static final String TEN_DAYS_LATER = "ten_days_later";
     public static final String FIFTEEN_DAYS_LATER = "fifteen_days_later";
 
+    public static final String CANCEL_NOTIFICATION = "cancel_notification";
+
     private boolean isBraveSetAsDefaultBrowser() {
         Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));
         ResolveInfo resolveInfo = mContext.getPackageManager().resolveActivity(browserIntent, supportsDefault() ? PackageManager.MATCH_DEFAULT_ONLY : 0);
@@ -101,17 +103,18 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
 
         b.setSmallIcon(R.drawable.ic_chrome)
          .setAutoCancel(false)
-         .setContentTitle(mContext.getString(R.string.brave_default_browser_notification_title))
          .setContentText(mContext.getString(R.string.brave_default_browser_notification_body))
          .setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_notification_body)))
          .setPriority(NotificationCompat.PRIORITY_DEFAULT)
          .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
-        if (supportsDefault() && !isBraveSetAsDefaultBrowser() && hasAlternateDefaultBrowser()) {
-            b.setContentTitle(mContext.getString(R.string.brave_default_browser_existing_notification_title));
+        if (supportsDefault()) {
+            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), getDefaultAppSettingsIntent(mContext)).build();
+            NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext)).build();
             b.setContentText(mContext.getString(R.string.brave_default_browser_existing_notification_body));
             b.setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_existing_notification_body)));
-            b.addAction(R.drawable.settings_cog, mContext.getString(R.string.brave_default_browser_notification_action_settings), getDefaultAppSettingsIntent(mContext));
+            b.addAction(actionYes);
+            b.addAction(actionNo);
         }
 
         NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -123,6 +126,13 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         intent.setAction(DEEP_LINK);
         intent.putExtra(DEEP_LINK, SHOW_DEFAULT_APP_SETTINGS);
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    public PendingIntent getDismissIntent(Context context) {
+        Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
+        intent.setAction(CANCEL_NOTIFICATION);
+        PendingIntent dismissIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
     }
 
     private boolean shouldNotifyLater() {
@@ -192,8 +202,16 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         mContext = context;
         mIntent = intent;
+        boolean deepLinkIsHandled = false;
         if (intent != null && intent.hasExtra(BraveSetDefaultBrowserNotificationService.DEEP_LINK)) {
             handleBraveSetDefaultBrowserDeepLink(intent);
+            deepLinkIsHandled = true;
+        }
+
+        if (deepLinkIsHandled ||
+            (intent != null && intent.getAction() != null && intent.getAction().equals(CANCEL_NOTIFICATION))) {
+            NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(NOTIFICATION_ID);
             return;
         }
 
