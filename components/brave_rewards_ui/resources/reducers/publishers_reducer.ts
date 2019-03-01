@@ -16,9 +16,34 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
       break
     case types.ON_NUM_EXCLUDED_SITES:
       state = { ...state }
-      if (action.payload.num != null) {
-        state.numExcludedSites = parseInt(action.payload.num, 10)
+
+      if (action.payload.excludedSitesInfo != null) {
+        const previousNum = state.numExcludedSites
+        const newNum = action.payload.excludedSitesInfo.num
+        const publisherKey = action.payload.excludedSitesInfo.publisherKey
+
+        state.numExcludedSites = parseInt(newNum, 10)
+
+        if (publisherKey.length > 0) {
+          if (previousNum < newNum) {
+            // On a new excluded publisher, add to excluded state
+            if (!state.excluded.includes(publisherKey)) {
+              state.excluded.push(publisherKey)
+            }
+          } else {
+            // Remove the publisher from excluded if it has been re-included
+            if (state.excluded.includes(publisherKey)) {
+              state.excluded = state.excluded.filter((key: string) => key !== publisherKey)
+            }
+          }
+        }
+
+        state = {
+          ...state,
+          excluded: state.excluded
+        }
       }
+
       break
     case types.ON_EXCLUDE_PUBLISHER:
       if (!action.payload.publisherKey) {
