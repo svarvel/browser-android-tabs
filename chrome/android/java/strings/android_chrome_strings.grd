@@ -4507,6 +4507,20 @@ month...
       <message name="IDS_MENU_BRAVE_REWARDS" desc="Menu item for Brave Rewards Settings. [CHAR-LIMIT=27]">
         Brave Rewards
       </message>
+      <message name="IDS_BRAVE_UI_WELCOME_BACK_MESSAGE" desc="Welcome back title">
+        Welcome back!
+      </message>
+      <message name="IDS_BRAVE_UI_GET_REWARDED" desc="Welcome back first description">
+        Get rewarded for browsing.
+      </message>
+      <message name="IDS_BRAVE_UI_GET_REWARDED_DESCRIPTION" desc="Welcome back second description">
+        Earn by viewing privacy-respecting
+ads, and pay it forward to support
+content creators you love.
+      </message>
+      <message name="IDS_BRAVE_UI_WELCOME_BACK_BUTTON_TEXT" desc="Enable Rewards button">
+        ENABLE BRAVE REWARDS
+      </message>
       <!--End of rewards temporary section.-->
     </messages>
   </release>

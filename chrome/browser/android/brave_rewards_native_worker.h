@@ -105,6 +105,12 @@ public:
         const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& publisher);
 
+    void SetRewardsMainEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        bool enabled);
+    void GetRewardsMainEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+
+    void OnGetRewardsMainEnabled(bool enabled);
 
     void OnGetPendingContributionsTotal(double amount);
 

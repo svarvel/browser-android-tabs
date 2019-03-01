@@ -398,13 +398,85 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <!--Layout when we turned off rewards-->
+            <LinearLayout
+                android:id="@+id/rewards_welcome_back"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/bat_rewards_summary_gradient"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_height="80dp"
+                    android:layout_width="110dp"
+                    android:src="@drawable/bat_icon"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    tools:ignore="ContentDescription"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/brave_ui_welcome_back_message"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="28sp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/brave_ui_get_rewarded"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="18sp"
+                    android:textColor="#4D58CF"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/brave_ui_get_rewarded_description"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:alpha=".7"/>
+
+                <Button
+                    android:id="@+id/enable_rewards_id"
+                    android:layout_height="50dp"
+                    android:layout_width="fill_parent"
+                    android:background="@drawable/enable_rewards_button"
+                    android:text="@string/brave_ui_welcome_back_button_text"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"
+                    android:textColor="#4D58CF"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:drawableEnd="@drawable/arrow_forward"/>
+
+            </LinearLayout>
+
             <!--Layout when we are on a valid webpage-->
             <LinearLayout
                 android:id="@+id/website_summary"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="#FFFFFF"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:visibility="gone" >
 
                 <GridLayout
                     android:id="@+id/website_summary_grid"

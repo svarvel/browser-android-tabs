@@ -2023,6 +2023,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnGetPendingContributionsTotal(double amount) {}
 
     @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {}
+
+
+    @Override
     public void setOnTabSwitcherClickHandler(OnClickListener listener) {
         if (mToggleTabStackButton != null) {
             mToggleTabStackButton.setOnTabSwitcherClickHandler(listener);

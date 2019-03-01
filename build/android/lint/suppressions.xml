@@ -477,4 +477,7 @@ Still reading?
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_grants_list_item.xml"/>
   </issue>
+  <issue id="TooManyViews">
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
+  </issue>
 </lint>

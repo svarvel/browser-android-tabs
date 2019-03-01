@@ -427,6 +427,31 @@ void BraveRewardsNativeWorker::OnRecurringDonationUpdated(
   }
 }
 
+void BraveRewardsNativeWorker::SetRewardsMainEnabled(JNIEnv* env, 
+      const base::android::JavaParamRef<jobject>& obj, bool enabled) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->SetRewardsMainEnabled(enabled);
+  }
+}
+
+void BraveRewardsNativeWorker::GetRewardsMainEnabled(JNIEnv* env, 
+      const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetRewardsMainEnabled(base::Bind(
+      &BraveRewardsNativeWorker::OnGetRewardsMainEnabled,
+      base::Unretained(this)));
+  }
+}
+
+void BraveRewardsNativeWorker::OnGetRewardsMainEnabled(
+    bool enabled) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnGetRewardsMainEnabled(env, 
+        weak_java_brave_rewards_native_worker_.get(env), enabled);
+}
+
+
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
     base::android::JavaParamRef<jobject>& jcaller) {
   new BraveRewardsNativeWorker(env, jcaller);
