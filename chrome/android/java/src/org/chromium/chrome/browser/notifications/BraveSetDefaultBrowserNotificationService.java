@@ -109,10 +109,10 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
          .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
         if (supportsDefault()) {
-            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), getDefaultAppSettingsIntent(mContext)).build();
-            NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext)).build();
             b.setContentText(mContext.getString(R.string.brave_default_browser_existing_notification_body));
             b.setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_existing_notification_body)));
+            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), hasAlternateDefaultBrowser() ? getDefaultAppSettingsIntent(mContext) : getOpenBlogIntent(mContext)).build();
+            NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext)).build();
             b.addAction(actionYes);
             b.addAction(actionNo);
         }
@@ -126,6 +126,11 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         intent.setAction(DEEP_LINK);
         intent.putExtra(DEEP_LINK, SHOW_DEFAULT_APP_SETTINGS);
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+    }
+
+    private PendingIntent getOpenBlogIntent(Context context) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.brave.com/blog"));
+        return PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     public PendingIntent getDismissIntent(Context context) {
