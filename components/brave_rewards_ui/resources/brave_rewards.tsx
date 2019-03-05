@@ -59,7 +59,7 @@ window.cr.define('brave_rewards', function () {
     getActions().onWalletProperties(properties)
   }
 
-  function grant (properties: Rewards.Grant) {
+  function grant (properties: Rewards.GrantResponse) {
     getActions().onGrant(properties)
   }
 

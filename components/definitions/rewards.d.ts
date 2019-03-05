@@ -19,6 +19,7 @@ declare namespace Rewards {
   export interface State {
     addresses?: Record<AddressesType, Address>
     adsData: AdsData
+    currentGrant?: Grant
     createdTimestamp: number | null
     enabledMain: boolean
     enabledContribute: boolean
@@ -37,7 +38,7 @@ declare namespace Rewards {
     walletInfo: WalletProperties
     connectedWallet: boolean
     recoveryKey: string
-    grant?: Grant
+    grants?: Grant[]
     reconcileStamp: number
     reports: Record<string, Report>
     ui: {
@@ -60,6 +61,14 @@ declare namespace Rewards {
     actions: any
   }
 
+  export type GrantStatus = 'wrongPosition' | 'grantGone' | 'generalError' | 'grantAlreadyClaimed' | number | null
+
+  export interface GrantResponse {
+    promotionId?: string
+    status?: number
+    type?: string
+  }
+
   export interface Grant {
     promotionId?: string
     altcurrency?: string
@@ -67,7 +76,8 @@ declare namespace Rewards {
     expiryTime: number
     captcha?: string
     hint?: string
-    status?: 'wrongPosition' | 'serverError' | number | null
+    status?: GrantStatus
+    type?: string
   }
 
   export interface WalletProperties {

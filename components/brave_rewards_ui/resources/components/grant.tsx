@@ -26,6 +26,7 @@ interface State {
 }
 
 interface Props extends Rewards.ComponentProps {
+  grant: Rewards.Grant
 }
 
 // TODO add local when we know what we will get from the server
@@ -43,9 +44,9 @@ class Grant extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  onClaim = () => {
+  onClaim = (promotionId?: string) => {
     this.setState({ loading: true })
-    this.actions.getGrantCaptcha()
+    this.actions.getGrantCaptcha(promotionId)
     this.setState({ grantStep: 'complete' })
   }
 
@@ -58,7 +59,8 @@ class Grant extends React.Component<Props, State> {
   }
 
   validateGrant = (tokens?: string) => {
-    const { grant, safetyNetFailed } = this.props.rewardsData
+    const { grant } = this.props
+    const { safetyNetFailed } = this.props.rewardsData
 
     if (!tokens || !grant) {
       return false
@@ -73,13 +75,18 @@ class Grant extends React.Component<Props, State> {
   }
 
   render () {
-    const { grant } = this.props.rewardsData
+    const { grant } = this.props
 
     if (!grant) {
       return null
     }
 
+    let promoId
     let tokens = '0.0'
+
+    if (grant.promotionId) {
+      promoId = grant.promotionId
+    }
     if (grant.probi) {
       tokens = convertProbiToFixed(grant.probi)
     }
@@ -94,7 +101,7 @@ class Grant extends React.Component<Props, State> {
           ? <GrantClaim
             type={'ugp'}
             isMobile={true}
-            onClaim={this.onClaim}
+            onClaim={this.onClaim.bind(this, promoId)}
             loading={this.state.loading}
           />
           : null
