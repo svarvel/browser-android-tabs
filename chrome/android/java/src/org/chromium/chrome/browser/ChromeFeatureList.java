@@ -340,6 +340,7 @@ public abstract class ChromeFeatureList {
     public static final String WEB_PAYMENTS_SINGLE_APP_UI_SKIP = "WebPaymentsSingleAppUiSkip";
     public static final String SERVICE_MANAGER_FOR_BACKGROUND_PREFETCH =
             "ServiceManagerForBackgroundPrefetch";
+    public static final String BRAVE_REWARDS = "BraveRewards";
 
     private static native boolean nativeIsInitialized();
     private static native boolean nativeIsEnabled(String featureName);

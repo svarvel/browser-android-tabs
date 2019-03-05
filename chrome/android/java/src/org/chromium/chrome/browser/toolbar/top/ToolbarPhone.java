@@ -499,6 +499,17 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      */
     @Override
     void onNativeLibraryReady() {
+        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
+            FrameLayout rewardsLayout = (FrameLayout) findViewById(R.id.brave_rewards_button_layout);
+            FrameLayout shieldsLayout = (FrameLayout) findViewById(R.id.brave_shields_button_layout);
+            if (rewardsLayout != null && shieldsLayout != null) {
+                shieldsLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getResources(), R.color.modern_grey_100));
+                rewardsLayout.setVisibility(View.VISIBLE);
+            }
+        }
+
+        updateUrlExpansionAnimation();
+
         super.onNativeLibraryReady();
 
         getLocationBar().onNativeLibraryReady();
@@ -1011,6 +1022,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      * @return The visibility for {@link #mToolbarButtonsContainer}.
      */
     private int getToolbarButtonVisibility() {
+        if (!isNativeLibraryReady()) return GONE;
         return mUrlExpansionPercent == 1f ? INVISIBLE : VISIBLE;
     }
 

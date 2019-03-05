@@ -18,6 +18,7 @@ import android.support.v7.content.res.AppCompatResources;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -148,7 +149,9 @@ public class ToolbarTablet extends ToolbarLayout
         mBraveShieldsButton = (ImageView) findViewById(R.id.brave_shields_button);
         mBraveShieldsButton.setClickable(true);
         mBraveRewardsPanelButton = (ImageView) findViewById(R.id.brave_rewards_button);
-        mBraveRewardsPanelButton.setClickable(true);
+        if (mBraveRewardsPanelButton != null) {
+            mBraveRewardsPanelButton.setClickable(true);
+        }
         mBraveRewardsNotificationsCount = (TextView) findViewById(R.id.br_notifications_count);
         mToolbarButtons = new ImageButton[] {mBackButton, mForwardButton, mReloadButton};
     }
@@ -165,6 +168,18 @@ public class ToolbarTablet extends ToolbarLayout
      */
     @Override
     public void onNativeLibraryReady() {
+        FrameLayout shieldsLayout = (FrameLayout) findViewById(R.id.brave_shields_button_layout);
+        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
+            FrameLayout rewardsLayout = (FrameLayout) findViewById(R.id.brave_rewards_button_layout);
+            if (rewardsLayout != null && shieldsLayout != null) {
+                shieldsLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getResources(), R.color.modern_grey_100));
+                rewardsLayout.setVisibility(View.VISIBLE);
+            }
+        }
+
+        if (shieldsLayout != null) {
+            shieldsLayout.setVisibility(View.VISIBLE);
+        }
         super.onNativeLibraryReady();
         mLocationBar.onNativeLibraryReady();
         mHomeButton.setOnClickListener(this);
