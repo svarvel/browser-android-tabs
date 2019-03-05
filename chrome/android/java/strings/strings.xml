@@ -143,10 +143,9 @@ Saved</string>
 as your default browser.</string>
     <string name="brave_default_browser_go_to_settings">We see you already set a default browser.
 You may change default browser in your app settings.</string>
-    <string name="brave_default_browser_notification_body">Make Brave your default web browser. Save battery and load web pages faster. Open Brave, press the kabob menu (3 dots on the top right) and select "Set as default browser".</string>
+    <string name="brave_default_browser_notification_body">Save battery and load web pages faster. Make Brave your default Browser. From the Brave menu tap “Set as default browser…”</string>
     <string name="brave_set_default_browser">Set as default browser</string>
-    <string name="brave_set_default_browser_dialog_text">Select Brave Browser from the list
-and tap 'Always'</string>
+    <string name="brave_set_default_browser_dialog_text">Select Brave from the list and tap “Always”</string>
     <string name="brave_default_browser_existing_notification_body">Make Brave your default web browser
 Save battery and load web pages faster</string>
 
