@@ -62,6 +62,14 @@ class AdsBox extends React.Component<Props, {}> {
     )
   }
 
+  getBoxMessage = (enabled?: boolean) => {
+    if (enabled) {
+      return getLocale('adsDesc')
+    }
+
+    return getLocale('adsDisabledText')
+  }
+
   render () {
     let adsEnabled = false
     let adsUIEnabled = false
@@ -78,7 +86,7 @@ class AdsBox extends React.Component<Props, {}> {
       <BoxMobile
         title={getLocale('adsTitle')}
         type={'ads'}
-        description={getLocale('adsDesc')}
+        description={this.getBoxMessage(toggle)}
         settingsChild={this.adsSettings(adsEnabled && enabledMain)}
         toggle={toggle}
         checked={enabledMain && adsEnabled}
