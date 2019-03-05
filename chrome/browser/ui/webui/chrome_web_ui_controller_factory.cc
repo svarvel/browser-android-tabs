@@ -359,8 +359,12 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   // All platform builds of Chrome will need to have a cloud printing
   // dialog as backup.  It's just that on Chrome OS, it's the only
   // print dialog.
-  if (url.host_piece() == chrome::kBraveRewardsHost)
+  if (url.host_piece() == chrome::kBraveRewardsHost) {
+    if (!base::FeatureList::IsEnabled(features::kBraveRewards)) {
+      return NULL;
+    }
     return &NewWebUI<BraveRewardsUI>;
+  }
   if (url.host_piece() == chrome::kChromeUIAccessibilityHost)
     return &NewWebUI<AccessibilityUI>;
   if (url.host_piece() == chrome::kChromeUIAutofillInternalsHost)

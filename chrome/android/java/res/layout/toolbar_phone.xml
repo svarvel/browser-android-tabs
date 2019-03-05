@@ -34,7 +34,9 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end" >
+        android:layout_gravity="top|end"
+        android:visibility="gone"
+        android:layout_marginEnd="8dp" >
 
         <ViewStub
             android:id="@+id/experimental_button_stub"
@@ -52,10 +54,10 @@
             android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default"
             android:visibility="gone" />
 
-        <FrameLayout
+        <FrameLayout android:id="@+id/brave_shields_button_layout"
             android:layout_width="@dimen/toolbar_button_width"
             android:orientation="vertical"
-            android:background="@color/modern_grey_100"
+            android:background="@drawable/modern_toolbar_background_grey_end_segment"
             android:layout_marginTop="8dp"
             android:layout_height="40dp" >
             <ImageButton android:id="@+id/brave_shields_button"
@@ -95,13 +97,13 @@
                   android:textSize="10sp" />
         </FrameLayout>
 
-        <FrameLayout
+        <FrameLayout android:id="@+id/brave_rewards_button_layout"
             android:layout_width="@dimen/toolbar_button_width"
             android:orientation="vertical"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/modern_toolbar_background_grey_end_segment"
-            android:layout_height="40dp" >
+            android:layout_height="40dp"
+            android:visibility="gone" >
             <!--<ImageButton android:id="@+id/brave_rewards_button"
                 style="@style/ToolbarButton"
                 android:layout_marginTop="8dp"
