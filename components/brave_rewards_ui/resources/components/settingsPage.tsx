@@ -76,8 +76,8 @@ class SettingsPage extends React.Component<Props, State> {
       this.actions.getWalletProperties()
     }, 60000)
 
-    if (!this.props.rewardsData.safetyNetFailed && !this.props.rewardsData.grant) {
-      this.actions.getGrant()
+    if (!this.props.rewardsData.safetyNetFailed && !this.props.rewardsData.grants) {
+      this.actions.getGrants()
     }
     this.actions.getAdsData()
   }
@@ -97,6 +97,30 @@ class SettingsPage extends React.Component<Props, State> {
     ) {
       this.actions.getContributeList()
     }
+  }
+
+  getGrantClaims = () => {
+    const { grants } = this.props.rewardsData
+
+    if (!grants) {
+      return null
+    }
+
+    return (
+      <>
+        {grants.map((grant?: Rewards.Grant, index?: number) => {
+          if (!grant || !grant.promotionId) {
+            return null
+          }
+
+          return (
+            <div key={`grant-${index}`}>
+              <Grant grant={grant} />
+            </div>
+          )
+        })}
+      </>
+    )
   }
 
   componentWillUnmount () {
@@ -131,7 +155,7 @@ class SettingsPage extends React.Component<Props, State> {
         }
         {
           enabledMain
-          ? <Grant />
+          ? this.getGrantClaims()
           : null
         }
         <WalletInfoHeader
