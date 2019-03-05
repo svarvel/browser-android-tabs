@@ -185,7 +185,7 @@ void BraveRewardsNativeWorker::IncludeInAutoContribution(JNIEnv* env,
       iter->second.excluded = ledger::PUBLISHER_EXCLUDE::INCLUDED;
     }
     if (brave_rewards_service_) {
-      brave_rewards_service_->SetContributionAutoInclude(iter->second.id, exclude, tabId);
+      brave_rewards_service_->SetContributionAutoInclude(iter->second.id, exclude);
     }
   }
 }
