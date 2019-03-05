@@ -4218,7 +4218,7 @@ as your default browser.
 You may change default browser in your app settings.
       </message>
       <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_BODY" desc="Default browser notification body">
-        Make Brave your default web browser. Save battery and load web pages faster. Open Brave, press the kabob menu (3 dots on the top right) and select "Set as default browser".
+        Save battery and load web pages faster. Make Brave your default Browser. From the Brave menu tap “Set as default browser…”
       </message>
       <message name="IDS_BRAVE_DEFAULT_BROWSER_EXISTING_NOTIFICATION_BODY" desc="Default browser notification body">
         Make Brave your default web browser
@@ -4228,7 +4228,7 @@ Save battery and load web pages faster
         Set as default browser
       </message>
       <message name="IDS_BRAVE_SET_DEFAULT_BROWSER_DIALOG_TEXT" desc="Dialog for setting default browser">
-        Select Brave Browser from the list and tap 'Always'
+        Select Brave from the list and tap “Always”
       </message>
     </messages>
   </release>
