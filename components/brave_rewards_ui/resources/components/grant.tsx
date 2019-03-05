@@ -49,14 +49,6 @@ class Grant extends React.Component<Props, State> {
     this.setState({ grantStep: 'complete' })
   }
 
-  onGrantHide = () => {
-    this.actions.onResetGrant()
-    this.setState({
-      grantStep: '',
-      loading: false
-    })
-  }
-
   onSuccess = () => {
     this.setState({
       grantShown: false,
@@ -111,7 +103,7 @@ class Grant extends React.Component<Props, State> {
           this.state.grantStep === 'complete' && validGrant
             ? <GrantWrapper
               fullScreen={true}
-              onClose={this.onGrantHide}
+              onClose={this.onSuccess}
               title={'It’s your lucky day!'}
               text={'Your token grant is on its way.'}
             >
