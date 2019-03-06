@@ -73,6 +73,7 @@ class SettingsPage extends React.Component<Props, State> {
     this.actions.getCurrentReport()
     this.actions.getDonationTable()
     this.balanceTimerId = window.setInterval(() => {
+      this.actions.getRewardsEnabled()
       this.actions.getWalletProperties()
     }, 60000)
 
@@ -139,7 +140,7 @@ class SettingsPage extends React.Component<Props, State> {
           enabled={enabledMain}
         />
         {
-          !this.state.mainToggle
+          !this.state.mainToggle && !enabledMain
           ? <StyledDisabledContent>
               <StyledHeading>
                 {getLocale('rewardsWhy')}

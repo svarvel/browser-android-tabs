@@ -148,6 +148,8 @@ export const removeRecurring = (publisherKey: string) => action(types.ON_REMOVE_
   publisherKey
 })
 
+export const getRewardsEnabled = () => action(types.GET_REWARDS_ENABLED)
+
 export const onRewardsEnabled = (enabled: boolean) => action(types.ON_REWARDS_ENABLED, {
   enabled
 })

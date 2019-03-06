@@ -33,6 +33,7 @@ export class App extends React.Component<Props, State> {
     if (!this.props.rewardsData.walletCreated) {
       this.actions.checkWalletExistence()
     }
+    this.actions.getRewardsEnabled()
   }
 
   componentDidUpdate (prevProps: Props, prevState: State) {
