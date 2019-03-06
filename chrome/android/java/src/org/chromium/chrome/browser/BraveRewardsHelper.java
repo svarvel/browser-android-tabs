@@ -47,7 +47,7 @@ import java.util.Calendar;
 public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private static final int FAVICON_CIRCLE_MEASUREMENTS = 70; // dp
     private static final int FAVICON_TEXT_SIZE = 50; // dp
-    private static final int FAVICON_FETCH_INTERVAL = 1500; // In milliseconds
+    private static final int FAVICON_FETCH_INTERVAL = 1000; // In milliseconds
     private static final int FAVICON_DESIRED_SIZE = 64; // px
     private static LargeIconBridge mLargeIconBridge;
 
@@ -55,8 +55,8 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private LargeIconReadyCallback mCallback;
     private final Handler mHandler = new Handler();
     private int mFetchCount;
-    private final int MAX_FAVICON_FETCH_COUNT = 20;
-    public static final int CROSS_FADE_DURATION = 1500; //ms
+    private final int MAX_FAVICON_FETCH_COUNT = 30;
+    public static final int CROSS_FADE_DURATION = 1000; //ms
 
 
     public interface LargeIconReadyCallback {
