@@ -927,6 +927,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           gl.setVisibility(View.GONE);
         }
         thisObject.mBraveRewardsNativeWorker.GetRecurringDonations();
+
+        mBraveRewardsNativeWorker.GetAutoContributeProps();
     }
 
     @Override
@@ -1095,5 +1097,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         } else {
             mBraveRewardsNativeWorker.WalletExist();
         }
+    }
+
+
+    @Override
+    public void OnGetAutoContributeProps() {
+        boolean ac_enabled  = mBraveRewardsNativeWorker.IsAutoContributeEnabled();
+        View viewAC  = root.findViewById(R.id.ac_enabled_controls);
+        viewAC.setVisibility(ac_enabled? View.VISIBLE : View.GONE);
     }
 }

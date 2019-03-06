@@ -356,6 +356,32 @@ bool BraveRewardsNativeWorker::IsCurrentPublisherInRecurrentDonations(JNIEnv* en
     map_recurrent_publishers_.end();
 }
 
+
+void BraveRewardsNativeWorker::GetAutoContributeProps(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetAutoContributeProps(base::Bind(
+            &BraveRewardsNativeWorker::OnGetAutoContributeProps,
+            weak_factory_.GetWeakPtr()));
+  }
+}
+
+
+void BraveRewardsNativeWorker::OnGetAutoContributeProps(
+        std::unique_ptr<brave_rewards::AutoContributeProps> props) {
+  if (props) {
+    auto_contrib_properties_ = *props;
+  }
+
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_BraveRewardsNativeWorker_OnGetAutoContributeProps(env,
+                                                               weak_java_brave_rewards_native_worker_.get(env));
+}
+
+bool BraveRewardsNativeWorker::IsAutoContributeEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj){
+  return auto_contrib_properties_.enabled_contribute;
+}
+
+
 void BraveRewardsNativeWorker::OnGetPendingContributionsTotal(double amount) {
   JNIEnv* env = base::android::AttachCurrentThread();
 
