@@ -306,6 +306,8 @@
                                     android:textSize="12sp"
                                     android:textColor="#FFFFFF"
                                     android:drawableStart="@drawable/add_funds"
+                                    android:enabled="false"
+                                    android:clickable="false"
                                     android:drawablePadding="5sp"/>
 
                                 <Button
