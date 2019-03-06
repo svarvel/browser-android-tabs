@@ -181,18 +181,20 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
 
         //set 'add funds' button onClick
-        View.OnClickListener add_funds_clicker = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // Temporary disable it
+        // View.OnClickListener add_funds_clicker = new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View view) {
 
-                Intent returnIntent = new Intent();
-		        setResult(ChromeTabbedActivity.SITE_BANNER_ADD_FUNDS_RESULT_CODE, returnIntent);
-		        finish();
-            }
-        };
+        //         Intent returnIntent = new Intent();
+        //   setResult(ChromeTabbedActivity.SITE_BANNER_ADD_FUNDS_RESULT_CODE, returnIntent);
+        //   finish();
+        //     }
+        // };
 
         TextView not_enough_funds_btn = (TextView)findViewById(R.id.not_enough_funds_text);
-        not_enough_funds_btn.setOnClickListener (add_funds_clicker);
+        // Temporary disable it
+        //not_enough_funds_btn.setOnClickListener (add_funds_clicker);
 
         String part1 = getResources().getString(R.string.brave_ui_site_banner_not_enough_tokens);
         String part2 = getResources().getString(R.string.brave_ui_please);
