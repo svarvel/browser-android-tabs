@@ -129,6 +129,11 @@ const rewardsReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State
         state.enabledMain = action.payload.enabled
         break
       }
+    case types.GET_REWARDS_ENABLED:
+      {
+        chrome.send('brave_rewards.getRewardsMainEnabled', [])
+        break
+      }
   }
 
   return state
