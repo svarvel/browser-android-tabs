@@ -405,7 +405,9 @@
                     android:layout_toStartOf="@id/make_monthly_text"
                     android:background="@android:color/transparent"
                     android:button="@drawable/plain_checkbox"
-                    android:scaleType="fitXY" />
+                    android:scaleType="fitXY"
+                    android:onClick="onMonthlyCheckboxClicked"
+                    android:checked="false"/>
             </RelativeLayout>
             <!--Row # 4-->
             <RelativeLayout
