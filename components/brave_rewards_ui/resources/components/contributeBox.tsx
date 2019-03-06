@@ -238,6 +238,7 @@ class ContributeBox extends React.Component<Props, State> {
             showRemove={true}
             showRowAmount={true}
             isMobile={true}
+            onRestore={this.onRestore}
             numExcludedSites={numExcludedSites}
           >
             {getLocale('contributionVisitSome')}
