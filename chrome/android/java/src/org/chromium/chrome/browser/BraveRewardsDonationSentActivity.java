@@ -94,9 +94,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
                         @Override
                         public void run() {
                             ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
-                            DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-                            float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
-                            int nPx = Math.round(px);
+                            int nPx = BraveRewardsHelper.dp2px(PUBLISHER_ICON_SIDE_LEN);
                             Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
 
                             View fadeout  = findViewById(R.id.publisher_favicon_update);
