@@ -53,7 +53,8 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
     private int currentTabId_ = -1;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
-    private final int PUBLISHER_ICON_SIDE_LEN= 70;
+    private final int PUBLISHER_ICON_SIDE_LEN= 70; //dp
+    private final int TOUCH_PADDING_MONTHLY= 32; //dp
     private BraveRewardsHelper mIconFetcher;
 
     @Override
@@ -257,10 +258,15 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                 }
             });
         }
+
+
+        RelativeLayout monthly_layout = ((RelativeLayout)findViewById(R.id.monthly_contribution));
         if (mBraveRewardsNativeWorker.IsCurrentPublisherInRecurrentDonations(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_))) {
-            ((RelativeLayout)findViewById(R.id.monthly_contribution)).setVisibility(View.GONE);
+            monthly_layout.setVisibility(View.GONE);
         } else {
-            ((RelativeLayout)findViewById(R.id.monthly_contribution)).setVisibility(View.VISIBLE);
+            // `monthly_contribution` is VISIBLE by default
+            CheckBox monthly_chk = (CheckBox) findViewById(R.id.make_monthly_checkbox);
+            BraveRewardsHelper.expandTouchArea (monthly_layout, monthly_chk, TOUCH_PADDING_MONTHLY);
         }
     }
 
@@ -304,9 +310,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     @Override
                     public void run() {
                         ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
-                        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-                        float px = PUBLISHER_ICON_SIDE_LEN * (metrics.densityDpi / 160f);
-                        int nPx = Math.round(px);
+                        int nPx = BraveRewardsHelper.dp2px(PUBLISHER_ICON_SIDE_LEN);
                         Bitmap resized = Bitmap.createScaledBitmap(bmp, nPx, nPx, true);
 
                         View fadeout  = findViewById(R.id.publisher_favicon_update);

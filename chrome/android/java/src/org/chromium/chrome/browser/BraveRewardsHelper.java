@@ -17,6 +17,8 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
+import android.view.TouchDelegate;
 import android.view.View;
 
 
@@ -317,4 +319,39 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
       }
       return val;
   }
+
+
+    /**
+     * Expands touchable area of a small view
+      * @param parentView
+     * @param childView
+     * @param extraPadding: dp
+     */
+  public static void expandTouchArea(final View parentView, final View childView, final int extraPadding) {
+        parentView.post(new Runnable() {
+            @Override
+            public void run() {
+                Rect rect = new Rect();
+                childView.getHitRect(rect);
+
+                int pxPadding = dp2px(extraPadding);
+                rect.top -= pxPadding;
+                rect.left -= pxPadding;
+                rect.right += pxPadding;
+                rect.bottom += pxPadding;
+                parentView.setTouchDelegate(new TouchDelegate(rect, childView));
+            }
+        });
+    }
+
+    /**
+     * Converts DP into PX
+     * @param dp
+     * @return
+     */
+    public static int dp2px(int dp){
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return Math.round(px);
+    }
 }
