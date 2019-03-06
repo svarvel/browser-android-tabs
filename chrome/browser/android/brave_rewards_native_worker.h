@@ -16,6 +16,7 @@
 #include "brave/components/brave_rewards/browser/rewards_service_private_observer.h"
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
 #include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
+#include "brave/components/brave_rewards/browser/auto_contribution_props.h"
 
 namespace brave_rewards {
   class RewardsService;
@@ -109,6 +110,11 @@ public:
         bool enabled);
     void GetRewardsMainEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    void GetAutoContributeProps(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    bool IsAutoContributeEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    void OnGetAutoContributeProps( std::unique_ptr<brave_rewards::AutoContributeProps> info);
 
     void OnGetRewardsMainEnabled(bool enabled);
 
@@ -156,6 +162,7 @@ private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;
+    brave_rewards::AutoContributeProps auto_contrib_properties_;
     std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_; // <tabId, PublisherInfo>
     std::map<std::string, uint64_t> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
 

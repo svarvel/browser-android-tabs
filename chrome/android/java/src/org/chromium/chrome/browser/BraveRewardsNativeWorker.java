@@ -206,6 +206,18 @@ public class BraveRewardsNativeWorker {
         nativeGetRewardsMainEnabled(mNativeBraveRewardsNativeWorker);
     }
 
+    public void GetAutoContributeProps() {
+        synchronized(lock) {
+            nativeGetAutoContributeProps(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
+    public boolean IsAutoContributeEnabled() {
+        synchronized(lock) {
+            return nativeIsAutoContributeEnabled(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
     @CalledByNative
     public void OnGetRewardsMainEnabled(boolean enabled) {
         for(BraveRewardsObserver observer : observers_) {
@@ -291,6 +303,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    @CalledByNative
+    public void OnGetAutoContributeProps() {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetAutoContributeProps();
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -324,4 +343,6 @@ public class BraveRewardsNativeWorker {
         String publisher);
     private native void nativeGetRewardsMainEnabled(long nativeBraveRewardsNativeWorker);
     private native void nativeSetRewardsMainEnabled(long nativeBraveRewardsNativeWorker, boolean enabled);
+    private native void nativeGetAutoContributeProps(long nativeBraveRewardsNativeWorker);
+    private native boolean nativeIsAutoContributeEnabled(long nativeBraveRewardsNativeWorker);
 }

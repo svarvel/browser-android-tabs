@@ -575,80 +575,90 @@
 
                     </LinearLayout>
 
-                    <TextView
+                    <!--AC set of controls-->
+                    <LinearLayout
+                        android:id="@+id/ac_enabled_controls"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_marginStart="10dp"
-                        android:text="@string/brave_ui_attention"
-                        android:fontFamily="sans-serif"
-                        android:gravity="start"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:layout_width="match_parent"
                         android:layout_row="1"
-                        android:layout_column="0"/>
+                        android:layout_column="0"
+                        android:layout_columnSpan="2"
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
-                    <TextView
-                        android:id="@+id/publisher_attention"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_marginEnd="10dp"
-                        android:text=""
-                        android:fontFamily="sans-serif"
-                        android:gravity="start"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_row="1"
-                        android:layout_column="1"/>
+                        <!-- Attention % row-->
+                        <RelativeLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="10dp">
 
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#c0c0c0"
-                        android:layout_row="2"
-                        android:layout_columnSpan="2"/>
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_toStartOf="@+id/publisher_attention"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/brave_ui_attention"
+                                android:fontFamily="sans-serif"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
 
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/brave_ui_auto_contribute"
-                        android:fontFamily="sans-serif"
-                        android:gravity="start"
-                        android:textSize="14sp"
-                        android:layout_row="3"
-                        android:layout_column="0"/>
+                            <TextView
+                                android:id="@+id/publisher_attention"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:text=""
+                                android:fontFamily="sans-serif"
+                                android:layout_alignParentEnd="true"
+                                android:textSize="14sp"
+                                android:textStyle="bold"/>
+                        </RelativeLayout>
 
-                    <Switch
-                        android:id="@+id/brave_ui_auto_contribute"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:switchMinWidth="56dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="10dp"
-                        android:theme="@style/BraveRewardsSwitchTheme"
-                        android:gravity="start"
-                        android:layout_gravity="end|center"
-                        android:layout_row="3"
-                        android:layout_column="1" />
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#c0c0c0"/>
 
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#c0c0c0"
-                        android:layout_row="4"
-                        android:layout_columnSpan="2"/>
+
+                        <!-- Include in AC list row-->
+                        <RelativeLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent">
+
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_toStartOf="@+id/brave_ui_auto_contribute"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/brave_ui_auto_contribute"
+                                android:fontFamily="sans-serif"
+                                android:textSize="14sp"
+                                android:layout_alignBaseline="@+id/brave_ui_auto_contribute"/>
+
+                            <Switch
+                                android:id="@+id/brave_ui_auto_contribute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:switchMinWidth="56dp"
+                                android:layout_marginEnd="10dp"
+                                android:theme="@style/BraveRewardsSwitchTheme"
+                                android:layout_alignParentEnd="true"/>
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#c0c0c0"/>
+
+                    </LinearLayout>
 
                     <Button
                         android:id="@+id/send_a_tip"
@@ -664,7 +674,7 @@
                         android:fontFamily="sans-serif"
                         android:textSize="14sp"
                         android:textColor="#392DD1"
-                        android:layout_row="4"
+                        android:layout_row="2"
                         android:layout_columnSpan="2"
                         android:alpha=".5"/>
 
