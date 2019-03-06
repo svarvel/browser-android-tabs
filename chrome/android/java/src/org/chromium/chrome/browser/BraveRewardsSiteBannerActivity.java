@@ -16,6 +16,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -319,5 +320,17 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     @Override
     public void onLargeIconReady(Bitmap icon){
         SetFavIcon(icon);
+    }
+
+
+
+    //`make_monthly_checkbox` checkbox click handler
+    public void onMonthlyCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        Button send_btn = (Button) findViewById(R.id.send_donation_button);
+
+        int string_id = (checked)? R.string.brave_ui_site_banner_send_monthly_donation : R.string.brave_ui_site_banner_send_donation;
+        String btn_text = getResources().getString(string_id);
+        send_btn.setText(btn_text);
     }
 }
