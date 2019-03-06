@@ -84,6 +84,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final int REWARDS_NOTIFICATION_IMPENDING_CONTRIBUTION = 4;
     private static final int REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS = 5;
     private static final int REWARDS_NOTIFICATION_BACKUP_WALLET = 6;
+    // Custom Android notification
+    private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
+    private static final String REWARDS_NOTIFICATION_NO_INTERNET_ID = "29d835c2-5752-4152-93c3-8a1ded9dd4ec";
+    //
 
     // Auto contribute results
     private static final String AUTO_CONTRIBUTE_SUCCESS = "0";
@@ -616,6 +620,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         String description = "";
         Button btClaimOk = (Button)root.findViewById(R.id.br_claim_button);
         btClaimOk.setVisibility(View.VISIBLE);
+        TextView notificationClose = (TextView)root.findViewById(R.id.br_notification_close);
+        notificationClose.setVisibility(View.VISIBLE);
         ImageView notification_icon = (ImageView)root.findViewById(R.id.br_notification_icon);
         LinearLayout nit = (LinearLayout)root.findViewById(R.id.notification_image_text);
         nit.setOrientation(LinearLayout.VERTICAL);
@@ -694,6 +700,19 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 title = root.getResources().getString(R.string.brave_ui_backup_wallet_msg);
                 description = root.getResources().getString(R.string.brave_ui_backup_wallet_desc);
                 break;
+            case REWARDS_NOTIFICATION_NO_INTERNET:
+                title = "";
+                notification_icon.setImageResource(R.drawable.icon_error_notification);
+                hl.setBackgroundResource(R.drawable.notification_header_error);
+                description =
+                    root.getResources().getString(R.string.brave_ui_notification_desc_no_internet_error);
+                btClaimOk.setVisibility(View.GONE);
+                notificationClose.setVisibility(View.GONE);
+                nit.setOrientation(LinearLayout.HORIZONTAL);
+                params.setMargins(params.leftMargin, 180, params.rightMargin, params.bottomMargin);
+                nit.setLayoutParams(params);
+                tv.setGravity(Gravity.START);
+                break;
             default:
                 Log.e(TAG, "This notification type is either invalid or not handled yet: " + type);
                 assert false;
@@ -752,8 +771,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     @Override
     public void OnWalletProperties(int error_code) {
-        boolean  former_walletDetailsReceived = walletDetailsReceived;
-        if (error_code == 0) {
+      boolean  former_walletDetailsReceived = walletDetailsReceived;
+      if (error_code == 0) {
+        DismissNotification(REWARDS_NOTIFICATION_NO_INTERNET_ID);
         if (mBraveRewardsNativeWorker != null) {
           double balance = mBraveRewardsNativeWorker.GetWalletBalance();
           ((TextView)this.root.findViewById(R.id.br_bat_wallet)).setText(
@@ -804,6 +824,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           }
         }
         walletDetailsReceived = true;
+      } else if (error_code == 1) {   // No Internet connection
+        String args[] = {};
+        ShowNotification(REWARDS_NOTIFICATION_NO_INTERNET_ID, REWARDS_NOTIFICATION_NO_INTERNET, 0, args);
       } else {
             walletDetailsReceived = false;
       }

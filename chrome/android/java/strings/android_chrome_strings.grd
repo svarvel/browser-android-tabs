@@ -4401,6 +4401,9 @@ month...
       <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_CONTR_ERROR" desc="">
         There was a problem processing your contribution.
       </message>
+      <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_NO_INTERNET_ERROR" desc="">
+        Uh oh! The Brave Rewards server is not responding. We will fix this as soon as possible.
+      </message>
       <message name="IDS_BRAVE_UI_GRANTS" desc="">
         Grants
       </message>
