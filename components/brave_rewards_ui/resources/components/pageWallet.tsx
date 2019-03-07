@@ -10,7 +10,6 @@ import { connect } from 'react-redux'
 import { AlertWallet } from 'brave-ui/src/features/rewards/walletWrapper'
 import {
   ModalAddFunds,
-  ModalBackupRestore,
   WalletSummary,
   WalletWrapper,
   WalletEmpty,
@@ -20,7 +19,6 @@ import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/src/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
 // Utils
-const clipboardCopy = require('clipboard-copy')
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
 import * as utils from '../utils'
@@ -37,8 +35,6 @@ interface Props extends Rewards.ComponentProps {
 }
 
 class PageWallet extends React.Component<Props, State> {
-  private backupFileName: string = 'brave_wallet_recovery.txt'
-
   constructor (props: Props) {
     super(props)
 
@@ -84,90 +80,6 @@ class PageWallet extends React.Component<Props, State> {
       }
     }
     this.setState({ addFundsShown: !this.state.addFundsShown })
-  }
-
-  onModalBackupOpen = () => {
-    const { recoveryKey } = this.props.rewardsData
-    if (recoveryKey.length === 0) {
-      this.actions.getWalletPassphrase()
-    }
-    this.actions.onModalBackupOpen()
-  }
-
-  onModalBackupClose = () => {
-    this.actions.onModalBackupClose()
-  }
-
-  onModalBackupTabChange = () => {
-    const newTabId = this.state.activeTabId === 0 ? 1 : 0
-    this.setState({
-      activeTabId: newTabId
-    })
-  }
-
-  onModalBackupOnCopy = (backupKey: string) => {
-    const success = clipboardCopy(backupKey)
-    console.log(success ? 'Copy successful' : 'Copy failed')
-  }
-
-  onModalBackupOnPrint = (backupKey: string) => {
-    if (!document.location) {
-      return
-    }
-
-    const documentWindow = window.open(document.location.href)
-    if (documentWindow) {
-      documentWindow.document.body.innerText = this.getBackupString(backupKey)
-      documentWindow.print()
-      documentWindow.close()
-    }
-  }
-
-  onModalBackupOnSaveFile = (backupKey: string) => {
-    const backupString = this.getBackupString(backupKey)
-    const blob = new Blob([backupString], { type: 'plain/test' })
-    const fileUrl = window.URL.createObjectURL(blob)
-
-    const saveAnchor = document.createElement('a')
-    saveAnchor.style.display = 'none'
-    saveAnchor.href = fileUrl
-    saveAnchor.download = this.backupFileName
-    document.body.appendChild(saveAnchor)
-
-    saveAnchor.click()
-    window.URL.revokeObjectURL(fileUrl)
-    document.body.removeChild(saveAnchor)
-  }
-
-  onModalBackupOnRestore = (key: string | MouseEvent) => {
-    if (typeof key === 'string' && key.length > 0) {
-      key = this.pullRecoveryKeyFromFile(key)
-      this.actions.recoverWallet(key)
-    }
-  }
-
-  pullRecoveryKeyFromFile = (key: string) => {
-    let recoveryKey = null
-    if (key) {
-      let messageLines = key.match(/^.+$/gm)
-      if (messageLines) {
-        let passphraseLine = '' || messageLines[2]
-        if (passphraseLine) {
-          const passphrasePattern = new RegExp(['Recovery Key:', '(.+)$'].join(' '))
-          recoveryKey = (passphraseLine.match(passphrasePattern) || [])[1]
-          return recoveryKey
-        }
-      }
-    }
-    return key
-  }
-
-  onModalBackupOnImport = () => {
-    console.log('To be implemented')
-  }
-
-  getBackupString = (key: string) => {
-    return utils.constructBackupString(key)
   }
 
   getConversion = () => {
@@ -237,11 +149,10 @@ class PageWallet extends React.Component<Props, State> {
       connectedWallet,
       addresses,
       walletInfo,
-      recoveryKey,
       ui,
       pendingContributionTotal
     } = this.props.rewardsData
-    const { walletRecoverySuccess, modalBackup, emptyWallet } = ui
+    const { emptyWallet } = ui
     const { balance } = walletInfo
     const addressArray = utils.getAddresses(addresses)
     const pendingTotal = parseFloat((pendingContributionTotal || 0).toFixed(1))
@@ -269,9 +180,8 @@ class PageWallet extends React.Component<Props, State> {
               ]}
               compact={true}
               isMobile={true}
-              onSettingsClick={this.onModalBackupOpen}
               onActivityClick={this.notImplemented}
-              showSecActions={true}
+              showSecActions={false}
               grants={this.getGrants()}
               alert={this.walletAlerts()}
               connectedWallet={connectedWallet}
@@ -288,21 +198,6 @@ class PageWallet extends React.Component<Props, State> {
                 : <WalletOff/>
               }
             </WalletWrapper>
-            {
-              modalBackup
-              ? <ModalBackupRestore
-                activeTabId={this.state.activeTabId}
-                backupKey={recoveryKey}
-                onTabChange={this.onModalBackupTabChange}
-                onClose={this.onModalBackupClose}
-                onCopy={this.onModalBackupOnCopy}
-                onPrint={this.onModalBackupOnPrint}
-                onSaveFile={this.onModalBackupOnSaveFile}
-                onRestore={this.onModalBackupOnRestore}
-                error={walletRecoverySuccess === false ? getLocale('walletRecoveryFail') : ''}
-                />
-              : null
-            }
           </StyledWalletWrapper>
           {
             this.state.addFundsShown
