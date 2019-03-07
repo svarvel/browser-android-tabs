@@ -9,13 +9,12 @@ import { connect } from 'react-redux'
 // Components
 import { AlertWallet } from 'brave-ui/src/features/rewards/walletWrapper'
 import {
-  ModalAddFunds,
   WalletSummary,
   WalletWrapper,
   WalletEmpty,
   WalletOff
 } from 'brave-ui/src/features/rewards'
-import { CloseStrokeIcon, WalletAddIcon } from 'brave-ui/src/components/icons'
+import { CloseStrokeIcon } from 'brave-ui/src/components/icons'
 import { StyledWalletClose, StyledWalletOverlay, StyledWalletWrapper } from './style'
 
 // Utils
@@ -26,7 +25,6 @@ import { convertProbiToFixed } from '../../../common/probiUtils'
 
 interface State {
   activeTabId: number
-  addFundsShown?: boolean
 }
 
 interface Props extends Rewards.ComponentProps {
@@ -39,8 +37,7 @@ class PageWallet extends React.Component<Props, State> {
     super(props)
 
     this.state = {
-      activeTabId: 0,
-      addFundsShown: false
+      activeTabId: 0
     }
   }
 
@@ -48,38 +45,8 @@ class PageWallet extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  componentDidMount () {
-    this.isAddFundsUrl()
-  }
-
-  isAddFundsUrl = () => {
-    if (window &&
-        window.location &&
-        window.location.hash &&
-        window.location.hash === '#add-funds') {
-      this.setState({
-        addFundsShown: true
-      })
-    } else {
-      this.setState({
-        addFundsShown: false
-      })
-    }
-  }
-
   notImplemented = () => {
     // Feature not implemented
-  }
-
-  toggleAddFunds = () => {
-    if (this.state.addFundsShown) {
-      if (window &&
-          window.location &&
-          window.location.href) {
-        window.location.href = 'chrome://rewards'
-      }
-    }
-    this.setState({ addFundsShown: !this.state.addFundsShown })
   }
 
   getConversion = () => {
@@ -147,17 +114,15 @@ class PageWallet extends React.Component<Props, State> {
     const {
       enabledMain,
       connectedWallet,
-      addresses,
       walletInfo,
       ui,
       pendingContributionTotal
     } = this.props.rewardsData
     const { emptyWallet } = ui
     const { balance } = walletInfo
-    const addressArray = utils.getAddresses(addresses)
     const pendingTotal = parseFloat((pendingContributionTotal || 0).toFixed(1))
 
-    if (!visible && !this.state.addFundsShown) {
+    if (!visible) {
       return null
     }
 
@@ -171,13 +136,7 @@ class PageWallet extends React.Component<Props, State> {
             <WalletWrapper
               balance={balance.toFixed(1)}
               converted={utils.formatConverted(this.getConversion())}
-              actions={[
-                {
-                  name: getLocale('panelAddFunds'),
-                  action: this.toggleAddFunds,
-                  icon: <WalletAddIcon />
-                }
-              ]}
+              actions={[]}
               compact={true}
               isMobile={true}
               onActivityClick={this.notImplemented}
@@ -199,11 +158,6 @@ class PageWallet extends React.Component<Props, State> {
               }
             </WalletWrapper>
           </StyledWalletWrapper>
-          {
-            this.state.addFundsShown
-            ? <ModalAddFunds isMobile={true} onClose={this.toggleAddFunds} addresses={addressArray} />
-            : null
-          }
         </StyledWalletOverlay>
       </React.Fragment>
     )
