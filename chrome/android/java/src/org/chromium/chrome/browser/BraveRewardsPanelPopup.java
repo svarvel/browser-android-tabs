@@ -228,6 +228,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (mBraveRewardsNativeWorker != null) {
             mBraveRewardsNativeWorker.GetRewardsMainEnabled();
         }
+        String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + "\u2122";
+        ((TextView)root.findViewById(R.id.brave_rewards_id)).setText(braveRewardsTitle);
         btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
@@ -704,8 +706,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 title = "";
                 notification_icon.setImageResource(R.drawable.icon_error_notification);
                 hl.setBackgroundResource(R.drawable.notification_header_error);
-                description =
-                    root.getResources().getString(R.string.brave_ui_notification_desc_no_internet_error);
+                description = "<b>" + root.getResources().getString(R.string.brave_rewards_local_uh_oh)
+                    + "</b> " + root.getResources().getString(R.string.brave_rewards_local_server_not_responding);
                 btClaimOk.setVisibility(View.GONE);
                 notificationClose.setVisibility(View.GONE);
                 nit.setOrientation(LinearLayout.HORIZONTAL);
@@ -808,7 +810,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   String date = Integer.toString(calTime.get(Calendar.MONTH) + 1) + "/" +
                       Integer.toString(calTime.get(Calendar.DAY_OF_MONTH)) + "/" +
                       Integer.toString(calTime.get(Calendar.YEAR));
-                  toInsert += String.format(this.root.getResources().getString(R.string.brave_ui_grant_info), 
+                  toInsert += String.format(this.root.getResources().getString(R.string.brave_ui_expires_on), 
                     date);
 
                   Context appContext = ContextUtils.getApplicationContext();
@@ -1093,7 +1095,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (amount > 0.0) {
             String non_verified_summary = 
               String.format(root.getResources().getString(
-                R.string.brave_ui_not_verified_publisher_summary), String.format("%.2f", amount)) + 
+                R.string.brave_ui_reserved_amount_text), String.format("%.2f", amount)) + 
               " <font color=#73CBFF>" + root.getResources().getString(R.string.learn_more) + 
               ".</font>";
             Context appContext = ContextUtils.getApplicationContext();
