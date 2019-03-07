@@ -194,7 +194,6 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 /content/web_ui_test_mojo_bindings.xml
 /data
 /delegate_execute
-/dist
 /device/serial/device_serial_mojo.xml
 /dist
 /google_apis/gcm/gcm.xml
