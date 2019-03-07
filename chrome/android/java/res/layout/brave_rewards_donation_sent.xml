@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:padding="10dp"
-                android:text="@string/brave_ui_donation_sent"
+                android:text="@string/brave_ui_thank_you"
                 android:textAllCaps="true"
                 android:textSize="16sp"
                 android:textStyle="bold"

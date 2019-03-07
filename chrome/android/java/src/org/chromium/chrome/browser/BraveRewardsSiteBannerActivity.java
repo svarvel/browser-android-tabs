@@ -200,7 +200,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         // Temporary disable it
         //not_enough_funds_btn.setOnClickListener (add_funds_clicker);
 
-        String part1 = getResources().getString(R.string.brave_ui_site_banner_not_enough_tokens);
+        String part1 = getResources().getString(R.string.brave_ui_not_enough_tokens);
         String part2 = getResources().getString(R.string.brave_ui_please);
         String part3 = getResources().getString(R.string.brave_ui_add_funds);
 
@@ -229,7 +229,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         if (!verified) {
             findViewById(R.id.not_verified_warning_layout ).setVisibility(View.VISIBLE);
 
-            part1 = getResources().getString(R.string.brave_ui_site_banner_not_verified);
+            part1 = getResources().getString(R.string.brave_ui_site_banner_notice_text);
             part2 = getResources().getString(R.string.learn_more);
 
             final StringBuilder sb1 = new StringBuilder();
@@ -364,7 +364,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         boolean checked = ((CheckBox) view).isChecked();
         Button send_btn = (Button) findViewById(R.id.send_donation_button);
 
-        int string_id = (checked)? R.string.brave_ui_site_banner_send_monthly_donation : R.string.brave_ui_site_banner_send_donation;
+        int string_id = (checked)? R.string.brave_ui_do_monthly : R.string.brave_ui_send_tip;
         String btn_text = getResources().getString(string_id);
         send_btn.setText(btn_text);
     }

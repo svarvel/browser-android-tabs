@@ -105,7 +105,7 @@
                             android:textColor="#686978"
                             android:textSize="14sp"
                             android:padding="10dp"
-                            android:text="@string/brave_ui_site_banner_not_verified"/>
+                            android:text="@string/brave_ui_site_banner_notice_text"/>
                     </LinearLayout>
 
 
@@ -130,7 +130,7 @@
                         android:fontFamily="sans-serif"
                         android:paddingStart="12dp"
                         android:paddingEnd="12dp"
-                        android:text="@string/brave_ui_site_banner_message1"
+                        android:text="@string/brave_ui_rewards_banner_text1"
                         android:textColor="#686978"
                         android:textSize="14sp" />
 
@@ -142,7 +142,7 @@
                         android:paddingTop="12dp"
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
-                        android:text="@string/brave_ui_site_banner_message2"
+                        android:text="@string/brave_ui_rewards_banner_text2"
                         android:textColor="#686978"
                         android:textSize="14sp" />
                 </LinearLayout> <!--Welcome-->
@@ -224,7 +224,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
-                    android:text="@string/brave_ui_site_banner_tip_amount"
+                    android:text="@string/brave_ui_donation_amount"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -237,7 +237,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:fontFamily="sans-serif"
-                    android:text="@string/brave_ui_site_banner_wallet_balance"
+                    android:text="@string/brave_ui_wallet_balance"
                     android:textAlignment="textEnd"
                     android:textSize="12sp" />
 
@@ -389,7 +389,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:fontFamily="sans-serif"
-                    android:text="@string/brave_ui_site_banner_make_monthly"
+                    android:text="@string/brave_ui_make_monthly"
                     android:textColor="@android:color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -428,7 +428,7 @@
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
                     android:singleLine="true"
-                    android:text="@string/brave_ui_site_banner_send_donation"
+                    android:text="@string/brave_ui_send_tip"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
