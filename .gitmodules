@@ -16,6 +16,3 @@
 [submodule "brave-crypto"]
 	path = brave-crypto
 	url = https://github.com/brave/crypto
-[submodule "niceware"]
-	path = niceware
-	url = https://github.com/diracdeltas/niceware.git
