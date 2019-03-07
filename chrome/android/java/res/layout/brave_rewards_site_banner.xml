@@ -47,6 +47,39 @@
                     android:background="#eaeeff"
                     android:orientation="vertical">
 
+                    <!-- Social networks buttons-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="12dp"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/chat_button"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="12dp"
+                            android:src="@drawable/icn_twitch" />
+
+                        <ImageView
+                            android:id="@+id/youtube_button"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/chat_button"
+                            android:src="@drawable/icn_youtube" />
+
+                        <ImageView
+                            android:id="@+id/twitter_button"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_toStartOf="@id/youtube_button"
+                            android:src="@drawable/icn_twitter" />
+                    </RelativeLayout>
+
                     <!-- Non verified warning-->
                     <LinearLayout
                         android:id="@+id/not_verified_warning_layout"
@@ -75,38 +108,6 @@
                             android:text="@string/brave_ui_site_banner_not_verified"/>
                     </LinearLayout>
 
-                    <!-- Social networks buttons-->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="12dp"
-                        android:visibility="gone">
-
-                        <ImageView
-                            android:id="@+id/chat_button"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="12dp"
-                            android:src="@drawable/icn_twitch" />
-
-                        <ImageView
-                            android:id="@+id/youtube_button"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_toStartOf="@id/chat_button"
-                            android:src="@drawable/icn_youtube" />
-
-                        <ImageView
-                            android:id="@+id/twitter_button"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_toStartOf="@id/youtube_button"
-                            android:src="@drawable/icn_twitter" />
-                    </RelativeLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -150,45 +151,43 @@
 
 
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent">
-
-        <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
-        <ProgressBar
-            android:id="@+id/publisher_favicon_update"
-            android:indeterminateDrawable="@drawable/progress_indeterminate"
+        <FrameLayout
+            android:id="@+id/publisher_favicon_holder"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:layout_marginHorizontal="22dp"
-            android:layout_marginVertical="22dp"
-            android:visibility="visible"/>
+            android:layout_marginStart="32dp"
+            android:background="@android:color/transparent">
 
-        <!-- Publisher's icon-->
-        <ImageView
-            android:id="@+id/publisher_favicon"
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:contentDescription="@null"
-            android:scaleType="center"
-            android:background="@drawable/publisher_favicon_background"
-            android:layout_marginHorizontal="22dp"
-            android:layout_marginVertical="22dp"
-            android:adjustViewBounds="true"
-            android:baselineAlignBottom="true"
-            android:layout_marginTop="12dp"
-            android:cropToPadding="true"
-            android:visibility="gone"/>
-        </FrameLayout>
+            <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
+            <ProgressBar
+                android:id="@+id/publisher_favicon_update"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:indeterminateDrawable="@drawable/progress_indeterminate"
+                android:layout_gravity="center"
+                android:visibility="visible"/>
 
+            <!-- Publisher's icon-->
+            <ImageView
+                android:id="@+id/publisher_favicon"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="center"
+                android:background="@drawable/publisher_favicon_background"
+                android:adjustViewBounds="true"
+                android:baselineAlignBottom="true"
+                android:cropToPadding="true"
+                android:visibility="gone"/>
+         </FrameLayout>
+
+        <!-- shadow -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="8dp"
             android:background="@drawable/brave_gradient_shadow"
             android:layout_gravity="bottom"/>
+
     </FrameLayout>
 
     <!-- Footer-->

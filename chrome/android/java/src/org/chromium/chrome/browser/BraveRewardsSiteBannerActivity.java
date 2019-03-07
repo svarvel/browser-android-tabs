@@ -14,10 +14,12 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -55,6 +57,8 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private final int PUBLISHER_ICON_SIDE_LEN= 70; //dp
     private final int TOUCH_PADDING_MONTHLY= 32; //dp
+    private final int ACTIVITY_HEADER_PADDING = 10; //dp
+    private final int ACTIVITY_HEADER_CONTENT_SIDE_MARGIN = 22; //dp
     private BraveRewardsHelper mIconFetcher;
 
     @Override
@@ -264,12 +268,37 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
         RelativeLayout monthly_layout = ((RelativeLayout)findViewById(R.id.monthly_contribution));
         if (mBraveRewardsNativeWorker.IsCurrentPublisherInRecurrentDonations(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_))) {
-            monthly_layout.setVisibility(View.GONE);
+            monthly_layout.setVisibility(View.INVISIBLE);
         } else {
             // `monthly_contribution` is VISIBLE by default
             CheckBox monthly_chk = (CheckBox) findViewById(R.id.make_monthly_checkbox);
             BraveRewardsHelper.expandTouchArea (monthly_layout, monthly_chk, TOUCH_PADDING_MONTHLY);
         }
+
+
+        //put icon `publisher_favicon_holder` at the middle of the position of `header_scrollView`
+        final View layout = (View) findViewById(R.id.header_scrollView);
+        ViewTreeObserver vto = layout.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                layout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+                int top = layout.getTop();
+                int newY = top - BraveRewardsHelper.dp2px( PUBLISHER_ICON_SIDE_LEN / 2 + ACTIVITY_HEADER_PADDING);
+                int minTopPosition = BraveRewardsHelper.dp2px(ACTIVITY_HEADER_CONTENT_SIDE_MARGIN);
+
+                if (newY < minTopPosition){
+                    newY = minTopPosition;
+                }
+
+                FrameLayout icon  = (FrameLayout)findViewById(R.id.publisher_favicon_holder);
+                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)icon.getLayoutParams();
+                params.setMargins(params.leftMargin, newY, params.rightMargin, params.bottomMargin);
+                icon.setLayoutParams(params);
+                icon.requestLayout();
+            }
+        });
     }
 
 
