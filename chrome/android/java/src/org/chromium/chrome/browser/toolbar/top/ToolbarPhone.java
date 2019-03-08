@@ -311,6 +311,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      */
     private ViewTreeObserver.OnGlobalLayoutListener mExperimentalButtonLayoutListener;
 
+    private FrameLayout mShieldsLayout;
+    private FrameLayout mRewardsLayout;
+
     // The following are some properties used during animation.  We use explicit property classes
     // to avoid the cost of reflection for each animation setup.
 
@@ -407,8 +410,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         Resources res = getResources();
         mLocationBarBackgroundVerticalInset =
                 res.getDimensionPixelSize(R.dimen.location_bar_vertical_margin);
-        mLocationBarBackground = createModernLocationBarBackground(getResources(),
-            R.drawable.modern_toolbar_background_white);
+        mLocationBarBackground = createModernLocationBarBackground(getResources());
 
         int lateralPadding = res.getDimensionPixelOffset(R.dimen.location_bar_lateral_padding);
         mLocationBar.setPadding(lateralPadding, 0, lateralPadding, 0);
@@ -419,7 +421,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     /**
      * @return The drawable for the modern location bar background.
      */
-    public static Drawable createModernLocationBarBackground(Resources resources, int drawableId) {
+    public static Drawable createModernLocationBarBackground(Resources resources) {
         Drawable drawable = ApiCompatibilityUtils.getDrawable(
                 resources, R.drawable.modern_toolbar_text_box_background_with_primary_color);
         drawable.mutate();
@@ -433,13 +435,11 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      * Set the background color of the location bar to appropriately match the theme color.
      */
     private void updateModernLocationBarColor(int color) {
-        // (Albert Wang): We want to preserve the LocationBar color across all pages and in incognito mode
-        return;
-        /*
         if (mCurrentLocationBarColor == color) return;
         mCurrentLocationBarColor = color;
         mLocationBarBackground.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-        */
+        mShieldsLayout.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        mRewardsLayout.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_IN);
     }
 
     /**
@@ -458,10 +458,12 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         if (mBraveShieldsButton != null) {
             mBraveShieldsButton.setClickable(true);
         }
+        mShieldsLayout = (FrameLayout) findViewById(R.id.brave_shields_button_layout);
         mBraveRewardsPanelButton = (ImageView) findViewById(R.id.brave_rewards_button);
         if (mBraveRewardsPanelButton != null) {
             mBraveRewardsPanelButton.setClickable(true);
         }
+        mRewardsLayout = (FrameLayout) findViewById(R.id.brave_rewards_button_layout);
         mBraveRewardsNotificationsCount = (TextView) findViewById(R.id.br_notifications_count);
     }
 
@@ -492,11 +494,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     @Override
     void onNativeLibraryReady() {
         if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
-            FrameLayout rewardsLayout = (FrameLayout) findViewById(R.id.brave_rewards_button_layout);
-            FrameLayout shieldsLayout = (FrameLayout) findViewById(R.id.brave_shields_button_layout);
-            if (rewardsLayout != null && shieldsLayout != null) {
-                shieldsLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getResources(), R.color.modern_grey_100));
-                rewardsLayout.setVisibility(View.VISIBLE);
+            if (mRewardsLayout != null) {
+                mRewardsLayout.setVisibility(View.VISIBLE);
             }
         }
 
@@ -1050,11 +1049,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         locationBarBaseTranslationX *= 1f
                 - (mExperimentalButtonAnimationRunning ? mLocBarWidthChangePercent
                                                        : mUrlExpansionPercent);
-
-        mLocationBarBackground = createModernLocationBarBackground(getResources(),
-            getToolbarButtonVisibility() == VISIBLE ? R.drawable.modern_toolbar_background_white : R.drawable.modern_toolbar_background_selected);
-        mLocationBarBackground.mutate();
-        mActiveLocationBarBackground = mLocationBarBackground;
 
         mLocationBarBackgroundNtpOffset.setEmpty();
         mLocationBarNtpOffsetLeft = 0;
