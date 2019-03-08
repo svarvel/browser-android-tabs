@@ -69,6 +69,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "adsDesc",  IDS_BRAVE_REWARDS_LOCAL_ADS_DESC },
         { "adsDisabledText",  IDS_BRAVE_REWARDS_LOCAL_ADS_DISABLED_TEXT },
 
+        { "bat", IDS_BRAVE_UI_BAT_REWARDS_TEXT },
         { "contributionTitle",  IDS_BRAVE_REWARDS_LOCAL_CONTR_TITLE },
         { "contributionDesc",  IDS_BRAVE_REWARDS_LOCAL_CONTR_DESC },
         { "contributionMonthly",  IDS_BRAVE_REWARDS_LOCAL_CONTR_MONTHLY },
