@@ -69,6 +69,11 @@ export const StyledWalletWrapper = styled<{}, 'div'>('div')`
   width: 90%;
   position: absolute;
   top: 50px;
+
+  @media (max-height: 515px) {
+    max-height: 415px;
+    overflow-y: scroll;
+  }
 `
 
 export const StyledWalletClose = styled<{}, 'div'>('div')`

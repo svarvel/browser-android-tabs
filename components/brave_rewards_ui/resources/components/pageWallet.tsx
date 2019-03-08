@@ -45,10 +45,6 @@ class PageWallet extends React.Component<Props, State> {
     return this.props.actions
   }
 
-  notImplemented = () => {
-    // Feature not implemented
-  }
-
   getConversion = () => {
     const walletInfo = this.props.rewardsData.walletInfo
     return utils.convertBalance(walletInfo.balance.toString(), walletInfo.rates)
@@ -139,7 +135,7 @@ class PageWallet extends React.Component<Props, State> {
               actions={[]}
               compact={true}
               isMobile={true}
-              onActivityClick={this.notImplemented}
+              showCopy={true}
               showSecActions={false}
               grants={this.getGrants()}
               alert={this.walletAlerts()}

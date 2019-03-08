@@ -121,7 +121,7 @@ class ContributeBox extends React.Component<Props, State> {
             <SelectMobile
               amountOptions={this.getAmountOptions(monthlyList)}
               onChange={this.onSelectSettingChange.bind(this, 'contributionMonthly')}
-              value={(contributionMonthly || '').toString()}
+              value={parseFloat((contributionMonthly.toString() || '0')).toFixed(1)}
             />
           </ControlWrapper>
           <ControlWrapper text={getLocale('contributionMinTime')}>
