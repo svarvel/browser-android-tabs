@@ -960,12 +960,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     public void OnGetCurrentBalanceReport(String[] report) {
         boolean no_activity = true;
         for (int i = 0; i < report.length; i++) {
+          TextView tvTitle = null;
           TextView tv = null;
           TextView tvUSD = null;
           String text = "";
           String textUSD = "";
 
           double  probiDouble = BraveRewardsHelper.probiToDouble(report[i]);
+          boolean hideControls = (probiDouble == 0);
           String value = Double.isNaN(probiDouble) ? ERROR_CONVERT_PROBI : String.format("%.2f", probiDouble);
 
           String usdValue = ERROR_CONVERT_PROBI;
@@ -980,30 +982,35 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             case 2:
               break;
             case 3:
+              tvTitle = (TextView)root.findViewById(R.id.br_grants_claimed_title);
               tv = (TextView)root.findViewById(R.id.br_grants_claimed_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_grants_claimed_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
             case 4:
+              tvTitle = (TextView)root.findViewById(R.id.br_earnings_ads_title);
               tv = (TextView)root.findViewById(R.id.br_earnings_ads_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_earnings_ads_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
             case 5:
+              tvTitle = (TextView)root.findViewById(R.id.br_auto_contribute_title);
               tv = (TextView)root.findViewById(R.id.br_auto_contribute_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_auto_contribute_usd);
               text = "<font color=#6537AD>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
             case 6:
+              tvTitle = (TextView)root.findViewById(R.id.br_recurring_donation_title);
               tv = (TextView)root.findViewById(R.id.br_recurring_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_recurring_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
             case 7:
+              tvTitle = (TextView)root.findViewById(R.id.br_one_time_donation_title);
               tv = (TextView)root.findViewById(R.id.br_one_time_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_one_time_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
@@ -1012,8 +1019,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             case 8:
               break;
           }
-          if (tv != null && tvUSD != null &&
+          if (tvTitle != null && tv != null && tvUSD != null &&
               !text.isEmpty() && !textUSD.isEmpty()) {
+            tvTitle.setVisibility(hideControls ? View.GONE : View.VISIBLE);
+            tv.setVisibility(hideControls ? View.GONE : View.VISIBLE);
+            tvUSD.setVisibility(hideControls ? View.GONE : View.VISIBLE);
             Context appContext = ContextUtils.getApplicationContext();
             Spanned toInsert;
             if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
