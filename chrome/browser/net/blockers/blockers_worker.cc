@@ -15,9 +15,9 @@
 #include "../../../../third_party/leveldatabase/src/include/leveldb/db.h"
 #include "../../../../third_party/re2/src/re2/re2.h"
 #include "../../../../url/gurl.h"
-#include <tracking-protection/TPParser.h>
-#include <ad-block/ad_block_client.h>
-#include <ad-block/data_file_version.h>
+#include "brave/vendor/tracking-protection/TPParser.h"
+#include "brave/vendor/ad-block/ad_block_client.h"
+#include "brave/vendor/ad-block/data_file_version.h"
 #include "base/strings/pattern.h"
 #include "net/base/registry_controlled_domains/registry_controlled_domain.h"
 
