@@ -4392,7 +4392,7 @@ watching privacy-respecting ads.
         add funds
       </message>
       <message name="IDS_BRAVE_UI_THANK_YOU" desc="A message that appears after tipping">
-        Thank you!
+        Thank you
       </message>
       <message name="IDS_BRAVE_UI_ERROR_INIT_WALLET" desc="An error which appear on wallet creation with no connection to the rewards service">
         Please try again later.
@@ -4525,6 +4525,18 @@ content creators you love.
       </message>
       <message name="IDS_BRAVE_WELCOME_PAGE_REWARDS_TITLE" desc="Enable Rewards button">
         ENABLE BRAVE REWARDS
+      </message>
+      <message name="IDS_BRAVE_UI_FIRST_TIP_TEXT" desc="string from Thank you screen">
+        Your first monthly tip will be sent on:
+      </message>
+      <message name="IDS_BRAVE_UI_TIP_TEXT" desc="string from Thank you screen">
+        You've just sent a tip to:
+      </message>
+      <message name="IDS_BRAVE_UI_AUTO_TIP_TEXT" desc="string from Thank you screen">
+        You are automatically sending a tip to:
+      </message>
+      <message name="IDS_BRAVE_UI_MONTHLY_TEXT" desc="string from Thank you screen">
+        Monthly
       </message>
       <!--End of rewards temporary section.-->
     </messages>

@@ -12,13 +12,15 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/tip_sent_float">
+            android:background="@drawable/tip_sent_float"
+            tools:fontFamily="@font/poppins_bold"
+            android:gravity="center">
 
             <FrameLayout
+                android:layout_centerHorizontal="true"
                 android:id="@+id/frame_publisher_favicon"
                 android:layout_height="80dp"
                 android:layout_width="80dp"
-                android:layout_centerInParent="true"
                 android:background="@drawable/publisher_favicon_background">
 
                 <ProgressBar
@@ -26,28 +28,89 @@
                     android:indeterminateDrawable="@drawable/progress_indeterminate"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:visibility="visible"/>
+                    android:visibility="gone"/>
 
                 <ImageView
                     android:id="@+id/publisher_favicon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="center"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
 
             </FrameLayout>
 
             <TextView
+                android:id="@+id/txt_thank_you"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:padding="10dp"
+                android:layout_below="@id/frame_publisher_favicon"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="10dp"
                 android:text="@string/brave_ui_thank_you"
-                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/txt_you_sent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_ui_tip_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_below="@id/txt_thank_you"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/txt_pub_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/brave_ui_auto_tip_text"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:layout_below="@id/frame_publisher_favicon"
-                android:layout_centerHorizontal="true"/>
+                android:layout_below="@id/txt_you_sent"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_ui_monthly_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@id/txt_pub_name"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/txt_tip_will_be_sent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/brave_ui_first_tip_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_below="@id/txt_amount"
+                android:layout_centerHorizontal="true"
+                android:textColor="@android:color/white"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:id="@+id/txt_send_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/brave_ui_thank_you"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_below="@id/txt_tip_will_be_sent"
+                android:layout_centerHorizontal="true"
+                android:textColor="#cb5737"
+                android:visibility="gone"/>
+
         </RelativeLayout>
 
 </RelativeLayout>

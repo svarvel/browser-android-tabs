@@ -229,4 +229,8 @@ until they verify, or until 90 days have passed.</string>
 ads, and pay it forward to support
 content creators you love.</string>
     <string name="brave_welcome_page_rewards_title">ENABLE BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Your first monthly tip will be sent on:</string>
+    <string name="brave_ui_tip_text">You've just sent a tip to:</string>
+    <string name="brave_ui_auto_tip_text">You are automatically sending a tip to:</string>
+    <string name="brave_ui_monthly_text">Monthly</string>
 </resources>
