@@ -676,7 +676,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                     if (title.isEmpty()) {
                         btClaimOk.setVisibility(View.GONE);
                         nit.setOrientation(LinearLayout.HORIZONTAL);
-                        params.setMargins(params.leftMargin, 30, params.rightMargin, params.bottomMargin);
+                        params.setMargins(params.leftMargin, 35, params.rightMargin, params.bottomMargin);
                         nit.setLayoutParams(params);
                         tv.setGravity(Gravity.START);
                     }
