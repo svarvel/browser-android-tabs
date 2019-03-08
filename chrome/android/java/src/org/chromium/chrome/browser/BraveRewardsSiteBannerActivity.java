@@ -169,12 +169,13 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                 }
                 //not enough funds
                 else {
-                    TextView send_tip = (TextView) findViewById(R.id.send_donation_button);
-                    send_tip.setVisibility(View.GONE);
-                    View animatedView = findViewById(R.id.not_enough_funds_text);
-                    TranslateAnimation animate = new TranslateAnimation(0,0,findViewById(R.id.send_donation_button).getHeight(),0);
+                    View send_tip = findViewById(R.id.send_donation_button);
+                    send_tip.setVisibility(View.INVISIBLE);
+                    View animatedView = findViewById(R.id.not_enough_funds_button);
+                    int fromY = findViewById(R.id.send_donation_button).getHeight();
+
+                    TranslateAnimation animate = new TranslateAnimation(0,0,fromY,0);
                     animate.setDuration(FADE_OUT_DURATION);
-                    animate.setFillAfter(true);
                     animatedView.startAnimation(animate);
                     animatedView.setVisibility(View.VISIBLE);
                 }
@@ -185,20 +186,30 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
 
         //set 'add funds' button onClick
-        // Temporary disable it
-        // View.OnClickListener add_funds_clicker = new View.OnClickListener() {
-        //     @Override
-        //     public void onClick(View view) {
+         View.OnClickListener add_funds_clicker = new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 /*
+                 //Temporary disable Add Funds functionality and add return to `Send Tip` button
+                 Intent returnIntent = new Intent();
+                 setResult(ChromeTabbedActivity.SITE_BANNER_ADD_FUNDS_RESULT_CODE, returnIntent);
+                 finish();
+                 */
 
-        //         Intent returnIntent = new Intent();
-        //   setResult(ChromeTabbedActivity.SITE_BANNER_ADD_FUNDS_RESULT_CODE, returnIntent);
-        //   finish();
-        //     }
-        // };
+                 View add_funds_btn = findViewById(R.id.not_enough_funds_button);
+                 add_funds_btn.setVisibility(View.INVISIBLE);
 
-        TextView not_enough_funds_btn = (TextView)findViewById(R.id.not_enough_funds_text);
-        // Temporary disable it
-        //not_enough_funds_btn.setOnClickListener (add_funds_clicker);
+                 View animatedView = findViewById(R.id.send_donation_button);
+                 int fromY = findViewById(R.id.send_donation_button).getHeight();
+                 TranslateAnimation animate = new TranslateAnimation(0,0,fromY,0);
+                 animate.setDuration(FADE_OUT_DURATION);
+                 animatedView.startAnimation(animate);
+                 animatedView.setVisibility(View.VISIBLE);
+             }
+         };
+
+        View not_enough_funds_btn = findViewById(R.id.not_enough_funds_button);
+        not_enough_funds_btn.setOnClickListener (add_funds_clicker);
 
         String part1 = getResources().getString(R.string.brave_ui_not_enough_tokens);
         String part2 = getResources().getString(R.string.brave_ui_please);
@@ -207,6 +218,10 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         part1 = part1.substring(0,1).toUpperCase() + part1.substring(1);
         part2 = part2.substring(0,1).toUpperCase() + part2.substring(1);
 
+        Spanned toInsert;
+        Context appContext = ContextUtils.getApplicationContext();
+        //Temporary disabled
+        /*
         StringBuilder sb = new StringBuilder();
         sb.append(part1);
         sb.append(". ");
@@ -215,14 +230,18 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         sb.append(part3);
         sb.append("</u>.");
 
-        Spanned toInsert;
-        Context appContext = ContextUtils.getApplicationContext();
         if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             toInsert = Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY);
         } else {
             toInsert = Html.fromHtml(sb.toString());
         }
-        not_enough_funds_btn.setText(toInsert);
+        TextView tv = (TextView)findViewById(R.id.not_enough_funds_text);
+        tv.setText(toInsert);
+        */
+
+        //Once Add Funds is enabled: uncomment above block and delete next 2 lines
+        TextView tv = (TextView)findViewById(R.id.not_enough_funds_text);
+        tv.setText(part1);
 
         ///////////////////////////////////////////////////////////////////////////////////////
         boolean verified = mBraveRewardsNativeWorker.GetPublisherVerified(currentTabId_);
@@ -362,7 +381,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     //`make_monthly_checkbox` checkbox click handler
     public void onMonthlyCheckboxClicked(View view) {
         boolean checked = ((CheckBox) view).isChecked();
-        Button send_btn = (Button) findViewById(R.id.send_donation_button);
+        TextView send_btn = (TextView) findViewById(R.id.send_donation_text);
 
         int string_id = (checked)? R.string.brave_ui_do_monthly : R.string.brave_ui_send_tip;
         String btn_text = getResources().getString(string_id);

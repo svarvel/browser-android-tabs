@@ -416,44 +416,69 @@
                 android:background="@android:color/transparent"
                 android:orientation="vertical">
 
-                <Button
+                <LinearLayout
                     android:id="@+id/send_donation_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
                     android:background="#5e45d0"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center|center_vertical"
-                    android:paddingStart="36dp"
-                    android:paddingEnd="36dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
-                    android:singleLine="true"
-                    android:text="@string/brave_ui_send_tip"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center"
+                        android:src="@drawable/plane_small"
+                        android:paddingEnd="12dp"/>
+
+                    <TextView
+                        android:id="@+id/send_donation_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:layout_gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:text="@string/brave_ui_send_tip"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
 
 
-                <Button
-                    android:id="@+id/not_enough_funds_text"
+                <LinearLayout
+                    android:id="@+id/not_enough_funds_button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
                     android:background="@android:color/black"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center|center_vertical"
-                    android:paddingStart="36dp"
-                    android:paddingEnd="36dp"
-                    android:paddingTop="3dp"
-                    android:paddingBottom="3dp"
-                    android:singleLine="true"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center"
+                        android:src="@drawable/icn_frowning_face"
+                        android:paddingEnd="12dp"/>
+
+                    <TextView
+                        android:id="@+id/not_enough_funds_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:layout_gravity="center_vertical|center"
+                        android:singleLine="true"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
             </RelativeLayout>
         </LinearLayout>
