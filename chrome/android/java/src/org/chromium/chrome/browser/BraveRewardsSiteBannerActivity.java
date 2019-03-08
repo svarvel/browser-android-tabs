@@ -52,6 +52,9 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     private final int FADE_OUT_DURATION = 750;
     private final float LANDSCAPE_HEADER_WEIGHT = 2.0f;
     public static final String TAB_ID_EXTRA = "currentTabId";
+    public static final String TIP_AMOUNT_EXTRA="tipAmount";
+    public static final String TIP_MONTHLY_EXTRA="tipMonthly";
+    public static final String RECON_STAMP_EXTRA="reconcileStamp";
 
     private int currentTabId_ = -1;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
@@ -161,10 +164,19 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                 //proceed to tipping
                 if (true == enough_funds) {
                     CheckBox monthly = (CheckBox)findViewById(R.id.make_monthly_checkbox);
+                    boolean monthly_bool = monthly.isChecked();
                     mBraveRewardsNativeWorker.Donate(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_),
-                        amount, monthly.isChecked());
+                        amount, monthly_bool);
                     Intent intent = new Intent(getApplicationContext(), BraveRewardsDonationSentActivity.class);
                     intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId_);
+                    intent.putExtra(BraveRewardsSiteBannerActivity.TIP_AMOUNT_EXTRA, amount);
+                    intent.putExtra(BraveRewardsSiteBannerActivity.TIP_MONTHLY_EXTRA, monthly_bool);
+
+                    if (true == monthly_bool) {
+                        String strReconcileStamp = "not a date"; //temp date placeholder
+                        intent.putExtra(BraveRewardsSiteBannerActivity.RECON_STAMP_EXTRA, strReconcileStamp);
+                    }
+
                     startActivityForResult(intent,TIP_SENT_REQUEST_CODE);
                 }
                 //not enough funds
