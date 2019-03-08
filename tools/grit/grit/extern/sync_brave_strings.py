@@ -17,7 +17,7 @@ def CheckStrings():
         string_name = string_tag.get('name')
         if string_name in skip_string_names:
             continue
-        string_value = string_tag.text.strip()
+        string_value = (string_tag.text.strip() if not string_tag.text is None else '')
         if not string_name:
             sys.exit('String name is empty')
         string_name_ids = 'IDS_' + string_name.upper()
@@ -25,13 +25,13 @@ def CheckStrings():
         message_found = False
         for message_tag in messages.findall('message'):
             message_name = message_tag.get('name')
-            message_value = message_tag.text.strip()
+            message_value = (message_tag.text.strip() if not message_tag.text is None else '')
             if not message_name:
                 sys.exit('Message name is empty')
             if string_name_ids == message_name:
                 if not string_value == message_value:
                     string_tag.text = message_value
-                    base_strings_file_modified = True
+                    base_strings_file_modified = False
                     print('String "' + string_name + '" updated with value "' + message_value + '"')
                 message_found = True
                 break
