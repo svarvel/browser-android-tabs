@@ -49,7 +49,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
     private  ToggleButton radio_tip_amount[] = new ToggleButton [3];
     private final int TIP_SENT_REQUEST_CODE = 2;
-    private final int FADE_OUT_DURATION = 750;
+    private final int FADE_OUT_DURATION = 500;
     private final float LANDSCAPE_HEADER_WEIGHT = 2.0f;
     public static final String TAB_ID_EXTRA = "currentTabId";
     public static final String TIP_AMOUNT_EXTRA="tipAmount";
