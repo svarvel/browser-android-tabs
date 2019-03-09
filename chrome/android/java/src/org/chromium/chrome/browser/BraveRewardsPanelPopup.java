@@ -444,6 +444,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   }
               }
               else if (mBraveRewardsNativeWorker != null) {
+
+                  //disable and hide CLAIM button
+                  claimOk.setEnabled(false);
+                  View fadein = root.findViewById(R.id.progress_br_claim_button);
+                  BraveRewardsHelper.crossfade(claimOk, fadein, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
+
                   mBraveRewardsNativeWorker.GetGrant();
 
                   walletDetailsReceived = false; //re-read wallet status

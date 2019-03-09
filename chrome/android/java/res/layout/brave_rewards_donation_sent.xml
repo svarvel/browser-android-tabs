@@ -28,14 +28,14 @@
                     android:indeterminateDrawable="@drawable/progress_indeterminate"
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
 
                 <ImageView
                     android:id="@+id/publisher_favicon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="center"
-                    android:visibility="visible"/>
+                    android:visibility="gone"/>
 
             </FrameLayout>
 
