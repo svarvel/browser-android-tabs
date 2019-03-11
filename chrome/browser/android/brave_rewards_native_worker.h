@@ -114,6 +114,10 @@ public:
 
     bool IsAutoContributeEnabled(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    void GetReconcileStamp(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
+    void OnGetGetReconcileStamp( uint64_t timestamp);
+
     void OnGetAutoContributeProps( std::unique_ptr<brave_rewards::AutoContributeProps> info);
 
     void OnGetRewardsMainEnabled(bool enabled);
@@ -121,7 +125,6 @@ public:
     void OnGetPendingContributionsTotal(double amount);
 
     void OnIsWalletCreated(bool created);
-
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         int error_code) override;

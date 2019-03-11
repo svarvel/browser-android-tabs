@@ -381,6 +381,21 @@ bool BraveRewardsNativeWorker::IsAutoContributeEnabled(JNIEnv* env, const base::
   return auto_contrib_properties_.enabled_contribute;
 }
 
+void BraveRewardsNativeWorker::GetReconcileStamp(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj){
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetReconcileStamp(base::Bind(
+            &BraveRewardsNativeWorker::OnGetGetReconcileStamp,
+            weak_factory_.GetWeakPtr()));
+  }
+}
+
+void BraveRewardsNativeWorker::OnGetGetReconcileStamp( uint64_t timestamp){
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnGetReconcileStamp(env,
+          weak_java_brave_rewards_native_worker_.get(env), timestamp);
+}
+
 
 void BraveRewardsNativeWorker::OnGetPendingContributionsTotal(double amount) {
   JNIEnv* env = base::android::AttachCurrentThread();
