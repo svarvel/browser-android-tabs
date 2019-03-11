@@ -1147,4 +1147,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         View viewAC  = root.findViewById(R.id.ac_enabled_controls);
         viewAC.setVisibility(ac_enabled? View.VISIBLE : View.GONE);
     }
+
+    @Override
+    public void OnGetReconcileStamp(long timestamp){}
 }

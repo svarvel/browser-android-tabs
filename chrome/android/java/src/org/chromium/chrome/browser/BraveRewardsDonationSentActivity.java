@@ -24,11 +24,13 @@ import org.chromium.chrome.browser.util.IntentUtils;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
+import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.BraveRewardsSiteBannerActivity;
 
 import static java.util.Locale.getDefault;
+import java.text.SimpleDateFormat;
 
-public class BraveRewardsDonationSentActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback {
+public class BraveRewardsDonationSentActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback, BraveRewardsObserver  {
 
     private final int SLIDE_UP_DURATION = 2000;
     private final int PUBLISHER_ICON_SIDE_LEN= 70;
@@ -38,7 +40,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     private int mAmount_;
     private boolean mMonthly_tip_;
     private String mPublisher_name_;
-    private String mReconcileStamp_;
+    private java.util.Date mReconcileStamp_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         setContentView(R.layout.brave_rewards_donation_sent);
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, -1);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
+        mBraveRewardsNativeWorker.AddObserver(this);
+
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
         Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
         String url = currentActiveTab.getUrl();
@@ -54,6 +58,15 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         mIconFetcher.retrieveLargeIcon(favicon_url, this);
         SetData();
         SetAnimation();
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+        if (null != mBraveRewardsNativeWorker){
+            mBraveRewardsNativeWorker.RemoveObserver(this);
+        }
     }
 
 
@@ -107,9 +120,6 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         mPublisher_name_ = mBraveRewardsNativeWorker.GetPublisherName(currentTabId_);
         mAmount_ = IntentUtils.safeGetIntExtra (intent, BraveRewardsSiteBannerActivity.TIP_AMOUNT_EXTRA, 0);
         mMonthly_tip_ = IntentUtils.safeGetBooleanExtra (intent, BraveRewardsSiteBannerActivity.TIP_MONTHLY_EXTRA, false);
-        if (true == mMonthly_tip_){
-            mReconcileStamp_ = IntentUtils.safeGetStringExtra (intent, BraveRewardsSiteBannerActivity.RECON_STAMP_EXTRA);
-        }
 
         //set the data
         String strAmount = String.format(getDefault(), "%.1f BAT", (float)mAmount_);
@@ -120,16 +130,15 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
             String monthly_send_msg = getResources().getString(R.string.brave_ui_auto_tip_text);
             ((TextView)findViewById(R.id.txt_you_sent)).setText(monthly_send_msg);
 
-            //make visible reconcile date views
-            findViewById(R.id.txt_tip_will_be_sent).setVisibility(View.VISIBLE);
-            TextView send_date = (TextView)findViewById(R.id.txt_send_date);
-            send_date.setVisibility(View.VISIBLE);
-            send_date.setText(mReconcileStamp_);
-
             //add 'Monthly' to amount
             strAmount += ", ";
             String monthly = getResources().getString(R.string.brave_ui_monthly_text);
             strAmount += monthly;
+
+            //get next reconcile stamp
+            //the `txt_tip_will_be_sent` and `txt_send_date` will be made visible in OnGetReconcileStamp
+            mBraveRewardsNativeWorker.GetReconcileStamp();
+
         }
         ((TextView)findViewById(R.id.txt_amount)).setText(strAmount);
     }
@@ -156,5 +165,57 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     @Override
     public void onLargeIconReady(Bitmap icon){
         SetFavIcon(icon);
+    }
+
+
+    // BraveRewardsObserver/////////////////////////////////////
+    @Override
+    public void OnWalletInitialized(int error_code){}
+
+    @Override
+    public void OnWalletProperties(int error_code){}
+
+    @Override
+    public void OnPublisherInfo(int tabId){}
+
+    @Override
+    public void OnGetCurrentBalanceReport(String[] report){}
+
+    @Override
+    public void OnNotificationAdded(String id, int type, long timestamp, String[] args) {}
+
+    @Override
+    public void OnNotificationsCount(int count) {}
+
+    @Override
+    public void OnGetLatestNotification(String id, int type, long timestamp, String[] args) {}
+
+    @Override
+    public void OnNotificationDeleted(String id) {}
+
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
+    @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {}
+
+    @Override
+    public void OnGetAutoContributeProps() {}
+
+    @Override
+    public void OnGetReconcileStamp(long timestamp) {
+        //make reconcile date views visible
+        if (true == mMonthly_tip_) {
+            findViewById(R.id.txt_tip_will_be_sent).setVisibility(View.VISIBLE);
+            
+            TextView send_date = (TextView) findViewById(R.id.txt_send_date);
+            send_date.setVisibility(View.VISIBLE);
+            mReconcileStamp_ = new java.util.Date(timestamp * 1000); //ms
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", getDefault());
+            send_date.setText(formatter.format (mReconcileStamp_));
+        }
     }
 }

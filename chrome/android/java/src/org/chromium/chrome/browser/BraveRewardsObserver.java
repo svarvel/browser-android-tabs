@@ -19,4 +19,5 @@ public interface BraveRewardsObserver {
   public void OnGetPendingContributionsTotal(double amount);
   public void OnGetRewardsMainEnabled(boolean enabled);
   public void OnGetAutoContributeProps();
+  public void OnGetReconcileStamp(long timestamp);
 }

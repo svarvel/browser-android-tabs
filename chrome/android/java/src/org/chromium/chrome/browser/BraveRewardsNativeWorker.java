@@ -218,6 +218,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    void GetReconcileStamp(){
+        synchronized(lock) {
+            nativeGetReconcileStamp(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
+
     @CalledByNative
     public void OnGetRewardsMainEnabled(boolean enabled) {
         for(BraveRewardsObserver observer : observers_) {
@@ -310,6 +317,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    @CalledByNative
+    public void OnGetReconcileStamp(long timestamp) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnGetReconcileStamp(timestamp);
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -345,4 +359,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeSetRewardsMainEnabled(long nativeBraveRewardsNativeWorker, boolean enabled);
     private native void nativeGetAutoContributeProps(long nativeBraveRewardsNativeWorker);
     private native boolean nativeIsAutoContributeEnabled(long nativeBraveRewardsNativeWorker);
+    private native void nativeGetReconcileStamp(long nativeBraveRewardsNativeWorker);
+
 }

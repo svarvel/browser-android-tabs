@@ -54,7 +54,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     public static final String TAB_ID_EXTRA = "currentTabId";
     public static final String TIP_AMOUNT_EXTRA="tipAmount";
     public static final String TIP_MONTHLY_EXTRA="tipMonthly";
-    public static final String RECON_STAMP_EXTRA="reconcileStamp";
 
     private int currentTabId_ = -1;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
@@ -171,12 +170,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId_);
                     intent.putExtra(BraveRewardsSiteBannerActivity.TIP_AMOUNT_EXTRA, amount);
                     intent.putExtra(BraveRewardsSiteBannerActivity.TIP_MONTHLY_EXTRA, monthly_bool);
-
-                    if (true == monthly_bool) {
-                        String strReconcileStamp = "not a date"; //temp date placeholder
-                        intent.putExtra(BraveRewardsSiteBannerActivity.RECON_STAMP_EXTRA, strReconcileStamp);
-                    }
-
                     startActivityForResult(intent,TIP_SENT_REQUEST_CODE);
                 }
                 //not enough funds
