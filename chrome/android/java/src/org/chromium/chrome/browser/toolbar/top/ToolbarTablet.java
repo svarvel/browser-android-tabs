@@ -12,6 +12,8 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.content.res.AppCompatResources;
@@ -549,6 +551,19 @@ public class ToolbarTablet extends ToolbarLayout
 
     @Override
     void updateButtonVisibility() {
+        if (mBraveRewardsPanelButton != null && mBraveRewardsPanelButton.getDrawable() != null) {
+            if (isIncognito()) {
+                mBraveRewardsPanelButton.setEnabled(false);
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.setSaturation(0);
+                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+                mBraveRewardsPanelButton.getDrawable().setColorFilter(filter);
+            } else {
+                mBraveRewardsPanelButton.setEnabled(true);
+                mBraveRewardsPanelButton.getDrawable().clearColorFilter();
+            }
+        }
+
         if (FeatureUtilities.isNewTabPageButtonEnabled()) {
             mHomeButton.setVisibility(isIncognito() ? GONE : VISIBLE);
         }
