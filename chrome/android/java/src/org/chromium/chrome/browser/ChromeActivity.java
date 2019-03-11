@@ -2502,10 +2502,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     }
 
     public boolean isBraveSetAsDefaultBrowser() {
-        Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));
-        boolean supportsDefault = Build.VERSION.SDK_INT >= 24;
-        ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent, supportsDefault ? PackageManager.MATCH_DEFAULT_ONLY : 0);
-        return resolveInfo.activityInfo.packageName.equals(BRAVE_PRODUCTION_PACKAGE_NAME) || resolveInfo.activityInfo.packageName.equals(BRAVE_DEVELOPMENT_PACKAGE_NAME);
+        return BraveSetDefaultBrowserNotificationService.isBraveSetAsDefaultBrowser(this);
     }
 
     /*
