@@ -326,8 +326,6 @@ jumbo_source_set("browser_sources") {
     "web_contents_binding_set.h",
     "web_contents_delegate.cc",
     "web_contents_delegate.h",
-    "web_contents_ledger_observer.cc",
-    "web_contents_ledger_observer.h",
     "web_contents_media_capture_id.cc",
     "web_contents_media_capture_id.h",
     "web_contents_observer.cc",
@@ -395,7 +393,6 @@ jumbo_source_set("browser_sources") {
     "//third_party/blink/public:mojo_bindings",
   ]
   deps = [
-    "//brave/vendor/bat-native-ledger",
     "//cc",
     "//components/viz/host",
     "//content/browser",  # Must not be public_deps!

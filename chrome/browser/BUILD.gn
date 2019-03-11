@@ -638,8 +638,6 @@ jumbo_split_static_library("browser") {
     "language/translate_frame_binder.h",
     "language/url_language_histogram_factory.cc",
     "language/url_language_histogram_factory.h",
-    "ledger_manager.cc",
-    "ledger_manager.h",
     "lifetime/application_lifetime.cc",
     "lifetime/application_lifetime.h",
     "lifetime/application_lifetime_mac.mm",

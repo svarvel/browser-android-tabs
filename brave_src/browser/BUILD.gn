@@ -6,10 +6,13 @@ source_set("browser_process") {
     "brave_tab_helpers.h",
     "brave_tab_url_web_contents_observer.cc",
     "brave_tab_url_web_contents_observer.h",
+    "web_contents_ledger_observer.cc",
+    "web_contents_ledger_observer.h",
   ]
 
   deps = [
     "//base",
+    "//brave/vendor/bat-native-ledger",
     "//chrome/common",
     "//components/component_updater",
     "//content/public/browser",
