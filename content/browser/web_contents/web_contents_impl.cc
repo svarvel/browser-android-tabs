@@ -128,7 +128,6 @@
 #include "content/public/browser/web_contents_binding_set.h"
 #include "content/public/browser/web_contents_delegate.h"
 #include "content/public/browser/web_ui_controller.h"
-#include "content/public/browser/web_contents_ledger_observer.h"
 #include "content/public/common/bindings_policy.h"
 #include "content/public/common/child_process_host.h"
 #include "content/public/common/content_constants.h"
@@ -312,8 +311,6 @@ bool FrameCompareDepth(RenderFrameHostImpl* a, RenderFrameHostImpl* b) {
 
 std::unique_ptr<WebContents> WebContents::Create(const WebContents::CreateParams& params) {
   std::unique_ptr<WebContents> web_contents = WebContentsImpl::CreateWithOpener(params, FindOpenerRFH(params));
-  std::shared_ptr<WebContentsLedgerObserver> web_contents_ledger_observer(new WebContentsLedgerObserver(web_contents.get()));
-  g_browser_process->ledger_manager_.AddObserver(web_contents_ledger_observer);
 
   return web_contents;
 }
