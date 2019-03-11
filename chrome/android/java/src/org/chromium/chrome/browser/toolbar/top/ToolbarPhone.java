@@ -16,6 +16,8 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -1719,6 +1721,19 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
     @Override
     public void updateButtonVisibility() {
+        if (mBraveRewardsPanelButton != null && mBraveRewardsPanelButton.getDrawable() != null) {
+            if (isIncognito()) {
+                mBraveRewardsPanelButton.setEnabled(false);
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.setSaturation(0);
+                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(matrix);
+                mBraveRewardsPanelButton.getDrawable().setColorFilter(filter);
+            } else {
+                mBraveRewardsPanelButton.setEnabled(true);
+                mBraveRewardsPanelButton.getDrawable().clearColorFilter();
+            }
+        }
+
         if (mHomeButton == null) return;
 
         boolean isNTP = getToolbarDataProvider().getNewTabPageForCurrentTab() != null;
