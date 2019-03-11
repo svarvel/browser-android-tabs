@@ -62,6 +62,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     private final int ACTIVITY_HEADER_PADDING = 10; //dp
     private final int ACTIVITY_HEADER_CONTENT_SIDE_MARGIN = 22; //dp
     private BraveRewardsHelper mIconFetcher;
+    private boolean mTippingInProgress; //flag preventing multiple tipping processes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +143,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         View.OnClickListener send_tip_clicker = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (mTippingInProgress){
+                    return;
+                }
+                mTippingInProgress = true;
+
                 double balance = mBraveRewardsNativeWorker.GetWalletBalance();
                 int amount = 0;
                 for (ToggleButton tb : radio_tip_amount){
@@ -336,6 +342,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             finish();
             overridePendingTransition(R.anim.activity_fade_in, R.anim.activity_fade_out);
+            mTippingInProgress = false;
 
         }
     }

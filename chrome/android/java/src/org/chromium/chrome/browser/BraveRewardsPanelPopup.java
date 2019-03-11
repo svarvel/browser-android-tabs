@@ -14,6 +14,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.os.Handler;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.Gravity;
@@ -123,6 +124,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private boolean showRewardsSummary;        //flag: we don't want OnGetCurrentBalanceReport always opens up Rewards Summary window
     private AnimationDrawable wallet_init_animation;
     private BraveRewardsHelper mIconFetcher;
+
+    //flag, Handler and delay to prevent quick opening of multiple site banners
+    private boolean mTippingInProgress;
+    private final Handler mHandler = new Handler();
+    private static final int CLICK_DISABLE_INTERVAL = 1000; // In milliseconds
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -366,10 +372,24 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           btSendATip.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mTippingInProgress){
+                    return;
+                }
+                mTippingInProgress = true;
+
                 ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
                 Intent intent = new Intent(app, BraveRewardsSiteBannerActivity.class);
                 intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId);
                 mActivity.startActivityForResult(intent,ChromeTabbedActivity.SITE_BANNER_REQUEST_CODE);
+
+                //BraveRewardsPanelPopup is not an Activity and onActivityResult is not available
+                //to dismiss mTippingInProgress. Post a delayed task to flip a mTippingInProgress flag.
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTippingInProgress = false;
+                    }
+                }, CLICK_DISABLE_INTERVAL);
             }
           }));
         }
