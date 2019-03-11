@@ -19,6 +19,7 @@ import org.chromium.chrome.browser.bookmarks.BookmarkUtils;
 import org.chromium.chrome.browser.compositor.layouts.OverviewModeBehavior;
 import org.chromium.chrome.browser.feature_engagement.TrackerFactory;
 import org.chromium.chrome.browser.tab.Tab;
+import org.chromium.chrome.browser.toolbar.BookmarksButton;
 import org.chromium.chrome.browser.toolbar.HomeButton;
 import org.chromium.chrome.browser.toolbar.IncognitoStateProvider;
 import org.chromium.chrome.browser.toolbar.MenuButton;
@@ -42,7 +43,7 @@ public class BrowsingModeBottomToolbarCoordinator {
     private final HomeButton mHomeButton;
 
     /** The bookmarks button that lives in the bottom toolbar. */
-    private final ImageButton mBookmarksButton;
+    private final BookmarksButton mBookmarksButton;
 
     /** The search accelerator that lives in the bottom toolbar. */
     private final SearchAccelerator mSearchAccelerator;
@@ -146,15 +147,17 @@ public class BrowsingModeBottomToolbarCoordinator {
         mSearchAccelerator.setIncognitoStateProvider(incognitoStateProvider);
 
         mTabSwitcherButtonCoordinator.setTabSwitcherListener(tabSwitcherListener);
-        // (Albert Wang): Don't use theme changes
-        // mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
+        mTabSwitcherButtonCoordinator.setThemeColorProvider(themeColorProvider);
         mTabSwitcherButtonCoordinator.setTabCountProvider(tabCountProvider);
 
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
         mMenuButton.setThemeColorProvider(themeColorProvider);
 
         mNewTabButton = mToolbarRoot.findViewById(R.id.new_tab_button);
+        mNewTabButton.setThemeColorProvider(themeColorProvider);
         mNewTabButton.setOnClickListener(newTabClickListener);
+
+        mBookmarksButton.setThemeColorProvider(themeColorProvider);
     }
 
     /**
@@ -195,5 +198,7 @@ public class BrowsingModeBottomToolbarCoordinator {
         //mSearchAccelerator.destroy();
         mTabSwitcherButtonCoordinator.destroy();
         mMenuButton.destroy();
+        mNewTabButton.destroy();
+        mBookmarksButton.destroy();
     }
 }
