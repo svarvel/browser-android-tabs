@@ -32,6 +32,7 @@ import android.view.MotionEvent;
 import org.chromium.chrome.browser.util.IntentUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
+import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
@@ -45,7 +46,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import org.chromium.base.ContextUtils;
 
-public class BraveRewardsSiteBannerActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback {
+public class BraveRewardsSiteBannerActivity extends Activity implements BraveRewardsHelper.LargeIconReadyCallback, BraveRewardsObserver {
 
     private  ToggleButton radio_tip_amount[] = new ToggleButton [3];
     private final int TIP_SENT_REQUEST_CODE = 2;
@@ -118,6 +119,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
         currentTabId_ = IntentUtils.safeGetIntExtra(getIntent(), TAB_ID_EXTRA, -1);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
+        mBraveRewardsNativeWorker.AddObserver(this);
 
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
         Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
@@ -364,6 +366,10 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         if (mIconFetcher != null) {
             mIconFetcher.detach();
         }
+
+        if (null != mBraveRewardsNativeWorker){
+            mBraveRewardsNativeWorker.RemoveObserver(this);
+        }
     }
 
 
@@ -422,4 +428,54 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         //run init logic in onMonthlyCheckboxClicked
         onMonthlyCheckboxClicked(cb);
     }
+
+
+
+    // BraveRewardsObserver/////////////////////////////////////
+    @Override
+    public void OnWalletInitialized(int error_code){}
+
+    @Override
+    public void OnWalletProperties(int error_code){
+        if (error_code == 0) {
+            if (mBraveRewardsNativeWorker != null) {
+                double balance = mBraveRewardsNativeWorker.GetWalletBalance();
+                String walletAmount = String.format("%.2f", balance) + " BAT";
+                ((TextView)findViewById(R.id.wallet_amount_text)).setText(walletAmount);
+            }
+        }
+    }
+
+    @Override
+    public void OnPublisherInfo(int tabId){}
+
+    @Override
+    public void OnGetCurrentBalanceReport(String[] report){}
+
+    @Override
+    public void OnNotificationAdded(String id, int type, long timestamp, String[] args) {}
+
+    @Override
+    public void OnNotificationsCount(int count) {}
+
+    @Override
+    public void OnGetLatestNotification(String id, int type, long timestamp, String[] args) {}
+
+    @Override
+    public void OnNotificationDeleted(String id) {}
+
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
+    @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {}
+
+    @Override
+    public void OnGetAutoContributeProps() {}
+
+    @Override
+    public void OnGetReconcileStamp(long timestamp) {}
 }
