@@ -81,10 +81,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final int REWARDS_NOTIFICATION_INVALID = 0;
     private static final int REWARDS_NOTIFICATION_AUTO_CONTRIBUTE = 1;
     private static final int REWARDS_NOTIFICATION_GRANT = 2;
-    private static final int REWARDS_NOTIFICATION_FAILED_CONTRIBUTION = 3;
-    private static final int REWARDS_NOTIFICATION_IMPENDING_CONTRIBUTION = 4;
-    private static final int REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS = 5;
-    private static final int REWARDS_NOTIFICATION_BACKUP_WALLET = 6;
+    private static final int REWARDS_NOTIFICATION_GRANT_ADS = 3;
+    private static final int REWARDS_NOTIFICATION_FAILED_CONTRIBUTION = 4;
+    private static final int REWARDS_NOTIFICATION_IMPENDING_CONTRIBUTION = 5;
+    private static final int REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS = 6;
+    private static final int REWARDS_NOTIFICATION_BACKUP_WALLET = 7;
     // Custom Android notification
     private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
     private static final String REWARDS_NOTIFICATION_NO_INTERNET_ID = "29d835c2-5752-4152-93c3-8a1ded9dd4ec";
@@ -738,6 +739,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 title = root.getResources().getString(R.string.brave_ui_new_token_grant);
                 description = root.getResources().getString(R.string.brave_ui_new_grant);
                 break;
+            case REWARDS_NOTIFICATION_GRANT_ADS:
+                Log.e(TAG, "REWARDS_NOTIFICATION_GRANT_ADS is not handled yet");
+                assert false;
+                break;
             case REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS:
                 btClaimOk.setText(root.getResources().getString(R.string.ok));
                 notification_icon.setImageResource(R.drawable.notification_icon);
@@ -1108,9 +1113,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     @Override
     public void OnNotificationAdded(String id, int type, long timestamp,
-          String[] args) { 
-        // Do nothing here as we will receive the most recent notification
-        // in OnGetLatestNotification
+          String[] args) {
+        // samartnik: we temporarily ignore this notification
+        if (type == REWARDS_NOTIFICATION_BACKUP_WALLET) {
+            if (mBraveRewardsNativeWorker != null) {
+                mBraveRewardsNativeWorker.DeleteNotification(id);
+                mBraveRewardsNativeWorker.GetAllNotifications();
+            }
+        }
     }
 
     @Override
