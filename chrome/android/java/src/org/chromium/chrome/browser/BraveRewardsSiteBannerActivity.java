@@ -55,6 +55,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
     public static final String TIP_AMOUNT_EXTRA="tipAmount";
     public static final String TIP_MONTHLY_EXTRA="tipMonthly";
 
+
     private int currentTabId_ = -1;
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private final int PUBLISHER_ICON_SIDE_LEN= 70; //dp
@@ -143,10 +144,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         View.OnClickListener send_tip_clicker = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mTippingInProgress){
-                    return;
-                }
-                mTippingInProgress = true;
 
                 double balance = mBraveRewardsNativeWorker.GetWalletBalance();
                 int amount = 0;
@@ -168,6 +165,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
                 //proceed to tipping
                 if (true == enough_funds) {
+                    if (mTippingInProgress){
+                        return;
+                    }
+                    mTippingInProgress = true;
+
                     CheckBox monthly = (CheckBox)findViewById(R.id.make_monthly_checkbox);
                     boolean monthly_bool = monthly.isChecked();
                     mBraveRewardsNativeWorker.Donate(mBraveRewardsNativeWorker.GetPublisherId(currentTabId_),
@@ -398,5 +400,26 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         int string_id = (checked)? R.string.brave_ui_do_monthly : R.string.brave_ui_send_tip;
         String btn_text = getResources().getString(string_id);
         send_btn.setText(btn_text);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        boolean monthly = ((CheckBox)findViewById(R.id.make_monthly_checkbox)).isChecked();
+        savedInstanceState.putBoolean(TIP_MONTHLY_EXTRA, monthly);
+    }
+
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        boolean myBoolean = savedInstanceState.getBoolean(TIP_MONTHLY_EXTRA);
+        CheckBox cb = (CheckBox)findViewById(R.id.make_monthly_checkbox);
+        cb.setChecked(myBoolean);
+
+        //run init logic in onMonthlyCheckboxClicked
+        onMonthlyCheckboxClicked(cb);
     }
 }
