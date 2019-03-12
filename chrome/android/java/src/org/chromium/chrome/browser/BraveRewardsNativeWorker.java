@@ -19,6 +19,7 @@ public class BraveRewardsNativeWorker {
 
     private static BraveRewardsNativeWorker instance;
     private static final Object lock = new Object();
+    private boolean createWalletInProcess;  //flag: wallet is being created
 
     public static  BraveRewardsNativeWorker getInstance(){
         synchronized(lock) {
@@ -66,8 +67,16 @@ public class BraveRewardsNativeWorker {
 
     public void CreateWallet() {
         synchronized(lock) {
+            if (createWalletInProcess) {
+                return;
+            }
+            createWalletInProcess = true;
             nativeCreateWallet(mNativeBraveRewardsNativeWorker);
         }
+    }
+
+    public boolean IsCreateWalletInProcess() {
+        return createWalletInProcess;
     }
 
     public void WalletExist() {
@@ -167,43 +176,63 @@ public class BraveRewardsNativeWorker {
     }
 
     public void GetAllNotifications() {
-        nativeGetAllNotifications(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetAllNotifications(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public void DeleteNotification(String notification_id) {
-        nativeDeleteNotification(mNativeBraveRewardsNativeWorker, notification_id);
+        synchronized(lock) {
+            nativeDeleteNotification(mNativeBraveRewardsNativeWorker, notification_id);
+        }
     }
 
     public void GetGrant() {
-        nativeGetGrant(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetGrant(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public int GetCurrentGrantsCount() {
-        return nativeGetCurrentGrantsCount(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            return nativeGetCurrentGrantsCount(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public String[] GetCurrentGrant(int position) {
-        return nativeGetCurrentGrant(mNativeBraveRewardsNativeWorker, position);
+        synchronized(lock) {
+            return nativeGetCurrentGrant(mNativeBraveRewardsNativeWorker, position);
+        }
     }
 
     public void GetPendingContributionsTotal() {
-        nativeGetPendingContributionsTotal(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetPendingContributionsTotal(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public void GetRecurringDonations() {
-        nativeGetRecurringDonations(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetRecurringDonations(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public boolean IsCurrentPublisherInRecurrentDonations(String publisher) {
-        return nativeIsCurrentPublisherInRecurrentDonations(mNativeBraveRewardsNativeWorker, publisher);
+        synchronized(lock) {
+            return nativeIsCurrentPublisherInRecurrentDonations(mNativeBraveRewardsNativeWorker, publisher);
+        }
     }
 
     public void SetRewardsMainEnabled(boolean enabled) {
-        nativeSetRewardsMainEnabled(mNativeBraveRewardsNativeWorker, enabled);
+        synchronized(lock) {
+            nativeSetRewardsMainEnabled(mNativeBraveRewardsNativeWorker, enabled);
+        }
     }
 
     public void GetRewardsMainEnabled() {
-        nativeGetRewardsMainEnabled(mNativeBraveRewardsNativeWorker);
+        synchronized(lock) {
+            nativeGetRewardsMainEnabled(mNativeBraveRewardsNativeWorker);
+        }
     }
 
     public void GetAutoContributeProps() {
@@ -254,6 +283,7 @@ public class BraveRewardsNativeWorker {
 
     @CalledByNative
     public void OnWalletInitialized(int error_code) {
+        createWalletInProcess = false;
         for(BraveRewardsObserver observer : observers_) {
             observer.OnWalletInitialized(error_code);
         }

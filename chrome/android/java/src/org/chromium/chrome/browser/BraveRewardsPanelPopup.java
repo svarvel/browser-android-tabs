@@ -130,6 +130,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private final Handler mHandler = new Handler();
     private static final int CLICK_DISABLE_INTERVAL = 1000; // In milliseconds
 
+    private boolean mClaimInProcess;
+    private boolean mWalletCreateInProcess;
+
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
         publisherExist = false;
@@ -231,7 +234,15 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 }
             }
         });
+
         if (mBraveRewardsNativeWorker != null) {
+
+            //check if 'CreateWallet' request has been sent
+            mWalletCreateInProcess = mBraveRewardsNativeWorker.IsCreateWalletInProcess();
+            if (mWalletCreateInProcess){
+                startJoinRewardsAnimation();
+            }
+
             mBraveRewardsNativeWorker.GetRewardsMainEnabled();
         }
         String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + "\u2122";
@@ -241,16 +252,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mBraveRewardsNativeWorker != null) {
+                if (mBraveRewardsNativeWorker != null && false == mWalletCreateInProcess) {
                   mBraveRewardsNativeWorker.CreateWallet();
-                }
-                Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
-                btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_rewards_creating_text));
-                btJoinRewards.setClickable(false);
-                btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.brave_rewards_loader, 0);
-                wallet_init_animation = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
-                if (wallet_init_animation != null) {
-                    wallet_init_animation.start();
+                  mWalletCreateInProcess = true;
+                  startJoinRewardsAnimation();
                 }
             }
           }));
@@ -429,6 +434,17 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         SetupNotificationsControls();
     }
 
+    private void startJoinRewardsAnimation(){
+        Button btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
+        btJoinRewards.setClickable(false); //set not clickable
+        btJoinRewards.setText(root.getResources().getString(R.string.brave_ui_rewards_creating_text));
+        btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.brave_rewards_loader, 0);
+        wallet_init_animation = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
+        if (wallet_init_animation != null) {
+            wallet_init_animation.start();
+        }
+    }
+
     private void SetupNotificationsControls() {
         // Check for notifications
         if (mBraveRewardsNativeWorker != null) {
@@ -464,9 +480,15 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   }
               }
               else if (mBraveRewardsNativeWorker != null) {
-
                   //disable and hide CLAIM button
                   claimOk.setEnabled(false);
+
+                  //claimOk.setEnabled(false) sometimes not fast enough, so block multiple 'Claim' clicks
+                  if (mClaimInProcess){
+                      return;
+                  }
+                  mClaimInProcess = true;
+
                   View fadein = root.findViewById(R.id.progress_br_claim_button);
                   BraveRewardsHelper.crossfade(claimOk, fadein, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
 
@@ -795,6 +817,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
       }
         wallet_init_animation = null;
+        mWalletCreateInProcess = false;
     }
 
     @Override
