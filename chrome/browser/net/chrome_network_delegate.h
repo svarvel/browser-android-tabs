@@ -274,6 +274,7 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   std::unique_ptr<ReportingPermissionsChecker> reporting_permissions_checker_;
 
   bool experimental_web_platform_features_enabled_;
+  bool brave_rewards_enabled_;
 
   // Blockers
   std::shared_ptr<net::blockers::BlockersWorker> blockers_worker_;
