@@ -49,6 +49,13 @@ export class App extends React.Component<Props, State> {
   }
 
   onCreateWalletClicked = () => {
+    if (window &&
+        window.navigator &&
+        !window.navigator.onLine) {
+      alert('The device is offline, please try again later.')
+      return
+    }
+
     this.actions.createWallet()
     this.setState({
       creating: true
