@@ -39,6 +39,7 @@
 #include "chrome/browser/stats_updater.h"
 #include "chrome/browser/task_manager/task_manager_interface.h"
 #include "chrome/common/buildflags.h"
+#include "chrome/common/chrome_features.h"
 #include "chrome/common/net/safe_search_util.h"
 #include "chrome/common/pref_names.h"
 #include "components/content_settings/core/browser/cookie_settings.h"
@@ -315,6 +316,7 @@ ChromeNetworkDelegate::ChromeNetworkDelegate(
       experimental_web_platform_features_enabled_(
           base::CommandLine::ForCurrentProcess()->HasSwitch(
               switches::kEnableExperimentalWebPlatformFeatures)),
+      brave_rewards_enabled_(base::FeatureList::IsEnabled(features::kBraveRewards)),
       reload_adblocker_(false),
       incognito_(false) {
   pending_requests_.reset(new PendingRequests());
@@ -792,14 +794,17 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
 
   // Notify ledger if we have YouTube or Twitch links
   //std::string linkType = GetLinkType(request, last_first_party_url_.spec());
-  if (brave_rewards::IsMediaLink(request->url(), last_first_party_url_, GURL(request->referrer()))) {
+  if (brave_rewards_enabled_
+      && brave_rewards::IsMediaLink(request->url(), last_first_party_url_, GURL(request->referrer()))) {
     if (request->get_upload()) {
       std::string urlQuery;
       for (size_t i = 0; i < (*(request->get_upload())->GetElementReaders()).size(); i++) {
         const net::UploadBytesElementReader* reader =
           (*(request->get_upload())->GetElementReaders())[i]->AsBytesReader();
-        std::string upload_data(reader->bytes(), reader->length());
-        urlQuery += upload_data;
+        if (reader) {
+          std::string upload_data(reader->bytes(), reader->length());
+          urlQuery += upload_data;
+        }
       }
       int render_process_id, render_frame_id, frame_tree_node_id;
       GetRenderFrameInfo(request, &render_frame_id, &render_process_id,
