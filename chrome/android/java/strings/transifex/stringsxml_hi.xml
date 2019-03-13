@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS  सब जगह</string>
     <string name="brave_shields_blocks_scripts_switch">अवस्र्द्ध लिपिया </string>
     <string name="accessibility_toolbar_btn_brave_shields">ब्रेव कवच को सक्षम/अक्षम करें </string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave रिवार्ड्स सक्षम/अक्षम करें</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3सरे दल बन को अवस्र्द्ध करें </string>
 
     <string name="httpse_summary">जहां संभव हो, HTTP के स्थान पर HTTPS का प्रयोग करते हुये समर्थित साइटें खोलता है</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">निकास</string>
 
-    <string name="brave_sync">Brave (बीटा) सिंक</string>
     <string name="sync_settings_add_device_name_title">उपकरण का नाम जोड़ें </string>
     <string name="sync_settings_add_device_name_label">इस उपकरण के लिए कोई वैकल्पिक नाम एंटर करें </string>
     <string name="sync_example_device_name">ऐन्ड्रॉइड उपकरण </string>
@@ -94,10 +94,8 @@
     <string name="brave_new_private_tab">नया निजी टैब</string>
     <string name="brave_new_tab_private_header">यह एक निजी टैब है</string>
     <string name="brave_new_tab_private_message">भले ही आप द्वारा निजी  टैब्स में देखी जाने वाली साइटें स्थानीय रूप से सहेजी नहीं जाती हैं, फिर भी वे आपको आपके ISP, आपके नियोक्ता, या आप द्वारा देखी गई साइटों के लिए अज्ञातकृत या अदृश्य नहीं बनाती हैं।</string>
-
     <string name="update_notification_title">Brave अपडेट</string>
     <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
-
     <string name="prefs_sync">सिंक (बीटा)</string>
     <string name="brave_sync_description_page_1_part_1">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</string>
     <string name="brave_sync_description_page_1_part_2">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</string>
@@ -125,13 +123,13 @@
     <string name="brave_sync_add_laptop_text_title">सिंक चेन कोड को दर्ज़ करें</string>
     <string name="brave_sync_add_laptop_text_part_1">अपने कंप्यूटर में, \'Brave सेटिंग्स > सिंक करें\' पर जाएं। \"कोई सिंक चेन कोड दर्ज करें\" चुनें।</string>
     <string name="brave_sync_add_laptop_text_part_2">स्पेस के साथ ऊपर दिया गया कोड वर्ड दर्ज़ करें।</string>
-    <string name="brave_sync_delete_device">क्या आप वाकई डिवाइस \'<ph name="DEVICE_NAME">%1$s</ph>\' को हटाना चाहते हैं?</string>
+    <string name="brave_sync_delete_device">क्या आप वाकई डिवाइस \'<ph name=\"DEVICE_NAME\">%1$s</ph>\' को हटाना चाहते हैं?</string>
     <string name="brave_sync_delete_sent">हटाने का अनुरोध भेजा गया। डिवाइस को जल्द ही हटा दिया जाएगा।</string>
     <string name="brave_sync_loading_data_title">डेटा लोड हो रहा है...</string>
     <string name="brave_sync_time_out_message">कुछ गलत हो गया है, ऐसा लगता है कि आपके अनुरोध की समय-सीमा समाप्त हो गई है।</string>
     <string name="brave_sync_use_camera_text">मैं अपने कैमरे का उपयोग करूंगा...</string>
     <string name="brave_sync_confirm_code_words_text">पुष्टि करें</string>
-    <string name="brave_sync_word_count_text">शब्दों की संख्या: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">शब्दों की संख्या: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">शब्दों की संख्या गलत है</string>
     <string name="brave_sync_qr_code">QR कोड</string>
     <string name="brave_sync_code_words">कोड वर्ड</string>
@@ -139,4 +137,97 @@
     <string name="brave_sync_copied_text">क्लिपबोर्ड पर कॉपी किया गया</string>
     <string name="brave_sync_this_device_text">(यह डिवाइस)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave आपके डिफ़ॉल्ट ब्राउज़र
+के रूप मेें पहले से सेट है.</string>
+    <string name="brave_default_browser_go_to_settings">आप पहले से ही डिफ़ॉल्ट ब्राउज़र सेट कर चुके हैं.
+आप अपने ऐप सेटिंग्स में डिफ़ॉल्ट ब्राउज़र बदल सकते हैं.</string>
+    <string name="brave_default_browser_notification_body">बैटरी बचाएं और वेब पेजों को जल्दी लोड करें. Brave को अपना डिफ़ॉल्ट ब्राउज़र बनायें. Brave के मेन्यू में  \"डिफ़ॉल्ट ब्राउज़र के रूप में सेट करें...\" पर टैप करें</string>
+    <string name="brave_set_default_browser">डिफ़ॉल्ट ब्राउज़र के रूप में सेट करें</string>
+    <string name="brave_set_default_browser_dialog_text">लिस्ट में से Brave चुनें और \"हमेशा\" पर टैप करें</string>
+    <string name="brave_default_browser_existing_notification_body">Brave को अपना डिफ़ॉल्ट वेब ब्राउज़र बनायें
+बैटरी बचाएं और वेब पेजों को जल्दी लोड करें</string>
+
+    <string name="brave_ui_welcome_header_two">अगला इंटरनेट अनुभव
+करने के लिए तैयार रहें.</string>
+    <string name="brave_ui_welcome_desc_two">अब आप गोपनीयता का सम्मान करने संबंधित विज्ञापन देखकर
+टोकन प्राप्त कर सकते हैं.</string>
+    <string name="brave_ui_welcome_button_text_two">रिवार्ड्स से जुड़ें</string>
+    <string name="brave_ui_welcome_footer_text_two">अधिक जानें</string>
+    <string name="brave_ui_rewards_creating_text">वॉलेट बनाना</string>
+    <string name="brave_ui_your_wallet">आपका वॉलेट</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">फ़ंड जोड़ें</string>
+    <string name="brave_ui_settings">सेटिंग्स</string>
+    <string name="brave_ui_rewards_summary">रिवार्ड्स सारांश</string>
+    <string name="brave_ui_site_banner_welcome">यहां रूकने के लिए धन्यवाद!</string>
+    <string name="brave_ui_rewards_banner_text1">आप कोई सुझाव भेजकर इस साइट का समर्थन कर सकते हैं. अच्छी सामग्री बनाने के लिए उन्हें धन्यवाद करने का यह अच्छा तरीका है. सत्यापित सामग्री क्रिएटर्स को प्रत्येक कैलेंडर महीने के पहले सप्ताह के दौरान उनके सुझावों के लिए भुगतान किया जाता है.</string>
+    <string name="brave_ui_rewards_banner_text2">यदि आपको पसंद हो, तो आप निरंतर रूप से इस साइट का समर्थन करने के लिए मासिक सुझाव निर्धारित कर सकते हैं.</string>
+    <string name="brave_ui_donation_amount">सुझाव के लिए धनराशि</string>
+    <string name="brave_ui_wallet_balance">वॉलेट में बैलेंस:</string>
+    <string name="brave_ui_make_monthly">इस मासिक बनाएं</string>
+    <string name="brave_ui_send_tip">मेरा सुझाव भेजें</string>
+    <string name="brave_ui_do_monthly">मासिक सुझाव सेट करें</string>
+    <string name="brave_ui_not_enough_tokens">पर्याप्त टोकन नहीं</string>
+    <string name="brave_ui_site_banner_notice_text">नोट: इस क्रिएटर ने अभी तक Brave के उपयोगकर्ताओं से मिलने वाले योगदान प्राप्त होने के लिए साइन अप नहीं किया है. हम उनके द्वारा सत्यापित करने या 90 दिन बीत जाने तक प्रयास करना जारी रखेंगे.</string>
+    <string name="brave_ui_please">कृपया</string>
+    <string name="brave_ui_add_funds">फ़ंड जोड़ें</string>
+    <string name="brave_ui_thank_you">धन्यवाद!</string>
+    <string name="brave_ui_error_init_wallet">कृपया बाद में पुनः प्रयास करें.</string>
+    <string name="brave_ui_month_jan">जनवरी</string>
+    <string name="brave_ui_month_feb">फरवरी</string>
+    <string name="brave_ui_month_mar">मार्च</string>
+    <string name="brave_ui_month_apr">अप्रैल</string>
+    <string name="brave_ui_month_may">मई</string>
+    <string name="brave_ui_month_jun">जून</string>
+    <string name="brave_ui_month_jul">जुलाई</string>
+    <string name="brave_ui_month_aug">अगस्त</string>
+    <string name="brave_ui_month_sep">सितंबर</string>
+    <string name="brave_ui_month_oct">अक्टूबर</string>
+    <string name="brave_ui_month_nov">नवंबर</string>
+    <string name="brave_ui_month_dec">दिसंबर</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>दिसंबर</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">सावधान</string>
+    <string name="brave_ui_include_in_auto">स्वतः योगदान में शामिल करें</string>
+    <string name="brave_ui_donate_now">कोई सुझाव भेजें...</string>
+    <string name="brave_ui_no_activity">इस महीने अभी तक कोई गतिविधि
+नहीं...</string>
+    <string name="brave_ui_token_grant_claimed">टोकन ग्रांट्स का दावा किया गया</string>
+    <string name="brave_ui_earnings_ads">विज्ञापनों से कमाई</string>
+    <string name="brave_ui_rewards_contribute">स्वतः योगदान</string>
+    <string name="brave_ui_rewards_contribute_description">आपने <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT का योगदान किया है.</string>
+    <string name="brave_ui_one_time_donation">वन-टाइम सुझाव</string>
+    <string name="brave_ui_recurring_donation">मासिक सुझाव</string>
+    <string name="brave_ui_verified_publisher">Brave का सत्यापित प्रकाशक</string>
+    <string name="brave_ui_not_verified_publisher">अभी तक सत्यापित नहीं</string>
+    <string name="brave_ui_not_verified_publisher_description">इस क्रिएटर ने Brave के उपयोगकर्ताओं से योगदान प्राप्त करने के लिए अभी तक साइन अप नहीं किया है.
+        आपके द्वारा भेजे जाने वाले सभी सुझाव सत्यापित होने तक आपके वॉलेट में ही रहेंगे.</string>
+    <string name="brave_ui_on_youtube">YouTube पर</string>
+    <string name="brave_ui_on_twitch">Twitch पर</string>
+    <string name="brave_ui_new_grant">एक फ़्री टोकन ग्रांट उपलब्ध है.</string>
+    <string name="brave_ui_new_token_grant">फ़्री टोकन ग्रांट</string>
+    <string name="brave_ui_claim">दावा</string>
+    <string name="brave_ui_reserved_amount_text">आपने उन क्रिएटर्स के लिए <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT निर्धारित किए हैं,  जिन्होंने
+योगदान प्राप्त करने के लिए अभी तक साइन अप नहीं किया है.  वे सत्यापित होने या 90 दिन बीत जाने तक
+आपका ब्राउज़र योगदान करने का प्रयास जारी रखेगा.</string>
+    <string name="brave_ui_notification_desc_no_funds">स्वतः योगदान और मासिक सुझावों के लिए आपका शेड्यूल्ड मासिक भुगतान अपर्याप्त फ़ंड के कारण पूर्ण नहीं किया जा सकता है.
+हम 30 दिन में पुनः प्रयास करेगे.</string>
+    <string name="brave_ui_notification_desc_tip_error">आपके सुझाव की प्रक्रिया करने में समस्या हुई थी, कृपया पुनः प्रयास करें.</string>
+    <string name="brave_ui_notification_desc_contr_error">आपके योगदान की प्रक्रिया करने में समस्या हुई थी.</string>
+    <string name="brave_rewards_local_uh_oh">ऊह ओह!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave रिवार्ड्स सर्वर प्रतिक्रिया नहीं दे रहा है. हम शीघ्र ही इसे ठीक करेंगे.</string>
+    <string name="brave_ui_grants">ग्रांट्स</string>
+    <string name="brave_ui_expires_on"><ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph> को समय-सीमा समाप्त</string>
+    <string name="brave_ui_insufficient_funds_msg">अपर्याप्त फ़ंड</string>
+    <string name="brave_ui_insufficient_funds_desc">आपका Brave रिवार्ड्स खाता जमा की प्रतीक्षा में है.</string>
+    <string name="brave_ui_backup_wallet_msg">वॉलेट का बैकअप लें</string>
+    <string name="brave_ui_backup_wallet_desc">कृपया अपने Brave वॉलेट का बैकअप लें.</string>
+    <string name="brave_ui_brave_rewards">Brave रिवार्ड्स</string>
+    <string name="brave_ui_welcome_back_message">आपका पुनः स्वागत है!</string>
+    <string name="brave_ui_get_rewarded">ब्राउज़िंग के लिए पुरस्कार पाएं.</string>
+    <string name="brave_ui_brave_rewards_desc">गोपनीयता का सम्मान संबंधी
+विज्ञापन देखकर कमाई करें और
+और अपनी पसंद के सामग्री क्रिएटर्स का
+समर्थन करने के लिए उन्हें भुगतान करें.</string>
+    <string name="brave_welcome_page_rewards_title">रिवार्ड्स सक्षम करें</string>
 </resources>

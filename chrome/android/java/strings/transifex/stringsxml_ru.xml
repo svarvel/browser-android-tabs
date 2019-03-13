@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS везде</string>
     <string name="brave_shields_blocks_scripts_switch">Блокировать скрипты</string>
     <string name="accessibility_toolbar_btn_brave_shields">Вкл/Выкл щиты Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Включить/отключить Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Блокировать сторонние cookie</string>
 
     <string name="httpse_summary">Открытие поддерживаемых сайтов с использованием HTTPS вместо HTTP, когда это возможно.</string>
@@ -30,7 +31,7 @@
 
     <string name="menu_exit">Выход</string>
 
-    <string name="brave_sync">Синхронизация Brave (бета-версия)</string>
+    <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Добавление имени устройства</string>
     <string name="sync_settings_add_device_name_label">Если хотите, введите имя для этого устройства</string>
     <string name="sync_example_device_name">Android устройство</string>
@@ -94,10 +95,8 @@
     <string name="brave_new_private_tab">Новая приватная вкладка</string>
     <string name="brave_new_tab_private_header">Это приватная вкладка</string>
     <string name="brave_new_tab_private_message">Хотя сайты, которые вы посещаете на приватных вкладках, не сохраняются локально, они не делают вас анонимными или невидимыми для вашего интернет-провайдера, вашего работодателя или сайтов, которые вы посещаете.</string>
-
     <string name="update_notification_title">Обновление Brave</string>
     <string name="update_notification_text">Новый Brave браузер на 22% быстрее</string>
-
     <string name="prefs_sync">Синхронизация (бета-версия)</string>
     <string name="brave_sync_description_page_1_part_1">С помощью функции «Синхронизация» вы можете синхронизировать данные закладок в браузерах Brave на разных устройствах, сохраняя конфиденциальность.</string>
     <string name="brave_sync_description_page_1_part_2">Просто отсканируйте код из цепочки синхронизации, созданной на другом устройстве, или запустите новую цепочку.</string>
@@ -125,13 +124,13 @@
     <string name="brave_sync_add_laptop_text_title">Введите код цепочки синхронизации</string>
     <string name="brave_sync_add_laptop_text_part_1">Откройте настройки Brave на компьютере и выберите «Синхронизация» > «Ввести код цепочки синхронизации».</string>
     <string name="brave_sync_add_laptop_text_part_2">Введите кодовые слова, указанные выше, включая пробелы.</string>
-    <string name="brave_sync_delete_device">Вы действительно хотите удалить устройство <ph name="DEVICE_NAME">%1$s</ph>?</string>
+    <string name="brave_sync_delete_device">Вы действительно хотите удалить устройство <ph name=\"DEVICE_NAME\">%1$s</ph>?</string>
     <string name="brave_sync_delete_sent">Запрос отправлен. Устройство будет удалено в ближайшее время.</string>
     <string name="brave_sync_loading_data_title">Загрузка данных…</string>
     <string name="brave_sync_time_out_message">Произошла ошибка. Время ожидания запроса истекло.</string>
     <string name="brave_sync_use_camera_text">Я воспользуюсь камерой…</string>
     <string name="brave_sync_confirm_code_words_text">Подтвердить</string>
-    <string name="brave_sync_word_count_text">Количество слов: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Количество слов: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Неверное количество слов</string>
     <string name="brave_sync_qr_code">QR-код</string>
     <string name="brave_sync_code_words">Кодовые слова</string>
@@ -139,4 +138,95 @@
     <string name="brave_sync_copied_text">Скопировано в буфер обмена</string>
     <string name="brave_sync_this_device_text">(это устройство)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave уже установлен
+в качестве браузера по умолчанию.</string>
+    <string name="brave_default_browser_go_to_settings">Вы уже установили браузер по умолчанию.
+Выбрать другой можно в настройках приложения.</string>
+    <string name="brave_default_browser_notification_body">Экономьте заряд батареи и загружайте страницы быстрее. Сделать Brave браузером по умолчанию. Из меню Brave выберите \"Сделать браузером по умолчанию...\"</string>
+    <string name="brave_set_default_browser">Сделать браузером по умолчанию</string>
+    <string name="brave_set_default_browser_dialog_text">Выберите Brave из списка и нажмите \"Всегда\"</string>
+    <string name="brave_default_browser_existing_notification_body">Сделать Brave браузером по умолчанию
+Экономьте заряд батареи и загружайте страницы быстрее</string>
+
+    <string name="brave_ui_welcome_header_two">Новые способы
+получать токены.</string>
+    <string name="brave_ui_welcome_desc_two">Теперь вы можете получать токены за просмотр рекламы,
+в которой соблюдается конфиденциальность данных.</string>
+    <string name="brave_ui_welcome_button_text_two">ВСТУПИТЬ В ПРОГРАММУ BRAVE REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">ПОДРОБНЕЕ</string>
+    <string name="brave_ui_rewards_creating_text">Создание кошелька</string>
+    <string name="brave_ui_your_wallet">Ваш кошелек</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> долл. США</string>
+    <string name="brave_rewards_local_panel_add_funds">Добавить средства</string>
+    <string name="brave_ui_settings">Настройки</string>
+    <string name="brave_ui_rewards_summary">О BRAVE REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Спасибо, что заглянули!</string>
+    <string name="brave_ui_rewards_banner_text1">Вы можете поддержать авторов этого сайта и поблагодарить их за труд, сделав пожертвование. Создатели контента, которые прошли проверку, получают вознаграждение в течение первой недели каждого календарного месяца.</string>
+    <string name="brave_ui_rewards_banner_text2">При желании вы можете настроить ежемесячные взносы.</string>
+    <string name="brave_ui_donation_amount">Сумма пожертвования</string>
+    <string name="brave_ui_wallet_balance">баланс кошелька:</string>
+    <string name="brave_ui_make_monthly">Перечислять ежемесячно</string>
+    <string name="brave_ui_send_tip">отправить пожертвование</string>
+    <string name="brave_ui_do_monthly">настроить ежемесячные пожертвования</string>
+    <string name="brave_ui_not_enough_tokens">недостаточно токенов</string>
+    <string name="brave_ui_site_banner_notice_text">ПРИМЕЧАНИЕ. Этот создатель контента еще не зарегистрировался в нашей программе. Повторные попытки отправить ему пожертвование будут совершаться до тех пор, пока он не пройдет проверку или пока не истечет 90 дней.</string>
+    <string name="brave_ui_please">пожалуйста</string>
+    <string name="brave_ui_add_funds">добавить средства</string>
+    <string name="brave_ui_thank_you">Спасибо!</string>
+    <string name="brave_ui_error_init_wallet">Попробуйте позже.</string>
+    <string name="brave_ui_month_jan">ЯНВАРЬ</string>
+    <string name="brave_ui_month_feb">ФЕВРАЛЬ</string>
+    <string name="brave_ui_month_mar">МАРТ</string>
+    <string name="brave_ui_month_apr">АПРЕЛЬ</string>
+    <string name="brave_ui_month_may">МАЙ</string>
+    <string name="brave_ui_month_jun">ИЮНЬ</string>
+    <string name="brave_ui_month_jul">ИЮЛЬ</string>
+    <string name="brave_ui_month_aug">АВГУСТ</string>
+    <string name="brave_ui_month_sep">СЕНТЯБРЬ</string>
+    <string name="brave_ui_month_oct">ОКТЯБРЬ</string>
+    <string name="brave_ui_month_nov">НОЯБРЬ</string>
+    <string name="brave_ui_month_dec">ДЕКАБРЬ</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>ДЕКАБРЬ</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018 г.</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Внимание!</string>
+    <string name="brave_ui_include_in_auto">Добавить в автоплатежи</string>
+    <string name="brave_ui_donate_now">Отправить пожертвование…</string>
+    <string name="brave_ui_no_activity">Нет информации
+о действиях в этом месяце.</string>
+    <string name="brave_ui_token_grant_claimed">Полученные в подарок токены</string>
+    <string name="brave_ui_earnings_ads">Доходы от рекламы</string>
+    <string name="brave_ui_rewards_contribute">Автоплатеж</string>
+    <string name="brave_ui_rewards_contribute_description">Вы сделали пожертвование: <ph name=\"BAT_VALUE\">%1$s50</ph><ex> BAT.</string>
+    <string name="brave_ui_one_time_donation">Разовые пожертвования</string>
+    <string name="brave_ui_recurring_donation">Ежемесячные пожертвования</string>
+    <string name="brave_ui_verified_publisher">Издатель, проверенный Brave</string>
+    <string name="brave_ui_not_verified_publisher">Еще не проверен</string>
+    <string name="brave_ui_not_verified_publisher_description">Этот создатель контента еще не зарегистрировался в нашей программе.
+        Отправленные пожертвования останутся в вашем кошельке до тех пор, пока автор не пройдет проверку.</string>
+    <string name="brave_ui_on_youtube">на YouTube</string>
+    <string name="brave_ui_on_twitch">в Twitch</string>
+    <string name="brave_ui_new_grant">Доступен бесплатный токен.</string>
+    <string name="brave_ui_new_token_grant">Токен в подарок</string>
+    <string name="brave_ui_claim">Получить</string>
+    <string name="brave_ui_reserved_amount_text">Вы хотите отправить <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT создателям контента, которые еще не зарегистрировались в нашей программе.
+Повторные попытки отправить им пожертвование будут совершаться в браузере до тех пор,
+пока эти лица не пройдут проверку или пока не истечет 90 дней.</string>
+    <string name="brave_ui_notification_desc_no_funds">Вы запланировали ежемесячный автоплатеж, но отправить пожертвование не удалось, поскольку у вас недостаточно средств. Мы повторим попытку через 30 дней.</string>
+    <string name="brave_ui_notification_desc_tip_error">При обработке платежа произошла ошибка. Повторите попытку.</string>
+    <string name="brave_ui_notification_desc_contr_error">При обработке платежа произошла ошибка.</string>
+    <string name="brave_rewards_local_uh_oh">Ошибка!</string>
+    <string name="brave_rewards_local_server_not_responding">Сервер Brave Rewards не отвечает. Мы постараемся исправить это как можно скорее.</string>
+    <string name="brave_ui_grants">Подарки</string>
+    <string name="brave_ui_expires_on">(срок действия истекает <ph name=\"DATE\">%1$s<ex>14/4/2019</ex></ph>)</string>
+    <string name="brave_ui_insufficient_funds_msg">Недостаточно средств</string>
+    <string name="brave_ui_insufficient_funds_desc">Необходимо пополнить баланс аккаунта Brave Rewards.</string>
+    <string name="brave_ui_backup_wallet_msg">Резервное копирование кошелька</string>
+    <string name="brave_ui_backup_wallet_desc">Создайте резервную копию своего кошелька Brave.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">С возвращением!</string>
+    <string name="brave_ui_get_rewarded">Получайте токены, пока пользуетесь браузером.</string>
+    <string name="brave_ui_brave_rewards_desc">Получайте токены за просмотр рекламы,
+в которой соблюдается конфиденциальность данных,
+и поддерживайте создателей интересного вам контента.</string>
+    <string name="brave_welcome_page_rewards_title">ВКЛЮЧИТЬ BRAVE REWARDS</string>
 </resources>

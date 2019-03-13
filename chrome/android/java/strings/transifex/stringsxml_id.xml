@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokir Skrip</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktifkan/Nonaktifkan Perisai Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktifkan/Nonaktifkan Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokir kuki pihak ke-3</string>
 
     <string name="httpse_summary">Buka situs yang didukung menggunakan HTTPS daripada HTTP jika memungkinkan</string>
@@ -30,7 +31,7 @@
 
     <string name="menu_exit">Keluar</string>
 
-    <string name="brave_sync">Brave (beta) Sync</string>
+    <string name="brave_sync">Sinkronisasi Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Tambahkan nama perangkat</string>
     <string name="sync_settings_add_device_name_label">Masukkan nama opsional untuk perangkat ini</string>
     <string name="sync_example_device_name">Perangkat Android</string>
@@ -97,12 +98,10 @@ Dihemat</string>
     <string name="brave_new_private_tab">Tab pribadi baru</string>
     <string name="brave_new_tab_private_header">Ini adalah Tab Pribadi</string>
     <string name="brave_new_tab_private_message">Meski situs yang Anda kunjungi melalui tab pribadi tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, bos Anda, atau situs yang Anda kunjungi.</string>
-
     <string name="update_notification_title">Pembaruan Brave</string>
     <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
-
     <string name="prefs_sync">Sync (beta)</string>
-    <string name="brave_sync_description_page_1_part_1">Brave Sync memungkinkan Anda mensinkronisasi data bookmarks secara pribadi antara Browser Brave Anda di perangkat yang berbeda-beda.</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Sync memungkinkan Anda mensinkronisasi data markah secara pribadi antarperamban Brave di semua perangkat Anda.</string>
     <string name="brave_sync_description_page_1_part_2">Cukup pindai kode dari rantai sinkronisasi yang Anda buat pada perangkat lain. Atau mulai rantai sinkronisasi baru.</string>
     <string name="brave_sync_scan_chain_code">Pindai atau masukkan kode sinkronisasi</string>
     <string name="brave_sync_start_new_chain">Mulai rantai sinkronisasi baru</string>
@@ -111,35 +110,126 @@ Dihemat</string>
     <string name="brave_sync_btn_mobile">Tambah Perangkat Seluler</string>
     <string name="brave_sync_btn_laptop">Tambah Komputer</string>
     <string name="brave_sync_scan_sync_code">Pindai kode sinkronisasi ini</string>
-    <string name="brave_sync_add_mobile_device_text_part_1">Menggunakan ponsel kedua atau tablet, bernavigasi ke Pengaturan Brave > Sinkronisasi > Pindai.</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Menggunakan ponsel atau tablet kedua, buka Pengaturan Brave > Sinkronisasi > Pindai.</string>
     <string name="brave_sync_add_mobile_device_text_part_2">Tangkap kode QR (di atas) dengan perangkat kedua Anda, atau masukkan kata-kata kode jika tidak ada kamera.</string>
     <string name="brave_sync_btn_done">Selesai</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Riwayat</string>
     <string name="brave_sync_autofill_passwords_text">Isi otomatis/Kata sandi</string>
-    <string name="brave_sync_payment_settings_text">Pengaturan Pembayaran Brave</string>
-    <string name="brave_sync_settings_title">SINKRONISASIKAN DI PERANGKAT INI</string>
-    <string name="brave_sync_settings_description">Mengubah pengaturan hanya akan mempengaruhi data yang dibagikan perangkat ini dengan orang lain.</string>
+    <string name="brave_sync_payment_settings_text">Pengaturan Brave Payment</string>
+    <string name="brave_sync_settings_title">SINKRONISASI DI PERANGKAT INI</string>
+    <string name="brave_sync_settings_description">Mengubah pengaturan hanya akan mempengaruhi data yang dibagikan perangkat ini dengan perangkat lain.</string>
     <string name="brave_sync_devices_title">PERANGKAT LAIN DALAM RANTAI</string>
     <string name="brave_sync_loading_devices_title">MEMUAT PERANGKAT...</string>
     <string name="brave_sync_add_device_text">Tambah perangkat lain</string>
     <string name="brave_sync_remove_device_text">Hapus perangkat ini</string>
     <string name="brave_sync_code_words_title">Sambungkan</string>
     <string name="brave_sync_add_laptop_text_title">Masukkan kode rantai sinkronisasi</string>
-    <string name="brave_sync_add_laptop_text_part_1">Pada komputer Anda, bernavigasi ke Pengaturan Brave > Sinkronisasi. Pilih \"Masukkan Kode Rantai Sinkronisasi\".</string>
+    <string name="brave_sync_add_laptop_text_part_1">Pada komputer Anda, buka Pengaturan Brave > Sinkronisasi. Pilih \"Masukkan Kode Rantai Sinkronisasi\".</string>
     <string name="brave_sync_add_laptop_text_part_2">Masukkan kata-kata kode di bawah ini, termasuk spasi.</string>
-    <string name="brave_sync_delete_device">Yakin ingin menghapus perangkat \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Yakin ingin menghapus perangkat \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Permintaan penghapusan telah dikirim. Perangkat akan dihapus sebentar lagi.</string>
     <string name="brave_sync_loading_data_title">Memuat data...</string>
     <string name="brave_sync_time_out_message">Ada yang salah, sepertinya permintaan Anda kehabisan waktu.</string>
     <string name="brave_sync_use_camera_text">Saya akan gunakan kamera saya...</string>
     <string name="brave_sync_confirm_code_words_text">Konfirmasi</string>
-    <string name="brave_sync_word_count_text">Jumlah kata: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Jumlah kata: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Jumlah kata salah</string>
     <string name="brave_sync_qr_code">Kode QR</string>
-    <string name="brave_sync_code_words">Kata-kata Kode</string>
+    <string name="brave_sync_code_words">Kode Kata</string>
     <string name="brave_sync_copy_button_text">Salin ke Clipboard</string>
     <string name="brave_sync_copied_text">Telah Disalin ke Clipboard</string>
     <string name="brave_sync_this_device_text">(perangkat ini)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave telah ditetapkan sebagai
+browser default.</string>
+    <string name="brave_default_browser_go_to_settings">Anda telah menetapkan browser default.
+Anda dapat mengubah browser default dalam pengaturan aplikasi.</string>
+    <string name="brave_default_browser_notification_body">Hemat baterai dan muat halaman web lebih cepat. Jadikan Brave Peramban default Anda. Dari menu Brave ketuk \"Atur sebagai peramban default...\"</string>
+    <string name="brave_set_default_browser">Atur sebagai peramban default</string>
+    <string name="brave_set_default_browser_dialog_text">Pilih Brave dari daftar dan ketuk \"Selalu\"</string>
+    <string name="brave_default_browser_existing_notification_body">Jadikan Brave peramban default Anda
+Hemat baterai dan muat halaman web lebih cepat</string>
+
+    <string name="brave_ui_welcome_header_two">Bersiaplah untuk merasakan pengalaman
+menelusuri Internet berikutnya.</string>
+    <string name="brave_ui_welcome_desc_two">Anda kini dapat memperoleh token untuk
+menonton iklan yang tidak mengganggu privasi.</string>
+    <string name="brave_ui_welcome_button_text_two">BERGABUNGLAH DENGAN BRAVE REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">PELAJARI SELENGKAPNYA</string>
+    <string name="brave_ui_rewards_creating_text">Membuat dompet</string>
+    <string name="brave_ui_your_wallet">Dompet Anda</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Tambahkan Dana</string>
+    <string name="brave_ui_settings">Pengaturan</string>
+    <string name="brave_ui_rewards_summary">RINGKASAN BRAVE REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Terima kasih telah berkunjung!</string>
+    <string name="brave_ui_rewards_banner_text1">Anda dapat mendukung situs ini dengan mengirim tip. Tip adalah cara untuk menunjukkan penghargaan kepada situs karena telah membuat konten menarik. Pembuat konten terverifikasi mendapatkan pembayaran untuk tip mereka selama minggu pertama pada setiap bulan kalender.</string>
+    <string name="brave_ui_rewards_banner_text2">Jika ingin, Anda dapat menjadwalkan tip bulanan untuk mendukung situs ini secara berkelanjutan.</string>
+    <string name="brave_ui_donation_amount">Jumlah tip</string>
+    <string name="brave_ui_wallet_balance">saldo dompet:</string>
+    <string name="brave_ui_make_monthly">Buat tip jadi bulanan</string>
+    <string name="brave_ui_send_tip">kirim tip saya</string>
+    <string name="brave_ui_do_monthly">atur tip bulanan</string>
+    <string name="brave_ui_not_enough_tokens">token tidak cukup</string>
+    <string name="brave_ui_site_banner_notice_text">CATATAN: Pembuat ini belum terdaftar untuk menerima kontribusi dari pengguna Brave. Kami akan terus mencoba memberikan kontribusi hingga diverifikasi, atau hingga 90 hari telah lewat.</string>
+    <string name="brave_ui_please">tambahkan</string>
+    <string name="brave_ui_add_funds">dana</string>
+    <string name="brave_ui_thank_you">Terima kasih!</string>
+    <string name="brave_ui_error_init_wallet">Coba lagi nanti.</string>
+    <string name="brave_ui_month_jan">JANUARI</string>
+    <string name="brave_ui_month_feb">FEBRUARI</string>
+    <string name="brave_ui_month_mar">MARET</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MEI</string>
+    <string name="brave_ui_month_jun">JUNI</string>
+    <string name="brave_ui_month_jul">JULI</string>
+    <string name="brave_ui_month_aug">AGUSTUS</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DESEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DESEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Perhatian</string>
+    <string name="brave_ui_include_in_auto">Sertakan dalam Kontribusi Otomatis</string>
+    <string name="brave_ui_donate_now">Kirim tip...</string>
+    <string name="brave_ui_no_activity">Belum ada aktivitas di
+bulan ini...</string>
+    <string name="brave_ui_token_grant_claimed">Hadiah Token Diklaim</string>
+    <string name="brave_ui_earnings_ads">Pendapatan dari Iklan</string>
+    <string name="brave_ui_rewards_contribute">Kontribusi Otomatis</string>
+    <string name="brave_ui_rewards_contribute_description">Anda telah berkontribusi sebesar <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Tip Satu Kali</string>
+    <string name="brave_ui_recurring_donation">Tip Bulanan</string>
+    <string name="brave_ui_verified_publisher">Penerbit Terverifikasi Brave</string>
+    <string name="brave_ui_not_verified_publisher">Belum terverifikasi</string>
+    <string name="brave_ui_not_verified_publisher_description">Pembuat ini belum terdaftar untuk menerima kontribusi dari pengguna Brave.
+        Setiap tip yang Anda kirim akan tetap ada di dompet Anda hingga diverifikasi.</string>
+    <string name="brave_ui_on_youtube">di YouTube</string>
+    <string name="brave_ui_on_twitch">di Twitch</string>
+    <string name="brave_ui_new_grant">Tersedia hadiah token gratis.</string>
+    <string name="brave_ui_new_token_grant">Hadiah Token Gratis</string>
+    <string name="brave_ui_claim">Klaim</string>
+    <string name="brave_ui_reserved_amount_text">Anda telah menetapkan <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kepada pembuat yang belum terdaftar
+untuk menerima kontribusi. Browser Anda akan terus mencoba memberikan kontribusi
+hingga diverifikasi, atau hingga 90 hari telah lewat.</string>
+    <string name="brave_ui_notification_desc_no_funds">Pembayaran bulanan terjadwal Anda untuk Kontribusi Otomatis dan tip bulanan tidak dapat diselesaikan karena dana tidak mencukupi. Kami akan mencobanya lagi dalam 30 hari.</string>
+    <string name="brave_ui_notification_desc_tip_error">Terjadi masalah saat memproses tip Anda, coba lagi.</string>
+    <string name="brave_ui_notification_desc_contr_error">Terjadi masalah saat memproses kontribusi Anda.</string>
+    <string name="brave_rewards_local_uh_oh">Oh!</string>
+    <string name="brave_rewards_local_server_not_responding">Server Brave Rewards tidak merespons. Kami akan memperbaiki masalah ini secepat mungkin.</string>
+    <string name="brave_ui_grants">Hadiah</string>
+    <string name="brave_ui_expires_on">berakhir pada <ph name=\"DATE\">%1$s<ex>14/4/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Dana Tidak Cukup</string>
+    <string name="brave_ui_insufficient_funds_desc">Akun Brave Rewards Anda sedang menunggu setoran dari Anda.</string>
+    <string name="brave_ui_backup_wallet_msg">Dompet Cadangan</string>
+    <string name="brave_ui_backup_wallet_desc">Cadangkan dompet Brave Anda.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Selamat datang!</string>
+    <string name="brave_ui_get_rewarded">Dapatkan hadiah saat menelusuri.</string>
+    <string name="brave_ui_brave_rewards_desc">Dapatkan dengan menonton iklan
+yang tidak mengganggu privasi, dan balas dengan mendukung
+pembuat konten yang Anda sukai.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIFKAN BRAVE REWARDS</string>
 </resources>

@@ -9,7 +9,8 @@
     <string name="brave_shields_ads_tracking_switch">Blokuj reklamy i śledzenie</string>
     <string name="brave_shields_https_everywhere_switch">Wymuszaj HTTPS</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuj skrypty</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Włącz/Wyłącz tarczę Brave</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Włącz/Wyłącz tarcze Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Włącz/Wyłącz nagrody Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokuj pliki cookie stron trzecich</string>
 
     <string name="httpse_summary">Wymusza użycie HTTPS, jeśli jest to możliwe</string>
@@ -81,23 +82,21 @@ zaoszczędzony czas</string>
     <string name="open_pages_in_custom_tabs_title">Otwórz zakładki w Zakładkach Własnych</string>
     <string name="open_pages_in_custom_tabs_summary">Oferuj otwarcie zakładek w Zakładkach Własnych</string>
 
-    <string name="ddg_offer_title">Prywatne wyszukiwanie dzięki DuckDuckGo?</string>
+    <string name="ddg_offer_title">Wyszukiwanie prywatne dzięki DuckDuckGo?</string>
     <string name="ddg_offer_text">W prywatnym wyszukiwaniu Brave będzie używać DuckDuckGo, aby odpowiedzieć na twoje zapytania podczas przebywania w prywatnej karcie. DuckDuckGo to wyszukiwarka internetowa, która nie śledzi twojej historii wyszukiwania i pozwala ci na prywatność.</string>
     <string name="ddg_offer_positive">Tak</string>
     <string name="ddg_offer_negative">Nie</string>
     <string name="ddg_offer_link">Dowiedz się więcej o prywatnym wyszukiwaniu za pomocą DuckDuckGo</string>
     <string name="prefs_standard_search_engine">Standardowa karta</string>
-    <string name="prefs_private_search_engine">Prywatna karta</string>
+    <string name="prefs_private_search_engine">Karta prywatna</string>
 
-    <string name="brave_open_in_private_tab">Otwórz w prywatnej karcie</string>
-    <string name="brave_close_all_private_tabs">Zamknij prywatne karty</string>
-    <string name="brave_new_private_tab">Nowa prywatna karta</string>
-    <string name="brave_new_tab_private_header">To jest prywatna karta</string>
-    <string name="brave_new_tab_private_message">Pomimo że strony, które odwiedzasz w prywatnej karcie nie są zapisywane lokalnie, nie czyni cię to ani anonimowym ani niewidocznym względem dostawcy usług internetowych, twojego pracodawcy lub stron, które odwiedzasz.</string>
-
+    <string name="brave_open_in_private_tab">Otwórz w karcie prywatnej</string>
+    <string name="brave_close_all_private_tabs">Zamknij karty prywatne</string>
+    <string name="brave_new_private_tab">Nowa karta prywatna</string>
+    <string name="brave_new_tab_private_header">To jest karta prywatna</string>
+    <string name="brave_new_tab_private_message">Pomimo że strony, które odwiedzasz w karcie prywatnej nie są zapisywane lokalnie, nie czyni cię to ani anonimowym ani niewidocznym względem dostawcy usług internetowych, twojego pracodawcy lub stron, które odwiedzasz.</string>
     <string name="update_notification_title">Aktualizacja przeglądarki Brave</string>
     <string name="update_notification_text">Nowa przeglądarka Brave działa o 22% szybciej</string>
-
     <string name="prefs_sync">Synchronizacja (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Synchronizacja Brave pozwala na prywatną synchronizację danych zakładek w Twoich przeglądarkach Brave na różnych urządzeniach.</string>
     <string name="brave_sync_description_page_1_part_2">Po prostu zeskanuj kod z łańcucha synchronizacji utworzonego na innym urządzeniu lub utwórz nowy łańcuch synchronizacji.</string>
@@ -125,13 +124,13 @@ zaoszczędzony czas</string>
     <string name="brave_sync_add_laptop_text_title">Wprowadź kod łańcucha synchronizacji</string>
     <string name="brave_sync_add_laptop_text_part_1">Na komputerze przejdź do ustawień Brave > Synchronizacja. Wybierz „Wprowadź kod synchronizacji łańcucha”.</string>
     <string name="brave_sync_add_laptop_text_part_2">Wprowadź hasło powyżej, uwzględniając spacje.</string>
-    <string name="brave_sync_delete_device">Czy na pewno chcesz usunąć urządzenie „<ph name="DEVICE_NAME">%1$s</ph>”?</string>
+    <string name="brave_sync_delete_device">Czy na pewno chcesz usunąć urządzenie „<ph name=\"DEVICE_NAME\">%1$s</ph>”?</string>
     <string name="brave_sync_delete_sent">Wysłano zapytanie o usunięcie. Urządzenie zostanie wkrótce usunięte.</string>
     <string name="brave_sync_loading_data_title">Wczytywanie danych…</string>
     <string name="brave_sync_time_out_message">Coś poszło nie tak, wygląda na to, że Twoje zapytanie wygasło.</string>
     <string name="brave_sync_use_camera_text">Skorzystam z aparatu…</string>
     <string name="brave_sync_confirm_code_words_text">Potwierdź</string>
-    <string name="brave_sync_word_count_text">Liczba słów: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Liczba słów: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Nieprawidłowa liczba słów</string>
     <string name="brave_sync_qr_code">Kod QR</string>
     <string name="brave_sync_code_words">Hasło</string>
@@ -139,4 +138,94 @@ zaoszczędzony czas</string>
     <string name="brave_sync_copied_text">Skopiowano do schowka</string>
     <string name="brave_sync_this_device_text">(to urządzenie)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave jest
+Twoją domyślną przeglądarką.</string>
+    <string name="brave_default_browser_go_to_settings">Twoja domyślna przeglądarka jest już ustawiona.
+Możesz zmienić domyślną przeglądarkę w ustawieniach aplikacji.</string>
+    <string name="brave_default_browser_notification_body">Oszczędzaj baterię dzięki szybszemu ładowaniu stron. Ustaw Brave jako domyślną przeglądarkę. W menu Brave wybierz \"Ustaw jako domyślną przeglądarkę...\"</string>
+    <string name="brave_set_default_browser">Ustaw jako domyślną przeglądarkę</string>
+    <string name="brave_set_default_browser_dialog_text">Wybierz Brave z listy i wciśnij \"Zawsze\"</string>
+    <string name="brave_default_browser_existing_notification_body">Ustaw Brave jako domyślną przeglądarkę
+Oszczędzaj baterię dzięki szybszemu ładowaniu stron</string>
+
+    <string name="brave_ui_welcome_header_two">Przygotuj się na
+nowe oblicze Internetu.</string>
+    <string name="brave_ui_welcome_desc_two">Teraz możesz zdobywać tokeny,
+oglądając reklamy, które szanują Twoją prywatność.</string>
+    <string name="brave_ui_welcome_button_text_two">DOŁĄCZ DO NAGRÓD</string>
+    <string name="brave_ui_welcome_footer_text_two">DOWIEDZ SIĘ WIĘCEJ</string>
+    <string name="brave_ui_rewards_creating_text">Tworzenie portfela</string>
+    <string name="brave_ui_your_wallet">Twój portfel</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Dodaj środki</string>
+    <string name="brave_ui_settings">Ustawienia</string>
+    <string name="brave_ui_rewards_summary">PODSUMOWANIE NAGRÓD</string>
+    <string name="brave_ui_site_banner_welcome">Dzięki za odwiedziny!</string>
+    <string name="brave_ui_rewards_banner_text1">Możesz wesprzeć tę stronę, wysyłając napiwek. To sposób na wyrażenie wdzięczności Twórcom za świetne treści. Zweryfikowani twórcy treści otrzymują zapłatę z napiwków w pierwszym tygodniu każdego miesiąca kalendarzowego.</string>
+    <string name="brave_ui_rewards_banner_text2">Jeśli chcesz, możesz zaplanować miesięczne napiwki, aby regularnie wspierać tę stronę.</string>
+    <string name="brave_ui_donation_amount">Wartość napiwku</string>
+    <string name="brave_ui_wallet_balance">saldo portfela:</string>
+    <string name="brave_ui_make_monthly">Zmień na comiesięczne</string>
+    <string name="brave_ui_send_tip">wyślij napiwek</string>
+    <string name="brave_ui_do_monthly">ustaw miesięczny napiwek</string>
+    <string name="brave_ui_not_enough_tokens">niewystarczająca liczba tokenów</string>
+    <string name="brave_ui_site_banner_notice_text">UWAGA: Ten twórca nie zarejestrował się jeszcze w celu otrzymywania wsparcia od użytkowników przeglądarki Brave. Będziemy starali się przekazać wsparcie do chwili, gdy dokonają weryfikacji lub przez 90 dni.</string>
+    <string name="brave_ui_please">proszę</string>
+    <string name="brave_ui_add_funds">dodaj środki</string>
+    <string name="brave_ui_thank_you">Dziękujemy!</string>
+    <string name="brave_ui_error_init_wallet">Spróbuj ponownie później.</string>
+    <string name="brave_ui_month_jan">STYCZEŃ</string>
+    <string name="brave_ui_month_feb">LUTY</string>
+    <string name="brave_ui_month_mar">MARZEC</string>
+    <string name="brave_ui_month_apr">KWIECIEŃ</string>
+    <string name="brave_ui_month_may">MAJ</string>
+    <string name="brave_ui_month_jun">CZERWIEC</string>
+    <string name="brave_ui_month_jul">LIPIEC</string>
+    <string name="brave_ui_month_aug">SIERPIEŃ</string>
+    <string name="brave_ui_month_sep">WRZESIEŃ</string>
+    <string name="brave_ui_month_oct">PAŹDZIERNIK</string>
+    <string name="brave_ui_month_nov">LISTOPAD</string>
+    <string name="brave_ui_month_dec">GRUDZIEŃ</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>GRUDNIA</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Uwaga</string>
+    <string name="brave_ui_include_in_auto">Uwzględnij we wsparciu automatycznym</string>
+    <string name="brave_ui_donate_now">Wyślij napiwek…</string>
+    <string name="brave_ui_no_activity">Brak aktywności w tym
+miesiącu…</string>
+    <string name="brave_ui_token_grant_claimed">Tokeny odebrane</string>
+    <string name="brave_ui_earnings_ads">Zarobki z reklam</string>
+    <string name="brave_ui_rewards_contribute">Wspieraj automatycznie</string>
+    <string name="brave_ui_rewards_contribute_description">Twoje wsparcie wynosi <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Jednorazowe napiwki</string>
+    <string name="brave_ui_recurring_donation">Miesięczne napiwki</string>
+    <string name="brave_ui_verified_publisher">Zweryfikowany wydawca Brave</string>
+    <string name="brave_ui_not_verified_publisher">Jeszcze nie zweryfikowano</string>
+    <string name="brave_ui_not_verified_publisher_description">Ten twórca nie zarejestrował się jeszcze w celu otrzymywania wsparcia od użytkowników przeglądarki Brave.
+Wszelkie przesłane mu przez Ciebie napiwki pozostaną w Twoim portfelu do czasu weryfikacji twórcy.</string>
+    <string name="brave_ui_on_youtube">w serwisie YouTube</string>
+    <string name="brave_ui_on_twitch">w serwisie Twitch</string>
+    <string name="brave_ui_new_grant">Dostępne są bezpłatne tokeny.</string>
+    <string name="brave_ui_new_token_grant">Tokeny odebrane</string>
+    <string name="brave_ui_claim">Odbierz</string>
+    <string name="brave_ui_reserved_amount_text">Przeznaczasz <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT dla twórców, którzy jeszcze się nie zarejestrowali,
+aby otrzymywać wsparcie. Twoja przeglądarka będzie próbowała przekazać im wsparcie do czasu, gdy zostaną zweryfikowani lub przez 90 dni.</string>
+    <string name="brave_ui_notification_desc_no_funds">Twoje zaplanowane miesięczne opłaty w celu realizacji automatycznego wsparcia i comiesięcznych napiwków nie mogły zostać przetworzone, ponieważ Twój portfel ma niewystarczające środki. Spróbujemy ponownie za 30 dni.</string>
+    <string name="brave_ui_notification_desc_tip_error">Wystąpił problem przy przetwarzaniu napiwku. Spróbuj ponownie.</string>
+    <string name="brave_ui_notification_desc_contr_error">Wystąpił problem przy przetwarzaniu Twojego wsparcia.</string>
+    <string name="brave_rewards_local_uh_oh">Oho!</string>
+    <string name="brave_rewards_local_server_not_responding">Serwer nagród Brave nie odpowiada. Naprawimy to tak szybko, jak to możliwe.</string>
+    <string name="brave_ui_grants">Przyznane środki</string>
+    <string name="brave_ui_expires_on">wygasa dnia <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Niewystarczające środki</string>
+    <string name="brave_ui_insufficient_funds_desc">Twoje konto nagród Brave czeka na depozyt.</string>
+    <string name="brave_ui_backup_wallet_msg">Kopia zapasowa portfela</string>
+    <string name="brave_ui_backup_wallet_desc">Utwórz kopię zapasową portfela.</string>
+    <string name="brave_ui_brave_rewards">Nagrody Brave</string>
+    <string name="brave_ui_welcome_back_message">Witaj ponownie!</string>
+    <string name="brave_ui_get_rewarded">Otrzymuj nagrody za przeglądanie.</string>
+    <string name="brave_ui_brave_rewards_desc">Zarabiaj, oglądając szanujące prywatność
+reklamy i przekazuj to, co zarobisz
+twórcom treści, które lubisz.</string>
+    <string name="brave_welcome_page_rewards_title">WŁĄCZ NAGRODY BRAVE</string>
 </resources>

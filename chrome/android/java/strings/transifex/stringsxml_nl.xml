@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS overal</string>
     <string name="brave_shields_blocks_scripts_switch">Blokkeer Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activeer/inactiveer Brave afschermingen</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave Rewards inschakelen/uitschakelen</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden</string>
 
     <string name="httpse_summary">Opent ondersteunde websites met HTTPS in plaats van HTTP indien mogelijk</string>
@@ -30,6 +31,7 @@
 
     <string name="menu_exit">Afsluiten</string>
 
+    <string name="brave_sync">Brave Sync (bèta)</string>
     <string name="sync_settings_add_device_name_title">Voeg naam apparaat toe</string>
     <string name="sync_settings_add_device_name_label">Voor een optionele naam voor dit apparaat in</string>
     <string name="sync_example_device_name">Android-apparaat</string>
@@ -93,8 +95,138 @@ Bespaard</string>
     <string name="brave_new_private_tab">Nieuw privétabblad</string>
     <string name="brave_new_tab_private_header">Dit is een privétabblad</string>
     <string name="brave_new_tab_private_message">Alhoewel de websites die je via een privétabblad bezoekt niet lokaal worden opgeslagen, maken ze je niet anoniem of onzichtbaar voor je internetprovider, werkgever, of andere websites die je bezoekt.</string>
-
     <string name="update_notification_title">Brave-update</string>
     <string name="update_notification_text">De nieuwe Brave-browser is 22% sneller</string>
+    <string name="prefs_sync">Synchronisatie (bèta)</string>
+    <string name="brave_sync_description_page_1_part_1">Met Brave-synchronisatie kun je bladwijzergegevens privé synchroniseren tussen Brave-browsers op verschillende apparaten.</string>
+    <string name="brave_sync_description_page_1_part_2">Hiervoor scan je de code in de synchronisatieketen die je op een ander apparaat hebt gemaakt. Je kunt ook een nieuwe synchronisatieketen starten.</string>
+    <string name="brave_sync_scan_chain_code">Synchronisatiecode scannen of invoeren</string>
+    <string name="brave_sync_start_new_chain">Een nieuwe synchronisatieketen starten</string>
+    <string name="brave_sync_qrcode_message_v2">Open de Brave-instellingen op het huidige gesynchroniseerde apparaat en ga naar Instellingen > Synchronisatie. Kies \'Apparaat toevoegen\' en scan de QR-code die op het scherm wordt weergegeven.</string>
+    <string name="brave_sync_codewords_message">Open de Brave-instellingen op het huidige gesynchroniseerde apparaat en ga naar Instellingen > Synchronisatie. Kies \'Apparaat toevoegen\' en vervolgens \'Codewoorden weergeven\'.</string>
+    <string name="brave_sync_btn_mobile">Een mobiel apparaat toevoegen</string>
+    <string name="brave_sync_btn_laptop">Een computer toevoegen</string>
+    <string name="brave_sync_scan_sync_code">Deze synchronisatiecode scannen</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Ga op een tweede telefoon of tablet naar Brave-instellingen > Synchronisatie > Scannen.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Registreer de QR-code die hieronder wordt weergegeven met je tweede apparaat of voer codewoorden in als er geen camera beschikbaar is.</string>
+    <string name="brave_sync_btn_done">Gereed</string>
+    <string name="brave_sync_tabs_text">Tabbladen</string>
+    <string name="brave_sync_history_text">Geschiedenis</string>
+    <string name="brave_sync_autofill_passwords_text">Automatisch invullen/wachtwoorden</string>
+    <string name="brave_sync_payment_settings_text">Brave-betalingsinstellingen</string>
+    <string name="brave_sync_settings_title">SYNCHRONISEREN OP DIT APPARAAT</string>
+    <string name="brave_sync_settings_description">Het wijzigen van de instellingen heeft alleen invloed op gegevens die door dit apparaat worden gedeeld.</string>
+    <string name="brave_sync_devices_title">OVERIGE APPARATEN IN DE KETEN</string>
+    <string name="brave_sync_loading_devices_title">APPARATEN LADEN...</string>
+    <string name="brave_sync_add_device_text">Nog een apparaat toevoegen</string>
+    <string name="brave_sync_remove_device_text">Dit apparaat verwijderen</string>
+    <string name="brave_sync_code_words_title">Koppelen</string>
+    <string name="brave_sync_add_laptop_text_title">De synchronisatieketencode invoeren</string>
+    <string name="brave_sync_add_laptop_text_part_1">Ga op de computer naar Brave-instellingen > Synchronisatie. Kies \'Een synchronisatieketencode invoeren\'.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Voer de bovenstaande codewoorden in (inclusief spaties).</string>
+    <string name="brave_sync_delete_device">Weet je zeker dat je het apparaat \'<ph name=\"DEVICE_NAME\">%1$s</ph>\' wilt verwijderen?</string>
+    <string name="brave_sync_delete_sent">De aanvraag is verzonden. Het apparaat wordt spoedig verwijderd.</string>
+    <string name="brave_sync_loading_data_title">Gegevens laden...</string>
+    <string name="brave_sync_time_out_message">Er is iets misgegaan: er is een time-out voor de aanvraag opgetreden.</string>
+    <string name="brave_sync_use_camera_text">Ik gebruik mijn camera...</string>
+    <string name="brave_sync_confirm_code_words_text">Bevestigen</string>
+    <string name="brave_sync_word_count_text">Aantal woorden: <ph name=\"WORD_COUNT\">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Onjuist aantal woorden</string>
+    <string name="brave_sync_qr_code">QR-code</string>
+    <string name="brave_sync_code_words">Codewoorden</string>
+    <string name="brave_sync_copy_button_text">Naar Klembord kopiëren</string>
+    <string name="brave_sync_copied_text">Gekopieerd naar Klembord</string>
+    <string name="brave_sync_this_device_text">(dit apparaat)</string>
 
-    </resources>
+    <string name="brave_already_set_as_default_browser">Brave is al ingesteld
+als je standaardbrowser.</string>
+    <string name="brave_default_browser_go_to_settings">Je hebt al een standaardbrowser ingesteld.
+Je kunt je standaardbrowser wijzigen in de app-instellingen.</string>
+    <string name="brave_default_browser_notification_body">Verleng de gebruiksduur van de batterij en laad webpagina\'s sneller. Maak van Brave je standaardbrowser. Tik in het Brave-menu op \'Instellen als standaardbrowser…\'</string>
+    <string name="brave_set_default_browser">Instellen als standaardbrowser</string>
+    <string name="brave_set_default_browser_dialog_text">Selecteer Brave in de lijst en tik op \'Altijd\'</string>
+    <string name="brave_default_browser_existing_notification_body">Maak van Brave je standaardinternetbrowser
+Verleng de gebruiksduur van de batterij en laad webpagina\'s sneller</string>
+
+    <string name="brave_ui_welcome_header_two">Bereid je voor op
+het \'nieuwe internet\'.</string>
+    <string name="brave_ui_welcome_desc_two">Je kunt nu tokens verdienen door
+advertenties te bekijken waarbij de privacy wordt gerespecteerd.</string>
+    <string name="brave_ui_welcome_button_text_two">LID WORDEN VAN REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">MEER INFORMATIE</string>
+    <string name="brave_ui_rewards_creating_text">Wallet maken</string>
+    <string name="brave_ui_your_wallet">Je wallet</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,00</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Geld toevoegen</string>
+    <string name="brave_ui_settings">Instellingen</string>
+    <string name="brave_ui_rewards_summary">REWARDS-OVERZICHT</string>
+    <string name="brave_ui_site_banner_welcome">Bedankt voor je bezoek!</string>
+    <string name="brave_ui_rewards_banner_text1">Je kunt deze site ondersteunen door een donatie te doen. Hiermee bedank je de makers voor hun fantastische inhoud. Geverifieerde makers van inhoud krijgen tijdens de eerste week van elke kalendermaand hun donaties uitbetaald.</string>
+    <string name="brave_ui_rewards_banner_text2">Als je wilt, kun je structureel elke maand een donatie doen om de site doorlopend te blijven ondersteunen.</string>
+    <string name="brave_ui_donation_amount">Donatiebedrag</string>
+    <string name="brave_ui_wallet_balance">wallettegoed:</string>
+    <string name="brave_ui_make_monthly">Maandelijks herhalen</string>
+    <string name="brave_ui_send_tip">mijn donatie verzenden</string>
+    <string name="brave_ui_do_monthly">maandelijkse donatie instellen</string>
+    <string name="brave_ui_not_enough_tokens">niet voldoende tokens</string>
+    <string name="brave_ui_site_banner_notice_text">OPMERKING: deze maker heeft zich nog niet geregistreerd voor het ontvangen van donaties van Brave-gebruikers. We blijven proberen de donatie over te maken tot de maker zich registreert, of tot er 90 dagen zijn verstreken.</string>
+    <string name="brave_ui_please">graag</string>
+    <string name="brave_ui_add_funds">geld toevoegen</string>
+    <string name="brave_ui_thank_you">Bedankt!</string>
+    <string name="brave_ui_error_init_wallet">Probeer het later opnieuw.</string>
+    <string name="brave_ui_month_jan">JANUARI</string>
+    <string name="brave_ui_month_feb">FEBRUARI</string>
+    <string name="brave_ui_month_mar">MAART</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MEI</string>
+    <string name="brave_ui_month_jun">JUNI</string>
+    <string name="brave_ui_month_jul">JULI</string>
+    <string name="brave_ui_month_aug">AUGUSTUS</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DECEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Let op</string>
+    <string name="brave_ui_include_in_auto">Gebruiken voor automatisch doneren</string>
+    <string name="brave_ui_donate_now">Doe een donatie...</string>
+    <string name="brave_ui_no_activity">Nog geen activiteiten deze
+maand...</string>
+    <string name="brave_ui_token_grant_claimed">Aantal geclaimde toegewezen tokens</string>
+    <string name="brave_ui_earnings_ads">Inkomsten van advertenties</string>
+    <string name="brave_ui_rewards_contribute">Automatisch doneren</string>
+    <string name="brave_ui_rewards_contribute_description">Je hebt<ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT\'s gedoneerd.</string>
+    <string name="brave_ui_one_time_donation">Eenmalige donaties</string>
+    <string name="brave_ui_recurring_donation">Maandelijkse donaties</string>
+    <string name="brave_ui_verified_publisher">Door Brave geverifieerde uitgever</string>
+    <string name="brave_ui_not_verified_publisher">Nog niet geverifieerd</string>
+    <string name="brave_ui_not_verified_publisher_description">Deze maker heeft zich nog niet geregistreerd voor het ontvangen van donaties van Brave-gebruikers.
+Alle donaties die je doet, blijven in je wallet staan tot de maker is geverifieerd.</string>
+    <string name="brave_ui_on_youtube">op YouTube</string>
+    <string name="brave_ui_on_twitch">op Twitch</string>
+    <string name="brave_ui_new_grant">Er zijn gratis toegewezen tokens beschikbaar.</string>
+    <string name="brave_ui_new_token_grant">Gratis toegewezen tokens</string>
+    <string name="brave_ui_claim">Claimen</string>
+    <string name="brave_ui_reserved_amount_text">Je hebt <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT\'s apart gezet voor makers die zich nog niet
+hebben geregistreerd voor het ontvangen van donaties. Je browser blijft proberen de donatie
+over te maken tot de maker zich registreert, of tot er 90 dagen zijn verstreken.</string>
+    <string name="brave_ui_notification_desc_no_funds">Je geplande maandelijkse betaling voor automatisch doneren en maandelijkse donaties kan niet worden uitgevoerd omdat er onvoldoende geld beschikbaar is. We proberen het over 30 dagen opnieuw.</string>
+    <string name="brave_ui_notification_desc_tip_error">Er is een probleem opgetreden bij het verwerken van je donatie. Probeer het opnieuw.</string>
+    <string name="brave_ui_notification_desc_contr_error">Er is een probleem opgetreden bij het verwerken van je donatie.</string>
+    <string name="brave_rewards_local_uh_oh">Er is een probleem opgetreden.</string>
+    <string name="brave_rewards_local_server_not_responding">De Brave Rewards-server reageert niet. We proberen dit zo snel mogelijk op te lossen.</string>
+    <string name="brave_ui_grants">Toewijzingen</string>
+    <string name="brave_ui_expires_on">verloopt op <ph name=\"DATE\">%1$s<ex>14-04-2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Onvoldoende geld</string>
+    <string name="brave_ui_insufficient_funds_desc">Er moet geld worden gestort naar je Brave Rewards-account.</string>
+    <string name="brave_ui_backup_wallet_msg">Back-up van wallet maken</string>
+    <string name="brave_ui_backup_wallet_desc">Maak een back-up van je Brave-wallet.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Welkom terug!</string>
+    <string name="brave_ui_get_rewarded">Word beloond voor browsen!</string>
+    <string name="brave_ui_brave_rewards_desc">Genereer inkomsten door advertenties te bekijken
+waarbij de privacy wordt gerespecteerd en laat
+anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.</string>
+    <string name="brave_welcome_page_rewards_title">BRAVE REWARDS INSCHAKELEN</string>
+</resources>

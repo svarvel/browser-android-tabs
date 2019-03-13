@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPSをどこでも</string>
     <string name="brave_shields_blocks_scripts_switch">スクリプトをブロック</string>
     <string name="accessibility_toolbar_btn_brave_shields">Braveシールドを有効化/無効化</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Braveリワードを有効化/無効化</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">サードパーティクッキーをブロック</string>
 
     <string name="httpse_summary">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">出口</string>
 
-    <string name="brave_sync">Brave (beta版) Sync</string>
     <string name="sync_settings_add_device_name_title">端末名を追加</string>
     <string name="sync_settings_add_device_name_label">この端末のオプション名を入力</string>
     <string name="sync_example_device_name">Android 端末</string>
@@ -94,10 +94,8 @@
     <string name="brave_new_private_tab">新しいプライベートタブ</string>
     <string name="brave_new_tab_private_header">これはプライベートタブです</string>
     <string name="brave_new_tab_private_message">プライベートタブで訪れたサイトはローカルに保存されませんが、ISPや雇用主、又は訪れたサイトに対して、あなたを匿名に保ったり、身元が分からない状態にはしません。</string>
-
     <string name="update_notification_title">Braveアプデート</string>
     <string name="update_notification_text">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</string>
-
     <string name="prefs_sync">Sync (beta版)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync は、さまざまな端末上の Brave ブラウザ間でのブックマークデータの同期を可能にします。</string>
     <string name="brave_sync_description_page_1_part_2">別の端末で作成した同期チェーンからコードをスキャンするだけ。または新しい同期チェーンを開始します。</string>
@@ -125,13 +123,13 @@
     <string name="brave_sync_add_laptop_text_title">同期チェーンコードを入力</string>
     <string name="brave_sync_add_laptop_text_part_1">お使いのコンピューターで、[Brave 設定] > {同期} に移動します。[同期チェーンコードを入力] を選択します。</string>
     <string name="brave_sync_add_laptop_text_part_2">上記のコードの単語を、スペースも含めて入力します。</string>
-    <string name="brave_sync_delete_device">端末「<ph name="DEVICE_NAME">%1$s</ph>」を削除してよろしいですか？</string>
+    <string name="brave_sync_delete_device">端末「<ph name=\"DEVICE_NAME\">%1$s</ph>」を削除してよろしいですか？</string>
     <string name="brave_sync_delete_sent">削除リクエストが送信されました。端末はまもなく削除されます。</string>
     <string name="brave_sync_loading_data_title">データを読み込み中...</string>
     <string name="brave_sync_time_out_message">問題が発生しました。リクエストが時間切れになったようです。</string>
     <string name="brave_sync_use_camera_text">カメラを使用します...</string>
     <string name="brave_sync_confirm_code_words_text">確認</string>
-    <string name="brave_sync_word_count_text">文字数: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">文字数: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">不正確な文字数</string>
     <string name="brave_sync_qr_code">QR コード</string>
     <string name="brave_sync_code_words">コードの単語</string>
@@ -139,4 +137,92 @@
     <string name="brave_sync_copied_text">クリップボードにコピー済み</string>
     <string name="brave_sync_this_device_text">(この端末)</string>
 
+    <string name="brave_already_set_as_default_browser">Braveがデフォルトのブラウザーとして
+設定されています。</string>
+    <string name="brave_default_browser_go_to_settings">すでにデフォルトのブラウザーが設定されています。
+アプリの設定で変更が可能です。</string>
+    <string name="brave_default_browser_notification_body">バッテリーを節約し、Webページの表示速度を上げましょう。 Braveをデフォルトのブラウザーにしましょう。 Braveメニューから「デフォルトのブラウザーに設定…」をタップします。</string>
+    <string name="brave_set_default_browser">デフォルトのブラウザとして設定する</string>
+    <string name="brave_set_default_browser_dialog_text">リストからBraveを選択し、「常に」をタップします</string>
+    <string name="brave_default_browser_existing_notification_body">Braveをデフォルトのウェブブラウザにしましょう
+バッテリーを節約し、Webページの表示速度を上げましょう</string>
+
+    <string name="brave_ui_welcome_header_two">次世代インターネットを
+体験しましょう。</string>
+    <string name="brave_ui_welcome_desc_two">プライバシーに配慮した広告を見ると
+トークンを獲得できます。</string>
+    <string name="brave_ui_welcome_button_text_two">リワードに参加</string>
+    <string name="brave_ui_welcome_footer_text_two">詳細</string>
+    <string name="brave_ui_rewards_creating_text">ウォレットを作成</string>
+    <string name="brave_ui_your_wallet">ウォレット</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph>米ドル</string>
+    <string name="brave_rewards_local_panel_add_funds">資金を追加</string>
+    <string name="brave_ui_settings">設定</string>
+    <string name="brave_ui_rewards_summary">リワードサマリー</string>
+    <string name="brave_ui_site_banner_welcome">ご利用ありがとうございます！</string>
+    <string name="brave_ui_rewards_banner_text1">素晴らしいコンテンツの制作者に感謝の意としてチップを送信し、このサイトをサポートできます。このチップは、認証済みコンテンツクリエイターに毎月第1週に支払われます。</string>
+    <string name="brave_ui_rewards_banner_text2">チップの送信をマンスリーに設定して、このサイトを継続的にサポートすることも可能です。</string>
+    <string name="brave_ui_donation_amount">チップ額</string>
+    <string name="brave_ui_wallet_balance">ウォレット残高:</string>
+    <string name="brave_ui_make_monthly">マンスリーに設定</string>
+    <string name="brave_ui_send_tip">チップを送信</string>
+    <string name="brave_ui_do_monthly">マンスリーチップを設定</string>
+    <string name="brave_ui_not_enough_tokens">トークンが不足しています</string>
+    <string name="brave_ui_site_banner_notice_text">注: このクリエイターは、まだBraveユーザーからの寄付を受諾する手続きを行っていません。クリエイターが確認するまで、または90日間が経過するまで、寄付の送信を継続します。</string>
+    <string name="brave_ui_add_funds">資金を追加</string>
+    <string name="brave_ui_thank_you">ありがとうございます！</string>
+    <string name="brave_ui_error_init_wallet">後ほどもう一度お試しください。</string>
+    <string name="brave_ui_month_jan">1月</string>
+    <string name="brave_ui_month_feb">2月</string>
+    <string name="brave_ui_month_mar">3月</string>
+    <string name="brave_ui_month_apr">4月</string>
+    <string name="brave_ui_month_may">5月</string>
+    <string name="brave_ui_month_jun">6月</string>
+    <string name="brave_ui_month_jul">7月</string>
+    <string name="brave_ui_month_aug">8月</string>
+    <string name="brave_ui_month_sep">9月</string>
+    <string name="brave_ui_month_oct">10月</string>
+    <string name="brave_ui_month_nov">11月</string>
+    <string name="brave_ui_month_dec">12月</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>12月</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018年</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">注意</string>
+    <string name="brave_ui_include_in_auto">自動寄付に含める</string>
+    <string name="brave_ui_donate_now">チップを送信...</string>
+    <string name="brave_ui_no_activity">今月はまだアクティビティが
+ありません...</string>
+    <string name="brave_ui_token_grant_claimed">トークン付与を請求しました</string>
+    <string name="brave_ui_earnings_ads">広告収入</string>
+    <string name="brave_ui_rewards_contribute">自動寄付</string>
+    <string name="brave_ui_rewards_contribute_description"><ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BATを寄付しました。</string>
+    <string name="brave_ui_one_time_donation">チップ</string>
+    <string name="brave_ui_recurring_donation">マンスリーチップ</string>
+    <string name="brave_ui_verified_publisher">Brave認証済みパブリッシャー</string>
+    <string name="brave_ui_not_verified_publisher">未認証</string>
+    <string name="brave_ui_not_verified_publisher_description">このクリエイターは、まだBraveユーザーからの寄付を受諾する手続きを行っていません。クリエイターの認証確認が終了するまで、送信されたチップはウォレット内に維持されます。</string>
+    <string name="brave_ui_on_youtube">YouTube</string>
+    <string name="brave_ui_on_twitch">Twitch</string>
+    <string name="brave_ui_new_grant">無料でトークンをご利用いただけます。</string>
+    <string name="brave_ui_new_token_grant">無料トークン付与</string>
+    <string name="brave_ui_claim">請求</string>
+    <string name="brave_ui_reserved_amount_text">寄付の受諾手続きを行なっていないクリエイターに<ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BATを
+設定しました。クリエイターが確認するまで、または90日間が経過するまで、ブラウザーにより寄付の送信が継続されます。</string>
+    <string name="brave_ui_notification_desc_no_funds">資金が不十分なため、自動寄付およびマンスリーチップに対して設定されている月次決済を完了できませんでした。30日後に再試行します。</string>
+    <string name="brave_ui_notification_desc_tip_error">チップの処理中にエラーが発生しました。もう一度お試しください。</string>
+    <string name="brave_ui_notification_desc_contr_error">寄付の処理中にエラーが発生しました。</string>
+    <string name="brave_rewards_local_uh_oh">エラー！</string>
+    <string name="brave_rewards_local_server_not_responding">Braveリワードサーバーが応答していません。修復作業が終了するまで少々お待ちください。</string>
+    <string name="brave_ui_grants">付与</string>
+    <string name="brave_ui_expires_on">の期限は<ex>2019/4/14/</ex><ph name=\"DATE\">%1$s</ph>までです</string>
+    <string name="brave_ui_insufficient_funds_msg">資金不足</string>
+    <string name="brave_ui_insufficient_funds_desc">Braveリワードアカウントへの入金があります。</string>
+    <string name="brave_ui_backup_wallet_msg">ウォレットのバックアップ</string>
+    <string name="brave_ui_backup_wallet_desc">Braveウォレットをバックアップしてください。</string>
+    <string name="brave_ui_brave_rewards">Braveリワード</string>
+    <string name="brave_ui_welcome_back_message">おかえりなさい！</string>
+    <string name="brave_ui_get_rewarded">閲覧してリワードを獲得。</string>
+    <string name="brave_ui_brave_rewards_desc">プライバシーに配慮した広告を表示して
+得た資金で、お気に入りのコンテンツ
+クリエイターをサポートしましょう。</string>
+    <string name="brave_welcome_page_rewards_title">BRAVEリワードを有効化</string>
 </resources>

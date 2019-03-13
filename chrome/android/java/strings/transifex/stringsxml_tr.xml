@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Her yerde</string>
     <string name="brave_shields_blocks_scripts_switch">Betikleri Engelle</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave Korumalarını Aç/Kapat</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave Ödüllerini Etkinleştir/Devre Dışı Bırak</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Üçüncü kişi çerezlerini engelleyin</string>
 
     <string name="httpse_summary">Desteklenen siteleri mümkün olduğunda HTTP yerine HTTPS kullanarak açar</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Çıkış</string>
 
-    <string name="brave_sync">Brave (beta) Senkronizasyon</string>
     <string name="sync_settings_add_device_name_title">Cihaz adı ekle</string>
     <string name="sync_settings_add_device_name_label">Bu cihaz için isteğe bağlı bir ad girin</string>
     <string name="sync_example_device_name">Android cihazı</string>
@@ -94,10 +94,8 @@ Kaydedildi</string>
     <string name="brave_new_private_tab">Yeni gizli sekme</string>
     <string name="brave_new_tab_private_header">Bu bir Gizli Sekme</string>
     <string name="brave_new_tab_private_message">Gizli sekmelerde ziyaret ettiğiniz siteler yerel olarak kaydedilmese de anonim olarak kalmazsınız ve bu siteler internet servis sağlayıcınız, işvereniniz veya ziyaret ettiğiniz siteler tarafından görülebilir.</string>
-
     <string name="update_notification_title">Brave güncellemesi</string>
     <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
-
     <string name="prefs_sync">Senkronizasyon (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</string>
     <string name="brave_sync_description_page_1_part_2">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</string>
@@ -125,13 +123,13 @@ Kaydedildi</string>
     <string name="brave_sync_add_laptop_text_title">Senkronizasyon zinciri kodunu gir</string>
     <string name="brave_sync_add_laptop_text_part_1">Bilgisayarınızda Brave Ayarları > Senkronizasyon öğesine gidin. \"Senkronizasyon Zinciri Kodu Gir\" öğesini seçin.</string>
     <string name="brave_sync_add_laptop_text_part_2">Yukarıdaki kod kelimelerini boşluklar dahil girin.</string>
-    <string name="brave_sync_delete_device">\"<ph name="DEVICE_NAME">%1$s</ph>\" cihazını silmek istediğinizden emin misiniz?</string>
+    <string name="brave_sync_delete_device">\"<ph name=\"DEVICE_NAME\">%1$s</ph>\" cihazını silmek istediğinizden emin misiniz?</string>
     <string name="brave_sync_delete_sent">Silme talebi gönderildi. Cihaz kısa süre içinde kaldırılacak.</string>
     <string name="brave_sync_loading_data_title">Veri yükleniyor...</string>
     <string name="brave_sync_time_out_message">Bir hata oluştu, görünüşe göre talebiniz zaman aşımına uğradı.</string>
     <string name="brave_sync_use_camera_text">Kameramı kullanacağım...</string>
     <string name="brave_sync_confirm_code_words_text">Onayla</string>
-    <string name="brave_sync_word_count_text">Kelime sayısı: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Kelime sayısı: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Yanlış kelime sayısı</string>
     <string name="brave_sync_qr_code">QR Kodu</string>
     <string name="brave_sync_code_words">Kod Kelimeleri</string>
@@ -139,4 +137,95 @@ Kaydedildi</string>
     <string name="brave_sync_copied_text">Panoya Kopyalandı</string>
     <string name="brave_sync_this_device_text">(bu cihaz)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave zaten varsayılan
+tarayıcınız olarak ayarlı.</string>
+    <string name="brave_default_browser_go_to_settings">Zaten varsayılan bir tarayıcı ayarladınız.
+Varsayılan tarayıcıyı uygulama ayarlarınızdan değiştirebilirsiniz.</string>
+    <string name="brave_default_browser_notification_body">Pilden tasarruf edin ve web sayfalarını daha hızlı yükleyin. Brave\'i varsayılan tarayıcınız yapın. Brave menüsünden \"Varsayılan tarayıcı olarak ayarla...\"yı seçin</string>
+    <string name="brave_set_default_browser">Varsayılan tarayıcı olarak ayarla</string>
+    <string name="brave_set_default_browser_dialog_text">Listeden Brave\'i seçin ve \"Her Zaman\"a dokunun</string>
+    <string name="brave_default_browser_existing_notification_body">Brave\'i varsayılan tarayıcınız yapın
+Pilden tasarruf edin ve web sayfalarını daha hılzı yükleyin</string>
+
+    <string name="brave_ui_welcome_header_two">İnternetin geleceğini
+deneyimlemeye hazır olun.</string>
+    <string name="brave_ui_welcome_desc_two">Artık gizliliğe saygılı reklamlar
+izleme karşılığında kupon kazanabilirsiniz.</string>
+    <string name="brave_ui_welcome_button_text_two">ÖDÜLLERE KATIL</string>
+    <string name="brave_ui_welcome_footer_text_two">DAHA FAZLASINI ÖĞREN</string>
+    <string name="brave_ui_rewards_creating_text">Cüzdan oluşturuluyor</string>
+    <string name="brave_ui_your_wallet">Cüzdanınız</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Para Ekle</string>
+    <string name="brave_ui_settings">Ayarlar</string>
+    <string name="brave_ui_rewards_summary">ÖDÜLLER ÖZETİ</string>
+    <string name="brave_ui_site_banner_welcome">Uğradığınız için teşekkür ederiz!</string>
+    <string name="brave_ui_rewards_banner_text1">Bu siteyi bir bahşiş göndererek destekleyebilirsiniz. Bu, muhteşem içerik için kendilerine teşekkür etmenin bir yoludur. Onaylı içerik oluşturucular her takvim ayının ilk haftası içinde bahşişleri için ödeme alır.</string>
+    <string name="brave_ui_rewards_banner_text2">İsterseniz bu siteyi devamlı olarak desteklemek için aylık bahşiş ödemeleri planlayabilirsiniz.</string>
+    <string name="brave_ui_donation_amount">Bahşiş tutarı</string>
+    <string name="brave_ui_wallet_balance">cüzdan bakiyesi:</string>
+    <string name="brave_ui_make_monthly">Bunu aylık yap</string>
+    <string name="brave_ui_send_tip">bahşişimi gönder</string>
+    <string name="brave_ui_do_monthly">aylık bahşiş ayarla</string>
+    <string name="brave_ui_not_enough_tokens">yeterli kupon yok</string>
+    <string name="brave_ui_site_banner_notice_text">NOT: Bu oluşturucu henüz Brave kullanıcılarından katkı almak için kaydolmamış. Onlar onaylayana veya 90 gün geçene kadar katkı yapmaya çalışacağız.</string>
+    <string name="brave_ui_please">lütfen</string>
+    <string name="brave_ui_add_funds">para ekleyin</string>
+    <string name="brave_ui_thank_you">Teşekkür ederiz!</string>
+    <string name="brave_ui_error_init_wallet">Lütfen daha sonra tekrar deneyin.</string>
+    <string name="brave_ui_month_jan">OCAK</string>
+    <string name="brave_ui_month_feb">ŞUBAT</string>
+    <string name="brave_ui_month_mar">MART</string>
+    <string name="brave_ui_month_apr">NİSAN</string>
+    <string name="brave_ui_month_may">MAYIS</string>
+    <string name="brave_ui_month_jun">HAZİRAN</string>
+    <string name="brave_ui_month_jul">TEMMUZ</string>
+    <string name="brave_ui_month_aug">AĞUSTOS</string>
+    <string name="brave_ui_month_sep">EYLÜL</string>
+    <string name="brave_ui_month_oct">EKİM</string>
+    <string name="brave_ui_month_nov">KASIM</string>
+    <string name="brave_ui_month_dec">ARALIK</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>ARALIK</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Dikkat</string>
+    <string name="brave_ui_include_in_auto">Otomatik Katkıya Dahil Et</string>
+    <string name="brave_ui_donate_now">Bir bahşiş gönder...</string>
+    <string name="brave_ui_no_activity">Bu ay henüz aktivite
+yok...</string>
+    <string name="brave_ui_token_grant_claimed">Alınan Kuponlar</string>
+    <string name="brave_ui_earnings_ads">Reklam Gelirleri</string>
+    <string name="brave_ui_rewards_contribute">Otomatik Katkı</string>
+    <string name="brave_ui_rewards_contribute_description"><ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT katkıda bulundunuz.</string>
+    <string name="brave_ui_one_time_donation">Tek Seferlik Bahşişler</string>
+    <string name="brave_ui_recurring_donation">Aylık Bahşişler</string>
+    <string name="brave_ui_verified_publisher">Brave Onaylı Yayıncı</string>
+    <string name="brave_ui_not_verified_publisher">Henüz onaylanmamış</string>
+    <string name="brave_ui_not_verified_publisher_description">Bu oluşturucu henüz Brave kullanıcılarından katkı almak için kaydolmamış.
+        Gönderdiğiniz tüm bahşişler onlar onaylayana kadar cüzdanınızda kalacaktır.</string>
+    <string name="brave_ui_on_youtube">YouTube\'da</string>
+    <string name="brave_ui_on_twitch">Twitch\'te</string>
+    <string name="brave_ui_new_grant">Ücretsiz bir kupon mevcut.</string>
+    <string name="brave_ui_new_token_grant">Ücretsiz Kupon Verme</string>
+    <string name="brave_ui_claim">Al</string>
+    <string name="brave_ui_reserved_amount_text">Henüz katkı almak amacıyla kaydolmamış oluşturucular için <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT
+ayırdınız. Tarayıcınız onlar onaylayana veya
+90 gün geçene kadar katkı yapmayı deneyecek.</string>
+    <string name="brave_ui_notification_desc_no_funds">Otomatik Katkı ve aylık bahşişler için planlı aylık ödemeniz yetersiz tutar sebebiyle tamamlanamadı. 30 gün içinde tekrar deneyeceğiz.</string>
+    <string name="brave_ui_notification_desc_tip_error">Bahşişiniz işleme alınırken bir sorun oluştu, lütfen tekrar deneyin.</string>
+    <string name="brave_ui_notification_desc_contr_error">Katkınız işleme alınırken bir sorun oluştu.</string>
+    <string name="brave_rewards_local_uh_oh">Tüh!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Ödülleri sunucusu yanıt vermiyor. Bunu en kısa zamanda düzelteceğiz.</string>
+    <string name="brave_ui_grants">Verilenler</string>
+    <string name="brave_ui_expires_on"><ph name=\"DATE\">%1$s<ex>14/4/2019</ex></ph> tarihinde süresi doluyor</string>
+    <string name="brave_ui_insufficient_funds_msg">Yetersiz Tutar</string>
+    <string name="brave_ui_insufficient_funds_desc">Brave Ödülleri hesabınız para yatırılmasını bekliyor.</string>
+    <string name="brave_ui_backup_wallet_msg">Cüzdanı Yedekle</string>
+    <string name="brave_ui_backup_wallet_desc">Lütfen Brave cüzdanınızı yedekleyin.</string>
+    <string name="brave_ui_brave_rewards">Brave Ödülleri</string>
+    <string name="brave_ui_welcome_back_message">Tekrar hoş geldiniz!</string>
+    <string name="brave_ui_get_rewarded">İnternette gezinmek için ödül alın.</string>
+    <string name="brave_ui_brave_rewards_desc">Gizliliğe saygılı reklamlar izleyerek
+para kazanın ve sevdiğiniz içerik
+üreticilerini desteklemek için bu parayla ödeme yapın.</string>
+    <string name="brave_welcome_page_rewards_title">BRAVE ÖDÜLLERİNİ ETKİNLEŞTİR</string>
 </resources>

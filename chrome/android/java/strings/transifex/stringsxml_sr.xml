@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS svuda</string>
     <string name="brave_shields_blocks_scripts_switch">Blokiraj skripte</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktiviraj/Deaktiviraj Brave štitove</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktiviraj/Deaktiviraj Brave nagrade</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokiraj kolačiće treće strane</string>
 
     <string name="httpse_summary">Otvara podržavane veb lokacije koristeći HTTPS umesto HTTP kada je to moguće</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Izlaz</string>
 
-    <string name="brave_sync">Brave (beta) sinhronizacija</string>
     <string name="sync_settings_add_device_name_title">Dodajte naziv uređaja</string>
     <string name="sync_settings_add_device_name_label">Unesite opciono ime za ovaj uređaj</string>
     <string name="sync_example_device_name">Android uređaj</string>
@@ -94,10 +94,8 @@ Sačuvano</string>
     <string name="brave_new_private_tab">Nova privatna kartica</string>
     <string name="brave_new_tab_private_header">Ovo je privatna kartica</string>
     <string name="brave_new_tab_private_message">Iako se lokacije koje posećujete na privatnim karticama ne čuvaju lokalno, to vas ne čini anonimnim ili nevidljivim za vaš ISP, vašeg poslodavca, ili za lokacije koje posećujete.</string>
-
     <string name="update_notification_title">Brave ažuriranje</string>
     <string name="update_notification_text">Novi Brave pregledač je 22% brži</string>
-
     <string name="prefs_sync">Sinhronizacija (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave sinhronizacija vam omogućava da diskretno sinhronizujete podatke o obeleživačima stranica između pregledača Brave i različitih uređaja koje koristite.</string>
     <string name="brave_sync_description_page_1_part_2">Jednostavno skenirajte kod iz lanca sihnronizacije koji ste kreirali na drugom uređaju. Ili, započnite novi lanac sihronizacije.</string>
@@ -125,13 +123,13 @@ Sačuvano</string>
     <string name="brave_sync_add_laptop_text_title">Unesite kod lanca sinhronizacije</string>
     <string name="brave_sync_add_laptop_text_part_1">Na vašem računaru idite na Brave Settings > Sync. Odaberite „Enter a Sync Chain Code”.</string>
     <string name="brave_sync_add_laptop_text_part_2">Unesite kodne reči iznad, uključujući razmake.</string>
-    <string name="brave_sync_delete_device">Da li sigurno želite da obrišete uređaj \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Da li sigurno želite da obrišete uređaj \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Zahtev za brisanje je poslat. Uređaj će ubrzo biti uklonjen.</string>
     <string name="brave_sync_loading_data_title">Učitavanje podataka...</string>
     <string name="brave_sync_time_out_message">Nešto nije u redu, izgleda da je vaš zahtev istekao.</string>
     <string name="brave_sync_use_camera_text">Upotrebiću kameru...</string>
     <string name="brave_sync_confirm_code_words_text">Potvrda</string>
-    <string name="brave_sync_word_count_text">Broj reči: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Broj reči: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Netačan broj reči</string>
     <string name="brave_sync_qr_code">QR kod</string>
     <string name="brave_sync_code_words">Kodne reči</string>
@@ -139,4 +137,95 @@ Sačuvano</string>
     <string name="brave_sync_copied_text">Kopirano</string>
     <string name="brave_sync_this_device_text">(ovaj uređaj)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave je već postavljen
+kao vaš podrazumevani pregledač.</string>
+    <string name="brave_default_browser_go_to_settings">Već smo postavili vaš podrazumevani pregledač.
+Podrazumevani pregledač možete promeniti u podešavanjima aplikacije.</string>
+    <string name="brave_default_browser_notification_body">Štedite bateriju i brže učitavajte veb-stranice. Postavite „Brave” kao svoj podrazumevani pregledač. U meniju „Brave” kratko dodirnite „Podesite kao podrazumevani pregledač…”</string>
+    <string name="brave_set_default_browser">Podesite kao podrazumevani pregledač</string>
+    <string name="brave_set_default_browser_dialog_text">Izaberite „Brave” iz spiska i kratko dodirnite „Uvek”</string>
+    <string name="brave_default_browser_existing_notification_body">Postavite „Brave” kao svoj podrazumevani veb-pregledač
+Štedite bateriju i brže učitavajte veb-stranice</string>
+
+    <string name="brave_ui_welcome_header_two">Spremi se da iskusiš
+novi internet.</string>
+    <string name="brave_ui_welcome_desc_two">Sada možete da zaradite tokene
+gledanjem reklama koje poštuju privatnost.</string>
+    <string name="brave_ui_welcome_button_text_two">PRIDRUŽI SE NAGRADAMA</string>
+    <string name="brave_ui_welcome_footer_text_two">VIŠE INFORMACIJA</string>
+    <string name="brave_ui_rewards_creating_text">Kreiranje novčanika</string>
+    <string name="brave_ui_your_wallet">Vaš novčanik</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Dodaj sredstva</string>
+    <string name="brave_ui_settings">Podešavanja</string>
+    <string name="brave_ui_rewards_summary">PREGLED NAGRADA</string>
+    <string name="brave_ui_site_banner_welcome">Hvala vam što ste svratili!</string>
+    <string name="brave_ui_rewards_banner_text1">Ovaj sajt možete da podržite slanjem napojnice. To je način da im se zahvalite za stvaranje odličnog sadržaja. Verifikovanim kreatorima sadržaja napojnice se isplaćuju u prvoj nedelji svakog kalendarskog meseca.</string>
+    <string name="brave_ui_rewards_banner_text2">Ako želite, možete da podesite mesečno uplaćivanje napojnica kako biste podržali ovaj sajt na duže staze.</string>
+    <string name="brave_ui_donation_amount">Iznos napojnice</string>
+    <string name="brave_ui_wallet_balance">stanje u novčaniku:</string>
+    <string name="brave_ui_make_monthly">Podesi mesečne napojnice</string>
+    <string name="brave_ui_send_tip">pošalji moju napojnicu</string>
+    <string name="brave_ui_do_monthly">pošalji mesečnu napojnicu</string>
+    <string name="brave_ui_not_enough_tokens">nedovoljno tokena</string>
+    <string name="brave_ui_site_banner_notice_text">NAPOMENA: Ovaj kreator sadržaja se još uvek nije prijavio za primanje donacija od korisnika pregledača Brave. Pokušavaćemo da izvršimo donaciju dok ne budu verifikovani ili dok ne prođe 90 dana.</string>
+    <string name="brave_ui_please">molimo</string>
+    <string name="brave_ui_add_funds">dodajte sredstva</string>
+    <string name="brave_ui_thank_you">Hvala!</string>
+    <string name="brave_ui_error_init_wallet">Pokušajte ponovo kasnije.</string>
+    <string name="brave_ui_month_jan">JANUAR</string>
+    <string name="brave_ui_month_feb">FEBRUAR</string>
+    <string name="brave_ui_month_mar">MART</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MAJ</string>
+    <string name="brave_ui_month_jun">JUN</string>
+    <string name="brave_ui_month_jul">JUL</string>
+    <string name="brave_ui_month_aug">AVGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBAR</string>
+    <string name="brave_ui_month_oct">OKTOBAR</string>
+    <string name="brave_ui_month_nov">NOVEMBAR</string>
+    <string name="brave_ui_month_dec">DECEMBAR</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBAR</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018.</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Pažnja</string>
+    <string name="brave_ui_include_in_auto">Uključi u automatske donacije</string>
+    <string name="brave_ui_donate_now">Pošalji napojnicu...</string>
+    <string name="brave_ui_no_activity">Još nije bilo aktivnosti ovog
+meseca...</string>
+    <string name="brave_ui_token_grant_claimed">Prihvaćeni dodeljeni tokeni</string>
+    <string name="brave_ui_earnings_ads">Zarade od reklama</string>
+    <string name="brave_ui_rewards_contribute">Automatske donacije</string>
+    <string name="brave_ui_rewards_contribute_description">Donirali ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Jednokratne napojnice</string>
+    <string name="brave_ui_recurring_donation">Mesečne napojnice</string>
+    <string name="brave_ui_verified_publisher">Verifikovani Brave izdavač</string>
+    <string name="brave_ui_not_verified_publisher">Još uvek nije verifikovan</string>
+    <string name="brave_ui_not_verified_publisher_description">Ovaj kreator sadržaja se još uvek nije prijavio za primanje donacija od korisnika pregledača Brave.
+Sve napojnice koje pošaljete ostaće u vašem novčaniku dok se kreator ne verifikuje.</string>
+    <string name="brave_ui_on_youtube">na YouTube</string>
+    <string name="brave_ui_on_twitch">na Twitch</string>
+    <string name="brave_ui_new_grant">Dostupna je dodela besplatnog tokena</string>
+    <string name="brave_ui_new_token_grant">Dodela besplatnog tokena</string>
+    <string name="brave_ui_claim">Prihvati</string>
+    <string name="brave_ui_reserved_amount_text">Namenili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kreatorima koji se nisu
+još uvek prijavili za primanje donacija. Vaš pregledač će nastaviti da pokušava da izvrši donaciju
+dok ne budu verifikovani ili dok ne prođe 90 dana.</string>
+    <string name="brave_ui_notification_desc_no_funds">Vaša planirana mesečna uplata automatskih donacija i mesečnih napojnica nije mogla biti izvršena zbog nedostatka sredstava. Pokušaćemo ponovo za 30 dana.</string>
+    <string name="brave_ui_notification_desc_tip_error">Došlo je do problema sa obradom vaše napojnice, pokušajte ponovo.</string>
+    <string name="brave_ui_notification_desc_contr_error">Došlo je do problema sa obradom vaše donacije.</string>
+    <string name="brave_rewards_local_uh_oh">Uh, uh!</string>
+    <string name="brave_rewards_local_server_not_responding">Server Brave nagrada ne reaguje. Rešićemo ovaj problem što je pre moguće.</string>
+    <string name="brave_ui_grants">Odobreni tokeni</string>
+    <string name="brave_ui_expires_on">ističe <ph name=\"DATE\">%1$s<ex>4.14.2019.</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Nedovoljno sredstava</string>
+    <string name="brave_ui_insufficient_funds_desc">Vaš nalog za Brave nagrade očekuje uplatu.</string>
+    <string name="brave_ui_backup_wallet_msg">Rezervni novčanik</string>
+    <string name="brave_ui_backup_wallet_desc">Napravite rezervnu kopiju novčanika.</string>
+    <string name="brave_ui_brave_rewards">Brave nagrade</string>
+    <string name="brave_ui_welcome_back_message">Dobro došli nazad!</string>
+    <string name="brave_ui_get_rewarded">Dobijte nagrade za pregledanje.</string>
+    <string name="brave_ui_brave_rewards_desc">Zaradite gledanjem reklama koje
+poštuju privatnost i iskoristite zaradu da podržite
+kreatore sadržaja koji vam se sviđaju.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIVIRAJ BRAVE NAGRADE</string>
 </resources>

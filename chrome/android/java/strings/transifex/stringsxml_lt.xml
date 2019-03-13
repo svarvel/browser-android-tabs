@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuoti scenarijus</string>
     <string name="accessibility_toolbar_btn_brave_shields">Įjungti / išjungti „Brave“ skydus</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Įjungti / išjungti „Brave“ atlygio funkciją</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokuoti trečiųjų šalių slapukus</string>
 
     <string name="httpse_summary">Kai įmanoma, atveria palaikomas svetaines naudojant HTTPS, o ne HTTP</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Išeiti</string>
 
-    <string name="brave_sync">„Brave Sync“ (beta versija)</string>
     <string name="sync_settings_add_device_name_title">Įrašykite įrenginio pavadinimą</string>
     <string name="sync_settings_add_device_name_label">Įveskite pasirinktinį šio įrenginio pavadinimą</string>
     <string name="sync_example_device_name">„Android“ įrenginys</string>
@@ -94,10 +94,8 @@ maždaug laiko</string>
     <string name="brave_new_private_tab">Nauja privati kortelė</string>
     <string name="brave_new_tab_private_header">Tai yra privati kortelė</string>
     <string name="brave_new_tab_private_message">Net jei svetainės, kuriose lankotės per privačias korteles, nėra įrašomos vietiniame įrenginyje, jos nepadaro jūsų nežinomo ar nematomo jūsų interneto paslaugų teikėjui, jūsų darbdaviui ar svetainėms, kuriose lankotės.</string>
-
     <string name="update_notification_title">„Brave“ naujinimas</string>
     <string name="update_notification_text">Naujoji naršyklė „Brave“ yra 22 % spartesnė</string>
-
     <string name="prefs_sync">„Sync“  (beta versija)</string>
     <string name="brave_sync_description_page_1_part_1">„Brave Sync“ suteikia galimybę privačiai sinchronizuoti adresyno įrašus tarp „Brave“ naršyklių įvairiuose jūsų įrenginiuose.</string>
     <string name="brave_sync_description_page_1_part_2">Tiesiog nuskaitykite kodą sinchronizavimo grandinėje, kurią sukūrėte kitame įrenginyje. Taip pat galite pradėti naują grandinę.</string>
@@ -125,13 +123,13 @@ maždaug laiko</string>
     <string name="brave_sync_add_laptop_text_title">Įvesti sinchronizavimo grandinės kodą</string>
     <string name="brave_sync_add_laptop_text_part_1">Kompiuteryje nueikite į „Brave“ Settings > Sync („Brave“ nustatymai > „Sync“). Pasirinkite „Enter a Sync Chain Code“ (įvesti sinchronizavimo grandinės kodą).</string>
     <string name="brave_sync_add_laptop_text_part_2">Viršuje įveskite žodinį kodą su tarpeliais.</string>
-    <string name="brave_sync_delete_device">Ar tikrai norite pašalinti įrenginį „<ph name="DEVICE_NAME">%1$s</ph>“?</string>
+    <string name="brave_sync_delete_device">Ar tikrai norite pašalinti įrenginį „<ph name=\"DEVICE_NAME\">%1$s</ph>“?</string>
     <string name="brave_sync_delete_sent">Prašymas pašalinti išsiųstas. Įrenginys netrukus bus pašalintas.</string>
     <string name="brave_sync_loading_data_title">Įkeliami duomenys...</string>
     <string name="brave_sync_time_out_message">Kažkas nutiko, atrodo, kad pasibaigė jūsų užklausos laikas.</string>
     <string name="brave_sync_use_camera_text">Aš naudosiu savo kamerą...</string>
     <string name="brave_sync_confirm_code_words_text">Patvirtinti</string>
-    <string name="brave_sync_word_count_text">Žodžių skaičius: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Žodžių skaičius: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Netikslus žodžių skaičius</string>
     <string name="brave_sync_qr_code">QR kodas</string>
     <string name="brave_sync_code_words">Žodinis kodas</string>
@@ -139,4 +137,95 @@ maždaug laiko</string>
     <string name="brave_sync_copied_text">Nukopijuota į iškarpinę</string>
     <string name="brave_sync_this_device_text">(šis įrenginys)</string>
 
+    <string name="brave_already_set_as_default_browser">„Brave“ jau nustatyta
+numatytąja naršykle.</string>
+    <string name="brave_default_browser_go_to_settings">Numatytąją naršyklę jau nustatėte.
+Numatytąją naršyklę galima pakeisti programos nuostatų skiltyje.</string>
+    <string name="brave_default_browser_notification_body">Taupykite akumuliatoriaus energiją ir negaiškite laukdami, kol puslapiai bus įkelti. Nustatykite „Brave“ numatytąja naršykle. Atvėrę „Brave“ meniu palieskite „Nustatyti kaip numatytąją naršyklę“.</string>
+    <string name="brave_set_default_browser">Nustatyti kaip numatytąją naršyklę</string>
+    <string name="brave_set_default_browser_dialog_text">Sąraše pasirinkite „Brave“ ir palieskite „Visada“.</string>
+    <string name="brave_default_browser_existing_notification_body">Nustatykite „Brave“ numatytąja interneto naršykle
+Taupykite akumuliatoriaus energiją ir negaiškite laukdami, kol puslapiai bus įkelti</string>
+
+    <string name="brave_ui_welcome_header_two">Pasiruoškite internete
+naršyti kitaip.</string>
+    <string name="brave_ui_welcome_desc_two">Dabar žiūrėdami privatumo nepažeidžiančias
+reklamas galite užsidirbti žetonų.</string>
+    <string name="brave_ui_welcome_button_text_two">DALYVAUTI ATLYGIO PROGRAMOJE</string>
+    <string name="brave_ui_welcome_footer_text_two">DAUGIAU INFORMACIJOS</string>
+    <string name="brave_ui_rewards_creating_text">Piniginės kūrimas</string>
+    <string name="brave_ui_your_wallet">Jūsų piniginė</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Įdėti pinigų</string>
+    <string name="brave_ui_settings">Nustatymai</string>
+    <string name="brave_ui_rewards_summary">ATLYGIO SUVESTINĖ</string>
+    <string name="brave_ui_site_banner_welcome">Ačiū, kad susidomėjote!</string>
+    <string name="brave_ui_rewards_banner_text1">Šią svetainę galite paremti nusiųsdami arbatpinigių. Taip galėsite padėkoti jos kūrėjams už puikų turinį. Patikrinti kūrėjai išmokas už savo arbatpinigius gauna per pirmąją kiekvieno kalendorinio mėnesio savaitę.</string>
+    <string name="brave_ui_rewards_banner_text2">Jei šią svetainę norite remti nuolat, galite pasirinkti mėnesinių arbatpinigių planą.</string>
+    <string name="brave_ui_donation_amount">Arbatpinigių suma</string>
+    <string name="brave_ui_wallet_balance">piniginės likutis:</string>
+    <string name="brave_ui_make_monthly">Padaryti juos mėnesiniais</string>
+    <string name="brave_ui_send_tip">siųsti mano arbatpinigius</string>
+    <string name="brave_ui_do_monthly">nustatyti mėnesinius arbatpinigius</string>
+    <string name="brave_ui_not_enough_tokens">trūksta žetonų</string>
+    <string name="brave_ui_site_banner_notice_text">PASTABA. Šis kūrėjas kol kas neužsiregistravo dotacijoms iš „Brave“ naudotojų gauti. Mes bandysime jiems dotuoti, kol jie patvirtins arba kol sueis 90 dienų terminas.</string>
+    <string name="brave_ui_please">prašome</string>
+    <string name="brave_ui_add_funds">įdėti pinigų</string>
+    <string name="brave_ui_thank_you">Dėkojame!</string>
+    <string name="brave_ui_error_init_wallet">Vėliau bandykite dar kartą.</string>
+    <string name="brave_ui_month_jan">SAUSIS</string>
+    <string name="brave_ui_month_feb">VASARIS</string>
+    <string name="brave_ui_month_mar">KOVAS</string>
+    <string name="brave_ui_month_apr">BALANDIS</string>
+    <string name="brave_ui_month_may">GEGUŽĖ</string>
+    <string name="brave_ui_month_jun">BIRŽELIS</string>
+    <string name="brave_ui_month_jul">LIEPA</string>
+    <string name="brave_ui_month_aug">RUGPJŪTIS</string>
+    <string name="brave_ui_month_sep">RUGSĖJIS</string>
+    <string name="brave_ui_month_oct">SPALIS</string>
+    <string name="brave_ui_month_nov">LAPKRITIS</string>
+    <string name="brave_ui_month_dec">GRUODIS</string>
+    <string name="brave_ui_month_year"><ph name=\"YEAR\">%2$s<ex>2018 M.</ex></ph> <ph name=\"MONTH\">%1$s<ex>GRUODIS</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Dėmėsio</string>
+    <string name="brave_ui_include_in_auto">Įtraukti į automatinio mokėjimo programą</string>
+    <string name="brave_ui_donate_now">Siųsti arbatpinigių...</string>
+    <string name="brave_ui_no_activity">Jokios veiklos per šį
+mėnesį...</string>
+    <string name="brave_ui_token_grant_claimed">Atsiimta dovanotų žetonų</string>
+    <string name="brave_ui_earnings_ads">Uždarbis iš reklamų</string>
+    <string name="brave_ui_rewards_contribute">Automatinis dotavimas</string>
+    <string name="brave_ui_rewards_contribute_description">Jūs dotavote <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Vienkartiniai arbatpinigiai</string>
+    <string name="brave_ui_recurring_donation">Mėnesiniai arbatpinigiai</string>
+    <string name="brave_ui_verified_publisher">„Brave“ patvirtintas kūrėjas</string>
+    <string name="brave_ui_not_verified_publisher">Dar nepatvirtintas</string>
+    <string name="brave_ui_not_verified_publisher_description">Šis kūrėjas kol kas neužsiregistravo įmokoms iš „Brave“ naudotojų gauti.
+ Visi arbatpinigiai liks jūsų piniginėje, kol jis neptavirtins.</string>
+    <string name="brave_ui_on_youtube">svetainėje „YouTube“</string>
+    <string name="brave_ui_on_twitch">svetainėje „Twitch“</string>
+    <string name="brave_ui_new_grant">Turime nemokamą žetoną dovanų.</string>
+    <string name="brave_ui_new_token_grant">Nemokamas žetonas dovanų</string>
+    <string name="brave_ui_claim">Atsiimti</string>
+    <string name="brave_ui_reserved_amount_text">Jūsų skyrėte <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kūrėjams, kurie
+dar neužsiregistravo dotacijoms gauti. Jūsų naršyklė bandys jiems dotuoti,
+kol jie patvirtins arba kol sueis 90 dienų terminas.</string>
+    <string name="brave_ui_notification_desc_no_funds">Suplanuoto mėnesinio automatinio dotavimo mokėjimo atlikti ir mėnesinių arbatpinigių išsiųsti nepavyko, nes trūksta pinigų. Po 30 dienų pabandysime dar kartą.</string>
+    <string name="brave_ui_notification_desc_tip_error">Apdorojant jūsų arbatpinigių operaciją įvyko klaida. Pabandykite dar kartą.</string>
+    <string name="brave_ui_notification_desc_contr_error">Apdorojant jūsų dotaciją įvyko klaida. </string>
+    <string name="brave_rewards_local_uh_oh">O, ne!</string>
+    <string name="brave_rewards_local_server_not_responding">Jūsų „Brave“ atlygio serveris neatsako. Šią problemą kuo skubiau pašalinsime.</string>
+    <string name="brave_ui_grants">Dovanos</string>
+    <string name="brave_ui_expires_on">galioja iki <ph name=\"DATE\">%1$s<ex>2019-04-14</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Nepakanka pinigų</string>
+    <string name="brave_ui_insufficient_funds_desc">Laukiama įnašo į jūsų „Brave“ atlygio sąskaitą.</string>
+    <string name="brave_ui_backup_wallet_msg">Kurti atsarginę piniginės kopiją</string>
+    <string name="brave_ui_backup_wallet_desc">Sukurkite atsarginę savo piniginės kopiją.</string>
+    <string name="brave_ui_brave_rewards">„Brave“ atlygis</string>
+    <string name="brave_ui_welcome_back_message">Sveiki sugrįžę!</string>
+    <string name="brave_ui_get_rewarded">Gaukite atlygį už naršymą.</string>
+    <string name="brave_ui_brave_rewards_desc">Uždirbkite žiūrėdami privatumo
+nepažeidžiančias reklamas ir skirkite
+savo uždarbį mėgstamiems turinio kūrėjams.</string>
+    <string name="brave_welcome_page_rewards_title">ĮJUNGTI „BRAVE“ ATLYGIO FUNKCIJĄ</string>
 </resources>

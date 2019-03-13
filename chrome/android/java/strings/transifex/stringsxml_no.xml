@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS overalt</string>
     <string name="brave_shields_blocks_scripts_switch">Blokker skript</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktiver/deaktiver Brave-skjold</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktiver/deaktiver Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokker informasjonskapsler fra tredjeparter</string>
 
     <string name="httpse_summary">Åpner støttede nettsteder ved å bruke HTTPS i stedet for HTTP når mulig</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Utgang</string>
 
-    <string name="brave_sync">Brave-synkronisering (beta)</string>
     <string name="sync_settings_add_device_name_title">Legg til enhetsnavn</string>
     <string name="sync_settings_add_device_name_label">Skriv inn et valgfritt navn for denne enheten</string>
     <string name="sync_example_device_name">Android enhet</string>
@@ -94,10 +94,8 @@ Lagret</string>
     <string name="brave_new_private_tab">Ny privat fane</string>
     <string name="brave_new_tab_private_header">Dette er en privat fane</string>
     <string name="brave_new_tab_private_message">Selv om nettsteder du besøker i private faner, ikke lagres lokalt, gjør de deg ikke anonym eller usynlig overfor internettleverandøren din, arbeidsgiveren din eller nettstedene du besøker.</string>
-
     <string name="update_notification_title">Brave-oppdatering</string>
     <string name="update_notification_text">Den nye nettleseren til Brave er 22 % raskere</string>
-
     <string name="prefs_sync">Synkronisering (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Med Brave-synkronisering kan du synkronisere Brave-nettlesere på ulike enheter slik at du får de samme private bokmerkene på alle.</string>
     <string name="brave_sync_description_page_1_part_2">Skann helt enkelt koden fra synkkjeden du laget på en annen enhet, eller start en ny synkkjede.</string>
@@ -125,13 +123,13 @@ Lagret</string>
     <string name="brave_sync_add_laptop_text_title">Angi synkkjedekoden</string>
     <string name="brave_sync_add_laptop_text_part_1">Bruk datamaskinen din og gå til Innstillinger i Brave > Synkroniser. Velg «Angi synkkjedekoden».</string>
     <string name="brave_sync_add_laptop_text_part_2">Skriv inn kodeordene over (ta med mellomrommene).</string>
-    <string name="brave_sync_delete_device">Er du sikker på at du vil slette enheten «<ph name="DEVICE_NAME">%1$s</ph>»?</string>
+    <string name="brave_sync_delete_device">Er du sikker på at du vil slette enheten «<ph name=\"DEVICE_NAME\">%1$s</ph>»?</string>
     <string name="brave_sync_delete_sent">Forespørselen om sletting er sendt. Enheten vil snart fjernes.</string>
     <string name="brave_sync_loading_data_title">Laster inn data …</string>
     <string name="brave_sync_time_out_message">Det oppsto en feil. Det ser ut som forespørselen fikk tidsavbrudd.</string>
     <string name="brave_sync_use_camera_text">Jeg bruker kameraet …</string>
     <string name="brave_sync_confirm_code_words_text">Bekreft</string>
-    <string name="brave_sync_word_count_text">Ordtelling: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Ordtelling: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Feil antall ord</string>
     <string name="brave_sync_qr_code">QR-kode</string>
     <string name="brave_sync_code_words">Kodeord</string>
@@ -139,4 +137,95 @@ Lagret</string>
     <string name="brave_sync_copied_text">Kopiert til utklippstavlen</string>
     <string name="brave_sync_this_device_text">(denne enheten)</string>
 
+    <string name="brave_already_set_as_default_browser">Du bruker allerede Brave
+som standard nettleser.</string>
+    <string name="brave_default_browser_go_to_settings">Du har allerede valgt standard nettleser.
+Du kan endre standard nettleser i innstillingene til appen.</string>
+    <string name="brave_default_browser_notification_body">Sparer batteri og laster nettsider raskere. Gjør Brave til din standard nettleser. Trykk på \"Bruk som standard nettleser ...\" fra Brave-menyen</string>
+    <string name="brave_set_default_browser">Bruk som standard nettleser</string>
+    <string name="brave_set_default_browser_dialog_text">Velg Brave fra listen, og trykk på \"Alltid\"</string>
+    <string name="brave_default_browser_existing_notification_body">Gjør Brave til din standard nettleser
+Spar batteri og last nettsider raskere</string>
+
+    <string name="brave_ui_welcome_header_two">Nå kan du oppleve
+fremtidens internett.</string>
+    <string name="brave_ui_welcome_desc_two">Nå kan du få polletter for
+å se reklame som respekterer personvernet ditt.</string>
+    <string name="brave_ui_welcome_button_text_two">BLI MED I REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">FINN UT MER</string>
+    <string name="brave_ui_rewards_creating_text">Oppretter lommebok</string>
+    <string name="brave_ui_your_wallet">Lommeboken din</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Legg til midler</string>
+    <string name="brave_ui_settings">Innstillinger</string>
+    <string name="brave_ui_rewards_summary">OPPSUMMERING FOR REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Takk for at du stakk innom!</string>
+    <string name="brave_ui_rewards_banner_text1">Du kan støtte de som driver dette nettstedet, ved å sende tips. Slik takker du dem for innholdet de lager. Verifiserte innholdsskapere får betalt for tipsen de mottar, den første uken i hver kalendermåned.</string>
+    <string name="brave_ui_rewards_banner_text2">Hvis du vil, kan du angi en månedlig tips for å støtte nettstedet fast.</string>
+    <string name="brave_ui_donation_amount">Tipsbeløp</string>
+    <string name="brave_ui_wallet_balance">saldo i lommebok:</string>
+    <string name="brave_ui_make_monthly">Gjør dette månedlig</string>
+    <string name="brave_ui_send_tip">send tipsen</string>
+    <string name="brave_ui_do_monthly">angi månedlig tips</string>
+    <string name="brave_ui_not_enough_tokens">ikke nok polletter</string>
+    <string name="brave_ui_site_banner_notice_text">OBS! Denne innholdsskaperen har foreløpig ikke registrert seg for å motta bidrag fra Brave-brukere. Vi prøver å sende bidraget inntil vedkommende bekrefter, eller til det har gått 90 dager.</string>
+    <string name="brave_ui_please">du må</string>
+    <string name="brave_ui_add_funds">legge til midler</string>
+    <string name="brave_ui_thank_you">Tusen takk!</string>
+    <string name="brave_ui_error_init_wallet">Prøv igjen senere.</string>
+    <string name="brave_ui_month_jan">JANUAR</string>
+    <string name="brave_ui_month_feb">FEBRUAR</string>
+    <string name="brave_ui_month_mar">MARS</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MAI</string>
+    <string name="brave_ui_month_jun">JUNI</string>
+    <string name="brave_ui_month_jul">JULI</string>
+    <string name="brave_ui_month_aug">AUGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DESEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DESEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Obs!</string>
+    <string name="brave_ui_include_in_auto">Ta med i automatisk bidrag</string>
+    <string name="brave_ui_donate_now">Send tips …</string>
+    <string name="brave_ui_no_activity">Foreløpig ingen aktivitet
+denne måneden …</string>
+    <string name="brave_ui_token_grant_claimed">Pollettbidrag hentet</string>
+    <string name="brave_ui_earnings_ads">Inntekt fra reklame</string>
+    <string name="brave_ui_rewards_contribute">Automatisk bidrag</string>
+    <string name="brave_ui_rewards_contribute_description">Du bidro med <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Engangstips</string>
+    <string name="brave_ui_recurring_donation">Månedlig tips</string>
+    <string name="brave_ui_verified_publisher">Brave-verifisert utgiver</string>
+    <string name="brave_ui_not_verified_publisher">Foreløpig ikke verifisert</string>
+    <string name="brave_ui_not_verified_publisher_description">Denne skaperen har foreløpig ikke registrert seg for å motta bidrag fra Brave-brukere.
+        Tips du vil sende, blir værende i lommeboken din inntil vedkommende bekrefter.</string>
+    <string name="brave_ui_on_youtube">på YouTube</string>
+    <string name="brave_ui_on_twitch">på Twitch</string>
+    <string name="brave_ui_new_grant">Et gratis pollettbidrag er tilgjengelig.</string>
+    <string name="brave_ui_new_token_grant">Gratis pollettbidrag</string>
+    <string name="brave_ui_claim">Hent</string>
+    <string name="brave_ui_reserved_amount_text">Du har reservert <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT til skapere som foreløpig ikke
+har registrert seg for å motta bidrag. Nettleseren din vil prøve å sende bidraget
+inntil vedkommende har bekreftet, eller det har gått 90 dager.</string>
+    <string name="brave_ui_notification_desc_no_funds">Den planlagte automatiske betalingen til automatiske bidrag og den månedlige tipsen kunne ikke gjennomføres siden du ikke har nok midler. Vi prøver igjen om 30 dager.</string>
+    <string name="brave_ui_notification_desc_tip_error">Det oppsto et problem med behandlingen av tipsen. Prøv igjen.</string>
+    <string name="brave_ui_notification_desc_contr_error">Det oppsto et problem med behandlingen av bidraget.</string>
+    <string name="brave_rewards_local_uh_oh">Å nei!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Rewards-serveren svarer ikke. Vi skal rette feilen så fort som mulig.</string>
+    <string name="brave_ui_grants">Bidrag</string>
+    <string name="brave_ui_expires_on">utløper <ph name=\"DATE\">%1$s<ex>14.4.2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Ikke nok midler</string>
+    <string name="brave_ui_insufficient_funds_desc">Brave Rewards-kontoen din venter på innskudd.</string>
+    <string name="brave_ui_backup_wallet_msg">Sikkerhetskopier lommebok</string>
+    <string name="brave_ui_backup_wallet_desc">Du må sikkerhetskopiere Brave-lommeboken.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Velkommen tilbake!</string>
+    <string name="brave_ui_get_rewarded">Du kan få belønninger for å surfe på nettet.</string>
+    <string name="brave_ui_brave_rewards_desc">Tjen midler ved å se reklame
+som respekterer personvernet ditt, og bruk dem
+til å støtte innholdsskapere du liker.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIVER BRAVE REWARDS</string>
 </resources>
