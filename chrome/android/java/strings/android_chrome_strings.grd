@@ -4218,7 +4218,7 @@ as your default browser.
 You may change default browser in your app settings.
       </message>
       <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_BODY" desc="Default browser notification body">
-        Save battery and load web pages faster. Make Brave your default Browser. From the Brave menu tap “Set as default browser…”
+        Save battery and load web pages faster. Make Brave your default Browser. From the Brave menu tap "Set as default browser"
       </message>
       <message name="IDS_BRAVE_DEFAULT_BROWSER_EXISTING_NOTIFICATION_BODY" desc="Default browser notification body">
         Make Brave your default web browser
@@ -4228,7 +4228,7 @@ Save battery and load web pages faster
         Set as default browser
       </message>
       <message name="IDS_BRAVE_SET_DEFAULT_BROWSER_DIALOG_TEXT" desc="Dialog for setting default browser">
-        Select Brave from the list and tap “Always”
+        Select Brave from the list and tap "Always"
       </message>
       
       <!--It's just temporary. We will need to pull rewards strings from brave-core-->
@@ -4389,7 +4389,7 @@ month...
         until they verify, or until 90 days have passed.
       </message>
       <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_NO_FUNDS" desc="A notification about not enough funds">
-        Your scheduled monthly payment for Auto-Contribute and monthly tips could not be completed due to insufficient funds. We’ll try again in 30 days.
+        Your scheduled monthly payment for Auto-Contribute and monthly tips could not be completed due to insufficient funds. We'll try again in 30 days.
       </message>
       <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_TIP_ERROR" desc="A notification about tip processing problem">
         There was a problem processing your tip, please try again.

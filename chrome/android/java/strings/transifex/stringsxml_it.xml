@@ -186,7 +186,7 @@ guardando pubblicità che rispettano la privacy.</string>
     <string name="brave_ui_month_oct">OTTOBRE</string>
     <string name="brave_ui_month_nov">NOVEMBRE</string>
     <string name="brave_ui_month_dec">DICEMBRE</string>
-    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DICEMBRE</ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DICEMBRE</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
     <string name="brave_ui_rewards_contribute_attention">Attenzione</string>
     <string name="brave_ui_include_in_auto">Includi in contributo automatico</string>
     <string name="brave_ui_donate_now">Invia una sovvenzione...</string>

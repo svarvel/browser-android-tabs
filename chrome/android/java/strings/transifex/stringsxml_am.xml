@@ -133,13 +133,15 @@
     <string name="brave_sync_copied_text">ወደ ክሊፕቦርድ ተገልብጧል</string>
     <string name="brave_sync_this_device_text">(ይህ መሳሪያ)</string>
 
-    <string name="brave_already_set_as_default_browser">Brave እንደ ዋና<br>ማሰሻዎ ተወስኗል።</string>
+    <string name="brave_already_set_as_default_browser">Brave እንደ ዋና
+ማሰሻዎ ተወስኗል።</string>
     <string name="brave_default_browser_go_to_settings">መጠቀም የሚፈልጉትን መደበኛወ አሳሽ ወስነዋል።
 በመተግበሪያ ቅንብሮች ውስጥ መደበኛ አሳሽን ሊቀይሩ ይችላሉ።</string>
     <string name="brave_default_browser_notification_body">ባትሪ ያድኑ እንዲሁም ድረገጾችን በፍጥነት ይክፈቱ። Brave መደበኛ አሳሽዎ እንዲሆን ያድርጉ። ከ Brave የመተግበሪያ ምናሌ ውስጥ \"አንደ መደበኛ አሳሽ አቀናብር. . . \" የሚለውን ይጫኑ። </string>
     <string name="brave_set_default_browser">እንደመደበኛ አሳሽ ያቀናብሩ</string>
     <string name="brave_set_default_browser_dialog_text">ከዝርዝሩ ውስጥ Brave የሚለውን ይምረጡ እና \"ሁልጊዜ\" የሚለውን ይምረጡ</string>
-    <string name="brave_default_browser_existing_notification_body">Brave መደበኛ የድር አሳሽዎ እንዲሆን ያድርጉ<br>ባትሪ ያድኑ እንዲሁም የድር ገጸችን በፍጥነት ይጫኑ</string>
+    <string name="brave_default_browser_existing_notification_body">Brave መደበኛ የድር አሳሽዎ እንዲሆን ያድርጉ
+ባትሪ ያድኑ እንዲሁም የድር ገጸችን በፍጥነት ይጫኑ</string>
 
     <string name="brave_ui_welcome_header_two">የሚቀጥለውን ኢንተርኔት
 ለመሞክር ዝግጁ ይሁኑ።</string>
@@ -194,7 +196,8 @@
     <string name="brave_ui_recurring_donation">ወርሀዊ መዋጮ</string>
     <string name="brave_ui_verified_publisher">Brave ያረጋገጠው አታሚ</string>
     <string name="brave_ui_not_verified_publisher">ገና ያልተረጋገጠ</string>
-    <string name="brave_ui_not_verified_publisher_description">ይህ ፈጣሪ ከ Brave ተጠቃሚዎች መዋጮዎችን ለመቀበል ገና አልተመዘገበም።<br>እስከሚያረጋግጡ ድረስ ማንኛውም መዋጮ በእርሶ ዋሌት ውስጥ የሚቆይ ይሆናል።</string>
+    <string name="brave_ui_not_verified_publisher_description">ይህ ፈጣሪ ከ Brave ተጠቃሚዎች መዋጮዎችን ለመቀበል ገና አልተመዘገበም።
+እስከሚያረጋግጡ ድረስ ማንኛውም መዋጮ በእርሶ ዋሌት ውስጥ የሚቆይ ይሆናል።</string>
     <string name="brave_ui_on_youtube">በዩቲውብ ላይ</string>
     <string name="brave_ui_on_twitch">በትዊች ላይ</string>
     <string name="brave_ui_new_grant">ነጻ የሆነ የቶክን ግራንት አለ።</string>

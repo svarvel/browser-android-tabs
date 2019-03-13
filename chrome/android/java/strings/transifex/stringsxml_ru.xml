@@ -196,7 +196,7 @@
     <string name="brave_ui_token_grant_claimed">Полученные в подарок токены</string>
     <string name="brave_ui_earnings_ads">Доходы от рекламы</string>
     <string name="brave_ui_rewards_contribute">Автоплатеж</string>
-    <string name="brave_ui_rewards_contribute_description">Вы сделали пожертвование: <ph name=\"BAT_VALUE\">%1$s50</ph><ex> BAT.</string>
+    <string name="brave_ui_rewards_contribute_description">Вы сделали пожертвование: <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
     <string name="brave_ui_one_time_donation">Разовые пожертвования</string>
     <string name="brave_ui_recurring_donation">Ежемесячные пожертвования</string>
     <string name="brave_ui_verified_publisher">Издатель, проверенный Brave</string>
