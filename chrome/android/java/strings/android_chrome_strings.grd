@@ -4385,8 +4385,8 @@ month...
       </message>
       <message name="IDS_BRAVE_UI_RESERVED_AMOUNT_TEXT" desc="A message that some amount of tokens reserved for non verified publishers">
         You've designated <ph name="BAT_VALUE">%1$s<ex>50</ex></ph> BAT for creators who haven't
-        yet signed up to receive contributions. Your browser will keep trying to contribute
-        until they verify, or until 90 days have passed.
+yet signed up to receive contributions. Your browser will keep trying to contribute
+until they verify, or until 90 days have passed.
       </message>
       <message name="IDS_BRAVE_UI_NOTIFICATION_DESC_NO_FUNDS" desc="A notification about not enough funds">
         Your scheduled monthly payment for Auto-Contribute and monthly tips could not be completed due to insufficient funds. We'll try again in 30 days.
