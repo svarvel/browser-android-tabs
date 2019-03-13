@@ -37,6 +37,8 @@ def GetFullTextFromTag(string_tag, parse_ph):
     return string_value
 
 def CleanUpString(string):
+    if string is None:
+        return None
     return string.replace("\\'", "'").replace('\\"', '"')
 
 def UpdateTagText(new_translation_tag, string_tag):
@@ -181,7 +183,13 @@ def SyncTransifexToTranslations():
                 xml_file_name = transifex_folder + '/stringsxml_' + lang_id + '.xml'
                 if os.path.isfile(xml_file_name):
                     # go through all strings in a file name
-                    strings = xml.etree.ElementTree.parse(xml_file_name).getroot()
+                    f = open(xml_file_name, 'r+')
+                    # load all content to the memory to make it faster (size is less than 1Mb, so should not be a problem)
+                    content = f.read()
+                    f.close()
+                    content = CleanUpString(content)
+                    print(content)
+                    strings = xml.etree.ElementTree.fromstring(content)
                     translations_file_was_changed = False
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')

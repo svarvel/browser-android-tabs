@@ -207,7 +207,7 @@ Kaikki lähettämäsi tipit pysyvät lompakossasi, kunnes hän vahvistaa itsens�
     <string name="brave_ui_new_grant">Ilmainen poletti saatavilla.</string>
     <string name="brave_ui_new_token_grant">Ilmainen polettilahjoitus</string>
     <string name="brave_ui_claim">Lunasta</string>
-    <string name="brave_ui_reserved_amount_text">Osoitit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex> BAT:ia luojalle, joka ei ole vielä kirjautunut
+    <string name="brave_ui_reserved_amount_text">Osoitit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT:ia luojalle, joka ei ole vielä kirjautunut
 vastaanottamaan avustuksia. Selaimesi yrittää avustaa, kunnes hän vahvistaa
 itsensä tai 90 päivän aikaraja umpeutuu.</string>
     <string name="brave_ui_notification_desc_no_funds">Ajastettua automaattisten avustusten ja kuukausittaisten tippien maksua ei voitu suorittaa, koska varat eivät riitä. Yritämme 30 päivän päästä uudestaan.</string>
