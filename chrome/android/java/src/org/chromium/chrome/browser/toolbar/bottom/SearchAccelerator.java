@@ -26,9 +26,6 @@ class SearchAccelerator extends ChromeImageButton implements ThemeColorObserver,
     /** A provider that notifies components when the theme color changes.*/
     private ThemeColorProvider mThemeColorProvider;
 
-    /** The gray pill background behind the search icon. */
-    private final Drawable mBackground;
-
     /** The {@link Resources} used to compute the background color. */
     private final Resources mResources;
 
@@ -36,10 +33,6 @@ class SearchAccelerator extends ChromeImageButton implements ThemeColorObserver,
         super(context, attrs);
 
         mResources = context.getResources();
-
-        mBackground = ApiCompatibilityUtils.getDrawable(mResources, R.drawable.ntp_search_box);
-        mBackground.mutate();
-        setBackground(mBackground);
     }
 
     void setThemeColorProvider(ThemeColorProvider themeColorProvider) {
@@ -58,9 +51,9 @@ class SearchAccelerator extends ChromeImageButton implements ThemeColorObserver,
 
     @Override
     public void onThemeColorChanged(int color, boolean shouldAnimate) {
-        mBackground.setColorFilter(
+        /*mBackground.setColorFilter(
                 ColorUtils.getTextBoxColorForToolbarBackground(mResources, false, color),
-                PorterDuff.Mode.SRC_IN);
+                PorterDuff.Mode.SRC_IN);*/
     }
 
     @Override
