@@ -14,6 +14,17 @@ import java.util.List;
 
 @JNINamespace("chrome::android")
 public class BraveRewardsNativeWorker {
+    // Rewards notifications
+    // Taken from components/brave_rewards/browser/rewards_notification_service.h
+    public static final int REWARDS_NOTIFICATION_INVALID = 0;
+    public static final int REWARDS_NOTIFICATION_AUTO_CONTRIBUTE = 1;
+    public static final int REWARDS_NOTIFICATION_GRANT = 2;
+    public static final int REWARDS_NOTIFICATION_GRANT_ADS = 3;
+    public static final int REWARDS_NOTIFICATION_FAILED_CONTRIBUTION = 4;
+    public static final int REWARDS_NOTIFICATION_IMPENDING_CONTRIBUTION = 5;
+    public static final int REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS = 6;
+    public static final int REWARDS_NOTIFICATION_BACKUP_WALLET = 7;
+    
     private List<BraveRewardsObserver> observers_;
     private long mNativeBraveRewardsNativeWorker;
 

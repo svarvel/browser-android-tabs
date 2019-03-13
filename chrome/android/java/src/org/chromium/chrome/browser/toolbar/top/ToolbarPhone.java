@@ -2030,6 +2030,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnNotificationAdded(String id, int type, long timestamp,
             String[] args) {
         if (mBraveRewardsNativeWorker != null) {
+            if (type == BraveRewardsNativeWorker.REWARDS_NOTIFICATION_BACKUP_WALLET) {
+                mBraveRewardsNativeWorker.DeleteNotification(id);
+            }
             mBraveRewardsNativeWorker.GetAllNotifications();
         }
     }
