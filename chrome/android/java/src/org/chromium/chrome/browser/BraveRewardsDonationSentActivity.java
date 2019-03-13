@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -41,6 +42,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     private boolean mMonthly_tip_;
     private String mPublisher_name_;
     private java.util.Date mReconcileStamp_;
+    private final Handler mHandler = new Handler(); //fadeout handler
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,39 +77,56 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         int height = metrics.heightPixels;
         View floater = findViewById(R.id.floater);
 
-        //slide up animation
-        TranslateAnimation animate = new TranslateAnimation(0,0,height,0);
-        animate.setDuration(SLIDE_UP_DURATION);
-        animate.setFillAfter(true);
-        animate.setAnimationListener(new Animation.AnimationListener(){
+
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setStartOffset(0);
+        fadeIn.setDuration(BraveRewardsHelper.THANKYOU_FADE_IN_DURATION);
+
+
+        fadeIn.setAnimationListener(new Animation.AnimationListener(){
             @Override
             public void onAnimationStart(Animation arg0) { }
             @Override
             public void onAnimationRepeat(Animation arg0) {}
             @Override
             public void onAnimationEnd(Animation arg0) {
+                //stay and then fade out
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                              @Override
+                              public void run() {
+                                  //fade out animation
+                                  Animation fadeOut = new AlphaAnimation(1, 0);
+                                  fadeOut.setInterpolator(new AccelerateInterpolator());
+                                  fadeOut.setStartOffset(0);
+                                  fadeOut.setDuration(BraveRewardsHelper.THANKYOU_FADE_OUT_DURATION);
 
-                //fade out animation
-                Animation fadeOut = new AlphaAnimation(1, 0);
-                fadeOut.setInterpolator(new AccelerateInterpolator());
-                fadeOut.setStartOffset(0);
-                fadeOut.setDuration(BraveRewardsHelper.CROSS_FADE_DURATION);
+                                  fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                                      @Override
+                                      public void onAnimationStart(Animation arg0) {}
+                                      @Override
+                                      public void onAnimationRepeat(Animation arg0) {}
+                                      @Override
+                                      public void onAnimationEnd(Animation arg0) {
+                                          finish();
+                                      }
+                                  });
 
-                fadeOut.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation arg0) {}
-                    @Override
-                    public void onAnimationRepeat(Animation arg0) {}
-                    @Override
-                    public void onAnimationEnd(Animation arg0) {
-                        finish();
+                                  findViewById(R.id.floater).startAnimation(fadeOut);
+
+                              }
+                          }
+                        );
+
                     }
-                });
+                }, BraveRewardsHelper.THANKYOU_STAY_DURATION);
 
-                findViewById(R.id.floater).setAnimation(fadeOut);
             }
         });
-        floater.startAnimation(animate);
+        floater.startAnimation(fadeIn);
     }
 
 
