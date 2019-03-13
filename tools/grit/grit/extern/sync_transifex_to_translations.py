@@ -24,7 +24,7 @@ def GenerateMessageId(message, meaning=''):
     # To avoid negative ids we strip the high-order bit
     return fp & 0x7fffffffffffffffL
 
-def GetFullTextFromTag(string_tag, parse_ph):
+def GetFullTextFromTag(string_tag, parse_ph, clean_up_ex):
     string_value = string_tag.text
     string_value_phs = string_tag.findall('ph')
     for string_value_ph in string_value_phs:
@@ -33,6 +33,11 @@ def GetFullTextFromTag(string_tag, parse_ph):
         else:
             if string_value_ph.text is not None:
                 string_value_ph.text = ''
+            if clean_up_ex:
+                # clean up <ex> in place holder
+                ph_exs = string_value_ph.findall('ex')
+                for ph_ex in ph_exs:
+                    string_value_ph.remove(ph_ex)
             string_value = (string_value if string_value is not None else '') + xml.etree.ElementTree.tostring(string_value_ph, encoding='utf-8').decode('utf-8')
     return string_value
 
@@ -54,6 +59,10 @@ def UpdateTagText(new_translation_tag, string_tag):
             string_value_ph.tail = CleanUpString(string_value_ph.tail)
         if string_value_ph.text is not None:
             string_value_ph.text = ''
+        # clean up <ex> in place holder
+        ph_exs = string_value_ph.findall('ex')
+        for ph_ex in ph_exs:
+            string_value_ph.remove(ph_ex)
         new_translation_tag.append(string_value_ph)
 
 # sync translations from .xtb files to .xml files to be uploaded on transifex
@@ -141,7 +150,7 @@ def SyncTransifexToTranslations():
     e = xml.etree.ElementTree.parse(base_strings_file).getroot()
     for string_tag in e.findall('string'):
         string_name = string_tag.get('name')
-        string_value = GetFullTextFromTag(string_tag, True)
+        string_value = GetFullTextFromTag(string_tag, True, True)
         if not string_name:
             sys.exit('String name is empty')
         if not string_value:
@@ -193,13 +202,13 @@ def SyncTransifexToTranslations():
                     translations_file_was_changed = False
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')
-                        string_value = CleanUpString(GetFullTextFromTag(string_tag, False))
+                        string_value = CleanUpString(GetFullTextFromTag(string_tag, False, True))
                         if string_name in brave_strings:
                             # we have its translation id, lets look for it in .xtb file
                             translation_id_found = False
                             for translation_tag in translations.findall('translation'):
                                 translation_id = translation_tag.get('id')
-                                translation_text = GetFullTextFromTag(translation_tag, False)
+                                translation_text = GetFullTextFromTag(translation_tag, False, False)
                                 # we found id, so replace it
                                 if translation_id == str(brave_strings[string_name]):
                                     if not translation_text == string_value:
