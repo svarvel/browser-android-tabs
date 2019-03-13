@@ -57,6 +57,9 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     private int mFetchCount;
     private final int MAX_FAVICON_FETCH_COUNT = 30;
     public static final int CROSS_FADE_DURATION = 1000; //ms
+    public static final int THANKYOU_FADE_OUT_DURATION = 1500; //ms
+    public static final int THANKYOU_FADE_IN_DURATION = 1500; //ms
+    public static final int THANKYOU_STAY_DURATION = 2000; //ms
 
 
     public interface LargeIconReadyCallback {
