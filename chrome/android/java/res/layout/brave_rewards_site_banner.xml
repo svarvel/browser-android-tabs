@@ -31,7 +31,8 @@
                 android:layout_weight="0.75"
                 android:scaleType="fitCenter"
                 android:src="@drawable/cover_photo"
-                android:background="@drawable/rounded_corners"/>
+                android:background="@drawable/rounded_corners"
+                android:paddingTop="5dp"/>
 
             <!-- Text-->
             <ScrollView
