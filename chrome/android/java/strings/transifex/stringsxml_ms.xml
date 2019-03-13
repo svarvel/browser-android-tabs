@@ -1,0 +1,232 @@
+<resources>
+
+    <string name="brave_settings_title">Tetapan perisai laman Brave untuk</string>
+    <string name="brave_shields_down">Bawah</string>
+    <string name="brave_shields_up">Atas</string>
+    <string name="brave_shields_ads_trackers">Iklan dan Penjejak Disekat</string>
+    <string name="brave_shields_https_upgrades">Naik Taraf HTTPS </string>
+    <string name="brave_shields_scripts_blocked">Skrip Disekat</string>
+    <string name="brave_shields_ads_tracking_switch">Sekat Iklan dan Penjejakan</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Di Mana-mana</string>
+    <string name="brave_shields_blocks_scripts_switch">Sekat Skrip</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Aktifkan/Lumpuhkan Perisai Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktifkan/Lumpuhkan Ganjaran Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Sekat kuki pihak ke-3</string>
+
+    <string name="httpse_summary">Buka laman disokong dengan menggunakan HTTPS dan bukan HTTP jika mungkin</string>
+    <string name="tracking_protection_title">Mod Perlindungan Penjejakan</string>
+    <string name="tracking_protection_summary">Mengelakkan pemuatan sumber yang mengikuti anda</string>
+    <string name="ad_block_title">Sekatan Iklan</string>
+    <string name="ad_block_summary">Mengelakkan ikan dimuatkan</string>
+
+    <string name="fingerprinting_protection_title">Perlindungan Cap Jari</string>
+    <string name="fingerprinting_protection_summary">Mengelakkan pelayar daripada mengikuti cap jari</string>
+    <string name="brave_shields_fingerprints_blocked">Kaedah Cap Jari Disekat</string>
+    <string name="brave_shields_block_fingerprints_switch">Perilndungan Cap Jari</string>
+
+    <string name="ad_block_regional_title">Sekatan Iklan Rantauan</string>
+    <string name="ad_block_regional_summary">Mengelakkan pemuatan iklan rantauan</string>
+
+    <string name="ad_block_regional_summary_no_list">Tiada senarai tambahan yang tersedia untuk lokasi anda</string>
+
+    <string name="menu_exit">Keluar</string>
+
+    <string name="brave_sync">Segerak Brave (beta)</string>
+    <string name="sync_settings_add_device_name_title">Tambah nama peranti</string>
+    <string name="sync_settings_add_device_name_label">Masukkan nama pilihan untuk peranti ini</string>
+    <string name="sync_example_device_name">Peranti Android</string>
+    <string name="enter_code_words_sync">Masukkan perkataan kod</string>
+    <string name="sync_device">Penyegerakan peranti</string>
+    <string name="sync_device_failure">Penyegerakan tidak boleh ditetapkan</string>
+
+    <string name="brave_stats_text_trackers">Penjejak
+Disekat</string>
+    <string name="brave_stats_text_ads">Iklan
+Disekat</string>
+    <string name="brave_stats_text_https">HTTPS
+Naik Taraf</string>
+    <string name="brave_stats_text_time">Masa Jangkaan
+Disimpan</string>
+
+    <string name="send_metrics_title">Hantar metrik</string>
+
+    <string name="desktop_mode_title">Mod Desktop</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Lebih suka laman versi desktop</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Lebih suka laman versi mudah alih</string>
+    <string name="website_settings_category_desktop_view_enabled">Aktifkan Paparan Desktop untuk tab baru</string>
+    <string name="website_settings_category_desktop_view_disabled">Gunakan laman versi mudah alih untuk tab baru (disyorkan)</string>
+
+    <string name="brave_shields_first_group_title">Monitor Penyekatan</string>
+    <string name="brave_shields_second_group_title">Kawalan Individu</string>
+    <string name="brave_shields">Perisai</string>
+    <string name="brave_shields_ads_and_trackers">Iklan dan Penjejak</string>
+    <string name="brave_shields_fingerprint_methods">Kaedah Cap Jari</string>
+    <string name="brave_shields_block_phishing_switch">Sekat Memancing Data</string>
+
+    <string name="play_video_in_background_title">Main balik video latar belakang</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Diaktifkan</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Dilumpuhkan</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Percubaan. Membolehkan anda memainkan audio dari video di latar belakang apabila tab tidak aktif atau skrin peranti dimatikan. Cuba beralih ke mod desktop jika ciri ini tidak berfungsi.</string>
+    <string name="settings_require_relaunch_notice">Perubahan anda akan berkuat kuasa pada kali seterusnya anda melancarkan Brave</string>
+    <string name="settings_require_relaunch_now">LANCARKAN SEMULA SEKARANG</string>
+    <string name="settings_require_relaunch_later">SEBENTAR</string>
+
+    <string name="play_yt_video_in_browser_title">Main balik video di Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Diaktifkan</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Dilumpuhkan</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Jika diaktifkan, video akan dimainkan di Brave dan bukan apl yang sepadan</string>
+
+    <string name="close_tabs_on_exit_title">Tutup tab apabila keluar</string>
+    <string name="close_tabs_on_exit_summary">Jangan tahan tab antara sesi pelayaran</string>
+
+    <string name="open_pages_in_custom_tabs_title">Buka tab di Tab Tersuai</string>
+    <string name="open_pages_in_custom_tabs_summary">Tawar untuk membuka tab di Tab Tersuai</string>
+
+    <string name="ddg_offer_title">Carian peribadi dengan DuckDuckGo?</string>
+    <string name="ddg_offer_text">Dengan carian peribadi, Brave akan menggunakan DuckDuckGo untuk menjawab carian anda semasa anda berada di tab peribadi ini. DuckDuckGo ialah enjin carian yang tidak menjejaki sejarah carian anda, ia membolehkan anda mencari secara peribadi.</string>
+    <string name="ddg_offer_positive">Ya</string>
+    <string name="ddg_offer_negative">Tidak</string>
+    <string name="ddg_offer_link">Belajari tentang carian peribadi dengan DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Tab Standard</string>
+    <string name="prefs_private_search_engine">Tab Peribadi</string>
+
+    <string name="brave_open_in_private_tab">Buka di tab peribadi</string>
+    <string name="brave_close_all_private_tabs">Tutup tab peribadi</string>
+    <string name="brave_new_private_tab">Tab peribadi baru</string>
+    <string name="brave_new_tab_private_header">Ini ialah Tab Peribadi</string>
+    <string name="brave_new_tab_private_message">Walaupun laman yang anda lawati di tab peribadi tidak disimpan secara tempatan, mereka tidak membuat anda tanpa nama atau tidak dapat dilihat dengan ISP, majikan anda, atau laman web yang anda lawati.</string>
+    <string name="update_notification_title">Kemas kini Brave</string>
+    <string name="update_notification_text">Pelayar Brave baru ialah lebih cepat sebanyak 22%</string>
+    <string name="prefs_sync">Segerak (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Penyegerakan Brave membolehkan anda menyegerakkan data penanda halaman secara peribadi di antara Pelayar Brave anda pada pelbagai peranti anda.</string>
+    <string name="brave_sync_description_page_1_part_2">Imbas kod daripada rantaian penyegerakan yang anda buat pada peranti lain. Atau mulakan rantaian penyegerakan baru.</string>
+    <string name="brave_sync_scan_chain_code">Imbas atau masukkan kod penyegerakan</string>
+    <string name="brave_sync_start_new_chain">Mulakan rantaian penyegerakan baru</string>
+    <string name="brave_sync_qrcode_message_v2">Dengan menggunakan peranti yang disegerakkan yang sedia ada, buka Tetapan Brave dan navigasi ke Tetapan> Segerak. Pilih \"Tambah Peranti\" dan imbas Kod QR yang dipaparkan pada skrin.</string>
+    <string name="brave_sync_codewords_message">Dengan menggunakan peranti yang disegerakkan yang sedia ada, buka Tetapan Brave dan navigasi ke Tetapan> Segerak. Pilih \"Tambah Peranti\" dan kemudian \"Paparkan perkataan kod\".</string>
+    <string name="brave_sync_btn_mobile">Tambah Peranti Mudah Alih</string>
+    <string name="brave_sync_btn_laptop">Tambah Komputer</string>
+    <string name="brave_sync_scan_sync_code">Imbas kod penyegerakan ini</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Dengan menggunakan telefon atau tablet kedua, navigasi ke Tetapan Brave> Segerak> Imbas.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Tangkap kod QR (di atas) dengan peranti kedua anda, atau masukkan kata-kata kod jika tiada kamera tersedia.</string>
+    <string name="brave_sync_btn_done">Siap</string>
+    <string name="brave_sync_tabs_text">Tab</string>
+    <string name="brave_sync_history_text">Sejarah</string>
+    <string name="brave_sync_autofill_passwords_text">Isi Auto/Kata Laluan</string>
+    <string name="brave_sync_payment_settings_text">Tetapan Pembayaran Brave</string>
+    <string name="brave_sync_settings_title">SEGERAK PADA PERANTI INI</string>
+    <string name="brave_sync_settings_description">Perubahan pada tetapan akan mengubah data yang dikongsikan kepada orang lain pada peranti ini.</string>
+    <string name="brave_sync_devices_title">PERANTI LAIN PADA RANTAIAN</string>
+    <string name="brave_sync_loading_devices_title">PERANTI PEMUATAN..</string>
+    <string name="brave_sync_add_device_text">Tambah satu peranti lagi</string>
+    <string name="brave_sync_remove_device_text">Keluarkan peranti ini</string>
+    <string name="brave_sync_code_words_title">Padan</string>
+    <string name="brave_sync_add_laptop_text_title">Masukkan kod rantaian penyegerakan</string>
+    <string name="brave_sync_add_laptop_text_part_1">Pada komputer anda, navigasikan ke Tetapan Brave > Segerak. Pilih \"Masukkan satu Kod Rantaian Penyegerakan\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Masukkan perkataan kod di atas, termasuk ruang kosong.</string>
+    <string name="brave_sync_delete_device">Adakah anda pasti bahawa anda mahu memadamkan peranti \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_sent">Permintaan hapus telah dihantar. Peranti akan dikeluarkan tidak lama lagi.</string>
+    <string name="brave_sync_loading_data_title">Memuatkan data...</string>
+    <string name="brave_sync_time_out_message">Ralat berlaku, kelihatannya permintaan anda telah tamat.</string>
+    <string name="brave_sync_use_camera_text">Saya akan menggunakan kamera saya...</string>
+    <string name="brave_sync_confirm_code_words_text">Sah</string>
+    <string name="brave_sync_word_count_text">Bilangan kata: <ph name=\"WORD_COUNT\">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Bilangan perkataan tidak betul</string>
+    <string name="brave_sync_qr_code">Kod QR</string>
+    <string name="brave_sync_code_words">Perkataan Kod</string>
+    <string name="brave_sync_copy_button_text">Salin ke Papan klip</string>
+    <string name="brave_sync_copied_text">Disalin ke Papan klip</string>
+    <string name="brave_sync_this_device_text">(peranti ini)</string>
+
+    <string name="brave_already_set_as_default_browser">Brave telah ditetapkan
+sebagai penyemak imbas lalai anda.</string>
+    <string name="brave_default_browser_go_to_settings">Anda telah menetapkan penyemak imbas lalai.
+Anda boleh mengubah penyemak imbas lalai dalam tetapan aplikasi anda.</string>
+    <string name="brave_default_browser_notification_body">Jimat bateri dan muatkan laman web dengan lebih cepat. Jadikan Brave penyemak imbas lalai anda. Daripada menu Brave, ketik \"Tetapkan sebagai penyemak imbas lalai...\"</string>
+    <string name="brave_set_default_browser">Tetapkan sebagai penyemak imbas lalai</string>
+    <string name="brave_set_default_browser_dialog_text">Pilih Brave daripada senarai dan ketik \"Sentiasa\"</string>
+    <string name="brave_default_browser_existing_notification_body">Jadikan Brave sebagai penyemak imbas lalai anda
+Jimat bateri dan muatkan laman web dengan lebih cepat</string>
+
+    <string name="brave_ui_welcome_header_two">Bersedia untuk mengalami
+Internet seterusnya.</string>
+    <string name="brave_ui_welcome_desc_two">Anda kini boleh mendapat token kerana
+menonton iklan yang menghormati privasi.</string>
+    <string name="brave_ui_welcome_button_text_two">SERTAI GANJARAN</string>
+    <string name="brave_ui_welcome_footer_text_two">KETAHUI LEBIH LANJUT</string>
+    <string name="brave_ui_rewards_creating_text">Mencipta dompet</string>
+    <string name="brave_ui_your_wallet">Dompet anda</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Tambah Dana</string>
+    <string name="brave_ui_settings">Tetapan</string>
+    <string name="brave_ui_rewards_summary">RINGKASAN GANJARAN</string>
+    <string name="brave_ui_site_banner_welcome">Terima kasih kerana singgah!</string>
+    <string name="brave_ui_rewards_banner_text1">Anda boleh menyokong tapak ini dengan menghantar petua. Ini cara mengucapkan terima kasih kepada mereka kerana menyediakan kandungan yang hebat. Pencipta kandungan yang disahkan dibayar untuk petua mereka pada minggu pertama setiap bulan kalendar.</string>
+    <string name="brave_ui_rewards_banner_text2">Jika anda mahu, anda boleh menjadualkan petua bulanan untuk menyokong tapak ini secara berterusan.</string>
+    <string name="brave_ui_donation_amount">Amaun petua</string>
+    <string name="brave_ui_wallet_balance">baki dompet:</string>
+    <string name="brave_ui_make_monthly">Jadikan ini bulanan</string>
+    <string name="brave_ui_send_tip">hantar petua saya</string>
+    <string name="brave_ui_do_monthly">tetapkan petua bulanan</string>
+    <string name="brave_ui_not_enough_tokens">tidak cukup token</string>
+    <string name="brave_ui_site_banner_notice_text">NOTA: Pencipta ini masih belum mendaftar untuk menerima sumbangan daripada pengguna Brave. Kami akan terus berusaha menyumbang sehingga mereka mengesahkan, atau sehingga 90 hari telah berlalu.</string>
+    <string name="brave_ui_please">sila</string>
+    <string name="brave_ui_add_funds">tambah dana</string>
+    <string name="brave_ui_thank_you">Terima kasih!</string>
+    <string name="brave_ui_error_init_wallet">Sila cuba lagi kemudian.</string>
+    <string name="brave_ui_month_jan">JANUARI</string>
+    <string name="brave_ui_month_feb">FEBRUARI</string>
+    <string name="brave_ui_month_mar">MAC</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MEI</string>
+    <string name="brave_ui_month_jun">JUN</string>
+    <string name="brave_ui_month_jul">JULAI</string>
+    <string name="brave_ui_month_aug">OGOS</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DISEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DISEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Perhatian</string>
+    <string name="brave_ui_include_in_auto">Masukkan dalam Sumbang Auto</string>
+    <string name="brave_ui_donate_now">Hantar petua...</string>
+    <string name="brave_ui_no_activity">Tiada aktiviti lagi
+bulan ini...</string>
+    <string name="brave_ui_token_grant_claimed">Geran Token Dituntut</string>
+    <string name="brave_ui_earnings_ads">Pendapatan daripada Iklan</string>
+    <string name="brave_ui_rewards_contribute">Sumbang Auto</string>
+    <string name="brave_ui_rewards_contribute_description">Anda telah menyumbang <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Petua Satu Kali</string>
+    <string name="brave_ui_recurring_donation">Petua Bulanan</string>
+    <string name="brave_ui_verified_publisher">Penerbit Disahkan Brave</string>
+    <string name="brave_ui_not_verified_publisher">Belum disahkan</string>
+    <string name="brave_ui_not_verified_publisher_description">Pencipta ini belum mendaftar untuk menerima sumbangan daripada pengguna Brave.
+        Sebarang petua yang anda hantar akan kekal dalam dompet anda sehingga mereka sahkan.</string>
+    <string name="brave_ui_on_youtube">di YouTube</string>
+    <string name="brave_ui_on_twitch">di Twitch</string>
+    <string name="brave_ui_new_grant">Geran token percuma tersedia.</string>
+    <string name="brave_ui_new_token_grant">Geran Token Percuma</string>
+    <string name="brave_ui_claim">Tuntut</string>
+    <string name="brave_ui_reserved_amount_text">Anda telah memperuntukkan <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT untuk pencipta yang belum
+lagi mendaftar untuk menerima sumbangan. Penyemak imbas anda akan terus mencuba untuk menyumbang
+sehingga mereka mengesahkan, atau sehingga 90 hari telah berlalu.</string>
+    <string name="brave_ui_notification_desc_no_funds">Bayaran bulanan anda yang dijadualkan untuk Sumbang Auto dan petua bulanan tidak dapat diselesaikan kerana dana tidak mencukupi. Kami akan mencuba lagi dalam 30 hari.</string>
+    <string name="brave_ui_notification_desc_tip_error">Terdapat masalah memproses petua anda, sila cuba lagi.</string>
+    <string name="brave_ui_notification_desc_contr_error">Terdapat masalah memproses sumbangan anda.</string>
+    <string name="brave_rewards_local_uh_oh">Oh oh!</string>
+    <string name="brave_rewards_local_server_not_responding">Pelayan Ganjaran Brave tidak memberi tindak balas. Kami akan membetulkan ini secepat mungkin.</string>
+    <string name="brave_ui_grants">Geran</string>
+    <string name="brave_ui_expires_on">tamat tempoh pada <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Dana Tidak Mencukupi</string>
+    <string name="brave_ui_insufficient_funds_desc">Akaun Ganjaran Brave anda menunggu untuk deposit.</string>
+    <string name="brave_ui_backup_wallet_msg">Sandarkan Dompet</string>
+    <string name="brave_ui_backup_wallet_desc">Sila sandarkan dompet Brave anda.</string>
+    <string name="brave_ui_brave_rewards">Ganjaran Brave</string>
+    <string name="brave_ui_welcome_back_message">Selamat datang kembali!</string>
+    <string name="brave_ui_get_rewarded">Dapatkan ganjaran kerana menyemak imbas.</string>
+    <string name="brave_ui_brave_rewards_desc">Dapatkan ganjaran dengan menonton iklan
+yang menghormati privasi dan bayar ke depan untuk menyokong
+pencipta kandungan yang anda suka.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIFKAN GANJARAN BRAVE</string>
+</resources>

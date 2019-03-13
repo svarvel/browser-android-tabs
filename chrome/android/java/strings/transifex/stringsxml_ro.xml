@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blocare scripturi</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activare/Dezactivare scuturi Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Activare/dezactivare Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blocare fișiere cookie terțe</string>
 
     <string name="httpse_summary">Deschide site-uri compatibile utilizând HTTPS în loc de HTTP atunci când este posibil</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Ieșire</string>
 
-    <string name="brave_sync">Sincronizare Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Adăugare nume dispozitiv</string>
     <string name="sync_settings_add_device_name_label">Introduceți un nume opțional pentru acest dispozitiv</string>
     <string name="sync_example_device_name">Dispozitiv Android</string>
@@ -94,10 +94,8 @@ Salvat</string>
     <string name="brave_new_private_tab">Filă privată nouă</string>
     <string name="brave_new_tab_private_header">Aceasta este o filă privată</string>
     <string name="brave_new_tab_private_message">Cu toate că site-urile pe care le vizitați în file private nu sunt salvate local, acestea nu vă fac anonim sau invizibil pentru furnizorul dvs. de internet, angajatorul dvs. sau site-urile pe care le vizitați.</string>
-
     <string name="update_notification_title">Actualizare Brave</string>
     <string name="update_notification_text">Noul browser Brave este cu 22% mai rapid</string>
-
     <string name="prefs_sync">Sincronizare (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Sincronizare Beta vă permite să sincronizați în mod privat date privind marcajele între Browserele Brave de pe diverse dispozitive.</string>
     <string name="brave_sync_description_page_1_part_2">Scanați codul de pe lanțul de sincronizare pe care l-ați creat pe un alt dispozitiv. Sau inițiați un lanț nou de sincronizare.</string>
@@ -125,13 +123,13 @@ Salvat</string>
     <string name="brave_sync_add_laptop_text_title">Introducere cod lanț sincronizare</string>
     <string name="brave_sync_add_laptop_text_part_1">Pe computer, accesați Setări Brave  >Sincronizare. Selectați „Introducere cod lanț sincronizare”.</string>
     <string name="brave_sync_add_laptop_text_part_2">Introduceți cuvintele cod de mai sus, inclusiv spațiile.</string>
-    <string name="brave_sync_delete_device">Sigur ștergeți dispozitivul \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Sigur ștergeți dispozitivul \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Solicitarea de șterge a fost trimisă. Dispozitivul va fi eliminat în curând.</string>
     <string name="brave_sync_loading_data_title">Se încarcă datele...</string>
     <string name="brave_sync_time_out_message">Ceva nu a funcționat corect; solicitarea a expirat.</string>
     <string name="brave_sync_use_camera_text">Voi utiliza camera....</string>
     <string name="brave_sync_confirm_code_words_text">Confirmați</string>
-    <string name="brave_sync_word_count_text">Număr de cuvinte: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Număr de cuvinte: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Număr de cuvinte incorect</string>
     <string name="brave_sync_qr_code">Cod QR</string>
     <string name="brave_sync_code_words">Cuvinte cod</string>
@@ -139,4 +137,95 @@ Salvat</string>
     <string name="brave_sync_copied_text">Copiat în Clipboard</string>
     <string name="brave_sync_this_device_text">(acest dispozitiv)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave este deja setat
+ca browser implicit.</string>
+    <string name="brave_default_browser_go_to_settings">Aveți deja setat un browser implicit.
+Puteți modifica browserul implicit din setările aplicației.</string>
+    <string name="brave_default_browser_notification_body">Economisiți baterie şi încărcați mai rapid paginile web. Faceți Brave Browserul dumneavoastră implicit. Din meniul Brave apăsați \"Setează ca browser implicit...\"</string>
+    <string name="brave_set_default_browser">Setați ca browser implicit</string>
+    <string name="brave_set_default_browser_dialog_text">Selectați Brave din listă şi apăsați \"Întotdeauna\"</string>
+    <string name="brave_default_browser_existing_notification_body">Faceți Brave browserul dumneavoastră implicit
+Economisiți baterie şi încărcați mai rapid paginile web</string>
+
+    <string name="brave_ui_welcome_header_two">Pregătiți-vă pentru experiența
+următorului nivel de Internet.</string>
+    <string name="brave_ui_welcome_desc_two">Acum puteți câștiga tokenuri pentru
+vizualizarea de reclame, cu respectarea vieții private.</string>
+    <string name="brave_ui_welcome_button_text_two">DEVENIȚI MEMBRU REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">AFLAȚI MAI MULTE</string>
+    <string name="brave_ui_rewards_creating_text">Creare portofel</string>
+    <string name="brave_ui_your_wallet">Portofelul dvs.</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Adăugați fonduri</string>
+    <string name="brave_ui_settings">Setări</string>
+    <string name="brave_ui_rewards_summary">CUPRINS REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Mulțumim pentru vizită!</string>
+    <string name="brave_ui_rewards_banner_text1">Puteți susține acest site web trimițând un bonus. Acesta este un mod de a le mulțumi pentru conținutul de calitate pe care îl furnizează. Creatorii de conținut verificați sunt plătiți pentru bonusurile lor în prima săptămână a fiecărei luni calendaristice. </string>
+    <string name="brave_ui_rewards_banner_text2">Dacă doriți, puteți opta pentru bonusuri lunare pentru a susține acest website în mod constant.</string>
+    <string name="brave_ui_donation_amount">Sumă bonus</string>
+    <string name="brave_ui_wallet_balance">sold portofel:</string>
+    <string name="brave_ui_make_monthly">Faceți un abonament lunar</string>
+    <string name="brave_ui_send_tip">trimite bonusul meu</string>
+    <string name="brave_ui_do_monthly">stabilește bonus lunar</string>
+    <string name="brave_ui_not_enough_tokens">nu aveți suficiente tokenuri</string>
+    <string name="brave_ui_site_banner_notice_text">NOTĂ: Acest creator nu s-a înregistrat încă pentru a primi donații de la utilizatorii Brave. Vom încerca să transmitem donațiile până când vor verifica, sau până când va curge un termen de 90 de zile. </string>
+    <string name="brave_ui_please">te rog</string>
+    <string name="brave_ui_add_funds">adaugă fonduri</string>
+    <string name="brave_ui_thank_you">Mulțumesc!</string>
+    <string name="brave_ui_error_init_wallet">Încercați din nou mai târziu.</string>
+    <string name="brave_ui_month_jan">IANUARIE</string>
+    <string name="brave_ui_month_feb">FEBRUARIE</string>
+    <string name="brave_ui_month_mar">MARTIE</string>
+    <string name="brave_ui_month_apr">APRILIE</string>
+    <string name="brave_ui_month_may">MAI</string>
+    <string name="brave_ui_month_jun">IUNIE</string>
+    <string name="brave_ui_month_jul">IULIE</string>
+    <string name="brave_ui_month_aug">AUGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBRIE</string>
+    <string name="brave_ui_month_oct">OCTOMBRIE</string>
+    <string name="brave_ui_month_nov">NOIEMBRIE</string>
+    <string name="brave_ui_month_dec">DECEMBRIE</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBRIE</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Atenție</string>
+    <string name="brave_ui_include_in_auto">Include în Auto-Contribute</string>
+    <string name="brave_ui_donate_now">Trimite un bonus...</string>
+    <string name="brave_ui_no_activity">Nicio activitate
+luna aceasta...</string>
+    <string name="brave_ui_token_grant_claimed">Acordare de tokenuri solicitată</string>
+    <string name="brave_ui_earnings_ads">Venituri din reclame</string>
+    <string name="brave_ui_rewards_contribute">Auto-Contribute</string>
+    <string name="brave_ui_rewards_contribute_description">Ați contribuit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT.</string>
+    <string name="brave_ui_one_time_donation">Bonusuri unice</string>
+    <string name="brave_ui_recurring_donation">Bonusuri lunare</string>
+    <string name="brave_ui_verified_publisher">Editor Brave verificat</string>
+    <string name="brave_ui_not_verified_publisher">Încă nu a fost verificat</string>
+    <string name="brave_ui_not_verified_publisher_description">Acest creator nu s-a înregistrat încă pentru a primi donații de la utilizatorii Brave.
+Orice bonusuri trimiteți vor rămâne în portofelul dumneavoastră până când se vor înscrie.</string>
+    <string name="brave_ui_on_youtube">pe YouTube</string>
+    <string name="brave_ui_on_twitch">pe Twitch</string>
+    <string name="brave_ui_new_grant">Este disponibilă acordarea de tokenuri gratuite.</string>
+    <string name="brave_ui_new_token_grant">Acordare de tokenuri gratuite</string>
+    <string name="brave_ui_claim">Solicită</string>
+    <string name="brave_ui_reserved_amount_text">Ați alocat <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT pentru creatori care nu
+s-au înregistrat încă pentru a primi contribuții. Browserul dvs. va încerca să transmită contribuțiile
+până când vor verifica sau până la 90 de zile. </string>
+    <string name="brave_ui_notification_desc_no_funds">Plata lunară programată pentru Auto-Contribute și bonusurile lunare nu s-au putut finaliza din cauza fondurilor insuficiente. Vom încerca din nou în 30 de zile. </string>
+    <string name="brave_ui_notification_desc_tip_error">A apărut o problemă în procesarea bonusului, vă rugăm încercați din nou.</string>
+    <string name="brave_ui_notification_desc_contr_error">A apărut o problemă în procesarea donației dumneavoastră.</string>
+    <string name="brave_rewards_local_uh_oh">Oo, nu!</string>
+    <string name="brave_rewards_local_server_not_responding">Serverul Brave Rewards nu răspunde. Vom remedia problema în cel mai scurt timp posibil. </string>
+    <string name="brave_ui_grants">Acordări</string>
+    <string name="brave_ui_expires_on">expiră la<ph name=\"DATE\">%1$s<ex>14.04.2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Fonduri insuficiente</string>
+    <string name="brave_ui_insufficient_funds_desc">Contul dumneavoastră pe Brave Rewards este disponibil pentru depunere.</string>
+    <string name="brave_ui_backup_wallet_msg">Portofel de rezervă</string>
+    <string name="brave_ui_backup_wallet_desc">Salvați datele din portofelul Brave.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Bine ați revenit!</string>
+    <string name="brave_ui_get_rewarded">Primiți recompense pentru navigări.</string>
+    <string name="brave_ui_brave_rewards_desc">Câștigați din vizualizarea reclamelor, cu respectarea vieții private,
+și dați mai departe pentru a susține
+creatorii de conținut care vă plac.</string>
+    <string name="brave_welcome_page_rewards_title">ACTIVEAZĂ BRAVE REWARDS</string>
 </resources>

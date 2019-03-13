@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS visur</string>
     <string name="brave_shields_blocks_scripts_switch">Bloķēt skriptus</string>
     <string name="accessibility_toolbar_btn_brave_shields">Iespējot/atspējot Brave vairogus</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Iespējot/atspējot Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloķē trešo pušu sīkfailus</string>
 
     <string name="httpse_summary">Atver atbalstītās vietnes, HTTP vietā izmantojot HTTPS, kad iespējams</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Izeja</string>
 
-    <string name="brave_sync">Brave (beta) Sync</string>
     <string name="sync_settings_add_device_name_title">Pievienojiet ierīces nosaukumu</string>
     <string name="sync_settings_add_device_name_label">Ievadiet izvēles nosaukumu šai ierīcei</string>
     <string name="sync_example_device_name">Android ierīce</string>
@@ -94,10 +94,8 @@ Saglabāts</string>
     <string name="brave_new_private_tab">Jauna privātā cilne</string>
     <string name="brave_new_tab_private_header">Šī ir privāta cilne</string>
     <string name="brave_new_tab_private_message">Kaut arī privātajās cilnēs apmeklētās vietnes netiek saglabātas lokāli, tās jūs nepadara anonīmus vai neredzamus jūsu interneta pakalpojumu sniedzējam, darba devējam vai apmeklētajām vietnēm.</string>
-
     <string name="update_notification_title">Brave atjauninājums</string>
     <string name="update_notification_text">Jaunais Brave pārlūks ir par 22 % ātrāks</string>
-
     <string name="prefs_sync">Sync (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync ļauj privāti sinhronizēt grāmatzīmju datus jūsu Brave pārlūkos dažādās ierīcēs.</string>
     <string name="brave_sync_description_page_1_part_2">Vienkārši skenējiet kodu jūsu sinhronizācijas ķēdē, ko izveidojāt citā ierīcē. Vai sāciet jaunu sinhronizācijas ķēdi.</string>
@@ -125,13 +123,13 @@ Saglabāts</string>
     <string name="brave_sync_add_laptop_text_title">Ievadiet sinhronizācijas ķēdes kodu</string>
     <string name="brave_sync_add_laptop_text_part_1">Savā datorā dodieties uz „Brave iestatījumi” > „Sync”. Atlasiet „Ievadīt sinhronizācijas ķēdes kodu”.</string>
     <string name="brave_sync_add_laptop_text_part_2">Ievadiet augstāk redzamos koda vārdus, tajā skaitā atstarpes.</string>
-    <string name="brave_sync_delete_device">Vai tiešām vēlaties dzēst ierīci „<ph name="DEVICE_NAME">%1$s</ph>”?</string>
+    <string name="brave_sync_delete_device">Vai tiešām vēlaties dzēst ierīci „<ph name=\"DEVICE_NAME\">%1$s</ph>”?</string>
     <string name="brave_sync_delete_sent">Dzēšanas pieprasījums ir nosūtīts. Ierīce tiks drīzumā noņemta.</string>
     <string name="brave_sync_loading_data_title">Notiek datu ielāde...</string>
     <string name="brave_sync_time_out_message">Radās kāda problēma, jūsu pieprasījumam iestājās taimauts.</string>
     <string name="brave_sync_use_camera_text">Lietošu kameru...</string>
     <string name="brave_sync_confirm_code_words_text">Apstiprināt</string>
-    <string name="brave_sync_word_count_text">Vārdu skaits: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Vārdu skaits: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Nepareizs vārdu skaits</string>
     <string name="brave_sync_qr_code">QR kods</string>
     <string name="brave_sync_code_words">Koda vārdi</string>
@@ -139,4 +137,94 @@ Saglabāts</string>
     <string name="brave_sync_copied_text">Kopēts starpliktuvē</string>
     <string name="brave_sync_this_device_text">(šī ierīce)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave jau tagad ir iestatīta
+kā jūsu noklusējuma pārlūkprogramma.</string>
+    <string name="brave_default_browser_go_to_settings">Jūs jau esat iestatījis/-usi noklusējuma pārlūkprogrammu.
+Noklusējuma pārlūkprogrammu var nomainīt jūsu programmu iestatījumos.</string>
+    <string name="brave_default_browser_notification_body">Taupiet akumulatoru un ielādējiet tīmekļa lapas ātrāk. Padariet Brave par savu noklusējuma pārlūkprogrammu. Brave izvēlnē pieskarieties “Iestatīt kā noklusējuma pārlūkprogrammu”...</string>
+    <string name="brave_set_default_browser">Iestatīt kā noklusējuma pārlūkprogrammu</string>
+    <string name="brave_set_default_browser_dialog_text">Sarakstā izvēlieties Brave un pieskarieties pie “Vienmēr”.</string>
+    <string name="brave_default_browser_existing_notification_body">Padariet Brave par savu noklusējuma pārlūkprogrammu.
+Taupiet akumulatoru un ielādējiet tīmekļa vietnes ātrāk.</string>
+
+    <string name="brave_ui_welcome_header_two">Sagatavojieties, lai pieredzētu
+nākamās paaudzes internetu.</string>
+    <string name="brave_ui_welcome_desc_two">Tagad jūs varat pelnīt žetonus,
+skatoties privātumu ievērojošas reklāmas.</string>
+    <string name="brave_ui_welcome_button_text_two">PIEVIENOTIES REWARDS PROGRAMMAI</string>
+    <string name="brave_ui_welcome_footer_text_two">UZZINĀT VAIRĀK</string>
+    <string name="brave_ui_rewards_creating_text">Maka izveide</string>
+    <string name="brave_ui_your_wallet">Jūsu maks</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>00,00</ex></ph>USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Pievienot līdzekļus</string>
+    <string name="brave_ui_settings">Iestatījumi</string>
+    <string name="brave_ui_rewards_summary">REWARDS PROGRAMMAS KOPSAVILKUMS</string>
+    <string name="brave_ui_site_banner_welcome">Paldies, ka apmeklējāt mūs!</string>
+    <string name="brave_ui_rewards_banner_text1">Jūs varat atbalstīt šo tīmekļa vietni, nosūtot dzeramnaudu. Tas ir veids, kā jūs varat viņiem pateikties par izcilu saturu. Verificēti satura veidotāji katra kalendārā mēneša pirmajā nedēļā tiek atalgoti par saņemto dzeramnaudu.</string>
+    <string name="brave_ui_rewards_banner_text2">Ja jūs vēlaties, ir iespējams ieplānot ikmēneša dzeramnaudu, lai pastāvīgi atbalstītu šo tīmekļa vietni.</string>
+    <string name="brave_ui_donation_amount">Dzeramnaudas apjoms</string>
+    <string name="brave_ui_wallet_balance">maka bilance:</string>
+    <string name="brave_ui_make_monthly">Sniedziet atbalstu katru mēnesi</string>
+    <string name="brave_ui_send_tip">nosūtīt manu dzeramnaudu</string>
+    <string name="brave_ui_do_monthly">iestatīt ikmēneša dzeramnaudu</string>
+    <string name="brave_ui_not_enough_tokens">nepietiek žetonu</string>
+    <string name="brave_ui_site_banner_notice_text">PIEZĪME. Šis satura veidotājs vēl nav reģistrējies, lai saņemtu atbalstu no Brave lietotājiem. Mēs turpināsim mēģināt nodrošināt šo atbalstu, līdz viņi tiks verificēti vai līdz paies 90 dienas.</string>
+    <string name="brave_ui_please">lūdzu,</string>
+    <string name="brave_ui_add_funds">pievienojiet līdzekļus</string>
+    <string name="brave_ui_thank_you">Paldies!</string>
+    <string name="brave_ui_error_init_wallet">Lūdzu, vēlāk mēģiniet vēlreiz!</string>
+    <string name="brave_ui_month_jan">JANVĀRIS</string>
+    <string name="brave_ui_month_feb">FEBRUĀRIS</string>
+    <string name="brave_ui_month_mar">MARTS</string>
+    <string name="brave_ui_month_apr">APRĪLIS</string>
+    <string name="brave_ui_month_may">MAIJS</string>
+    <string name="brave_ui_month_jun">JŪNIJS</string>
+    <string name="brave_ui_month_jul">JŪLIJS</string>
+    <string name="brave_ui_month_aug">AUGUSTS</string>
+    <string name="brave_ui_month_sep">SEPTEMBRIS</string>
+    <string name="brave_ui_month_oct">OKTOBRIS</string>
+    <string name="brave_ui_month_nov">NOVEMBRIS</string>
+    <string name="brave_ui_month_dec">DECEMBRIS</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>2018. GADA</ex></ph>, <ph name=\"YEAR\">%2$s<ex>DECEMBRIS</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Uzmanību!</string>
+    <string name="brave_ui_include_in_auto">Iekļaut autom. atbalstīšanu</string>
+    <string name="brave_ui_donate_now">Nosūtīt dzeramnaudu..</string>
+    <string name="brave_ui_no_activity">Šajā mēnesī nav
+veiktu darbību...</string>
+    <string name="brave_ui_token_grant_claimed">Saņemtie žetonu piešķīrumi</string>
+    <string name="brave_ui_earnings_ads">Ienākumi no reklāmām</string>
+    <string name="brave_ui_rewards_contribute">Autom. atbalstīšana</string>
+    <string name="brave_ui_rewards_contribute_description">Jūs esat ieguldījuši <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Vienreizēja dzeramnauda</string>
+    <string name="brave_ui_recurring_donation">Ikmēneša dzeramnauda</string>
+    <string name="brave_ui_verified_publisher">Brave verificēts izdevējs</string>
+    <string name="brave_ui_not_verified_publisher">Neverificēts</string>
+    <string name="brave_ui_not_verified_publisher_description">Šis satura veidotājs vēl nav reģistrējies, lai saņemtu atbalstu no Brave lietotājiem.
+Visa dzeramnauda, ko nosūtīsiet, paliks jūsu makā, līdz viņi to apstiprinās.</string>
+    <string name="brave_ui_on_youtube">YouTube</string>
+    <string name="brave_ui_on_twitch">Twitch</string>
+    <string name="brave_ui_new_grant">Ir iespēja saņemt bezmaksas žetonus.</string>
+    <string name="brave_ui_new_token_grant">Bezmaksas žetona piešķiršana</string>
+    <string name="brave_ui_claim">Pieprasīt</string>
+    <string name="brave_ui_reserved_amount_text">Jūs esat rezervējuši <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT priekš satura veidotājiem, kuri vēl nav
+reģistrējušies, lai saņemtu atbalstu. Jūsu pārlūkprogramma turpinās mēģināt sniegt viņiem atbalstu, līdz viņi to apstiprinās vai būs pagājušas 90 dienas.</string>
+    <string name="brave_ui_notification_desc_no_funds">Jūsu plānoto ikmēneša maksājumu automātiskajai atbalstīšanai un ikmēneša dzeramnaudu neizdevās nosūtīt, jo jums nepietiek līdzekļu. Mēs mēģināsim vēlreiz pēc 30 dienām.</string>
+    <string name="brave_ui_notification_desc_tip_error">Apstrādājot jūsu dzeramnaudu, radās problēma, lūdzu, mēģiniet vēlreiz.</string>
+    <string name="brave_ui_notification_desc_contr_error">Apstrādājot jūsu ieguldījumu, radās problēma.</string>
+    <string name="brave_rewards_local_uh_oh">Ak, vai!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Rewards serveris nav pieejams. Mēs atrisināsim šo problēmu pēc iespējas īsākā laikā.</string>
+    <string name="brave_ui_grants">Ieguldījums</string>
+    <string name="brave_ui_expires_on">beidzas <ph name=\"DATE\">%1$s<ex>04.14.2019.</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Nepietiekami līdzekļi</string>
+    <string name="brave_ui_insufficient_funds_desc">Jūsu Brave Rewards konts gaida, kad veiksiet iemaksu.</string>
+    <string name="brave_ui_backup_wallet_msg">Papildināt maku</string>
+    <string name="brave_ui_backup_wallet_desc">Lūdzu, papildiniet savu Brave maku.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Esiet sveicināti atpakaļ!</string>
+    <string name="brave_ui_get_rewarded">Iegūstiet atalgojumu par pārlūkošanu.</string>
+    <string name="brave_ui_brave_rewards_desc">Pelniet, skatoties privātumu ievērojošas
+reklāmas, un veiciet priekšapmaksu, lai atbalstītu
+savus iemīļotākos satura veidotājus.</string>
+    <string name="brave_welcome_page_rewards_title">IESPĒJOT BRAVE REWARDS</string>
 </resources>

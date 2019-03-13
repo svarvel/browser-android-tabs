@@ -1,0 +1,232 @@
+<resources>
+
+    <string name="brave_settings_title">Brave‘i lehe kaitse seaded</string>
+    <string name="brave_shields_down">Alla</string>
+    <string name="brave_shields_up">Üles</string>
+    <string name="brave_shields_ads_trackers">Blokeeritud reklaamid ja jälitajad</string>
+    <string name="brave_shields_https_upgrades">HTTPS uuendused</string>
+    <string name="brave_shields_scripts_blocked">Blokeeritud skriptid</string>
+    <string name="brave_shields_ads_tracking_switch">Blokeerige reklaame ja jälitajaid</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
+    <string name="brave_shields_blocks_scripts_switch">Blokeerige skripte</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Luba/keela Brave‘i kaitsed</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Luba/keela Brave’i preemiad</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Blokeerige 3. osapoole küpsised</string>
+
+    <string name="httpse_summary">Võimalusel avab ühilduvaid lehti HTPPS-i kaudu HTTP asemel</string>
+    <string name="tracking_protection_title">Jälitamisvastane režiim</string>
+    <string name="tracking_protection_summary">Takistab laadimisel jälitavaid ressursse</string>
+    <string name="ad_block_title">Reklaami blokeerimine</string>
+    <string name="ad_block_summary">Takistab reklaamide laadimist</string>
+
+    <string name="fingerprinting_protection_title">Kaitse sõrmejäljega</string>
+    <string name="fingerprinting_protection_summary">Takistab veebilehitsejal lugeda sõrmejälgi</string>
+    <string name="brave_shields_fingerprints_blocked">Sõrmejälje salvestamise meetodid blokeeritud</string>
+    <string name="brave_shields_block_fingerprints_switch">Kaitse sõrmejäljega</string>
+
+    <string name="ad_block_regional_title">Kohalike reklaamide blokeerimine</string>
+    <string name="ad_block_regional_summary">Takistab kohalike reklaamide laadimist</string>
+
+    <string name="ad_block_regional_summary_no_list">Teie asukohale pole täiendavaid loendeid saadaval</string>
+
+    <string name="menu_exit">Välju</string>
+
+    <string name="brave_sync">Brave’i ajakohastamine (beeta)</string>
+    <string name="sync_settings_add_device_name_title">Lisa seadme nimi</string>
+    <string name="sync_settings_add_device_name_label">Sisesta sellele seadmele valikuline nimi</string>
+    <string name="sync_example_device_name">Android seade</string>
+    <string name="enter_code_words_sync">Sisesta salasõnad</string>
+    <string name="sync_device">Sünk seade</string>
+    <string name="sync_device_failure">Sünki seadistamine nurjus</string>
+
+    <string name="brave_stats_text_trackers">Jälitajad
+Blokeeritud</string>
+    <string name="brave_stats_text_ads">Reklaamid
+Blokeeritud</string>
+    <string name="brave_stats_text_https">HTTPS
+Uuendused</string>
+    <string name="brave_stats_text_time">Hin. aeg
+Salvestatud</string>
+
+    <string name="send_metrics_title">Saada statistika</string>
+
+    <string name="desktop_mode_title">Arvuti režiim</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Eelista arvutile mõeldud lehti</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Eelista mobiilile mõeldud lehti</string>
+    <string name="website_settings_category_desktop_view_enabled">Luba uusi kaarte näidata nagu arvutist</string>
+    <string name="website_settings_category_desktop_view_disabled">Luba uusi kaarte näidata nagu mobiililt (soovitatav)</string>
+
+    <string name="brave_shields_first_group_title">Blokeerimise jälgija</string>
+    <string name="brave_shields_second_group_title">Täpsed värvid</string>
+    <string name="brave_shields">Kaitsed</string>
+    <string name="brave_shields_ads_and_trackers">Reklaamid ja jälitajad</string>
+    <string name="brave_shields_fingerprint_methods">Sõrmejälje meetodid</string>
+    <string name="brave_shields_block_phishing_switch">Blokeeri andmepüük</string>
+
+    <string name="play_video_in_background_title">Video esitamine taustal</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Lubatud</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Keelatud</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Katsetamisjärgus. Võimaldab esitada taustal mängiva video heli, kui vahekaart pole ees või seadme ekraan on välja lülitatud. Kui see ei tööta, valige arvuti režiim.</string>
+    <string name="settings_require_relaunch_notice">Muudatused rakenduvad Brave‘i järgmisel käivitamisel</string>
+    <string name="settings_require_relaunch_now">TAASKÄIVITA NÜÜD</string>
+    <string name="settings_require_relaunch_later">HILJEM</string>
+
+    <string name="play_yt_video_in_browser_title">Video taasesitamine Brave‘s</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Lubatud</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Keelatud</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Lubamise korral esitatakse videoid Brave‘i asemel vastavas rakenduses</string>
+
+    <string name="close_tabs_on_exit_title">Sulge vahekaardid väljumisel</string>
+    <string name="close_tabs_on_exit_summary">Ära säilita vahekaarte sirvimisseansside vahetamisel</string>
+
+    <string name="open_pages_in_custom_tabs_title">Ava vahekaardid kohandatud vahekaartidel</string>
+    <string name="open_pages_in_custom_tabs_summary">Paku vahekaartide avamist kohandatud vahekaartidel</string>
+
+    <string name="ddg_offer_title">Privaatne otsing DuckDuckGo-s?</string>
+    <string name="ddg_offer_text">Privaatse otsinguga vastab Brave privaatses vahekaardis teie küsimustele DuckDuckGo abil. DuckDuckGo on otsingumootor, mis ei jälita teie otsinguajalugu, võimaldades otsida privaatselt.</string>
+    <string name="ddg_offer_positive">Jah</string>
+    <string name="ddg_offer_negative">Ei</string>
+    <string name="ddg_offer_link">Hankige lisateavet DuckDuckGo‘ga otsimise kohta</string>
+    <string name="prefs_standard_search_engine">Tavaline vahekaart</string>
+    <string name="prefs_private_search_engine">Privaatne vahekaart</string>
+
+    <string name="brave_open_in_private_tab">Ava privaatses vahekaardis</string>
+    <string name="brave_close_all_private_tabs">Sulge privaatsed vahekaardid</string>
+    <string name="brave_new_private_tab">Uus privaatne vahekaart</string>
+    <string name="brave_new_tab_private_header">See on privaatne vahekaart</string>
+    <string name="brave_new_tab_private_message">Isegi, kui privaatsetes vahekaartides sirvitavaid lehti ei salvestata seadmesse, ei tee see teid anonüümseks ega nähtamatuks internetiteenuse pakkujale või tööandjale või külastatavatele lehtedele.</string>
+    <string name="update_notification_title">Brave‘i uuendus</string>
+    <string name="update_notification_text">Uus Brave‘i veebilehitseja on 22% kiirem</string>
+    <string name="prefs_sync">Sünk (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave sünk võimaldab ajakohastada järjehoidjate andmeid privaatselt erinevates seadmetes olevate Brave‘i veebilehitsejate vahel.</string>
+    <string name="brave_sync_description_page_1_part_2">Lihtsalt skannige koodi, mille lõite teise seadme sünkromiseerimisahelas. Või looge uus sünkroniseerimisahel.</string>
+    <string name="brave_sync_scan_chain_code">Skannige või sisestage sünkroniseerimiskood</string>
+    <string name="brave_sync_start_new_chain">Alustage uut sünkroniseerimisahelat</string>
+    <string name="brave_sync_qrcode_message_v2">Kasutage olemasolevat ajakohastatud seadet, avage Brave‘i seaded ja minge „Seaded > Sünk“. Valige „Lisage seade“ ja skannige ekraanil näidatud QR-koodi.</string>
+    <string name="brave_sync_codewords_message">Kasutage olemasolevat ajakohastatud seadet, avage Brave‘i seaded ja minge „Seaded > Sünk“. Valige „Lisage seade“, siis „Näita selle asemel salasõnu“.</string>
+    <string name="brave_sync_btn_mobile">Lisa mobiilseade</string>
+    <string name="brave_sync_btn_laptop">Lisa arvuti</string>
+    <string name="brave_sync_scan_sync_code">Skannige seda ajakohastamiskoodi</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Minge teise telefoni või nuhvliga „Brave‘i seaded > Sünk > Skanni“.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Skannige QR-koodi (ülal) teise seadmega või kaamera puudumisel sisestage salasõnad.</string>
+    <string name="brave_sync_btn_done">Valmis</string>
+    <string name="brave_sync_tabs_text">Vahekaardid</string>
+    <string name="brave_sync_history_text">Ajalugu</string>
+    <string name="brave_sync_autofill_passwords_text">Autotäide/paroolid</string>
+    <string name="brave_sync_payment_settings_text">Brave‘i makse seaded</string>
+    <string name="brave_sync_settings_title">AJAKOHASTA SEDA SEADET</string>
+    <string name="brave_sync_settings_description">Seadete muutmine mõjutab ainult andmeid, mida see seade jagab teistega.</string>
+    <string name="brave_sync_devices_title">TEISED SEADMED AHELAS</string>
+    <string name="brave_sync_loading_devices_title">SEADMETE LAADIMINE...</string>
+    <string name="brave_sync_add_device_text">Lisa veel üks seade</string>
+    <string name="brave_sync_remove_device_text">Eemalda see seade</string>
+    <string name="brave_sync_code_words_title">Seo</string>
+    <string name="brave_sync_add_laptop_text_title">Sisestage ajakohastamisahela kood</string>
+    <string name="brave_sync_add_laptop_text_part_1">Arvutis minge „Brave‘i seaded > Sünk“. Valige „Sisestage ajakohastamisahela kood“.</string>
+    <string name="brave_sync_add_laptop_text_part_2">Sisestage ülesse salasõnad, sealhulgas tühikud.</string>
+    <string name="brave_sync_delete_device">Oled seadme „<ph name=\"DEVICE_NAME\">%1$s</ph>“ kustamises kindel?</string>
+    <string name="brave_sync_delete_sent">Kustutamistaotlus saadetud. Seade eemaldatakse kohe.</string>
+    <string name="brave_sync_loading_data_title">Andmete laadimine...</string>
+    <string name="brave_sync_time_out_message">Midagi läks valesti. Tundub, et päring aegus.</string>
+    <string name="brave_sync_use_camera_text">Kasutan kaamerat...</string>
+    <string name="brave_sync_confirm_code_words_text">Kinnita</string>
+    <string name="brave_sync_word_count_text">Sõnade arv: <ph name=\"WORD_COUNT\">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Vale arv sõnu</string>
+    <string name="brave_sync_qr_code">QR-kood</string>
+    <string name="brave_sync_code_words">Salasõnad</string>
+    <string name="brave_sync_copy_button_text">Kopeeri lõikelauale</string>
+    <string name="brave_sync_copied_text">Kopeeritud lõikelauale</string>
+    <string name="brave_sync_this_device_text">(see seade)</string>
+
+    <string name="brave_already_set_as_default_browser">Brave on juba määratud
+tavaveebilehitsejaks.</string>
+    <string name="brave_default_browser_go_to_settings">Oled juba määranud tavaveebilehitseja.
+Tavaveebilehitsejat saad muuta rakenduse seadetes.</string>
+    <string name="brave_default_browser_notification_body">Säästa akut ja lae lehti kiiremini. Määra Brave oma tavaveebilehitsejaks. Vali Brave’i menüüst „Määra veebilehitsejaks“</string>
+    <string name="brave_set_default_browser">Määra tavaveebilehitsejaks</string>
+    <string name="brave_set_default_browser_dialog_text">Vali loendist Brave ja puuduta valikut „Alati</string>
+    <string name="brave_default_browser_existing_notification_body">Määra Brave oma tavaveebilehitsejaks
+Säästa akut ja lae lehti kiiremini</string>
+
+    <string name="brave_ui_welcome_header_two">Valmistu kogema
+uut internetti.</string>
+    <string name="brave_ui_welcome_desc_two">Saad nüüd eraelu austavate reklaamide
+vaatamise eest märke teenida.</string>
+    <string name="brave_ui_welcome_button_text_two">LIITU PREEMIATEGA</string>
+    <string name="brave_ui_welcome_footer_text_two">LISATEAVE</string>
+    <string name="brave_ui_rewards_creating_text">Rahakoti loomine</string>
+    <string name="brave_ui_your_wallet">Sinu rahakott</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> dollarit</string>
+    <string name="brave_rewards_local_panel_add_funds">Raha lisamine</string>
+    <string name="brave_ui_settings">Seaded</string>
+    <string name="brave_ui_rewards_summary">PREEMIATE ÜLEVAADE</string>
+    <string name="brave_ui_site_banner_welcome">Täname läbi astumast!</string>
+    <string name="brave_ui_rewards_banner_text1">Sellele lehele saab toetuseks jootraha saata. See on võimalus nende tänamiseks hea sisu loomise eest. Kinnitatud sisuloojatele makstakse jootraha iga kalendrikuu esimesel nädalal.</string>
+    <string name="brave_ui_rewards_banner_text2">Soovi korral saad selle lehe pidevaks toetamiseks ajastada igakuise jootraha.</string>
+    <string name="brave_ui_donation_amount">Jootraha summa</string>
+    <string name="brave_ui_wallet_balance">rahakoti saldo:</string>
+    <string name="brave_ui_make_monthly">Muuda igakuiseks</string>
+    <string name="brave_ui_send_tip">saada jootraha</string>
+    <string name="brave_ui_do_monthly">määra igakuine jootraha</string>
+    <string name="brave_ui_not_enough_tokens">pole piisavalt märke</string>
+    <string name="brave_ui_site_banner_notice_text">MÄRKUS! See looja pole veel registreerunud Brave’i kasutajate toetuseid saama. Püüame toetust edastada, kuni nad oma kasutaja kinnitavad või kuni 90 päeva möödumiseni.</string>
+    <string name="brave_ui_please">palun</string>
+    <string name="brave_ui_add_funds">raha lisamine</string>
+    <string name="brave_ui_thank_you">Aitäh!</string>
+    <string name="brave_ui_error_init_wallet">Proovi hiljem uuesti.</string>
+    <string name="brave_ui_month_jan">JAANUAR</string>
+    <string name="brave_ui_month_feb">VEEBRUAR</string>
+    <string name="brave_ui_month_mar">MÄRTS</string>
+    <string name="brave_ui_month_apr">APRILL</string>
+    <string name="brave_ui_month_may">MAI</string>
+    <string name="brave_ui_month_jun">JUUNI</string>
+    <string name="brave_ui_month_jul">JUULI</string>
+    <string name="brave_ui_month_aug">AUGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DETSEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DETSEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Tähelepanu</string>
+    <string name="brave_ui_include_in_auto">Lisa automaatsele toetusele</string>
+    <string name="brave_ui_donate_now">Saada jootraha...</string>
+    <string name="brave_ui_no_activity">Sel kuul veel tegevusi
+pole...</string>
+    <string name="brave_ui_token_grant_claimed">Vastu võetud märgid</string>
+    <string name="brave_ui_earnings_ads">Reklaamidest saadav tulu</string>
+    <string name="brave_ui_rewards_contribute">Automaatne toetus</string>
+    <string name="brave_ui_rewards_contribute_description">Oled toetanud <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT-iga.</string>
+    <string name="brave_ui_one_time_donation">Ühekordsed jootrahad</string>
+    <string name="brave_ui_recurring_donation">Igakuised jootrahad</string>
+    <string name="brave_ui_verified_publisher">Brave’i kinnitatud sisulooja</string>
+    <string name="brave_ui_not_verified_publisher">Pole veel kinnitatud</string>
+    <string name="brave_ui_not_verified_publisher_description">See looja pole veel registreerunud Brave’i kasutajatelt toetuseid saama.
+        Saadetud jootrahad jäävad nende konto kinnitamiseni sinu rahakotti.</string>
+    <string name="brave_ui_on_youtube">YouTube’is</string>
+    <string name="brave_ui_on_twitch">Twitch’is</string>
+    <string name="brave_ui_new_grant">Saadaval on tasuta märk.</string>
+    <string name="brave_ui_new_token_grant">Tasuta märk</string>
+    <string name="brave_ui_claim">Võta vastu</string>
+    <string name="brave_ui_reserved_amount_text">Oled eraldanud <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT-i loojatele, kes pole veel
+registreerunud toetuseid saama. Veebilehitseja jätkab toetuse edastamise püüdluseid
+konto kinnitamiseni või 90 päeva möödumiseni.</string>
+    <string name="brave_ui_notification_desc_no_funds">Ajastasid automaatse toetamise jaoks igakuised maksed, kuid jootraha polnud võimalik ebapiisavate vahendite tõttu edastada. Proovime 30 päeva pärast uuesti.</string>
+    <string name="brave_ui_notification_desc_tip_error">Jootraha töötlemisel esines probleem, proovi uuesti.</string>
+    <string name="brave_ui_notification_desc_contr_error">Panuse töötlemisel ilmnes probleem.</string>
+    <string name="brave_rewards_local_uh_oh">Oih!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave’i preemiate server ei vasta. Parandame selle esimesel võimalusel.</string>
+    <string name="brave_ui_grants">Toetused</string>
+    <string name="brave_ui_expires_on">aegub <ph name=\"DATE\">%1$s<ex>14.04.2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Pole piisavalt vahendeid</string>
+    <string name="brave_ui_insufficient_funds_desc">Brave’i preemiate konto ootab sissemakset.</string>
+    <string name="brave_ui_backup_wallet_msg">Rahakoti varundamine</string>
+    <string name="brave_ui_backup_wallet_desc">Varunda Brave’i rahakott.</string>
+    <string name="brave_ui_brave_rewards">Brave’i preemiad</string>
+    <string name="brave_ui_welcome_back_message">Tere tulemast tagasi!</string>
+    <string name="brave_ui_get_rewarded">Saa sirvimise eest preemiaid.</string>
+    <string name="brave_ui_brave_rewards_desc">Teeni, vaadates eraelu austavaid
+reklaame ning anna see edasi
+armastatud sisuloojate toetamiseks.</string>
+    <string name="brave_welcome_page_rewards_title">LUBA BRAVE’I PREEMIAD</string>
+</resources>

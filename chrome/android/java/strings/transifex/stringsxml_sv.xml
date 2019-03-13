@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS överallt</string>
     <string name="brave_shields_blocks_scripts_switch">Blockera skript</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktivera/Inaktivera Brave Shields</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktivera/Inaktivera Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blockera cookies från 3:e part</string>
 
     <string name="httpse_summary">Öppnar webbplatser som använder HTTPS i stället för HTTP när det är möjligt</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Avsluta</string>
 
-    <string name="brave_sync">Brave (beta) Sync</string>
     <string name="sync_settings_add_device_name_title">Lägg till enhetsnamn</string>
     <string name="sync_settings_add_device_name_label">Ange ett alternativt namn för denna enhet</string>
     <string name="sync_example_device_name">Android-enhet</string>
@@ -94,10 +94,8 @@ tid</string>
     <string name="brave_new_private_tab">Ny privat flik</string>
     <string name="brave_new_tab_private_header">Detta är en privat flik</string>
     <string name="brave_new_tab_private_message">Även om webbsidor du besöker i privata flikar inte sparas lokalt gör de dig inte anonym eller osynlig för din ISP, din arbetsgivare, eller de webbsidor du besöker.</string>
-
     <string name="update_notification_title">Brave-uppdatering</string>
     <string name="update_notification_text">Nya Brave-webbläsaren är 22 % snabbare</string>
-
     <string name="prefs_sync">Sync (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync är ett säkert sätt att synkronisera bokmärken mellan Brave-webbläsare på dina olika enheter.</string>
     <string name="brave_sync_description_page_1_part_2">Skanna koden från synkroniseringskedjan du skapade på en annan enhet, eller starta en ny synkroniseringskedja.</string>
@@ -125,13 +123,13 @@ tid</string>
     <string name="brave_sync_add_laptop_text_title">Ange synkroniseringskoden</string>
     <string name="brave_sync_add_laptop_text_part_1">Öppna Brave på datorn och gå till Inställningar > Synkronisering. Välj \"Ange en synkroniseringskod\".</string>
     <string name="brave_sync_add_laptop_text_part_2">Ange kodorden ovan, inklusive mellanslag.</string>
-    <string name="brave_sync_delete_device">Vill du ta bort enheten <ph name="DEVICE_NAME">%1$s</ph>?</string>
+    <string name="brave_sync_delete_device">Vill du ta bort enheten <ph name=\"DEVICE_NAME\">%1$s</ph>?</string>
     <string name="brave_sync_delete_sent">Borttagningen har loggats. Enheten tas bort inom kort.</string>
     <string name="brave_sync_loading_data_title">Laddar data ...</string>
     <string name="brave_sync_time_out_message">Någonting blev fel. Begäran tog för lång tid.</string>
     <string name="brave_sync_use_camera_text">Jag använder kameran ...</string>
     <string name="brave_sync_confirm_code_words_text">Bekräfta</string>
-    <string name="brave_sync_word_count_text">Antal ord: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Antal ord: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Fel antal ord</string>
     <string name="brave_sync_qr_code">QR-kod</string>
     <string name="brave_sync_code_words">Kodord</string>
@@ -139,4 +137,95 @@ tid</string>
     <string name="brave_sync_copied_text">Kopierades till urklipp</string>
     <string name="brave_sync_this_device_text">(den här enheten)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave är redan
+din primära webbläsare.</string>
+    <string name="brave_default_browser_go_to_settings">Du har redan valt en webbläsare. 
+Du kan ändra primär webbläsare i dina appinställningar. </string>
+    <string name="brave_default_browser_notification_body">Spara batteri och ladda hemsidor snabbare. Gör Brave till din primära webbläsare. Från menyn i Brave väljer du \"Använd som primär webbläsare ...\"</string>
+    <string name="brave_set_default_browser">Använd som primär webbläsare</string>
+    <string name="brave_set_default_browser_dialog_text">Välj Brave från listan och tryck på \"Alltid\" </string>
+    <string name="brave_default_browser_existing_notification_body">Gör Brave till din primära webbläsare 
+Spara batteri och ladda hemsidor snabbare </string>
+
+    <string name="brave_ui_welcome_header_two">Gör dig redo att uppleva
+nästa steg av internet.</string>
+    <string name="brave_ui_welcome_desc_two">Du kan få polletter för att
+titta på integritetsrespekterande reklam.</string>
+    <string name="brave_ui_welcome_button_text_two">GÅ MED I REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">LÄS MER</string>
+    <string name="brave_ui_rewards_creating_text">Skapar plånbok</string>
+    <string name="brave_ui_your_wallet">Din plånbok</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Lägg till pengar</string>
+    <string name="brave_ui_settings">Inställningar</string>
+    <string name="brave_ui_rewards_summary">REWARDS-SAMMANSTÄLLNING</string>
+    <string name="brave_ui_site_banner_welcome">Tack för besöket!</string>
+    <string name="brave_ui_rewards_banner_text1">Du kan visa ditt stöd för den här webbplatsen genom att skicka lite dricks. Det är ett bra sätt att tacka dem för att de skapar bra innehåll. Verifierade innehållsskapare får sin dricks utbetald den första veckan varje kalendermånad.</string>
+    <string name="brave_ui_rewards_banner_text2">Om du vill kan du lägga in månatlig dricks för att ge ditt stöd till webbplatsen regelbundet.</string>
+    <string name="brave_ui_donation_amount">Dricks</string>
+    <string name="brave_ui_wallet_balance">plånbokssaldo:</string>
+    <string name="brave_ui_make_monthly">Gör det här varje månad</string>
+    <string name="brave_ui_send_tip">skicka min dricks</string>
+    <string name="brave_ui_do_monthly">ställ in månatlig dricks</string>
+    <string name="brave_ui_not_enough_tokens">för lite polletter</string>
+    <string name="brave_ui_site_banner_notice_text">Obs! Den här skaparen har inte registrerat sig att ta emot bidrag från Brave-användare. Vi försöker få skaparen att verifiera sig så att ditt bidrag går fram (i upp till 90 dagar).</string>
+    <string name="brave_ui_please">snälla</string>
+    <string name="brave_ui_add_funds">lägg till pengar</string>
+    <string name="brave_ui_thank_you">Tack!</string>
+    <string name="brave_ui_error_init_wallet">Försök igen senare.</string>
+    <string name="brave_ui_month_jan">JANUARI</string>
+    <string name="brave_ui_month_feb">FEBRUARI</string>
+    <string name="brave_ui_month_mar">MARS</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MAJ</string>
+    <string name="brave_ui_month_jun">JUNI</string>
+    <string name="brave_ui_month_jul">JULI</string>
+    <string name="brave_ui_month_aug">AUGUSTI</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DECEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Viktigt</string>
+    <string name="brave_ui_include_in_auto">Lägg till i autobidrag</string>
+    <string name="brave_ui_donate_now">Skicka dricks...</string>
+    <string name="brave_ui_no_activity">Ingen aktivitet den här
+månaden...</string>
+    <string name="brave_ui_token_grant_claimed">Tog emot polletter</string>
+    <string name="brave_ui_earnings_ads">Reklamintäkter</string>
+    <string name="brave_ui_rewards_contribute">Autobidrag</string>
+    <string name="brave_ui_rewards_contribute_description">Du har bidragit med <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Engångsdricks</string>
+    <string name="brave_ui_recurring_donation">Månatlig dricks</string>
+    <string name="brave_ui_verified_publisher">Brave-verifierad utgivare</string>
+    <string name="brave_ui_not_verified_publisher">Inte verifierad än</string>
+    <string name="brave_ui_not_verified_publisher_description">Den här skaparen har inte registrerat sig för att ta emot bidrag från Brave-användare än.
+        All dricks du skickar ligger kvar i din plånbok tills användaren har blivit verifierad.</string>
+    <string name="brave_ui_on_youtube">på YouTube</string>
+    <string name="brave_ui_on_twitch">på Twitch</string>
+    <string name="brave_ui_new_grant">En gratis pollett är tillgänglig.</string>
+    <string name="brave_ui_new_token_grant">Gratis pollett</string>
+    <string name="brave_ui_claim">Hämta</string>
+    <string name="brave_ui_reserved_amount_text">Du har skickat <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT till skapare som inte har
+registrerat sig för att ta emot bidrag. Din webbläsare försöker skicka ditt bidrag
+tills de har verifierat sig (i upp till 90 dagar).</string>
+    <string name="brave_ui_notification_desc_no_funds">Din månatliga betalning via autobidrag och månatliga dricks kunde inte skickas på grund av otillräckligt saldo. Vi försöker igen om 30 dagar.</string>
+    <string name="brave_ui_notification_desc_tip_error">Ett fel inträffade vid behandlingen av din dricks. Försök igen senare.</string>
+    <string name="brave_ui_notification_desc_contr_error">Ett fel inträffade vid behandlingen av ditt bidrag.</string>
+    <string name="brave_rewards_local_uh_oh">Oj!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Rewards-servern svarar inte. Vi försöker åtgärda det så fort som möjligt.</string>
+    <string name="brave_ui_grants">Bidrag</string>
+    <string name="brave_ui_expires_on">upphör <ph name=\"DATE\">%1$s<ex>2019-04-14</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Otillräckligt saldo</string>
+    <string name="brave_ui_insufficient_funds_desc">Ditt Brave Rewards-konto väntar på en insättning.</string>
+    <string name="brave_ui_backup_wallet_msg">Säkerhetskopiera plånbok</string>
+    <string name="brave_ui_backup_wallet_desc">Säkerhetskopiera din Brave-plånbok.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Välkommen tillbaka!</string>
+    <string name="brave_ui_get_rewarded">Bli belönad för att surfa.</string>
+    <string name="brave_ui_brave_rewards_desc">Bli belönad för att titta på integritets-
+respekterande reklam, och använd det
+för att visa ditt stöd för skapare du gillar.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIVERA BRAVE REWARDS</string>
 </resources>

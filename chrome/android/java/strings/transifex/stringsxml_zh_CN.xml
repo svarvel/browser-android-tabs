@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">屏蔽脚本</string>
     <string name="accessibility_toolbar_btn_brave_shields">启用/禁用Brave屏蔽器</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">启用/禁用 Brave 奖励</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">屏蔽第三方cookies</string>
 
     <string name="httpse_summary">尽可能使用 HTTPS 而不是 HTTP 打开支持的网站</string>
@@ -30,7 +31,7 @@
 
     <string name="menu_exit">退出</string>
 
-    <string name="brave_sync">Brave（beta）同步</string>
+    <string name="brave_sync">Brave 同步 （测试）</string>
     <string name="sync_settings_add_device_name_title">添加设备名称</string>
     <string name="sync_settings_add_device_name_label">为此设备输入可选名称</string>
     <string name="sync_example_device_name">Android 设备</string>
@@ -94,10 +95,8 @@
     <string name="brave_new_private_tab">新建隐私标签页</string>
     <string name="brave_new_tab_private_header">这是个隐私标签页</string>
     <string name="brave_new_tab_private_message">即使您通过隐私标签访问的网站未保存在本地，但这对于您的 ISP ，您的雇主或您访问的网站仍然不是匿名或者隐身的。</string>
-
     <string name="update_notification_title">更新 Brave</string>
     <string name="update_notification_text">新版Brave浏览器快了22%</string>
-
     <string name="prefs_sync">同步（beta）</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync允许您在不同设备上的Brave浏览器之间自行同步书签数据。</string>
     <string name="brave_sync_description_page_1_part_2">只需从另一个设备上创建的同步链中扫描代码。或者启动一个新的同步链。</string>
@@ -125,13 +124,13 @@
     <string name="brave_sync_add_laptop_text_title">输入同步链代码</string>
     <string name="brave_sync_add_laptop_text_part_1">在您的计算机上，导航到Brave设置>同步。选择“输入同步链代码”。</string>
     <string name="brave_sync_add_laptop_text_part_2">输入上面的码字，包括空格。</string>
-    <string name="brave_sync_delete_device">您确定要删除设备“<ph name="DEVICE_NAME">%1$s</ph>”？</string>
+    <string name="brave_sync_delete_device">您确定要删除设备“<ph name=\"DEVICE_NAME\">%1$s</ph>”？</string>
     <string name="brave_sync_delete_sent">已发送删除请求。设备将在短时间内移除。</string>
     <string name="brave_sync_loading_data_title">加载数据...</string>
     <string name="brave_sync_time_out_message">出了点问题，您的请求似乎超时了。</string>
     <string name="brave_sync_use_camera_text">我将使用照相机...</string>
     <string name="brave_sync_confirm_code_words_text">确认</string>
-    <string name="brave_sync_word_count_text">字数：<ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">字数：<ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">字数不正确</string>
     <string name="brave_sync_qr_code">二维码</string>
     <string name="brave_sync_code_words">码字</string>
@@ -139,4 +138,95 @@
     <string name="brave_sync_copied_text">已复制到剪贴板</string>
     <string name="brave_sync_this_device_text">（此设备）</string>
 
+    <string name="brave_already_set_as_default_browser">Brave 已经设为
+您的默认浏览器。</string>
+    <string name="brave_default_browser_go_to_settings">您已经设置了默认浏览器。
+您可以在应用设置中更改默认浏览器。</string>
+    <string name="brave_default_browser_notification_body">节约电量并能更快的加载网页。设置 Brave 为默认浏览器。在 Brave 菜单中点击“设为默认浏览器”</string>
+    <string name="brave_set_default_browser">设为默认浏览器</string>
+    <string name="brave_set_default_browser_dialog_text">在列表中选择 Brave 并点击“总是”</string>
+    <string name="brave_default_browser_existing_notification_body">设置 Brave 为默认浏览器
+节约电量并能更快的加载网页</string>
+
+    <string name="brave_ui_welcome_header_two">做好准备，体验
+下一代因特网。</string>
+    <string name="brave_ui_welcome_desc_two">您现在可以通过
+观看尊重隐私的广告赚取代币。</string>
+    <string name="brave_ui_welcome_button_text_two">加入奖励</string>
+    <string name="brave_ui_welcome_footer_text_two">详细了解</string>
+    <string name="brave_ui_rewards_creating_text">创建钱包</string>
+    <string name="brave_ui_your_wallet">您的钱包</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">增加资金</string>
+    <string name="brave_ui_settings">设置</string>
+    <string name="brave_ui_rewards_summary">奖励摘要</string>
+    <string name="brave_ui_site_banner_welcome">感谢您关注！</string>
+    <string name="brave_ui_rewards_banner_text1">您可以发送小费支持此网站。这是对他们提供极好内容的一种感谢方式。请在每个日历月份的第一个星期期间验证内容创建者收到了他们的小费。</string>
+    <string name="brave_ui_rewards_banner_text2">如果您喜欢，您可以每月安排提供小费以持续支持此网站。</string>
+    <string name="brave_ui_donation_amount">小费金额</string>
+    <string name="brave_ui_wallet_balance">钱包余额：</string>
+    <string name="brave_ui_make_monthly">每月进行此操作</string>
+    <string name="brave_ui_send_tip">发送我的小费</string>
+    <string name="brave_ui_do_monthly">设置每月小费</string>
+    <string name="brave_ui_not_enough_tokens">代币不足</string>
+    <string name="brave_ui_site_banner_notice_text">注意：此创建者尚未签收 Brave 用户的捐款。我们将不断尝试捐献，直至得到验证，或者直至 90 天后。</string>
+    <string name="brave_ui_please">请</string>
+    <string name="brave_ui_add_funds">增加资金</string>
+    <string name="brave_ui_thank_you">谢谢您！</string>
+    <string name="brave_ui_error_init_wallet">请稍后再试一次。</string>
+    <string name="brave_ui_month_jan">一月</string>
+    <string name="brave_ui_month_feb">二月</string>
+    <string name="brave_ui_month_mar">三月</string>
+    <string name="brave_ui_month_apr">四月</string>
+    <string name="brave_ui_month_may">五月</string>
+    <string name="brave_ui_month_jun">六月</string>
+    <string name="brave_ui_month_jul">七月</string>
+    <string name="brave_ui_month_aug">八月</string>
+    <string name="brave_ui_month_sep">九月</string>
+    <string name="brave_ui_month_oct">十月</string>
+    <string name="brave_ui_month_nov">十一月</string>
+    <string name="brave_ui_month_dec">十二月</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>十二月</ex></ph>（ <ph name=\"YEAR\">%2$s<ex>2018</ex></ph> 年）</string>
+    <string name="brave_ui_rewards_contribute_attention">注意</string>
+    <string name="brave_ui_include_in_auto">包括于自动捐献中</string>
+    <string name="brave_ui_donate_now">发送小费...</string>
+    <string name="brave_ui_no_activity">此月尚无
+任何活动...</string>
+    <string name="brave_ui_token_grant_claimed">代币捐款已认领</string>
+    <string name="brave_ui_earnings_ads">广告收益</string>
+    <string name="brave_ui_rewards_contribute">自动捐献</string>
+    <string name="brave_ui_rewards_contribute_description">您已捐献 <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT。</string>
+    <string name="brave_ui_one_time_donation">一次性小费</string>
+    <string name="brave_ui_recurring_donation">每月小费</string>
+    <string name="brave_ui_verified_publisher">Brave 验证发表者</string>
+    <string name="brave_ui_not_verified_publisher">尚未验证</string>
+    <string name="brave_ui_not_verified_publisher_description">此创建者尚未签收 Brave 用户的捐款。
+    您发送的任何小费将仍然在您的钱包中，直至得到验证。</string>
+    <string name="brave_ui_on_youtube">在 YouTube 上</string>
+    <string name="brave_ui_on_twitch">在 Twitch 上</string>
+    <string name="brave_ui_new_grant">有未认领代币捐款。</string>
+    <string name="brave_ui_new_token_grant">未认领代币捐款</string>
+    <string name="brave_ui_claim">认领</string>
+    <string name="brave_ui_reserved_amount_text">您已为尚未签收捐款的创建者指定
+ <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT。您的浏览器
+将不断尝试捐献，直至得到验证，或者直至 90 天后。</string>
+    <string name="brave_ui_notification_desc_no_funds">您为自动捐献和每月小费安排的每月付款因资金不足而无法完成。我们将在 30 天内再试一次。</string>
+    <string name="brave_ui_notification_desc_tip_error">处理您的小费时出现问题，请再试一次。</string>
+    <string name="brave_ui_notification_desc_contr_error">处理您的捐款时出现问题。</string>
+    <string name="brave_rewards_local_uh_oh">哎呀！</string>
+    <string name="brave_rewards_local_server_not_responding">Brave 奖励服务器无响应。我们将尽快修复。</string>
+    <string name="brave_ui_grants">捐款</string>
+    <string name="brave_ui_expires_on">于 <ph name=\"DATE\">%1$s<ex>2019 年 4 月 14 日</ex></ph> 到期</string>
+    <string name="brave_ui_insufficient_funds_msg">资金不足</string>
+    <string name="brave_ui_insufficient_funds_desc">您的 Brave 奖励账户正在等待存款。</string>
+    <string name="brave_ui_backup_wallet_msg">备份钱包</string>
+    <string name="brave_ui_backup_wallet_desc">请备份您的 Brave 钱包。</string>
+    <string name="brave_ui_brave_rewards">Brave 奖励</string>
+    <string name="brave_ui_welcome_back_message">欢迎回来！</string>
+    <string name="brave_ui_get_rewarded">获取浏览奖励。</string>
+    <string name="brave_ui_brave_rewards_desc">通过观看隐私尊重广告
+赚钱，然后将其用于支持
+您喜欢的内容创建者。</string>
+    <string name="brave_welcome_page_rewards_title">启用 BRAVE 奖励</string>
 </resources>

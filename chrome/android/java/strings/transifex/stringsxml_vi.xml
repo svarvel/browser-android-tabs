@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Chặn Script</string>
     <string name="accessibility_toolbar_btn_brave_shields">Bật/ Tắt Lá chắn Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Bật/tắt Phần thưởng Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Chặn cookies của bên thứ ba</string>
 
     <string name="httpse_summary">Mở các trang được hỗ trợ bằng cách sử dụng HTTPS thay vì HTTP khi có thể</string>
@@ -30,6 +31,7 @@
 
     <string name="menu_exit">Lối thoát</string>
 
+    <string name="brave_sync">Đồng bộ hoá Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Thêm tên thiết bị</string>
     <string name="sync_settings_add_device_name_label">Nhập tên tùy chọn cho thiết bị này</string>
     <string name="sync_example_device_name">Thiết bị Android</string>
@@ -93,8 +95,138 @@ HTTPS</string>
     <string name="brave_new_private_tab">Tab riêng tư mới</string>
     <string name="brave_new_tab_private_header">Đây là một tab riêng tư</string>
     <string name="brave_new_tab_private_message">Mặc dù các trang web bạn truy cập trong các tab riêng tư không được lưu cục bộ, chúng không giúp bạn ẩn danh hoặc vô hình với ISP (Nhà cung cấp dịch vụ Internet) hay nhà tuyển dụng của bạn hoặc các trang web mà bạn đang truy cập.</string>
-
     <string name="update_notification_title">Cập nhật Brave</string>
     <string name="update_notification_text">Trình duyệt Brave mới nhanh hơn 22%</string>
+    <string name="prefs_sync">Đồng bộ (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">Brave Đồng bộ cho phép bạn đồng bộ dữ liệu dấu trang một cách riêng tư giữa các Trình duyệt Brave trên các thiết bị khác nhau của bạn.</string>
+    <string name="brave_sync_description_page_1_part_2">Chỉ cần quét mã từ chuỗi đồng bộ mà bạn đã tạo trên một thiết bị khác. Hoặc bắt đầu một chuỗi đồng bộ mới.</string>
+    <string name="brave_sync_scan_chain_code">Quét hoặc nhập mã đồng bộ</string>
+    <string name="brave_sync_start_new_chain">Bắt đầu một chuỗi đồng bộ mới</string>
+    <string name="brave_sync_qrcode_message_v2">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave và tìm đến Cài đặt > Đồng bộ. Chọn \"Thêm thiết bị\" và quét mã QR hiển thị trên màn hình.</string>
+    <string name="brave_sync_codewords_message">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave và tìm đến Cài đặt > Đồng bộ. Chọn \"Thêm thiết bị\" và sau đó \"Hiển thị các từ mã để thay thế\".</string>
+    <string name="brave_sync_btn_mobile">Thêm một thiết bị di động</string>
+    <string name="brave_sync_btn_laptop">Thêm một máy tính</string>
+    <string name="brave_sync_scan_sync_code">Quét mã đồng bộ này</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Sử dụng một điện thoại hoặc máy tính bảng thứ hai, tìm đến Cài đặt Brave > Đồng bộ > Quét.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Chụp mã QR (ở trên) bằng thiết bị thứ hai của bạn hoặc nhập các từ mã nếu không có camera.</string>
+    <string name="brave_sync_btn_done">Xong</string>
+    <string name="brave_sync_tabs_text">Tab</string>
+    <string name="brave_sync_history_text">Lịch sử</string>
+    <string name="brave_sync_autofill_passwords_text">Tự động điền/Mật khẩu</string>
+    <string name="brave_sync_payment_settings_text">Cài đặt thanh toán Brave</string>
+    <string name="brave_sync_settings_title">ĐỒNG BỘ TRÊN THIẾT BỊ NÀY</string>
+    <string name="brave_sync_settings_description">Thay đổi cài đặt sẽ chỉ ảnh hưởng đến dữ liệu mà thiết bị này chia sẻ với các thiết bị khác.</string>
+    <string name="brave_sync_devices_title">CÁC THIẾT BỊ KHÁC TRONG CHUỖI</string>
+    <string name="brave_sync_loading_devices_title">ĐANG TẢI CÁC THIẾT BỊ...</string>
+    <string name="brave_sync_add_device_text">Thêm một thiết bị khác</string>
+    <string name="brave_sync_remove_device_text">Xóa thiết bị này</string>
+    <string name="brave_sync_code_words_title">Ghép đôi</string>
+    <string name="brave_sync_add_laptop_text_title">Nhập mã chuỗi đồng bộ</string>
+    <string name="brave_sync_add_laptop_text_part_1">Trên máy tính của bạn, tìm đến Cài đặt Brave > Đồng bộ. Chọn \"Nhập mã chuỗi đồng bộ\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Nhập các từ mã ở trên, bao gồm cả khoảng trống.</string>
+    <string name="brave_sync_delete_device">Bạn có chắc muốn xóa thiết bị \'<ph name=\"DEVICE_NAME\">%1$s</ph>\' không?</string>
+    <string name="brave_sync_delete_sent">Yêu cầu xóa đã được gửi đi. Thiết bị sẽ sớm được xóa.</string>
+    <string name="brave_sync_loading_data_title">Đang tải dữ liệu...</string>
+    <string name="brave_sync_time_out_message">Đã xảy ra lỗi, có vẻ như yêu cầu của bạn đã hết giờ.</string>
+    <string name="brave_sync_use_camera_text">Tôi sẽ sử dụng camera...</string>
+    <string name="brave_sync_confirm_code_words_text">Xác nhận</string>
+    <string name="brave_sync_word_count_text">Đếm chữ: <ph name=\"WORD_COUNT\">%1$d</ph></string>
+    <string name="brave_sync_word_count_error">Số lượng từ không đúng</string>
+    <string name="brave_sync_qr_code">Mã QR</string>
+    <string name="brave_sync_code_words">Các từ mã</string>
+    <string name="brave_sync_copy_button_text">Sao chép vào bộ nhớ đệm</string>
+    <string name="brave_sync_copied_text">Đã sao chép vào bộ nhớ đệm</string>
+    <string name="brave_sync_this_device_text">(thiết bị này)</string>
 
-    </resources>
+    <string name="brave_already_set_as_default_browser">Brave đã được đặt
+làm trình duyệt mặc định của bạn.</string>
+    <string name="brave_default_browser_go_to_settings">Bạn đã đặt trình duyệt mặc định.
+Bạn có thể thay đổi trình duyệt mặc định trong cài đặt ứng dụng của mình.</string>
+    <string name="brave_default_browser_notification_body">Tiết kiệm pin và tải các trang web nhanh hơn. Đặt Brave làm trình duyệt mặc định của bạn. Từ thanh trình đơn Brave, nhấn \"Đặt làm trình duyệt mặc định...\"</string>
+    <string name="brave_set_default_browser">Đặt làm trình duyệt mặc định</string>
+    <string name="brave_set_default_browser_dialog_text">Chọn Brave từ danh sách và nhấn \"Luôn luôn\"</string>
+    <string name="brave_default_browser_existing_notification_body">Đặt Brave làm trình duyệt mặc định của bạn
+Tiết kiệm pin và tải các trang web nhanh hơn</string>
+
+    <string name="brave_ui_welcome_header_two">Hãy sẵn sàng trải nghiệm
+thế giới Internet mới.</string>
+    <string name="brave_ui_welcome_desc_two">Giờ đây bạn có thể kiếm token khi
+xem những quảng cáo tôn trọng quyền riêng tư.</string>
+    <string name="brave_ui_welcome_button_text_two">THAM GIA PHẦN THƯỞNG</string>
+    <string name="brave_ui_welcome_footer_text_two">TÌM HIỂU THÊM</string>
+    <string name="brave_ui_rewards_creating_text">Tạo ví</string>
+    <string name="brave_ui_your_wallet">Ví của bạn</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Thêm tiền</string>
+    <string name="brave_ui_settings">Cài đặt</string>
+    <string name="brave_ui_rewards_summary">TÓM TẮT PHẦN THƯỞNG</string>
+    <string name="brave_ui_site_banner_welcome">Cảm ơn đã ghé qua!</string>
+    <string name="brave_ui_rewards_banner_text1">Bạn có thể hỗ trợ trang này bằng cách gửi tiền boa. Đó là một cách để cảm ơn họ vì đã tạo rao những nội dung tuyệt vời. Các nhà sáng tạo nội dung đã được xác thực sẽ nhận được tiền boa vào tuần đầu tiên của mỗi tháng.</string>
+    <string name="brave_ui_rewards_banner_text2">Nếu bạn thích, bạn có thể đặt lịch gửi tiền boa hàng tháng để hỗ trợ trang này một cách liên tục.</string>
+    <string name="brave_ui_donation_amount">Số tiền boa</string>
+    <string name="brave_ui_wallet_balance">số dư ví:</string>
+    <string name="brave_ui_make_monthly">Thực hiện điều này hàng tháng</string>
+    <string name="brave_ui_send_tip">gửi tiền boa của tôi</string>
+    <string name="brave_ui_do_monthly">đặt số tiền boa hàng tháng</string>
+    <string name="brave_ui_not_enough_tokens">không đủ token</string>
+    <string name="brave_ui_site_banner_notice_text">LƯU Ý: Nhà sáng tạo này chưa đăng ký nhận đóng góp từ người dùng Brave. Chúng tôi sẽ tiếp tục cố gắng đóng góp cho đến khi họ xác thực hoặc cho đến khi 90 ngày đã trôi qua.</string>
+    <string name="brave_ui_please">vui lòng</string>
+    <string name="brave_ui_add_funds">thêm tiền</string>
+    <string name="brave_ui_thank_you">Cảm ơn!</string>
+    <string name="brave_ui_error_init_wallet">Vui lòng thử lại sau.</string>
+    <string name="brave_ui_month_jan">THÁNG 1</string>
+    <string name="brave_ui_month_feb">THÁNG 2</string>
+    <string name="brave_ui_month_mar">THÁNG 3</string>
+    <string name="brave_ui_month_apr">THÁNG 4</string>
+    <string name="brave_ui_month_may">THÁNG 5</string>
+    <string name="brave_ui_month_jun">THÁNG 6</string>
+    <string name="brave_ui_month_jul">THÁNG 7</string>
+    <string name="brave_ui_month_aug">THÁNG 8</string>
+    <string name="brave_ui_month_sep">THÁNG 9</string>
+    <string name="brave_ui_month_oct">THÁNG 10</string>
+    <string name="brave_ui_month_nov">THÁNG 11</string>
+    <string name="brave_ui_month_dec">THÁNG 12</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>THÁNG 12</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Chú ý</string>
+    <string name="brave_ui_include_in_auto">Bao gồm trong Tự động đóng góp</string>
+    <string name="brave_ui_donate_now">Gửi tiền boa...</string>
+    <string name="brave_ui_no_activity">Chưa có hoạt động nào
+trong tháng này...</string>
+    <string name="brave_ui_token_grant_claimed">Đã nhận tài trợ token</string>
+    <string name="brave_ui_earnings_ads">Thu nhập từ quảng cáo</string>
+    <string name="brave_ui_rewards_contribute">Tự động đóng góp</string>
+    <string name="brave_ui_rewards_contribute_description">Bạn đã đóng góp <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Boa một lần</string>
+    <string name="brave_ui_recurring_donation">Boa hàng tháng</string>
+    <string name="brave_ui_verified_publisher">Nhà phát hành đã được Brave xác thực</string>
+    <string name="brave_ui_not_verified_publisher">Chưa được xác thực</string>
+    <string name="brave_ui_not_verified_publisher_description">Nhà sáng tạo này chưa đăng ký nhận đóng góp từ người dùng Brave.
+        Mọi khoản tiền boa bạn gửi sẽ vẫn nằm trong ví của bạn cho đến khi họ xác thực.</string>
+    <string name="brave_ui_on_youtube">trên YouTube</string>
+    <string name="brave_ui_on_twitch">trên Twitch</string>
+    <string name="brave_ui_new_grant">Có một khoản tài trợ token miễn phí.</string>
+    <string name="brave_ui_new_token_grant">Tài trợ token miễn phí</string>
+    <string name="brave_ui_claim">Nhận</string>
+    <string name="brave_ui_reserved_amount_text">Bạn đã dành <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT cho những nhà sáng tạo chưa
+đăng ký nhận đóng góp. Trình duyệt của bạn sẽ tiếp tục cố gắng đóng góp
+cho đến khi họ xác thực, hoặc cho đến khi 90 ngày đã trôi qua.</string>
+    <string name="brave_ui_notification_desc_no_funds">Không thể hoàn thành khoản thanh toán hàng tháng mà bạn đã lên lịch cho Tự động đóng góp và tiền boa hàng tháng do không đủ tiền. Chúng tôi sẽ thử lại sau 30 ngày.</string>
+    <string name="brave_ui_notification_desc_tip_error">Có vấn đề khi xử lý khoản tiền boa của bạn, vui lòng thử lại.</string>
+    <string name="brave_ui_notification_desc_contr_error">Có vấn đề khi xử lý khoản đóng góp của bạn.</string>
+    <string name="brave_rewards_local_uh_oh">Ôi không!</string>
+    <string name="brave_rewards_local_server_not_responding">Máy chủ Phần thưởng Brave không phản hồi. Chúng tôi sẽ sửa sớm nhất có thể.</string>
+    <string name="brave_ui_grants">Tài trợ</string>
+    <string name="brave_ui_expires_on">hết hạn vào <ph name=\"DATE\">%1$s<ex>14/04/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Không đủ tiền</string>
+    <string name="brave_ui_insufficient_funds_desc">Tài khoản Phần thưởng Brave của bạn đang chờ nạp tiền.</string>
+    <string name="brave_ui_backup_wallet_msg">Sao lưu ví</string>
+    <string name="brave_ui_backup_wallet_desc">Vui lòng sao lưu ví Brave của bạn.</string>
+    <string name="brave_ui_brave_rewards">Phần thưởng Brave</string>
+    <string name="brave_ui_welcome_back_message">Chào mừng trở lại!</string>
+    <string name="brave_ui_get_rewarded">Nhận thưởng khi duyệt web.</string>
+    <string name="brave_ui_brave_rewards_desc">Kiếm tiền bằng cách xem quảng cáo
+tôn trọng quyền riêng tư và trả tiền đó để hỗ trợ
+những nhà sáng tạo nội dung bạn yêu thích.</string>
+    <string name="brave_welcome_page_rewards_title">BẬT PHẦN THƯỞNG BRAVE</string>
+</resources>

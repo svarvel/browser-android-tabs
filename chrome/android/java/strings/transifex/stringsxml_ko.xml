@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS 우선 사용</string>
     <string name="brave_shields_blocks_scripts_switch">스크립트 차단</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave Shields 사용 / 사용않함</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave Rewards 활성화/비활성화</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">제삼자 쿠키 차단</string>
 
     <string name="httpse_summary">가능 시 HTTP 대신 HTTPS를 사용하는 지원되는 사이트 열기</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">종료</string>
 
-    <string name="brave_sync">Brave(베타) 싱크</string>
     <string name="sync_settings_add_device_name_title">장치 이름을 추가합니다</string>
     <string name="sync_settings_add_device_name_label">이 장치에 대한 별명을 입력합니다</string>
     <string name="sync_example_device_name">Android 장치</string>
@@ -94,10 +94,8 @@
     <string name="brave_new_private_tab">새 비밀 탭</string>
     <string name="brave_new_tab_private_header">이것은 비밀 탭입니다</string>
     <string name="brave_new_tab_private_message">귀하께서 비밀 탭들로 방문한 사이트들이 위치상으로 저장되지는 않지만, 귀하를 익명으로 만들거나 귀하의 ISP, 귀하의 고용주 혹은 귀하께서 방문하고 계신 사이트들에 보이지 않도록 만들지 않습니다.</string>
-
     <string name="update_notification_title">Brave 업데이트</string>
     <string name="update_notification_text">새로운 Brave 브라우저는 22% 더 빠릅니다</string>
-
     <string name="prefs_sync">싱크(베타)</string>
     <string name="brave_sync_description_page_1_part_1">Brave 싱크를 사용하면 여러 장치에서 Brave 브라우저 간에 있는 책갈피 데이터를 비공개로 싱크할 수 있습니다.</string>
     <string name="brave_sync_description_page_1_part_2">다른 장치에서 만든 싱크 체인의 코드를 스캔하면 됩니다. 또는 싱크 체인을 새로 시작해도 됩니다.</string>
@@ -125,13 +123,13 @@
     <string name="brave_sync_add_laptop_text_title">싱크 체인 코드 입력</string>
     <string name="brave_sync_add_laptop_text_part_1">컴퓨터에서 Brave 설정 > 싱크로 이동합니다. \'싱크 체인 코드 입력\'을 선택합니다.</string>
     <string name="brave_sync_add_laptop_text_part_2">위 코드 단어(공백 포함)를 입력하세요.</string>
-    <string name="brave_sync_delete_device">\'<ph name="DEVICE_NAME">%1$s</ph>\' 기기를 삭제하시겠습니까?</string>
+    <string name="brave_sync_delete_device">\'<ph name=\"DEVICE_NAME\">%1$s</ph>\' 기기를 삭제하시겠습니까?</string>
     <string name="brave_sync_delete_sent">삭제 요청이 전송되었습니다. 장치가 곧 삭제됩니다.</string>
     <string name="brave_sync_loading_data_title">데이터 로드 중...</string>
     <string name="brave_sync_time_out_message">문제가 발생했습니다. 요청 시간이 초과되었습니다.</string>
     <string name="brave_sync_use_camera_text">내 카메라 사용...</string>
     <string name="brave_sync_confirm_code_words_text">확인</string>
-    <string name="brave_sync_word_count_text">단어 수: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">단어 수: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">올바르지 않은 단어 수</string>
     <string name="brave_sync_qr_code">QR 코드</string>
     <string name="brave_sync_code_words">코드 단어</string>
@@ -139,4 +137,95 @@
     <string name="brave_sync_copied_text">클립보드에 복사됨</string>
     <string name="brave_sync_this_device_text">(이 장치)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave가 이미 귀하의
+기본 브라우저로 설정되었습니다.</string>
+    <string name="brave_default_browser_go_to_settings">이미 기본 브라우저를 설정하셨습니다.
+앱 설정에서 기본 브라우저를 변경하실 수 있습니다.</string>
+    <string name="brave_default_browser_notification_body">배터리를 절약하고 웹 페이지를 더욱 빠르게 로드하세요. Brave를 기본 브라우저로 설정하세요. Brave 메뉴에서 \"기본 브라우저로 설정...\"을 탭하세요.</string>
+    <string name="brave_set_default_browser">기본 브라우저로 설정</string>
+    <string name="brave_set_default_browser_dialog_text">목록에서 Brave를 선택하신 후 \"항상\"을 탭하세요</string>
+    <string name="brave_default_browser_existing_notification_body">Brave를 귀하의 기본 웹 브라우저로 설정하세요
+배터리를 절약하고 웹 페이지를 더욱 빠르게 로드하세요</string>
+
+    <string name="brave_ui_welcome_header_two">인터넷의 그 너머를
+경험해 보십시오.</string>
+    <string name="brave_ui_welcome_desc_two">개인 설정에 따른 광고를 볼 수 있는
+토큰을 획득할 수 있습니다.</string>
+    <string name="brave_ui_welcome_button_text_two">Rewards 가입</string>
+    <string name="brave_ui_welcome_footer_text_two">자세히 알아보기</string>
+    <string name="brave_ui_rewards_creating_text">지갑 생성</string>
+    <string name="brave_ui_your_wallet">나의 지갑</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">자금 추가</string>
+    <string name="brave_ui_settings">설정</string>
+    <string name="brave_ui_rewards_summary">Reward 요약</string>
+    <string name="brave_ui_site_banner_welcome">관심을 가져 주셔서 감사합니다!</string>
+    <string name="brave_ui_rewards_banner_text1">팁을 전송하여 이 사이트를 지원할 수 있습니다. 이는 훌륭한 콘텐츠를 만든 작업자에게 감사를 표시하는 방법입니다. 인증된 콘텐츠 작성자들은 매월 첫째 주에 팁을 지불받습니다.</string>
+    <string name="brave_ui_rewards_banner_text2">원하시면 해당 사이트를 지속적으로 지원하도록 월별 팁을 일정으로 만들 수 있습니다.</string>
+    <string name="brave_ui_donation_amount">팁 금액</string>
+    <string name="brave_ui_wallet_balance">지갑 잔액:</string>
+    <string name="brave_ui_make_monthly">월별 일정으로 만들기</string>
+    <string name="brave_ui_send_tip">내 팁 전송</string>
+    <string name="brave_ui_do_monthly">월별 팁으로 설정</string>
+    <string name="brave_ui_not_enough_tokens">토큰이 충분하지 않음</string>
+    <string name="brave_ui_site_banner_notice_text">알림: 이 작성자는 아직 Brave 사용자로부터 기여를 받도록 등록된 상태가 아닙니다. 해당 사용자가 인증하거나 90일이 지나갈 때까지 계속 기여를 시도합니다.</string>
+    <string name="brave_ui_please">부탁합니다.</string>
+    <string name="brave_ui_add_funds">자금 추가</string>
+    <string name="brave_ui_thank_you">감사합니다!</string>
+    <string name="brave_ui_error_init_wallet">나중에 다시 시도하십시오.</string>
+    <string name="brave_ui_month_jan">1월</string>
+    <string name="brave_ui_month_feb">2월</string>
+    <string name="brave_ui_month_mar">3월</string>
+    <string name="brave_ui_month_apr">4월</string>
+    <string name="brave_ui_month_may">5월</string>
+    <string name="brave_ui_month_jun">6월</string>
+    <string name="brave_ui_month_jul">7월</string>
+    <string name="brave_ui_month_aug">8월</string>
+    <string name="brave_ui_month_sep">9월</string>
+    <string name="brave_ui_month_oct">10월</string>
+    <string name="brave_ui_month_nov">11월</string>
+    <string name="brave_ui_month_dec">12월</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>12월</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">주의</string>
+    <string name="brave_ui_include_in_auto">자동 기여 포함</string>
+    <string name="brave_ui_donate_now">팁 전송...</string>
+    <string name="brave_ui_no_activity">이번 달에 아직 활동이
+없습니다...</string>
+    <string name="brave_ui_token_grant_claimed">토큰 승인 요청됨</string>
+    <string name="brave_ui_earnings_ads">광고에서 벌기</string>
+    <string name="brave_ui_rewards_contribute">자동 기여</string>
+    <string name="brave_ui_rewards_contribute_description"><ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT를 기여했습니다.</string>
+    <string name="brave_ui_one_time_donation">1회성 팁</string>
+    <string name="brave_ui_recurring_donation">월별 팁</string>
+    <string name="brave_ui_verified_publisher">Brave 인증 게시자</string>
+    <string name="brave_ui_not_verified_publisher">아직 인증되지 않음</string>
+    <string name="brave_ui_not_verified_publisher_description">이 작성자는 아직 Brave 사용자로부터 기여를 받도록 등록된 상태가 아닙니다.
+        전송하신 모든 팁은 당사자가 인증할 때까지 지갑에 남아있게 됩니다.</string>
+    <string name="brave_ui_on_youtube">YouTube에서</string>
+    <string name="brave_ui_on_twitch">Twitch에서</string>
+    <string name="brave_ui_new_grant">사용할 수 있는 무료 토큰 승인이 있습니다.</string>
+    <string name="brave_ui_new_token_grant">무료 토큰 승인</string>
+    <string name="brave_ui_claim">요청</string>
+    <string name="brave_ui_reserved_amount_text">귀하가 <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT를 주도록지명한 작성자는 아직
+기여를 받도록 등록된 상태가 아닙니다. 해당 사용자가 인증하거나 90일이 지나갈 때까지
+브라우저는 계속 기여를 시도합니다.</string>
+    <string name="brave_ui_notification_desc_no_funds">귀하는 자동 기여용으로 월별 결제 일정을 만들었으며 월별 팁이 자금 부족으로 인해 완료되지 못했습니다. 30일 내에 다시 시도할 것입니다.</string>
+    <string name="brave_ui_notification_desc_tip_error">팁을 처리하는 도중 문제가 발생했습니다. 다시 시도해주세요.</string>
+    <string name="brave_ui_notification_desc_contr_error">귀하의 기여를 처리하는 도중 문제가 발생했습니다.</string>
+    <string name="brave_rewards_local_uh_oh">이런!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Rewards 서버가 응답하지 않습니다. 가능한 빨리 수정하겠습니다.</string>
+    <string name="brave_ui_grants">승인</string>
+    <string name="brave_ui_expires_on"><ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph>에 만료</string>
+    <string name="brave_ui_insufficient_funds_msg">자금 부족</string>
+    <string name="brave_ui_insufficient_funds_desc">귀하의 Brave Rewards 계정이 예금을 기다리고 있습니다.</string>
+    <string name="brave_ui_backup_wallet_msg">지갑 백업</string>
+    <string name="brave_ui_backup_wallet_desc">Brave 지갑을 백업하십시오.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">돌아오신 것을 환영합니다!</string>
+    <string name="brave_ui_get_rewarded">웹을 탐색하며 보상을 받으세요.</string>
+    <string name="brave_ui_brave_rewards_desc">개인 설정에 따른 광고를 보며
+획득하고 좋아하는 콘텐츠 작성자에게
+전달하여 지원하세요.</string>
+    <string name="brave_welcome_page_rewards_title">BRAVE REWARDS 활성화</string>
 </resources>

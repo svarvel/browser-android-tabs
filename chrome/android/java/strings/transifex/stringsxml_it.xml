@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Ovunque</string>
     <string name="brave_shields_blocks_scripts_switch">Blocca gli script</string>
     <string name="accessibility_toolbar_btn_brave_shields">Attiva/Disattiva le protezioni Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Attiva/Disattiva Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blocca i cookie di terze parti</string>
 
     <string name="httpse_summary">Apre siti supportati utilizzando HTTPS invece di HTTP quando possibile</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Uscita</string>
 
-    <string name="brave_sync">Sincronizzazione Brave (versione beta)</string>
     <string name="sync_settings_add_device_name_title">Aggiungi il nome del dispositivo</string>
     <string name="sync_settings_add_device_name_label">Inserisci un nome opzionale per questo dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
@@ -94,10 +94,8 @@ Risparmiato</string>
     <string name="brave_new_private_tab">Nuova scheda privata</string>
     <string name="brave_new_tab_private_header">Questa è una Scheda Privata</string>
     <string name="brave_new_tab_private_message">Anche se i siti visitati in schede private non vengono salvati localmente, ciò non ti rende anonimo o invisibile al tuo ISP, al tuo datore di lavoro o ai siti che stai visitando.</string>
-
     <string name="update_notification_title">Aggiornamento Brave</string>
     <string name="update_notification_text">Il nuovo browser Brave è il 22% più veloce</string>
-
     <string name="prefs_sync">Sincronizzazione (versione beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync ti consente di sincronizzare i dati dei segnalibri privatamente tra i browser Brave su vari dispositivi.</string>
     <string name="brave_sync_description_page_1_part_2">È sufficiente eseguire la scansione del codice dalla catena di sincronizzazione che hai creato su un altro dispositivo. In alternativa, puoi avviare una nuova catena di sincronizzazione.</string>
@@ -125,13 +123,13 @@ Risparmiato</string>
     <string name="brave_sync_add_laptop_text_title">Inserisci il codice della catena di sincronizzazione</string>
     <string name="brave_sync_add_laptop_text_part_1">Sul computer, vai alle impostazioni di Brave, quindi alla sincronizzazione. Scegli l’opzione per inserire un codice della catena di sincronizzazione.</string>
     <string name="brave_sync_add_laptop_text_part_2">Inserisci le parole del codice sopra, inclusi gli spazi.</string>
-    <string name="brave_sync_delete_device">Vuoi davvero eliminare il dispositivo \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Vuoi davvero eliminare il dispositivo \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">La richiesta di eliminazione è stata inviata. Il dispositivo verrà eliminato a breve.</string>
     <string name="brave_sync_loading_data_title">Caricamento dei dati...</string>
     <string name="brave_sync_time_out_message">Si è verificato un errore. Sembra che si sia verificato il timeout della richiesta.</string>
     <string name="brave_sync_use_camera_text">Utilizzerò la mia fotocamera...</string>
     <string name="brave_sync_confirm_code_words_text">Conferma</string>
-    <string name="brave_sync_word_count_text">Conteggio parole: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Conteggio parole: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Numero di parole non corretto </string>
     <string name="brave_sync_qr_code">Codice QR</string>
     <string name="brave_sync_code_words">Parole del codice</string>
@@ -139,4 +137,96 @@ Risparmiato</string>
     <string name="brave_sync_copied_text">Copiato negli Appunti</string>
     <string name="brave_sync_this_device_text">(questo dispositivo)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave è già impostato
+come browser predefinito.</string>
+    <string name="brave_default_browser_go_to_settings">Hai già impostato un browser predefinito.
+Puoi modificare il browser predefinito nelle impostazioni dell’app.</string>
+    <string name="brave_default_browser_notification_body">Risparmia la batteria e carica le pagine web più velocemente. Imposta Brave come browser predefinito. Seleziona dal menu di Brave \"Imposta come browser predefinito...\"</string>
+    <string name="brave_set_default_browser">Imposta come browser predefinito</string>
+    <string name="brave_set_default_browser_dialog_text">Seleziona Brave dalla lista e clicca su \"Sempre\"</string>
+    <string name="brave_default_browser_existing_notification_body">Imposta Brave come browser predefinito
+Risparmia la batteria e carica le pagine web più velocemente</string>
+
+    <string name="brave_ui_welcome_header_two">Preparati a sperimentare
+l’Internet del futuro.</string>
+    <string name="brave_ui_welcome_desc_two">Ora puoi ottenere gettoni
+guardando pubblicità che rispettano la privacy.</string>
+    <string name="brave_ui_welcome_button_text_two">ENTRA IN REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">MAGGIORI INFORMAZIONI</string>
+    <string name="brave_ui_rewards_creating_text">Creazione portafoglio in corso</string>
+    <string name="brave_ui_your_wallet">Il tuo portafoglio</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Aggiungi fondi</string>
+    <string name="brave_ui_settings">Impostazioni</string>
+    <string name="brave_ui_rewards_summary">RIEPILOGO REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Grazie per la visita!</string>
+    <string name="brave_ui_rewards_banner_text1">Puoi sostenere questo sito inviando una sovvenzione. È un modo per ringraziare i creatori degli eccezionali contenuti messi a tua disposizione. I creatori di contenuti verificati ricevono le sovvenzioni a loro destinate nel corso della prima settimana di ogni mese di calendario.</string>
+    <string name="brave_ui_rewards_banner_text2">Se lo desideri, puoi pianificare sovvenzioni mensili per sostenere questo sito su base continuativa.</string>
+    <string name="brave_ui_donation_amount">Importo sovvenzione</string>
+    <string name="brave_ui_wallet_balance">saldo portafoglio:</string>
+    <string name="brave_ui_make_monthly">Impostala come mensile</string>
+    <string name="brave_ui_send_tip">invia la mia sovvenzione</string>
+    <string name="brave_ui_do_monthly">imposta sovvenzione mensile</string>
+    <string name="brave_ui_not_enough_tokens">gettoni insufficienti</string>
+    <string name="brave_ui_site_banner_notice_text">NOTA: questo creatore non ha ancora effettuato l\'iscrizione per ricevere contributi da utenti Brave. Continueremo a provare a inviare il contributo fino a quando non risulterà verificato o finché non saranno trascorsi 90 giorni.</string>
+    <string name="brave_ui_please">ti preghiamo di</string>
+    <string name="brave_ui_add_funds">aggiungi fondi</string>
+    <string name="brave_ui_thank_you">Grazie!</string>
+    <string name="brave_ui_error_init_wallet">Riprova più tardi.</string>
+    <string name="brave_ui_month_jan">GENNAIO</string>
+    <string name="brave_ui_month_feb">FEBBRAIO</string>
+    <string name="brave_ui_month_mar">MARZO</string>
+    <string name="brave_ui_month_apr">APRILE</string>
+    <string name="brave_ui_month_may">MAGGIO</string>
+    <string name="brave_ui_month_jun">GIUGNO</string>
+    <string name="brave_ui_month_jul">LUGLIO</string>
+    <string name="brave_ui_month_aug">AGOSTO</string>
+    <string name="brave_ui_month_sep">SETTEMBRE</string>
+    <string name="brave_ui_month_oct">OTTOBRE</string>
+    <string name="brave_ui_month_nov">NOVEMBRE</string>
+    <string name="brave_ui_month_dec">DICEMBRE</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DICEMBRE</ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Attenzione</string>
+    <string name="brave_ui_include_in_auto">Includi in contributo automatico</string>
+    <string name="brave_ui_donate_now">Invia una sovvenzione...</string>
+    <string name="brave_ui_no_activity">Ancora nessuna attività
+questo mese...</string>
+    <string name="brave_ui_token_grant_claimed">Contributi in gettoni ritirati</string>
+    <string name="brave_ui_earnings_ads">Entrate da pubblicità</string>
+    <string name="brave_ui_rewards_contribute">Contributo automatico</string>
+    <string name="brave_ui_rewards_contribute_description">Hai contribuito con <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Sovvenzioni una tantum</string>
+    <string name="brave_ui_recurring_donation">Sovvenzioni mensili</string>
+    <string name="brave_ui_verified_publisher">Editore verificato da Brave</string>
+    <string name="brave_ui_not_verified_publisher">Non ancora verificato</string>
+    <string name="brave_ui_not_verified_publisher_description">Questo creatore non ha ancora effettuato l\'iscrizione per ricevere sovvenzioni da utenti Brave.
+  Eventuali sovvenzioni inviate rimarranno nel tuo portafoglio fino a quando non risulterà verificato.</string>
+    <string name="brave_ui_on_youtube">su YouTube</string>
+    <string name="brave_ui_on_twitch">su Twitch</string>
+    <string name="brave_ui_new_grant">È disponibile un contributo in gettoni gratuito.</string>
+    <string name="brave_ui_new_token_grant">Contributo in gettoni gratuito</string>
+    <string name="brave_ui_claim">Ritira</string>
+    <string name="brave_ui_reserved_amount_text">Hai destinato <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT a creatori che non hanno ancora
+effettuato l\'iscrizione per ricevere contributi. Il browser continuerà
+a provare a inviare il contributo finché non risulteranno verificati o finché non saranno trascorsi 90 giorni.</string>
+    <string name="brave_ui_notification_desc_no_funds">A causa di fondi insufficienti, non è stato possibile completare il pagamento mensile pianificato per contributi automatici e sovvenzioni mensili. Riproveremo nuovamente tra 30 giorni.</string>
+    <string name="brave_ui_notification_desc_tip_error">Si è verificato un problema durante l\'elaborazione della sovvenzione. Riprova.</string>
+    <string name="brave_ui_notification_desc_contr_error">Si è verificato un problema durante l\'elaborazione del contributo.</string>
+    <string name="brave_rewards_local_uh_oh">Oh oh!</string>
+    <string name="brave_rewards_local_server_not_responding">Il server Brave Rewards non risponde. Risolveremo il problema il prima possibile.</string>
+    <string name="brave_ui_grants">Contributi</string>
+    <string name="brave_ui_expires_on">scade il <ph name=\"DATE\">%1$s<ex>14/04/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Fondi insufficienti</string>
+    <string name="brave_ui_insufficient_funds_desc">Il tuo conto Brave Rewards è in attesa di un versamento.</string>
+    <string name="brave_ui_backup_wallet_msg">Backup portafoglio</string>
+    <string name="brave_ui_backup_wallet_desc">Esegui il backup del tuo portafoglio Brave.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Bentornato/a!</string>
+    <string name="brave_ui_get_rewarded">Naviga e otterrai un premio!</string>
+    <string name="brave_ui_brave_rewards_desc">Guadagna visualizzando pubblicità
+che rispettano la privacy e sostieni
+i creatori dei contenuti che preferisci inviando loro
+delle sovvenzioni.</string>
+    <string name="brave_welcome_page_rewards_title">ATTIVA BRAVE REWARDS</string>
 </resources>

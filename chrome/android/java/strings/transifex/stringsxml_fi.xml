@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Kaikkialla</string>
     <string name="brave_shields_blocks_scripts_switch">Estä Komentosarjat</string>
     <string name="accessibility_toolbar_btn_brave_shields">Ota käyttöön/Poista käytöstä Brave -suojat</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Ota Brave Rewardsit käyttöön / poista käytöstä</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Estä kolmannen osapuolen evästeet</string>
 
     <string name="httpse_summary">Avaa tuetut sivustot käyttämällä HTTPS:ää HTTP:n sijasta, kun mahdollista</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Poistua</string>
 
-    <string name="brave_sync">Brave (beta) -synkronointi</string>
     <string name="sync_settings_add_device_name_title">Lisää laitteen nimi</string>
     <string name="sync_settings_add_device_name_label">Anna laitteelle vaihtoehtoinen nimi</string>
     <string name="sync_example_device_name">Android-laite</string>
@@ -94,10 +94,8 @@ Tallennettu</string>
     <string name="brave_new_private_tab">Uusi yksityinen välilehti</string>
     <string name="brave_new_tab_private_header">Tämä on yksityinen välilehti</string>
     <string name="brave_new_tab_private_message">Vaikka sivustoja, joilla vierailemiseen käytät yksityisiä välilehtiä, ei tallennetakaan paikallisesti, et kuitenkaan ole anonyymi tai näkymätön Internet-palveluntarjoajallesi, työnantajallesi tai vierailemillesi sivustoille.</string>
-
     <string name="update_notification_title">Brave-selaimen päivitys</string>
     <string name="update_notification_text">Uusi Brave-selain on 22 % nopeampi</string>
-
     <string name="prefs_sync">Synkronoi (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Syncin avulla voit synkronoida kirjanmerkkitietoja yksityisesti Brave-selaintesi välillä eri laitteissasi.</string>
     <string name="brave_sync_description_page_1_part_2">Yksinkertaisesti skannaa koodi synkronointiketjusta, jonka loit toisessa laitteessa. Tai aloita uusi synkronointiketju.</string>
@@ -125,13 +123,13 @@ Tallennettu</string>
     <string name="brave_sync_add_laptop_text_title">Anna synkronointiketjun koodi</string>
     <string name="brave_sync_add_laptop_text_part_1">Siirry tietokoneellasi kohtaan Braven asetukset > Synkronoi. Valitse \"Anna synkronointiketjun koodi\".</string>
     <string name="brave_sync_add_laptop_text_part_2">Anna yllä olevat koodisanat, mukaan lukien välilyönnit.</string>
-    <string name="brave_sync_delete_device">Haluatko varmasti poistaa laitteen \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Haluatko varmasti poistaa laitteen \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Poistopyyntö on lähetetty. Laite poistetaan kohta.</string>
     <string name="brave_sync_loading_data_title">Tietoja ladataan...</string>
     <string name="brave_sync_time_out_message">Jotain meni pieleen, näyttää siltä, että pyyntö aikakatkaistiin.</string>
     <string name="brave_sync_use_camera_text">Käytän kameraani...</string>
     <string name="brave_sync_confirm_code_words_text">Vahvista</string>
-    <string name="brave_sync_word_count_text">Sanamäärä: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Sanamäärä: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Virheellinen määrä sanoja</string>
     <string name="brave_sync_qr_code">QR-koodi</string>
     <string name="brave_sync_code_words">Koodisanat</string>
@@ -139,4 +137,95 @@ Tallennettu</string>
     <string name="brave_sync_copied_text">Kopioitu leikepöydälle</string>
     <string name="brave_sync_this_device_text">(tämä laite)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave on jo asetettu
+oletusselaimeksesi.</string>
+    <string name="brave_default_browser_go_to_settings">Olet jo asettanut oletusselaimen.
+Voit vaihtaa oletusselainta sovelluksen asetuksissa.</string>
+    <string name="brave_default_browser_notification_body">Säästä akkua ja lataa verkkosivut nopeammin. Aseta Brave oletusselaimeksesi. Valitse Braven valikosta \"Aseta oletusselaimeksi...\"</string>
+    <string name="brave_set_default_browser">Aseta oletusselaimeksi</string>
+    <string name="brave_set_default_browser_dialog_text">Valitse listalta Brave ja napauta \"Aina\"</string>
+    <string name="brave_default_browser_existing_notification_body">Aseta Brave oletusverkkoselaimeksesi
+Säästä akkua ja lataa verkkosivut nopeammin</string>
+
+    <string name="brave_ui_welcome_header_two">Valmistaudu kokemaan
+seuraava Internet.</string>
+    <string name="brave_ui_welcome_desc_two">Voit ansaita poletteja katsomalla
+yksityisyyttä kunnioittavia mainoksia.</string>
+    <string name="brave_ui_welcome_button_text_two">LIITY REWARDSIIN</string>
+    <string name="brave_ui_welcome_footer_text_two">LUE LISÄÄ</string>
+    <string name="brave_ui_rewards_creating_text">Luodaan lompakkoa</string>
+    <string name="brave_ui_your_wallet">Oma lompakko</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Lisää varoja</string>
+    <string name="brave_ui_settings">Asetukset</string>
+    <string name="brave_ui_rewards_summary">REWARDS-YHTEENVETO</string>
+    <string name="brave_ui_site_banner_welcome">Kiitos käynnistä!</string>
+    <string name="brave_ui_rewards_banner_text1">Voit tukea tätä sivustoa lähettämällä tipin. Se on tapa kiittää heitä loistavasta sisällöstä. Vahvistetuille sisällöntuottajille maksetaan tipeistä jokaisen kuukauden ensimmäisellä viikolla.</string>
+    <string name="brave_ui_rewards_banner_text2">Voit halutessasi ajastaa jatkuvan kuukausittaisen tipin tälle sivustolle.</string>
+    <string name="brave_ui_donation_amount">Tipin summa</string>
+    <string name="brave_ui_wallet_balance">lompakon saldo:</string>
+    <string name="brave_ui_make_monthly">Tee tästä kuukausittainen</string>
+    <string name="brave_ui_send_tip">lähetä tippini</string>
+    <string name="brave_ui_do_monthly">aseta kuukausittainen tippi</string>
+    <string name="brave_ui_not_enough_tokens">poletit eivät riitä</string>
+    <string name="brave_ui_site_banner_notice_text">HUOMIO: Tämä luoja ei ole kirjautunut vielä vastaanottamaan avustuksia Brave-käyttäjiltä. Yritämme avustaa, kunnes hän vahvistaa itsensä tai 90 päivän aikaraja umpeutuu.</string>
+    <string name="brave_ui_please">kiitos</string>
+    <string name="brave_ui_add_funds">lisää varoja</string>
+    <string name="brave_ui_thank_you">Kiitos!</string>
+    <string name="brave_ui_error_init_wallet">Yritä myöhemmin uudestaan.</string>
+    <string name="brave_ui_month_jan">TAMMIKUU</string>
+    <string name="brave_ui_month_feb">HELMIKUU</string>
+    <string name="brave_ui_month_mar">MAALISKUU</string>
+    <string name="brave_ui_month_apr">HUHTIKUU</string>
+    <string name="brave_ui_month_may">TOUKOKUU</string>
+    <string name="brave_ui_month_jun">KESÄKUU</string>
+    <string name="brave_ui_month_jul">HEINÄKUU</string>
+    <string name="brave_ui_month_aug">ELOKUU</string>
+    <string name="brave_ui_month_sep">SYYSKUU</string>
+    <string name="brave_ui_month_oct">LOKAKUU</string>
+    <string name="brave_ui_month_nov">MARRASKUU</string>
+    <string name="brave_ui_month_dec">JOULUKUU</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>JOULUKUU</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Huomio</string>
+    <string name="brave_ui_include_in_auto">Sisällytä automaattiseen avustukseen</string>
+    <string name="brave_ui_donate_now">Lähetä tippi...</string>
+    <string name="brave_ui_no_activity">Ei vielä toimintaa tässä
+kuussa...</string>
+    <string name="brave_ui_token_grant_claimed">Polettilahjoituksia lunastettu</string>
+    <string name="brave_ui_earnings_ads">Ansiot mainoksista</string>
+    <string name="brave_ui_rewards_contribute">Automaattinen avustus</string>
+    <string name="brave_ui_rewards_contribute_description">Avustit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT:illa.</string>
+    <string name="brave_ui_one_time_donation">Kertaluontoiset tipit</string>
+    <string name="brave_ui_recurring_donation">Kuukausittaiset tipit</string>
+    <string name="brave_ui_verified_publisher">Vahvistettu Brave-julkaisija</string>
+    <string name="brave_ui_not_verified_publisher">Vielä vahvistamaton</string>
+    <string name="brave_ui_not_verified_publisher_description">Tämä luoja ei ole kirjautunut vielä vastaanottamaan avustuksia Brave-käyttäjiltä.
+Kaikki lähettämäsi tipit pysyvät lompakossasi, kunnes hän vahvistaa itsensä.</string>
+    <string name="brave_ui_on_youtube">YouTubessa</string>
+    <string name="brave_ui_on_twitch">Twitchissä</string>
+    <string name="brave_ui_new_grant">Ilmainen poletti saatavilla.</string>
+    <string name="brave_ui_new_token_grant">Ilmainen polettilahjoitus</string>
+    <string name="brave_ui_claim">Lunasta</string>
+    <string name="brave_ui_reserved_amount_text">Osoitit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex> BAT:ia luojalle, joka ei ole vielä kirjautunut
+vastaanottamaan avustuksia. Selaimesi yrittää avustaa, kunnes hän vahvistaa
+itsensä tai 90 päivän aikaraja umpeutuu.</string>
+    <string name="brave_ui_notification_desc_no_funds">Ajastettua automaattisten avustusten ja kuukausittaisten tippien maksua ei voitu suorittaa, koska varat eivät riitä. Yritämme 30 päivän päästä uudestaan.</string>
+    <string name="brave_ui_notification_desc_tip_error">Tippisi käsittelyssä ilmeni ongelma, yritä uudestaan.</string>
+    <string name="brave_ui_notification_desc_contr_error">Avustuksesi käsittelyssä ilmeni ongelma.</string>
+    <string name="brave_rewards_local_uh_oh">Ohoh!</string>
+    <string name="brave_rewards_local_server_not_responding">Brave Rewards -palvelin ei vastaa. Korjaamme tämän mahdollisimman pian.</string>
+    <string name="brave_ui_grants">Lahjoitukset</string>
+    <string name="brave_ui_expires_on">erääntyy <ph name=\"DATE\">%1$s<ex>14.4.2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Varat eivät riitä</string>
+    <string name="brave_ui_insufficient_funds_desc">Brave Rewards -tilisi odottaa talletusta.</string>
+    <string name="brave_ui_backup_wallet_msg">Varmuuskopioi lompakko</string>
+    <string name="brave_ui_backup_wallet_desc">Varmuuskopioi Brave-lompakkosi.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Tervetuloa takaisin!</string>
+    <string name="brave_ui_get_rewarded">Saa palkkioita selaamalla.</string>
+    <string name="brave_ui_brave_rewards_desc">Ansaitse katsomalla yksityisyyyttä
+kunnioittavia mainoksia ja maksa
+rakastamillesi sisällöntuottajille.</string>
+    <string name="brave_welcome_page_rewards_title">OTA BRAVE REWARDSIT KÄYTTÖÖN</string>
 </resources>

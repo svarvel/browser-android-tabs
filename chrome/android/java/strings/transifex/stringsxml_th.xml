@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS ทุกแห่ง</string>
     <string name="brave_shields_blocks_scripts_switch">ป้องกันสคริป</string>
     <string name="accessibility_toolbar_btn_brave_shields">เปิดใช้งาน/ปิดเกราะป้องกัน Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">เปิด/ปิดใช้งาน Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">ปิดกั้นคุกกี้จากบุคคลภายนอก</string>
 
     <string name="httpse_summary">เปิดเว็บที่รองรับโดยใช้ HTTPS แทน HTTP หากเป็นไปได้</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">ทางออก</string>
 
-    <string name="brave_sync">Brave (เบต้า) Sync</string>
     <string name="sync_settings_add_device_name_title">เพิ่มชื่ออุปกรณ์</string>
     <string name="sync_settings_add_device_name_label">ป้อนชื่อเพิ่มเติมสำหรับอุปกรณ์นี้</string>
     <string name="sync_example_device_name">อุปกรณ์ Android</string>
@@ -94,10 +94,8 @@ EST แล้ว</string>
     <string name="brave_new_private_tab">แท็บส่วนตัวใหม่</string>
     <string name="brave_new_tab_private_header">นี่คือแท็บส่วนตัว</string>
     <string name="brave_new_tab_private_message">แม้ว่าเว็บไซต์ที่คุณเข้าชมในแท็บส่วนตัวจะไม่บันทึกลงในเครื่อง แต่วิธีนี้ไม่ทำให้คุณไม่มีตัวตนหรือหายไปจากผู้ให้บริการอินเทอร์เน็ต, นายจ้าง หรือเว็บไซต์ที่คุณเข้าชม</string>
-
     <string name="update_notification_title">อัปเดตของ Brave</string>
     <string name="update_notification_text">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</string>
-
     <string name="prefs_sync">Sync (เบต้า)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync ให้คุณซิงค์ข้อมูลบุ๊กมาร์กระหว่าง Brave Browser บนอุปกรณ์ต่างๆ ของคุณได้อย่างเป็นส่วนตัว</string>
     <string name="brave_sync_description_page_1_part_2">เพียงสแกนรหัสจากกลุ่มการซิงค์ที่คุณสร้างไว้บนอีกอุปกรณ์หนึ่ง หรือเริ่มกลุ่มการซิงค์ใหม่</string>
@@ -125,13 +123,13 @@ EST แล้ว</string>
     <string name="brave_sync_add_laptop_text_title">ป้อนรหัสกลุ่มการซิงค์</string>
     <string name="brave_sync_add_laptop_text_part_1">บนคอมพิวเตอร์ของคุณ ให้นำทางไปยัง การตั้งค่า Brave > ซิงค์ เลือก \"ป้อนรหัสกลุ่มการซิงค์\"</string>
     <string name="brave_sync_add_laptop_text_part_2">ป้อนข้อความรหัสที่กล่าวถึงข้างต้น รวมช่องว่าง</string>
-    <string name="brave_sync_delete_device">คุณแน่ใจหรือไม่ว่าต้องการลบอุปกรณ์ \'<ph name="DEVICE_NAME">%1$s</ph>\'</string>
+    <string name="brave_sync_delete_device">คุณแน่ใจหรือไม่ว่าต้องการลบอุปกรณ์ \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'</string>
     <string name="brave_sync_delete_sent">ส่งคำขอลบแล้ว อุปกรณ์จะถูกลบในไม่ช้า</string>
     <string name="brave_sync_loading_data_title">กำลังโหลดข้อมูล...</string>
     <string name="brave_sync_time_out_message">มีบางอย่างผิดปกติ ดูเหมือนคำขอของคุณจะหมดเวลา</string>
     <string name="brave_sync_use_camera_text">ฉันจะใช้กล้องของฉัน...</string>
     <string name="brave_sync_confirm_code_words_text">ยืนยัน</string>
-    <string name="brave_sync_word_count_text">จำนวนคำ: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">จำนวนคำ: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">จำนวนคำไม่ถูกต้อง</string>
     <string name="brave_sync_qr_code">รหัส QR</string>
     <string name="brave_sync_code_words">ข้อความรหัส</string>
@@ -139,4 +137,95 @@ EST แล้ว</string>
     <string name="brave_sync_copied_text">คัดลอกไปยังคลิปบอร์ดแล้ว</string>
     <string name="brave_sync_this_device_text">(อุปกรณ์นี้)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave ถูกตั้งเป็น
+เบราว์เซอร์เริ่มต้นของคุณแล้ว</string>
+    <string name="brave_default_browser_go_to_settings">คุณได้ตั้งค่าเบราว์เซอร์เริ่มต้นไว้เรียบร้อยแล้ว
+คุณสามารถเปลี่ยนเบราเซอร์เริ่มต้นได้ในการตั้งค่าแอพของคุณ</string>
+    <string name="brave_default_browser_notification_body">ประหยัดแบตเตอรี่ โหลดหน้าเว็บได้เร็วขึ้น เพียงกำหนดให้ Brave เป็นเบราว์เซอร์เริ่มต้น โดยแตะที่ \"ตั้งค่าเป็นเบราว์เซอร์เริ่มต้น...\" จากในเมนู Brave</string>
+    <string name="brave_set_default_browser">ตั้งค่าเป็นเบราว์เซอร์เริ่มต้น</string>
+    <string name="brave_set_default_browser_dialog_text">เลือก Brave จากรายการ แล้วแตะ \"ทุกครั้ง\"</string>
+    <string name="brave_default_browser_existing_notification_body">ตั้งค่า Brave เป็นเว็บเบราว์เซอร์เริ่มต้น
+ประหยัดแบตเตอรี่ โหลดหน้าเว็บได้เร็วขึ้น</string>
+
+    <string name="brave_ui_welcome_header_two">เตรียมตัวพบกับ
+อินเตอร์เน็ตรูปแบบใหม่</string>
+    <string name="brave_ui_welcome_desc_two">ตอนนี้คุณสามารถได้รับโทเค็นสำหรับ
+การดูโฆษณาที่ไม่รบกวนความเป็นส่วนตัวได้แล้ว</string>
+    <string name="brave_ui_welcome_button_text_two">ร่วมรับรางวัล</string>
+    <string name="brave_ui_welcome_footer_text_two">เรียนรู้เพิ่มเติม</string>
+    <string name="brave_ui_rewards_creating_text">การสร้างกระเป๋าเงิน</string>
+    <string name="brave_ui_your_wallet">กระเป๋าเงินของคุณ</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">เติมเงิน</string>
+    <string name="brave_ui_settings">การตั้งค่า</string>
+    <string name="brave_ui_rewards_summary">สรุปรางวัล</string>
+    <string name="brave_ui_site_banner_welcome">ขอบคุณที่แวะมา</string>
+    <string name="brave_ui_rewards_banner_text1">คุณสามารถสนับสนุนเว็บไซต์นี้ด้วยการส่งทิป ซึ่งเป็นวิธีในการขอบคุณพวกเขาที่ทำเนื้อหาดีๆ ออกมา ครีเอเตอร์เนื้อหาที่ยืนยันตัวตนแล้วจะได้รับค่าทิปของพวกเขาในช่วงสัปดาห์แรกของแต่ละเดือนตามปฏิทิน</string>
+    <string name="brave_ui_rewards_banner_text2">หากว่าคุณชอบ คุณสามารถกำหนดทิปรายเดือนเพื่อสนับสนุนเว็บไซต์นี้อย่างต่อเนื่องได้</string>
+    <string name="brave_ui_donation_amount">จำนวนทิป</string>
+    <string name="brave_ui_wallet_balance">ยอดคงเหลือกระเป๋าเงิน:</string>
+    <string name="brave_ui_make_monthly">ทำให้เป็นรายเดือน</string>
+    <string name="brave_ui_send_tip">ส่งทิปของฉัน</string>
+    <string name="brave_ui_do_monthly">กำหนดทิปรายเดือน</string>
+    <string name="brave_ui_not_enough_tokens">มีโทเค็นไม่เพียงพอ</string>
+    <string name="brave_ui_site_banner_notice_text">หมายเหตุ: ครีเอเตอร์รายนี้ยังไม่ได้ลงทะเบียนเพื่อรับเงินสนับสนุนจากผู้ใช้ Brave เราจะพยายามส่งเงินสนับสนุนให้พวกเขาจนกว่าจะยืนยันตัวตนหรือจนกว่าจะผ่านไป 90 วัน</string>
+    <string name="brave_ui_please">ได้โปรด</string>
+    <string name="brave_ui_add_funds">เติมเงิน</string>
+    <string name="brave_ui_thank_you">ขอบคุณ</string>
+    <string name="brave_ui_error_init_wallet">กรุณาลองใหม่ภายหลัง</string>
+    <string name="brave_ui_month_jan">มกราคม</string>
+    <string name="brave_ui_month_feb">กุมภาพันธ์</string>
+    <string name="brave_ui_month_mar">มีนาคม</string>
+    <string name="brave_ui_month_apr">เมษายน</string>
+    <string name="brave_ui_month_may">พฤษภาคม</string>
+    <string name="brave_ui_month_jun">มิถุนายน</string>
+    <string name="brave_ui_month_jul">กรกฎาคม</string>
+    <string name="brave_ui_month_aug">สิงหาคม</string>
+    <string name="brave_ui_month_sep">กันยายน</string>
+    <string name="brave_ui_month_oct">ตุลาคม</string>
+    <string name="brave_ui_month_nov">พฤศจิกายน</string>
+    <string name="brave_ui_month_dec">ธันวาคม</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>ธันวาคม</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">ประกาศ</string>
+    <string name="brave_ui_include_in_auto">มีระบบสนับสนุนอัตโนมัติ</string>
+    <string name="brave_ui_donate_now">ส่งทิป...</string>
+    <string name="brave_ui_no_activity">ยังไม่มีกิจกรรมเลย
+ในเดือนนี้...</string>
+    <string name="brave_ui_token_grant_claimed">รับเงินสนับสนุนเป็นโทเค็นแล้ว</string>
+    <string name="brave_ui_earnings_ads">สร้างรายได้จากโฆษณา</string>
+    <string name="brave_ui_rewards_contribute">ระบบสนับสนุนอัตโนมัติ</string>
+    <string name="brave_ui_rewards_contribute_description">คุณได้สนับสนุน <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT</string>
+    <string name="brave_ui_one_time_donation">ทิปครั้งเดียว</string>
+    <string name="brave_ui_recurring_donation">ทิปรายเดือน</string>
+    <string name="brave_ui_verified_publisher">ผู้เผยแพร่ที่ยืนยันตัวตนกับ Brave แล้ว</string>
+    <string name="brave_ui_not_verified_publisher">ยังไม่ได้ยืนยันตัวตน</string>
+    <string name="brave_ui_not_verified_publisher_description">ครีเอเตอร์รายนี้ยังไม่ได้ลงทะเบียนเพื่อรับเงินสนับสนุนจากผู้ใช้ Brave
+        ทิปที่คุณส่งจะยังคงอยู่ในกระเป๋าเงินของคุณจนกว่าพวกเขาจะยืนยันตัวตน</string>
+    <string name="brave_ui_on_youtube">บน Youtube</string>
+    <string name="brave_ui_on_twitch">บน Twitch</string>
+    <string name="brave_ui_new_grant">เงินรางวัลโทเค็นฟรีพร้อมแล้ว</string>
+    <string name="brave_ui_new_token_grant">เงินรางวัลโทเค็นฟรี</string>
+    <string name="brave_ui_claim">รับ</string>
+    <string name="brave_ui_reserved_amount_text">คุณได้มอบ <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT ให้กับครีเอเตอร์ที่ยังไม่ได้
+ลงทะเบียนเพื่อรับเงินสนับสนุน เบราว์เซอร์ของคุณจะพยายามมอบเงินสนับสนุนให้
+จนกว่าพวกเขาจะยืนยันตัวตน หรือจนกว่าจะผ่านไป 90 วัน</string>
+    <string name="brave_ui_notification_desc_no_funds">ไม่สามารถดำเนินการการชำระเงินรายเดือนที่กำหนดไว้ของคุณสำหรับการสนับสนุนอัตโนมัติและทิปรายเดือนให้เสร็จสิ้นได้เนื่องจากเงินไม่เพียงพอ เราจะลองใหม่อีกครั้งใน 30 วัน</string>
+    <string name="brave_ui_notification_desc_tip_error">มีปัญหาเกิดขึ้นในการประมวลผลทิปของคุณ กรุณาลองอีกครั้ง</string>
+    <string name="brave_ui_notification_desc_contr_error">มีปัญหาเกิดขึ้นในการประมวลผลการสนับสนุนของคุณ</string>
+    <string name="brave_rewards_local_uh_oh">แย่แล้ว</string>
+    <string name="brave_rewards_local_server_not_responding">เซิร์ฟเวอร์ของ Brave Rewards ไม่ตอบสนอง เราจะรีบแก้ไขให้เร็วที่สุดเท่าที่จะเป็นไปได้</string>
+    <string name="brave_ui_grants">เงินรางวัล</string>
+    <string name="brave_ui_expires_on">หมดอายุวันที่ <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">เงินไม่เพียงพอ</string>
+    <string name="brave_ui_insufficient_funds_desc">บัญชี Brave Rewards ของคุณกำลังรอการฝากอยู่</string>
+    <string name="brave_ui_backup_wallet_msg">กระเป๋าเงินสำรอง</string>
+    <string name="brave_ui_backup_wallet_desc">กรุณาสำรองกระเป๋าเงิน Brave ของคุณ</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">ขอต้อนรับกลับมา</string>
+    <string name="brave_ui_get_rewarded">รับรางวัลสำหรับการท่องเว็บ</string>
+    <string name="brave_ui_brave_rewards_desc">สร้างรายได้จากการดูโฆษณาที่ไม่กระทบ
+กับความเป็นส่วนตัว และจ่ายเงินเพื่อสนับสนุน
+ครีเอเตอร์เนื้อหาที่คุณชื่นชอบ</string>
+    <string name="brave_welcome_page_rewards_title">เปิดใช้งาน BRAVE REWARDS</string>
 </resources>

@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS sa Lahat ng Lugar</string>
     <string name="brave_shields_blocks_scripts_switch">I-block ang Mga Script</string>
     <string name="accessibility_toolbar_btn_brave_shields">I-enable/I-disable ang Mga Shield ng Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">I-enable/I-disable ang Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">I-block ang cookies ng 3rd party</string>
 
     <string name="httpse_summary">Binubuksan ang mga sinusuportahang site gamit ang HTTPS sa halip na HTTP hangga\'t maaari</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Lumabas</string>
 
-    <string name="brave_sync">Pag-sync ng Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Magdagdag ng pangalan ng device</string>
     <string name="sync_settings_add_device_name_label">Maglagay ng opsyonal na pangalan para sa device na ito</string>
     <string name="sync_example_device_name">Android device</string>
@@ -94,10 +94,8 @@ na Natipid</string>
     <string name="brave_new_private_tab">Bagong pribadong tab</string>
     <string name="brave_new_tab_private_header">Isa itong Pribadong Tab</string>
     <string name="brave_new_tab_private_message">Bagama\'t hindi lokal na nase-save ang mga site na binibisita mo sa mga pribadong tab, hindi ka nito ginagawang anonymous o invisible sa iyong ISP, sa iyong employer, o sa mga site na binibisita mo.</string>
-
     <string name="update_notification_title">Update sa Brave</string>
     <string name="update_notification_text">Ang bagong Brave browser ay 22% mas mabilis</string>
-
     <string name="prefs_sync">Pag-sync (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Ang Pag-sync ng Brave ay nagbibigay-daan sa iyong i-sync nang pribado ang data ng mga bookmark sa pagitan ng iyong Mga Brave Browser sa iba\'t ibang device mo.</string>
     <string name="brave_sync_description_page_1_part_2">I-scan lang ang code mula sa iyong chain ng pag-sync na ginawa mo sa ibang device. O kaya, magsimula ng bagong chain ng pag-sync.</string>
@@ -125,13 +123,13 @@ na Natipid</string>
     <string name="brave_sync_add_laptop_text_title">Ilagay ang code sa chain ng pag-sync</string>
     <string name="brave_sync_add_laptop_text_part_1">Sa iyong computer, mag-navigate sa Mga Setting ng Brave > Pag-sync. Piliin ang \"Maglagay ng Code sa Chain ng Pag-sync\".</string>
     <string name="brave_sync_add_laptop_text_part_2">Ilagay ang mga code na salita sa itaas, kasama ang mga puwang.</string>
-    <string name="brave_sync_delete_device">Sigurado ka bang gusto mong i-delete ang device na \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Sigurado ka bang gusto mong i-delete ang device na \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Naipadala na ang kahilingan sa pag-delete. Aalisin ang device sa loob ng ilang sandali.</string>
     <string name="brave_sync_loading_data_title">Nilo-load ang data...</string>
     <string name="brave_sync_time_out_message">Nagkaproblema, mukhang nag-time out ang iyong kahilingan.</string>
     <string name="brave_sync_use_camera_text">Gagamitin ko ang aking camera...</string>
     <string name="brave_sync_confirm_code_words_text">Kumpirmahin</string>
-    <string name="brave_sync_word_count_text">Bilang ng salita: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Bilang ng salita: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Maling bilang ng mga salita</string>
     <string name="brave_sync_qr_code">QR Code</string>
     <string name="brave_sync_code_words">Mga Code na Salita</string>
@@ -139,4 +137,95 @@ na Natipid</string>
     <string name="brave_sync_copied_text">Kinopya sa Clipboard</string>
     <string name="brave_sync_this_device_text">(ang device na ito)</string>
 
+    <string name="brave_already_set_as_default_browser">Naka-set na ang Brave
+bilang iyong default na browser.</string>
+    <string name="brave_default_browser_go_to_settings">Nag-set ka na ng default na browser.
+Pwede mong baguhin ang default na browser sa mga setting ng iyong app.</string>
+    <string name="brave_default_browser_notification_body">Makatipid ng baterya at mag-load ng mga web page nang mas mabilis. Gawing iyong default na Browser ang Brave. Sa menu ng Brave, i-tap ang “I-set bilang default na browser…”</string>
+    <string name="brave_set_default_browser">I-set bilang default na browser</string>
+    <string name="brave_set_default_browser_dialog_text">Piliin ang Brave sa listahan at i-tap ang “Palagi”</string>
+    <string name="brave_default_browser_existing_notification_body">Gawing iyong default na web browser ang Brave
+Makatipid ng baterya at mag-load ng mga web page nang mas mabilis</string>
+
+    <string name="brave_ui_welcome_header_two">Maghandang maranasan
+ang susunod na Internet.</string>
+    <string name="brave_ui_welcome_desc_two">Makakatanggap ka na ngayon ng mga token para
+sa panonood ng mga ad na gumagalang sa privacy.</string>
+    <string name="brave_ui_welcome_button_text_two">SUMALI SA REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">MATUTO PA</string>
+    <string name="brave_ui_rewards_creating_text">Ginagawa ang wallet</string>
+    <string name="brave_ui_your_wallet">Iyong wallet</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Magdagdag ng Pondo</string>
+    <string name="brave_ui_settings">Mga Setting</string>
+    <string name="brave_ui_rewards_summary">BUOD NG REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Salamat sa pagpunta rito!</string>
+    <string name="brave_ui_rewards_banner_text1">Pwede mong suportahan ang site na ito sa pamamagitan ng pagpapadala ng tip. Isa itong paraan ng pagpapasalamat sa kanila sa paggawa ng magandang content. Ang mga na-verify na content creator na binabayaran para sa kanilang mga tip sa unang linggo ng bawat buwan ng kalendaryo.</string>
+    <string name="brave_ui_rewards_banner_text2">Kung gusto mo, maaari kang mag-iskedyul ng mga buwanang tip para suportahan ang site na ito nang tuluy-tuloy.</string>
+    <string name="brave_ui_donation_amount">Halaga ng tip</string>
+    <string name="brave_ui_wallet_balance">balanse ng wallet:</string>
+    <string name="brave_ui_make_monthly">Gawin itong buwan-buwan</string>
+    <string name="brave_ui_send_tip">ipadala ang tip ko</string>
+    <string name="brave_ui_do_monthly">mag-set ng buwanang tip</string>
+    <string name="brave_ui_not_enough_tokens">hindi sapat ang mga token</string>
+    <string name="brave_ui_site_banner_notice_text">TANDAAN: Ang creator na ito ay hindi pa nag-sign up para makatanggap ng mga kontribusyon mula sa mga user ng Brave. Patuloy naming susubukang mag-ambag hanggang sa mag-verify sila, o hanggang lumipas ang 90 araw.</string>
+    <string name="brave_ui_please">kung maaari</string>
+    <string name="brave_ui_add_funds">magdagdag ng pondo</string>
+    <string name="brave_ui_thank_you">Salamat!</string>
+    <string name="brave_ui_error_init_wallet">Pakisubukang muli sa ibang pagkakataon.</string>
+    <string name="brave_ui_month_jan">ENERO</string>
+    <string name="brave_ui_month_feb">PEBRERO</string>
+    <string name="brave_ui_month_mar">MARSO</string>
+    <string name="brave_ui_month_apr">ABRIL</string>
+    <string name="brave_ui_month_may">MAYO</string>
+    <string name="brave_ui_month_jun">HUNYO</string>
+    <string name="brave_ui_month_jul">HULYO</string>
+    <string name="brave_ui_month_aug">AGOSTO</string>
+    <string name="brave_ui_month_sep">SETYEMBRE</string>
+    <string name="brave_ui_month_oct">OKTUBRE</string>
+    <string name="brave_ui_month_nov">NOBYEMBRE</string>
+    <string name="brave_ui_month_dec">DISYEMBRE</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DISYEMBRE</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Atensyon</string>
+    <string name="brave_ui_include_in_auto">Isama sa Auto-Contribute</string>
+    <string name="brave_ui_donate_now">Magpadala ng tip...</string>
+    <string name="brave_ui_no_activity">Wala pang mga aktibidad
+ngayong buwan...</string>
+    <string name="brave_ui_token_grant_claimed">Mga Nakuhang Token Grant</string>
+    <string name="brave_ui_earnings_ads">Mga Kinita Mula sa Mga Ad</string>
+    <string name="brave_ui_rewards_contribute">Auto-Contribute</string>
+    <string name="brave_ui_rewards_contribute_description">Nag-ambag ka ng <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Mga One-time na Tip</string>
+    <string name="brave_ui_recurring_donation">Mga Buwanang Tip</string>
+    <string name="brave_ui_verified_publisher">Brave Verified Publisher</string>
+    <string name="brave_ui_not_verified_publisher">Hindi pa na-verify</string>
+    <string name="brave_ui_not_verified_publisher_description">Ang creator na ito ay hindi pa nag-sign up para makatanggap ng mga kontribusyon mula sa mga Brave user.
+        Ang anumang tip na ipinadala mo ay mananatili sa iyong wallet hanggang sa mag-verify sila.</string>
+    <string name="brave_ui_on_youtube">sa YouTube</string>
+    <string name="brave_ui_on_twitch">sa Twitch</string>
+    <string name="brave_ui_new_grant">May libreng token grant na available.</string>
+    <string name="brave_ui_new_token_grant">Libreng Token Grant</string>
+    <string name="brave_ui_claim">Kunin</string>
+    <string name="brave_ui_reserved_amount_text">Nagtalaga ka ng <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT para sa mga creator na hindi
+pa nag-sign upa para makatanggap ng mga kontribusyon. Patuloy na susubukan ng iyong browser na mag-ambag
+hanggang sa mag-verify sila, o hanggang lumipas ang 90 araw.</string>
+    <string name="brave_ui_notification_desc_no_funds">Ang iyong na-iskedyul na buwanang pagbabayad para sa Auto-Contribute at mga buwanang tip ay hindi nakumpleto dahil sa hindi sapat na pondo. Susubukan naming muli makalipas ang 30 araw.</string>
+    <string name="brave_ui_notification_desc_tip_error">Nagkaroon ng problema sa pagproseso sa iyong tip, pakisubukang muli.</string>
+    <string name="brave_ui_notification_desc_contr_error">Nagkaroon ng problema sa pagproseso sa iyong kontribusyon.</string>
+    <string name="brave_rewards_local_uh_oh">Hala!</string>
+    <string name="brave_rewards_local_server_not_responding">Hindi nagre-respond ang Brave Rewards server. Susubukan namin itong ayusin sa lalong madaling panahon.</string>
+    <string name="brave_ui_grants">Mga Grant</string>
+    <string name="brave_ui_expires_on">mag-e-expire sa <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Hindi Sapat ang Pondo</string>
+    <string name="brave_ui_insufficient_funds_desc">Naghihintay ng deposito ang iyong Brave Rewards account.</string>
+    <string name="brave_ui_backup_wallet_msg">Backup Wallet</string>
+    <string name="brave_ui_backup_wallet_desc">Paki-back up ang iyong Brave wallet.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Maligayang pagbabalik!</string>
+    <string name="brave_ui_get_rewarded">Magkaroon ng reward para sa pagba-browse.</string>
+    <string name="brave_ui_brave_rewards_desc">Kumita sa pamamagitan ng panonood ng
+mga ad na gumagalang sa privacy, ay mag-pay it forward
+para suportahan ang mga content creator na gusto mo.</string>
+    <string name="brave_welcome_page_rewards_title">I-ENABLE ANG BRAVE REWARDS</string>
 </resources>

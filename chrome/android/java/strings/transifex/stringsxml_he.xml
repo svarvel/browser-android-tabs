@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS בכל מקום</string>
     <string name="brave_shields_blocks_scripts_switch">לחסום קובצי תסריט</string>
     <string name="accessibility_toolbar_btn_brave_shields">הפעלה/השבתה של מגני Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">הפעלה/השבתה של גמול כספי של Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">לחסום עוגיות צד שלישי</string>
 
     <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP כשאפשר</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">יציאה</string>
 
-    <string name="brave_sync">סנכרון Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">נא להוסיף שם מכשיר</string>
     <string name="sync_settings_add_device_name_label">נא להזין שם אופציונלי עבור מכשיר זה</string>
     <string name="sync_example_device_name">מכשיר אנדרואיד</string>
@@ -94,10 +94,8 @@ HTTPS</string>
     <string name="brave_new_private_tab">לשונית פרטית חדשה</string>
     <string name="brave_new_tab_private_header">זו לשונית פרטית</string>
     <string name="brave_new_tab_private_message">למרות שאתרים שבהם ביקרתם בעזרת לשונית פרטית אינם נשמרים במחשב שלכם, הם אינם הופכים אתכם לאנונימיים או לבלתי נראים בפני ספק שירות האינטרנט שלכם, המעביד שלכם או האתרים שבהם אתם מבקרים.</string>
-
     <string name="update_notification_title">עדכון Brave</string>
     <string name="update_notification_text">דפדפן ה-Brave החדש מהיר יותר ב-22%</string>
-
     <string name="prefs_sync">סנכרון (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync מאפשר לסנכרן נתוני סימניות בפרטיות בין Brave Browsers במכשירים השונים שלך.</string>
     <string name="brave_sync_description_page_1_part_2">פשוט סרוק את הקוד משרשרת הסנכרון שיצרת במכשיר אחר. או התחל שרשרת סנכרון חדשה.</string>
@@ -125,13 +123,13 @@ HTTPS</string>
     <string name="brave_sync_add_laptop_text_title">הזן קוד שרשרת סנכרון</string>
     <string name="brave_sync_add_laptop_text_part_1">במחשב שלך, נווט אל הגדרות Brave > סנכרון. בחר \"הזן קוד שרשרת סנכרון\".</string>
     <string name="brave_sync_add_laptop_text_part_2">הזן את מילות הקוד המופיעות מעלה, כולל רווחים.</string>
-    <string name="brave_sync_delete_device">האם ברצונך למחוק את המכשיר \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">האם ברצונך למחוק את המכשיר \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">בקשת מחיקה נשלחה. המכשיר יוסר במהרה.</string>
     <string name="brave_sync_loading_data_title">טוען נתונים...</string>
     <string name="brave_sync_time_out_message">משהו השתבש, נראה כי הזמן לבקשתך תם.</string>
     <string name="brave_sync_use_camera_text">אני אשתמש במצלמה שלי...</string>
     <string name="brave_sync_confirm_code_words_text">אשר</string>
-    <string name="brave_sync_word_count_text">מספר מילים: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">מספר מילים: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">מספר שגוי של מילים</string>
     <string name="brave_sync_qr_code">קוד QR</string>
     <string name="brave_sync_code_words">מילות קוד</string>
@@ -139,4 +137,95 @@ HTTPS</string>
     <string name="brave_sync_copied_text">בוצעה העתקה ל-Clipboard</string>
     <string name="brave_sync_this_device_text">(מכשיר זה)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave כבר מוגדר
+כדפדפן ברירת המחדל שלך.</string>
+    <string name="brave_default_browser_go_to_settings">הגדרת כבר דפדפן ברירת מחדל.
+באפשרותך להחליף את דפדפן ברירת המחדל בהגדרות האפליקציה.</string>
+    <string name="brave_default_browser_notification_body">חסכו סוללה וטענו דפי רשת במהירות. הפכו את Brave לדפדפן ברירת המחדל שלכם. בתפריט של Brave הקישו על \"הגדר כדפדפן ברירת מחדל...\"</string>
+    <string name="brave_set_default_browser">הגדירו כדפדפן ברירת המחדל</string>
+    <string name="brave_set_default_browser_dialog_text">בחרו את Brave מהרשימה והקישו על \"תמיד\"</string>
+    <string name="brave_default_browser_existing_notification_body">הפכו את Brave לדפדפן ברירת המחדל
+חסכו סוללה וטענו דפי רשת במהירות</string>
+
+    <string name="brave_ui_welcome_header_two">תתכונן לחוויית
+האינטרנט הבא.</string>
+    <string name="brave_ui_welcome_desc_two">באפשרותך להרוויח אסימונים
+על צפייה בפרסומות מכבדות פרטיות.</string>
+    <string name="brave_ui_welcome_button_text_two">הצטרף לגמול כספי</string>
+    <string name="brave_ui_welcome_footer_text_two">למידע נוסף</string>
+    <string name="brave_ui_rewards_creating_text">יצירת ארנק</string>
+    <string name="brave_ui_your_wallet">הארנק שלך</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">הוסף כסף</string>
+    <string name="brave_ui_settings">הגדרות</string>
+    <string name="brave_ui_rewards_summary">סיכום הגמול הכספי</string>
+    <string name="brave_ui_site_banner_welcome">תודה שקפצת לבקר!</string>
+    <string name="brave_ui_rewards_banner_text1">ניתן לתמוך באתר זה באמצעות שליחת טיפ. זוהי דרך להודות להם על התוכן נהדר. יוצרי תוכן מאומתים מקבלים תשלום עבור הטיפים שלהם במהלך השבוע הראשון של כל חודש קלנדרי.</string>
+    <string name="brave_ui_rewards_banner_text2">אם תרצה, תוכל לתזמן טיפים חודשיים לתמיכה באתר זה באופן קבוע.</string>
+    <string name="brave_ui_donation_amount">כמות טיפים</string>
+    <string name="brave_ui_wallet_balance">הסכום בארנק:</string>
+    <string name="brave_ui_make_monthly">הפוך לחודשי</string>
+    <string name="brave_ui_send_tip">שלח את הטיפ שלי</string>
+    <string name="brave_ui_do_monthly">הגדר טיפ חודשי</string>
+    <string name="brave_ui_not_enough_tokens">אין מספיק אסימונים</string>
+    <string name="brave_ui_site_banner_notice_text">הערה: יוצר זה עדיין לא נרשם לקבלת תרומות ממשתמשי Brave. אנו נמשיך לנסות לתרום עד שהוא יאמת, או עד שיחלפו 90 יום.</string>
+    <string name="brave_ui_please">בבקשה</string>
+    <string name="brave_ui_add_funds">הוסף כסף</string>
+    <string name="brave_ui_thank_you">תודה!</string>
+    <string name="brave_ui_error_init_wallet">נסה שוב מאוחר יותר.</string>
+    <string name="brave_ui_month_jan">ינואר</string>
+    <string name="brave_ui_month_feb">פברואר</string>
+    <string name="brave_ui_month_mar">מרץ</string>
+    <string name="brave_ui_month_apr">אפריל</string>
+    <string name="brave_ui_month_may">מאי</string>
+    <string name="brave_ui_month_jun">יוני</string>
+    <string name="brave_ui_month_jul">יולי</string>
+    <string name="brave_ui_month_aug">אוגוסט</string>
+    <string name="brave_ui_month_sep">ספטמבר</string>
+    <string name="brave_ui_month_oct">אוקטובר</string>
+    <string name="brave_ui_month_nov">נובמבר</string>
+    <string name="brave_ui_month_dec">דצמבר</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>דצמבר</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">לתשומת לבך</string>
+    <string name="brave_ui_include_in_auto">כלול בתרומה אוטומטית</string>
+    <string name="brave_ui_donate_now">שלח טיפ...</string>
+    <string name="brave_ui_no_activity">אין עדיין פעילויות
+החודש...</string>
+    <string name="brave_ui_token_grant_claimed">מימוש מענק אסימונים</string>
+    <string name="brave_ui_earnings_ads">להרוויח מצפייה בפרסומות</string>
+    <string name="brave_ui_rewards_contribute">תרומה אוטומטית</string>
+    <string name="brave_ui_rewards_contribute_description">תרמת <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">תרומת טיפ חד פעמית</string>
+    <string name="brave_ui_recurring_donation">טיפים חודשיים</string>
+    <string name="brave_ui_verified_publisher">מפרסם מאומת של Brave</string>
+    <string name="brave_ui_not_verified_publisher">לא אומת עדיין</string>
+    <string name="brave_ui_not_verified_publisher_description">הערה: יוצר זה עדיין לא נרשם לקבלת תרומות ממשתמשי Brave.
+ כל טיפ שתשלח ישאר בארנק שלך עד לאימות.</string>
+    <string name="brave_ui_on_youtube">ב-YouTube</string>
+    <string name="brave_ui_on_twitch">ב-Twitch</string>
+    <string name="brave_ui_new_grant">מענק אסימונים חינם זמין.</string>
+    <string name="brave_ui_new_token_grant">מענק אסימונים חינם</string>
+    <string name="brave_ui_claim">מימוש</string>
+    <string name="brave_ui_reserved_amount_text">ייעדת <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT ליוצרים שלא
+ נרשמו עדיין לקבלת תרומות. הדפדפן שלך ימשיך לנסות לתרום
+עד שהם יאשרו, או עד שיחלפו 90 יום.</string>
+    <string name="brave_ui_notification_desc_no_funds">לא ניתן היה להשלים את התשלום החודשי המתוזמן שלך לתרומה אוטומטית וטיפים חודשיים כיוון שאין לך מספיק כסף. We&#8217;ll ננסה שוב בעוד 30 יום.</string>
+    <string name="brave_ui_notification_desc_tip_error">חלה בעיה בעיבוד הטיפ שלך, אנא נסה שנית.</string>
+    <string name="brave_ui_notification_desc_contr_error">חלה בעיה בעיבוד התרומה שלך.</string>
+    <string name="brave_rewards_local_uh_oh">אוי לא!</string>
+    <string name="brave_rewards_local_server_not_responding">שרת גמול כספי של Brave אינו מגיב. נתקן זאת בהקדם האפשרי.</string>
+    <string name="brave_ui_grants">מענקים</string>
+    <string name="brave_ui_expires_on">תקף עד <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">סכום הכסף אינו מספיק</string>
+    <string name="brave_ui_insufficient_funds_desc">חשבון הגמול הכספי של Brave שלך ממתין להפקדה.</string>
+    <string name="brave_ui_backup_wallet_msg">ארנק גיבוי</string>
+    <string name="brave_ui_backup_wallet_desc">יש לגבות את ארנק Brave.</string>
+    <string name="brave_ui_brave_rewards">גמול כספי של Brave</string>
+    <string name="brave_ui_welcome_back_message">יופי שחזרת!</string>
+    <string name="brave_ui_get_rewarded">קבל פרסים על גלישה.</string>
+    <string name="brave_ui_brave_rewards_desc">בוא להרוויח מצפייה בפרסומות מכבדות פרטיות
+ולהעביר את הפרס הלאה כדי לתמוך
+ביוצרי התוכן המועדפים עליך.</string>
+    <string name="brave_welcome_page_rewards_title">הפעל אפשרות גמול כספי של BRAVE</string>
 </resources>

@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokér Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Desaktivér Brave Skjolde</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktivér/deaktivér Brave-belønninger</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloker 3. parts cookies</string>
 
     <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP når det er muligt</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Afslut</string>
 
-    <string name="brave_sync">Brave (beta) Sync</string>
     <string name="sync_settings_add_device_name_title">Tilføj enhedens navn</string>
     <string name="sync_settings_add_device_name_label">Indtast et valgfrit navn til denne enhed</string>
     <string name="sync_example_device_name">Android enhed</string>
@@ -95,10 +95,8 @@ besparelse</string>
     <string name="brave_new_private_tab">Nyt privat faneblad</string>
     <string name="brave_new_tab_private_header">Dette er et Privat Faneblad</string>
     <string name="brave_new_tab_private_message">Selvom hjemmesider du besøger i private faneblade ikke bliver gemt lokalt, gør de dig ikke anonym eller usynlig over for din ISP, chef eller for hjemmesiderne du bsøger.</string>
-
     <string name="update_notification_title">Brave opdatering </string>
     <string name="update_notification_text">Den nye Brave browser er 22% hurtigere </string>
-
     <string name="prefs_sync">Sync (beta)</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync giver dig mulighed for at synkronisere dine bogmærkedata mellem dine Brave-browsere privat, på tværs af enheder.</string>
     <string name="brave_sync_description_page_1_part_2">Scan koden fra den synkroniseringskæde, du skabte på en anden enhed. Eller begynd på en ny synkroniseringskæde.</string>
@@ -126,13 +124,13 @@ besparelse</string>
     <string name="brave_sync_add_laptop_text_title">Indtast kode til synkroniseringskæde</string>
     <string name="brave_sync_add_laptop_text_part_1">Gå til Brave-indstillinger > Sync på din computer. Vælg \"Indtast kode til synkroniseringskæden\".</string>
     <string name="brave_sync_add_laptop_text_part_2">Indtast kodeordene foroven, med mellemrum.</string>
-    <string name="brave_sync_delete_device">Er du sikker på, at du vil slette enheden \'<ph name="DEVICE_NAME">%1$s</ph>\'?</string>
+    <string name="brave_sync_delete_device">Er du sikker på, at du vil slette enheden \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">Sletningsanmodningen er sendt. Enheden fjernes snart.</string>
     <string name="brave_sync_loading_data_title">Indlæser data ...</string>
     <string name="brave_sync_time_out_message">Noget gik galt. Det lader til, at din anmodning tog for lang tid.</string>
     <string name="brave_sync_use_camera_text">Jeg bruger mit kamera ...</string>
     <string name="brave_sync_confirm_code_words_text">Bekræft</string>
-    <string name="brave_sync_word_count_text">Ordoptælling: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Ordoptælling: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Ukorrekt antal ord</string>
     <string name="brave_sync_qr_code">QR-kode</string>
     <string name="brave_sync_code_words">Kodeord</string>
@@ -140,4 +138,95 @@ besparelse</string>
     <string name="brave_sync_copied_text">Kopieret til udklipsholderen</string>
     <string name="brave_sync_this_device_text">(denne enhed)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave er allerede angivet
+som din standardbrowser.</string>
+    <string name="brave_default_browser_go_to_settings">Du har allerede angivet en standardbrowser.
+Du kan skifte standardbrowser i dine appindstillinger.</string>
+    <string name="brave_default_browser_notification_body">Spar batteri og åbn hjemmesider hurtigere. Gør Brave til din standardbrowser. Tryk “Sæt som standardbrowser...” i Brave-menuen</string>
+    <string name="brave_set_default_browser">Sæt som standardbrowser </string>
+    <string name="brave_set_default_browser_dialog_text">Vælg Brave fra listen og tryk “Altid”   </string>
+    <string name="brave_default_browser_existing_notification_body">Gør Brave til din standardbrowser
+Spar batteri og åbn hjemmesider hurtigere </string>
+
+    <string name="brave_ui_welcome_header_two">Gør dig klar til at opleve
+det næste internet.</string>
+    <string name="brave_ui_welcome_desc_two">Du kan nu tjene mærker ved at se
+ reklamer, der respekterer dit privatliv.</string>
+    <string name="brave_ui_welcome_button_text_two">TILMELD DIG BELØNNINGER</string>
+    <string name="brave_ui_welcome_footer_text_two">FLERE OPLYSNINGER</string>
+    <string name="brave_ui_rewards_creating_text">Opretter tegnebog</string>
+    <string name="brave_ui_your_wallet">Din tegnebog</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name="VALUE">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Tilføj penge</string>
+    <string name="brave_ui_settings">Indstillinger</string>
+    <string name="brave_ui_rewards_summary">OVERSIGT OVER BELØNNINGER</string>
+    <string name="brave_ui_site_banner_welcome">Tak for besøget!</string>
+    <string name="brave_ui_rewards_banner_text1">Du kan støtte denne side ved at sende et bidrag. På den måde kan du takke dem for at lave fantastisk indhold. Godkendte indholdsskabere bliver betalt for deres bidrag i første uge af hver måned.</string>
+    <string name="brave_ui_rewards_banner_text2">Hvis du ønsker det, kan du give denne side månedlige bidrag for at støtte den fremadrettet.</string>
+    <string name="brave_ui_donation_amount">Bidragsbeløb</string>
+    <string name="brave_ui_wallet_balance">tegnebogssaldo:</string>
+    <string name="brave_ui_make_monthly">Betal dette månedligt</string>
+    <string name="brave_ui_send_tip">send bidrag til</string>
+    <string name="brave_ui_do_monthly">angiv månedligt bidrag</string>
+    <string name="brave_ui_not_enough_tokens">ikke nok mærker</string>
+    <string name="brave_ui_site_banner_notice_text">BEMÆRK: Denne indholdsskaber har ikke tilmeldt sig modtagelse af støtte fra Brave-brugere. Vi vil forsøge at støtte vedkommende, indtil personen tilmelder sig, eller indtil der er gået 90 dage.</string>
+    <string name="brave_ui_please">vær venlig at</string>
+    <string name="brave_ui_add_funds">tilføje penge</string>
+    <string name="brave_ui_thank_you">Tak!</string>
+    <string name="brave_ui_error_init_wallet">Prøv igen senere.</string>
+    <string name="brave_ui_month_jan">JANUAR</string>
+    <string name="brave_ui_month_feb">FEBRUAR</string>
+    <string name="brave_ui_month_mar">MARTS</string>
+    <string name="brave_ui_month_apr">APRIL</string>
+    <string name="brave_ui_month_may">MAJ</string>
+    <string name="brave_ui_month_jun">JUNI</string>
+    <string name="brave_ui_month_jul">JULI</string>
+    <string name="brave_ui_month_aug">AUGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTOBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DECEMBER</string>
+    <string name="brave_ui_month_year"><ph name="MONTH">%1$s<ex>DECEMBER</ex></ph> <ph name="YEAR">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Bemærk</string>
+    <string name="brave_ui_include_in_auto">Inkludér i automatiske bidrag</string>
+    <string name="brave_ui_donate_now">Send et bidrag ...</string>
+    <string name="brave_ui_no_activity">Endnu ingen aktiviteter
+i denne måned ...</string>
+    <string name="brave_ui_token_grant_claimed">Du har modtaget bevillinger af mærker</string>
+    <string name="brave_ui_earnings_ads">Indtægter fra reklamer</string>
+    <string name="brave_ui_rewards_contribute">Automatisk bidrag</string>
+    <string name="brave_ui_rewards_contribute_description">Du har bidraget <ph name="BAT_VALUE">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Engangsbidrag</string>
+    <string name="brave_ui_recurring_donation">Månedligt bidrag</string>
+    <string name="brave_ui_verified_publisher">Godkendt Brave-udgiver</string>
+    <string name="brave_ui_not_verified_publisher">Endnu ikke godkendt</string>
+    <string name="brave_ui_not_verified_publisher_description">Denne indholdsskaber har endnu ikke tilmeldt sig modtagelse af støtte fra Brave-brugere. 
+De bidrag, du sender til vedkommende, vil blive i din tegnebog, indtil indholdsskaberen godkendes.</string>
+    <string name="brave_ui_on_youtube">på YouTube</string>
+    <string name="brave_ui_on_twitch">på Twitch</string>
+    <string name="brave_ui_new_grant">En gratis bevilling af mærker er tilgængelig.</string>
+    <string name="brave_ui_new_token_grant">Gratis bevilling af mærker</string>
+    <string name="brave_ui_claim">Modtag</string>
+    <string name="brave_ui_reserved_amount_text">Du har angivet <ph name="BAT_VALUE">%1$s<ex>50</ex></ph> BAT til indholdsskabere, der endnu ikke
+har tilmeldt sig modtagelse af støtte fra Brave-brugere. Din browser vil forsøge at bidrage,
+indtil vedkommende godkendes, eller indtil der er gået 90 dage.</string>
+    <string name="brave_ui_notification_desc_no_funds">Din planlagte månedlige betaling via automatisk bidrag og månedlige bidrag kunne ikke gennemføres på grund af manglende penge. Vi prøver igen om 30 dage.</string>
+    <string name="brave_ui_notification_desc_tip_error">Der opstod et problem under behandling af dit bidrag. Prøv igen.</string>
+    <string name="brave_ui_notification_desc_contr_error">Der opstod et problem under behandling af din støtte.</string>
+    <string name="brave_rewards_local_uh_oh">Åh-åh.</string>
+    <string name="brave_rewards_local_server_not_responding">Serveren for Brave-belønninger svarer ikke. Vi løser problemet hurtigst muligt.</string>
+    <string name="brave_ui_grants">Bevillinger</string>
+    <string name="brave_ui_expires_on">udløber <ph name="DATE">%1$s<ex>14/04 2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Ikke nok penge</string>
+    <string name="brave_ui_insufficient_funds_desc">Din konto for Brave-belønninger venter på et indskud.</string>
+    <string name="brave_ui_backup_wallet_msg">Tag backup af tegnebog</string>
+    <string name="brave_ui_backup_wallet_desc">Tag backup af din Brace-tegnebog.</string>
+    <string name="brave_ui_brave_rewards">Brave-belønninger</string>
+    <string name="brave_ui_welcome_back_message">Velkommen tilbage!</string>
+    <string name="brave_ui_get_rewarded">Bliv belønnet for at browse.</string>
+    <string name="brave_ui_brave_rewards_desc">Tjen på at se reklamer, der respekterer dit privatliv,
+og giv din indtægt videre for at støtte
+de indholdsskabere, du elsker.</string>
+    <string name="brave_welcome_page_rewards_title">AKTIVÉR BRAVE-BELØNNINGER</string>
 </resources>

@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Скрипти</string>
     <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк щити Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Увімкнути/вимкнути нагороди Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Сторонні куки</string>
 
     <string name="httpse_summary">Відкривати підтримувані сайти з використанням протоколу HTTPS замість HTTP</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Вихід</string>
 
-    <string name="brave_sync">Синхронізація Brave (бета)</string>
     <string name="sync_settings_add_device_name_title">Додавання імені пристрою</string>
     <string name="sync_settings_add_device_name_label">Введіть ім'я для даного пристрою</string>
     <string name="sync_example_device_name">Android пристрій</string>
@@ -94,10 +94,8 @@
     <string name="brave_new_private_tab">Нова приватна вкладка</string>
     <string name="brave_new_tab_private_header">Це приватна вкладка</string>
     <string name="brave_new_tab_private_message">Хоча сайти, на які ви заходите у приватних вкладках, не зберігаються, ви не є анонімними чи невидимими для свого Інтернет-провайдера, начальника чи сайтів, на які ви заходите.</string>
-
     <string name="update_notification_title">Оновлення Brave</string>
     <string name="update_notification_text">Новий Brave браузер на 22% швидше</string>
-
     <string name="prefs_sync">Синхронізація (бета)</string>
     <string name="brave_sync_description_page_1_part_1">«Синхронізація Brave» дозволяє конфіденційно синхронізувати дані закладок у браузерах Brave на різних пристроях.</string>
     <string name="brave_sync_description_page_1_part_2">Просто відскануйте код ланцюжка синхронізації, створеного на іншому пристрої, або створіть новий ланцюжок синхронізації.</string>
@@ -125,13 +123,13 @@
     <string name="brave_sync_add_laptop_text_title">Уведення коду ланцюжка синхронізації</string>
     <string name="brave_sync_add_laptop_text_part_1">На комп’ютері перейдіть до меню «Налаштування Brave» > «Синхронізація» та виберіть пункт «Увести код ланцюжка синхронізації».</string>
     <string name="brave_sync_add_laptop_text_part_2">Уведіть кодові слова вище, ураховуючи пробіли між ними.</string>
-    <string name="brave_sync_delete_device">Ви впевнені, що хочете видалити пристрій «<ph name="DEVICE_NAME">%1$s</ph>»?</string>
+    <string name="brave_sync_delete_device">Ви впевнені, що хочете видалити пристрій «<ph name=\"DEVICE_NAME\">%1$s</ph>»?</string>
     <string name="brave_sync_delete_sent">Запит на видалення надіслано. Незабаром пристрій буде видалено.</string>
     <string name="brave_sync_loading_data_title">Завантаження даних…</string>
     <string name="brave_sync_time_out_message">Сталася помилка. Минув час очікування відповіді на запит.</string>
     <string name="brave_sync_use_camera_text">Я скористаюся камерою…</string>
     <string name="brave_sync_confirm_code_words_text">Підтвердити</string>
-    <string name="brave_sync_word_count_text">Усього слів: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Усього слів: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Неправильна кількість слів</string>
     <string name="brave_sync_qr_code">QR-код</string>
     <string name="brave_sync_code_words">Кодові слова</string>
@@ -139,4 +137,95 @@
     <string name="brave_sync_copied_text">Скопійовано до буфера обміну</string>
     <string name="brave_sync_this_device_text">(цей пристрій)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave вже вибрано
+браузером за замовчуванням.</string>
+    <string name="brave_default_browser_go_to_settings">Ви вже вибрали браузер за замовчуванням.
+Цей вибір можна змінити в налаштуваннях програми.</string>
+    <string name="brave_default_browser_notification_body">Економте заряд та завантажуйте сторінки швидше. Зробіть Brave своїм усталеним переглядачем. Натисніть на \"Зробити усталеним переглядачем...\" у меню Brave</string>
+    <string name="brave_set_default_browser">Зробити усталеним переглядачем</string>
+    <string name="brave_set_default_browser_dialog_text">Виберіть Brave зі списку і натисніть \"Завжди\"</string>
+    <string name="brave_default_browser_existing_notification_body">Зробіть Brave своїм усталеним веб-переглядачем
+Економте заряд та завантажуйте сторінки швидше</string>
+
+    <string name="brave_ui_welcome_header_two">Починайте користуватися
+Інтернетом на новому рівні!</string>
+    <string name="brave_ui_welcome_desc_two">Заробляйте токени, переглядаючи
+рекламу, яка не порушує основ конфіденційності.</string>
+    <string name="brave_ui_welcome_button_text_two">ПРИЄДНАТИСЯ ДО ПРОГРАМИ «НАГОРОДИ»</string>
+    <string name="brave_ui_welcome_footer_text_two">ДІЗНАТИСЯ БІЛЬШЕ</string>
+    <string name="brave_ui_rewards_creating_text">Створення гаманця</string>
+    <string name="brave_ui_your_wallet">Ваш гаманець</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> дол. США</string>
+    <string name="brave_rewards_local_panel_add_funds">Внести кошти</string>
+    <string name="brave_ui_settings">Налаштування</string>
+    <string name="brave_ui_rewards_summary">ЗАГАЛЬНА ІНФОРМАЦІЯ ПРО НАГОРОДИ</string>
+    <string name="brave_ui_site_banner_welcome">Дякуємо, що перейшли на цю сторінку!</string>
+    <string name="brave_ui_rewards_banner_text1">Ви можете підтримати цей сайт, надіславши заохочення. Це спосіб подякувати розробникам сайту за їхню величезну роботу. Усі підтвердженні автори контенту отримують гроші за зароблені заохочення протягом першого тижня кожного місяця.</string>
+    <string name="brave_ui_rewards_banner_text2">За бажанням ви можете робити щомісячні заохочення, щоб підтримувати роботу сайту на постійній основі.</string>
+    <string name="brave_ui_donation_amount">Розмір заохочення</string>
+    <string name="brave_ui_wallet_balance">залишок у гаманці:</string>
+    <string name="brave_ui_make_monthly">Сплачувати щомісяця</string>
+    <string name="brave_ui_send_tip">надіслати заохочення</string>
+    <string name="brave_ui_do_monthly">налаштувати щомісячне заохочення</string>
+    <string name="brave_ui_not_enough_tokens">недостатньо токенів</string>
+    <string name="brave_ui_site_banner_notice_text">ПРИМІТКА. Цей автор ще не зареєструвався, щоб отримувати внески від користувачів Brave. Ми робитимемо спроби надіслати внесок, доки автор не виконає процедуру підтвердження або доки не мине 90 днів. </string>
+    <string name="brave_ui_please">будь ласка</string>
+    <string name="brave_ui_add_funds">внесіть кошти</string>
+    <string name="brave_ui_thank_you">Дякуємо!</string>
+    <string name="brave_ui_error_init_wallet">Спробуйте ще раз пізніше.</string>
+    <string name="brave_ui_month_jan">СІЧЕНЬ</string>
+    <string name="brave_ui_month_feb">ЛЮТИЙ</string>
+    <string name="brave_ui_month_mar">БЕРЕЗЕНЬ</string>
+    <string name="brave_ui_month_apr">КВІТЕНЬ</string>
+    <string name="brave_ui_month_may">ТРАВЕНЬ</string>
+    <string name="brave_ui_month_jun">ЧЕРВЕНЬ</string>
+    <string name="brave_ui_month_jul">ЛИПЕНЬ</string>
+    <string name="brave_ui_month_aug">СЕРПЕНЬ</string>
+    <string name="brave_ui_month_sep">ВЕРЕСЕНЬ</string>
+    <string name="brave_ui_month_oct">ЖОВТЕНЬ</string>
+    <string name="brave_ui_month_nov">ЛИСТОПАД</string>
+    <string name="brave_ui_month_dec">ГРУДЕНЬ</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex> ГРУДНЯ</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018 р.</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Увага</string>
+    <string name="brave_ui_include_in_auto">Додати до автоматичної виплати внеску</string>
+    <string name="brave_ui_donate_now">Надсилання заохочення…</string>
+    <string name="brave_ui_no_activity">Немає активності
+цього місяця…</string>
+    <string name="brave_ui_token_grant_claimed">Отримано токени в подарунок</string>
+    <string name="brave_ui_earnings_ads">Прибуток від перегляду реклами</string>
+    <string name="brave_ui_rewards_contribute">Автоматичний внесок</string>
+    <string name="brave_ui_rewards_contribute_description">Ви внесли <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Одноразові заохочення</string>
+    <string name="brave_ui_recurring_donation">Щомісячні заохочення</string>
+    <string name="brave_ui_verified_publisher">Підтверджений автор публікацій Brave</string>
+    <string name="brave_ui_not_verified_publisher">Ще не підтверджено</string>
+    <string name="brave_ui_not_verified_publisher_description">Цей автор ще не зареєструвався, щоб отримувати внески від користувачів Brave.
+        Усі надіслані вами заохочення залишаться на рахунку вашого гаманця, доки автора не буде підтверджено.</string>
+    <string name="brave_ui_on_youtube">на YouTube</string>
+    <string name="brave_ui_on_twitch">на Twitch</string>
+    <string name="brave_ui_new_grant">Доступний безкоштовний подарунок із токенами.</string>
+    <string name="brave_ui_new_token_grant">Безкоштовний подарунок із токенами</string>
+    <string name="brave_ui_claim">Отримати</string>
+    <string name="brave_ui_reserved_amount_text">Ви призначали <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT для авторів, які ще не зареєструвалися для отримання внесків.
+Ваш браузер робитиме спроби зробити внесок,
+доки автора не буде підтверджено або доки не мине 90 днів.</string>
+    <string name="brave_ui_notification_desc_no_funds">Неможливо здійснити заплановане щомісячне автоматичне заохочення, а також щомісячне заохочення, оскільки у вас недостатньо коштів. Спробу буде повторено за 30 днів.</string>
+    <string name="brave_ui_notification_desc_tip_error">Під час обробки заохочення сталася помилка. Спробуйте ще раз.</string>
+    <string name="brave_ui_notification_desc_contr_error">Під час обробки заохочення сталася помилка.</string>
+    <string name="brave_rewards_local_uh_oh">Ой!</string>
+    <string name="brave_rewards_local_server_not_responding">Сервер нагород Brave не відповідає. Проблему буде вирішено якомога скоріше.</string>
+    <string name="brave_ui_grants">Термін дії подарунків</string>
+    <string name="brave_ui_expires_on">минає <ph name=\"DATE\">%1$s<ex>14 квітня 2019 р.</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Недостатньо коштів</string>
+    <string name="brave_ui_insufficient_funds_desc">На рахунок нагород Brave можна зробити внесок.</string>
+    <string name="brave_ui_backup_wallet_msg">Резервне копіювання гаманця</string>
+    <string name="brave_ui_backup_wallet_desc">Зробіть резервну копію гаманця Brave.</string>
+    <string name="brave_ui_brave_rewards">Нагороди Brave</string>
+    <string name="brave_ui_welcome_back_message">З поверненням!</string>
+    <string name="brave_ui_get_rewarded">Отримуйте нагороду за перегляд сайтів.</string>
+    <string name="brave_ui_brave_rewards_desc">Заробляйте, переглядаючи
+рекламу, яка не порушує основ конфіденційності
+та підтримуйте улюблених авторів.</string>
+    <string name="brave_welcome_page_rewards_title">УВІМКНУТИ ПРОГРАМУ «НАГОРОДИ BRAVE»</string>
 </resources>

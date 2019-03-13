@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS všade</string>
     <string name="brave_shields_blocks_scripts_switch">Zablokovať skripty</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktivovať/deaktivovať ochrany Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Aktivovať/deaktivovať odmeny Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokovať súbory cookie tretích strán</string>
 
     <string name="httpse_summary">Otvára podporované stránky prostredníctvom HTTPS namiesto HTTP vždy, keď je to možné</string>
@@ -30,7 +31,6 @@
 
     <string name="menu_exit">Východ</string>
 
-    <string name="brave_sync">Brave Sync (beta verzia)</string>
     <string name="sync_settings_add_device_name_title">Pridajte názov zariadenia</string>
     <string name="sync_settings_add_device_name_label">Zadajte nepovinný názov pre toto zariadenie</string>
     <string name="sync_example_device_name">Android zariadenie</string>
@@ -94,10 +94,8 @@ ušetrený čas</string>
     <string name="brave_new_private_tab">Nová súkromná karta</string>
     <string name="brave_new_tab_private_header">Toto je súkromná karta</string>
     <string name="brave_new_tab_private_message">Aj napriek tomu, že stránky, ktoré navštevujete na súkromných kartách, sa lokálne neukladajú, Vaša aktivita je stále viditeľná pre Vášho zamestnávateľa, poskytovateľa internetového pripojenia alebo vlastníkov navštevovaných stránok.</string>
-
     <string name="update_notification_title">Aktualizácia prehliadača Brave</string>
     <string name="update_notification_text">Nový prehliadač Brave je o 22 % rýchlejší</string>
-
     <string name="prefs_sync">Sync (beta verzia)</string>
     <string name="brave_sync_description_page_1_part_1">Aplikácia Brave Sync vám umožňuje súkromne synchronizovať údaje záložiek medzi prehliadačmi Brave na rôznych zariadeniach.</string>
     <string name="brave_sync_description_page_1_part_2">Jednoducho naskenujte kód zo synchronizačného reťazca, ktorý ste vytvorili na inom zariadení. Alebo začnite nový synchronizačný reťazec.</string>
@@ -125,13 +123,13 @@ ušetrený čas</string>
     <string name="brave_sync_add_laptop_text_title">Zadať kód synchronizačného reťazca</string>
     <string name="brave_sync_add_laptop_text_part_1">Na počítači prejdite na položku Brave Settings (Nastavenia Brave) > Sync (Synchronizácia). Vyberte položku „Enter a Sync Chain Code“ (Zadať kód synchronizačného reťazca).</string>
     <string name="brave_sync_add_laptop_text_part_2">Zadajte vyššie uvedené slová kódu vrátane medzier.</string>
-    <string name="brave_sync_delete_device">Naozaj chcete odstrániť zariadenie „<ph name="DEVICE_NAME">%1$s</ph>“?</string>
+    <string name="brave_sync_delete_device">Naozaj chcete odstrániť zariadenie „<ph name=\"DEVICE_NAME\">%1$s</ph>“?</string>
     <string name="brave_sync_delete_sent">Žiadosť o odstránenie sa odoslala. Zariadenie sa čoskoro odstráni.</string>
     <string name="brave_sync_loading_data_title">Prebieha načítanie údajov...</string>
     <string name="brave_sync_time_out_message">Došlo k chybe, zdá sa, že skončila platnosť vašej žiadosti.</string>
     <string name="brave_sync_use_camera_text">Použijem svoju kameru...</string>
     <string name="brave_sync_confirm_code_words_text">Potvrdiť</string>
-    <string name="brave_sync_word_count_text">Počet slov: <ph name="WORD_COUNT">%1$d</ph></string>
+    <string name="brave_sync_word_count_text">Počet slov: <ph name=\"WORD_COUNT\">%1$d</ph></string>
     <string name="brave_sync_word_count_error">Nesprávny počet slov</string>
     <string name="brave_sync_qr_code">QR kód</string>
     <string name="brave_sync_code_words">Slová kódu</string>
@@ -139,4 +137,95 @@ ušetrený čas</string>
     <string name="brave_sync_copied_text">Skopírované do schránky</string>
     <string name="brave_sync_this_device_text">(toto zariadenie)</string>
 
+    <string name="brave_already_set_as_default_browser">Brave je už nastavený ako
+váš predvolený prehliadač.</string>
+    <string name="brave_default_browser_go_to_settings">Už ste nastavili predvolený prehliadač.
+Váš predvolený prehliadač môžete zmeniť v nastaveniach aplikácie.</string>
+    <string name="brave_default_browser_notification_body">Šetrite batériu a načítavajte webové stránky rýchlejšie. Nastavte si Brave ako svoj predvolený prehliadač. V menu Brave klepnite na \"Nastaviť ako predvolený prehliadač...\"</string>
+    <string name="brave_set_default_browser">Nastaviť ako predvolený prehliadač</string>
+    <string name="brave_set_default_browser_dialog_text">V zozname vyberte položku Brave a klepnite na \"Vždy\"</string>
+    <string name="brave_default_browser_existing_notification_body">Nastavte si Brave ako svoj predvolený prehliadač
+Šetrite batériu a načítavajte webové stránky rýchlejšie</string>
+
+    <string name="brave_ui_welcome_header_two">Pripravte sa na zážitok z
+nového internetu.</string>
+    <string name="brave_ui_welcome_desc_two">Teraz môžete získať tokeny za
+za sledovanie reklám, ktoré rešpektujú súkromie.</string>
+    <string name="brave_ui_welcome_button_text_two">PRIPOJIŤ SA DO PROGRAMU ODMIEN</string>
+    <string name="brave_ui_welcome_footer_text_two">ĎALŠIE INFORMÁCIE</string>
+    <string name="brave_ui_rewards_creating_text">Vytvára sa peňaženka</string>
+    <string name="brave_ui_your_wallet">Vaša peňaženka</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0,0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Pridať finančné prostriedky</string>
+    <string name="brave_ui_settings">Nastavenia</string>
+    <string name="brave_ui_rewards_summary">ZHRNUTIE ODMIEN</string>
+    <string name="brave_ui_site_banner_welcome">Ďakujeme za návštevu!</string>
+    <string name="brave_ui_rewards_banner_text1">Túto stránku môžete podporiť tým, že pošlete sprepitné. Je to spôsob ako poďakovať autorom za vytvorenie skvelého obsahu. Overeným autorom obsahu sa sprepitné vypláca prvý týždeň každého kalendárneho mesiaca.</string>
+    <string name="brave_ui_rewards_banner_text2">Ak chcete, môžete si naplánovať mesačné sprepitné na pravidelnú podporu tejto stránky.</string>
+    <string name="brave_ui_donation_amount">Výška sprepitného</string>
+    <string name="brave_ui_wallet_balance">zostatok v peňaženke:</string>
+    <string name="brave_ui_make_monthly">Platiť mesačne</string>
+    <string name="brave_ui_send_tip">poslať moje sprepitné</string>
+    <string name="brave_ui_do_monthly">nastaviť mesačné sprepitné</string>
+    <string name="brave_ui_not_enough_tokens">nedostatok tokenov</string>
+    <string name="brave_ui_site_banner_notice_text">POZNÁMKA: Tento autor sa zatiaľ nezaregistroval, aby mohol získavať príspevky od používateľov prehliadača Brave. Budeme sa snažiť prispievať, kým neoverí svoj účet, alebo kým neuplynie 90 dní.</string>
+    <string name="brave_ui_please">prosím</string>
+    <string name="brave_ui_add_funds">pridať finančné prostriedky</string>
+    <string name="brave_ui_thank_you">Ďakujeme!</string>
+    <string name="brave_ui_error_init_wallet">Skúste to znova neskôr.</string>
+    <string name="brave_ui_month_jan">JANUÁR</string>
+    <string name="brave_ui_month_feb">FEBRUÁR</string>
+    <string name="brave_ui_month_mar">MAREC</string>
+    <string name="brave_ui_month_apr">APRÍL</string>
+    <string name="brave_ui_month_may">MÁJ</string>
+    <string name="brave_ui_month_jun">JÚN</string>
+    <string name="brave_ui_month_jul">JÚL</string>
+    <string name="brave_ui_month_aug">AUGUST</string>
+    <string name="brave_ui_month_sep">SEPTEMBER</string>
+    <string name="brave_ui_month_oct">OKTÓBER</string>
+    <string name="brave_ui_month_nov">NOVEMBER</string>
+    <string name="brave_ui_month_dec">DECEMBER</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Upozornenie</string>
+    <string name="brave_ui_include_in_auto">Zahrnúť do automatického prispievania</string>
+    <string name="brave_ui_donate_now">Poslať sprepitné...</string>
+    <string name="brave_ui_no_activity">Tento mesiac zatiaľ nedošlo k
+žiadnej aktivite...</string>
+    <string name="brave_ui_token_grant_claimed">Získané darčekové tokeny</string>
+    <string name="brave_ui_earnings_ads">Výnosy z reklám</string>
+    <string name="brave_ui_rewards_contribute">Automatické prispievanie</string>
+    <string name="brave_ui_rewards_contribute_description">Prispeli ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Jednorazové sprepitné</string>
+    <string name="brave_ui_recurring_donation">Mesačné sprepitné</string>
+    <string name="brave_ui_verified_publisher">Autor overený spoločnosťou Brave</string>
+    <string name="brave_ui_not_verified_publisher">Zatiaľ neoverené</string>
+    <string name="brave_ui_not_verified_publisher_description">Tento autor sa zatiaľ nezaregistroval, aby mohol získavať príspevky od používateľov prehliadača Brave.
+        Akékoľvek poslané sprepitné zostane vo vašej peňaženke, kým autor neoverí svoj účet.</string>
+    <string name="brave_ui_on_youtube">v službe YouTube</string>
+    <string name="brave_ui_on_twitch">v službe Twitch</string>
+    <string name="brave_ui_new_grant">K dispozícii je bezplatný darčekový token.</string>
+    <string name="brave_ui_new_token_grant">Bezplatný darčekový token</string>
+    <string name="brave_ui_claim">Získať</string>
+    <string name="brave_ui_reserved_amount_text">Vyhradili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT pre autorov, ktorí
+sa zatiaľ nezaregistrovali na získavanie príspevkov. Váš prehliadač sa bude pokúšať
+prispievať, kým autori neoveria svoj účet, alebo kým neuplynie 90 dní.</string>
+    <string name="brave_ui_notification_desc_no_funds">Vašu naplánovanú mesačnú platbu v rámci automatického prispievania a mesačného sprepitné sa nepodarilo dokončiť, pretože nemáte dostatok finančných prostriedkov. Skúsime to znovu za 30 dní.</string>
+    <string name="brave_ui_notification_desc_tip_error">Pri spracovaní vášho sprepitného došlo k chybe. Skúste to znova.</string>
+    <string name="brave_ui_notification_desc_contr_error">Pri spracovaní vášho príspevku došlo k chybe.</string>
+    <string name="brave_rewards_local_uh_oh">Ale nie!</string>
+    <string name="brave_rewards_local_server_not_responding">Server odmien Brave neodpovedá. Opravíme to čo najskôr.</string>
+    <string name="brave_ui_grants">Darčeky</string>
+    <string name="brave_ui_expires_on">vyprší <ph name=\"DATE\">%1$s<ex>14.4.2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Nedostatok finančných prostriedkov</string>
+    <string name="brave_ui_insufficient_funds_desc">Váš účet odmien Brave čaká na vklad.</string>
+    <string name="brave_ui_backup_wallet_msg">Zálohovať peňaženku</string>
+    <string name="brave_ui_backup_wallet_desc">Zálohujte svoju peňaženku Brave.</string>
+    <string name="brave_ui_brave_rewards">Odmeny Brave</string>
+    <string name="brave_ui_welcome_back_message">Vitajte späť!</string>
+    <string name="brave_ui_get_rewarded">Dostávajte odmeny za prehliadanie.</string>
+    <string name="brave_ui_brave_rewards_desc">Zarábajte sledovaním reklám, ktoré
+rešpektujú súkromie, a odmeňujte
+tvorcov obsahu, ktorých máte radi.</string>
+    <string name="brave_welcome_page_rewards_title">POVOLIŤ ODMENY BRAVE</string>
 </resources>
