@@ -144,7 +144,7 @@ class PageWallet extends React.Component<Props, State> {
               {
                 enabledMain
                 ? emptyWallet
-                  ? <WalletEmpty />
+                  ? <WalletEmpty hideAddFundsText={true} />
                   : <WalletSummary
                     reservedAmount={pendingTotal}
                     reservedMoreLink={'https://brave.com/faq-rewards/#unclaimed-funds'}
