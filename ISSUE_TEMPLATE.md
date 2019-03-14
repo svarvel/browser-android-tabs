@@ -14,10 +14,12 @@ INSUFFICIENT INFO WILL GET THE ISSUE CLOSED. IT WILL ONLY BE REOPENED AFTER SUFF
 
 ## Actual result <!-- Please add screenshots if needed -->
 
+
 ## Expected result
 
 
 ## Issue reproduces how often <!-- [Easily reproduced/Intermittent issue/No steps to reproduce] -->
+
 
 ## Issue happens on <!-- Mention yes or no -->
    - Current Play Store version?
