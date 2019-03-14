@@ -3,38 +3,37 @@
 PLEASE USE THE TEMPLATE BELOW TO PROVIDE INFORMATION ABOUT THE ISSUE. 
 INSUFFICIENT INFO WILL GET THE ISSUE CLOSED. IT WILL ONLY BE REOPENED AFTER SUFFICIENT INFO IS PROVIDED-->
 
-## Description <!--Provide a brief description of the issue-->
+## Description <!-- Provide a brief description of the issue -->
 
 
-## Steps to Reproduce <!--Please add a series of steps to reproduce the issue-->
+## Steps to reproduce <!-- Please add a series of steps to reproduce the issue -->
 
    1. 
    2. 
    3. 
 
-## Actual result: <!--Please add screenshots if needed-->
+## Actual result <!-- Please add screenshots if needed -->
+
+## Expected result
 
 
-## Expected result:
+## Issue reproduces how often <!-- [Easily reproduced/Intermittent issue/No steps to reproduce] -->
 
-
-## Issue reproduces how often: <!--[Easily reproduced/Intermittent issue/No steps to reproduce]-->
-
-## Issue happens on: <!-- Mention yes or no -->
-   - Current Playstore version?
+## Issue happens on <!-- Mention yes or no -->
+   - Current Play Store version?
    - Beta build?
 
-## Device Details:
-   - Install Type(ARM, x86):
-   - Device(Phone, Tablet, Phablet):
-   - Android Version:
+## Device details
+   - Install type (ARM, x86):
+   - Device (Phone, Tablet, Phablet):
+   - Android version:
    
-## Brave version:
+## Brave version
 
 
-### Website problems only:  
+### Website problems only
 - Does the issue resolve itself when disabling Brave Shields? 
 - Is the issue reproducible on the latest version of Chrome? 
 
-### Additional Information
-<!--Any additional information, related issues, extra QA steps, configuration or data that might be necessary to reproduce the issue-->
+### Additional information
+<!-- Any additional information, related issues, extra QA steps, configuration or data that might be necessary to reproduce the issue -->
