@@ -459,6 +459,13 @@ void BraveRewardsNativeWorker::OnGrant(brave_rewards::RewardsService* rewards_se
       unsigned int result, brave_rewards::Grant grant) {
   // TODO what do we need to do here? We receive notification about deletion
 }
+void BraveRewardsNativeWorker::OnGrantFinish(brave_rewards::RewardsService* rewards_service, 
+      unsigned int result, brave_rewards::Grant grant) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnGrantFinish(env, 
+        weak_java_brave_rewards_native_worker_.get(env), result);
+}
 
 void BraveRewardsNativeWorker::OnRecurringDonationUpdated(
       brave_rewards::RewardsService* rewards_service, brave_rewards::ContentSiteList list) {
