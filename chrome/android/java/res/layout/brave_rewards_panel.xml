@@ -115,6 +115,7 @@
                     android:paddingStart="30dp"
                     android:paddingEnd="30dp"
                     android:alpha=".5"
+                    android:enabled="false"
                     android:visibility="gone"/>
                 </FrameLayout>
 
@@ -399,7 +400,7 @@
                                 android:layout_width="40dp"
                                 android:layout_gravity="center"
                                 android:gravity="center"
-                                android:visibility="gone"/>
+                                android:visibility="visible"/>
 
                             <Button
                                 android:id="@+id/br_claim_button"
@@ -412,7 +413,7 @@
                                 android:fontFamily="sans-serif"
                                 android:textSize="14sp"
                                 android:textColor="#FFFFFF"
-                                android:visibility="visible"/>
+                                android:visibility="gone"/>
                         </FrameLayout>
 
                     </LinearLayout>

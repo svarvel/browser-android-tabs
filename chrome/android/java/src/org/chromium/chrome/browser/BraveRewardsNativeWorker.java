@@ -31,6 +31,7 @@ public class BraveRewardsNativeWorker {
     private static BraveRewardsNativeWorker instance;
     private static final Object lock = new Object();
     private boolean createWalletInProcess;  //flag: wallet is being created
+    private boolean grantClaimInProcess;  //flag: wallet is being created
 
     public static  BraveRewardsNativeWorker getInstance(){
         synchronized(lock) {
@@ -88,6 +89,10 @@ public class BraveRewardsNativeWorker {
 
     public boolean IsCreateWalletInProcess() {
         return createWalletInProcess;
+    }
+
+    public boolean IsGrantClaimInProcess() {
+        return grantClaimInProcess;
     }
 
     public void WalletExist() {
@@ -200,6 +205,10 @@ public class BraveRewardsNativeWorker {
 
     public void GetGrant() {
         synchronized(lock) {
+            if (grantClaimInProcess) {
+                return;
+            }
+            grantClaimInProcess = true;
             nativeGetGrant(mNativeBraveRewardsNativeWorker);
         }
     }
@@ -363,6 +372,11 @@ public class BraveRewardsNativeWorker {
         for(BraveRewardsObserver observer : observers_) {
             observer.OnGetReconcileStamp(timestamp);
         }
+    }
+
+    @CalledByNative
+    public void OnGrantFinish(int result) {
+        grantClaimInProcess = false;
     }
 
     private native void nativeInit();

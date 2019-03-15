@@ -226,19 +226,23 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             }
         });
 
-        if (mBraveRewardsNativeWorker != null) {
 
+        btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
+        if (mBraveRewardsNativeWorker != null) {
             //check if 'CreateWallet' request has been sent
             mWalletCreateInProcess = mBraveRewardsNativeWorker.IsCreateWalletInProcess();
             if (mWalletCreateInProcess){
                 startJoinRewardsAnimation();
             }
+            else{
+                btJoinRewards.setEnabled(true);
+            }
 
             mBraveRewardsNativeWorker.GetRewardsMainEnabled();
         }
+
         String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + "\u2122";
         ((TextView)root.findViewById(R.id.brave_rewards_id)).setText(braveRewardsTitle);
-        btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
         if (btJoinRewards != null) {
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -427,7 +431,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     private void startJoinRewardsAnimation(){
         Button btJoinRewards = (Button)root.findViewById(R.id.join_rewards_id);
-        btJoinRewards.setClickable(false); //set not clickable
+        btJoinRewards.setEnabled(false); 
         btJoinRewards.setText(root.getResources().getString(R.string.brave_ui_rewards_creating_text));
         btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.brave_rewards_loader, 0);
         wallet_init_animation = (AnimationDrawable)btJoinRewards.getCompoundDrawables()[2];
@@ -484,7 +488,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   BraveRewardsHelper.crossfade(claimOk, fadein, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
 
                   mBraveRewardsNativeWorker.GetGrant();
-
                   walletDetailsReceived = false; //re-read wallet status
                   EnableWalletDetails(false);
 
@@ -660,7 +663,20 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         String title = "";
         String description = "";
         Button btClaimOk = (Button)root.findViewById(R.id.br_claim_button);
-        btClaimOk.setVisibility(View.VISIBLE);
+        View claim_progress = root.findViewById(R.id.progress_br_claim_button);
+
+        //hide 'Claim' button if Grant claim is in process
+        mClaimInProcess = mBraveRewardsNativeWorker.IsGrantClaimInProcess();
+        if (mClaimInProcess){
+            btClaimOk.setVisibility(View.GONE);
+            claim_progress.setVisibility(View.VISIBLE);
+        }
+        else {
+            claim_progress.setVisibility(View.GONE);
+            btClaimOk.setVisibility(View.VISIBLE);
+        }
+
+
         TextView notificationClose = (TextView)root.findViewById(R.id.br_notification_close);
         notificationClose.setVisibility(View.VISIBLE);
         ImageView notification_icon = (ImageView)root.findViewById(R.id.br_notification_icon);

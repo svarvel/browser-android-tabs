@@ -158,6 +158,9 @@ public:
     void OnGrant(brave_rewards::RewardsService* rewards_service, unsigned int result,
         brave_rewards::Grant grant) override;
 
+    void OnGrantFinish(brave_rewards::RewardsService* rewards_service, unsigned int result,
+        brave_rewards::Grant grant) override;
+
     void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
         brave_rewards::ContentSiteList) override;
 
