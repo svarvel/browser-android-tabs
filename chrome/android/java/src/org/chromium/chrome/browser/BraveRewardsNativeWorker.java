@@ -30,8 +30,8 @@ public class BraveRewardsNativeWorker {
 
     private static BraveRewardsNativeWorker instance;
     private static final Object lock = new Object();
-    private boolean createWalletInProcess;  //flag: wallet is being created
-    private boolean grantClaimInProcess;  //flag: wallet is being created
+    private boolean createWalletInProcess;  // flag: wallet is being created
+    private boolean grantClaimInProcess;  // flag: wallet is being created
 
     public static  BraveRewardsNativeWorker getInstance(){
         synchronized(lock) {
@@ -88,11 +88,15 @@ public class BraveRewardsNativeWorker {
     }
 
     public boolean IsCreateWalletInProcess() {
-        return createWalletInProcess;
+        synchronized(lock) {
+          return createWalletInProcess;
+        }
     }
 
     public boolean IsGrantClaimInProcess() {
-        return grantClaimInProcess;
+        synchronized(lock) {
+          return grantClaimInProcess;
+        }
     }
 
     public void WalletExist() {
