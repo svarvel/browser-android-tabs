@@ -53,6 +53,7 @@ Still reading?
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_donation_sent.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+    <ignore regexp="chrome/android/java/res/layout-land/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="DefaultLocale">
     <ignore regexp="clank"/>
@@ -105,6 +106,7 @@ Still reading?
     <ignore regexp="chromecast/internal"/>
     <ignore regexp="remoting/android/host/res/layout/main.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+    <ignore regexp="chrome/android/java/res/layout-land/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="IconColors" severity="Error">
     <ignore regexp="tools/android/audio_focus_grabber/java/res/drawable-hdpi/notification_icon.png"/>
@@ -465,15 +467,18 @@ Still reading?
   <issue id="RelativeOverlap">
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_donation_sent.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+    <ignore regexp="chrome/android/java/res/layout-land/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="NestedWeights">
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+    <ignore regexp="chrome/android/java/res/layout-land/brave_rewards_site_banner.xml"/>
   </issue>
   <issue id="NestedScrolling">
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
   </issue>
   <issue id="SmallSp">
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_site_banner.xml"/>
+    <ignore regexp="chrome/android/java/res/layout-land/brave_rewards_site_banner.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_grants_list_item.xml"/>
   </issue>
