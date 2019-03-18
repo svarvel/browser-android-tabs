@@ -33,6 +33,7 @@ import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ChromeActivity;
+import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.NavigationPopup;
 import org.chromium.chrome.browser.download.DownloadUtils;
 import org.chromium.chrome.browser.ntp.NewTabPage;
@@ -70,6 +71,7 @@ public class ToolbarTablet extends ToolbarLayout
     private ImageButton mBookmarkButton;
     private ImageButton mSaveOfflineButton;
     private ToggleTabStackButton mAccessibilitySwitcherButton;
+    private ImageView mBraveShieldsButton;
     private ImageView mBraveRewardsPanelButton;
 
     private OnClickListener mBookmarkListener;

@@ -1048,7 +1048,7 @@ std::string GetProduct() {
 
 }  // namespace
 
-std::string GetUserAgent() {
+std::string GetUserAgent(const std::string& host) {
   base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
   if (command_line->HasSwitch(switches::kUserAgent)) {
     std::string ua = command_line->GetSwitchValueASCII(switches::kUserAgent);
@@ -1062,7 +1062,7 @@ std::string GetUserAgent() {
   if (command_line->HasSwitch(switches::kUseMobileUserAgent))
     product += " Mobile";
 #endif
-  return content::BuildUserAgentFromProduct(product);
+  return content::BuildUserAgentFromProduct(product, host);
 }
 
 blink::UserAgentMetadata GetUserAgentMetadata() {
@@ -5589,8 +5589,8 @@ std::string ChromeContentBrowserClient::GetProduct() const {
   return ::GetProduct();
 }
 
-std::string ChromeContentBrowserClient::GetUserAgent() const {
-  return ::GetUserAgent();
+std::string ChromeContentBrowserClient::GetUserAgent(const std::string& host) const {
+  return ::GetUserAgent(host);
 }
 
 blink::UserAgentMetadata ChromeContentBrowserClient::GetUserAgentMetadata()

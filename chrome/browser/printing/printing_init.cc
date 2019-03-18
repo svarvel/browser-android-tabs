@@ -27,7 +27,7 @@ void InitializePrinting(content::WebContents* web_contents) {
 #else
   printing::PrintViewManagerBasic::CreateForWebContents(web_contents);
 #endif  // BUILDFLAG(ENABLE_PRINT_PREVIEW)
-  CreateCompositeClientIfNeeded(web_contents, GetUserAgent());
+  CreateCompositeClientIfNeeded(web_contents, GetUserAgent(""));
 }
 
 }  // namespace printing

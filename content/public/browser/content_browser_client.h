@@ -1496,7 +1496,7 @@ class CONTENT_EXPORT ContentBrowserClient {
   virtual std::string GetProduct() const;
 
   // Returns the user agent.  Content may cache this value.
-  virtual std::string GetUserAgent() const;
+  virtual std::string GetUserAgent(const std::string& host) const;
 
   // Returns user agent metadata. Content may cache this value.
   virtual blink::UserAgentMetadata GetUserAgentMetadata() const;

@@ -59,6 +59,7 @@ import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ChromeActivity;
+import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
 import org.chromium.chrome.browser.device.DeviceClassManager;
@@ -479,6 +480,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 } else {
                     return getCurrentTabView();
                 }
+            }
 
             @Override
             public View getNextFocusBackward() {
@@ -486,7 +488,6 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             }
         });
         mBraveShieldsButton.setOnClickListener(this);
-        mBraveShieldsButton.setOnLongClickListener(this);
         mBraveRewardsPanelButton.setOnClickListener(this);
     }
 
@@ -649,7 +650,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
         // Chrome prevents layout_gravity="left" from being defined in XML, but it simplifies
         // the logic, so it is manually specified here.
-        locationBarLayoutParams.gravity = Gravity.TOP | Gravity.LEFT;
+        locationBarLayoutParams.gravity = Gravity.TOP | Gravity.START;
 
         int width = 0;
         int leftMargin = 0;

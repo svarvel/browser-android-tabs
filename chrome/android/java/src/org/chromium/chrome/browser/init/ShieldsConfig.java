@@ -24,6 +24,7 @@ import org.chromium.chrome.browser.ContentSettingsType;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.website.WebsitePreferenceBridge;
 import org.chromium.chrome.browser.preferences.website.ContentSetting;
+import org.chromium.chrome.browser.preferences.website.ContentSettingValues;
 import org.chromium.chrome.browser.preferences.website.ContentSettingException;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorTabObserver;
 
@@ -256,9 +257,9 @@ public class ShieldsConfig {
     public void setJavaScriptBlock(boolean incognitoTab, String host, boolean block, boolean fromTopShields) {
         String hostForAccessMap = CutWwwPrefix(host);
 
-        ContentSetting setting = ContentSetting.ALLOW;
+        int setting = ContentSettingValues.ALLOW;
         if (block && !fromTopShields) {
-            setting = ContentSetting.BLOCK;
+            setting = ContentSettingValues.BLOCK;
         }
 
         if (fromTopShields) {
@@ -267,7 +268,7 @@ public class ShieldsConfig {
           // block is false => we should allow js
           // block is true => we should switch js back according to hostSettings string
           if (!block) {
-            setting = ContentSetting.ALLOW;
+            setting = ContentSettingValues.ALLOW;
           } else {
             boolean allowJsFromBraveHostSettings = true;//safe dafault
             String settings = getHostSettings(incognitoTab, hostForAccessMap);
@@ -278,18 +279,18 @@ public class ShieldsConfig {
                 //'1' means Block Scripts switch is on
                 allowJsFromBraveHostSettings = false;
             }
-            setting = allowJsFromBraveHostSettings ? ContentSetting.ALLOW : ContentSetting.BLOCK;
+            setting = allowJsFromBraveHostSettings ? ContentSettingValues.ALLOW : ContentSettingValues.BLOCK;
           }
         }
 
         if (incognitoTab) {
             PrefServiceBridge.getInstance().nativeSetContentSettingForPatternIncognito(
                       ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT, host,
-                      setting.toInt());
+                      setting);
         } else {
             PrefServiceBridge.getInstance().nativeSetContentSettingForPattern(
                       ContentSettingsType.CONTENT_SETTINGS_TYPE_JAVASCRIPT, host,
-                      setting.toInt());
+                      setting);
         }
 
         if (!fromTopShields) {
@@ -421,7 +422,7 @@ public class ShieldsConfig {
                 continue;
             }
 
-            if (ContentSetting.ALLOW == exception.getContentSetting()) {
+            if (ContentSettingValues.ALLOW == exception.getContentSetting()) {
                 return true;
             } else {
                 return false;
