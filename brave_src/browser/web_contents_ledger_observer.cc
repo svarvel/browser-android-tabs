@@ -128,4 +128,6 @@ bool WebContentsLedgerObserver::IsBeingDestroyed() {
   return is_being_destroyed_;
 }
 
+WEB_CONTENTS_USER_DATA_KEY_IMPL(WebContentsLedgerObserver)
+
 }

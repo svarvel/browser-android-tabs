@@ -962,7 +962,7 @@ std::string ContentBrowserClient::GetProduct() const {
   return std::string();
 }
 
-std::string ContentBrowserClient::GetUserAgent() const {
+std::string ContentBrowserClient::GetUserAgent(const std::string& host) const {
   return std::string();
 }
 

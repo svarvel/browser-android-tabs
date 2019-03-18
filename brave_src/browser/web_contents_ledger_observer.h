@@ -37,7 +37,7 @@ public:
   void ResourceLoadComplete(content::RenderFrameHost* render_frame_host,
       const content::GlobalRequestID& request_id,
       const content::mojom::ResourceLoadInfo& resource_load_info) override;
-
+  WEB_CONTENTS_USER_DATA_KEY_DECL();
 private:
   content::WebContents* web_contents_;
   brave_rewards::RewardsService* brave_rewards_service_;

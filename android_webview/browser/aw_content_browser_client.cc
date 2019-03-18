@@ -234,7 +234,7 @@ std::string GetProduct() {
   return version_info::GetProductNameAndVersionForUserAgent();
 }
 
-std::string GetUserAgent() {
+std::string GetUserAgent(const std::string& host) {
   // "Version/4.0" had been hardcoded in the legacy WebView.
   std::string product = "Version/4.0 " + GetProduct();
   if (base::CommandLine::ForCurrentProcess()->HasSwitch(
@@ -242,7 +242,7 @@ std::string GetUserAgent() {
     product += " Mobile";
   }
   return content::BuildUserAgentFromProductAndExtraOSInfo(
-      product, "; wv", true /* include_android_build_number */);
+      product, "; wv", true /* include_android_build_number */, host);
 }
 
 // TODO(yirui): can use similar logic as in PrependToAcceptLanguagesIfNecessary
@@ -1062,8 +1062,8 @@ std::string AwContentBrowserClient::GetProduct() const {
   return android_webview::GetProduct();
 }
 
-std::string AwContentBrowserClient::GetUserAgent() const {
-  return android_webview::GetUserAgent();
+std::string AwContentBrowserClient::GetUserAgent(const std::string& host) const {
+  return android_webview::GetUserAgent(host);
 }
 
 content::ContentBrowserClient::WideColorGamutHeuristic

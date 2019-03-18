@@ -361,16 +361,12 @@ ChromeContentUtilityClient::MaybeCreateMainThreadService(
 #endif  // defined(OS_CHROMEOS)
 
 #if BUILDFLAG(BRAVE_ADS_ENABLED)
-  service_manager::EmbeddedServiceInfo bat_ads_service;
-  bat_ads_service.factory = base::BindRepeating(
-      &bat_ads::BatAdsApp::CreateService);
-  services->emplace(bat_ads::mojom::kServiceName, bat_ads_service);
+  if (service_name == bat_ads::mojom::kServiceName)
+    return std::make_unique<bat_ads::BatAdsApp>(std::move(request));
 #endif
 
-  service_manager::EmbeddedServiceInfo bat_ledger_info;
-  bat_ledger_info.factory = base::BindRepeating(
-    &bat_ledger::BatLedgerApp::CreateService);
-  services->emplace(bat_ledger::mojom::kServiceName, bat_ledger_info);
+  if (service_name == bat_ledger::mojom::kServiceName)
+    return std::make_unique<bat_ledger::BatLedgerApp>(std::move(request));
 }
 
 std::unique_ptr<service_manager::Service>

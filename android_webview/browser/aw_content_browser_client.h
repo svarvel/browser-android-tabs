@@ -35,7 +35,7 @@ class AwBrowserContext;
 class AwFeatureListCreator;
 
 std::string GetProduct();
-std::string GetUserAgent();
+std::string GetUserAgent(const std::string& host);
 
 class AwContentBrowserClient : public content::ContentBrowserClient {
  public:
@@ -244,7 +244,7 @@ class AwContentBrowserClient : public content::ContentBrowserClient {
       network::mojom::TrustedHeaderClientPtr* header_client,
       uint32_t* options) override;
   std::string GetProduct() const override;
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& host) const override;
   ContentBrowserClient::WideColorGamutHeuristic GetWideColorGamutHeuristic()
       const override;
 

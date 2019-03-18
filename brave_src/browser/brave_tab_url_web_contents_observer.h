@@ -65,7 +65,7 @@ class BraveTabUrlWebContentsObserver : public content::WebContentsObserver,
 
  private:
   friend class content::WebContentsUserData<BraveTabUrlWebContentsObserver>;
-
+  WEB_CONTENTS_USER_DATA_KEY_DECL();
   DISALLOW_COPY_AND_ASSIGN(BraveTabUrlWebContentsObserver);
 };
 

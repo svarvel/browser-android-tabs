@@ -155,4 +155,6 @@ GURL BraveTabUrlWebContentsObserver::GetTabURLFromRenderFrameInfo(
   return GURL();
 }
 
+WEB_CONTENTS_USER_DATA_KEY_IMPL(BraveTabUrlWebContentsObserver)
+
 }  // namespace brave
