@@ -131,7 +131,7 @@ def UpdateBraveIds(grd_file):
         brave_string_phs = message_tag.findall('ph')
         meaning = (message_tag.get('meaning') if 'meaning' in message_tag.attrib else None)
         for brave_string_ph in brave_string_phs:
-            brave_string = brave_string + brave_string_ph.get('name').upper() + brave_string_ph.tail
+            brave_string = (brave_string if brave_string is not None else '') + brave_string_ph.get('name').upper() + (brave_string_ph.tail if brave_string_ph.tail is not None else '')
         if brave_string is None:
             continue
         brave_string = brave_string.strip().encode('utf-8')
