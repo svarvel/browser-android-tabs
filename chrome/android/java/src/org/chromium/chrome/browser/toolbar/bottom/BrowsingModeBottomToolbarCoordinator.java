@@ -82,7 +82,12 @@ public class BrowsingModeBottomToolbarCoordinator {
         mBookmarksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BookmarkUtils.showBookmarkManager((ChromeActivity) v.getContext());
+                try {
+                    BookmarkUtils.showBookmarkManager((ChromeActivity) v.getContext());
+                } catch (ClassCastException exc) {
+                    assert false;
+                    // Just ignore it for now
+                }
             }
         });
 
@@ -170,12 +175,29 @@ public class BrowsingModeBottomToolbarCoordinator {
      * Clean up any state when the browsing mode bottom toolbar is destroyed.
      */
     public void destroy() {
-        mMediator.destroy();
-        mHomeButton.destroy();
-        //mShareButton.destroy();
-        mSearchAccelerator.destroy();
-        mTabSwitcherButtonCoordinator.destroy();
-        mMenuButton.destroy();
-        mBookmarksButton.destroy();
+        try {
+            if (mMediator != null) {
+                mMediator.destroy();
+            }
+            if (mHomeButton != null) {
+                mHomeButton.destroy();
+            }
+            //mShareButton.destroy();
+            if (mSearchAccelerator != null) {
+                mSearchAccelerator.destroy();
+            }
+            if (mTabSwitcherButtonCoordinator != null) {
+                mTabSwitcherButtonCoordinator.destroy();
+            }
+            if (mMenuButton != null) {
+                mMenuButton.destroy();
+            }
+            if (mBookmarksButton != null) {
+                mBookmarksButton.destroy();
+            }
+        } catch (NullPointerException exc) {
+            // Just ignore it here
+            assert false;
+        }
     }
 }
