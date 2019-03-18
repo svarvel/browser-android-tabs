@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/tip_sent_float"
+            android:background="#E62F3140"
             tools:fontFamily="@font/poppins_bold"
             android:gravity="center">
 
