@@ -211,18 +211,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     int offset = tvPublisherNotVerifiedSummary.getOffsetForPosition(
                       motionEvent.getX(), motionEvent.getY());
-                    findWord(tvPublisherNotVerifiedSummary.getText().toString(), offset);
+
+                    String learn_more = BraveRewardsPanelPopup.this.root.getResources().getString(R.string.learn_more);
+                    if (BraveRewardsHelper.subtextAtOffset(tvPublisherNotVerifiedSummary.getText().toString(), learn_more, offset) ){
+                        mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
+                        dismiss();
+                    }
                 }
                 return false;
-            }
-
-            private void findWord(String text, int offset) {
-                int firstOffset = text.indexOf(". ");
-                if (offset > firstOffset) {
-                    // We are on learn more
-                    mActivity.openNewOrSelectExistingTab (ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
-                    dismiss();
-                }
             }
         });
 
@@ -400,18 +396,14 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     int offset = tvPublisherNotVerified.getOffsetForPosition(
                       motionEvent.getX(), motionEvent.getY());
-                    findWord(tvPublisherNotVerified.getText().toString(), offset);
+
+                    String learn_more = BraveRewardsPanelPopup.this.root.getResources().getString(R.string.learn_more);
+                    if (BraveRewardsHelper.subtextAtOffset(tvPublisherNotVerified.getText().toString(), learn_more, offset) ){
+                        mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
+                        dismiss();
+                    }
                 }
                 return false;
-            }
-
-            private void findWord(String text, int offset) {
-                int firstOffset = text.indexOf(".\n");
-                if (offset > firstOffset) {
-                    // We are on change auto-contribute settings
-                    mActivity.openNewOrSelectExistingTab(ChromeTabbedActivity.REWARDS_LEARN_MORE_URL);
-                    dismiss();
-                }
             }
         });
 

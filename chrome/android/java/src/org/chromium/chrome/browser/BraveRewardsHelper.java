@@ -60,6 +60,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     public static final int THANKYOU_FADE_OUT_DURATION = 1500; //ms
     public static final int THANKYOU_FADE_IN_DURATION = 1500; //ms
     public static final int THANKYOU_STAY_DURATION = 2000; //ms
+    private static final float DP_PER_INCH_MDPI = 160f;
 
 
     public interface LargeIconReadyCallback {
@@ -354,7 +355,20 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
      */
     public static int dp2px(int dp){
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        float px = dp * (metrics.densityDpi / 160f);
+        float px = dp * (metrics.densityDpi / DP_PER_INCH_MDPI);
         return Math.round(px);
+    }
+
+
+    public static boolean subtextAtOffset(String text, String subtext, int offset) {
+        boolean ret_value = false;
+        final int startIndex = text.indexOf(subtext);
+        if (startIndex >= 0){
+            final int endIndex = startIndex + subtext.length();
+            if (offset >= startIndex && offset  < endIndex) {
+                ret_value = true;
+            }
+        }
+        return ret_value;
     }
 }
