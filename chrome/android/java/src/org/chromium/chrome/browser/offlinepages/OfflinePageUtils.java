@@ -580,7 +580,16 @@ public class OfflinePageUtils {
                     assert(isSchemeContentOrFile(uri));
                     return uri;
                 }
-                return ChromeFileProvider.generateUri(activity, offlinePageFile);
+                try {
+                    Uri uri = ChromeFileProvider.generateUri(activity, offlinePageFile);
+                    return uri;
+                } catch (IllegalArgumentException e) {
+                    assert false;
+                    if (pageUrl.isEmpty()) {
+                        return Uri.parse("https://");
+                    }
+                    return Uri.parse(pageUrl);
+                }
             }
             @Override
             protected void onPostExecute(Uri uri) {
