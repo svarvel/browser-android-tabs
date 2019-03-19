@@ -268,9 +268,9 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
             final StringBuilder sb1 = new StringBuilder();
             sb1.append(part1);
-            sb1.append(" <font color=#00afff>");
+            sb1.append(" <br><font color=#00afff>");
             sb1.append(part2);
-            sb1.append("</font>");
+            sb1.append("</font></br>");
 
             if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 toInsert = Html.fromHtml(sb1.toString(), Html.FROM_HTML_MODE_LEGACY);
@@ -279,7 +279,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
             }
             TextView not_verified_warning_text = (TextView )findViewById(R.id.not_verified_warning_text );
             not_verified_warning_text.setText(toInsert);
-            final int learn_more_start_index = toInsert.length() - part2.length();
 
             not_verified_warning_text.setOnTouchListener(new View.OnTouchListener() {
                 @Override
@@ -287,8 +286,9 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                         int offset = not_verified_warning_text.getOffsetForPosition(
                                 motionEvent.getX(), motionEvent.getY());
-                        if (offset >= learn_more_start_index){
-                            // We are on learn more
+
+                        String learn_more = getResources().getString(R.string.learn_more);
+                        if (BraveRewardsHelper.subtextAtOffset(not_verified_warning_text.getText().toString(), learn_more, offset) ){
                             Intent returnIntent = new Intent();
                             setResult(ChromeTabbedActivity.SITE_BANNER_NOT_VERIFIED_LEARN_MORE_RESULT_CODE, returnIntent);
                             finish();
