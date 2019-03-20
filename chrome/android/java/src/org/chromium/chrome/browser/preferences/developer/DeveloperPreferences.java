@@ -27,7 +27,7 @@ public class DeveloperPreferences extends PreferenceFragment {
     public static boolean shouldShowDeveloperPreferences() {
         // Always enabled on canary, dev and local builds, otherwise can be enabled by tapping the
         // Chrome version in Settings>About multiple times.
-        if (VersionConstants.CHANNEL <= Channel.DEV) return true;
+        // if (VersionConstants.CHANNEL <= Channel.DEV) return true;
         return ContextUtils.getAppSharedPreferences().getBoolean(PREF_DEVELOPER_ENABLED, false);
     }
 

@@ -338,6 +338,14 @@ ChromeContentUtilityClient::MaybeCreateMainThreadService(
   }
 #endif
 
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+  if (service_name == bat_ads::mojom::kServiceName)
+    return std::make_unique<bat_ads::BatAdsApp>(std::move(request));
+#endif
+
+  if (service_name == bat_ledger::mojom::kServiceName)
+    return std::make_unique<bat_ledger::BatLedgerApp>(std::move(request));
+
 #if defined(OS_CHROMEOS)
   if (service_name == chromeos::ime::mojom::kServiceName)
     return std::make_unique<chromeos::ime::ImeService>(std::move(request));
@@ -359,14 +367,6 @@ ChromeContentUtilityClient::MaybeCreateMainThreadService(
 #else   // defined(OS_CHROMEOS)
   return nullptr;
 #endif  // defined(OS_CHROMEOS)
-
-#if BUILDFLAG(BRAVE_ADS_ENABLED)
-  if (service_name == bat_ads::mojom::kServiceName)
-    return std::make_unique<bat_ads::BatAdsApp>(std::move(request));
-#endif
-
-  if (service_name == bat_ledger::mojom::kServiceName)
-    return std::make_unique<bat_ledger::BatLedgerApp>(std::move(request));
 }
 
 std::unique_ptr<service_manager::Service>

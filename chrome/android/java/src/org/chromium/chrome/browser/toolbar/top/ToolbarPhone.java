@@ -478,22 +478,24 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     }
 
     private void enableTabSwitchingResources() {
-        mToggleTabStackButton.setOnKeyListener(new KeyboardNavigationListener() {
-            @Override
-            public View getNextFocusForward() {
-                final ImageButton menuButton = getMenuButton();
-                if (menuButton != null && menuButton.isShown()) {
-                    return menuButton;
-                } else {
-                    return getCurrentTabView();
+        if (mToggleTabStackButton != null) {
+            mToggleTabStackButton.setOnKeyListener(new KeyboardNavigationListener() {
+                @Override
+                public View getNextFocusForward() {
+                    final ImageButton menuButton = getMenuButton();
+                    if (menuButton != null && menuButton.isShown()) {
+                        return menuButton;
+                    } else {
+                        return getCurrentTabView();
+                    }
                 }
-            }
 
-            @Override
-            public View getNextFocusBackward() {
-                return findViewById(R.id.url_bar);
-            }
-        });
+                @Override
+                public View getNextFocusBackward() {
+                    return findViewById(R.id.url_bar);
+                }
+            });
+        }
         mBraveShieldsButton.setOnClickListener(this);
         mBraveRewardsPanelButton.setOnClickListener(this);
     }

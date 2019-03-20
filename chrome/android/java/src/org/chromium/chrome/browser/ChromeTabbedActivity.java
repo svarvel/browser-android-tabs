@@ -1887,7 +1887,7 @@ public class ChromeTabbedActivity
     }
 
     @Override
-    protected void setBraveShieldsColor(boolean incognitoTab, String url) {
+    public void setBraveShieldsColor(boolean incognitoTab, String url) {
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
             if (app.getShieldsConfig().isTopShieldsEnabled(incognitoTab, url)) {

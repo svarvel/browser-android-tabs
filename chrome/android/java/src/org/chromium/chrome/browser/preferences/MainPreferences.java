@@ -174,11 +174,11 @@ public class MainPreferences extends PreferenceFragment
 
         // This checks whether Autofill Assistant is enabled and was shown at least once (only then
         // will the AA switch be assigned a value).
-        if (!ChromeFeatureList.isEnabled(ChromeFeatureList.AUTOFILL_ASSISTANT)
+        /*if (!ChromeFeatureList.isEnabled(ChromeFeatureList.AUTOFILL_ASSISTANT)
                 || !ContextUtils.getAppSharedPreferences().contains(
                         AutofillAssistantPreferences.PREF_AUTOFILL_ASSISTANT_SWITCH)) {
             getPreferenceScreen().removePreference(findPreference(PREF_AUTOFILL_ASSISTANT));
-        }
+        }*/
     }
 
     /**
