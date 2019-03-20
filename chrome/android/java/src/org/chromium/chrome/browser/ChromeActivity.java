@@ -766,7 +766,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
     }
 
-    protected void setBraveShieldsColor(boolean incognitoTab, String url) {
+    public void setBraveShieldsColor(boolean incognitoTab, String url) {
         ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
         if (null != app) {
             if (app.getShieldsConfig().isTopShieldsEnabled(incognitoTab, url)) {
@@ -778,7 +778,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
     }
 
-    protected void setBraveShieldsBlackAndWhite() {
+    public void setBraveShieldsBlackAndWhite() {
         ImageButton braveShieldsButton = (ImageButton)findViewById(R.id.brave_shields_button);
         if (null != braveShieldsButton) {
             braveShieldsButton.setImageResource(R.drawable.btn_brave_off);
@@ -792,7 +792,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
     }
 
-    protected void braveShieldsCountUpdate(String url, int adsAndTrackers,
+    public void braveShieldsCountUpdate(String url, int adsAndTrackers,
             int httpsUpgrades, int scriptsBlocked, int fingerprintsBlocked) {
         List<Tab> tabsList = new ArrayList<>();
         for (int i = 0; i < getCurrentTabModel().getCount(); i++) {

@@ -83,7 +83,6 @@ import org.chromium.chrome.browser.tabmodel.ChromeTabCreator;
 import org.chromium.chrome.browser.tabmodel.TabModelSelector;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorImpl;
 import org.chromium.chrome.browser.tabmodel.TabPersistencePolicy;
-import org.chromium.chrome.browser.tabmodel.TabModelSelectorTabObserver;
 import org.chromium.chrome.browser.toolbar.ToolbarManager;
 import org.chromium.chrome.browser.toolbar.top.ToolbarControlContainer;
 import org.chromium.chrome.browser.util.ColorUtils;
@@ -139,8 +138,6 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
     private CustomTabTopBarDelegate mTopBarDelegate;
     private CustomTabActivityTabController mTabController;
     private CustomTabActivityTabFactory mTabFactory;
-
-    private TabModelSelectorTabObserver mTabModelSelectorTabObserver;
 
     // This is to give the right package name while using the client's resources during an
     // overridePendingTransition call.
@@ -306,54 +303,7 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
 
     @Override
     protected TabModelSelector createTabModelSelector() {
-        TabModelSelectorImpl tabModelSelectorImpl = mTabFactory.createTabModelSelector();
-
-        mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(tabModelSelectorImpl) {
-
-            private boolean mIsFirstPageLoadStart = true;
-
-            @Override
-            public void onPageLoadStarted(Tab tab, String url) {
-                // Discard startup navigation measurements when the user interfered and started the
-                // 2nd navigation (in activity lifetime) in parallel.
-                if (mIsFirstPageLoadStart) {
-                    mIsFirstPageLoadStart = false;
-                }
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
-                if ((null != app) && (null != app.getShieldsConfig())) {
-                    app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
-                }
-                if (getActivityTab() == tab) {
-                    try {
-                        URL urlCheck = new URL(url);
-                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
-                    } catch (Exception e) {
-                        setBraveShieldsBlackAndWhite();
-                    }
-                }
-                tab.clearBraveShieldsCount();
-            }
-
-            @Override
-            public void onPageLoadFinished(Tab tab, String url) {
-                if (getActivityTab() == tab) {
-                    try {
-                        URL urlCheck = new URL(url);
-                        setBraveShieldsColor(tab.isIncognito(), urlCheck.getHost());
-                    } catch (Exception e) {
-                        setBraveShieldsBlackAndWhite();
-                    }
-                }
-            }
-
-            @Override
-            public void onBraveShieldsCountUpdate(String url, int adsAndTrackers, int httpsUpgrades,
-                    int scriptsBlocked, int fingerprintsBlocked) {
-                braveShieldsCountUpdate(url, adsAndTrackers, httpsUpgrades, scriptsBlocked, fingerprintsBlocked);
-            }
-        };
-
-        return  tabModelSelectorImpl;
+        return mTabFactory.createTabModelSelector();
     }
 
     @Override

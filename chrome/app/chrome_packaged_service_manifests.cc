@@ -12,6 +12,7 @@
 #include "chrome/services/noop/public/cpp/manifest.h"
 #include "components/services/patch/public/cpp/manifest.h"
 #include "components/services/unzip/public/cpp/manifest.h"
+#include "brave/components/services/bat_ledger/manifest.h"
 #include "components/spellcheck/common/spellcheck.mojom.h"
 #include "components/startup_metric_utils/common/startup_metric.mojom.h"
 #include "device/vr/buildflags/buildflags.h"
@@ -132,6 +133,7 @@ GetChromePackagedServiceManifests() {
       GetNoopManifest(),
       patch::GetManifest(),
       unzip::GetManifest(),
+      bat_ledger::GetManifest(),
       proxy_resolver::GetManifest(),
       prefs::GetLocalStateManifest(),
 #if BUILDFLAG(ENABLE_EXTENSIONS)
