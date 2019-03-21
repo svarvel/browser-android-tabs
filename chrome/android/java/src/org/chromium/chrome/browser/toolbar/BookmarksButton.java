@@ -7,6 +7,7 @@ package org.chromium.chrome.browser.toolbar;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.content.res.AppCompatResources;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ThemeColorProvider;
 import org.chromium.chrome.browser.ThemeColorProvider.ThemeColorObserver;
 import org.chromium.chrome.browser.ThemeColorProvider.TintObserver;
+import org.chromium.chrome.browser.toolbar.top.ToolbarLayout;
 import org.chromium.ui.widget.ChromeImageButton;
 
 /**
@@ -23,12 +25,11 @@ import org.chromium.ui.widget.ChromeImageButton;
 public class BookmarksButton extends ChromeImageButton implements ThemeColorObserver, TintObserver {
     /** A provider that notifies components when the theme color changes.*/
     private ThemeColorProvider mThemeColorProvider;
+    private ColorStateList mCurrentTint;
 
     public BookmarksButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        final int bookmarksButtonIcon = R.drawable.btn_toolbar_bookmarks;
-        setImageDrawable(ContextCompat.getDrawable(context, bookmarksButtonIcon));
+        setImageDrawable(ContextCompat.getDrawable(context, R.drawable.btn_bookmark));
     }
 
     public void destroy() {
@@ -51,6 +52,21 @@ public class BookmarksButton extends ChromeImageButton implements ThemeColorObse
 
     @Override
     public void onTintChanged(ColorStateList tint, boolean useLight) {
+        mCurrentTint = tint;
         ApiCompatibilityUtils.setImageTintList(this, tint);
+    }
+
+    public void updateBookmarkButton(boolean isBookmarked, boolean editingAllowed) {
+        if (isBookmarked) {
+            setImageResource(R.drawable.btn_bookmark_fill);
+            ApiCompatibilityUtils.setImageTintList(this, AppCompatResources.getColorStateList(getContext(), R.color.blue_mode_tint));
+            setContentDescription(getContext().getString(R.string.edit_bookmark));
+        } else {
+            setImageResource(R.drawable.btn_bookmark);
+            ApiCompatibilityUtils.setImageTintList(this, mCurrentTint);
+            setContentDescription(
+                    getContext().getString(R.string.accessibility_menu_bookmark));
+        }
+        setEnabled(editingAllowed);
     }
 }
