@@ -197,7 +197,7 @@ public class FeatureUtilities {
         cacheHomePageButtonForceEnabled();
         cacheHomepageTileEnabled();
         cacheNewTabPageButtonEnabled();
-        cacheBottomToolbarEnabled();
+        //cacheBottomToolbarEnabled();
         cacheAdaptiveToolbarEnabled();
         cacheInflateToolbarOnBackgroundThread();
         cacheNightModeAvailable();
@@ -394,7 +394,8 @@ public class FeatureUtilities {
      * @return Whether or not the bottom toolbar is enabled.
      */
     public static boolean isBottomToolbarEnabled() {
-        if (sIsBottomToolbarEnabled == null) {
+        return ChromePreferenceManager.getInstance().isBottomToolbarEnabled();
+        /*if (sIsBottomToolbarEnabled == null) {
             ChromePreferenceManager prefManager = ChromePreferenceManager.getInstance();
 
             sIsBottomToolbarEnabled = true;
@@ -403,7 +404,7 @@ public class FeatureUtilities {
         return sIsBottomToolbarEnabled
                 && !DeviceFormFactor.isNonMultiDisplayContextOnTablet(
                         ContextUtils.getApplicationContext())
-                && !isTabGroupsAndroidEnabled();
+                && !isTabGroupsAndroidEnabled();*/
     }
 
     /**

@@ -6,6 +6,7 @@ package org.chromium.chrome.browser.preferences.website;
 
 import static org.chromium.chrome.browser.preferences.SearchUtils.handleSearchNavigation;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Build;
@@ -442,7 +443,7 @@ public class SingleCategoryPreferences extends PreferenceFragment
                 if (type == SiteSettingsCategory.Type.NOTIFICATIONS) {
                     updateNotificationsVibrateCheckBox();
                 } else if (type == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND) {
-                    AskForRelaunch();
+                    AskForRelaunch(this.getActivity());
                 }
                 break;
             }
@@ -912,8 +913,9 @@ public class SingleCategoryPreferences extends PreferenceFragment
         }
     }
 
-    private void AskForRelaunch() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this.getActivity());
+    // TODO(samartnik): find better place for this function
+    public static void AskForRelaunch(Context context) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
          alertDialogBuilder
             .setMessage(R.string.settings_require_relaunch_notice)
             .setCancelable(true)
