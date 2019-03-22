@@ -15,13 +15,13 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/toolbar_height_no_shadow" >
 
-    <org.chromium.chrome.browser.toolbar.HomeButton
+    <!--<org.chromium.chrome.browser.toolbar.HomeButton
         android:id="@+id/home_button"
         style="@style/ToolbarButton"
         android:src="@drawable/btn_toolbar_home"
         android:contentDescription="@string/accessibility_toolbar_btn_home"
         android:visibility="gone"
-        app:tint="@color/standard_mode_tint" />
+        app:tint="@color/standard_mode_tint" />-->
 
     <org.chromium.chrome.browser.omnibox.LocationBarPhone
         android:id="@+id/location_bar"
@@ -46,20 +46,13 @@
             android:paddingStart="8dp"
             android:visibility="gone" />
 
-        <org.chromium.chrome.browser.toolbar.top.ToggleTabStackButton
-            android:id="@+id/tab_switcher_button"
-            style="@style/ToolbarButton"
-            android:paddingStart="8dp"
-            android:layout_gravity="top"
-            android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default"
-            android:visibility="gone" />
-
         <FrameLayout android:id="@+id/brave_shields_button_layout"
             android:layout_width="@dimen/toolbar_button_width"
             android:orientation="vertical"
             android:background="@drawable/modern_toolbar_background_grey_end_segment"
             android:layout_marginTop="8dp"
             android:layout_height="40dp" >
+
             <ImageButton android:id="@+id/brave_shields_button"
                 style="@style/ToolbarButton"
                 android:layout_marginTop="8dp"
@@ -163,6 +156,15 @@
                   android:textSize="10sp" />
         </FrameLayout>
 
+        <org.chromium.chrome.browser.toolbar.top.ToggleTabStackButton
+            android:id="@+id/tab_switcher_button"
+            style="@style/ToolbarButton"
+            android:paddingStart="8dp"
+            android:layout_gravity="top"
+            android:contentDescription="@string/accessibility_toolbar_btn_tabswitcher_toggle_default" />
+
         <include layout="@layout/menu_button"/>
+
     </LinearLayout>
+
 </org.chromium.chrome.browser.toolbar.top.ToolbarPhone>

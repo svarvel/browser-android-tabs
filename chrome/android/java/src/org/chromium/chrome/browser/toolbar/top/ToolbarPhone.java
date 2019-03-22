@@ -777,9 +777,14 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      * @return The right bounds of the location bar after accounting for any visible left buttons.
      */
     private int getBoundsAfterAccountingForRightButtons() {
-        //return Math.max(mToolbarSidePadding, mToolbarButtonsContainer.getMeasuredWidth());
-        // We want toolbar buttons to be included into URL bar
-        return mToolbarSidePadding;
+        // We want brave toolbar buttons to be included into URL bar
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mToolbarButtonsContainer.getLayoutParams();
+        int outsideToolbarWidth =
+            mToolbarButtonsContainer.getMeasuredWidth() -
+            mShieldsLayout.getWidth() -
+            mRewardsLayout.getWidth() +
+            params.getMarginEnd();
+        return Math.max(mToolbarSidePadding, outsideToolbarWidth);
     }
 
     private void updateToolbarBackground(int color) {

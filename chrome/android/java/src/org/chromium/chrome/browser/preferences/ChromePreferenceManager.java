@@ -597,8 +597,7 @@ public class ChromePreferenceManager {
      * @return True if the bottom toolbar is enabled.
      */
     public boolean isBottomToolbarEnabled() {
-      return true;
-      // return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, false);
+        return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
     }
 
     /** Get whether or not use custom tabs.

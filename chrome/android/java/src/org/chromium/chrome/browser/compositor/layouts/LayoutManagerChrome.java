@@ -138,7 +138,7 @@ public class LayoutManagerChrome extends LayoutManager implements OverviewModeCo
      * @param manager The {@link ToolbarManager} for accessing toolbar textures.
      */
     public void setToolbarManager(ToolbarManager manager) {
-        if (FeatureUtilities.isBottomToolbarEnabled()) {
+        if (FeatureUtilities.isBottomToolbarEnabled() && manager.getBottomToolbarCoordinator() != null) {
             manager.getBottomToolbarCoordinator().setToolbarSwipeLayout(mToolbarSwipeLayout);
         }
     }
