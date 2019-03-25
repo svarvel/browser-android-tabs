@@ -389,6 +389,18 @@ void BraveRewardsNativeWorker::GetReconcileStamp(JNIEnv* env, const base::androi
   }
 }
 
+double BraveRewardsNativeWorker::GetPublisherRecurrentDonationAmount(JNIEnv* env,
+                                              const base::android::JavaParamRef<jobject>& obj,
+                                              const base::android::JavaParamRef<jstring>& publisher){
+  double amount (0.0);
+  auto it = map_recurrent_publishers_.find(base::android::ConvertJavaStringToUTF8(env, publisher));
+  if ( it != map_recurrent_publishers_.end() ){
+    // for Recurrent Donations, the amount is stored in ContentSite::percentage
+    amount = it->second.percentage;
+  }
+  return  amount;
+}
+
 void BraveRewardsNativeWorker::OnGetGetReconcileStamp( uint64_t timestamp){
   JNIEnv* env = base::android::AttachCurrentThread();
 
@@ -471,8 +483,13 @@ void BraveRewardsNativeWorker::OnRecurringDonationUpdated(
       brave_rewards::RewardsService* rewards_service, brave_rewards::ContentSiteList list) {
   map_recurrent_publishers_.clear();
   for (size_t i = 0; i < list.size(); i++) {
-    map_recurrent_publishers_[list[i].id] = list[i].reconcile_stamp;
+    map_recurrent_publishers_[list[i].id] = list[i];
   }
+
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_BraveRewardsNativeWorker_OnRecurringDonationUpdated(env, 
+        weak_java_brave_rewards_native_worker_.get(env));
+
 }
 
 void BraveRewardsNativeWorker::SetRewardsMainEnabled(JNIEnv* env, 

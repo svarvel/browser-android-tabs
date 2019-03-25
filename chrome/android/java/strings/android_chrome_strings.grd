@@ -4450,6 +4450,9 @@ content creators you love.
       <message name="IDS_BRAVE_UI_MONTHLY_TEXT" desc="string from Thank you screen">
         Monthly
       </message>
+      <message name="IDS_BRAVE_UI_DONATE_MONTHLY" desc="">
+        Tip this site monthly
+      </message>
       <!--End of rewards temporary section.-->
       <message name="IDS_BOTTOM_TOOLBAR_ENABLE" desc="Menu item for enabling the bottom toolbar.">
         Enable bottom toolbar

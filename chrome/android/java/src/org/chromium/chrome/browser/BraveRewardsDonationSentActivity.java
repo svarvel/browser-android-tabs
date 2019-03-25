@@ -225,6 +225,9 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     public void OnGetAutoContributeProps() {}
 
     @Override
+    public void OnRecurringDonationUpdated() {}
+
+    @Override
     public void OnGetReconcileStamp(long timestamp) {
         //make reconcile date views visible
         if (true == mMonthly_tip_) {

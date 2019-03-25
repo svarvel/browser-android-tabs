@@ -33,6 +33,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.content.Context;
@@ -60,7 +61,9 @@ import org.chromium.base.ContextUtils;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -123,6 +126,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     private boolean mClaimInProcess;
     private boolean mWalletCreateInProcess;
+
+    private boolean mAutoContributeEnabled;
+    private boolean mPubInReccuredDonation;
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -195,7 +201,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
               }
           });
         }
-      }, 0, 60000);
+      }, 0, UPDATE_BALANCE_INTERVAL);
     }
 
     protected void onCreate() {
@@ -1191,11 +1197,57 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     @Override
     public void OnGetAutoContributeProps() {
-        boolean ac_enabled  = mBraveRewardsNativeWorker.IsAutoContributeEnabled();
-        View viewAC  = root.findViewById(R.id.ac_enabled_controls);
-        viewAC.setVisibility(ac_enabled? View.VISIBLE : View.GONE);
+        mAutoContributeEnabled  = mBraveRewardsNativeWorker.IsAutoContributeEnabled();
+        mBraveRewardsNativeWorker.GetRecurringDonations();
     }
 
     @Override
     public void OnGetReconcileStamp(long timestamp){}
+
+
+    @Override
+    public void OnRecurringDonationUpdated() {
+        String pubId = mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
+        mPubInReccuredDonation = mBraveRewardsNativeWorker.IsCurrentPublisherInRecurrentDonations(pubId);
+
+        //all (mPubInReccuredDonation, mAutoContributeEnabled) are false: exit
+        //one is true: ac_enabled_controls on
+        //mAutoContributeEnabled: attention_layout and include_in_ac_layout on
+        //mPubInReccuredDonation: auto_tip_layout is on
+
+        if (mAutoContributeEnabled || mPubInReccuredDonation){
+            root.findViewById(R.id.ac_enabled_controls).setVisibility(View.VISIBLE);
+
+            if (mAutoContributeEnabled){
+                root.findViewById(R.id.attention_layout).setVisibility(View.VISIBLE);
+                root.findViewById(R.id.include_in_ac_layout).setVisibility(View.VISIBLE);
+            }
+
+            if (mPubInReccuredDonation){
+                UpdateRecurrnetDonationSpinner();
+                root.findViewById(R.id.auto_tip_layout).setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+
+    void UpdateRecurrnetDonationSpinner(){
+        String pubId = mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
+        double amount  = mBraveRewardsNativeWorker.GetPublisherRecurrentDonationAmount(pubId);
+        double usdrate = mBraveRewardsNativeWorker.GetWalletRate("USD");
+        Spinner tip_amount_spinner = (Spinner)root.findViewById(R.id.auto_tip_amount);
+        List<String> tip_list = new ArrayList<String>();
+        String strTip = String.format("%f BAT", amount);
+        double bat_donations [] = {0,1,5,10};
+        for (double value : bat_donations ){
+            String strValue = String.format("%.1f BAT (%.2f USD)", value, value * usdrate);
+            tip_list.add(strValue);
+        }
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(ContextUtils.getApplicationContext(),
+                android.R.layout.simple_spinner_item, tip_list);
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tip_amount_spinner.setAdapter(dataAdapter);
+    }
 }

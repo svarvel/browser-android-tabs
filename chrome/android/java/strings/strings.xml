@@ -233,10 +233,9 @@ content creators you love.</string>
     <string name="brave_ui_tip_text">You've just sent a tip to:</string>
     <string name="brave_ui_auto_tip_text">You are automatically sending a tip to:</string>
     <string name="brave_ui_monthly_text">Monthly</string>
-
     <string name="bottom_toolbar_enable">Enable bottom toolbar</string>
     <string name="bottom_toolbar_disable">Disable bottom toolbar</string>
     <string name="search_or_url">Search or URL</string>
-
     <string name="accessibility_toolbar_btn_bookmark">Create a bookmark</string>
+    <string name="brave_ui_donate_monthly">Tip this site monthly</string>
 </resources>
