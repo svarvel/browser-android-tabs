@@ -247,6 +247,12 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public double GetPublisherRecurrentDonationAmount(String publisher) {
+        synchronized(lock) {
+            return nativeGetPublisherRecurrentDonationAmount(mNativeBraveRewardsNativeWorker, publisher);
+        }
+    }
+
     public void SetRewardsMainEnabled(boolean enabled) {
         synchronized(lock) {
             nativeSetRewardsMainEnabled(mNativeBraveRewardsNativeWorker, enabled);
@@ -271,7 +277,7 @@ public class BraveRewardsNativeWorker {
         }
     }
 
-    void GetReconcileStamp(){
+    public void GetReconcileStamp(){
         synchronized(lock) {
             nativeGetReconcileStamp(mNativeBraveRewardsNativeWorker);
         }
@@ -379,6 +385,13 @@ public class BraveRewardsNativeWorker {
     }
 
     @CalledByNative
+    public void OnRecurringDonationUpdated() {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnRecurringDonationUpdated();
+        }
+    }
+
+    @CalledByNative
     public void OnGrantFinish(int result) {
         grantClaimInProcess = false;
     }
@@ -419,5 +432,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetAutoContributeProps(long nativeBraveRewardsNativeWorker);
     private native boolean nativeIsAutoContributeEnabled(long nativeBraveRewardsNativeWorker);
     private native void nativeGetReconcileStamp(long nativeBraveRewardsNativeWorker);
-
+    private native double nativeGetPublisherRecurrentDonationAmount(long nativeBraveRewardsNativeWorker, String publisher);    
 }

@@ -2056,6 +2056,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     @Override
     public void OnGetReconcileStamp(long timestamp){}
 
+    @Override
+    public void OnRecurringDonationUpdated() {}
 
     @Override
     public void setOnTabSwitcherClickHandler(OnClickListener listener) {

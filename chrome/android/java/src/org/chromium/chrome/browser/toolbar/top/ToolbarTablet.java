@@ -536,6 +536,9 @@ public class ToolbarTablet extends ToolbarLayout
     @Override
     public void OnGetReconcileStamp(long timestamp){}
 
+    @Override
+    public void OnRecurringDonationUpdated() {}
+
     /**
      * Called when the currently visible New Tab Page changes.
      */

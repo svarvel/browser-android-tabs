@@ -17,6 +17,7 @@
 #include "brave/components/brave_rewards/browser/wallet_properties.h"
 #include "brave/vendor/bat-native-ledger/include/bat/ledger/publisher_info.h"
 #include "brave/components/brave_rewards/browser/auto_contribution_props.h"
+#include "brave/components/brave_rewards/browser/content_site.h"
 
 namespace brave_rewards {
   class RewardsService;
@@ -116,6 +117,10 @@ public:
 
     void GetReconcileStamp(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    double GetPublisherRecurrentDonationAmount(JNIEnv* env,
+                                                const base::android::JavaParamRef<jobject>& obj,
+                                                const base::android::JavaParamRef<jstring>& publisher);
+
     void OnGetGetReconcileStamp( uint64_t timestamp);
 
     void OnGetAutoContributeProps( std::unique_ptr<brave_rewards::AutoContributeProps> info);
@@ -170,8 +175,7 @@ private:
     brave_rewards::WalletProperties wallet_properties_;
     brave_rewards::AutoContributeProps auto_contrib_properties_;
     std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_; // <tabId, PublisherInfo>
-    std::map<std::string, uint64_t> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
-
+    std::map<std::string, brave_rewards::ContentSite> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
     base::WeakPtrFactory<BraveRewardsNativeWorker> weak_factory_;
 };
 }

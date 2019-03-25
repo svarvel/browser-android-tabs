@@ -478,4 +478,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
     @Override
     public void OnGetReconcileStamp(long timestamp) {}
+
+    @Override
+    public void OnRecurringDonationUpdated() {}
 }
