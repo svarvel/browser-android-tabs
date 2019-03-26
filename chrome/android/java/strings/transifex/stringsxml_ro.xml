@@ -141,9 +141,9 @@ Salvat</string>
 ca browser implicit.</string>
     <string name="brave_default_browser_go_to_settings">Aveți deja setat un browser implicit.
 Puteți modifica browserul implicit din setările aplicației.</string>
-    <string name="brave_default_browser_notification_body">Economisiți baterie şi încărcați mai rapid paginile web. Faceți Brave Browserul dumneavoastră implicit. Din meniul Brave apăsați \"Setează ca browser implicit...\"</string>
+    <string name="brave_default_browser_notification_body">Economisiți baterie și încărcați mai repede paginile web. Faceți ca Brave să fie browserul dvs. implicit. Din meniul Brave, atingeți „Setează ca browser implicit”</string>
     <string name="brave_set_default_browser">Setați ca browser implicit</string>
-    <string name="brave_set_default_browser_dialog_text">Selectați Brave din listă şi apăsați \"Întotdeauna\"</string>
+    <string name="brave_set_default_browser_dialog_text">Selectați Brave din listă și atingeți „Întotdeauna”</string>
     <string name="brave_default_browser_existing_notification_body">Faceți Brave browserul dumneavoastră implicit
 Economisiți baterie şi încărcați mai rapid paginile web</string>
 
@@ -210,7 +210,6 @@ Orice bonusuri trimiteți vor rămâne în portofelul dumneavoastră până cân
     <string name="brave_ui_reserved_amount_text">Ați alocat <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT pentru creatori care nu
 s-au înregistrat încă pentru a primi contribuții. Browserul dvs. va încerca să transmită contribuțiile
 până când vor verifica sau până la 90 de zile. </string>
-    <string name="brave_ui_notification_desc_no_funds">Plata lunară programată pentru Auto-Contribute și bonusurile lunare nu s-au putut finaliza din cauza fondurilor insuficiente. Vom încerca din nou în 30 de zile. </string>
     <string name="brave_ui_notification_desc_tip_error">A apărut o problemă în procesarea bonusului, vă rugăm încercați din nou.</string>
     <string name="brave_ui_notification_desc_contr_error">A apărut o problemă în procesarea donației dumneavoastră.</string>
     <string name="brave_rewards_local_uh_oh">Oo, nu!</string>
@@ -228,4 +227,12 @@ până când vor verifica sau până la 90 de zile. </string>
 și dați mai departe pentru a susține
 creatorii de conținut care vă plac.</string>
     <string name="brave_welcome_page_rewards_title">ACTIVEAZĂ BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Primul dvs. bacșiș lunar va fi trimis la:</string>
+    <string name="brave_ui_tip_text">Tocmai ați trimis un bacșiș către:</string>
+    <string name="brave_ui_auto_tip_text">Trimiteți automat un bacșiș către:</string>
+    <string name="brave_ui_monthly_text">Lunar</string>
+
+    <string name="bottom_toolbar_enable">Activează bara de instrumente de jos</string>
+    <string name="bottom_toolbar_disable">Dezactivează bara de instrumente de jos</string>
+    <string name="search_or_url">Căutare sau URL</string>
 </resources>

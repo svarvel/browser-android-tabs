@@ -142,9 +142,9 @@
 您的默认浏览器。</string>
     <string name="brave_default_browser_go_to_settings">您已经设置了默认浏览器。
 您可以在应用设置中更改默认浏览器。</string>
-    <string name="brave_default_browser_notification_body">节约电量并能更快的加载网页。设置 Brave 为默认浏览器。在 Brave 菜单中点击“设为默认浏览器”</string>
+    <string name="brave_default_browser_notification_body">节约电量并能更快的加载网页。设置 Brave 为默认浏览器。在 Brave 菜单中点击“设为默认浏览器” </string>
     <string name="brave_set_default_browser">设为默认浏览器</string>
-    <string name="brave_set_default_browser_dialog_text">在列表中选择 Brave 并点击“总是”</string>
+    <string name="brave_set_default_browser_dialog_text">在列表中选择 Brave 并点击“总是” </string>
     <string name="brave_default_browser_existing_notification_body">设置 Brave 为默认浏览器
 节约电量并能更快的加载网页</string>
 
@@ -211,7 +211,7 @@
     <string name="brave_ui_reserved_amount_text">您已为尚未签收捐款的创建者指定
  <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT。您的浏览器
 将不断尝试捐献，直至得到验证，或者直至 90 天后。</string>
-    <string name="brave_ui_notification_desc_no_funds">您为自动捐献和每月小费安排的每月付款因资金不足而无法完成。我们将在 30 天内再试一次。</string>
+    <string name="brave_ui_notification_desc_no_funds">由于资金不足，您无法完成预定的每月自动付款和提示付款。我们会在30天后再试一次。</string>
     <string name="brave_ui_notification_desc_tip_error">处理您的小费时出现问题，请再试一次。</string>
     <string name="brave_ui_notification_desc_contr_error">处理您的捐款时出现问题。</string>
     <string name="brave_rewards_local_uh_oh">哎呀！</string>
@@ -229,4 +229,12 @@
 赚钱，然后将其用于支持
 您喜欢的内容创建者。</string>
     <string name="brave_welcome_page_rewards_title">启用 BRAVE 奖励</string>
+    <string name="brave_ui_first_tip_text">您的第一个月度提示将发送到：</string>
+    <string name="brave_ui_tip_text">您刚刚发送了一个提示到：</string>
+    <string name="brave_ui_auto_tip_text">您正在自动发送提示到：</string>
+    <string name="brave_ui_monthly_text">每月一次</string>
+
+    <string name="bottom_toolbar_enable">启用底部工具栏</string>
+    <string name="bottom_toolbar_disable">禁用底部工具栏</string>
+    <string name="search_or_url">搜索或输入网址</string>
 </resources>

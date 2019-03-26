@@ -142,9 +142,7 @@ Guardado</string>
 como o seu navegador padrão.</string>
     <string name="brave_default_browser_go_to_settings">Já definiu um navegador padrão.
 Pode alterar o navegador padrão nas configurações da sua aplicação.</string>
-    <string name="brave_default_browser_notification_body">Poupe bateria e carregue páginas de internet mais rapidamente. Torne o Brave o seu navegador padrão. No menu do Brave, toque em “Definir como navegador padrão…”</string>
     <string name="brave_set_default_browser">Definir como navegador padrão</string>
-    <string name="brave_set_default_browser_dialog_text">Selecione Brave na lista e toque em “Sempre”</string>
     <string name="brave_default_browser_existing_notification_body">Torne o Brave o seu navegador de padrão
 Poupe bateria e carregue páginas de internet mais rapidamente</string>
 
@@ -211,7 +209,6 @@ este mês...</string>
     <string name="brave_ui_reserved_amount_text">Designou <ph name=\"BAT_VALUE\">%1$s <ex>50</ex></ph> BAT para criadores que ainda não fizeram o registo
 para receber contribuições. O seu navegador vai continuar a tentar contribuir
 durante 90 dias ou até que o criador efetue a verificação.</string>
-    <string name="brave_ui_notification_desc_no_funds">Não foi possível efetuar o pagamento mensal agendado para a contribuição automática e gratificações mensais devido a fundos insuficientes. Voltaremos a tentar dentro de 30 dias.</string>
     <string name="brave_ui_notification_desc_tip_error">Ocorreu um problema ao processar a sua gratificação. Tente novamente.</string>
     <string name="brave_ui_notification_desc_contr_error">Ocorreu um problema ao processar a sua contribuição.</string>
     <string name="brave_rewards_local_uh_oh">Oh-oh!</string>
@@ -229,4 +226,4 @@ durante 90 dias ou até que o criador efetue a verificação.</string>
 que respeitam a privacidade e retribua para apoiar
 os criadores de conteúdo de que adora.</string>
     <string name="brave_welcome_page_rewards_title">ATIVAR BRAVE REWARDS</string>
-</resources>
+    </resources>

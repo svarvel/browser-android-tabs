@@ -142,9 +142,9 @@
 已設為 Brave。</string>
     <string name="brave_default_browser_go_to_settings">您已經設定了預設瀏覽器。
 您可以在應用程式設定中變更預設瀏覽器。</string>
-    <string name="brave_default_browser_notification_body">節省電池電力並加快網頁載入速度。將 Brave 設定為您的預設瀏覽器。從 Brave 功能表中點選「設定為預設瀏覽器...」</string>
+    <string name="brave_default_browser_notification_body">節省電池電力並加快網頁載入速度。將 Brave 設為預設瀏覽器。從 Brave 功能表中點選「設為預設瀏覽器」</string>
     <string name="brave_set_default_browser">設定為預設瀏覽器</string>
-    <string name="brave_set_default_browser_dialog_text">從清單中選取 Brave 並點選「總是」</string>
+    <string name="brave_set_default_browser_dialog_text">從清單中選取 Brave 並點選「Always」</string>
     <string name="brave_default_browser_existing_notification_body">將 Brave 設定為您的預設網頁瀏覽器
 節省電池電力並加快網頁載入速度</string>
 
@@ -211,7 +211,6 @@
     <string name="brave_ui_reserved_amount_text">您已將 <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT 指定給尚未註冊而
 未能收取捐獻的創作者。在創作者通過驗證或超過 90 天前，
 瀏覽器會持續試著捐獻。</string>
-    <string name="brave_ui_notification_desc_no_funds">由於資金不足，無法給出您排定的每月自動捐獻和每月小費。我們會在 30 天內再試一次。</string>
     <string name="brave_ui_notification_desc_tip_error">處理您的小費時發生問題，請再試一次。</string>
     <string name="brave_ui_notification_desc_contr_error">處理您的捐獻時發生問題。</string>
     <string name="brave_rewards_local_uh_oh">糟糕！</string>
@@ -229,4 +228,12 @@
 獲得獎勵，並透過捐獻來支持
 您所喜愛的內容創作者。</string>
     <string name="brave_welcome_page_rewards_title">啟用 Brave 獎勵</string>
+    <string name="brave_ui_first_tip_text">您第一個月的小費將傳送於：</string>
+    <string name="brave_ui_tip_text">您剛剛傳送小費給：</string>
+    <string name="brave_ui_auto_tip_text">您正自動傳送小費給：</string>
+    <string name="brave_ui_monthly_text">每月</string>
+
+    <string name="bottom_toolbar_enable">啟用底端工具列</string>
+    <string name="bottom_toolbar_disable">停用底端工具列</string>
+    <string name="search_or_url">搜尋或 URL</string>
 </resources>

@@ -141,7 +141,7 @@
 браузером за замовчуванням.</string>
     <string name="brave_default_browser_go_to_settings">Ви вже вибрали браузер за замовчуванням.
 Цей вибір можна змінити в налаштуваннях програми.</string>
-    <string name="brave_default_browser_notification_body">Економте заряд та завантажуйте сторінки швидше. Зробіть Brave своїм усталеним переглядачем. Натисніть на \"Зробити усталеним переглядачем...\" у меню Brave</string>
+    <string name="brave_default_browser_notification_body">Економте заряд та завантажуйте сторінки швидше. Зробіть Brave своїм усталеним переглядачем. Натисніть на \"Зробити усталеним переглядачем\" у меню Brave</string>
     <string name="brave_set_default_browser">Зробити усталеним переглядачем</string>
     <string name="brave_set_default_browser_dialog_text">Виберіть Brave зі списку і натисніть \"Завжди\"</string>
     <string name="brave_default_browser_existing_notification_body">Зробіть Brave своїм усталеним веб-переглядачем
@@ -210,7 +210,6 @@
     <string name="brave_ui_reserved_amount_text">Ви призначали <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT для авторів, які ще не зареєструвалися для отримання внесків.
 Ваш браузер робитиме спроби зробити внесок,
 доки автора не буде підтверджено або доки не мине 90 днів.</string>
-    <string name="brave_ui_notification_desc_no_funds">Неможливо здійснити заплановане щомісячне автоматичне заохочення, а також щомісячне заохочення, оскільки у вас недостатньо коштів. Спробу буде повторено за 30 днів.</string>
     <string name="brave_ui_notification_desc_tip_error">Під час обробки заохочення сталася помилка. Спробуйте ще раз.</string>
     <string name="brave_ui_notification_desc_contr_error">Під час обробки заохочення сталася помилка.</string>
     <string name="brave_rewards_local_uh_oh">Ой!</string>
@@ -228,4 +227,12 @@
 рекламу, яка не порушує основ конфіденційності
 та підтримуйте улюблених авторів.</string>
     <string name="brave_welcome_page_rewards_title">УВІМКНУТИ ПРОГРАМУ «НАГОРОДИ BRAVE»</string>
+    <string name="brave_ui_first_tip_text">Ваші перші щомісячні чайові будуть відправлені:</string>
+    <string name="brave_ui_tip_text">Ви щойно відправили чайові:</string>
+    <string name="brave_ui_auto_tip_text">Ви автоматично відправляєте чайові:</string>
+    <string name="brave_ui_monthly_text">Щомісяця</string>
+
+    <string name="bottom_toolbar_enable">Увімкнути нижню панель інструментів</string>
+    <string name="bottom_toolbar_disable">Вимкнути нижню панель інструментів</string>
+    <string name="search_or_url">Пошук чи ланка</string>
 </resources>

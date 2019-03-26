@@ -141,9 +141,9 @@ Tallennettu</string>
 oletusselaimeksesi.</string>
     <string name="brave_default_browser_go_to_settings">Olet jo asettanut oletusselaimen.
 Voit vaihtaa oletusselainta sovelluksen asetuksissa.</string>
-    <string name="brave_default_browser_notification_body">Säästä akkua ja lataa verkkosivut nopeammin. Aseta Brave oletusselaimeksesi. Valitse Braven valikosta \"Aseta oletusselaimeksi...\"</string>
+    <string name="brave_default_browser_notification_body">Säästä akkua ja lataa verkkosivut nopeammin. Tee Bravesta oletusselaimesi. Napauta Brave-valikosta kohtaa \"Aseta oletusselaimeksi\"</string>
     <string name="brave_set_default_browser">Aseta oletusselaimeksi</string>
-    <string name="brave_set_default_browser_dialog_text">Valitse listalta Brave ja napauta \"Aina\"</string>
+    <string name="brave_set_default_browser_dialog_text">Valitse Brave listasta ja napauta kohdasta \"Aina\"</string>
     <string name="brave_default_browser_existing_notification_body">Aseta Brave oletusverkkoselaimeksesi
 Säästä akkua ja lataa verkkosivut nopeammin</string>
 
@@ -207,10 +207,9 @@ Kaikki lähettämäsi tipit pysyvät lompakossasi, kunnes hän vahvistaa itsens�
     <string name="brave_ui_new_grant">Ilmainen poletti saatavilla.</string>
     <string name="brave_ui_new_token_grant">Ilmainen polettilahjoitus</string>
     <string name="brave_ui_claim">Lunasta</string>
-    <string name="brave_ui_reserved_amount_text">Osoitit <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT:ia luojalle, joka ei ole vielä kirjautunut
+    <string name="brave_ui_reserved_amount_text"><ph name=\"BAT_VALUE\">Osoitit %1$s<ex>50</ex></ph> BAT:ia luojalle, joka ei ole vielä kirjautunut
 vastaanottamaan avustuksia. Selaimesi yrittää avustaa, kunnes hän vahvistaa
 itsensä tai 90 päivän aikaraja umpeutuu.</string>
-    <string name="brave_ui_notification_desc_no_funds">Ajastettua automaattisten avustusten ja kuukausittaisten tippien maksua ei voitu suorittaa, koska varat eivät riitä. Yritämme 30 päivän päästä uudestaan.</string>
     <string name="brave_ui_notification_desc_tip_error">Tippisi käsittelyssä ilmeni ongelma, yritä uudestaan.</string>
     <string name="brave_ui_notification_desc_contr_error">Avustuksesi käsittelyssä ilmeni ongelma.</string>
     <string name="brave_rewards_local_uh_oh">Ohoh!</string>
@@ -228,4 +227,12 @@ itsensä tai 90 päivän aikaraja umpeutuu.</string>
 kunnioittavia mainoksia ja maksa
 rakastamillesi sisällöntuottajille.</string>
     <string name="brave_welcome_page_rewards_title">OTA BRAVE REWARDSIT KÄYTTÖÖN</string>
+    <string name="brave_ui_first_tip_text">Ensimmäinen kuukausittainen vinkkisi lähetetään:</string>
+    <string name="brave_ui_tip_text">Olet juuri lähettänyt vinkin kohteelle:</string>
+    <string name="brave_ui_auto_tip_text">Olet automaattisesti lähettämässä vinkkiä kohteelle:</string>
+    <string name="brave_ui_monthly_text">Kuukausittainen</string>
+
+    <string name="bottom_toolbar_enable">Salli alaosan työkalupalkki</string>
+    <string name="bottom_toolbar_disable">Poista alapuolen työkalupalkki käytöstä</string>
+    <string name="search_or_url">Haku tai URL</string>
 </resources>

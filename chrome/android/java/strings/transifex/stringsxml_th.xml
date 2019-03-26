@@ -141,9 +141,9 @@ EST แล้ว</string>
 เบราว์เซอร์เริ่มต้นของคุณแล้ว</string>
     <string name="brave_default_browser_go_to_settings">คุณได้ตั้งค่าเบราว์เซอร์เริ่มต้นไว้เรียบร้อยแล้ว
 คุณสามารถเปลี่ยนเบราเซอร์เริ่มต้นได้ในการตั้งค่าแอพของคุณ</string>
-    <string name="brave_default_browser_notification_body">ประหยัดแบตเตอรี่ โหลดหน้าเว็บได้เร็วขึ้น เพียงกำหนดให้ Brave เป็นเบราว์เซอร์เริ่มต้น โดยแตะที่ \"ตั้งค่าเป็นเบราว์เซอร์เริ่มต้น...\" จากในเมนู Brave</string>
+    <string name="brave_default_browser_notification_body">ประหยัดแบตเตอรี่และโหลดหน้าเว็บเร็วขึ้น ตั้ง Brave เป็นเบราว์เซอร์เริ่มต้น แตะ \"ตั้งเป็นเบราว์เซอร์เริ่มต้น\" จากเมนู Brave</string>
     <string name="brave_set_default_browser">ตั้งค่าเป็นเบราว์เซอร์เริ่มต้น</string>
-    <string name="brave_set_default_browser_dialog_text">เลือก Brave จากรายการ แล้วแตะ \"ทุกครั้ง\"</string>
+    <string name="brave_set_default_browser_dialog_text">เลือก Brave จากรายการและแตะ \"ทุกครั้ง\"</string>
     <string name="brave_default_browser_existing_notification_body">ตั้งค่า Brave เป็นเว็บเบราว์เซอร์เริ่มต้น
 ประหยัดแบตเตอรี่ โหลดหน้าเว็บได้เร็วขึ้น</string>
 
@@ -210,7 +210,6 @@ EST แล้ว</string>
     <string name="brave_ui_reserved_amount_text">คุณได้มอบ <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT ให้กับครีเอเตอร์ที่ยังไม่ได้
 ลงทะเบียนเพื่อรับเงินสนับสนุน เบราว์เซอร์ของคุณจะพยายามมอบเงินสนับสนุนให้
 จนกว่าพวกเขาจะยืนยันตัวตน หรือจนกว่าจะผ่านไป 90 วัน</string>
-    <string name="brave_ui_notification_desc_no_funds">ไม่สามารถดำเนินการการชำระเงินรายเดือนที่กำหนดไว้ของคุณสำหรับการสนับสนุนอัตโนมัติและทิปรายเดือนให้เสร็จสิ้นได้เนื่องจากเงินไม่เพียงพอ เราจะลองใหม่อีกครั้งใน 30 วัน</string>
     <string name="brave_ui_notification_desc_tip_error">มีปัญหาเกิดขึ้นในการประมวลผลทิปของคุณ กรุณาลองอีกครั้ง</string>
     <string name="brave_ui_notification_desc_contr_error">มีปัญหาเกิดขึ้นในการประมวลผลการสนับสนุนของคุณ</string>
     <string name="brave_rewards_local_uh_oh">แย่แล้ว</string>
@@ -228,4 +227,12 @@ EST แล้ว</string>
 กับความเป็นส่วนตัว และจ่ายเงินเพื่อสนับสนุน
 ครีเอเตอร์เนื้อหาที่คุณชื่นชอบ</string>
     <string name="brave_welcome_page_rewards_title">เปิดใช้งาน BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">ระบบจะส่งทิปรายเดือนครั้งแรกของคุณใน:</string>
+    <string name="brave_ui_tip_text">คุณเพิ่งให้ทิปกับ:</string>
+    <string name="brave_ui_auto_tip_text">คุณกำลังให้ทิปโดยอัตโนมัติกับ:</string>
+    <string name="brave_ui_monthly_text">รายเดือน</string>
+
+    <string name="bottom_toolbar_enable">เปิดแถบเครื่องมือด้านล่าง</string>
+    <string name="bottom_toolbar_disable">ปิดแถบเครื่องมือด้านล่าง</string>
+    <string name="search_or_url">ค้นหาหรือ URL</string>
 </resources>

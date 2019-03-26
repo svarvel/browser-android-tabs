@@ -141,9 +141,7 @@ maždaug laiko</string>
 numatytąja naršykle.</string>
     <string name="brave_default_browser_go_to_settings">Numatytąją naršyklę jau nustatėte.
 Numatytąją naršyklę galima pakeisti programos nuostatų skiltyje.</string>
-    <string name="brave_default_browser_notification_body">Taupykite akumuliatoriaus energiją ir negaiškite laukdami, kol puslapiai bus įkelti. Nustatykite „Brave“ numatytąja naršykle. Atvėrę „Brave“ meniu palieskite „Nustatyti kaip numatytąją naršyklę“.</string>
     <string name="brave_set_default_browser">Nustatyti kaip numatytąją naršyklę</string>
-    <string name="brave_set_default_browser_dialog_text">Sąraše pasirinkite „Brave“ ir palieskite „Visada“.</string>
     <string name="brave_default_browser_existing_notification_body">Nustatykite „Brave“ numatytąja interneto naršykle
 Taupykite akumuliatoriaus energiją ir negaiškite laukdami, kol puslapiai bus įkelti</string>
 
@@ -210,7 +208,6 @@ mėnesį...</string>
     <string name="brave_ui_reserved_amount_text">Jūsų skyrėte <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kūrėjams, kurie
 dar neužsiregistravo dotacijoms gauti. Jūsų naršyklė bandys jiems dotuoti,
 kol jie patvirtins arba kol sueis 90 dienų terminas.</string>
-    <string name="brave_ui_notification_desc_no_funds">Suplanuoto mėnesinio automatinio dotavimo mokėjimo atlikti ir mėnesinių arbatpinigių išsiųsti nepavyko, nes trūksta pinigų. Po 30 dienų pabandysime dar kartą.</string>
     <string name="brave_ui_notification_desc_tip_error">Apdorojant jūsų arbatpinigių operaciją įvyko klaida. Pabandykite dar kartą.</string>
     <string name="brave_ui_notification_desc_contr_error">Apdorojant jūsų dotaciją įvyko klaida. </string>
     <string name="brave_rewards_local_uh_oh">O, ne!</string>
@@ -228,4 +225,4 @@ kol jie patvirtins arba kol sueis 90 dienų terminas.</string>
 nepažeidžiančias reklamas ir skirkite
 savo uždarbį mėgstamiems turinio kūrėjams.</string>
     <string name="brave_welcome_page_rewards_title">ĮJUNGTI „BRAVE“ ATLYGIO FUNKCIJĄ</string>
-</resources>
+    </resources>

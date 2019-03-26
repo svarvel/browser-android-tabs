@@ -142,9 +142,7 @@
 আপনার ডিফল্ট ব্রাউজার হিসাবে সেট করা আছে।</string>
     <string name="brave_default_browser_go_to_settings">আপনি ইতিমধ্যে একটি ডিফল্ট ব্রাউজার সেট করেছেন।
 আপনি আপনার অ্যাপ সেটিংসে ডিফল্ট ব্রাউজার পরিবর্তন করতে পারেন।</string>
-    <string name="brave_default_browser_notification_body">ব্যাটারি সংরক্ষণ করুন এবং ওয়েব পৃষ্ঠাগুলি আরও দ্রুত লোড করুন। Brave কে আপনার ডিফল্ট ব্রাউজার করুন। Brave মেনু থেকে “ডিফল্ট ব্রাউজার হিসাবে সেট করুন...” এ ট্যাপ করুন</string>
     <string name="brave_set_default_browser">ডিফল্ট ব্রাউজার হিসাবে সেট করুন</string>
-    <string name="brave_set_default_browser_dialog_text">তালিকাটি থেকে Brave নির্বাচন করুন এবং “সর্বদা” তে ট্যাপ করুন</string>
     <string name="brave_default_browser_existing_notification_body">Brave কে আপনার ডিফল্ট ওয়েব ব্রাউজার করুন
 ব্যাটারি সংরক্ষণ করুন এবং ওয়েব পৃষ্ঠাগুলি আরও দ্রুত লোড করুন</string>
 
@@ -211,7 +209,6 @@
     <string name="brave_ui_reserved_amount_text">অবদানগুলি গ্রহণ করতে এখনও সাইন আপ না করা স্রষ্টাদের জন্য আপনাকে <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT এর জন্য মনোনীত
 করা হয়েছে। যতক্ষণ না তারা যাচাই করে, বা
 90 দিন অতিক্রান্ত না হওয়া পর্যন্ত আপনার ব্রাউজার অবদান রাখার চেষ্টা করে যাব।</string>
-    <string name="brave_ui_notification_desc_no_funds">অপর্যাপ্ত তহবিলের কারণে স্বয়ংক্রিয়-অবদান এবং মাসিক বকশিসগুলির জন্য আপনার সূচিত মাসিক পেমেন্ট সম্পূর্ণ করা গেল না। আমরা 30 দিনের মধ্যে আবার চেষ্টা করব।</string>
     <string name="brave_ui_notification_desc_tip_error">আপনার পরামর্শ প্রক্রিয়াকরণ করতে একটি সমস্যা হয়েছে, অনুগ্রহ করে আবার চেষ্টা করুন।</string>
     <string name="brave_ui_notification_desc_contr_error">আপনার অবদান প্রক্রিয়াকরণ করতে একটি সমস্যা হয়েছে।</string>
     <string name="brave_rewards_local_uh_oh">ওহো!</string>
@@ -229,4 +226,4 @@
 আপনার পছন্দের সামগ্রীর স্রষ্টাদের
 সহায়তা করতে সেগুলি তাদেরকে দিয়ে দিন।</string>
     <string name="brave_welcome_page_rewards_title">BRAVE পুরস্কারগুলি সক্রিয় করুন</string>
-</resources>
+    </resources>

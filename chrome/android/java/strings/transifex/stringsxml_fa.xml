@@ -141,9 +141,7 @@ HTTPS</string>
 مرورگر پیش‌فرضتان تنظیم شده است.</string>
     <string name="brave_default_browser_go_to_settings">ازقبل مرورگر پیش‌فرضی را تنظیم کرده‌اید.
 می‌توانید در تنظیمات برنامه، مرورگر پیش‌فرض را تغییر دهید.</string>
-    <string name="brave_default_browser_notification_body">در مصرف شارژ باتری صرفه‌جویی کنید و صفحات وب را سریع‌تر بارگیری کنید. Brave را مرورگر پیش‌فرضتان کنید. در منوی Brave، روی «تنظیم به‌عنوان مرورگر پیش‌فرض» ضربه بزنید.</string>
     <string name="brave_set_default_browser">تنظیم به‌عنوان مرورگر پیش‌فرض</string>
-    <string name="brave_set_default_browser_dialog_text">Brave را از فهرست انتخاب کنید و روی «همیشه» ضربه بزنید</string>
     <string name="brave_default_browser_existing_notification_body">Brave را مرورگر پیش‌فرضتان کنید
 در مصرف شارژ باتری صرفه‌جویی کنید و صفحات وب را سریع‌تر بار کنید</string>
 
@@ -210,7 +208,6 @@ HTTPS</string>
     <string name="brave_ui_reserved_amount_text"><ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> بت برای پدیدآورندگانی که هنوز برای دریافت کمک نقدی
 ثبت‌نام نکرده‌اند، در نظر گرفته‌اید. مرورگرتان تا زمانی‌که آنها به تأیید برسند، یا
 تا 90 روز دیگر سعی می‌کند کمک شما را منتقل کند.</string>
-    <string name="brave_ui_notification_desc_no_funds">پرداخت ماهانه زمان‌بندی‌شده‌تان برای کمک نقدی خودکار و انعام‌های ماهانه به دلیل سرمایه ناکافی کامل نشد. 30 روز دیگر دوباره امتحان خواهیم کرد.</string>
     <string name="brave_ui_notification_desc_tip_error">هنگام پردازش انعامتان مشکلی پیش آمد؛ لطفاً دوباره امتحان کنید.</string>
     <string name="brave_ui_notification_desc_contr_error">هنگام پردازش کمک نقدی‌تان مشکلی پیش آمد.</string>
     <string name="brave_rewards_local_uh_oh">وای نه!</string>
@@ -228,4 +225,4 @@ HTTPS</string>
 پاداش دریافت کنید، و با انتقال پاداشتان به پدیدآورندگان محتوایی
 که دوست دارید، آنها را حمایت کنید.</string>
     <string name="brave_welcome_page_rewards_title">فعال کردن «پاداش‌های Brave»</string>
-</resources>
+    </resources>

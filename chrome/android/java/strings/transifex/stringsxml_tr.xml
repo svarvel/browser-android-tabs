@@ -31,6 +31,7 @@
 
     <string name="menu_exit">Çıkış</string>
 
+    <string name="brave_sync">Brave Senkronizasyonu (beta)</string>
     <string name="sync_settings_add_device_name_title">Cihaz adı ekle</string>
     <string name="sync_settings_add_device_name_label">Bu cihaz için isteğe bağlı bir ad girin</string>
     <string name="sync_example_device_name">Android cihazı</string>
@@ -141,11 +142,11 @@ Kaydedildi</string>
 tarayıcınız olarak ayarlı.</string>
     <string name="brave_default_browser_go_to_settings">Zaten varsayılan bir tarayıcı ayarladınız.
 Varsayılan tarayıcıyı uygulama ayarlarınızdan değiştirebilirsiniz.</string>
-    <string name="brave_default_browser_notification_body">Pilden tasarruf edin ve web sayfalarını daha hızlı yükleyin. Brave\'i varsayılan tarayıcınız yapın. Brave menüsünden \"Varsayılan tarayıcı olarak ayarla...\"yı seçin</string>
+    <string name="brave_default_browser_notification_body">Pili koruyun ve web sayfalarını daha hızlı yükleyin. Varsayılan Tarayıcınızı Brave yapın. Brave menüsünden \"Varsayılan tarayıcı olarak ayarla\"ya dokunun.</string>
     <string name="brave_set_default_browser">Varsayılan tarayıcı olarak ayarla</string>
-    <string name="brave_set_default_browser_dialog_text">Listeden Brave\'i seçin ve \"Her Zaman\"a dokunun</string>
-    <string name="brave_default_browser_existing_notification_body">Brave\'i varsayılan tarayıcınız yapın
-Pilden tasarruf edin ve web sayfalarını daha hılzı yükleyin</string>
+    <string name="brave_set_default_browser_dialog_text">Listeden Brave\'i seçip \"Her Zaman\" a dokunun</string>
+    <string name="brave_default_browser_existing_notification_body">Brave\'i varsayılan web tarayıcınız yapın
+Pilden tasarruf edin ve web sayfalarını daha hızlı yükleyin</string>
 
     <string name="brave_ui_welcome_header_two">İnternetin geleceğini
 deneyimlemeye hazır olun.</string>
@@ -210,7 +211,6 @@ yok...</string>
     <string name="brave_ui_reserved_amount_text">Henüz katkı almak amacıyla kaydolmamış oluşturucular için <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT
 ayırdınız. Tarayıcınız onlar onaylayana veya
 90 gün geçene kadar katkı yapmayı deneyecek.</string>
-    <string name="brave_ui_notification_desc_no_funds">Otomatik Katkı ve aylık bahşişler için planlı aylık ödemeniz yetersiz tutar sebebiyle tamamlanamadı. 30 gün içinde tekrar deneyeceğiz.</string>
     <string name="brave_ui_notification_desc_tip_error">Bahşişiniz işleme alınırken bir sorun oluştu, lütfen tekrar deneyin.</string>
     <string name="brave_ui_notification_desc_contr_error">Katkınız işleme alınırken bir sorun oluştu.</string>
     <string name="brave_rewards_local_uh_oh">Tüh!</string>
@@ -228,4 +228,12 @@ ayırdınız. Tarayıcınız onlar onaylayana veya
 para kazanın ve sevdiğiniz içerik
 üreticilerini desteklemek için bu parayla ödeme yapın.</string>
     <string name="brave_welcome_page_rewards_title">BRAVE ÖDÜLLERİNİ ETKİNLEŞTİR</string>
+    <string name="brave_ui_first_tip_text">İlk aylık ipucunuz gönderileceği zaman:</string>
+    <string name="brave_ui_tip_text">Az önce şuna bir ipucu gönderdiniz:</string>
+    <string name="brave_ui_auto_tip_text">Şuna otomatik olarak bir ipucu gönderiyorsunuz:</string>
+    <string name="brave_ui_monthly_text">Aylık</string>
+
+    <string name="bottom_toolbar_enable">Alt araç çubuğunu etkinleştir</string>
+    <string name="bottom_toolbar_disable">Alt araç çubuğunu devre dışı bırak</string>
+    <string name="search_or_url">Arama veya URL</string>
 </resources>

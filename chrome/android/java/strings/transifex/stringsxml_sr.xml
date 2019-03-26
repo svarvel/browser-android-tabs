@@ -141,9 +141,9 @@ Sačuvano</string>
 kao vaš podrazumevani pregledač.</string>
     <string name="brave_default_browser_go_to_settings">Već smo postavili vaš podrazumevani pregledač.
 Podrazumevani pregledač možete promeniti u podešavanjima aplikacije.</string>
-    <string name="brave_default_browser_notification_body">Štedite bateriju i brže učitavajte veb-stranice. Postavite „Brave” kao svoj podrazumevani pregledač. U meniju „Brave” kratko dodirnite „Podesite kao podrazumevani pregledač…”</string>
+    <string name="brave_default_browser_notification_body">Sačuvajte bateriju i brže učitajvajte veb stranice. Napravite da Brave bude vaš podrazumevani pregledač. Iz Brave menija dodirnite „Postavi kao podrazumevani pregledač”</string>
     <string name="brave_set_default_browser">Podesite kao podrazumevani pregledač</string>
-    <string name="brave_set_default_browser_dialog_text">Izaberite „Brave” iz spiska i kratko dodirnite „Uvek”</string>
+    <string name="brave_set_default_browser_dialog_text">Izaberite Brave sa liste i dodirnite „Uvek”</string>
     <string name="brave_default_browser_existing_notification_body">Postavite „Brave” kao svoj podrazumevani veb-pregledač
 Štedite bateriju i brže učitavajte veb-stranice</string>
 
@@ -210,7 +210,6 @@ Sve napojnice koje pošaljete ostaće u vašem novčaniku dok se kreator ne veri
     <string name="brave_ui_reserved_amount_text">Namenili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kreatorima koji se nisu
 još uvek prijavili za primanje donacija. Vaš pregledač će nastaviti da pokušava da izvrši donaciju
 dok ne budu verifikovani ili dok ne prođe 90 dana.</string>
-    <string name="brave_ui_notification_desc_no_funds">Vaša planirana mesečna uplata automatskih donacija i mesečnih napojnica nije mogla biti izvršena zbog nedostatka sredstava. Pokušaćemo ponovo za 30 dana.</string>
     <string name="brave_ui_notification_desc_tip_error">Došlo je do problema sa obradom vaše napojnice, pokušajte ponovo.</string>
     <string name="brave_ui_notification_desc_contr_error">Došlo je do problema sa obradom vaše donacije.</string>
     <string name="brave_rewards_local_uh_oh">Uh, uh!</string>
@@ -228,4 +227,12 @@ dok ne budu verifikovani ili dok ne prođe 90 dana.</string>
 poštuju privatnost i iskoristite zaradu da podržite
 kreatore sadržaja koji vam se sviđaju.</string>
     <string name="brave_welcome_page_rewards_title">AKTIVIRAJ BRAVE NAGRADE</string>
+    <string name="brave_ui_first_tip_text">Vaš prvi mesečni savet će biti poslat dana:</string>
+    <string name="brave_ui_tip_text">Upravo ste poslali savet ka:</string>
+    <string name="brave_ui_auto_tip_text">Automatski šaljete savet ka:</string>
+    <string name="brave_ui_monthly_text">Mesečno</string>
+
+    <string name="bottom_toolbar_enable">Omogući donju traku sa alatkama</string>
+    <string name="bottom_toolbar_disable">Onemogući donju traku sa alatkama</string>
+    <string name="search_or_url">Pretraga ili URL</string>
 </resources>

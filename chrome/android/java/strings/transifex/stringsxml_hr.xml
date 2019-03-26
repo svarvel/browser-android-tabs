@@ -141,9 +141,7 @@ Spaseno</string>
 kao zadani preglednik.</string>
     <string name="brave_default_browser_go_to_settings">Već ste postavili zadani preglednik.
 Zadani preglednik možete promijeniti u postavkama aplikacije.</string>
-    <string name="brave_default_browser_notification_body">Uštedite bateriju i brže učitavajte internetske stranice. Postavite Brave kao zadani preglednik. U izborniku aplikacije Brave dodirnite „Postavi kao zadani preglednik”</string>
     <string name="brave_set_default_browser">Postavi kao zadani preglednik</string>
-    <string name="brave_set_default_browser_dialog_text">Odaberite Brave s popisa i dodirnite „Uvijek”</string>
     <string name="brave_default_browser_existing_notification_body">Postavite Brave kao zadani preglednik
 Uštedite bateriju i brže učitavajte internetske stranice</string>
 
@@ -210,7 +208,6 @@ Sve poslane napojnice ostat će u vašoj lisnici dok ih stvaratelj ne potvrdi.</
     <string name="brave_ui_reserved_amount_text">Namijenili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph>BAT stvarateljima koji se još nisu
 prijavili za primanje doprinosa. Vaš će preglednik pokušavati proslijediti doprinose
 dok ih stvaratelj ne potvrdi ili dok ne prođe 90 dana.</string>
-    <string name="brave_ui_notification_desc_no_funds">Vaša se zakazana mjesečna uplata za automatski doprinos ne može izvršiti niti se mjesečne napojnice mogu dovršiti jer nemate dovoljno sredstava. Pokušat ćemo ponovno za 30 dana.</string>
     <string name="brave_ui_notification_desc_tip_error">Nastao je problem pri obradi vaše napojnice.  Pokušajte ponovno.</string>
     <string name="brave_ui_notification_desc_contr_error">Nastao je problem pri obradi vašeg doprinosa.</string>
     <string name="brave_rewards_local_uh_oh">Ups!</string>
@@ -228,4 +225,4 @@ dok ih stvaratelj ne potvrdi ili dok ne prođe 90 dana.</string>
 koji poštuju privatnost, platite ih unaprijed i podržite
 omiljene stvaratelje sadržaja.</string>
     <string name="brave_welcome_page_rewards_title">OMOGUĆI NAGRADE ZA BRAVE</string>
-</resources>
+    </resources>
