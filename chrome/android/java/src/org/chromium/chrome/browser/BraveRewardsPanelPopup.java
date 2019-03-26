@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.text.Html;
@@ -24,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -34,6 +36,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.content.Context;
@@ -62,6 +65,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -118,6 +122,9 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private boolean showRewardsSummary;        //flag: we don't want OnGetCurrentBalanceReport always opens up Rewards Summary window
     private AnimationDrawable wallet_init_animation;
     private BraveRewardsHelper mIconFetcher;
+
+    private DonationsAdapter mTip_amount_spinner_data_adapter; //data adapter for mTip_amount_spinner (Spinner)
+    private Spinner mTip_amount_spinner;
 
     //flag, Handler and delay to prevent quick opening of multiple site banners
     private boolean mTippingInProgress;
@@ -425,6 +432,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         }
 
         SetupNotificationsControls();
+
+        mTip_amount_spinner = root.findViewById(R.id.auto_tip_amount);
+        mTip_amount_spinner_data_adapter = new DonationsAdapter(ContextUtils.getApplicationContext());
+        mTip_amount_spinner.setAdapter(mTip_amount_spinner_data_adapter);
     }
 
     private void startJoinRewardsAnimation(){
@@ -638,6 +649,75 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
               }
           });
           publisherFetchesCount++;
+        }
+    }
+
+    public class DonationsAdapter extends BaseAdapter implements SpinnerAdapter {
+        Context context;
+        LayoutInflater inflater;
+        int bat_donations [] = {0,1,5,10};
+
+        public DonationsAdapter(Context applicationContext) {
+            this.context = applicationContext;
+            inflater = (LayoutInflater.from(applicationContext));
+        }
+
+        @Override
+        public int getCount() {
+            return bat_donations.length;
+        }
+
+
+        public int getPosition (int tipValue){
+            int index = Arrays.binarySearch(bat_donations, tipValue);
+            return (index < 0) ? -1 : index;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View view, ViewGroup viewGroup) {
+            TextView tv;
+            if (null == view) {
+                tv = (TextView)inflater.inflate(R.layout.brave_rewards_spinnner_item, null);
+            }
+            else{
+                tv = (TextView)view;
+            }
+
+            String strValue = String.format("%d.0 BAT", bat_donations[position]);
+            tv.setText(strValue);
+            return tv;
+        }
+
+        @Override
+        public View getDropDownView(int position, View convertView, ViewGroup parent) {
+            //read USD rate
+            double usdrate = mBraveRewardsNativeWorker.GetWalletRate("USD");
+
+            TextView tv;
+            if (null == convertView) {
+                tv = (TextView)inflater.inflate(R.layout.brave_rewards_spinnner_item_dropdown, null);
+            }
+            else{
+                tv = (TextView)convertView;
+            }
+
+            String strValue = String.format("%d.0 BAT (%.2f USD)", bat_donations[position], bat_donations[position] * usdrate);
+            tv.setText(strValue);
+            int selected = mTip_amount_spinner.getSelectedItemPosition();
+            if (selected == position){
+                tv.setCompoundDrawablesWithIntrinsicBounds(R.drawable.changetip_icon, 0, 0, 0);
+            }
+            return tv;
         }
     }
 
@@ -1224,30 +1304,19 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             }
 
             if (mPubInReccuredDonation){
-                UpdateRecurrnetDonationSpinner();
+                double amount  = mBraveRewardsNativeWorker.GetPublisherRecurrentDonationAmount(pubId);
+                UpdateRecurentDonationSpinner(amount);
                 root.findViewById(R.id.auto_tip_layout).setVisibility(View.VISIBLE);
             }
         }
     }
 
 
-    void UpdateRecurrnetDonationSpinner(){
-        String pubId = mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
-        double amount  = mBraveRewardsNativeWorker.GetPublisherRecurrentDonationAmount(pubId);
-        double usdrate = mBraveRewardsNativeWorker.GetWalletRate("USD");
-        Spinner tip_amount_spinner = (Spinner)root.findViewById(R.id.auto_tip_amount);
-        List<String> tip_list = new ArrayList<String>();
-        String strTip = String.format("%f BAT", amount);
-        double bat_donations [] = {0,1,5,10};
-        for (double value : bat_donations ){
-            String strValue = String.format("%.1f BAT (%.2f USD)", value, value * usdrate);
-            tip_list.add(strValue);
+    void UpdateRecurentDonationSpinner(double amount){
+        int position = mTip_amount_spinner_data_adapter.getPosition ((int)amount);
+        if (position < 0){
+            position = 0;
         }
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(ContextUtils.getApplicationContext(),
-                android.R.layout.simple_spinner_item, tip_list);
-
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tip_amount_spinner.setAdapter(dataAdapter);
+        mTip_amount_spinner.setSelection(position);
     }
 }
