@@ -58,8 +58,9 @@ void ToolbarLayer::PushResource(int toolbar_resource_id,
       gfx::PointF(resource->toolbar_rect().origin()));
   toolbar_background_layer_->SetBackgroundColor(toolbar_background_color);
 
-  bool url_bar_visible =
-      (resource->location_bar_content_rect().width() != 0) && url_bar_alpha > 0;
+  // Make it always false to avoid drawing round corners
+  bool url_bar_visible = false;
+      //(resource->location_bar_content_rect().width() != 0) && url_bar_alpha > 0;
   url_bar_background_layer_->SetHideLayerAndSubtree(!url_bar_visible);
   if (url_bar_visible) {
     ui::NinePatchResource* url_bar_background_resource;

@@ -1338,8 +1338,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         }
 
         // Draw the tab stack button and associated text.
-        if (mTabSwitcherAnimationTabStackDrawable != null && mToggleTabStackButton != null
-                && !mIsBottomToolbarVisible && mUrlExpansionPercent != 1f) {
+        if (mToggleTabStackButton != null && mUrlExpansionPercent != 1f) {
             // Draw the tab stack button image.
             canvas.save();
             translateCanvasToView(mToolbarButtonsContainer, mToggleTabStackButton, canvas);
@@ -1358,58 +1357,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             backgroundTop += mToggleTabStackButton.getPaddingTop();
             canvas.translate(backgroundLeft, backgroundTop);
 
-            mTabSwitcherAnimationTabStackDrawable.setBounds(
-                    mToggleTabStackButton.getDrawable().getBounds());
-            mTabSwitcherAnimationTabStackDrawable.setAlpha(rgbAlpha);
-            mTabSwitcherAnimationTabStackDrawable.draw(canvas);
-            canvas.restore();
-        }
-
-        // Draw Brave Shields button if necessary.
-        if (mBraveShieldsButton.getDrawable() != null
-                && mBraveShieldsButton != null
-                && mUrlExpansionPercent != 1f) {
-            canvas.save();
-            translateCanvasToView(mToolbarButtonsContainer, mBraveShieldsButton, canvas);
-
-            int backgroundWidth = mBraveShieldsButton.getDrawable().getIntrinsicWidth();
-            int backgroundHeight = mBraveShieldsButton.getDrawable().getIntrinsicHeight();
-            int backgroundLeft = (mBraveShieldsButton.getWidth()
-                    - mBraveShieldsButton.getPaddingLeft()
-                    - mBraveShieldsButton.getPaddingRight() - backgroundWidth) / 2;
-            backgroundLeft += mBraveShieldsButton.getPaddingLeft();
-            int backgroundTop = (mBraveShieldsButton.getHeight()
-                    - mBraveShieldsButton.getPaddingTop()
-                    - mBraveShieldsButton.getPaddingBottom() - backgroundHeight) / 2;
-            backgroundTop += mBraveShieldsButton.getPaddingTop();
-            canvas.translate(backgroundLeft, backgroundTop);
-
-            mBraveShieldsButton.getDrawable().setAlpha(rgbAlpha);
-            mBraveShieldsButton.getDrawable().draw(canvas);
-            canvas.restore();
-        }
-
-        // Draw Brave Rewards panel button if necessary.
-        if (mBraveRewardsPanelButton.getDrawable() != null
-                && mBraveRewardsPanelButton != null
-                && mUrlExpansionPercent != 1f) {
-            canvas.save();
-            translateCanvasToView(mToolbarButtonsContainer, mBraveRewardsPanelButton, canvas);
-
-            int backgroundWidth = mBraveRewardsPanelButton.getDrawable().getIntrinsicWidth();
-            int backgroundHeight = mBraveRewardsPanelButton.getDrawable().getIntrinsicHeight();
-            int backgroundLeft = (mBraveRewardsPanelButton.getWidth()
-                    - mBraveRewardsPanelButton.getPaddingLeft()
-                    - mBraveRewardsPanelButton.getPaddingRight() - backgroundWidth) / 2;
-            backgroundLeft += mBraveRewardsPanelButton.getPaddingLeft();
-            int backgroundTop = (mBraveRewardsPanelButton.getHeight()
-                    - mBraveRewardsPanelButton.getPaddingTop()
-                    - mBraveRewardsPanelButton.getPaddingBottom() - backgroundHeight) / 2;
-            backgroundTop += mBraveRewardsPanelButton.getPaddingTop();
-            canvas.translate(backgroundLeft, backgroundTop);
-
-            mBraveRewardsPanelButton.getDrawable().setAlpha(rgbAlpha);
-            mBraveRewardsPanelButton.getDrawable().draw(canvas);
+            mToggleTabStackButton.getDrawable().setAlpha(rgbAlpha);
+            mToggleTabStackButton.getDrawable().draw(canvas);
             canvas.restore();
         }
 
