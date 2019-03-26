@@ -141,9 +141,9 @@ Uložen</string>
 jako váš výchozí prohlížeč.</string>
     <string name="brave_default_browser_go_to_settings">Výchozí prohlížeč jste si už vybrali. 
 Změnit ho můžete v nastavení aplikací. </string>
-    <string name="brave_default_browser_notification_body">Šetřete baterii a nahrávejte webové stránky rychleji. Nastavte si Brave jako výchozí webový prohlížeč. V menu Brave klepněte na „Nastavit jako výchozí prohlížeč...“</string>
+    <string name="brave_default_browser_notification_body">Šetřete baterii a načítejte webové stránky rychleji. Učiňte z Brave svůj výchozí prohlížeč. V nabídce Brave klikněte na \"Nastavit jako výchozí prohlížeč\"</string>
     <string name="brave_set_default_browser">Nastavit jako výchozí prohlížeč</string>
-    <string name="brave_set_default_browser_dialog_text">Ze seznamu vyberte Brave a klepněte na „Vždy“</string>
+    <string name="brave_set_default_browser_dialog_text">Zvolte v seznamu Brave a klepněte na \"Vždy\"</string>
     <string name="brave_default_browser_existing_notification_body">Nastavte si Brave jako výchozí webový prohlížeč
 Šetřete baterii a nahrávejte webové stránky rychleji </string>
 
@@ -210,7 +210,6 @@ k žádné aktivitě...</string>
     <string name="brave_ui_reserved_amount_text">Vyhradili jste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT pro tvůrce, kteří se ještě
 nezaregistrovali, aby mohli získávat příspěvky. Váš prohlížeč se bude pokoušet přispívat,
 dokud autoři svůj účet neověří, nebo dokud neuplyne 90 dní. </string>
-    <string name="brave_ui_notification_desc_no_funds">Vaši plánovanou měsíční platbu za automatické přispívání a měsíční spropitné se nepodařilo dokončit, protože nemáte dostatek prostředků. Zkusíme to znovu za 30 dní.</string>
     <string name="brave_ui_notification_desc_tip_error">Při zpracovávání vašeho spropitného došlo k chybě. Zkuste to znovu.</string>
     <string name="brave_ui_notification_desc_contr_error">Při zpracovávání vašeho příspěvku došlo k chybě.</string>
     <string name="brave_rewards_local_uh_oh">Jejda!</string>
@@ -228,4 +227,12 @@ dokud autoři svůj účet neověří, nebo dokud neuplyne 90 dní. </string>
 respektujících soukromí a odměňujte
 tvůrce obsahu, který milujete.</string>
     <string name="brave_welcome_page_rewards_title">POVOLIT BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Váš první měsíční tip bude zaslán: </string>
+    <string name="brave_ui_tip_text">Právě jste poslali tip: </string>
+    <string name="brave_ui_auto_tip_text">Automaticky posíláte tip: </string>
+    <string name="brave_ui_monthly_text">Měsíčně</string>
+
+    <string name="bottom_toolbar_enable">Zapnout dolní lištu</string>
+    <string name="bottom_toolbar_disable">Vypnout spodní lištu</string>
+    <string name="search_or_url">Hledat nebo URL</string>
 </resources>

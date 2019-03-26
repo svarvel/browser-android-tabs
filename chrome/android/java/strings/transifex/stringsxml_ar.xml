@@ -31,6 +31,7 @@
 
     <string name="menu_exit">ىخرج</string>
 
+    <string name="brave_sync">مزامنة Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">إضافة اسم جهاز</string>
     <string name="sync_settings_add_device_name_label">أدخل اسمًا اختياريًا لهذا الجهاز</string>
     <string name="sync_example_device_name">جهاز أندرويد</string>
@@ -145,9 +146,9 @@ HTTPS</string>
 كمتصفّحك الافتراضي.</string>
     <string name="brave_default_browser_go_to_settings">لقد قمت بالفعل بتعيين متصفّح افتراضي.
 يمكنك تغيير متصفّحك الافتراضي من إعدادات تطبيقاتك.</string>
-    <string name="brave_default_browser_notification_body">حافظ على طاقة البطارية وحمّل صفحات الويب بشكل أسرع. عين Brave متصفّحًا افتراضيًا لديك. من قائمة Brave انقر فوق خيار \"تعيين كمتصفّح افتراضي...\"</string>
+    <string name="brave_default_browser_notification_body">حافظ على البطارية وقم بتحميّل صفحات الويب بشكلٍ أسرع. اجعل Brave متصفحك الافتراضي. من خلال قائمة Brave، انقر فوق \"تعيين كمتصفح افتراضي\"</string>
     <string name="brave_set_default_browser">تعيين كمتصفّح افتراضي</string>
-    <string name="brave_set_default_browser_dialog_text">حدد Brave من القائمة وانقر فوق خيار \"دائمًا\"</string>
+    <string name="brave_set_default_browser_dialog_text">حدِّد Brave من القائمة وانقر فوق \"دائماً\"</string>
     <string name="brave_default_browser_existing_notification_body">عين Brave متصفّحًا افتراضيًا لديك 
 حافظ على طاقة البطارية وحمّل صفحات الإنترنت بشكل أسرع</string>
 
@@ -214,7 +215,6 @@ HTTPS</string>
     <string name="brave_ui_reserved_amount_text">لقد خصصت <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT لمبتكرين لم
 يشتركوا بعد لتلقِّي مساهمات. سيستمر متصفحك في محاولة الإسهام
 حتى يتم  التصديق عليه، أو حتى يمر 90 يومًا.</string>
-    <string name="brave_ui_notification_desc_no_funds">لقد حددت موعد مبلغ شهريّ للمساهمة التلقائية وتعذّر إتمام الإكراميات الشهرية بسبب عدم كفاية الأموال. سنحاول نحن و&#8217; مجددًا خلال 30 يومًا.</string>
     <string name="brave_ui_notification_desc_tip_error">وقعت مشكلة أثناء معالجة إكراميتك، يُرجى إعادة المحاولة.</string>
     <string name="brave_ui_notification_desc_contr_error">وقعت مشكلة أثناء معالجة مساهمتك،</string>
     <string name="brave_rewards_local_uh_oh">عذرًا!</string>
@@ -232,4 +232,12 @@ HTTPS</string>
 تحترم الخصوصية، وانقل ما كسبته لدعم
 مبتكري المحتوى الذين تحبهم.</string>
     <string name="brave_welcome_page_rewards_title">تفعيل جوائز BRAVE</string>
+    <string name="brave_ui_first_tip_text">سيتم إرسال أول نصيحة شهرية إليك في:</string>
+    <string name="brave_ui_tip_text">لقد أرسلت للتو نصيحة إلى:</string>
+    <string name="brave_ui_auto_tip_text">أنت ترسل تلقائياً نصيحة إلى:</string>
+    <string name="brave_ui_monthly_text">شهرياً</string>
+
+    <string name="bottom_toolbar_enable">تمكين شريط الأدوات السفلي</string>
+    <string name="bottom_toolbar_disable">تعطيل شريط الأدوات السفلي</string>
+    <string name="search_or_url">بحث أو عنوان URL</string>
 </resources>

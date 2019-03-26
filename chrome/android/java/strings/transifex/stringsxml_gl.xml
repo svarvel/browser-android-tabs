@@ -1,13 +1,100 @@
 <resources>
 
+    <string name="brave_settings_title">Axustes dos escudos web do Brave para</string>
+    <string name="brave_shields_down">Abaixo</string>
+    <string name="brave_shields_up">Arriba</string>
+    <string name="brave_shields_ads_trackers">Anuncios e rastrexadores bloqueados</string>
+    <string name="brave_shields_https_upgrades">Actualizacións HTTPS</string>
+    <string name="brave_shields_scripts_blocked">Scripts bloqueados</string>
+    <string name="brave_shields_ads_tracking_switch">Bloquear anuncios e rastrexadores</string>
+    <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activar/desactivar escudos do Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Activar/desactivar as recompensas do Brave</string>
+    <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceiros</string>
+
+    <string name="httpse_summary">Sempre que sexa posíbel, abrir os sitios compatíbeis empregando HTTPS no canto do HTTP</string>
+    <string name="tracking_protection_title">Modo de protección contra o rastrexo</string>
+    <string name="tracking_protection_summary">Empecer que se carguen os recursos de rastrexo</string>
+    <string name="ad_block_title">Bloqueo de anuncios</string>
+    <string name="ad_block_summary">Empecer que se carguen anuncios</string>
+
+    <string name="fingerprinting_protection_title">Protección empregando pegada dixital</string>
+    <string name="fingerprinting_protection_summary">Empecer que o navigador rexistre pegadas dixitais</string>
+    <string name="brave_shields_fingerprints_blocked">Métodos de pegada dixital bloqueados</string>
+    <string name="brave_shields_block_fingerprints_switch">Protección de pegada dixital</string>
+
+    <string name="ad_block_regional_title">Bloqueo de anuncios rexionais</string>
+    <string name="ad_block_regional_summary">Empecer que se carguen anuncios rexionais</string>
+
+    <string name="ad_block_regional_summary_no_list">Non hai listaxes dispoñíbeis para a súa categoría rexional</string>
+
     <string name="menu_exit">Saír</string>
 
-    <string name="sync_settings_add_device_name_title">Engadir o nome do dispositivo</string>
-    <string name="sync_settings_add_device_name_label">Introduza un nome opcional para este dispositivo</string>
+    <string name="brave_sync">Sincronización do Brave (beta)</string>
+    <string name="sync_settings_add_device_name_title">Engadir nome do dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Insire un nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
+    <string name="enter_code_words_sync">Insire as palabras clave</string>
     <string name="sync_device">Sincronizar dispositivo</string>
-    <string name="sync_device_failure">A sincronización non se puido configurar</string>
+    <string name="sync_device_failure">Non se puido configurar a sincronización</string>
 
-    <string name="settings_require_relaunch_later">MÁIS TARDE</string>
+    <string name="brave_stats_text_trackers">Rastrexadores
+bloqueados</string>
+    <string name="brave_stats_text_ads">Anuncios
+bloqueados</string>
+    <string name="brave_stats_text_https">Actualizacións
+HTTPS</string>
+    <string name="brave_stats_text_time">Tempo avaliado
+Gardado</string>
 
+    <string name="send_metrics_title">Enviar indicadores</string>
+
+    <string name="desktop_mode_title">Modo de escritorio</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir a versión de escritorio dos sitios</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir a versión móbil dos sitios</string>
+    <string name="website_settings_category_desktop_view_enabled">Habilitar vista de escritorio para novas lapelas</string>
+    <string name="website_settings_category_desktop_view_disabled">Empregar versións móbiles de sitios para novas lapelas (recomendado)</string>
+
+    <string name="brave_shields_first_group_title">Monitor de bloqueos</string>
+    <string name="brave_shields_second_group_title">Controis individuais</string>
+    <string name="brave_shields">Escudos</string>
+    <string name="brave_shields_ads_and_trackers">Anuncios e rastrexadores</string>
+    <string name="brave_shields_fingerprint_methods">Métodos de pegadas dixitais</string>
+    <string name="brave_shields_block_phishing_switch">Bloquear mensaxes fraudulentas</string>
+
+    <string name="play_video_in_background_title">Reprodución de vídeo en segundo plano</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Activado</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Desactivado</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Activa a reprodución de son do vídeo en segundo plano cando a lapela non está activa ou a pantalla do dispositivo está apagado. Proba a mudar ó modo de escritorio se esta funcionalidade non funciona.</string>
+    <string name="settings_require_relaunch_notice">As mudanzas terán efecto a seguinte vez que abras o Brave.</string>
+    <string name="settings_require_relaunch_now">Voltar abrir agora</string>
+    <string name="settings_require_relaunch_later">DESPOIS</string>
+
+    <string name="play_yt_video_in_browser_title">Reprodución de vídeo no Brave</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Activado</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desactivado</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Se está activado, os vídeos reproduciranse no Brave no canto da aplicación correspondente</string>
+
+    <string name="close_tabs_on_exit_title">Pechar lapelas ó saír</string>
+    <string name="close_tabs_on_exit_summary">Non manter as lapelas entre sesións de navigación</string>
+
+    <string name="open_pages_in_custom_tabs_title">Abrir lapelas en \"Lapelas Personalizadas\"</string>
+    <string name="open_pages_in_custom_tabs_summary">Ofrecer para abrir lapelas en \"Lapelas Personalizadas\"</string>
+
+    <string name="ddg_offer_title">Desexas facer unha proxura privada co DuckDuckGo?</string>
+    <string name="ddg_offer_text">Ca procura privada, o Brave empregará o DuckDuckGo para respostar ás túas procuras mentras estea nesta lapela privada. O DuckDuckGo é un motor de procura que non grava o teu historial de procuras, posibilitando que podas navigar de xeito privado.</string>
+    <string name="ddg_offer_positive">Si</string>
+    <string name="ddg_offer_negative">Non</string>
+    <string name="ddg_offer_link">Saber máis acerca da procura privada co DuckDuckGo</string>
+    <string name="prefs_standard_search_engine">Lapela normal</string>
+    <string name="prefs_private_search_engine">Lapela privada</string>
+
+    <string name="brave_open_in_private_tab">Abrir nunha lapela privada</string>
+    <string name="brave_close_all_private_tabs">Pechar lapelas privadas</string>
+    <string name="brave_new_private_tab">Nova lapela privada</string>
+    <string name="brave_new_tab_private_header">Isto é unha \"Lapela Privada\"</string>
+    <string name="brave_new_tab_private_message">Aínda que os sitios que visites dende lapelas privadas non se garden de xeito local, non serán anónimos ou invisíbeis para os teus ISP, o teu empregador ou para as páxinas que estés a ollar.</string>
+    <string name="update_notification_title">Actualización do navigador do Brave</string>
+    <string name="update_notification_text">O navigador novo do Brave é un 22% máis rápido</string>
+    <string name="prefs_sync">Sincronización (beta)</string>
     </resources>

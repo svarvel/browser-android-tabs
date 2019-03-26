@@ -141,9 +141,7 @@ Umehifadhiwa</string>
 kivinjari chako chaguomsingi.</string>
     <string name="brave_default_browser_go_to_settings">Tayari umeshapangilia kivinjari chaguomsingi.
 Unaweza kubadilisha kivinjari chaguomsingi katika mipangilio ya programu yako.</string>
-    <string name="brave_default_browser_notification_body">Okoa betri na vinjari haraka. Ifanye Brave kuwa kivinjari chako chaguomsingi. Kutoka kwenye menyu ya Brave bofya \"Weka kuwa kivinjari chaguo msingi...\"</string>
     <string name="brave_set_default_browser">Kiweke kuwa kivinjari chaguomsingi</string>
-    <string name="brave_set_default_browser_dialog_text">Chagua Brave kutoka kwenye orodha na bofya \"Daima\"</string>
     <string name="brave_default_browser_existing_notification_body">Fanya Brave kuwa kivinjari chako chaguomsingi
 Okoa betri na vinjari haraka zaidi.</string>
 
@@ -207,7 +205,6 @@ mwezi huu...</string>
     <string name="brave_ui_new_token_grant">Ruzuku ya Zawadi ya Bure</string>
     <string name="brave_ui_claim">Dai</string>
     <string name="brave_ui_reserved_amount_text">Umeweka <ph name=\"BAT_VALUE\">%1$s<ex>BAT 50</ex></ph> kwa  watengenezaji wa maudhui ambao hawajajisajili kupokea michango. Kivinjari chako kitaendelea kujaribu kuchangia hadi watakapothibitisha, au hadi siku 90 zipite.</string>
-    <string name="brave_ui_notification_desc_no_funds">Malipo yako ya kila mwezi ya Auto-Contribute na zawadi za kila mwezi hazikuweza kukamilishwa kwa sababu hakuna fedha za kutosha, Tutajaribu&#8217; tena ndani ya siku 30.</string>
     <string name="brave_ui_notification_desc_tip_error">Hitilafu fulani ilitokea wakati wa kuchakata zawadi yako, tafadhali jaribu tena.</string>
     <string name="brave_ui_notification_desc_contr_error">Hitilafu fulani ilitokea wakati wa kuchakata mchango wako.</string>
     <string name="brave_rewards_local_uh_oh">Ayaa!</string>
@@ -225,4 +222,4 @@ mwezi huu...</string>
 faragha, na itoe kuwasaidia
 watengenezaji maudhui unaowapenda.</string>
     <string name="brave_welcome_page_rewards_title">WEZESHA BRAVE REWARDS</string>
-</resources>
+    </resources>

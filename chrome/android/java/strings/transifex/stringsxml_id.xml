@@ -145,11 +145,11 @@ Dihemat</string>
 browser default.</string>
     <string name="brave_default_browser_go_to_settings">Anda telah menetapkan browser default.
 Anda dapat mengubah browser default dalam pengaturan aplikasi.</string>
-    <string name="brave_default_browser_notification_body">Hemat baterai dan muat halaman web lebih cepat. Jadikan Brave Peramban default Anda. Dari menu Brave ketuk \"Atur sebagai peramban default...\"</string>
-    <string name="brave_set_default_browser">Atur sebagai peramban default</string>
+    <string name="brave_default_browser_notification_body">Hemat baterai dan muat laman web lebih cepat. Jadikan Brave peramban baku Anda. Dari menu Brave, ketuk \"Atur sebagai peramban baku\"</string>
+    <string name="brave_set_default_browser">Atur sebagai peramban baku</string>
     <string name="brave_set_default_browser_dialog_text">Pilih Brave dari daftar dan ketuk \"Selalu\"</string>
-    <string name="brave_default_browser_existing_notification_body">Jadikan Brave peramban default Anda
-Hemat baterai dan muat halaman web lebih cepat</string>
+    <string name="brave_default_browser_existing_notification_body">Jadikan Brave peramban baku Anda
+Hemat baterai dan muat laman web lebih cepat</string>
 
     <string name="brave_ui_welcome_header_two">Bersiaplah untuk merasakan pengalaman
 menelusuri Internet berikutnya.</string>
@@ -214,7 +214,7 @@ bulan ini...</string>
     <string name="brave_ui_reserved_amount_text">Anda telah menetapkan <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT kepada pembuat yang belum terdaftar
 untuk menerima kontribusi. Browser Anda akan terus mencoba memberikan kontribusi
 hingga diverifikasi, atau hingga 90 hari telah lewat.</string>
-    <string name="brave_ui_notification_desc_no_funds">Pembayaran bulanan terjadwal Anda untuk Kontribusi Otomatis dan tip bulanan tidak dapat diselesaikan karena dana tidak mencukupi. Kami akan mencobanya lagi dalam 30 hari.</string>
+    <string name="brave_ui_notification_desc_no_funds">Pembayaran bulanan terjadwal Anda untuk Kontribusi Otomatis dan tip bulanan tidak dapat diselesaikan karena dana tidak mencukupi. Kami akan mencoba kembali dalam 30 hari.</string>
     <string name="brave_ui_notification_desc_tip_error">Terjadi masalah saat memproses tip Anda, coba lagi.</string>
     <string name="brave_ui_notification_desc_contr_error">Terjadi masalah saat memproses kontribusi Anda.</string>
     <string name="brave_rewards_local_uh_oh">Oh!</string>
@@ -232,4 +232,12 @@ hingga diverifikasi, atau hingga 90 hari telah lewat.</string>
 yang tidak mengganggu privasi, dan balas dengan mendukung
 pembuat konten yang Anda sukai.</string>
     <string name="brave_welcome_page_rewards_title">AKTIFKAN BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Tip bulanan pertama Anda akan dikirimkan pada:</string>
+    <string name="brave_ui_tip_text">Anda baru saja mengirimkan tip ke:</string>
+    <string name="brave_ui_auto_tip_text">Anda mengirimkan tip secara otomatis ke:</string>
+    <string name="brave_ui_monthly_text">Bulanan</string>
+
+    <string name="bottom_toolbar_enable">Aktifkan bilah alat bawah</string>
+    <string name="bottom_toolbar_disable">Nonaktifkan bilah alat bawah</string>
+    <string name="search_or_url">Cari atau URL</string>
 </resources>

@@ -141,9 +141,10 @@ ušetrený čas</string>
 váš predvolený prehliadač.</string>
     <string name="brave_default_browser_go_to_settings">Už ste nastavili predvolený prehliadač.
 Váš predvolený prehliadač môžete zmeniť v nastaveniach aplikácie.</string>
-    <string name="brave_default_browser_notification_body">Šetrite batériu a načítavajte webové stránky rýchlejšie. Nastavte si Brave ako svoj predvolený prehliadač. V menu Brave klepnite na \"Nastaviť ako predvolený prehliadač...\"</string>
+    <string name="brave_default_browser_notification_body">Šetrite batériu a načítavajte webové stránky rýchlejšie. Dajte si Brave za svoj predvolený prehliadač. V ponuke Brave klepnite na \"Nastaviť ako predvolený prehliadač\"</string>
     <string name="brave_set_default_browser">Nastaviť ako predvolený prehliadač</string>
-    <string name="brave_set_default_browser_dialog_text">V zozname vyberte položku Brave a klepnite na \"Vždy\"</string>
+    <string name="brave_set_default_browser_dialog_text">Vyberte zo zoznamu položku Brave a klepnite na položku \"Vždy\"
+</string>
     <string name="brave_default_browser_existing_notification_body">Nastavte si Brave ako svoj predvolený prehliadač
 Šetrite batériu a načítavajte webové stránky rýchlejšie</string>
 
@@ -210,7 +211,6 @@ za sledovanie reklám, ktoré rešpektujú súkromie.</string>
     <string name="brave_ui_reserved_amount_text">Vyhradili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT pre autorov, ktorí
 sa zatiaľ nezaregistrovali na získavanie príspevkov. Váš prehliadač sa bude pokúšať
 prispievať, kým autori neoveria svoj účet, alebo kým neuplynie 90 dní.</string>
-    <string name="brave_ui_notification_desc_no_funds">Vašu naplánovanú mesačnú platbu v rámci automatického prispievania a mesačného sprepitné sa nepodarilo dokončiť, pretože nemáte dostatok finančných prostriedkov. Skúsime to znovu za 30 dní.</string>
     <string name="brave_ui_notification_desc_tip_error">Pri spracovaní vášho sprepitného došlo k chybe. Skúste to znova.</string>
     <string name="brave_ui_notification_desc_contr_error">Pri spracovaní vášho príspevku došlo k chybe.</string>
     <string name="brave_rewards_local_uh_oh">Ale nie!</string>
@@ -228,4 +228,12 @@ prispievať, kým autori neoveria svoj účet, alebo kým neuplynie 90 dní.</st
 rešpektujú súkromie, a odmeňujte
 tvorcov obsahu, ktorých máte radi.</string>
     <string name="brave_welcome_page_rewards_title">POVOLIŤ ODMENY BRAVE</string>
+    <string name="brave_ui_first_tip_text">Váš prvý mesačný tip bude poslaný:</string>
+    <string name="brave_ui_tip_text">Práve ste poslali tip na:</string>
+    <string name="brave_ui_auto_tip_text">Automaticky posielate tip na:</string>
+    <string name="brave_ui_monthly_text">Mesačne</string>
+
+    <string name="bottom_toolbar_enable">Aktivovať spodný panel s nástrojmi</string>
+    <string name="bottom_toolbar_disable">Vypnúť spodnú lištu nástrojov</string>
+    <string name="search_or_url">Vyhľadávanie alebo URL adresa</string>
 </resources>

@@ -142,7 +142,7 @@ HTTPS</string>
 làm trình duyệt mặc định của bạn.</string>
     <string name="brave_default_browser_go_to_settings">Bạn đã đặt trình duyệt mặc định.
 Bạn có thể thay đổi trình duyệt mặc định trong cài đặt ứng dụng của mình.</string>
-    <string name="brave_default_browser_notification_body">Tiết kiệm pin và tải các trang web nhanh hơn. Đặt Brave làm trình duyệt mặc định của bạn. Từ thanh trình đơn Brave, nhấn \"Đặt làm trình duyệt mặc định...\"</string>
+    <string name="brave_default_browser_notification_body">Tiết kiệm pin và tải các trang web nhanh hơn. Hãy đặt Brave làm Trình duyệt mặc định của bạn. Từ trình đơn của Brave, nhấn chọn \"Đặt làm trình duyệt mặc định\"</string>
     <string name="brave_set_default_browser">Đặt làm trình duyệt mặc định</string>
     <string name="brave_set_default_browser_dialog_text">Chọn Brave từ danh sách và nhấn \"Luôn luôn\"</string>
     <string name="brave_default_browser_existing_notification_body">Đặt Brave làm trình duyệt mặc định của bạn
@@ -211,7 +211,6 @@ trong tháng này...</string>
     <string name="brave_ui_reserved_amount_text">Bạn đã dành <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT cho những nhà sáng tạo chưa
 đăng ký nhận đóng góp. Trình duyệt của bạn sẽ tiếp tục cố gắng đóng góp
 cho đến khi họ xác thực, hoặc cho đến khi 90 ngày đã trôi qua.</string>
-    <string name="brave_ui_notification_desc_no_funds">Không thể hoàn thành khoản thanh toán hàng tháng mà bạn đã lên lịch cho Tự động đóng góp và tiền boa hàng tháng do không đủ tiền. Chúng tôi sẽ thử lại sau 30 ngày.</string>
     <string name="brave_ui_notification_desc_tip_error">Có vấn đề khi xử lý khoản tiền boa của bạn, vui lòng thử lại.</string>
     <string name="brave_ui_notification_desc_contr_error">Có vấn đề khi xử lý khoản đóng góp của bạn.</string>
     <string name="brave_rewards_local_uh_oh">Ôi không!</string>
@@ -229,4 +228,12 @@ cho đến khi họ xác thực, hoặc cho đến khi 90 ngày đã trôi qua.<
 tôn trọng quyền riêng tư và trả tiền đó để hỗ trợ
 những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="brave_welcome_page_rewards_title">BẬT PHẦN THƯỞNG BRAVE</string>
+    <string name="brave_ui_first_tip_text">Tiền thưởng hàng tháng từ bạn sẽ được gửi đi lần đầu tiên vào:</string>
+    <string name="brave_ui_tip_text">Bạn vừa gửi tiền thưởng đến:</string>
+    <string name="brave_ui_auto_tip_text">Bạn đang tự động gửi tiền thưởng đến:</string>
+    <string name="brave_ui_monthly_text">Hàng tháng</string>
+
+    <string name="bottom_toolbar_enable">Bật thanh công cụ bên dưới </string>
+    <string name="bottom_toolbar_disable">Tắt thanh công cụ bên dưới</string>
+    <string name="search_or_url">Tìm kiếm hoặc nhập URL</string>
 </resources>

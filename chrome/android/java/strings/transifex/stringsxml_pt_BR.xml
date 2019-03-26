@@ -31,6 +31,7 @@
 
     <string name="menu_exit">Saída</string>
 
+    <string name="brave_sync">Sincronizar Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Adicionar nome do dispositivo</string>
     <string name="sync_settings_add_device_name_label">Inserir um nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
@@ -141,9 +142,9 @@ Salvo</string>
 como seu navegador padrão.</string>
     <string name="brave_default_browser_go_to_settings">Você já definiu um navegador padrão.
 Você pode alterar o navegador padrão nas suas configurações de aplicativos.</string>
-    <string name="brave_default_browser_notification_body">Economize bateria e carregue as páginas web mais rápido. Torne o Brave o seu Navegador padrão No menu do Brave toque \"Definir como navegador padrão...\"</string>
+    <string name="brave_default_browser_notification_body">Economize bateria e carregue as páginas da web mais rapidamente. Torne o Brave seu Navegador padrão. No menu do Brave, toque em \"Definir como navegador padrão\" </string>
     <string name="brave_set_default_browser">Defina como navegador padrão</string>
-    <string name="brave_set_default_browser_dialog_text">Selecione o Brave da lista e toque \"Sempre\"</string>
+    <string name="brave_set_default_browser_dialog_text">Selecione Brave na lista e toque em \"Sempre\"</string>
     <string name="brave_default_browser_existing_notification_body">Torne o Brace o seu navegador padrão da web
 Economize bateria e carregue as páginas web mais rápido</string>
 
@@ -210,7 +211,6 @@ atividade neste mês...</string>
     <string name="brave_ui_reserved_amount_text">Você designou <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT para criadores que
 ainda não se cadastraram para receber contribuições. Seu navegador continuará tentando contribuir
 até que os criadores verifiquem as contas ou por um período de 90 dias.</string>
-    <string name="brave_ui_notification_desc_no_funds">Não foi possível realizar seu pagamento mensal da Contribuição automática e das doações mensais. Seu saldo é insuficiente. Tentaremos novamente em 30 dias.</string>
     <string name="brave_ui_notification_desc_tip_error">Houve um problema no processamento da sua doação. Tente novamente.</string>
     <string name="brave_ui_notification_desc_contr_error">Houve um problema no processamento da sua doação.</string>
     <string name="brave_rewards_local_uh_oh">Oh, não!</string>
@@ -228,4 +228,12 @@ até que os criadores verifiquem as contas ou por um período de 90 dias.</strin
 que respeitam sua privacidade e retribua
 contribuindo para seus criadores de conteúdo favoritos.</string>
     <string name="brave_welcome_page_rewards_title">ATIVAR O BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Sua primeira gorjeta mensal será enviada em:</string>
+    <string name="brave_ui_tip_text">Você acabou de enviar uma gorjeta para:</string>
+    <string name="brave_ui_auto_tip_text">Você automaticamente enviará uma gorjeta para:</string>
+    <string name="brave_ui_monthly_text">Mensal</string>
+
+    <string name="bottom_toolbar_enable">Habilitar barra de ferramentas inferior</string>
+    <string name="bottom_toolbar_disable">Desabilitar barra de ferramentas inferior</string>
+    <string name="search_or_url">Pesquisar ou URL</string>
 </resources>

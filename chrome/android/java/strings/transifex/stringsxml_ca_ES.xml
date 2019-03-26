@@ -141,9 +141,7 @@ Desat</string>
 com el teu navegador predeterminat.</string>
     <string name="brave_default_browser_go_to_settings">Ja has definit un navegador predeterminat.
 Pots canviar el navegador predeterminat a la configuració de l\'aplicació.</string>
-    <string name="brave_default_browser_notification_body">Estalvia bateria i carrega pàgines web més ràpid. Defineix Brave com el teu navegador predeterminat. Des del menú Brave, toca \"Defineix com a navegador predeterminat...\"</string>
     <string name="brave_set_default_browser">Defineix com a navegador predeterminat</string>
-    <string name="brave_set_default_browser_dialog_text">Selecciona Brave a la llista i toca \"Sempre\"</string>
     <string name="brave_default_browser_existing_notification_body">Defineix Brave com el teu navegador web predeterminat
 Estalvia bateria i carrega pàgines web més ràpid</string>
 
@@ -210,7 +208,6 @@ aquest mes...</string>
     <string name="brave_ui_reserved_amount_text">Has designat <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT per als creadors que encara
 no s\'han registrat per rebre contribucions. El teu navegador continuarà intentant contribuir
 fins que es verifiquin o fins que passin 90 dies.</string>
-    <string name="brave_ui_notification_desc_no_funds">No s\'ha pogut completar el teu pagament mensual programat per a la contribució automàtica ni les propines mensuals per falta de fons. Tornarem a provar-ho en 30 dies.</string>
     <string name="brave_ui_notification_desc_tip_error">S\'ha produït un problema en processar la teva propina, torna-ho a provar.</string>
     <string name="brave_ui_notification_desc_contr_error">S\'ha produït un problema en processar la teva contribució.</string>
     <string name="brave_rewards_local_uh_oh">Vaja!</string>
@@ -228,4 +225,4 @@ fins que es verifiquin o fins que passin 90 dies.</string>
 la privacitat i gasta-ho per donar suport
 als creadors de contingut que t\'agraden.</string>
     <string name="brave_welcome_page_rewards_title">ACTIVA BRAVE REWARDS</string>
-</resources>
+    </resources>

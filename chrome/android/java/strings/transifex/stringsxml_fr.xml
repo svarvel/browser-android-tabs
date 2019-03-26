@@ -141,9 +141,9 @@ Economisé</string>
 comme votre navigateur par défaut.</string>
     <string name="brave_default_browser_go_to_settings">Vous avez déjà défini un navigateur par défaut.
 Vous pouvez changer de navigateur par défaut dans les paramètres de votre application.</string>
-    <string name="brave_default_browser_notification_body">Économisez votre batterie, et chargez plus rapidement les pages web. Faire de Brave votre navigateur web par défaut. Dans le menu Brave, appuyez sur \"Définir comme navigateur par défaut...\"</string>
+    <string name="brave_default_browser_notification_body">Économisez votre batterie et chargez vos pages web plus rapidement. Définissez Brave comme navigateur par défaut. Dans le menu Brave, sélectionnez \"Définir comme navigateur par défaut\"</string>
     <string name="brave_set_default_browser">Définir comme navigateur par défaut.</string>
-    <string name="brave_set_default_browser_dialog_text">Sélectionnez Brave dans la liste, et appuyez sur \"Toujours\".</string>
+    <string name="brave_set_default_browser_dialog_text">Sélectionnez Brave dans la liste et cliquez sur \"Toujours\"</string>
     <string name="brave_default_browser_existing_notification_body">Faire de Brave votre navigateur web par défaut
 Économisez votre batterie, et chargez plus rapidement les pages web</string>
 
@@ -210,7 +210,6 @@ pour le moment…</string>
     <string name="brave_ui_reserved_amount_text">Vous avez dédié <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT pour des créateurs qui ne se sont pas
 encore inscrits pour recevoir des dons. Votre navigateur continuera à essayer d\'envoyer des dons
 jusqu\'à ce qu\'ils procèdent à une vérification ou jusqu\'à ce que 90 jours se soient écoulés.</string>
-    <string name="brave_ui_notification_desc_no_funds">Votre paiement mensuel programmé pour le don automatique et les pourboires mensuels n\'a pas pu être effectué en raison de fonds insuffisants. Nous réessaierons dans 30 jours.</string>
     <string name="brave_ui_notification_desc_tip_error">Un problème est survenu lors du traitement de votre pourboire. Veuillez réessayer.</string>
     <string name="brave_ui_notification_desc_contr_error">Un problème est survenu lors du traitement de votre don.</string>
     <string name="brave_rewards_local_uh_oh">Oups !</string>
@@ -228,4 +227,12 @@ jusqu\'à ce qu\'ils procèdent à une vérification ou jusqu\'à ce que 90 jou
 qui respectent la vie privée et soutenez financièrement
 les créateurs de contenu que vous aimez.</string>
     <string name="brave_welcome_page_rewards_title">ACTIVER BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Votre première contribution mensuelle sera versée le :</string>
+    <string name="brave_ui_tip_text">Vous venez de verser une contribution à :</string>
+    <string name="brave_ui_auto_tip_text">Une contribution est automatiquement versée à :</string>
+    <string name="brave_ui_monthly_text">Mensuelle</string>
+
+    <string name="bottom_toolbar_enable">Activer la barre d\'outils inférieure</string>
+    <string name="bottom_toolbar_disable">Désactiver la barre d\'outils inférieure</string>
+    <string name="search_or_url">Recherche ou URL</string>
 </resources>

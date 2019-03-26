@@ -142,9 +142,7 @@ Salvestatud</string>
 tavaveebilehitsejaks.</string>
     <string name="brave_default_browser_go_to_settings">Oled juba määranud tavaveebilehitseja.
 Tavaveebilehitsejat saad muuta rakenduse seadetes.</string>
-    <string name="brave_default_browser_notification_body">Säästa akut ja lae lehti kiiremini. Määra Brave oma tavaveebilehitsejaks. Vali Brave’i menüüst „Määra veebilehitsejaks“</string>
     <string name="brave_set_default_browser">Määra tavaveebilehitsejaks</string>
-    <string name="brave_set_default_browser_dialog_text">Vali loendist Brave ja puuduta valikut „Alati</string>
     <string name="brave_default_browser_existing_notification_body">Määra Brave oma tavaveebilehitsejaks
 Säästa akut ja lae lehti kiiremini</string>
 
@@ -211,7 +209,6 @@ pole...</string>
     <string name="brave_ui_reserved_amount_text">Oled eraldanud <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT-i loojatele, kes pole veel
 registreerunud toetuseid saama. Veebilehitseja jätkab toetuse edastamise püüdluseid
 konto kinnitamiseni või 90 päeva möödumiseni.</string>
-    <string name="brave_ui_notification_desc_no_funds">Ajastasid automaatse toetamise jaoks igakuised maksed, kuid jootraha polnud võimalik ebapiisavate vahendite tõttu edastada. Proovime 30 päeva pärast uuesti.</string>
     <string name="brave_ui_notification_desc_tip_error">Jootraha töötlemisel esines probleem, proovi uuesti.</string>
     <string name="brave_ui_notification_desc_contr_error">Panuse töötlemisel ilmnes probleem.</string>
     <string name="brave_rewards_local_uh_oh">Oih!</string>
@@ -229,4 +226,4 @@ konto kinnitamiseni või 90 päeva möödumiseni.</string>
 reklaame ning anna see edasi
 armastatud sisuloojate toetamiseks.</string>
     <string name="brave_welcome_page_rewards_title">LUBA BRAVE’I PREEMIAD</string>
-</resources>
+    </resources>
