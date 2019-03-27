@@ -24,6 +24,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.URLUtil;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -125,6 +126,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     private DonationsAdapter mTip_amount_spinner_data_adapter; //data adapter for mTip_amount_spinner (Spinner)
     private Spinner mTip_amount_spinner;
+    private boolean mTip_amount_spinner_auto_select; //spinner selection was changed programmatically (true)
 
     //flag, Handler and delay to prevent quick opening of multiple site banners
     private boolean mTippingInProgress;
@@ -433,9 +435,42 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
         SetupNotificationsControls();
 
+        //setting Recurrent Donations spinner
         mTip_amount_spinner = root.findViewById(R.id.auto_tip_amount);
         mTip_amount_spinner_data_adapter = new DonationsAdapter(ContextUtils.getApplicationContext());
         mTip_amount_spinner.setAdapter(mTip_amount_spinner_data_adapter);
+        mTip_amount_spinner.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(
+                            AdapterView<?> parent, View view, int position, long id) {
+                        if (mTip_amount_spinner_auto_select){ //do nothing
+                            mTip_amount_spinner_auto_select = false;
+                            return;
+                        }
+
+                        Integer intObj = (Integer)mTip_amount_spinner_data_adapter.getItem (position);
+                        if (null == intObj){
+                            Log.e(TAG, "Wrong position at Recurrent Donations Spinner");
+                            return;
+                        }
+                        int tipValue = (int)intObj;
+                        String pubId = mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
+                        if (0 == tipValue){
+                            //remove recurrent donation for this publisher
+                            mBraveRewardsNativeWorker.RemoveRecurring(pubId);
+                        }
+                        else{
+                            //update recurrent donation amount for this publisher
+                            mBraveRewardsNativeWorker.Donate(pubId, tipValue, true);
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        //Do nothing
+                    }
+                });
     }
 
     private void startJoinRewardsAnimation(){
@@ -675,7 +710,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
         @Override
         public Object getItem(int i) {
-            return null;
+            Integer intObj = null;
+            if (i >= 0 && i < bat_donations.length) {
+                intObj = Integer.valueOf(bat_donations[i]);
+            }
+            return intObj;
         }
 
         @Override
@@ -1285,6 +1324,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     public void OnGetReconcileStamp(long timestamp){}
 
 
+    /**
+     * OnRecurringDonationUpdated is fired after a publisher was added or removed to/from
+     * recurrent donation list
+     */
     @Override
     public void OnRecurringDonationUpdated() {
         String pubId = mBraveRewardsNativeWorker.GetPublisherId(currentTabId);
@@ -1313,10 +1356,16 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
 
     void UpdateRecurentDonationSpinner(double amount){
-        int position = mTip_amount_spinner_data_adapter.getPosition ((int)amount);
-        if (position < 0){
-            position = 0;
+        int RequestedPosition = mTip_amount_spinner_data_adapter.getPosition ((int)amount);
+        if (RequestedPosition < 0 || RequestedPosition >= mTip_amount_spinner_data_adapter.getCount() ){
+            Log.e(TAG, "Requested position in Recurrent Donations Spinner doesn't exist");
+            return;
         }
-        mTip_amount_spinner.setSelection(position);
+
+        int selectedItemPos = mTip_amount_spinner.getSelectedItemPosition();
+        if (RequestedPosition != selectedItemPos){
+            mTip_amount_spinner_auto_select = true; //spinner selection was changed programmatically
+            mTip_amount_spinner.setSelection(RequestedPosition);
+        }
     }
 }
