@@ -283,6 +283,12 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public void RemoveRecurring(String publisher){
+        synchronized(lock) {
+            nativeRemoveRecurring(mNativeBraveRewardsNativeWorker,publisher);
+        }
+    }
+
 
     @CalledByNative
     public void OnGetRewardsMainEnabled(boolean enabled) {
@@ -432,5 +438,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetAutoContributeProps(long nativeBraveRewardsNativeWorker);
     private native boolean nativeIsAutoContributeEnabled(long nativeBraveRewardsNativeWorker);
     private native void nativeGetReconcileStamp(long nativeBraveRewardsNativeWorker);
-    private native double nativeGetPublisherRecurrentDonationAmount(long nativeBraveRewardsNativeWorker, String publisher);    
+    private native double nativeGetPublisherRecurrentDonationAmount(long nativeBraveRewardsNativeWorker, String publisher);
+    private native void nativeRemoveRecurring(long nativeBraveRewardsNativeWorker, String publisher);
 }

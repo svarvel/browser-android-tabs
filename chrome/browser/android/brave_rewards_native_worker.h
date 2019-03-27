@@ -118,8 +118,11 @@ public:
     void GetReconcileStamp(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
     double GetPublisherRecurrentDonationAmount(JNIEnv* env,
-                                                const base::android::JavaParamRef<jobject>& obj,
-                                                const base::android::JavaParamRef<jstring>& publisher);
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher);
+
+    void RemoveRecurring(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& publisher);
 
     void OnGetGetReconcileStamp( uint64_t timestamp);
 

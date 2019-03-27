@@ -401,6 +401,14 @@ double BraveRewardsNativeWorker::GetPublisherRecurrentDonationAmount(JNIEnv* env
   return  amount;
 }
 
+void BraveRewardsNativeWorker::RemoveRecurring(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+    const base::android::JavaParamRef<jstring>& publisher){
+  if (brave_rewards_service_) {
+      brave_rewards_service_->RemoveRecurring(base::android::ConvertJavaStringToUTF8(env, publisher));
+  }
+}
+
+
 void BraveRewardsNativeWorker::OnGetGetReconcileStamp( uint64_t timestamp){
   JNIEnv* env = base::android::AttachCurrentThread();
 
