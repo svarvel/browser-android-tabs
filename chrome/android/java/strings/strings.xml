@@ -10,7 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Block Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Enable/Disable Brave Shields</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Enable/Disable Brave Rewards</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Manage Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Block 3rd party cookies</string>
 
     <string name="httpse_summary">Opens supported sites using HTTPS instead of HTTP when possible</string>
@@ -237,4 +237,6 @@ content creators you love.</string>
     <string name="bottom_toolbar_enable">Enable bottom toolbar</string>
     <string name="bottom_toolbar_disable">Disable bottom toolbar</string>
     <string name="search_or_url">Search or URL</string>
+
+    <string name="accessibility_toolbar_btn_bookmark">Create a bookmark</string>
 </resources>

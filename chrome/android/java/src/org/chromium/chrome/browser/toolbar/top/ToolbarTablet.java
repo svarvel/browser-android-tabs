@@ -185,6 +185,7 @@ public class ToolbarTablet extends ToolbarLayout
         super.onNativeLibraryReady();
         mLocationBar.onNativeLibraryReady();
         mHomeButton.setOnClickListener(this);
+        mHomeButton.setOnLongClickListener(this);
         mHomeButton.setOnKeyListener(new KeyboardNavigationListener() {
             @Override
             public View getNextFocusForward() {
@@ -293,7 +294,9 @@ public class ToolbarTablet extends ToolbarLayout
         mSaveOfflineButton.setOnClickListener(this);
         mSaveOfflineButton.setOnLongClickListener(this);
         mBraveShieldsButton.setOnClickListener(this);
+        mBraveShieldsButton.setOnLongClickListener(this);
         mBraveRewardsPanelButton.setOnClickListener(this);
+        mBraveRewardsPanelButton.setOnLongClickListener(this);
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         if (mBraveRewardsNativeWorker != null) {
             mBraveRewardsNativeWorker.AddObserver(this);
@@ -382,7 +385,7 @@ public class ToolbarTablet extends ToolbarLayout
 
     @Override
     public boolean onLongClick(View v) {
-        String description = null;
+        String description = "";
         Context context = getContext();
         Resources resources = context.getResources();
 
@@ -395,7 +398,14 @@ public class ToolbarTablet extends ToolbarLayout
             description = resources.getString(R.string.menu_bookmark);
         } else if (v == mSaveOfflineButton) {
             description = resources.getString(R.string.menu_download);
+        } else if (v == mHomeButton) {
+            description = resources.getString(R.string.accessibility_toolbar_btn_home);
+        } else if (v == mBraveShieldsButton) {
+            description = description = resources.getString(R.string.accessibility_toolbar_btn_brave_shields);
+        } else if (v == mBraveRewardsPanelButton) {
+            description = resources.getString(R.string.accessibility_toolbar_btn_brave_rewards);
         }
+
         return AccessibilityUtil.showAccessibilityToast(context, v, description);
     }
 

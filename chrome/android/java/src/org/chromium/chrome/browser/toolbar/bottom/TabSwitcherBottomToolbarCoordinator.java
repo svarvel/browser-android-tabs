@@ -4,11 +4,14 @@
 
 package org.chromium.chrome.browser.toolbar.bottom;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 
+import org.chromium.base.ContextUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ThemeColorProvider;
 import org.chromium.chrome.browser.appmenu.AppMenuButtonHelper;
@@ -16,13 +19,14 @@ import org.chromium.chrome.browser.compositor.layouts.OverviewModeBehavior;
 import org.chromium.chrome.browser.toolbar.IncognitoStateProvider;
 import org.chromium.chrome.browser.toolbar.MenuButton;
 import org.chromium.chrome.browser.toolbar.TabCountProvider;
+import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.ui.modelutil.PropertyModelChangeProcessor;
 
 /**
  * The coordinator for the tab switcher mode bottom toolbar. This class handles all interactions
  * that the tab switcher bottom toolbar has with the outside world.
  */
-public class TabSwitcherBottomToolbarCoordinator {
+public class TabSwitcherBottomToolbarCoordinator implements View.OnLongClickListener {
     /** The mediator that handles events from outside the tab switcher bottom toolbar. */
     private final TabSwitcherBottomToolbarMediator mMediator;
 
@@ -34,6 +38,8 @@ public class TabSwitcherBottomToolbarCoordinator {
 
     /** The menu button that lives in the tab switcher bottom toolbar. */
     private final MenuButton mMenuButton;
+
+    final Context context = ContextUtils.getApplicationContext();
 
     /**
      * Build the coordinator that manages the tab switcher bottom toolbar.
@@ -76,12 +82,25 @@ public class TabSwitcherBottomToolbarCoordinator {
 
         mNewTabButton = root.findViewById(R.id.tab_switcher_new_tab_button);
         mNewTabButton.setOnClickListener(newTabClickListener);
+        mNewTabButton.setOnLongClickListener(this);
         mNewTabButton.setIncognitoStateProvider(incognitoStateProvider);
         mNewTabButton.setThemeColorProvider(themeColorProvider);
 
         mMenuButton = root.findViewById(R.id.menu_button_wrapper);
         mMenuButton.setThemeColorProvider(themeColorProvider);
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        String description = "";
+        Resources resources = context.getResources();
+
+        if (v == mNewTabButton) {
+            description = description = resources.getString(R.string.accessibility_new_tab_page);
+        }
+
+        return AccessibilityUtil.showAccessibilityToast(context, v, description);
     }
 
     /**
