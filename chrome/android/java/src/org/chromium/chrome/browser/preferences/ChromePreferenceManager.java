@@ -184,6 +184,7 @@ public class ChromePreferenceManager {
      * Default value is false.
      */
     public static final String BOTTOM_TOOLBAR_ENABLED_KEY = "bottom_toolbar_enabled";
+    public static final String BRAVE_BOTTOM_TOOLBAR_SET_KEY = "brave_bottom_toolbar_enabled";
 
     /**
      * Whether or not the adaptive toolbar is enabled.
@@ -597,7 +598,13 @@ public class ChromePreferenceManager {
      * @return True if the bottom toolbar is enabled.
      */
     public boolean isBottomToolbarEnabled() {
-        return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
+        if (mSharedPreferences.getBoolean(BRAVE_BOTTOM_TOOLBAR_SET_KEY, false)) {
+            return mSharedPreferences.getBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
+        } else {
+            writeBoolean(BRAVE_BOTTOM_TOOLBAR_SET_KEY, true);
+            writeBoolean(BOTTOM_TOOLBAR_ENABLED_KEY, true);
+            return true;
+        }
     }
 
     /** Get whether or not use custom tabs.
