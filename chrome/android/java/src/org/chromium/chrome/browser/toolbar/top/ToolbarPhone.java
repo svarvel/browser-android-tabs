@@ -79,6 +79,7 @@ import org.chromium.chrome.browser.toolbar.TabCountProvider;
 import org.chromium.chrome.browser.toolbar.TabCountProvider.TabCountObserver;
 import org.chromium.chrome.browser.toolbar.TabSwitcherDrawable;
 import org.chromium.chrome.browser.toolbar.top.TopToolbarCoordinator.UrlExpansionObserver;
+import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.chrome.browser.util.ColorUtils;
 import org.chromium.chrome.browser.util.FeatureUtilities;
 import org.chromium.chrome.browser.util.MathUtils;
@@ -98,6 +99,7 @@ import java.util.List;
  * Phone specific toolbar implementation.
  */
 public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, OnClickListener,
+                                                           View.OnLongClickListener,
                                                            NewTabPage.OnSearchBoxScrollListener,
                                                            TabCountObserver, BraveRewardsObserver {
     /** The amount of time transitioning from one theme color to another should take in ms. */
@@ -497,7 +499,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             });
         }
         mBraveShieldsButton.setOnClickListener(this);
+        mBraveShieldsButton.setOnLongClickListener(this);
         mBraveRewardsPanelButton.setOnClickListener(this);
+        mBraveRewardsPanelButton.setOnLongClickListener(this);
     }
 
     /**
@@ -602,6 +606,21 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
               mRewardsPopup.showLikePopDownMenu();
             }
         }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        String description = "";
+        Context context = getContext();
+        Resources resources = context.getResources();
+
+        if (v == mBraveShieldsButton) {
+            description = description = resources.getString(R.string.accessibility_toolbar_btn_brave_shields);
+        } else if (v == mBraveRewardsPanelButton) {
+            description = resources.getString(R.string.accessibility_toolbar_btn_brave_rewards);
+        }
+
+        return AccessibilityUtil.showAccessibilityToast(context, v, description);
     }
 
     @Override
