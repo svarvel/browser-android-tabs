@@ -2,6 +2,7 @@ package org.chromium.chrome.browser.notifications;
 
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -18,11 +19,15 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import org.chromium.chrome.R;
 import org.chromium.base.ContextUtils;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.ChromeActivitySessionTracker;
+import org.chromium.chrome.browser.ChromeFeatureList;
+
+import java.util.Random;
 
 public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver {
     public Context mContext;
@@ -51,6 +56,16 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     public static final String FIFTEEN_DAYS_LATER = "fifteen_days_later";
 
     public static final String CANCEL_NOTIFICATION = "cancel_notification";
+
+    //Startup notification data
+    private static final String NOTIFICATION_CHANNEL_ID = "32F04429-3F6E-4657-AF13-B7FF3A59B4B4";
+    private static int rewards_live_notification_id; //generated randomly
+    private static final String NOTIFICATION_TAG = "2A035D70-5C79-4E48-9F1F-DCECA96A3B2D";
+    private static String FIRST_TIME_RUN = "first_time_run";
+    public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq/#what-is-brave-rewards";
+    private static String BRAVE_NOTIFICATION_CHANNEL_NAME = "Brave Notification Channel";
+    private static String BRAVE_NOTIFICATION_CHANNEL_DESC = "Brave Notification Channel description";
+
 
     public static boolean isBraveSetAsDefaultBrowser(Context context) {
         Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://"));
@@ -121,14 +136,14 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         notificationManager.notify(NOTIFICATION_ID, b.build());
     }
 
-    private PendingIntent getDefaultAppSettingsIntent(Context context) {
+    public static PendingIntent getDefaultAppSettingsIntent(Context context) {
         Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
         intent.setAction(DEEP_LINK);
         intent.putExtra(DEEP_LINK, SHOW_DEFAULT_APP_SETTINGS);
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-    public PendingIntent getDismissIntent(Context context) {
+    public static PendingIntent getDismissIntent(Context context) {
         Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
         intent.setAction(CANCEL_NOTIFICATION);
         PendingIntent dismissIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -223,6 +238,66 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
             notifyLater();
             if (hasSetAlarmsForDaysLater()) {
                 setAlarmsForDaysLater();
+            }
+        }
+    }
+
+    public static void NotifyRewardsLive(){
+        if ( ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)){
+            SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+            boolean first_time_run = sharedPref.getBoolean(FIRST_TIME_RUN, true);
+            if (first_time_run) {
+
+                //save FIRST_TIME_RUN flag
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(FIRST_TIME_RUN, false);
+                editor.apply();
+
+                Context context = ContextUtils.getApplicationContext();
+                rewards_live_notification_id = new Random().nextInt();
+
+                //create a notification channel for >= Build.VERSION_CODES.O
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,
+                            BRAVE_NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+                    channel.setDescription(BRAVE_NOTIFICATION_CHANNEL_DESC);
+                    NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
+                    notificationManager.createNotificationChannel(channel);
+                }
+
+                //intent that will fire when the user taps the Learn More
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
+                intent.setPackage(context.getPackageName());
+                PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+
+                NotificationCompat.Action learnAction =
+                        new NotificationCompat.Action.Builder(0, context.getString(R.string.learn_more),
+                                pendingIntent)
+                                .build();
+
+                //Dismiss intent
+                PendingIntent dismissIntent = getDismissIntent(context);
+                NotificationCompat.Action dismissAction =
+                        new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_dismiss),
+                                dismissIntent)
+                                .build();
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
+                        .setSmallIcon(R.drawable.ic_chrome)
+                        .setContentTitle(context.getString(R.string.brave_rewards_intro_title))
+                        .setContentText(context.getString(R.string.brave_rewards_intro_text))
+
+                        .setLargeIcon(BitmapFactory.decodeResource(
+                                context.getResources(),
+                                R.drawable.bat_icon))
+
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setAutoCancel(true)
+                        .addAction(learnAction)
+                        .addAction(dismissAction);
+
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+                notificationManager.notify(NOTIFICATION_ID, builder.build());
             }
         }
     }
