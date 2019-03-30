@@ -4541,6 +4541,15 @@ content creators you love.
       <message name="IDS_BRAVE_UI_DONATE_MONTHLY" desc="">
         Tip this site monthly
       </message>
+      <message name="IDS_BRAVE_REWARDS_INTRO_TITLE" desc="Rewards intro title">
+        Brave Rewards is here
+      </message>
+      <message name="IDS_BRAVE_REWARDS_INTRO_TEXT" desc="Rewards intro text">
+        Support the sites you love. Get started
+      </message>
+      <message name="IDS_BRAVE_REWARDS_DISMISS" desc="Dismiss">
+        Dismiss
+      </message>
       <!--End of rewards temporary section.-->
       <message name="IDS_BOTTOM_TOOLBAR_ENABLE" desc="Menu item for enabling the bottom toolbar.">
         Enable bottom toolbar

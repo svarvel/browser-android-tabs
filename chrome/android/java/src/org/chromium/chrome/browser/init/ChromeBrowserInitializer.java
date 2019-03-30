@@ -38,6 +38,7 @@ import org.chromium.chrome.browser.FileProviderHelper;
 import org.chromium.chrome.browser.crash.LogcatExtractionRunnable;
 import org.chromium.chrome.browser.download.DownloadManagerService;
 import org.chromium.chrome.browser.init.InstallationSourceInformer;
+import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.privacy.PrivacyPreferencesManager;
 import org.chromium.chrome.browser.services.GoogleServicesManager;
@@ -170,6 +171,10 @@ public class ChromeBrowserInitializer {
 
       mSearchSuggestSwitched = true;
       new SwitchSearchSuggestAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    private void NotifyOnFirstRun(){
+        BraveSetDefaultBrowserNotificationService.NotifyRewardsLive();
     }
 
     // ADBlock update
@@ -582,6 +587,7 @@ public class ChromeBrowserInitializer {
         UpdateStats();
         CheckInstallationSource();
         SwitchSearchSuggestEnabled();
+        NotifyOnFirstRun();
     }
 
     private ActivityStateListener createActivityStateListener() {
