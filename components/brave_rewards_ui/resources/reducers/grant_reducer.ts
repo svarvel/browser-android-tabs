@@ -33,7 +33,14 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
       break
     case types.ON_GRANT:
       state = { ...state }
-      if (action.payload.properties.status === 1) {
+      const grantProps = action.payload.properties
+
+      if (grantProps.status === 1) {
+        break
+      }
+
+      if (grantProps.status === 13 && !grantProps.promotionId) {
+        state.grants = []
         break
       }
 
@@ -41,14 +48,14 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
         state.grants = []
       }
 
-      const promotionId = action.payload.properties.promotionId
+      const promotionId = grantProps.promotionId
 
       if (!getGrant(promotionId, state.grants)) {
         state.grants.push({
           promotionId: promotionId,
           expiryTime: 0,
           probi: '',
-          type: action.payload.properties.type
+          type: grantProps.type
         })
       }
 
@@ -162,6 +169,12 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
       state = { ...state }
       let newGrant: any = {}
       const properties: Rewards.Grant = action.payload.properties
+      const panelClaimed = properties.status === 0 && !state.currentGrant
+
+      if (panelClaimed) {
+        state.grants = []
+        break
+      }
 
       if (!state.grants || !state.currentGrant) {
         break
