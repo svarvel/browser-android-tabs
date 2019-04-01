@@ -170,6 +170,17 @@ const walletReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State,
       {
         state = { ...state }
         state.reports = action.payload.reports
+
+        const date = new Date()
+        const key = `${date.getFullYear()}_${date.getMonth() + 1}`
+
+        // If we have reports for the month we should
+        // show the view in the summary, regardless of balance
+        // (state.emptyWallet at this time is only used in the report summary)
+        if (state.reports &&
+            state.reports.hasOwnProperty(key)) {
+          state.ui.emptyWallet = false
+        }
         break
       }
     case types.CHECK_WALLET_EXISTENCE:
