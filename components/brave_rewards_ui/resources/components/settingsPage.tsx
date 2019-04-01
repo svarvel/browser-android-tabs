@@ -54,6 +54,12 @@ class SettingsPage extends React.Component<Props, State> {
   }
 
   onToggleWallet = () => {
+    if (this.state.walletShown) {
+      window.location.hash = ''
+    } else {
+      window.location.hash = '#rewards-summary'
+    }
+
     this.setState({ walletShown: !this.state.walletShown })
   }
 
@@ -82,6 +88,14 @@ class SettingsPage extends React.Component<Props, State> {
       this.actions.getGrants()
     }
     this.actions.getAdsData()
+    this.isWalletUrl()
+
+    window.addEventListener('popstate', (e) => {
+      this.isWalletUrl()
+    })
+    window.addEventListener('hashchange', (e) => {
+      this.isWalletUrl()
+    })
   }
 
   componentDidUpdate (prevProps: Props) {
@@ -99,6 +113,19 @@ class SettingsPage extends React.Component<Props, State> {
     ) {
       this.actions.getContributeList()
     }
+  }
+
+  isWalletUrl = () => {
+    const walletShown = (
+      window &&
+      window.location &&
+      window.location.hash &&
+      window.location.hash === '#rewards-summary'
+    )
+
+    this.setState({
+      walletShown: !!walletShown
+    })
   }
 
   getGrantClaims = () => {
