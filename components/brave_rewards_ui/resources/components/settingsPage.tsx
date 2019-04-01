@@ -75,6 +75,7 @@ class SettingsPage extends React.Component<Props, State> {
     this.balanceTimerId = window.setInterval(() => {
       this.actions.getRewardsEnabled()
       this.actions.getWalletProperties()
+      this.actions.getCurrentReport()
     }, 60000)
 
     if (!this.props.rewardsData.safetyNetFailed) {
