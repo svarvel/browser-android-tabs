@@ -301,7 +301,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                         .addAction(dismissAction);
 
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-                notificationManager.notify(NOTIFICATION_ID, builder.build());
+                notificationManager.notify(rewards_live_notification_id, builder.build());
             }
         }
     }
