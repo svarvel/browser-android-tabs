@@ -360,7 +360,8 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   // dialog as backup.  It's just that on Chrome OS, it's the only
   // print dialog.
   if (url.host_piece() == chrome::kBraveRewardsHost) {
-    if (!base::FeatureList::IsEnabled(features::kBraveRewards)) {
+    if (!base::FeatureList::IsEnabled(features::kBraveRewards) ||
+        profile->GetPrefs()->GetBoolean(prefs::kSafetynetCheckFailed)) {
       return NULL;
     }
     return &NewWebUI<BraveRewardsUI>;

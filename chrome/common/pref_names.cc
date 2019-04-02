@@ -2627,4 +2627,6 @@ const char kAllowPopupsDuringPageUnload[] = "allow_popups_during_page_unload";
 const char kCertificateManagementAllowed[] = "certificate_management_allowed";
 #endif
 
+// Boolean that is true when SafetyNet check is failed.
+const char kSafetynetCheckFailed[] = "safetynetcheck.failed";
 }  // namespace prefs

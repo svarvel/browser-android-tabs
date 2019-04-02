@@ -928,24 +928,25 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     @Override
     public void OnWalletInitialized(int error_code) {
-      if (error_code == 12) {   // Wallet created code
-          walletInitialized = true;
-          ShowWebSiteView(false);
-      }
-      else {
-          Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
-          btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_welcome_button_text_two));
-          btJoinRewards.setClickable(true);
-          btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-          if (wallet_init_animation != null) {
-              wallet_init_animation.stop();
-          }
+        if (error_code == 12) {   // Wallet created code
+            walletInitialized = true;
+            ShowWebSiteView(false);
+        } else if (error_code == 19) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
+            dismiss();
+        } else {
+            Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);
+            btJoinRewards.setText(BraveRewardsPanelPopup.this.root.getResources().getString(R.string.brave_ui_welcome_button_text_two));
+            btJoinRewards.setClickable(true);
+            btJoinRewards.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            if (wallet_init_animation != null) {
+                wallet_init_animation.stop();
+            }
 
-          Context context = ContextUtils.getApplicationContext();
-          Toast toast = Toast.makeText(context, root.getResources().getString(R.string.brave_ui_error_init_wallet), Toast.LENGTH_SHORT);
-          toast.show();
+            Context context = ContextUtils.getApplicationContext();
+            Toast toast = Toast.makeText(context, root.getResources().getString(R.string.brave_ui_error_init_wallet), Toast.LENGTH_SHORT);
+            toast.show();
 
-      }
+        }
         wallet_init_animation = null;
         mWalletCreateInProcess = false;
     }

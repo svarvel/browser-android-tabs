@@ -31,6 +31,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.graphics.drawable.DrawableWrapper;
 import android.util.AttributeSet;
 import android.util.Property;
@@ -60,6 +61,7 @@ import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.ChromeFeatureList;
+import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
 import org.chromium.chrome.browser.device.DeviceClassManager;
@@ -71,6 +73,7 @@ import org.chromium.chrome.browser.omnibox.LocationBar;
 import org.chromium.chrome.browser.omnibox.LocationBarPhone;
 import org.chromium.chrome.browser.partnercustomizations.HomepageManager;
 import org.chromium.chrome.browser.partnercustomizations.PartnerBrowserCustomizations;
+import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.toolbar.KeyboardNavigationListener;
@@ -502,7 +505,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      */
     @Override
     void onNativeLibraryReady() {
-        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)) {
+        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
+            !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
             if (mRewardsLayout != null) {
                 mRewardsLayout.setVisibility(View.VISIBLE);
             }
@@ -1962,7 +1966,29 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     }
 
     @Override
-    public void OnWalletInitialized(int error_code) {}
+    public void OnWalletInitialized(int error_code) {
+        if (error_code == 19) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
+            PrefServiceBridge.getInstance().setSafetynetCheckFailed(true);
+            if (mRewardsLayout != null) {
+                mRewardsLayout.setVisibility(View.GONE);
+            }
+            // Show message
+            AlertDialog.Builder alert = new AlertDialog.Builder(getContext(), R.style.AlertDialogTheme);
+            AlertDialog alertDialog = alert.setMessage(getResources().getString(R.string.brave_rewards_not_available))
+                                           .setPositiveButton(R.string.ok, null)
+                                           .create();
+            alertDialog.getDelegate().setHandleNativeActionModesEnabled(false);
+            alertDialog.show();
+            // If current tab is rewards tab we close it, as it is not valid anymore
+            Tab currentTab = getToolbarDataProvider().getTab();
+            if (currentTab != null && getToolbarDataProvider().getCurrentUrl().equals(ChromeTabbedActivity.REWARDS_SETTINGS_URL)) {
+                if (getContext() instanceof ChromeActivity) {
+                    ChromeActivity activity = (ChromeActivity)getContext();
+                    activity.getCurrentTabModel().closeTab(currentTab);
+                }
+            }
+        }
+    }
 
     @Override
     public void OnWalletProperties(int error_code) {}
