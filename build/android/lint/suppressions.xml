@@ -415,6 +415,7 @@ Still reading?
     <!-- Upscaling 24dp to 48dp doesn't work as expected with a TextView compound drawable. -->
     <ignore regexp="chrome/android/java/res/layout/photo_picker_bitmap_view.xml"/>
     <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel.xml"/>
+    <ignore regexp="chrome/android/java/res/layout/brave_rewards_panel_grant.xml"/>
   </issue>
   <issue id="UselessParent">
     <ignore regexp="android_webview/tools/system_webview_shell/apk/res/layout/activity_webview_browser.xml"/>

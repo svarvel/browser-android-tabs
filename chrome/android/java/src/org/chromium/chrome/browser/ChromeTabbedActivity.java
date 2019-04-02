@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ShortcutManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -174,6 +175,7 @@ import org.chromium.ui.base.WindowAndroid;
 import org.chromium.ui.modaldialog.ModalDialogManager;
 import org.chromium.ui.widget.Toast;
 import org.chromium.chrome.browser.toolbar.top.Toolbar;
+import org.chromium.chrome.browser.notifications.BraveSetDefaultBrowserNotificationService;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -1384,6 +1386,15 @@ public class ChromeTabbedActivity
             } else {
                 RecordUserAction.record("MobileTabbedModeViewIntentFromApp");
             }
+
+            //substitue the URL if BRAVE_REWARDS_SUBSTITUTE_URL extra data was provided
+            String substituteUrl = intent.getStringExtra(BraveSetDefaultBrowserNotificationService.BRAVE_REWARDS_SUBSTITUTE_URL);
+            if (substituteUrl != null && !substituteUrl.isEmpty()){
+                url = substituteUrl;
+                intent.setData(Uri.parse(url));
+                tabOpenType = TabOpenType.REUSE_URL_MATCHING_TAB_ELSE_NEW_TAB;
+            }
+
 
             boolean fromLauncherShortcut = IntentUtils.safeGetBooleanExtra(
                     intent, IntentHandler.EXTRA_INVOKED_FROM_SHORTCUT, false);

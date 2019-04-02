@@ -63,8 +63,10 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     private static final String NOTIFICATION_TAG = "2A035D70-5C79-4E48-9F1F-DCECA96A3B2D";
     private static String FIRST_TIME_RUN = "first_time_run";
     public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq/#what-is-brave-rewards";
+    public static final String BRAVE_REWARDS_INTERNAL_URL = "chrome://rewards";
     private static String BRAVE_NOTIFICATION_CHANNEL_NAME = "Brave Notification Channel";
     private static String BRAVE_NOTIFICATION_CHANNEL_DESC = "Brave Notification Channel description";
+    public static final String BRAVE_REWARDS_SUBSTITUTE_URL = "brave_rewards_substitute_url";
 
 
     public static boolean isBraveSetAsDefaultBrowser(Context context) {
@@ -268,10 +270,12 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 //intent that will fire when the user taps the Learn More
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
                 intent.setPackage(context.getPackageName());
+                intent.putExtra(BRAVE_REWARDS_SUBSTITUTE_URL, BRAVE_REWARDS_INTERNAL_URL);
+
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
                 NotificationCompat.Action learnAction =
-                        new NotificationCompat.Action.Builder(0, context.getString(R.string.learn_more),
+                         new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_get_started),
                                 pendingIntent)
                                 .build();
 

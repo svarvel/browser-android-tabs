@@ -6,5 +6,6 @@
     android:layout_gravity="end"
     android:textColor="@color/brave_rewards_theme_color"
     android:textAllCaps="true"
-    android:textStyle="bold"/>
+    android:textStyle="bold"
+    android:textAlignment="textEnd"/>
 
