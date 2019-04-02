@@ -940,6 +940,7 @@ extern const char kUsageStatsEnabled[];
 extern const char kCertificateManagementAllowed[];
 #endif
 
+extern const char kSafetynetCheckFailed[];
 }  // namespace prefs
 
 #endif  // CHROME_COMMON_PREF_NAMES_H_

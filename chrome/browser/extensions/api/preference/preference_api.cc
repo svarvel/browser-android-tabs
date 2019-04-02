@@ -179,6 +179,8 @@ const PrefMappingEntry kPrefMapping[] = {
      APIPermission::kAccessibilityFeaturesRead,
      APIPermission::kAccessibilityFeaturesModify},
 #endif
+    {"safetynetCheckFailed", prefs::kSafetynetCheckFailed,
+     APIPermission::kPrivacy, APIPermission::kPrivacy},
 };
 
 class IdentityPrefTransformer : public PrefTransformerInterface {
