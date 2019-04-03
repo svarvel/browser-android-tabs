@@ -10,6 +10,7 @@ import android.animation.AnimatorSet;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.ColorMatrix;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 
 import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.ApplicationStatus;
+import org.chromium.base.ContextUtils;
 import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
@@ -44,6 +46,7 @@ import org.chromium.chrome.browser.omnibox.LocationBarTablet;
 import org.chromium.chrome.browser.partnercustomizations.HomepageManager;
 import org.chromium.chrome.browser.preferences.ChromePreferenceManager;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
+import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.toolbar.KeyboardNavigationListener;
 import org.chromium.chrome.browser.toolbar.TabCountProvider;
@@ -66,6 +69,8 @@ public class ToolbarTablet extends ToolbarLayout
         BraveRewardsObserver {
     // The number of toolbar buttons that can be hidden at small widths (reload, back, forward).
     public static final int HIDEABLE_BUTTON_COUNT = 3;
+
+    private static final String PREF_HIDE_BRAVE_ICON = "hide_brave_rewards_icon";
 
     private ImageButton mHomeButton;
     private ImageButton mBackButton;
@@ -175,8 +180,10 @@ public class ToolbarTablet extends ToolbarLayout
      */
     @Override
     public void onNativeLibraryReady() {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
         if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-            !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            !PrefServiceBridge.getInstance().isSafetynetCheckFailed() &&
+                !sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
             if (mRewardsLayout != null && mShieldsLayout != null) {
                 mShieldsLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getResources(), R.color.modern_grey_100));
                 mRewardsLayout.setVisibility(View.VISIBLE);
@@ -484,6 +491,15 @@ public class ToolbarTablet extends ToolbarLayout
                     ChromeActivity activity = (ChromeActivity)getContext();
                     activity.getCurrentTabModel().closeTab(currentTab);
                 }
+            }
+        } else if (error_code == 12) {
+            // Check and set flag to show Brave Rewards icon if enabled
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            if (sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
+                sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, false);
+                sharedPreferencesEditor.apply();
+                SingleCategoryPreferences.AskForRelaunch((ChromeActivity)getContext());
             }
         }
     }

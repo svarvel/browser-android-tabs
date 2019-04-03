@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright (c) 2019 The Brave Authors. All rights reserved.
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <org.chromium.chrome.browser.preferences.ChromeSwitchPreference
+        android:key="hide_brave_rewards_icon"
+        android:title="@string/hide_brave_rewards_icon_title"
+        android:summaryOn="@string/hide_brave_rewards_icon_description"
+        android:summaryOff="@string/hide_brave_rewards_icon_description" />
+
+</PreferenceScreen>

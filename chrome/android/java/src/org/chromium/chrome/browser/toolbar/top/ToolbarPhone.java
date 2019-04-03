@@ -12,6 +12,7 @@ import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -53,6 +54,8 @@ import android.widget.TextView;
 
 import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.ApplicationStatus;
+import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.base.TraceEvent;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.chrome.R;
@@ -74,6 +77,7 @@ import org.chromium.chrome.browser.omnibox.LocationBarPhone;
 import org.chromium.chrome.browser.partnercustomizations.HomepageManager;
 import org.chromium.chrome.browser.partnercustomizations.PartnerBrowserCustomizations;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
+import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.toolbar.KeyboardNavigationListener;
@@ -128,6 +132,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     protected static final int TAB_SWITCHER = 1;
     protected static final int ENTERING_TAB_SWITCHER = 2;
     protected static final int EXITING_TAB_SWITCHER = 3;
+
+    private static final String PREF_HIDE_BRAVE_ICON = "hide_brave_rewards_icon";
 
     @ViewDebug.ExportedProperty(category = "chrome", mapping = {
             @ViewDebug.IntToString(from = STATIC_TAB, to = "STATIC_TAB"),
@@ -505,8 +511,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
      */
     @Override
     void onNativeLibraryReady() {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
         if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-            !PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            !PrefServiceBridge.getInstance().isSafetynetCheckFailed() &&
+                !sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
             if (mRewardsLayout != null) {
                 mRewardsLayout.setVisibility(View.VISIBLE);
             }
@@ -1986,6 +1994,16 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                     ChromeActivity activity = (ChromeActivity)getContext();
                     activity.getCurrentTabModel().closeTab(currentTab);
                 }
+            }
+        }
+        else if (error_code == 12) {   // Wallet created code
+            // Check and set flag to show Brave Rewards icon if enabled
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            if (sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
+                sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, false);
+                sharedPreferencesEditor.apply();
+                SingleCategoryPreferences.AskForRelaunch((ChromeActivity)getContext());
             }
         }
     }
