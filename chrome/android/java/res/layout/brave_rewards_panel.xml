@@ -287,6 +287,18 @@
                                  android:dividerHeight="0dp"
                                  android:visibility="gone" />
 
+                            <TextView
+                                android:id="@+id/pre_grant_message"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="@string/brave_ui_pre_grant_message"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:fontFamily="sans-serif"
+                                android:textSize="14sp"
+                                android:textColor="#FFFFFF"
+                                android:visibility="gone"/>
+
                             <LinearLayout
                                 android:layout_height="wrap_content"
                                 android:layout_width="fill_parent"
