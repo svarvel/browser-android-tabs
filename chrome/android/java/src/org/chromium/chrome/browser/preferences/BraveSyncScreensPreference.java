@@ -267,6 +267,9 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                               return;
                           }
                           if (null != message && !message.isEmpty()) {
+                              if (message.equals("Credential server response 400. Signed request body of the client timestamp is required.")) {
+                                message =  R.string.sync_requires_correct_time;
+                              }
                               message = " [" + message + "]";
                           }
                           final String messageFinal = (null == message) ? "" : message;
