@@ -1468,6 +1468,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // and has not yet completed), it no longer needs to do the belated onStart code since we
         // were stopped in the mean time.
         mStarted = false;
+        if (this instanceof ChromeTabbedActivity) {
+            ((ChromeTabbedActivity)this).dismissRewardsPanel();
+        }
     }
 
     @Override
