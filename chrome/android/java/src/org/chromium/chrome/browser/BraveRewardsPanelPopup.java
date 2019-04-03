@@ -83,6 +83,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String TWITCH_TYPE = "twitch#";
 
     private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
+    private static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
 
     // Custom Android notification
     private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
@@ -471,6 +472,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                         //Do nothing
                     }
                 });
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        if (!sharedPreferences.getBoolean(PREF_GRANTS_NOTIFICATION_RECEIVED, false)) {
+            TextView pre_grant = (TextView)root.findViewById(R.id.pre_grant_message);
+            if (pre_grant != null) {
+                pre_grant.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     private void startJoinRewardsAnimation(){
@@ -862,6 +870,15 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 notification_icon.setImageResource(R.drawable.grant_icon);
                 title = root.getResources().getString(R.string.brave_ui_new_token_grant);
                 description = root.getResources().getString(R.string.brave_ui_new_grant);
+                // Set flag
+                SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+                SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+                sharedPreferencesEditor.putBoolean(PREF_GRANTS_NOTIFICATION_RECEIVED, true);
+                sharedPreferencesEditor.apply();
+                TextView pre_grant = (TextView)root.findViewById(R.id.pre_grant_message);
+                if (pre_grant != null) {
+                    pre_grant.setVisibility(View.GONE);
+                }
                 break;
             case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT_ADS:
                 Log.e(TAG, "REWARDS_NOTIFICATION_GRANT_ADS is not handled yet");
