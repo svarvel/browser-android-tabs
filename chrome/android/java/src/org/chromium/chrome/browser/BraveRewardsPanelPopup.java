@@ -1265,12 +1265,11 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             walletInitialized = true;
             ShowWebSiteView(false);
 
-            // Set preferences that Brave Rewards was turned On
+            // Set preferences that Brave Rewards was turned On and that Brave Rewards icon is not hidden
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             sharedPreferencesEditor.putBoolean(PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
             sharedPreferencesEditor.apply();
-            //
         }
         else {
             //wallet hasn't been created yet: show 'Join Rewards' button

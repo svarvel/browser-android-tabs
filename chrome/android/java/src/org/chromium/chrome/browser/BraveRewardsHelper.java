@@ -188,14 +188,14 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
 
 
     static public ChromeTabbedActivity GetChromeTabbedActivity() {
-    for (Activity ref : ApplicationStatus.getRunningActivities()) {
-        if (!(ref instanceof ChromeTabbedActivity)) continue;
+      for (Activity ref : ApplicationStatus.getRunningActivities()) {
+          if (!(ref instanceof ChromeTabbedActivity)) continue;
 
-        return (ChromeTabbedActivity)ref;
+          return (ChromeTabbedActivity)ref;
+      }
+
+      return null;
     }
-
-    return null;
-  }
 
   static public String getCurrentMonth(Calendar currentTime,
       Resources resources, boolean upper_case) {
