@@ -67,6 +67,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     private static String BRAVE_NOTIFICATION_CHANNEL_NAME = "Brave Notification Channel";
     private static String BRAVE_NOTIFICATION_CHANNEL_DESC = "Brave Notification Channel description";
     public static final String BRAVE_REWARDS_SUBSTITUTE_URL = "brave_rewards_substitute_url";
+    public static final String NOTIFICATION_ID_EXTRA = "notification_id_extra";
 
 
     public static boolean isBraveSetAsDefaultBrowser(Context context) {
@@ -129,7 +130,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
             b.setContentText(mContext.getString(R.string.brave_default_browser_existing_notification_body));
             b.setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_existing_notification_body)));
             NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), getDefaultAppSettingsIntent(mContext)).build();
-            NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext)).build();
+            NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext, NOTIFICATION_ID)).build();
             b.addAction(actionYes);
             b.addAction(actionNo);
         }
@@ -145,9 +146,10 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-    public static PendingIntent getDismissIntent(Context context) {
+    public static PendingIntent getDismissIntent(Context context, int notification_id) {
         Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
         intent.setAction(CANCEL_NOTIFICATION);
+        intent.putExtra(NOTIFICATION_ID_EXTRA, notification_id);
         PendingIntent dismissIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
     }
@@ -229,8 +231,9 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
 
         if (deepLinkIsHandled ||
             (intent != null && intent.getAction() != null && intent.getAction().equals(CANCEL_NOTIFICATION))) {
+            int notification_id = intent.getIntExtra(NOTIFICATION_ID_EXTRA, 0);
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.cancel(NOTIFICATION_ID);
+            notificationManager.cancel(notification_id);
             return;
         }
 
@@ -271,30 +274,29 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
                 intent.setPackage(context.getPackageName());
                 intent.putExtra(BRAVE_REWARDS_SUBSTITUTE_URL, BRAVE_REWARDS_INTERNAL_URL);
-
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-
                 NotificationCompat.Action learnAction =
                          new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_get_started),
                                 pendingIntent)
                                 .build();
 
                 //Dismiss intent
-                PendingIntent dismissIntent = getDismissIntent(context);
+                PendingIntent dismissIntent = getDismissIntent(context,rewards_live_notification_id);
                 NotificationCompat.Action dismissAction =
                         new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_dismiss),
                                 dismissIntent)
                                 .build();
 
+                //select small and large icons for devices < 21 or higher
+                int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.btn_brave : R.drawable.ic_chrome;
+                int largeIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.bat_logo : R.drawable.bat_icon;
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-                        .setSmallIcon(R.drawable.ic_chrome)
+                        .setSmallIcon(smallIconId)
                         .setContentTitle(context.getString(R.string.brave_rewards_intro_title))
                         .setContentText(context.getString(R.string.brave_rewards_intro_text))
-
                         .setLargeIcon(BitmapFactory.decodeResource(
                                 context.getResources(),
-                                R.drawable.bat_icon))
-
+                                largeIconId))
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setAutoCancel(true)
                         .addAction(learnAction)
