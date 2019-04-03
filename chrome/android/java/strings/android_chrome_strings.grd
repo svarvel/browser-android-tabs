@@ -4203,6 +4203,9 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <message name="IDS_TABSWITCHER_CREATE_GROUP" desc="This flat button is shown in the Tab Switcher, under an open tab. When the user taps the button, Chrome creates a new group of tabs that includes the existing tab. It's okay to use any of the following verbs in order to keep the text under 45 characters: Create, Make, Add.">
         Create group
       </message>
+      <message name="IDS_SYNC_REQUIRES_CORRECT_TIME" desc="The message for the dialog where the user notified about sync setup failure.">
+        You might be having wrong system time or timezone setup on your device. Please setup the correct time and timezone
+      </message>
 
       <message name="IDS_TAB_MANAGEMENT_MODULE_TITLE" desc="Text shown when the Tab Management module is referenced in install start, success, failure UI (e.g. in IDS_MODULE_INSTALL_START_TEXT, which will expand to 'Installing Tab management for Chrome…').">
         Tab management
@@ -4230,7 +4233,7 @@ Save battery and load web pages faster
       <message name="IDS_BRAVE_SET_DEFAULT_BROWSER_DIALOG_TEXT" desc="Dialog for setting default browser">
         Select Brave from the list and tap "Always"
       </message>
-      
+
       <!--It's just temporary. We will need to pull rewards strings from brave-core-->
       <message name="IDS_BRAVE_UI_WELCOME_HEADER_TWO" desc="Get ready to experience the next Internet.">
         Get ready to experience
