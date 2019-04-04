@@ -252,4 +252,9 @@ content creators you love.</string>
     <string name="hide_brave_rewards_icon_description">Hides the Brave Rewards Icon when Brave Rewards is not enabled</string>
 
     <string name="brave_ui_pre_grant_message">Check back soon for a free token grant</string>
+
+    <string name="reset_brave_rewards_option">Reset Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">This will delete your Brave wallet and reset all of your Brave Rewards data</string>
+    <string name="reset_brave_rewards_error_title">Reset Error</string>
+    <string name="reset_brave_rewards_error_description">There was an error resetting Brave Rewards. Please relaunch Brave and try again</string>
 </resources>
