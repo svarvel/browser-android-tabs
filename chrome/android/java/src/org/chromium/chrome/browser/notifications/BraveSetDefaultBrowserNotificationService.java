@@ -58,14 +58,10 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     public static final String CANCEL_NOTIFICATION = "cancel_notification";
 
     //Startup notification data
-    private static final String NOTIFICATION_CHANNEL_ID = "32F04429-3F6E-4657-AF13-B7FF3A59B4B4";
     private static int rewards_live_notification_id; //generated randomly
-    private static final String NOTIFICATION_TAG = "2A035D70-5C79-4E48-9F1F-DCECA96A3B2D";
     private static String FIRST_TIME_RUN = "first_time_run";
     public static final String REWARDS_LEARN_MORE_URL = "https://brave.com/faq/#what-is-brave-rewards";
     public static final String BRAVE_REWARDS_INTERNAL_URL = "chrome://rewards";
-    private static String BRAVE_NOTIFICATION_CHANNEL_NAME = "Brave Notification Channel";
-    private static String BRAVE_NOTIFICATION_CHANNEL_DESC = "Brave Notification Channel description";
     public static final String BRAVE_REWARDS_SUBSTITUTE_URL = "brave_rewards_substitute_url";
     public static final String NOTIFICATION_ID_EXTRA = "notification_id_extra";
 
@@ -150,8 +146,8 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
         intent.setAction(CANCEL_NOTIFICATION);
         intent.putExtra(NOTIFICATION_ID_EXTRA, notification_id);
-        PendingIntent dismissIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-        return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        return PendingIntent.getBroadcast(context, notification_id, intent, 0);
     }
 
     private boolean shouldNotifyLater() {
@@ -261,14 +257,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 Context context = ContextUtils.getApplicationContext();
                 rewards_live_notification_id = new Random().nextInt();
 
-                //create a notification channel for >= Build.VERSION_CODES.O
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID,
-                            BRAVE_NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
-                    channel.setDescription(BRAVE_NOTIFICATION_CHANNEL_DESC);
-                    NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-                    notificationManager.createNotificationChannel(channel);
-                }
+
 
                 //intent that will fire when the user taps the Learn More
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
@@ -291,7 +280,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.brave_logo_19 : R.drawable.ic_chrome;
                 int largeIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.bat_logo : R.drawable.bat_icon;
 
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, ChromeActivity.CHANNEL_ID);
                 builder.setSmallIcon(smallIconId);
                 builder.setContentTitle(context.getString(R.string.brave_rewards_intro_title));
                 builder.setContentText(context.getString(R.string.brave_rewards_intro_text));
