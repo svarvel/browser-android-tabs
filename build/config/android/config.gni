@@ -159,6 +159,9 @@ if (is_android || is_chromeos) {
     # Android versionName for android_apk()s that don't explicitly set one.
     android_default_version_name = "Developer Build"
 
+    # Brave build correction number for different RCs (should be divisible by 100).
+    brave_build_correction_number = 0
+
     # Forced Android versionCode
     android_override_version_code = ""
 
