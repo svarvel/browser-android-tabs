@@ -16,7 +16,7 @@ if (chrome_version_name == "Developer Build") {
 }
 
 _version_code = chrome_version_id
-
+_version_code += brave_build_correction_number
 # The architecture preference is encoded into the version_code for devices
 # that support multiple architectures
 if (target_cpu == "arm") {
