@@ -33,9 +33,9 @@ public class BraveRewardsNativeWorker {
     private boolean createWalletInProcess;  // flag: wallet is being created
     private boolean grantClaimInProcess;  // flag: wallet is being created
 
-    public static  BraveRewardsNativeWorker getInstance(){
+    public static  BraveRewardsNativeWorker getInstance() {
         synchronized(lock) {
-          if(instance == null){
+          if(instance == null) {
               instance = new BraveRewardsNativeWorker();
               instance.Init();
           }
@@ -277,13 +277,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
-    public void GetReconcileStamp(){
+    public void GetReconcileStamp() {
         synchronized(lock) {
             nativeGetReconcileStamp(mNativeBraveRewardsNativeWorker);
         }
     }
 
-    public void RemoveRecurring(String publisher){
+    public void RemoveRecurring(String publisher) {
         synchronized(lock) {
             nativeRemoveRecurring(mNativeBraveRewardsNativeWorker,publisher);
         }

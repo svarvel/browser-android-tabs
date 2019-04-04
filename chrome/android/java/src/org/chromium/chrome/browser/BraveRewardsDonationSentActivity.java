@@ -63,16 +63,16 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
 
-        if (null != mBraveRewardsNativeWorker){
+        if (null != mBraveRewardsNativeWorker) {
             mBraveRewardsNativeWorker.RemoveObserver(this);
         }
     }
 
 
-    private void SetAnimation(){
+    private void SetAnimation() {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         int height = metrics.heightPixels;
         View floater = findViewById(R.id.floater);
@@ -84,7 +84,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         fadeIn.setDuration(BraveRewardsHelper.THANKYOU_FADE_IN_DURATION);
 
 
-        fadeIn.setAnimationListener(new Animation.AnimationListener(){
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation arg0) { }
             @Override
@@ -130,7 +130,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     }
 
 
-    private void SetData(){
+    private void SetData() {
         Intent intent = getIntent();
         if (-1 == currentTabId_) {
             currentTabId_ = IntentUtils.safeGetIntExtra(intent, BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, -1);
@@ -144,7 +144,7 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
         String strAmount = String.format(getDefault(), "%.1f BAT", (float)mAmount_);
         ((TextView)findViewById(R.id.txt_pub_name)).setText(mPublisher_name_);
 
-        if (true == mMonthly_tip_){
+        if (true == mMonthly_tip_) {
             //change `txt_you_sent` message
             String monthly_send_msg = getResources().getString(R.string.brave_ui_auto_tip_text);
             ((TextView)findViewById(R.id.txt_you_sent)).setText(monthly_send_msg);
@@ -164,9 +164,9 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
 
 
     private void SetFavIcon(Bitmap bmp) {
-        if (bmp != null){
+        if (bmp != null) {
             runOnUiThread(
-                    new Runnable(){
+                    new Runnable() {
                         @Override
                         public void run() {
                             ImageView iv = (ImageView) findViewById(R.id.publisher_favicon);
@@ -182,23 +182,23 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
     }
 
     @Override
-    public void onLargeIconReady(Bitmap icon){
+    public void onLargeIconReady(Bitmap icon) {
         SetFavIcon(icon);
     }
 
 
     // BraveRewardsObserver/////////////////////////////////////
     @Override
-    public void OnWalletInitialized(int error_code){}
+    public void OnWalletInitialized(int error_code) {}
 
     @Override
-    public void OnWalletProperties(int error_code){}
+    public void OnWalletProperties(int error_code) {}
 
     @Override
-    public void OnPublisherInfo(int tabId){}
+    public void OnPublisherInfo(int tabId) {}
 
     @Override
-    public void OnGetCurrentBalanceReport(String[] report){}
+    public void OnGetCurrentBalanceReport(String[] report) {}
 
     @Override
     public void OnNotificationAdded(String id, int type, long timestamp, String[] args) {}

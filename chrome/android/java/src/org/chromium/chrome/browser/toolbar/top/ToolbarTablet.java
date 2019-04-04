@@ -381,7 +381,7 @@ public class ToolbarTablet extends ToolbarLayout
                 RecordUserAction.record("MobileToolbarShowBraveShields");
             }
         } else if (mBraveRewardsPanelButton == v) {
-            if (null == mRewardsPopup){
+            if (null == mRewardsPopup) {
                 mRewardsPopup = new BraveRewardsPanelPopup(v);
                 mRewardsPopup.showLikePopDownMenu();
             }
@@ -578,7 +578,7 @@ public class ToolbarTablet extends ToolbarLayout
     public void OnGetAutoContributeProps() {}
 
     @Override
-    public void OnGetReconcileStamp(long timestamp){}
+    public void OnGetReconcileStamp(long timestamp) {}
 
     @Override
     public void OnRecurringDonationUpdated() {}

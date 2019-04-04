@@ -613,7 +613,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 mBraveShieldsListener.onClick(mBraveShieldsButton);
             }
         } else if (mBraveRewardsPanelButton == v) {
-            if (null == mRewardsPopup){
+            if (null == mRewardsPopup) {
               mRewardsPopup = new BraveRewardsPanelPopup(v);
               mRewardsPopup.showLikePopDownMenu();
             }
@@ -2098,7 +2098,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnGetAutoContributeProps() {}
 
     @Override
-    public void OnGetReconcileStamp(long timestamp){}
+    public void OnGetReconcileStamp(long timestamp) {}
 
     @Override
     public void OnRecurringDonationUpdated() {}

@@ -24,10 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.text.Html;
 import android.text.Spanned;
 import android.content.Context;
-import android.os.Build;
 import android.view.MotionEvent;
 import org.chromium.chrome.browser.util.IntentUtils;
 import org.chromium.chrome.browser.BraveRewardsHelper;
@@ -234,7 +232,6 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         part2 = part2.substring(0,1).toUpperCase() + part2.substring(1);
 
         Spanned toInsert;
-        Context appContext = ContextUtils.getApplicationContext();
         //Temporary disabled
         /*
         StringBuilder sb = new StringBuilder();
@@ -244,12 +241,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         sb.append(" <u>");
         sb.append(part3);
         sb.append("</u>.");
-
-        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            toInsert = Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            toInsert = Html.fromHtml(sb.toString());
-        }
+        toInsert = BraveRewardsHelper.spannedFromHtmlString(sb.toString());
         TextView tv = (TextView)findViewById(R.id.not_enough_funds_text);
         tv.setText(toInsert);
         */
@@ -271,12 +263,7 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
             sb1.append(" <br><font color=#00afff>");
             sb1.append(part2);
             sb1.append("</font></br>");
-
-            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                toInsert = Html.fromHtml(sb1.toString(), Html.FROM_HTML_MODE_LEGACY);
-            } else {
-                toInsert = Html.fromHtml(sb1.toString());
-            }
+            toInsert = BraveRewardsHelper.spannedFromHtmlString(sb1.toString());
             TextView not_verified_warning_text = (TextView )findViewById(R.id.not_verified_warning_text );
             not_verified_warning_text.setText(toInsert);
 

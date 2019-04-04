@@ -270,8 +270,8 @@ content::WebContents* GetWebContents(
 
 struct OnBeforeURLRequestContext
 {
-  OnBeforeURLRequestContext(){}
-  ~OnBeforeURLRequestContext(){}
+  OnBeforeURLRequestContext() {}
+  ~OnBeforeURLRequestContext() {}
 
   int adsBlocked = 0;
   int trackersBlocked = 0;
@@ -530,7 +530,7 @@ void ChromeNetworkDelegate::NotifyLedger(const GURL& url, const std::string& url
 
   brave_rewards::RewardsService* brave_rewards_service = nullptr;
   bool incognito = web_contents->GetBrowserContext()->IsOffTheRecord();
-  if (incognito == false){
+  if (incognito == false) {
     brave_rewards_service = brave_rewards::RewardsServiceFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
   }
