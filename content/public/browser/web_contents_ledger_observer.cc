@@ -30,7 +30,7 @@ WebContentsLedgerObserver::WebContentsLedgerObserver(WebContents* web_contents)
     brave_rewards_service_(nullptr),
     is_being_destroyed_(false) {
   bool incognito = web_contents->GetBrowserContext()->IsOffTheRecord();
-  if (incognito == false){
+  if (incognito == false) {
     brave_rewards_service_ = brave_rewards::RewardsServiceFactory::GetForProfile(
      ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
   }

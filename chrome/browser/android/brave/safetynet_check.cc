@@ -50,8 +50,7 @@ void SafetyNetCheckRunner::jobFinished(SafetyNetCheck* finished_job) {
   if (it != jobs_.end()) {
     jobs_.erase(it);
   } else {
-    // This should not happen
-    assert(false);
+    NOTREACHED();
   }
 }
 

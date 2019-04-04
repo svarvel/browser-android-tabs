@@ -14,7 +14,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Handler;
 import android.text.Html;
 import android.text.Spanned;
@@ -81,6 +80,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final int PUBLISHER_FETCHES_COUNT = 3;
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
+    private static final String COPYRIGHT_SPECIAL = "\u2122";
 
     private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
     private static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
@@ -96,6 +96,17 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String AUTO_CONTRIBUTE_NOT_ENOUGH_FUNDS = "15";
     private static final String AUTO_CONTRIBUTE_TIPPING_ERROR = "16";
     private static final String ERROR_CONVERT_PROBI = "ERROR";
+
+    // Balance report codes
+    private static final int BALANCE_REPORT_OPENING_BALANCE = 0;
+    private static final int BALANCE_REPORT_CLOSING_BALANCE = 1;
+    private static final int BALANCE_REPORT_DEPOSITS = 2;
+    private static final int BALANCE_REPORT_GRANTS = 3;
+    private static final int BALANCE_REPORT_EARNING_FROM_ADS = 4;
+    private static final int BALANCE_REPORT_AUTO_CONTRIBUTE = 5;
+    private static final int BALANCE_REPORT_RECURRING_DONATION = 6;
+    private static final int BALANCE_REPORT_ONE_TIME_DONATION = 7;
+    private static final int BALANCE_REPORT_TOTAL = 8;
 
     protected final View anchor;
     private final PopupWindow window;
@@ -253,7 +264,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             mBraveRewardsNativeWorker.GetRewardsMainEnabled();
         }
 
-        String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + "\u2122";
+        String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + COPYRIGHT_SPECIAL;
         ((TextView)root.findViewById(R.id.brave_rewards_id)).setText(braveRewardsTitle);
         if (btJoinRewards != null) {
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
@@ -917,13 +928,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         }
         String stringToInsert = (title.isEmpty() ? "" : ("<b>" + title + "</b>" + " | ")) + description +
           (title.isEmpty() ? "" : ("  <font color=#a9aab4>" + notificationTime + "</font>"));
-        Spanned toInsert;
-        Context appContext = ContextUtils.getApplicationContext();
-        if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            toInsert = Html.fromHtml(stringToInsert, Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            toInsert = Html.fromHtml(stringToInsert);
-        }
+        Spanned toInsert = BraveRewardsHelper.spannedFromHtmlString(stringToInsert);
         tv.setText(toInsert);
     }
 
@@ -1009,13 +1014,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                       Integer.toString(calTime.get(Calendar.YEAR));
                   toInsert += String.format(this.root.getResources().getString(R.string.brave_ui_expires_on), 
                     date);
-
-                  Context appContext = ContextUtils.getApplicationContext();
-                  if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                      adapter.add(Html.fromHtml(toInsert, Html.FROM_HTML_MODE_LEGACY));
-                  } else {
-                      adapter.add(Html.fromHtml(toInsert));
-                  }
+                  adapter.add(BraveRewardsHelper.spannedFromHtmlString(toInsert));
               }
               listView.setAdapter(adapter);
           } else {
@@ -1128,13 +1127,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 root.getResources().getString(R.string.brave_ui_not_verified_publisher_description);
             verified_description += "<br/><font color=#73CBFF>" + 
               root.getResources().getString(R.string.learn_more) + ".</font>";
-            Context appContext = ContextUtils.getApplicationContext();
-            Spanned toInsert;
-            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                toInsert = Html.fromHtml(verified_description, Html.FROM_HTML_MODE_LEGACY);
-            } else {
-                toInsert = Html.fromHtml(verified_description);
-            }
+            Spanned toInsert = BraveRewardsHelper.spannedFromHtmlString(verified_description);
             tv.setText(toInsert);
             tv.setVisibility(View.VISIBLE);
             tvVerified.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icn_unverified, 0, 0, 0);
@@ -1174,46 +1167,46 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
           }
 
           switch (i) {
-            case 0:
-            case 1:
-            case 2:
+            case BALANCE_REPORT_OPENING_BALANCE:
+            case BALANCE_REPORT_CLOSING_BALANCE:
+            case BALANCE_REPORT_DEPOSITS:
               break;
-            case 3:
+            case BALANCE_REPORT_GRANTS:
               tvTitle = (TextView)root.findViewById(R.id.br_grants_claimed_title);
               tv = (TextView)root.findViewById(R.id.br_grants_claimed_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_grants_claimed_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
-            case 4:
+            case BALANCE_REPORT_EARNING_FROM_ADS:
               tvTitle = (TextView)root.findViewById(R.id.br_earnings_ads_title);
               tv = (TextView)root.findViewById(R.id.br_earnings_ads_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_earnings_ads_usd);
               text = "<font color=#8E2995>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
-            case 5:
+            case BALANCE_REPORT_AUTO_CONTRIBUTE:
               tvTitle = (TextView)root.findViewById(R.id.br_auto_contribute_title);
               tv = (TextView)root.findViewById(R.id.br_auto_contribute_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_auto_contribute_usd);
               text = "<font color=#6537AD>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
-            case 6:
+            case BALANCE_REPORT_RECURRING_DONATION:
               tvTitle = (TextView)root.findViewById(R.id.br_recurring_donation_title);
               tv = (TextView)root.findViewById(R.id.br_recurring_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_recurring_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
-            case 7:
+            case BALANCE_REPORT_ONE_TIME_DONATION:
               tvTitle = (TextView)root.findViewById(R.id.br_one_time_donation_title);
               tv = (TextView)root.findViewById(R.id.br_one_time_donation_bat);
               tvUSD = (TextView)root.findViewById(R.id.br_one_time_donation_usd);
               text = "<font color=#392DD1>" + value + "</font><font color=#000000> BAT</font>";
               textUSD = usdValue;
               break;
-            case 8:
+            case BALANCE_REPORT_TOTAL:
               break;
           }
           if (tvTitle != null && tv != null && tvUSD != null &&
@@ -1221,13 +1214,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             tvTitle.setVisibility(hideControls ? View.GONE : View.VISIBLE);
             tv.setVisibility(hideControls ? View.GONE : View.VISIBLE);
             tvUSD.setVisibility(hideControls ? View.GONE : View.VISIBLE);
-            Context appContext = ContextUtils.getApplicationContext();
-            Spanned toInsert;
-            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                toInsert = Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY);
-            } else {
-                toInsert = Html.fromHtml(text);
-            }
+            Spanned toInsert = BraveRewardsHelper.spannedFromHtmlString(text);
             tv.setText(toInsert);
             tvUSD.setText(textUSD);
           }
@@ -1304,13 +1291,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 R.string.brave_ui_reserved_amount_text), String.format("%.2f", amount)) + 
               " <font color=#73CBFF>" + root.getResources().getString(R.string.learn_more) + 
               ".</font>";
-            Context appContext = ContextUtils.getApplicationContext();
-            Spanned toInsert;
-            if (appContext != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                toInsert = Html.fromHtml(non_verified_summary, Html.FROM_HTML_MODE_LEGACY);
-            } else {
-                toInsert = Html.fromHtml(non_verified_summary);
-            }
+            Spanned toInsert = BraveRewardsHelper.spannedFromHtmlString(non_verified_summary);
             tvPublisherNotVerifiedSummary.setText(toInsert);
             tvPublisherNotVerifiedSummary.setVisibility(View.VISIBLE);
         } else {

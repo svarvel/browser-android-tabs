@@ -15,8 +15,11 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.DisplayMetrics;
 import android.view.TouchDelegate;
 import android.view.View;
@@ -67,7 +70,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
         void onLargeIconReady(Bitmap icon);
     }
 
-    public BraveRewardsHelper (){
+    public BraveRewardsHelper () {
         if (mLargeIconBridge == null) {
             mLargeIconBridge = new LargeIconBridge(currentActiveTab().getProfile());
         }
@@ -76,7 +79,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     /**
      *  we don't destroy mLargeIconBridge sisnce it's static
      */
-    private void destroy(){
+    private void destroy() {
         if (mLargeIconBridge != null) {
             mLargeIconBridge.destroy();
             mLargeIconBridge = null;
@@ -85,23 +88,23 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     }
 
 
-    public void detach(){
+    public void detach() {
         mCallback =  null;
     }
 
-    public void retrieveLargeIcon(String favIconURL, LargeIconReadyCallback callback){
+    public void retrieveLargeIcon(String favIconURL, LargeIconReadyCallback callback) {
         mCallback = callback;
         mFaviconUrl = favIconURL;
         retrieveLargeIconInternal();
     }
 
-    private void retrieveLargeIconInternal(){
+    private void retrieveLargeIconInternal() {
         mFetchCount ++;
 
         //favIconURL (or content URL) is still not available, try to read it again
-        if (mFaviconUrl == null || mFaviconUrl.isEmpty() || mFaviconUrl.equals("clear") ){
+        if (mFaviconUrl == null || mFaviconUrl.isEmpty() || mFaviconUrl.equals("clear")) {
             Tab tab  = currentActiveTab();
-            if (tab != null){
+            if (tab != null) {
                 mFaviconUrl = tab.getUrl();
             }
 
@@ -116,7 +119,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
         }
 
         //get the icon
-        if (mLargeIconBridge!= null && mCallback != null && !mFaviconUrl.isEmpty() ){
+        if (mLargeIconBridge!= null && mCallback != null && !mFaviconUrl.isEmpty()) {
             mLargeIconBridge.getLargeIconForUrl(mFaviconUrl,FAVICON_DESIRED_SIZE, this);
         }
     }
@@ -124,12 +127,12 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     @Override
     @CalledByNative("LargeIconCallback")
     public void onLargeIconAvailable(@Nullable Bitmap icon, int fallbackColor,
-                                     boolean isFallbackColorDefault, @IconType int iconType){
-        if (mFaviconUrl.isEmpty()){
+                                     boolean isFallbackColorDefault, @IconType int iconType) {
+        if (mFaviconUrl.isEmpty()) {
             return;
         }
 
-        if (  mFetchCount == MAX_FAVICON_FETCH_COUNT  || (icon == null && false == isFallbackColorDefault) ){
+        if (  mFetchCount == MAX_FAVICON_FETCH_COUNT  || (icon == null && false == isFallbackColorDefault) ) {
             RoundedIconGenerator mIconGenerator = new RoundedIconGenerator(Resources.getSystem(),
                     FAVICON_CIRCLE_MEASUREMENTS, FAVICON_CIRCLE_MEASUREMENTS,
                     FAVICON_CIRCLE_MEASUREMENTS, fallbackColor, FAVICON_TEXT_SIZE);
@@ -252,7 +255,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
 
   public static Tab currentActiveTab() {
     ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-    if (activity == null || activity.getTabModelSelector() == null){
+    if (activity == null || activity.getTabModelSelector() == null) {
       return null;
     }
     return activity.getActivityTab();
@@ -267,11 +270,11 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
    * @param fade_out_visibility: fade in/out time (ms)
    */
   public static void crossfade(final View fadeout, final View fadein, int fade_out_visibility, float fadeInAlpha, int fade_time) {
-    if (fade_time < 0 ){
+    if (fade_time < 0) {
         fade_time = 0;
     }
 
-    if (fadeInAlpha < 0 || fadeInAlpha > 1  ){
+    if (fadeInAlpha < 0 || fadeInAlpha > 1) {
         fadeInAlpha= 1f;
     }
 
@@ -318,7 +321,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
           BigDecimal dividerNumber = new BigDecimal(PROBI_POWER);
           val = probiNumber.divide(dividerNumber).doubleValue();
       }
-      catch(NumberFormatException e){
+      catch(NumberFormatException e) {
           val = Double.NaN;
       }
       return val;
@@ -353,7 +356,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
      * @param dp
      * @return
      */
-    public static int dp2px(int dp){
+    public static int dp2px(int dp) {
         DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
         float px = dp * (metrics.densityDpi / DP_PER_INCH_MDPI);
         return Math.round(px);
@@ -363,12 +366,20 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     public static boolean subtextAtOffset(String text, String subtext, int offset) {
         boolean ret_value = false;
         final int startIndex = text.indexOf(subtext);
-        if (startIndex >= 0){
+        if (startIndex >= 0) {
             final int endIndex = startIndex + subtext.length();
             if (offset >= startIndex && offset  < endIndex) {
                 ret_value = true;
             }
         }
         return ret_value;
+    }
+
+    public static Spanned spannedFromHtmlString(String string) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(string, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            return Html.fromHtml(string);
+        }
     }
 }
