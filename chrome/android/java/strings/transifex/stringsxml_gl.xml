@@ -9,7 +9,6 @@
     <string name="brave_shields_ads_tracking_switch">Bloquear anuncios e rastrexadores</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activar/desactivar escudos do Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Activar/desactivar as recompensas do Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceiros</string>
 
     <string name="httpse_summary">Sempre que sexa posíbel, abrir os sitios compatíbeis empregando HTTPS no canto do HTTP</string>
@@ -37,7 +36,6 @@
     <string name="enter_code_words_sync">Insire as palabras clave</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">Non se puido configurar a sincronización</string>
-
     <string name="brave_stats_text_trackers">Rastrexadores
 bloqueados</string>
     <string name="brave_stats_text_ads">Anuncios

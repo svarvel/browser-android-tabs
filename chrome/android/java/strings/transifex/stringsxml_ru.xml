@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS везде</string>
     <string name="brave_shields_blocks_scripts_switch">Блокировать скрипты</string>
     <string name="accessibility_toolbar_btn_brave_shields">Вкл/Выкл щиты Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Включить/отключить Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Блокировать сторонние cookie</string>
 
     <string name="httpse_summary">Открытие поддерживаемых сайтов с использованием HTTPS вместо HTTP, когда это возможно.</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">Ввод кодовых слов</string>
     <string name="sync_device">Синхронизация устройства</string>
     <string name="sync_device_failure">Не удалось настроить синхронизацию</string>
+    <string name="sync_requires_correct_time">Вероятно на вашем устройстве неверно установлено системное время или часовой пояс. Установите правильно время и часовой пояс</string>
 
     <string name="brave_stats_text_trackers">Трекеров
 заблокировано</string>
@@ -211,6 +211,7 @@
     <string name="brave_ui_reserved_amount_text">Вы хотите отправить <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT создателям контента, которые еще не зарегистрировались в нашей программе.
 Повторные попытки отправить им пожертвование будут совершаться в браузере до тех пор,
 пока эти лица не пройдут проверку или пока не истечет 90 дней.</string>
+    <string name="brave_ui_notification_desc_no_funds">Вы запланировали ежемесячный автоплатеж и чаевые, но отправить пожертвование не удалось, поскольку у вас недостаточно средств. Мы повторим попытку через 30 дней.</string>
     <string name="brave_ui_notification_desc_tip_error">При обработке платежа произошла ошибка. Повторите попытку.</string>
     <string name="brave_ui_notification_desc_contr_error">При обработке платежа произошла ошибка.</string>
     <string name="brave_rewards_local_uh_oh">Ошибка!</string>
@@ -232,8 +233,27 @@
     <string name="brave_ui_tip_text">Вы только что отправили чаевые:</string>
     <string name="brave_ui_auto_tip_text">Вы автоматически отправляете чаевые:</string>
     <string name="brave_ui_monthly_text">Ежемесячно</string>
-
     <string name="bottom_toolbar_enable">Включить нижнюю панель</string>
     <string name="bottom_toolbar_disable">Отключить нижнюю панель</string>
     <string name="search_or_url">Поиск или URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Создать закладку</string>
+    <string name="brave_ui_donate_monthly">Благодарить этот сайт деньгами ежемесячно</string>
+    <string name="brave_rewards_intro_title">Brave Rewards здесь</string>
+    <string name="brave_rewards_intro_text">Поддержите ваши любимые сайты</string>
+    <string name="brave_rewards_dismiss">Закрыть</string>
+    <string name="brave_rewards_get_started">Начать</string>
+
+    <string name="brave_rewards_not_available">Мы сожалеем, похоже, что Brave Rewards недоступно на вашем устройстве</string>
+
+    <string name="prefs_section_display">Отобразить</string>
+    <string name="prefs_appearance">Внешний вид</string>
+    <string name="hide_brave_rewards_icon_title">Скрыть иконку  Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">Скрывает иконку Brave Rewards, когда Brave Rewards не активно</string>
+
+    <string name="brave_ui_pre_grant_message">Возвращайтесь скорее за бесплатным подарком токенов</string>
+
+    <string name="reset_brave_rewards_option">Сбросить Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Это действие удалит ваш кошелек Brave и сбросит все ваши данные Brave Rewards</string>
+    <string name="reset_brave_rewards_error_title">Ошибка сброса</string>
+    <string name="reset_brave_rewards_error_description">Произошла ошибка сброса Brave Rewards. Перезапустите Brave и повторите попытку</string>
 </resources>

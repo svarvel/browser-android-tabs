@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS overal</string>
     <string name="brave_shields_blocks_scripts_switch">Blokkeer Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activeer/inactiveer Brave afschermingen</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave Rewards inschakelen/uitschakelen</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokkeer cookies van derden</string>
 
     <string name="httpse_summary">Opent ondersteunde websites met HTTPS in plaats van HTTP indien mogelijk</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">Voer codewoorden in</string>
     <string name="sync_device">Synchroniseer apparaat</string>
     <string name="sync_device_failure">Synchronisatie kon niet worden gestart</string>
+    <string name="sync_requires_correct_time">Het kan zijn dat op uw apparaat een onjuiste systeemtijd of tijdszone is ingesteld. Stel de juiste tijd en tijdszone in.</string>
 
     <string name="brave_stats_text_trackers">Trackers
 geblokkeerd</string>
@@ -232,8 +232,27 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
     <string name="brave_ui_tip_text">U heeft zojuist een fooi gestuurd naar:</string>
     <string name="brave_ui_auto_tip_text">U stuurt automatisch een fooi aan:</string>
     <string name="brave_ui_monthly_text">Maandelijks</string>
-
     <string name="bottom_toolbar_enable">Zet onderste werkbalk aan</string>
     <string name="bottom_toolbar_disable">Zet onderste werkbalk uit</string>
     <string name="search_or_url">Zoekterm of URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Een bladwijzer maken</string>
+    <string name="brave_ui_donate_monthly">Deze website maandelijks een fooi geven</string>
+    <string name="brave_rewards_intro_title">Brave Rewards is hier</string>
+    <string name="brave_rewards_intro_text">Steun de websites waar u van houdt.</string>
+    <string name="brave_rewards_dismiss">Annuleren</string>
+    <string name="brave_rewards_get_started">Aan de slag.</string>
+
+    <string name="brave_rewards_not_available">Het spijt ons maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</string>
+
+    <string name="prefs_section_display">Scherm</string>
+    <string name="prefs_appearance">Uiterlijk</string>
+    <string name="hide_brave_rewards_icon_title">Brave Rewards-pictogram verbergen</string>
+    <string name="hide_brave_rewards_icon_description">Verbergt het Brave Rewards-pictogram wanneer Brave Rewards niet is ingeschakeld</string>
+
+    <string name="brave_ui_pre_grant_message">Kom snel terug voor een gratis symbolische gift</string>
+
+    <string name="reset_brave_rewards_option">Brave Rewards resetten</string>
+    <string name="reset_brave_rewards_option_description">Dit zal uw Brave-portefeuille verwijderen en al uw Brave Reward-gegevens resetten</string>
+    <string name="reset_brave_rewards_error_title">Fout resetten</string>
+    <string name="reset_brave_rewards_error_description">Er is een fout opgetreden bij het resetten van Brave Rewards. Herstart Brave opnieuw en probeer het opnieuw.</string>
 </resources>

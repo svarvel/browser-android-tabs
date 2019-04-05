@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokir Skrip</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktifkan/Nonaktifkan Perisai Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Aktifkan/Nonaktifkan Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokir kuki pihak ke-3</string>
 
     <string name="httpse_summary">Buka situs yang didukung menggunakan HTTPS daripada HTTP jika memungkinkan</string>
@@ -38,6 +37,8 @@
     <string name="enter_code_words_sync">Masukkan kode kata</string>
     <string name="sync_device">Sinkronkan perangkat</string>
     <string name="sync_device_failure">Sinkronisasi tidak dapat disiapkan</string>
+    <string name="sync_requires_correct_time">Mungkin waktu sistem atau zona waktu perangkat Anda salah. Harap atur waktu dan zona waktu yang benar
+</string>
 
     <string name="brave_stats_text_trackers">Pelacak
 Diblokir</string>
@@ -236,8 +237,39 @@ pembuat konten yang Anda sukai.</string>
     <string name="brave_ui_tip_text">Anda baru saja mengirimkan tip ke:</string>
     <string name="brave_ui_auto_tip_text">Anda mengirimkan tip secara otomatis ke:</string>
     <string name="brave_ui_monthly_text">Bulanan</string>
-
     <string name="bottom_toolbar_enable">Aktifkan bilah alat bawah</string>
     <string name="bottom_toolbar_disable">Nonaktifkan bilah alat bawah</string>
     <string name="search_or_url">Cari atau URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Buat Marka
+</string>
+    <string name="brave_ui_donate_monthly">Beri situs ini tip setiap bulan
+</string>
+    <string name="brave_rewards_intro_title">Imbalan Brave sudah tiba
+</string>
+    <string name="brave_rewards_intro_text">Dukung situs yang Anda sukai.
+</string>
+    <string name="brave_rewards_dismiss">Tutup</string>
+    <string name="brave_rewards_get_started">Memulai</string>
+
+    <string name="brave_rewards_not_available">Kami mohon maaf tampaknya Imbalan Brave tidak tersedia di perangkat Anda
+</string>
+
+    <string name="prefs_section_display">Layar Tampilan
+</string>
+    <string name="prefs_appearance">Penampilan</string>
+    <string name="hide_brave_rewards_icon_title">Sembunyikan Ikon Imbalan Brave
+</string>
+    <string name="hide_brave_rewards_icon_description">Menyembunyikan Ikon Imbalan Brave ketika Imbalan Brave tidak diaktifkan
+</string>
+
+    <string name="brave_ui_pre_grant_message">Silakan datang kembali untuk mendapatkan token gratis
+</string>
+
+    <string name="reset_brave_rewards_option">Reset Imbalan Brave
+</string>
+    <string name="reset_brave_rewards_option_description">Dompet Brave Anda akan dihapus dan mereset semua data Imbalan Brave Anda
+</string>
+    <string name="reset_brave_rewards_error_title">Reset Kesalahan</string>
+    <string name="reset_brave_rewards_error_description">Terjadi kesalahan saat mereset Imbalan Brave. Harap luncurkan ulang Brave dan coba lagi
+</string>
 </resources>

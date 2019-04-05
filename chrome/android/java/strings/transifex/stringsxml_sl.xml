@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS povsod</string>
     <string name="brave_shields_blocks_scripts_switch">Blokiraj skripte</string>
     <string name="accessibility_toolbar_btn_brave_shields">Omogoči/onemogoči ščite Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Omogoči/onemogoči nagrade Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokiranje piškotkov tretjih strani</string>
 
     <string name="httpse_summary">Odpre podprta spletna mesta z uporabo protokola HTTPS, namesto z uporabo protokola HTTP, kjerkoli je mogoče</string>
@@ -37,7 +36,6 @@
     <string name="enter_code_words_sync">Vnos kodnih besed</string>
     <string name="sync_device">Sinhroniziraj napravo</string>
     <string name="sync_device_failure">Sinhronizacije ni bilo mogoče nastaviti</string>
-
     <string name="brave_stats_text_trackers">Sledilniki
 so blokirani</string>
     <string name="brave_stats_text_ads">Oglasi

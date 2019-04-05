@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS 우선 사용</string>
     <string name="brave_shields_blocks_scripts_switch">스크립트 차단</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave Shields 사용 / 사용않함</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave Rewards 활성화/비활성화</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">제삼자 쿠키 차단</string>
 
     <string name="httpse_summary">가능 시 HTTP 대신 HTTPS를 사용하는 지원되는 사이트 열기</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">코드 문자를 입력합니다</string>
     <string name="sync_device">장치 싱크</string>
     <string name="sync_device_failure">싱크를 설정할 수 없습니다</string>
+    <string name="sync_requires_correct_time">기기의 시스템 시간이나 시간대가 잘못 설정되어 있을 수 있습니다. 올바른 시간과 시간대로 설정하십시오.</string>
 
     <string name="brave_stats_text_trackers">추적기
 차단됨</string>
@@ -231,8 +231,27 @@
     <string name="brave_ui_tip_text">다음으로 팁을 보냈습니다: </string>
     <string name="brave_ui_auto_tip_text">자동으로 팁을 다음으로 보냅니다: </string>
     <string name="brave_ui_monthly_text">월간</string>
-
     <string name="bottom_toolbar_enable">하단 툴바 활성화</string>
     <string name="bottom_toolbar_disable">하단 툴바 비활성화</string>
     <string name="search_or_url">검색 혹은 URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">북마크 작성하기</string>
+    <string name="brave_ui_donate_monthly">이 사이트에 매월 팁 주기</string>
+    <string name="brave_rewards_intro_title">Brave 리워드는 여기 있습니다</string>
+    <string name="brave_rewards_intro_text">좋아하는 사이트를 지원해 주세요.</string>
+    <string name="brave_rewards_dismiss">무시하기</string>
+    <string name="brave_rewards_get_started">시작하기</string>
+
+    <string name="brave_rewards_not_available">죄송합니다만, 이 기기에서는 Brave 리워드를 이용하실 수 없습니다</string>
+
+    <string name="prefs_section_display">표시하기</string>
+    <string name="prefs_appearance">외형</string>
+    <string name="hide_brave_rewards_icon_title">Brave 리워드 아이콘 숨기기</string>
+    <string name="hide_brave_rewards_icon_description">Brave 리워드 비활성화 시에 Brave 리워드 아이콘 숨기기</string>
+
+    <string name="brave_ui_pre_grant_message">무료 토큰 할당이 있는지 곧 다시 확인하세요</string>
+
+    <string name="reset_brave_rewards_option">Brave 리워드 재설정</string>
+    <string name="reset_brave_rewards_option_description">이것으로 귀하의 Brave 월렛이 삭제되고 모든 Brave 리워드 데이터가 초기화됩니다</string>
+    <string name="reset_brave_rewards_error_title">오류 초기화</string>
+    <string name="reset_brave_rewards_error_description">Brave 리워드 재설정 중에 오류가 발생했습니다. Brave를 재시작하고 다시 시도해 주세요.</string>
 </resources>

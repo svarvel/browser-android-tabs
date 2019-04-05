@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Kaikkialla</string>
     <string name="brave_shields_blocks_scripts_switch">Estä Komentosarjat</string>
     <string name="accessibility_toolbar_btn_brave_shields">Ota käyttöön/Poista käytöstä Brave -suojat</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Ota Brave Rewardsit käyttöön / poista käytöstä</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Estä kolmannen osapuolen evästeet</string>
 
     <string name="httpse_summary">Avaa tuetut sivustot käyttämällä HTTPS:ää HTTP:n sijasta, kun mahdollista</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Anna koodisanat</string>
     <string name="sync_device">Synkronoi laite</string>
     <string name="sync_device_failure">Synkronoinnin määritys ei onnistunut</string>
+    <string name="sync_requires_correct_time">Järjestelmän aika tai aikavyöhyke saattaa olla väärä laitteessasi. Aseta järjestelmään oikea aika ja aikavyöhyke</string>
 
     <string name="brave_stats_text_trackers">Seuraimet
 Estetty</string>
@@ -231,8 +231,27 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="brave_ui_tip_text">Olet juuri lähettänyt vinkin kohteelle:</string>
     <string name="brave_ui_auto_tip_text">Olet automaattisesti lähettämässä vinkkiä kohteelle:</string>
     <string name="brave_ui_monthly_text">Kuukausittainen</string>
-
     <string name="bottom_toolbar_enable">Salli alaosan työkalupalkki</string>
     <string name="bottom_toolbar_disable">Poista alapuolen työkalupalkki käytöstä</string>
     <string name="search_or_url">Haku tai URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Luo kirjanmerkki</string>
+    <string name="brave_ui_donate_monthly">Lahjoita tälle sivustolle rahaa kuukausittain</string>
+    <string name="brave_rewards_intro_title">Brave Rewards on täällä</string>
+    <string name="brave_rewards_intro_text">Tue sivustoja, joita rakastat.</string>
+    <string name="brave_rewards_dismiss">Hylkää</string>
+    <string name="brave_rewards_get_started">Aloita</string>
+
+    <string name="brave_rewards_not_available">Vaikuttaa valitettavasti siltä, että Brave Rewards ei ole käytettävissä laitteellasi</string>
+
+    <string name="prefs_section_display">Näytä</string>
+    <string name="prefs_appearance">Ulkoasu</string>
+    <string name="hide_brave_rewards_icon_title">Piilota Brave Rewards -kuvake</string>
+    <string name="hide_brave_rewards_icon_description">Piilottaa Brave Rewards -kuvakkeen, kun Brave Rewards ei ole käytössä</string>
+
+    <string name="brave_ui_pre_grant_message">Tule pian takaisin saadaksesi ilmaisia rahakkeita</string>
+
+    <string name="reset_brave_rewards_option">Nollaa Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Tämä toiminto poistaa Brave-lompakkosi ja nollaa kaikki Brave Rewards -tietosi</string>
+    <string name="reset_brave_rewards_error_title">Virhe nollattaessa</string>
+    <string name="reset_brave_rewards_error_description">Brave Rewards -järjestelmää nollattaessa ilmeni virhe. Käynnistä Brave uudelleen ja yritä uudestaan</string>
 </resources>

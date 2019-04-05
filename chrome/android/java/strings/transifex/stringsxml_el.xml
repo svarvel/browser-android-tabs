@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Παντού</string>
     <string name="brave_shields_blocks_scripts_switch">Μπλοκάρισμα Σκριπτ [scripts]</string>
     <string name="accessibility_toolbar_btn_brave_shields">Ενεργοποίηση/Απενεργοποίηση Ασπίδων [προστασίας] Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Ενεργοποίηση/Απενεργοποίηση των Επιβραβεύσεων Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Αποκλεισμός στα cookies τρίτων</string>
 
     <string name="httpse_summary">Ανοίγει υποστηριζόμενες ιστοσελίδες που χρησιμοποιούν HTTPS αντί για HTTP όταν είναι δυνατόν</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">Εισαγωγή κωδικών λέξεων </string>
     <string name="sync_device">Συσκευή συγχρονισμού</string>
     <string name="sync_device_failure">Δεν ήταν δυνατή η ρύθμιση του συγχρονισμού</string>
+    <string name="sync_requires_correct_time">Ενδεχομένως έχετε λανθασμένη ώρα ή ζώνη ώρας συστήματος στη συσκευή σας. Παρακαλούμε ρυθμίστε τη σωστή ώρα ή ζώνη ώρας</string>
 
     <string name="brave_stats_text_trackers">Ιχνηλάτες που
 Αποκλείστηκαν</string>
@@ -229,8 +229,27 @@ HTTPS</string>
     <string name="brave_ui_tip_text">Μόλις στείλατε μια συμβουλή στον:</string>
     <string name="brave_ui_auto_tip_text">Στέλνετε αυτόματα μια συμβουλή στον:</string>
     <string name="brave_ui_monthly_text">Μηνιαία</string>
-
     <string name="bottom_toolbar_enable">Ενεργοποίηση της κάτω γραμμής εργαλείων</string>
     <string name="bottom_toolbar_disable">Απενεργοποιήστε την κάτω γραμμή εργαλείων </string>
     <string name="search_or_url">Αναζήτηση ή διεύθυνση URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Δημιουργία σελιδοδείκτη</string>
+    <string name="brave_ui_donate_monthly">Ενισχύστε αυτήν την ιστοσελίδα μηνιαία</string>
+    <string name="brave_rewards_intro_title">Το Brave Rewards είναι εδώ</string>
+    <string name="brave_rewards_intro_text">Υποστηρίξτε τις ιστοσελίδες που αγαπάτε.</string>
+    <string name="brave_rewards_dismiss">Απόρριψη</string>
+    <string name="brave_rewards_get_started">Έναρξη</string>
+
+    <string name="brave_rewards_not_available">Λυπούμαστε, φαίνεται πως το Brave Rewards δεν είναι διαθέσιμο στη συσκευή σας</string>
+
+    <string name="prefs_section_display">Παρουσίαση</string>
+    <string name="prefs_appearance">Εμφάνιση</string>
+    <string name="hide_brave_rewards_icon_title">Απόκρυψη του Εικονιδίου Brave Rewards </string>
+    <string name="hide_brave_rewards_icon_description">Αποκρύπτει το Εικονίδιο Brave Rewards όταν το Brave Rewards δεν είναι ενεργοποιημένο</string>
+
+    <string name="brave_ui_pre_grant_message">Ελάτε πάλι σύντομα για μια δωρεάν προσφορά token</string>
+
+    <string name="reset_brave_rewards_option">Επαναφορά Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Αυτό θα διαγράψει το πορτοφόλι σας Brave και θα επαναφέρει όλα τα δεδομένα σας Brave Rewards</string>
+    <string name="reset_brave_rewards_error_title">Σφάλμα Επαναφοράς</string>
+    <string name="reset_brave_rewards_error_description">Παρουσιάστηκε σφάλμα κατά την επαναφορά του Brave Rewards. Παρακαλούμε ανοίξτε ξανά το Brave και δοκιμάστε πάλι  </string>
 </resources>

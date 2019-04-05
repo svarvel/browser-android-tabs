@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Chặn Script</string>
     <string name="accessibility_toolbar_btn_brave_shields">Bật/ Tắt Lá chắn Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Bật/tắt Phần thưởng Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Chặn cookies của bên thứ ba</string>
 
     <string name="httpse_summary">Mở các trang được hỗ trợ bằng cách sử dụng HTTPS thay vì HTTP khi có thể</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">Nhập các từ mã</string>
     <string name="sync_device">Thiết bị đồng bộ</string>
     <string name="sync_device_failure">Không thể thiết lập đồng bộ</string>
-
     <string name="brave_stats_text_trackers">Trình theo dõi
 Đã chặn</string>
     <string name="brave_stats_text_ads">Quảng cáo
@@ -232,8 +230,7 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="brave_ui_tip_text">Bạn vừa gửi tiền thưởng đến:</string>
     <string name="brave_ui_auto_tip_text">Bạn đang tự động gửi tiền thưởng đến:</string>
     <string name="brave_ui_monthly_text">Hàng tháng</string>
-
     <string name="bottom_toolbar_enable">Bật thanh công cụ bên dưới </string>
     <string name="bottom_toolbar_disable">Tắt thanh công cụ bên dưới</string>
     <string name="search_or_url">Tìm kiếm hoặc nhập URL</string>
-</resources>
+    </resources>

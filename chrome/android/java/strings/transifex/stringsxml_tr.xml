@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Her yerde</string>
     <string name="brave_shields_blocks_scripts_switch">Betikleri Engelle</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave Korumalarını Aç/Kapat</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave Ödüllerini Etkinleştir/Devre Dışı Bırak</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Üçüncü kişi çerezlerini engelleyin</string>
 
     <string name="httpse_summary">Desteklenen siteleri mümkün olduğunda HTTP yerine HTTPS kullanarak açar</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">Kod kelimeleri ekle</string>
     <string name="sync_device">Senkronizasyon cihazı</string>
     <string name="sync_device_failure">Senk. sıfırlanamadı.</string>
-
     <string name="brave_stats_text_trackers">Takipçiler
 Engellendi</string>
     <string name="brave_stats_text_ads">Reklam
@@ -232,8 +230,7 @@ para kazanın ve sevdiğiniz içerik
     <string name="brave_ui_tip_text">Az önce şuna bir ipucu gönderdiniz:</string>
     <string name="brave_ui_auto_tip_text">Şuna otomatik olarak bir ipucu gönderiyorsunuz:</string>
     <string name="brave_ui_monthly_text">Aylık</string>
-
     <string name="bottom_toolbar_enable">Alt araç çubuğunu etkinleştir</string>
     <string name="bottom_toolbar_disable">Alt araç çubuğunu devre dışı bırak</string>
     <string name="search_or_url">Arama veya URL</string>
-</resources>
+    </resources>

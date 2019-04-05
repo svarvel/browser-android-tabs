@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS בכל מקום</string>
     <string name="brave_shields_blocks_scripts_switch">לחסום קובצי תסריט</string>
     <string name="accessibility_toolbar_btn_brave_shields">הפעלה/השבתה של מגני Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">הפעלה/השבתה של גמול כספי של Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">לחסום עוגיות צד שלישי</string>
 
     <string name="httpse_summary">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP כשאפשר</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">נא להזין מילות קוד</string>
     <string name="sync_device">לסנכרן מכשיר</string>
     <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
+    <string name="sync_requires_correct_time">ייתכן שבמכשיר שלך מוגדרים זמן מערכת או אזור זמן שגויים. אנא, הגדר/י את זמן המערכת ואזור הזמן הנכונים</string>
 
     <string name="brave_stats_text_trackers">כלי מעקב
 שנחסמו</string>
@@ -231,8 +231,27 @@ HTTPS</string>
     <string name="brave_ui_tip_text">שלחת טיפ אל:</string>
     <string name="brave_ui_auto_tip_text">את/ה שולח/ת טיפ באופן אוטומטי אל:</string>
     <string name="brave_ui_monthly_text">חודשי</string>
-
     <string name="bottom_toolbar_enable">הפוך סרגל כלים תחתון לזמין</string>
     <string name="bottom_toolbar_disable">הפוך סרגל כלים תחתון ללא זמין</string>
     <string name="search_or_url">חיפוש או URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">יצירת סימניה</string>
+    <string name="brave_ui_donate_monthly">תן/י לאתר זה טיפ אחת לחודש</string>
+    <string name="brave_rewards_intro_title">Brave Rewards נמצא כאן</string>
+    <string name="brave_rewards_intro_text">תמכו באתרים שאתם אוהבים.</string>
+    <string name="brave_rewards_dismiss">התעלם/י</string>
+    <string name="brave_rewards_get_started">מתחילים</string>
+
+    <string name="brave_rewards_not_available">אנו מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</string>
+
+    <string name="prefs_section_display">תצוגה</string>
+    <string name="prefs_appearance">מראה</string>
+    <string name="hide_brave_rewards_icon_title">מסתיר את אייקון Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">מסתיר את אייקון Brave Rewards כש-Brave Rewards אינו זמין</string>
+
+    <string name="brave_ui_pre_grant_message">בוא/י שוב בקרוב וקבל/י מענק אסימונים חינם</string>
+
+    <string name="reset_brave_rewards_option">איפוס Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">זה ימחק את ארנק Brave שלך ויאפס את כל הנתונים של Brave Rewards שלך</string>
+    <string name="reset_brave_rewards_error_title">איפוס שגיאה</string>
+    <string name="reset_brave_rewards_error_description">אירעה שגיאה באיפוס Brave Rewards. נא להפעיל מחדש את Brave ולנסות שוב</string>
 </resources>

@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS সব জায়গায়</string>
     <string name="brave_shields_blocks_scripts_switch">স্ক্রিপ্টগুলি অবরুদ্ধ করুন</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave রক্ষকগুলি সক্রিয়/নিষ্ক্রিয় করুন</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave পুরস্কারগুলি সক্রিয়/নিষ্ক্রিয় করুন</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3য় পক্ষের কুকিগুলি অবরুদ্ধ করুন</string>
 
     <string name="httpse_summary">যখন সম্ভব তখন HTTP এর পরিবর্তে HTTPS ব্যবহার করে সমর্থিত সাইটগুলি খোলে</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">কোড ওয়ার্ডগুলি লিখুন</string>
     <string name="sync_device">ডিভাইস সিঙ্ক করুন</string>
     <string name="sync_device_failure">সিঙ্ক সেট আপ করা গেল না</string>
-
     <string name="brave_stats_text_trackers">ট্র্যাকারগুলি
 অবরুদ্ধ করা হয়েছে</string>
     <string name="brave_stats_text_ads">বিজ্ঞাপনগুলি

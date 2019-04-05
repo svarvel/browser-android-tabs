@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS በሁሉም ቦታ</string>
     <string name="brave_shields_blocks_scripts_switch">ስክሪፕቶችን አግድ</string>
     <string name="accessibility_toolbar_btn_brave_shields">የBrave ጋሻዎችን አንቃ/አሰናክል</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brace Rewards ን አንቃ/አሰናክል</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">የ3ኛ ወገን ኩኪዎችን አግድ</string>
 
     <string name="httpse_summary">በተቻለ ሰአት ከ HTTP ይልቅ HTTPSን በመጠቀም የሚደገፉ ጣቢያዎችን ይከፍታል</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">የኮድ ቃላቱን ያስገቡ</string>
     <string name="sync_device">መሳሪያውን ያጣምሩ</string>
     <string name="sync_device_failure">ለማጣመር አልተቻለም</string>
-
     <string name="brave_stats_text_trackers">መከታተያዎች ተከልክለዋል</string>
     <string name="brave_stats_text_ads">ማስታወቂያዎች ተከልክለዋል</string>
     <string name="brave_stats_text_https">የ HTTPS እደሳዎች</string>

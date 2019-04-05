@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Ovunque</string>
     <string name="brave_shields_blocks_scripts_switch">Blocca gli script</string>
     <string name="accessibility_toolbar_btn_brave_shields">Attiva/Disattiva le protezioni Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Attiva/Disattiva Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blocca i cookie di terze parti</string>
 
     <string name="httpse_summary">Apre siti supportati utilizzando HTTPS invece di HTTP quando possibile</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Inserisci le parole codice</string>
     <string name="sync_device">Sincronizza dispositivo</string>
     <string name="sync_device_failure">Non è stato impossibile configurare la sincronizzazione</string>
+    <string name="sync_requires_correct_time">Potresti avere l\'ora di sistema o l\'impostazione del fuso orario errata sul tuo dispositivo. Sei pregato di impostare l\'ora e il fuso orario corretto</string>
 
     <string name="brave_stats_text_trackers">Tracker
 bloccati</string>
@@ -232,8 +232,27 @@ delle sovvenzioni.</string>
     <string name="brave_ui_tip_text">Hai appena inviato un suggerimento a: </string>
     <string name="brave_ui_auto_tip_text">Stai inviando automaticamente un suggerimento a: </string>
     <string name="brave_ui_monthly_text">Mensile </string>
-
     <string name="bottom_toolbar_enable">Attiva la barra degli strumenti inferiore </string>
     <string name="bottom_toolbar_disable">Disattiva la barra degli strumenti inferiore </string>
     <string name="search_or_url">Cerca o URL </string>
+    <string name="accessibility_toolbar_btn_bookmark">Crea un segnalibro</string>
+    <string name="brave_ui_donate_monthly">Fai una donazione a questo sito mensilmente</string>
+    <string name="brave_rewards_intro_title">Le Ricompense di Brave sono qui</string>
+    <string name="brave_rewards_intro_text">Supporta i siti che ami.</string>
+    <string name="brave_rewards_dismiss">Scarta</string>
+    <string name="brave_rewards_get_started">Inizia</string>
+
+    <string name="brave_rewards_not_available">Siamo spiacenti ma sembra che le Ricompense di Brave non siano disponibili sul tuo dispositivo</string>
+
+    <string name="prefs_section_display">Mostra</string>
+    <string name="prefs_appearance">Aspetto</string>
+    <string name="hide_brave_rewards_icon_title">Nascondi l\'Icona delle Ricompense di Brave</string>
+    <string name="hide_brave_rewards_icon_description">Nascondi l\'Icona delle Ricompense di Brave quando le Ricompense di Brave non sono abilitate</string>
+
+    <string name="brave_ui_pre_grant_message">Torna a controllare presto per una concessione gratuita di token</string>
+
+    <string name="reset_brave_rewards_option">Resetta le Ricompense di Brave</string>
+    <string name="reset_brave_rewards_option_description">Questo eliminerà il tuo portafoglio di Brave e resetterà tutti i dati delle Ricompense di Brave</string>
+    <string name="reset_brave_rewards_error_title">Errore durante il Reset</string>
+    <string name="reset_brave_rewards_error_description">Si è verificato un errore resettando le Ricompense di Brave. Si prega di riavviare Brave e riprovare</string>
 </resources>

@@ -156,6 +156,7 @@ def SyncTransifexToTranslations():
         if not string_value:
             sys.exit("String value is empty")
         # calculate translation id
+        print(string_value)
         string_fp = GenerateMessageId(string_value, None)
         if string_name in brave_strings:
             sys.exit('String name "' + string_name + '" is duplicated')

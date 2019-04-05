@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Zuia Hati</string>
     <string name="accessibility_toolbar_btn_brave_shields">Wezesha/Lemaza Ngao Mahiri</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Wezesha/Lemaza Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Zuia vidakuzi vya mhusika mwengine</string>
 
     <string name="httpse_summary">Hufungua tovuti zinazoauniwa kwa kutumia HTTPS badala ya HTTP ikiwezekana</string>
@@ -37,7 +36,6 @@
     <string name="enter_code_words_sync">Ingiza maneno ya msimbo</string>
     <string name="sync_device">Landanisha kifaa</string>
     <string name="sync_device_failure">Ulandanishaji usingesanidiwa</string>
-
     <string name="brave_stats_text_trackers">Vifuatiliaji
 Vimezuiwa</string>
     <string name="brave_stats_text_ads">Matangazo

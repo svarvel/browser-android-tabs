@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokér Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktivér/Desaktivér Brave Skjolde</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Aktivér/deaktivér Brave-belønninger</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloker 3. parts cookies</string>
 
     <string name="httpse_summary">Åbner understøttede sider ved at bruge HTTPS i stedet for HTTP når det er muligt</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Indtast kodeord</string>
     <string name="sync_device">Synkroniser enhed</string>
     <string name="sync_device_failure">Synkronisering kunne ikke opsættes</string>
+    <string name="sync_requires_correct_time">Du har måske en forkert systemtids- eller tidszoneindstilling på din enhed. Indstil venligst korrekt tid og tidszone</string>
 
     <string name="brave_stats_text_trackers">Sporere er
 blokeret</string>
@@ -232,8 +232,27 @@ de indholdsskabere, du elsker.</string>
     <string name="brave_ui_tip_text">Du har netop sendt en donation til:</string>
     <string name="brave_ui_auto_tip_text">Du sender automatisk en donation til:</string>
     <string name="brave_ui_monthly_text">Månedligt</string>
-
     <string name="bottom_toolbar_enable">Aktiver værktøjslinje forneden</string>
     <string name="bottom_toolbar_disable">Deaktiver værktøjslinje forneden</string>
     <string name="search_or_url">Søg eller webadresse</string>
+    <string name="accessibility_toolbar_btn_bookmark">Lav et bogmærke</string>
+    <string name="brave_ui_donate_monthly">Giv denne side månedlige drikkepenge</string>
+    <string name="brave_rewards_intro_title">Brave Belønninger er her</string>
+    <string name="brave_rewards_intro_text">Støt de sider, du holder af</string>
+    <string name="brave_rewards_dismiss">Afvis</string>
+    <string name="brave_rewards_get_started">Kom i gang</string>
+
+    <string name="brave_rewards_not_available">Det ser desværre ud til, at Brave Belønninger ikke er tilgængeligt på din enhed</string>
+
+    <string name="prefs_section_display">Visning</string>
+    <string name="prefs_appearance">Udseende</string>
+    <string name="hide_brave_rewards_icon_title">Skjul Ikonet for Brave Belønninger</string>
+    <string name="hide_brave_rewards_icon_description">Skjuler Ikonet for Brave Belønninger, når Brave Belønninger ikke er aktiveret</string>
+
+    <string name="brave_ui_pre_grant_message">Kom tilbage snart for at modtage en gratis polet</string>
+
+    <string name="reset_brave_rewards_option">Nulstil Brave Belønninger</string>
+    <string name="reset_brave_rewards_option_description">Dette vil slette din Brave-pengepung og nulstille alle dine data om Brave Belønninger</string>
+    <string name="reset_brave_rewards_error_title">Nulstil Fejl</string>
+    <string name="reset_brave_rewards_error_description">Der opstod fejl ved nulstilling af Brave Belønninger. Du bedes genstarte Brave og prøve igen</string>
 </resources>

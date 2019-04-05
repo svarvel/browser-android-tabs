@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blocare scripturi</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activare/Dezactivare scuturi Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Activare/dezactivare Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blocare fișiere cookie terțe</string>
 
     <string name="httpse_summary">Deschide site-uri compatibile utilizând HTTPS în loc de HTTP atunci când este posibil</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Introducere cuvânt codat</string>
     <string name="sync_device">Dispozitiv de sincronizat</string>
     <string name="sync_device_failure">Sincronizarea nu poate fi realizată</string>
+    <string name="sync_requires_correct_time">Este posibil să aveți setată o oră eronată pentru sistem sau alt fus orar pe dispozitivul dumneavoastră. Vă rugăm setați ora și fusul orar corecte</string>
 
     <string name="brave_stats_text_trackers">Urmărire
 blocate</string>
@@ -231,8 +231,27 @@ creatorii de conținut care vă plac.</string>
     <string name="brave_ui_tip_text">Tocmai ați trimis un bacșiș către:</string>
     <string name="brave_ui_auto_tip_text">Trimiteți automat un bacșiș către:</string>
     <string name="brave_ui_monthly_text">Lunar</string>
-
     <string name="bottom_toolbar_enable">Activează bara de instrumente de jos</string>
     <string name="bottom_toolbar_disable">Dezactivează bara de instrumente de jos</string>
     <string name="search_or_url">Căutare sau URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Creați un semn de carte</string>
+    <string name="brave_ui_donate_monthly">Susțineți financiar lunar acest site</string>
+    <string name="brave_rewards_intro_title">Recompensele Brave sunt aici</string>
+    <string name="brave_rewards_intro_text">Sprijiniți site-urile care vă plac.</string>
+    <string name="brave_rewards_dismiss">Renunță</string>
+    <string name="brave_rewards_get_started">Începe</string>
+
+    <string name="brave_rewards_not_available">Ne pare rău dar se pare că Recompensele Brave nu sunt disponibile pe dispozitivul dumneavoastră</string>
+
+    <string name="prefs_section_display">Afișaj</string>
+    <string name="prefs_appearance">Aspect</string>
+    <string name="hide_brave_rewards_icon_title">Ascunde Iconița Recompense Brave</string>
+    <string name="hide_brave_rewards_icon_description">Ascunde Ioniță de Recompense Brave când Recompensele Brave nu sunt activate</string>
+
+    <string name="brave_ui_pre_grant_message">Reveniți în curând pentru un token gratuit</string>
+
+    <string name="reset_brave_rewards_option">Resetează Recompense Brave</string>
+    <string name="reset_brave_rewards_option_description">Aceasta va șterge portofelul Brave și va reseta toate datele despre Recompensele Brave</string>
+    <string name="reset_brave_rewards_error_title">Resetare Eroare</string>
+    <string name="reset_brave_rewards_error_description">A apărut o eroare la resetarea Recompenselor Brave. Vă rugăm relansați Brave și încercați din nou</string>
 </resources>

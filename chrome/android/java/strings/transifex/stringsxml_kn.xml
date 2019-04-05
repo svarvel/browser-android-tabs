@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS ಪ್ರತಿಯೊಂದು ಕಡೆಗೆ</string>
     <string name="brave_shields_blocks_scripts_switch">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ನಿರ್ಬಂಧಿಸಿ</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave ಶೀಲ್ಡ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ/ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave ರಿವಾರ್ಡ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ/ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3ನೇ ಪಾರ್ಟಿ ಕುಕೀಗಳನ್ನು ನಿರ್ಬಂಧಿಸಿ</string>
 
     <string name="httpse_summary">ಸಾಧ್ಯವಾದಾಗಲೆಲ್ಲಾ HTTP ಬದಲಿಗೆ HTTPS ಬಳಸಿಕೊಂಡು ಬೆಂಬಲಿತ ಸೈಟ್‌ಗಳನ್ನು ತೆರೆಯುತ್ತದೆ</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">ಕೋಡ್ ಪದಗಳನ್ನು ನಮೂದಿಸಿ</string>
     <string name="sync_device">ಸಾಧನ ಸಿಂಕ್ ಮಾಡಿ</string>
     <string name="sync_device_failure">ಸಿಂಕ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಲಿಲ್ಲ</string>
-
     <string name="brave_stats_text_trackers">ಟ್ರ್ಯಾಕರ್‌ಗಳನ್ನು
 ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
     <string name="brave_stats_text_ads">ಜಾಹೀರಾತುಗಳನ್ನು
