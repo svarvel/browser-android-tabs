@@ -13,4 +13,10 @@
         android:summaryOn="@string/hide_brave_rewards_icon_description"
         android:summaryOff="@string/hide_brave_rewards_icon_description" />
 
+    <org.chromium.chrome.browser.preferences.ChromeSwitchPreference
+        android:key="bottom_toolbar_enabled"
+        android:title="@string/bottom_toolbar_enable"
+        android:summaryOn="@string/text_on"
+        android:summaryOff="@string/text_off" />
+
 </PreferenceScreen>

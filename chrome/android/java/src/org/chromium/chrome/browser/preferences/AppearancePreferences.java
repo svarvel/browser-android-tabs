@@ -20,6 +20,7 @@ import org.chromium.chrome.browser.accessibility.FontSizePrefs;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs.FontSizePrefsObserver;
 import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.util.AccessibilityUtil;
+import org.chromium.ui.base.DeviceFormFactor;
 
 /**
  * Fragment to keep track of all the display related preferences.
@@ -43,6 +44,16 @@ public class AppearancePreferences extends PreferenceFragment
         Preference hideBraveIconBlockPref = findPreference(PREF_HIDE_BRAVE_ICON);
         hideBraveIconBlockPref.setEnabled(false);
         hideBraveIconBlockPref.setOnPreferenceChangeListener(this);
+        Preference enableBottomToolbar = findPreference(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY);
+        enableBottomToolbar.setOnPreferenceChangeListener(this);
+        boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(ContextUtils.getApplicationContext());
+        if (enableBottomToolbar instanceof ChromeSwitchPreference){
+            ((ChromeSwitchPreference)enableBottomToolbar).setChecked(!isTablet && ChromePreferenceManager.getInstance().isBottomToolbarEnabled());
+        }
+        if (isTablet) {
+            // We don't have bottom toolbar on tablets
+            enableBottomToolbar.setEnabled(false);
+        }
     }
 
     @Override
@@ -71,6 +82,11 @@ public class AppearancePreferences extends PreferenceFragment
             sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, (boolean)newValue);
             sharedPreferencesEditor.apply();
             SingleCategoryPreferences.AskForRelaunch(this.getActivity());
+        } else if (ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY.equals(preference.getKey())) {
+            SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
+            Boolean originalStatus = ChromePreferenceManager.getInstance().isBottomToolbarEnabled();
+            prefs.edit().putBoolean(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY, !originalStatus).apply();
+            SingleCategoryPreferences.AskForRelaunch(getActivity());
         }
         return true;
     }
