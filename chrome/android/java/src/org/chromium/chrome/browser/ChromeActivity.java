@@ -2529,22 +2529,12 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             DomDistillerUIUtils.openSettings(currentTab.getWebContents());
         } else if (id == R.id.brave_set_default_browser) {
             handleBraveSetDefaultBrowserDialog();
-        } else if (id == R.id.bottom_toolbar_enable_disable) {
-            showOrHideBottomToolbar();
         } else if (id == R.id.exit_id) {
             ApplicationLifetime.terminate(false);
         } else {
             return false;
         }
         return true;
-    }
-
-    private void showOrHideBottomToolbar() {
-        SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
-        Context context = ContextUtils.getApplicationContext();
-        Boolean originalStatus = ChromePreferenceManager.getInstance().isBottomToolbarEnabled();
-        prefs.edit().putBoolean(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY, !originalStatus).apply();
-        SingleCategoryPreferences.AskForRelaunch(this);
     }
 
     public boolean isBraveSetAsDefaultBrowser() {

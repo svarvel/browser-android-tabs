@@ -4554,9 +4554,9 @@ content creators you love.
       <message name="IDS_BOTTOM_TOOLBAR_ENABLE" desc="Menu item for enabling the bottom toolbar.">
         Enable bottom toolbar
       </message>
-      <message name="IDS_BOTTOM_TOOLBAR_DISABLE" desc="Menu item for disabling the bottom toolbar.">
+      <!--<message name="IDS_BOTTOM_TOOLBAR_DISABLE" desc="Menu item for disabling the bottom toolbar.">
         Disable bottom toolbar
-      </message>
+      </message>-->
       <message name="IDS_SEARCH_OR_URL" desc="Prompt to enter text into the text field that will either perform web searches or navigate to a website. [CHAR-LIMIT=38]" formatter_data="android_java">
         Search or URL
       </message>
