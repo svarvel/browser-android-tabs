@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS ทุกแห่ง</string>
     <string name="brave_shields_blocks_scripts_switch">ป้องกันสคริป</string>
     <string name="accessibility_toolbar_btn_brave_shields">เปิดใช้งาน/ปิดเกราะป้องกัน Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">เปิด/ปิดใช้งาน Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">ปิดกั้นคุกกี้จากบุคคลภายนอก</string>
 
     <string name="httpse_summary">เปิดเว็บที่รองรับโดยใช้ HTTPS แทน HTTP หากเป็นไปได้</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">ป้อนคำรหัส</string>
     <string name="sync_device">ซิงค์อุปกรณ์</string>
     <string name="sync_device_failure">ไม่สามารถตั้งค่าการซิงค์ได้</string>
+    <string name="sync_requires_correct_time">คุณอาจตั้งเวลาระบบหรือโซนเวลาในอุปกรณ์ผิดพลาด โปรดตั้งเวลาและโซนเวลาให้ถูกต้อง</string>
 
     <string name="brave_stats_text_trackers">บล็อก
 ตัวติดตามแล้ว</string>
@@ -231,8 +231,27 @@ EST แล้ว</string>
     <string name="brave_ui_tip_text">คุณเพิ่งให้ทิปกับ:</string>
     <string name="brave_ui_auto_tip_text">คุณกำลังให้ทิปโดยอัตโนมัติกับ:</string>
     <string name="brave_ui_monthly_text">รายเดือน</string>
-
     <string name="bottom_toolbar_enable">เปิดแถบเครื่องมือด้านล่าง</string>
     <string name="bottom_toolbar_disable">ปิดแถบเครื่องมือด้านล่าง</string>
     <string name="search_or_url">ค้นหาหรือ URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">สร้างบุ๊กมาร์ก</string>
+    <string name="brave_ui_donate_monthly">ให้ทิปเว็บไซต์นี้เป็นรายเดือน</string>
+    <string name="brave_rewards_intro_title">Brave Rewards อยู่นี่แล้ว</string>
+    <string name="brave_rewards_intro_text">สนับสนุนเว็บไซต์ที่คุณชื่นชอบ</string>
+    <string name="brave_rewards_dismiss">เพิกเฉย</string>
+    <string name="brave_rewards_get_started">เริ่มต้นใช้งาน</string>
+
+    <string name="brave_rewards_not_available">ขออภัย ดูเหมือนว่า Brave Rewards จะไม่พร้อมให้บริการในอุปกรณ์ของคุณ</string>
+
+    <string name="prefs_section_display">แสดง</string>
+    <string name="prefs_appearance">ลักษณะ</string>
+    <string name="hide_brave_rewards_icon_title">ซ่อนไอคอน Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">ซ่อนไอคอน Brave Rewards เมื่อไม่ได้เปิดใช้งาน Brave Rewards</string>
+
+    <string name="brave_ui_pre_grant_message">กลับมาใหม่เร็ว ๆ นี้เพื่อรับโทเค็นฟรี</string>
+
+    <string name="reset_brave_rewards_option">รีเซ็ต Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">คำสั่งนี้จะลบกระเป๋าเงิน Brave ของคุณและรีเซ็ตข้อมูล Brave Rewards ของคุณทั้งหมด</string>
+    <string name="reset_brave_rewards_error_title">ข้อผิดพลาดในการรีเซ็ต</string>
+    <string name="reset_brave_rewards_error_description">เกิดข้อผิดพลาดขณะรีเซ็ต Brave Rewards กรุณาปิดแล้วเปิด Brave ใหม่และลองอีกครั้ง</string>
 </resources>

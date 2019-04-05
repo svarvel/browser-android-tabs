@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS في كل مكان</string>
     <string name="brave_shields_blocks_scripts_switch">حظر النصوص</string>
     <string name="accessibility_toolbar_btn_brave_shields">تفعيل/ تعطيل دروع Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">تفعيل/ تعطيل جوائز Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">حجب ملفات تعريف الارتباط لطرف ثالث</string>
 
     <string name="httpse_summary">يفتح المواقع المدعمة باستخدام HTTPS بدلا من HTTP إن أمكن</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">أدخل كلمات الرمز</string>
     <string name="sync_device">مزامنة الجهاز</string>
     <string name="sync_device_failure">تعذر إعداد المزامنة</string>
+    <string name="sync_requires_correct_time">قد يكون لديك خطأ في إعداد وقت النظام أو المنطقة الزمنية على جهازك. يُرجى إعداد الوقت الصحيح والمنطقة الزمنية</string>
 
     <string name="brave_stats_text_trackers">تم حظر
 المتتبعات
@@ -236,8 +236,28 @@ HTTPS</string>
     <string name="brave_ui_tip_text">لقد أرسلت للتو نصيحة إلى:</string>
     <string name="brave_ui_auto_tip_text">أنت ترسل تلقائياً نصيحة إلى:</string>
     <string name="brave_ui_monthly_text">شهرياً</string>
-
     <string name="bottom_toolbar_enable">تمكين شريط الأدوات السفلي</string>
     <string name="bottom_toolbar_disable">تعطيل شريط الأدوات السفلي</string>
     <string name="search_or_url">بحث أو عنوان URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">إنشاء إشارة مرجعية</string>
+    <string name="brave_ui_donate_monthly">تبرَّع لهذا الموقع شهرياً</string>
+    <string name="brave_rewards_intro_title">مكافآت Brave هنا</string>
+    <string name="brave_rewards_intro_text">ادعم المواقع التي تحبها.</string>
+    <string name="brave_rewards_dismiss">تجاهل
+</string>
+    <string name="brave_rewards_get_started">البدء</string>
+
+    <string name="brave_rewards_not_available">نأسف لأن مكافآت Brave لا تتوفر على جهازك</string>
+
+    <string name="prefs_section_display">العرض</string>
+    <string name="prefs_appearance">المظهر</string>
+    <string name="hide_brave_rewards_icon_title">إخفاء أيقونة مكافآت Brave</string>
+    <string name="hide_brave_rewards_icon_description">تخفي أيقونة مكافآت Brave عند عدم تمكين مكافآت Brave.</string>
+
+    <string name="brave_ui_pre_grant_message">تحقق مرةً أخرى قريبًا لمنحة رمزية مجانية</string>
+
+    <string name="reset_brave_rewards_option">إعادة تعيين مكافآت Brave</string>
+    <string name="reset_brave_rewards_option_description">سيؤدي ذلك إلى حذف محفظة Brave وإعادة تعيين جميع بيانات مكافآت Brave الخاصة بك</string>
+    <string name="reset_brave_rewards_error_title">خطأٌ في إعادة التعيين</string>
+    <string name="reset_brave_rewards_error_description">حدث خطأ أثناء إعادة تعيين مكافآت Brave. يُرجى إعادة تشغيل Brave والمحاولة مرةً أخرى</string>
 </resources>

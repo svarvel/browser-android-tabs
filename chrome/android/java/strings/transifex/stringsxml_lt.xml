@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokuoti scenarijus</string>
     <string name="accessibility_toolbar_btn_brave_shields">Įjungti / išjungti „Brave“ skydus</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Įjungti / išjungti „Brave“ atlygio funkciją</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokuoti trečiųjų šalių slapukus</string>
 
     <string name="httpse_summary">Kai įmanoma, atveria palaikomas svetaines naudojant HTTPS, o ne HTTP</string>
@@ -37,7 +36,6 @@
     <string name="enter_code_words_sync">Įveskite žodinį kodą</string>
     <string name="sync_device">Sinchronizuoti įrenginį</string>
     <string name="sync_device_failure">Nepavyko nustatyti sinchronizavimo</string>
-
     <string name="brave_stats_text_trackers">Blokuota
 sekimo failų</string>
     <string name="brave_stats_text_ads">Blokuota

@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Arreu</string>
     <string name="brave_shields_blocks_scripts_switch">Bloca scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Activa/desactiva escuts Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Activa/desactiva Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloca les galetes de 3rs</string>
 
     <string name="httpse_summary">Obre els llocs compatibles amb HTTPS enlloc de HTTP, si és possible</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Introduïu les paraules del codi</string>
     <string name="sync_device">Sincronitza el dispositiu</string>
     <string name="sync_device_failure">No s'ha pogut configurar la sincronització</string>
+    <string name="sync_requires_correct_time">Pot ser que el sistema del teu dispositiu tingui mal configurada l\'hora o la zona horària. Configura l\'hora i la zona horària correctament</string>
 
     <string name="brave_stats_text_trackers">Seguiments
 blocats</string>
@@ -225,4 +225,31 @@ fins que es verifiquin o fins que passin 90 dies.</string>
 la privacitat i gasta-ho per donar suport
 als creadors de contingut que t\'agraden.</string>
     <string name="brave_welcome_page_rewards_title">ACTIVA BRAVE REWARDS</string>
-    </resources>
+    <string name="brave_ui_first_tip_text">La teva primera propina mensual s\'enviarà a:</string>
+    <string name="brave_ui_tip_text">Acabes d\'enviar una propina a:</string>
+    <string name="brave_ui_auto_tip_text">Estàs enviant una propina automàtica a:</string>
+    <string name="brave_ui_monthly_text">Cada mes</string>
+    <string name="bottom_toolbar_enable">Activar barra d\'eines inferior</string>
+    <string name="bottom_toolbar_disable">Inhabilitar la barra d\'eines inferior</string>
+    <string name="search_or_url">Buscar o URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Crear una adreça d\'interès</string>
+    <string name="brave_ui_donate_monthly">Donar una propina a aquest lloc cada mes</string>
+    <string name="brave_rewards_intro_title">Ja és aquí Brave Rewards</string>
+    <string name="brave_rewards_intro_text">Dona suport als llocs webs que t\'agraden.</string>
+    <string name="brave_rewards_dismiss">Descartar</string>
+    <string name="brave_rewards_get_started">Iniciar</string>
+
+    <string name="brave_rewards_not_available">Ens sap greu, sembla que Brave Rewards no està disponible al teu dispositiu</string>
+
+    <string name="prefs_section_display">Visualitzar</string>
+    <string name="prefs_appearance">Aparença</string>
+    <string name="hide_brave_rewards_icon_title">Ocultar Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">Amaga la icona de Brave Rewards quan Brave Rewards no estigui activat</string>
+
+    <string name="brave_ui_pre_grant_message">Torna aviat per poder rebre un obsequi gratuït</string>
+
+    <string name="reset_brave_rewards_option">Inicialitzar Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Això eliminarà la cartera Brave Rewards i inicialitzarà totes les teves dades de Brave Rewards</string>
+    <string name="reset_brave_rewards_error_title">Error d\'inicialització</string>
+    <string name="reset_brave_rewards_error_description">S\'ha produït un error en inicialitzar Brave Rewards. Reinicia Brave i torna-ho a provar</string>
+</resources>

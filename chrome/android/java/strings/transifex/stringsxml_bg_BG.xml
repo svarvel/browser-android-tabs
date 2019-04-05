@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS навсякъде</string>
     <string name="brave_shields_blocks_scripts_switch">Блокирайте скриптовете</string>
     <string name="accessibility_toolbar_btn_brave_shields">Разрешете/отменете щитовете на Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Управление на Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Блокиране на бисквитки на трети страни</string>
 
     <string name="httpse_summary">Отваря сайтове за поддръжка като използва HTTPS вместо of HTTP когато е възможно</string>
@@ -30,12 +31,14 @@
 
     <string name="menu_exit">Изход</string>
 
+    <string name="brave_sync">Синхронизиране на Brave (бета)</string>
     <string name="sync_settings_add_device_name_title">Добавете име на устройство</string>
     <string name="sync_settings_add_device_name_label">Въведете опционно име за това устройство</string>
     <string name="sync_example_device_name">Android устройство</string>
     <string name="enter_code_words_sync">Въведете кодовите думи</string>
     <string name="sync_device">Синхронизиране на устройство</string>
     <string name="sync_device_failure">Синхронизирането не може да се настрои</string>
+    <string name="sync_requires_correct_time">Може да сте настроили неправилно часа или часовата зона на Вашето устройство. Моля, настройте правилно часа и часова зона</string>
 
     <string name="brave_stats_text_trackers">Проследяването
 Блокирано</string>
@@ -136,4 +139,123 @@
     <string name="brave_sync_copied_text">Копирано в клипборда</string>
     <string name="brave_sync_this_device_text">(това устройство)</string>
 
-    </resources>
+    <string name="brave_already_set_as_default_browser">Brave вече е зададен
+като Вашия браузър по подразбиране.</string>
+    <string name="brave_default_browser_go_to_settings">Вече сте задали браузър по подразбиране.
+Можете да промените браузъра по подразбиране в настройките на приложенията си.</string>
+    <string name="brave_default_browser_notification_body">Пестете батерия и зареждайте уеб страниците по-бързо. Направете Brave Вашият браузър по подразбиране. От менюто на Brave изберете \"Задаване като браузър по подразбиране\"</string>
+    <string name="brave_set_default_browser">Задаване като браузър по подразбиране</string>
+    <string name="brave_set_default_browser_dialog_text">Изберете Brave от списъка и натиснете „Винаги“</string>
+    <string name="brave_default_browser_existing_notification_body">Направете Brave Вашият браузър по подразбиране
+Пестете батерия и зареждайте уеб страниците по-бързо</string>
+
+    <string name="brave_ui_welcome_header_two">Пригответе се да опитате
+следващия интернет.</string>
+    <string name="brave_ui_welcome_desc_two">Вече можете да печелите токени за
+гледане на реклами, защитаващи неприкосновеността на личните данни.</string>
+    <string name="brave_ui_welcome_button_text_two">ПРИСЪЕДИНЯВАНЕ КЪМ REWARDS</string>
+    <string name="brave_ui_welcome_footer_text_two">НАУЧЕТЕ ПОВЕЧЕ</string>
+    <string name="brave_ui_rewards_creating_text">Създаване на портфейл</string>
+    <string name="brave_ui_your_wallet">Вашият портфейл</string>
+    <string name="brave_ui_bat_text">BAT</string>
+    <string name="brave_ui_usd"><ph name=\"VALUE\">%1$s<ex>0.0</ex></ph> USD</string>
+    <string name="brave_rewards_local_panel_add_funds">Добавяне на средства</string>
+    <string name="brave_ui_settings">Настройки</string>
+    <string name="brave_ui_rewards_summary">ОБОБЩЕНИЕ НА REWARDS</string>
+    <string name="brave_ui_site_banner_welcome">Благодаря, че се отбихте!</string>
+    <string name="brave_ui_rewards_banner_text1">Можете да подкрепите този сайт, като изпратите дарение. Това е начин да им благодарим за създаването на страхотно съдържание. Потвърдените създатели на съдържание получават заплащане за даренията си през първата седмица на всеки календарен месец.</string>
+    <string name="brave_ui_rewards_banner_text2">Ако желаете, можете да планирате месечни дарения за непрекъсната подкрепа на този сайт.</string>
+    <string name="brave_ui_donation_amount">Размер на дарението</string>
+    <string name="brave_ui_wallet_balance">баланс на портфейла:</string>
+    <string name="brave_ui_make_monthly">Правете това месечно</string>
+    <string name="brave_ui_send_tip">изпращане на моето дарение</string>
+    <string name="brave_ui_do_monthly">задаване на месечно дарение</string>
+    <string name="brave_ui_not_enough_tokens">няма достатъчно токени</string>
+    <string name="brave_ui_site_banner_notice_text">ЗАБЕЛЕЖКА: Този създател все още не се е регистрирал, за да получава дарения от потребители на Brave. Ще продължим да се опитваме да даряваме, докато не потвърдят, или до изтичането на 90 дни.</string>
+    <string name="brave_ui_please">моля</string>
+    <string name="brave_ui_add_funds">добавяне на средства</string>
+    <string name="brave_ui_thank_you">Благодарим Ви!</string>
+    <string name="brave_ui_error_init_wallet">Моля, опитайте отново по-късно.</string>
+    <string name="brave_ui_month_jan">ЯНУАРИ</string>
+    <string name="brave_ui_month_feb">ФЕВРУАРИ</string>
+    <string name="brave_ui_month_mar">МАРТ</string>
+    <string name="brave_ui_month_apr">АПРИЛ</string>
+    <string name="brave_ui_month_may">МАЙ</string>
+    <string name="brave_ui_month_jun">ЮНИ</string>
+    <string name="brave_ui_month_jul">ЮЛИ</string>
+    <string name="brave_ui_month_aug">АВГУСТ</string>
+    <string name="brave_ui_month_sep">СЕПТЕМВРИ</string>
+    <string name="brave_ui_month_oct">ОКТОМВРИ</string>
+    <string name="brave_ui_month_nov">НОЕМВРИ</string>
+    <string name="brave_ui_month_dec">ДЕКЕМВРИ</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>DECEMBER</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Внимание</string>
+    <string name="brave_ui_include_in_auto">Включи автоматично дарение</string>
+    <string name="brave_ui_donate_now">Изпращане на дарение...</string>
+    <string name="brave_ui_no_activity">Все още няма дейности този
+месец...</string>
+    <string name="brave_ui_token_grant_claimed">Поискано е отпускане на токени</string>
+    <string name="brave_ui_earnings_ads">Приходи от реклами</string>
+    <string name="brave_ui_rewards_contribute">Автоматично дарение</string>
+    <string name="brave_ui_rewards_contribute_description">Дарили сте <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT.</string>
+    <string name="brave_ui_one_time_donation">Еднократни дарения</string>
+    <string name="brave_ui_recurring_donation">Месечни дарения</string>
+    <string name="brave_ui_verified_publisher">Издател, потвърден от Brave</string>
+    <string name="brave_ui_not_verified_publisher">Все още не е потвърдено</string>
+    <string name="brave_ui_not_verified_publisher_description">Този създател все още не се е регистрирал, за да получава дарения от потребители на Brave.
+        Всички дарения, които изпращате, ще останат в портфейла Ви, докато не бъдат потвърдени.</string>
+    <string name="brave_ui_on_youtube">в YouTube</string>
+    <string name="brave_ui_on_twitch">в Twitch</string>
+    <string name="brave_ui_new_grant">
+Налице е получаване на безплатен токен.</string>
+    <string name="brave_ui_new_token_grant">Получаване на безплатен токен</string>
+    <string name="brave_ui_claim">Искане</string>
+    <string name="brave_ui_reserved_amount_text">Определили сте <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT за създателите, които 
+все още не са се регистрирали за получаване на дарения. Вашият браузър ще продължава да се опитва да извърши дарение,
+докато не потвърдят, или до изтичането на 90 дни.</string>
+    <string name="brave_ui_notification_desc_no_funds">Планираното месечно плащане на автоматични дарения и месечни дарения не беше извършено, поради липса на достатъчно средства. Ще опитаме отново след 30 дни.</string>
+    <string name="brave_ui_notification_desc_tip_error">Възникна проблем при обработката на Вашето дарение. Моля, опитайте отново.</string>
+    <string name="brave_ui_notification_desc_contr_error">Възникна проблем при обработката на Вашето дарение.</string>
+    <string name="brave_rewards_local_uh_oh">Ъ!</string>
+    <string name="brave_rewards_local_server_not_responding">Сървърът на Brave Rewards не отговаря. Ще поправим това възможно най-скоро.</string>
+    <string name="brave_ui_grants">Дарения</string>
+    <string name="brave_ui_expires_on">изтича на <ph name=\"DATE\">%1$s<ex>4/14/2019</ex></ph></string>
+    <string name="brave_ui_insufficient_funds_msg">Липса на достатъчно средства</string>
+    <string name="brave_ui_insufficient_funds_desc">Вашата Brave Rewards сметка очаква депозит.</string>
+    <string name="brave_ui_backup_wallet_msg">Резервен портфейл</string>
+    <string name="brave_ui_backup_wallet_desc">Моля, направете резервен Brave портфейл.</string>
+    <string name="brave_ui_brave_rewards">Brave Rewards</string>
+    <string name="brave_ui_welcome_back_message">Добре дошли отново!</string>
+    <string name="brave_ui_get_rewarded">Получете възнаграждение за сърфиране.</string>
+    <string name="brave_ui_brave_rewards_desc">Печелете, гледайки съобразени с неприкосновеността на личните данни
+реклами и ги платете, за да подкрепите
+създателите на съдържание, което харесвате.</string>
+    <string name="brave_welcome_page_rewards_title">АКТИВИРАНЕ НА BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Първото ти месечно дарение ще бъде изпратено на:</string>
+    <string name="brave_ui_tip_text">Току-що изпратихте дарение на:</string>
+    <string name="brave_ui_auto_tip_text">Вие автоматично изпращате дарение на:</string>
+    <string name="brave_ui_monthly_text">Месечно</string>
+    <string name="bottom_toolbar_enable">Активиране на долната лента с инструменти</string>
+    <string name="bottom_toolbar_disable">Деактивиране на долната лента с инструменти</string>
+    <string name="search_or_url">Търсене или URL адрес</string>
+    <string name="accessibility_toolbar_btn_bookmark">Създаване на маркер</string>
+    <string name="brave_ui_donate_monthly">Правете дарение на този сайт ежемесечно</string>
+    <string name="brave_rewards_intro_title">Brave Rewards е  тук</string>
+    <string name="brave_rewards_intro_text">Подкрепяйте любимите си сайтове.</string>
+    <string name="brave_rewards_dismiss">Отхвърляне</string>
+    <string name="brave_rewards_get_started">Начало</string>
+
+    <string name="brave_rewards_not_available">Съжаляваме, но изглежда, че система Brave Rewards не e налична на устройството Ви</string>
+
+    <string name="prefs_section_display">Показване</string>
+    <string name="prefs_appearance">Облик</string>
+    <string name="hide_brave_rewards_icon_title">Скриване на иконата на Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">Скрива иконата на Brave Rewards, когато система Brave Rewards е неактивна</string>
+
+    <string name="brave_ui_pre_grant_message">Проверете скоро за получаване на безплатен токен</string>
+
+    <string name="reset_brave_rewards_option">Възстановяване на Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Това ще изтрие вашия Brave портфейл и ще нулира всичките Ви данни за Brave Rewards</string>
+    <string name="reset_brave_rewards_error_title">Възстановяване на грешка</string>
+    <string name="reset_brave_rewards_error_description">При възстановяването на Brave Rewards възникна грешка. Моля, рестартирайте Brave и опитайте отново</string>
+</resources>

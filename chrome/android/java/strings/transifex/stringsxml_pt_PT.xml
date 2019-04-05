@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS em todo o lado</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Ativar/Desativar Brave Shields</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Ativar/Desativar Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceiros</string>
 
     <string name="httpse_summary">Abre sites suportados com recurso a HTTPS em vez de HTTP sempre que possível</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">Introduza as palavras de código</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">Não foi possível configurar o Sync</string>
-
     <string name="brave_stats_text_trackers">Controladores
 Bloqueados</string>
     <string name="brave_stats_text_ads">Anúncios

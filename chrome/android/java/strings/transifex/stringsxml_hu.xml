@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS mindenhol</string>
     <string name="brave_shields_blocks_scripts_switch">Blokkolja a szkripteket</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave Pajzsok engedélyezése/letiltása</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">A Brave Rewards engedélyezése/letiltása</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3. fél sütijeinek blokkolása</string>
 
     <string name="httpse_summary">A támogatott oldalakat lehetőség szerint HTTP helyett HTTPS protokollal nyitja meg</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Kódszavak hozzáadása</string>
     <string name="sync_device">Eszköz szinkronizálása</string>
     <string name="sync_device_failure">A szinkronizálást nem lehetett beállítani</string>
+    <string name="sync_requires_correct_time">Lehet, hogy rossz a rendszeridő vagy az időzóna beállítás készülékeden. Kérünk, állítsd be a helyes időt és időzónát.</string>
 
     <string name="brave_stats_text_trackers">Követések
 blokkolva</string>
@@ -231,8 +231,27 @@ tartalomkészítők támogatására.</string>
     <string name="brave_ui_tip_text">Borravalót küldtél ide:</string>
     <string name="brave_ui_auto_tip_text">Automatikusan borravalód küldesz ide:</string>
     <string name="brave_ui_monthly_text">Havonta</string>
-
     <string name="bottom_toolbar_enable">Alsó eszköztár engedélyezése</string>
     <string name="bottom_toolbar_disable">Alsó eszköztár letiltása</string>
     <string name="search_or_url">Keresés vagy URL </string>
+    <string name="accessibility_toolbar_btn_bookmark">Könyvjelző készítése</string>
+    <string name="brave_ui_donate_monthly">Adj borravalót havonta ennek az oldalnak</string>
+    <string name="brave_rewards_intro_title">Itt a Brave Jutalmak</string>
+    <string name="brave_rewards_intro_text">Támogasd a kedvelt oldalakat.</string>
+    <string name="brave_rewards_dismiss">Elvetés</string>
+    <string name="brave_rewards_get_started">Első lépések</string>
+
+    <string name="brave_rewards_not_available">Sajnáljuk, úgy tűnik, a Brave Jutalmak nem érhetők el készülékedről.</string>
+
+    <string name="prefs_section_display">Megjelenítés</string>
+    <string name="prefs_appearance">Megjelenés</string>
+    <string name="hide_brave_rewards_icon_title">Brave Jutalmak ikon elrejtése</string>
+    <string name="hide_brave_rewards_icon_description">Elrejti a Brave Jutalmak ikont, ha a Brave Jutalmak nincs engedélyezve.</string>
+
+    <string name="brave_ui_pre_grant_message">Látogass vissza hamarosan egy ingyenes token jóváírásért.</string>
+
+    <string name="reset_brave_rewards_option">Brave Jutalmak újraállítása</string>
+    <string name="reset_brave_rewards_option_description">Ezzel törlődik Brave tárcád és alaphelyzetbe áll minden Brave Jutalmak adatod.</string>
+    <string name="reset_brave_rewards_error_title">Újraállítási hiba</string>
+    <string name="reset_brave_rewards_error_description">Hiba történt a Brave Jutalmak újraállítása során. Kérünk, indítsd újra a Brave-et, majd próbáld újra.</string>
 </resources>

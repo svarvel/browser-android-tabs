@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPSをどこでも</string>
     <string name="brave_shields_blocks_scripts_switch">スクリプトをブロック</string>
     <string name="accessibility_toolbar_btn_brave_shields">Braveシールドを有効化/無効化</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Braveリワードを有効化/無効化</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">サードパーティクッキーをブロック</string>
 
     <string name="httpse_summary">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">コードの単語を入力</string>
     <string name="sync_device">Sync 端末</string>
     <string name="sync_device_failure">同期をセットアップできませでした</string>
+    <string name="sync_requires_correct_time">デバイスのシステム時刻もしくはタイムゾーンが間違っている可能性があります。正確な時刻やタイムゾーを設定してください</string>
 
     <string name="brave_stats_text_trackers">トラッカー
 ブロックされました</string>
@@ -228,8 +228,27 @@
     <string name="brave_ui_tip_text">へ、今あなたはチップを送りました</string>
     <string name="brave_ui_auto_tip_text">あなたは　へ自動的にチップを送ろうとしています</string>
     <string name="brave_ui_monthly_text">月ごとの</string>
-
     <string name="bottom_toolbar_enable">画面下のツールバーを有効にする</string>
     <string name="bottom_toolbar_disable">画面下のツールバーを無効にする</string>
     <string name="search_or_url">検索またはURLを入力します</string>
+    <string name="accessibility_toolbar_btn_bookmark">ブックマークを作成</string>
+    <string name="brave_ui_donate_monthly">このサイトに毎月チップを支払う</string>
+    <string name="brave_rewards_intro_title">Braveリワードはここにあります</string>
+    <string name="brave_rewards_intro_text">お気に入りのサイトをサポート</string>
+    <string name="brave_rewards_dismiss">解除</string>
+    <string name="brave_rewards_get_started">始める</string>
+
+    <string name="brave_rewards_not_available">申し訳ありませんが、お使いのデバイスではBraveリワードがご利用いただけないようです。</string>
+
+    <string name="prefs_section_display">表示</string>
+    <string name="prefs_appearance">見た目</string>
+    <string name="hide_brave_rewards_icon_title">Braveリワードアイコンを隠す</string>
+    <string name="hide_brave_rewards_icon_description">Braveリワードが有効でない場合にBraveリワードアイコンを隠す</string>
+
+    <string name="brave_ui_pre_grant_message">またすぐにチェックして無料のトークンを受け取りましょう</string>
+
+    <string name="reset_brave_rewards_option">Braveリワードをリセット</string>
+    <string name="reset_brave_rewards_option_description">Braveウォレットが削除され、すべてのBraveリワードデータがリセットされます</string>
+    <string name="reset_brave_rewards_error_title">エラーをリセット</string>
+    <string name="reset_brave_rewards_error_description">Braveリワードのリセット中にエラーが発生しました。Braveを再開して、再度お試しください。</string>
 </resources>

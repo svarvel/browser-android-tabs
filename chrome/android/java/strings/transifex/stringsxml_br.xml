@@ -1,3 +1,21 @@
 <resources>
 
+    <string name="brave_shields_down">Traoñ</string>
+    <string name="brave_shields_up">Laez</string>
+    <string name="brave_ui_month_jan">GENVER</string>
+    <string name="brave_ui_month_feb">C\'HWEVRER</string>
+    <string name="brave_ui_month_mar">MEURZH</string>
+    <string name="brave_ui_month_apr">EBREL</string>
+    <string name="brave_ui_month_may">MAE</string>
+    <string name="brave_ui_month_jun">MEZHEVEN</string>
+    <string name="brave_ui_month_jul">GOUERE</string>
+    <string name="brave_ui_month_aug">EOST</string>
+    <string name="brave_ui_month_sep">GWENGOLO</string>
+    <string name="brave_ui_month_oct">HERE</string>
+    <string name="brave_ui_month_nov">DU</string>
+    <string name="brave_ui_month_dec">KERZU</string>
+    <string name="brave_ui_month_year"><ph name=\"MONTH\">%1$s<ex>KERZU</ex></ph> <ph name=\"YEAR\">%2$s<ex>2018</ex></ph></string>
+    <string name="brave_ui_rewards_contribute_attention">Diwallit</string>
+    <string name="brave_ui_monthly_text">Miziek</string>
+    <string name="search_or_url">Klask un URL</string>
     </resources>

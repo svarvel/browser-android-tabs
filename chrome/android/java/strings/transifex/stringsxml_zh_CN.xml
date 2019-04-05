@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">屏蔽脚本</string>
     <string name="accessibility_toolbar_btn_brave_shields">启用/禁用Brave屏蔽器</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">启用/禁用 Brave 奖励</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">屏蔽第三方cookies</string>
 
     <string name="httpse_summary">尽可能使用 HTTPS 而不是 HTTP 打开支持的网站</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">输入同步代码</string>
     <string name="sync_device">同步设备</string>
     <string name="sync_device_failure">无法设置同步</string>
+    <string name="sync_requires_correct_time">你的设备上可能设置了错误的系统时间或时区。 请设置正确的时间和时区</string>
 
     <string name="brave_stats_text_trackers">跟踪器
 已屏蔽</string>
@@ -233,8 +233,27 @@
     <string name="brave_ui_tip_text">您刚刚发送了一个提示到：</string>
     <string name="brave_ui_auto_tip_text">您正在自动发送提示到：</string>
     <string name="brave_ui_monthly_text">每月一次</string>
-
     <string name="bottom_toolbar_enable">启用底部工具栏</string>
     <string name="bottom_toolbar_disable">禁用底部工具栏</string>
     <string name="search_or_url">搜索或输入网址</string>
+    <string name="accessibility_toolbar_btn_bookmark">创建书签</string>
+    <string name="brave_ui_donate_monthly">每月打赏本网站</string>
+    <string name="brave_rewards_intro_title">Brave 奖励在此</string>
+    <string name="brave_rewards_intro_text">支持你喜爱的网站。</string>
+    <string name="brave_rewards_dismiss">忽视</string>
+    <string name="brave_rewards_get_started">开始</string>
+
+    <string name="brave_rewards_not_available">我们很抱歉，似乎 Brave 奖励在您的设备上不可用</string>
+
+    <string name="prefs_section_display">显示</string>
+    <string name="prefs_appearance">外观</string>
+    <string name="hide_brave_rewards_icon_title">隐藏 Brave 奖励图标</string>
+    <string name="hide_brave_rewards_icon_description">当未启用 Brave 奖励时隐藏 Brave 奖励图标</string>
+
+    <string name="brave_ui_pre_grant_message">稍后回来查看免费令牌授权</string>
+
+    <string name="reset_brave_rewards_option">重设 Brave 奖励</string>
+    <string name="reset_brave_rewards_option_description">这将会删除你的 Brave 钱包并重设你的全部 Brave 奖励数据</string>
+    <string name="reset_brave_rewards_error_title">重设错误</string>
+    <string name="reset_brave_rewards_error_description">重设 Brave 奖励时出现了一个错误。 请重新启动 Brave 并重试</string>
 </resources>

@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS overalt</string>
     <string name="brave_shields_blocks_scripts_switch">Blokker skript</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktiver/deaktiver Brave-skjold</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Aktiver/deaktiver Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokker informasjonskapsler fra tredjeparter</string>
 
     <string name="httpse_summary">Åpner støttede nettsteder ved å bruke HTTPS i stedet for HTTP når mulig</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Skriv inn kode ord</string>
     <string name="sync_device">Synk enhet</string>
     <string name="sync_device_failure">Synk kunne ikke settes opp</string>
+    <string name="sync_requires_correct_time">Du har kanskje feil oppsett av systemtid eller tidssone på enheten din. Sett opp riktig tidspunkt og tidssone</string>
 
     <string name="brave_stats_text_trackers">Sporing
 blokkert</string>
@@ -231,8 +231,27 @@ til å støtte innholdsskapere du liker.</string>
     <string name="brave_ui_tip_text">Du sendte nettopp et tips til:</string>
     <string name="brave_ui_auto_tip_text">Du sender automatisk et tips til:</string>
     <string name="brave_ui_monthly_text">Månedlig</string>
-
     <string name="bottom_toolbar_enable">Aktiver verktøylinjen på bunn</string>
     <string name="bottom_toolbar_disable">Deaktiver verktøylinjen på bunn</string>
     <string name="search_or_url">Søk eller URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Opprett et bokmerke</string>
+    <string name="brave_ui_donate_monthly">Tips dette nettstedet månedlig</string>
+    <string name="brave_rewards_intro_title">Brave Rewards er her</string>
+    <string name="brave_rewards_intro_text">Støtt nettstedene du liker.</string>
+    <string name="brave_rewards_dismiss">Lukk</string>
+    <string name="brave_rewards_get_started">Kom i gang</string>
+
+    <string name="brave_rewards_not_available">Vi beklager – det ser ut til at Brave Rewards ikke er tilgjengelig på enheten din</string>
+
+    <string name="prefs_section_display">Vis</string>
+    <string name="prefs_appearance">Utseende</string>
+    <string name="hide_brave_rewards_icon_title">Skjul Brave Rewards-ikonet</string>
+    <string name="hide_brave_rewards_icon_description">Skjuler Brave Rewards-ikonet når Brave Rewards ikke er aktivert</string>
+
+    <string name="brave_ui_pre_grant_message">Sjekk innom igjen snart for en gratis tokentildeling</string>
+
+    <string name="reset_brave_rewards_option">Tilbakestill Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Dette medfører at Brave-lommeboken din slettes og alle Brave Rewards-dataene dine tilbakestilles</string>
+    <string name="reset_brave_rewards_error_title">Feil ved tilbakestilling</string>
+    <string name="reset_brave_rewards_error_description">En feil oppsto under tilbakestilling av Brave Rewards. Start Brave på nytt og prøv igjen</string>
 </resources>

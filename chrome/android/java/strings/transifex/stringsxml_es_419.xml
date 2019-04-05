@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Habilitar/Deshabilitar protecciones de Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Activar/Desactivar Recompensas Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceros</string>
 
     <string name="httpse_summary">Abre los sitios compatibles utilizando HTTPS en lugar de HTTP, cuando sea posible</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">Introducir palabras clave</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">No se pudo establecer la sincronización</string>
-
     <string name="brave_stats_text_trackers">Rastreadores
 bloqueados</string>
     <string name="brave_stats_text_ads">Anuncios
@@ -79,21 +77,21 @@ estimado</string>
     <string name="close_tabs_on_exit_title">Cerrar pestañas al salir</string>
     <string name="close_tabs_on_exit_summary">No persistir las pestañas entre sesiones de navegación</string>
 
-    <string name="open_pages_in_custom_tabs_title">Abrir pestañas en Pestañas Personalizadas</string>
-    <string name="open_pages_in_custom_tabs_summary">Ofrecer abrir las pestañas en Pestañas Personalizadas</string>
+    <string name="open_pages_in_custom_tabs_title">Abrir pestañas en pestañas personalizadas</string>
+    <string name="open_pages_in_custom_tabs_summary">Ofrecer abrir las pestañas en pestañas personalizadas</string>
 
     <string name="ddg_offer_title">¿Deseas la búsqueda privada con DuckDuckGo?</string>
     <string name="ddg_offer_text">Con la búsqueda privada, Brave usará DuckDuckGo para respoender a tus búsquedas cuando usas una pestaña privada. DuckDuckGo es un motor de búsqueda que no realiza un seguimiento de tu historial de búsquedas, permitiéndote navegar privadamente.</string>
     <string name="ddg_offer_positive">Sí</string>
     <string name="ddg_offer_negative">No</string>
     <string name="ddg_offer_link">Conoce más acerca de la búsqueda privada con DuckDuckGo</string>
-    <string name="prefs_standard_search_engine">Pestaña Estándard</string>
-    <string name="prefs_private_search_engine">Pestaña Privada</string>
+    <string name="prefs_standard_search_engine">Pestaña estándar</string>
+    <string name="prefs_private_search_engine">Pestaña privada</string>
 
     <string name="brave_open_in_private_tab">Abrir en pestaña privada</string>
     <string name="brave_close_all_private_tabs">Cerrar las pestañas privadas</string>
     <string name="brave_new_private_tab">Nueva pestaña privada</string>
-    <string name="brave_new_tab_private_header">Esta es una Pestaña Privada</string>
+    <string name="brave_new_tab_private_header">Esta es una pestaña privada</string>
     <string name="brave_new_tab_private_message">A pesar de que los sitios que visitas utilizando pestañas privadas no son guardados localmente, estos no te hacen anónimo o invicible a tu Proveedor de Internet, tu empleador, o a los sitios que visitas.</string>
     <string name="update_notification_title">Actualización del navegador Brave</string>
     <string name="update_notification_text">El navegador nuevo Brave es 22% más rápido</string>
@@ -142,7 +140,9 @@ estimado</string>
 su navegador predeterminado.</string>
     <string name="brave_default_browser_go_to_settings">Ya ha establecido un navegador predeterminado.
 Puede cambiarlo en la configuración de su aplicación.</string>
+    <string name="brave_default_browser_notification_body">Ahorra batería y carga páginas web más rápido. Haz de Brave tu navegador predeterminado. En el menú Brave, pulse \"Establecer como navegador predeterminado\".</string>
     <string name="brave_set_default_browser">Establecer como navegador predeterminado</string>
+    <string name="brave_set_default_browser_dialog_text">Seleccione Brave de la lista y toque en \"Siempre\"</string>
     <string name="brave_default_browser_existing_notification_body">Configure Brave como navegador web predeterminado
 Ahorre batería y cargue páginas web más rápido</string>
 
@@ -209,6 +209,7 @@ Las propinas que usted envíe quedarán en su billetera hasta que el creador ver
     <string name="brave_ui_reserved_amount_text">Ha designado <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT para creadores que aún no se han
 registrado para recibir contribuciones. Su navegador seguirá intentando hacer la contribución
 hasta que verifiquen su identidad o hasta que hayan transcurrido 90 días.</string>
+    <string name="brave_ui_notification_desc_no_funds">Su pago mensual programado por contribución automática y propinas mensuales no se pudo completar debido a la insuficiencia de fondos. Lo intentaremos de nuevo en 30 días.</string>
     <string name="brave_ui_notification_desc_tip_error">No pudimos procesar su propina. Inténtelo de nuevo.</string>
     <string name="brave_ui_notification_desc_contr_error">No pudimos procesar su contribución.</string>
     <string name="brave_rewards_local_uh_oh">Oh oh...</string>
@@ -226,4 +227,11 @@ hasta que verifiquen su identidad o hasta que hayan transcurrido 90 días.</stri
 respetan su privacidad y haga contribuciones para
 apoyar a los creadores de contenido que más le gustan.</string>
     <string name="brave_welcome_page_rewards_title">ACTIVAR RECOMPENSAS BRAVE</string>
+    <string name="brave_ui_first_tip_text">Su primer consejo mensual será enviado el:</string>
+    <string name="brave_ui_tip_text">Acabas de enviar una consejo a:</string>
+    <string name="brave_ui_auto_tip_text">Usted está enviando automáticamente un consejo a:</string>
+    <string name="brave_ui_monthly_text">Mensualmente</string>
+    <string name="bottom_toolbar_enable">Habilitar barra de herramientas inferior</string>
+    <string name="bottom_toolbar_disable">Deshabilitar barra de herramientas inferior</string>
+    <string name="search_or_url">Búsqueda o URL</string>
     </resources>

@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS  सब जगह</string>
     <string name="brave_shields_blocks_scripts_switch">अवस्र्द्ध लिपिया </string>
     <string name="accessibility_toolbar_btn_brave_shields">ब्रेव कवच को सक्षम/अक्षम करें </string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Brave रिवार्ड्स सक्षम/अक्षम करें</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3सरे दल बन को अवस्र्द्ध करें </string>
 
     <string name="httpse_summary">जहां संभव हो, HTTP के स्थान पर HTTPS का प्रयोग करते हुये समर्थित साइटें खोलता है</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">कोड शब्द एंटर करें </string>
     <string name="sync_device">सिंक उपकरण</string>
     <string name="sync_device_failure">सिंक सैट-अप नहीं किया जा सका </string>
-
     <string name="brave_stats_text_trackers">ट्रैकर 
 ब्लॉक किया गया  </string>
     <string name="brave_stats_text_ads">विज्ञापन 
@@ -233,8 +231,7 @@
     <string name="brave_ui_tip_text">आपने अभी एक टिप भेजी है: </string>
     <string name="brave_ui_auto_tip_text">आप स्वचालित रूप से एक टिप भेज रहे हैं: </string>
     <string name="brave_ui_monthly_text">मासिक </string>
-
     <string name="bottom_toolbar_enable">सबसे नीचे के टूलबार को सक्षम करें </string>
     <string name="bottom_toolbar_disable">सबसे नीचे के टूलबार को अक्षम करें </string>
     <string name="search_or_url">खोजें या URL</string>
-</resources>
+    </resources>

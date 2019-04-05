@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS všude</string>
     <string name="brave_shields_blocks_scripts_switch">Blokovat skripty</string>
     <string name="accessibility_toolbar_btn_brave_shields">Zapnout/vypnout štíty Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Povolit/zakázat Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokovat cookies třetí strany</string>
 
     <string name="httpse_summary">Otevře podporované stránky pomocí HTTPS místo HTTP, pokud je to možné</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Vložte kódová slova</string>
     <string name="sync_device">Synchronizovat zařízení</string>
     <string name="sync_device_failure">Synchronizace nemohla být nastavena</string>
+    <string name="sync_requires_correct_time">Možná máte na přístroji nastaven nesprávný systémový čas nebo časové pásmo. Nastavte si správný čas a časové pásmo.</string>
 
     <string name="brave_stats_text_trackers">Trackery
 Zablokovány</string>
@@ -231,8 +231,27 @@ tvůrce obsahu, který milujete.</string>
     <string name="brave_ui_tip_text">Právě jste poslali tip: </string>
     <string name="brave_ui_auto_tip_text">Automaticky posíláte tip: </string>
     <string name="brave_ui_monthly_text">Měsíčně</string>
-
     <string name="bottom_toolbar_enable">Zapnout dolní lištu</string>
     <string name="bottom_toolbar_disable">Vypnout spodní lištu</string>
     <string name="search_or_url">Hledat nebo URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Vytvořit záložku</string>
+    <string name="brave_ui_donate_monthly">Podpořit stránku každý měsíc</string>
+    <string name="brave_rewards_intro_title">Odměny Brave jsou tady</string>
+    <string name="brave_rewards_intro_text">Podporovat stránku, kterou máte rádi.</string>
+    <string name="brave_rewards_dismiss">Odmítnout</string>
+    <string name="brave_rewards_get_started">Začít</string>
+
+    <string name="brave_rewards_not_available">Litujeme, ale odměny Brave nejsou na vašem přístroji k dispozici</string>
+
+    <string name="prefs_section_display">Zobrazit</string>
+    <string name="prefs_appearance">Vzhled</string>
+    <string name="hide_brave_rewards_icon_title">Skrýt ikonu odměn Brave</string>
+    <string name="hide_brave_rewards_icon_description">Skryje ikonu odměn Brave, pokud nejsou odměny Brave k dispozici</string>
+
+    <string name="brave_ui_pre_grant_message">Brzy si opět zkontrolujte, zda není k dispozici žeton zdarma</string>
+
+    <string name="reset_brave_rewards_option">Resetovat odměny Brave</string>
+    <string name="reset_brave_rewards_option_description">Tímto se vaše peněženka Brave vymaže a s ní i veškeré údaje o odměnách Brave</string>
+    <string name="reset_brave_rewards_error_title">Resetovat chybu</string>
+    <string name="reset_brave_rewards_error_description">Při opětovném nastavování odměn Brave nastala chyba. Spusťte Brave a zkuste to znovu </string>
 </resources>

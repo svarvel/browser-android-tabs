@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Di Mana-mana</string>
     <string name="brave_shields_blocks_scripts_switch">Sekat Skrip</string>
     <string name="accessibility_toolbar_btn_brave_shields">Aktifkan/Lumpuhkan Perisai Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Aktifkan/Lumpuhkan Ganjaran Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Sekat kuki pihak ke-3</string>
 
     <string name="httpse_summary">Buka laman disokong dengan menggunakan HTTPS dan bukan HTTP jika mungkin</string>
@@ -38,6 +37,7 @@
     <string name="enter_code_words_sync">Masukkan perkataan kod</string>
     <string name="sync_device">Penyegerakan peranti</string>
     <string name="sync_device_failure">Penyegerakan tidak boleh ditetapkan</string>
+    <string name="sync_requires_correct_time">Anda mungkin mempunyai tetapan masa sistem atau zon masa yang salah pada peranti anda. Sila tetapkan masa dan zon masa yang betul</string>
 
     <string name="brave_stats_text_trackers">Penjejak
 Disekat</string>
@@ -232,8 +232,27 @@ pencipta kandungan yang anda suka.</string>
     <string name="brave_ui_tip_text">Anda baru sahaja menghantar tip kepada:</string>
     <string name="brave_ui_auto_tip_text">Anda menghantar tip secara automatik kepada:</string>
     <string name="brave_ui_monthly_text">Bulanan</string>
-
     <string name="bottom_toolbar_enable">Aktifkan bar alat bawah</string>
     <string name="bottom_toolbar_disable">Lumpuhkan bar alat bawah</string>
     <string name="search_or_url">Cari atau URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Cipta penanda buku</string>
+    <string name="brave_ui_donate_monthly">Berikan tip kepada tapak ini secara bulanan</string>
+    <string name="brave_rewards_intro_title">Ganjaran Brave berada di sini</string>
+    <string name="brave_rewards_intro_text">Sokong tapak yang anda gemari.</string>
+    <string name="brave_rewards_dismiss">Tolak</string>
+    <string name="brave_rewards_get_started">Mulakan</string>
+
+    <string name="brave_rewards_not_available">Kami memohon maaf kerana Ganjaran Brave tidak tersedia pada peranti anda</string>
+
+    <string name="prefs_section_display">Papar</string>
+    <string name="prefs_appearance">Penampilan</string>
+    <string name="hide_brave_rewards_icon_title">Sembunyikan Ikon Ganjaran Brave</string>
+    <string name="hide_brave_rewards_icon_description">Sembunyikan Ikon Ganjaran Brave apabila Ganjaran Brave tidak diaktifkan</string>
+
+    <string name="brave_ui_pre_grant_message">Periksa semula sebentar lagi untuk pemberian hadiah percuma</string>
+
+    <string name="reset_brave_rewards_option">Tetapkan Semula Ganjaran Brave</string>
+    <string name="reset_brave_rewards_option_description">Ini akan memadam dompet Brave anda dan menetapkan semula semua data Ganjaran Brave anda</string>
+    <string name="reset_brave_rewards_error_title">Tetapkan Semula Ralat</string>
+    <string name="reset_brave_rewards_error_description">Terdapat ralat ketika menetapkan semula Ganjaran Brave. Sila lancar semula Brave dan cuba lagi</string>
 </resources>

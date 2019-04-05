@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Svugdje</string>
     <string name="brave_shields_blocks_scripts_switch">Blokirati skripte</string>
     <string name="accessibility_toolbar_btn_brave_shields">Omogućiti/onemogućiti štitove za Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Omogućite/onemogućite nagrade za Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokirati kolačiće 3. strana</string>
 
     <string name="httpse_summary">Otvara podržane sajtove uz pomoć HTTPS umjesto HTTP kad je to mogućno</string>
@@ -37,6 +36,7 @@
     <string name="enter_code_words_sync">Unesi kodne riječi</string>
     <string name="sync_device">Sinkroniziraj uređaj</string>
     <string name="sync_device_failure">Postavljanje sinkronizacije nije uspjelo</string>
+    <string name="sync_requires_correct_time">Možda imate pogrešne postavke sustava za vrijeme ili vremensku zonu na svom uređaju. Uspostavite ispravno vrijeme i vremensku zonu</string>
 
     <string name="brave_stats_text_trackers">Obilježivači
 blokirani</string>
@@ -225,4 +225,31 @@ dok ih stvaratelj ne potvrdi ili dok ne prođe 90 dana.</string>
 koji poštuju privatnost, platite ih unaprijed i podržite
 omiljene stvaratelje sadržaja.</string>
     <string name="brave_welcome_page_rewards_title">OMOGUĆI NAGRADE ZA BRAVE</string>
-    </resources>
+    <string name="brave_ui_first_tip_text">Vaš prvi mjesečni savjet bit će poslan na:</string>
+    <string name="brave_ui_tip_text">Upravo ste poslali savjet za:</string>
+    <string name="brave_ui_auto_tip_text">Automatski šaljete savjet za:</string>
+    <string name="brave_ui_monthly_text">Mjesečno</string>
+    <string name="bottom_toolbar_enable">Omogućite alatnu traku na dnu</string>
+    <string name="bottom_toolbar_disable">Onemogućite alatnu traku na dnu</string>
+    <string name="search_or_url">Pretraga ili URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Kreirajte knjižnu oznaku</string>
+    <string name="brave_ui_donate_monthly">Savjetujte ovo mjesto mjesečno</string>
+    <string name="brave_rewards_intro_title">Brave Rewards je ovdje</string>
+    <string name="brave_rewards_intro_text">Podržite mjesta koja volite.</string>
+    <string name="brave_rewards_dismiss">Odbaciti</string>
+    <string name="brave_rewards_get_started">Otpočnite</string>
+
+    <string name="brave_rewards_not_available">Žao nam je, izgleda da Brave Rewards nije dostupan na vašem uređaju</string>
+
+    <string name="prefs_section_display">Prikazati</string>
+    <string name="prefs_appearance">Izgled</string>
+    <string name="hide_brave_rewards_icon_title">Sakrijte ikonu Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">Sakriva ikonu Brave Rewards onda kad Brave Rewards nije omogućen</string>
+
+    <string name="brave_ui_pre_grant_message">Vratite nam se ponovno uskoro za besplatan poklon žeton</string>
+
+    <string name="reset_brave_rewards_option">Resetirajte Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Ovim će se pobrisati vaša Brave novčarka i resetirati svi vaši Brave Rewards podaci</string>
+    <string name="reset_brave_rewards_error_title">Resetirajte pogrešku</string>
+    <string name="reset_brave_rewards_error_description">Došlo je do pogreške u resetiranju Brave Rewards. Ponovno pokrenite Brave i pokušajte opet</string>
+</resources>

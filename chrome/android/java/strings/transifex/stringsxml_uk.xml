@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Скрипти</string>
     <string name="accessibility_toolbar_btn_brave_shields">Увімк/Вимк щити Brave</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Увімкнути/вимкнути нагороди Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Сторонні куки</string>
 
     <string name="httpse_summary">Відкривати підтримувані сайти з використанням протоколу HTTPS замість HTTP</string>
@@ -37,7 +36,6 @@
     <string name="enter_code_words_sync">Введення кодових слів</string>
     <string name="sync_device">Синхронізація пристрою</string>
     <string name="sync_device_failure">Синхронізація не може бути встановлена</string>
-
     <string name="brave_stats_text_trackers">Заблоковано
 стеження</string>
     <string name="brave_stats_text_ads">Заблоковано
@@ -231,8 +229,7 @@
     <string name="brave_ui_tip_text">Ви щойно відправили чайові:</string>
     <string name="brave_ui_auto_tip_text">Ви автоматично відправляєте чайові:</string>
     <string name="brave_ui_monthly_text">Щомісяця</string>
-
     <string name="bottom_toolbar_enable">Увімкнути нижню панель інструментів</string>
     <string name="bottom_toolbar_disable">Вимкнути нижню панель інструментів</string>
     <string name="search_or_url">Пошук чи ланка</string>
-</resources>
+    </resources>

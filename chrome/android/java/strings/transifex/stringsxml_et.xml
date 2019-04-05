@@ -10,7 +10,6 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Blokeerige skripte</string>
     <string name="accessibility_toolbar_btn_brave_shields">Luba/keela Brave‘i kaitsed</string>
-    <string name="accessibility_toolbar_btn_brave_rewards">Luba/keela Brave’i preemiad</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokeerige 3. osapoole küpsised</string>
 
     <string name="httpse_summary">Võimalusel avab ühilduvaid lehti HTPPS-i kaudu HTTP asemel</string>
@@ -38,7 +37,6 @@
     <string name="enter_code_words_sync">Sisesta salasõnad</string>
     <string name="sync_device">Sünk seade</string>
     <string name="sync_device_failure">Sünki seadistamine nurjus</string>
-
     <string name="brave_stats_text_trackers">Jälitajad
 Blokeeritud</string>
     <string name="brave_stats_text_ads">Reklaamid
