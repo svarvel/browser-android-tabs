@@ -34,8 +34,6 @@ export interface Props extends Rewards.ComponentProps {
 }
 
 class SettingsPage extends React.Component<Props, State> {
-  private balanceTimerId: number
-
   constructor (props: Props) {
     super(props)
     this.state = {
@@ -73,21 +71,6 @@ class SettingsPage extends React.Component<Props, State> {
       this.actions.onSettingSave('firstLoad', false)
     }
 
-    this.actions.getContributeList()
-    this.actions.getWalletProperties()
-    this.actions.getPendingContributionsTotal()
-    this.actions.getCurrentReport()
-    this.actions.getDonationTable()
-    this.balanceTimerId = window.setInterval(() => {
-      this.actions.getRewardsEnabled()
-      this.actions.getWalletProperties()
-      this.actions.getCurrentReport()
-    }, 60000)
-
-    if (!this.props.rewardsData.safetyNetFailed) {
-      this.actions.getGrants()
-    }
-    this.actions.getAdsData()
     this.isWalletUrl()
 
     window.addEventListener('popstate', (e) => {
@@ -153,7 +136,11 @@ class SettingsPage extends React.Component<Props, State> {
   }
 
   componentWillUnmount () {
-    window.clearInterval(this.balanceTimerId)
+    const { rewardsIntervalId } = this.props.rewardsData
+
+    if (rewardsIntervalId) {
+      window.clearInterval(rewardsIntervalId)
+    }
   }
 
   render () {
