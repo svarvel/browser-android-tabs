@@ -117,12 +117,16 @@ public:
 
     void GetReconcileStamp(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    void ResetTheWholeState(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
     double GetPublisherRecurrentDonationAmount(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& publisher);
 
     void RemoveRecurring(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& publisher);
+
+    void OnResetTheWholeState(bool sucess);
 
     void OnGetGetReconcileStamp( uint64_t timestamp);
 
@@ -171,6 +175,9 @@ public:
 
     void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
         brave_rewards::ContentSiteList) override;
+
+    void OnRewardsMainEnabled(brave_rewards::RewardsService* rewards_service, 
+        bool rewards_main_enabled) override;
 
 private:
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;

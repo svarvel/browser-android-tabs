@@ -1243,6 +1243,8 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/preferences/AboutChromePreferences.java",
   "java/src/org/chromium/chrome/browser/preferences/AccessibilityPreferences.java",
   "java/src/org/chromium/chrome/browser/preferences/AppearancePreferences.java",
+  "java/src/org/chromium/chrome/browser/preferences/BraveRewardsPreferences.java",
+  "java/src/org/chromium/chrome/browser/preferences/BraveRewardsResetPreference.java",
   "java/src/org/chromium/chrome/browser/preferences/BraveSyncScreensObserver.java",
   "java/src/org/chromium/chrome/browser/preferences/BraveSyncScreensPreference.java",
   "java/src/org/chromium/chrome/browser/preferences/ButtonPreference.java",

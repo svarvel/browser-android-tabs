@@ -21,4 +21,6 @@ public interface BraveRewardsObserver {
   public void OnGetAutoContributeProps();
   public void OnGetReconcileStamp(long timestamp);
   public void OnRecurringDonationUpdated();
+  public void OnResetTheWholeState(boolean success);
+  public void OnRewardsMainEnabled(boolean enabled);
 }

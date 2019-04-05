@@ -240,4 +240,10 @@ public class BraveRewardsDonationSentActivity extends Activity implements BraveR
             send_date.setText(formatter.format (mReconcileStamp_));
         }
     }
+
+    @Override
+    public void OnResetTheWholeState(boolean success) {}
+
+    @Override
+    public void OnRewardsMainEnabled(boolean enabled) {}
 }

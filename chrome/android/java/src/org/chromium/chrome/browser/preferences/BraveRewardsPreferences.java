@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
@@ -20,40 +24,27 @@ import org.chromium.chrome.browser.accessibility.FontSizePrefs;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs.FontSizePrefsObserver;
 import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.util.AccessibilityUtil;
-import org.chromium.ui.base.DeviceFormFactor;
 
 /**
- * Fragment to keep track of all the display related preferences.
+ * Fragment to keep track of all Brave Rewards related preferences.
  */
-public class AppearancePreferences extends PreferenceFragment
+public class BraveRewardsPreferences extends PreferenceFragment
         implements OnPreferenceChangeListener, BraveRewardsObserver {
 
-    static final String PREF_HIDE_BRAVE_ICON = "hide_brave_rewards_icon";
+    static final String PREF_RESET_REWARDS = "reset_rewards";
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.prefs_appearance);
-        PreferenceUtils.addPreferencesFromResource(this, R.xml.appearance_preferences);
+        getActivity().setTitle(R.string.brave_ui_brave_rewards);
+        PreferenceUtils.addPreferencesFromResource(this, R.xml.brave_rewards_preferences);
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Preference hideBraveIconBlockPref = findPreference(PREF_HIDE_BRAVE_ICON);
-        hideBraveIconBlockPref.setEnabled(false);
-        hideBraveIconBlockPref.setOnPreferenceChangeListener(this);
-        Preference enableBottomToolbar = findPreference(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY);
-        enableBottomToolbar.setOnPreferenceChangeListener(this);
-        boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(ContextUtils.getApplicationContext());
-        if (enableBottomToolbar instanceof ChromeSwitchPreference){
-            ((ChromeSwitchPreference)enableBottomToolbar).setChecked(!isTablet && ChromePreferenceManager.getInstance().isBottomToolbarEnabled());
-        }
-        if (isTablet) {
-            // We don't have bottom toolbar on tablets
-            enableBottomToolbar.setEnabled(false);
-        }
     }
 
     @Override
@@ -76,18 +67,6 @@ public class AppearancePreferences extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (PREF_HIDE_BRAVE_ICON.equals(preference.getKey())) {
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-            sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, (boolean)newValue);
-            sharedPreferencesEditor.apply();
-            SingleCategoryPreferences.AskForRelaunch(this.getActivity());
-        } else if (ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY.equals(preference.getKey())) {
-            SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
-            Boolean originalStatus = ChromePreferenceManager.getInstance().isBottomToolbarEnabled();
-            prefs.edit().putBoolean(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY, !originalStatus).apply();
-            SingleCategoryPreferences.AskForRelaunch(getActivity());
-        }
         return true;
     }
 
@@ -125,11 +104,6 @@ public class AppearancePreferences extends PreferenceFragment
 
     @Override
     public void OnGetRewardsMainEnabled(boolean enabled) {
-        ChromeSwitchPreference hideBraveIconBlockPref = (ChromeSwitchPreference)findPreference(PREF_HIDE_BRAVE_ICON);
-        hideBraveIconBlockPref.setEnabled(!enabled);
-        if (enabled) {
-          hideBraveIconBlockPref.setChecked(false);
-        }
     }
 
     @Override
@@ -142,7 +116,8 @@ public class AppearancePreferences extends PreferenceFragment
     public void OnRecurringDonationUpdated() {}
 
     @Override
-    public void OnResetTheWholeState(boolean success) {}
+    public void OnResetTheWholeState(boolean success) {
+    }
 
     @Override
     public void OnRewardsMainEnabled(boolean enabled) {}

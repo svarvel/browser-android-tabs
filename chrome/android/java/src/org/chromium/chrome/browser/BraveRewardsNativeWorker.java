@@ -289,6 +289,12 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public void ResetTheWholeState() {
+        synchronized(lock) {
+            nativeResetTheWholeState(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
 
     @CalledByNative
     public void OnGetRewardsMainEnabled(boolean enabled) {
@@ -402,6 +408,20 @@ public class BraveRewardsNativeWorker {
         grantClaimInProcess = false;
     }
 
+    @CalledByNative
+    public void OnResetTheWholeState(boolean success) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnResetTheWholeState(success);
+        }
+    }
+
+    @CalledByNative
+    public void OnRewardsMainEnabled(boolean enabled) {
+        for(BraveRewardsObserver observer : observers_) {
+            observer.OnRewardsMainEnabled(enabled);
+        }
+    }
+
     private native void nativeInit();
     private native void nativeDestroy(long nativeBraveRewardsNativeWorker);
     private native void nativeCreateWallet(long nativeBraveRewardsNativeWorker);
@@ -440,4 +460,5 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetReconcileStamp(long nativeBraveRewardsNativeWorker);
     private native double nativeGetPublisherRecurrentDonationAmount(long nativeBraveRewardsNativeWorker, String publisher);
     private native void nativeRemoveRecurring(long nativeBraveRewardsNativeWorker, String publisher);
+    private native void nativeResetTheWholeState(long nativeBraveRewardsNativeWorker);
 }

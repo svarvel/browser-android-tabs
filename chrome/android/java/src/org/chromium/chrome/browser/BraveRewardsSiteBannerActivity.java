@@ -468,4 +468,10 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
 
     @Override
     public void OnRecurringDonationUpdated() {}
+
+    @Override
+    public void OnResetTheWholeState(boolean success) {}
+
+    @Override
+    public void OnRewardsMainEnabled(boolean enabled) {}
 }
