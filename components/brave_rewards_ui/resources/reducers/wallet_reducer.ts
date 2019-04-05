@@ -22,6 +22,20 @@ const createWallet = (state: Rewards.State) => {
   return state
 }
 
+const fetchRewardsInfo = (state: Rewards.State) => {
+  chrome.send('brave_rewards.getContributionList')
+  chrome.send('brave_rewards.getWalletProperties', [])
+  chrome.send('brave_rewards.getPendingContributionsTotal')
+  chrome.send('brave_rewards.getBalanceReports')
+  chrome.send('brave_rewards.updateRecurringDonationsList')
+  chrome.send('brave_rewards.updateTipsList')
+  chrome.send('brave_rewards.getAdsData')
+
+  if (!state.safetyNetFailed) {
+    chrome.send('brave_rewards.getGrants', [])
+  }
+}
+
 const walletReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, action) => {
   switch (action.type) {
     case types.CREATE_WALLET:
@@ -190,11 +204,25 @@ const walletReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State,
       }
     case types.ON_WALLET_EXISTS:
       {
-        if (!action.payload.exists || state.walletCreated) {
+        state = { ...state }
+
+        if (!action.payload.exists) {
+          state.walletCreated = false
           break
         }
-        state = { ...state }
-        state = createWallet(state)
+
+        if (!state.walletCreated && action.payload.exists) {
+          state = createWallet(state) 
+        }
+
+        fetchRewardsInfo(state)
+
+        state.rewardsIntervalId = window.setInterval(() => {
+          chrome.send('brave_rewards.getRewardsMainEnabled', [])
+          chrome.send('brave_rewards.getWalletProperties', [])
+          chrome.send('brave_rewards.getBalanceReports')
+        }, 60000)
+
         break
       }
     case types.ON_CONTRIBUTION_AMOUNT:
