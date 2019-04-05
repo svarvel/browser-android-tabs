@@ -519,6 +519,12 @@ public class ToolbarTablet extends ToolbarLayout
         if (mBraveRewardsNativeWorker != null) {
             if (type == BraveRewardsNativeWorker.REWARDS_NOTIFICATION_BACKUP_WALLET) {
                 mBraveRewardsNativeWorker.DeleteNotification(id);
+            } else if (type == BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT) {
+                // Set flag
+                SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+                SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+                sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_GRANTS_NOTIFICATION_RECEIVED, true);
+                sharedPreferencesEditor.apply();
             }
             mBraveRewardsNativeWorker.GetAllNotifications();
         }
