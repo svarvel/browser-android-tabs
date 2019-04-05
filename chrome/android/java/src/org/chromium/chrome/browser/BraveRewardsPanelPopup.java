@@ -83,7 +83,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String COPYRIGHT_SPECIAL = "\u2122";
 
     private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
-    private static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
+    public static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
 
     // Custom Android notification
     private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
@@ -881,11 +881,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 notification_icon.setImageResource(R.drawable.grant_icon);
                 title = root.getResources().getString(R.string.brave_ui_new_token_grant);
                 description = root.getResources().getString(R.string.brave_ui_new_grant);
-                // Set flag
-                SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-                SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-                sharedPreferencesEditor.putBoolean(PREF_GRANTS_NOTIFICATION_RECEIVED, true);
-                sharedPreferencesEditor.apply();
                 TextView pre_grant = (TextView)root.findViewById(R.id.pre_grant_message);
                 if (pre_grant != null) {
                     pre_grant.setVisibility(View.GONE);
