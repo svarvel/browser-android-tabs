@@ -389,6 +389,21 @@ void BraveRewardsNativeWorker::GetReconcileStamp(JNIEnv* env, const base::androi
   }
 }
 
+void BraveRewardsNativeWorker::ResetTheWholeState(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->ResetTheWholeState(base::Bind(
+            &BraveRewardsNativeWorker::OnResetTheWholeState,
+            weak_factory_.GetWeakPtr()));
+  }
+}
+
+void BraveRewardsNativeWorker::OnResetTheWholeState(bool sucess) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnResetTheWholeState(env,
+          weak_java_brave_rewards_native_worker_.get(env), sucess);
+}
+
 double BraveRewardsNativeWorker::GetPublisherRecurrentDonationAmount(JNIEnv* env,
                                               const base::android::JavaParamRef<jobject>& obj,
                                               const base::android::JavaParamRef<jstring>& publisher){
@@ -505,6 +520,14 @@ void BraveRewardsNativeWorker::SetRewardsMainEnabled(JNIEnv* env,
   if (brave_rewards_service_) {
     brave_rewards_service_->SetRewardsMainEnabled(enabled);
   }
+}
+
+void BraveRewardsNativeWorker::OnRewardsMainEnabled(brave_rewards::RewardsService* rewards_service, 
+    bool rewards_main_enabled) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+
+  Java_BraveRewardsNativeWorker_OnRewardsMainEnabled(env, 
+        weak_java_brave_rewards_native_worker_.get(env), rewards_main_enabled);
 }
 
 void BraveRewardsNativeWorker::GetRewardsMainEnabled(JNIEnv* env, 

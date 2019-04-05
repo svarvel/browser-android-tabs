@@ -35,6 +35,8 @@
         android:key="private_search_engine"
         android:order="5"
         android:title="@string/prefs_private_search_engine"/>
+
+    <!--Basic section-->
     <PreferenceCategory
         android:key="basics_section"
         android:order="6"
@@ -62,17 +64,17 @@
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.NotificationsPreferences"
         android:key="notifications"
-        android:order="9"
+        android:order="10"
         android:title="@string/prefs_notifications"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.ContextualSuggestionsPreference"
         android:key="contextual_suggestions"
-        android:order="10"
+        android:order="11"
         android:title="@string/prefs_contextual_suggestions"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.HomepagePreferences"
         android:key="homepage"
-        android:order="11"
+        android:order="12"
         android:title="@string/options_homepage_title"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.themes.ThemePreferences"
@@ -90,6 +92,7 @@
         android:order="14"
         android:title="@string/prefs_appearance"/>
 
+    <!--Advanced section-->
     <PreferenceCategory
         android:key="advanced_section"
         android:order="15"
@@ -100,24 +103,29 @@
         android:order="16"
         android:title="@string/prefs_privacy"/>
     <Preference
+        android:fragment="org.chromium.chrome.browser.preferences.BraveRewardsPreferences"
+        android:key="brave_rewards"
+        android:order="17"
+        android:title="@string/brave_ui_brave_rewards" />
+    <Preference
         android:fragment="org.chromium.chrome.browser.preferences.BraveSyncScreensPreference"
         android:key="brave_sync_layout"
-        android:order="17"
+        android:order="18"
         android:title="@string/prefs_sync" />
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.AccessibilityPreferences"
         android:key="accessibility"
-        android:order="18"
+        android:order="19"
         android:title="@string/prefs_accessibility"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.website.SiteSettingsPreferences"
         android:key="content_settings"
-        android:order="19"
+        android:order="20"
         android:title="@string/prefs_site_settings"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.languages.LanguagesPreferences"
         android:key="languages"
-        android:order="20"
+        android:order="21"
         android:title="@string/prefs_languages"/>
     <!--<org.chromium.chrome.browser.preferences.datareduction.DataReductionPreference
         android:fragment="org.chromium.chrome.browser.preferences.datareduction.DataReductionPreferenceFragment"
@@ -127,17 +135,17 @@
     <org.chromium.chrome.browser.preferences.ChromeBasePreference
         android:fragment="org.chromium.chrome.browser.preferences.download.DownloadPreferences"
         android:key="downloads"
-        android:order="21"
+        android:order="22"
         android:title="@string/menu_downloads"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.developer.DeveloperPreferences"
         android:key="developer"
-        android:order="22"
+        android:order="23"
         android:title="Developer options"/>
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.AboutChromePreferences"
         android:key="about_chrome"
-        android:order="23"
+        android:order="24"
         android:title="@string/prefs_about_chrome"/>
 
 </PreferenceScreen>

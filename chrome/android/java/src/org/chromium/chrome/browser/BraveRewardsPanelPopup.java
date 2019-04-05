@@ -1347,6 +1347,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         }
     }
 
+    @Override
+    public void OnResetTheWholeState(boolean success) {}
+    
+    @Override
+    public void OnRewardsMainEnabled(boolean enabled) {}
+
 
     void UpdateRecurentDonationSpinner(double amount){
         int RequestedPosition = mTip_amount_spinner_data_adapter.getPosition ((int)amount);
