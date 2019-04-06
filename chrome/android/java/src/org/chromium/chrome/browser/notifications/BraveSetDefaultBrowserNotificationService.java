@@ -288,19 +288,20 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                                 .build();
 
                 //select small and large icons for devices < 21 or higher
-                int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.btn_brave : R.drawable.ic_chrome;
+                int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.brave_logo_19 : R.drawable.ic_chrome;
                 int largeIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.bat_logo : R.drawable.bat_icon;
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-                        .setSmallIcon(smallIconId)
-                        .setContentTitle(context.getString(R.string.brave_rewards_intro_title))
-                        .setContentText(context.getString(R.string.brave_rewards_intro_text))
-                        .setLargeIcon(BitmapFactory.decodeResource(
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID);
+                builder.setSmallIcon(smallIconId);
+                builder.setContentTitle(context.getString(R.string.brave_rewards_intro_title));
+                builder.setContentText(context.getString(R.string.brave_rewards_intro_text));
+                builder.setLargeIcon(BitmapFactory.decodeResource(
                                 context.getResources(),
-                                largeIconId))
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setAutoCancel(true)
-                        .addAction(learnAction)
-                        .addAction(dismissAction);
+                                largeIconId));
+                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                builder.setAutoCancel(true);
+                builder.addAction(learnAction);
+                builder.addAction(dismissAction);
 
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
                 notificationManager.notify(rewards_live_notification_id, builder.build());
