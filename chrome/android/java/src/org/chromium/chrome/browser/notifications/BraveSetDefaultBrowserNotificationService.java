@@ -279,7 +279,6 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 //select small and large icons for devices < 21 or higher
                 int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.brave_logo_19 : R.drawable.ic_chrome;
                 int largeIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.bat_logo : R.drawable.bat_icon;
-
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(context, ChromeActivity.CHANNEL_ID);
                 builder.setSmallIcon(smallIconId);
                 builder.setContentTitle(context.getString(R.string.brave_rewards_intro_title));
