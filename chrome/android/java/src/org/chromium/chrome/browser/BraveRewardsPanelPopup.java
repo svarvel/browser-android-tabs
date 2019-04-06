@@ -824,7 +824,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         TextView tv = (TextView)root.findViewById(R.id.br_notification_description);
         tv.setGravity(Gravity.CENTER);
         // TODO other types of notifications
-        Log.i("TAG", "!!!here10 type == " + type);
         switch (type) {
             case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_AUTO_CONTRIBUTE:
                 if (args.length >= 4) {
