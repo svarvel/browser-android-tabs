@@ -270,6 +270,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
                 intent.setPackage(context.getPackageName());
                 intent.putExtra(BRAVE_REWARDS_SUBSTITUTE_URL, BRAVE_REWARDS_INTERNAL_URL);
+                intent.putExtra(NOTIFICATION_ID_EXTRA, rewards_live_notification_id);
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
                 NotificationCompat.Action learnAction =
                          new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_get_started),
