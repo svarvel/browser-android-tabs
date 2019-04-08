@@ -126,10 +126,12 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         if (supportsDefault()) {
             b.setContentText(mContext.getString(R.string.brave_default_browser_existing_notification_body));
             b.setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_existing_notification_body)));
-            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), getDefaultAppSettingsIntent(mContext)).build();
+            PendingIntent intentYes = getDefaultAppSettingsIntent(mContext);
+            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), intentYes).build();
             NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext, NOTIFICATION_ID)).build();
             b.addAction(actionYes);
             b.addAction(actionNo);
+            b.setContentIntent(intentYes);
         }
 
         NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -288,6 +290,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
                 builder.setSmallIcon(smallIconId);
                 builder.setContentTitle(context.getString(R.string.brave_rewards_intro_title));
                 builder.setContentText(context.getString(R.string.brave_rewards_intro_text));
+                builder.setContentIntent(pendingIntent);
                 builder.setLargeIcon(BitmapFactory.decodeResource(
                                 context.getResources(),
                                 largeIconId));
