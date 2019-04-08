@@ -23,6 +23,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import org.chromium.chrome.R;
 import org.chromium.base.ContextUtils;
+import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.ChromeActivitySessionTracker;
 import org.chromium.chrome.browser.ChromeFeatureList;
@@ -244,7 +245,11 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     }
 
     public static void NotifyRewardsLive(){
-        if ( ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS)){
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        boolean rewardsIsOn = sharedPreferences.getBoolean(
+            BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, false);
+        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
+            !rewardsIsOn){
             SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
             boolean first_time_run = sharedPref.getBoolean(FIRST_TIME_RUN, true);
             if (first_time_run) {
