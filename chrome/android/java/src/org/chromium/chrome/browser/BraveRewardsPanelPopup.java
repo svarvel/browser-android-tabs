@@ -82,7 +82,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String TWITCH_TYPE = "twitch#";
     private static final String COPYRIGHT_SPECIAL = "\u2122";
 
-    private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
+    public static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
     public static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
 
     // Custom Android notification
