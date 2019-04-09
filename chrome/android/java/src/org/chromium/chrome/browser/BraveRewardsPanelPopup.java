@@ -1338,11 +1338,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 root.findViewById(R.id.include_in_ac_layout).setVisibility(View.VISIBLE);
             }
 
+            //Temporary commented out due to dropdown spinner inflating issue on PopupWindow (API 24)
+            /*
             if (mPubInReccuredDonation){
                 double amount  = mBraveRewardsNativeWorker.GetPublisherRecurrentDonationAmount(pubId);
                 UpdateRecurentDonationSpinner(amount);
                 root.findViewById(R.id.auto_tip_layout).setVisibility(View.VISIBLE);
-            }
+            }*/
         }
     }
 
