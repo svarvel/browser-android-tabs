@@ -44,6 +44,7 @@ const walletReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State,
     case types.WALLET_CREATED:
       state = { ...state }
       state = createWallet(state)
+      fetchRewardsInfo(state)
       break
     case types.WALLET_CREATE_FAILED:
       state = { ...state }
