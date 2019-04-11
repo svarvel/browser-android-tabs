@@ -7,9 +7,7 @@ package org.chromium.chrome.browser.preferences;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.preference.DialogPreference;
-import android.support.v7.app.AlertDialog;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
@@ -25,7 +23,6 @@ import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.RestartWorker;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
-import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 
 
 /**
@@ -33,9 +30,6 @@ import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences
  */
 public class BraveRewardsResetPreference
         extends DialogPreference implements BraveRewardsObserver {
-
-    private static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
-    private static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
 
     private BraveRewardsNativeWorker mBraveRewardsNativeWorker;
     private Context mContext;
@@ -78,7 +72,7 @@ public class BraveRewardsResetPreference
         if (!enabled) {
             mBraveRewardsNativeWorker.ResetTheWholeState();
         } else {
-            AskForRelaunchCustom(mContext);
+            BraveRewardsPreferences.AskForRelaunchCustom(mContext);
         }
     }
 
@@ -128,40 +122,5 @@ public class BraveRewardsResetPreference
 
     @Override
     public void OnResetTheWholeState(boolean success) {
-        if (success) {
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-            sharedPreferencesEditor.putBoolean(PREF_GRANTS_NOTIFICATION_RECEIVED, false);
-            sharedPreferencesEditor.putBoolean(PREF_WAS_BRAVE_REWARDS_TURNED_ON, false);
-            sharedPreferencesEditor.apply();
-            PrefServiceBridge.getInstance().setSafetynetCheckFailed(false);
-            SingleCategoryPreferences.AskForRelaunch(mContext);
-        } else {
-            AskForRelaunchCustom(mContext);
-        }
-    }
-
-    public static void AskForRelaunchCustom(Context context) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-         alertDialogBuilder
-            .setTitle(R.string.reset_brave_rewards_error_title)
-            .setMessage(R.string.reset_brave_rewards_error_description)
-            .setCancelable(true)
-            .setPositiveButton(R.string.settings_require_relaunch_now, new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog,int id) {
-                  RestartWorker restartWorker = new RestartWorker();
-                  restartWorker.Restart();
-                  dialog.cancel();
-              }
-            })
-            .setNegativeButton(R.string.settings_require_relaunch_later,new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog,int id) {
-                  dialog.cancel();
-              }
-            });
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
     }
 }
