@@ -16,8 +16,10 @@ import org.chromium.base.Log;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsObserver;
+import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs.FontSizePrefsObserver;
+import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.ui.base.DeviceFormFactor;
@@ -36,23 +38,36 @@ public class AppearancePreferences extends PreferenceFragment
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.prefs_appearance);
         PreferenceUtils.addPreferencesFromResource(this, R.xml.appearance_preferences);
+        if (!ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) 
+              || PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            removePreferenceIfPresent(PREF_HIDE_BRAVE_ICON);
+        }
+        boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(ContextUtils.getApplicationContext());
+        if (isTablet) {
+            removePreferenceIfPresent(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY);
+        }
+    }
+
+    private void removePreferenceIfPresent(String key) {
+        Preference preference = getPreferenceScreen().findPreference(key);
+        if (preference != null) getPreferenceScreen().removePreference(preference);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Preference hideBraveIconBlockPref = findPreference(PREF_HIDE_BRAVE_ICON);
-        hideBraveIconBlockPref.setEnabled(false);
-        hideBraveIconBlockPref.setOnPreferenceChangeListener(this);
-        Preference enableBottomToolbar = findPreference(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY);
-        enableBottomToolbar.setOnPreferenceChangeListener(this);
-        boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(ContextUtils.getApplicationContext());
-        if (enableBottomToolbar instanceof ChromeSwitchPreference){
-            ((ChromeSwitchPreference)enableBottomToolbar).setChecked(!isTablet && ChromePreferenceManager.getInstance().isBottomToolbarEnabled());
+        if (hideBraveIconBlockPref != null) {
+            hideBraveIconBlockPref.setEnabled(false);
+            hideBraveIconBlockPref.setOnPreferenceChangeListener(this);
         }
-        if (isTablet) {
-            // We don't have bottom toolbar on tablets
-            enableBottomToolbar.setEnabled(false);
+        Preference enableBottomToolbar = findPreference(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY);
+        if (enableBottomToolbar != null) {
+            enableBottomToolbar.setOnPreferenceChangeListener(this);
+            if (enableBottomToolbar instanceof ChromeSwitchPreference) {
+              boolean isTablet = DeviceFormFactor.isNonMultiDisplayContextOnTablet(ContextUtils.getApplicationContext());
+              ((ChromeSwitchPreference)enableBottomToolbar).setChecked(!isTablet && ChromePreferenceManager.getInstance().isBottomToolbarEnabled());
+            }
         }
     }
 
@@ -126,9 +141,11 @@ public class AppearancePreferences extends PreferenceFragment
     @Override
     public void OnGetRewardsMainEnabled(boolean enabled) {
         ChromeSwitchPreference hideBraveIconBlockPref = (ChromeSwitchPreference)findPreference(PREF_HIDE_BRAVE_ICON);
-        hideBraveIconBlockPref.setEnabled(!enabled);
-        if (enabled) {
-          hideBraveIconBlockPref.setChecked(false);
+        if (hideBraveIconBlockPref != null) {
+          hideBraveIconBlockPref.setEnabled(!enabled);
+          if (enabled) {
+            hideBraveIconBlockPref.setChecked(false);
+          }
         }
     }
 

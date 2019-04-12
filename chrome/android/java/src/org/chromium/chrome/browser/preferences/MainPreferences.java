@@ -20,6 +20,7 @@ import org.chromium.chrome.browser.contextual_suggestions.ContextualSuggestionsE
 import org.chromium.chrome.browser.net.spdyproxy.DataReductionProxySettings;
 import org.chromium.chrome.browser.partnercustomizations.HomepageManager;
 import org.chromium.chrome.browser.password_manager.ManagePasswordsReferrer;
+import org.chromium.chrome.browser.preferences.PrefServiceBridge;
 import org.chromium.chrome.browser.preferences.autofill_assistant.AutofillAssistantPreferences;
 import org.chromium.chrome.browser.preferences.datareduction.DataReductionPreferenceFragment;
 import org.chromium.chrome.browser.preferences.developer.DeveloperPreferences;
@@ -53,6 +54,7 @@ public class MainPreferences extends PreferenceFragment
     public static final String PREF_DOWNLOADS = "downloads";
     public static final String PREF_DEVELOPER = "developer";
     public static final String PREF_AUTOFILL_ASSISTANT = "autofill_assistant";
+    public static final String PREF_BRAVE_REWARDS = "brave_rewards";
 
     public static final String AUTOFILL_GUID = "guid";
     // Needs to be in sync with kSettingsOrigin[] in
@@ -239,6 +241,11 @@ public class MainPreferences extends PreferenceFragment
             addPreferenceIfAbsent(PREF_DEVELOPER);
         } else {
             removePreferenceIfPresent(PREF_DEVELOPER);
+        }
+
+        if (!ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) ||
+            PrefServiceBridge.getInstance().isSafetynetCheckFailed()) {
+            removePreferenceIfPresent(PREF_BRAVE_REWARDS);
         }
 
         /*ChromeBasePreference dataReduction =
