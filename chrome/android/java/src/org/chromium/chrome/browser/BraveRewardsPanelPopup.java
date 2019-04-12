@@ -947,11 +947,6 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (error_code == 12) {   // Wallet created code
             walletInitialized = true;
             ShowWebSiteView(false);
-            // Set preferences that Brave Rewards was turned On and that Brave Rewards icon is not hidden
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-            sharedPreferencesEditor.putBoolean(PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
-            sharedPreferencesEditor.apply();
         } else if (error_code == 19) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
             dismiss();
         } else {

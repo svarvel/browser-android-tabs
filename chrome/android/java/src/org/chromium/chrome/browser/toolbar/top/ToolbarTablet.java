@@ -496,11 +496,13 @@ public class ToolbarTablet extends ToolbarLayout
             // Check and set flag to show Brave Rewards icon if enabled
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, true);
             if (sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
                 sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, false);
                 sharedPreferencesEditor.apply();
                 SingleCategoryPreferences.AskForRelaunch((ChromeActivity)getContext());
             }
+            sharedPreferencesEditor.apply();
         }
     }
 
