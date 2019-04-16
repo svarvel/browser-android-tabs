@@ -14,7 +14,6 @@ import android.os.Build;
 import android.os.ConditionVariable;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
