@@ -2068,7 +2068,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
     @Override
     public void OnNotificationsCount(int count) {
-        if (mBraveRewardsNotificationsCount != null) {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        boolean rewardsEnabled = sharedPreferences.getBoolean(
+            BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, true);
+        if (mBraveRewardsNotificationsCount != null && rewardsEnabled) {
             if (count != 0) {
                 String value = Integer.toString(count);
                 if (count > 99) {
@@ -2082,9 +2085,10 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 mBraveRewardsNotificationsCount.setText(value);
                 mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
             } else {
+                mBraveRewardsNotificationsCount.setText("");
                 mBraveRewardsNotificationsCount.setVisibility(View.GONE);
             }
-        }   
+        }
     }
 
     @Override
@@ -2116,7 +2120,18 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnResetTheWholeState(boolean success) {}
 
     @Override
-    public void OnRewardsMainEnabled(boolean enabled) {}
+    public void OnRewardsMainEnabled(boolean enabled) {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+        sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, enabled);
+        sharedPreferencesEditor.apply();
+        if (mBraveRewardsNotificationsCount != null) {
+            String count = mBraveRewardsNotificationsCount.getText().toString();
+            if (!count.isEmpty()) {
+                mBraveRewardsNotificationsCount.setVisibility(enabled ? View.VISIBLE : View.GONE);
+            }
+        }
+    }
 
     @Override
     public void setOnTabSwitcherClickHandler(OnClickListener listener) {

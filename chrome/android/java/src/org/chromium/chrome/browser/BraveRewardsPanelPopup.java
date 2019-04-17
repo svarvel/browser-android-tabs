@@ -84,6 +84,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     public static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
     public static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
+    public static final String PREF_WAS_BRAVE_REWARDS_ENABLED = "brave_rewards_enabled";
 
     // Custom Android notification
     private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
@@ -670,6 +671,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             }
           }
       } else {
+        HideNotifications();
         ((LinearLayout)this.root.findViewById(R.id.website_summary)).setVisibility(View.GONE);
         ((LinearLayout)this.root.findViewById(R.id.rewards_welcome_back)).setVisibility(View.VISIBLE);
       }
@@ -930,16 +932,20 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (!currentNotificationId.equals(id)) {
           return;
         }
+        HideNotifications();
+        currentNotificationId = "";
+        if (mBraveRewardsNativeWorker != null) {
+            mBraveRewardsNativeWorker.GetAllNotifications();
+        }
+    }
+
+    private void HideNotifications() {
         LinearLayout ll = (LinearLayout)root.findViewById(R.id.header_layout);
         ll.setBackgroundResource(R.drawable.header);
         GridLayout gl = (GridLayout)root.findViewById(R.id.wallet_info_gridlayout);
         gl.setVisibility(View.VISIBLE);
         ll = (LinearLayout)root.findViewById(R.id.notification_info_layout);
         ll.setVisibility(View.GONE);
-        currentNotificationId = "";
-        if (mBraveRewardsNativeWorker != null) {
-            mBraveRewardsNativeWorker.GetAllNotifications();
-        }
     }
 
     @Override

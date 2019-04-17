@@ -30,6 +30,7 @@ import android.widget.TextView;
 import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.ApplicationStatus;
 import org.chromium.base.ContextUtils;
+import org.chromium.base.Log;
 import org.chromium.base.metrics.RecordUserAction;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
@@ -547,7 +548,10 @@ public class ToolbarTablet extends ToolbarLayout
 
     @Override
     public void OnNotificationsCount(int count) {
-        if (mBraveRewardsNotificationsCount != null) {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        boolean rewardsEnabled = sharedPreferences.getBoolean(
+            BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, true);
+        if (mBraveRewardsNotificationsCount != null && rewardsEnabled) {
             if (count != 0) {
                 String value = Integer.toString(count);
                 if (count > 99) {
@@ -561,9 +565,10 @@ public class ToolbarTablet extends ToolbarLayout
                 mBraveRewardsNotificationsCount.setText(value);
                 mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
             } else {
+                mBraveRewardsNotificationsCount.setText("");
                 mBraveRewardsNotificationsCount.setVisibility(View.GONE);
             }
-        }   
+        }
     }
 
     @Override
@@ -595,7 +600,18 @@ public class ToolbarTablet extends ToolbarLayout
     public void OnResetTheWholeState(boolean success) {}
 
     @Override
-    public void OnRewardsMainEnabled(boolean enabled) {}
+    public void OnRewardsMainEnabled(boolean enabled) {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+        sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, enabled);
+        sharedPreferencesEditor.apply();
+        if (mBraveRewardsNotificationsCount != null) {
+            String count = mBraveRewardsNotificationsCount.getText().toString();
+            if (!count.isEmpty()) {
+                mBraveRewardsNotificationsCount.setVisibility(enabled ? View.VISIBLE : View.GONE);
+            }
+        }
+    }
 
     /**
      * Called when the currently visible New Tab Page changes.
