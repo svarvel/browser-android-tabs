@@ -119,6 +119,10 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         mBraveRewardsNativeWorker.AddObserver(this);
 
+        String publisherName = mBraveRewardsNativeWorker.GetPublisherName(currentTabId_);
+        TextView publisher = (TextView)findViewById(R.id.publisher_name);
+        publisher.setText(publisherName);
+
         String publisherFavIconURL = mBraveRewardsNativeWorker.GetPublisherFavIconURL(currentTabId_);
         Tab currentActiveTab = BraveRewardsHelper.currentActiveTab();
         String url = currentActiveTab.getUrl();
@@ -314,10 +318,14 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                 }
 
                 FrameLayout icon  = (FrameLayout)findViewById(R.id.publisher_favicon_holder);
-                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)icon.getLayoutParams();
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)icon.getLayoutParams();
                 params.setMargins(params.leftMargin, newY, params.rightMargin, params.bottomMargin);
                 icon.setLayoutParams(params);
                 icon.requestLayout();
+                params = (LinearLayout.LayoutParams)publisher.getLayoutParams();
+                params.setMargins(params.leftMargin, newY, params.rightMargin, params.bottomMargin);
+                publisher.setLayoutParams(params);
+                publisher.requestLayout();
             }
         });
     }

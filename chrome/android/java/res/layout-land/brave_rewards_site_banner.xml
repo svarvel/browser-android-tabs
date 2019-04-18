@@ -149,37 +149,52 @@
             </ScrollView>
         </LinearLayout> <!--Header-->
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <FrameLayout
+                android:id="@+id/publisher_favicon_holder"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="32dp"
+                android:background="@android:color/transparent">
 
-        <FrameLayout
-            android:id="@+id/publisher_favicon_holder"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="32dp"
-            android:background="@android:color/transparent">
+                <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
+                <ProgressBar
+                    android:id="@+id/publisher_favicon_update"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:indeterminateDrawable="@drawable/progress_indeterminate"
+                    android:layout_gravity="center"
+                    android:visibility="visible"/>
 
-            <!-- The 'publisher_favicon_update' substitutes 'publisher_favicon' when not available-->
-            <ProgressBar
-                android:id="@+id/publisher_favicon_update"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:indeterminateDrawable="@drawable/progress_indeterminate"
-                android:layout_gravity="center"
-                android:visibility="visible"/>
+                <!-- Publisher's icon-->
+                <ImageView
+                    android:id="@+id/publisher_favicon"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="center"
+                    android:background="@drawable/publisher_favicon_background"
+                    android:adjustViewBounds="true"
+                    android:baselineAlignBottom="true"
+                    android:cropToPadding="true"
+                    android:visibility="gone"/>
 
-            <!-- Publisher's icon-->
-            <ImageView
-                android:id="@+id/publisher_favicon"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:contentDescription="@null"
-                android:scaleType="center"
-                android:background="@drawable/publisher_favicon_background"
-                android:adjustViewBounds="true"
-                android:baselineAlignBottom="true"
-                android:cropToPadding="true"
-                android:visibility="gone"/>
-         </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/publisher_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingStart="12dp"
+                android:textColor="#D1D1DB"
+                app:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
 
         <!-- shadow -->
         <ImageView
