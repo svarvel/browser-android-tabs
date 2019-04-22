@@ -4424,8 +4424,11 @@ Saved
       <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_1" desc="Part 1 of the text on 'Add Laptop' page.">
         On your computer, navigate to Brave Settings > Sync. Choose "Enter a Sync Chain Code".
       </message>
-      <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2" desc="Part 2 of the text on 'Add Laptop' page.">
+      <!--<message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2" desc="Part 2 of the text on 'Add Laptop' page.">
         Enter the code words above, including spaces.
+      </message>-->
+      <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2_NEW" desc="Part 2 of the text on 'Add Laptop' page.">
+        Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.
       </message>
       <message name="IDS_BRAVE_SYNC_DELETE_DEVICE" desc="Delete device message.">
         Are you sure you want to delete device '<ph name="DEVICE_NAME">%1$s</ph>'?
