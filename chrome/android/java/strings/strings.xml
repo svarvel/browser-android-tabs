@@ -259,4 +259,7 @@ content creators you love.</string>
     <string name="reset_brave_rewards_error_description">There was an error resetting Brave Rewards. Please relaunch Brave and try again</string>
 
     <string name="brave_sync_add_laptop_text_part_2_new">Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Sync</string>
 </resources>
