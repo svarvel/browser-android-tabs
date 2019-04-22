@@ -1254,6 +1254,13 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     @Override
     public void OnGetLatestNotification(String id, int type, long timestamp,
             String[] args) {
+        if (type == BraveRewardsNativeWorker.REWARDS_NOTIFICATION_BACKUP_WALLET) {
+            if (mBraveRewardsNativeWorker != null) {
+                mBraveRewardsNativeWorker.DeleteNotification(id);
+                mBraveRewardsNativeWorker.GetAllNotifications();
+            }
+            return;
+        }
         ShowNotification(id, type, timestamp, args);
     }
 
