@@ -689,7 +689,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
   private void setAppropriateView() {
       getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-      getActivity().setTitle(R.string.prefs_sync);
+      getActivity().setTitle(R.string.prefs_sync_official);
       SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
       String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
       //Log.i(TAG, "setAppropriateView: seed == " + seed);
@@ -728,7 +728,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void setMainSyncText() {
-      setSyncText(getResources().getString(R.string.brave_sync), getResources().getString(R.string.brave_sync_description_page_1_part_1) + "\n\n" +
+      setSyncText(getResources().getString(R.string.brave_sync_official), getResources().getString(R.string.brave_sync_description_page_1_part_1) + "\n\n" +
                     getResources().getString(R.string.brave_sync_description_page_1_part_2), mBraveSyncTextViewInitial);
   }
 
@@ -1365,7 +1365,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
 
   private void setSyncDoneLayout() {
       getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-      getActivity().setTitle(R.string.prefs_sync);
+      getActivity().setTitle(R.string.prefs_sync_official);
       if (null != mCameraSourcePreview) {
           mCameraSourcePreview.stop();
       }

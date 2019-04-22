@@ -4177,8 +4177,11 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
         Exit
       </message>
 
-      <message name="IDS_BRAVE_SYNC" desc="Brave sync main screen message title.">
+      <!--<message name="IDS_BRAVE_SYNC" desc="Brave sync main screen message title.">
         Brave Sync (beta)
+      </message>-->
+      <message name="IDS_BRAVE_SYNC_OFFICIAL" desc="Brave sync main screen message title.">
+        Brave Sync
       </message>
       <message name="IDS_SYNC_SETTINGS_ADD_DEVICE_NAME_TITLE" desc="The title for the dialog where the user can type a sync device name.">
         Add device name
@@ -4346,8 +4349,11 @@ Saved
       </message>
 
       <!-- Sync preferences -->
-      <message name="IDS_PREFS_SYNC" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
+      <!--<message name="IDS_PREFS_SYNC" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
         Sync (beta)
+      </message>-->
+      <message name="IDS_PREFS_SYNC_OFFICIAL" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
+        Sync
       </message>
       <message name="IDS_BRAVE_SYNC_DESCRIPTION_PAGE_1_PART_1" desc="Brave sync main screen message (part 1).">
         Brave Sync allows you to sync bookmarks data privately between your Brave Browsers on your various devices.

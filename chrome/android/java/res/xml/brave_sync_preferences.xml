@@ -8,8 +8,8 @@
 
     <org.chromium.chrome.browser.preferences.ChromeSwitchPreference
         android:key="sync_switch"
-        android:summaryOn="@string/prefs_sync"
-        android:summaryOff="@string/prefs_sync"
+        android:summaryOn="@string/prefs_sync_official"
+        android:summaryOff="@string/prefs_sync_official"
         android:defaultValue="false" />
 
     <org.chromium.chrome.browser.preferences.ChromeSwitchPreference

@@ -112,7 +112,7 @@
         android:fragment="org.chromium.chrome.browser.preferences.BraveSyncScreensPreference"
         android:key="brave_sync_layout"
         android:order="18"
-        android:title="@string/prefs_sync" />
+        android:title="@string/prefs_sync_official" />
     <Preference
         android:fragment="org.chromium.chrome.browser.preferences.AccessibilityPreferences"
         android:key="accessibility"
