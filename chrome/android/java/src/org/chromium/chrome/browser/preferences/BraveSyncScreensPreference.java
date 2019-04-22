@@ -1299,7 +1299,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (null != mBraveSyncTextViewAddLaptop) {
           setSyncText(getResources().getString(R.string.brave_sync_add_laptop_text_title),
                         getResources().getString(R.string.brave_sync_add_laptop_text_part_1) + "\n\n" +
-                        getResources().getString(R.string.brave_sync_add_laptop_text_part_2), mBraveSyncTextViewAddLaptop);
+                        getResources().getString(R.string.brave_sync_add_laptop_text_part_2_new), mBraveSyncTextViewAddLaptop);
       }
       if (null != mScrollViewSyncInitial) {
           mScrollViewSyncInitial.setVisibility(View.GONE);

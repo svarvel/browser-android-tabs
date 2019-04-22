@@ -257,4 +257,6 @@ content creators you love.</string>
     <string name="reset_brave_rewards_option_description">This will delete your Brave wallet and reset all of your Brave Rewards data</string>
     <string name="reset_brave_rewards_error_title">Reset Error</string>
     <string name="reset_brave_rewards_error_description">There was an error resetting Brave Rewards. Please relaunch Brave and try again</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.</string>
 </resources>
