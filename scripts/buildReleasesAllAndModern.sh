@@ -100,9 +100,61 @@ echo "packing symbols for X86 modern"
 sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Modern
 
 echo "---------------------------------"
+echo "build X86 release mono"
+sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Mono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+rc=$?
+if [ $rc != 0 ]
+then
+	echo "build X86 release mono failed ($rc)"
+	exit $rc
+else
+	echo "build X86 release mono succeeded"
+	mv out/Defaultx86/apks/BraveMono_aligned.apk out/Defaultx86/apks/BraveMonox86.apk
+fi
+echo "packing symbols for X86 release mono"
+rm out/Defaultx86Mono.tar.7z
+sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Mono
+
+echo "---------------------------------"
+echo "build ARM64 release mono"
+sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR64 scripts/gn/argsReleaseArm64Mono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+rc=$?
+if [ $rc != 0 ]
+then
+	echo "build ARM64 release mono failed ($rc)"
+	exit $rc
+else
+	echo "build ARM64 release mono succeeded"
+	mv out/DefaultR64/apks/BraveMono_aligned.apk out/DefaultR64/apks/BraveMonoarm64.apk
+fi
+echo "packing symbols for ARM64 release mono"
+rm out/DefaultRArm64Mono.tar.7z
+sh ./scripts/makeArchive7z.sh out/DefaultR64 out/DefaultRArm64Mono
+
+echo "---------------------------------"
+echo "build X86_64 release mono"
+sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86_64 scripts/gn/argsReleaseX86_64Mono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+rc=$?
+if [ $rc != 0 ]
+then
+	echo "build X86_64 release mono failed ($rc)"
+	exit $rc
+else
+	echo "build X86_64 release mono succeeded"
+	mv out/Defaultx86_64/apks/BraveMono_aligned.apk out/Defaultx86_64/apks/BraveMonox86_64.apk
+fi
+echo "packing symbols for X86_64 release mono"
+rm out/Defaultx86_64Mono.tar.7z
+sh ./scripts/makeArchive7z.sh out/Defaultx86_64 out/Defaultx86_64Mono
+
+echo "---------------------------------"
 echo "all builds arm and x86, classic and modern succeeded"
 echo "out/DefaultR/apks/Bravearm.apk"
 echo "out/DefaultR/apks/BraveModernarm.apk"
+echo "out/DefaultR/apks/BraveMonoarm.apk"
+echo "out/DefaultR64/apks/BraveMonoarm64.apk"
 echo "out/Defaultx86/apks/Bravex86.apk"
 echo "out/Defaultx86/apks/BraveModernx86.apk"
+echo "out/Defaultx86/apks/BraveMonox86.apk"
+echo "out/Defaultx86_64/apks/BraveMonox86_64.apk"
 echo "================================="
