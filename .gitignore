@@ -310,6 +310,9 @@ chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java
 scripts/gn/argsReleaseArmClassic.gn
 scripts/gn/argsReleaseArmModern.gn
 scripts/gn/argsReleaseArmMono.gn
+scripts/gn/argsReleaseArm64Mono.gn
 scripts/gn/argsReleaseX86Classic.gn
 scripts/gn/argsReleaseX86Modern.gn
+scripts/gn/argsReleaseX86Mono.gn
+scripts/gn/argsReleaseX86_64Mono.gn
 /brave
