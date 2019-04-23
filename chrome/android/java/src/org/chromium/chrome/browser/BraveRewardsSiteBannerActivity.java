@@ -317,15 +317,11 @@ public class BraveRewardsSiteBannerActivity extends Activity implements BraveRew
                     newY = minTopPosition;
                 }
 
-                FrameLayout icon  = (FrameLayout)findViewById(R.id.publisher_favicon_holder);
-                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)icon.getLayoutParams();
+                RelativeLayout icon_layout  = (RelativeLayout)findViewById(R.id.publisher_favicon_layout);
+                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)icon_layout.getLayoutParams();
                 params.setMargins(params.leftMargin, newY, params.rightMargin, params.bottomMargin);
-                icon.setLayoutParams(params);
-                icon.requestLayout();
-                params = (LinearLayout.LayoutParams)publisher.getLayoutParams();
-                params.setMargins(params.leftMargin, newY, params.rightMargin, params.bottomMargin);
-                publisher.setLayoutParams(params);
-                publisher.requestLayout();
+                icon_layout.setLayoutParams(params);
+                icon_layout.requestLayout();               
             }
         });
     }
