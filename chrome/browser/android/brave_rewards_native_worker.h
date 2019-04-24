@@ -126,6 +126,8 @@ public:
     void RemoveRecurring(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& publisher);
 
+    void FetchGrants(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
     void OnResetTheWholeState(bool sucess);
 
     void OnGetGetReconcileStamp( uint64_t timestamp);

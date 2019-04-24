@@ -244,6 +244,12 @@ void BraveRewardsNativeWorker::WalletExist(JNIEnv* env,
   }
 }
 
+void BraveRewardsNativeWorker::FetchGrants(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->FetchGrants(std::string(), std::string());
+  }
+}
+
 void BraveRewardsNativeWorker::OnIsWalletCreated(bool created) {
   JNIEnv* env = base::android::AttachCurrentThread();
   Java_BraveRewardsNativeWorker_OnIsWalletCreated(env, 
