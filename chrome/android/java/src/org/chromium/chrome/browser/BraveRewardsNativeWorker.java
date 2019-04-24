@@ -295,6 +295,12 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public void FetchGrants() {
+        synchronized(lock) {
+            nativeFetchGrants(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
 
     @CalledByNative
     public void OnGetRewardsMainEnabled(boolean enabled) {
@@ -461,4 +467,5 @@ public class BraveRewardsNativeWorker {
     private native double nativeGetPublisherRecurrentDonationAmount(long nativeBraveRewardsNativeWorker, String publisher);
     private native void nativeRemoveRecurring(long nativeBraveRewardsNativeWorker, String publisher);
     private native void nativeResetTheWholeState(long nativeBraveRewardsNativeWorker);
+    private native void nativeFetchGrants(long nativeBraveRewardsNativeWorker);
 }

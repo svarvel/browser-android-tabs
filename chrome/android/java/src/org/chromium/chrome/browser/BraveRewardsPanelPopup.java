@@ -1275,6 +1275,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (created) {
             walletInitialized = true;
             ShowWebSiteView(false);
+            mBraveRewardsNativeWorker.FetchGrants();
         }
         else {
             //wallet hasn't been created yet: show 'Join Rewards' button
