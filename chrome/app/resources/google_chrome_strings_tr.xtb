@@ -2,15 +2,15 @@
 <!DOCTYPE translationbundle>
 <translationbundle lang="tr">
 <translation id="1001534784610492198">Yükleyici arşivi bozuk veya geçersiz. Lütfen Brave'u yeniden indirin.</translation>
-<translation id="102763973188675173">Brave'u özelleştirin ve kontrol edin. Güncelleme mevcut.</translation>
-<translation id="1035334672863811645">Brave'da oturum açın</translation>
+<translation id="5849446944780602366">Brave'u özelleştirin ve kontrol edin. Güncelleme mevcut.</translation>
+<translation id="5935964611177478118">Brave'da oturum açın</translation>
 <translation id="1051826050538111504">Bilgisayarınızda zararlı yazılım var. Brave, tarayıcınızın tekrar normal şekilde çalışmasını sağlamak için bunu kaldırabilir, ayarlarınızı geri yükleyebilir ve uzantıları devre dışı bırakabilir.</translation>
 <translation id="1065672644894730302">Tercihleriniz okunamıyor. Bazı özellikler kullanılamayabilir. Tercihlerde yapılan değişiklikler kaydedilmeyecektir.</translation>
 <translation id="1088300314857992706"><ph name="USER_EMAIL_ADDRESS" /> önceden Brave kullanıyordu</translation>
 <translation id="1104959162601287462">&amp;Chrome OS hakkında</translation>
-<translation id="110877069173485804">Bu sizin Brave'unuz</translation>
-<translation id="1142745911746664600">Brave güncellenemiyor</translation>
-<translation id="1154147086299354128">&amp;Brave'da aç</translation>
+<translation id="4100716194836114130">Bu sizin Brave'unuz</translation>
+<translation id="6389268239133412586">Brave güncellenemiyor</translation>
+<translation id="9071554113102421877">&amp;Brave'da aç</translation>
 <translation id="123620459398936149">Chrome OS, verilerinizi senkronize edemedi. Lütfen Senkronizasyon parolanızı güncelleyin.</translation>
 <translation id="127345590676626841">Brave otomatik olarak güncellenerek her zaman en yeni sürüme sahip olmanızı sağlar. Bu indirme işlemi tamamlandığında Brave yeniden başlatılacak ve yolunuza devam edeceksiniz.</translation>
 <translation id="1302523850133262269">Brave en son sistem güncellemelerini yüklerken lütfen bekleyin.</translation>
@@ -19,41 +19,40 @@
 <translation id="1393853151966637042">Brave'u kullanma konusunda yardım alın</translation>
 <translation id="1399397803214730675">Bu bilgisayarda Brave'un daha yeni bir sürümü zaten var. Yazılım çalışmıyorsa, lütfen Brave'un yüklemesini kaldırın ve tekrar deneyin.</translation>
 <translation id="1434626383986940139">Brave Canary Uygulamaları</translation>
-<translation id="1457721931618994305">Brave güncelleniyor...</translation>
+<translation id="5047208012586153436">Brave güncelleniyor...</translation>
 <translation id="1469002951682717133">Brave Uygulama Başlatıcı</translation>
-<translation id="1553358976309200471">Brave'u güncelle</translation>
+<translation id="1705567146636171298">Brave'u güncelle</translation>
 <translation id="1585657529869845941">Görünürse <ph name="BEGIN_BOLD" />Yine de değiştir<ph name="END_BOLD" />'i tıklayın</translation>
-<translation id="1587223624401073077">Brave kameranızı kullanıyor.</translation>
-<translation id="1587325591171447154"><ph name="FILE_NAME" /> tehlikeli olduğu için Brave tarafından engellendi.</translation>
+<translation id="3205074487970075628">Brave kameranızı kullanıyor.</translation>
+<translation id="4168372721886011198"><ph name="FILE_NAME" /> tehlikeli olduğu için Brave tarafından engellendi.</translation>
 <translation id="1619887657840448962">Brave'u daha güvenli bir hale getirmek için <ph name="IDS_EXTENSION_WEB_STORE_TITLE" /> altında listelenmeyen ve bilginiz dışında eklenmiş olabilecek aşağıdaki uzantıyı devre dışı bıraktık.</translation>
 <translation id="1628000112320670027">Brave'la ilgili yardım alın</translation>
 <translation id="1662639173275167396">Chrome OS, <ph name="BEGIN_LINK_LINUX_OSS" />Linux'ta (Beta)<ph name="END_LINK_LINUX_OSS" /> olduğu gibi ek <ph name="BEGIN_LINK_CROS_OSS" />açık kaynak yazılımlardan<ph name="END_LINK_CROS_OSS" /> yararlanılarak geliştirilmiştir.</translation>
 <translation id="1674870198290878346">Bağlantıyı Brave &amp;Gizli Penceresinde Aç</translation>
-<translation id="1682634494516646069">Brave, veri dizini üzerinde okuma ve yazma işlemi yapamıyor: <ph name="USER_DATA_DIRECTORY" /></translation>
+<translation id="2585240446624043880">Brave, veri dizini üzerinde okuma ve yazma işlemi yapamıyor: <ph name="USER_DATA_DIRECTORY" /></translation>
 <translation id="1698376642261615901">Brave, web sayfalarını ve uygulamaları yıldırım hızıyla çalıştıran bir web tarayıcısıdır. Hızlı, dengeli ve kullanımı kolaydır. Kötü amaçlı yazılımlara ve e-dolandırıcılığa karşı Brave'un içinde yerleşik olarak bulunan koruma özellikleriyle web'de daha güvenli bir şekilde gezinin.</translation>
 <translation id="1718131156967340976"><ph name="SMALL_PRODUCT_LOGO" /> <ph name="BEGIN_BOLD" />Brave<ph name="END_BOLD" />'u seçin</translation>
-<translation id="1734234790201236882">Brave bu şifreyi Google Hesabınıza kaydedecek. Bu şekilde şifreyi hatırlamanız gerekmez.</translation>
+<translation id="6163134585289952357">Brave bu şifreyi Google Hesabınıza kaydedecek. Bu şekilde şifreyi hatırlamanız gerekmez.</translation>
 <translation id="174539241580958092">Oturum açmadaki bir hata nedeniyle Brave, verilerinizi senkronize edemedi.</translation>
-<translation id="1759842336958782510">Brave</translation>
 <translation id="1773601347087397504">Chrome OS'i kullanma konusunda yardım alın</translation>
-<translation id="1795405610103747296">Brave'u telefonunuza yükleyin. Telefonunuza SMS göndereceğiz: <ph name="PHONE_NUMBER" /></translation>
+<translation id="1570795130102031380">Brave'u telefonunuza yükleyin. Telefonunuza SMS göndereceğiz: <ph name="PHONE_NUMBER" /></translation>
 <translation id="1812689907177901597">Bu özelliği kapatarak Brave'da oturum açmadan Gmail gibi Google sitelerinde oturum açabilirsiniz.</translation>
 <translation id="1860536484129686729">Brave'un bu sitede kameranıza erişmesi için izin gerekiyor</translation>
-<translation id="1873233029667955273">Brave varsayılan tarayıcınız değil</translation>
+<translation id="3343095737966473035">Brave varsayılan tarayıcınız değil</translation>
 <translation id="1874309113135274312">Brave Beta (mDNS-In)</translation>
-<translation id="1877026089748256423">Brave sürümü eski</translation>
+<translation id="5173820533850252773">Brave sürümü eski</translation>
 <translation id="1915828456209461693">Brave için yeni bir güncelleme var. Yeniden başlattığınızda güncelleme hemen uygulanacaktır.</translation>
 <translation id="1919130412786645364">Brave'da oturum açmaya izin verin</translation>
 <translation id="2063848847527508675">Güncellemenin uygulanması için Chrome OS yeniden başlatılmalıdır.</translation>
 <translation id="2094919256425865063">Yine de Brave'dan çıkılsın mı?</translation>
 <translation id="2120620239521071941">Bu işlem, <ph name="ITEMS_COUNT" /> öğeyi bu cihazdan silecektir. Verilerinizi daha sonra geri almak için Brave'da <ph name="USER_EMAIL" /> hesabıyla oturum açın.</translation>
 <translation id="2123055963409958220"><ph name="BEGIN_LINK" />Mevcut ayarlarınızı<ph name="END_LINK" /> bildirerek Brave'u daha iyi hale getirmemize yardımcı olun</translation>
-<translation id="216054706567564023">Brave'u telefonunuza yükleyin. Hesap kurtarma telefon numaranıza SMS göndereceğiz.</translation>
-<translation id="2246246234298806438">Brave, dahili PDF görüntüleyici yokken baskı önizlemeyi gösteremez.</translation>
-<translation id="2252923619938421629">Mevcut ayarlarınızı bildirerek Brave'u daha iyi hale getirmemize yardımcı olun</translation>
+<translation id="1609678321160597289">Brave'u telefonunuza yükleyin. Hesap kurtarma telefon numaranıza SMS göndereceğiz.</translation>
+<translation id="5874882355102994015">Brave, dahili PDF görüntüleyici yokken baskı önizlemeyi gösteremez.</translation>
+<translation id="7456658570432774853">Mevcut ayarlarınızı bildirerek Brave'u daha iyi hale getirmemize yardımcı olun</translation>
 <translation id="225363235161345695">{0,plural, =1{Brave bir saat içinde yeniden başlatılacak}other{Brave # saat içinde yeniden başlatılacak}}</translation>
-<translation id="2286950485307333924">Şu anda Brave'da oturum açmış bulunmaktasınız</translation>
-<translation id="2290014774651636340">Google API anahtarları eksik. Brave'un bazı işlevleri devre dışı bırakılacak.</translation>
+<translation id="4934157190377700991">Şu anda Brave'da oturum açmış bulunmaktasınız</translation>
+<translation id="350396164462274391">Google API anahtarları eksik. Brave'un bazı işlevleri devre dışı bırakılacak.</translation>
 <translation id="2290095356545025170">Brave'u kaldırmak istediğinizden emin misiniz?</translation>
 <translation id="2309047409763057870">Bu, Brave'un ikincil bir yüklemesidir ve varsayılan tarayıcınız yapılamaz.</translation>
 <translation id="2334084861041072223">Telif Hakkı <ph name="YEAR" /> Brave Software Inc. Tüm hakları saklıdır.</translation>
@@ -68,24 +67,24 @@ Yine de oturum açarsanız, yer işaretleriniz, geçmişiniz ve diğer ayarları
 <translation id="2535429035253759792">Yöneticiniz bu güncellemeyi uygulamak için Brave'u yeniden başlatmanızı istiyor</translation>
 <translation id="2580411288591421699">Şu anda çalışmakta olan Brave ile aynı sürüm yüklenemez. Lütfen Brave'u kapatın ve tekrar deneyin.</translation>
 <translation id="2586406160782125153">Bu işlem, tarama verilerinizi bu cihazdan silecektir. Verilerinizi daha sonra geri almak için Brave'da <ph name="USER_EMAIL" /> hesabıyla oturum açın.</translation>
-<translation id="2588322182880276190">Brave logosu</translation>
+<translation id="4847979153841887006">Brave logosu</translation>
 <translation id="2644798301485385923">Chrome OS Sistemi</translation>
 <translation id="2652691236519827073">Bağlantıyı Yeni Brave &amp;sekmesinde aç</translation>
-<translation id="2665296953892887393">Kilitlenme raporlarını ve <ph name="UMA_LINK" /> bilgilerini Google'a göndererek Brave'u daha iyi hale getirmeye yardımcı olun</translation>
-<translation id="2689103672227170538">Bu uzantı, Brave'u başlattığınızda gösterilen sayfayı değiştirdi.</translation>
+<translation id="7348158796480960456">Kilitlenme raporlarını ve <ph name="UMA_LINK" /> bilgilerini Google'a göndererek Brave'u daha iyi hale getirmeye yardımcı olun</translation>
+<translation id="3813272600615358652">Bu uzantı, Brave'u başlattığınızda gösterilen sayfayı değiştirdi.</translation>
 <translation id="2765403129283291972">Brave'un bu sitede mikrofonunuza erişmesi için izin gerekiyor</translation>
 <translation id="2770231113462710648">Varsayılan tarayıcıyı şuna dönüştür:</translation>
 <translation id="2799223571221894425">Yeniden başlat</translation>
 <translation id="2847461019998147611">Brave'u bu dilde görüntüle</translation>
 <translation id="2857540653560290388">Brave başlatılıyor...</translation>
 <translation id="2871893339301912279">Brave'da oturum açtınız!</translation>
-<translation id="2888126860611144412">Brave hakkında</translation>
+<translation id="8541922081612557424">Brave hakkında</translation>
 <translation id="3037838751736561277">Brave arka plan modunda.</translation>
-<translation id="3047079729301751317"><ph name="USERNAME" /> kullanıcısının bağlantısını kesmek, geçmişinizi, yer işaretlerinizi, ayarlarınızı ve bu cihazda depolanan diğer Brave verilerinizi temizler. Google Hesabınızda depolanan veriler temizlenmez ve <ph name="GOOGLE_DASHBOARD_LINK" />Google Hesap Özeti<ph name="END_GOOGLE_DASHBOARD_LINK" />'nden yönetilebilir.</translation>
-<translation id="3065168410429928842">Brave Sekmesi</translation>
+<translation id="4806360651959814118"><ph name="USERNAME" /> kullanıcısının bağlantısını kesmek, geçmişinizi, yer işaretlerinizi, ayarlarınızı ve bu cihazda depolanan diğer Brave verilerinizi temizler. Google Hesabınızda depolanan veriler temizlenmez ve <ph name="GOOGLE_DASHBOARD_LINK" />Google Hesap Özeti<ph name="END_GOOGLE_DASHBOARD_LINK" />'nden yönetilebilir.</translation>
+<translation id="6791166902140255175">Brave Sekmesi</translation>
 <translation id="3080151273017101988">Brave kapandığında arka plan uygulamaları çalıştırmaya devam et</translation>
 <translation id="3089968997497233615">Brave'un kullanabileceğiniz yeni, daha güvenli bir sürümü var.</translation>
-<translation id="3149510190863420837">Brave Uygulamaları</translation>
+<translation id="300669147395456190">Brave Uygulamaları</translation>
 <translation id="3251381707915721925"><ph name="NEW_PROFILE_NAME" /> kullanıcısının hangi web sitelerini görüntüleyebileceğini ayarlamak için <ph name="BEGIN_LINK_1" /><ph name="DISPLAY_LINK" /><ph name="END_LINK_1" /> bağlantısını ziyaret ederek kısıtlamaları ve ayarları yapılandırabilirsiniz. Varsayılan ayarları değiştirmezseniz <ph name="NEW_PROFILE_NAME" /> web'de bulunan her şeye göz atabilir.
 
 
@@ -93,23 +92,23 @@ Yine de oturum açarsanız, yer işaretleriniz, geçmişiniz ve diğer ayarları
 <ph name="BEGIN_LINK_2" />Daha fazla bilgi edinin<ph name="END_LINK_2" />
 
 Daha fazla talimat için lütfen e-postanızı <ph name="ACCOUNT_EMAIL" /> kontrol edin.</translation>
-<translation id="3282568296779691940">Brave'da oturum aç</translation>
+<translation id="82609232232243542">Brave'da oturum aç</translation>
 <translation id="3360895254066713204">Brave Helper</translation>
 <translation id="3395323229510056640">Chrome OS ile ilgili yardım alın</translation>
 <translation id="3396977131400919238">Yükleme sırasında bir işletim sistemi hatası oluştu. Lütfen Brave'u yeniden indirin.</translation>
 <translation id="3398288718845740432">Brave Menüsünde Gizle</translation>
-<translation id="3451115285585441894">Brave'a ekleniyor...</translation>
+<translation id="8880183781256147665">Brave'a ekleniyor...</translation>
 <translation id="345171907106878721">Kendinizi Brave'a ekleyin</translation>
 <translation id="3479552764303398839">Şimdi değil</translation>
 <translation id="34857402635545079">Brave'daki verileri de temizle (<ph name="URL" />)</translation>
 <translation id="3503306920980160878">Konumunuzu bu siteyle paylaşabilmek için Brave'un konum bilgilerinize erişmesi gerekiyor</translation>
 <translation id="3576528680708590453">Sistem yöneticiniz Brave'u <ph name="TARGET_URL_HOSTNAME" /> adresine erişmek için alternatif bir tarayıcıyı açacak şekilde yapılandırmış.</translation>
-<translation id="3582972582564653026">Brave'u cihazlarınız arasında senkronize edin ve kişiselleştirin</translation>
+<translation id="5477319665405831211">Brave'u cihazlarınız arasında senkronize edin ve kişiselleştirin</translation>
 <translation id="3622797965165704966">Brave'u Google Hesabınızla ve paylaşılan bilgisayarlarda kullanmak artık daha kolay.</translation>
 <translation id="3637702109597584617">Google Chrome OS <ph name="TERMS_OF_SERVICE_LINK" />Hizmet Şartları<ph name="END_TERMS_OF_SERVICE_LINK" /></translation>
-<translation id="3716182511346448902">Bu sayfa, bellekte çok fazla yer kapladığından Brave tarafından duraklatıldı.</translation>
+<translation id="5805364706385912897">Bu sayfa, bellekte çok fazla yer kapladığından Brave tarafından duraklatıldı.</translation>
 <translation id="3718181793972440140">Bu işlem, 1 öğeyi bu cihazdan silecektir. Verilerinizi daha sonra geri almak için Brave'da <ph name="USER_EMAIL" /> hesabıyla oturum açın.</translation>
-<translation id="3735758079232443276">"<ph name="EXTENSION_NAME" />" uzantısı, Brave'u başlattığınızda gösterilen sayfayı değiştirdi.</translation>
+<translation id="2576129394594491151">"<ph name="EXTENSION_NAME" />" uzantısı, Brave'u başlattığınızda gösterilen sayfayı değiştirdi.</translation>
 <translation id="3780814664026482060">Brave - <ph name="PAGE_TITLE" /></translation>
 <translation id="3784527566857328444">Brave'dan Kaldır...</translation>
 <translation id="386202838227397562">Lütfen tüm Brave pencerelerini kapatıp tekrar deneyin.</translation>
@@ -119,14 +118,14 @@ Daha fazla talimat için lütfen e-postanızı <ph name="ACCOUNT_EMAIL" /> kontr
 <translation id="3898493977366060150">Google Smarts ile web'e göz atma</translation>
 <translation id="4028693306634653894">Brave'a daha hızlı ulaşın</translation>
 <translation id="4050175100176540509">Son sürümde güvenlikle ilgili önemli iyileştirmeler ve yeni özellikler mevcuttur.</translation>
-<translation id="4053720452172726777">Brave'u özelleştirin ve kontrol edin</translation>
+<translation id="8148611988012584308">Brave'u özelleştirin ve kontrol edin</translation>
 <translation id="4143243756087420366">Brave adı ve resmi</translation>
 <translation id="4147555960264124640">Yönetilen bir hesapla oturum açıyor ve hesabın yöneticisine Brave profilinizi denetleme izni veriyorsunuz. Uygulamalarınız, yer işaretleriniz, geçmişiniz, şifreleriniz ve diğer ayarlarınız gibi Brave verileriniz kalıcı olarak <ph name="USER_NAME" /> ile bağlantılandırılacaktır. Google Hesapları Hesap Özeti'ni kullanarak bu verileri silebilecek, ancak bu verileri başka bir hesapla ilişkilendiremeyeceksiniz.<ph name="LEARN_MORE" /></translation>
 <translation id="4149882025268051530">Yükleyici arşivi açamadı. Lütfen Brave'u yeniden indirin.</translation>
-<translation id="424864128008805179">Brave oturumu kapatılsın mı?</translation>
+<translation id="7445061995866044926">Brave oturumu kapatılsın mı?</translation>
 <translation id="4251615635259297716">Brave verileriniz bu hesaba bağlansın mı?</translation>
-<translation id="4251625577313994583">iPhone'unuzda Brave'u edinin</translation>
-<translation id="4293420128516039005">Brave'u cihazlarınız arasında senkronize etmek ve kişiselleştirmek için oturum açın</translation>
+<translation id="8358191771897395012">iPhone'unuzda Brave'u edinin</translation>
+<translation id="3360368475735266712">Brave'u cihazlarınız arasında senkronize etmek ve kişiselleştirmek için oturum açın</translation>
 <translation id="4328355335528187361">Brave Dev (mDNS-In)</translation>
 <translation id="4331809312908958774">Chrome OS</translation>
 <translation id="4343195214584226067"><ph name="EXTENSION_NAME" /> Brave'a eklendi</translation>
@@ -137,55 +136,55 @@ Daha fazla talimat için lütfen e-postanızı <ph name="ACCOUNT_EMAIL" /> kontr
 <translation id="4567424176335768812"><ph name="USER_EMAIL_ADDRESS" /> olarak oturum açtınız. Şimdi oturum açtığınız tüm cihazlarda yer işaretlerinize, geçmişinize ve diğer ayarlarınıza erişebilirsiniz.</translation>
 <translation id="4571503333518166079">Brave bildirim ayarlarına git</translation>
 <translation id="459622048091363950">Brave erişim izni aldıktan sonra, web siteleri de erişim için sizden izin isteyebilecek.</translation>
-<translation id="4600710005438004015">Brave en son sürüme güncellenemediği için yeni özellikler ve güvenlik düzeltmeleri cihazınızda bulunmuyor.</translation>
+<translation id="7963515534397191222">Brave en son sürüme güncellenemediği için yeni özellikler ve güvenlik düzeltmeleri cihazınızda bulunmuyor.</translation>
 <translation id="4631713731678262610">Brave menüsünde gizle</translation>
 <translation id="4633000520311261472">Brave'u daha güvenli bir hale getirmek için <ph name="IDS_EXTENSION_WEB_STORE_TITLE" /> altında listelenmeyen ve bilginiz dışında eklenmiş olabilecek bazı uzantıları devre dışı bıraktık.</translation>
 <translation id="4700157086864140907">Brave, tarayıcıda yazdıklarınızı Google sunucularına gönderip akıllı yazım denetimi olanağı sağlayabilir ve Google arama tarafından kullanılan yazım denetimi teknolojisini kullanmanıza olanak tanır.</translation>
 <translation id="4728575227883772061">Belirlenemeyen bir hata nedeniyle yükleme başarısız oldu. Brave şu anda çalışır durumdaysa, kapatıp yeniden deneyin.</translation>
 <translation id="4750550185319565338"><ph name="PLUGIN_NAME" /> eklentisini etkinleştirmek için Brave'u yeniden başlatın</translation>
 <translation id="4754614261631455953">Brave Canary (mDNS-In)</translation>
-<translation id="4771048833395599659">Bu dosya tehlikeli olabileceği için Brave tarafından engellendi.</translation>
-<translation id="4794050651896644714">Ayrıntıları Brave'a kaydet</translation>
+<translation id="89367911614620585">Bu dosya tehlikeli olabileceği için Brave tarafından engellendi.</translation>
+<translation id="2887570477425111999">Ayrıntıları Brave'a kaydet</translation>
 <translation id="4891791193823137474">Brave'un arka planda çalışmasına izin ver</translation>
 <translation id="4895437082222824641">Bağlantıyı yeni Brave &amp;sekmesinde aç</translation>
-<translation id="4921569541910214635">Bilgisayarı paylaşıyor musunuz? Artık Brave'u tam olarak istediğiniz gibi kurabilirsiniz.</translation>
+<translation id="8296145982386097283">Bilgisayarı paylaşıyor musunuz? Artık Brave'u tam olarak istediğiniz gibi kurabilirsiniz.</translation>
 <translation id="4945319281866068441">{0,plural, =1{Chrome OS'i bir gün içinde yeniden başlatın}other{Chrome OS'i # gün içinde yeniden başlatın}}</translation>
 <translation id="4953650215774548573">Brave'u varsayılan tarayıcım olarak ayarla</translation>
-<translation id="495931528404527476">Brave'da</translation>
+<translation id="6078442581074612226">Brave'da</translation>
 <translation id="4990567037958725628">Brave Canary</translation>
 <translation id="5028489144783860647">Brave, verilerinizi senkronize edemedi. Lütfen Senkronizasyon parolanızı güncelleyin.</translation>
 <translation id="5062123544085870375">Chrome OS'i yeniden başlat</translation>
 <translation id="5090044601776247154">Brave 70 sürümünden itibaren denetlenen kullanıcı profilleri artık kullanılmayacaktır.</translation>
-<translation id="5132929315877954718">Brave'a özgü harika uygulamaları, oyunları, uzantıları ve temaları keşfedin.</translation>
+<translation id="2871190378186459992">Brave'a özgü harika uygulamaları, oyunları, uzantıları ve temaları keşfedin.</translation>
 <translation id="5170938038195470297">Profiliniz daha yeni bir Brave sürümünden geldiği için kullanılamıyor.
 
 Bazı özellikler kullanılamayabilir. Lütfen farklı bir profil dizini belirtin veya daha yeni bir Brave sürümü kullanın.</translation>
 <translation id="5193136243808726294">Google Chrome OS bu sayfayı açamıyor.</translation>
 <translation id="5204098752394657250">Brave <ph name="TERMS_OF_SERVICE_LINK" />Hizmet Şartları<ph name="END_TERMS_OF_SERVICE_LINK" /></translation>
 <translation id="5251420635869119124">Misafirler Brave'u geride hiçbir şey bırakmadan kullanabilirler.</translation>
-<translation id="532046782124376502">Uyarı: Brave, uzantıların göz atma geçmişinizi kaydetmesini önleyemez. Gizli modda bu uzantıyı devre dışı bırakmak için bu seçeneğin onay işaretini kaldırın.</translation>
+<translation id="5436841087823876677">Uyarı: Brave, uzantıların göz atma geçmişinizi kaydetmesini önleyemez. Gizli modda bu uzantıyı devre dışı bırakmak için bu seçeneğin onay işaretini kaldırın.</translation>
 <translation id="5386244825306882791">Ayrıca, Brave'u başlattığınızda veya Çok Amaçlı Adres Çubuğu'ndan arama yaptığınızda gösterilecek sayfayı da denetler.</translation>
-<translation id="5430073640787465221">Tercih dosyanız bozuk veya geçersiz. Brave, ayarlarınızı kurtaramıyor.</translation>
+<translation id="3403365884036456766">Tercih dosyanız bozuk veya geçersiz. Brave, ayarlarınızı kurtaramıyor.</translation>
 <translation id="5483595757826856374">{0,plural, =0{Brave şimdi yeniden başlatılacak}=1{Brave 1 saniye içinde yeniden başlatılacak}other{Brave # saniye içinde yeniden başlatılacak}}</translation>
 <translation id="556024056938947818">Brave şifreleri göstermeyi deniyor.</translation>
 <translation id="5566025111015594046">Brave (mDNS-In)</translation>
-<translation id="565744775970812598"><ph name="FILE_NAME" /> tehlikeli olabileceği için Brave tarafından engellendi.</translation>
-<translation id="5686916850681061684">Brave'u özelleştirin ve kontrol edin. İlgilenmeniz gereken bir konu var. Ayrıntılar için tıklayın.</translation>
-<translation id="5715063361988620182">{SECONDS,plural, =1{Brave 1 saniye içinde yeniden başlatılacak}other{Brave # saniye içinde yeniden başlatılacak}}</translation>
+<translation id="3561569806301739367"><ph name="FILE_NAME" /> tehlikeli olabileceği için Brave tarafından engellendi.</translation>
+<translation id="6315734375101223238">Brave'u özelleştirin ve kontrol edin. İlgilenmeniz gereken bir konu var. Ayrıntılar için tıklayın.</translation>
+<translation id="2513524988380267210">{SECONDS,plural, =1{Brave 1 saniye içinde yeniden başlatılacak}other{Brave # saniye içinde yeniden başlatılacak}}</translation>
 <translation id="573759479754913123">Chrome OS hakkında</translation>
-<translation id="5795887333006832406"><ph name="PAGE_TITLE" /> - Brave Canary</translation>
+<translation id="6236814935154483927"><ph name="PAGE_TITLE" /> - Brave Canary</translation>
 <translation id="5804318322022881572">Brave başlatılamadı. Tekrar deneyin.</translation>
 <translation id="5877064549588274448">Kanal değişti. Değişikliklerin uygulanması için cihazınızı yeniden başlatın.</translation>
 <translation id="5895138241574237353">Yeniden başlat</translation>
 <translation id="5906655207909574370">Az kaldı! Güncellemeyi tamamlamak için cihazınızı yeniden başlatın.</translation>
 <translation id="5940385492829620908">Web, yer işaretleri ve diğer Brave öğeleriniz burada bulunur.</translation>
-<translation id="5941830788786076944">Brave varsayılan tarayıcı olsun</translation>
+<translation id="5019879183386042809">Brave varsayılan tarayıcı olsun</translation>
 <translation id="6014844626092547096">Brave'da oturum açtınız! Senkronizasyon, yöneticiniz tarafından devre dışı bırakıldı.</translation>
 <translation id="6040143037577758943">Kapat</translation>
 <translation id="6070348360322141662">Brave ek güvenlik sağlamak için verilerinizi şifreler</translation>
 <translation id="6113794647360055231">Brave daha da iyi bir hale geldi</translation>
-<translation id="6169866489629082767"><ph name="PAGE_TITLE" /> - Brave</translation>
-<translation id="6173637689840186878"><ph name="PAGE_TITLE" /> - Brave Beta</translation>
+<translation id="5381622442243174305"><ph name="PAGE_TITLE" /> - Brave</translation>
+<translation id="1403270718080126244"><ph name="PAGE_TITLE" /> - Brave Beta</translation>
 <translation id="61852838583753520">&amp;Chrome OS'i güncelle</translation>
 <translation id="6235018212288296708">Brave'un mDNS trafiğine izin vermeyi sağlayan gelen trafik kuralı.</translation>
 <translation id="6291089322031436445">Brave Dev Uygulamaları</translation>
@@ -193,10 +192,10 @@ Bazı özellikler kullanılamayabilir. Lütfen farklı bir profil dizini belirti
 <translation id="6338556085225130112">Brave güncelleniyor</translation>
 <translation id="6368958679917195344">Chrome OS, ek <ph name="BEGIN_LINK_CROS_OSS" />açık kaynak yazılımlardan<ph name="END_LINK_CROS_OSS" /> yararlanılarak geliştirilmiştir.</translation>
 <translation id="6468844726266617801">{0,plural, =1{Brave'u bir gün içinde yeniden başlatın}other{Brave'u # gün içinde yeniden başlatın}}</translation>
-<translation id="6515495397637126556"><ph name="PAGE_TITLE" /> - Brave Dev</translation>
+<translation id="3943696263619956191"><ph name="PAGE_TITLE" /> - Brave Dev</translation>
 <translation id="6566149418543181476">Brave güncelleniyor (<ph name="PROGRESS_PERCENT" />)</translation>
-<translation id="6598387184982954187">Brave öğelerinizi senkronize etmek için <ph name="PROFILE_EMAIL" /> adresini kullanıyorsunuz. Senkronizasyon tercihinizi güncellemek veya Brave'u bir Google Hesabı olmadan kullanmak için şunu ziyaret edin: <ph name="SETTINGS_LINK" />.</translation>
-<translation id="6600954340915313787">Brave'a kopyalandı</translation>
+<translation id="2472951610753402739">Brave öğelerinizi senkronize etmek için <ph name="PROFILE_EMAIL" /> adresini kullanıyorsunuz. Senkronizasyon tercihinizi güncellemek veya Brave'u bir Google Hesabı olmadan kullanmak için şunu ziyaret edin: <ph name="SETTINGS_LINK" />.</translation>
+<translation id="663059986967017181">Brave'a kopyalandı</translation>
 <translation id="6634887557811630702">Brave güncel durumda.</translation>
 <translation id="6676384891291319759">İnternet'e erişin</translation>
 <translation id="6679975945624592337">Brave'un Arka Planda Çalışmasına İzin Ver</translation>
@@ -211,9 +210,9 @@ Bazı özellikler kullanılamayabilir. Lütfen farklı bir profil dizini belirti
 <translation id="6982337800632491844"><ph name="DOMAIN" />, bu cihazı kullanmadan önce aşağıdaki Hizmet Şartları'nı okuyup kabul etmenizi gerektirmektedir. Bu şartlar, Google Chromium OS Şartları'nın kapsamını genişletmez, değiştirmez veya sınırlamaz.</translation>
 <translation id="6989339256997917931">Brave güncellendi, ancak programı en azından 30 gündür kullanmıyorsunuz.</translation>
 <translation id="7023651421574588884">Bir güncellemeyi uygulamak için yöneticiniz Chrome OS'i yeniden başlatmanızı gerektiriyor</translation>
-<translation id="7098166902387133879">Brave mikrofonunuzu kullanıyor.</translation>
-<translation id="7106741999175697885">Görev Yöneticisi - Brave</translation>
-<translation id="7164397146364144019">Olası güvenlik olaylarının ayrıntılarını Google'a otomatik olarak bildirerek Brave'un daha güvenli ve kullanımı kolay bir hale gelmesine yardımcı olabilirsiniz.</translation>
+<translation id="8919461291440820124">Brave mikrofonunuzu kullanıyor.</translation>
+<translation id="5516268345616100622">Görev Yöneticisi - Brave</translation>
+<translation id="474353600079041991">Olası güvenlik olaylarının ayrıntılarını Google'a otomatik olarak bildirerek Brave'un daha güvenli ve kullanımı kolay bir hale gelmesine yardımcı olabilirsiniz.</translation>
 <translation id="7242029209006116544">Yönetilen bir hesapla oturum açıyor ve hesabın yöneticisine Brave profilinizi denetleme izni veriyorsunuz. Uygulamalarınız, yer işaretleriniz, geçmişiniz, şifreleriniz ve diğer ayarlarınız gibi Brave verileriniz kalıcı olarak <ph name="USER_NAME" /> ile bağlantılandırılacaktır. Google Hesapları Hesap Özeti'ni kullanarak bu verileri silebilecek, ancak bu verileri başka bir hesapla ilişkilendiremeyeceksiniz. İsterseniz mevcut Brave verilerinizi ayrı tutmak için yeni bir profil oluşturabilirsiniz.<ph name="LEARN_MORE" /></translation>
 <translation id="7295052994004373688">Bu dil, Brave kullanıcı arayüzünü görüntülemek için kullanılır</translation>
 <translation id="7296210096911315575">Önemli kullanım ve güvenlik bilgileri</translation>
@@ -230,14 +229,14 @@ Bazı özellikler kullanılamayabilir. Lütfen farklı bir profil dizini belirti
 <translation id="7561940363513215021">{0,plural, =1{Brave 1 dakika içinde yeniden başlatılacak}other{Brave # dakika içinde yeniden başlatılacak}}</translation>
 <translation id="7589360514048265910">Mac OS X 10.9 artık desteklenmediğinden, bu bilgisayar artık Brave güncellemelerini almayacak.</translation>
 <translation id="7592736734348559088">Hesap oturum açma ayrıntılarınız güncel olmadığından Brave, verilerinizi senkronize edemedi.</translation>
-<translation id="7626032353295482388">Brave'a Hoş Geldiniz</translation>
+<translation id="7207456302801184289">Brave'a Hoş Geldiniz</translation>
 <translation id="7651907282515937834">Brave Enterprise logosu</translation>
 <translation id="7747138024166251722">Yükleyici geçici bir dizin oluşturamadı. Lütfen, kullanılabilir disk alanını ve yazılım yükleme iznini kontrol edin.</translation>
 <translation id="7761834446675418963">Brave'u açmak ve göz atmaya başlamak için adınızı tıklayın.</translation>
 <translation id="7777080907402804672">Bir resmin işe yarar bir açıklaması yoksa, Brave sizin için bir açıklama sağlamaya çalışır. Açıklama oluşturmak için resimler Google'a gönderilir. Bu özelliği istediğiniz zaman ayarlardan kapatabilirsiniz.</translation>
 <translation id="7781002470561365167">Brave'un yeni bir sürümü çıktı.</translation>
 <translation id="7787950393032327779">Profilin başka bir bilgisayarda (<ph name="HOST_NAME" />) başka bir Brave işlemi (<ph name="PROCESS_ID" />) tarafından kullanıldığı anlaşılıyor. Brave, profili bozulmaması için kilitledi. Bu profili kullanan başka bir işlem olmadığından eminseniz profilin kilidini açabilir ve Brave'u tekrar başlatabilirsiniz.</translation>
-<translation id="7808348361785373670">Brave'dan kaldır...</translation>
+<translation id="777113543093865885">Brave'dan kaldır...</translation>
 <translation id="7825851276765848807">Yükleme belirtilmeyen bir hata nedeniyle başarısız oldu. Lütfen Brave'u tekrar yükleyin.</translation>
 <translation id="7855730255114109580">Brave güncel durumda</translation>
 <translation id="7888186132678118370">Brave'u görev çubuğunuza sabitleme</translation>
@@ -246,29 +245,29 @@ Bazı özellikler kullanılamayabilir. Lütfen farklı bir profil dizini belirti
 <translation id="7908168227788431038">Az kaldı! Güncellemeyi tamamlamak için Brave'u yeniden başlatın.</translation>
 <translation id="7962410387636238736">Windows XP ve Windows Vista artık desteklenmediğinden, bu bilgisayar bundan böyle Brave güncellemelerini almayacaktır</translation>
 <translation id="8005540215158006229">Brave neredeyse hazır.</translation>
-<translation id="8008534537613507642">Brave'u yeniden yükle</translation>
+<translation id="5875673934455379806">Brave'u yeniden yükle</translation>
 <translation id="8013993649590906847">Bir resmin işe yarar bir açıklaması yoksa, Brave sizin için bir açıklama sağlamaya çalışır. Açıklama oluşturmak için resimler Google'a gönderilir.</translation>
 <translation id="8030318113982266900">Cihazınız <ph name="CHANNEL_NAME" /> kanalına güncelleniyor...</translation>
-<translation id="8032142183999901390">Hesabınızı Brave'dan kaldırdıktan sonra, geçerli olması için açık sekmelerinizi yeniden yüklemeniz gerekebilir.</translation>
+<translation id="1672124279374861424">Hesabınızı Brave'dan kaldırdıktan sonra, geçerli olması için açık sekmelerinizi yeniden yüklemeniz gerekebilir.</translation>
 <translation id="8077352834923175128">Yöneticiniz bu güncellemeyi uygulamak için Chrome OS'i yeniden başlatmanızı istiyor</translation>
 <translation id="8129812357326543296">&amp;Brave hakkında</translation>
-<translation id="8179874765710681175">Brave'u telefonunuza yükleyin. Telefonunuza SMS göndereceğiz.</translation>
+<translation id="8899693649891674038">Brave'u telefonunuza yükleyin. Telefonunuza SMS göndereceğiz.</translation>
 <translation id="8183957050892517584">Brave, kişisel bilgilerinizi güvenli şekilde depoladığından bu bilgileri tekrar yazmak zorunda kalmazsınız.</translation>
 <translation id="8226081633851087288">{0,plural, =0{Chrome OS şimdi yeniden başlatılacak}=1{Chrome OS 1 saniye içinde yeniden başlatılacak}other{Chrome OS # saniye içinde yeniden başlatılacak}}</translation>
-<translation id="825412236959742607">Bu sayfa çok fazla bellek kullandığından Brave bazı içerikleri kaldırdı.</translation>
-<translation id="8255190535488645436">Brave kameranızı ve mikrofonunuzu kullanıyor.</translation>
+<translation id="5138664332909611586">Bu sayfa çok fazla bellek kullandığından Brave bazı içerikleri kaldırdı.</translation>
+<translation id="3293668930608086049">Brave kameranızı ve mikrofonunuzu kullanıyor.</translation>
 <translation id="8286862437124483331">Brave şifreleri göstermeye çalışıyor. Buna izin vermek için Windows şifrenizi yazın.</translation>
 <translation id="8290100596633877290">Of! Brave kilitlendi. Şimdi yeniden başlatılsın mı?</translation>
-<translation id="8342675569599923794">Bu dosya tehlikeli olduğu için Brave tarafından engellendi.</translation>
+<translation id="9067428552314418522">Bu dosya tehlikeli olduğu için Brave tarafından engellendi.</translation>
 <translation id="8380166467911888159">Yazım hatalarını düzeltmek için Brave, metin alanlarına yazdığınız metinleri Google'a gönderir</translation>
 <translation id="840084489713044809">Brave, şifrelerinizi dışa aktarmak istiyor.</translation>
-<translation id="8406086379114794905">Brave'u daha iyi hale getirmeye yardımcı olun</translation>
-<translation id="8432724323949790809">Brave'u şimdi yeniden başlatmalısınız</translation>
+<translation id="763369711159699222">Brave'u daha iyi hale getirmeye yardımcı olun</translation>
+<translation id="5509303873219371662">Brave'u şimdi yeniden başlatmalısınız</translation>
 <translation id="8455999171311319804">İsteğe bağlı: Teşhis ve kullanım verilerini Google'a otomatik olarak gönderin ve Chrome OS'in iyileştirilmesine yardımcı olun.</translation>
-<translation id="8478823064122749032">Brave'u telefonunuza yükleyin. Hesap kurtarma telefon numaranıza SMS göndereceğiz: <ph name="PHONE_NUMBER" /></translation>
-<translation id="8498858610309223613">Brave için özel bir güvenlik güncellemesi uygulandı. Uygulamayı hemen yeniden başlatın; açık sekmeleriniz geri yüklenir.</translation>
+<translation id="2965084188004448871">Brave'u telefonunuza yükleyin. Hesap kurtarma telefon numaranıza SMS göndereceğiz: <ph name="PHONE_NUMBER" /></translation>
+<translation id="8668413672647811944">Brave için özel bir güvenlik güncellemesi uygulandı. Uygulamayı hemen yeniden başlatın; açık sekmeleriniz geri yüklenir.</translation>
 <translation id="8521348052903287641">Brave Dev'in mDNS trafiğine izin vermeyi sağlayan gelen trafik kuralı.</translation>
-<translation id="8540666473246803645">Brave</translation>
+<translation id="939305735877869636">Brave</translation>
 <translation id="8547799825197623713">Brave Uygulama Başlatıcısı Canary</translation>
 <translation id="8556340503434111824">Kullanabileceğiniz yeni bir Brave sürümü var ve bu sürüm, her zamankinden daha hızlı.</translation>
 <translation id="8568392309447938879">Uygulamaları kullanmak için Brave'da oturum açmış olmanız gerekir. Oturum açmanız, Brave'un uygulamalarınızı, yer işaretlerinizi, geçmişinizi, şifrelerinizi ve diğer ayarlarınızı tüm cihazlarınızda senkronize etmesine olanak sağlar.</translation>
