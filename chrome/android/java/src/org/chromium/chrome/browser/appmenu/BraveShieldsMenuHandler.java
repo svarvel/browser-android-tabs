@@ -108,7 +108,7 @@ public class BraveShieldsMenuHandler {
             tempMenu.inflate(mMenuResourceId);
             mMenu = tempMenu.getMenu();
         }
-        ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity, R.style.OverflowMenuTheme);
+        ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity, R.style.OverflowMenuThemeOverlay);
         Point pt = new Point();
         mActivity.getWindowManager().getDefaultDisplay().getSize(pt);
         // Get the height and width of the display.

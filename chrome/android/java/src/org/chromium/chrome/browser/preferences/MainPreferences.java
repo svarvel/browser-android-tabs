@@ -333,7 +333,7 @@ public class MainPreferences extends PreferenceFragment
 
     @Override
     public void syncStateChanged() {
-        updateSyncAndServicesPreference();
+        //updateSyncAndServicesPreference();
     }
 
     @VisibleForTesting

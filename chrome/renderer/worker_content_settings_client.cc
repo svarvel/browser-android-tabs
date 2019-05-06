@@ -120,4 +120,4 @@ bool WorkerContentSettingsClient::AllowScriptFromSource(
 
 bool WorkerContentSettingsClient::AllowFingerprinting() {
     return true;
-};
+}

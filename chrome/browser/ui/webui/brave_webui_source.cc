@@ -37,7 +37,7 @@ void AddResourcePaths(content::WebUIDataSource* html_source,
 
 void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource* source) {
   // Resources specific to each page
-  static std::map<std::string, std::vector<WebUISimpleItem> > resources = {
+  std::map<std::string, std::vector<WebUISimpleItem> > resources = {
     {
       std::string("rewards"), {
         { "878e89ddb547d70019456c4792ce1a23.svg", IDR_BRAVE_REWARDS_IMG_ADS_DISABLED },
@@ -62,7 +62,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
   };
   AddResourcePaths(source, resources[name]);
 
-  static std::map<std::string, std::vector<WebUISimpleItem> > localized_strings = {
+  std::map<std::string, std::vector<WebUISimpleItem> > localized_strings = {
     {
       std::string("rewards"), {
         { "adsTitle",  IDS_BRAVE_REWARDS_LOCAL_ADS_TITLE },

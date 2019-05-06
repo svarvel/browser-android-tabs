@@ -58,8 +58,6 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
     /** The menu button that lives in the browsing mode bottom toolbar. */
     private final MenuButton mMenuButton;
 
-    private final ScrollingBottomViewResourceFrameLayout mToolbarRoot;
-
     final Context context = ContextUtils.getApplicationContext();
 
     /**
@@ -157,9 +155,11 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
         mMenuButton.setThemeColorProvider(themeColorProvider);
 
-        mBookmarksButton.setThemeColorProvider(themeColorProvider);
-        mBookmarksButton.setOnClickListener(bookmarkClickListener);
-        mBookmarksButton.setOnLongClickListener(this);
+        if (mBookmarksButton != null) {
+            mBookmarksButton.setThemeColorProvider(themeColorProvider);
+            mBookmarksButton.setOnClickListener(bookmarkClickListener);
+            mBookmarksButton.setOnLongClickListener(this);
+        }
     }
 
     @Override

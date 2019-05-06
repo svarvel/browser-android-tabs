@@ -1047,7 +1047,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         // toolbar is not visible (e.g. in tab switcher mode).
         if (isInTabSwitcherMode()) return;
 
-        if (!mIsBottomToolbarVisible) {
+        /*if (!mIsBottomToolbarVisible) */{
             int toolbarButtonVisibility = getToolbarButtonVisibility();
             mToolbarButtonsContainer.setVisibility(toolbarButtonVisibility);
             if (mHomeButton != null && mHomeButton.getVisibility() != GONE) {
@@ -2010,7 +2010,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 mRewardsLayout.setVisibility(View.GONE);
             }
             // Show message
-            AlertDialog.Builder alert = new AlertDialog.Builder(getContext(), R.style.AlertDialogTheme);
+            AlertDialog.Builder alert = new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog);
             AlertDialog alertDialog = alert.setMessage(getResources().getString(R.string.brave_rewards_not_available))
                                            .setPositiveButton(R.string.ok, null)
                                            .create();

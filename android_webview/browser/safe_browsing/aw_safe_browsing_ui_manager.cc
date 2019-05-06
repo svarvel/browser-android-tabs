@@ -45,7 +45,7 @@ void RecordIsWebViewViewable(bool isViewable) {
 network::mojom::NetworkContextParamsPtr CreateDefaultNetworkContextParams() {
   network::mojom::NetworkContextParamsPtr network_context_params =
       network::mojom::NetworkContextParams::New();
-  network_context_params->user_agent = GetUserAgent();
+  network_context_params->user_agent = GetUserAgent("");
   return network_context_params;
 }
 

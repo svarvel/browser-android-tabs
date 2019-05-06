@@ -280,6 +280,12 @@ public class Preferences
     @Override
     public void onBackPressed() {
         Fragment activeFragment = getMainFragment();
+        if (activeFragment instanceof BraveSyncScreensPreference) {
+            BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
+            if (pref.onBackPressed()) {
+                return;
+            }
+        }
         if (!(activeFragment instanceof OnBackPressedListener)) {
             super.onBackPressed();
             return;
@@ -305,16 +311,5 @@ public class Preferences
             // Something terribly wrong has happened.
             throw new RuntimeException(ex);
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-         if (getFragmentForTest() instanceof BraveSyncScreensPreference) {
-             BraveSyncScreensPreference pref = (BraveSyncScreensPreference) getFragmentForTest();
-             if (pref.onBackPressed()) {
-                 return;
-             }
-         }
-         super.onBackPressed();
     }
 }

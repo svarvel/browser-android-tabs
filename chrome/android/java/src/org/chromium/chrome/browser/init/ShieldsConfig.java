@@ -96,6 +96,9 @@ public class ShieldsConfig {
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Long result) {}
     }
 
     public void Close() {
@@ -504,6 +507,9 @@ public class ShieldsConfig {
 
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Long result) {}
     }
 
     private void saveSettings() {
