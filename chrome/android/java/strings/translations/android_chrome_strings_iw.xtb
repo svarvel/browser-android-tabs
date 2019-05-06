@@ -324,7 +324,7 @@
 <translation id="3350687908700087792">סגור את כל כרטיסיות הגלישה בסתר</translation>
 <translation id="3353615205017136254">‏גרסת Lite של הדף נוצרה על ידי Google. כדי לטעון את הגרסה המקורית, אפשר להקיש על לחצן טעינת המקור.</translation>
 <translation id="3367813778245106622">היכנס שוב כדי להתחיל בסנכרון</translation>
-<translation id="3377025655491224618">כרטיסייה פרטית</translation>
+<translation id="3377025655491224618">לשונית פרטית</translation>
 <translation id="3384347053049321195">שיתוף תמונה</translation>
 <translation id="3386292677130313581">יש לשאול לפני שמאפשרים לאתרים לדעת מה המיקום שלך (מומלץ)</translation>
 <translation id="3387650086002190359">הורדת <ph name="FILE_NAME" /> נכשלה עקב שגיאות במערכת הקבצים.</translation>
@@ -431,7 +431,7 @@
 <translation id="4226663524361240545">רטט של המכשיר אפשרי כשמתקבלת הודעה</translation>
 <translation id="423219824432660969">‏הצפנת נתונים מסונכרנים באמצעות סיסמת Google החל מ-<ph name="TIME" /></translation>
 <translation id="4242533952199664413">פתח את 'הגדרות'</translation>
-<translation id="4243710787042215766">פתיחה בכרטיסייה פרטית</translation>
+<translation id="4243710787042215766">פתחו בלשונית פרטית</translation>
 <translation id="7445061995866044926">‏האם לצאת מ-Brave?</translation>
 <translation id="4256782883801055595">רישיונות קוד פתוח</translation>
 <translation id="4259722352634471385">הניווט חסום: <ph name="URL" /></translation>
@@ -652,7 +652,7 @@
 <translation id="5797070761912323120">‏Google עשויה להשתמש בהיסטוריית הגלישה שלך לצורך התאמה אישית של החיפוש, מודעות ושירותי Google אחרים</translation>
 <translation id="5804241973901381774">הרשאות</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{לפני שעה}two{לפני שעתיים}many{לפני # שעות}other{לפני # שעות}}</translation>
-<translation id="5817918615728894473">התאם</translation>
+<translation id="5817918615728894473">צימוד</translation>
 <translation id="583281660410589416">לא ידוע</translation>
 <translation id="5833984609253377421">שיתוף קישור</translation>
 <translation id="3888648114124182147">‏מוריד עדכון של Brave…</translation>
@@ -721,7 +721,7 @@
 <translation id="6320088164292336938">רטט</translation>
 <translation id="6324034347079777476">‏סנכרון מערכת Android מושבת</translation>
 <translation id="6333140779060797560">שיתוף באמצעות <ph name="APPLICATION" /></translation>
-<translation id="6336451774241870485">כרטיסייה פרטית חדשה</translation>
+<translation id="6336451774241870485">לשונית פרטית חדשה</translation>
 <translation id="6337234675334993532">הצפנה</translation>
 <translation id="6341580099087024258">לשאול איפה לשמור קבצים</translation>
 <translation id="6343192674172527289">לא נמצאו הורדות</translation>
@@ -764,7 +764,7 @@
 <translation id="6593061639179217415">לגרסה במחשב</translation>
 <translation id="663059986967017181">‏הועתק אל Brave</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
-<translation id="6610147964972079463">סגירת הכרטיסיות הפרטיות</translation>
+<translation id="6610147964972079463">סגרו את הלשוניות הפרטיות</translation>
 <translation id="6612358246767739896">תוכן מוגן</translation>
 <translation id="6627583120233659107">ערוך תיקיה</translation>
 <translation id="6643016212128521049">ניקוי</translation>
@@ -981,7 +981,7 @@
 <translation id="4565206163201411670">‏להציג את הפעילות שלך ב-Brave ב'שימוש חכם בדיגיטל'?</translation>
 <translation id="8116925261070264013">מושתקים</translation>
 <translation id="813082847718468539">הצג נתוני אתר</translation>
-<translation id="8131740175452115882">אישור</translation>
+<translation id="8131740175452115882">אשר</translation>
 <translation id="8156139159503939589">באילו שפות באפשרותך לקרוא?</translation>
 <translation id="8168435359814927499">תוכן</translation>
 <translation id="8186512483418048923">נותרו עוד <ph name="FILES" /> קבצים</translation>
@@ -1056,7 +1056,7 @@
 <translation id="8719023831149562936">לא ניתן להעביר תוכן מהכרטיסייה הנוכחית</translation>
 <translation id="8725066075913043281">נסה שוב</translation>
 <translation id="7247433043977983806">‏השימוש שלך באפליקציה הזו מבטא את הסכמתך ל<ph name="BEGIN_LINK1" />תנאים ולהגבלות<ph name="END_LINK1" /> ול<ph name="BEGIN_LINK2" />מדיניות הפרטיות<ph name="END_LINK2" /> של Brave, וכן ל<ph name="BEGIN_LINK3" />הודעת הפרטיות לחשבונות Google שמנוהלים ב-Family Link<ph name="END_LINK3" />.</translation>
-<translation id="8730621377337864115">בוצע</translation>
+<translation id="8730621377337864115">סיום</translation>
 <translation id="8748850008226585750">התוכן מוסתר</translation>
 <translation id="8751914237388039244">בחירת תמונה</translation>
 <translation id="8788968922598763114">פתח מחדש את הכרטיסייה האחרונה שנסגרה</translation>
@@ -1130,4 +1130,223 @@
 <translation id="982182592107339124">פעולה זו תמחק נתונים של כל האתרים, כולל:</translation>
 <translation id="983192555821071799">סגור את כל הכרטיסיות</translation>
 <translation id="987264212798334818">כללי</translation>
+<translation id="3209146299287804856">הגדרות מגן אתר Brave עבור</translation>
+<translation id="622484624075952240">למטה</translation>
+<translation id="2706462751667573066">למעלה</translation>
+<translation id="4339730410920731698">מודעות ושרתי מעקב שנחסמו</translation>
+<translation id="2313532038420432247">שדרוגי HTTPS</translation>
+<translation id="7461425058443653485">קובצי תסריט שנחסמו</translation>
+<translation id="7835726359440951858">חסימת מודעות ומעקב</translation>
+<translation id="520895744850022668">HTTPS בכל מקום</translation>
+<translation id="94154759592465111">לחסום קובצי תסריט</translation>
+<translation id="7307834434086582547">הפעלה/השבתה של מגני Brave</translation>
+<translation id="6132506775968708399">לחסום עוגיות צד שלישי</translation>
+<translation id="8710614491157212477">פתיחת אתרים נתמכים באמצעות HTTPS במקום HTTP כשאפשר</translation>
+<translation id="5758129336814690876">מצב הגנה מפני מעקב</translation>
+<translation id="4609637183310787528">מניעת טעינה של משאבים שעוקבים אחריך</translation>
+<translation id="8387201461264842096">לחסום פרסומות</translation>
+<translation id="1934885595886623674">מניעת טעינה של פרסומות</translation>
+<translation id="7458422973722236530">הגנה מפני תקיפת טביעת אצבע</translation>
+<translation id="5787084571334399599">מניעת הדפדפן מלקיחת טביעות אצבעות</translation>
+<translation id="3758669798635576061">שיטות לקיחת טביעת אצבע חסומות</translation>
+<translation id="3276318574457057212">לחסום פרסומות אזוריות</translation>
+<translation id="2300239903491866759">מניעת טעינה של פרסומות אזוריות</translation>
+<translation id="8142327400852603066">אין רשימות נוספות זמינות עבור האזור שלך</translation>
+<translation id="9148058034647219655">יציאה</translation>
+<translation id="3082265116777145081">נא להוסיף שם מכשיר</translation>
+<translation id="9024091168371687561">נא להזין שם אופציונלי עבור מכשיר זה</translation>
+<translation id="3998827900918661986">מכשיר אנדרואיד</translation>
+<translation id="7539985410310934287">נא להזין מילות קוד</translation>
+<translation id="326454632686131209">לסנכרן מכשיר</translation>
+<translation id="8985635554450124959">לא ניתן להגדיר את הסנכרון</translation>
+<translation id="230829157901335313">ייתכן שבמכשיר שלך מוגדרים זמן מערכת או אזור זמן שגויים. אנא, הגדר/י את זמן המערכת ואזור הזמן הנכונים</translation>
+<translation id="6244065453125065109">כלי מעקב
+שנחסמו</translation>
+<translation id="2547939855139473800">פרסומות
+שנחסמו</translation>
+<translation id="8880969045613157151">שדרוגי
+HTTPS</translation>
+<translation id="204407992549693965">הזמן המשוער
+שנחסך</translation>
+<translation id="991605024067283917">לשלוח מדדים</translation>
+<translation id="6572660632052512096">מצב שולחן עבודה</translation>
+<translation id="4479934682648362332">להעדיף את גרסאות האתרים לשולחן עבודה</translation>
+<translation id="807636106793708118">להעדיף את גרסאות האתרים למכשירים ניידים</translation>
+<translation id="1340503115760585811">להפעיל תצוגת שולחן עבודה לכרטיסיות חדשות</translation>
+<translation id="7924540991929826186">להשתמש בגרסאות האתרים למכשירים ניידים בכרטיסיות חדשות (מומלץ)</translation>
+<translation id="3834924998750356151">צג חסימות</translation>
+<translation id="1713450908129883784">פקדים פרטניים</translation>
+<translation id="6303294677342628402">מגנים</translation>
+<translation id="252011129655042182">פרסומות וכלי מעקב</translation>
+<translation id="6754976710186182237">שיטות לקיחת טביעת אצבע</translation>
+<translation id="8585880402319729023">חסימת דיוג</translation>
+<translation id="5965081608816406060">נגינת סרטים ברקע</translation>
+<translation id="59174027418879706">מופעל</translation>
+<translation id="4176463684765177261">כבוי</translation>
+<translation id="1580125697191336644">ניסיוני. מאפשר הפעלת צליל מווידאו ברקע כשכרטיסיות אינן פעילות או כשמסך המכשיר מכובה. נא לנסות לעבור למצב שולחן עבודה אם תכונה זו אינה פועלת.</translation>
+<translation id="6587448235155023666">השינויים שלך ייכנסו לתוקף בפעם הבאה ש־Brave יופעל מחדש</translation>
+<translation id="8701563696941209024">להפעיל מחדש עכשיו</translation>
+<translation id="834487290629916192">מאוחר יותר</translation>
+<translation id="1842747674580016420">הצגת סרטים ב־Brave</translation>
+<translation id="5368992950177874750">אם זה מופעל, הסרטים יוצגו ב־Brave במקום באפליקציה המשויכת</translation>
+<translation id="7459000603787995422">סגור כרטיסיות ביציאה</translation>
+<translation id="1680858055899097121">אין להחזיק כרטיסיות בין זמני עיון שונים</translation>
+<translation id="213787746370741250">פתח לשוניות ב׳לשוניות מותאמות׳</translation>
+<translation id="3544772668823934222">הצעה לפתוח לשוניות ב׳לשוניות מותאמות׳</translation>
+<translation id="4501702055016678577">חיפוש אישי בעזרת DuckDuckGo?</translation>
+<translation id="910419239800579753">בחיפוש הפרטי, Brave ישתמש ב-DuckDuckGo כדי לענות על החיפושים שלכם בזמן שתהיו בלשונית פרטית זו. DuckDuckGo הוא מנוע חיפוש שאינו עוקב אחרי היסטוריית החיפושים שלכם, ובכך הוא מאפשר לכם לבצע חיפושים באופן פרטי.</translation>
+<translation id="1426410128494586442">כן</translation>
+<translation id="4250680216510889253">לא</translation>
+<translation id="5628466560184522265">למדו אודות חיפוש פרטי בעזרת DuckDuckGo</translation>
+<translation id="1468415711258933398">לשונית סטנדרטית</translation>
+<translation id="6199596294742117349">זו לשונית פרטית</translation>
+<translation id="5858455511731621847">למרות שאתרים שבהם ביקרתם בעזרת לשונית פרטית אינם נשמרים במחשב שלכם, הם אינם הופכים אתכם לאנונימיים או לבלתי נראים בפני ספק שירות האינטרנט שלכם, המעביד שלכם או האתרים שבהם אתם מבקרים.</translation>
+<translation id="2339273275658335597">עדכון Brave</translation>
+<translation id="8395234238259738935">דפדפן ה-Brave החדש מהיר יותר ב-22%</translation>
+<translation id="391177677159359824">סנכרון (beta)</translation>
+<translation id="3680755684186855422">Brave Sync מאפשר לסנכרן נתוני סימניות בפרטיות בין Brave Browsers במכשירים השונים שלך.</translation>
+<translation id="3735228155296883311">פשוט סרוק את הקוד משרשרת הסנכרון שיצרת במכשיר אחר. או התחל שרשרת סנכרון חדשה.</translation>
+<translation id="7745082336226088126">סרוק או הזן קוד סנכרון</translation>
+<translation id="1602067095281698985">התחל שרשרת סנכרון חדשה</translation>
+<translation id="4690880825349994619">באמצעות מכשיר מסונכרן קיים, פתח את הגדרות Brave ונווט אל  הגדרות &gt; סנכרון. הקש על "הוסף מכשיר" וסרוק את קוד ה-QR המוצג על המסך.</translation>
+<translation id="6270614677029463366">באמצעות מכשיר מסונכרן קיים, פתח את הגדרות Brave ונווט אל  הגדרות &gt; סנכרון. הקש על "הוסף מכשיר" ואז "הצג מילות קוד במקום".</translation>
+<translation id="1475223680121592371">הוסף מכשיר נייד</translation>
+<translation id="2965377893636908578">הוסף מחשב</translation>
+<translation id="65315202420929965">סרוק את קוד הסנכרון</translation>
+<translation id="6604289897677913048">באמצעות מכשיר טלפון שני או טאבלט, נווט אל הגדרות Brave&gt; סנכרון &gt; סריקה.</translation>
+<translation id="3405078156498254717">לכוד את קוד ה-QR (המופיע מטה) באמצעות המכשיר השני, או הזן מילות קוד אם המצלמה אינה זמינה.</translation>
+<translation id="8076492880354921740">כרטיסיות</translation>
+<translation id="5706430066167764107">מילוי אוטומטי/סיסמה</translation>
+<translation id="1164234435773528579">הגדרות תשלום של Brave</translation>
+<translation id="6174119914106813304">סנכרן במכשיר זה</translation>
+<translation id="6776430845975754238">שינוי הגדרות ישפיע אך ורק על נתונים שמכשיר זה משתף עם אחרים.</translation>
+<translation id="8193724030871339658">מכשירים אחרים בשרשרת</translation>
+<translation id="279635009973773843">טוען מכשירים...</translation>
+<translation id="6450924769151530465">הוסף מכשיר אחר</translation>
+<translation id="2004365171440701679">הסר את מכשיר זה</translation>
+<translation id="2731921493694251495">הזן קוד שרשרת סנכרון</translation>
+<translation id="2590683710114839102">במחשב שלך, נווט אל הגדרות Brave &gt; סנכרון. בחר "הזן קוד שרשרת סנכרון".</translation>
+<translation id="1732271215616957850">הזן את מילות הקוד המופיעות מעלה, כולל רווחים.</translation>
+<translation id="1178128181015923849">האם ברצונך למחוק את המכשיר '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="9154490620151093733">בקשת מחיקה נשלחה. המכשיר יוסר במהרה.</translation>
+<translation id="544873101641618162">טוען נתונים...</translation>
+<translation id="6779408765480516895">משהו השתבש, נראה כי הזמן לבקשתך תם.</translation>
+<translation id="4973653569293835178">אני אשתמש במצלמה שלי...</translation>
+<translation id="2569646144216067185">מספר מילים: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">מספר שגוי של מילים</translation>
+<translation id="2175927920773552910">קוד QR</translation>
+<translation id="8653433343015102968">מילות קוד</translation>
+<translation id="8624315169751085215">העתק ל-Clipboard</translation>
+<translation id="5241263629636958324">בוצעה העתקה ל-Clipboard</translation>
+<translation id="222883304157347087">(מכשיר זה)</translation>
+<translation id="4745013713714502219">Brave כבר מוגדר
+כדפדפן ברירת המחדל שלך.</translation>
+<translation id="6874141297197991294">הגדרת כבר דפדפן ברירת מחדל.
+באפשרותך להחליף את דפדפן ברירת המחדל בהגדרות האפליקציה.</translation>
+<translation id="5708254139873333042">באפשרותך לחסוך סוללה ולהטעין דפי אינטרנט מהר יותר. הפוך/הפכי את Brave לדפדפן ברירת המחדל שלך. מתפריט Brave הקש/י על "הגדר כברירת מחדל".</translation>
+<translation id="3570367516044491911">הגדירו כדפדפן ברירת המחדל</translation>
+<translation id="5827583267117939716">בחר/י ב-Brave מתוך הרשימה והקש/י על "תמיד"</translation>
+<translation id="2262526166668973593">הפכו את Brave לדפדפן ברירת המחדל
+חסכו סוללה וטענו דפי רשת במהירות</translation>
+<translation id="1916285746997567466">תתכונן לחוויית
+האינטרנט הבא.</translation>
+<translation id="1071131306814166204">באפשרותך להרוויח אסימונים
+על צפייה בפרסומות מכבדות פרטיות.</translation>
+<translation id="1327938628925645979">הצטרף לגמול כספי</translation>
+<translation id="5567439033041178034">למידע נוסף</translation>
+<translation id="7530570094705720669">יצירת ארנק</translation>
+<translation id="3780605330121608425">הארנק שלך</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">הוסף כסף</translation>
+<translation id="2730771409541953249">סיכום הגמול הכספי</translation>
+<translation id="8596647978585397359">תודה שקפצת לבקר!</translation>
+<translation id="3165726837666415756">ניתן לתמוך באתר זה באמצעות שליחת טיפ. זוהי דרך להודות להם על התוכן נהדר. יוצרי תוכן מאומתים מקבלים תשלום עבור הטיפים שלהם במהלך השבוע הראשון של כל חודש קלנדרי.</translation>
+<translation id="1704859330137112950">אם תרצה, תוכל לתזמן טיפים חודשיים לתמיכה באתר זה באופן קבוע.</translation>
+<translation id="245015745140252435">כמות טיפים</translation>
+<translation id="3370968821559864204">הסכום בארנק:</translation>
+<translation id="3250511771491660127">הפוך לחודשי</translation>
+<translation id="2573313946367623146">שלח את הטיפ שלי</translation>
+<translation id="3492491948683276944">הגדר טיפ חודשי</translation>
+<translation id="853714875140407133">אין מספיק אסימונים</translation>
+<translation id="298349922412901215">הערה: יוצר זה עדיין לא נרשם לקבלת תרומות ממשתמשי Brave. אנו נמשיך לנסות לתרום עד שהוא יאמת, או עד שיחלפו 90 יום.</translation>
+<translation id="6940273954212603510">בבקשה</translation>
+<translation id="1036277985068412734">הוסף כסף</translation>
+<translation id="5299848999918506028">תודה!</translation>
+<translation id="2626799779920242286">נסה שוב מאוחר יותר.</translation>
+<translation id="6639570430554986719">ינואר</translation>
+<translation id="1807352595146144483">פברואר</translation>
+<translation id="2021828608097804771">מרץ</translation>
+<translation id="1112527417301376065">אפריל</translation>
+<translation id="8737090912129856089">מאי</translation>
+<translation id="6832612641867423485">יוני</translation>
+<translation id="8442574087856349697">יולי</translation>
+<translation id="1202041222842415454">אוגוסט</translation>
+<translation id="7317265217038113435">ספטמבר</translation>
+<translation id="8220228041552340594">אוקטובר</translation>
+<translation id="8280223431922155812">נובמבר</translation>
+<translation id="4254029385847607686">דצמבר</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">לתשומת לבך</translation>
+<translation id="7335371657242627509">כלול בתרומה אוטומטית</translation>
+<translation id="8918760045046434238">שלח טיפ...</translation>
+<translation id="1978261665418056203">אין עדיין פעילויות
+החודש...</translation>
+<translation id="4914597931214386232">מימוש מענק אסימונים</translation>
+<translation id="298067735430872465">להרוויח מצפייה בפרסומות</translation>
+<translation id="6112368337882254910">תרומה אוטומטית</translation>
+<translation id="4781696154289395607">תרמת <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">תרומת טיפ חד פעמית</translation>
+<translation id="7577100371127227294">טיפים חודשיים</translation>
+<translation id="8772672608371898774">מפרסם מאומת של Brave</translation>
+<translation id="1397683270551078781">לא אומת עדיין</translation>
+<translation id="5727208111992260840">הערה: יוצר זה עדיין לא נרשם לקבלת תרומות ממשתמשי Brave.
+ כל טיפ שתשלח ישאר בארנק שלך עד לאימות.</translation>
+<translation id="683765328936486920">ב-YouTube</translation>
+<translation id="8969049974285901797">ב-Twitch</translation>
+<translation id="606865182719489911">מענק אסימונים חינם זמין.</translation>
+<translation id="3453206261112715431">מענק אסימונים חינם</translation>
+<translation id="13853865024308201">מימוש</translation>
+<translation id="3692362746128814480">ייעדת <ph name="BAT_VALUE" /> BAT ליוצרים שלא
+ נרשמו עדיין לקבלת תרומות. הדפדפן שלך ימשיך לנסות לתרום
+עד שהם יאשרו, או עד שיחלפו 90 יום.</translation>
+<translation id="5306913077198665897">חלה בעיה בעיבוד הטיפ שלך, אנא נסה שנית.</translation>
+<translation id="2429828319207652823">חלה בעיה בעיבוד התרומה שלך.</translation>
+<translation id="2323069945529668668">אוי לא!</translation>
+<translation id="7510166204621526816">שרת גמול כספי של Brave אינו מגיב. נתקן זאת בהקדם האפשרי.</translation>
+<translation id="2104073734684466851">מענקים</translation>
+<translation id="3068742524072211213">תקף עד <ph name="DATE" /></translation>
+<translation id="7550470870580166294">סכום הכסף אינו מספיק</translation>
+<translation id="2775064702681588061">חשבון הגמול הכספי של Brave שלך ממתין להפקדה.</translation>
+<translation id="765834632354589737">ארנק גיבוי</translation>
+<translation id="1713542052890184975">יש לגבות את ארנק Brave.</translation>
+<translation id="3333887201479867589">גמול כספי של Brave</translation>
+<translation id="2012723204723845092">יופי שחזרת!</translation>
+<translation id="7669994301500276741">קבל פרסים על גלישה.</translation>
+<translation id="8203529727745387785">בוא להרוויח מצפייה בפרסומות מכבדות פרטיות
+ולהעביר את הפרס הלאה כדי לתמוך
+ביוצרי התוכן המועדפים עליך.</translation>
+<translation id="5148719990624240755">הפעל אפשרות גמול כספי של BRAVE</translation>
+<translation id="1628742278973105368">הטיפ החודשי הראשון שלך יישלח ב-</translation>
+<translation id="6665366815203065060">שלחת טיפ אל:</translation>
+<translation id="5441565662498481293">את/ה שולח/ת טיפ באופן אוטומטי אל:</translation>
+<translation id="1166682575529520472">חודשי</translation>
+<translation id="8495235435594442882">הפוך סרגל כלים תחתון לזמין</translation>
+<translation id="7239121106815507493">הפוך סרגל כלים תחתון ללא זמין</translation>
+<translation id="145068164597056296">חיפוש או URL</translation>
+<translation id="6810078320346589989">יצירת סימניה</translation>
+<translation id="5463954686005964104">תן/י לאתר זה טיפ אחת לחודש</translation>
+<translation id="1923568441186788334">Brave Rewards נמצא כאן</translation>
+<translation id="7722441371828049691">תמכו באתרים שאתם אוהבים.</translation>
+<translation id="5234764350956374838">התעלם/י</translation>
+<translation id="4472575034687746823">מתחילים</translation>
+<translation id="4162066325465825185">אנו מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</translation>
+<translation id="4150201353443180367">תצוגה</translation>
+<translation id="2804710924397009224">מסתיר את אייקון Brave Rewards</translation>
+<translation id="7358991116457217836">מסתיר את אייקון Brave Rewards כש-Brave Rewards אינו זמין</translation>
+<translation id="7618184561660805696">בוא/י שוב בקרוב וקבל/י מענק אסימונים חינם</translation>
+<translation id="3349204812119681938">איפוס Brave Rewards</translation>
+<translation id="8782039523249932839">זה ימחק את ארנק Brave שלך ויאפס את כל הנתונים של Brave Rewards שלך</translation>
+<translation id="5321518976657560663">איפוס שגיאה</translation>
+<translation id="7071576788062714665">אירעה שגיאה באיפוס Brave Rewards. נא להפעיל מחדש את Brave ולנסות שוב</translation>
 </translationbundle>

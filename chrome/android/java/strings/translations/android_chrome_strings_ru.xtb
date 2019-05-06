@@ -324,7 +324,7 @@
 <translation id="3350687908700087792">Закрыть все вкладки инкогнито</translation>
 <translation id="3353615205017136254">Lite-версия страницы получена с помощью Google. Нажмите кнопку "Полная версия", чтобы загрузить оригинал.</translation>
 <translation id="3367813778245106622">Чтобы начать синхронизацию, снова войдите в аккаунт</translation>
-<translation id="3377025655491224618">Вкладка инкогнито</translation>
+<translation id="3377025655491224618">Приватная вкладка</translation>
 <translation id="3384347053049321195">Поделиться изображением</translation>
 <translation id="3386292677130313581">Запрашивать разрешение на доступ к данным о местоположении (рекомендуется)</translation>
 <translation id="3387650086002190359">Не удалось скачать файл <ph name="FILE_NAME" /> из-за ошибок файловой системы.</translation>
@@ -431,7 +431,7 @@
 <translation id="4226663524361240545">Вибрация при получении уведомлений</translation>
 <translation id="423219824432660969">Шифровать синхронизированные данные, используя пароль аккаунта Google от <ph name="TIME" /></translation>
 <translation id="4242533952199664413">Открыть настройки</translation>
-<translation id="4243710787042215766">Открыть в режиме инкогнито</translation>
+<translation id="4243710787042215766">Открыть в приватной вкладке</translation>
 <translation id="7445061995866044926">Выйти из Brave?</translation>
 <translation id="4256782883801055595">Лицензии на ПО с открытым кодом</translation>
 <translation id="4259722352634471385">Навигация заблокирована: <ph name="URL" /></translation>
@@ -652,7 +652,7 @@
 <translation id="5797070761912323120">Google может использовать вашу историю, чтобы персонализировать рекламу, а также Поиск и другие сервисы.</translation>
 <translation id="5804241973901381774">Разрешения</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# час назад}one{# час назад}few{# часа назад}many{# часов назад}other{# часа назад}}</translation>
-<translation id="5817918615728894473">Подключить</translation>
+<translation id="5817918615728894473">Связать устройства</translation>
 <translation id="583281660410589416">Неизвестно</translation>
 <translation id="5833984609253377421">Отправить ссылку</translation>
 <translation id="3888648114124182147">Скачивание обновлений для Brave…</translation>
@@ -721,7 +721,7 @@
 <translation id="6320088164292336938">Вибросигнал</translation>
 <translation id="6324034347079777476">Синхронизация системы Android отключена</translation>
 <translation id="6333140779060797560">Отправить с помощью <ph name="APPLICATION" /></translation>
-<translation id="6336451774241870485">Новая вкладка инкогнито</translation>
+<translation id="6336451774241870485">Новая приватная вкладка</translation>
 <translation id="6337234675334993532">Шифрование</translation>
 <translation id="6341580099087024258">Спрашивать, куда сохранять файлы</translation>
 <translation id="6343192674172527289">Ничего не найдено.</translation>
@@ -764,7 +764,7 @@
 <translation id="6593061639179217415">Версия для ПК</translation>
 <translation id="663059986967017181">Скопировано в Brave</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> ГБ</translation>
-<translation id="6610147964972079463">Закрыть вкладки инкогнито</translation>
+<translation id="6610147964972079463">Закрыть приватные вкладки</translation>
 <translation id="6612358246767739896">Защищенный контент</translation>
 <translation id="6627583120233659107">Изменить папку</translation>
 <translation id="6643016212128521049">Удалить</translation>
@@ -1130,4 +1130,225 @@
 <translation id="982182592107339124">Будут удалены данные всех сайтов, в том числе:</translation>
 <translation id="983192555821071799">Закрыть все вкладки</translation>
 <translation id="987264212798334818">Общие</translation>
+<translation id="3209146299287804856">Настройки щитов Brave для</translation>
+<translation id="622484624075952240">Выкл</translation>
+<translation id="2706462751667573066">Вкл</translation>
+<translation id="4339730410920731698">Реклам или трекеров заблокировано</translation>
+<translation id="2313532038420432247">HTTPS-перенаправлений</translation>
+<translation id="7461425058443653485">Скриптов заблокировано</translation>
+<translation id="7835726359440951858">Блокировать рекламу и трекинг</translation>
+<translation id="520895744850022668">HTTPS везде</translation>
+<translation id="94154759592465111">Блокировать скрипты</translation>
+<translation id="7307834434086582547">Вкл/Выкл щиты Brave</translation>
+<translation id="6132506775968708399">Блокировать сторонние cookie</translation>
+<translation id="8710614491157212477">Открытие поддерживаемых сайтов с использованием HTTPS вместо HTTP, когда это возможно.</translation>
+<translation id="5758129336814690876">Режим защиты от трекинга</translation>
+<translation id="4609637183310787528">Блокирует трекинг-ресурсы</translation>
+<translation id="8387201461264842096">Блокировка рекламы</translation>
+<translation id="1934885595886623674">Блокирует загрузку рекламы</translation>
+<translation id="7458422973722236530">Защита отпечатка браузера</translation>
+<translation id="5787084571334399599">Блокирует определение отпечатка браузера</translation>
+<translation id="3758669798635576061">Блокировано отпечатков</translation>
+<translation id="3276318574457057212">Блокирование региональной рекламы</translation>
+<translation id="2300239903491866759">Блокирует загрузку региональной рекламы</translation>
+<translation id="8142327400852603066">Дополнительных списков для вашего региона не обнаружено</translation>
+<translation id="9148058034647219655">Выход</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
+<translation id="3082265116777145081">Добавление имени устройства</translation>
+<translation id="9024091168371687561">Если хотите, введите имя для этого устройства</translation>
+<translation id="3998827900918661986">Android устройство</translation>
+<translation id="7539985410310934287">Ввод кодовых слов</translation>
+<translation id="326454632686131209">Синхронизация устройства</translation>
+<translation id="8985635554450124959">Не удалось настроить синхронизацию</translation>
+<translation id="230829157901335313">Вероятно на вашем устройстве неверно установлено системное время или часовой пояс. Установите правильно время и часовой пояс</translation>
+<translation id="6244065453125065109">Трекеров
+заблокировано</translation>
+<translation id="2547939855139473800">Рекламы
+заблокировано</translation>
+<translation id="8880969045613157151">HTTPS-пере-
+направлений</translation>
+<translation id="204407992549693965">Сохранено
+времени</translation>
+<translation id="991605024067283917">Отправка метрик</translation>
+<translation id="6572660632052512096">Полная версия сайта</translation>
+<translation id="4479934682648362332">Предпочитать версию сайта для компьютера</translation>
+<translation id="807636106793708118">Предпочитать мобильную версию сайта</translation>
+<translation id="1340503115760585811">Включить полную версию сайта для новых вкладок</translation>
+<translation id="7924540991929826186">Использовать мобильную версию сайта для новых вкладок (рекомендуется)</translation>
+<translation id="3834924998750356151">Монитор блокирования</translation>
+<translation id="1713450908129883784">Индивидуальные элементы управления</translation>
+<translation id="6303294677342628402">Щиты</translation>
+<translation id="252011129655042182">Реклама и трекеры</translation>
+<translation id="6754976710186182237">Методы определения отпечатка</translation>
+<translation id="8585880402319729023">Блокировать фишинг</translation>
+<translation id="5965081608816406060">Воспроизведение видео в фоне</translation>
+<translation id="59174027418879706">Включено</translation>
+<translation id="4176463684765177261">Отключено</translation>
+<translation id="1580125697191336644">Тестовая функция. Включает воспроизведение звука из видео в фоновом режиме, если вкладка не активна или экран устройства выключен. Попробуйте переключиться в режим рабочего стола, если эта функция не работает.</translation>
+<translation id="6587448235155023666">Изменения вступят в силу после перезапуска Brave</translation>
+<translation id="8701563696941209024">ПЕРЕЗАПУСТИТЬ СЕЙЧАС</translation>
+<translation id="834487290629916192">ПОЗЖЕ</translation>
+<translation id="1842747674580016420">Воспроизведение видео в Brave</translation>
+<translation id="5368992950177874750">Если включено, видео будет воспроизводиться в Brave вместо соответствующего приложения</translation>
+<translation id="7459000603787995422">Закрывать вкладки при выходе</translation>
+<translation id="1680858055899097121">Не сохранять вкладки между сессиями</translation>
+<translation id="213787746370741250">Открыть вкладки в Моих Вкладках</translation>
+<translation id="3544772668823934222">Предложить открыть вкладки в Моих Вкладках</translation>
+<translation id="4501702055016678577">Выполнить приватный поиск с помощью DuckDuckGo?</translation>
+<translation id="910419239800579753">При выполнении приватного поиска Brave будет использовать DuckDuckGo для ответа на ваши поисковые запросы, когда вы находитесь на этой приватной вкладке. DuckDuckGo — это поисковая система, которая не отслеживает историю поиска, позволяя вам выполнять поиск конфиденциально.</translation>
+<translation id="1426410128494586442">Да</translation>
+<translation id="4250680216510889253">Нет</translation>
+<translation id="5628466560184522265">Узнайте о приватном поиске с помощью DuckDuckGo</translation>
+<translation id="1468415711258933398">Стандартная вкладка</translation>
+<translation id="6199596294742117349">Это приватная вкладка</translation>
+<translation id="5858455511731621847">Хотя сайты, которые вы посещаете на приватных вкладках, не сохраняются локально, они не делают вас анонимными или невидимыми для вашего интернет-провайдера, вашего работодателя или сайтов, которые вы посещаете.</translation>
+<translation id="2339273275658335597">Обновление Brave</translation>
+<translation id="8395234238259738935">Новый Brave браузер на 22% быстрее</translation>
+<translation id="391177677159359824">Синхронизация (бета-версия)</translation>
+<translation id="3680755684186855422">С помощью функции «Синхронизация» вы можете синхронизировать данные закладок в браузерах Brave на разных устройствах, сохраняя конфиденциальность.</translation>
+<translation id="3735228155296883311">Просто отсканируйте код из цепочки синхронизации, созданной на другом устройстве, или запустите новую цепочку.</translation>
+<translation id="7745082336226088126">Сканировать или ввести код синхронизации</translation>
+<translation id="1602067095281698985">Запустить новую цепочку синхронизации</translation>
+<translation id="4690880825349994619">Выберите «Синхронизация» в настройках Brave на синхронизированном устройстве. Нажмите «Добавить устройство» и отсканируйте QR-код, показанный на экране.</translation>
+<translation id="6270614677029463366">Выберите «Синхронизация» в настройках Brave на синхронизированном устройстве. Нажмите «Добавить устройство» &gt; «Показать кодовые слова».</translation>
+<translation id="1475223680121592371">Добавить мобильное устройство</translation>
+<translation id="2965377893636908578">Добавить компьютер</translation>
+<translation id="65315202420929965">Отсканируйте этот код синхронизации</translation>
+<translation id="6604289897677913048">В настройках Brave на втором телефоне или планшете выберите «Синхронизация» &gt; «Сканировать».</translation>
+<translation id="3405078156498254717">Отсканируйте QR-код (см. выше), используя второе устройство. Если камера недоступна, введите кодовые слова.</translation>
+<translation id="8076492880354921740">Вкладки</translation>
+<translation id="5706430066167764107">Автозаполнение/пароли</translation>
+<translation id="1164234435773528579">Настройки платежей Brave</translation>
+<translation id="6174119914106813304">СИНХРОНИЗИРОВАТЬ НА ЭТОМ УСТРОЙСТВЕ</translation>
+<translation id="6776430845975754238">Изменение настроек повлияет только на те данные, к которым открыт доступ на этом устройстве.</translation>
+<translation id="8193724030871339658">ДРУГИЕ УСТРОЙСТВА В ЦЕПОЧКЕ</translation>
+<translation id="279635009973773843">ЗАГРУЗКА УСТРОЙСТВ…</translation>
+<translation id="6450924769151530465">Добавить другое устройство</translation>
+<translation id="2004365171440701679">Удалить это устройство</translation>
+<translation id="2731921493694251495">Введите код цепочки синхронизации</translation>
+<translation id="2590683710114839102">Откройте настройки Brave на компьютере и выберите «Синхронизация» &gt; «Ввести код цепочки синхронизации».</translation>
+<translation id="1732271215616957850">Введите кодовые слова, указанные выше, включая пробелы.</translation>
+<translation id="1178128181015923849">Вы действительно хотите удалить устройство <ph name="DEVICE_NAME" />?</translation>
+<translation id="9154490620151093733">Запрос отправлен. Устройство будет удалено в ближайшее время.</translation>
+<translation id="544873101641618162">Загрузка данных…</translation>
+<translation id="6779408765480516895">Произошла ошибка. Время ожидания запроса истекло.</translation>
+<translation id="4973653569293835178">Я воспользуюсь камерой…</translation>
+<translation id="2569646144216067185">Количество слов: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Неверное количество слов</translation>
+<translation id="2175927920773552910">QR-код</translation>
+<translation id="8653433343015102968">Кодовые слова</translation>
+<translation id="8624315169751085215">Копировать в буфер обмена</translation>
+<translation id="5241263629636958324">Скопировано в буфер обмена</translation>
+<translation id="222883304157347087">(это устройство)</translation>
+<translation id="4745013713714502219">Brave уже установлен
+в качестве браузера по умолчанию.</translation>
+<translation id="6874141297197991294">Вы уже установили браузер по умолчанию.
+Выбрать другой можно в настройках приложения.</translation>
+<translation id="5708254139873333042">Экономьте заряд аккумулятора и загружайте веб-страницы быстрее. Сделайте Brave браузером по умолчанию. Нажмите «Установить в качестве браузера по умолчанию» в меню «Brave»</translation>
+<translation id="3570367516044491911">Сделать браузером по умолчанию</translation>
+<translation id="5827583267117939716">Выберите Brave из списка и нажмите «Всегда»</translation>
+<translation id="2262526166668973593">Сделать Brave браузером по умолчанию
+Экономьте заряд батареи и загружайте страницы быстрее</translation>
+<translation id="1916285746997567466">Новые способы
+получать токены.</translation>
+<translation id="1071131306814166204">Теперь вы можете получать токены за просмотр рекламы,
+в которой соблюдается конфиденциальность данных.</translation>
+<translation id="1327938628925645979">ВСТУПИТЬ В ПРОГРАММУ BRAVE REWARDS</translation>
+<translation id="5567439033041178034">ПОДРОБНЕЕ</translation>
+<translation id="7530570094705720669">Создание кошелька</translation>
+<translation id="3780605330121608425">Ваш кошелек</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> долл. США</translation>
+<translation id="1165667598801520610">Добавить средства</translation>
+<translation id="2730771409541953249">О BRAVE REWARDS</translation>
+<translation id="8596647978585397359">Спасибо, что заглянули!</translation>
+<translation id="3165726837666415756">Вы можете поддержать авторов этого сайта и поблагодарить их за труд, сделав пожертвование. Создатели контента, которые прошли проверку, получают вознаграждение в течение первой недели каждого календарного месяца.</translation>
+<translation id="1704859330137112950">При желании вы можете настроить ежемесячные взносы.</translation>
+<translation id="245015745140252435">Сумма пожертвования</translation>
+<translation id="3370968821559864204">баланс кошелька:</translation>
+<translation id="3250511771491660127">Перечислять ежемесячно</translation>
+<translation id="2573313946367623146">отправить пожертвование</translation>
+<translation id="3492491948683276944">настроить ежемесячные пожертвования</translation>
+<translation id="853714875140407133">недостаточно токенов</translation>
+<translation id="298349922412901215">ПРИМЕЧАНИЕ. Этот создатель контента еще не зарегистрировался в нашей программе. Повторные попытки отправить ему пожертвование будут совершаться до тех пор, пока он не пройдет проверку или пока не истечет 90 дней.</translation>
+<translation id="6940273954212603510">пожалуйста</translation>
+<translation id="1036277985068412734">добавить средства</translation>
+<translation id="5299848999918506028">Спасибо!</translation>
+<translation id="2626799779920242286">Попробуйте позже.</translation>
+<translation id="6639570430554986719">ЯНВАРЬ</translation>
+<translation id="1807352595146144483">ФЕВРАЛЬ</translation>
+<translation id="2021828608097804771">МАРТ</translation>
+<translation id="1112527417301376065">АПРЕЛЬ</translation>
+<translation id="8737090912129856089">МАЙ</translation>
+<translation id="6832612641867423485">ИЮНЬ</translation>
+<translation id="8442574087856349697">ИЮЛЬ</translation>
+<translation id="1202041222842415454">АВГУСТ</translation>
+<translation id="7317265217038113435">СЕНТЯБРЬ</translation>
+<translation id="8220228041552340594">ОКТЯБРЬ</translation>
+<translation id="8280223431922155812">НОЯБРЬ</translation>
+<translation id="4254029385847607686">ДЕКАБРЬ</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Внимание!</translation>
+<translation id="7335371657242627509">Добавить в автоплатежи</translation>
+<translation id="8918760045046434238">Отправить пожертвование…</translation>
+<translation id="1978261665418056203">Нет информации
+о действиях в этом месяце.</translation>
+<translation id="4914597931214386232">Полученные в подарок токены</translation>
+<translation id="298067735430872465">Доходы от рекламы</translation>
+<translation id="6112368337882254910">Автоплатеж</translation>
+<translation id="4781696154289395607">Вы сделали пожертвование: <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">Разовые пожертвования</translation>
+<translation id="7577100371127227294">Ежемесячные пожертвования</translation>
+<translation id="8772672608371898774">Издатель, проверенный Brave</translation>
+<translation id="1397683270551078781">Еще не проверен</translation>
+<translation id="5727208111992260840">Этот создатель контента еще не зарегистрировался в нашей программе.
+        Отправленные пожертвования останутся в вашем кошельке до тех пор, пока автор не пройдет проверку.</translation>
+<translation id="683765328936486920">на YouTube</translation>
+<translation id="8969049974285901797">в Twitch</translation>
+<translation id="606865182719489911">Доступен бесплатный токен.</translation>
+<translation id="3453206261112715431">Токен в подарок</translation>
+<translation id="13853865024308201">Получить</translation>
+<translation id="3692362746128814480">Вы хотите отправить <ph name="BAT_VALUE" /> BAT создателям контента, которые еще не зарегистрировались в нашей программе.
+Повторные попытки отправить им пожертвование будут совершаться в браузере до тех пор,
+пока эти лица не пройдут проверку или пока не истечет 90 дней.</translation>
+<translation id="7997676409547731821">Вы запланировали ежемесячный автоплатеж и чаевые, но отправить пожертвование не удалось, поскольку у вас недостаточно средств. Мы повторим попытку через 30 дней.</translation>
+<translation id="5306913077198665897">При обработке платежа произошла ошибка. Повторите попытку.</translation>
+<translation id="2429828319207652823">При обработке платежа произошла ошибка.</translation>
+<translation id="2323069945529668668">Ошибка!</translation>
+<translation id="7510166204621526816">Сервер Brave Rewards не отвечает. Мы постараемся исправить это как можно скорее.</translation>
+<translation id="2104073734684466851">Подарки</translation>
+<translation id="3068742524072211213">(срок действия истекает <ph name="DATE" />)</translation>
+<translation id="7550470870580166294">Недостаточно средств</translation>
+<translation id="2775064702681588061">Необходимо пополнить баланс аккаунта Brave Rewards.</translation>
+<translation id="765834632354589737">Резервное копирование кошелька</translation>
+<translation id="1713542052890184975">Создайте резервную копию своего кошелька Brave.</translation>
+<translation id="3333887201479867589">Brave Rewards</translation>
+<translation id="2012723204723845092">С возвращением!</translation>
+<translation id="7669994301500276741">Получайте токены, пока пользуетесь браузером.</translation>
+<translation id="8203529727745387785">Получайте токены за просмотр рекламы,
+в которой соблюдается конфиденциальность данных,
+и поддерживайте создателей интересного вам контента.</translation>
+<translation id="5148719990624240755">ВКЛЮЧИТЬ BRAVE REWARDS</translation>
+<translation id="1628742278973105368">Ваши первые ежемесячные чаевые будут отправлены:</translation>
+<translation id="6665366815203065060">Вы только что отправили чаевые:</translation>
+<translation id="5441565662498481293">Вы автоматически отправляете чаевые:</translation>
+<translation id="1166682575529520472">Ежемесячно</translation>
+<translation id="8495235435594442882">Включить нижнюю панель</translation>
+<translation id="7239121106815507493">Отключить нижнюю панель</translation>
+<translation id="145068164597056296">Поиск или URL</translation>
+<translation id="6810078320346589989">Создать закладку</translation>
+<translation id="5463954686005964104">Благодарить этот сайт деньгами ежемесячно</translation>
+<translation id="1923568441186788334">Brave Rewards здесь</translation>
+<translation id="7722441371828049691">Поддержите ваши любимые сайты</translation>
+<translation id="5234764350956374838">Закрыть</translation>
+<translation id="4472575034687746823">Начать</translation>
+<translation id="4162066325465825185">Мы сожалеем, похоже, что Brave Rewards недоступно на вашем устройстве</translation>
+<translation id="4150201353443180367">Отобразить</translation>
+<translation id="2804710924397009224">Скрыть иконку  Brave Rewards</translation>
+<translation id="7358991116457217836">Скрывает иконку Brave Rewards, когда Brave Rewards не активно</translation>
+<translation id="7618184561660805696">Возвращайтесь скорее за бесплатным подарком токенов</translation>
+<translation id="3349204812119681938">Сбросить Brave Rewards</translation>
+<translation id="8782039523249932839">Это действие удалит ваш кошелек Brave и сбросит все ваши данные Brave Rewards</translation>
+<translation id="5321518976657560663">Ошибка сброса</translation>
+<translation id="7071576788062714665">Произошла ошибка сброса Brave Rewards. Перезапустите Brave и повторите попытку</translation>
 </translationbundle>

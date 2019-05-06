@@ -90,7 +90,7 @@
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{นำ 1 รายการที่เลือกออก}other{นำ # รายการที่เลือกออก}}</translation>
 <translation id="1641113438599504367">Safe Browsing</translation>
 <translation id="164269334534774161">คุณกำลังดูสำเนาออฟไลน์ของหน้านี้จากวันที่ <ph name="CREATION_TIME" /></translation>
-<translation id="1644574205037202324">ประวัติการเข้าชม</translation>
+<translation id="1644574205037202324">ประวัติ</translation>
 <translation id="1647391597548383849">เข้าถึงกล้องถ่ายรูป</translation>
 <translation id="1660204651932907780">อนุญาตให้เว็บไซต์เล่นเสียง (แนะนำ)</translation>
 <translation id="1670399744444387456">พื้นฐาน</translation>
@@ -198,7 +198,7 @@
 <translation id="2414886740292270097">มืด</translation>
 <translation id="8285489906452138776">Brave ต้องการสิทธิ์เข้าถึงกล้องถ่ายรูปของคุณสำหรับไซต์นี้</translation>
 <translation id="2426805022920575512">เลือกบัญชีอื่น</translation>
-<translation id="2433507940547922241">ลักษณะที่ปรากฏ</translation>
+<translation id="2433507940547922241">ลักษณะ</translation>
 <translation id="2434158240863470628">ดาวน์โหลดเสร็จสมบูรณ์ <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">การเข้าถึงตำแหน่ง</translation>
 <translation id="2450083983707403292">คุณต้องการเริ่มดาวน์โหลด <ph name="FILE_NAME" /> อีกครั้งไหม</translation>
@@ -431,7 +431,7 @@
 <translation id="4226663524361240545">การแจ้งเตือนอาจทำให้อุปกรณ์สั่น</translation>
 <translation id="423219824432660969">เข้ารหัสลับข้อมูลที่ซิงค์ด้วยรหัสผ่าน Google ตั้งแต่ <ph name="TIME" /></translation>
 <translation id="4242533952199664413">เปิดการตั้งค่า</translation>
-<translation id="4243710787042215766">เปิดในแท็บส่วนตัว</translation>
+<translation id="4243710787042215766">เปิดแท็บส่วนตัว</translation>
 <translation id="7445061995866044926">ต้องการออกจากระบบ Brave ไหม</translation>
 <translation id="4256782883801055595">ใบอนุญาตโอเพนซอร์ส</translation>
 <translation id="4259722352634471385">มีการบล็อกการนำทาง: <ph name="URL" /></translation>
@@ -1130,4 +1130,223 @@
 <translation id="982182592107339124">การดำเนินการนี้จะล้างข้อมูลสำหรับทุกเว็บไซต์ รวมถึง</translation>
 <translation id="983192555821071799">ปิดแท็บทั้งหมด</translation>
 <translation id="987264212798334818">ทั่วไป</translation>
+<translation id="3209146299287804856">การตั้งค่าเกราะป้องกัน Brave สำหรับ</translation>
+<translation id="622484624075952240">ลง</translation>
+<translation id="2706462751667573066">ขึ้น</translation>
+<translation id="4339730410920731698">ป้องกันโฆษณาและการติดตามข้อมูลแล้ว</translation>
+<translation id="2313532038420432247">อัพเกรด HTTPS</translation>
+<translation id="7461425058443653485">ป้องกันสคริปแล้ว</translation>
+<translation id="7835726359440951858">ป้องกันโฆษณาและการติดตามข้อมูล</translation>
+<translation id="520895744850022668">HTTPS ทุกแห่ง</translation>
+<translation id="94154759592465111">ป้องกันสคริป</translation>
+<translation id="7307834434086582547">เปิดใช้งาน/ปิดเกราะป้องกัน Brave</translation>
+<translation id="6132506775968708399">ปิดกั้นคุกกี้จากบุคคลภายนอก</translation>
+<translation id="8710614491157212477">เปิดเว็บที่รองรับโดยใช้ HTTPS แทน HTTP หากเป็นไปได้</translation>
+<translation id="5758129336814690876">โหมดป้องกันการติดตาม</translation>
+<translation id="4609637183310787528">ป้องกันการโหลดทรัพยากรที่จะติดตามคุณ</translation>
+<translation id="8387201461264842096">บล็อกโฆษณา</translation>
+<translation id="1934885595886623674">ป้องกันการโหลดโฆษณา</translation>
+<translation id="7458422973722236530">การป้องกันการพิมพ์ลายนิ้วมือ</translation>
+<translation id="5787084571334399599">ป้องกันมิให้เบราเซอร์พิมพ์ลายนิ้วมือ</translation>
+<translation id="3758669798635576061">วิธีการพิมพ์ลายนิ้วมือที่ถูกบล็อก</translation>
+<translation id="3276318574457057212">การบล็อกโฆษณาในภูมิภาค</translation>
+<translation id="2300239903491866759">ป้องกันมิให้โหลดโฆษณาในภูมิภาค</translation>
+<translation id="8142327400852603066">ไม่มีรายการเพิ่มเติมสำหรับสถานที่ของคุณ</translation>
+<translation id="9148058034647219655">ทางออก</translation>
+<translation id="3082265116777145081">เพิ่มชื่ออุปกรณ์</translation>
+<translation id="9024091168371687561">ป้อนชื่อเพิ่มเติมสำหรับอุปกรณ์นี้</translation>
+<translation id="3998827900918661986">อุปกรณ์ Android</translation>
+<translation id="7539985410310934287">ป้อนคำรหัส</translation>
+<translation id="326454632686131209">ซิงค์อุปกรณ์</translation>
+<translation id="8985635554450124959">ไม่สามารถตั้งค่าการซิงค์ได้</translation>
+<translation id="230829157901335313">คุณอาจตั้งเวลาระบบหรือโซนเวลาในอุปกรณ์ผิดพลาด โปรดตั้งเวลาและโซนเวลาให้ถูกต้อง</translation>
+<translation id="6244065453125065109">บล็อก
+ตัวติดตามแล้ว</translation>
+<translation id="2547939855139473800">บล็อก
+โฆษณาแล้ว</translation>
+<translation id="8880969045613157151">อัพเกรด
+HTTPS</translation>
+<translation id="204407992549693965">บันทึกเวลา
+EST แล้ว</translation>
+<translation id="991605024067283917">ส่งตัววัด</translation>
+<translation id="6572660632052512096">โหมดเดสก์ท็อป</translation>
+<translation id="4479934682648362332">ต้องการใช้งานเว็บไซต์เวอร์ชันเดสก์ท็อปมากกว่า</translation>
+<translation id="807636106793708118">ต้องการใช้งานเว็บไซต์เวอร์ชันมือถือมากกว่า</translation>
+<translation id="1340503115760585811">เปิดใช้มุมมองเดสก์ท็อปสำหรับแท็บใหม่</translation>
+<translation id="7924540991929826186">ใช้เว็บไซต์เวอร์ชันมือถือสำหรับแท็บใหม่ (แนะนำ)</translation>
+<translation id="3834924998750356151">การบล็อกหน้าจอ</translation>
+<translation id="1713450908129883784">ระบบควบคุมส่วนตัว</translation>
+<translation id="6303294677342628402">เกราะป้องกัน</translation>
+<translation id="252011129655042182">โฆษณาและระบบติดตาม</translation>
+<translation id="6754976710186182237">วิธีใช้ลายนิ้วมือ</translation>
+<translation id="8585880402319729023">บล็อกฟิชชิ่ง</translation>
+<translation id="5965081608816406060">การเล่นวิดีโอพื้นหลัง</translation>
+<translation id="59174027418879706">เปิดใช้งาน</translation>
+<translation id="4176463684765177261">ปิดใช้งาน</translation>
+<translation id="1580125697191336644">การทดลอง เปิดใช้ฟีเจอร์เล่นเสียงจากวิดีโอในเบื้องหลังเมื่อแท็บไม่ได้ทำงานหรือเมื่อปิดหน้าจออุปกรณ์ ลองเปลี่ยนเป็นโหมดเดสก์ท็อปหากฟีเจอร์นี้ยังไม่ทำงาน</translation>
+<translation id="6587448235155023666">การเปลี่ยนแปลงจะมีผลในครั้งถัดไปที่คุณเปิด Brave ใหม่</translation>
+<translation id="8701563696941209024">เปิดใหม่ทันที</translation>
+<translation id="834487290629916192">ภายหลัง</translation>
+<translation id="1842747674580016420">การเล่นวิดีโอใน Brave</translation>
+<translation id="5368992950177874750">หากเปิดใช้งาน วิดีโอจะถูกเล่นใน Brave แทนแอปที่เกี่ยวข้อง</translation>
+<translation id="7459000603787995422">ปิดแท็บเมื่อออก</translation>
+<translation id="1680858055899097121">อย่าเก็บแท็บไว้ข้ามเซสชันการเรียกดู</translation>
+<translation id="213787746370741250">เปิดแท็บในแท็บแบบกำหนดเอง</translation>
+<translation id="3544772668823934222">ข้อเสนอให้เปิดแท็บในแท็บแบบกำหนดเอง</translation>
+<translation id="4501702055016678577">สงสัยเรื่องการค้นหาส่วนตัวด้วย DuckDuckGo ใช่หรือไม่</translation>
+<translation id="910419239800579753">ด้วยการค้นหาส่วนตัว Brave จะใช้ DuckDuckGo เพื่อตอบการค้นหาในขณะที่คุณอยู่ในแท็บส่วนตัวนี้ DuckDuckGo คือเครื่องมือค้นหาที่ไม่ติดตามประวัติการใช้งาน จึงทำให้คุณค้นหาได้อย่างเป็นส่วนตัว</translation>
+<translation id="1426410128494586442">ไม่ใช่</translation>
+<translation id="4250680216510889253">ใช่</translation>
+<translation id="5628466560184522265">เรียนรู้เกี่ยวกับการค้นหาส่วนตัวด้วย DuckDuckGo</translation>
+<translation id="1468415711258933398">แท็บมาตรฐาน</translation>
+<translation id="6199596294742117349">นี่คือแท็บส่วนตัว</translation>
+<translation id="5858455511731621847">แม้ว่าเว็บไซต์ที่คุณเข้าชมในแท็บส่วนตัวจะไม่บันทึกลงในเครื่อง แต่วิธีนี้ไม่ทำให้คุณไม่มีตัวตนหรือหายไปจากผู้ให้บริการอินเทอร์เน็ต, นายจ้าง หรือเว็บไซต์ที่คุณเข้าชม</translation>
+<translation id="2339273275658335597">อัปเดตของ Brave</translation>
+<translation id="8395234238259738935">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</translation>
+<translation id="391177677159359824">Sync (เบต้า)</translation>
+<translation id="3680755684186855422">Brave Sync ให้คุณซิงค์ข้อมูลบุ๊กมาร์กระหว่าง Brave Browser บนอุปกรณ์ต่างๆ ของคุณได้อย่างเป็นส่วนตัว</translation>
+<translation id="3735228155296883311">เพียงสแกนรหัสจากกลุ่มการซิงค์ที่คุณสร้างไว้บนอีกอุปกรณ์หนึ่ง หรือเริ่มกลุ่มการซิงค์ใหม่</translation>
+<translation id="7745082336226088126">สแกนหรือป้อนรหัสการซิงค์</translation>
+<translation id="1602067095281698985">เริ่มกลุ่มการซิงค์ใหม่</translation>
+<translation id="4690880825349994619">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า &gt; ซิงค์ เลือก "เพิ่มอุปกรณ์" แล้วสแกนรหัส QR ที่แสดงอยู่บนหน้าจอ</translation>
+<translation id="6270614677029463366">หากต้องการใช้อุปกรณ์ที่ซิงค์อยู่ในปัจจุบัน ให้เปิด การตั้งค่า Brave แล้วนำทางไปยัง การตั้งค่า &gt; ซิงค์ เลือก "เพิ่มอุปกรณ์" จากนั้นเลือก "แสดงข้อความรหัสแทน"</translation>
+<translation id="1475223680121592371">เพิ่มอุปกรณ์เคลื่อนที่</translation>
+<translation id="2965377893636908578">เพิ่มคอมพิวเตอร์</translation>
+<translation id="65315202420929965">สแกนรหัสการซิงค์นี้</translation>
+<translation id="6604289897677913048">หากต้องการใช้โทรศัพท์หรือแท็บเล็ตเครื่องที่สอง ให้นำทางไปยัง การตั้งค่า Brave &gt; ซิงค์ &gt; สแกน</translation>
+<translation id="3405078156498254717">จับภาพรหัส QR (ด้านล่าง) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</translation>
+<translation id="8076492880354921740">แท็บ</translation>
+<translation id="5706430066167764107">ป้อนอัตโนมัติ/รหัสผ่าน</translation>
+<translation id="1164234435773528579">การตั้งค่า Brave Payment</translation>
+<translation id="6174119914106813304">ซิงค์บนอุปกรณ์นี้</translation>
+<translation id="6776430845975754238">การเปลี่ยนแปลงการตั้งค่าจะมีผลเฉพาะกับข้อมูลที่อุปกรณ์นี้แชร์กับอุปกรณ์อื่นๆ</translation>
+<translation id="8193724030871339658">อุปกรณ์อื่นๆ ในกลุ่ม</translation>
+<translation id="279635009973773843">กำลังโหลดอุปกรณ์...</translation>
+<translation id="6450924769151530465">เพิ่มอีกอุปกรณ์</translation>
+<translation id="2004365171440701679">ลบอุปกรณ์นี้</translation>
+<translation id="2731921493694251495">ป้อนรหัสกลุ่มการซิงค์</translation>
+<translation id="2590683710114839102">บนคอมพิวเตอร์ของคุณ ให้นำทางไปยัง การตั้งค่า Brave &gt; ซิงค์ เลือก "ป้อนรหัสกลุ่มการซิงค์"</translation>
+<translation id="1732271215616957850">ป้อนข้อความรหัสที่กล่าวถึงข้างต้น รวมช่องว่าง</translation>
+<translation id="1178128181015923849">คุณแน่ใจหรือไม่ว่าต้องการลบอุปกรณ์ '<ph name="DEVICE_NAME" />'</translation>
+<translation id="9154490620151093733">ส่งคำขอลบแล้ว อุปกรณ์จะถูกลบในไม่ช้า</translation>
+<translation id="544873101641618162">กำลังโหลดข้อมูล...</translation>
+<translation id="6779408765480516895">มีบางอย่างผิดปกติ ดูเหมือนคำขอของคุณจะหมดเวลา</translation>
+<translation id="4973653569293835178">ฉันจะใช้กล้องของฉัน...</translation>
+<translation id="2569646144216067185">จำนวนคำ: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">จำนวนคำไม่ถูกต้อง</translation>
+<translation id="2175927920773552910">รหัส QR</translation>
+<translation id="8653433343015102968">ข้อความรหัส</translation>
+<translation id="8624315169751085215">คัดลอกไปยังคลิปบอร์ด</translation>
+<translation id="5241263629636958324">คัดลอกไปยังคลิปบอร์ดแล้ว</translation>
+<translation id="222883304157347087">(อุปกรณ์นี้)</translation>
+<translation id="4745013713714502219">Brave ถูกตั้งเป็น
+เบราว์เซอร์เริ่มต้นของคุณแล้ว</translation>
+<translation id="6874141297197991294">คุณได้ตั้งค่าเบราว์เซอร์เริ่มต้นไว้เรียบร้อยแล้ว
+คุณสามารถเปลี่ยนเบราเซอร์เริ่มต้นได้ในการตั้งค่าแอพของคุณ</translation>
+<translation id="5708254139873333042">ประหยัดแบตเตอรี่และโหลดหน้าเว็บเร็วขึ้น ตั้ง Brave เป็นเบราว์เซอร์เริ่มต้น แตะ "ตั้งเป็นเบราว์เซอร์เริ่มต้น" จากเมนู Brave</translation>
+<translation id="3570367516044491911">ตั้งค่าเป็นเบราว์เซอร์เริ่มต้น</translation>
+<translation id="5827583267117939716">เลือก Brave จากรายการและแตะ "ทุกครั้ง"</translation>
+<translation id="2262526166668973593">ตั้งค่า Brave เป็นเว็บเบราว์เซอร์เริ่มต้น
+ประหยัดแบตเตอรี่ โหลดหน้าเว็บได้เร็วขึ้น</translation>
+<translation id="1916285746997567466">เตรียมตัวพบกับ
+อินเตอร์เน็ตรูปแบบใหม่</translation>
+<translation id="1071131306814166204">ตอนนี้คุณสามารถได้รับโทเค็นสำหรับ
+การดูโฆษณาที่ไม่รบกวนความเป็นส่วนตัวได้แล้ว</translation>
+<translation id="1327938628925645979">ร่วมรับรางวัล</translation>
+<translation id="5567439033041178034">เรียนรู้เพิ่มเติม</translation>
+<translation id="7530570094705720669">การสร้างกระเป๋าเงิน</translation>
+<translation id="3780605330121608425">กระเป๋าเงินของคุณ</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">เติมเงิน</translation>
+<translation id="2730771409541953249">สรุปรางวัล</translation>
+<translation id="8596647978585397359">ขอบคุณที่แวะมา</translation>
+<translation id="3165726837666415756">คุณสามารถสนับสนุนเว็บไซต์นี้ด้วยการส่งทิป ซึ่งเป็นวิธีในการขอบคุณพวกเขาที่ทำเนื้อหาดีๆ ออกมา ครีเอเตอร์เนื้อหาที่ยืนยันตัวตนแล้วจะได้รับค่าทิปของพวกเขาในช่วงสัปดาห์แรกของแต่ละเดือนตามปฏิทิน</translation>
+<translation id="1704859330137112950">หากว่าคุณชอบ คุณสามารถกำหนดทิปรายเดือนเพื่อสนับสนุนเว็บไซต์นี้อย่างต่อเนื่องได้</translation>
+<translation id="245015745140252435">จำนวนทิป</translation>
+<translation id="3370968821559864204">ยอดคงเหลือกระเป๋าเงิน:</translation>
+<translation id="3250511771491660127">ทำให้เป็นรายเดือน</translation>
+<translation id="2573313946367623146">ส่งทิปของฉัน</translation>
+<translation id="3492491948683276944">กำหนดทิปรายเดือน</translation>
+<translation id="853714875140407133">มีโทเค็นไม่เพียงพอ</translation>
+<translation id="298349922412901215">หมายเหตุ: ครีเอเตอร์รายนี้ยังไม่ได้ลงทะเบียนเพื่อรับเงินสนับสนุนจากผู้ใช้ Brave เราจะพยายามส่งเงินสนับสนุนให้พวกเขาจนกว่าจะยืนยันตัวตนหรือจนกว่าจะผ่านไป 90 วัน</translation>
+<translation id="6940273954212603510">ได้โปรด</translation>
+<translation id="1036277985068412734">เติมเงิน</translation>
+<translation id="5299848999918506028">ขอบคุณ</translation>
+<translation id="2626799779920242286">กรุณาลองใหม่ภายหลัง</translation>
+<translation id="6639570430554986719">มกราคม</translation>
+<translation id="1807352595146144483">กุมภาพันธ์</translation>
+<translation id="2021828608097804771">มีนาคม</translation>
+<translation id="1112527417301376065">เมษายน</translation>
+<translation id="8737090912129856089">พฤษภาคม</translation>
+<translation id="6832612641867423485">มิถุนายน</translation>
+<translation id="8442574087856349697">กรกฎาคม</translation>
+<translation id="1202041222842415454">สิงหาคม</translation>
+<translation id="7317265217038113435">กันยายน</translation>
+<translation id="8220228041552340594">ตุลาคม</translation>
+<translation id="8280223431922155812">พฤศจิกายน</translation>
+<translation id="4254029385847607686">ธันวาคม</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">ประกาศ</translation>
+<translation id="7335371657242627509">มีระบบสนับสนุนอัตโนมัติ</translation>
+<translation id="8918760045046434238">ส่งทิป...</translation>
+<translation id="1978261665418056203">ยังไม่มีกิจกรรมเลย
+ในเดือนนี้...</translation>
+<translation id="4914597931214386232">รับเงินสนับสนุนเป็นโทเค็นแล้ว</translation>
+<translation id="298067735430872465">สร้างรายได้จากโฆษณา</translation>
+<translation id="6112368337882254910">ระบบสนับสนุนอัตโนมัติ</translation>
+<translation id="4781696154289395607">คุณได้สนับสนุน <ph name="BAT_VALUE" />BAT</translation>
+<translation id="9182287025588539628">ทิปครั้งเดียว</translation>
+<translation id="7577100371127227294">ทิปรายเดือน</translation>
+<translation id="8772672608371898774">ผู้เผยแพร่ที่ยืนยันตัวตนกับ Brave แล้ว</translation>
+<translation id="1397683270551078781">ยังไม่ได้ยืนยันตัวตน</translation>
+<translation id="5727208111992260840">ครีเอเตอร์รายนี้ยังไม่ได้ลงทะเบียนเพื่อรับเงินสนับสนุนจากผู้ใช้ Brave
+        ทิปที่คุณส่งจะยังคงอยู่ในกระเป๋าเงินของคุณจนกว่าพวกเขาจะยืนยันตัวตน</translation>
+<translation id="683765328936486920">บน Youtube</translation>
+<translation id="8969049974285901797">บน Twitch</translation>
+<translation id="606865182719489911">เงินรางวัลโทเค็นฟรีพร้อมแล้ว</translation>
+<translation id="3453206261112715431">เงินรางวัลโทเค็นฟรี</translation>
+<translation id="13853865024308201">รับ</translation>
+<translation id="3692362746128814480">คุณได้มอบ <ph name="BAT_VALUE" />BAT ให้กับครีเอเตอร์ที่ยังไม่ได้
+ลงทะเบียนเพื่อรับเงินสนับสนุน เบราว์เซอร์ของคุณจะพยายามมอบเงินสนับสนุนให้
+จนกว่าพวกเขาจะยืนยันตัวตน หรือจนกว่าจะผ่านไป 90 วัน</translation>
+<translation id="5306913077198665897">มีปัญหาเกิดขึ้นในการประมวลผลทิปของคุณ กรุณาลองอีกครั้ง</translation>
+<translation id="2429828319207652823">มีปัญหาเกิดขึ้นในการประมวลผลการสนับสนุนของคุณ</translation>
+<translation id="2323069945529668668">แย่แล้ว</translation>
+<translation id="7510166204621526816">เซิร์ฟเวอร์ของ Brave Rewards ไม่ตอบสนอง เราจะรีบแก้ไขให้เร็วที่สุดเท่าที่จะเป็นไปได้</translation>
+<translation id="2104073734684466851">เงินรางวัล</translation>
+<translation id="3068742524072211213">หมดอายุวันที่ <ph name="DATE" /></translation>
+<translation id="7550470870580166294">เงินไม่เพียงพอ</translation>
+<translation id="2775064702681588061">บัญชี Brave Rewards ของคุณกำลังรอการฝากอยู่</translation>
+<translation id="765834632354589737">กระเป๋าเงินสำรอง</translation>
+<translation id="1713542052890184975">กรุณาสำรองกระเป๋าเงิน Brave ของคุณ</translation>
+<translation id="3333887201479867589">Brave Rewards</translation>
+<translation id="2012723204723845092">ขอต้อนรับกลับมา</translation>
+<translation id="7669994301500276741">รับรางวัลสำหรับการท่องเว็บ</translation>
+<translation id="8203529727745387785">สร้างรายได้จากการดูโฆษณาที่ไม่กระทบ
+กับความเป็นส่วนตัว และจ่ายเงินเพื่อสนับสนุน
+ครีเอเตอร์เนื้อหาที่คุณชื่นชอบ</translation>
+<translation id="5148719990624240755">เปิดใช้งาน BRAVE REWARDS</translation>
+<translation id="1628742278973105368">ระบบจะส่งทิปรายเดือนครั้งแรกของคุณใน:</translation>
+<translation id="6665366815203065060">คุณเพิ่งให้ทิปกับ:</translation>
+<translation id="5441565662498481293">คุณกำลังให้ทิปโดยอัตโนมัติกับ:</translation>
+<translation id="1166682575529520472">รายเดือน</translation>
+<translation id="8495235435594442882">เปิดแถบเครื่องมือด้านล่าง</translation>
+<translation id="7239121106815507493">ปิดแถบเครื่องมือด้านล่าง</translation>
+<translation id="145068164597056296">ค้นหาหรือ URL</translation>
+<translation id="6810078320346589989">สร้างบุ๊กมาร์ก</translation>
+<translation id="5463954686005964104">ให้ทิปเว็บไซต์นี้เป็นรายเดือน</translation>
+<translation id="1923568441186788334">Brave Rewards อยู่นี่แล้ว</translation>
+<translation id="7722441371828049691">สนับสนุนเว็บไซต์ที่คุณชื่นชอบ</translation>
+<translation id="5234764350956374838">เพิกเฉย</translation>
+<translation id="4472575034687746823">เริ่มต้นใช้งาน</translation>
+<translation id="4162066325465825185">ขออภัย ดูเหมือนว่า Brave Rewards จะไม่พร้อมให้บริการในอุปกรณ์ของคุณ</translation>
+<translation id="4150201353443180367">แสดง</translation>
+<translation id="2804710924397009224">ซ่อนไอคอน Brave Rewards</translation>
+<translation id="7358991116457217836">ซ่อนไอคอน Brave Rewards เมื่อไม่ได้เปิดใช้งาน Brave Rewards</translation>
+<translation id="7618184561660805696">กลับมาใหม่เร็ว ๆ นี้เพื่อรับโทเค็นฟรี</translation>
+<translation id="3349204812119681938">รีเซ็ต Brave Rewards</translation>
+<translation id="8782039523249932839">คำสั่งนี้จะลบกระเป๋าเงิน Brave ของคุณและรีเซ็ตข้อมูล Brave Rewards ของคุณทั้งหมด</translation>
+<translation id="5321518976657560663">ข้อผิดพลาดในการรีเซ็ต</translation>
+<translation id="7071576788062714665">เกิดข้อผิดพลาดขณะรีเซ็ต Brave Rewards กรุณาปิดแล้วเปิด Brave ใหม่และลองอีกครั้ง</translation>
 </translationbundle>

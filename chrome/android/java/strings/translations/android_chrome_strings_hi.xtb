@@ -981,7 +981,7 @@
 <translation id="4565206163201411670">'डिजिटल वेलबीइंग' में अपनी Brave गतिविधि दिखाना चाहते हैं?</translation>
 <translation id="8116925261070264013">आवाज़ बंद की गई</translation>
 <translation id="813082847718468539">साइट जानकारी देखें</translation>
-<translation id="8131740175452115882">दुबारा पूछें</translation>
+<translation id="8131740175452115882">पुष्टि करें</translation>
 <translation id="8156139159503939589">आप किन भाषाओं में पढ़ सकते हैं?</translation>
 <translation id="8168435359814927499">सामग्री</translation>
 <translation id="8186512483418048923"><ph name="FILES" /> फ़ाइलें बची हैं</translation>
@@ -1009,7 +1009,7 @@
 <translation id="8380167699614421159">इस साइट में तंग करने वाले या गुमराह करने वाले विज्ञापन दिखाई देते हैं</translation>
 <translation id="8393700583063109961">संदेश भेजें</translation>
 <translation id="8413126021676339697">पूरा इतिहास दिखाएं</translation>
-<translation id="8428213095426709021">सेटिंग</translation>
+<translation id="8428213095426709021">सेटिंग्स</translation>
 <translation id="8438566539970814960">खोजों और ब्राउज़िंग को बेहतर बनाएं</translation>
 <translation id="8441146129660941386">पीछे जाएं</translation>
 <translation id="4058091506841967397">Brave अपडेट संभव नहीं</translation>
@@ -1130,4 +1130,209 @@
 <translation id="982182592107339124">इससे इन सभी साइटों का डेटा साफ़ हो जाएगा:</translation>
 <translation id="983192555821071799">सभी टैब बंद करें</translation>
 <translation id="987264212798334818">सामान्य</translation>
+<translation id="3209146299287804856">रेव साइट के लिए रक्षा करनेवाला अस्</translation>
+<translation id="622484624075952240">नीचे</translation>
+<translation id="2706462751667573066">ऊपर</translation>
+<translation id="4339730410920731698">विज्ञापन और रास्ता ढूँढ़ने वाला अवरुद्ध</translation>
+<translation id="2313532038420432247">एचटीटीपीएस उन्नयन</translation>
+<translation id="7461425058443653485">लिपिया अवरुद्</translation>
+<translation id="7835726359440951858">अवस्र्द्ध विज्ञापन और निगाह रखना</translation>
+<translation id="520895744850022668">HTTPS  सब जगह</translation>
+<translation id="94154759592465111">अवस्र्द्ध लिपिया </translation>
+<translation id="7307834434086582547">ब्रेव कवच को सक्षम/अक्षम करें </translation>
+<translation id="6132506775968708399">3सरे दल बन को अवस्र्द्ध करें </translation>
+<translation id="8710614491157212477">जहां संभव हो, HTTP के स्थान पर HTTPS का प्रयोग करते हुये समर्थित साइटें खोलता है</translation>
+<translation id="5758129336814690876">ट्रैकिंग सुरक्षा प्रणाली</translation>
+<translation id="4609637183310787528">आपको लोड करने पर नज़र रखने वाले स्रोतों को रोकता है</translation>
+<translation id="8387201461264842096">विज्ञापन ब्लॉक</translation>
+<translation id="1934885595886623674">विज्ञापनों को लोड होने से रोकता है</translation>
+<translation id="7458422973722236530">फिंगर-प्रिंटिंग सुरक्षा</translation>
+<translation id="5787084571334399599">ब्राउज़र को फिंगर-प्रिंटिंग करने से रोकता है</translation>
+<translation id="3758669798635576061">फिंगर-प्रिंटिंग विधियां रोकी गई</translation>
+<translation id="3276318574457057212">स्थानीय विज्ञापन ब्लॉक</translation>
+<translation id="2300239903491866759">स्थानीय विज्ञापनों को लोड होने से रोकता है</translation>
+<translation id="8142327400852603066">आपके स्थान के लिए अतिरिक्त सूचियां उपलबद्ध नहीं है</translation>
+<translation id="9148058034647219655">निकास</translation>
+<translation id="7820683005702098135">Brave सिंक (बीटा)</translation>
+<translation id="3082265116777145081">उपकरण का नाम जोड़ें </translation>
+<translation id="9024091168371687561">इस उपकरण के लिए कोई वैकल्पिक नाम एंटर करें </translation>
+<translation id="3998827900918661986">ऐन्ड्रॉइड उपकरण </translation>
+<translation id="7539985410310934287">कोड शब्द एंटर करें </translation>
+<translation id="326454632686131209">सिंक उपकरण</translation>
+<translation id="8985635554450124959">सिंक सैट-अप नहीं किया जा सका </translation>
+<translation id="6244065453125065109">ट्रैकर 
+ब्लॉक किया गया  </translation>
+<translation id="2547939855139473800">विज्ञापन 
+ब्लॉक किया गया  </translation>
+<translation id="8880969045613157151">एचटीटीपीएस 
+अपग्रेड </translation>
+<translation id="204407992549693965">स्थापित   समय 
+सेव किया गया </translation>
+<translation id="991605024067283917">मेट्रिक्स भेजें </translation>
+<translation id="6572660632052512096">डेस्कटॉप मोड </translation>
+<translation id="4479934682648362332">साइटों के डेस्कटॉप  प्रारूप को वरीयता दें </translation>
+<translation id="807636106793708118">साइटों के मोबाइल प्रारूप को वरीयता दें  </translation>
+<translation id="1340503115760585811">नये टैबों के लिये डेस्कटॉप व्यू एनेबल करें  </translation>
+<translation id="7924540991929826186">नये टैबों के लिये साइटों के मोबाइल प्रारूपों का प्रयोग करें (अनुशंसित) </translation>
+<translation id="3834924998750356151">मॉनीटर ब्लॉक करना</translation>
+<translation id="1713450908129883784">व्यक्तिगत नियंत्रण</translation>
+<translation id="6303294677342628402">शील्ड</translation>
+<translation id="252011129655042182">विज्ञापन व ट्रैकर्स</translation>
+<translation id="6754976710186182237">फिंगरप्रिंट विधि</translation>
+<translation id="8585880402319729023">फिशिंग ब्लॉक करें</translation>
+<translation id="5965081608816406060">पृष्ठभूमि वीडियो प्लेबैक</translation>
+<translation id="59174027418879706">सक्षम किया</translation>
+<translation id="4176463684765177261">अक्षम किया</translation>
+<translation id="1580125697191336644">प्रायोगिक. जब टैब सक्रिय ना हो या सक्रीन ऑफ हो तो पृष्ठभूमि में वीडियो से ऑडियो चलाना सक्षम करता है. यदि यह सुविधा काम ना करे तो डेस्कटॉप मोड पर जाने का प्रयास करें.</translation>
+<translation id="6587448235155023666">आपके किए गए बदलाव तब प्रभावी होंगे जब आप ब्रेव को फिर से लॉन्च करेंगे</translation>
+<translation id="8701563696941209024">अभी फिर से लॉन्च करें</translation>
+<translation id="834487290629916192">बाद में</translation>
+<translation id="1842747674580016420">ब्रेव में वीडियो प्लेबैक</translation>
+<translation id="5368992950177874750">सक्षम किए जाने पर वीडियो, संबंधित ऐप के स्थान पर ब्रेव में चलाए जाएंगे </translation>
+<translation id="7459000603787995422">बाहर निकलने पर टैब बंद करें</translation>
+<translation id="1680858055899097121">ब्राउज़िंग सत्रों के बीच टैब पर ना टिके</translation>
+<translation id="213787746370741250">कस्टम टैब्स में टैब्स खोलें</translation>
+<translation id="3544772668823934222">कस्टम टैब में टैब खोलने की पेशकश करें</translation>
+<translation id="4501702055016678577">क्या आप DuckDuckGo के साथ निजी खोज करना चाहते हैं?</translation>
+<translation id="910419239800579753">निजी खोज के साथ, Brave इस निजी टैब में आपकी खोजों का उत्तर देने के लिए DuckDuckGo का उपयोग करेगा। DuckDuckGo एक खोज इंजन है जो आपके खोज इतिहास को ट्रैक नहीं करता है, और आपको निजी रूप से खोज करने की सुविधा प्रदान करता है।</translation>
+<translation id="1426410128494586442">हाँ</translation>
+<translation id="4250680216510889253">नहीं</translation>
+<translation id="5628466560184522265">DuckDuckGo के साथ निजी खोज के बारे में जानें</translation>
+<translation id="1468415711258933398">मानक टैब</translation>
+<translation id="6199596294742117349">यह एक निजी टैब है</translation>
+<translation id="5858455511731621847">भले ही आप द्वारा निजी  टैब्स में देखी जाने वाली साइटें स्थानीय रूप से सहेजी नहीं जाती हैं, फिर भी वे आपको आपके ISP, आपके नियोक्ता, या आप द्वारा देखी गई साइटों के लिए अज्ञातकृत या अदृश्य नहीं बनाती हैं।</translation>
+<translation id="2339273275658335597">Brave अपडेट</translation>
+<translation id="8395234238259738935">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</translation>
+<translation id="391177677159359824">सिंक (बीटा)</translation>
+<translation id="3680755684186855422">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</translation>
+<translation id="3735228155296883311">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</translation>
+<translation id="7745082336226088126">सिंक चेन को स्कैन करें या दर्ज़ करें</translation>
+<translation id="1602067095281698985">किसी नई सिंक चेन की शुरुआत करें</translation>
+<translation id="4690880825349994619">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और 'सेटिंग्स &gt; सिंक करें' पर जाएं। "डिवाइस जोड़ें" चुनें और स्क्रीन पर दिखाया गया QR कोड स्कैन करें।</translation>
+<translation id="6270614677029463366">सिंक किए गए मौजूदा डिवाइस का प्रयोग करते हुए Brave सेटिंग्स खोलें और 'सेटिंग्स &gt; सिंक करें' पर जाएं। "डिवाइस जोड़ें" चुनकर "इसकी जगह कोड वर्ड दिखाएं" चुनें।</translation>
+<translation id="1475223680121592371">कोई मोबाइल डिवाइस जोड़ें</translation>
+<translation id="2965377893636908578">कोई कंप्यूटर जोड़ें</translation>
+<translation id="65315202420929965">यह सिंक कोड स्कैन करें</translation>
+<translation id="6604289897677913048">किसी दूसरे फोन या टैबलेट का उपयोग करके, 'Brave सेटिंग्स &gt; सिंक करें &gt; स्कैन करें' पर जाएं।</translation>
+<translation id="3405078156498254717">अपने दूसरे डिवाइस से QR कोड (ऊपर बताया गया) को कैप्चर करें या कोई कैमरा मौजूद नहीं होने पर कोड वर्ड दर्ज़ करें।</translation>
+<translation id="8076492880354921740">टैब</translation>
+<translation id="5706430066167764107">अपने आप भरें/पासवर्ड</translation>
+<translation id="1164234435773528579">Brave भुगतान सेटिंग्स</translation>
+<translation id="6174119914106813304">इस उपकरण पर सिंक करें</translation>
+<translation id="6776430845975754238">सेटिंग्स बदलने से केवल उस डेटा पर असर पड़ेगा, जिसे आपका डिवाइस दूसरे डिवाइस के साथ साझा करता है।</translation>
+<translation id="8193724030871339658">चेन के दूसरे डिवाइस</translation>
+<translation id="279635009973773843">डिवाइस लोड किया जा रहा है...</translation>
+<translation id="6450924769151530465">कोई दूसरा डिवाइस जोड़ें</translation>
+<translation id="2004365171440701679">यह डिवाइस हटाएँ</translation>
+<translation id="2731921493694251495">सिंक चेन कोड को दर्ज़ करें</translation>
+<translation id="2590683710114839102">अपने कंप्यूटर में, 'Brave सेटिंग्स &gt; सिंक करें' पर जाएं। "कोई सिंक चेन कोड दर्ज करें" चुनें।</translation>
+<translation id="1732271215616957850">स्पेस के साथ ऊपर दिया गया कोड वर्ड दर्ज़ करें।</translation>
+<translation id="1178128181015923849">क्या आप वाकई डिवाइस '<ph name="DEVICE_NAME" />' को हटाना चाहते हैं?</translation>
+<translation id="9154490620151093733">हटाने का अनुरोध भेजा गया। डिवाइस को जल्द ही हटा दिया जाएगा।</translation>
+<translation id="544873101641618162">डेटा लोड हो रहा है...</translation>
+<translation id="6779408765480516895">कुछ गलत हो गया है, ऐसा लगता है कि आपके अनुरोध की समय-सीमा समाप्त हो गई है।</translation>
+<translation id="4973653569293835178">मैं अपने कैमरे का उपयोग करूंगा...</translation>
+<translation id="2569646144216067185">शब्दों की संख्या: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">शब्दों की संख्या गलत है</translation>
+<translation id="2175927920773552910">QR कोड</translation>
+<translation id="8653433343015102968">कोड वर्ड</translation>
+<translation id="8624315169751085215">क्लिपबोर्ड पर कॉपी करें</translation>
+<translation id="5241263629636958324">क्लिपबोर्ड पर कॉपी किया गया</translation>
+<translation id="222883304157347087">(यह डिवाइस)</translation>
+<translation id="4745013713714502219">Brave आपके डिफ़ॉल्ट ब्राउज़र
+के रूप मेें पहले से सेट है.</translation>
+<translation id="6874141297197991294">आप पहले से ही डिफ़ॉल्ट ब्राउज़र सेट कर चुके हैं.
+आप अपने ऐप सेटिंग्स में डिफ़ॉल्ट ब्राउज़र बदल सकते हैं.</translation>
+<translation id="5708254139873333042">बैटरी बचाएं और वेब पृष्ठों को तेजी से लोड करें। ब्रेव को अपना डिफॉल्ट ब्राउज़र बनाएं। ब्रेव मेन्यू में "डिफॉल्ट ब्राउज़र के रूप में सेट करें" पर टैप करें।  </translation>
+<translation id="3570367516044491911">डिफ़ॉल्ट ब्राउज़र के रूप में सेट करें</translation>
+<translation id="5827583267117939716">सूची में से ब्रेव को चयनित करें और "हमेशा" पर टैप करें </translation>
+<translation id="2262526166668973593">Brave को अपना डिफ़ॉल्ट वेब ब्राउज़र बनायें
+बैटरी बचाएं और वेब पेजों को जल्दी लोड करें</translation>
+<translation id="1916285746997567466">अगला इंटरनेट अनुभव
+करने के लिए तैयार रहें.</translation>
+<translation id="1071131306814166204">अब आप गोपनीयता का सम्मान करने संबंधित विज्ञापन देखकर
+टोकन प्राप्त कर सकते हैं.</translation>
+<translation id="1327938628925645979">रिवार्ड्स से जुड़ें</translation>
+<translation id="5567439033041178034">अधिक जानें</translation>
+<translation id="7530570094705720669">वॉलेट बनाना</translation>
+<translation id="3780605330121608425">आपका वॉलेट</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">फ़ंड जोड़ें</translation>
+<translation id="2730771409541953249">रिवार्ड्स सारांश</translation>
+<translation id="8596647978585397359">यहां रूकने के लिए धन्यवाद!</translation>
+<translation id="3165726837666415756">आप कोई सुझाव भेजकर इस साइट का समर्थन कर सकते हैं. अच्छी सामग्री बनाने के लिए उन्हें धन्यवाद करने का यह अच्छा तरीका है. सत्यापित सामग्री क्रिएटर्स को प्रत्येक कैलेंडर महीने के पहले सप्ताह के दौरान उनके सुझावों के लिए भुगतान किया जाता है.</translation>
+<translation id="1704859330137112950">यदि आपको पसंद हो, तो आप निरंतर रूप से इस साइट का समर्थन करने के लिए मासिक सुझाव निर्धारित कर सकते हैं.</translation>
+<translation id="245015745140252435">सुझाव के लिए धनराशि</translation>
+<translation id="3370968821559864204">वॉलेट में बैलेंस:</translation>
+<translation id="3250511771491660127">इस मासिक बनाएं</translation>
+<translation id="2573313946367623146">मेरा सुझाव भेजें</translation>
+<translation id="3492491948683276944">मासिक सुझाव सेट करें</translation>
+<translation id="853714875140407133">पर्याप्त टोकन नहीं</translation>
+<translation id="298349922412901215">नोट: इस क्रिएटर ने अभी तक Brave के उपयोगकर्ताओं से मिलने वाले योगदान प्राप्त होने के लिए साइन अप नहीं किया है. हम उनके द्वारा सत्यापित करने या 90 दिन बीत जाने तक प्रयास करना जारी रखेंगे.</translation>
+<translation id="6940273954212603510">कृपया</translation>
+<translation id="1036277985068412734">फ़ंड जोड़ें</translation>
+<translation id="5299848999918506028">धन्यवाद!</translation>
+<translation id="2626799779920242286">कृपया बाद में पुनः प्रयास करें.</translation>
+<translation id="6639570430554986719">जनवरी</translation>
+<translation id="1807352595146144483">फरवरी</translation>
+<translation id="2021828608097804771">मार्च</translation>
+<translation id="1112527417301376065">अप्रैल</translation>
+<translation id="8737090912129856089">मई</translation>
+<translation id="6832612641867423485">जून</translation>
+<translation id="8442574087856349697">जुलाई</translation>
+<translation id="1202041222842415454">अगस्त</translation>
+<translation id="7317265217038113435">सितंबर</translation>
+<translation id="8220228041552340594">अक्टूबर</translation>
+<translation id="8280223431922155812">नवंबर</translation>
+<translation id="4254029385847607686">दिसंबर</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">सावधान</translation>
+<translation id="7335371657242627509">स्वतः योगदान में शामिल करें</translation>
+<translation id="8918760045046434238">कोई सुझाव भेजें...</translation>
+<translation id="1978261665418056203">इस महीने अभी तक कोई गतिविधि
+नहीं...</translation>
+<translation id="4914597931214386232">टोकन ग्रांट्स का दावा किया गया</translation>
+<translation id="298067735430872465">विज्ञापनों से कमाई</translation>
+<translation id="6112368337882254910">स्वतः योगदान</translation>
+<translation id="4781696154289395607">आपने <ph name="BAT_VALUE" /> BAT का योगदान किया है.</translation>
+<translation id="9182287025588539628">वन-टाइम सुझाव</translation>
+<translation id="7577100371127227294">मासिक सुझाव</translation>
+<translation id="8772672608371898774">Brave का सत्यापित प्रकाशक</translation>
+<translation id="1397683270551078781">अभी तक सत्यापित नहीं</translation>
+<translation id="5727208111992260840">इस क्रिएटर ने Brave के उपयोगकर्ताओं से योगदान प्राप्त करने के लिए अभी तक साइन अप नहीं किया है.
+        आपके द्वारा भेजे जाने वाले सभी सुझाव सत्यापित होने तक आपके वॉलेट में ही रहेंगे.</translation>
+<translation id="683765328936486920">YouTube पर</translation>
+<translation id="8969049974285901797">Twitch पर</translation>
+<translation id="606865182719489911">एक फ़्री टोकन ग्रांट उपलब्ध है.</translation>
+<translation id="3453206261112715431">फ़्री टोकन ग्रांट</translation>
+<translation id="13853865024308201">दावा</translation>
+<translation id="3692362746128814480">आपने उन क्रिएटर्स के लिए <ph name="BAT_VALUE" /> BAT निर्धारित किए हैं,  जिन्होंने
+योगदान प्राप्त करने के लिए अभी तक साइन अप नहीं किया है.  वे सत्यापित होने या 90 दिन बीत जाने तक
+आपका ब्राउज़र योगदान करने का प्रयास जारी रखेगा.</translation>
+<translation id="5306913077198665897">आपके सुझाव की प्रक्रिया करने में समस्या हुई थी, कृपया पुनः प्रयास करें.</translation>
+<translation id="2429828319207652823">आपके योगदान की प्रक्रिया करने में समस्या हुई थी.</translation>
+<translation id="2323069945529668668">ऊह ओह!</translation>
+<translation id="7510166204621526816">Brave रिवार्ड्स सर्वर प्रतिक्रिया नहीं दे रहा है. हम शीघ्र ही इसे ठीक करेंगे.</translation>
+<translation id="2104073734684466851">ग्रांट्स</translation>
+<translation id="3068742524072211213"><ph name="DATE" /> को समय-सीमा समाप्त</translation>
+<translation id="7550470870580166294">अपर्याप्त फ़ंड</translation>
+<translation id="2775064702681588061">आपका Brave रिवार्ड्स खाता जमा की प्रतीक्षा में है.</translation>
+<translation id="765834632354589737">वॉलेट का बैकअप लें</translation>
+<translation id="1713542052890184975">कृपया अपने Brave वॉलेट का बैकअप लें.</translation>
+<translation id="3333887201479867589">Brave रिवार्ड्स</translation>
+<translation id="2012723204723845092">आपका पुनः स्वागत है!</translation>
+<translation id="7669994301500276741">ब्राउज़िंग के लिए पुरस्कार पाएं.</translation>
+<translation id="8203529727745387785">गोपनीयता का सम्मान संबंधी
+विज्ञापन देखकर कमाई करें और
+और अपनी पसंद के सामग्री क्रिएटर्स का
+समर्थन करने के लिए उन्हें भुगतान करें.</translation>
+<translation id="5148719990624240755">रिवार्ड्स सक्षम करें</translation>
+<translation id="1628742278973105368">आपकी पहली मासिक टिप पर भेजी जाएगी: </translation>
+<translation id="6665366815203065060">आपने अभी एक टिप भेजी है: </translation>
+<translation id="5441565662498481293">आप स्वचालित रूप से एक टिप भेज रहे हैं: </translation>
+<translation id="1166682575529520472">मासिक </translation>
+<translation id="8495235435594442882">सबसे नीचे के टूलबार को सक्षम करें </translation>
+<translation id="7239121106815507493">सबसे नीचे के टूलबार को अक्षम करें </translation>
+<translation id="145068164597056296">खोजें या URL</translation>
 </translationbundle>

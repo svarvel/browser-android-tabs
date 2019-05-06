@@ -764,7 +764,7 @@
 <translation id="6593061639179217415">العرض بإصدار سطح المكتب</translation>
 <translation id="663059986967017181">‏تم النسخ إلى Brave</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> غيغابايت</translation>
-<translation id="6610147964972079463">إغلاق علامات التبويب الخاصة</translation>
+<translation id="6610147964972079463">غلق علامات التبويب الخاصة</translation>
 <translation id="6612358246767739896">المحتوى المحمي</translation>
 <translation id="6627583120233659107">تعديل مجلد</translation>
 <translation id="6643016212128521049">محو</translation>
@@ -981,7 +981,7 @@
 <translation id="4565206163201411670">‏هل تريد عرض نشاط Brave في الرفاهية الرقمية؟</translation>
 <translation id="8116925261070264013">مواقع الويب التي تم كتم الصوت فيها</translation>
 <translation id="813082847718468539">عرض معلومات الموقع</translation>
-<translation id="8131740175452115882">التأكيد</translation>
+<translation id="8131740175452115882">تأكيد</translation>
 <translation id="8156139159503939589">ما هي اللغات التي تقرؤها؟</translation>
 <translation id="8168435359814927499">المحتوى</translation>
 <translation id="8186512483418048923"><ph name="FILES" /> من الملفات المتبقية</translation>
@@ -1130,4 +1130,229 @@
 <translation id="982182592107339124">سيؤدي هذا إلى محو بيانات جميع المواقع، بما في ذلك:</translation>
 <translation id="983192555821071799">إغلاق جميع علامات التبويب</translation>
 <translation id="987264212798334818">عام</translation>
+<translation id="3209146299287804856">إعدادات موقع درع Brave  ل</translation>
+<translation id="622484624075952240">أسفل</translation>
+<translation id="2706462751667573066">فوق</translation>
+<translation id="4339730410920731698">حجب القتفون والإعلانات</translation>
+<translation id="2313532038420432247">تحديثات HTTPS</translation>
+<translation id="7461425058443653485">حجب النصوص</translation>
+<translation id="7835726359440951858">حظر الإعلانات والتتبع</translation>
+<translation id="520895744850022668">HTTPS في كل مكان</translation>
+<translation id="94154759592465111">حظر النصوص</translation>
+<translation id="7307834434086582547">تفعيل/ تعطيل دروع Brave</translation>
+<translation id="6132506775968708399">حجب ملفات تعريف الارتباط لطرف ثالث</translation>
+<translation id="8710614491157212477">يفتح المواقع المدعمة باستخدام HTTPS بدلا من HTTP إن أمكن</translation>
+<translation id="5758129336814690876">تتبع وضع الحماية</translation>
+<translation id="4609637183310787528">يمنع الموارد التي تتبعها من التحميل</translation>
+<translation id="8387201461264842096">حجب الإعلانات</translation>
+<translation id="1934885595886623674">يمنع تحميل الإعلانات</translation>
+<translation id="7458422973722236530">حماية البصمة</translation>
+<translation id="5787084571334399599">يمنع المتصفح من التعرف على بصمتك الخاصة</translation>
+<translation id="3758669798635576061">حظر وسائل الحصول على البصمة</translation>
+<translation id="3276318574457057212">حظر الإعلانات المحلية</translation>
+<translation id="2300239903491866759">يمنع تحميل الإعلانات الإقليمية</translation>
+<translation id="8142327400852603066">لا توجد قوائم إضافية مُتاحة في موقعك</translation>
+<translation id="9148058034647219655">ىخرج</translation>
+<translation id="7820683005702098135">مزامنة Brave (beta)</translation>
+<translation id="3082265116777145081">إضافة اسم جهاز</translation>
+<translation id="9024091168371687561">أدخل اسمًا اختياريًا لهذا الجهاز</translation>
+<translation id="3998827900918661986">جهاز أندرويد</translation>
+<translation id="7539985410310934287">أدخل كلمات الرمز</translation>
+<translation id="326454632686131209">مزامنة الجهاز</translation>
+<translation id="8985635554450124959">تعذر إعداد المزامنة</translation>
+<translation id="230829157901335313">قد يكون لديك خطأ في إعداد وقت النظام أو المنطقة الزمنية على جهازك. يُرجى إعداد الوقت الصحيح والمنطقة الزمنية</translation>
+<translation id="6244065453125065109">تم حظر
+المتتبعات
+</translation>
+<translation id="2547939855139473800">تم حظر
+الإعلانات</translation>
+<translation id="8880969045613157151">ترقيات 
+HTTPS</translation>
+<translation id="204407992549693965">حُفِظ
+توقيت الساحل الشرقي
+</translation>
+<translation id="991605024067283917">إرسال المقاييس</translation>
+<translation id="6572660632052512096">وضع سطح المكتب</translation>
+<translation id="4479934682648362332">هل تفضل إصدار سطح المكتب للمواقع</translation>
+<translation id="807636106793708118">هل تفضل إصدار الهاتف الجوال للمواقع </translation>
+<translation id="1340503115760585811">تمكين عرض سطح المكتب لعلامات التبويب الجديدة</translation>
+<translation id="7924540991929826186">استخدم إصدارات الهاتف الجوال للمواقع للحصول على علامات تبويب جديدة (مُستحسن)</translation>
+<translation id="3834924998750356151">حظر المراقبة</translation>
+<translation id="1713450908129883784">وسائل التحكم الفردية</translation>
+<translation id="6303294677342628402">دروع</translation>
+<translation id="252011129655042182">إعلانات ومتتبعات</translation>
+<translation id="6754976710186182237">وسائل قراءة البصمات</translation>
+<translation id="8585880402319729023">حظر التصيد الاحتيالي</translation>
+<translation id="5965081608816406060">تشغيل الفيديو في الخلفية
+</translation>
+<translation id="59174027418879706">مُمَكن</translation>
+<translation id="4176463684765177261">مُعطَّل</translation>
+<translation id="1580125697191336644">تجريبي. يتيح تشغيل صوت من فيديو في الخلفية عندما تكون علامة التبويب غير نشطة، أو عندما تكون شاشة الجهاز مطفأة. إذا كانت هذه الميزة لا تعمل حاول التبديل إلى وضع سطح المكتب.</translation>
+<translation id="6587448235155023666">سيظهر أثر التغييرات التي قمت بإدخالها في المرة القادمة عند إعادة تشغيل Brave</translation>
+<translation id="8701563696941209024">إعادة التشغيل الآن</translation>
+<translation id="834487290629916192">فيما بعد</translation>
+<translation id="1842747674580016420">تشغيل الفيديو عن طريق Brave
+</translation>
+<translation id="5368992950177874750">إذا تم تمكينه، سيتم تشغيل الفيديو عن طريق Brave  بدلا من التطبيق المُناظر</translation>
+<translation id="7459000603787995422">قُم بإغلاق علامات التبويب عند الخروج</translation>
+<translation id="1680858055899097121">لا تترك علامات التبويب مفتوحة بين جلسات التصفح</translation>
+<translation id="213787746370741250">افتح الألسنة في "تخصيص الألسنة"</translation>
+<translation id="3544772668823934222">اعرض فتح الألسنة في "تخصيص الألسنة"</translation>
+<translation id="4501702055016678577">هل تريد القيام ببحث خاص بواسطة DuckDuckGo؟</translation>
+<translation id="910419239800579753">بواسطة البحث الخاص، سنقوم باستخدم DuckDuckGo للإجابة عن عمليات البحث الخاصة بك أثناء وجودك في علامة التبويب الخاصة هذه. DuckDuckGo هو محرك بحث لا يقوم بتتبع سجل البحث الخاص بك، مما يتيح لك البحث بشكلٍ خاص.</translation>
+<translation id="1426410128494586442">نعم</translation>
+<translation id="4250680216510889253">لا</translation>
+<translation id="5628466560184522265">تعرّف على البحث الخاص بواسطة DuckDuckGo</translation>
+<translation id="1468415711258933398">علامة تبويب قياسية</translation>
+<translation id="6199596294742117349">هذه علامة تبويب خاصة</translation>
+<translation id="5858455511731621847">على الرغم من أن المواقع التي تزورها في علامات التبويب الخاصة لا يتم حفظها محلياً، إلا أنها لا تجعلك مجهولاً أو غير مرئياً بالنسبة لمزود خدمة الإنترنت أو صاحب العمل الخاص بك أو المواقع التي تزورها.</translation>
+<translation id="2339273275658335597">تحديث Brave</translation>
+<translation id="8395234238259738935">متصفح Brave الجديد أسرع بنسبة 22% </translation>
+<translation id="391177677159359824">مزامنة (beta)</translation>
+<translation id="3680755684186855422">يتيح لك Brave Sync مزامنة بيانات الإشارات المرجعية بخصوصية بين متصفحات Brave الخاصة بك على أجهزتك المختلفة.</translation>
+<translation id="3735228155296883311">ليس عليك إلا المسح الضوئي للرمز من سلسلة المزامنة الخاصة بك الذي أنشأته على جهازٍ آخر، أو ابدأ سلسلة مزامنة جديدة.</translation>
+<translation id="7745082336226088126">امسح ضوئيًا أو أدخل رمز المزامنة</translation>
+<translation id="1602067095281698985">بدء سلسلة مزامنة جديدة</translation>
+<translation id="4690880825349994619">باستخدام جهاز متزامن حاليًا، افتح إعدادات Brave وانتقل إلى الإعدادات &gt; مزامنة. اختر "إضافة جهاز" وامسح ضوئيًا رمز الاستجابة السريعة المعروض على الشاشة.</translation>
+<translation id="6270614677029463366">باستخدام جهاز متزامن حاليًا، افتح إعدادات Brave وانتقل إلى الإعدادات &gt; مزامنة. اختر "إضافة جهاز" ثم "عرض كلمات الرمز كبديل".</translation>
+<translation id="1475223680121592371">إضافة جهاز محمول</translation>
+<translation id="2965377893636908578">إضافة كمبيوتر</translation>
+<translation id="65315202420929965">مسح رمز المزامنة هذا ضوئيًا</translation>
+<translation id="6604289897677913048">باستخدام هاتف أو حاسب لوحي ثانٍ، انتقل إلى إعدادات Brave &gt; مزامنة &gt; مسح ضوئي.</translation>
+<translation id="3405078156498254717">التقط صورة رمز الاستجابة السريعة (أعلاه) باستخدام جهازك الثاني، أو أدخل كلمات الرمز إذا لم تتوفر كاميرا.</translation>
+<translation id="8076492880354921740">علامات التبويب</translation>
+<translation id="5706430066167764107">التعبئة التلقائية/كلمات المرور</translation>
+<translation id="1164234435773528579">إعدادات دفع Brave</translation>
+<translation id="6174119914106813304">مزامنة على هذا الجهاز</translation>
+<translation id="6776430845975754238">سيؤثر تغيير الإعدادات فقط على البيانات التي يشاركها هذا الجهاز مع الأجهزة الأخرى.</translation>
+<translation id="8193724030871339658">أجهزة أخرى على السلسلة</translation>
+<translation id="279635009973773843">جارٍ تحميل الأجهزة...</translation>
+<translation id="6450924769151530465">إضافة جهاز آخر</translation>
+<translation id="2004365171440701679">إزالة هذا الجهاز</translation>
+<translation id="2731921493694251495">إدخال رمز سلسلة المزامنة</translation>
+<translation id="2590683710114839102">على الكمبيوتر الخاص بك، انتقل إلى إعدادات Brave &gt; مزامنة. اختر "إدخال رمز سلسلة المزامنة".</translation>
+<translation id="1732271215616957850">أدخل كلمات الرمز أعلاه، بما فيها المسافات.</translation>
+<translation id="1178128181015923849">هل أنت متأكد من رغبتك في حذف الجهاز '<ph name="DEVICE_NAME" />'؟</translation>
+<translation id="9154490620151093733">تم إرسال طلب الحذف. ستتم إزالة الجهاز بعد قليل.</translation>
+<translation id="544873101641618162">جارٍ تحميل البيانات...</translation>
+<translation id="6779408765480516895">حدث خطأ ما، يبدو أن طلبك انتهت مهلته.</translation>
+<translation id="4973653569293835178">سأستخدم كاميرتي...</translation>
+<translation id="2569646144216067185">عدد الكلمات: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">عدد كلمات غير صحيح</translation>
+<translation id="2175927920773552910">رمز الاستجابة السريعة</translation>
+<translation id="8653433343015102968">كلمات الرمز</translation>
+<translation id="8624315169751085215">نسخ إلى الحافظة</translation>
+<translation id="5241263629636958324">تم النسخ إلى الحافظة</translation>
+<translation id="222883304157347087">(هذا الجهاز)</translation>
+<translation id="4745013713714502219">تم تعيين Brave بالفعل
+كمتصفّحك الافتراضي.</translation>
+<translation id="6874141297197991294">لقد قمت بالفعل بتعيين متصفّح افتراضي.
+يمكنك تغيير متصفّحك الافتراضي من إعدادات تطبيقاتك.</translation>
+<translation id="5708254139873333042">حافظ على البطارية وقم بتحميّل صفحات الويب بشكلٍ أسرع. اجعل Brave متصفحك الافتراضي. من خلال قائمة Brave، انقر فوق "تعيين كمتصفح افتراضي"</translation>
+<translation id="3570367516044491911">تعيين كمتصفّح افتراضي</translation>
+<translation id="5827583267117939716">حدِّد Brave من القائمة وانقر فوق "دائماً"</translation>
+<translation id="2262526166668973593">عين Brave متصفّحًا افتراضيًا لديك 
+حافظ على طاقة البطارية وحمّل صفحات الإنترنت بشكل أسرع</translation>
+<translation id="1916285746997567466">استعد لتجربة
+الإنترنت الجديد.</translation>
+<translation id="1071131306814166204">يمكنك الآن كسب رموزًا مميزة
+لمشاهدتك إعلانات تحترم الخصوصية.</translation>
+<translation id="1327938628925645979">الانضمام إلى الجوائز</translation>
+<translation id="5567439033041178034">معرفة المزيد</translation>
+<translation id="7530570094705720669">جار إنشاء محفظة</translation>
+<translation id="3780605330121608425">محفظتك</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">إضافة أموال</translation>
+<translation id="2730771409541953249">ملخص الجوائز</translation>
+<translation id="8596647978585397359">نشكرك على مرورك علينا!</translation>
+<translation id="3165726837666415756">يمكنك دعم الموقع عن طريق إرسال إكرامية. إنها طريقة لشكرهم على ابتكار محتوى رائع. يقبض مبتكرو المحتوى المُصدَّق عليه المال مقابل الإكراميات المرسلة إليهم أثناء الأسبوع الأول من كل شهر في التقويم.</translation>
+<translation id="1704859330137112950">يمكنك إذا أردت أن تحدد موعدًا للإكراميات الشهرية لدعم هذا الموقع بشكلٍ مستمر.</translation>
+<translation id="245015745140252435">مبلغ الإكرامية</translation>
+<translation id="3370968821559864204">رصيد المحفظة:</translation>
+<translation id="3250511771491660127">اجعل هذا شهريًّا</translation>
+<translation id="2573313946367623146">أرسل إكراميتي</translation>
+<translation id="3492491948683276944">حدد إكرامية شهرية</translation>
+<translation id="853714875140407133">لا توجد رموز سرية كافية</translation>
+<translation id="298349922412901215">ملحوظة: لم يشترك هذا المبتكر بعد ليتلقّى المساهمات من مستخدمي Brave. سنستمر في محاولة الإسهام حتى يتم التصديق عليه، أو حتى يمر 90 يومًا.</translation>
+<translation id="6940273954212603510">رجاءً</translation>
+<translation id="1036277985068412734">إضافة أموال</translation>
+<translation id="5299848999918506028">شكرًا لك!</translation>
+<translation id="2626799779920242286">يُرجى إعادة المحاولة لاحقًا.</translation>
+<translation id="6639570430554986719">يناير</translation>
+<translation id="1807352595146144483">فبراير</translation>
+<translation id="2021828608097804771">مارس</translation>
+<translation id="1112527417301376065">أبريل</translation>
+<translation id="8737090912129856089">مايو</translation>
+<translation id="6832612641867423485">يونيو</translation>
+<translation id="8442574087856349697">يوليو</translation>
+<translation id="1202041222842415454">أغسطس</translation>
+<translation id="7317265217038113435">سبتمبر</translation>
+<translation id="8220228041552340594">أكتوبر</translation>
+<translation id="8280223431922155812">نوفمبر</translation>
+<translation id="4254029385847607686">ديسمبر</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">تنبيه</translation>
+<translation id="7335371657242627509">تضمين مساهمة تلقائية</translation>
+<translation id="8918760045046434238">إرسال إكرامية...</translation>
+<translation id="1978261665418056203">لم تظهر أنشطة بعد
+هذا الشهر...</translation>
+<translation id="4914597931214386232">تمت المطالبة بمِنح الرموز السرية</translation>
+<translation id="298067735430872465">الأرباح من الإعلانات</translation>
+<translation id="6112368337882254910">المساهمة التلقائية</translation>
+<translation id="4781696154289395607">لقد ساهمت بـ <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">إكراميات لمرة واحدة</translation>
+<translation id="7577100371127227294">إكراميات شهرية</translation>
+<translation id="8772672608371898774">ناشر مُصدّق في Brave</translation>
+<translation id="1397683270551078781">لم يُصدّق عليه بعد</translation>
+<translation id="5727208111992260840">لم يشترك هذا المبتكر بعد ليتلقّى المساهمات من مستخدمي Brave.
+ستظل أي إكراميات في محفظتك حتى يتم التصديق عليه.</translation>
+<translation id="683765328936486920">على YouTube</translation>
+<translation id="8969049974285901797">على Twitch</translation>
+<translation id="606865182719489911">تتوفر منحة رمز سري مجانية.</translation>
+<translation id="3453206261112715431">منحة رمز سري</translation>
+<translation id="13853865024308201">مطالبة</translation>
+<translation id="3692362746128814480">لقد خصصت <ph name="BAT_VALUE" /> BAT لمبتكرين لم
+يشتركوا بعد لتلقِّي مساهمات. سيستمر متصفحك في محاولة الإسهام
+حتى يتم  التصديق عليه، أو حتى يمر 90 يومًا.</translation>
+<translation id="5306913077198665897">وقعت مشكلة أثناء معالجة إكراميتك، يُرجى إعادة المحاولة.</translation>
+<translation id="2429828319207652823">وقعت مشكلة أثناء معالجة مساهمتك،</translation>
+<translation id="2323069945529668668">عذرًا!</translation>
+<translation id="7510166204621526816">لا يستجيب خادم جوائز Brave. سنُصلح هذه المشكلة بأسرع ما يمكن.</translation>
+<translation id="2104073734684466851">المِنح</translation>
+<translation id="3068742524072211213">تنتهي الصلاحية في <ph name="DATE" /></translation>
+<translation id="7550470870580166294">أموال غير كافية</translation>
+<translation id="2775064702681588061">ينتظر حساب جوائز Brave الخاص بك إيداعًا.</translation>
+<translation id="765834632354589737">المحفظة الاحتياطية</translation>
+<translation id="1713542052890184975">نرجو صنع نسخة احتياطية من محفظة Brave الخاصة بك.</translation>
+<translation id="3333887201479867589">جوائز Brave</translation>
+<translation id="2012723204723845092">مرحبًا بعودتك!</translation>
+<translation id="7669994301500276741">اكسب جوائز على تصفحك.</translation>
+<translation id="8203529727745387785">اكسب عن طريق اسعراض الإعلانات التي
+تحترم الخصوصية، وانقل ما كسبته لدعم
+مبتكري المحتوى الذين تحبهم.</translation>
+<translation id="5148719990624240755">تفعيل جوائز BRAVE</translation>
+<translation id="1628742278973105368">سيتم إرسال أول نصيحة شهرية إليك في:</translation>
+<translation id="6665366815203065060">لقد أرسلت للتو نصيحة إلى:</translation>
+<translation id="5441565662498481293">أنت ترسل تلقائياً نصيحة إلى:</translation>
+<translation id="1166682575529520472">شهرياً</translation>
+<translation id="8495235435594442882">تمكين شريط الأدوات السفلي</translation>
+<translation id="7239121106815507493">تعطيل شريط الأدوات السفلي</translation>
+<translation id="145068164597056296">بحث أو عنوان URL</translation>
+<translation id="6810078320346589989">إنشاء إشارة مرجعية</translation>
+<translation id="5463954686005964104">تبرَّع لهذا الموقع شهرياً</translation>
+<translation id="1923568441186788334">مكافآت Brave هنا</translation>
+<translation id="7722441371828049691">ادعم المواقع التي تحبها.</translation>
+<translation id="5234764350956374838">تجاهل
+</translation>
+<translation id="4472575034687746823">البدء</translation>
+<translation id="4162066325465825185">نأسف لأن مكافآت Brave لا تتوفر على جهازك</translation>
+<translation id="4150201353443180367">العرض</translation>
+<translation id="2804710924397009224">إخفاء أيقونة مكافآت Brave</translation>
+<translation id="7358991116457217836">تخفي أيقونة مكافآت Brave عند عدم تمكين مكافآت Brave.</translation>
+<translation id="7618184561660805696">تحقق مرةً أخرى قريبًا لمنحة رمزية مجانية</translation>
+<translation id="3349204812119681938">إعادة تعيين مكافآت Brave</translation>
+<translation id="8782039523249932839">سيؤدي ذلك إلى حذف محفظة Brave وإعادة تعيين جميع بيانات مكافآت Brave الخاصة بك</translation>
+<translation id="5321518976657560663">خطأٌ في إعادة التعيين</translation>
+<translation id="7071576788062714665">حدث خطأ أثناء إعادة تعيين مكافآت Brave. يُرجى إعادة تشغيل Brave والمحاولة مرةً أخرى</translation>
 </translationbundle>

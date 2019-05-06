@@ -720,7 +720,7 @@ Nekatera spletna mesta se lahko na primer na zahtevo odzovejo tako, da prikažej
 <translation id="6320088164292336938">Vibriranje</translation>
 <translation id="6324034347079777476">Sinhronizacija sistema Android je onemogočena.</translation>
 <translation id="6333140779060797560">Skupna raba prek: <ph name="APPLICATION" /></translation>
-<translation id="6336451774241870485">Novi zasebni zavihek</translation>
+<translation id="6336451774241870485">Nov zasebni zavihek</translation>
 <translation id="6337234675334993532">Šifriranje</translation>
 <translation id="6341580099087024258">Vprašaj, kje shraniti datoteke</translation>
 <translation id="6343192674172527289">Ni prenosov</translation>
@@ -1129,4 +1129,198 @@ Nekatera spletna mesta se lahko na primer na zahtevo odzovejo tako, da prikažej
 <translation id="982182592107339124">S tem bodo izbrisani podatki za vsa spletna mesta, vključno s temi:</translation>
 <translation id="983192555821071799">Zapri vse zavihke</translation>
 <translation id="987264212798334818">Splošno</translation>
+<translation id="3209146299287804856">Nastavitve ščitov za spletno mesto Brave</translation>
+<translation id="622484624075952240">Dol</translation>
+<translation id="2706462751667573066">Gor</translation>
+<translation id="4339730410920731698">Oglasi in sledilniki so blokirani</translation>
+<translation id="2313532038420432247">HTTPS nadgradnje</translation>
+<translation id="7461425058443653485">Skripti so blokirani</translation>
+<translation id="7835726359440951858">Blokiraj oglase in sledenje</translation>
+<translation id="520895744850022668">HTTPS povsod</translation>
+<translation id="94154759592465111">Blokiraj skripte</translation>
+<translation id="7307834434086582547">Omogoči/onemogoči ščite Brave</translation>
+<translation id="6132506775968708399">Blokiranje piškotkov tretjih strani</translation>
+<translation id="8710614491157212477">Odpre podprta spletna mesta z uporabo protokola HTTPS, namesto z uporabo protokola HTTP, kjerkoli je mogoče</translation>
+<translation id="5758129336814690876">Način zaščite pred sledenjem</translation>
+<translation id="4609637183310787528">Preprečevanje nalaganja sledilnih virov</translation>
+<translation id="8387201461264842096">Blok za oglase</translation>
+<translation id="1934885595886623674">Prepreči nalaganje oglasov</translation>
+<translation id="7458422973722236530">Zaščita pred prstnim odtisom</translation>
+<translation id="5787084571334399599">Brskalniku prepreči ustvarjanje prstnega odtisa</translation>
+<translation id="3758669798635576061">Blokiranje načinov za prstne odtise</translation>
+<translation id="3276318574457057212">Block za regionalne oglase</translation>
+<translation id="2300239903491866759">Preprečevanje nalaganja regionalnih oglasov</translation>
+<translation id="8142327400852603066">Za vaše območje dodatni seznami niso na voljo</translation>
+<translation id="9148058034647219655">Izhod</translation>
+<translation id="3082265116777145081">Dodaj ime naprave</translation>
+<translation id="9024091168371687561">Vnesite izbirno ime za to napravo</translation>
+<translation id="3998827900918661986">Naprava Android</translation>
+<translation id="7539985410310934287">Vnos kodnih besed</translation>
+<translation id="326454632686131209">Sinhroniziraj napravo</translation>
+<translation id="8985635554450124959">Sinhronizacije ni bilo mogoče nastaviti</translation>
+<translation id="6244065453125065109">Sledilniki
+so blokirani</translation>
+<translation id="2547939855139473800">Oglasi
+so blokirani</translation>
+<translation id="8880969045613157151">HTTPS
+nadgradnje</translation>
+<translation id="204407992549693965">Ocenj. Čas
+Shranjeno</translation>
+<translation id="991605024067283917">Pošlji metriko</translation>
+<translation id="6572660632052512096">Namizni način</translation>
+<translation id="4479934682648362332">Prednostno prikaži namizne različice spletnih mest</translation>
+<translation id="807636106793708118">Prednostno prikaži mobilne različice spletnih mest</translation>
+<translation id="1340503115760585811">Omogoči namizni pogled za nove zavihke</translation>
+<translation id="7924540991929826186">V novih zavihkih prikaži mobilne različice spletnih mest (priporočeno)</translation>
+<translation id="3834924998750356151">Spremljanje blokad</translation>
+<translation id="1713450908129883784">Posamezni kontrolniki</translation>
+<translation id="6303294677342628402">Ščiti</translation>
+<translation id="252011129655042182">Oglasi in sledilniki</translation>
+<translation id="6754976710186182237">Načini za prstne odtise</translation>
+<translation id="8585880402319729023">Blokiraj zvabljanje</translation>
+<translation id="5965081608816406060">Predvajanje videa v ozadju</translation>
+<translation id="59174027418879706">Omogočeno</translation>
+<translation id="4176463684765177261">Onemogočeno</translation>
+<translation id="1580125697191336644">Poskusno. Omogoča predvajanje zvoka iz videa v ozadju, ko zavihek ni aktiven ali je zaslon naprave izključen. Če ta funkcija ne deluje, poskusite preklopiti na namizni način.</translation>
+<translation id="6587448235155023666">Opravljene spremembe bodo začele veljati po naslednjem ponovnem zagonu Brave.</translation>
+<translation id="8701563696941209024">PONOVNO ZAŽENI ZDAJ</translation>
+<translation id="834487290629916192">KASNEJE</translation>
+<translation id="1842747674580016420">Predvajanje videa v Brave</translation>
+<translation id="5368992950177874750">Če potrdite to možnost, se bodo filmi predvajali v Brave in ne v zato namenjenih programih</translation>
+<translation id="7459000603787995422">Zapri zavihke ob izhodu</translation>
+<translation id="1680858055899097121">Ne vztrajaj z zavihki med sejami brskanja</translation>
+<translation id="213787746370741250">Odpri zavihke kot zavihke po meri</translation>
+<translation id="3544772668823934222">Ponudi odpiranje zavihkov med zavihki po meri</translation>
+<translation id="4501702055016678577">Želite zasebno iskanje z DuckDuckGo?</translation>
+<translation id="910419239800579753">Z zasebnim iskanjem bo Brave uporabljal DuckDuckGo za opravljanje iskanje, ko ste v tem zasebnem zavihku. DuckDuckGo je iskalnik, ki ne sledi vaši zgodovini iskanja, zaradi česar lahko iščete zasebno.</translation>
+<translation id="1426410128494586442">Da</translation>
+<translation id="4250680216510889253">Ne</translation>
+<translation id="5628466560184522265">Izvejte več o zasebnem iskanju z DuckDuckGo</translation>
+<translation id="1468415711258933398">Navadni zavihek</translation>
+<translation id="6199596294742117349">To je zasebni zavihek</translation>
+<translation id="5858455511731621847">Čeprav spletišča, ki jih obiščete v zasebnih zavihkih, niso krajevno shranjena, ne ohranjajo vaše anonimnosti ali nevidnosti nasproti vašemu ponudniku internetnih storitev, vašemu delodajalcu ali spletiščem, ki jih obiskujete.</translation>
+<translation id="2339273275658335597">Posodobitev Brave</translation>
+<translation id="8395234238259738935">Novi brskalnik Brave je 22 % hitrejši</translation>
+<translation id="391177677159359824">Sync (beta)</translation>
+<translation id="3680755684186855422">Brave Sync vam omogoča zasebno sinhronizacijo podatkov o zaznamkih med brskalniki Brave na vaših različnih napravah.</translation>
+<translation id="3735228155296883311">Enostavno skenirajte kodo vaše sinhronizacijske verige, ki ste jo ustvarili na drugi napravi ali pa ustvarite novo sinhronizacijsko verigo.</translation>
+<translation id="7745082336226088126">Skeniraj ali vnesi kodo za sinhronizacijo</translation>
+<translation id="1602067095281698985">Ustvari novo sinhronizacijsko verigo</translation>
+<translation id="4690880825349994619">Z uporabo že obstoječe sinhronizirane naprave odprite nastavitve Brave in izberite Nastavitve &gt; Sinhronizacija. Izberite »Dodaj napravo« in skenirajte kodo QR, ki je prikazana na zaslonu.</translation>
+<translation id="6270614677029463366">Z uporabo že obstoječe sinhronizirane naprave odprite nastavitve Brave in izberite Nastavitve &gt; Sinhronizacija. Izberite »Dodaj napravo« in nato »Prikaži kodne besede«.</translation>
+<translation id="1475223680121592371">Dodaj mobilno napravo</translation>
+<translation id="2965377893636908578">Dodaj računalnik</translation>
+<translation id="65315202420929965">Skeniraj to kodo za sinhronizacijo</translation>
+<translation id="6604289897677913048">Na drugem telefonu ali tabličnem računalniku izberite Nastavitve Brave &gt; Sinhronizacija &gt; Skeniranje.</translation>
+<translation id="3405078156498254717">Zajemite kodo QR (zgoraj) z drugo napravo ali vnesite kodne besede, če kamera naprave ni na voljo.</translation>
+<translation id="8076492880354921740">Zavihki</translation>
+<translation id="5706430066167764107">Samodejni vnos/Gesla</translation>
+<translation id="1164234435773528579">Nastavitve plačil Brave</translation>
+<translation id="6174119914106813304">SINHRONIZACIJA NA TEJ NAPRAVI</translation>
+<translation id="6776430845975754238">Sprememba nastavitev bo vplivala le na podatke, ki jih ta naprava deli z drugimi.</translation>
+<translation id="8193724030871339658">DRUGE NAPRAVE V VERIGI</translation>
+<translation id="279635009973773843">NALAGANJE NAPRAV ...</translation>
+<translation id="6450924769151530465">Dodaj drugo napravo</translation>
+<translation id="2004365171440701679">Odstrani to napravo</translation>
+<translation id="2731921493694251495">Vnesi kodo sinhronizacijske verige</translation>
+<translation id="2590683710114839102">Na računalniku izberite Nastavitve Brave &gt; Sinhronizacija. Nato izberite »Vnesi kodo sinhronizacijske verige«.</translation>
+<translation id="1732271215616957850">Vnesite kodne besede zgoraj, vključno s presledki.</translation>
+<translation id="1178128181015923849">Ali ste prepričani, da želite izbrisati napravo '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="9154490620151093733">Poslan je bil zahtevek za izbris. Naprava bo kmalu izbrisana.</translation>
+<translation id="544873101641618162">Nalaganje podatkov ...</translation>
+<translation id="6779408765480516895">Prišlo je do težave, verjetno je potekel čas zahtevka.</translation>
+<translation id="4973653569293835178">Uporabi kamero ...</translation>
+<translation id="2569646144216067185">Število besed:<ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Napačno število besed</translation>
+<translation id="2175927920773552910">Koda QR</translation>
+<translation id="8653433343015102968">Kodne besede</translation>
+<translation id="8624315169751085215">Kopiraj v odložišče</translation>
+<translation id="5241263629636958324">Kopirano v odložišče</translation>
+<translation id="222883304157347087">(ta naprava)</translation>
+<translation id="4745013713714502219">Brave je že nastavljen
+kot vaš privzeti brskalnik.</translation>
+<translation id="6874141297197991294">Privzeti brskalnik ste že nastavili.
+Spremenite ga lahko v nastavitvah aplikacije.</translation>
+<translation id="3570367516044491911">Nastavi kot privzeti brskalnik</translation>
+<translation id="2262526166668973593">Nastavite Brave kot privzeti brskalnik
+Prihranite baterijo in hitreje naložite spletne strani.</translation>
+<translation id="1916285746997567466">Pripravite se na
+novo dobo interneta.</translation>
+<translation id="1071131306814166204">Zdaj lahko žetone pridobite že z
+gledanjem oglasov, ki spoštujejo vašo zasebnost.</translation>
+<translation id="1327938628925645979">PRIDRUŽI SE MOŽNOSTI NAGRAD</translation>
+<translation id="5567439033041178034">VEČ</translation>
+<translation id="7530570094705720669">Ustvarjanje denarnice</translation>
+<translation id="3780605330121608425">Vaša denarnica</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" />USD</translation>
+<translation id="1165667598801520610">Dodaj sredstva</translation>
+<translation id="2730771409541953249">POVZETEK NAGRAD</translation>
+<translation id="8596647978585397359">Zahvaljujemo se vam za vaš obisk!</translation>
+<translation id="3165726837666415756">To spletno mesto lahko podprete tako, da pošljete donacijo. Na ta način se jim lahko zahvalite za dobro vsebino, ki jo ustvarjajo. Preverjeni ustvarjalci vsebine prejmejo vaše donacije v prvem tednu vsakega koledarskega meseca.</translation>
+<translation id="1704859330137112950">Če želite, lahko izberete mesečne donacije, s katerimi zagotovite redno podporo tej spletni strani.</translation>
+<translation id="245015745140252435">Znesek donacije</translation>
+<translation id="3370968821559864204">Stanje denarnice:</translation>
+<translation id="3250511771491660127">Izberi mesečno donacijo</translation>
+<translation id="2573313946367623146">Pošlji mojo donacijo</translation>
+<translation id="3492491948683276944">Nastavi mesečno donacijo</translation>
+<translation id="853714875140407133">Ni dovolj žetonov</translation>
+<translation id="298349922412901215">OPOMBA: Ustvarjalec vsebine se še ni registriral za prejemanje donacij uporabnikov Brave. Donacijo bomo še naprej poskušali izvesti, dokler je ne potrdijo oziroma do preteka 90 dni.</translation>
+<translation id="6940273954212603510">prosim</translation>
+<translation id="1036277985068412734">dodaj sredstva</translation>
+<translation id="5299848999918506028">Hvala!</translation>
+<translation id="2626799779920242286">Poskusite znova pozneje.</translation>
+<translation id="6639570430554986719">JANUAR</translation>
+<translation id="1807352595146144483">FEBRUAR</translation>
+<translation id="2021828608097804771">MAREC</translation>
+<translation id="1112527417301376065">APRIL</translation>
+<translation id="8737090912129856089">MAJ</translation>
+<translation id="6832612641867423485">JUNIJ</translation>
+<translation id="8442574087856349697">JULIJ</translation>
+<translation id="1202041222842415454">AVGUST</translation>
+<translation id="7317265217038113435">SEPTEMBER</translation>
+<translation id="8220228041552340594">OKTOBER</translation>
+<translation id="8280223431922155812">NOVEMBER</translation>
+<translation id="4254029385847607686">DECEMBER</translation>
+<translation id="937392350501765664"><ph name="MONTH" /><ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Pozor</translation>
+<translation id="7335371657242627509">Vključi v samodejno donacijo</translation>
+<translation id="8918760045046434238">Pošlji donacijo ...</translation>
+<translation id="1978261665418056203">Ta mesec še ni zabeleženih
+dejavnosti ...</translation>
+<translation id="4914597931214386232">Zahtevana donacija za žetone</translation>
+<translation id="298067735430872465">Zaslužek od oglasov</translation>
+<translation id="6112368337882254910">Samodejna donacija</translation>
+<translation id="4781696154289395607">Donirali ste <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">Enkratna donacija</translation>
+<translation id="7577100371127227294">Mesečna donacija</translation>
+<translation id="8772672608371898774">Preverjeni ustvarjalec vsebine Brave</translation>
+<translation id="1397683270551078781">Še nepreverjen</translation>
+<translation id="5727208111992260840">Ustvarjalec vsebine se še ni registriral za prejemanje donacij uporabnikov Brave.
+Donacije, ki jih pošljete, bodo v vaši denarnici, dokler jih ustvarjalec vsebine ne potrdi.</translation>
+<translation id="683765328936486920">na YouTubu</translation>
+<translation id="8969049974285901797">na Twitchu</translation>
+<translation id="606865182719489911">Na voljo je brezplačen dostop do žetona.</translation>
+<translation id="3453206261112715431">Brezplačen dostop do žetona</translation>
+<translation id="13853865024308201">Zaprosi</translation>
+<translation id="3692362746128814480">Namenili ste <ph name="BAT_VALUE" /> BAT za ustvarjalce vsebine, ki se še niso
+prijavili za prejemanje donacij. Vaš brskalnik bo še naprej poskušal izvesti donacijo, dokler
+je ne potrdijo oziroma do preteka 90 dni.</translation>
+<translation id="5306913077198665897">Pri obdelavi vaše donacije je prišlo do težave. Prosimo, poskusite znova.</translation>
+<translation id="2429828319207652823">Pri obdelavi vaše donacije je prišlo do težave.</translation>
+<translation id="2323069945529668668">Ojoj!</translation>
+<translation id="7510166204621526816">Strežnik Brave Rewards se ne odziva. Težave bomo skušali rešiti čim prej.</translation>
+<translation id="2104073734684466851">Zneski</translation>
+<translation id="3068742524072211213">poteče dne <ph name="DATE" /></translation>
+<translation id="7550470870580166294">Nezadostna sredstva</translation>
+<translation id="2775064702681588061">Vaš račun Brave Rewards čaka na nakazilo.</translation>
+<translation id="765834632354589737">Varnostna kopija denarnice</translation>
+<translation id="1713542052890184975">Varnostno kopirajte svojo denarnico Brave.</translation>
+<translation id="3333887201479867589">Nagrade Brave Rewards</translation>
+<translation id="2012723204723845092">Dobrodošli nazaj!</translation>
+<translation id="7669994301500276741">Zagotovite si nagrado za brskanje.</translation>
+<translation id="8203529727745387785">Zaslužite z ogledi oglasov, ki spoštujejo
+vašo zasebnost, in namenite sredstva
+ustvarjalcem vsebin, ki so vam všeč.</translation>
+<translation id="5148719990624240755">OMOGOČI MOŽNOST NAGRAD BRAVE REWARDS</translation>
 </translationbundle>

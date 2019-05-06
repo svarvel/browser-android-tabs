@@ -652,7 +652,7 @@
 <translation id="5797070761912323120">‏Google ممکن است از سابقه مرور شما برای شخصی کردن جستجو، آگهی‌ها و سایر سرویس‌های Google استفاده کند</translation>
 <translation id="5804241973901381774">مجوزها</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{۱ ساعت قبل}one{# ساعت قبل}other{# ساعت قبل}}</translation>
-<translation id="5817918615728894473">مرتبط‌سازی</translation>
+<translation id="5817918615728894473">جفت کردن</translation>
 <translation id="583281660410589416">ناشناس</translation>
 <translation id="5833984609253377421">اشتراک‌گذاری پیوند</translation>
 <translation id="3888648114124182147">‏درحال بارگیری به‌روزرسانی Brave…</translation>
@@ -1130,4 +1130,198 @@
 <translation id="982182592107339124">با این کار داده‌های همه سایت‌ها پاک می‌شود، از جمله:</translation>
 <translation id="983192555821071799">بستن همه برگه‌ها</translation>
 <translation id="987264212798334818">موارد کلی</translation>
+<translation id="3209146299287804856">تنظیمات سپر سایت Brave برای</translation>
+<translation id="622484624075952240">پایین</translation>
+<translation id="2706462751667573066">بالا</translation>
+<translation id="4339730410920731698">تبلیغات و ردیاب‌ها مسدود شدند</translation>
+<translation id="2313532038420432247">ارتقاهای HTTPS</translation>
+<translation id="7461425058443653485">اسکریپت‌ها مسدود شدند</translation>
+<translation id="7835726359440951858">مسدود کردن تبلیغات و ردیابی</translation>
+<translation id="520895744850022668">HTTPS در هر جایی</translation>
+<translation id="94154759592465111">مسدود کردن اسکریپت‌ها</translation>
+<translation id="7307834434086582547">فعال‌سازی/غیرفعال‌سازی سپرهای Brave</translation>
+<translation id="6132506775968708399">مسدود کردن کوکی‌های شخص ثالث</translation>
+<translation id="8710614491157212477">سایت‌های پشتیبانی شده را در صورت امکان با استفاده از HTTPS به جای HTTP باز می‌کند</translation>
+<translation id="5758129336814690876">حالت محافظت در برابر ردیابی</translation>
+<translation id="4609637183310787528">بارگیری منابعی را مسدود می‌کند که شما را ردیابی می‌کنند</translation>
+<translation id="8387201461264842096">مسدود کردن تبلیغات</translation>
+<translation id="1934885595886623674">مسدود کردن بارگیری تبلیغات</translation>
+<translation id="7458422973722236530">محافظت در برابر ثبت اثر انگشت</translation>
+<translation id="5787084571334399599">مسدود کردن ثبت اثر انگشت توسط مرورگر</translation>
+<translation id="3758669798635576061">روش‌های ثبت اثر انگشت مسدود شد</translation>
+<translation id="3276318574457057212">مسدود کردن تبلیغات منطقه‌ای</translation>
+<translation id="2300239903491866759">مسدود کردن بارگیری تبلیغات منطقه‌ای</translation>
+<translation id="8142327400852603066">فهرست دیگری برای منطقه شما در دسترس نیست</translation>
+<translation id="9148058034647219655">خروج</translation>
+<translation id="3082265116777145081">نام دستگاه را اضافه کنید</translation>
+<translation id="9024091168371687561">یک نام اختیاری برای این دستگاه وارد کنید</translation>
+<translation id="3998827900918661986">دستگاه اندروید</translation>
+<translation id="7539985410310934287">کلمات کد را وارد کنید</translation>
+<translation id="326454632686131209">دستگاه را همگام سازی کنید</translation>
+<translation id="8985635554450124959">همگام سازی تنظیم نشد</translation>
+<translation id="6244065453125065109">ردیاب‌ها
+مسدود شدند</translation>
+<translation id="2547939855139473800">آگهی‌ها
+مسدود شدند</translation>
+<translation id="8880969045613157151">ارتقاهای
+HTTPS</translation>
+<translation id="204407992549693965">زمان تقریبی
+ذخیره شد</translation>
+<translation id="991605024067283917">ارسال معیارها</translation>
+<translation id="6572660632052512096">حالت رایانه</translation>
+<translation id="4479934682648362332">نسخه رایانه‌ای سایت‌ها ترجیح داده می‌شود</translation>
+<translation id="807636106793708118">نسخه دستگاه همراه سایت‌ها ترجیح داده می‌شود</translation>
+<translation id="1340503115760585811">فعال کردن نمای رایانه‌ای برای برگه‌های جدید</translation>
+<translation id="7924540991929826186">استفاده از نسخه‌های دستگاه همراه سایت‌ها برای برگه‌های جدید (توصیه می‌شود)</translation>
+<translation id="3834924998750356151">پایش مسدود کردن</translation>
+<translation id="1713450908129883784">کنترل‌های تکی</translation>
+<translation id="6303294677342628402">سپرها</translation>
+<translation id="252011129655042182">آگهی‌ها و ردیاب‌ها</translation>
+<translation id="6754976710186182237">روش‌های مبتنی بر اثر انگشت</translation>
+<translation id="8585880402319729023">مسدود کردن فیشینگ</translation>
+<translation id="5965081608816406060">پخش ویدیو در پس‌زمینه</translation>
+<translation id="59174027418879706">فعال</translation>
+<translation id="4176463684765177261">غیرفعال</translation>
+<translation id="1580125697191336644">آزمایشی. وقتی برگه پخش ویدیو فعال نیست یا صفحه‌نمایش دستگاه خاموش می‌شود، صدای ویدیو را در پس‌زمینه پخش می‌کند. اگر این ویژگی کار نمی‌کند، به حالت رایانه جابه‌جا شوید.</translation>
+<translation id="6587448235155023666">با راه‌اندازی مجدد Brave، تغییراتتان اعمال خواهند شد.</translation>
+<translation id="8701563696941209024">راه‌اندازی در همین لحظه</translation>
+<translation id="834487290629916192">بعداً</translation>
+<translation id="1842747674580016420">پخش ویدیو در Brave</translation>
+<translation id="5368992950177874750">اگر فعال باشد، ویدیوها به‌جای اینکه در برنامه مربوطه پخش شوند در Brave پخش می‌شوند.</translation>
+<translation id="7459000603787995422">بسته شدن برگه‌ها هنگام خروج</translation>
+<translation id="1680858055899097121">برگه‌ها در فاصله بین جلسه‌های مرور باقی نمانند</translation>
+<translation id="213787746370741250">باز کردن برگه‌ها در «برگه‌های سفارشی»</translation>
+<translation id="3544772668823934222">پیشنهاد باز کردن برگه‌ها در «برگه‌های سفارشی»</translation>
+<translation id="4501702055016678577">جستجوی خصوصی با DuckDuckGo انجام شود؟</translation>
+<translation id="910419239800579753">هنگام فعال بودن جستجوی خصوصی، Brave با استفاده از DuckDuckGo به جستجوهایتان در این برگه خصوصی پاسخ خواهد داد. DuckDuckGo موتور جستجویی است که سابقه مرورتان را ردیابی نمی‌کند و به شما امکان می‌دهد مروری خصوصی داشته باشید.</translation>
+<translation id="1426410128494586442">بله</translation>
+<translation id="4250680216510889253">نه</translation>
+<translation id="5628466560184522265">با جستجوی خصوصی با DuckDuckGo بیشتر آشنا شوید</translation>
+<translation id="1468415711258933398">برگه استاندارد</translation>
+<translation id="6199596294742117349">این یک برگه خصوصی است</translation>
+<translation id="5858455511731621847">اگرچه سایت‌هایی که در برگه‌های خصوصی بازدید می‌کنید به‌صورت محلی ذخیره نمی‌شوند، اما باعث نمی‌شود برای ISP، کارفرما، یا سایت‌هایی که بازدید می‌کنید، ناشناس یا نامرئی شوید.</translation>
+<translation id="2339273275658335597">به‌روزرسانی Brave</translation>
+<translation id="8395234238259738935">سرعت مرورگر جدید Brave ‏22% بیشتر شده است</translation>
+<translation id="391177677159359824">همگام‌سازی (بتا)</translation>
+<translation id="3680755684186855422">«همگام‌سازی Brave» به شما امکان می‌دهد داده‌های نشانک‌هایتان را به‌طور خصوصی میان مرورگرهای Brave خود در دستگاه‌های مختلفتان ذخیره کنید.</translation>
+<translation id="3735228155296883311">کافی است کد را از زنجیره همگام‌سازی که در دستگاه دیگر ساخته‌اید اسکن کنید، یا زنجیره همگام‌سازی جدیدی بسازید.</translation>
+<translation id="7745082336226088126">اسکن کردن یا ساختن کد همگام‌سازی</translation>
+<translation id="1602067095281698985">شروع زنجیره همگام‌سازی جدید</translation>
+<translation id="4690880825349994619">با استفاده از دستگاهی که قبلاً همگام‌سازی‌شده است، «تنظیمات Brave» را باز کنید و به «تنظیمات &gt; همگام‌سازی» بروید. «افزودن دستگاه» را انتخاب کنید و کد QR نشان داده‌شده روی صفحه را اسکن کنید.</translation>
+<translation id="6270614677029463366">با استفاده از دستگاهی که قبلاً همگام‌سازی‌شده است، «تنظیمات Brave» را باز کنید و به «تنظیمات &gt; همگام‌سازی» بروید. «افزودن دستگاه» و سپس «به‌جای آن کلمات کد نشان داده شود» را انتخاب کنید.</translation>
+<translation id="1475223680121592371">افزودن دستگاه همراه</translation>
+<translation id="2965377893636908578">افزودن رایانه</translation>
+<translation id="65315202420929965">اسکن کردن این کد همگام‌سازی</translation>
+<translation id="6604289897677913048">با استفاده از تلفن یا تبلت دیگری، به «تنظیمات Brave &gt; همگام‌سازی &gt; اسکن» بروید.</translation>
+<translation id="3405078156498254717">کد QR (بالا) را با دستگاه دیگر اسکن کنید، یا اگر دوربین دردسترس نیست کلمات کد را وارد کنید.</translation>
+<translation id="8076492880354921740">برگه‌ها</translation>
+<translation id="5706430066167764107">تکمیل خودکار/گذرواژه‌ها</translation>
+<translation id="1164234435773528579">تنظیمات پرداخت Brave</translation>
+<translation id="6174119914106813304">همگام‌سازی در این دستگاه</translation>
+<translation id="6776430845975754238">تغییر دادن تنظیمات فقط داده‌هایی را که این دستگاه با دستگاه‌های دیگر به‌اشتراک می‌گذارد، تحت تأثیر قرار می‌دهد.</translation>
+<translation id="8193724030871339658">سایر دستگاه‌های زنجیره</translation>
+<translation id="279635009973773843">درحال بارگیری دستگاه‌ها...</translation>
+<translation id="6450924769151530465">افزودن دستگاه دیگر</translation>
+<translation id="2004365171440701679">برداشتن این دستگاه</translation>
+<translation id="2731921493694251495">وارد کردن کد زنجیره همگام‌سازی</translation>
+<translation id="2590683710114839102">در رایانه، به «تنظیمات Brave &gt; همگام‌سازی» بروید. «وارد کردن کد زنجیره همگام‌سازی» را انتخاب کنید.</translation>
+<translation id="1732271215616957850">کلمات کد بالا را وارد کنید (ازجمله فاصله‌ها).</translation>
+<translation id="1178128181015923849">مطمئنید می‌خواهید دستگاه «<ph name="DEVICE_NAME" />» را حذف کنید؟</translation>
+<translation id="9154490620151093733">درخواست حذف ارسال شد. دستگاه به‌زودی برداشته خواهد شد.</translation>
+<translation id="544873101641618162">درحال بارگیری داده‌ها...</translation>
+<translation id="6779408765480516895">مشکلی پیش آمد؛ به نظر می‌رسد مهلت زمانی درخواستتان تمام شده است.</translation>
+<translation id="4973653569293835178">از دوربین استفاده خواهم کرد...</translation>
+<translation id="2569646144216067185">تعداد کلمات: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">تعداد کلمات درست نیست</translation>
+<translation id="2175927920773552910">کد QR</translation>
+<translation id="8653433343015102968">کلمات کد</translation>
+<translation id="8624315169751085215">کپی کردن در کلیپ‌بورد</translation>
+<translation id="5241263629636958324">در کلیپ‌بورد کپی شد</translation>
+<translation id="222883304157347087">(این دستگاه)</translation>
+<translation id="4745013713714502219">Brave ازقبل به‌عنوان
+مرورگر پیش‌فرضتان تنظیم شده است.</translation>
+<translation id="6874141297197991294">ازقبل مرورگر پیش‌فرضی را تنظیم کرده‌اید.
+می‌توانید در تنظیمات برنامه، مرورگر پیش‌فرض را تغییر دهید.</translation>
+<translation id="3570367516044491911">تنظیم به‌عنوان مرورگر پیش‌فرض</translation>
+<translation id="2262526166668973593">Brave را مرورگر پیش‌فرضتان کنید
+در مصرف شارژ باتری صرفه‌جویی کنید و صفحات وب را سریع‌تر بار کنید</translation>
+<translation id="1916285746997567466">برای تجربه کردن اینترنت آینده،
+آماده شوید.</translation>
+<translation id="1071131306814166204">می‌توانید با تماشای آگهی‌های رعایت‌کننده
+حریم خصوصی، توکن دریافت کنید.</translation>
+<translation id="1327938628925645979">به «پاداش‌ها» بپیوندید</translation>
+<translation id="5567439033041178034">بیشتر بدانید</translation>
+<translation id="7530570094705720669">درحال ایجاد کیف پول</translation>
+<translation id="3780605330121608425">کیف پول شما</translation>
+<translation id="8845154268466251503">بت</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> دلار آمریکا</translation>
+<translation id="1165667598801520610">افزودن سرمایه</translation>
+<translation id="2730771409541953249">خلاصه پاداش‌ها</translation>
+<translation id="8596647978585397359">از بازدیدتان سپاسگزاریم!</translation>
+<translation id="3165726837666415756">می‌توانید با ارسال انعام از این سایت حمایت کنید. این یک راه تشکر از آنها برای ساخت محتوای عالی است. پدیدآورندگان تأییدشده محتوا در اولین هفته هر ماه تقویمی، بابت انعام‌هایشان پول دریافت می‌کنند.</translation>
+<translation id="1704859330137112950">در صورت تمایل، می‌توانید انعامی ماهانه و مستمر برای حمایت از این سایت برنامه‌ریزی کنید. </translation>
+<translation id="245015745140252435">مقدار انعام</translation>
+<translation id="3370968821559864204">موجودی کیف پول:</translation>
+<translation id="3250511771491660127">ماهانه پرداخت شود</translation>
+<translation id="2573313946367623146">ارسال انعام من</translation>
+<translation id="3492491948683276944">تنظیم انعام ماهانه</translation>
+<translation id="853714875140407133">توکن کافی وجود ندارد</translation>
+<translation id="298349922412901215">توجه: این پدیدآورنده هنوز برای دریافت کمک‌های نقدی کاربران Brave ثبت‌نام نکرده است. تا زمانی‌که ناشر تأیید شود یا تا 90‌ روز،‌ به تلاش برای انتقال کمکتان ادامه می‌دهیم.</translation>
+<translation id="6940273954212603510">لطفاً</translation>
+<translation id="1036277985068412734">سرمایه اضافه کنید</translation>
+<translation id="5299848999918506028">متشکریم!</translation>
+<translation id="2626799779920242286">لطفاً بعداً دوباره امتحان کنید.</translation>
+<translation id="6639570430554986719">ژانویه</translation>
+<translation id="1807352595146144483">فوریه</translation>
+<translation id="2021828608097804771">مارس</translation>
+<translation id="1112527417301376065">آوریل</translation>
+<translation id="8737090912129856089">مه</translation>
+<translation id="6832612641867423485">ژوئن</translation>
+<translation id="8442574087856349697">ژوئیه</translation>
+<translation id="1202041222842415454">اوت</translation>
+<translation id="7317265217038113435">سپتامبر</translation>
+<translation id="8220228041552340594">اکتبر</translation>
+<translation id="8280223431922155812">نوامبر</translation>
+<translation id="4254029385847607686">دسامبر</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">توجه</translation>
+<translation id="7335371657242627509">لحاظ کردن در «کمک نقدی خودکار»</translation>
+<translation id="8918760045046434238">ارسال انعام...</translation>
+<translation id="1978261665418056203">هنوز فعالیتی در این ماه
+نداشته‌اید...</translation>
+<translation id="4914597931214386232">اعطای توکن مطالبه شد</translation>
+<translation id="298067735430872465">کسب درآمد از آگهی‌ها</translation>
+<translation id="6112368337882254910">کمک نقدی خودکار</translation>
+<translation id="4781696154289395607"><ph name="BAT_VALUE" /> بت کمک نقدی داشتید.</translation>
+<translation id="9182287025588539628">انعام یک‌باره</translation>
+<translation id="7577100371127227294">انعام ماهانه</translation>
+<translation id="8772672608371898774">ناشر تأییدشده Brave</translation>
+<translation id="1397683270551078781">هنوز تأیید نشده است</translation>
+<translation id="5727208111992260840">این پدیدآورنده هنوز برای دریافت کمک نقدی از کاربران Brave ثبت‌نام نکرده است.
+        تا زمانی‌که ناشر تأیید نشده است، انعام‌هایی که ارسال می‌کنید در کیف پولتان باقی می‌ماند.</translation>
+<translation id="683765328936486920">در YouTube</translation>
+<translation id="8969049974285901797">در Twitch</translation>
+<translation id="606865182719489911">اعطای توکن رایگان دردسترس است.</translation>
+<translation id="3453206261112715431">اعطای توکن رایگان</translation>
+<translation id="13853865024308201">مطالبه</translation>
+<translation id="3692362746128814480"><ph name="BAT_VALUE" /> بت برای پدیدآورندگانی که هنوز برای دریافت کمک نقدی
+ثبت‌نام نکرده‌اند، در نظر گرفته‌اید. مرورگرتان تا زمانی‌که آنها به تأیید برسند، یا
+تا 90 روز دیگر سعی می‌کند کمک شما را منتقل کند.</translation>
+<translation id="5306913077198665897">هنگام پردازش انعامتان مشکلی پیش آمد؛ لطفاً دوباره امتحان کنید.</translation>
+<translation id="2429828319207652823">هنگام پردازش کمک نقدی‌تان مشکلی پیش آمد.</translation>
+<translation id="2323069945529668668">وای نه!</translation>
+<translation id="7510166204621526816">سرور «پاداش‌های Brave» پاسخ نمی‌دهد. در اسرع وقت مشکل را برطرف خواهیم کرد.</translation>
+<translation id="2104073734684466851">اعطاها</translation>
+<translation id="3068742524072211213">در <ph name="DATE" /> منقضی می‌شود</translation>
+<translation id="7550470870580166294">سرمایه کافی نیست</translation>
+<translation id="2775064702681588061">حساب «پاداش‌های Brave» شما در انتظار سرمایه است.</translation>
+<translation id="765834632354589737">پشتیبان‌گیری از کیف پول</translation>
+<translation id="1713542052890184975">لطفاً از کیف پول Brave خود پشتیبان‌گیری کنید.</translation>
+<translation id="3333887201479867589">پاداش‌های Brave</translation>
+<translation id="2012723204723845092">خوش آمدید!</translation>
+<translation id="7669994301500276741">برای مرور کردن، پاداش دریافت کنید.</translation>
+<translation id="8203529727745387785">با تماشای آگهی‌های رعایت‌کننده حریم خصوصی
+پاداش دریافت کنید، و با انتقال پاداشتان به پدیدآورندگان محتوایی
+که دوست دارید، آنها را حمایت کنید.</translation>
+<translation id="5148719990624240755">فعال کردن «پاداش‌های Brave»</translation>
 </translationbundle>

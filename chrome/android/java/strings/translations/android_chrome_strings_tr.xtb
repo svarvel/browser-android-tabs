@@ -652,7 +652,7 @@ Bu ayarı değiştirmek için <ph name="BEGIN_LINK" />senkronizasyonu sıfırlay
 <translation id="5797070761912323120">Google; Arama, reklamlar ve diğer Google hizmetlerini kişiselleştirmek için geçmişinizi kullanabilir</translation>
 <translation id="5804241973901381774">İzinler</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# saat önce}other{# saat önce}}</translation>
-<translation id="5817918615728894473">Eşle</translation>
+<translation id="5817918615728894473">Eşleştir</translation>
 <translation id="583281660410589416">Bilinmiyor</translation>
 <translation id="5833984609253377421">Bağlantıyı paylaş</translation>
 <translation id="3888648114124182147">Brave Güncellemesi indiriliyor…</translation>
@@ -1130,4 +1130,208 @@ Bu ayarı değiştirmek için <ph name="BEGIN_LINK" />senkronizasyonu sıfırlay
 <translation id="982182592107339124">Bu işlem, aşağıdakiler de dahil olmak üzere tüm sitelere ilişkin verileri temizleyecek:</translation>
 <translation id="983192555821071799">Tüm sekmeleri kapat</translation>
 <translation id="987264212798334818">Genel</translation>
+<translation id="3209146299287804856">Brave sitesi koruma ayarları:</translation>
+<translation id="622484624075952240">Aşağı</translation>
+<translation id="2706462751667573066">Yukarı</translation>
+<translation id="4339730410920731698">Reklam ve Takipçiler Engellendi</translation>
+<translation id="2313532038420432247">HTTPS Yükseltmeleri</translation>
+<translation id="7461425058443653485">Betikler Engellendi</translation>
+<translation id="7835726359440951858">Reklam ve Takipçileri Engelle</translation>
+<translation id="520895744850022668">HTTPS Her yerde</translation>
+<translation id="94154759592465111">Betikleri Engelle</translation>
+<translation id="7307834434086582547">Brave Korumalarını Aç/Kapat</translation>
+<translation id="6132506775968708399">Üçüncü kişi çerezlerini engelleyin</translation>
+<translation id="8710614491157212477">Desteklenen siteleri mümkün olduğunda HTTP yerine HTTPS kullanarak açar</translation>
+<translation id="5758129336814690876">İzleme Koruması Modu</translation>
+<translation id="4609637183310787528">Sizi izleyen kaynakların yüklenmesini engeller</translation>
+<translation id="8387201461264842096">Reklam Engelleme</translation>
+<translation id="1934885595886623674">Reklamların yüklenmesini engeller</translation>
+<translation id="7458422973722236530">Parmak izi koruması</translation>
+<translation id="5787084571334399599">Tarayıcının parmak izi bırakmasını önler</translation>
+<translation id="3758669798635576061">Parmak İzi Yöntemleri Engellendi</translation>
+<translation id="3276318574457057212">Bölgesel Reklam Engeli</translation>
+<translation id="2300239903491866759">Bölgesel reklamların yüklenmesini önler</translation>
+<translation id="8142327400852603066">Yerel ayarınız için ek listeler yok</translation>
+<translation id="9148058034647219655">Çıkış</translation>
+<translation id="7820683005702098135">Brave Senkronizasyonu (beta)</translation>
+<translation id="3082265116777145081">Cihaz adı ekle</translation>
+<translation id="9024091168371687561">Bu cihaz için isteğe bağlı bir ad girin</translation>
+<translation id="3998827900918661986">Android cihazı</translation>
+<translation id="7539985410310934287">Kod kelimeleri ekle</translation>
+<translation id="326454632686131209">Senkronizasyon cihazı</translation>
+<translation id="8985635554450124959">Senk. sıfırlanamadı.</translation>
+<translation id="6244065453125065109">Takipçiler
+Engellendi</translation>
+<translation id="2547939855139473800">Reklam
+Engellendi</translation>
+<translation id="8880969045613157151">HTTPS
+Yükseltmeleri</translation>
+<translation id="204407992549693965">Tahmini Zaman
+Kaydedildi</translation>
+<translation id="991605024067283917">Ölçümleri gönder</translation>
+<translation id="6572660632052512096">Masaüstü Modu</translation>
+<translation id="4479934682648362332">Sitelerin masaüstü versiyonunu tercih et</translation>
+<translation id="807636106793708118">Sitelerin mobil versiyonunu tercih et</translation>
+<translation id="1340503115760585811">Yeni sekmeler için Masaüstü Görünümünü Etkinleştir</translation>
+<translation id="7924540991929826186">Yeni sekmeler için sitelerin mobil versiyonlarını kullanın (önerilir)</translation>
+<translation id="3834924998750356151">Ekranı Engelleme</translation>
+<translation id="1713450908129883784">Bireysel Kontroller</translation>
+<translation id="6303294677342628402">Kalkanlar</translation>
+<translation id="252011129655042182">Reklamlar ve Takipçiler</translation>
+<translation id="6754976710186182237">Parmak İzi Yöntemleri</translation>
+<translation id="8585880402319729023">Kimlik Avını Engelleyin</translation>
+<translation id="5965081608816406060">Arka planda vide oynatma</translation>
+<translation id="59174027418879706">Etkin</translation>
+<translation id="4176463684765177261">Devre Dışı</translation>
+<translation id="1580125697191336644">Deneme niteliğinde. Sekme etkin olmadığında veya cihaz ekranı kapalıyken arka plandaki videnun oynatma sesini etkinleştirir. Bu özellik çalışmıyorsa masaüstü moduna geçmeyi deneyin.</translation>
+<translation id="6587448235155023666">Değişiklikleriniz Brave'i bir sonraki yeniden başlattığınızda geçerli olacak</translation>
+<translation id="8701563696941209024">ŞİMDİ YENİDEN BAŞLAT</translation>
+<translation id="834487290629916192">SONRA</translation>
+<translation id="1842747674580016420">Brave'de video oynatma</translation>
+<translation id="5368992950177874750">Etkinleştirilmesi halinde videolar ilişkili uygulama yerine Brave'de oynatılacaktır</translation>
+<translation id="7459000603787995422">Çıkışta sekmeleri kapatın</translation>
+<translation id="1680858055899097121">Tarama oturumları arasında sekmeleri sürdürmeyin</translation>
+<translation id="213787746370741250">Sekmeleri Özel Sekmelerde Açın</translation>
+<translation id="3544772668823934222">Sekmeleri Özel Sekmelerde açma teklifi</translation>
+<translation id="4501702055016678577">DuckDuckGo ile gizli arama yapılsın mı?</translation>
+<translation id="910419239800579753">Gizli arama özelliği kullanıldığında Brave, bu gizli sekmede yaptığınız aramaları yanıtlamak için DuckDuckGo'yu kullanır. DuckDuckGo, arama geçmişinizi takip etmeyen ve gizli şekilde arama yapmanızı sağlayan bir arama motorudur.</translation>
+<translation id="1426410128494586442">Evet</translation>
+<translation id="4250680216510889253">Hayır</translation>
+<translation id="5628466560184522265">DuckDuckGo ile gizli arama yapma hakkında bilgi edinin</translation>
+<translation id="1468415711258933398">Standart Sekme</translation>
+<translation id="6199596294742117349">Bu bir Gizli Sekme</translation>
+<translation id="5858455511731621847">Gizli sekmelerde ziyaret ettiğiniz siteler yerel olarak kaydedilmese de anonim olarak kalmazsınız ve bu siteler internet servis sağlayıcınız, işvereniniz veya ziyaret ettiğiniz siteler tarafından görülebilir.</translation>
+<translation id="2339273275658335597">Brave güncellemesi</translation>
+<translation id="8395234238259738935">Yeni Brave tarayıcı %22 daha hızlı</translation>
+<translation id="391177677159359824">Senkronizasyon (beta)</translation>
+<translation id="3680755684186855422">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</translation>
+<translation id="3735228155296883311">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</translation>
+<translation id="7745082336226088126">Senkronizasyon kodu tara veya gir</translation>
+<translation id="1602067095281698985">Yeni bir senkronizasyon zinciri başlat</translation>
+<translation id="4690880825349994619">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. "Cihaz Ekle" öğesini seçin ve ekranda görüntülenen QR Kodunu tarayın.</translation>
+<translation id="6270614677029463366">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. "Cihaz Ekle" öğesini ve ardından "Bunun yerine kod kelimelerini görüntüle" öğesini seçin.</translation>
+<translation id="1475223680121592371">Mobil Cihaz Ekle</translation>
+<translation id="2965377893636908578">Bilgisayar Ekle</translation>
+<translation id="65315202420929965">Bu senkronizasyon kodunu tarayın</translation>
+<translation id="6604289897677913048">İkinci bir telefon veya tablet kullanarak Brave Ayarları &gt; Senkronizasyon &gt; Tara öğesine gidin.</translation>
+<translation id="3405078156498254717">İkinci cihazınızla (yukarıdaki) QR kodunu çekin veya kamera mevcut değilse kod kelimelerini girin.</translation>
+<translation id="8076492880354921740">Sekmeler</translation>
+<translation id="5706430066167764107">Otomatik Doldurma/Parolalar</translation>
+<translation id="1164234435773528579">Brave Ödeme Ayarları</translation>
+<translation id="6174119914106813304">BU CİHAZDA SENKRONİZASYON</translation>
+<translation id="6776430845975754238">Ayarların değiştirilmesi yalnızca bu cihazın diğerleriyle paylaştığı verileri etkileyecektir.</translation>
+<translation id="8193724030871339658">ZİNCİRDEKİ DİĞER CİHAZLAR</translation>
+<translation id="279635009973773843">CİHAZLAR YÜKLENİYOR...</translation>
+<translation id="6450924769151530465">Başka cihaz ekle</translation>
+<translation id="2004365171440701679">Bu cihazı kaldır</translation>
+<translation id="2731921493694251495">Senkronizasyon zinciri kodunu gir</translation>
+<translation id="2590683710114839102">Bilgisayarınızda Brave Ayarları &gt; Senkronizasyon öğesine gidin. "Senkronizasyon Zinciri Kodu Gir" öğesini seçin.</translation>
+<translation id="1732271215616957850">Yukarıdaki kod kelimelerini boşluklar dahil girin.</translation>
+<translation id="1178128181015923849">"<ph name="DEVICE_NAME" />" cihazını silmek istediğinizden emin misiniz?</translation>
+<translation id="9154490620151093733">Silme talebi gönderildi. Cihaz kısa süre içinde kaldırılacak.</translation>
+<translation id="544873101641618162">Veri yükleniyor...</translation>
+<translation id="6779408765480516895">Bir hata oluştu, görünüşe göre talebiniz zaman aşımına uğradı.</translation>
+<translation id="4973653569293835178">Kameramı kullanacağım...</translation>
+<translation id="2569646144216067185">Kelime sayısı: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Yanlış kelime sayısı</translation>
+<translation id="2175927920773552910">QR Kodu</translation>
+<translation id="8653433343015102968">Kod Kelimeleri</translation>
+<translation id="8624315169751085215">Panoya Kopyala</translation>
+<translation id="5241263629636958324">Panoya Kopyalandı</translation>
+<translation id="222883304157347087">(bu cihaz)</translation>
+<translation id="4745013713714502219">Brave zaten varsayılan
+tarayıcınız olarak ayarlı.</translation>
+<translation id="6874141297197991294">Zaten varsayılan bir tarayıcı ayarladınız.
+Varsayılan tarayıcıyı uygulama ayarlarınızdan değiştirebilirsiniz.</translation>
+<translation id="5708254139873333042">Pili koruyun ve web sayfalarını daha hızlı yükleyin. Varsayılan Tarayıcınızı Brave yapın. Brave menüsünden "Varsayılan tarayıcı olarak ayarla"ya dokunun.</translation>
+<translation id="3570367516044491911">Varsayılan tarayıcı olarak ayarla</translation>
+<translation id="5827583267117939716">Listeden Brave'i seçip "Her Zaman" a dokunun</translation>
+<translation id="2262526166668973593">Brave'i varsayılan web tarayıcınız yapın
+Pilden tasarruf edin ve web sayfalarını daha hızlı yükleyin</translation>
+<translation id="1916285746997567466">İnternetin geleceğini
+deneyimlemeye hazır olun.</translation>
+<translation id="1071131306814166204">Artık gizliliğe saygılı reklamlar
+izleme karşılığında kupon kazanabilirsiniz.</translation>
+<translation id="1327938628925645979">ÖDÜLLERE KATIL</translation>
+<translation id="5567439033041178034">DAHA FAZLASINI ÖĞREN</translation>
+<translation id="7530570094705720669">Cüzdan oluşturuluyor</translation>
+<translation id="3780605330121608425">Cüzdanınız</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">Para Ekle</translation>
+<translation id="2730771409541953249">ÖDÜLLER ÖZETİ</translation>
+<translation id="8596647978585397359">Uğradığınız için teşekkür ederiz!</translation>
+<translation id="3165726837666415756">Bu siteyi bir bahşiş göndererek destekleyebilirsiniz. Bu, muhteşem içerik için kendilerine teşekkür etmenin bir yoludur. Onaylı içerik oluşturucular her takvim ayının ilk haftası içinde bahşişleri için ödeme alır.</translation>
+<translation id="1704859330137112950">İsterseniz bu siteyi devamlı olarak desteklemek için aylık bahşiş ödemeleri planlayabilirsiniz.</translation>
+<translation id="245015745140252435">Bahşiş tutarı</translation>
+<translation id="3370968821559864204">cüzdan bakiyesi:</translation>
+<translation id="3250511771491660127">Bunu aylık yap</translation>
+<translation id="2573313946367623146">bahşişimi gönder</translation>
+<translation id="3492491948683276944">aylık bahşiş ayarla</translation>
+<translation id="853714875140407133">yeterli kupon yok</translation>
+<translation id="298349922412901215">NOT: Bu oluşturucu henüz Brave kullanıcılarından katkı almak için kaydolmamış. Onlar onaylayana veya 90 gün geçene kadar katkı yapmaya çalışacağız.</translation>
+<translation id="6940273954212603510">lütfen</translation>
+<translation id="1036277985068412734">para ekleyin</translation>
+<translation id="5299848999918506028">Teşekkür ederiz!</translation>
+<translation id="2626799779920242286">Lütfen daha sonra tekrar deneyin.</translation>
+<translation id="6639570430554986719">OCAK</translation>
+<translation id="1807352595146144483">ŞUBAT</translation>
+<translation id="2021828608097804771">MART</translation>
+<translation id="1112527417301376065">NİSAN</translation>
+<translation id="8737090912129856089">MAYIS</translation>
+<translation id="6832612641867423485">HAZİRAN</translation>
+<translation id="8442574087856349697">TEMMUZ</translation>
+<translation id="1202041222842415454">AĞUSTOS</translation>
+<translation id="7317265217038113435">EYLÜL</translation>
+<translation id="8220228041552340594">EKİM</translation>
+<translation id="8280223431922155812">KASIM</translation>
+<translation id="4254029385847607686">ARALIK</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Dikkat</translation>
+<translation id="7335371657242627509">Otomatik Katkıya Dahil Et</translation>
+<translation id="8918760045046434238">Bir bahşiş gönder...</translation>
+<translation id="1978261665418056203">Bu ay henüz aktivite
+yok...</translation>
+<translation id="4914597931214386232">Alınan Kuponlar</translation>
+<translation id="298067735430872465">Reklam Gelirleri</translation>
+<translation id="6112368337882254910">Otomatik Katkı</translation>
+<translation id="4781696154289395607"><ph name="BAT_VALUE" /> BAT katkıda bulundunuz.</translation>
+<translation id="9182287025588539628">Tek Seferlik Bahşişler</translation>
+<translation id="7577100371127227294">Aylık Bahşişler</translation>
+<translation id="8772672608371898774">Brave Onaylı Yayıncı</translation>
+<translation id="1397683270551078781">Henüz onaylanmamış</translation>
+<translation id="5727208111992260840">Bu oluşturucu henüz Brave kullanıcılarından katkı almak için kaydolmamış.
+        Gönderdiğiniz tüm bahşişler onlar onaylayana kadar cüzdanınızda kalacaktır.</translation>
+<translation id="683765328936486920">YouTube'da</translation>
+<translation id="8969049974285901797">Twitch'te</translation>
+<translation id="606865182719489911">Ücretsiz bir kupon mevcut.</translation>
+<translation id="3453206261112715431">Ücretsiz Kupon Verme</translation>
+<translation id="13853865024308201">Al</translation>
+<translation id="3692362746128814480">Henüz katkı almak amacıyla kaydolmamış oluşturucular için <ph name="BAT_VALUE" /> BAT
+ayırdınız. Tarayıcınız onlar onaylayana veya
+90 gün geçene kadar katkı yapmayı deneyecek.</translation>
+<translation id="5306913077198665897">Bahşişiniz işleme alınırken bir sorun oluştu, lütfen tekrar deneyin.</translation>
+<translation id="2429828319207652823">Katkınız işleme alınırken bir sorun oluştu.</translation>
+<translation id="2323069945529668668">Tüh!</translation>
+<translation id="7510166204621526816">Brave Ödülleri sunucusu yanıt vermiyor. Bunu en kısa zamanda düzelteceğiz.</translation>
+<translation id="2104073734684466851">Verilenler</translation>
+<translation id="3068742524072211213"><ph name="DATE" /> tarihinde süresi doluyor</translation>
+<translation id="7550470870580166294">Yetersiz Tutar</translation>
+<translation id="2775064702681588061">Brave Ödülleri hesabınız para yatırılmasını bekliyor.</translation>
+<translation id="765834632354589737">Cüzdanı Yedekle</translation>
+<translation id="1713542052890184975">Lütfen Brave cüzdanınızı yedekleyin.</translation>
+<translation id="3333887201479867589">Brave Ödülleri</translation>
+<translation id="2012723204723845092">Tekrar hoş geldiniz!</translation>
+<translation id="7669994301500276741">İnternette gezinmek için ödül alın.</translation>
+<translation id="8203529727745387785">Gizliliğe saygılı reklamlar izleyerek
+para kazanın ve sevdiğiniz içerik
+üreticilerini desteklemek için bu parayla ödeme yapın.</translation>
+<translation id="5148719990624240755">BRAVE ÖDÜLLERİNİ ETKİNLEŞTİR</translation>
+<translation id="1628742278973105368">İlk aylık ipucunuz gönderileceği zaman:</translation>
+<translation id="6665366815203065060">Az önce şuna bir ipucu gönderdiniz:</translation>
+<translation id="5441565662498481293">Şuna otomatik olarak bir ipucu gönderiyorsunuz:</translation>
+<translation id="1166682575529520472">Aylık</translation>
+<translation id="8495235435594442882">Alt araç çubuğunu etkinleştir</translation>
+<translation id="7239121106815507493">Alt araç çubuğunu devre dışı bırak</translation>
+<translation id="145068164597056296">Arama veya URL</translation>
 </translationbundle>

@@ -90,7 +90,7 @@
 <translation id="1628019612362412531">{NUM_SELECTED,plural, =1{Hapus 1 item yang dipilih}other{Hapus # item yang dipilih}}</translation>
 <translation id="1641113438599504367">Safe Browsing</translation>
 <translation id="164269334534774161">Anda melihat salinan offline halaman ini dari <ph name="CREATION_TIME" /></translation>
-<translation id="1644574205037202324">Histori</translation>
+<translation id="1644574205037202324">Riwayat</translation>
 <translation id="1647391597548383849">Mengakses kamera Anda</translation>
 <translation id="1660204651932907780">Mengizinkan situs memutar suara (direkomendasikan)</translation>
 <translation id="1670399744444387456">Dasar</translation>
@@ -198,7 +198,7 @@
 <translation id="2414886740292270097">Gelap</translation>
 <translation id="8285489906452138776">Brave memerlukan izin akses ke kamera untuk situs ini.</translation>
 <translation id="2426805022920575512">Pilih akun lain</translation>
-<translation id="2433507940547922241">Tampilan</translation>
+<translation id="2433507940547922241">Penampilan</translation>
 <translation id="2434158240863470628">Download selesai <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">Akses lokasi</translation>
 <translation id="2450083983707403292">Ingin mulai mendownload <ph name="FILE_NAME" /> lagi?</translation>
@@ -324,7 +324,7 @@
 <translation id="3350687908700087792">Tutup semua jendela penyamaran</translation>
 <translation id="3353615205017136254">Halaman ringan yang ditampilkan oleh Google. Tap tombol muat versi asli untuk memuat halaman asli.</translation>
 <translation id="3367813778245106622">Login lagi untuk memulai sinkronisasi</translation>
-<translation id="3377025655491224618">Tab Rahasia</translation>
+<translation id="3377025655491224618">Tab Pribadi</translation>
 <translation id="3384347053049321195">Bagikan gambar</translation>
 <translation id="3386292677130313581">Minta izin sebelum memungkinkan situs mengetahui lokasi Anda (disarankan)</translation>
 <translation id="3387650086002190359">Download <ph name="FILE_NAME" /> gagal karena kesalahan sistem file.</translation>
@@ -431,7 +431,7 @@ Untuk menyesuaikan istilah penelusuran, tekan lama untuk memilih. Untuk memerinc
 <translation id="4226663524361240545">Notifikasi dapat membuat perangkat bergetar</translation>
 <translation id="423219824432660969">Enkripsikan data yang disinkronkan dengan sandi Google mulai tanggal <ph name="TIME" /></translation>
 <translation id="4242533952199664413">Buka setelan</translation>
-<translation id="4243710787042215766">Buka di tab rahasia</translation>
+<translation id="4243710787042215766">Buka di tab pribadi</translation>
 <translation id="7445061995866044926">Logout dari Brave?</translation>
 <translation id="4256782883801055595">Lisensi open source</translation>
 <translation id="4259722352634471385">Navigasi diblokir: <ph name="URL" /></translation>
@@ -652,7 +652,7 @@ Untuk mengubah setelan ini, <ph name="BEGIN_LINK" />setel ulang sinkronisasi<ph 
 <translation id="5797070761912323120">Google dapat menggunakan histori Anda untuk mempersonalisasi Penelusuran, iklan, dan layanan Google lainnya</translation>
 <translation id="5804241973901381774">Izin</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# jam yang lalu}other{# jam yang lalu}}</translation>
-<translation id="5817918615728894473">Sandingkan</translation>
+<translation id="5817918615728894473">Sambungkan</translation>
 <translation id="583281660410589416">Tidak dikenal</translation>
 <translation id="5833984609253377421">Bagikan link</translation>
 <translation id="3888648114124182147">Mendownload Update Brave…</translation>
@@ -721,7 +721,7 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="6320088164292336938">Getar</translation>
 <translation id="6324034347079777476">Sinkronisasi sistem Android dinonaktifkan</translation>
 <translation id="6333140779060797560">Bagikan dengan <ph name="APPLICATION" /></translation>
-<translation id="6336451774241870485">Tab rahasia yang baru</translation>
+<translation id="6336451774241870485">Tab pribadi baru</translation>
 <translation id="6337234675334993532">Enkripsi</translation>
 <translation id="6341580099087024258">Tanya lokasi menyimpan file</translation>
 <translation id="6343192674172527289">Tidak ada file download</translation>
@@ -764,7 +764,7 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="6593061639179217415">Situs desktop</translation>
 <translation id="663059986967017181">Disalin ke Brave</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
-<translation id="6610147964972079463">Tutup tab rahasia</translation>
+<translation id="6610147964972079463">Tutup tab pribadi</translation>
 <translation id="6612358246767739896">Konten dilindungi</translation>
 <translation id="6627583120233659107">Edit folder</translation>
 <translation id="6643016212128521049">Hapus</translation>
@@ -1009,7 +1009,7 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="8380167699614421159">Situs ini menampilkan iklan yang mengganggu atau menyesatkan</translation>
 <translation id="8393700583063109961">Kirim pesan</translation>
 <translation id="8413126021676339697">Tampilkan histori lengkap</translation>
-<translation id="8428213095426709021">Setelan</translation>
+<translation id="8428213095426709021">Pengaturan</translation>
 <translation id="8438566539970814960">Jadikan penelusuran dan penjelajahan lebih baik</translation>
 <translation id="8441146129660941386">Cari mundur</translation>
 <translation id="4058091506841967397">Brave tak bisa diupdate</translation>
@@ -1130,4 +1130,241 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="982182592107339124">Tindakan ini akan menghapus data untuk semua situs, termasuk:</translation>
 <translation id="983192555821071799">Tutup semua tab</translation>
 <translation id="987264212798334818">Umum</translation>
+<translation id="3209146299287804856">Pengaturan perisai situs Brave untuk</translation>
+<translation id="622484624075952240">Turun</translation>
+<translation id="2706462751667573066">Naik</translation>
+<translation id="4339730410920731698">Iklan dan Pelacak Diblokir</translation>
+<translation id="2313532038420432247">Peningkatan HTTPS</translation>
+<translation id="7461425058443653485">Skrip Diblokir</translation>
+<translation id="7835726359440951858">Blokir Iklan dan Pelacakan</translation>
+<translation id="520895744850022668">HTTPS Everywhere</translation>
+<translation id="94154759592465111">Blokir Skrip</translation>
+<translation id="7307834434086582547">Aktifkan/Nonaktifkan Perisai Brave</translation>
+<translation id="6132506775968708399">Blokir kuki pihak ke-3</translation>
+<translation id="8710614491157212477">Buka situs yang didukung menggunakan HTTPS daripada HTTP jika memungkinkan</translation>
+<translation id="5758129336814690876">Mode Perlindungan Pelacakan</translation>
+<translation id="4609637183310787528">Cegah proses memuat sumber-sumber yang melacak Anda</translation>
+<translation id="8387201461264842096">Blokir Iklan</translation>
+<translation id="1934885595886623674">Mencegah iklan-iklan dari proses memuat</translation>
+<translation id="7458422973722236530">Perlindungan Sidik Jari</translation>
+<translation id="5787084571334399599">Cegah peramban dari sidik jari</translation>
+<translation id="3758669798635576061">Metode Sidik Jari Diblokir</translation>
+<translation id="3276318574457057212">Blokir Iklan Regional</translation>
+<translation id="2300239903491866759">Mencegah iklan regional dimuat</translation>
+<translation id="8142327400852603066">Tidak ada daftar tambahan yang tersedia untuk bahasa Anda</translation>
+<translation id="9148058034647219655">Keluar</translation>
+<translation id="7820683005702098135">Sinkronisasi Brave (beta)</translation>
+<translation id="3082265116777145081">Tambahkan nama perangkat</translation>
+<translation id="9024091168371687561">Masukkan nama opsional untuk perangkat ini</translation>
+<translation id="3998827900918661986">Perangkat Android</translation>
+<translation id="7539985410310934287">Masukkan kode kata</translation>
+<translation id="326454632686131209">Sinkronkan perangkat</translation>
+<translation id="8985635554450124959">Sinkronisasi tidak dapat disiapkan</translation>
+<translation id="230829157901335313">Mungkin waktu sistem atau zona waktu perangkat Anda salah. Harap atur waktu dan zona waktu yang benar
+</translation>
+<translation id="6244065453125065109">Pelacak
+Diblokir</translation>
+<translation id="2547939855139473800">Iklan
+Diblokir</translation>
+<translation id="8880969045613157151">Peningkatan
+HTTPS</translation>
+<translation id="204407992549693965">± Waktu
+Dihemat</translation>
+<translation id="991605024067283917">Kirim metrik</translation>
+<translation id="6572660632052512096">Mode Desktop</translation>
+<translation id="4479934682648362332">Memilih versi desktop dari situs</translation>
+<translation id="807636106793708118">Memilih versi seluler dari situs</translation>
+<translation id="1340503115760585811">Aktifkan Tampilan Desktop untuk tab baru</translation>
+<translation id="7924540991929826186">Gunakan versi seluler situs untuk tab baru (disarankan)</translation>
+<translation id="3834924998750356151">Layar Pemblokiran</translation>
+<translation id="1713450908129883784">Kontrol Individu</translation>
+<translation id="6303294677342628402">Perisai</translation>
+<translation id="252011129655042182">Iklan dan Pelacak</translation>
+<translation id="6754976710186182237">Metode Sidik Jari</translation>
+<translation id="8585880402319729023">Blokir Phishing</translation>
+<translation id="5965081608816406060">Pemutaran video di latar</translation>
+<translation id="59174027418879706">Diaktifkan</translation>
+<translation id="4176463684765177261">Dinonaktifkan</translation>
+<translation id="1580125697191336644">Eksperimental: Aktifkan memutar audio dari video di latar ketika tab tidak aktif atau layar perangkat mati. Coba beralih ke mode desktop jika fitur ini tidak bekerja.</translation>
+<translation id="6587448235155023666">Perubahan Anda akan berlaku setelah Anda meluncurkan ulang Brave</translation>
+<translation id="8701563696941209024">LUNCURKAN ULANG</translation>
+<translation id="834487290629916192">NANTI</translation>
+<translation id="1842747674580016420">Pemutaran video di Brave</translation>
+<translation id="5368992950177874750">Jika diaktifkan, video akan diputar di Brave dan bukan di aplikasi yang terkait</translation>
+<translation id="7459000603787995422">Tutup tab saat keluar</translation>
+<translation id="1680858055899097121">Jangan ingat tab di antara sesi penjelajahan</translation>
+<translation id="213787746370741250">Buka tab di Tab Ubahsuai</translation>
+<translation id="3544772668823934222">Tawarkan untuk membuka tab di Tab Ubahsuai</translation>
+<translation id="4501702055016678577">Pencarian pribadi dengan DuckDuckGo?</translation>
+<translation id="910419239800579753">Dengan pencarian pribadi, Brave akan menggunakan DuckDuckGo untuk mencari jawaban pencarian Anda saat Anda berada dalam tab pribadi ini. DuckDuckGo adalah mesin pencari yang tidak merekam riwayat pencarian Anda, memungkinkan Anda untuk mencari secara pribadi.</translation>
+<translation id="1426410128494586442">Ya
+</translation>
+<translation id="4250680216510889253">Tidak
+</translation>
+<translation id="5628466560184522265">Pelajari tentang pencarian pribadi dengan DuckDuckGo</translation>
+<translation id="1468415711258933398">Tab Standar
+</translation>
+<translation id="6199596294742117349">Ini adalah Tab Pribadi</translation>
+<translation id="5858455511731621847">Meski situs yang Anda kunjungi melalui tab pribadi tidak disimpan secara lokal, tetapi tidak membuat jadi anonim atau tak tampak dari ISP Anda, bos Anda, atau situs yang Anda kunjungi.</translation>
+<translation id="2339273275658335597">Pembaruan Brave</translation>
+<translation id="8395234238259738935">Peramban Brave baru 22% lebih cepat</translation>
+<translation id="391177677159359824">Sync (beta)</translation>
+<translation id="3680755684186855422">Brave Sync memungkinkan Anda mensinkronisasi data markah secara pribadi antarperamban Brave di semua perangkat Anda.</translation>
+<translation id="3735228155296883311">Cukup pindai kode dari rantai sinkronisasi yang Anda buat pada perangkat lain. Atau mulai rantai sinkronisasi baru.</translation>
+<translation id="7745082336226088126">Pindai atau masukkan kode sinkronisasi</translation>
+<translation id="1602067095281698985">Mulai rantai sinkronisasi baru</translation>
+<translation id="4690880825349994619">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih "Tambah Perangkat" dan pindai Kode QR yang ditampilkan di layar.</translation>
+<translation id="6270614677029463366">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih "Tambah Perangkat" lalu "Tampilkan kata-kata kode".</translation>
+<translation id="1475223680121592371">Tambah Perangkat Seluler</translation>
+<translation id="2965377893636908578">Tambah Komputer</translation>
+<translation id="65315202420929965">Pindai kode sinkronisasi ini</translation>
+<translation id="6604289897677913048">Menggunakan ponsel atau tablet kedua, buka Pengaturan Brave &gt; Sinkronisasi &gt; Pindai.</translation>
+<translation id="3405078156498254717">Tangkap kode QR (di atas) dengan perangkat kedua Anda, atau masukkan kata-kata kode jika tidak ada kamera.</translation>
+<translation id="8076492880354921740">Tab</translation>
+<translation id="5706430066167764107">Isi otomatis/Kata sandi</translation>
+<translation id="1164234435773528579">Pengaturan Brave Payment</translation>
+<translation id="6174119914106813304">SINKRONISASI DI PERANGKAT INI</translation>
+<translation id="6776430845975754238">Mengubah pengaturan hanya akan mempengaruhi data yang dibagikan perangkat ini dengan perangkat lain.</translation>
+<translation id="8193724030871339658">PERANGKAT LAIN DALAM RANTAI</translation>
+<translation id="279635009973773843">MEMUAT PERANGKAT...</translation>
+<translation id="6450924769151530465">Tambah perangkat lain</translation>
+<translation id="2004365171440701679">Hapus perangkat ini</translation>
+<translation id="2731921493694251495">Masukkan kode rantai sinkronisasi</translation>
+<translation id="2590683710114839102">Pada komputer Anda, buka Pengaturan Brave &gt; Sinkronisasi. Pilih "Masukkan Kode Rantai Sinkronisasi".</translation>
+<translation id="1732271215616957850">Masukkan kata-kata kode di bawah ini, termasuk spasi.</translation>
+<translation id="1178128181015923849">Yakin ingin menghapus perangkat '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="9154490620151093733">Permintaan penghapusan telah dikirim. Perangkat akan dihapus sebentar lagi.</translation>
+<translation id="544873101641618162">Memuat data...</translation>
+<translation id="6779408765480516895">Ada yang salah, sepertinya permintaan Anda kehabisan waktu.</translation>
+<translation id="4973653569293835178">Saya akan gunakan kamera saya...</translation>
+<translation id="2569646144216067185">Jumlah kata: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Jumlah kata salah</translation>
+<translation id="2175927920773552910">Kode QR</translation>
+<translation id="8653433343015102968">Kode Kata</translation>
+<translation id="8624315169751085215">Salin ke Clipboard</translation>
+<translation id="5241263629636958324">Telah Disalin ke Clipboard</translation>
+<translation id="222883304157347087">(perangkat ini)</translation>
+<translation id="4745013713714502219">Brave telah ditetapkan sebagai
+browser default.</translation>
+<translation id="6874141297197991294">Anda telah menetapkan browser default.
+Anda dapat mengubah browser default dalam pengaturan aplikasi.</translation>
+<translation id="5708254139873333042">Hemat baterai dan muat laman web lebih cepat. Jadikan Brave peramban baku Anda. Dari menu Brave, ketuk "Atur sebagai peramban baku"</translation>
+<translation id="3570367516044491911">Atur sebagai peramban baku</translation>
+<translation id="5827583267117939716">Pilih Brave dari daftar dan ketuk "Selalu"</translation>
+<translation id="2262526166668973593">Jadikan Brave peramban baku Anda
+Hemat baterai dan muat laman web lebih cepat</translation>
+<translation id="1916285746997567466">Bersiaplah untuk merasakan pengalaman
+menelusuri Internet berikutnya.</translation>
+<translation id="1071131306814166204">Anda kini dapat memperoleh token untuk
+menonton iklan yang tidak mengganggu privasi.</translation>
+<translation id="1327938628925645979">BERGABUNGLAH DENGAN BRAVE REWARDS</translation>
+<translation id="5567439033041178034">PELAJARI SELENGKAPNYA</translation>
+<translation id="7530570094705720669">Membuat dompet</translation>
+<translation id="3780605330121608425">Dompet Anda</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">Tambahkan Dana</translation>
+<translation id="2730771409541953249">RINGKASAN BRAVE REWARDS</translation>
+<translation id="8596647978585397359">Terima kasih telah berkunjung!</translation>
+<translation id="3165726837666415756">Anda dapat mendukung situs ini dengan mengirim tip. Tip adalah cara untuk menunjukkan penghargaan kepada situs karena telah membuat konten menarik. Pembuat konten terverifikasi mendapatkan pembayaran untuk tip mereka selama minggu pertama pada setiap bulan kalender.</translation>
+<translation id="1704859330137112950">Jika ingin, Anda dapat menjadwalkan tip bulanan untuk mendukung situs ini secara berkelanjutan.</translation>
+<translation id="245015745140252435">Jumlah tip</translation>
+<translation id="3370968821559864204">saldo dompet:</translation>
+<translation id="3250511771491660127">Buat tip jadi bulanan</translation>
+<translation id="2573313946367623146">kirim tip saya</translation>
+<translation id="3492491948683276944">atur tip bulanan</translation>
+<translation id="853714875140407133">token tidak cukup</translation>
+<translation id="298349922412901215">CATATAN: Pembuat ini belum terdaftar untuk menerima kontribusi dari pengguna Brave. Kami akan terus mencoba memberikan kontribusi hingga diverifikasi, atau hingga 90 hari telah lewat.</translation>
+<translation id="6940273954212603510">tambahkan</translation>
+<translation id="1036277985068412734">dana</translation>
+<translation id="5299848999918506028">Terima kasih!</translation>
+<translation id="2626799779920242286">Coba lagi nanti.</translation>
+<translation id="6639570430554986719">JANUARI</translation>
+<translation id="1807352595146144483">FEBRUARI</translation>
+<translation id="2021828608097804771">MARET</translation>
+<translation id="1112527417301376065">APRIL</translation>
+<translation id="8737090912129856089">MEI</translation>
+<translation id="6832612641867423485">JUNI</translation>
+<translation id="8442574087856349697">JULI</translation>
+<translation id="1202041222842415454">AGUSTUS</translation>
+<translation id="7317265217038113435">SEPTEMBER</translation>
+<translation id="8220228041552340594">OKTOBER</translation>
+<translation id="8280223431922155812">NOVEMBER</translation>
+<translation id="4254029385847607686">DESEMBER</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Perhatian</translation>
+<translation id="7335371657242627509">Sertakan dalam Kontribusi Otomatis</translation>
+<translation id="8918760045046434238">Kirim tip...</translation>
+<translation id="1978261665418056203">Belum ada aktivitas di
+bulan ini...</translation>
+<translation id="4914597931214386232">Hadiah Token Diklaim</translation>
+<translation id="298067735430872465">Pendapatan dari Iklan</translation>
+<translation id="6112368337882254910">Kontribusi Otomatis</translation>
+<translation id="4781696154289395607">Anda telah berkontribusi sebesar <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">Tip Satu Kali</translation>
+<translation id="7577100371127227294">Tip Bulanan</translation>
+<translation id="8772672608371898774">Penerbit Terverifikasi Brave</translation>
+<translation id="1397683270551078781">Belum terverifikasi</translation>
+<translation id="5727208111992260840">Pembuat ini belum terdaftar untuk menerima kontribusi dari pengguna Brave.
+        Setiap tip yang Anda kirim akan tetap ada di dompet Anda hingga diverifikasi.</translation>
+<translation id="683765328936486920">di YouTube</translation>
+<translation id="8969049974285901797">di Twitch</translation>
+<translation id="606865182719489911">Tersedia hadiah token gratis.</translation>
+<translation id="3453206261112715431">Hadiah Token Gratis</translation>
+<translation id="13853865024308201">Klaim</translation>
+<translation id="3692362746128814480">Anda telah menetapkan <ph name="BAT_VALUE" /> BAT kepada pembuat yang belum terdaftar
+untuk menerima kontribusi. Browser Anda akan terus mencoba memberikan kontribusi
+hingga diverifikasi, atau hingga 90 hari telah lewat.</translation>
+<translation id="7997676409547731821">Pembayaran bulanan terjadwal Anda untuk Kontribusi Otomatis dan tip bulanan tidak dapat diselesaikan karena dana tidak mencukupi. Kami akan mencoba kembali dalam 30 hari.</translation>
+<translation id="5306913077198665897">Terjadi masalah saat memproses tip Anda, coba lagi.</translation>
+<translation id="2429828319207652823">Terjadi masalah saat memproses kontribusi Anda.</translation>
+<translation id="2323069945529668668">Oh!</translation>
+<translation id="7510166204621526816">Server Brave Rewards tidak merespons. Kami akan memperbaiki masalah ini secepat mungkin.</translation>
+<translation id="2104073734684466851">Hadiah</translation>
+<translation id="3068742524072211213">berakhir pada <ph name="DATE" /></translation>
+<translation id="7550470870580166294">Dana Tidak Cukup</translation>
+<translation id="2775064702681588061">Akun Brave Rewards Anda sedang menunggu setoran dari Anda.</translation>
+<translation id="765834632354589737">Dompet Cadangan</translation>
+<translation id="1713542052890184975">Cadangkan dompet Brave Anda.</translation>
+<translation id="3333887201479867589">Brave Rewards</translation>
+<translation id="2012723204723845092">Selamat datang!</translation>
+<translation id="7669994301500276741">Dapatkan hadiah saat menelusuri.</translation>
+<translation id="8203529727745387785">Dapatkan dengan menonton iklan
+yang tidak mengganggu privasi, dan balas dengan mendukung
+pembuat konten yang Anda sukai.</translation>
+<translation id="5148719990624240755">AKTIFKAN BRAVE REWARDS</translation>
+<translation id="1628742278973105368">Tip bulanan pertama Anda akan dikirimkan pada:</translation>
+<translation id="6665366815203065060">Anda baru saja mengirimkan tip ke:</translation>
+<translation id="5441565662498481293">Anda mengirimkan tip secara otomatis ke:</translation>
+<translation id="1166682575529520472">Bulanan</translation>
+<translation id="8495235435594442882">Aktifkan bilah alat bawah</translation>
+<translation id="7239121106815507493">Nonaktifkan bilah alat bawah</translation>
+<translation id="145068164597056296">Cari atau URL</translation>
+<translation id="6810078320346589989">Buat Marka
+</translation>
+<translation id="5463954686005964104">Beri situs ini tip setiap bulan
+</translation>
+<translation id="1923568441186788334">Imbalan Brave sudah tiba
+</translation>
+<translation id="7722441371828049691">Dukung situs yang Anda sukai.
+</translation>
+<translation id="5234764350956374838">Tutup</translation>
+<translation id="4472575034687746823">Memulai</translation>
+<translation id="4162066325465825185">Kami mohon maaf tampaknya Imbalan Brave tidak tersedia di perangkat Anda
+</translation>
+<translation id="4150201353443180367">Layar Tampilan
+</translation>
+<translation id="2804710924397009224">Sembunyikan Ikon Imbalan Brave
+</translation>
+<translation id="7358991116457217836">Menyembunyikan Ikon Imbalan Brave ketika Imbalan Brave tidak diaktifkan
+</translation>
+<translation id="7618184561660805696">Silakan datang kembali untuk mendapatkan token gratis
+</translation>
+<translation id="3349204812119681938">Reset Imbalan Brave
+</translation>
+<translation id="8782039523249932839">Dompet Brave Anda akan dihapus dan mereset semua data Imbalan Brave Anda
+</translation>
+<translation id="5321518976657560663">Reset Kesalahan</translation>
+<translation id="7071576788062714665">Terjadi kesalahan saat mereset Imbalan Brave. Harap luncurkan ulang Brave dan coba lagi
+</translation>
 </translationbundle>
