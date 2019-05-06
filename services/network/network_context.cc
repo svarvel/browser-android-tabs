@@ -961,7 +961,7 @@ void NetworkContext::QueueSignedExchangeReport(
     return;
   std::string user_agent;
   if (request_context->http_user_agent_settings() != nullptr) {
-    user_agent = request_context->http_user_agent_settings()->GetUserAgent();
+    user_agent = request_context->http_user_agent_settings()->GetUserAgent("");
   }
   net::NetworkErrorLoggingService::SignedExchangeReportDetails details;
   details.success = report->success;

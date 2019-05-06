@@ -1687,8 +1687,8 @@ public class ToolbarManager
         boolean editingAllowed = currentTab == null || mBookmarkBridge == null
                 || mBookmarkBridge.isEditBookmarksEnabled();
         mToolbar.updateBookmarkButton(isBookmarked, editingAllowed);
-        if (mBottomToolbarCoordinator != null) {
-            mBottomToolbarCoordinator.updateBookmarkButton(isBookmarked, editingAllowed);
+        if (mBottomControlsCoordinator != null) {
+            mBottomControlsCoordinator.updateBookmarkButton(isBookmarked, editingAllowed);
         }
     }
 

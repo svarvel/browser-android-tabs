@@ -112,7 +112,7 @@ public class BottomControlsCoordinator {
      */
     public void initializeWithNative(ChromeActivity chromeActivity, ResourceManager resourceManager,
             LayoutManager layoutManager, OnClickListener tabSwitcherListener,
-            OnClickListener newTabClickListener, OnClickListener closeTabsClickListener,
+            OnClickListener newTabClickListener, OnClickListener bookmarkClickListener, OnClickListener closeTabsClickListener,
             AppMenuButtonHelper menuButtonHelper, OverviewModeBehavior overviewModeBehavior,
             WindowAndroid windowAndroid, TabCountProvider tabCountProvider,
             IncognitoStateProvider incognitoStateProvider, ViewGroup topToolbarRoot) {
@@ -122,7 +122,7 @@ public class BottomControlsCoordinator {
 
         if (mBottomToolbarCoordinator != null) {
             mBottomToolbarCoordinator.initializeWithNative(tabSwitcherListener, newTabClickListener,
-                    closeTabsClickListener, menuButtonHelper, overviewModeBehavior,
+                    bookmarkClickListener, closeTabsClickListener, menuButtonHelper, overviewModeBehavior,
                     tabCountProvider, incognitoStateProvider, topToolbarRoot);
             mMediator.setToolbarSwipeHandler(layoutManager.getToolbarSwipeHandler());
         }
@@ -196,5 +196,11 @@ public class BottomControlsCoordinator {
         if (mBottomToolbarCoordinator != null) mBottomToolbarCoordinator.destroy();
         if (mTabGroupUi != null) mTabGroupUi.destroy();
         mMediator.destroy();
+    }
+
+    public void updateBookmarkButton(boolean isBookmarked, boolean editingAllowed) {
+        if (mBottomToolbarCoordinator != null) {
+            mBottomToolbarCoordinator.updateBookmarkButton(isBookmarked, editingAllowed);
+        }
     }
 }

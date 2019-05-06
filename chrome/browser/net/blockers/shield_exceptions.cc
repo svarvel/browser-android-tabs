@@ -23,7 +23,7 @@ bool IsWhitelistedCookieExeption(const GURL& first_party_url,
     return false;
   }
 
-  static std::vector<std::pair<URLPattern,
+  std::vector<std::pair<URLPattern,
       std::vector<URLPattern>>> whitelist_patterns =
   {
     {

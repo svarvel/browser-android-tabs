@@ -90,6 +90,9 @@ public final class PackageReplacedBroadcastReceiver extends BroadcastReceiver {
                 result.finish();
                 return null;
             }
+
+            @Override
+            protected void onPostExecute(Void result) {}
         }.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
     }
 }

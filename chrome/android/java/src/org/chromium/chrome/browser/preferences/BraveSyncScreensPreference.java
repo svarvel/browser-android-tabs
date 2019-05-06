@@ -1077,7 +1077,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void showEndDialog(String message) {
-      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog);
       if (null == alert) {
           return;
       }
@@ -1132,7 +1132,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           }
       };
 
-      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+      AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog);
       if (null == alert) {
           return;
       }
@@ -1156,7 +1156,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void deleteDeviceDialog(String deviceName, String deviceId, String deviceObjectId, View v) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.AlertDialogTheme);
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity(), R.style.Theme_Chromium_AlertDialog);
         if (null == alert) {
             return;
         }

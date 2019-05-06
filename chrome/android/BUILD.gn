@@ -2470,6 +2470,12 @@ generate_jni("jni_headers") {
     "java/src/org/chromium/chrome/browser/webapps/WebApkUpdateManager.java",
     "java/src/org/chromium/chrome/browser/webapps/WebappRegistry.java",
     "java/src/org/chromium/chrome/browser/widget/ThumbnailGenerator.java",
+    "java/src/org/chromium/chrome/browser/BraveRewardsNativeWorker.java",
+    "java/src/org/chromium/chrome/browser/BraveSyncWorker.java",
+    "java/src/org/chromium/chrome/browser/RestartWorker.java",
+    "java/src/org/chromium/chrome/browser/init/ShieldsConfig.java",
+    "java/src/org/chromium/chrome/browser/init/StatsUpdater.java",
+    "java/src/org/chromium/chrome/browser/util/SafetyNetCheck.java",
   ]
 
   # Used for testing only, should not be shipped to end users.

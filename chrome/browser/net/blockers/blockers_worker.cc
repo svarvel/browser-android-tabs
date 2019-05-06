@@ -576,8 +576,8 @@ namespace blockers {
     }
 
     std::string BlockersWorker::applyHTTPSRule(const std::string& originalUrl, const std::string& rule) {
-        std::unique_ptr<base::Value> json_object = base::JSONReader::Read(rule);
-        if (nullptr == json_object.get()) {
+        base::Optional<base::Value> json_object = base::JSONReader::Read(rule);
+        if (!json_object) {
             LOG(ERROR) << "applyHTTPSRule: incorrect json rule";
 
             return "";
@@ -774,8 +774,8 @@ namespace blockers {
       // https://github.com/brave/browser-laptop/issues/5861
       // The below patterns are done to only allow the specific request
       // pattern, of reddit -> redditmedia -> embedly -> imgur.
-      static std::string redditPtrn = "https://www.reddit.com/*";
-      static std::vector<std::string> reddit_embed_patterns({
+      std::string redditPtrn = "https://www.reddit.com/*";
+      std::vector<std::string> reddit_embed_patterns({
         redditPtrn,
         "https://www.redditmedia.com/*",
         "https://cdn.embedly.com/*",
@@ -794,7 +794,7 @@ namespace blockers {
         }
       }
 
-      static std::map<GURL, std::vector<std::string> > whitelist_patterns_map = {{
+      std::map<GURL, std::vector<std::string> > whitelist_patterns_map = {{
           GURL("https://www.facebook.com/"), {
             "https://*.fbcdn.net/*"
           }
@@ -814,7 +814,7 @@ namespace blockers {
       }
 
       // It's preferred to use specific_patterns below when possible
-      static std::vector<std::string> whitelist_patterns({
+      std::vector<std::string> whitelist_patterns({
         "*://use.typekit.net/*",
         "*://cloud.typography.com/*"
       });

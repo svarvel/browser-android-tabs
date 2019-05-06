@@ -292,7 +292,7 @@ struct OnBeforeURLRequestContext
 
   bool block = false;
 
-  const ResourceRequestInfo* info = nullptr;
+  ResourceRequestInfo* info = nullptr;
   bool isValidUrl = true;
   std::string firstparty_host = "";
   bool check_httpse_redirect = true;
