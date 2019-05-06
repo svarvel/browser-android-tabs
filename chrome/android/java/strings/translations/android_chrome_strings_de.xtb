@@ -201,7 +201,7 @@
 <translation id="2414886740292270097">Dunkel</translation>
 <translation id="2416359993254398973">Chrome benötigt für diese Website die Berechtigung, auf Ihre Kamera zuzugreifen.</translation>
 <translation id="2426805022920575512">Anderes Konto auswählen</translation>
-<translation id="2433507940547922241">Darstellung</translation>
+<translation id="2433507940547922241">Aussehen</translation>
 <translation id="2434158240863470628">Download abgeschlossen <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">Standortzugriff</translation>
 <translation id="2450083983707403292">Möchten Sie den Download von <ph name="FILE_NAME" /> noch einmal starten?</translation>
@@ -1151,4 +1151,224 @@ Einige Websites schalten möglicherweise Werbeanzeigen, deren Auswahl nicht dara
 <translation id="982182592107339124">Alle Daten für alle Websites werden gelöscht, darunter:</translation>
 <translation id="983192555821071799">Alle Tabs schließen</translation>
 <translation id="987264212798334818">Allgemein</translation>
+<translation id="3209146299287804856">Brave-Schutzschild für</translation>
+<translation id="622484624075952240">Aus</translation>
+<translation id="2706462751667573066">An</translation>
+<translation id="4339730410920731698">Werbungen und Tracker geblockt</translation>
+<translation id="2313532038420432247">HTTPS-Aufwertungen</translation>
+<translation id="7461425058443653485">Skripte geblockt</translation>
+<translation id="7835726359440951858">Werbung und Tracking blocken</translation>
+<translation id="520895744850022668">HTTPS Everywhere</translation>
+<translation id="94154759592465111">Skripte blocken</translation>
+<translation id="7307834434086582547">Brave-Schutzschilde aktivieren/deaktivieren</translation>
+<translation id="6132506775968708399">Drittanbieter-Cookies blocken</translation>
+<translation id="8710614491157212477">Falls möglich werden unterstützte Websites via HTTPS anstatt via HTTP geladen</translation>
+<translation id="5758129336814690876">Tracking-Schutzmodus</translation>
+<translation id="4609637183310787528">Verhindert das Laden von Seitenelementen, die zum Verfolgen Ihrer Internetnutzung dienen</translation>
+<translation id="8387201461264842096">Werbeblocker</translation>
+<translation id="1934885595886623674">Verhindert das Laden von Werbung</translation>
+<translation id="7458422973722236530">Fingerprinting-Schutz</translation>
+<translation id="5787084571334399599">Verhindert das eindeutige Identifizieren Ihres Browsers mittels Fingerprinting</translation>
+<translation id="3758669798635576061">Fingerprinting-Methoden geblockt</translation>
+<translation id="3276318574457057212">Regionaler Werbeblocker</translation>
+<translation id="2300239903491866759">Verhindert das Laden regionaler Werbung</translation>
+<translation id="8142327400852603066">Keine zusätzlichen Listen für Ihre Region verfügbar</translation>
+<translation id="9148058034647219655">Beenden</translation>
+<translation id="7820683005702098135">Brave Sync (beta)</translation>
+<translation id="3082265116777145081">Gerätenamen hinzufügen</translation>
+<translation id="9024091168371687561">Geben Sie einen optionalen Namen für dieses Gerät ein</translation>
+<translation id="3998827900918661986">Android-Gerät</translation>
+<translation id="7539985410310934287">Codewörter eingeben</translation>
+<translation id="326454632686131209">Gerät synchronisieren</translation>
+<translation id="8985635554450124959">Synchronisierung konnte nicht eingerichtet werden</translation>
+<translation id="230829157901335313">Vielleicht haben Sie auf Ihrem Gerät eine falsche Systemzeit oder Zeitzone eingestellt. Bitte stellen Sie Zeit und Zeitzone korrekt ein</translation>
+<translation id="6244065453125065109">Tracker
+geblockt</translation>
+<translation id="2547939855139473800">Werbungen
+geblockt</translation>
+<translation id="8880969045613157151">HTTPS-
+Aufwertungen</translation>
+<translation id="204407992549693965">Zeit
+gespart</translation>
+<translation id="991605024067283917">Metriken senden</translation>
+<translation id="6572660632052512096">Desktop-Modus</translation>
+<translation id="4479934682648362332">Desktop-Version von Websites bevorzugen</translation>
+<translation id="807636106793708118">Mobilversion von Websites bevorzugen</translation>
+<translation id="1340503115760585811">Desktop-Ansicht für neue Tabs aktivieren</translation>
+<translation id="7924540991929826186">Mobilversionen von Websites für neue Tabs verwenden (empfohlen)</translation>
+<translation id="3834924998750356151">Übersicht</translation>
+<translation id="1713450908129883784">Einzeleinstellungen</translation>
+<translation id="6303294677342628402">Schutzschilde</translation>
+<translation id="252011129655042182">Werbungen und Tracker</translation>
+<translation id="6754976710186182237">Fingerprint-Methoden</translation>
+<translation id="8585880402319729023">Phishing blocken</translation>
+<translation id="5965081608816406060">Videowiedergabe im Hintergrund</translation>
+<translation id="59174027418879706">Aktiviert</translation>
+<translation id="4176463684765177261">Deaktiviert</translation>
+<translation id="1580125697191336644">Experimentell. Ermöglicht die Tonwiedergabe von im Hintergrund laufenden Videos während der Tab nicht aktiv oder der Gerätebildschirm ausgeschaltet ist. Falls diese Funktion dies nicht funktioniert, versuchen Sie, in den Desktop-Modus zu wechseln.</translation>
+<translation id="6587448235155023666">Ihre Änderungen werden erst nach dem nächsten Neustart von Brave wirksam.</translation>
+<translation id="8701563696941209024">JETZT NEU STARTEN</translation>
+<translation id="834487290629916192">SPÄTER</translation>
+<translation id="1842747674580016420">Videowiedergabe in Brave</translation>
+<translation id="5368992950177874750">Falls aktiviert, werden Videos anstatt in der entsprechenden App in Brave wiedergegeben</translation>
+<translation id="7459000603787995422">Tabs beim Beenden schließen</translation>
+<translation id="1680858055899097121">Tabs zwischen Browsersitzungen nicht speichern</translation>
+<translation id="213787746370741250">Tabs in Custom Tabs öffnen</translation>
+<translation id="3544772668823934222">Anbieten, Tabs in Custom Tabs zu öffnen</translation>
+<translation id="4501702055016678577">Private Suche mit DuckDuckGo?</translation>
+<translation id="910419239800579753">Solange Sie sich in diesem privaten Tab befinden, verwendet Brave für Ihre Suchanfragen DuckDuckGo. DuckDuckGo ist eine Suchmaschine, die Ihren Suchverlauf nicht aufzeichnet, damit Sie vertraulich suchen können.</translation>
+<translation id="1426410128494586442">Ja</translation>
+<translation id="4250680216510889253">Nein</translation>
+<translation id="5628466560184522265">Mehr über die private Suche mit DuckDuckGo erfahren</translation>
+<translation id="1468415711258933398">Standard-Tab</translation>
+<translation id="6199596294742117349">Dies ist ein privater Tab</translation>
+<translation id="5858455511731621847">Obwohl in privaten Tabs von Ihnen besuchte Websites nicht lokal gespeichert werden, macht Sie dies nicht anonym oder unsichtbar gegenüber Ihrem ISP, Arbeitgeber oder den von Ihnen besuchten Sites.</translation>
+<translation id="2339273275658335597">Brave-Update</translation>
+<translation id="8395234238259738935">Der neue Brave-Browser ist 22 % schneller</translation>
+<translation id="391177677159359824">Synchronisierung (beta)</translation>
+<translation id="3680755684186855422">Mit Brave Sync können Sie Lesezeichendaten privat zwischen Ihren Brave-Browsern auf verschiedenen Geräten synchronisieren.</translation>
+<translation id="3735228155296883311">Scannen Sie einfach den Code aus Ihrer Synchronisierungskette, die Sie auf einem anderen Gerät erstellt haben. Oder beginnen Sie eine neue Synchronisierungskette.</translation>
+<translation id="7745082336226088126">Synchronisierungscode scannen oder eingeben</translation>
+<translation id="1602067095281698985">Neue Synchronisierungskette beginnen</translation>
+<translation id="4690880825349994619">Öffnen Sie mit einem vorhandenen synchronisierten Gerät die Brave-Einstellungen und navigieren Sie zu den Einstellungen &gt; Synchronisierung. Wählen Sie die Option „Gerät hinzufügen“ und scannen Sie den QR-Code, der auf dem Bildschirm angezeigt wird.</translation>
+<translation id="6270614677029463366">Öffnen Sie mit einem vorhandenen synchronisierten Gerät die Brave-Einstellungen und navigieren Sie zu den Einstellungen &gt; Synchronisierung. Wählen Sie die Option „Gerät hinzufügen“ und dann „Stattdessen Codewörter anzeigen“.</translation>
+<translation id="1475223680121592371">Mobilgerät hinzufügen</translation>
+<translation id="2965377893636908578">Computer hinzufügen</translation>
+<translation id="65315202420929965">Synchronisierungscode scannen</translation>
+<translation id="6604289897677913048">Navigieren Sie mit einem zweiten Telefon oder Tablet zu den Brave-Einstellungen &gt; Synchronisierung &gt; Scannen.</translation>
+<translation id="3405078156498254717">Erfassen Sie den QR-Code (oben) mit Ihrem zweiten Gerät oder geben Sie die Codewörter ein, wenn keine Kamera verfügbar ist.</translation>
+<translation id="8076492880354921740">Tabs</translation>
+<translation id="5706430066167764107">Autofill/Passwörter</translation>
+<translation id="1164234435773528579">Brave-Zahlungseinstellungen</translation>
+<translation id="6174119914106813304">AUF DIESEM GERÄT SYNCHRONISIEREN</translation>
+<translation id="6776430845975754238">Geänderte Einstellungen wirken sich nur auf Daten aus, die dieses Gerät mit anderen teilt.</translation>
+<translation id="8193724030871339658">ANDERE GERÄTE IN DER KETTE</translation>
+<translation id="279635009973773843">GERÄTE WERDEN GELADEN …</translation>
+<translation id="6450924769151530465">Weiteres Gerät hinzufügen</translation>
+<translation id="2004365171440701679">Dieses Gerät entfernen</translation>
+<translation id="2731921493694251495">Synchronisierungsketten-Code eingeben</translation>
+<translation id="2590683710114839102">Navigieren Sie auf Ihrem Computer zu den Brave-Einstellungen &gt; Synchronisierung. Wählen Sie die Option „Synchronisierungsketten-Code eingeben“.</translation>
+<translation id="1732271215616957850">Geben Sie die oben stehenden Codewörter einschließlich Leerzeichen ein.</translation>
+<translation id="1178128181015923849">Möchten Sie das Gerät „<ph name="DEVICE_NAME" />“ wirklich löschen?</translation>
+<translation id="9154490620151093733">Die Löschanfrage wurde gesendet. Das Gerät wird in Kürze entfernt.</translation>
+<translation id="544873101641618162">Daten werden geladen …</translation>
+<translation id="6779408765480516895">Etwas ist schiefgelaufen. Anscheinend ist Ihre Anfrage abgelaufen.</translation>
+<translation id="4973653569293835178">Ich nutze meine Kamera …</translation>
+<translation id="2569646144216067185">Wortanzahl: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Wortanzahl nicht korrekt</translation>
+<translation id="2175927920773552910">QR-Code</translation>
+<translation id="8653433343015102968">Codewörter</translation>
+<translation id="8624315169751085215">In Zwischenablage kopieren</translation>
+<translation id="5241263629636958324">In Zwischenablage kopiert</translation>
+<translation id="222883304157347087">(dieses Gerät)</translation>
+<translation id="4745013713714502219">Brave ist schon als Ihr
+Standardbrowser eingerichtet.</translation>
+<translation id="6874141297197991294">Wie wir sehen, haben Sie bereits einen Standardbrowser eingerichtet.
+Sie können den Standardbrowser in Ihren Anwendungseinstellungen ändern.</translation>
+<translation id="5708254139873333042">Sparen Sie Akkuleistung und laden Sie Webseiten schneller. Machen Sie Brave zu Ihrem Standardbrowser. Tippen Sie im Brave-Menü auf „Als Standardbrowser festlegen“.</translation>
+<translation id="3570367516044491911">Als Standardbrowser einrichten</translation>
+<translation id="5827583267117939716">Wählen Sie in der Liste Brave aus und tippen Sie auf „Immer“.</translation>
+<translation id="2262526166668973593">Machen Sie Brave zu Ihrem Standard-Webbrowser
+Sparen Sie Akku und laden Sie Webseiten schneller</translation>
+<translation id="1916285746997567466">Erleben Sie die
+Zukunft des Internets.</translation>
+<translation id="1071131306814166204">Sie können jetzt Token verdienen,
+wenn Sie Anzeigen zum Schutz der Privatsphäre betrachten.</translation>
+<translation id="1327938628925645979">MACHEN SIE MIT BEI REWARDS</translation>
+<translation id="5567439033041178034">MEHR ERFAHREN</translation>
+<translation id="7530570094705720669">Erstelle Wallet</translation>
+<translation id="3780605330121608425">Ihre Wallet</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">Mittel hinzufügen</translation>
+<translation id="2730771409541953249">REWARDS-ZUSAMMENFASSUNG</translation>
+<translation id="8596647978585397359">Danke, dass Sie vorbeischauen!</translation>
+<translation id="3165726837666415756">Sie können diese Website unterstützen, indem Sie ein Trinkgeld senden. Auf diese Weise können Sie ihnen dafür danken, dass sie großartige Inhalte erstellt haben. Verifizierte Content-Ersteller werden in der ersten Woche jedes Kalendermonats für ihre Trinkgelder bezahlt.</translation>
+<translation id="1704859330137112950">Wenn Sie möchten, können Sie monatliche Trinkgelder einrichten, um diese Website kontinuierlich zu unterstützen.</translation>
+<translation id="245015745140252435">Trinkgeld-Betrag</translation>
+<translation id="3370968821559864204">Wallet-Guthaben</translation>
+<translation id="3250511771491660127">Monatlich einrichten</translation>
+<translation id="2573313946367623146">mein Trinkgeld senden</translation>
+<translation id="3492491948683276944">monatliches Trinkgeld festlegen</translation>
+<translation id="853714875140407133">nicht genügend Token</translation>
+<translation id="298349922412901215">HINWEIS: Dieser Ersteller hat sich noch nicht angemeldet, um Beiträge von Brave-Benutzern zu erhalten. Wir werden weiter versuchen, die Beiträge zu übermitteln, bis sich der Ersteller verifiziert hat oder bis 90 Tage vergangen sind.</translation>
+<translation id="6940273954212603510">bitte</translation>
+<translation id="1036277985068412734">Mittel hinzufügen</translation>
+<translation id="5299848999918506028">Vielen Dank!</translation>
+<translation id="2626799779920242286">Bitte versuchen Sie es später erneut.</translation>
+<translation id="6639570430554986719">JANUAR</translation>
+<translation id="1807352595146144483">FEBRUAR</translation>
+<translation id="2021828608097804771">MÄRZ</translation>
+<translation id="1112527417301376065">APRIL</translation>
+<translation id="8737090912129856089">MAI</translation>
+<translation id="6832612641867423485">JUNI</translation>
+<translation id="8442574087856349697">JULI</translation>
+<translation id="1202041222842415454">AUGUST</translation>
+<translation id="7317265217038113435">SEPTEMBER</translation>
+<translation id="8220228041552340594">OKTOBER</translation>
+<translation id="8280223431922155812">NOVEMBER</translation>
+<translation id="4254029385847607686">DEZEMBER</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Achtung</translation>
+<translation id="7335371657242627509">In Auto-Contribute einbeziehen</translation>
+<translation id="8918760045046434238">Trinkgeld senden …</translation>
+<translation id="1978261665418056203">Noch keine Aktivitäten
+in diesem Monat …</translation>
+<translation id="4914597931214386232">Eingeforderte Token-Zuwendungen</translation>
+<translation id="298067735430872465">Einnahmen aus Anzeigen</translation>
+<translation id="6112368337882254910">Auto-Contribute</translation>
+<translation id="4781696154289395607">Sie haben <ph name="BAT_VALUE" /> BAT beigetragen.</translation>
+<translation id="9182287025588539628">Einmalige Trinkgelder</translation>
+<translation id="7577100371127227294">Monatliche Trinkgelder</translation>
+<translation id="8772672608371898774">Von Brave verifizierter Herausgeber</translation>
+<translation id="1397683270551078781">Noch nicht verifiziert</translation>
+<translation id="5727208111992260840">Dieser Ersteller hat sich noch nicht angemeldet, um Beiträge von Brave-Benutzern zu erhalten.
+ Alle von Ihnen gesendeten Trinkgelder verbleiben in Ihrer Wallet, bis der Ersteller sich verifizieren lässt.</translation>
+<translation id="683765328936486920">auf YouTube</translation>
+<translation id="8969049974285901797">auf Twitch</translation>
+<translation id="606865182719489911">Eine kostenlose Token-Zuwendung ist verfügbar.</translation>
+<translation id="3453206261112715431">Kostenlose Token-Zuwendung</translation>
+<translation id="13853865024308201">Einforderung</translation>
+<translation id="3692362746128814480">Sie haben <ph name="BAT_VALUE" /> BAT für Ersteller festgelegt, die sich noch nicht
+noch angemeldet haben, um Beiträge zu erhalten. Ihr Browser wird weiterhin versuchen, einen Beitrag
+zu übermitteln, bis sich der Ersteller verifiziert hat, oder bis 90 Tage vergangen sind.</translation>
+<translation id="5306913077198665897">Bei der Verarbeitung Ihres Trinkgelds ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</translation>
+<translation id="2429828319207652823">Bei der Verarbeitung Ihres Beitrags ist ein Problem aufgetreten.</translation>
+<translation id="2323069945529668668">Hoppla!</translation>
+<translation id="7510166204621526816">Der Brave Rewards-Server antwortet nicht. Wir werden das so schnell wie möglich beheben.</translation>
+<translation id="2104073734684466851">Zuwendungen</translation>
+<translation id="3068742524072211213">läuft ab am <ph name="DATE" /></translation>
+<translation id="7550470870580166294">Unzureichende Mittel</translation>
+<translation id="2775064702681588061">Ihr Brave Rewards-Konto wartet auf eine Einzahlung.</translation>
+<translation id="765834632354589737">Backup für Wallet durchführen</translation>
+<translation id="1713542052890184975">Bitte führen Sie ein Backup für Ihre Brave Wallet durch.</translation>
+<translation id="3333887201479867589">Brave Rewards</translation>
+<translation id="2012723204723845092">Willkommen zurück!</translation>
+<translation id="7669994301500276741">Lassen Sie sich fürs browsen belohnen.</translation>
+<translation id="8203529727745387785">Sichern Sie sich Einkommen, indem Sie Anzeigen zum Schutz
+der Privatsphäre betrachten, und verwenden Sie dieses Einkommen,
+um Ihre Lieblingsersteller zu unterstützen.</translation>
+<translation id="5148719990624240755">BRAVE REWARDS AKTIVIEREN</translation>
+<translation id="1628742278973105368">Ihr erstes monatliches Trinkgeld wird gesendet am:</translation>
+<translation id="6665366815203065060">Sie haben gerade Trinkgeld gesendet an:</translation>
+<translation id="5441565662498481293">Sie senden automatisch Trinkgeld an:</translation>
+<translation id="1166682575529520472">Monatlich</translation>
+<translation id="8495235435594442882">Untere Symbolleiste aktivieren</translation>
+<translation id="7239121106815507493">Untere Symbolleiste deaktivieren</translation>
+<translation id="145068164597056296">Suche oder URL</translation>
+<translation id="6810078320346589989">Ein Lesezeichen setzen</translation>
+<translation id="5463954686005964104">Rufen Sie diese Seite jeden Monat auf</translation>
+<translation id="1923568441186788334">Brave Rewards ist hier</translation>
+<translation id="7722441371828049691">Unterstützen Sie die Seiten, die Sie lieben.</translation>
+<translation id="5234764350956374838">Verwerfen</translation>
+<translation id="4472575034687746823">Anfangen</translation>
+<translation id="4162066325465825185">Leider scheint Brave Rewards auf Ihrem Gerät nicht verfügbar zu sein</translation>
+<translation id="4150201353443180367">Anzeige</translation>
+<translation id="2804710924397009224">Brave-Rewards-Symbol ausblenden</translation>
+<translation id="7358991116457217836">Blendet das Brave-Rewards-Symbol aus, wenn Brave Rewards nicht aktiviert ist</translation>
+<translation id="7618184561660805696">Schauen Sie bald wieder vorbei für ein kostenloses Token</translation>
+<translation id="3349204812119681938">Brave Rewards zurücksetzen</translation>
+<translation id="8782039523249932839">Dadurch wird Ihre Brave-Wallet gelöscht und all Ihre Brave-Rewards-Daten zurückgesetzt</translation>
+<translation id="5321518976657560663">Fehler beim Zurücksetzen</translation>
+<translation id="7071576788062714665">Es ist ein Fehler beim Zurücksetzen von Brave Rewards aufgetreten. Bitte starten Sie Brave neu und versuchen es noch einmal</translation>
 </translationbundle>
