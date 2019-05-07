@@ -27,6 +27,6 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:switchMinWidth="56dp"
-            android:theme="@style/BraveRewardsSwitchTheme" />
+            android:theme="@style/BraveSwitchTheme" />
     </LinearLayout>
 </RelativeLayout>
