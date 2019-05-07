@@ -10,5 +10,7 @@
     <size
         android:width="@dimen/modern_toolbar_background_size"
         android:height="@dimen/modern_toolbar_background_size" />
-    <corners android:radius="@dimen/modern_toolbar_background_corner_radius" />
+    <corners android:radius="@dimen/modern_toolbar_background_corner_radius"
+        android:bottomRightRadius="0dp"
+        android:topRightRadius="0dp" />
 </shape>
