@@ -373,8 +373,8 @@
     <!-- Used to offset content_suggestions_card_modern_margin applied to the bottom of the
          last card. -->
     <dimen name="content_suggestions_action_modern_margin_top">-16dp</dimen>
-    <dimen name="md_incognito_ntp_line_spacing">6sp</dimen>
-    <dimen name="md_incognito_ntp_padding_left">16dp</dimen>
+    <!--<dimen name="md_incognito_ntp_line_spacing">6sp</dimen>
+    <dimen name="md_incognito_ntp_padding_left">16dp</dimen>-->
 
     <!-- Explore sites page -->
     <dimen name="explore_sites_category_padding">20dp</dimen>

@@ -93,8 +93,8 @@ public class IncognitoNewTabPage
                 ChromeFeatureList.isEnabled(ChromeFeatureList.INCOGNITO_STRINGS);
         TextView newTabIncognitoHeader =
                 (TextView) mIncognitoNewTabPageView.findViewById(R.id.new_tab_incognito_title);
-        newTabIncognitoHeader.setText(useAlternateIncognitoStrings ? R.string.new_tab_private_title
-                                                                   : R.string.new_tab_otr_title);
+        newTabIncognitoHeader.setText(
+                activity.getResources().getString(R.string.brave_new_tab_private_message));
     }
 
     /**

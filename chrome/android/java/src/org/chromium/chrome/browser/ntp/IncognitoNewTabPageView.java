@@ -52,12 +52,12 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
     private int mWidthDp;
     private int mHeightDp;
 
-    private LinearLayout mContainer;
-    private TextView mHeader;
-    private TextView mSubtitle;
-    private LinearLayout mBulletpointsContainer;
-    private TextView mLearnMore;
-    private TextView[] mParagraphs;
+    //private LinearLayout mContainer;
+    //private TextView mHeader;
+    //private TextView mSubtitle;
+    //private LinearLayout mBulletpointsContainer;
+    //private TextView mLearnMore;
+    //private TextView[] mParagraphs;
 
     private static final int BULLETPOINTS_HORIZONTAL_SPACING_DP = 40;
     private static final int CONTENT_WIDTH_DP = 600;
@@ -113,16 +113,16 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
         mWidthDp = getContext().getResources().getConfiguration().screenWidthDp;
         mHeightDp = getContext().getResources().getConfiguration().screenHeightDp;
 
-        populateBulletpoints(R.id.new_tab_incognito_features, R.string.new_tab_otr_not_saved);
-        populateBulletpoints(R.id.new_tab_incognito_warning, R.string.new_tab_otr_visible);
+        //populateBulletpoints(R.id.new_tab_incognito_features, R.string.new_tab_otr_not_saved);
+        //populateBulletpoints(R.id.new_tab_incognito_warning, R.string.new_tab_otr_visible);
 
-        mContainer = findViewById(R.id.new_tab_incognito_container);
-        mHeader = findViewById(R.id.new_tab_incognito_title);
-        mSubtitle = findViewById(R.id.new_tab_incognito_subtitle);
-        mLearnMore = findViewById(R.id.learn_more);
-        mParagraphs = new TextView[] {mSubtitle, findViewById(R.id.new_tab_incognito_features),
-                findViewById(R.id.new_tab_incognito_warning), mLearnMore};
-        mBulletpointsContainer = findViewById(R.id.new_tab_incognito_bulletpoints_container);
+        //mContainer = findViewById(R.id.new_tab_incognito_container);
+        //mHeader = findViewById(R.id.new_tab_incognito_title);
+        //mSubtitle = findViewById(R.id.new_tab_incognito_subtitle);
+        //mLearnMore = findViewById(R.id.learn_more);
+        /*mParagraphs = new TextView[] {mSubtitle, findViewById(R.id.new_tab_incognito_features),
+                findViewById(R.id.new_tab_incognito_warning), mLearnMore};*/
+        //mBulletpointsContainer = findViewById(R.id.new_tab_incognito_bulletpoints_container);
 
         adjustView();
 
@@ -266,50 +266,50 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
             paddingVerticalDp = 32;
 
             // Align left.
-            mContainer.setGravity(Gravity.START);
+            //mContainer.setGravity(Gravity.START);
 
             // Decide the bulletpoints orientation.
             bulletpointsArrangedHorizontally = false;
 
             // The subtitle is sized automatically, but not wider than CONTENT_WIDTH_DP.
-            mSubtitle.setLayoutParams(
+            /*mSubtitle.setLayoutParams(
                     new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT));
-            mSubtitle.setMaxWidth(dpToPx(getContext(), CONTENT_WIDTH_DP));
+            mSubtitle.setMaxWidth(dpToPx(getContext(), CONTENT_WIDTH_DP));*/
 
             // The bulletpoints container takes the same width as subtitle. Since the width can
             // not be directly measured at this stage, we must calculate it manually.
-            mBulletpointsContainer.setLayoutParams(new LinearLayout.LayoutParams(
+            /*mBulletpointsContainer.setLayoutParams(new LinearLayout.LayoutParams(
                     dpToPx(getContext(),
                             Math.min(CONTENT_WIDTH_DP, mWidthDp - 2 * paddingHorizontalDp)),
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
+                    LinearLayout.LayoutParams.WRAP_CONTENT));*/
         } else {
             // Large padding.
             paddingHorizontalDp = 0; // Should not be necessary on a screen this large.
             paddingVerticalDp = mHeightDp <= 320 ? 16 : 72;
 
             // Align to the center.
-            mContainer.setGravity(Gravity.CENTER_HORIZONTAL);
+            //mContainer.setGravity(Gravity.CENTER_HORIZONTAL);
 
             // Decide the bulletpoints orientation.
             bulletpointsArrangedHorizontally = true;
 
             int contentWidthPx = dpToPx(getContext(), CONTENT_WIDTH_DP);
-            mSubtitle.setLayoutParams(new LinearLayout.LayoutParams(
+            /*mSubtitle.setLayoutParams(new LinearLayout.LayoutParams(
                     contentWidthPx, LinearLayout.LayoutParams.WRAP_CONTENT));
             mBulletpointsContainer.setLayoutParams(new LinearLayout.LayoutParams(
-                    contentWidthPx, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    contentWidthPx, LinearLayout.LayoutParams.WRAP_CONTENT));*/
         }
 
         // Apply the bulletpoints orientation.
-        if (bulletpointsArrangedHorizontally) {
+        /*if (bulletpointsArrangedHorizontally) {
             mBulletpointsContainer.setOrientation(LinearLayout.HORIZONTAL);
         } else {
             mBulletpointsContainer.setOrientation(LinearLayout.VERTICAL);
-        }
+        }*/
 
         // Set up paddings and margins.
-        int paddingTop;
+        /*int paddingTop;
         int paddingBottom;
         paddingTop = paddingBottom = dpToPx(getContext(), paddingVerticalDp);
         mContainer.setPadding(dpToPx(getContext(), paddingHorizontalDp), paddingTop,
@@ -331,7 +331,7 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
         }
 
         ((LinearLayout.LayoutParams) mHeader.getLayoutParams()).setMargins(0, spacingPx, 0, 0);
-        mHeader.setLayoutParams(mHeader.getLayoutParams()); // Apply the new layout.
+        mHeader.setLayoutParams(mHeader.getLayoutParams());*/ // Apply the new layout.
     }
 
     /** Adjust the Incognito icon. */
@@ -357,12 +357,12 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
                 getContext().getResources().getString(R.string.new_tab_otr_subtitle);
         boolean learnMoreInSubtitle = mWidthDp > WIDE_LAYOUT_THRESHOLD_DP;
 
-        mLearnMore.setVisibility(learnMoreInSubtitle ? View.GONE : View.VISIBLE);
+        //mLearnMore.setVisibility(learnMoreInSubtitle ? View.GONE : View.VISIBLE);
 
         if (!learnMoreInSubtitle) {
             // Revert to the original text.
-            mSubtitle.setText(subtitleText);
-            mSubtitle.setMovementMethod(null);
+            /*mSubtitle.setText(subtitleText);
+            mSubtitle.setMovementMethod(null);*/
             return;
         }
 
@@ -377,8 +377,8 @@ public class IncognitoNewTabPageView extends HistoryNavigationLayout {
                 R.color.modern_blue_300, (view) -> getManager().loadIncognitoLearnMore());
         textWithLearnMoreLink.setSpan(
                 span, subtitleText.length() + 1, textWithLearnMoreLink.length(), 0 /* flags */);
-        mSubtitle.setText(textWithLearnMoreLink);
-        mSubtitle.setMovementMethod(LinkMovementMethod.getInstance());
+        /*mSubtitle.setText(textWithLearnMoreLink);
+        mSubtitle.setMovementMethod(LinkMovementMethod.getInstance());*/
     }
 
     public void showDDGOffer(boolean forceShow) {
