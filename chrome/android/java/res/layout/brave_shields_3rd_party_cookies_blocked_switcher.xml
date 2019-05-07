@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:switchMinWidth="56dp"
-            android:theme="@style/BraveRewardsSwitchTheme"
+            android:theme="@style/BraveSwitchTheme"
             android:gravity="center|center_vertical"
             android:layout_gravity="center_vertical" />
 
