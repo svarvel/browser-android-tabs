@@ -141,7 +141,7 @@ public:
     void OnIsWalletCreated(bool created);
 
     void OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
-        int error_code) override;
+        uint32_t error_code) override;
 
     void OnWalletProperties(brave_rewards::RewardsService* rewards_service,
         int error_code, 
@@ -175,8 +175,7 @@ public:
     void OnGrantFinish(brave_rewards::RewardsService* rewards_service, unsigned int result,
         brave_rewards::Grant grant) override;
 
-    void OnRecurringDonationUpdated(brave_rewards::RewardsService* rewards_service,
-        brave_rewards::ContentSiteList) override;
+    void OnGetRecurringTips(std::unique_ptr<brave_rewards::ContentSiteList> list);
 
     void OnRewardsMainEnabled(brave_rewards::RewardsService* rewards_service, 
         bool rewards_main_enabled) override;

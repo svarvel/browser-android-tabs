@@ -199,7 +199,7 @@ void BraveRewardsNativeWorker::RemovePublisherFromMap(JNIEnv* env,
 }
 
 void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
-        int error_code) {
+        uint32_t error_code) {
   JNIEnv* env = base::android::AttachCurrentThread();
   
   Java_BraveRewardsNativeWorker_OnWalletInitialized(env, 
@@ -351,8 +351,24 @@ void BraveRewardsNativeWorker::GetPendingContributionsTotal(JNIEnv* env,
 void BraveRewardsNativeWorker::GetRecurringDonations(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj) {
   if (brave_rewards_service_) {
-    brave_rewards_service_->UpdateRecurringDonationsList();
+    brave_rewards_service_->GetRecurringTipsUI(base::Bind(
+          &BraveRewardsNativeWorker::OnGetRecurringTips,
+          weak_factory_.GetWeakPtr()));
   }
+}
+
+void BraveRewardsNativeWorker::OnGetRecurringTips(
+        std::unique_ptr<brave_rewards::ContentSiteList> list) {
+  map_recurrent_publishers_.clear();
+  if (list) {
+    for (size_t i = 0; i < list->size(); i++) {
+      map_recurrent_publishers_[(*list)[i].id] = (*list)[i];
+    }
+  }
+
+  JNIEnv* env = base::android::AttachCurrentThread();
+  Java_BraveRewardsNativeWorker_OnRecurringDonationUpdated(env, 
+        weak_java_brave_rewards_native_worker_.get(env));
 }
 
 bool BraveRewardsNativeWorker::IsCurrentPublisherInRecurrentDonations(JNIEnv* env, 
@@ -425,7 +441,7 @@ double BraveRewardsNativeWorker::GetPublisherRecurrentDonationAmount(JNIEnv* env
 void BraveRewardsNativeWorker::RemoveRecurring(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
     const base::android::JavaParamRef<jstring>& publisher){
   if (brave_rewards_service_) {
-      brave_rewards_service_->RemoveRecurring(base::android::ConvertJavaStringToUTF8(env, publisher));
+      brave_rewards_service_->RemoveRecurringTip(base::android::ConvertJavaStringToUTF8(env, publisher));
   }
 }
 
@@ -506,19 +522,6 @@ void BraveRewardsNativeWorker::OnGrantFinish(brave_rewards::RewardsService* rewa
 
   Java_BraveRewardsNativeWorker_OnGrantFinish(env, 
         weak_java_brave_rewards_native_worker_.get(env), result);
-}
-
-void BraveRewardsNativeWorker::OnRecurringDonationUpdated(
-      brave_rewards::RewardsService* rewards_service, brave_rewards::ContentSiteList list) {
-  map_recurrent_publishers_.clear();
-  for (size_t i = 0; i < list.size(); i++) {
-    map_recurrent_publishers_[list[i].id] = list[i];
-  }
-
-  JNIEnv* env = base::android::AttachCurrentThread();
-  Java_BraveRewardsNativeWorker_OnRecurringDonationUpdated(env, 
-        weak_java_brave_rewards_native_worker_.get(env));
-
 }
 
 void BraveRewardsNativeWorker::SetRewardsMainEnabled(JNIEnv* env, 

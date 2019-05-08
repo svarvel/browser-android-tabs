@@ -6,6 +6,7 @@
 
 #include "base/command_line.h"
 #include "base/no_destructor.h"
+#include "brave/components/services/bat_ledger/public/cpp/manifest.h"
 #include "build/build_config.h"
 #include "chrome/browser/engagement/site_engagement_details.mojom.h"
 #include "chrome/browser/media/media_engagement_score_details.mojom.h"
@@ -274,6 +275,7 @@ const service_manager::Manifest& GetChromeContentBrowserOverlayManifest() {
             .PackageService(identity::GetManifest())
             .PackageService(image_annotation::GetManifest())
             .PackageService(prefs::GetManifest())
+            .PackageService(bat_ledger::GetManifest())
 #if defined(OS_CHROMEOS)
             .PackageService(chromeos::device_sync::GetManifest())
             .PackageService(chromeos::multidevice_setup::GetManifest())

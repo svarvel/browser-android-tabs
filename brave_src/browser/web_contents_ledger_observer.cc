@@ -18,6 +18,7 @@
 #include "brave_src/browser/web_contents_ledger_observer.h"
 #include "content/public/browser/web_contents.h"
 #include "content/public/browser/web_contents_user_data.h"
+#include "content/public/common/resource_load_info.mojom.h"
 
 void FavIconUpdated(IOThread* io_thread, const std::string& url, const std::string& favicon_url) {
   //io_thread->globals()->ledger_->favIconUpdated(url, favicon_url);
