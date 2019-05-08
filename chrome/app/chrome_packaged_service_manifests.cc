@@ -5,6 +5,7 @@
 #include "chrome/app/chrome_packaged_service_manifests.h"
 
 #include "base/no_destructor.h"
+#include "brave/components/services/bat_ledger/public/cpp/manifest.h"
 #include "build/build_config.h"
 #include "chrome/common/buildflags.h"
 #include "chrome/common/constants.mojom.h"
@@ -134,6 +135,7 @@ GetChromePackagedServiceManifests() {
       unzip::GetManifest(),
       proxy_resolver::GetManifest(),
       prefs::GetLocalStateManifest(),
+      bat_ledger::GetManifest(),
 #if BUILDFLAG(ENABLE_EXTENSIONS)
       GetRemovableStorageWriterManifest(),
 #endif
