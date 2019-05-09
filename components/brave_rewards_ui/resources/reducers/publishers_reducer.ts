@@ -79,7 +79,7 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
       if (!action.payload.publisherKey) {
         break
       }
-      chrome.send('brave_rewards.removeRecurring', [action.payload.publisherKey])
+      chrome.send('brave_rewards.removeRecurringTip', [action.payload.publisherKey])
       break
   }
 

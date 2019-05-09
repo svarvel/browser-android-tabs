@@ -115,7 +115,7 @@ window.cr.define('brave_rewards', function () {
     getActions().onInitAutoContributeSettings(properties)
   }
 
-  function recurringDonationUpdate (list: Rewards.Publisher[]) {
+  function recurringTips (list: Rewards.Publisher[]) {
     getActions().onRecurringDonationUpdate(list)
   }
 
@@ -156,7 +156,7 @@ window.cr.define('brave_rewards', function () {
     contributionAmount,
     adsData,
     initAutoContributeSettings,
-    recurringDonationUpdate,
+    recurringTips,
     currentTips,
     rewardsEnabled,
     pendingContributionTotal,

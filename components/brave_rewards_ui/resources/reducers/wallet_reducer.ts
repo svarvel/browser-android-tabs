@@ -27,8 +27,8 @@ const fetchRewardsInfo = (state: Rewards.State) => {
   chrome.send('brave_rewards.getWalletProperties', [])
   chrome.send('brave_rewards.getPendingContributionsTotal')
   chrome.send('brave_rewards.getBalanceReports')
-  chrome.send('brave_rewards.updateRecurringDonationsList')
-  chrome.send('brave_rewards.updateTipsList')
+  chrome.send('brave_rewards.getRecurringTips')
+  chrome.send('brave_rewards.getOneTimeTips')
   chrome.send('brave_rewards.getAdsData')
 
   if (!state.safetyNetFailed) {
