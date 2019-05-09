@@ -137,6 +137,10 @@ window.cr.define('brave_rewards', function () {
     }
   }
 
+  function recurringTipRemoved (success: boolean) {
+    getActions().onRecurringTipRemoved(success)
+  }
+
   return {
     initialize,
     walletCreated,
@@ -160,6 +164,7 @@ window.cr.define('brave_rewards', function () {
     currentTips,
     rewardsEnabled,
     pendingContributionTotal,
+    recurringTipRemoved,
     onPendingContributionSaved
   }
 })
