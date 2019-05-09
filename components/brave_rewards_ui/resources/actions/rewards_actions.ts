@@ -159,3 +159,7 @@ export const getPendingContributionsTotal = () => action(types.GET_PENDING_CONTR
 export const onPendingContributionTotal = (amount: number) => action(types.ON_PENDING_CONTRIBUTION_TOTAL, {
   amount
 })
+
+export const onRecurringTipRemoved = (success: boolean) => action(types.ON_RECURRING_TIP_REMOVED, {
+  success
+})
