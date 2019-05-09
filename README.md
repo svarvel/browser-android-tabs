@@ -4,10 +4,9 @@
 
 ### System Requirements
 
-- OS Linux, Ubuntu (14.04 - 17.10) is completely supported. Other distros may or may not work
+- OS Linux, Ubuntu (14.04 - 18.04) is completely supported. Other distros may or may not work
 - Make sure you have enough swapspace available
 - [node](https://nodejs.org/)
-- [ninja](https://ninja-build.org/)
 
 ### Preparing the Build Environment
 
