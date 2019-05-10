@@ -1746,6 +1746,7 @@ template("monochrome_public_apk_or_module_tmpl") {
 
     deps = [
       "//chrome/android:app_hooks_java",
+      "//chrome/common:buildflags",
     ]
     if (!_is_trichrome) {
       deps += [
