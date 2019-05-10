@@ -110,6 +110,7 @@ public class ToolbarTablet extends ToolbarLayout
     private BraveRewardsPanelPopup mRewardsPopup;
 
     private FrameLayout mShieldsLayout;
+    private boolean mShieldsLayoutIsColorBackground;
     private FrameLayout mRewardsLayout;
 
     /**
@@ -193,7 +194,8 @@ public class ToolbarTablet extends ToolbarLayout
             !PrefServiceBridge.getInstance().isSafetynetCheckFailed() &&
                 !sharedPreferences.getBoolean(PREF_HIDE_BRAVE_ICON, false)) {
             if (mRewardsLayout != null && mShieldsLayout != null) {
-                mShieldsLayout.setBackgroundColor(ApiCompatibilityUtils.getColor(getResources(), R.color.modern_grey_100));
+                mShieldsLayout.setBackgroundColor(ColorUtils.getDefaultThemeColor(getResources(), isIncognito()));
+                mShieldsLayoutIsColorBackground = true;
                 mRewardsLayout.setVisibility(View.VISIBLE);
             }
         }
@@ -470,6 +472,9 @@ public class ToolbarTablet extends ToolbarLayout
                 getResources(), false, color, isIncognito());
         mLocationBar.getBackground().setColorFilter(textBoxColor, PorterDuff.Mode.SRC_IN);
         mShieldsLayout.getBackground().setColorFilter(textBoxColor, PorterDuff.Mode.SRC_IN);
+        if (mShieldsLayoutIsColorBackground) {
+            mShieldsLayout.setBackgroundColor(ColorUtils.getDefaultThemeColor(getResources(), isIncognito()));
+        }
         mRewardsLayout.getBackground().setColorFilter(textBoxColor, PorterDuff.Mode.SRC_IN);
 
         mLocationBar.updateVisualsForState();
@@ -490,6 +495,7 @@ public class ToolbarTablet extends ToolbarLayout
                 mRewardsLayout.setVisibility(View.GONE);
                 mShieldsLayout.setBackgroundDrawable(
                     ApiCompatibilityUtils.getDrawable(getContext().getResources(), R.drawable.modern_toolbar_background_grey_end_segment));
+                mShieldsLayoutIsColorBackground = false;
             }
             // Show message
             AlertDialog.Builder alert = new AlertDialog.Builder(getContext(), R.style.Theme_Chromium_AlertDialog);
