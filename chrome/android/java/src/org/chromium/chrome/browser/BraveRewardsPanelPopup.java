@@ -690,8 +690,10 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         @Override
         public void run() {
           if (thisObject.publisherExist || publisherFetchesCount >= PUBLISHER_FETCHES_COUNT) {
-            mPublisherFetcher.cancel();
-            mPublisherFetcher = null;
+            if (mPublisherFetcher != null) {
+                mPublisherFetcher.cancel();
+                mPublisherFetcher = null;
+            }
 
             return;
           }
