@@ -363,7 +363,8 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   // print dialog.
   if (url.host_piece() == chrome::kBraveRewardsHost) {
     if (!base::FeatureList::IsEnabled(features::kBraveRewards) ||
-        profile->GetPrefs()->GetBoolean(prefs::kSafetynetCheckFailed)) {
+        profile->GetPrefs()->GetBoolean(prefs::kSafetynetCheckFailed) ||
+        profile->GetProfileType() == Profile::INCOGNITO_PROFILE) {
       return NULL;
     }
     return &NewWebUI<BraveRewardsUI>;
