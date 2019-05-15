@@ -22,7 +22,8 @@ NativeTheme* NativeTheme::GetInstanceForWeb() {
 }
 
 NativeTheme* NativeTheme::GetInstanceForNativeUi() {
-  NOTREACHED();
+  // sergzh: remove assert to prevent it's triggering on web-ui when fetch favicons
+  //NOTREACHED();
   return nullptr;
 }
 #endif
