@@ -230,7 +230,8 @@ void FaviconSource::SendDefaultResponse(
 }
 
 void FaviconSource::SendDefaultResponse(const IconRequest& icon_request) {
-  const bool dark = GetNativeTheme()->SystemDarkModeEnabled();
+  ui::NativeTheme* native_theme = GetNativeTheme();
+  const bool dark = (native_theme == nullptr) ? false : native_theme->SystemDarkModeEnabled();
   int resource_id;
   switch (icon_request.size_in_dip) {
     case 64:
