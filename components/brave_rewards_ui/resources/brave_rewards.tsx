@@ -95,6 +95,10 @@ window.cr.define('brave_rewards', function () {
     getActions().onNumExcludedSites(num)
   }
 
+  function excludedNumber (num: number) {
+    getActions().onExcludedNumber(num)
+  }
+
   function balanceReports (reports: Record<string, Rewards.Report>) {
     getActions().onBalanceReports(reports)
   }
@@ -155,6 +159,7 @@ window.cr.define('brave_rewards', function () {
     addresses,
     contributeList,
     numExcludedSites,
+    excludedNumber,
     balanceReports,
     walletExists,
     contributionAmount,

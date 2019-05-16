@@ -35,6 +35,7 @@ declare namespace Rewards {
     donationAbilityTwitter: boolean
     excluded: string[]
     numExcludedSites: number
+    excludedPublishersNumber: number
     walletInfo: WalletProperties
     connectedWallet: boolean
     recoveryKey: string
