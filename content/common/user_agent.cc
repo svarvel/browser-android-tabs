@@ -13,6 +13,7 @@
 #include "base/system/sys_info.h"
 #include "build/build_config.h"
 #include "build/util/webkit_version.h"
+#include "components/version_info/version_info.h"
 
 #if defined(OS_WIN)
 #include "base/win/windows_version.h"
@@ -22,7 +23,8 @@
 
 #define DUCK_DUCK_GO "duckduckgo.com"
 #define CHROME_UA "Chrome"
-#define BRAVE_UA "Brave Chrome"
+#define BRAVE_UA "Brave"
+#define DDG_BRAVE_UA "Brave Chrome"
 
 namespace content {
 
@@ -188,37 +190,44 @@ std::string GetAndroidOSInfo(bool include_android_build_number) {
 std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
                                            const std::string& product,
                                            const std::string& strHost) {
-  std::string productToPass = AddBraveUserAgent(product, strHost);
+  std::string productToPass = AddBraveUserAgentForDDG(product, strHost);
+  std::string braveUA = MakeBraveUserAgent(product);
   // Derived from Safari's UA string.
   // This is done to expose our product name in a manner that is maximally
   // compatible with Safari, we hope!!
   std::string user_agent;
   base::StringAppendF(
       &user_agent,
-      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d",
+      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d %s",
       os_info.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR,
       productToPass.c_str(),
       WEBKIT_VERSION_MAJOR,
-      WEBKIT_VERSION_MINOR);
+      WEBKIT_VERSION_MINOR,
+      braveUA.c_str());
 
   return user_agent;
 }
 
-std::string AddBraveUserAgent(const std::string& baseString, const std::string& strHost) {
-  if (baseString.find(BRAVE_UA) != std::string::npos) {
+// TODO(samartnik): remove as soon as DDG make changes on their side
+std::string AddBraveUserAgentForDDG(const std::string& baseString, const std::string& strHost) {
+  if (baseString.find(DDG_BRAVE_UA) != std::string::npos) {
     return baseString;
   }
   std::string res = baseString;
   int iDDGPosition = strHost.find(DUCK_DUCK_GO);
   if (0 == iDDGPosition || (int)std::string("https://").length() == iDDGPosition) {
-     int iPos = res.find(CHROME_UA);
-     if (iPos != -1) {
-         res.replace(iPos, strlen(CHROME_UA), BRAVE_UA);
-     }
+    int iPos = res.find(CHROME_UA);
+    if (iPos != -1) {
+      res.replace(iPos, strlen(CHROME_UA), DDG_BRAVE_UA);
+    }
   }
   return res;
+}
+
+std::string MakeBraveUserAgent(const std::string& baseString) {
+  return std::string(BRAVE_UA) + "/" + version_info::GetMajorVersionNumber();
 }
 
 }  // namespace content
