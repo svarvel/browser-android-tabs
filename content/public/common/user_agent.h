@@ -49,8 +49,10 @@ CONTENT_EXPORT std::string BuildUserAgentFromOSAndProduct(
     const std::string& product,
     const std::string& strHost);
 
-// Adds Brave user agent string if necessary
-CONTENT_EXPORT std::string AddBraveUserAgent(const std::string& baseString, const std::string& strHost);
+// TODO(samartnik): remove as soon as DDG make changes on their side
+CONTENT_EXPORT std::string AddBraveUserAgentForDDG(const std::string& baseString, const std::string& strHost);
+// Makes Brave user agent string
+CONTENT_EXPORT std::string MakeBraveUserAgent(const std::string& baseString);
 
 }  // namespace content
 

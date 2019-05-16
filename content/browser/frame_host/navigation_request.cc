@@ -609,7 +609,7 @@ NavigationRequest::NavigationRequest(
   if (commit_params.is_overriding_user_agent ||
       (entry && entry->GetIsOverridingUserAgent())) {
     user_agent_override =
-        content::AddBraveUserAgent(frame_tree_node_->navigator()->GetDelegate()->GetUserAgentOverride(), common_params_.url.host());
+        content::AddBraveUserAgentForDDG(frame_tree_node_->navigator()->GetDelegate()->GetUserAgentOverride(), common_params_.url.host());
     content::WebContents* web_contents = content::WebContentsImpl::FromFrameTreeNode(frame_tree_node_);
     if (web_contents) {
       web_contents->SetUserAgentOverride(user_agent_override, false);
