@@ -115,6 +115,10 @@ export const onNumExcludedSites = (excludedSitesInfo: {num: string, publisherKey
   excludedSitesInfo
 })
 
+export const onExcludedNumber = (num: number) => action(types.ON_EXCLUDED_PUBLISHERS_NUMBER, {
+  num
+})
+
 export const onContributionAmount = (amount: number) => action(types.ON_CONTRIBUTION_AMOUNT, {
   amount
 })

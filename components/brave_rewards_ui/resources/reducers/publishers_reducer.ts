@@ -45,6 +45,17 @@ const publishersReducer: Reducer<Rewards.State | undefined> = (state: Rewards.St
       }
 
       break
+    case types.ON_EXCLUDED_PUBLISHERS_NUMBER:
+      state = { ...state }
+      let num = parseInt(action.payload.num, 10)
+
+      if (isNaN(num)) {
+        num = 0
+      }
+
+      state.excludedPublishersNumber = num
+
+      break
     case types.ON_EXCLUDE_PUBLISHER:
       if (!action.payload.publisherKey) {
         break

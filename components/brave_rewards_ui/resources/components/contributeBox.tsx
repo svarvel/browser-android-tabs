@@ -190,7 +190,7 @@ class ContributeBox extends React.Component<Props, State> {
       reconcileStamp,
       autoContributeList,
       enabledContribute,
-      numExcludedSites
+      excludedPublishersNumber
     } = this.props.rewardsData
     const prefix = this.state.allSitesShown ? 'Hide all' : 'Show all'
     const monthlyList: MonthlyChoice[] = utils.generateContributionMonthly(walletInfo.choices, walletInfo.rates)
@@ -245,7 +245,7 @@ class ContributeBox extends React.Component<Props, State> {
             showRowAmount={true}
             isMobile={true}
             onRestore={this.onRestore}
-            numExcludedSites={numExcludedSites}
+            numExcludedSites={excludedPublishersNumber}
           >
             {getLocale('contributionVisitSome')}
           </TableContribute>
