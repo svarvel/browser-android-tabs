@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">Εισαγωγή κωδικών λέξεων </string>
     <string name="sync_device">Συσκευή συγχρονισμού</string>
     <string name="sync_device_failure">Δεν ήταν δυνατή η ρύθμιση του συγχρονισμού</string>
-    <string name="sync_requires_correct_time">Ενδεχομένως έχετε λανθασμένη ώρα ή ζώνη ώρας συστήματος στη συσκευή σας. Παρακαλούμε ρυθμίστε τη σωστή ώρα ή ζώνη ώρας</string>
+    <string name="sync_requires_correct_time">Το ρολόι του υπολογιστή σας μπορεί να έχει ρυθμιστεί σε λάθος ώρα ή σε λάθος ζώνη ώρας. Ελέγξτε τις ρυθμίσεις ρολογιού σας</string>
 
     <string name="brave_stats_text_trackers">Ιχνηλάτες που
 Αποκλείστηκαν</string>
@@ -239,7 +239,7 @@ HTTPS</string>
     <string name="brave_rewards_dismiss">Απόρριψη</string>
     <string name="brave_rewards_get_started">Έναρξη</string>
 
-    <string name="brave_rewards_not_available">Λυπούμαστε, φαίνεται πως το Brave Rewards δεν είναι διαθέσιμο στη συσκευή σας</string>
+    <string name="brave_rewards_not_available">Λυπούμαστε, φαίνεται ότι το Brave Rewards δεν είναι διαθέσιμο για τη συσκευή σας</string>
 
     <string name="prefs_section_display">Παρουσίαση</string>
     <string name="prefs_appearance">Εμφάνιση</string>
@@ -252,4 +252,9 @@ HTTPS</string>
     <string name="reset_brave_rewards_option_description">Αυτό θα διαγράψει το πορτοφόλι σας Brave και θα επαναφέρει όλα τα δεδομένα σας Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Σφάλμα Επαναφοράς</string>
     <string name="reset_brave_rewards_error_description">Παρουσιάστηκε σφάλμα κατά την επαναφορά του Brave Rewards. Παρακαλούμε ανοίξτε ξανά το Brave και δοκιμάστε πάλι  </string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Εισαγάγετε τις λέξεις του κώδικα αλυσίδας συγχρονισμού που εμφανίζονται παρακάτω. Χρησιμοποιείστε αυτόν τον κωδικό σαν κωδικό πρόσβασης. Αν πέσει στα χέρια κάποιου, θα μπορεί να διαβάσει και να τροποποιήσει τα συγχρονισμένα δεδομένα σας.</string>
+
+    <string name="brave_sync_official">Συγχρονισμός Brave</string>
+    <string name="prefs_sync_official">Συγχρονισμός</string>
 </resources>

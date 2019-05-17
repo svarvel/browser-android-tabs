@@ -37,6 +37,8 @@
     <string name="enter_code_words_sync">Nhập các từ mã</string>
     <string name="sync_device">Thiết bị đồng bộ</string>
     <string name="sync_device_failure">Không thể thiết lập đồng bộ</string>
+    <string name="sync_requires_correct_time">Giờ hoặc múi giờ của đồng hồ máy tính bạn có thể bị sai. Hãy kiểm tra cài đặt đồng hồ của bạn</string>
+
     <string name="brave_stats_text_trackers">Trình theo dõi
 Đã chặn</string>
     <string name="brave_stats_text_ads">Quảng cáo
@@ -233,4 +235,29 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="bottom_toolbar_enable">Bật thanh công cụ bên dưới </string>
     <string name="bottom_toolbar_disable">Tắt thanh công cụ bên dưới</string>
     <string name="search_or_url">Tìm kiếm hoặc nhập URL</string>
-    </resources>
+    <string name="accessibility_toolbar_btn_bookmark">Tạo dấu trang</string>
+    <string name="brave_ui_donate_monthly">Thưởng tiền hàng tháng cho trang web này</string>
+    <string name="brave_rewards_intro_title">Brave Rewards đây rồi</string>
+    <string name="brave_rewards_intro_text">Ủng hộ các trang web bạn yêu thích.</string>
+    <string name="brave_rewards_dismiss">Hủy</string>
+    <string name="brave_rewards_get_started">Bắt đầu</string>
+
+    <string name="brave_rewards_not_available">Chúng tôi rất tiếc, dường như tính năng Brave Rewards không khả dụng trên thiết bị của bạn</string>
+
+    <string name="prefs_section_display">Hiển thị</string>
+    <string name="prefs_appearance">Hiển thị</string>
+    <string name="hide_brave_rewards_icon_title">Ẩn Biểu tượng Brave Rewards</string>
+    <string name="hide_brave_rewards_icon_description">Ẩn biểu tượng </string>
+
+    <string name="brave_ui_pre_grant_message">Sớm trở lại kiểm tra để được nhận token miễn phí</string>
+
+    <string name="reset_brave_rewards_option">Đặt lại Brave Rewards</string>
+    <string name="reset_brave_rewards_option_description">Việc này sẽ xóa ví Brave của bạn và đặt lại toàn bộ dữ liệu Brave Rewards của bạn về trạng thái ban đầu</string>
+    <string name="reset_brave_rewards_error_title">Lỗi khi Đặt lại</string>
+    <string name="reset_brave_rewards_error_description">Đã xảy ra lỗi khi khôi phục Brave Rewards về cài đặt gốc. Vui lòng khởi động lại Brave và thử lại</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Nhập các từ của chuỗi mã đồng bộ hóa hiển thị dưới đây. Hãy coi mã này như một mật khẩu. Nếu ai đó lấy được mã này, họ sẽ có thể đọc và thay đổi dữ liệu đồng bộ hóa của bạn.</string>
+
+    <string name="brave_sync_official">Đồng bộ hóa Brave</string>
+    <string name="prefs_sync_official">Đồng bộ hóa</string>
+</resources>

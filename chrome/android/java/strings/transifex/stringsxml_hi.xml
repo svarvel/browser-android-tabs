@@ -37,6 +37,8 @@
     <string name="enter_code_words_sync">कोड शब्द एंटर करें </string>
     <string name="sync_device">सिंक उपकरण</string>
     <string name="sync_device_failure">सिंक सैट-अप नहीं किया जा सका </string>
+    <string name="sync_requires_correct_time">आपके कंप्यूटर की घड़ी गलत समय या गलत टाइम ज़ोन पर सेट हो सकती है। अपनी घड़ी की सेटिंग की जाँच करें</string>
+
     <string name="brave_stats_text_trackers">ट्रैकर 
 ब्लॉक किया गया  </string>
     <string name="brave_stats_text_ads">विज्ञापन 
@@ -234,4 +236,29 @@
     <string name="bottom_toolbar_enable">सबसे नीचे के टूलबार को सक्षम करें </string>
     <string name="bottom_toolbar_disable">सबसे नीचे के टूलबार को अक्षम करें </string>
     <string name="search_or_url">खोजें या URL</string>
-    </resources>
+    <string name="accessibility_toolbar_btn_bookmark">बुकमार्क बनाएं</string>
+    <string name="brave_ui_donate_monthly">इस साइट को मासिक रूप से टिप दें</string>
+    <string name="brave_rewards_intro_title">Brave इनाम यहाँ हैं</string>
+    <string name="brave_rewards_intro_text">उन साइटों का सहयोग करें जिन्हें आप पसंद करते हैं।</string>
+    <string name="brave_rewards_dismiss">रद्द करें</string>
+    <string name="brave_rewards_get_started">आरम्भ करें</string>
+
+    <string name="brave_rewards_not_available">हमे खेद है, ऐसा प्रतीत होता है कि Brave पुरस्कार आपके डिवाइस पर उपलब्ध नही हैं</string>
+
+    <string name="prefs_section_display">डिस्प्ले</string>
+    <string name="prefs_appearance">रंगरूप</string>
+    <string name="hide_brave_rewards_icon_title">Brave इनाम आइकन छुपाएं</string>
+    <string name="hide_brave_rewards_icon_description">Brave इनाम आइकन सक्रिय न होने पर Brave इनाम आइकन छुपाएं</string>
+
+    <string name="brave_ui_pre_grant_message">निःशुल्क टोकन अनुदान के लिए जल्द ही दुबारा जांचें</string>
+
+    <string name="reset_brave_rewards_option">Brave इनामों को रिसेट करें</string>
+    <string name="reset_brave_rewards_option_description">यह आपके Brave बटुए को डिलीट कर देगा और आपके सभी Brave इनाम डेटा को रीसेट कर देगा</string>
+    <string name="reset_brave_rewards_error_title">रिसेट त्रुटि</string>
+    <string name="reset_brave_rewards_error_description">Brave इनामों को रीसेट करने में त्रुटि हुई। कृपया Brave को पुनः चलाएँ और दुबारा प्रयास करें</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">नीचे दर्शाए गए सिंक चेन कोड शब्दों को दर्ज करें। इस कोड को पासवर्ड ही समझें। अगर कोई इसे प्राप्त कर लेता है तो वे आपके सिंक किए गए डेटा को पढ़ और बदल कर सकते हैं।</string>
+
+    <string name="brave_sync_official">Brave सिंक</string>
+    <string name="prefs_sync_official">सिंक</string>
+</resources>

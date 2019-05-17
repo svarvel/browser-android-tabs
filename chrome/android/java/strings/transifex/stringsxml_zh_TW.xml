@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">輸入代碼</string>
     <string name="sync_device">同步裝置</string>
     <string name="sync_device_failure">無法建立同步</string>
-    <string name="sync_requires_correct_time">你的裝置可能設定了錯誤的系統時間或時區。請設定成正確的時間和時區</string>
+    <string name="sync_requires_correct_time">您的電腦時鐘可能時間設定不正確，或是被設定成不正確時區。請檢查您的時間設定</string>
 
     <string name="brave_stats_text_trackers">追蹤器
 已阻擋</string>
@@ -242,7 +242,7 @@
     <string name="brave_rewards_dismiss">解散</string>
     <string name="brave_rewards_get_started">開始</string>
 
-    <string name="brave_rewards_not_available">我們很抱歉，看來 Brave 獎勵還未在你的裝置上開放</string>
+    <string name="brave_rewards_not_available">我們很抱歉，看似您的裝置上沒有 Brave Rewards 可用</string>
 
     <string name="prefs_section_display">顯示</string>
     <string name="prefs_appearance">外觀</string>
@@ -255,4 +255,9 @@
     <string name="reset_brave_rewards_option_description">這將會刪除你的 Brave 錢包並重新設定你所有的 Brave 獎勵之數據</string>
     <string name="reset_brave_rewards_error_title">重新設定發生錯誤</string>
     <string name="reset_brave_rewards_error_description">重新設定 Brave 獎勵時發生錯誤。請重新啟動 Brave 並再次嘗試</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">輸入下方顯示的同步鏈代碼字。將這代碼視同密碼。如果有人取得這代碼，他們便能讀取和修改您同步過的資料。</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">同步</string>
 </resources>

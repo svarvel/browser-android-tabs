@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">נא להזין מילות קוד</string>
     <string name="sync_device">לסנכרן מכשיר</string>
     <string name="sync_device_failure">לא ניתן להגדיר את הסנכרון</string>
-    <string name="sync_requires_correct_time">ייתכן שבמכשיר שלך מוגדרים זמן מערכת או אזור זמן שגויים. אנא, הגדר/י את זמן המערכת ואזור הזמן הנכונים</string>
+    <string name="sync_requires_correct_time">ייתכן ששעון המחשב שלך מוגדר לשעה שגויה או לאזור זמן שגוי. נא לבדוק את הגדרות השעון</string>
 
     <string name="brave_stats_text_trackers">כלי מעקב
 שנחסמו</string>
@@ -241,7 +241,7 @@ HTTPS</string>
     <string name="brave_rewards_dismiss">התעלם/י</string>
     <string name="brave_rewards_get_started">מתחילים</string>
 
-    <string name="brave_rewards_not_available">אנו מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</string>
+    <string name="brave_rewards_not_available">אנו  מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</string>
 
     <string name="prefs_section_display">תצוגה</string>
     <string name="prefs_appearance">מראה</string>
@@ -254,4 +254,9 @@ HTTPS</string>
     <string name="reset_brave_rewards_option_description">זה ימחק את ארנק Brave שלך ויאפס את כל הנתונים של Brave Rewards שלך</string>
     <string name="reset_brave_rewards_error_title">איפוס שגיאה</string>
     <string name="reset_brave_rewards_error_description">אירעה שגיאה באיפוס Brave Rewards. נא להפעיל מחדש את Brave ולנסות שוב</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">נא להזין את מילות הקוד לשרשרת סנכרון להלן. יש להתייחס לקוד זה כסיסמה. אם היא תגיע לידיו של מישהו, הוא יוכל לקרוא ולשנות את הנתונים המסונכרנים שלך.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">סנכרון</string>
 </resources>

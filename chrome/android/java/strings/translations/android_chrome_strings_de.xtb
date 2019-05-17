@@ -747,7 +747,7 @@ Einige Websites schalten möglicherweise Werbeanzeigen, deren Auswahl nicht dara
 <translation id="6393863479814692971">Chrome benötigt für diese Website die Berechtigung, auf Ihre Kamera und Ihr Mikrofon zuzugreifen.</translation>
 <translation id="6395288395575013217">LINK</translation>
 <translation id="6404511346730675251">Lesezeichen bearbeiten</translation>
-<translation id="6406506848690869874">Synchronisierung</translation>
+<translation id="6406506848690869874">Synchronisieren</translation>
 <translation id="641643625718530986">Drucken...</translation>
 <translation id="6416782512398055893"><ph name="MBS" /> MB heruntergeladen</translation>
 <translation id="6427112570124116297">Das Web übersetzen</translation>
@@ -1181,7 +1181,7 @@ Einige Websites schalten möglicherweise Werbeanzeigen, deren Auswahl nicht dara
 <translation id="7539985410310934287">Codewörter eingeben</translation>
 <translation id="326454632686131209">Gerät synchronisieren</translation>
 <translation id="8985635554450124959">Synchronisierung konnte nicht eingerichtet werden</translation>
-<translation id="230829157901335313">Vielleicht haben Sie auf Ihrem Gerät eine falsche Systemzeit oder Zeitzone eingestellt. Bitte stellen Sie Zeit und Zeitzone korrekt ein</translation>
+<translation id="230829157901335313">Die Uhr Ihres Computers zeigt evtl. die falsche Zeit an oder ist auf die falsche Zeitzone eingestellt. Überprüfen Sie Ihre Einstellungen für die Uhr.</translation>
 <translation id="6244065453125065109">Tracker
 geblockt</translation>
 <translation id="2547939855139473800">Werbungen
@@ -1362,7 +1362,7 @@ um Ihre Lieblingsersteller zu unterstützen.</translation>
 <translation id="7722441371828049691">Unterstützen Sie die Seiten, die Sie lieben.</translation>
 <translation id="5234764350956374838">Verwerfen</translation>
 <translation id="4472575034687746823">Anfangen</translation>
-<translation id="4162066325465825185">Leider scheint Brave Rewards auf Ihrem Gerät nicht verfügbar zu sein</translation>
+<translation id="4162066325465825185">Tut uns leid: Anscheinend ist Brave Rewards auf Ihrem Gerät nicht verfügbar.</translation>
 <translation id="4150201353443180367">Anzeige</translation>
 <translation id="2804710924397009224">Brave-Rewards-Symbol ausblenden</translation>
 <translation id="7358991116457217836">Blendet das Brave-Rewards-Symbol aus, wenn Brave Rewards nicht aktiviert ist</translation>
@@ -1371,4 +1371,7 @@ um Ihre Lieblingsersteller zu unterstützen.</translation>
 <translation id="8782039523249932839">Dadurch wird Ihre Brave-Wallet gelöscht und all Ihre Brave-Rewards-Daten zurückgesetzt</translation>
 <translation id="5321518976657560663">Fehler beim Zurücksetzen</translation>
 <translation id="7071576788062714665">Es ist ein Fehler beim Zurücksetzen von Brave Rewards aufgetreten. Bitte starten Sie Brave neu und versuchen es noch einmal</translation>
+<translation id="6302422639282249274">Brave Rewards verwalten</translation>
+<translation id="24067401253841795">Geben Sie die Codeworte der Synchronisationskette ein, die unten gezeigt werden. Behandeln Sie diesen Code wie ein Passwort: Jemand, der in seinen Besitz kommt, kann Ihre synchronisierten Daten lesen und verändern.</translation>
+<translation id="3149880132460839085">Brave</translation>
 </translationbundle>

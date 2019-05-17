@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">コードの単語を入力</string>
     <string name="sync_device">Sync 端末</string>
     <string name="sync_device_failure">同期をセットアップできませでした</string>
-    <string name="sync_requires_correct_time">デバイスのシステム時刻もしくはタイムゾーンが間違っている可能性があります。正確な時刻やタイムゾーを設定してください</string>
+    <string name="sync_requires_correct_time">お使いのコンピューターの時計が誤った時間または誤ったタイムゾーンに設定されている可能性があります。時計の設定をご確認ください。</string>
 
     <string name="brave_stats_text_trackers">トラッカー
 ブロックされました</string>
@@ -238,7 +238,7 @@
     <string name="brave_rewards_dismiss">解除</string>
     <string name="brave_rewards_get_started">始める</string>
 
-    <string name="brave_rewards_not_available">申し訳ありませんが、お使いのデバイスではBraveリワードがご利用いただけないようです。</string>
+    <string name="brave_rewards_not_available">申し訳ありませんが、お使いの端末ではBrave Rewardsをご利用いただけないようです</string>
 
     <string name="prefs_section_display">表示</string>
     <string name="prefs_appearance">見た目</string>
@@ -251,4 +251,9 @@
     <string name="reset_brave_rewards_option_description">Braveウォレットが削除され、すべてのBraveリワードデータがリセットされます</string>
     <string name="reset_brave_rewards_error_title">エラーをリセット</string>
     <string name="reset_brave_rewards_error_description">Braveリワードのリセット中にエラーが発生しました。Braveを再開して、再度お試しください。</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">下に表示された同期チェーンコードワードを入力してください。このコードはパスワードのようにお取り扱いください。誰かがそれを入手すると、あなたの同期データを読んだり、変更したりすることができます。</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">同期</string>
 </resources>

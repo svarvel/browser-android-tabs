@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">Ingresa las palabras clave</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">No se ha podido configurar la sincronización</string>
-    <string name="sync_requires_correct_time">Puede que tengas un sistema horario equivocado o la zona horaria de tu dispositivo mal establecida. Por favor establece las hora y zona horaria correctas.</string>
+    <string name="sync_requires_correct_time">El reloj de su ordenador podría tener la hora o la zona horaria mal configuradas. Revise la configuración de su reloj</string>
 
     <string name="brave_stats_text_trackers">Rastreadores
 bloqueados</string>
@@ -243,7 +243,7 @@ apoyar a los creadores de contenido que más te gustan.</string>
     <string name="brave_rewards_dismiss">Descartar</string>
     <string name="brave_rewards_get_started">Comienza</string>
 
-    <string name="brave_rewards_not_available">Lo sentimos. Parece que Brave Rewards no están disponibles en tu dispositivo</string>
+    <string name="brave_rewards_not_available">Lo sentimos, parece que Brave Rewards no está disponible en su dispositivo</string>
 
     <string name="prefs_section_display">Pantalla</string>
     <string name="prefs_appearance">Apariencia</string>
@@ -256,4 +256,9 @@ apoyar a los creadores de contenido que más te gustan.</string>
     <string name="reset_brave_rewards_option_description">Esto borrará tu cartera de Brave y restablecerá los datos de tus Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Error al restablecer</string>
     <string name="reset_brave_rewards_error_description">Ha habido un error al restablecer Brave Rewards. Por favor, abre de nuevo Brave e inténtalo otra vez</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Introduzca las palabras del código de sincronización de abajo. Use el código como una contraseña. Si alguien lo conociera, podría acceder a sus datos sincronizados y modificarlos.</string>
+
+    <string name="brave_sync_official">Sincronizar Brave</string>
+    <string name="prefs_sync_official">Sincronizar</string>
 </resources>

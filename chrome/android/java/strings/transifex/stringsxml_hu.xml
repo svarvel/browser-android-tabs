@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Kódszavak hozzáadása</string>
     <string name="sync_device">Eszköz szinkronizálása</string>
     <string name="sync_device_failure">A szinkronizálást nem lehetett beállítani</string>
-    <string name="sync_requires_correct_time">Lehet, hogy rossz a rendszeridő vagy az időzóna beállítás készülékeden. Kérünk, állítsd be a helyes időt és időzónát.</string>
+    <string name="sync_requires_correct_time">Lehet, hogy számítógéped órája rosszul van beállítva, vagy más időzónát mutat. Ellenőrizd az óra beállításait.</string>
 
     <string name="brave_stats_text_trackers">Követések
 blokkolva</string>
@@ -241,7 +241,7 @@ tartalomkészítők támogatására.</string>
     <string name="brave_rewards_dismiss">Elvetés</string>
     <string name="brave_rewards_get_started">Első lépések</string>
 
-    <string name="brave_rewards_not_available">Sajnáljuk, úgy tűnik, a Brave Jutalmak nem érhetők el készülékedről.</string>
+    <string name="brave_rewards_not_available">Sajnáljuk, úgy tűnik a Brave Jutalmak nem elérhető készülékedről.</string>
 
     <string name="prefs_section_display">Megjelenítés</string>
     <string name="prefs_appearance">Megjelenés</string>
@@ -254,4 +254,9 @@ tartalomkészítők támogatására.</string>
     <string name="reset_brave_rewards_option_description">Ezzel törlődik Brave tárcád és alaphelyzetbe áll minden Brave Jutalmak adatod.</string>
     <string name="reset_brave_rewards_error_title">Újraállítási hiba</string>
     <string name="reset_brave_rewards_error_description">Hiba történt a Brave Jutalmak újraállítása során. Kérünk, indítsd újra a Brave-et, majd próbáld újra.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Írd be az alább látható szinkronlánc-kulcsszavakat. Kezeld ezt a kódot jelszóként. Ha valaki megszerzi, elolvashatja és módosíthatja a szinkronizált adataidat.</string>
+
+    <string name="brave_sync_official">Brave szinkronizálás</string>
+    <string name="prefs_sync_official">Szinkronizálás</string>
 </resources>

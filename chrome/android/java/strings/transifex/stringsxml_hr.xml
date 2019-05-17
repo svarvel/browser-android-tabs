@@ -36,8 +36,6 @@
     <string name="enter_code_words_sync">Unesi kodne riječi</string>
     <string name="sync_device">Sinkroniziraj uređaj</string>
     <string name="sync_device_failure">Postavljanje sinkronizacije nije uspjelo</string>
-    <string name="sync_requires_correct_time">Možda imate pogrešne postavke sustava za vrijeme ili vremensku zonu na svom uređaju. Uspostavite ispravno vrijeme i vremensku zonu</string>
-
     <string name="brave_stats_text_trackers">Obilježivači
 blokirani</string>
     <string name="brave_stats_text_ads">Oglasi
@@ -239,8 +237,6 @@ omiljene stvaratelje sadržaja.</string>
     <string name="brave_rewards_dismiss">Odbaciti</string>
     <string name="brave_rewards_get_started">Otpočnite</string>
 
-    <string name="brave_rewards_not_available">Žao nam je, izgleda da Brave Rewards nije dostupan na vašem uređaju</string>
-
     <string name="prefs_section_display">Prikazati</string>
     <string name="prefs_appearance">Izgled</string>
     <string name="hide_brave_rewards_icon_title">Sakrijte ikonu Brave Rewards</string>
@@ -252,4 +248,5 @@ omiljene stvaratelje sadržaja.</string>
     <string name="reset_brave_rewards_option_description">Ovim će se pobrisati vaša Brave novčarka i resetirati svi vaši Brave Rewards podaci</string>
     <string name="reset_brave_rewards_error_title">Resetirajte pogrešku</string>
     <string name="reset_brave_rewards_error_description">Došlo je do pogreške u resetiranju Brave Rewards. Ponovno pokrenite Brave i pokušajte opet</string>
-</resources>
+
+    </resources>

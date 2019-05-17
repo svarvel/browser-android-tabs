@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS em tudo</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear Scripts</string>
     <string name="accessibility_toolbar_btn_brave_shields">Habilitar/Desabilitar Brave Shields</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Gerenciar Brave Rewards</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear 3rd party cookies</string>
 
     <string name="httpse_summary">Abre sites suportados utilizando HTTPS em vez de HTTP quando possível</string>
@@ -37,7 +38,7 @@
     <string name="enter_code_words_sync">Inserir código palavras</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">A sincronização não pôde ser configurada</string>
-    <string name="sync_requires_correct_time">O horário ou o fuso horário do sistema no seu dispositivo pode estar incorreto. Defina o horário e o fuso horário corretos.</string>
+    <string name="sync_requires_correct_time">O relógio do seu computador pode estar configurado com a hora errada ou o fuso horário errado. Verifique as configurações do relógio</string>
 
     <string name="brave_stats_text_trackers">Rastreadores
 Bloqueados</string>
@@ -145,7 +146,7 @@ Você pode alterar o navegador padrão nas suas configurações de aplicativos.<
     <string name="brave_default_browser_notification_body">Economize bateria e carregue as páginas da web mais rapidamente. Torne o Brave seu Navegador padrão. No menu do Brave, toque em \"Definir como navegador padrão\" </string>
     <string name="brave_set_default_browser">Defina como navegador padrão</string>
     <string name="brave_set_default_browser_dialog_text">Selecione Brave na lista e toque em \"Sempre\"</string>
-    <string name="brave_default_browser_existing_notification_body">Torne o Brace o seu navegador padrão da web
+    <string name="brave_default_browser_existing_notification_body">Torne o Brave o seu navegador padrão da web
 Economize bateria e carregue as páginas web mais rápido</string>
 
     <string name="brave_ui_welcome_header_two">Prepare-se para conhecer
@@ -211,6 +212,7 @@ atividade neste mês...</string>
     <string name="brave_ui_reserved_amount_text">Você designou <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT para criadores que
 ainda não se cadastraram para receber contribuições. Seu navegador continuará tentando contribuir
 até que os criadores verifiquem as contas ou por um período de 90 dias.</string>
+    <string name="brave_ui_notification_desc_no_funds">Não foi possível realizar seu pagamento mensal da Contribuição automática e das doações mensais. Seu saldo é insuficiente. Tentaremos novamente em 30 dias.</string>
     <string name="brave_ui_notification_desc_tip_error">Houve um problema no processamento da sua doação. Tente novamente.</string>
     <string name="brave_ui_notification_desc_contr_error">Houve um problema no processamento da sua doação.</string>
     <string name="brave_rewards_local_uh_oh">Oh, não!</string>
@@ -242,7 +244,7 @@ contribuindo para seus criadores de conteúdo favoritos.</string>
     <string name="brave_rewards_dismiss">Recusar</string>
     <string name="brave_rewards_get_started">Iniciar</string>
 
-    <string name="brave_rewards_not_available">Lamentamos que o Brave Rewards não esteja disponível no seu dispositivo.</string>
+    <string name="brave_rewards_not_available">Desculpe, mas parece que o Brave Rewards não está disponível no seu dispositivo</string>
 
     <string name="prefs_section_display">Exibição</string>
     <string name="prefs_appearance">Aparência</string>
@@ -255,4 +257,9 @@ contribuindo para seus criadores de conteúdo favoritos.</string>
     <string name="reset_brave_rewards_option_description">Isso excluirá sua carteira da Brave e redefinirá todos os dados da sua Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Erro de reconfiguração</string>
     <string name="reset_brave_rewards_error_description">Houve um erro ao reconfigurar o Brave Rewards. Reative o Brave e tente novamente.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Digite as palavras do código da cadeia de sincronização mostradas abaixo. Trate esse código como uma senha. Se alguém tiver acesso a ele, poderá ler e modificar seus dados sincronizados.</string>
+
+    <string name="brave_sync_official">Sincronização do Brave</string>
+    <string name="prefs_sync_official">Sincronizar</string>
 </resources>

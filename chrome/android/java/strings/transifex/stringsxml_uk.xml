@@ -36,6 +36,8 @@
     <string name="enter_code_words_sync">Введення кодових слів</string>
     <string name="sync_device">Синхронізація пристрою</string>
     <string name="sync_device_failure">Синхронізація не може бути встановлена</string>
+    <string name="sync_requires_correct_time">Можливо, годинник вашого комп\'ютера йде за невірним часом чи часовим поясом. Перевірте налаштування свого годинника</string>
+
     <string name="brave_stats_text_trackers">Заблоковано
 стеження</string>
     <string name="brave_stats_text_ads">Заблоковано
@@ -232,4 +234,29 @@
     <string name="bottom_toolbar_enable">Увімкнути нижню панель інструментів</string>
     <string name="bottom_toolbar_disable">Вимкнути нижню панель інструментів</string>
     <string name="search_or_url">Пошук чи ланка</string>
-    </resources>
+    <string name="accessibility_toolbar_btn_bookmark">Створити закладку</string>
+    <string name="brave_ui_donate_monthly">Щомісяця перераховувати чайові цьому сайту</string>
+    <string name="brave_rewards_intro_title">Нагороди Brave тут</string>
+    <string name="brave_rewards_intro_text">Підтримуйте сайти, які любите.</string>
+    <string name="brave_rewards_dismiss">Відхилити</string>
+    <string name="brave_rewards_get_started">Розпочати</string>
+
+    <string name="brave_rewards_not_available">Вибачте, але нагороди Brave, схоже, недоступні на вашому пристрої</string>
+
+    <string name="prefs_section_display">Відобразити</string>
+    <string name="prefs_appearance">Вигляд</string>
+    <string name="hide_brave_rewards_icon_title">Сховати іконку нагород Brave</string>
+    <string name="hide_brave_rewards_icon_description">Приховує іконку нагород Brave, коли ті вимкнуті</string>
+
+    <string name="brave_ui_pre_grant_message">Поверніться незабаром, щоб безоплатно отримати токени</string>
+
+    <string name="reset_brave_rewards_option">Скинути нагороди Brave</string>
+    <string name="reset_brave_rewards_option_description">Це видалить ваш гаманець Brave і скине усі дані ваших нагород Brave</string>
+    <string name="reset_brave_rewards_error_title">Помилка скидання</string>
+    <string name="reset_brave_rewards_error_description">При скиданні налаштувань нагород Brave сталася помилка. Будь ласка, перезапустіть Brave і спробуйте знову</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Введіть показані нижче кодові слова ланцюжка синхронізації. Вважайте цей код паролем. Якщо хтось його дізнається, то зможе читати і змінювати ваші синхронізовані дані.</string>
+
+    <string name="brave_sync_official">Синхронізація Brave</string>
+    <string name="prefs_sync_official">Синхронізувати</string>
+</resources>
