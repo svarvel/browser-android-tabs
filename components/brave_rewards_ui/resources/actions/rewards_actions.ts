@@ -167,3 +167,5 @@ export const onPendingContributionTotal = (amount: number) => action(types.ON_PE
 export const onRecurringTipRemoved = (success: boolean) => action(types.ON_RECURRING_TIP_REMOVED, {
   success
 })
+
+export const getExcludedPublishersNumber = () => action(types.GET_EXCLUDED_PUBLISHERS_NUMBER)
