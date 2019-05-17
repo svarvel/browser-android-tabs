@@ -198,7 +198,7 @@
 <translation id="2414886740292270097">Gelap</translation>
 <translation id="8285489906452138776">Brave memerlukan izin akses ke kamera untuk situs ini.</translation>
 <translation id="2426805022920575512">Pilih akun lain</translation>
-<translation id="2433507940547922241">Penampilan</translation>
+<translation id="2433507940547922241">Tampilan</translation>
 <translation id="2434158240863470628">Download selesai <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">Akses lokasi</translation>
 <translation id="2450083983707403292">Ingin mulai mendownload <ph name="FILE_NAME" /> lagi?</translation>
@@ -735,7 +735,7 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="7988136689212463100">Brave memerlukan izin akses ke kamera dan mikrofon untuk situs ini.</translation>
 <translation id="6395288395575013217">LINK</translation>
 <translation id="6404511346730675251">Edit bookmark</translation>
-<translation id="6406506848690869874">Sinkronisasi</translation>
+<translation id="6406506848690869874">Sinkronkan</translation>
 <translation id="641643625718530986">Cetak...</translation>
 <translation id="6416782512398055893">Terdownload <ph name="MBS" /> MB</translation>
 <translation id="6433501201775827830">Pilih mesin telusur Anda</translation>
@@ -1160,8 +1160,7 @@ Misalnya, beberapa situs web mungkin menanggapi permintaan ini dengan menayangka
 <translation id="7539985410310934287">Masukkan kode kata</translation>
 <translation id="326454632686131209">Sinkronkan perangkat</translation>
 <translation id="8985635554450124959">Sinkronisasi tidak dapat disiapkan</translation>
-<translation id="230829157901335313">Mungkin waktu sistem atau zona waktu perangkat Anda salah. Harap atur waktu dan zona waktu yang benar
-</translation>
+<translation id="230829157901335313">Jam komputer Anda mungkin diatur ke waktu atau zona waktu yang salah. Periksa pengaturan jam Anda.</translation>
 <translation id="6244065453125065109">Pelacak
 Diblokir</translation>
 <translation id="2547939855139473800">Iklan
@@ -1340,31 +1339,22 @@ pembuat konten yang Anda sukai.</translation>
 <translation id="8495235435594442882">Aktifkan bilah alat bawah</translation>
 <translation id="7239121106815507493">Nonaktifkan bilah alat bawah</translation>
 <translation id="145068164597056296">Cari atau URL</translation>
-<translation id="6810078320346589989">Buat Marka
-</translation>
-<translation id="5463954686005964104">Beri situs ini tip setiap bulan
-</translation>
-<translation id="1923568441186788334">Imbalan Brave sudah tiba
-</translation>
-<translation id="7722441371828049691">Dukung situs yang Anda sukai.
-</translation>
+<translation id="6810078320346589989">Buat markah</translation>
+<translation id="5463954686005964104">Beri situs ini tip setiap bulan</translation>
+<translation id="1923568441186788334">Brave Rewards sudah tiba</translation>
+<translation id="7722441371828049691">Dukung situs yang Anda sukai.</translation>
 <translation id="5234764350956374838">Tutup</translation>
 <translation id="4472575034687746823">Memulai</translation>
-<translation id="4162066325465825185">Kami mohon maaf tampaknya Imbalan Brave tidak tersedia di perangkat Anda
-</translation>
-<translation id="4150201353443180367">Layar Tampilan
-</translation>
-<translation id="2804710924397009224">Sembunyikan Ikon Imbalan Brave
-</translation>
-<translation id="7358991116457217836">Menyembunyikan Ikon Imbalan Brave ketika Imbalan Brave tidak diaktifkan
-</translation>
-<translation id="7618184561660805696">Silakan datang kembali untuk mendapatkan token gratis
-</translation>
-<translation id="3349204812119681938">Reset Imbalan Brave
-</translation>
-<translation id="8782039523249932839">Dompet Brave Anda akan dihapus dan mereset semua data Imbalan Brave Anda
-</translation>
-<translation id="5321518976657560663">Reset Kesalahan</translation>
-<translation id="7071576788062714665">Terjadi kesalahan saat mereset Imbalan Brave. Harap luncurkan ulang Brave dan coba lagi
-</translation>
+<translation id="4162066325465825185">Maaf, sepertinya Brave Rewards tidak tersedia di perangkat Anda</translation>
+<translation id="4150201353443180367">Layar Tampilan</translation>
+<translation id="2804710924397009224">Sembunyikan Ikon Brave Rewards</translation>
+<translation id="7358991116457217836">Menyembunyikan Ikon Brave Rewards ketika Brave Rewards tidak diaktifkan</translation>
+<translation id="7618184561660805696">Periksa lagi nanti untuk mendapatkan token gratis</translation>
+<translation id="3349204812119681938">Atur Ulang Brave Rewards</translation>
+<translation id="8782039523249932839">Dompet Brave Anda akan dihapus dan mengatur ulang semua data Brave Rewards Anda</translation>
+<translation id="5321518976657560663">Kesalahan Pengaturan Ulang</translation>
+<translation id="7071576788062714665">Terjadi kesalahan saat mengatur ulang Brave Rewards. Harap luncurkan ulang Brave dan coba lagi</translation>
+<translation id="6302422639282249274">Kelola Brave Rewards</translation>
+<translation id="24067401253841795">Masukkan kata-kata kode rantai sinkronisasi yang ditunjukkan di bawah ini. Perlakukan kode ini seperti kata sandi. Jika orang lain mengetahuinya, mereka dapat membaca dan memodifikasi data tersinkronkan milik Anda.</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

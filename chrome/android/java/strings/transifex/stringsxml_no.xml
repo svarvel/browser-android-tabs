@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Skriv inn kode ord</string>
     <string name="sync_device">Synk enhet</string>
     <string name="sync_device_failure">Synk kunne ikke settes opp</string>
-    <string name="sync_requires_correct_time">Du har kanskje feil oppsett av systemtid eller tidssone på enheten din. Sett opp riktig tidspunkt og tidssone</string>
+    <string name="sync_requires_correct_time">Datamaskinklokken din kan være satt feil, eller </string>
 
     <string name="brave_stats_text_trackers">Sporing
 blokkert</string>
@@ -241,7 +241,7 @@ til å støtte innholdsskapere du liker.</string>
     <string name="brave_rewards_dismiss">Lukk</string>
     <string name="brave_rewards_get_started">Kom i gang</string>
 
-    <string name="brave_rewards_not_available">Vi beklager – det ser ut til at Brave Rewards ikke er tilgjengelig på enheten din</string>
+    <string name="brave_rewards_not_available">Vi beklager, men det virker som Brave Rewards ikke er tilgjengelig på enheten din</string>
 
     <string name="prefs_section_display">Vis</string>
     <string name="prefs_appearance">Utseende</string>
@@ -254,4 +254,9 @@ til å støtte innholdsskapere du liker.</string>
     <string name="reset_brave_rewards_option_description">Dette medfører at Brave-lommeboken din slettes og alle Brave Rewards-dataene dine tilbakestilles</string>
     <string name="reset_brave_rewards_error_title">Feil ved tilbakestilling</string>
     <string name="reset_brave_rewards_error_description">En feil oppsto under tilbakestilling av Brave Rewards. Start Brave på nytt og prøv igjen</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Legg inn synkroniseringskjedens kodeord som vist nedenfor. Beskytt koden som et passord. Hvis noen får tak i det </string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Synkroniser</string>
 </resources>

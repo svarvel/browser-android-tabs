@@ -1161,7 +1161,7 @@ Por exemplo, alguns sites podem responder a esse pedido mostrando anúncios que 
 <translation id="7539985410310934287">Inserir código palavras</translation>
 <translation id="326454632686131209">Sincronizar dispositivo</translation>
 <translation id="8985635554450124959">A sincronização não pôde ser configurada</translation>
-<translation id="230829157901335313">O horário ou o fuso horário do sistema no seu dispositivo pode estar incorreto. Defina o horário e o fuso horário corretos.</translation>
+<translation id="230829157901335313">O relógio do seu computador pode estar configurado com a hora errada ou o fuso horário errado. Verifique as configurações do relógio</translation>
 <translation id="6244065453125065109">Rastreadores
 Bloqueados</translation>
 <translation id="2547939855139473800">Anúncios
@@ -1248,7 +1248,7 @@ Você pode alterar o navegador padrão nas suas configurações de aplicativos.<
 <translation id="5708254139873333042">Economize bateria e carregue as páginas da web mais rapidamente. Torne o Brave seu Navegador padrão. No menu do Brave, toque em "Definir como navegador padrão" </translation>
 <translation id="3570367516044491911">Defina como navegador padrão</translation>
 <translation id="5827583267117939716">Selecione Brave na lista e toque em "Sempre"</translation>
-<translation id="2262526166668973593">Torne o Brace o seu navegador padrão da web
+<translation id="2262526166668973593">Torne o Brave o seu navegador padrão da web
 Economize bateria e carregue as páginas web mais rápido</translation>
 <translation id="1916285746997567466">Prepare-se para conhecer
 a nova internet.</translation>
@@ -1342,7 +1342,7 @@ contribuindo para seus criadores de conteúdo favoritos.</translation>
 <translation id="7722441371828049691">Apoie os sites que você ama.</translation>
 <translation id="5234764350956374838">Recusar</translation>
 <translation id="4472575034687746823">Iniciar</translation>
-<translation id="4162066325465825185">Lamentamos que o Brave Rewards não esteja disponível no seu dispositivo.</translation>
+<translation id="4162066325465825185">Desculpe, mas parece que o Brave Rewards não está disponível no seu dispositivo</translation>
 <translation id="4150201353443180367">Exibição</translation>
 <translation id="2804710924397009224">Ícone Ocultar Brave Rewards</translation>
 <translation id="7358991116457217836">Oculta o ícone Brave Rewards quando o Brave Rewards não está ativado.</translation>
@@ -1351,4 +1351,8 @@ contribuindo para seus criadores de conteúdo favoritos.</translation>
 <translation id="8782039523249932839">Isso excluirá sua carteira da Brave e redefinirá todos os dados da sua Brave Rewards</translation>
 <translation id="5321518976657560663">Erro de reconfiguração</translation>
 <translation id="7071576788062714665">Houve um erro ao reconfigurar o Brave Rewards. Reative o Brave e tente novamente.</translation>
+<translation id="6302422639282249274">Gerenciar Brave Rewards</translation>
+<translation id="7997676409547731821">Não foi possível realizar seu pagamento mensal da Contribuição automática e das doações mensais. Seu saldo é insuficiente. Tentaremos novamente em 30 dias.</translation>
+<translation id="24067401253841795">Digite as palavras do código da cadeia de sincronização mostradas abaixo. Trate esse código como uma senha. Se alguém tiver acesso a ele, poderá ler e modificar seus dados sincronizados.</translation>
+<translation id="3149880132460839085">Sincronização do Brave</translation>
 </translationbundle>

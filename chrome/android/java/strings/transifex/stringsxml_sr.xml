@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Unesite reči koda</string>
     <string name="sync_device">Sinhronizacija uređaja</string>
     <string name="sync_device_failure">Sinhronizacija se ne može instalirati</string>
-    <string name="sync_requires_correct_time">Možda imate pogrešno podešeno sistemsko vreme ili vremensku zonu na svom uređaju. Podesite tačno vreme i vremensku zonu</string>
+    <string name="sync_requires_correct_time">Sat na vašem računaru je možda podešen na pogrešno vreme ili na pogrešnu vremensku zonu. Proverite podešavanja sata.</string>
 
     <string name="brave_stats_text_trackers">Trekeri
 blokirani</string>
@@ -241,7 +241,7 @@ kreatore sadržaja koji vam se sviđaju.</string>
     <string name="brave_rewards_dismiss">Odbaci</string>
     <string name="brave_rewards_get_started">Prvi koraci</string>
 
-    <string name="brave_rewards_not_available">Žao nam je, čini se da Brave Rewards nije dostupan na vašem uređaju</string>
+    <string name="brave_rewards_not_available">Nažalost, izgleda da Brave Rewards nije dostupan na vašem uređaju.</string>
 
     <string name="prefs_section_display">Prikaz</string>
     <string name="prefs_appearance">Izgled</string>
@@ -254,4 +254,9 @@ kreatore sadržaja koji vam se sviđaju.</string>
     <string name="reset_brave_rewards_option_description">Obrišite svoj Brave novčanik i ponovo postavite sve svoje Brave Rewards podatke</string>
     <string name="reset_brave_rewards_error_title">Greška pri ponovnom postavljanju</string>
     <string name="reset_brave_rewards_error_description">Došlo je do greške prilikom postavljanja Brave Rewards na početne vrednosti. Ponovo pokrenite Brave i pokušajte opet</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Unesite dole prikazane kôdne reči za sinhronizaciju. Postupajte sa ovim kôdom kao sa lozinkom. Ako neko dođe do ovog podatka, može da čita i menja vaše sinhronizovane podatke.</string>
+
+    <string name="brave_sync_official">Sinhronizacija Brave-a</string>
+    <string name="prefs_sync_official">Sinhronizacija</string>
 </resources>

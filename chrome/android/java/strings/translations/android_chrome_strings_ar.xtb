@@ -1160,7 +1160,7 @@
 <translation id="7539985410310934287">أدخل كلمات الرمز</translation>
 <translation id="326454632686131209">مزامنة الجهاز</translation>
 <translation id="8985635554450124959">تعذر إعداد المزامنة</translation>
-<translation id="230829157901335313">قد يكون لديك خطأ في إعداد وقت النظام أو المنطقة الزمنية على جهازك. يُرجى إعداد الوقت الصحيح والمنطقة الزمنية</translation>
+<translation id="230829157901335313">قد تكون ساعة الكمبيوتر الخاص بك مضبوطة على الوقت الخطأ، أو على المنطقة الزمنية الخطأ. تحققْ من إعدادات الساعة الخاصة بك</translation>
 <translation id="6244065453125065109">تم حظر
 المتتبعات
 </translation>
@@ -1346,7 +1346,7 @@ HTTPS</translation>
 <translation id="5234764350956374838">تجاهل
 </translation>
 <translation id="4472575034687746823">البدء</translation>
-<translation id="4162066325465825185">نأسف لأن مكافآت Brave لا تتوفر على جهازك</translation>
+<translation id="4162066325465825185">عذراً، يبدو أن مكافآت Brave لا تتوفر على جهازك</translation>
 <translation id="4150201353443180367">العرض</translation>
 <translation id="2804710924397009224">إخفاء أيقونة مكافآت Brave</translation>
 <translation id="7358991116457217836">تخفي أيقونة مكافآت Brave عند عدم تمكين مكافآت Brave.</translation>
@@ -1355,4 +1355,7 @@ HTTPS</translation>
 <translation id="8782039523249932839">سيؤدي ذلك إلى حذف محفظة Brave وإعادة تعيين جميع بيانات مكافآت Brave الخاصة بك</translation>
 <translation id="5321518976657560663">خطأٌ في إعادة التعيين</translation>
 <translation id="7071576788062714665">حدث خطأ أثناء إعادة تعيين مكافآت Brave. يُرجى إعادة تشغيل Brave والمحاولة مرةً أخرى</translation>
+<translation id="24067401253841795">أدخل كلمات رمز سلسلة المزامنة الموضحة أدناه. تَعامل مع هذا الرمز مثل كلمة المرور. إذا حصل شخص ما على هذه المعلومات، فيمكنه قراءة بياناتك المتزامنة وتعديلها.</translation>
+<translation id="3149880132460839085">مزامنة Brave
+</translation>
 </translationbundle>

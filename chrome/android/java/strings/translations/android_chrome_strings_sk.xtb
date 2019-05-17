@@ -735,7 +735,7 @@ Niektoré weby môžu napríklad na túto žiadosť reagovať tak, že vám zobr
 <translation id="7988136689212463100">Brave potrebuje povolenie pre tento web na prístup k vášmu fotoaparátu a mikrofónu.</translation>
 <translation id="6395288395575013217">ODKAZ</translation>
 <translation id="6404511346730675251">Upraviť záložku</translation>
-<translation id="6406506848690869874">Synchronizácia</translation>
+<translation id="6406506848690869874">Synchronizovať</translation>
 <translation id="641643625718530986">Tlačiť...</translation>
 <translation id="6416782512398055893">Stiahnuté: <ph name="MBS" /> MB</translation>
 <translation id="6433501201775827830">Výber vyhľadávača</translation>
@@ -1159,7 +1159,7 @@ Niektoré weby môžu napríklad na túto žiadosť reagovať tak, že vám zobr
 <translation id="7539985410310934287">Zadajte kódové slová</translation>
 <translation id="326454632686131209">Synchronizované zariadenie</translation>
 <translation id="8985635554450124959">Synchronizáciu nie je možné nastaviť</translation>
-<translation id="230829157901335313">Na svojom zariadení máte možno nesprávne nastavený systémový čas alebo časové pásmo. Nastavte si správny čas a časové pásmo</translation>
+<translation id="230829157901335313">Hodiny vo vašom počítači majú možno nastavený nesprávny čas alebo časovú zónu. Skontrolujte nastavenia hodín</translation>
 <translation id="6244065453125065109">Sledovanie
 zablokované</translation>
 <translation id="2547939855139473800">Reklamy
@@ -1341,7 +1341,7 @@ tvorcov obsahu, ktorých máte radi.</translation>
 <translation id="7722441371828049691">Podporte stránky, ktoré máte radi.</translation>
 <translation id="5234764350956374838">Zamietnuť</translation>
 <translation id="4472575034687746823">Začať</translation>
-<translation id="4162066325465825185">Ľutujeme, ale vo vašom zariadení nie sú Odmeny Brave k dispozícii</translation>
+<translation id="4162066325465825185">Ľutujeme, ale Odmeny Brave vo vašom zariadení nie sú  k dispozícii</translation>
 <translation id="4150201353443180367">Zobraziť</translation>
 <translation id="2804710924397009224">Skryť ikonu Odmeny Brave</translation>
 <translation id="7358991116457217836">Skryť ikonu Odmeny Brave, keď Odmeny Brave nie sú povolené</translation>
@@ -1350,4 +1350,6 @@ tvorcov obsahu, ktorých máte radi.</translation>
 <translation id="8782039523249932839">Týmto vymažete svoju peňaženku Brave a obnovíte všetky svoje dáta  Odmeny Brave</translation>
 <translation id="5321518976657560663">Chyba obnovenia</translation>
 <translation id="7071576788062714665">Pri resetovaní Odmeny Brave sa vyskytla chyba. Znova spustite Brave a skúste to znova</translation>
+<translation id="24067401253841795">Zadajte dole uvedené kódové slová synchronizačného reťazca. S týmto kódom zaobchádzajte ako s heslom. Ak ho niekto získa neoprávnene, bude môcť čítať a upravovať synchronizované údaje.</translation>
+<translation id="3149880132460839085">Brave synchronizácia</translation>
 </translationbundle>

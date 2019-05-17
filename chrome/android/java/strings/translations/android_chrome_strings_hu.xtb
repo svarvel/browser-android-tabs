@@ -1159,7 +1159,7 @@ Egyes webhelyek például válaszolhatnak rá úgy, hogy olyan hirdetéseket jel
 <translation id="7539985410310934287">Kódszavak hozzáadása</translation>
 <translation id="326454632686131209">Eszköz szinkronizálása</translation>
 <translation id="8985635554450124959">A szinkronizálást nem lehetett beállítani</translation>
-<translation id="230829157901335313">Lehet, hogy rossz a rendszeridő vagy az időzóna beállítás készülékeden. Kérünk, állítsd be a helyes időt és időzónát.</translation>
+<translation id="230829157901335313">Lehet, hogy számítógéped órája rosszul van beállítva, vagy más időzónát mutat. Ellenőrizd az óra beállításait.</translation>
 <translation id="6244065453125065109">Követések
 blokkolva</translation>
 <translation id="2547939855139473800">Reklámok
@@ -1340,7 +1340,7 @@ tartalomkészítők támogatására.</translation>
 <translation id="7722441371828049691">Támogasd a kedvelt oldalakat.</translation>
 <translation id="5234764350956374838">Elvetés</translation>
 <translation id="4472575034687746823">Első lépések</translation>
-<translation id="4162066325465825185">Sajnáljuk, úgy tűnik, a Brave Jutalmak nem érhetők el készülékedről.</translation>
+<translation id="4162066325465825185">Sajnáljuk, úgy tűnik a Brave Jutalmak nem elérhető készülékedről.</translation>
 <translation id="4150201353443180367">Megjelenítés</translation>
 <translation id="2804710924397009224">Brave Jutalmak ikon elrejtése</translation>
 <translation id="7358991116457217836">Elrejti a Brave Jutalmak ikont, ha a Brave Jutalmak nincs engedélyezve.</translation>
@@ -1349,4 +1349,6 @@ tartalomkészítők támogatására.</translation>
 <translation id="8782039523249932839">Ezzel törlődik Brave tárcád és alaphelyzetbe áll minden Brave Jutalmak adatod.</translation>
 <translation id="5321518976657560663">Újraállítási hiba</translation>
 <translation id="7071576788062714665">Hiba történt a Brave Jutalmak újraállítása során. Kérünk, indítsd újra a Brave-et, majd próbáld újra.</translation>
+<translation id="24067401253841795">Írd be az alább látható szinkronlánc-kulcsszavakat. Kezeld ezt a kódot jelszóként. Ha valaki megszerzi, elolvashatja és módosíthatja a szinkronizált adataidat.</translation>
+<translation id="3149880132460839085">Brave szinkronizálás</translation>
 </translationbundle>

@@ -1159,7 +1159,7 @@
 <translation id="7539985410310934287">נא להזין מילות קוד</translation>
 <translation id="326454632686131209">לסנכרן מכשיר</translation>
 <translation id="8985635554450124959">לא ניתן להגדיר את הסנכרון</translation>
-<translation id="230829157901335313">ייתכן שבמכשיר שלך מוגדרים זמן מערכת או אזור זמן שגויים. אנא, הגדר/י את זמן המערכת ואזור הזמן הנכונים</translation>
+<translation id="230829157901335313">ייתכן ששעון המחשב שלך מוגדר לשעה שגויה או לאזור זמן שגוי. נא לבדוק את הגדרות השעון</translation>
 <translation id="6244065453125065109">כלי מעקב
 שנחסמו</translation>
 <translation id="2547939855139473800">פרסומות
@@ -1340,7 +1340,7 @@ HTTPS</translation>
 <translation id="7722441371828049691">תמכו באתרים שאתם אוהבים.</translation>
 <translation id="5234764350956374838">התעלם/י</translation>
 <translation id="4472575034687746823">מתחילים</translation>
-<translation id="4162066325465825185">אנו מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</translation>
+<translation id="4162066325465825185">אנו  מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</translation>
 <translation id="4150201353443180367">תצוגה</translation>
 <translation id="2804710924397009224">מסתיר את אייקון Brave Rewards</translation>
 <translation id="7358991116457217836">מסתיר את אייקון Brave Rewards כש-Brave Rewards אינו זמין</translation>
@@ -1349,4 +1349,6 @@ HTTPS</translation>
 <translation id="8782039523249932839">זה ימחק את ארנק Brave שלך ויאפס את כל הנתונים של Brave Rewards שלך</translation>
 <translation id="5321518976657560663">איפוס שגיאה</translation>
 <translation id="7071576788062714665">אירעה שגיאה באיפוס Brave Rewards. נא להפעיל מחדש את Brave ולנסות שוב</translation>
+<translation id="24067401253841795">נא להזין את מילות הקוד לשרשרת סנכרון להלן. יש להתייחס לקוד זה כסיסמה. אם היא תגיע לידיו של מישהו, הוא יוכל לקרוא ולשנות את הנתונים המסונכרנים שלך.</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

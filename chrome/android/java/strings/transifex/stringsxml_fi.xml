@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Anna koodisanat</string>
     <string name="sync_device">Synkronoi laite</string>
     <string name="sync_device_failure">Synkronoinnin määritys ei onnistunut</string>
-    <string name="sync_requires_correct_time">Järjestelmän aika tai aikavyöhyke saattaa olla väärä laitteessasi. Aseta järjestelmään oikea aika ja aikavyöhyke</string>
+    <string name="sync_requires_correct_time">Tietokoneesi kello on saatettu asettaa väärään aikaan tai väärälle aikavyöhykkeelle. Tarkista kellosi asetukset</string>
 
     <string name="brave_stats_text_trackers">Seuraimet
 Estetty</string>
@@ -241,7 +241,7 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="brave_rewards_dismiss">Hylkää</string>
     <string name="brave_rewards_get_started">Aloita</string>
 
-    <string name="brave_rewards_not_available">Vaikuttaa valitettavasti siltä, että Brave Rewards ei ole käytettävissä laitteellasi</string>
+    <string name="brave_rewards_not_available">Valitettavasti Brave Rewardsit eivät nähtävästi ole käytettävissä laitteellasi</string>
 
     <string name="prefs_section_display">Näytä</string>
     <string name="prefs_appearance">Ulkoasu</string>
@@ -254,4 +254,9 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="reset_brave_rewards_option_description">Tämä toiminto poistaa Brave-lompakkosi ja nollaa kaikki Brave Rewards -tietosi</string>
     <string name="reset_brave_rewards_error_title">Virhe nollattaessa</string>
     <string name="reset_brave_rewards_error_description">Brave Rewards -järjestelmää nollattaessa ilmeni virhe. Käynnistä Brave uudelleen ja yritä uudestaan</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Syötä alla olevat synkronointiketjun koodisanat. Käsittele tätä koodia salasanan tavoin. Koodin haltuunsa saaneen on mahdollista lukea ja muokata synkronoituja tietojasi.</string>
+
+    <string name="brave_sync_official">Brave-synkronointi</string>
+    <string name="prefs_sync_official">Synkronoi</string>
 </resources>

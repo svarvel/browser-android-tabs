@@ -38,8 +38,6 @@
     <string name="enter_code_words_sync">Въведете кодовите думи</string>
     <string name="sync_device">Синхронизиране на устройство</string>
     <string name="sync_device_failure">Синхронизирането не може да се настрои</string>
-    <string name="sync_requires_correct_time">Може да сте настроили неправилно часа или часовата зона на Вашето устройство. Моля, настройте правилно часа и часова зона</string>
-
     <string name="brave_stats_text_trackers">Проследяването
 Блокирано</string>
     <string name="brave_stats_text_ads">Реклами
@@ -245,8 +243,6 @@
     <string name="brave_rewards_dismiss">Отхвърляне</string>
     <string name="brave_rewards_get_started">Начало</string>
 
-    <string name="brave_rewards_not_available">Съжаляваме, но изглежда, че система Brave Rewards не e налична на устройството Ви</string>
-
     <string name="prefs_section_display">Показване</string>
     <string name="prefs_appearance">Облик</string>
     <string name="hide_brave_rewards_icon_title">Скриване на иконата на Brave Rewards</string>
@@ -258,4 +254,5 @@
     <string name="reset_brave_rewards_option_description">Това ще изтрие вашия Brave портфейл и ще нулира всичките Ви данни за Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Възстановяване на грешка</string>
     <string name="reset_brave_rewards_error_description">При възстановяването на Brave Rewards възникна грешка. Моля, рестартирайте Brave и опитайте отново</string>
-</resources>
+
+    </resources>

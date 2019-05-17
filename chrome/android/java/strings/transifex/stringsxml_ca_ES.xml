@@ -36,8 +36,6 @@
     <string name="enter_code_words_sync">Introduïu les paraules del codi</string>
     <string name="sync_device">Sincronitza el dispositiu</string>
     <string name="sync_device_failure">No s'ha pogut configurar la sincronització</string>
-    <string name="sync_requires_correct_time">Pot ser que el sistema del teu dispositiu tingui mal configurada l\'hora o la zona horària. Configura l\'hora i la zona horària correctament</string>
-
     <string name="brave_stats_text_trackers">Seguiments
 blocats</string>
     <string name="brave_stats_text_ads">Anuncis
@@ -239,8 +237,6 @@ als creadors de contingut que t\'agraden.</string>
     <string name="brave_rewards_dismiss">Descartar</string>
     <string name="brave_rewards_get_started">Iniciar</string>
 
-    <string name="brave_rewards_not_available">Ens sap greu, sembla que Brave Rewards no està disponible al teu dispositiu</string>
-
     <string name="prefs_section_display">Visualitzar</string>
     <string name="prefs_appearance">Aparença</string>
     <string name="hide_brave_rewards_icon_title">Ocultar Brave Rewards</string>
@@ -252,4 +248,5 @@ als creadors de contingut que t\'agraden.</string>
     <string name="reset_brave_rewards_option_description">Això eliminarà la cartera Brave Rewards i inicialitzarà totes les teves dades de Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Error d\'inicialització</string>
     <string name="reset_brave_rewards_error_description">S\'ha produït un error en inicialitzar Brave Rewards. Reinicia Brave i torna-ho a provar</string>
-</resources>
+
+    </resources>

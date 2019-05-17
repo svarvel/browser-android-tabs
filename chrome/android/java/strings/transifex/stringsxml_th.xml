@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">ป้อนคำรหัส</string>
     <string name="sync_device">ซิงค์อุปกรณ์</string>
     <string name="sync_device_failure">ไม่สามารถตั้งค่าการซิงค์ได้</string>
-    <string name="sync_requires_correct_time">คุณอาจตั้งเวลาระบบหรือโซนเวลาในอุปกรณ์ผิดพลาด โปรดตั้งเวลาและโซนเวลาให้ถูกต้อง</string>
+    <string name="sync_requires_correct_time">นาฬิกาบนคอมพิวเตอร์ของคุณอาจตั้งเวลาไว้ไม่ถูกต้องหรือตั้งเขตเวลาไว้ไม่ถูกต้อง โปรดตรวจสอบการตั้งค่านาฬิกาของคุณ</string>
 
     <string name="brave_stats_text_trackers">บล็อก
 ตัวติดตามแล้ว</string>
@@ -241,7 +241,7 @@ EST แล้ว</string>
     <string name="brave_rewards_dismiss">เพิกเฉย</string>
     <string name="brave_rewards_get_started">เริ่มต้นใช้งาน</string>
 
-    <string name="brave_rewards_not_available">ขออภัย ดูเหมือนว่า Brave Rewards จะไม่พร้อมให้บริการในอุปกรณ์ของคุณ</string>
+    <string name="brave_rewards_not_available">ขออภัย ดูเหมือนว่า Brave Rewards จะไม่สามารถใช้งานบนอุปกรณ์ของคุณได้</string>
 
     <string name="prefs_section_display">แสดง</string>
     <string name="prefs_appearance">ลักษณะ</string>
@@ -254,4 +254,9 @@ EST แล้ว</string>
     <string name="reset_brave_rewards_option_description">คำสั่งนี้จะลบกระเป๋าเงิน Brave ของคุณและรีเซ็ตข้อมูล Brave Rewards ของคุณทั้งหมด</string>
     <string name="reset_brave_rewards_error_title">ข้อผิดพลาดในการรีเซ็ต</string>
     <string name="reset_brave_rewards_error_description">เกิดข้อผิดพลาดขณะรีเซ็ต Brave Rewards กรุณาปิดแล้วเปิด Brave ใหม่และลองอีกครั้ง</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">กรอกโค้ดคำซิงก์เชนที่แสดงด้านล่าง โปรดดูแลโค้ดนี้เสมือนเป็นรหัสผ่าน หากมีผู้ใดยึดครองโค้ดนี้ พวกเขาจะสามารถอ่านและแก้ไขข้อมูลที่คุณซิงก์ได้</string>
+
+    <string name="brave_sync_official">ซิงก์ Brave</string>
+    <string name="prefs_sync_official">ซิงก์</string>
 </resources>

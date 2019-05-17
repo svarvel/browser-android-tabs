@@ -1159,7 +1159,7 @@ Nogle websites kan f.eks. reagere på denne anmodning ved at vise dig annoncer, 
 <translation id="7539985410310934287">Indtast kodeord</translation>
 <translation id="326454632686131209">Synkroniser enhed</translation>
 <translation id="8985635554450124959">Synkronisering kunne ikke opsættes</translation>
-<translation id="230829157901335313">Du har måske en forkert systemtids- eller tidszoneindstilling på din enhed. Indstil venligst korrekt tid og tidszone</translation>
+<translation id="230829157901335313">Din computers ur kan være indstillet til det forkerte klokkeslæt eller den forkerte tidszone. Tjek dine ur-indstillinger</translation>
 <translation id="6244065453125065109">Sporere er
 blokeret</translation>
 <translation id="2547939855139473800">Reklamer er
@@ -1341,7 +1341,7 @@ de indholdsskabere, du elsker.</translation>
 <translation id="7722441371828049691">Støt de sider, du holder af</translation>
 <translation id="5234764350956374838">Afvis</translation>
 <translation id="4472575034687746823">Kom i gang</translation>
-<translation id="4162066325465825185">Det ser desværre ud til, at Brave Belønninger ikke er tilgængeligt på din enhed</translation>
+<translation id="4162066325465825185">Vi beklager at det ser ud til at Brave Rewards ikke er tilgængelig på din enhed</translation>
 <translation id="4150201353443180367">Visning</translation>
 <translation id="2804710924397009224">Skjul Ikonet for Brave Belønninger</translation>
 <translation id="7358991116457217836">Skjuler Ikonet for Brave Belønninger, når Brave Belønninger ikke er aktiveret</translation>
@@ -1350,4 +1350,6 @@ de indholdsskabere, du elsker.</translation>
 <translation id="8782039523249932839">Dette vil slette din Brave-pengepung og nulstille alle dine data om Brave Belønninger</translation>
 <translation id="5321518976657560663">Nulstil Fejl</translation>
 <translation id="7071576788062714665">Der opstod fejl ved nulstilling af Brave Belønninger. Du bedes genstarte Brave og prøve igen</translation>
+<translation id="24067401253841795">Indtast sync chain-kodeordene som er vist nedenfor. Betragt denne kode som en adgangskode. Hvis nogen får fat i den, kan de læse og ændre dine synkroniserede data.</translation>
+<translation id="3149880132460839085">Brave-synkronisering</translation>
 </translationbundle>

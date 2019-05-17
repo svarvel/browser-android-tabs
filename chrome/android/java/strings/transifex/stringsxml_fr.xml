@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Saisir un code</string>
     <string name="sync_device">Synchronisation de l'appareil</string>
     <string name="sync_device_failure">Échec de la configuration de la synchronisation</string>
-    <string name="sync_requires_correct_time">Il se peut que l\'heure du système ou la configuration du fuseau horaire sur votre appareil soit erronée. Veuillez configurer correctement l\'heure et le fuseau horaire.</string>
+    <string name="sync_requires_correct_time">L\'horloge de votre ordinateur n\'est peut-être pas à l\'heure correcte ou dans le bon fuseau horaire. Vérifiez les paramètres de votre horloge</string>
 
     <string name="brave_stats_text_trackers">Trackers
 bloqués</string>
@@ -149,8 +149,7 @@ Vous pouvez changer de navigateur par défaut dans les paramètres de votre appl
 
     <string name="brave_ui_welcome_header_two">Préparez-vous à découvrir
 la prochaine évolution d\'Internet.</string>
-    <string name="brave_ui_welcome_desc_two">Vous pouvez maintenant gagner des jetons en
-visionnant des publicités qui respectent la vie privée.</string>
+    <string name="brave_ui_welcome_desc_two">Vous pouvez maintenant gagner des jetons en visionnant des publicités qui respectent la vie privée.</string>
     <string name="brave_ui_welcome_button_text_two">PARTICIPER AU PROGRAMME REWARDS</string>
     <string name="brave_ui_welcome_footer_text_two">EN SAVOIR PLUS</string>
     <string name="brave_ui_rewards_creating_text">Création d\'un portefeuille</string>
@@ -241,7 +240,7 @@ les créateurs de contenu que vous aimez.</string>
     <string name="brave_rewards_dismiss">Annuler</string>
     <string name="brave_rewards_get_started">Commencer</string>
 
-    <string name="brave_rewards_not_available">Nous sommes désolés, il semblerait que Brave Rewards ne soit pas disponible sur votre appareil</string>
+    <string name="brave_rewards_not_available">Nous sommes désolés, il semblerait que Brave Rewards ne soit pas disponible pour votre appareil</string>
 
     <string name="prefs_section_display">Affichage</string>
     <string name="prefs_appearance">Apparence</string>
@@ -254,4 +253,9 @@ les créateurs de contenu que vous aimez.</string>
     <string name="reset_brave_rewards_option_description">Cela supprimera votre portefeuille Brave et réinitialisera toutes vos données Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Erreur de réinitialisation</string>
     <string name="reset_brave_rewards_error_description">Une erreur est survenue lors de la reconfiguration de Brave Rewards. Veuillez relancer Brave puis réessayez.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Saisissez les mots du code de synchronisation affichés ci-dessous. Considérez ce code comme un mot de passe. Une personne possédant ce code peut consulter et modifier vos données synchronisées.</string>
+
+    <string name="brave_sync_official">Synchronisation Brave</string>
+    <string name="prefs_sync_official">Synchronisation</string>
 </resources>

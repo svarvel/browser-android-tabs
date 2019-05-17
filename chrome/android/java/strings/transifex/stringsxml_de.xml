@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Skripte blocken</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave-Schutzschilde aktivieren/deaktivieren</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave Rewards verwalten</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Drittanbieter-Cookies blocken</string>
 
     <string name="httpse_summary">Falls möglich werden unterstützte Websites via HTTPS anstatt via HTTP geladen</string>
@@ -37,7 +38,7 @@
     <string name="enter_code_words_sync">Codewörter eingeben</string>
     <string name="sync_device">Gerät synchronisieren</string>
     <string name="sync_device_failure">Synchronisierung konnte nicht eingerichtet werden</string>
-    <string name="sync_requires_correct_time">Vielleicht haben Sie auf Ihrem Gerät eine falsche Systemzeit oder Zeitzone eingestellt. Bitte stellen Sie Zeit und Zeitzone korrekt ein</string>
+    <string name="sync_requires_correct_time">Die Uhr Ihres Computers zeigt evtl. die falsche Zeit an oder ist auf die falsche Zeitzone eingestellt. Überprüfen Sie Ihre Einstellungen für die Uhr.</string>
 
     <string name="brave_stats_text_trackers">Tracker
 geblockt</string>
@@ -242,7 +243,7 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
     <string name="brave_rewards_dismiss">Verwerfen</string>
     <string name="brave_rewards_get_started">Anfangen</string>
 
-    <string name="brave_rewards_not_available">Leider scheint Brave Rewards auf Ihrem Gerät nicht verfügbar zu sein</string>
+    <string name="brave_rewards_not_available">Tut uns leid: Anscheinend ist Brave Rewards auf Ihrem Gerät nicht verfügbar.</string>
 
     <string name="prefs_section_display">Anzeige</string>
     <string name="prefs_appearance">Aussehen</string>
@@ -255,4 +256,9 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
     <string name="reset_brave_rewards_option_description">Dadurch wird Ihre Brave-Wallet gelöscht und all Ihre Brave-Rewards-Daten zurückgesetzt</string>
     <string name="reset_brave_rewards_error_title">Fehler beim Zurücksetzen</string>
     <string name="reset_brave_rewards_error_description">Es ist ein Fehler beim Zurücksetzen von Brave Rewards aufgetreten. Bitte starten Sie Brave neu und versuchen es noch einmal</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Geben Sie die Codeworte der Synchronisationskette ein, die unten gezeigt werden. Behandeln Sie diesen Code wie ein Passwort: Jemand, der in seinen Besitz kommt, kann Ihre synchronisierten Daten lesen und verändern.</string>
+
+    <string name="brave_sync_official">Brave</string>
+    <string name="prefs_sync_official">Synchronisieren</string>
 </resources>

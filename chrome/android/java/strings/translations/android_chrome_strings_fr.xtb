@@ -1159,7 +1159,7 @@ Par exemple, certains sites Web peuvent répondre à cette demande en diffusant 
 <translation id="7539985410310934287">Saisir un code</translation>
 <translation id="326454632686131209">Synchronisation de l'appareil</translation>
 <translation id="8985635554450124959">Échec de la configuration de la synchronisation</translation>
-<translation id="230829157901335313">Il se peut que l'heure du système ou la configuration du fuseau horaire sur votre appareil soit erronée. Veuillez configurer correctement l'heure et le fuseau horaire.</translation>
+<translation id="230829157901335313">L'horloge de votre ordinateur n'est peut-être pas à l'heure correcte ou dans le bon fuseau horaire. Vérifiez les paramètres de votre horloge</translation>
 <translation id="6244065453125065109">Trackers
 bloqués</translation>
 <translation id="2547939855139473800">Publicités
@@ -1250,8 +1250,7 @@ Vous pouvez changer de navigateur par défaut dans les paramètres de votre appl
 Économisez votre batterie, et chargez plus rapidement les pages web</translation>
 <translation id="1916285746997567466">Préparez-vous à découvrir
 la prochaine évolution d'Internet.</translation>
-<translation id="1071131306814166204">Vous pouvez maintenant gagner des jetons en
-visionnant des publicités qui respectent la vie privée.</translation>
+<translation id="1071131306814166204">Vous pouvez maintenant gagner des jetons en visionnant des publicités qui respectent la vie privée.</translation>
 <translation id="1327938628925645979">PARTICIPER AU PROGRAMME REWARDS</translation>
 <translation id="5567439033041178034">EN SAVOIR PLUS</translation>
 <translation id="7530570094705720669">Création d'un portefeuille</translation>
@@ -1340,7 +1339,7 @@ les créateurs de contenu que vous aimez.</translation>
 <translation id="7722441371828049691">Soutenez les sites que vous aimez.</translation>
 <translation id="5234764350956374838">Annuler</translation>
 <translation id="4472575034687746823">Commencer</translation>
-<translation id="4162066325465825185">Nous sommes désolés, il semblerait que Brave Rewards ne soit pas disponible sur votre appareil</translation>
+<translation id="4162066325465825185">Nous sommes désolés, il semblerait que Brave Rewards ne soit pas disponible pour votre appareil</translation>
 <translation id="4150201353443180367">Affichage</translation>
 <translation id="2804710924397009224">Masquer l'icône Brave Rewards</translation>
 <translation id="7358991116457217836">Masque l'icône Brave Rewards lorsque Brave Rewards n'est pas activé</translation>
@@ -1349,4 +1348,6 @@ les créateurs de contenu que vous aimez.</translation>
 <translation id="8782039523249932839">Cela supprimera votre portefeuille Brave et réinitialisera toutes vos données Brave Rewards</translation>
 <translation id="5321518976657560663">Erreur de réinitialisation</translation>
 <translation id="7071576788062714665">Une erreur est survenue lors de la reconfiguration de Brave Rewards. Veuillez relancer Brave puis réessayez.</translation>
+<translation id="24067401253841795">Saisissez les mots du code de synchronisation affichés ci-dessous. Considérez ce code comme un mot de passe. Une personne possédant ce code peut consulter et modifier vos données synchronisées.</translation>
+<translation id="3149880132460839085">Synchronisation Brave</translation>
 </translationbundle>

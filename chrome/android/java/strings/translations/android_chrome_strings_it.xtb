@@ -1159,7 +1159,7 @@ Ad esempio, alcuni siti web potrebbero rispondere alla richiesta mostrando annun
 <translation id="7539985410310934287">Inserisci le parole codice</translation>
 <translation id="326454632686131209">Sincronizza dispositivo</translation>
 <translation id="8985635554450124959">Non è stato impossibile configurare la sincronizzazione</translation>
-<translation id="230829157901335313">Potresti avere l'ora di sistema o l'impostazione del fuso orario errata sul tuo dispositivo. Sei pregato di impostare l'ora e il fuso orario corretto</translation>
+<translation id="230829157901335313">L'orologio del computer potrebbe essere impostato sull'ora sbagliata, o sul fuso orario sbagliato. Controlla le impostazioni dell'orologio</translation>
 <translation id="6244065453125065109">Tracker
 bloccati</translation>
 <translation id="2547939855139473800">Pubblicità
@@ -1341,7 +1341,7 @@ delle sovvenzioni.</translation>
 <translation id="7722441371828049691">Supporta i siti che ami.</translation>
 <translation id="5234764350956374838">Scarta</translation>
 <translation id="4472575034687746823">Inizia</translation>
-<translation id="4162066325465825185">Siamo spiacenti ma sembra che le Ricompense di Brave non siano disponibili sul tuo dispositivo</translation>
+<translation id="4162066325465825185">Siamo spiacenti, sembra che Ricompense Brave non sia disponibile sul tuo dispositivo</translation>
 <translation id="4150201353443180367">Mostra</translation>
 <translation id="2804710924397009224">Nascondi l'Icona delle Ricompense di Brave</translation>
 <translation id="7358991116457217836">Nascondi l'Icona delle Ricompense di Brave quando le Ricompense di Brave non sono abilitate</translation>
@@ -1350,4 +1350,6 @@ delle sovvenzioni.</translation>
 <translation id="8782039523249932839">Questo eliminerà il tuo portafoglio di Brave e resetterà tutti i dati delle Ricompense di Brave</translation>
 <translation id="5321518976657560663">Errore durante il Reset</translation>
 <translation id="7071576788062714665">Si è verificato un errore resettando le Ricompense di Brave. Si prega di riavviare Brave e riprovare</translation>
+<translation id="24067401253841795">Inserisci le parole chiave della catena di sincronizzazione indicate qui sotto. Tratta questo codice come una password. Se qualcuno ne entra in possesso, può leggere e modificare i tuoi dati sincronizzati.</translation>
+<translation id="3149880132460839085">Sincronizzazione Brave</translation>
 </translationbundle>

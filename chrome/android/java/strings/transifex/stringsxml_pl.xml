@@ -38,7 +38,7 @@
     <string name="enter_code_words_sync">Wpisz hasła</string>
     <string name="sync_device">Synchronizuj urządzenie</string>
     <string name="sync_device_failure">Nie można skonfigurować synchronizacji</string>
-    <string name="sync_requires_correct_time">Możesz mieć niewłaściwie ustawione czas lub strefę czasową w swoim urządzeniu. Skonfiguruj prawidłowy czas i właściwą strefę czasową.</string>
+    <string name="sync_requires_correct_time">Zegar komputera może być ustawiony na nieprawidłową godzinę lub strefę czasową. Sprawdź ustawienia zegara</string>
 
     <string name="brave_stats_text_trackers">Zablokowane
 oprogramowanie śledzące</string>
@@ -243,7 +243,7 @@ twórcom treści, które lubisz.</string>
     <string name="brave_rewards_dismiss">Pomiń</string>
     <string name="brave_rewards_get_started">Zacznij</string>
 
-    <string name="brave_rewards_not_available">Przykro nam, wygląda na to, że Brave Rewards nie są dostępne w Twoim urządzeniu.</string>
+    <string name="brave_rewards_not_available">Przepraszamy. Wygląda na to, że nagroda Brave nie jest dostępna na Twoim urządzeniu</string>
 
     <string name="prefs_section_display">Wyświetl</string>
     <string name="prefs_appearance">Wygląd</string>
@@ -256,4 +256,9 @@ twórcom treści, które lubisz.</string>
     <string name="reset_brave_rewards_option_description">Spowoduje to usunięcie portfela Brave i zresetowanie wszystkich Twoich danych o Brave Rewards.</string>
     <string name="reset_brave_rewards_error_title">Błąd resetowania</string>
     <string name="reset_brave_rewards_error_description">Podczas resetowania Brave Rewards wystąpił błąd. Uruchom Brave ponownie i spróbuj jeszcze raz.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Wprowadź wyświetloną poniżej treść kodu łańcucha synchronizacji. Traktuj ten kod jako hasło. Jeśli osoba trzecia uzyska dostęp do kodu, będzie mogła czytać i modyfikować zsynchronizowane dane.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Synchronizacja</string>
 </resources>

@@ -1159,7 +1159,7 @@
 <translation id="7539985410310934287">コードの単語を入力</translation>
 <translation id="326454632686131209">Sync 端末</translation>
 <translation id="8985635554450124959">同期をセットアップできませでした</translation>
-<translation id="230829157901335313">デバイスのシステム時刻もしくはタイムゾーンが間違っている可能性があります。正確な時刻やタイムゾーを設定してください</translation>
+<translation id="230829157901335313">お使いのコンピューターの時計が誤った時間または誤ったタイムゾーンに設定されている可能性があります。時計の設定をご確認ください。</translation>
 <translation id="6244065453125065109">トラッカー
 ブロックされました</translation>
 <translation id="2547939855139473800">広告
@@ -1337,7 +1337,7 @@
 <translation id="7722441371828049691">お気に入りのサイトをサポート</translation>
 <translation id="5234764350956374838">解除</translation>
 <translation id="4472575034687746823">始める</translation>
-<translation id="4162066325465825185">申し訳ありませんが、お使いのデバイスではBraveリワードがご利用いただけないようです。</translation>
+<translation id="4162066325465825185">申し訳ありませんが、お使いの端末ではBrave Rewardsをご利用いただけないようです</translation>
 <translation id="4150201353443180367">表示</translation>
 <translation id="2804710924397009224">Braveリワードアイコンを隠す</translation>
 <translation id="7358991116457217836">Braveリワードが有効でない場合にBraveリワードアイコンを隠す</translation>
@@ -1346,4 +1346,6 @@
 <translation id="8782039523249932839">Braveウォレットが削除され、すべてのBraveリワードデータがリセットされます</translation>
 <translation id="5321518976657560663">エラーをリセット</translation>
 <translation id="7071576788062714665">Braveリワードのリセット中にエラーが発生しました。Braveを再開して、再度お試しください。</translation>
+<translation id="24067401253841795">下に表示された同期チェーンコードワードを入力してください。このコードはパスワードのようにお取り扱いください。誰かがそれを入手すると、あなたの同期データを読んだり、変更したりすることができます。</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

@@ -1159,7 +1159,7 @@
 <translation id="7539985410310934287">코드 문자를 입력합니다</translation>
 <translation id="326454632686131209">장치 싱크</translation>
 <translation id="8985635554450124959">싱크를 설정할 수 없습니다</translation>
-<translation id="230829157901335313">기기의 시스템 시간이나 시간대가 잘못 설정되어 있을 수 있습니다. 올바른 시간과 시간대로 설정하십시오.</translation>
+<translation id="230829157901335313">이 컴퓨터의 시간 또는 시간대가 잘못 설정되어 있을 가능성이 있습니다. 시간 설정을 확인해주세요</translation>
 <translation id="6244065453125065109">추적기
 차단됨</translation>
 <translation id="2547939855139473800">광고
@@ -1340,7 +1340,7 @@
 <translation id="7722441371828049691">좋아하는 사이트를 지원해 주세요.</translation>
 <translation id="5234764350956374838">무시하기</translation>
 <translation id="4472575034687746823">시작하기</translation>
-<translation id="4162066325465825185">죄송합니다만, 이 기기에서는 Brave 리워드를 이용하실 수 없습니다</translation>
+<translation id="4162066325465825185">죄송하지만 Brave Rewards를 이 장치에서 사용할 수 없는 것으로 보입니다</translation>
 <translation id="4150201353443180367">표시하기</translation>
 <translation id="2804710924397009224">Brave 리워드 아이콘 숨기기</translation>
 <translation id="7358991116457217836">Brave 리워드 비활성화 시에 Brave 리워드 아이콘 숨기기</translation>
@@ -1349,4 +1349,6 @@
 <translation id="8782039523249932839">이것으로 귀하의 Brave 월렛이 삭제되고 모든 Brave 리워드 데이터가 초기화됩니다</translation>
 <translation id="5321518976657560663">오류 초기화</translation>
 <translation id="7071576788062714665">Brave 리워드 재설정 중에 오류가 발생했습니다. Brave를 재시작하고 다시 시도해 주세요.</translation>
+<translation id="24067401253841795">동기화 체인 코드 단어를 아래에 입력해주세요. 이 코드를 비밀번호처럼 취급해 주세요. 다른 사람이 이 코드를 알게 되면 귀하의 동기화된 데이터를 읽고 변경할 수 있습니다.</translation>
+<translation id="3149880132460839085">Brave 동기화</translation>
 </translationbundle>

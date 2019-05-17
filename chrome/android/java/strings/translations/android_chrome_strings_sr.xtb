@@ -735,7 +735,7 @@ Google налог можда има друге облике историје п�
 <translation id="7988136689212463100">Brave тражи дозволу да приступи камери и микрофону за овај сајт.</translation>
 <translation id="6395288395575013217">ЛИНК</translation>
 <translation id="6404511346730675251">Измена обележивача</translation>
-<translation id="6406506848690869874">Синхронизација</translation>
+<translation id="6406506848690869874">Sinhronizacija</translation>
 <translation id="641643625718530986">Штампај...</translation>
 <translation id="6416782512398055893">Преузели сте <ph name="MBS" /> MB</translation>
 <translation id="6433501201775827830">Изаберите претраживач</translation>
@@ -1159,7 +1159,7 @@ Google налог можда има друге облике историје п�
 <translation id="7539985410310934287">Unesite reči koda</translation>
 <translation id="326454632686131209">Sinhronizacija uređaja</translation>
 <translation id="8985635554450124959">Sinhronizacija se ne može instalirati</translation>
-<translation id="230829157901335313">Možda imate pogrešno podešeno sistemsko vreme ili vremensku zonu na svom uređaju. Podesite tačno vreme i vremensku zonu</translation>
+<translation id="230829157901335313">Sat na vašem računaru je možda podešen na pogrešno vreme ili na pogrešnu vremensku zonu. Proverite podešavanja sata.</translation>
 <translation id="6244065453125065109">Trekeri
 blokirani</translation>
 <translation id="2547939855139473800">Reklame
@@ -1340,7 +1340,7 @@ kreatore sadržaja koji vam se sviđaju.</translation>
 <translation id="7722441371828049691">Podržite lokacije koje volite.</translation>
 <translation id="5234764350956374838">Odbaci</translation>
 <translation id="4472575034687746823">Prvi koraci</translation>
-<translation id="4162066325465825185">Žao nam je, čini se da Brave Rewards nije dostupan na vašem uređaju</translation>
+<translation id="4162066325465825185">Nažalost, izgleda da Brave Rewards nije dostupan na vašem uređaju.</translation>
 <translation id="4150201353443180367">Prikaz</translation>
 <translation id="2804710924397009224">Sakrijte Brave Rewards ikonicu</translation>
 <translation id="7358991116457217836">Sakrijte Brave Rewards ikonicu kada Brave Rewards nije omogućena</translation>
@@ -1349,4 +1349,6 @@ kreatore sadržaja koji vam se sviđaju.</translation>
 <translation id="8782039523249932839">Obrišite svoj Brave novčanik i ponovo postavite sve svoje Brave Rewards podatke</translation>
 <translation id="5321518976657560663">Greška pri ponovnom postavljanju</translation>
 <translation id="7071576788062714665">Došlo je do greške prilikom postavljanja Brave Rewards na početne vrednosti. Ponovo pokrenite Brave i pokušajte opet</translation>
+<translation id="24067401253841795">Unesite dole prikazane kôdne reči za sinhronizaciju. Postupajte sa ovim kôdom kao sa lozinkom. Ako neko dođe do ovog podatka, može da čita i menja vaše sinhronizovane podatke.</translation>
+<translation id="3149880132460839085">Sinhronizacija Brave-a</translation>
 </translationbundle>

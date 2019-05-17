@@ -1160,7 +1160,7 @@
 <translation id="7539985410310934287">輸入代碼</translation>
 <translation id="326454632686131209">同步裝置</translation>
 <translation id="8985635554450124959">無法建立同步</translation>
-<translation id="230829157901335313">你的裝置可能設定了錯誤的系統時間或時區。請設定成正確的時間和時區</translation>
+<translation id="230829157901335313">您的電腦時鐘可能時間設定不正確，或是被設定成不正確時區。請檢查您的時間設定</translation>
 <translation id="6244065453125065109">追蹤器
 已阻擋</translation>
 <translation id="2547939855139473800">廣告
@@ -1341,7 +1341,7 @@
 <translation id="7722441371828049691">支持你喜愛的網站。</translation>
 <translation id="5234764350956374838">解散</translation>
 <translation id="4472575034687746823">開始</translation>
-<translation id="4162066325465825185">我們很抱歉，看來 Brave 獎勵還未在你的裝置上開放</translation>
+<translation id="4162066325465825185">我們很抱歉，看似您的裝置上沒有 Brave Rewards 可用</translation>
 <translation id="4150201353443180367">顯示</translation>
 <translation id="2804710924397009224">隱藏 Brave 獎勵圖標</translation>
 <translation id="7358991116457217836">當 Brave 獎勵未啟用時隱藏 Brave 獎勵圖示</translation>
@@ -1350,4 +1350,6 @@
 <translation id="8782039523249932839">這將會刪除你的 Brave 錢包並重新設定你所有的 Brave 獎勵之數據</translation>
 <translation id="5321518976657560663">重新設定發生錯誤</translation>
 <translation id="7071576788062714665">重新設定 Brave 獎勵時發生錯誤。請重新啟動 Brave 並再次嘗試</translation>
+<translation id="24067401253841795">輸入下方顯示的同步鏈代碼字。將這代碼視同密碼。如果有人取得這代碼，他們便能讀取和修改您同步過的資料。</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

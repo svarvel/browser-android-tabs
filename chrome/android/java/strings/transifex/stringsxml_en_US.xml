@@ -38,7 +38,7 @@
     <string name="enter_code_words_sync">Enter code words</string>
     <string name="sync_device">Sync device</string>
     <string name="sync_device_failure">Sync could not be setup</string>
-    <string name="sync_requires_correct_time">You might be having wrong system time or timezone setup on your device. Please setup the correct time and timezone</string>
+    <string name="sync_requires_correct_time">Your computer's clock may be set to the wrong time, or to the wrong time-zone. Check your clock settings</string>
 
     <string name="brave_stats_text_trackers">Trackers
 Blocked</string>
@@ -257,4 +257,9 @@ content creators you love.</string>
     <string name="reset_brave_rewards_option_description">This will delete your Brave wallet and reset all of your Brave Rewards data</string>
     <string name="reset_brave_rewards_error_title">Reset Error</string>
     <string name="reset_brave_rewards_error_description">There was an error resetting Brave Rewards. Please relaunch Brave and try again</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Sync</string>
 </resources>

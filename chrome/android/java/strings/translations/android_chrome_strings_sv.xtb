@@ -1159,7 +1159,7 @@ Vissa webbplatser kan till exempel svara på begäran genom att visa annonser so
 <translation id="7539985410310934287">Ange kodord</translation>
 <translation id="326454632686131209">Sync-enhet</translation>
 <translation id="8985635554450124959">Sync kunde inte ställas in</translation>
-<translation id="230829157901335313">Du kan ha fel systemtid eller tidszon inställd på din enhet. Vänligen ställ in korrekt tid och tidszon</translation>
+<translation id="230829157901335313">Klockan på din dator kan vara inställd på fel tid, eller fel tidszon. Kolla inställningarna. </translation>
 <translation id="6244065453125065109">Blockerade
 spårare</translation>
 <translation id="2547939855139473800">Blockerad
@@ -1340,7 +1340,7 @@ för att visa ditt stöd för skapare du gillar.</translation>
 <translation id="7722441371828049691">Stöd webbplatserna du älskar</translation>
 <translation id="5234764350956374838">Avvisa</translation>
 <translation id="4472575034687746823">Kom igång</translation>
-<translation id="4162066325465825185">Vi är ledsna, men Brave Rewards verkar inte finnas tillgänglig för din enhet</translation>
+<translation id="4162066325465825185">Tyvärr verkar Brave Rewards inte vara tillgängligt på din enhet.</translation>
 <translation id="4150201353443180367">Visa</translation>
 <translation id="2804710924397009224">Göm ikonen Brave Rewards</translation>
 <translation id="7358991116457217836">Gömmer ikonen Brave Rewards när Brave Rewards inte är aktiverad</translation>
@@ -1349,4 +1349,6 @@ för att visa ditt stöd för skapare du gillar.</translation>
 <translation id="8782039523249932839">Detta kommer att ta bort din Brave-plånbok och återställa all information kopplad till Brave Rewards</translation>
 <translation id="5321518976657560663">Återställ fel</translation>
 <translation id="7071576788062714665">Ett fel uppstod när Brave Reward återställdes. Starta om Brave och försök igen</translation>
+<translation id="24067401253841795">Skriv in synkroniseringskoden nedan. Hantera koden som ett lösenord. Kommer någon över det kan vederbörande läsa och modifiera dina synkade data. </translation>
+<translation id="3149880132460839085">Brave-synkronisering</translation>
 </translationbundle>

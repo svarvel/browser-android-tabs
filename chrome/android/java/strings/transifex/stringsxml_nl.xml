@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">Voer codewoorden in</string>
     <string name="sync_device">Synchroniseer apparaat</string>
     <string name="sync_device_failure">Synchronisatie kon niet worden gestart</string>
-    <string name="sync_requires_correct_time">Het kan zijn dat op uw apparaat een onjuiste systeemtijd of tijdszone is ingesteld. Stel de juiste tijd en tijdszone in.</string>
+    <string name="sync_requires_correct_time">Mogelijk is de klok van uw computer ingesteld op de verkeerde tijd of tijdzone. Controleer uw klokinstellingen</string>
 
     <string name="brave_stats_text_trackers">Trackers
 geblokkeerd</string>
@@ -242,7 +242,7 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
     <string name="brave_rewards_dismiss">Annuleren</string>
     <string name="brave_rewards_get_started">Aan de slag.</string>
 
-    <string name="brave_rewards_not_available">Het spijt ons maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</string>
+    <string name="brave_rewards_not_available">Het spijt ons, maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</string>
 
     <string name="prefs_section_display">Scherm</string>
     <string name="prefs_appearance">Uiterlijk</string>
@@ -255,4 +255,9 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
     <string name="reset_brave_rewards_option_description">Dit zal uw Brave-portefeuille verwijderen en al uw Brave Reward-gegevens resetten</string>
     <string name="reset_brave_rewards_error_title">Fout resetten</string>
     <string name="reset_brave_rewards_error_description">Er is een fout opgetreden bij het resetten van Brave Rewards. Herstart Brave opnieuw en probeer het opnieuw.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Voer onderstaande codewoorden ter synchronisatie in. Behandel deze code als een wachtwoord. Als iemand deze in handen krijgt, kan deze persoon uw gesynchroniseerde data lezen en bewerken.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Synchroniseren</string>
 </resources>

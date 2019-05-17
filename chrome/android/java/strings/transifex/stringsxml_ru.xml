@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">Ввод кодовых слов</string>
     <string name="sync_device">Синхронизация устройства</string>
     <string name="sync_device_failure">Не удалось настроить синхронизацию</string>
-    <string name="sync_requires_correct_time">Вероятно на вашем устройстве неверно установлено системное время или часовой пояс. Установите правильно время и часовой пояс</string>
+    <string name="sync_requires_correct_time">В часах вашего компьютера может быть установлено неправильное время или неправильный часовой пояс. Проверьте настройки часов</string>
 
     <string name="brave_stats_text_trackers">Трекеров
 заблокировано</string>
@@ -243,7 +243,7 @@
     <string name="brave_rewards_dismiss">Закрыть</string>
     <string name="brave_rewards_get_started">Начать</string>
 
-    <string name="brave_rewards_not_available">Мы сожалеем, похоже, что Brave Rewards недоступно на вашем устройстве</string>
+    <string name="brave_rewards_not_available">К сожалению, похоже, что награды Brave недоступны на вашем устройстве</string>
 
     <string name="prefs_section_display">Отобразить</string>
     <string name="prefs_appearance">Внешний вид</string>
@@ -256,4 +256,9 @@
     <string name="reset_brave_rewards_option_description">Это действие удалит ваш кошелек Brave и сбросит все ваши данные Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Ошибка сброса</string>
     <string name="reset_brave_rewards_error_description">Произошла ошибка сброса Brave Rewards. Перезапустите Brave и повторите попытку</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Введите кодовые слова цепочки синхронизации, показанные ниже. Рассматривайте этот код как пароль. Если кто-то получит его, они сможет просматривать и изменять ваши синхронизированные данные.</string>
+
+    <string name="brave_sync_official">Синхронизация Brave</string>
+    <string name="prefs_sync_official">Синхронизировать</string>
 </resources>

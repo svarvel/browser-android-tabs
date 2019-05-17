@@ -1159,7 +1159,7 @@ Noen nettsteder kan for eksempel svare på denne forespørselen ved å vise deg 
 <translation id="7539985410310934287">Skriv inn kode ord</translation>
 <translation id="326454632686131209">Synk enhet</translation>
 <translation id="8985635554450124959">Synk kunne ikke settes opp</translation>
-<translation id="230829157901335313">Du har kanskje feil oppsett av systemtid eller tidssone på enheten din. Sett opp riktig tidspunkt og tidssone</translation>
+<translation id="230829157901335313">Datamaskinklokken din kan være satt feil, eller </translation>
 <translation id="6244065453125065109">Sporing
 blokkert</translation>
 <translation id="2547939855139473800">Annonser
@@ -1340,7 +1340,7 @@ til å støtte innholdsskapere du liker.</translation>
 <translation id="7722441371828049691">Støtt nettstedene du liker.</translation>
 <translation id="5234764350956374838">Lukk</translation>
 <translation id="4472575034687746823">Kom i gang</translation>
-<translation id="4162066325465825185">Vi beklager – det ser ut til at Brave Rewards ikke er tilgjengelig på enheten din</translation>
+<translation id="4162066325465825185">Vi beklager, men det virker som Brave Rewards ikke er tilgjengelig på enheten din</translation>
 <translation id="4150201353443180367">Vis</translation>
 <translation id="2804710924397009224">Skjul Brave Rewards-ikonet</translation>
 <translation id="7358991116457217836">Skjuler Brave Rewards-ikonet når Brave Rewards ikke er aktivert</translation>
@@ -1349,4 +1349,6 @@ til å støtte innholdsskapere du liker.</translation>
 <translation id="8782039523249932839">Dette medfører at Brave-lommeboken din slettes og alle Brave Rewards-dataene dine tilbakestilles</translation>
 <translation id="5321518976657560663">Feil ved tilbakestilling</translation>
 <translation id="7071576788062714665">En feil oppsto under tilbakestilling av Brave Rewards. Start Brave på nytt og prøv igjen</translation>
+<translation id="24067401253841795">Legg inn synkroniseringskjedens kodeord som vist nedenfor. Beskytt koden som et passord. Hvis noen får tak i det </translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

@@ -735,7 +735,7 @@ Jotkin verkkosivustot voivat vastata tähän pyyntöön esimerkiksi näyttämäl
 <translation id="7988136689212463100">Brave tarvitsee oikeuden käyttää kameraasi ja mikrofoniasi tällä sivustolla.</translation>
 <translation id="6395288395575013217">LINKITÄ</translation>
 <translation id="6404511346730675251">Muokkaa kirjanmerkkiä</translation>
-<translation id="6406506848690869874">Synkronointi</translation>
+<translation id="6406506848690869874">Synkronoi</translation>
 <translation id="641643625718530986">Tulosta…</translation>
 <translation id="6416782512398055893">Ladattu: <ph name="MBS" /> Mt</translation>
 <translation id="6433501201775827830">Valitse hakukone</translation>
@@ -1159,7 +1159,7 @@ Jotkin verkkosivustot voivat vastata tähän pyyntöön esimerkiksi näyttämäl
 <translation id="7539985410310934287">Anna koodisanat</translation>
 <translation id="326454632686131209">Synkronoi laite</translation>
 <translation id="8985635554450124959">Synkronoinnin määritys ei onnistunut</translation>
-<translation id="230829157901335313">Järjestelmän aika tai aikavyöhyke saattaa olla väärä laitteessasi. Aseta järjestelmään oikea aika ja aikavyöhyke</translation>
+<translation id="230829157901335313">Tietokoneesi kello on saatettu asettaa väärään aikaan tai väärälle aikavyöhykkeelle. Tarkista kellosi asetukset</translation>
 <translation id="6244065453125065109">Seuraimet
 Estetty</translation>
 <translation id="2547939855139473800">Mainokset
@@ -1340,7 +1340,7 @@ rakastamillesi sisällöntuottajille.</translation>
 <translation id="7722441371828049691">Tue sivustoja, joita rakastat.</translation>
 <translation id="5234764350956374838">Hylkää</translation>
 <translation id="4472575034687746823">Aloita</translation>
-<translation id="4162066325465825185">Vaikuttaa valitettavasti siltä, että Brave Rewards ei ole käytettävissä laitteellasi</translation>
+<translation id="4162066325465825185">Valitettavasti Brave Rewardsit eivät nähtävästi ole käytettävissä laitteellasi</translation>
 <translation id="4150201353443180367">Näytä</translation>
 <translation id="2804710924397009224">Piilota Brave Rewards -kuvake</translation>
 <translation id="7358991116457217836">Piilottaa Brave Rewards -kuvakkeen, kun Brave Rewards ei ole käytössä</translation>
@@ -1349,4 +1349,6 @@ rakastamillesi sisällöntuottajille.</translation>
 <translation id="8782039523249932839">Tämä toiminto poistaa Brave-lompakkosi ja nollaa kaikki Brave Rewards -tietosi</translation>
 <translation id="5321518976657560663">Virhe nollattaessa</translation>
 <translation id="7071576788062714665">Brave Rewards -järjestelmää nollattaessa ilmeni virhe. Käynnistä Brave uudelleen ja yritä uudestaan</translation>
+<translation id="24067401253841795">Syötä alla olevat synkronointiketjun koodisanat. Käsittele tätä koodia salasanan tavoin. Koodin haltuunsa saaneen on mahdollista lukea ja muokata synkronoituja tietojasi.</translation>
+<translation id="3149880132460839085">Brave-synkronointi</translation>
 </translationbundle>

@@ -735,7 +735,7 @@ Zo kunnen sommige websites op dit verzoek reageren door advertenties weer te gev
 <translation id="7988136689212463100">Brave heeft toegangsrechten voor je camera en microfoon nodig voor deze site.</translation>
 <translation id="6395288395575013217">LINK</translation>
 <translation id="6404511346730675251">Bladwijzer bewerken</translation>
-<translation id="6406506848690869874">Synchronisatie</translation>
+<translation id="6406506848690869874">Synchroniseren</translation>
 <translation id="641643625718530986">Afdrukken…</translation>
 <translation id="6416782512398055893"><ph name="MBS" /> MB gedownload</translation>
 <translation id="6433501201775827830">Je zoekmachine kiezen</translation>
@@ -1160,7 +1160,7 @@ Zo kunnen sommige websites op dit verzoek reageren door advertenties weer te gev
 <translation id="7539985410310934287">Voer codewoorden in</translation>
 <translation id="326454632686131209">Synchroniseer apparaat</translation>
 <translation id="8985635554450124959">Synchronisatie kon niet worden gestart</translation>
-<translation id="230829157901335313">Het kan zijn dat op uw apparaat een onjuiste systeemtijd of tijdszone is ingesteld. Stel de juiste tijd en tijdszone in.</translation>
+<translation id="230829157901335313">Mogelijk is de klok van uw computer ingesteld op de verkeerde tijd of tijdzone. Controleer uw klokinstellingen</translation>
 <translation id="6244065453125065109">Trackers
 geblokkeerd</translation>
 <translation id="2547939855139473800">Ads
@@ -1341,7 +1341,7 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
 <translation id="7722441371828049691">Steun de websites waar u van houdt.</translation>
 <translation id="5234764350956374838">Annuleren</translation>
 <translation id="4472575034687746823">Aan de slag.</translation>
-<translation id="4162066325465825185">Het spijt ons maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</translation>
+<translation id="4162066325465825185">Het spijt ons, maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</translation>
 <translation id="4150201353443180367">Scherm</translation>
 <translation id="2804710924397009224">Brave Rewards-pictogram verbergen</translation>
 <translation id="7358991116457217836">Verbergt het Brave Rewards-pictogram wanneer Brave Rewards niet is ingeschakeld</translation>
@@ -1350,4 +1350,6 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
 <translation id="8782039523249932839">Dit zal uw Brave-portefeuille verwijderen en al uw Brave Reward-gegevens resetten</translation>
 <translation id="5321518976657560663">Fout resetten</translation>
 <translation id="7071576788062714665">Er is een fout opgetreden bij het resetten van Brave Rewards. Herstart Brave opnieuw en probeer het opnieuw.</translation>
+<translation id="24067401253841795">Voer onderstaande codewoorden ter synchronisatie in. Behandel deze code als een wachtwoord. Als iemand deze in handen krijgt, kan deze persoon uw gesynchroniseerde data lezen en bewerken.</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

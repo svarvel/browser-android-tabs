@@ -198,7 +198,7 @@
 <translation id="2414886740292270097">Темна</translation>
 <translation id="8285489906452138776">Brave потрібні дозволи, щоб використовувати камеру на цьому сайті.</translation>
 <translation id="2426805022920575512">Вибрати інший обліковий запис</translation>
-<translation id="2433507940547922241">Зовнішній вигляд</translation>
+<translation id="2433507940547922241">Вигляд</translation>
 <translation id="2434158240863470628">Завантажено <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">Доступ до геоданих</translation>
 <translation id="2450083983707403292">Завантажити файл <ph name="FILE_NAME" /> ще раз?</translation>
@@ -735,7 +735,7 @@
 <translation id="7988136689212463100">Brave потрібні дозволи, щоб використовувати камеру та мікрофон на цьому сайті.</translation>
 <translation id="6395288395575013217">ПОСИЛАННЯ</translation>
 <translation id="6404511346730675251">Редагувати закладку</translation>
-<translation id="6406506848690869874">Синхронізація</translation>
+<translation id="6406506848690869874">Синхронізувати</translation>
 <translation id="641643625718530986">Друк…</translation>
 <translation id="6416782512398055893">Завантажено <ph name="MBS" /> МБ</translation>
 <translation id="6433501201775827830">Виберіть пошукову систему</translation>
@@ -1333,4 +1333,22 @@
 <translation id="8495235435594442882">Увімкнути нижню панель інструментів</translation>
 <translation id="7239121106815507493">Вимкнути нижню панель інструментів</translation>
 <translation id="145068164597056296">Пошук чи ланка</translation>
+<translation id="230829157901335313">Можливо, годинник вашого комп'ютера йде за невірним часом чи часовим поясом. Перевірте налаштування свого годинника</translation>
+<translation id="6810078320346589989">Створити закладку</translation>
+<translation id="5463954686005964104">Щомісяця перераховувати чайові цьому сайту</translation>
+<translation id="1923568441186788334">Нагороди Brave тут</translation>
+<translation id="7722441371828049691">Підтримуйте сайти, які любите.</translation>
+<translation id="5234764350956374838">Відхилити</translation>
+<translation id="4472575034687746823">Розпочати</translation>
+<translation id="4162066325465825185">Вибачте, але нагороди Brave, схоже, недоступні на вашому пристрої</translation>
+<translation id="4150201353443180367">Відобразити</translation>
+<translation id="2804710924397009224">Сховати іконку нагород Brave</translation>
+<translation id="7358991116457217836">Приховує іконку нагород Brave, коли ті вимкнуті</translation>
+<translation id="7618184561660805696">Поверніться незабаром, щоб безоплатно отримати токени</translation>
+<translation id="3349204812119681938">Скинути нагороди Brave</translation>
+<translation id="8782039523249932839">Це видалить ваш гаманець Brave і скине усі дані ваших нагород Brave</translation>
+<translation id="5321518976657560663">Помилка скидання</translation>
+<translation id="7071576788062714665">При скиданні налаштувань нагород Brave сталася помилка. Будь ласка, перезапустіть Brave і спробуйте знову</translation>
+<translation id="24067401253841795">Введіть показані нижче кодові слова ланцюжка синхронізації. Вважайте цей код паролем. Якщо хтось його дізнається, то зможе читати і змінювати ваші синхронізовані дані.</translation>
+<translation id="3149880132460839085">Синхронізація Brave</translation>
 </translationbundle>

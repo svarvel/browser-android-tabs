@@ -36,7 +36,7 @@
     <string name="enter_code_words_sync">Inserisci le parole codice</string>
     <string name="sync_device">Sincronizza dispositivo</string>
     <string name="sync_device_failure">Non è stato impossibile configurare la sincronizzazione</string>
-    <string name="sync_requires_correct_time">Potresti avere l\'ora di sistema o l\'impostazione del fuso orario errata sul tuo dispositivo. Sei pregato di impostare l\'ora e il fuso orario corretto</string>
+    <string name="sync_requires_correct_time">L\'orologio del computer potrebbe essere impostato sull\'ora sbagliata, o sul fuso orario sbagliato. Controlla le impostazioni dell\'orologio</string>
 
     <string name="brave_stats_text_trackers">Tracker
 bloccati</string>
@@ -242,7 +242,7 @@ delle sovvenzioni.</string>
     <string name="brave_rewards_dismiss">Scarta</string>
     <string name="brave_rewards_get_started">Inizia</string>
 
-    <string name="brave_rewards_not_available">Siamo spiacenti ma sembra che le Ricompense di Brave non siano disponibili sul tuo dispositivo</string>
+    <string name="brave_rewards_not_available">Siamo spiacenti, sembra che Ricompense Brave non sia disponibile sul tuo dispositivo</string>
 
     <string name="prefs_section_display">Mostra</string>
     <string name="prefs_appearance">Aspetto</string>
@@ -255,4 +255,9 @@ delle sovvenzioni.</string>
     <string name="reset_brave_rewards_option_description">Questo eliminerà il tuo portafoglio di Brave e resetterà tutti i dati delle Ricompense di Brave</string>
     <string name="reset_brave_rewards_error_title">Errore durante il Reset</string>
     <string name="reset_brave_rewards_error_description">Si è verificato un errore resettando le Ricompense di Brave. Si prega di riavviare Brave e riprovare</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Inserisci le parole chiave della catena di sincronizzazione indicate qui sotto. Tratta questo codice come una password. Se qualcuno ne entra in possesso, può leggere e modificare i tuoi dati sincronizzati.</string>
+
+    <string name="brave_sync_official">Sincronizzazione Brave</string>
+    <string name="prefs_sync_official">Sincronizzazione</string>
 </resources>

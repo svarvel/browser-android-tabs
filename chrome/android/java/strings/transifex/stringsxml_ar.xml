@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">أدخل كلمات الرمز</string>
     <string name="sync_device">مزامنة الجهاز</string>
     <string name="sync_device_failure">تعذر إعداد المزامنة</string>
-    <string name="sync_requires_correct_time">قد يكون لديك خطأ في إعداد وقت النظام أو المنطقة الزمنية على جهازك. يُرجى إعداد الوقت الصحيح والمنطقة الزمنية</string>
+    <string name="sync_requires_correct_time">قد تكون ساعة الكمبيوتر الخاص بك مضبوطة على الوقت الخطأ، أو على المنطقة الزمنية الخطأ. تحققْ من إعدادات الساعة الخاصة بك</string>
 
     <string name="brave_stats_text_trackers">تم حظر
 المتتبعات
@@ -247,7 +247,7 @@ HTTPS</string>
 </string>
     <string name="brave_rewards_get_started">البدء</string>
 
-    <string name="brave_rewards_not_available">نأسف لأن مكافآت Brave لا تتوفر على جهازك</string>
+    <string name="brave_rewards_not_available">عذراً، يبدو أن مكافآت Brave لا تتوفر على جهازك</string>
 
     <string name="prefs_section_display">العرض</string>
     <string name="prefs_appearance">المظهر</string>
@@ -260,4 +260,10 @@ HTTPS</string>
     <string name="reset_brave_rewards_option_description">سيؤدي ذلك إلى حذف محفظة Brave وإعادة تعيين جميع بيانات مكافآت Brave الخاصة بك</string>
     <string name="reset_brave_rewards_error_title">خطأٌ في إعادة التعيين</string>
     <string name="reset_brave_rewards_error_description">حدث خطأ أثناء إعادة تعيين مكافآت Brave. يُرجى إعادة تشغيل Brave والمحاولة مرةً أخرى</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">أدخل كلمات رمز سلسلة المزامنة الموضحة أدناه. تَعامل مع هذا الرمز مثل كلمة المرور. إذا حصل شخص ما على هذه المعلومات، فيمكنه قراءة بياناتك المتزامنة وتعديلها.</string>
+
+    <string name="brave_sync_official">مزامنة Brave
+</string>
+    <string name="prefs_sync_official">المزامنة</string>
 </resources>

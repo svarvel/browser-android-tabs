@@ -37,7 +37,7 @@
     <string name="enter_code_words_sync">Masukkan perkataan kod</string>
     <string name="sync_device">Penyegerakan peranti</string>
     <string name="sync_device_failure">Penyegerakan tidak boleh ditetapkan</string>
-    <string name="sync_requires_correct_time">Anda mungkin mempunyai tetapan masa sistem atau zon masa yang salah pada peranti anda. Sila tetapkan masa dan zon masa yang betul</string>
+    <string name="sync_requires_correct_time">Jam komputer anda mungkin ditetapkan</string>
 
     <string name="brave_stats_text_trackers">Penjejak
 Disekat</string>
@@ -242,7 +242,7 @@ pencipta kandungan yang anda suka.</string>
     <string name="brave_rewards_dismiss">Tolak</string>
     <string name="brave_rewards_get_started">Mulakan</string>
 
-    <string name="brave_rewards_not_available">Kami memohon maaf kerana Ganjaran Brave tidak tersedia pada peranti anda</string>
+    <string name="brave_rewards_not_available">Harap maaf, nampaknya Ganjaran Brave tidak boleh didapati pada peranti anda</string>
 
     <string name="prefs_section_display">Papar</string>
     <string name="prefs_appearance">Penampilan</string>
@@ -255,4 +255,9 @@ pencipta kandungan yang anda suka.</string>
     <string name="reset_brave_rewards_option_description">Ini akan memadam dompet Brave anda dan menetapkan semula semua data Ganjaran Brave anda</string>
     <string name="reset_brave_rewards_error_title">Tetapkan Semula Ralat</string>
     <string name="reset_brave_rewards_error_description">Terdapat ralat ketika menetapkan semula Ganjaran Brave. Sila lancar semula Brave dan cuba lagi</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Masukkan perkataan kod rantai segerak yang ditunjukkan di bawah. Anggap kod ini seperti kata laluan. Jika seseorang memperolehnya, mereka boleh membaca dan mengubah suai data anda yang disegerakkan.</string>
+
+    <string name="brave_sync_official">Segerak Brave</string>
+    <string name="prefs_sync_official">Segerak</string>
 </resources>

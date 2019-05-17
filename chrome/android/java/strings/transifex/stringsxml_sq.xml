@@ -38,8 +38,6 @@
     <string name="enter_code_words_sync">Jepni fjalë kod</string>
     <string name="sync_device">Njëkohësoni pajisje</string>
     <string name="sync_device_failure">S\’u rregullua dot njëkohësim</string>
-    <string name="sync_requires_correct_time">Ju mund të keni kohë të gabuar të sistemit ose konfigurim të gabuar të zonës kohore në pajisjen tuaj. Ju lutemi të vendosni zonën kohore dhe kohën e duhur</string>
-
     <string name="brave_stats_text_trackers">U bllokuan
 Gjurmues</string>
     <string name="brave_stats_text_ads">U bllokuan
@@ -240,8 +238,6 @@ përkrahje të krijuesve të lëndës që doni.</string>
     <string name="brave_rewards_dismiss">Hiqni</string>
     <string name="brave_rewards_get_started">Filloni</string>
 
-    <string name="brave_rewards_not_available">Na vjen keq duket se Brave Rewards nuk është i disponueshëm në pajisjen tuaj</string>
-
     <string name="prefs_section_display">Shfaqni</string>
     <string name="prefs_appearance">Pamja</string>
     <string name="hide_brave_rewards_icon_title">Fshihni Ikonën e Brave Rewards</string>
@@ -253,4 +249,5 @@ përkrahje të krijuesve të lëndës që doni.</string>
     <string name="reset_brave_rewards_option_description">Kjo do të fshijë portofolin tuaj Brave dhe do të rivendosë të gjitha të dhënat tuaja të Brave Rewards</string>
     <string name="reset_brave_rewards_error_title">Gabim i rivendosjes</string>
     <string name="reset_brave_rewards_error_description">Pati një gabim në rivendosjen e Brave Rewards. Ju lutemi të rilëshoni Brave dhe të provoni përsëri</string>
-</resources>
+
+    </resources>
