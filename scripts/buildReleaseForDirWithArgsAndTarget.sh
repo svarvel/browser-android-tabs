@@ -13,6 +13,20 @@ if grep -q "public static final String URPC_API_KEY = \"\";" "$config"; then
     exit 2
 fi
 
+# Check that GS_API_KEY was applied
+config="chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java"
+if grep -q "public static final String GS_API_KEY = \"\";" "$config"; then
+    echo "GS_API_KEY is not applied. You should do it manually."
+    exit 2
+fi
+
+# Check that QA_CODE was applied
+config="chrome/android/java/src/org/chromium/chrome/browser/ConfigAPIs.java"
+if grep -q "public static final String QA_CODE = \"\";" "$config"; then
+    echo "QA_CODE is not applied. You should do it manually."
+    exit 2
+fi
+
 BASEDIR=$1
 GN_FILE_PATH=$2
 TARGET_NAME=$3

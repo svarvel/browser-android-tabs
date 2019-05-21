@@ -2654,4 +2654,7 @@ const char kCertificateManagementAllowed[] = "certificate_management_allowed";
 
 // Boolean that is true when SafetyNet check is failed.
 const char kSafetynetCheckFailed[] = "safetynetcheck.failed";
+
+// Boolean that allows to use Rewards staging server when true.
+const char kUseRewardsStagingServer[] = "brave.rewards.use_staging_server";
 }  // namespace prefs
