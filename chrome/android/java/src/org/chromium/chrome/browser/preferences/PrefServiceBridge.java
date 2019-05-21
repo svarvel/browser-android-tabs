@@ -1227,6 +1227,17 @@ public class PrefServiceBridge {
         return nativeGetSafetynetCheckFailed();
     }
 
+    /**
+     * @param whether should use staging server for Rewards.
+     */
+    public void setUseRewardsStagingServer(boolean value) {
+        nativeSetUseRewardsStagingServer(value);
+    }
+
+    public boolean useRewardsStagingServer() {
+        return nativeGetUseRewardsStagingServer();
+    }
+
     private native boolean nativeGetBoolean(int preference);
     private native void nativeSetBoolean(int preference, boolean value);
     private native boolean nativeGetAcceptCookiesEnabled();
@@ -1364,4 +1375,6 @@ public class PrefServiceBridge {
     private native void nativeSetExplicitLanguageAskPromptShown(boolean shown);
     private native void nativeSetSafetynetCheckFailed(boolean value);
     private native boolean nativeGetSafetynetCheckFailed();
+    private native void nativeSetUseRewardsStagingServer(boolean value);
+    private native boolean nativeGetUseRewardsStagingServer();
 }
