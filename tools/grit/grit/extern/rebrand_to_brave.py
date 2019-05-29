@@ -58,7 +58,7 @@
 # Chromova -> Brave
 # Chromov -> Brave
 # Brave OS -> Chrome OS
-# Google Inc -> Brave Software Inc
+# Google LLC -> Brave Software Inc
 
 # In `android_chrome_strings.grd` make sure that these are changed:
 # IDS_CHROME_PRIVACY_NOTICE_URL -> https://brave.com/privacy_android
