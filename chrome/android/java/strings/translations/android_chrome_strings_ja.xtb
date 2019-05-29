@@ -201,7 +201,7 @@
 <translation id="2414886740292270097">暗</translation>
 <translation id="8285489906452138776">このサイトを利用するには、Brave でカメラの使用を許可する必要があります。</translation>
 <translation id="2426805022920575512">別のアカウントを選択</translation>
-<translation id="2433507940547922241">デザイン</translation>
+<translation id="2433507940547922241">見た目</translation>
 <translation id="2434158240863470628">ダウンロードが完了しました<ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">位置情報へのアクセス</translation>
 <translation id="2450083983707403292"><ph name="FILE_NAME" /> のダウンロードをやり直してもよろしいですか？</translation>
@@ -329,7 +329,7 @@
 <translation id="3350687908700087792">すべてのシークレット タブを閉じます</translation>
 <translation id="3353615205017136254">Google から提供されている軽量版のページです。元のページを読み込むには [元のサイトを表示] をタップしてください。</translation>
 <translation id="3367813778245106622">同期を開始するにはもう一度ログインします</translation>
-<translation id="3377025655491224618">プライベート タブ</translation>
+<translation id="3377025655491224618">プライベートタブ</translation>
 <translation id="3384347053049321195">画像を共有</translation>
 <translation id="3386292677130313581">サイトに現在地の認識を許可する前に確認する（推奨）</translation>
 <translation id="3387650086002190359">ファイル システムでエラーが発生したため、<ph name="FILE_NAME" /> をダウンロードできませんでした。</translation>
@@ -433,7 +433,7 @@
 <translation id="4226663524361240545">通知を受け取るとデバイスが振動します</translation>
 <translation id="423219824432660969"><ph name="TIME" />時点の Google パスワードで同期データを暗号化する</translation>
 <translation id="4242533952199664413">設定を開く</translation>
-<translation id="4243710787042215766">プライベート タブで開く</translation>
+<translation id="4243710787042215766">プライベートタブで開く</translation>
 <translation id="7445061995866044926">Brave からログアウトしますか？</translation>
 <translation id="4256782883801055595">オープンソース ライセンス</translation>
 <translation id="4259722352634471385"><ph name="URL" /> へのアクセスがブロックされました</translation>
@@ -662,7 +662,7 @@
 <translation id="5804241973901381774">権限</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# 時間前}other{# 時間前}}</translation>
 <translation id="5810288467834065221">Copyright <ph name="YEAR" /> Brave Software Inc. All rights reserved.</translation>
-<translation id="5817918615728894473">ペア設定</translation>
+<translation id="5817918615728894473">ペア</translation>
 <translation id="583281660410589416">不明</translation>
 <translation id="5833984609253377421">リンクを共有</translation>
 <translation id="3888648114124182147">Brave のアップデートをダウンロードしています…</translation>
@@ -732,7 +732,7 @@
 <translation id="6320088164292336938">バイブレーション</translation>
 <translation id="6324034347079777476">Android システムの同期が無効です</translation>
 <translation id="6333140779060797560"><ph name="APPLICATION" /> で共有します</translation>
-<translation id="6336451774241870485">新しいプライベート タブ</translation>
+<translation id="6336451774241870485">新しいプライベートタブ</translation>
 <translation id="6337234675334993532">暗号化</translation>
 <translation id="6341580099087024258">ファイルの保存場所を確認する</translation>
 <translation id="6343192674172527289">ダウンロードしたアイテムは見つかりませんでした</translation>
@@ -776,7 +776,7 @@
 <translation id="6593061639179217415">PC 版サイト</translation>
 <translation id="663059986967017181">Brave にコピー済み</translation>
 <translation id="6608650720463149374"><ph name="GIGABYTES" /> GB</translation>
-<translation id="6610147964972079463">プライベート タブを閉じる</translation>
+<translation id="6610147964972079463">プライベートタブを閉じる</translation>
 <translation id="6612358246767739896">保護されたコンテンツ</translation>
 <translation id="6627583120233659107">フォルダを編集</translation>
 <translation id="6643016212128521049">削除</translation>
@@ -1150,4 +1150,222 @@
 <translation id="982182592107339124">この操作を行うと、次を含むすべてのサイトのデータが削除されます。</translation>
 <translation id="983192555821071799">すべてのタブを閉じる</translation>
 <translation id="987264212798334818">全般</translation>
+<translation id="3209146299287804856">Brave サイトシールドの設定 対象:</translation>
+<translation id="622484624075952240">下へ</translation>
+<translation id="2706462751667573066">上ヘ</translation>
+<translation id="4339730410920731698">広告と追跡トラッカーはブロックされました</translation>
+<translation id="2313532038420432247">HTTPS アップグレード</translation>
+<translation id="7461425058443653485">スクリプトはブロックされました</translation>
+<translation id="7835726359440951858">広告と追跡トラッカーをブロック</translation>
+<translation id="520895744850022668">HTTPSをどこでも</translation>
+<translation id="94154759592465111">スクリプトをブロック</translation>
+<translation id="7307834434086582547">Braveシールドを有効化/無効化</translation>
+<translation id="6132506775968708399">サードパーティクッキーをブロック</translation>
+<translation id="8710614491157212477">HTTPの代わりにHTTPSの利用が可能であれば、HTTPSでサポートされたサイトを開</translation>
+<translation id="5758129336814690876">追跡保護モード</translation>
+<translation id="4609637183310787528">読み込む事であなたを追跡するリソースを防ぐ</translation>
+<translation id="8387201461264842096">広告ブロック</translation>
+<translation id="1934885595886623674">広告の読み込みを防ぐ</translation>
+<translation id="7458422973722236530">フィンガープリント保護</translation>
+<translation id="5787084571334399599">ブラウザーがフィンガープリントされるのを防ぐ。</translation>
+<translation id="3758669798635576061">フィンガープリント法をブロック</translation>
+<translation id="3276318574457057212">地域の広告ブロック</translation>
+<translation id="2300239903491866759">地域広告が読み込まれるのを防ぐ。</translation>
+<translation id="8142327400852603066">お住まいの地域では追加リストがご利用になれません。</translation>
+<translation id="9148058034647219655">出口</translation>
+<translation id="3082265116777145081">端末名を追加</translation>
+<translation id="9024091168371687561">この端末のオプション名を入力</translation>
+<translation id="3998827900918661986">Android 端末</translation>
+<translation id="7539985410310934287">コードの単語を入力</translation>
+<translation id="326454632686131209">Sync 端末</translation>
+<translation id="8985635554450124959">同期をセットアップできませでした</translation>
+<translation id="230829157901335313">お使いのコンピューターの時計が誤った時間または誤ったタイムゾーンに設定されている可能性があります。時計の設定をご確認ください。</translation>
+<translation id="6244065453125065109">トラッカー
+ブロックされました</translation>
+<translation id="2547939855139473800">広告
+ブロックされました</translation>
+<translation id="8880969045613157151">HTTPS
+アップグレード</translation>
+<translation id="204407992549693965">東部標準時間
+セーブされました</translation>
+<translation id="991605024067283917">メトリクスを送信する</translation>
+<translation id="6572660632052512096">デスクトップモード</translation>
+<translation id="4479934682648362332">サイトのデスクトップバージョンを選択</translation>
+<translation id="807636106793708118">サイトの携帯バージョンを選択</translation>
+<translation id="1340503115760585811">新しいタブでデスクトップビューを可能にする</translation>
+<translation id="7924540991929826186">新しいタブでサイトの携帯バーションをお使いください（奨励）</translation>
+<translation id="3834924998750356151">監視をブロック</translation>
+<translation id="1713450908129883784">個別の制御</translation>
+<translation id="6303294677342628402">シールド</translation>
+<translation id="252011129655042182">広告とトラッカー</translation>
+<translation id="6754976710186182237">指紋による方法</translation>
+<translation id="8585880402319729023">フィッシングをブロック</translation>
+<translation id="5965081608816406060">背景動画の再生</translation>
+<translation id="59174027418879706">有効になっています</translation>
+<translation id="4176463684765177261">無効になっています</translation>
+<translation id="1580125697191336644">試験的機能です。タブが無効またはデバイスの画面がオフの際のバックグラウンドの動画からのオーディオ再生を有効化します。この機能が動作しない場合には、デスクトップモードに切り替えてみてください。</translation>
+<translation id="6587448235155023666">変更は次回の Brave 再起動後に有効となります</translation>
+<translation id="8701563696941209024">今すぐ再起動する</translation>
+<translation id="834487290629916192">後で</translation>
+<translation id="1842747674580016420">Braveでの動画再生</translation>
+<translation id="5368992950177874750">有効になっているときは、対応するアプリの代わりにBraveで動画が再生されます</translation>
+<translation id="7459000603787995422">出口にあるタブを閉じてください</translation>
+<translation id="1680858055899097121">ブラウズの間はタブをそのままにしないでください。</translation>
+<translation id="213787746370741250">カスタムタブ内のタブを開く</translation>
+<translation id="3544772668823934222">カスタムタブ内のタブを開くよう提案する</translation>
+<translation id="4501702055016678577"> DuckDuckGoでプライベート検索しますか？</translation>
+<translation id="910419239800579753">プライベート検索では、BraveがDuckDuckGoを使って、このプライベートタブ内であなたの検索リクエストに応えます。DuckDuckGoは、検索履歴を追跡しない検索エンジンなので、プライベートな検索を行うことができます。</translation>
+<translation id="1426410128494586442">はい</translation>
+<translation id="4250680216510889253">いいえ</translation>
+<translation id="5628466560184522265">DuckDuckGoを使ったプライベート検索について学ぶ</translation>
+<translation id="1468415711258933398">標準タブ</translation>
+<translation id="6199596294742117349">これはプライベートタブです</translation>
+<translation id="5858455511731621847">プライベートタブで訪れたサイトはローカルに保存されませんが、ISPや雇用主、又は訪れたサイトに対して、あなたを匿名に保ったり、身元が分からない状態にはしません。</translation>
+<translation id="2339273275658335597">Braveアプデート</translation>
+<translation id="8395234238259738935">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</translation>
+<translation id="391177677159359824">Sync (beta版)</translation>
+<translation id="3680755684186855422">Brave Sync は、さまざまな端末上の Brave ブラウザ間でのブックマークデータの同期を可能にします。</translation>
+<translation id="3735228155296883311">別の端末で作成した同期チェーンからコードをスキャンするだけ。または新しい同期チェーンを開始します。</translation>
+<translation id="7745082336226088126">同期コードをスキャンまたは入力</translation>
+<translation id="1602067095281698985">新しい同期チェーンを開始</translation>
+<translation id="4690880825349994619">同期された既存の端末を使って Brave 設定を開き、 [設定] &gt; [同期] に移動します。[デバイスを追加] を選択し、画面に表示された QR コードをスキャンします。</translation>
+<translation id="6270614677029463366">同期された既存の端末を使ってBrave 設定を開き、 [設定] &gt; [同期] に移動します。[デバイスを追加] 、次に [代わりにコードの単語を表示] を選択します。</translation>
+<translation id="1475223680121592371">モバイル端末を追加</translation>
+<translation id="2965377893636908578">コンピュータを追加</translation>
+<translation id="65315202420929965">この同期コードをスキャンします</translation>
+<translation id="6604289897677913048">2 つ目の電話またはタブレットを使用して、[Brave 設定] &gt; [同期] &gt; {スキャン} に移動します。</translation>
+<translation id="3405078156498254717">2 つ目のデバイスで QR コード (上記) を読み込むか、カメラが利用できない場合はコードの単語を入力します。</translation>
+<translation id="8076492880354921740">タブ</translation>
+<translation id="5706430066167764107">自動入力/パスワード</translation>
+<translation id="1164234435773528579">Brave 支払い設定</translation>
+<translation id="6174119914106813304">この端末で同期</translation>
+<translation id="6776430845975754238">設定の変更はこの端末が他の端末と共有したデータにのみ影響します。</translation>
+<translation id="8193724030871339658">チェーン上のその他の端末</translation>
+<translation id="279635009973773843">端末を読み込み中...</translation>
+<translation id="6450924769151530465">別の端末を追加</translation>
+<translation id="2004365171440701679">この端末を削除</translation>
+<translation id="2731921493694251495">同期チェーンコードを入力</translation>
+<translation id="2590683710114839102">お使いのコンピューターで、[Brave 設定] &gt; {同期} に移動します。[同期チェーンコードを入力] を選択します。</translation>
+<translation id="1732271215616957850">上記のコードの単語を、スペースも含めて入力します。</translation>
+<translation id="1178128181015923849">端末「<ph name="DEVICE_NAME" />」を削除してよろしいですか？</translation>
+<translation id="9154490620151093733">削除リクエストが送信されました。端末はまもなく削除されます。</translation>
+<translation id="544873101641618162">データを読み込み中...</translation>
+<translation id="6779408765480516895">問題が発生しました。リクエストが時間切れになったようです。</translation>
+<translation id="4973653569293835178">カメラを使用します...</translation>
+<translation id="2569646144216067185">文字数: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">不正確な文字数</translation>
+<translation id="2175927920773552910">QR コード</translation>
+<translation id="8653433343015102968">コードの単語</translation>
+<translation id="8624315169751085215">クリップボードにコピー</translation>
+<translation id="5241263629636958324">クリップボードにコピー済み</translation>
+<translation id="222883304157347087">(この端末)</translation>
+<translation id="4745013713714502219">Braveがデフォルトのブラウザーとして
+設定されています。</translation>
+<translation id="6874141297197991294">すでにデフォルトのブラウザーが設定されています。
+アプリの設定で変更が可能です。</translation>
+<translation id="5708254139873333042">電池を節約しながら、ウェブサイトの読み込みスピードを上げましょう。Braveをデフォルトのブラウザに設定しましょう。Braveのメニューから「デフォルトのブラウザに設定」をタップし選択してください</translation>
+<translation id="3570367516044491911">デフォルトのブラウザとして設定する</translation>
+<translation id="5827583267117939716">リストからBraveを選び、「常に」をタップします</translation>
+<translation id="2262526166668973593">Braveをデフォルトのウェブブラウザにしましょう
+バッテリーを節約し、Webページの表示速度を上げましょう</translation>
+<translation id="1916285746997567466">次世代インターネットを
+体験しましょう。</translation>
+<translation id="1071131306814166204">プライバシーに配慮した広告を見ると
+トークンを獲得できます。</translation>
+<translation id="1327938628925645979">リワードに参加</translation>
+<translation id="5567439033041178034">詳細</translation>
+<translation id="7530570094705720669">ウォレットを作成</translation>
+<translation id="3780605330121608425">ウォレット</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" />米ドル</translation>
+<translation id="1165667598801520610">資金を追加</translation>
+<translation id="2730771409541953249">リワードサマリー</translation>
+<translation id="8596647978585397359">ご利用ありがとうございます！</translation>
+<translation id="3165726837666415756">素晴らしいコンテンツの制作者に感謝の意としてチップを送信し、このサイトをサポートできます。このチップは、認証済みコンテンツクリエイターに毎月第1週に支払われます。</translation>
+<translation id="1704859330137112950">チップの送信をマンスリーに設定して、このサイトを継続的にサポートすることも可能です。</translation>
+<translation id="245015745140252435">チップ額</translation>
+<translation id="3370968821559864204">ウォレット残高:</translation>
+<translation id="3250511771491660127">マンスリーに設定</translation>
+<translation id="2573313946367623146">チップを送信</translation>
+<translation id="3492491948683276944">マンスリーチップを設定</translation>
+<translation id="853714875140407133">トークンが不足しています</translation>
+<translation id="298349922412901215">注: このクリエイターは、まだBraveユーザーからの寄付を受諾する手続きを行っていません。クリエイターが確認するまで、または90日間が経過するまで、寄付の送信を継続します。</translation>
+<translation id="1036277985068412734">資金を追加</translation>
+<translation id="5299848999918506028">ありがとうございます！</translation>
+<translation id="2626799779920242286">後ほどもう一度お試しください。</translation>
+<translation id="6639570430554986719">1月</translation>
+<translation id="1807352595146144483">2月</translation>
+<translation id="2021828608097804771">3月</translation>
+<translation id="1112527417301376065">4月</translation>
+<translation id="8737090912129856089">5月</translation>
+<translation id="6832612641867423485">6月</translation>
+<translation id="8442574087856349697">7月</translation>
+<translation id="1202041222842415454">8月</translation>
+<translation id="7317265217038113435">9月</translation>
+<translation id="8220228041552340594">10月</translation>
+<translation id="8280223431922155812">11月</translation>
+<translation id="4254029385847607686">12月</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">注意</translation>
+<translation id="7335371657242627509">自動寄付に含める</translation>
+<translation id="8918760045046434238">チップを送信...</translation>
+<translation id="1978261665418056203">今月はまだアクティビティが
+ありません...</translation>
+<translation id="4914597931214386232">トークン付与を請求しました</translation>
+<translation id="298067735430872465">広告収入</translation>
+<translation id="6112368337882254910">自動寄付</translation>
+<translation id="4781696154289395607"><ph name="BAT_VALUE" />BATを寄付しました。</translation>
+<translation id="9182287025588539628">チップ</translation>
+<translation id="7577100371127227294">マンスリーチップ</translation>
+<translation id="8772672608371898774">Brave認証済みパブリッシャー</translation>
+<translation id="1397683270551078781">未認証</translation>
+<translation id="5727208111992260840">このクリエイターは、まだBraveユーザーからの寄付を受諾する手続きを行っていません。クリエイターの認証確認が終了するまで、送信されたチップはウォレット内に維持されます。</translation>
+<translation id="683765328936486920">YouTube</translation>
+<translation id="8969049974285901797">Twitch</translation>
+<translation id="606865182719489911">無料でトークンをご利用いただけます。</translation>
+<translation id="3453206261112715431">無料トークン付与</translation>
+<translation id="13853865024308201">請求</translation>
+<translation id="3692362746128814480">寄付の受諾手続きを行なっていないクリエイターに<ph name="BAT_VALUE" />BATを
+設定しました。クリエイターが確認するまで、または90日間が経過するまで、ブラウザーにより寄付の送信が継続されます。</translation>
+<translation id="5306913077198665897">チップの処理中にエラーが発生しました。もう一度お試しください。</translation>
+<translation id="2429828319207652823">寄付の処理中にエラーが発生しました。</translation>
+<translation id="2323069945529668668">エラー！</translation>
+<translation id="7510166204621526816">Braveリワードサーバーが応答していません。修復作業が終了するまで少々お待ちください。</translation>
+<translation id="2104073734684466851">付与</translation>
+<translation id="3068742524072211213">の期限は<ph name="DATE" />までです</translation>
+<translation id="7550470870580166294">資金不足</translation>
+<translation id="2775064702681588061">Braveリワードアカウントへの入金があります。</translation>
+<translation id="765834632354589737">ウォレットのバックアップ</translation>
+<translation id="1713542052890184975">Braveウォレットをバックアップしてください。</translation>
+<translation id="3333887201479867589">Braveリワード</translation>
+<translation id="2012723204723845092">おかえりなさい！</translation>
+<translation id="7669994301500276741">閲覧してリワードを獲得。</translation>
+<translation id="8203529727745387785">プライバシーに配慮した広告を表示して
+得た資金で、お気に入りのコンテンツ
+クリエイターをサポートしましょう。</translation>
+<translation id="5148719990624240755">BRAVEリワードを有効化</translation>
+<translation id="1628742278973105368">あなたの毎月のチップの初回は　に送付されます</translation>
+<translation id="6665366815203065060">へ、今あなたはチップを送りました</translation>
+<translation id="5441565662498481293">あなたは　へ自動的にチップを送ろうとしています</translation>
+<translation id="1166682575529520472">月ごとの</translation>
+<translation id="8495235435594442882">画面下のツールバーを有効にする</translation>
+<translation id="7239121106815507493">画面下のツールバーを無効にする</translation>
+<translation id="145068164597056296">検索またはURLを入力します</translation>
+<translation id="6810078320346589989">ブックマークを作成</translation>
+<translation id="5463954686005964104">このサイトに毎月チップを支払う</translation>
+<translation id="1923568441186788334">Braveリワードはここにあります</translation>
+<translation id="7722441371828049691">お気に入りのサイトをサポート</translation>
+<translation id="5234764350956374838">解除</translation>
+<translation id="4472575034687746823">始める</translation>
+<translation id="4162066325465825185">申し訳ありませんが、お使いの端末ではBrave Rewardsをご利用いただけないようです</translation>
+<translation id="4150201353443180367">表示</translation>
+<translation id="2804710924397009224">Braveリワードアイコンを隠す</translation>
+<translation id="7358991116457217836">Braveリワードが有効でない場合にBraveリワードアイコンを隠す</translation>
+<translation id="7618184561660805696">またすぐにチェックして無料のトークンを受け取りましょう</translation>
+<translation id="3349204812119681938">Braveリワードをリセット</translation>
+<translation id="8782039523249932839">Braveウォレットが削除され、すべてのBraveリワードデータがリセットされます</translation>
+<translation id="5321518976657560663">エラーをリセット</translation>
+<translation id="7071576788062714665">Braveリワードのリセット中にエラーが発生しました。Braveを再開して、再度お試しください。</translation>
+<translation id="24067401253841795">下に表示された同期チェーンコードワードを入力してください。このコードはパスワードのようにお取り扱いください。誰かがそれを入手すると、あなたの同期データを読んだり、変更したりすることができます。</translation>
+<translation id="3149880132460839085">Brave Sync</translation>
 </translationbundle>

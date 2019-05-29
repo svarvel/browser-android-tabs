@@ -201,7 +201,7 @@
 <translation id="2414886740292270097">Tối</translation>
 <translation id="8285489906452138776">Brave cần có quyền truy cập máy ảnh của bạn cho trang web này.</translation>
 <translation id="2426805022920575512">Chọn một tài khoản khác</translation>
-<translation id="2433507940547922241">Hình thức</translation>
+<translation id="2433507940547922241">Hiển thị</translation>
 <translation id="2434158240863470628">Quá trình tải xuống hoàn tất <ph name="SEPARATOR" /> <ph name="BYTES_DOWNLOADED" /></translation>
 <translation id="2440823041667407902">Truy cập vị trí</translation>
 <translation id="2450083983707403292">Bạn có muốn bắt đầu tải xuống <ph name="FILE_NAME" /> lần nữa không?</translation>
@@ -663,7 +663,7 @@ Tài khoản Google của bạn có thể có các dạng lịch sử duyệt we
 <translation id="5804241973901381774">Quyền</translation>
 <translation id="5809361687334836369">{HOURS,plural, =1{# giờ trước}other{# giờ trước}}</translation>
 <translation id="5810288467834065221">Bản quyền <ph name="YEAR" /> Brave Software Inc. Mọi quyền được bảo lưu.</translation>
-<translation id="5817918615728894473">Ghép nối</translation>
+<translation id="5817918615728894473">Ghép đôi</translation>
 <translation id="583281660410589416">Không xác định</translation>
 <translation id="5833984609253377421">Chia sẻ liên kết</translation>
 <translation id="3888648114124182147">Đang tải Bản cập nhật Brave…</translation>
@@ -1151,4 +1151,226 @@ Ví dụ: một số trang web có thể phản hồi yêu cầu này bằng cá
 <translation id="982182592107339124">Thao tác này sẽ xóa dữ liệu của tất cả các trang web, bao gồm:</translation>
 <translation id="983192555821071799">Đóng tất cả các tab</translation>
 <translation id="987264212798334818">Chung</translation>
+<translation id="3209146299287804856">Cài đặt lá chắn của trang Brave cho</translation>
+<translation id="622484624075952240">Xuống</translation>
+<translation id="2706462751667573066">Lên</translation>
+<translation id="4339730410920731698">Quảng cáo và Công cụ theo dõi đã bị chặn</translation>
+<translation id="2313532038420432247">Nâng cấp HTTPS</translation>
+<translation id="7461425058443653485">Script đã bị chặn</translation>
+<translation id="7835726359440951858">Chặn Quảng cáo và Theo dõi</translation>
+<translation id="520895744850022668">HTTPS Everywhere</translation>
+<translation id="94154759592465111">Chặn Script</translation>
+<translation id="7307834434086582547">Bật/ Tắt Lá chắn Brave</translation>
+<translation id="6132506775968708399">Chặn cookies của bên thứ ba</translation>
+<translation id="8710614491157212477">Mở các trang được hỗ trợ bằng cách sử dụng HTTPS thay vì HTTP khi có thể</translation>
+<translation id="5758129336814690876">Chế độ Bảo vệ Theo dõi</translation>
+<translation id="4609637183310787528">Ngăn chặn việc tải các nguồn theo dõi bạn</translation>
+<translation id="8387201461264842096">Chặn Quảng cáo</translation>
+<translation id="1934885595886623674">Ngăn chặn tải quảng cáo</translation>
+<translation id="7458422973722236530">Bảo vệ bằng dấu vân tay</translation>
+<translation id="5787084571334399599">Ngăn không cho trình duyệt lấy dấu vân tay</translation>
+<translation id="3758669798635576061">Các Biện pháp Lấy dấu Vân tay bị Chặn</translation>
+<translation id="3276318574457057212">Khối Quảng cáo Vùng</translation>
+<translation id="2300239903491866759">Ngăn không cho tải quảng cáo vùng</translation>
+<translation id="8142327400852603066">Không có danh sách bổ sung có sẵn cho ngôn ngữ của bạn</translation>
+<translation id="9148058034647219655">Lối thoát</translation>
+<translation id="7820683005702098135">Đồng bộ hoá Brave (beta)</translation>
+<translation id="3082265116777145081">Thêm tên thiết bị</translation>
+<translation id="9024091168371687561">Nhập tên tùy chọn cho thiết bị này</translation>
+<translation id="3998827900918661986">Thiết bị Android</translation>
+<translation id="7539985410310934287">Nhập các từ mã</translation>
+<translation id="326454632686131209">Thiết bị đồng bộ</translation>
+<translation id="8985635554450124959">Không thể thiết lập đồng bộ</translation>
+<translation id="230829157901335313">Giờ hoặc múi giờ của đồng hồ máy tính bạn có thể bị sai. Hãy kiểm tra cài đặt đồng hồ của bạn</translation>
+<translation id="6244065453125065109">Trình theo dõi
+Đã chặn</translation>
+<translation id="2547939855139473800">Quảng cáo
+Đã chặn</translation>
+<translation id="8880969045613157151">Nâng cấp
+HTTPS</translation>
+<translation id="204407992549693965">Thời gian ước tính
+Đã tiết kiệm</translation>
+<translation id="991605024067283917">Gửi chỉ số</translation>
+<translation id="6572660632052512096">Phiên bản Máy để bàn</translation>
+<translation id="4479934682648362332">Thích phiên bản máy để bàn của trang</translation>
+<translation id="807636106793708118">Thích phiên bản di động của trang</translation>
+<translation id="1340503115760585811">Bật Dạng xem Máy để bàn cho tab mới</translation>
+<translation id="7924540991929826186">Sử dụng phiên bản di động của trang cho các tab mới (khuyến khích)</translation>
+<translation id="3834924998750356151">Giám sát Chặn</translation>
+<translation id="1713450908129883784">Kiểm soát Riêng lẻ</translation>
+<translation id="6303294677342628402">Khiên bảo vệ</translation>
+<translation id="252011129655042182">Quảng cáo và Trình theo dõi</translation>
+<translation id="6754976710186182237">Biện pháp Vân tay</translation>
+<translation id="8585880402319729023">Chặn Lừa đảo</translation>
+<translation id="5965081608816406060">Phát lại video nền</translation>
+<translation id="59174027418879706">Đã bật</translation>
+<translation id="4176463684765177261">Đã tắt</translation>
+<translation id="1580125697191336644">Thử nghiệm. Kích hoạt tính năng phát nhạc từ video chạy ngầm khi cửa sổ không ở trạng thái sử dụng hoặc màn hình thiết bị đang tắt. Hãy thử chuyển về chế độ màn hình chính nếu tính năng này không hoạt động.</translation>
+<translation id="6587448235155023666">Các thay đổi của bạn sẽ có hiệu lực vào lần tiếp theo khi bạn khởi động lại ứng dụng Brave</translation>
+<translation id="8701563696941209024">KHỞI ĐỘNG LẠI NGAY BÂY GIỜ</translation>
+<translation id="834487290629916192">ĐỂ SAU</translation>
+<translation id="1842747674580016420">Phát lại video trong Brave</translation>
+<translation id="5368992950177874750">Nếu được bật, video sẽ được phát trong Brave thay vì ứng dụng tương ứng</translation>
+<translation id="7459000603787995422">Đóng các tab khi thoát </translation>
+<translation id="1680858055899097121">Không tiếp tục duy trì các tab giữa các phiên duyệt web</translation>
+<translation id="213787746370741250">Mở các tab trong mục Tùy chỉnh Tab</translation>
+<translation id="3544772668823934222">Đề xuất mở các tab trong mục Tùy chỉnh Tab</translation>
+<translation id="4501702055016678577">Tìm kiếm riêng tư với DuckDuckGo?</translation>
+<translation id="910419239800579753">Với chức năng tìm kiếm riêng tư, Brave sẽ sử dụng DuckDuckGo để trả lời các tìm kiếm của bạn trong khi bạn đang ở trong tab riêng tư này. DuckDuckGo là một công cụ tìm kiếm không theo dõi lịch sử tìm kiếm của bạn, cho phép bạn tìm kiếm một cách riêng tư.</translation>
+<translation id="1426410128494586442">Vâng</translation>
+<translation id="4250680216510889253">Không</translation>
+<translation id="5628466560184522265">Tìm hiểu về công cụ tìm kiếm riêng tư với DuckDuckGo</translation>
+<translation id="1468415711258933398">Tab chuẩn</translation>
+<translation id="6199596294742117349">Đây là một tab riêng tư</translation>
+<translation id="5858455511731621847">Mặc dù các trang web bạn truy cập trong các tab riêng tư không được lưu cục bộ, chúng không giúp bạn ẩn danh hoặc vô hình với ISP (Nhà cung cấp dịch vụ Internet) hay nhà tuyển dụng của bạn hoặc các trang web mà bạn đang truy cập.</translation>
+<translation id="2339273275658335597">Cập nhật Brave</translation>
+<translation id="8395234238259738935">Trình duyệt Brave mới nhanh hơn 22%</translation>
+<translation id="391177677159359824">Đồng bộ (beta)</translation>
+<translation id="3680755684186855422">Brave Đồng bộ cho phép bạn đồng bộ dữ liệu dấu trang một cách riêng tư giữa các Trình duyệt Brave trên các thiết bị khác nhau của bạn.</translation>
+<translation id="3735228155296883311">Chỉ cần quét mã từ chuỗi đồng bộ mà bạn đã tạo trên một thiết bị khác. Hoặc bắt đầu một chuỗi đồng bộ mới.</translation>
+<translation id="7745082336226088126">Quét hoặc nhập mã đồng bộ</translation>
+<translation id="1602067095281698985">Bắt đầu một chuỗi đồng bộ mới</translation>
+<translation id="4690880825349994619">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave và tìm đến Cài đặt &gt; Đồng bộ. Chọn "Thêm thiết bị" và quét mã QR hiển thị trên màn hình.</translation>
+<translation id="6270614677029463366">Sử dụng thiết bị được đồng bộ hiện tại, mở Cài đặt Brave và tìm đến Cài đặt &gt; Đồng bộ. Chọn "Thêm thiết bị" và sau đó "Hiển thị các từ mã để thay thế".</translation>
+<translation id="1475223680121592371">Thêm một thiết bị di động</translation>
+<translation id="2965377893636908578">Thêm một máy tính</translation>
+<translation id="65315202420929965">Quét mã đồng bộ này</translation>
+<translation id="6604289897677913048">Sử dụng một điện thoại hoặc máy tính bảng thứ hai, tìm đến Cài đặt Brave &gt; Đồng bộ &gt; Quét.</translation>
+<translation id="3405078156498254717">Chụp mã QR (ở trên) bằng thiết bị thứ hai của bạn hoặc nhập các từ mã nếu không có camera.</translation>
+<translation id="8076492880354921740">Tab</translation>
+<translation id="5706430066167764107">Tự động điền/Mật khẩu</translation>
+<translation id="1164234435773528579">Cài đặt thanh toán Brave</translation>
+<translation id="6174119914106813304">ĐỒNG BỘ TRÊN THIẾT BỊ NÀY</translation>
+<translation id="6776430845975754238">Thay đổi cài đặt sẽ chỉ ảnh hưởng đến dữ liệu mà thiết bị này chia sẻ với các thiết bị khác.</translation>
+<translation id="8193724030871339658">CÁC THIẾT BỊ KHÁC TRONG CHUỖI</translation>
+<translation id="279635009973773843">ĐANG TẢI CÁC THIẾT BỊ...</translation>
+<translation id="6450924769151530465">Thêm một thiết bị khác</translation>
+<translation id="2004365171440701679">Xóa thiết bị này</translation>
+<translation id="2731921493694251495">Nhập mã chuỗi đồng bộ</translation>
+<translation id="2590683710114839102">Trên máy tính của bạn, tìm đến Cài đặt Brave &gt; Đồng bộ. Chọn "Nhập mã chuỗi đồng bộ".</translation>
+<translation id="1732271215616957850">Nhập các từ mã ở trên, bao gồm cả khoảng trống.</translation>
+<translation id="1178128181015923849">Bạn có chắc muốn xóa thiết bị '<ph name="DEVICE_NAME" />' không?</translation>
+<translation id="9154490620151093733">Yêu cầu xóa đã được gửi đi. Thiết bị sẽ sớm được xóa.</translation>
+<translation id="544873101641618162">Đang tải dữ liệu...</translation>
+<translation id="6779408765480516895">Đã xảy ra lỗi, có vẻ như yêu cầu của bạn đã hết giờ.</translation>
+<translation id="4973653569293835178">Tôi sẽ sử dụng camera...</translation>
+<translation id="2569646144216067185">Đếm chữ: <ph name="WORD_COUNT" /></translation>
+<translation id="4282642752844565114">Số lượng từ không đúng</translation>
+<translation id="2175927920773552910">Mã QR</translation>
+<translation id="8653433343015102968">Các từ mã</translation>
+<translation id="8624315169751085215">Sao chép vào bộ nhớ đệm</translation>
+<translation id="5241263629636958324">Đã sao chép vào bộ nhớ đệm</translation>
+<translation id="222883304157347087">(thiết bị này)</translation>
+<translation id="4745013713714502219">Brave đã được đặt
+làm trình duyệt mặc định của bạn.</translation>
+<translation id="6874141297197991294">Bạn đã đặt trình duyệt mặc định.
+Bạn có thể thay đổi trình duyệt mặc định trong cài đặt ứng dụng của mình.</translation>
+<translation id="5708254139873333042">Tiết kiệm pin và tải các trang web nhanh hơn. Hãy đặt Brave làm Trình duyệt mặc định của bạn. Từ trình đơn của Brave, nhấn chọn "Đặt làm trình duyệt mặc định"</translation>
+<translation id="3570367516044491911">Đặt làm trình duyệt mặc định</translation>
+<translation id="5827583267117939716">Chọn Brave từ danh sách và nhấn "Luôn luôn"</translation>
+<translation id="2262526166668973593">Đặt Brave làm trình duyệt mặc định của bạn
+Tiết kiệm pin và tải các trang web nhanh hơn</translation>
+<translation id="1916285746997567466">Hãy sẵn sàng trải nghiệm
+thế giới Internet mới.</translation>
+<translation id="1071131306814166204">Giờ đây bạn có thể kiếm token khi
+xem những quảng cáo tôn trọng quyền riêng tư.</translation>
+<translation id="1327938628925645979">THAM GIA PHẦN THƯỞNG</translation>
+<translation id="5567439033041178034">TÌM HIỂU THÊM</translation>
+<translation id="7530570094705720669">Tạo ví</translation>
+<translation id="3780605330121608425">Ví của bạn</translation>
+<translation id="8845154268466251503">BAT</translation>
+<translation id="7760215798627399379"><ph name="VALUE" /> USD</translation>
+<translation id="1165667598801520610">Thêm tiền</translation>
+<translation id="2730771409541953249">TÓM TẮT PHẦN THƯỞNG</translation>
+<translation id="8596647978585397359">Cảm ơn đã ghé qua!</translation>
+<translation id="3165726837666415756">Bạn có thể hỗ trợ trang này bằng cách gửi tiền boa. Đó là một cách để cảm ơn họ vì đã tạo rao những nội dung tuyệt vời. Các nhà sáng tạo nội dung đã được xác thực sẽ nhận được tiền boa vào tuần đầu tiên của mỗi tháng.</translation>
+<translation id="1704859330137112950">Nếu bạn thích, bạn có thể đặt lịch gửi tiền boa hàng tháng để hỗ trợ trang này một cách liên tục.</translation>
+<translation id="245015745140252435">Số tiền boa</translation>
+<translation id="3370968821559864204">số dư ví:</translation>
+<translation id="3250511771491660127">Thực hiện điều này hàng tháng</translation>
+<translation id="2573313946367623146">gửi tiền boa của tôi</translation>
+<translation id="3492491948683276944">đặt số tiền boa hàng tháng</translation>
+<translation id="853714875140407133">không đủ token</translation>
+<translation id="298349922412901215">LƯU Ý: Nhà sáng tạo này chưa đăng ký nhận đóng góp từ người dùng Brave. Chúng tôi sẽ tiếp tục cố gắng đóng góp cho đến khi họ xác thực hoặc cho đến khi 90 ngày đã trôi qua.</translation>
+<translation id="6940273954212603510">vui lòng</translation>
+<translation id="1036277985068412734">thêm tiền</translation>
+<translation id="5299848999918506028">Cảm ơn!</translation>
+<translation id="2626799779920242286">Vui lòng thử lại sau.</translation>
+<translation id="6639570430554986719">THÁNG 1</translation>
+<translation id="1807352595146144483">THÁNG 2</translation>
+<translation id="2021828608097804771">THÁNG 3</translation>
+<translation id="1112527417301376065">THÁNG 4</translation>
+<translation id="8737090912129856089">THÁNG 5</translation>
+<translation id="6832612641867423485">THÁNG 6</translation>
+<translation id="8442574087856349697">THÁNG 7</translation>
+<translation id="1202041222842415454">THÁNG 8</translation>
+<translation id="7317265217038113435">THÁNG 9</translation>
+<translation id="8220228041552340594">THÁNG 10</translation>
+<translation id="8280223431922155812">THÁNG 11</translation>
+<translation id="4254029385847607686">THÁNG 12</translation>
+<translation id="937392350501765664"><ph name="MONTH" /> <ph name="YEAR" /></translation>
+<translation id="3074127054582480056">Chú ý</translation>
+<translation id="7335371657242627509">Bao gồm trong Tự động đóng góp</translation>
+<translation id="8918760045046434238">Gửi tiền boa...</translation>
+<translation id="1978261665418056203">Chưa có hoạt động nào
+trong tháng này...</translation>
+<translation id="4914597931214386232">Đã nhận tài trợ token</translation>
+<translation id="298067735430872465">Thu nhập từ quảng cáo</translation>
+<translation id="6112368337882254910">Tự động đóng góp</translation>
+<translation id="4781696154289395607">Bạn đã đóng góp <ph name="BAT_VALUE" /> BAT.</translation>
+<translation id="9182287025588539628">Boa một lần</translation>
+<translation id="7577100371127227294">Boa hàng tháng</translation>
+<translation id="8772672608371898774">Nhà phát hành đã được Brave xác thực</translation>
+<translation id="1397683270551078781">Chưa được xác thực</translation>
+<translation id="5727208111992260840">Nhà sáng tạo này chưa đăng ký nhận đóng góp từ người dùng Brave.
+        Mọi khoản tiền boa bạn gửi sẽ vẫn nằm trong ví của bạn cho đến khi họ xác thực.</translation>
+<translation id="683765328936486920">trên YouTube</translation>
+<translation id="8969049974285901797">trên Twitch</translation>
+<translation id="606865182719489911">Có một khoản tài trợ token miễn phí.</translation>
+<translation id="3453206261112715431">Tài trợ token miễn phí</translation>
+<translation id="13853865024308201">Nhận</translation>
+<translation id="3692362746128814480">Bạn đã dành <ph name="BAT_VALUE" /> BAT cho những nhà sáng tạo chưa
+đăng ký nhận đóng góp. Trình duyệt của bạn sẽ tiếp tục cố gắng đóng góp
+cho đến khi họ xác thực, hoặc cho đến khi 90 ngày đã trôi qua.</translation>
+<translation id="5306913077198665897">Có vấn đề khi xử lý khoản tiền boa của bạn, vui lòng thử lại.</translation>
+<translation id="2429828319207652823">Có vấn đề khi xử lý khoản đóng góp của bạn.</translation>
+<translation id="2323069945529668668">Ôi không!</translation>
+<translation id="7510166204621526816">Máy chủ Phần thưởng Brave không phản hồi. Chúng tôi sẽ sửa sớm nhất có thể.</translation>
+<translation id="2104073734684466851">Tài trợ</translation>
+<translation id="3068742524072211213">hết hạn vào <ph name="DATE" /></translation>
+<translation id="7550470870580166294">Không đủ tiền</translation>
+<translation id="2775064702681588061">Tài khoản Phần thưởng Brave của bạn đang chờ nạp tiền.</translation>
+<translation id="765834632354589737">Sao lưu ví</translation>
+<translation id="1713542052890184975">Vui lòng sao lưu ví Brave của bạn.</translation>
+<translation id="3333887201479867589">Phần thưởng Brave</translation>
+<translation id="2012723204723845092">Chào mừng trở lại!</translation>
+<translation id="7669994301500276741">Nhận thưởng khi duyệt web.</translation>
+<translation id="8203529727745387785">Kiếm tiền bằng cách xem quảng cáo
+tôn trọng quyền riêng tư và trả tiền đó để hỗ trợ
+những nhà sáng tạo nội dung bạn yêu thích.</translation>
+<translation id="5148719990624240755">BẬT PHẦN THƯỞNG BRAVE</translation>
+<translation id="1628742278973105368">Tiền thưởng hàng tháng từ bạn sẽ được gửi đi lần đầu tiên vào:</translation>
+<translation id="6665366815203065060">Bạn vừa gửi tiền thưởng đến:</translation>
+<translation id="5441565662498481293">Bạn đang tự động gửi tiền thưởng đến:</translation>
+<translation id="1166682575529520472">Hàng tháng</translation>
+<translation id="8495235435594442882">Bật thanh công cụ bên dưới </translation>
+<translation id="7239121106815507493">Tắt thanh công cụ bên dưới</translation>
+<translation id="145068164597056296">Tìm kiếm hoặc nhập URL</translation>
+<translation id="6810078320346589989">Tạo dấu trang</translation>
+<translation id="5463954686005964104">Thưởng tiền hàng tháng cho trang web này</translation>
+<translation id="1923568441186788334">Brave Rewards đây rồi</translation>
+<translation id="7722441371828049691">Ủng hộ các trang web bạn yêu thích.</translation>
+<translation id="5234764350956374838">Hủy</translation>
+<translation id="4472575034687746823">Bắt đầu</translation>
+<translation id="4162066325465825185">Chúng tôi rất tiếc, dường như tính năng Brave Rewards không khả dụng trên thiết bị của bạn</translation>
+<translation id="4150201353443180367">Hiển thị</translation>
+<translation id="2804710924397009224">Ẩn Biểu tượng Brave Rewards</translation>
+<translation id="7358991116457217836">Ẩn biểu tượng </translation>
+<translation id="7618184561660805696">Sớm trở lại kiểm tra để được nhận token miễn phí</translation>
+<translation id="3349204812119681938">Đặt lại Brave Rewards</translation>
+<translation id="8782039523249932839">Việc này sẽ xóa ví Brave của bạn và đặt lại toàn bộ dữ liệu Brave Rewards của bạn về trạng thái ban đầu</translation>
+<translation id="5321518976657560663">Lỗi khi Đặt lại</translation>
+<translation id="7071576788062714665">Đã xảy ra lỗi khi khôi phục Brave Rewards về cài đặt gốc. Vui lòng khởi động lại Brave và thử lại</translation>
+<translation id="24067401253841795">Nhập các từ của chuỗi mã đồng bộ hóa hiển thị dưới đây. Hãy coi mã này như một mật khẩu. Nếu ai đó lấy được mã này, họ sẽ có thể đọc và thay đổi dữ liệu đồng bộ hóa của bạn.</translation>
+<translation id="3149880132460839085">Đồng bộ hóa Brave</translation>
 </translationbundle>
