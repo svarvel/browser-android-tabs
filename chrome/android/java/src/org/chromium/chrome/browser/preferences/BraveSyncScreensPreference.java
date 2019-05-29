@@ -256,7 +256,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       mPrefSwitchPaymentSettings = (ChromeSwitchPreference) findPreference(BraveSyncWorker.PREF_SYNC_PAYMENT_SETTINGS);
 
       // Initialize mSyncScreensObserver
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
       if (null != application && null != application.mBraveSyncWorker) {
           if (null == mSyncScreensObserver) {
               mSyncScreensObserver = new BraveSyncScreensObserver() {
@@ -306,7 +306,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                   @Override
                                   public void run() {
                                       cancelTimeoutTimer();
-                                      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                                      ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                                       if (null != application && null != application.mBraveSyncWorker) {
                                           application.mBraveSyncWorker.SetSyncEnabled(true);
                                           application.mBraveSyncWorker.InitSync(true, false);
@@ -425,7 +425,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
                                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                                   String currentDeviceId = sharedPref.getString(BraveSyncWorker.PREF_DEVICE_ID, "");
                                   // Load other devices in chain
-                                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                                  ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                                   if (null != application && null != application.mBraveSyncWorker) {
                                       new Thread(new Runnable() {
                                           @Override
@@ -790,7 +790,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
               Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.brave_sync_copied_text), Toast.LENGTH_LONG).show();
           }
       } else if (mConfirmCodeWordsButton == v) {
-          ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+          ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
           String[] words = mCodeWords.getText().toString().trim().replace("   ", " ").replace("\n", " ").split(" ");
           if (BraveSyncWorker.NICEWARE_WORD_COUNT != words.length && BraveSyncWorker.BIP39_WORD_COUNT != words.length) {
               if (null != mSyncScreensObserver) {
@@ -866,7 +866,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           Log.w(TAG, "Unknown button");
           return;
       }
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
       if (null != application && null != application.mBraveSyncWorker) {
           if (buttonView == mSyncSwitchBookmarks) {
               application.mBraveSyncWorker.SetSyncBookmarksEnabled(isChecked);
@@ -1065,7 +1065,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           getActivity().runOnUiThread(new Runnable() {
               @Override
               public void run() {
-                  ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                  ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                   if (null != application && null != application.mBraveSyncWorker) {
                       application.mBraveSyncWorker.SetSyncEnabled(true);
                       application.mBraveSyncWorker.InitSync(true, false);
@@ -1164,7 +1164,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
             @Override
             public void onClick(DialogInterface dialog, int button) {
                 if (button == AlertDialog.BUTTON_POSITIVE) {
-                    ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+                    ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                     if (null != application && null != application.mBraveSyncWorker) {
                         new Thread() {
                             @Override
@@ -1246,7 +1246,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
   }
 
   private void cancelLoadingResetAndBack() {
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
       if (null != application && null != application.mBraveSyncWorker) {
           application.mBraveSyncWorker.ResetSync();
       }
@@ -1278,7 +1278,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       getActivity().runOnUiThread(new Runnable() {
           @Override
           public void run() {
-              ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+              ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
               if (null != application && null != application.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
@@ -1320,7 +1320,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       getActivity().runOnUiThread(new Runnable() {
           @Override
           public void run() {
-              ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+              ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
               if (null != application && null != application.mBraveSyncWorker) {
                   SharedPreferences sharedPref = getActivity().getApplicationContext().getSharedPreferences(BraveSyncWorker.PREF_NAME, 0);
                   String seed = sharedPref.getString(BraveSyncWorker.PREF_SEED, null);
@@ -1391,7 +1391,7 @@ public class BraveSyncScreensPreference extends PreferenceFragment
           adjustWidth(mScrollViewSyncDone, false);
           mScrollViewSyncDone.setVisibility(View.VISIBLE);
       }
-      ChromeApplication application = (ChromeApplication)ContextUtils.getApplicationContext();
+      ChromeApplication application = (ChromeApplication)ContextUtils.getBaseApplicationContext();
       if (null != application && null != application.mBraveSyncWorker) {
           if (null != mSyncSwitchBookmarks) {
               mSyncSwitchBookmarks.setChecked(application.mBraveSyncWorker.IsSyncBookmarksEnabled());

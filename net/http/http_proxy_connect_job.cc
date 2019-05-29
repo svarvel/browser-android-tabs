@@ -816,7 +816,7 @@ const HostPortPair& HttpProxyConnectJob::GetDestination() {
 std::string HttpProxyConnectJob::GetUserAgent() const {
   if (!http_user_agent_settings())
     return std::string();
-  return http_user_agent_settings()->GetUserAgent();
+  return http_user_agent_settings()->GetUserAgent("");
 }
 
 }  // namespace net

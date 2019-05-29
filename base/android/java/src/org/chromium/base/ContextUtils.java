@@ -49,6 +49,14 @@ public class ContextUtils {
         return sApplicationContext;
     }
 
+    public static Context getBaseApplicationContext() {
+        if (sApplicationContext instanceof ContextWrapper) {
+            return ((ContextWrapper)sApplicationContext).getBaseContext();
+        } else {
+            return getApplicationContext();
+        }
+    }
+
     /**
      * Initializes the java application context.
      *

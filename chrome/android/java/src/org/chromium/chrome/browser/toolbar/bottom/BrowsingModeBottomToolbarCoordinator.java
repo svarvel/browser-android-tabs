@@ -144,7 +144,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         mMediator.setThemeColorProvider(themeColorProvider);
 
         mHomeButton.setThemeColorProvider(themeColorProvider);
-        mShareButton.setThemeColorProvider(themeColorProvider);
+        //mShareButton.setThemeColorProvider(themeColorProvider);
         mSearchAccelerator.setThemeColorProvider(themeColorProvider);
         mSearchAccelerator.setIncognitoStateProvider(incognitoStateProvider);
 

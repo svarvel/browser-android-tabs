@@ -40,64 +40,64 @@ namespace blockers {
           FilterOption filter_option = FONoFilterOption;
           switch(resource_type) {
             // top level page
-            case content::RESOURCE_TYPE_MAIN_FRAME:
+            case content::ResourceType::kMainFrame:
               filter_option = FODocument;
               break;
             // frame or iframe
-            case content::RESOURCE_TYPE_SUB_FRAME:
+            case content::ResourceType::kSubFrame:
               filter_option = FOSubdocument;
               break;
             // a CSS stylesheet
-            case content::RESOURCE_TYPE_STYLESHEET:
+            case content::ResourceType::kStylesheet:
               filter_option = FOStylesheet;
               break;
             // an external script
-            case content::RESOURCE_TYPE_SCRIPT:
+            case content::ResourceType::kScript:
               filter_option = FOScript;
               break;
             // an image (jpg/gif/png/etc)
-            case content::RESOURCE_TYPE_IMAGE:
+            case content::ResourceType::kImage:
               filter_option = FOImage;
               break;
             // a font
-            case content::RESOURCE_TYPE_FONT_RESOURCE:
+            case content::ResourceType::kFontResource:
               filter_option = FOFont;
               break;
             // an "other" subresource.
-            case content::RESOURCE_TYPE_SUB_RESOURCE:
+            case content::ResourceType::kSubResource:
               filter_option = FOOther;
               break;
             // an object (or embed) tag for a plugin.
-            case content::RESOURCE_TYPE_OBJECT:
+            case content::ResourceType::kObject:
               filter_option = FOObject;
               break;
             // a media resource.
-            case content::RESOURCE_TYPE_MEDIA:
+            case content::ResourceType::kMedia:
               filter_option = FOMedia;
               break;
             // a XMLHttpRequest
-            case content::RESOURCE_TYPE_XHR:
+            case content::ResourceType::kXhr:
               filter_option = FOXmlHttpRequest;
               break;
             // a ping request for <a ping>/sendBeacon.
-            case content::RESOURCE_TYPE_PING:
+            case content::ResourceType::kPing:
               filter_option = FOPing;
               break;
             // the main resource of a dedicated
-            case content::RESOURCE_TYPE_WORKER:
+            case content::ResourceType::kWorker:
             // the main resource of a shared worker.
-            case content::RESOURCE_TYPE_SHARED_WORKER:
+            case content::ResourceType::kSharedWorker:
             // an explicitly requested prefetch
-            case content::RESOURCE_TYPE_PREFETCH:
+            case content::ResourceType::kPrefetch:
             // a favicon
-            case content::RESOURCE_TYPE_FAVICON:
+            case content::ResourceType::kFavicon:
             // the main resource of a service worker.
-            case content::RESOURCE_TYPE_SERVICE_WORKER:
+            case content::ResourceType::kServiceWorker:
             // a report of Content Security Policy
-            case content::RESOURCE_TYPE_CSP_REPORT:
+            case content::ResourceType::kCspReport:
             // a resource that a plugin requested.
-            case content::RESOURCE_TYPE_PLUGIN_RESOURCE:
-            case content::RESOURCE_TYPE_LAST_TYPE:
+            case content::ResourceType::kPluginResource:
+            case content::ResourceType::kMaxValue:
             default:
               break;
           }

@@ -50,7 +50,7 @@ public class MixPanelWorker {
         /*if (!ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEND_METRICS, true)) {
             return;
         }
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         GetMixpanelInstance(app);
         if (null != app && null != app.mMixpanelInstance) {
             app.mMixpanelInstance.track(eventName);
@@ -62,7 +62,7 @@ public class MixPanelWorker {
         /*if (!ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEND_METRICS, true)) {
             return;
         }
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         GetMixpanelInstance(app);
         if (null != app && null != app.mMixpanelInstance) {
             try {
@@ -79,7 +79,7 @@ public class MixPanelWorker {
         /*if (!ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEND_METRICS, true)) {
             return;
         }
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         GetMixpanelInstance(app);
         if (null != app && null != app.mMixpanelInstance) {
             try {

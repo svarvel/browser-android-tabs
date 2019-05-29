@@ -30,6 +30,7 @@
     <color name="black_alpha_30">#4D000000</color>
     <color name="black_alpha_65">#A6000000</color>
     <color name="white_alpha_65">#A6FFFFFF</color>
+    <color name="white_alpha_90">#E6FFFFFF</color>
 
     <!-- Old color palette -->
     <color name="google_blue_grey_500">#607D8B</color>
@@ -107,7 +108,7 @@
     <color name="ntp_bg_incognito">@color/incognito_modern_primary_color</color>
     <color name="suggestions_modern_bg">@color/modern_primary_color</color>
     <color name="suggestions_offline_badge_tint">@color/default_icon_color_blue</color>
-    <color name="google_logo_tint">@android:color/transparent</color>
+    <!--<color name="google_logo_tint">@android:color/transparent</color>-->
 
     <!-- Incognito NTP Colors. -->
     <color name="incognito_emphasis">@android:color/white</color>

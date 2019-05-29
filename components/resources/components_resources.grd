@@ -43,8 +43,8 @@
       <include name="IDR_BRAVE_REWARDS_IMG_BTC" file="../../brave/components/brave_rewards/resources/img/BTC.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_IMG_ETH" file="../../brave/components/brave_rewards/resources/img/ETH.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_IMG_LTC" file="../../brave/components/brave_rewards/resources/img/LTC.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_DONATE_BG_1" file="../../brave/components/brave_rewards/resources/img/donate_bg_1.svg" type="BINDATA" />
-      <include name="IDR_BRAVE_DONATE_BG_2" file="../../brave/components/brave_rewards/resources/img/donate_bg_2.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_DONATE_BG_1" file="../../brave/components/brave_rewards/resources/img/tip_bg_1.svg" type="BINDATA" />
+      <include name="IDR_BRAVE_DONATE_BG_2" file="../../brave/components/brave_rewards/resources/img/tip_bg_2.svg" type="BINDATA" />
       <include name="IDR_BRAVE_REWARDS_NICEWARE_LIST" file="../../brave/vendor/bat-native-ledger/niceware/wordlist" type="BINDATA" />
     </includes>
 

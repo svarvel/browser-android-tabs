@@ -23,7 +23,7 @@ class NET_EXPORT HttpUserAgentSettings {
   virtual std::string GetAcceptLanguage() const = 0;
 
   // Gets the UA string.
-  virtual std::string GetUserAgent() const = 0;
+  virtual std::string GetUserAgent(const std::string&) const = 0;
 
  private:
   DISALLOW_COPY_AND_ASSIGN(HttpUserAgentSettings);

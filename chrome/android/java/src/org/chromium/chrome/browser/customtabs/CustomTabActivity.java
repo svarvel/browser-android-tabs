@@ -284,13 +284,6 @@ public class CustomTabActivity extends ChromeActivity<CustomTabActivityComponent
             InfoBarContainer.get(mTabProvider.getTab()).setParentView(bottomContainer);
         }
 
-        // Properly attach tab's infobar to the view hierarchy, as the main tab might have been
-        // initialized prior to inflation.
-        if (mTabController.getTab() != null) {
-            ViewGroup bottomContainer = (ViewGroup) findViewById(R.id.bottom_container);
-            InfoBarContainer.get(mTabController.getTab()).setParentView(bottomContainer);
-        }
-
         // Setting task title and icon to be null will preserve the client app's title and icon.
         ApiCompatibilityUtils.setTaskDescription(this, null, null, toolbarColor);
         showCustomButtonsOnToolbar();

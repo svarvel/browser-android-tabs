@@ -30,7 +30,7 @@ public class ADBlockUpdater {
         try {
             mAvailable.acquire();
             if (initShieldsConfig) {
-              ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+              ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
               if (null != app) {
                   app.initShieldsConfig();
               }

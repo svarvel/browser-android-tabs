@@ -73,7 +73,7 @@ public class CustomTabActivityTabFactory {
         mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelector) {
             @Override
             public void onLoadStarted(Tab tab, boolean toDifferentDocument) {
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
                 }

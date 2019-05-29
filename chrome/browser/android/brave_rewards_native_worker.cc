@@ -79,13 +79,13 @@ void BraveRewardsNativeWorker::GetPublisherInfo(JNIEnv* env, const
 void BraveRewardsNativeWorker::OnPanelPublisherInfo(
       brave_rewards::RewardsService* rewards_service,
       int error_code,
-      std::unique_ptr<ledger::PublisherInfo> info,
+      const ledger::PublisherInfo* info,
       uint64_t tabId) {
   if (!info) {
     return;
   }
-
-  map_publishers_info_[tabId] = *info;
+  ledger::PublisherInfoPtr pi = info->Clone();
+  map_publishers_info_[tabId] = std::move(pi);
   JNIEnv* env = base::android::AttachCurrentThread();
   Java_BraveRewardsNativeWorker_OnPublisherInfo(env, 
         weak_java_brave_rewards_native_worker_.get(env), tabId);
@@ -95,9 +95,9 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = base::android::ConvertUTF8ToJavaString(env, iter->second.url);
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second->url);
   }
 
   return res;
@@ -107,9 +107,9 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = base::android::ConvertUTF8ToJavaString(env, iter->second.favicon_url);
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second->favicon_url);
   }
 
   return res; 
@@ -119,9 +119,9 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = base::android::ConvertUTF8ToJavaString(env, iter->second.name);
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second->name);
   }
 
   return res;
@@ -131,9 +131,9 @@ base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetPublishe
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = base::android::ConvertUTF8ToJavaString(env, iter->second.id);
+    res = base::android::ConvertUTF8ToJavaString(env, iter->second->id);
   }
 
   return res;
@@ -143,9 +143,9 @@ int BraveRewardsNativeWorker::GetPublisherPercent(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   int res = 0;
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = iter->second.percent;
+    res = iter->second->percent;
   }
 
   return res;
@@ -155,9 +155,9 @@ bool BraveRewardsNativeWorker::GetPublisherExcluded(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   bool res = false;
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = iter->second.excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED;
+    res = iter->second->excluded == ledger::PUBLISHER_EXCLUDE::EXCLUDED;
   }
 
   return res;
@@ -167,9 +167,9 @@ bool BraveRewardsNativeWorker::GetPublisherVerified(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
   bool res = false;
 
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
-    res = iter->second.verified;
+    res = iter->second->verified;
   }
 
   return res;
@@ -177,22 +177,22 @@ bool BraveRewardsNativeWorker::GetPublisherVerified(JNIEnv* env,
 
 void BraveRewardsNativeWorker::IncludeInAutoContribution(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId, bool exclude) {
-  std::map<uint64_t, ledger::PublisherInfo>::iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
     if (exclude) {
-      iter->second.excluded = ledger::PUBLISHER_EXCLUDE::EXCLUDED;
+      iter->second->excluded = ledger::PUBLISHER_EXCLUDE::EXCLUDED;
     } else {
-      iter->second.excluded = ledger::PUBLISHER_EXCLUDE::INCLUDED;
+      iter->second->excluded = ledger::PUBLISHER_EXCLUDE::INCLUDED;
     }
     if (brave_rewards_service_) {
-      brave_rewards_service_->SetContributionAutoInclude(iter->second.id, exclude);
+      brave_rewards_service_->SetContributionAutoInclude(iter->second->id, exclude);
     }
   }
 }
 
 void BraveRewardsNativeWorker::RemovePublisherFromMap(JNIEnv* env, 
         const base::android::JavaParamRef<jobject>& obj, uint64_t tabId) {
-  std::map<uint64_t, ledger::PublisherInfo>::const_iterator iter(map_publishers_info_.find(tabId));
+  PublishersInfoMap::const_iterator iter(map_publishers_info_.find(tabId));
   if (iter != map_publishers_info_.end()) {
     map_publishers_info_.erase(iter);
   }
@@ -290,7 +290,7 @@ void BraveRewardsNativeWorker::Donate(JNIEnv* env,
         const base::android::JavaParamRef<jstring>& publisher_key, 
         int amount, bool recurring) {
   if (brave_rewards_service_) {
-    brave_rewards_service_->OnDonate(base::android::ConvertJavaStringToUTF8(env, publisher_key), 
+    brave_rewards_service_->OnTip(base::android::ConvertJavaStringToUTF8(env, publisher_key), 
       amount, recurring);
   }
 }

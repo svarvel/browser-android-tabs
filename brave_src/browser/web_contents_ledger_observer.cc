@@ -113,10 +113,10 @@ void WebContentsLedgerObserver::ResourceLoadComplete(
     return;
   }
 
-  if (resource_load_info.resource_type == content::RESOURCE_TYPE_MEDIA ||
-      resource_load_info.resource_type == content::RESOURCE_TYPE_XHR ||
-      resource_load_info.resource_type == content::RESOURCE_TYPE_IMAGE ||
-      resource_load_info.resource_type == content::RESOURCE_TYPE_SCRIPT) {
+  if (resource_load_info.resource_type == content::ResourceType::kMedia ||
+      resource_load_info.resource_type == content::ResourceType::kXhr ||
+      resource_load_info.resource_type == content::ResourceType::kImage ||
+      resource_load_info.resource_type == content::ResourceType::kScript) {
 
     // TODO fill first_party_url and referrer with actual values
     brave_rewards_service_->OnXHRLoad(SessionTabHelper::IdForTab(web_contents_), 

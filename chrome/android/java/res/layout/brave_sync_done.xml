@@ -203,7 +203,7 @@
             android:text="@string/brave_sync_remove_device_text"
             style="@style/BraveSyncBottomButton"
             android:background="@android:color/transparent"
-            android:textColor="@color/google_red_700" />
+            android:textColor="@color/google_red_600" />
 
     </LinearLayout>
 </ScrollView>

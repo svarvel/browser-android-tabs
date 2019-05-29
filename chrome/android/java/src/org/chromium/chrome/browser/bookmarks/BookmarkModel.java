@@ -143,7 +143,7 @@ public class BookmarkModel extends BookmarkBridge {
     void moveBookmarks(List<BookmarkId> bookmarkIds, BookmarkId newParentId) {
         int appenedIndex = getChildCount(newParentId);
         BookmarkItem[] bookmarksToMove = new BookmarkItem[bookmarkIds.size()];
-        ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+        ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
         for (int i = 0; i < bookmarkIds.size(); ++i) {
             if (null != app && null != app.mBraveSyncWorker && app.mBraveSyncWorker.SyncBookmarkModelIsReady()) {
                 app.mBraveSyncWorker.SyncedMoveBookmark(bookmarkIds.get(i), newParentId);

@@ -401,7 +401,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 }
                 mTippingInProgress = true;
 
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                 Intent intent = new Intent(app, BraveRewardsSiteBannerActivity.class);
                 intent.putExtra(BraveRewardsSiteBannerActivity.TAB_ID_EXTRA, currentTabId);
                 mActivity.startActivityForResult(intent,ChromeTabbedActivity.SITE_BANNER_REQUEST_CODE);

@@ -162,7 +162,7 @@ public class BookmarkEditActivity extends SynchronousInitializationActivity {
                 }
             }
             if (sendToSyncWorker) {
-                ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+                ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                 if (null != app && null != app.mBraveSyncWorker) {
                     app.mBraveSyncWorker.CreateUpdateBookmark(false, mModel.getBookmarkById(mBookmarkId));
                 }

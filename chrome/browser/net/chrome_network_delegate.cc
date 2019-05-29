@@ -642,7 +642,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPreFileWork(
       && isAdBlockEnabled
       && request
       && ctx->info
-      && content::RESOURCE_TYPE_MAIN_FRAME != ctx->info->GetResourceType()) {
+      && content::ResourceType::kMainFrame != ctx->info->GetResourceType()) {
         ctx->needPerformAdBlock = true;
       if (!blockers_worker_->isAdBlockerInitialized() ||
         (ctx->isAdBlockRegionalEnabled && !blockers_worker_->isAdBlockerRegionalInitialized()) ) {
@@ -697,7 +697,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
   }
 
   ctx->check_httpse_redirect = true;
-  if (ctx->block && ctx->info && content::RESOURCE_TYPE_IMAGE == ctx->info->GetResourceType()) {
+  if (ctx->block && ctx->info && content::ResourceType::kImage == ctx->info->GetResourceType()) {
     ctx->check_httpse_redirect = false;
     *new_url = GURL(TRANSPARENT1PXGIF);
   }
@@ -844,7 +844,7 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_PostBlockers(
   }*/
   //
 
-  if (ctx->block && (nullptr == ctx->info || content::RESOURCE_TYPE_IMAGE != ctx->info->GetResourceType())) {
+  if (ctx->block && (nullptr == ctx->info || content::ResourceType::kImage != ctx->info->GetResourceType())) {
     *new_url = GURL("");
     if (ctx->pendingAtLeastOnce) {
       std::move(callback).Run(net::ERR_BLOCKED_BY_ADMINISTRATOR);

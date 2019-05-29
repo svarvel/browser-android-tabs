@@ -283,7 +283,7 @@ class ChromeNetworkDelegate : public net::NetworkDelegateImpl {
   // (TODO)find a better way to handle last first party
   GURL last_first_party_url_;
 
-  std::auto_ptr<PendingRequests> pending_requests_;
+  std::unique_ptr<PendingRequests> pending_requests_;
 
   bool incognito_;
 

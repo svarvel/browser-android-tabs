@@ -118,7 +118,7 @@ public class BookmarkManager implements BookmarkDelegate, SearchDelegate,
     private final Runnable mModelLoadedRunnable = new Runnable() {
         @Override
         public void run() {
-            ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();
+            ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
             if (null != app && null != app.mBraveSyncWorker) {
                 mBookmarkModel.addObserver(app.mBraveSyncWorker.mBookmarkModelObserver);
                 app.mBraveSyncWorker.mBookmarkModelObserver.braveBookmarkModelLoaded(mBookmarkModel);

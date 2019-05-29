@@ -245,7 +245,7 @@ void DataReductionProxyChromeSettings::InitDataReductionProxySettings(
       InitDataReductionProxySettings(profile_prefs, io_data,
                                      std::move(service));
   io_data->SetDataReductionProxyService(
-      data_reduction_proxy_service()->GetWeakPtr(), GetUserAgent());
+      data_reduction_proxy_service()->GetWeakPtr(), GetUserAgent(""));
 
   data_reduction_proxy::DataReductionProxySettings::
       SetCallbackToRegisterSyntheticFieldTrial(base::Bind(

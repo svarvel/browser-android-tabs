@@ -2039,7 +2039,6 @@ jumbo_split_static_library("browser") {
     "//device/usb/public/mojom",
     "//device/vr/buildflags",
     "//extensions/buildflags",
-    "//extensions/common:url_pattern",
     "//google_apis",
     "//gpu/config",
     "//media",

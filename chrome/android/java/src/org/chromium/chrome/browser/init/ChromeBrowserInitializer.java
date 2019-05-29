@@ -199,7 +199,7 @@ public class ChromeBrowserInitializer {
        @Override
        protected Long doInBackground() {
            try {
-             Context context = mApplication.getApplicationContext();
+             Context context = ContextUtils.getApplicationContext();
              // A list with valid installers package name
              List<String> validInstallers = new ArrayList<>(Arrays.asList("com.android.vending", "com.google.android.feedback"));
 
@@ -239,7 +239,7 @@ public class ChromeBrowserInitializer {
             try {
                 boolean alreadySwitched = ContextUtils.getAppSharedPreferences().getBoolean(PREF_SEARCH_SUGGESTIONS_SWITCHED_DEFAULT_FALSE, false);
                 if (!alreadySwitched) {
-                    if (PackageUtils.isFirstInstall(mApplication.getApplicationContext())) {
+                    if (PackageUtils.isFirstInstall(ContextUtils.getApplicationContext())) {
                         ThreadUtils.postOnUiThread(new Runnable() {
                             @Override
                             public void run() {

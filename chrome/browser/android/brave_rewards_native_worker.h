@@ -26,6 +26,8 @@ namespace brave_rewards {
 namespace chrome {
 namespace android {
 
+typedef std::map<uint64_t, ledger::PublisherInfoPtr> PublishersInfoMap;
+
 class BraveRewardsNativeWorker : public brave_rewards::RewardsServiceObserver,
     public brave_rewards::RewardsServicePrivateObserver,
     public brave_rewards::RewardsNotificationServiceObserver {
@@ -150,7 +152,7 @@ public:
     void OnPanelPublisherInfo(
         brave_rewards::RewardsService* rewards_service,
         int error_code,
-        std::unique_ptr<ledger::PublisherInfo> info,
+        const ledger::PublisherInfo* info,
         uint64_t tabId) override;
 
     void OnGetCurrentBalanceReport(brave_rewards::RewardsService* rewards_service,
@@ -185,7 +187,7 @@ private:
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;
     brave_rewards::AutoContributeProps auto_contrib_properties_;
-    std::map<uint64_t, ledger::PublisherInfo> map_publishers_info_; // <tabId, PublisherInfo>
+    PublishersInfoMap map_publishers_info_; // <tabId, PublisherInfoPtr>
     std::map<std::string, brave_rewards::ContentSite> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
     base::WeakPtrFactory<BraveRewardsNativeWorker> weak_factory_;
 };
