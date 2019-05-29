@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Buscando...</translation>
 <translation id="1316495628809031177">La sincronización está en pausa</translation>
 <translation id="1322046419516468189">Consulta y administra las contraseñas guardadas en tu <ph name="SAVED_PASSWORDS_STORE" /></translation>
-<translation id="1326317727527857210">Inicia sesión en Brave para ver las pestañas de tus otros dispositivos.</translation>
+<translation id="7253276740368043692">Inicia sesión en Brave para ver las pestañas de tus otros dispositivos.</translation>
 <translation id="1327074568633507428">Impresora en Google Cloud Print</translation>
 <translation id="1327977588028644528">Pasarela</translation>
 <translation id="1329584516321524826">Actualizada ahora mismo</translation>
@@ -1385,7 +1385,7 @@ y su configuración no se sincronizan en otros dispositivos con la función de s
 
     Descripción:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Aplicaciones de Brave</translation>
+<translation id="300669147395456190">Aplicaciones de Brave</translation>
 <translation id="3150927491400159470">Volver a cargar de manera forzada</translation>
 <translation id="315116470104423982">Redes móviles</translation>
 <translation id="3151539355209957474">Hora de inicio</translation>
@@ -1460,7 +1460,7 @@ y su configuración no se sincronizan en otros dispositivos con la función de s
 <translation id="3280237271814976245">Gu&amp;ardar como...</translation>
 <translation id="3280243678470289153">Permanecer en Brave</translation>
 <translation id="3281892622610078515">Archivos y programas que se pondrán en cuarentena:</translation>
-<translation id="3282568296779691940">Iniciar sesión en Brave</translation>
+<translation id="82609232232243542">Iniciar sesión en Brave</translation>
 <translation id="3285322247471302225">Nueva &amp;pestaña</translation>
 <translation id="3288047731229977326">Las extensiones que se ejecutan en modo de desarrollador pueden causar daños en el ordenador. Si no eres desarrollador, debes inhabilitar esas extensiones para mantener protegido tu ordenador.</translation>
 <translation id="3289856944988573801">Para comprobar si hay actualizaciones, utiliza una conexión Ethernet o Wi-Fi.</translation>
@@ -2223,7 +2223,7 @@ Si no cambias la configuración predeterminada, <ph name="USER_DISPLAY_NAME" /> 
 <translation id="4453946976636652378">Busca <ph name="SEARCH_ENGINE_NAME" /> o introduce una URL</translation>
 <translation id="4462159676511157176">Servidores de nombres personalizados</translation>
 <translation id="4469477701382819144">Bloqueados en sitios web que muestran anuncios invasivos o engañosos</translation>
-<translation id="447252321002412580">Ayudar a mejorar las funciones y el rendimiento de Brave</translation>
+<translation id="918192811481327695">Ayudar a mejorar las funciones y el rendimiento de Brave</translation>
 <translation id="4472575034687746823">Empezar</translation>
 <translation id="4474155171896946103">Añadir todas las pestañas a marcadores...</translation>
 <translation id="4475552974751346499">Buscar descargas</translation>
@@ -3733,7 +3733,7 @@ Exponente público (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bits):
 <translation id="6841186874966388268">Errores</translation>
 <translation id="6843423766595476978">Ok Google ya se ha configurado</translation>
 <translation id="6845038076637626672">Abrir de forma maximizada</translation>
-<translation id="6845325883481699275">Ayudar a mejorar la seguridad de Brave</translation>
+<translation id="4991384657077828949">Ayudar a mejorar la seguridad de Brave</translation>
 <translation id="6848388270925200958">Tienes algunas tarjetas que solo se pueden utilizar en este dispositivo</translation>
 <translation id="6851497530878285708">Aplicación habilitada</translation>
 <translation id="6853388645642883916">Herramienta de actualización no disponible</translation>
@@ -4194,7 +4194,7 @@ Exponente público (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bits):
 <translation id="756445078718366910">Abrir ventana del navegador</translation>
 <translation id="7564847347806291057">Finalizar proceso</translation>
 <translation id="7566118625369982896">Gestionar enlaces de aplicaciones de Play</translation>
-<translation id="756809126120519699">Datos de Brave borrados</translation>
+<translation id="7814200940910057384">Datos de Brave borrados</translation>
 <translation id="7568790562536448087">Actualización</translation>
 <translation id="7571643774869182231">No hay espacio suficiente para instalar la actualización</translation>
 <translation id="7573172247376861652">Carga de batería</translation>
@@ -4306,7 +4306,7 @@ Exponente público (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bits):
 <translation id="7732111077498238432">La red está controlada por políticas</translation>
 <translation id="7737238973539693982">Eliminar Linux (Beta)</translation>
 <translation id="7740996059027112821">Estándar</translation>
-<translation id="7746457520633464754">Para detectar aplicaciones y sitios web peligrosos, Brave envía a Google las URL de algunas de las páginas que visitas, información limitada del sistema y parte del contenido de las páginas.</translation>
+<translation id="3712897541513849705">Para detectar aplicaciones y sitios web peligrosos, Brave envía a Google las URL de algunas de las páginas que visitas, información limitada del sistema y parte del contenido de las páginas.</translation>
 <translation id="7750228210027921155">Imagen en imagen</translation>
 <translation id="7751260505918304024">Mostrar todo</translation>
 <translation id="7754704193130578113">Preguntar dónde se guardará cada archivo antes de descargarlo</translation>
@@ -5075,7 +5075,7 @@ Guarda tu archivo de clave en un lugar seguro, ya que lo necesitarás para crear
 <translation id="8899851313684471736">Abrir enlace en una &amp;ventana nueva</translation>
 <translation id="8902081783136172774">Elige un fondo de pantalla para la página de inicio</translation>
 <translation id="8902667442496790482">Abrir los ajustes de Enunciar Selección</translation>
-<translation id="8904976895050290827">Sincronización de Brave</translation>
+<translation id="3149880132460839085">Sincronización de Brave</translation>
 <translation id="890616557918890486">Cambiar fuente</translation>
 <translation id="8909833622202089127">El sitio web está registrando tu ubicación</translation>
 <translation id="8910146161325739742">Compartir tu pantalla</translation>

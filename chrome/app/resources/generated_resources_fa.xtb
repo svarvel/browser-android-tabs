@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">در حال جستجو...</translation>
 <translation id="1316495628809031177">همگام‌سازی موقتاً متوقف شده است</translation>
 <translation id="1322046419516468189">در <ph name="SAVED_PASSWORDS_STORE" /> گذرواژه‌های ذخیره‌شده‌تان را مشاهده و مدیریت کنید</translation>
-<translation id="1326317727527857210">‏برای دسترسی به برگه‌هایتان در دستگاه‌های دیگر، به سیستم Brave وارد شوید.</translation>
+<translation id="7253276740368043692">‏برای دسترسی به برگه‌هایتان در دستگاه‌های دیگر، به سیستم Brave وارد شوید.</translation>
 <translation id="1327074568633507428">‏چاپگر در Google Cloud Print</translation>
 <translation id="1327977588028644528">دروازه</translation>
 <translation id="1329584516321524826">لحظاتی پیش به‌روزرسانی شد</translation>
@@ -1381,7 +1381,7 @@
 
     توضیح:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">‏برنامه‌های Brave</translation>
+<translation id="300669147395456190">‏برنامه‌های Brave</translation>
 <translation id="3150927491400159470">تازه سازی سخت</translation>
 <translation id="315116470104423982">داده‌های تلفن همراه</translation>
 <translation id="3151539355209957474">زمان شروع</translation>
@@ -1456,7 +1456,7 @@
 <translation id="3280237271814976245">ذخیره &amp;بعنوان</translation>
 <translation id="3280243678470289153">‏ماندن در Brave</translation>
 <translation id="3281892622610078515">فایل‌ها و برنامه‌هایی که قرنطینه می‌شود:</translation>
-<translation id="3282568296779691940">‏ورود به Brave</translation>
+<translation id="82609232232243542">‏ورود به Brave</translation>
 <translation id="3285322247471302225">&amp;برگه جدید</translation>
 <translation id="3288047731229977326">افزونه‌هایی که در حالت برنامه‌نوبس اجرا می‌شوند می‌توانند به رایانه شما آسیب برسانند. اگر برنامه‌نویس نیستید، باید این برنامه‌های افزودنی را که در حالت برنامه‌نویس اجرا می‌شوند غیرفعال کنید تا ایمن بمانید.</translation>
 <translation id="3289856944988573801">‏برای بررسی موارد به‌روز لطفاً از کابل شبکه یا Wi-Fi استفاده کنید.</translation>
@@ -2222,7 +2222,7 @@
 <translation id="4453946976636652378">جستجوی <ph name="SEARCH_ENGINE_NAME" /> یا تایپ نشانی وب</translation>
 <translation id="4462159676511157176">سرورهای نام سفارشی</translation>
 <translation id="4469477701382819144">در سایت‌هایی که آگهی‌های مزاحم یا گمراه‌کننده نشان می‌دهند مسدود شود</translation>
-<translation id="447252321002412580">‏کمک به بهبود ویژگی‌ها و عملکرد Brave</translation>
+<translation id="918192811481327695">‏کمک به بهبود ویژگی‌ها و عملکرد Brave</translation>
 <translation id="4472575034687746823">شروع به کار</translation>
 <translation id="4474155171896946103">نشانک‌گذاری همه برگه‌ها...</translation>
 <translation id="4475552974751346499">جستجوی فایل‌های بارگیری‌شده</translation>
@@ -3732,7 +3732,7 @@
 <translation id="6841186874966388268">خطاها</translation>
 <translation id="6843423766595476978">‏Ok Google کاملاً آماده است</translation>
 <translation id="6845038076637626672">باز کردن در حداکثر اندازه</translation>
-<translation id="6845325883481699275">‏کمک به بهبود امنیت Brave</translation>
+<translation id="4991384657077828949">‏کمک به بهبود امنیت Brave</translation>
 <translation id="6848388270925200958">درحال‌حاضر، کارت‌هایی دارید که فقط در این دستگاه قابل استفاده‌اند</translation>
 <translation id="6851497530878285708">برنامه فعال شد</translation>
 <translation id="6853388645642883916">به‌روزرسان در حالت خواب</translation>
@@ -4193,7 +4193,7 @@
 <translation id="756445078718366910">باز کردن پنجرهٔ مرورگر</translation>
 <translation id="7564847347806291057">پایان دادن به فرایند</translation>
 <translation id="7566118625369982896">‏مدیریت پیوندهای برنامه Play</translation>
-<translation id="756809126120519699">‏داده‌های Brave پاک شد</translation>
+<translation id="7814200940910057384">‏داده‌های Brave پاک شد</translation>
 <translation id="7568790562536448087">در حال به‌روزرسانی</translation>
 <translation id="7571643774869182231">فضای ذخیره‌سازی برای به‌روزرسانی کافی نیست</translation>
 <translation id="7573172247376861652">شارژ باتری</translation>
@@ -4305,7 +4305,7 @@
 <translation id="7732111077498238432">شبکه توسط خط‌مشی کنترل می‌شود</translation>
 <translation id="7737238973539693982">‏حذف Linux (بتا)</translation>
 <translation id="7740996059027112821">استاندارد</translation>
-<translation id="7746457520633464754">‏برای حذف برنامه‌ها و سایت‌های خطرناک، Brave نشانی‌های وب برخی از صفحه‌هایی را که بازدید می‌کنید، اطلاعات سیستم محدود و برخی از محتوای صفحه را به Google می‌فرستد.</translation>
+<translation id="3712897541513849705">‏برای حذف برنامه‌ها و سایت‌های خطرناک، Brave نشانی‌های وب برخی از صفحه‌هایی را که بازدید می‌کنید، اطلاعات سیستم محدود و برخی از محتوای صفحه را به Google می‌فرستد.</translation>
 <translation id="7750228210027921155">تصویردرتصویر</translation>
 <translation id="7751260505918304024">نمایش همه</translation>
 <translation id="7754704193130578113">قبل از بارگیری هر فایل، درباره مکان ذخیره سؤال شود</translation>
@@ -5074,7 +5074,7 @@
 <translation id="8899851313684471736">باز کردن پیوند در &amp;پنجره جدید</translation>
 <translation id="8902081783136172774">یک کاغذدیواری برای صفحه شروع خود انتخاب کنید</translation>
 <translation id="8902667442496790482">باز کردن تنظیمات «انتخاب برای شنیدن»</translation>
-<translation id="8904976895050290827">‏همگام‌سازی Brave</translation>
+<translation id="3149880132460839085">‏همگام‌سازی Brave</translation>
 <translation id="890616557918890486">تغییر منبع</translation>
 <translation id="8909833622202089127">سایت درحال ردیابی مکان شما است</translation>
 <translation id="8910146161325739742">اشتراک‌گذاری صفحه</translation>

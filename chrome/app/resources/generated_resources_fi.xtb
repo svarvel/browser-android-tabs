@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Haetaan...</translation>
 <translation id="1316495628809031177">Synkronointi on keskeytetty</translation>
 <translation id="1322046419516468189">Katso ja ylläpidä salasanoja: <ph name="SAVED_PASSWORDS_STORE" /></translation>
-<translation id="1326317727527857210">Käytä välilehtiä muilta laitteiltasi kirjautumalla Braveen.</translation>
+<translation id="7253276740368043692">Käytä välilehtiä muilta laitteiltasi kirjautumalla Braveen.</translation>
 <translation id="1327074568633507428">Tulostin Google Cloud Printissä</translation>
 <translation id="1327977588028644528">Yhdyskäytävä</translation>
 <translation id="1329584516321524826">Päivitetty juuri nyt</translation>
@@ -1386,7 +1386,7 @@
 
     Kuvaus:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Brave-sovellukset</translation>
+<translation id="300669147395456190">Brave-sovellukset</translation>
 <translation id="3150927491400159470">Pakotettu päivitys</translation>
 <translation id="315116470104423982">Mobiilitiedonsiirto</translation>
 <translation id="3151539355209957474">Aloitusaika</translation>
@@ -1461,7 +1461,7 @@
 <translation id="3280237271814976245">Tallenna &amp;nimellä...</translation>
 <translation id="3280243678470289153">Pysy Bravessa</translation>
 <translation id="3281892622610078515">Karanteeniin siirrettävät tiedostot ja ohjelmat:</translation>
-<translation id="3282568296779691940">Kirjaudu Braveen</translation>
+<translation id="82609232232243542">Kirjaudu Braveen</translation>
 <translation id="3285322247471302225">Uusi välileh&amp;ti</translation>
 <translation id="3288047731229977326">Kehittäjätilassa olevat laajennukset voivat vahingoittaa tietokonettasi. Jos et ole kehittäjä, poista kehittäjätilassa olevat laajennukset käytöstä varmuuden vuoksi.</translation>
 <translation id="3289856944988573801">Tarkista päivitykset Ethernetin tai Wi-Fin kautta.</translation>
@@ -2224,7 +2224,7 @@
 <translation id="4453946976636652378">Tee <ph name="SEARCH_ENGINE_NAME" />-haku tai kirjoita URL-osoite</translation>
 <translation id="4462159676511157176">Omat nimipalvelimet</translation>
 <translation id="4469477701382819144">Estetty häiritseviä tai harhaanjohtavia mainoksia näyttävillä sivustoilla</translation>
-<translation id="447252321002412580">Auta parantamaan Braven ominaisuuksia ja suorituskykyä</translation>
+<translation id="918192811481327695">Auta parantamaan Braven ominaisuuksia ja suorituskykyä</translation>
 <translation id="4472575034687746823">Aloita</translation>
 <translation id="4474155171896946103">Lisää kaikki välilehdet kirjanmerkkeihin...</translation>
 <translation id="4475552974751346499">Haku latauksista</translation>
@@ -3736,7 +3736,7 @@ Julkinen eksponentti (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bittiä):
 <translation id="6841186874966388268">Virheet</translation>
 <translation id="6843423766595476978">Ok Google on valmiina</translation>
 <translation id="6845038076637626672">Avaa suuressa koossa</translation>
-<translation id="6845325883481699275">Auttaa parantamaan Braven suojausta.</translation>
+<translation id="4991384657077828949">Auttaa parantamaan Braven suojausta.</translation>
 <translation id="6848388270925200958">Joitakin korttejasi voi juuri nyt käyttää vain tällä laitteella</translation>
 <translation id="6851497530878285708">Sovellus käytössä</translation>
 <translation id="6853388645642883916">Päivittäjä on lepotilassa</translation>
@@ -4197,7 +4197,7 @@ Julkinen eksponentti (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bittiä):
 <translation id="756445078718366910">Avaa selainikkuna</translation>
 <translation id="7564847347806291057">Lopeta prosessi</translation>
 <translation id="7566118625369982896">Hallinnoi Play-sovelluksen linkkejä</translation>
-<translation id="756809126120519699">Brave-tiedot tyhjennetty</translation>
+<translation id="7814200940910057384">Brave-tiedot tyhjennetty</translation>
 <translation id="7568790562536448087">Päivitetään</translation>
 <translation id="7571643774869182231">Tallennustila ei riitä päivitykseen.</translation>
 <translation id="7573172247376861652">Akun varaus</translation>
@@ -4309,7 +4309,7 @@ Julkinen eksponentti (<ph name="PUBLIC_EXPONENT_NUM_BITS" /> bittiä):
 <translation id="7732111077498238432">Tämän verkon toimintaa ohjataan käytännöillä.</translation>
 <translation id="7737238973539693982">Poista Linux (beta)</translation>
 <translation id="7740996059027112821">Vakio</translation>
-<translation id="7746457520633464754">Vaarallisia sovelluksia ja sivustoja löytääkseen Brave lähettää joidenkin avattujen sivujen URL-osoitteita, rajallisia järjestelmätietoja ja osia sivujen sisällöstä Googlelle</translation>
+<translation id="3712897541513849705">Vaarallisia sovelluksia ja sivustoja löytääkseen Brave lähettää joidenkin avattujen sivujen URL-osoitteita, rajallisia järjestelmätietoja ja osia sivujen sisällöstä Googlelle</translation>
 <translation id="7750228210027921155">Kuva kuvassa</translation>
 <translation id="7751260505918304024">Näytä kaikki</translation>
 <translation id="7754704193130578113">Kysy, minne kukin tiedosto tallennetaan ennen lataamista</translation>
@@ -5077,7 +5077,7 @@ Tallenna avaintiedosto suojattuun sijaintiin. Tarvitset sitä, jos haluat luoda 
 <translation id="8899851313684471736">Avaa linkki uudessa &amp;ikkunassa</translation>
 <translation id="8902081783136172774">Aloitussivun taustakuvan valinta</translation>
 <translation id="8902667442496790482">Avaa Teksti puhuttuna -asetukset</translation>
-<translation id="8904976895050290827">Braven synkronointi</translation>
+<translation id="3149880132460839085">Braven synkronointi</translation>
 <translation id="890616557918890486">Vaihda lähdettä</translation>
 <translation id="8909833622202089127">Sivusto seuraa sijaintiasi</translation>
 <translation id="8910146161325739742">Näytön jakaminen</translation>

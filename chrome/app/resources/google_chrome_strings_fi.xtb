@@ -2,15 +2,15 @@
 <!DOCTYPE translationbundle>
 <translationbundle lang="fi">
 <translation id="1001534784610492198">Asennusohjelman arkistotiedosto on vioittunut tai se ei kelpaa. Lataa Brave uudelleen.</translation>
-<translation id="102763973188675173">Muokkaa ja hallinnoi Bravea. Päivitys on saatavilla.</translation>
-<translation id="1035334672863811645">Kirjaudu Braveen</translation>
+<translation id="5849446944780602366">Muokkaa ja hallinnoi Bravea. Päivitys on saatavilla.</translation>
+<translation id="5935964611177478118">Kirjaudu Braveen</translation>
 <translation id="1051826050538111504">Tietokoneellasi on haitallinen ohjelmisto. Brave voi poistaa sen, palauttaa asetuksesi ja poistaa laajennukset käytöstä, jotta selaimesi toimii taas normaalisti.</translation>
 <translation id="1065672644894730302">Asetuksiasi ei voi lukea. Kaikkia toimintoja ei voi välttämättä käyttää eikä asetuksiin tehtäviä muutoksia tallenneta.</translation>
 <translation id="1088300314857992706"><ph name="USER_EMAIL_ADDRESS" /> käytti aiemmin Bravea</translation>
 <translation id="1104959162601287462">Tietoja &amp;Brave-käyttöjärjestelmästä</translation>
-<translation id="110877069173485804">Tämä on oma Bravesi</translation>
-<translation id="1142745911746664600">Braven päivitys epäonnistui</translation>
-<translation id="1154147086299354128">Avaa Chr&amp;omessa</translation>
+<translation id="4100716194836114130">Tämä on oma Bravesi</translation>
+<translation id="6389268239133412586">Braven päivitys epäonnistui</translation>
+<translation id="9071554113102421877">Avaa Chr&amp;omessa</translation>
 <translation id="123620459398936149">Brave-käyttöjärjestelmä ei voinut synkronoida tietoja. Päivitä synkronoinnin tunnuslause.</translation>
 <translation id="127345590676626841">Brave päivittyy automaattisesti, joten käytössäsi on aina uusin versio. Kun lataus on valmis, Brave käynnistyy uudelleen ja voit aloittaa käytön.</translation>
 <translation id="1302523850133262269">Odota hetki, Brave asentaa uusimpia järjestelmäpäivityksiä.</translation>
@@ -19,43 +19,43 @@
 <translation id="1393853151966637042">Apua Braven käytössä</translation>
 <translation id="1399397803214730675">Tietokoneessa on jo Braven uudempi versio. Jos sovellus ei toimi, poista Brave ja yritä uudelleen.</translation>
 <translation id="1434626383986940139">Brave Canary -sovellukset</translation>
-<translation id="1457721931618994305">Päivitetään Bravea...</translation>
+<translation id="5047208012586153436">Päivitetään Bravea...</translation>
 <translation id="1469002951682717133">Braven sovellusten käynnistysohjelma</translation>
-<translation id="1553358976309200471">Päivitä Brave</translation>
+<translation id="1705567146636171298">Päivitä Brave</translation>
 <translation id="1585657529869845941">Klikkaa <ph name="BEGIN_BOLD" />Vaihda joka tapauksessa<ph name="END_BOLD" /> ‑painiketta, jos se tulee näkyviin.</translation>
-<translation id="1587223624401073077">Brave käyttää kameraasi.</translation>
-<translation id="1587325591171447154"><ph name="FILE_NAME" /> on vaarallinen, joten Brave on estänyt sen.</translation>
-<translation id="1590588151039584890">Päivittämistä varten Brave on suljettava tällä tietokoneella. Tämän takia muut tietokoneelle kirjautuneet voivat menettää tallentamattomat muutokset.</translation>
+<translation id="3205074487970075628">Brave käyttää kameraasi.</translation>
+<translation id="4168372721886011198"><ph name="FILE_NAME" /> on vaarallinen, joten Brave on estänyt sen.</translation>
+<translation id="2632141563911437138">Päivittämistä varten Brave on suljettava tällä tietokoneella. Tämän takia muut tietokoneelle kirjautuneet voivat menettää tallentamattomat muutokset.</translation>
 <translation id="1619887657840448962">Paransimme Braven turvallisuutta poistamalla käytöstä sovelluksia, joita <ph name="IDS_EXTENSION_WEB_STORE_TITLE" /> ei tarjoa ja jotka on voitu lisätä ilman lupaasi.</translation>
 <translation id="1628000112320670027">Ohjeita Braven käyttöön</translation>
 <translation id="1662639173275167396">Toinen <ph name="BEGIN_LINK_CROS_OSS" />avoimen lähdekoodin ohjelmisto<ph name="END_LINK_CROS_OSS" /> tukee Brave-käyttöjärjestelmää, kuten myös <ph name="BEGIN_LINK_LINUX_OSS" />Linuxia (beta)<ph name="END_LINK_LINUX_OSS" />.</translation>
 <translation id="1674870198290878346">Avaa linkki Braven inco&amp;gnito-ikkunassa</translation>
-<translation id="1682634494516646069">Brave ei voi lukea tietohakemistoaan <ph name="USER_DATA_DIRECTORY" /> tai kirjoittaa siihen</translation>
+<translation id="2585240446624043880">Brave ei voi lukea tietohakemistoaan <ph name="USER_DATA_DIRECTORY" /> tai kirjoittaa siihen</translation>
 <translation id="1698376642261615901">Brave on verkkoselain, jolla voit avata verkkosivuja ja sovelluksia salamannopeasti. Se on nopea, vakaa ja helppokäyttöinen. Selaa verkkoa turvallisemmin Braven haittaohjelma- ja tietojenkalastelusuojauksen avulla.</translation>
 <translation id="1718131156967340976">Valitse <ph name="SMALL_PRODUCT_LOGO" /> <ph name="BEGIN_BOLD" />Brave<ph name="END_BOLD" />.</translation>
-<translation id="1734234790201236882">Brave tallentaa tämän salasanan Google-tilillesi. Sinun ei tarvitse muistaa sitä.</translation>
+<translation id="6163134585289952357">Brave tallentaa tämän salasanan Google-tilillesi. Sinun ei tarvitse muistaa sitä.</translation>
 <translation id="174539241580958092">Brave ei voinut synkronoida tietoja kirjautumisvirheen vuoksi.</translation>
-<translation id="1759842336958782510">Brave</translation>
+<translation id="939305735877869636">Brave</translation>
 <translation id="1773601347087397504">Apua Brave-käyttöjärjestelmän käytössä</translation>
-<translation id="1795405610103747296">Asenna Brave puhelimellesi. Lähetämme tekstiviestin puhelimeesi: <ph name="PHONE_NUMBER" />.</translation>
+<translation id="1570795130102031380">Asenna Brave puhelimellesi. Lähetämme tekstiviestin puhelimeesi: <ph name="PHONE_NUMBER" />.</translation>
 <translation id="1812689907177901597">Poistamalla tämän käytöstä voit kirjautua Google-sivustoille, esim. Gmailiin, kirjautumatta Braveen.</translation>
-<translation id="1815759068706561639"><ph name="FILE_NAME" /> on vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
+<translation id="8858456697111532356"><ph name="FILE_NAME" /> on vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
 <translation id="1860536484129686729">Brave tarvitsee oikeuden käyttää kameraasi tällä sivustolla.</translation>
-<translation id="1873233029667955273">Brave ei ole oletusselain.</translation>
+<translation id="3343095737966473035">Brave ei ole oletusselain.</translation>
 <translation id="1874309113135274312">Braven betaversio (saapuva mDNS)</translation>
-<translation id="1877026089748256423">Brave on vanhentunut</translation>
+<translation id="5173820533850252773">Brave on vanhentunut</translation>
 <translation id="1915828456209461693">Uusi Brave-päivitys on saatavilla, ja se otetaan käyttöön uudelleenkäynnistyksen jälkeen.</translation>
 <translation id="1919130412786645364">Salli Brave-kirjautuminen</translation>
 <translation id="2063848847527508675">Brave-käyttöjärjestelmä täytyy käynnistää uudelleen, jotta päivitys voidaan ottaa käyttöön.</translation>
 <translation id="2094919256425865063">Suljetaanko Brave silti?</translation>
 <translation id="2120620239521071941"><ph name="ITEMS_COUNT" /> kohdetta poistetaan pysyvästi tältä laitteelta. Jos haluat palauttaa tiedot myöhemmin, kirjaudu Braveen käyttäjänä <ph name="USER_EMAIL" />.</translation>
 <translation id="2123055963409958220">Auta parantamaan Bravea ilmoittamalla <ph name="BEGIN_LINK" />nykyiset asetukset<ph name="END_LINK" />.</translation>
-<translation id="216054706567564023">Asenna Brave puhelimellesi. Lähetämme tekstiviestin palauttamisen puhelinnumeroosi.</translation>
-<translation id="2246246234298806438">Brave ei voi näyttää tulostusesikatselua, koska PDF-katseluohjelma puuttuu.</translation>
-<translation id="2252923619938421629">Auta parantamaan Bravea ilmoittamalla nykyiset asetukset.</translation>
+<translation id="1609678321160597289">Asenna Brave puhelimellesi. Lähetämme tekstiviestin palauttamisen puhelinnumeroosi.</translation>
+<translation id="5874882355102994015">Brave ei voi näyttää tulostusesikatselua, koska PDF-katseluohjelma puuttuu.</translation>
+<translation id="7456658570432774853">Auta parantamaan Bravea ilmoittamalla nykyiset asetukset.</translation>
 <translation id="225363235161345695">{0,plural, =1{Brave käynnistetään uudelleen tunnin kuluttua}other{Brave käynnistetään uudelleen # tunnin kuluttua}}</translation>
-<translation id="2286950485307333924">Olet nyt kirjautuneena Braveen</translation>
-<translation id="2290014774651636340">Googlen sovellusliittymän avaimet puuttuvat. Jotkin Braven toiminnoista poistetaan käytöstä.</translation>
+<translation id="4934157190377700991">Olet nyt kirjautuneena Braveen</translation>
+<translation id="350396164462274391">Googlen sovellusliittymän avaimet puuttuvat. Jotkin Braven toiminnoista poistetaan käytöstä.</translation>
 <translation id="2290095356545025170">Haluatko varmasti poistaa Braven?</translation>
 <translation id="2309047409763057870">Tämä on Braven toissijainen asennus, eikä sitä voi asettaa oletusselaimeksi.</translation>
 <translation id="2346876346033403680">Joku on jo kirjautunut tällä tietokoneella Braveen käyttäjätilillä <ph name="ACCOUNT_EMAIL_LAST" />. Jos se ei ole sinun käyttäjätilisi, luo uusi Brave-käyttäjä, jos haluat pitää tiedot erillään.
@@ -65,53 +65,53 @@ Jos kirjaudut silti sisään, Brave-tiedot, kuten kirjanmerkit, historia ja aset
 <translation id="2429317896000329049">Brave ei voinut synkronoida tietoja, koska synkronointi ei ole käytettävissä verkkotunnuksessasi.</translation>
 <translation id="2467438592969358367">Brave yrittää viedä salasanojasi tiedostoon. Salli tämä kirjoittamalla Windows-salasanasi.</translation>
 <translation id="2485422356828889247">Poista</translation>
-<translation id="2521856951867783208">Tämä tiedosto voi olla vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
+<translation id="8943391224520748272">Tämä tiedosto voi olla vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
 <translation id="2534507159460261402">Google Pay (kopioitu Braveen)</translation>
 <translation id="2535429035253759792">Ylläpitäjä pyytää Braven uudelleenkäynnistystä, jotta tämä päivitys voidaan ottaa käyttöön.</translation>
 <translation id="2580411288591421699">Ei voi asentaa samaa Braven versiota, joka tällä hetkellä on käytössä. Sulje Brave ja yritä uudelleen.</translation>
 <translation id="2586406160782125153">Selaustiedot poistetaan tältä laitteelta. Jos haluat palauttaa tiedot myöhemmin, kirjaudu Braveen käyttäjänä <ph name="USER_EMAIL" />.</translation>
-<translation id="2588322182880276190">Brave-logo</translation>
+<translation id="4847979153841887006">Brave-logo</translation>
 <translation id="2644798301485385923">Brave-käyttöjärjestelmä</translation>
 <translation id="2652691236519827073">Avaa linkki uudella Braven välilehdellä</translation>
-<translation id="2665296953892887393">Auta parantamaan Bravea lähettämällä kaatumisilmoitukset ja <ph name="UMA_LINK" /> Googlelle</translation>
-<translation id="2689103672227170538">Tämä laajennus on vaihtanut Braven aloitussivun.</translation>
+<translation id="7348158796480960456">Auta parantamaan Bravea lähettämällä kaatumisilmoitukset ja <ph name="UMA_LINK" /> Googlelle</translation>
+<translation id="3813272600615358652">Tämä laajennus on vaihtanut Braven aloitussivun.</translation>
 <translation id="2765403129283291972">Brave tarvitsee oikeuden käyttää mikrofoniasi tällä sivustolla.</translation>
 <translation id="2770231113462710648">Vaihda oletusselaimeksi:</translation>
 <translation id="2799223571221894425">Käynnistä uudelleen</translation>
 <translation id="2847461019998147611">Näytä Brave tällä kielellä</translation>
 <translation id="2857540653560290388">Käynnistetään Bravea…</translation>
 <translation id="2871893339301912279">Olet kirjautunut Braveen!</translation>
-<translation id="2888126860611144412">Tietoja Bravesta</translation>
+<translation id="8541922081612557424">Tietoja Bravesta</translation>
 <translation id="3037838751736561277">Brave on käynnissä taustalla.</translation>
-<translation id="3047079729301751317">Jos irrotat tilin <ph name="USERNAME" />, historiasi, kirjanmerkkisi ja muut laitteelle tallennetut Brave-tiedot poistetaan. Google-tiliisi tallennetut tiedot säilyvät ennallaan ja voit hallinnoida niitä <ph name="GOOGLE_DASHBOARD_LINK" />Google Hallintapaneelin kautta<ph name="END_GOOGLE_DASHBOARD_LINK" />.</translation>
-<translation id="3065168410429928842">Brave-välilehti</translation>
+<translation id="4806360651959814118">Jos irrotat tilin <ph name="USERNAME" />, historiasi, kirjanmerkkisi ja muut laitteelle tallennetut Brave-tiedot poistetaan. Google-tiliisi tallennetut tiedot säilyvät ennallaan ja voit hallinnoida niitä <ph name="GOOGLE_DASHBOARD_LINK" />Google Hallintapaneelin kautta<ph name="END_GOOGLE_DASHBOARD_LINK" />.</translation>
+<translation id="6791166902140255175">Brave-välilehti</translation>
 <translation id="3080151273017101988">Jätä taustaohjelmat käyntiin, kun Brave suljetaan</translation>
 <translation id="3089968997497233615">Bravesta on saatavillaa uusi, turvallisempi versio.</translation>
-<translation id="3149510190863420837">Brave-sovellukset</translation>
+<translation id="300669147395456190">Brave-sovellukset</translation>
 <translation id="3251381707915721925">Jos haluat valita, mitä verkkosivustoja <ph name="NEW_PROFILE_NAME" /> voi katsella, määritä rajoituksia ja asetuksia osoitteessa <ph name="BEGIN_LINK_1" /><ph name="DISPLAY_LINK" /><ph name="END_LINK_1" />. Jos et muokkaa oletusasetuksia, <ph name="NEW_PROFILE_NAME" /> voi selata kaikkia verkkosivustoja.
 
 Jotta <ph name="NEW_PROFILE_NAME" /> ei voi käyttää tiliäsi, lukitse profiilisi, kun et enää käytä Bravea. Voit tehdä tämän klikkaamalla profiilisi nimeä selainikkunan oikeassa yläkulmassa ja valitsemalla Sulje ja aseta lapsilukko.
 <ph name="BEGIN_LINK_2" />Lisätietoja<ph name="END_LINK_2" />
 
 Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />.</translation>
-<translation id="3282568296779691940">Kirjaudu Braveen</translation>
+<translation id="82609232232243542">Kirjaudu Braveen</translation>
 <translation id="3360895254066713204">Brave Helper</translation>
 <translation id="3395323229510056640">Ohjeita Brave-käyttöjärjestelmän käyttöön</translation>
 <translation id="3396977131400919238">Asennuksessa havaittiin käyttöjärjestelmävirhe. Lataa Brave uudelleen.</translation>
 <translation id="3398288718845740432">Piilota Brave-valikossa</translation>
-<translation id="3451115285585441894">Lisätään Braveen...</translation>
+<translation id="8880183781256147665">Lisätään Braveen...</translation>
 <translation id="345171907106878721">Lisää itsesi Braveen</translation>
 <translation id="3479552764303398839">Ei nyt</translation>
-<translation id="3481286511616257896"><ph name="FILE_NAME" /> voi olla vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
+<translation id="6205431412329939367"><ph name="FILE_NAME" /> voi olla vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
 <translation id="34857402635545079">Poista data myös Bravesta (<ph name="URL" />)</translation>
 <translation id="3503306920980160878">Brave tarvitsee oikeuden käyttää sijaintiasi, jotta se voidaan jakaa tämän sivuston kanssa.</translation>
 <translation id="3576528680708590453">Järjestelmänvalvojasi on määrittänyt Braven käynnistämään vaihtoehtoisen selaimen, kun <ph name="TARGET_URL_HOSTNAME" /> avataan.</translation>
-<translation id="3582972582564653026">Voit synkronoida Braven ja tehdä siitä yksilöllisemmän kaikilla laitteilla.</translation>
+<translation id="5477319665405831211">Voit synkronoida Braven ja tehdä siitä yksilöllisemmän kaikilla laitteilla.</translation>
 <translation id="3622797965165704966">Nyt voit helpommin käyttää Bravea Google-tililläsi ja jaetuilla tietokoneilla.</translation>
 <translation id="3637702109597584617">Brave ‑käyttöjärjestelmän <ph name="TERMS_OF_SERVICE_LINK" />käyttöehdot<ph name="END_TERMS_OF_SERVICE_LINK" /></translation>
-<translation id="3716182511346448902">Tämä sivu käyttää liikaa muistia, joten Brave keskeytti sen.</translation>
+<translation id="5805364706385912897">Tämä sivu käyttää liikaa muistia, joten Brave keskeytti sen.</translation>
 <translation id="3718181793972440140">Yksi kohde poistetaan pysyvästi  tältä laitteelta. Jos haluat palauttaa tiedot myöhemmin, kirjaudu Braveen käyttäjänä <ph name="USER_EMAIL" />.</translation>
-<translation id="3735758079232443276">Laajennus <ph name="EXTENSION_NAME" /> on vaihtanut Braven aloitussivun.</translation>
+<translation id="2576129394594491151">Laajennus <ph name="EXTENSION_NAME" /> on vaihtanut Braven aloitussivun.</translation>
 <translation id="3780814664026482060">Brave – <ph name="PAGE_TITLE" /></translation>
 <translation id="3784527566857328444">Poista Bravesta…</translation>
 <translation id="386202838227397562">Sulje kaikki Brave-ikkunat ja yritä uudelleen.</translation>
@@ -120,14 +120,14 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="3898493977366060150">Verkkoselaaminen Googlen älykkäillä ratkaisuilla</translation>
 <translation id="4028693306634653894">Avaa Brave nopeammin</translation>
 <translation id="4050175100176540509">Uusimmassa versiossa on käytettävissä tärkeitä turvallisuusparannuksia ja uusia ominaisuuksia.</translation>
-<translation id="4053720452172726777">Braven muokkaaminen ja hallinta</translation>
+<translation id="8148611988012584308">Braven muokkaaminen ja hallinta</translation>
 <translation id="4143243756087420366">Braven nimi ja kuva</translation>
 <translation id="4147555960264124640">Olet kirjautumassa sisään hallinnoidulla tilillä ja antamassa tilin järjestelmänvalvojalle oikeuden hallita Brave -profiiliasi. Brave-tietosi, kuten sovelluksesi, kirjanmerkkisi, historiasi, salasanasi ja muut asetuksesi, yhdistetään pysyvästi käyttäjätiliin <ph name="USER_NAME" />. Voit poistaa nämä tiedot Google-tilien Hallintapaneelissa, mutta et voi liittää tietoja toiseen tiliin. <ph name="LEARN_MORE" /></translation>
 <translation id="4149882025268051530">Asennusohjelma ei pystynyt purkamaan arkistotiedostoa. Lataa Brave uudelleen.</translation>
-<translation id="424864128008805179">Kirjaudutaanko ulos Bravesta?</translation>
+<translation id="7445061995866044926">Kirjaudutaanko ulos Bravesta?</translation>
 <translation id="4251615635259297716">Linkitetäänkö Brave-tiedot tähän tiliin?</translation>
-<translation id="4251625577313994583">lataa Brave iPhoneen</translation>
-<translation id="4293420128516039005">Kirjaudu sisään, niin voit synkronoida Braven ja tehdä siitä yksilöllisemmän kaikilla laitteilla.</translation>
+<translation id="8358191771897395012">lataa Brave iPhoneen</translation>
+<translation id="3360368475735266712">Kirjaudu sisään, niin voit synkronoida Braven ja tehdä siitä yksilöllisemmän kaikilla laitteilla.</translation>
 <translation id="4328355335528187361">Braven kehittäjäversio (saapuva mDNS)</translation>
 <translation id="4331809312908958774">Chrome OS
 </translation>
@@ -139,54 +139,54 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="4567424176335768812">Olet kirjautunut Braveen tilillä <ph name="USER_EMAIL_ADDRESS" />. Nyt voit käyttää kirjanmerkkejäsi, historiaa ja muita asetuksia kaikilla laitteilla, joihin olet kirjautunut.</translation>
 <translation id="4571503333518166079">Siirry Braven ilmoitusasetuksiin</translation>
 <translation id="459622048091363950">Kun Bravella on käyttöoikeus, sivustot voivat pyytää sitä sinulta.</translation>
-<translation id="4600710005438004015">Bravea ei voitu päivittää uusimpaan versioon, joten sinulta puuttuu joitakin uusia ominaisuuksia ja tietoturvakorjauksia.</translation>
+<translation id="7963515534397191222">Bravea ei voitu päivittää uusimpaan versioon, joten sinulta puuttuu joitakin uusia ominaisuuksia ja tietoturvakorjauksia.</translation>
 <translation id="4631713731678262610">Piilota Brave-valikossa</translation>
 <translation id="4633000520311261472">Paransimme Braven turvallisuutta poistamalla käytöstä sovelluksia, joita ei löydy kohteesta <ph name="IDS_EXTENSION_WEB_STORE_TITLE" /> ja jotka on voitu lisätä ilman lupaasi.</translation>
 <translation id="4728575227883772061">Asennus epäonnistui tuntemattoman virheen takia. Jos Brave on tällä hetkellä käynnissä, sulje ohjelma ja yritä uudelleen.</translation>
 <translation id="4750550185319565338">Ota <ph name="PLUGIN_NAME" /> käyttöön käynnistämällä Brave uudelleen.</translation>
 <translation id="4754614261631455953">Brave Canary (saapuva mDNS)</translation>
-<translation id="4771048833395599659">Tämä tiedosto voi olla vaarallinen, joten Brave on estänyt sen.</translation>
-<translation id="4794050651896644714">Tallenna tiedot Braveen</translation>
+<translation id="89367911614620585">Tämä tiedosto voi olla vaarallinen, joten Brave on estänyt sen.</translation>
+<translation id="2887570477425111999">Tallenna tiedot Braveen</translation>
 <translation id="4891791193823137474">Jätä Brave käyntiin taustalle</translation>
 <translation id="4895437082222824641">Avaa linkki uudella Braven välilehdellä</translation>
-<translation id="4921569541910214635">Jaatko tietokoneen jonkun kanssa? Nyt voit määrittää Braven juuri sellaiseksi kuin haluat.</translation>
+<translation id="8296145982386097283">Jaatko tietokoneen jonkun kanssa? Nyt voit määrittää Braven juuri sellaiseksi kuin haluat.</translation>
 <translation id="4945319281866068441">{0,plural, =1{Käynnistä Chrome OS uudelleen vuorokauden kuluessa}other{Käynnistä Brave uudelleen # vuorokauden kuluessa}}</translation>
 <translation id="4953650215774548573">Aseta Brave oletusselaimeksi</translation>
-<translation id="495931528404527476">Bravessa</translation>
+<translation id="6078442581074612226">Bravessa</translation>
 <translation id="4990567037958725628">Brave Canary</translation>
 <translation id="5028489144783860647">Brave ei voinut synkronoida tietoja. Päivitä synkronoinnin tunnuslause.</translation>
 <translation id="5062123544085870375">Käynnistä Chrome OS uudelleen</translation>
 <translation id="5090044601776247154">Brave 70:n myötä valvotut käyttäjäprofiilit eivät enää ole saatavilla.</translation>
-<translation id="5132929315877954718">Löydät hienoja sovelluksia, pelejä ja teemoja Bravelle.</translation>
+<translation id="2871190378186459992">Löydät hienoja sovelluksia, pelejä ja teemoja Bravelle.</translation>
 <translation id="5170938038195470297">Profiiliasi ei voi käyttää, koska se on peräisin uudemmasta Braven versiosta. Kaikkia toimintoja ei välttämättä voi käyttää. Määritä toinen profiilihakemisto tai käytä uudempaa Braven versiota.</translation>
 <translation id="5193136243808726294">Brave ‑käyttöjärjestelmä ei voi avata tätä sivua.</translation>
 <translation id="5204098752394657250">Braven <ph name="TERMS_OF_SERVICE_LINK" />käyttöehdot<ph name="END_TERMS_OF_SERVICE_LINK" /></translation>
 <translation id="5251420635869119124">Vierailijat voivat käyttää Bravea jälkiä jättämättä.</translation>
-<translation id="532046782124376502">Varoitus: Brave ei voi estää laajennuksia tallentamasta selaushistoriaasi. Voit poistaa tämän laajennuksen käytöstä incognito-tilassa poistamalla tämän valinnan.</translation>
+<translation id="5436841087823876677">Varoitus: Brave ei voi estää laajennuksia tallentamasta selaushistoriaasi. Voit poistaa tämän laajennuksen käytöstä incognito-tilassa poistamalla tämän valinnan.</translation>
 <translation id="5386244825306882791">Määrittää myös Braven ja omnibox-hakujen aloitussivun.</translation>
-<translation id="5430073640787465221">Asetustiedostosi on virheellinen. Brave ei voi palauttaa asetuksiasi.</translation>
+<translation id="3403365884036456766">Asetustiedostosi on virheellinen. Brave ei voi palauttaa asetuksiasi.</translation>
 <translation id="5483595757826856374">{0,plural, =0{Brave käynnistetään uudelleen nyt}=1{Brave käynnistetään uudelleen 1 sekunnin kuluttua}other{Brave käynnistetään uudelleen # sekunnin kuluttua}}</translation>
-<translation id="5543953544073077331">Braven muita kopioita on käynnissä. Sulje ne päivittämistä varten.</translation>
+<translation id="1801551749768408825">Braven muita kopioita on käynnissä. Sulje ne päivittämistä varten.</translation>
 <translation id="556024056938947818">Brave yrittää näyttää salasanoja.</translation>
 <translation id="5566025111015594046">Brave (saapuva mDNS)</translation>
-<translation id="565744775970812598"><ph name="FILE_NAME" /> voi olla vaarallinen, joten Brave on estänyt sen.</translation>
-<translation id="5686916850681061684">Yksilöi ja ylläpidä Bravea. Toimenpiteitä vaaditaan. Katso lisätiedot klikkaamalla.</translation>
+<translation id="3561569806301739367"><ph name="FILE_NAME" /> voi olla vaarallinen, joten Brave on estänyt sen.</translation>
+<translation id="6315734375101223238">Yksilöi ja ylläpidä Bravea. Toimenpiteitä vaaditaan. Katso lisätiedot klikkaamalla.</translation>
 <translation id="5690427481109656848">Brave Software Inc</translation>
-<translation id="5715063361988620182">{SECONDS,plural, =1{Brave käynnistyy uudelleen 1 sekunnin kuluttua}other{Brave käynnistyy uudelleen # sekunnin kuluttua}}</translation>
+<translation id="2513524988380267210">{SECONDS,plural, =1{Brave käynnistyy uudelleen 1 sekunnin kuluttua}other{Brave käynnistyy uudelleen # sekunnin kuluttua}}</translation>
 <translation id="573759479754913123">Tietoja Brave-käyttöjärjestelmästä</translation>
-<translation id="5795887333006832406"><ph name="PAGE_TITLE" /> – Brave Canary</translation>
+<translation id="6236814935154483927"><ph name="PAGE_TITLE" /> – Brave Canary</translation>
 <translation id="5804318322022881572">Braven käynnistäminen epäonnistui. Yritä uudelleen.</translation>
 <translation id="5877064549588274448">Kanava vaihdettiin. Ota muutokset käyttöön käynnistämällä laite uudelleen.</translation>
 <translation id="5895138241574237353">Käynnistä uudelleen</translation>
 <translation id="5906655207909574370">Melkein ajan tasalla. Viimeistele päivitys käynnistämällä laite uudelleen.</translation>
 <translation id="5940385492829620908">Tämä on verkkosi, kirjanmerkkiesi ja muun Brave-sisältösi koti.</translation>
-<translation id="5941830788786076944">Tee Bravesta oletusselain</translation>
+<translation id="5019879183386042809">Tee Bravesta oletusselain</translation>
 <translation id="6014844626092547096">Olet nyt kirjautunut sisään Braveen! Järjestelmänvalvoja on poistanut synkronoinnin käytöstä.</translation>
 <translation id="6040143037577758943">Sulje</translation>
 <translation id="6070348360322141662">Brave lisää suojausta salaamalla tietosi.</translation>
 <translation id="6113794647360055231">Brave on nyt entistä parempi</translation>
-<translation id="6169866489629082767"><ph name="PAGE_TITLE" /> - Brave</translation>
-<translation id="6173637689840186878"><ph name="PAGE_TITLE" /> – Brave Beta</translation>
+<translation id="5381622442243174305"><ph name="PAGE_TITLE" /> - Brave</translation>
+<translation id="1403270718080126244"><ph name="PAGE_TITLE" /> – Brave Beta</translation>
 <translation id="61852838583753520">Päivitä &amp;Brave-käyttöjärjestelmä</translation>
 <translation id="6235018212288296708">Braven saapuvien yhteyksien sääntö, joka sallii mDNS-liikenteen.</translation>
 <translation id="6291089322031436445">Braven kehittäjäversion sovellukset</translation>
@@ -194,10 +194,10 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="6338556085225130112">Päivitetään Bravea.</translation>
 <translation id="6368958679917195344">Brave-käyttöjärjestelmää tukee toinen <ph name="BEGIN_LINK_CROS_OSS" />avoimen lähdekoodin ohjelmisto<ph name="END_LINK_CROS_OSS" />.</translation>
 <translation id="6468844726266617801">{0,plural, =1{Käynnistä Brave uudelleen vuorokauden kuluessa}other{Käynnistä Brave uudelleen # vuorokauden kuluessa}}</translation>
-<translation id="6515495397637126556"><ph name="PAGE_TITLE" /> – Brave Dev</translation>
+<translation id="3943696263619956191"><ph name="PAGE_TITLE" /> – Brave Dev</translation>
 <translation id="6566149418543181476">Päivitetään Bravea (<ph name="PROGRESS_PERCENT" />)</translation>
-<translation id="6598387184982954187">Synkronoit Braven tietosi osoitteella <ph name="PROFILE_EMAIL" />. Voit vaihtaa synkronoinnin asetuksia tai siirtyä käyttämään Bravea ilman Google-tiliä käymällä <ph name="SETTINGS_LINK" />.</translation>
-<translation id="6600954340915313787">Kopioitiin Braveen.</translation>
+<translation id="2472951610753402739">Synkronoit Braven tietosi osoitteella <ph name="PROFILE_EMAIL" />. Voit vaihtaa synkronoinnin asetuksia tai siirtyä käyttämään Bravea ilman Google-tiliä käymällä <ph name="SETTINGS_LINK" />.</translation>
+<translation id="663059986967017181">Kopioitiin Braveen.</translation>
 <translation id="6634887557811630702">Brave on ajan tasalla.</translation>
 <translation id="6676384891291319759">Käytä internetiä</translation>
 <translation id="6679975945624592337">Jätä Brave käyntiin taustalle</translation>
@@ -212,9 +212,9 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="6982337800632491844"><ph name="DOMAIN" /> edellyttää, että luet ja hyväksyt seuraavat käyttöehdot ennen tämän laitteen käyttöä. Nämä ehdot eivät laajenna, muokkaa tai rajoita Brave-käyttöliittymän ehtoja.</translation>
 <translation id="6989339256997917931">Brave on päivitetty, mutta et ole käyttänyt sitä ainakaan 30 päivään.</translation>
 <translation id="7023651421574588884">Järjestelmänvalvoja edellyttää Chrome OS:n uudelleenkäynnistystä, jotta päivitys voidaan ottaa käyttöön.</translation>
-<translation id="7098166902387133879">Brave käyttää mikrofoniasi.</translation>
-<translation id="7106741999175697885">Tehtävänhallinta - Brave</translation>
-<translation id="7164397146364144019">Voit auttaa meitä parantamaan Braven turvallisuutta ja tekemään selaimesta helppokäyttöisemmän ilmoittamalla mahdollisista turvallisuusongelmista Googlelle automaattisesti.</translation>
+<translation id="8919461291440820124">Brave käyttää mikrofoniasi.</translation>
+<translation id="5516268345616100622">Tehtävänhallinta - Brave</translation>
+<translation id="474353600079041991">Voit auttaa meitä parantamaan Braven turvallisuutta ja tekemään selaimesta helppokäyttöisemmän ilmoittamalla mahdollisista turvallisuusongelmista Googlelle automaattisesti.</translation>
 <translation id="7242029209006116544">Olet kirjautumassa sisään hallinnoidulla tilillä ja antamassa tilin järjestelmänvalvojalle oikeuden hallita Brave -profiiliasi. Brave-tietosi, kuten sovelluksesi, kirjanmerkkisi, historiasi, salasanasi ja muut asetuksesi, yhdistetään pysyvästi käyttäjätiliin <ph name="USER_NAME" />. Voit poistaa nämä tiedot Google-tilien Hallintapaneelissa, mutta et voi liittää tietoja toiseen tiliin. Voit myös halutessasi luoda uuden profiilin, jos haluat pitää aiemmat Brave-tietosi erillään. <ph name="LEARN_MORE" /></translation>
 <translation id="7295052994004373688">Brave ‑käyttöliittymä näytetään tällä kielellä</translation>
 <translation id="7296210096911315575">Tärkeää käyttö- ja turvallisuustietoa</translation>
@@ -226,14 +226,14 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="7459554271817304652">Määrittämällä synkronoinnin voit tallentaa selaimesi tiedot verkkoon ja käyttää niitä minkä tahansa tietokoneen Bravella.</translation>
 <translation id="7473136999113284234">Brave päivitetään automaattisesti, joten käytössäsi on aina uusin versio</translation>
 <translation id="7486227612705979895">Brave käyttää Drivea antaakseen ehdotuksia osoitepalkissa</translation>
-<translation id="748945194546522577">Tämä tiedosto on vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
-<translation id="7531671357096394523">Lopeta kaikki Brave-kopiot</translation>
+<translation id="2938460345748897177">Tämä tiedosto on vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
+<translation id="8887390605192156061">Lopeta kaikki Brave-kopiot</translation>
 <translation id="7535429826459677826">Braven kehittäjäversio</translation>
 <translation id="7552219221109926349">Näytä Brave-käyttöjärjestelmä tällä kielellä</translation>
 <translation id="7561940363513215021">{0,plural, =1{Brave käynnistetään uudelleen 1 minuutin kuluttua}other{Brave käynnistetään uudelleen # minuutin kuluttua}}</translation>
 <translation id="7589360514048265910">Tämän tietokone ei enää saa Brave ‑päivityksiä, koska Mac OS X 10.9:ää ei enää tueta.</translation>
 <translation id="7592736734348559088">Brave ei voinut synkronoida tietoja, sillä tilin kirjautumistiedot ovat vanhentuneet.</translation>
-<translation id="7626032353295482388">Tervetuloa Braveen</translation>
+<translation id="7207456302801184289">Tervetuloa Braveen</translation>
 <translation id="7636297873481318396">Tämä tiedosto on vaarallinen, joten Brave on estänyt sen. Lisäsuojaus pitää puoliasi.</translation>
 <translation id="7641148173327520642">Järjestelmänvalvojasi on määrittänyt Braven avaamaan osoitteen <ph name="TARGET_URL_HOSTNAME" /> selaimella <ph name="ALTERNATIVE_BROWSER_NAME" />.</translation>
 <translation id="7651907282515937834">Brave Enterprise ‑logo</translation>
@@ -242,7 +242,7 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="7777080907402804672">Jos kuvalla ei ole hyödyllistä kuvausta, Brave yrittää luoda sellaisen. Kuvat lähetetään Googlelle kuvausten luomista varten. Voit milloin tahansa poistaa tämän käytöstä asetuksissa.</translation>
 <translation id="7781002470561365167">Braven uusi versio on saatavilla.</translation>
 <translation id="7787950393032327779">Profiili näyttäisi olevan toisen Brave -prosessin (<ph name="PROCESS_ID" />) käytössä toisella tietokoneella (<ph name="HOST_NAME" />). Brave on lukinnut profiilin, jotta se ei vioitu. Jos olet varma, että mikään toinen prosessi ei käytä tätä profiilia, voit poistaa profiilin lukituksen ja käynnistää Braven uudelleen.</translation>
-<translation id="7808348361785373670">Poista Bravesta…</translation>
+<translation id="777113543093865885">Poista Bravesta…</translation>
 <translation id="7825851276765848807">Asennus epäonnistui tuntemattoman virheen vuoksi. Lataa Brave uudelleen.</translation>
 <translation id="7855730255114109580">Brave on ajan tasalla</translation>
 <translation id="7888186132678118370">Braven kiinnittäminen tehtäväpalkkiin</translation>
@@ -251,30 +251,29 @@ Lähetimme lisäohjeita sähköpostiisi osoitteeseen <ph name="ACCOUNT_EMAIL" />
 <translation id="7908168227788431038">Lähes valmista. Viimeistele päivitys käynnistämällä Brave uudelleen.</translation>
 <translation id="7962410387636238736">Tämän tietokoneen Bravea ei enää päivitetä, koska Windows XP:tä ja Windows Vistaa ei enää tueta.</translation>
 <translation id="8005540215158006229">Brave on melkein valmis.</translation>
-<translation id="8008534537613507642">Asenna Brave uudelleen</translation>
+<translation id="5875673934455379806">Asenna Brave uudelleen</translation>
 <translation id="8013993649590906847">Jos kuvalla ei ole hyödyllistä kuvausta, Brave yrittää luoda sellaisen. Kuvat lähetetään Googlelle kuvausten luomista varten.</translation>
 <translation id="8030318113982266900">Päivitetään laitteeseen kanavaa <ph name="CHANNEL_NAME" />…</translation>
-<translation id="8032142183999901390">Kun olet poistanut tilisi Bravesta, sinun on ehkä avattava avoinna olleet välilehdet uudelleen, jotta muutos tulee voimaan.</translation>
+<translation id="1672124279374861424">Kun olet poistanut tilisi Bravesta, sinun on ehkä avattava avoinna olleet välilehdet uudelleen, jotta muutos tulee voimaan.</translation>
 <translation id="8077352834923175128">Järjestelmänvalvoja pyytää Chrome OS:n uudelleenkäynnistystä, jotta tämä päivitys voidaan ottaa käyttöön.</translation>
 <translation id="8129812357326543296">Tietoja &amp;Bravesta</translation>
-<translation id="8179874765710681175">Asenna Brave puhelimeesi. Lähetämme tekstiviestin puhelimeen.</translation>
+<translation id="8899693649891674038">Asenna Brave puhelimeesi. Lähetämme tekstiviestin puhelimeen.</translation>
 <translation id="8183957050892517584">Brave tallentaa tietosi turvalliseen paikkaan, jottei sinun tarvitse kirjoittaa tietoja uudelleen.</translation>
 <translation id="8226081633851087288">{0,plural, =0{Chrome OS käynnistetään uudelleen nyt}=1{Chrome OS käynnistetään uudelleen 1 sekunnin kuluttua}other{Chrome OS käynnistetään uudelleen # sekunnin kuluttua}}</translation>
-<translation id="825412236959742607">Tämä sivu käyttää liikaa muistia, joten Brave poisti osan sisällöstä.</translation>
-<translation id="8255190535488645436">Brave käyttää kameraasi ja mikrofoniasi.</translation>
+<translation id="5138664332909611586">Tämä sivu käyttää liikaa muistia, joten Brave poisti osan sisällöstä.</translation>
+<translation id="3293668930608086049">Brave käyttää kameraasi ja mikrofoniasi.</translation>
 <translation id="8286862437124483331">Brave yrittää näyttää salasanoja. Salli tämä kirjoittamalla Windows-salasanasi.</translation>
 <translation id="8290100596633877290">Hups! Brave kaatui. Käynnistetäänkö uudelleen?</translation>
-<translation id="8342675569599923794">Tämä tiedosto on vaarallinen, joten Brave on estänyt sen.</translation>
+<translation id="9067428552314418522">Tämä tiedosto on vaarallinen, joten Brave on estänyt sen.</translation>
 <translation id="8370517070665726704">Copyright <ph name="YEAR" /> Brave Software Inc. Kaikki oikeudet pidätetään.</translation>
 <translation id="8380166467911888159">Brave lähettää kenttiin kirjoittamasi tekstin Googlelle oikeinkirjoitusvirheiden korjaamiseksi.</translation>
 <translation id="840084489713044809">Brave yrittää viedä salasanojasi tiedostoon.</translation>
-<translation id="8406086379114794905">Auta parantamaan Bravea</translation>
-<translation id="8432724323949790809">Käynnistä Brave uudelleen</translation>
+<translation id="763369711159699222">Auta parantamaan Bravea</translation>
+<translation id="5509303873219371662">Käynnistä Brave uudelleen</translation>
 <translation id="8455999171311319804">Valinnainen: Lähetä automaattisesti diagnostiikka- ja käyttötietoja Googlelle Brave-käyttöjärjestelmän kehittämiseksi.</translation>
-<translation id="8478823064122749032">Asenna Brave puhelimellesi. Lähetämme tekstiviestin palauttamisen puhelinnumeroosi: <ph name="PHONE_NUMBER" />.</translation>
-<translation id="8498858610309223613">Braven tärkeä tietoturvapäivitys on asennettu. Käynnistä selain uudelleen – palautamme avoimet välilehdet.</translation>
+<translation id="2965084188004448871">Asenna Brave puhelimellesi. Lähetämme tekstiviestin palauttamisen puhelinnumeroosi: <ph name="PHONE_NUMBER" />.</translation>
+<translation id="8668413672647811944">Braven tärkeä tietoturvapäivitys on asennettu. Käynnistä selain uudelleen – palautamme avoimet välilehdet.</translation>
 <translation id="8521348052903287641">Braven kehittäjäversion saapuvien yhteyksien sääntö, joka sallii mDNS-liikenteen.</translation>
-<translation id="8540666473246803645">Brave</translation>
 <translation id="8547799825197623713">Brave Canary -sovellusten käynnistysohjelma</translation>
 <translation id="8556340503434111824">Bravesta on saatavissa uusi versio, joka on entistäkin nopeampi.</translation>
 <translation id="8568392309447938879">Sinun täytyy kirjautua Braveen käyttääksesi sovelluksia. Kirjauduttuasi Brave voi synkronoida sovelluksesi, kirjanmerkkisi, historiasi, salasanasi ja muut asetuksesi eri laitteille.</translation>

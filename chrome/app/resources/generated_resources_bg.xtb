@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Търси се...</translation>
 <translation id="1316495628809031177">Синхронизирането е на пауза</translation>
 <translation id="1322046419516468189">Преглеждайте и управлявайте запазените пароли в <ph name="SAVED_PASSWORDS_STORE" /></translation>
-<translation id="1326317727527857210">Влезте в Brave, за да получите разделите си от другите си устройства.</translation>
+<translation id="7253276740368043692">Влезте в Brave, за да получите разделите си от другите си устройства.</translation>
 <translation id="1327074568633507428">Принтер в Google Отпечатване в облак</translation>
 <translation id="1327977588028644528">Шлюз</translation>
 <translation id="1329584516321524826">Актуализирано току-що</translation>
@@ -1382,7 +1382,7 @@
 
 Описание:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Приложения в Brave</translation>
+<translation id="300669147395456190">Приложения в Brave</translation>
 <translation id="3150927491400159470">Твърдо презареждане</translation>
 <translation id="315116470104423982">Мобилни данни</translation>
 <translation id="3151539355209957474">Начален час</translation>
@@ -1457,7 +1457,7 @@
 <translation id="3280237271814976245">&amp;Запазване като...</translation>
 <translation id="3280243678470289153">Оставане в Brave</translation>
 <translation id="3281892622610078515">Файлове и програми, които да бъдат поставени под карантина:</translation>
-<translation id="3282568296779691940">Вход в Brave</translation>
+<translation id="82609232232243542">Вход в Brave</translation>
 <translation id="3285322247471302225">Нов &amp;раздел</translation>
 <translation id="3288047731229977326">Разширенията, които се изпълняват в режим за програмисти, могат да навредят на компютъра ви. Ако не сте програмист, за по-голяма безопасност трябва да деактивирате изпълнението им в този режим.</translation>
 <translation id="3289856944988573801">За да проверите за актуализации, моля, използвайте Ethernet или Wi-Fi.</translation>
@@ -2225,7 +2225,7 @@
 <translation id="4453946976636652378">Търсете с(ъс) <ph name="SEARCH_ENGINE_NAME" /> или въведете URL адрес</translation>
 <translation id="4462159676511157176">Специално зададени сървъри за имена</translation>
 <translation id="4469477701382819144">Блокиране за сайтовете, на които се показват натрапчиви или подвеждащи реклами</translation>
-<translation id="447252321002412580">Помощ за подобряването на функциите и ефективността на Brave</translation>
+<translation id="918192811481327695">Помощ за подобряването на функциите и ефективността на Brave</translation>
 <translation id="4472575034687746823">Първи стъпки</translation>
 <translation id="4474155171896946103">Запазване на отметки към всички раздели…</translation>
 <translation id="4475552974751346499">Търсене във файловете за изтегляне</translation>
@@ -3736,7 +3736,7 @@
 <translation id="6841186874966388268">Грешки</translation>
 <translation id="6843423766595476978">Настроихте Ok Google</translation>
 <translation id="6845038076637626672">Отваряне с увеличен изглед</translation>
-<translation id="6845325883481699275">Помощ за подобряването на сигурността на Brave</translation>
+<translation id="4991384657077828949">Помощ за подобряването на сигурността на Brave</translation>
 <translation id="6848388270925200958">В момента имате някои карти, които могат да се използват само на това устройство</translation>
 <translation id="6851497530878285708">Активиране на приложението</translation>
 <translation id="6853388645642883916">Актуализиращата програма е в спящ режим</translation>
@@ -4197,7 +4197,7 @@
 <translation id="756445078718366910">Отваряне на прозореца на браузъра</translation>
 <translation id="7564847347806291057">Прекратяване на процеса</translation>
 <translation id="7566118625369982896">Управление на връзките към приложения в Google Play</translation>
-<translation id="756809126120519699">Данните в Brave са изчистени</translation>
+<translation id="7814200940910057384">Данните в Brave са изчистени</translation>
 <translation id="7568790562536448087">Актуализира се</translation>
 <translation id="7571643774869182231">Мястото в хранилището не е достатъчно за актуализацията</translation>
 <translation id="7573172247376861652">Заряд на батерията</translation>
@@ -4309,7 +4309,7 @@
 <translation id="7732111077498238432">Мрежата се контролира чрез правила</translation>
 <translation id="7737238973539693982">Изтриване на Linux (бета)</translation>
 <translation id="7740996059027112821">Стандартна</translation>
-<translation id="7746457520633464754">За да открива опасни приложения и сайтове, Brave изпраща до Google URL адресите на някои от страниците, които посещавате, ограничена системна информация и част от съдържанието на страниците</translation>
+<translation id="3712897541513849705">За да открива опасни приложения и сайтове, Brave изпраща до Google URL адресите на някои от страниците, които посещавате, ограничена системна информация и част от съдържанието на страниците</translation>
 <translation id="7750228210027921155">Картина в картината</translation>
 <translation id="7751260505918304024">Показване на всички</translation>
 <translation id="7754704193130578113">Извеждане на запитване къде да бъде запазен всеки файл преди изтеглянето му</translation>
@@ -5078,7 +5078,7 @@
 <translation id="8899851313684471736">Отваряне на връзк&amp;ата в нов прозорец</translation>
 <translation id="8902081783136172774">Изберете тапет за началната си страница</translation>
 <translation id="8902667442496790482">Отваряне на настройките на Прочитане на глас</translation>
-<translation id="8904976895050290827">Синхронизиране в Brave</translation>
+<translation id="3149880132460839085">Синхронизиране в Brave</translation>
 <translation id="890616557918890486">Промяна на източника</translation>
 <translation id="8909833622202089127">Сайтът следи местоположението ви</translation>
 <translation id="8910146161325739742">Споделяне на екрана ви</translation>

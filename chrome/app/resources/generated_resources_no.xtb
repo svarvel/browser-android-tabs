@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Søker …</translation>
 <translation id="1316495628809031177">Synkroniseringen er satt på pause</translation>
 <translation id="1322046419516468189">Se og administrer lagrede passord i <ph name="SAVED_PASSWORDS_STORE" /> din</translation>
-<translation id="1326317727527857210">For å få fanene dine fra de andre enhetene du bruker, logg på Brave.</translation>
+<translation id="7253276740368043692">For å få fanene dine fra de andre enhetene du bruker, logg på Brave.</translation>
 <translation id="1327074568633507428">Skriver på Google Cloud Print</translation>
 <translation id="1327977588028644528">Gateway</translation>
 <translation id="1329584516321524826">Nettopp oppdatert</translation>
@@ -1381,7 +1381,7 @@
 
     Beskrivelse:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Brave-apper</translation>
+<translation id="300669147395456190">Brave-apper</translation>
 <translation id="3150927491400159470">Hard innlasting på nytt</translation>
 <translation id="315116470104423982">Mobildata</translation>
 <translation id="3151539355209957474">Starttid</translation>
@@ -1456,7 +1456,7 @@
 <translation id="3280237271814976245">L&amp;agre som...</translation>
 <translation id="3280243678470289153">Bli værende i Brave</translation>
 <translation id="3281892622610078515">Filer og programmer som blir satt i karantene:</translation>
-<translation id="3282568296779691940">Logg på Brave</translation>
+<translation id="82609232232243542">Logg på Brave</translation>
 <translation id="3285322247471302225">Ny &amp;fane</translation>
 <translation id="3288047731229977326">Utvidelser som kjører i utviklermodus kan skade datamaskinen din. Hvis du ikke er utvikler, bør du deaktivere disse utvidelsene som kjører i utviklermodus, for å være på den sikre siden.</translation>
 <translation id="3289856944988573801">For å sjekke etter oppdateringer, kan du bruke Ethernet eller Wi-Fi.</translation>
@@ -2219,7 +2219,7 @@
 <translation id="4453946976636652378">Søk i <ph name="SEARCH_ENGINE_NAME" /> eller skriv inn en nettadresse</translation>
 <translation id="4462159676511157176">Egendefinerte navnetjenere</translation>
 <translation id="4469477701382819144">Blokkert på nettsteder som viser forstyrrende eller villedende annonser</translation>
-<translation id="447252321002412580">Hjelp til med å forbedre funksjonene og ytelsen til Brave</translation>
+<translation id="918192811481327695">Hjelp til med å forbedre funksjonene og ytelsen til Brave</translation>
 <translation id="4472575034687746823">Kom i gang</translation>
 <translation id="4474155171896946103">Bokmerk alle fanene</translation>
 <translation id="4475552974751346499">Søk i nedlastinger</translation>
@@ -3729,7 +3729,7 @@
 <translation id="6841186874966388268">Feil</translation>
 <translation id="6843423766595476978">Ok Google er konfigurert</translation>
 <translation id="6845038076637626672">Maksimer ved åpning</translation>
-<translation id="6845325883481699275">Bidra til å gjøre Brave sikrere</translation>
+<translation id="4991384657077828949">Bidra til å gjøre Brave sikrere</translation>
 <translation id="6848388270925200958">Akkurat nå har du noen kort som bare kan brukes på denne enheten</translation>
 <translation id="6851497530878285708">Appen er slått på</translation>
 <translation id="6853388645642883916">Oppdatereringsprogrammet er i hvilemodus</translation>
@@ -4188,7 +4188,7 @@
 <translation id="756445078718366910">Åpne nettleservindu</translation>
 <translation id="7564847347806291057">Avslutt prosessen</translation>
 <translation id="7566118625369982896">Administrer Play-applinker</translation>
-<translation id="756809126120519699">Brave-dataene er slettet</translation>
+<translation id="7814200940910057384">Brave-dataene er slettet</translation>
 <translation id="7568790562536448087">Oppdaterer</translation>
 <translation id="7571643774869182231">For lite lagringsplass til å oppdatere</translation>
 <translation id="7573172247376861652">Batterilading</translation>
@@ -4300,7 +4300,7 @@
 <translation id="7732111077498238432">Nettverket er kontrollert av regler</translation>
 <translation id="7737238973539693982">Slett Linux (beta)</translation>
 <translation id="7740996059027112821">Standard</translation>
-<translation id="7746457520633464754">For å oppdage farlige apper og nettsteder sender Brave nettadressene til noen av sidene du besøker, begrenset systeminformasjon og noe sideinnhold til Google.</translation>
+<translation id="3712897541513849705">For å oppdage farlige apper og nettsteder sender Brave nettadressene til noen av sidene du besøker, begrenset systeminformasjon og noe sideinnhold til Google.</translation>
 <translation id="7750228210027921155">Bilde i bilde</translation>
 <translation id="7751260505918304024">Vis alle</translation>
 <translation id="7754704193130578113">Spør før nedlasting hvor hver fil skal lagres</translation>
@@ -5069,7 +5069,7 @@ Jeg tror ikke det er nødvendig å blokkere dette nettstedet.</translation>
 <translation id="8899851313684471736">Å&amp;pne linken i et nytt vindu</translation>
 <translation id="8902081783136172774">Velg en bakgrunn for startsiden din</translation>
 <translation id="8902667442496790482">Åpne innstillingene for Tekstopplesing</translation>
-<translation id="8904976895050290827">Brave-synkronisering</translation>
+<translation id="3149880132460839085">Brave-synkronisering</translation>
 <translation id="890616557918890486">Endre kilde</translation>
 <translation id="8909833622202089127">Nettstedet sporer posisjonen din</translation>
 <translation id="8910146161325739742">Del skjermen</translation>

@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Prebieha vyhľadávanie...</translation>
 <translation id="1316495628809031177">Synchronizácia je pozastavená</translation>
 <translation id="1322046419516468189">Uložené heslá si môžete zobraziť a spravovať v časti <ph name="SAVED_PASSWORDS_STORE" /></translation>
-<translation id="1326317727527857210">Ak chcete získať karty z ďalších svojich zariadení, prihláste sa do Brave.</translation>
+<translation id="7253276740368043692">Ak chcete získať karty z ďalších svojich zariadení, prihláste sa do Brave.</translation>
 <translation id="1327074568633507428">Tlačiareň v službe Google Cloud Print</translation>
 <translation id="1327977588028644528">Brána</translation>
 <translation id="1329584516321524826">Práve aktualizované</translation>
@@ -1383,7 +1383,7 @@
 
     Popis:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Aplikácie Brave</translation>
+<translation id="300669147395456190">Aplikácie Brave</translation>
 <translation id="3150927491400159470">Vynútiť opätovné načítanie</translation>
 <translation id="315116470104423982">Mobilné dátové prenosy</translation>
 <translation id="3151539355209957474">Čas začiatku</translation>
@@ -1458,7 +1458,7 @@
 <translation id="3280237271814976245">Uložiť &amp;ako...</translation>
 <translation id="3280243678470289153">Zostať v Brave</translation>
 <translation id="3281892622610078515">Súbory a programy, ktoré sa pridajú do karantény:</translation>
-<translation id="3282568296779691940">Prihlásenie do prehliadača Brave</translation>
+<translation id="82609232232243542">Prihlásenie do prehliadača Brave</translation>
 <translation id="3285322247471302225">Nová &amp;karta</translation>
 <translation id="3288047731229977326">Rozšírenia spustené v režime pre vývojárov môžu poškodiť váš počítač. Ak nie ste vývojár, mali by ste v záujme bezpečnosti rozšírenia spustené v režime vývojára zakázať.</translation>
 <translation id="3289856944988573801">Ak chcete skontrolovať aktualizácie, použite sieť ethernet alebo Wi‑Fi.</translation>
@@ -2224,7 +2224,7 @@
 <translation id="4453946976636652378">Vyhľadajte v službe <ph name="SEARCH_ENGINE_NAME" /> alebo zadajte webovú adresu</translation>
 <translation id="4462159676511157176">Vlastné menné servery</translation>
 <translation id="4469477701382819144">Blokované na weboch, ktoré zobrazujú obťažujúce alebo zavádzajúce reklamy</translation>
-<translation id="447252321002412580">Pomáhať s vylepšovaním funkcií a výkonu Brave</translation>
+<translation id="918192811481327695">Pomáhať s vylepšovaním funkcií a výkonu Brave</translation>
 <translation id="4472575034687746823">Začíname</translation>
 <translation id="4474155171896946103">Všetky karty uložiť ako záložky...</translation>
 <translation id="4475552974751346499">Hľadať stiahnuté súbory</translation>
@@ -3734,7 +3734,7 @@
 <translation id="6841186874966388268">Chyby</translation>
 <translation id="6843423766595476978">Výraz „Ok Google“ je nastavený</translation>
 <translation id="6845038076637626672">Otvoriť maximalizované</translation>
-<translation id="6845325883481699275">Pomoc so zlepšením zabezpečenia Brave</translation>
+<translation id="4991384657077828949">Pomoc so zlepšením zabezpečenia Brave</translation>
 <translation id="6848388270925200958">Momentálne máte niekoľko kariet, ktoré je možné použiť iba v tomto zariadení</translation>
 <translation id="6851497530878285708">Aplikácia je povolená</translation>
 <translation id="6853388645642883916">Služba Updater je v režime spánku</translation>
@@ -4195,7 +4195,7 @@
 <translation id="756445078718366910">Otvoriť okno prehliadača</translation>
 <translation id="7564847347806291057">Ukončiť proces</translation>
 <translation id="7566118625369982896">Správa skratiek aplikácie Play</translation>
-<translation id="756809126120519699">Údaje Brave boli vymazané</translation>
+<translation id="7814200940910057384">Údaje Brave boli vymazané</translation>
 <translation id="7568790562536448087">Prebieha aktualizácia</translation>
 <translation id="7571643774869182231">V úložisku nie je dostatok miesta na aktualizáciu</translation>
 <translation id="7573172247376861652">Nabíjanie batérie</translation>
@@ -4307,7 +4307,7 @@
 <translation id="7732111077498238432">Sieť je riadená pravidlami</translation>
 <translation id="7737238973539693982">Odstrániť Linux (beta)</translation>
 <translation id="7740996059027112821">Štandardne</translation>
-<translation id="7746457520633464754">Brave odosiela Googlu webové adresy niektorých navštívených stránok, obmedzené informácie o systéme a obsah niektorých stránok na účely rozpoznávania nebezpečných aplikácií a webov.</translation>
+<translation id="3712897541513849705">Brave odosiela Googlu webové adresy niektorých navštívených stránok, obmedzené informácie o systéme a obsah niektorých stránok na účely rozpoznávania nebezpečných aplikácií a webov.</translation>
 <translation id="7750228210027921155">Obraz v obraze</translation>
 <translation id="7751260505918304024">Zobraziť všetky</translation>
 <translation id="7754704193130578113">Pred každým sťahovaním sa spýtať, kam uložiť súbor</translation>
@@ -5075,7 +5075,7 @@ Súbor kľúča uložte na bezpečné miesto. Budete ho potrebovať na vytvoreni
 <translation id="8899851313684471736">Otvoriť odkaz v novom &amp;okne</translation>
 <translation id="8902081783136172774">Pridajte si na úvodnú stránku tapetu</translation>
 <translation id="8902667442496790482">Otvoriť nastavenia počúvania vybraného textu</translation>
-<translation id="8904976895050290827">Synchronizácia Brave</translation>
+<translation id="3149880132460839085">Synchronizácia Brave</translation>
 <translation id="890616557918890486">Zmeniť zdroj</translation>
 <translation id="8909833622202089127">Web sleduje vašu polohu</translation>
 <translation id="8910146161325739742">Zdieľanie obrazovky</translation>

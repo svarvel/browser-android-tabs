@@ -216,7 +216,7 @@
 <translation id="1316136264406804862">Aranıyor...</translation>
 <translation id="1316495628809031177">Senkronizasyon duraklatıldı</translation>
 <translation id="1322046419516468189">Kayıtlı şifreleri <ph name="SAVED_PASSWORDS_STORE" /> üzerinde görüntüleyin ve yönetin</translation>
-<translation id="1326317727527857210">Diğer cihazlarınızdaki sekmelerinize ulaşmak için Brave'da oturum açın.</translation>
+<translation id="7253276740368043692">Diğer cihazlarınızdaki sekmelerinize ulaşmak için Brave'da oturum açın.</translation>
 <translation id="1327074568633507428">Google Cloud Print'teki yazıcı</translation>
 <translation id="1327977588028644528">Ağ geçidi</translation>
 <translation id="1329584516321524826">Az önce güncellendi</translation>
@@ -1385,7 +1385,7 @@ Sunucunun mesajı: <ph name="SERVER_MSG" /></translation>
 
     Açıklama:
     <ph name="LINUX_DESCRIPTION" /></translation>
-<translation id="3149510190863420837">Brave Uygulamaları</translation>
+<translation id="300669147395456190">Brave Uygulamaları</translation>
 <translation id="3150927491400159470">Tam Yeniden Yükle</translation>
 <translation id="315116470104423982">Mobil veriler</translation>
 <translation id="3151539355209957474">Başlangıç Zamanı</translation>
@@ -1460,7 +1460,7 @@ Sunucunun mesajı: <ph name="SERVER_MSG" /></translation>
 <translation id="3280237271814976245">Farklı k&amp;aydet...</translation>
 <translation id="3280243678470289153">Brave'da Kal</translation>
 <translation id="3281892622610078515">Karantinaya alınacak dosyalar ve programlar:</translation>
-<translation id="3282568296779691940">Brave'da oturum aç</translation>
+<translation id="82609232232243542">Brave'da oturum aç</translation>
 <translation id="3285322247471302225">Yeni &amp;Sekme</translation>
 <translation id="3288047731229977326">Geliştirici modunda çalışan uzantılar bilgisayarınıza zarar verebilir. Geliştirici değilseniz, geliştirici modundayken güvende olmak için bu uzantıların çalışmasını devre dışı bırakmanız gerekir.</translation>
 <translation id="3289856944988573801">Güncellemeleri kontrol etmek için lütfen Ethernet veya Kablosuz kullanın.</translation>
@@ -2226,7 +2226,7 @@ Sunucunun mesajı: <ph name="SERVER_MSG" /></translation>
 <translation id="4453946976636652378"><ph name="SEARCH_ENGINE_NAME" /> üzerinde arayın veya bir URL yazın</translation>
 <translation id="4462159676511157176">Özel ad sunucuları</translation>
 <translation id="4469477701382819144">Araya giren veya yanıltıcı reklamlar gösteren sitelerde engellendi</translation>
-<translation id="447252321002412580">Brave'un özelliklerini ve performansını iyileştirmeye yardımcı olun</translation>
+<translation id="918192811481327695">Brave'un özelliklerini ve performansını iyileştirmeye yardımcı olun</translation>
 <translation id="4472575034687746823">Başlayın</translation>
 <translation id="4474155171896946103">Tüm sekmelere yer işareti koy...</translation>
 <translation id="4475552974751346499">İndirilenlerde ara</translation>
@@ -3737,7 +3737,7 @@ Hassas bilgileri vermediğinizden emin olun.</translation>
 <translation id="6841186874966388268">Hatalar</translation>
 <translation id="6843423766595476978">Ok Google hazır</translation>
 <translation id="6845038076637626672">Ekranı Kaplayacak Şekilde Aç</translation>
-<translation id="6845325883481699275">Brave güvenliğini iyileştirmeye yardımcı olun</translation>
+<translation id="4991384657077828949">Brave güvenliğini iyileştirmeye yardımcı olun</translation>
 <translation id="6848388270925200958">Şu anda, yalnızca bu cihazda kullanılabilen kartlarınız var</translation>
 <translation id="6851497530878285708">Uygulama Etkinleştirildi</translation>
 <translation id="6853388645642883916">Güncelleyici uyku modunda</translation>
@@ -4198,7 +4198,7 @@ Hassas bilgileri vermediğinizden emin olun.</translation>
 <translation id="756445078718366910">Tarayıcı Penceresini Aç</translation>
 <translation id="7564847347806291057">İşlemi bitir</translation>
 <translation id="7566118625369982896">Play uygulama bağlantılarını yönet</translation>
-<translation id="756809126120519699">Brave verileri temizlendi</translation>
+<translation id="7814200940910057384">Brave verileri temizlendi</translation>
 <translation id="7568790562536448087">Güncelleniyor</translation>
 <translation id="7571643774869182231">Depolama alanı güncelleme için yeterli değil</translation>
 <translation id="7573172247376861652">Pil Şarjı</translation>
@@ -4310,7 +4310,7 @@ Hassas bilgileri vermediğinizden emin olun.</translation>
 <translation id="7732111077498238432">Ağ, politika ile denetleniyor</translation>
 <translation id="7737238973539693982">Linux'u (Beta) silin</translation>
 <translation id="7740996059027112821">Standart</translation>
-<translation id="7746457520633464754">Brave, tehlikeli uygulamaları ve siteleri algılamak için Google'a ziyaret ettiğiniz bazı sitelerin URL'lerini, sınırlı sistem bilgisini ve bazı sayfa içeriklerini gönderir.</translation>
+<translation id="3712897541513849705">Brave, tehlikeli uygulamaları ve siteleri algılamak için Google'a ziyaret ettiğiniz bazı sitelerin URL'lerini, sınırlı sistem bilgisini ve bazı sayfa içeriklerini gönderir.</translation>
 <translation id="7750228210027921155">Pencere içinde pencere</translation>
 <translation id="7751260505918304024">Tümünü göster</translation>
 <translation id="7754704193130578113">İndirmeden önce her dosyanın nereye kaydedileceğini sor</translation>
@@ -5078,7 +5078,7 @@ Anahtar dosyanızı güvenli bir yerde saklayın. Uzantınızın yeni sürümler
 <translation id="8899851313684471736">Bağlantıyı yeni &amp;pencerede aç</translation>
 <translation id="8902081783136172774">Başlangıç sayfanız için bir duvar kağıdı seçin</translation>
 <translation id="8902667442496790482">Seç ve Dinle ayarlarını aç</translation>
-<translation id="8904976895050290827">Brave Senkronizasyonu</translation>
+<translation id="3149880132460839085">Brave Senkronizasyonu</translation>
 <translation id="890616557918890486">Kaynağı değiştir</translation>
 <translation id="8909833622202089127">Site, konumunuzu izliyor</translation>
 <translation id="8910146161325739742">Ekranınızı paylaşın</translation>
