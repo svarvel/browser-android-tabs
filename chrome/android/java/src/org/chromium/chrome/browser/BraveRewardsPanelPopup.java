@@ -955,7 +955,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
         if (error_code == 12) {   // Wallet created code
             walletInitialized = true;
             ShowWebSiteView(false);
-        } else if (error_code == 19) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
+        } else if (error_code == 20) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
             dismiss();
         } else {
             Button btJoinRewards = (Button)BraveRewardsPanelPopup.this.root.findViewById(R.id.join_rewards_id);

@@ -46,6 +46,6 @@ void AwContentSettingsClient::OnDestruct() {
 
 bool AwContentSettingsClient::AllowFingerprinting() {
     return true;
-};
+}
 
 }  // namespace android_webview

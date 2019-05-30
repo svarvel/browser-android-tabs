@@ -483,7 +483,7 @@ public class ToolbarTablet extends ToolbarLayout
 
     @Override
     public void OnWalletInitialized(int error_code) {
-        if (error_code == 19) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
+        if (error_code == 20) { // ledger::Result::SAFETYNET_ATTESTATION_FAILED
             PrefServiceBridge.getInstance().setSafetynetCheckFailed(true);
             if (mRewardsLayout != null && mShieldsLayout != null) {
                 mRewardsLayout.setVisibility(View.GONE);
