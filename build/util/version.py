@@ -110,6 +110,8 @@ def WriteIfChanged(file_name, contents):
 def BuildParser():
   """Build argparse parser, with added arguments."""
   parser = argparse.ArgumentParser()
+  parser.add_argument('-bcn', '--brave_correction_number', default=None,
+                      help='Brave correction number.')
   parser.add_argument('-f', '--file', action='append', default=[],
                       help='Read variables from FILE.')
   parser.add_argument('-i', '--input', default=None,
@@ -193,6 +195,9 @@ def GenerateValues(options, evals):
     values[key] = str(eval(val, globals(), values))
 
   if options.os == 'android':
+    values['BRAVE_CORRECTION_NUMBER'] = '0'
+    if options.brave_correction_number is not None:
+      values['BRAVE_CORRECTION_NUMBER'] = options.brave_correction_number
     android_chrome_version_codes = android_chrome_version.GenerateVersionCodes(
         values, options.arch, options.next)
     values.update(android_chrome_version_codes)

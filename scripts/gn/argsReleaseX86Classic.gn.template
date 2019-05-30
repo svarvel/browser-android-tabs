@@ -11,5 +11,4 @@ android_default_version_name = "1.0.0"
 v8_use_external_startup_data = true
 fieldtrial_testing_like_official_build = true
 icu_use_data_file = false
-# should be divisible by 100
 brave_build_correction_number = 0
