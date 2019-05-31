@@ -982,9 +982,9 @@ public class ToolbarManager
             mBottomControlsCoordinator.initializeWithNative(mActivity,
                     mActivity.getCompositorViewHolder().getResourceManager(),
                     mActivity.getCompositorViewHolder().getLayoutManager(),
-                    wrapBottomToolbarClickListenerForIPH(tabSwitcherClickHandler),
-                    wrapBottomToolbarClickListenerForIPH(newTabClickHandler),
-                    wrapBottomToolbarClickListenerForIPH(bookmarkClickHandler),
+                    tabSwitcherClickHandler,
+                    newTabClickHandler,
+                    bookmarkClickHandler,
                     closeTabsClickListener, mAppMenuButtonHelper, mOverviewModeBehavior,
                     mActivity.getWindowAndroid(), mTabCountProvider, mIncognitoStateProvider,
                     mActivity.findViewById(R.id.control_container));

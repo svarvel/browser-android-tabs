@@ -51,8 +51,8 @@
                     android:layout_gravity="center"
                     android:paddingTop="@dimen/search_accelerator_height_padding"
                     android:paddingBottom="@dimen/search_accelerator_height_padding"
-                    android:clickable="false"
-                    android:contentDescription="@string/accessibility_toolbar_btn_new_tab" />
+                    android:contentDescription="@string/accessibility_toolbar_btn_new_tab"
+                    style="@style/BottomToolbarButton" />
 
                 <TextView
                     android:id="@+id/new_tab_button_label"
