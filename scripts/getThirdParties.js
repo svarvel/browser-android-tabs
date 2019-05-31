@@ -10,4 +10,3 @@ gclient sync
 sh . build/android/envsetup.sh
 sh scripts/postThirdPartiesSetup.js
 npm install
-gn args out/Default
