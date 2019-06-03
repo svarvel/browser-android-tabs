@@ -191,21 +191,21 @@ std::string BuildUserAgentFromOSAndProduct(const std::string& os_info,
                                            const std::string& product,
                                            const std::string& strHost) {
   std::string productToPass = AddBraveUserAgentForDDG(product, strHost);
-  std::string braveUA = MakeBraveUserAgent(product);
+  //std::string braveUA = MakeBraveUserAgent(product);
   // Derived from Safari's UA string.
   // This is done to expose our product name in a manner that is maximally
   // compatible with Safari, we hope!!
   std::string user_agent;
   base::StringAppendF(
       &user_agent,
-      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d %s",
+      "Mozilla/5.0 (%s) AppleWebKit/%d.%d (KHTML, like Gecko) %s Safari/%d.%d",
       os_info.c_str(),
       WEBKIT_VERSION_MAJOR,
       WEBKIT_VERSION_MINOR,
       productToPass.c_str(),
       WEBKIT_VERSION_MAJOR,
-      WEBKIT_VERSION_MINOR,
-      braveUA.c_str());
+      WEBKIT_VERSION_MINOR/*,
+      braveUA.c_str()*/);
 
   return user_agent;
 }
