@@ -4,6 +4,7 @@
 
 package org.chromium.chrome.browser.preferences.developer;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -103,12 +104,14 @@ public class DeveloperPreferences extends PreferenceFragment
         if (null == alert) {
             return;
         }
-        AlertDialog alertDialog = alert
+        AlertDialog.Builder alertDialog = alert
                 .setTitle("Enter QA code")
                 .setView(view)
                 .setPositiveButton(R.string.ok, onClickListener)
                 .setNegativeButton(R.string.cancel, onClickListener)
-                .create();
-        alertDialog.show();
+                .setCancelable(false);
+        Dialog dialog = alertDialog.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
     }
 }
