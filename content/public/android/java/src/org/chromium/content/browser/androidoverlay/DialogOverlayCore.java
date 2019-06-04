@@ -162,15 +162,19 @@ class DialogOverlayCore {
 
         @Override
         public void surfaceDestroyed(SurfaceHolder holder) {
-            assertProperThread();
+            try {
+                assertProperThread();
 
-            if (mDialog == null || mHost == null) return;
+                if (mDialog == null || mHost == null) return;
 
-            // Notify the host that we've been destroyed, and wait for it to clean up or time out.
-            mHost.onOverlayDestroyed();
-            mHost.waitForClose();
-            mHost.enforceClose();
-            mHost = null;
+                // Notify the host that we've been destroyed, and wait for it to clean up or time out.
+                mHost.onOverlayDestroyed();
+                mHost.waitForClose();
+                mHost.enforceClose();
+                mHost = null;
+            } catch (NullPointerException e) {
+                // No futher action as it is the end
+            }
         }
 
         @Override
