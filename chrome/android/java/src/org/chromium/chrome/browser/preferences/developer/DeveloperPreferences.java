@@ -7,6 +7,7 @@ package org.chromium.chrome.browser.preferences.developer;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -20,11 +21,13 @@ import org.chromium.base.ContextUtils;
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeVersionInfo;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
+import org.chromium.chrome.browser.BraveRewardsObserver;
+import org.chromium.chrome.browser.BraveRewardsPanelPopup;
 import org.chromium.chrome.browser.ConfigAPIs;
 import org.chromium.chrome.browser.preferences.ChromeSwitchPreference;
 import org.chromium.chrome.browser.preferences.PreferenceUtils;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
-import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
+import org.chromium.chrome.browser.RestartWorker;
 import org.chromium.components.version_info.Channel;
 import org.chromium.components.version_info.VersionConstants;
 
@@ -33,7 +36,7 @@ import org.chromium.base.Log;
  * Settings fragment containing preferences aimed at Chrome and web developers.
  */
 public class DeveloperPreferences extends PreferenceFragment
-        implements OnPreferenceChangeListener {
+        implements OnPreferenceChangeListener, BraveRewardsObserver {
     private static final String UI_PREF_BETA_STABLE_HINT = "beta_stable_hint";
     private static final String PREF_DEVELOPER_ENABLED = "developer";
     private static final String PREF_USE_REWARDS_STAGING_SERVER = "use_rewards_staging_server";
@@ -71,6 +74,18 @@ public class DeveloperPreferences extends PreferenceFragment
     }
 
     @Override
+    public void onStart() {
+        BraveRewardsNativeWorker.getInstance().AddObserver(this);
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        BraveRewardsNativeWorker.getInstance().RemoveObserver(this);
+        super.onStop();
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         checkQACode(preference, newValue);
         return true;
@@ -90,7 +105,7 @@ public class DeveloperPreferences extends PreferenceFragment
                     if (PREF_USE_REWARDS_STAGING_SERVER.equals(preference.getKey())) {
                         PrefServiceBridge.getInstance().setUseRewardsStagingServer((boolean) newValue);
                         BraveRewardsNativeWorker.getInstance().ResetTheWholeState();
-                        SingleCategoryPreferences.AskForRelaunch(getActivity());
+                        RestartWorker.AskForRelaunch(getActivity());
                     }
                 } else {
                     if (preference instanceof ChromeSwitchPreference) {
@@ -114,4 +129,67 @@ public class DeveloperPreferences extends PreferenceFragment
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
+
+    @Override
+    public void OnWalletInitialized(int error_code) {}
+
+    @Override
+    public void OnWalletProperties(int error_code) {}
+
+    @Override
+    public void OnPublisherInfo(int tabId) {}
+
+    @Override
+    public void OnGetCurrentBalanceReport(String[] report) {}
+
+    @Override
+    public void OnNotificationAdded(String id, int type, long timestamp,
+          String[] args) {}
+
+    @Override
+    public void OnNotificationsCount(int count) {}
+
+    @Override
+    public void OnGetLatestNotification(String id, int type, long timestamp,
+              String[] args) {}
+
+    @Override
+    public void OnNotificationDeleted(String id) {}
+
+    @Override
+    public void OnIsWalletCreated(boolean created) {}
+
+    @Override
+    public void OnGetPendingContributionsTotal(double amount) {}
+
+    @Override
+    public void OnGetRewardsMainEnabled(boolean enabled) {
+    }
+
+    @Override
+    public void OnGetAutoContributeProps() {}
+
+    @Override
+    public void OnGetReconcileStamp(long timestamp) {}
+
+    @Override
+    public void OnRecurringDonationUpdated() {}
+
+    @Override
+    public void OnResetTheWholeState(boolean success) {
+        if (success) {
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_GRANTS_NOTIFICATION_RECEIVED, false);
+            sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, false);
+            sharedPreferencesEditor.apply();
+            PrefServiceBridge.getInstance().setSafetynetCheckFailed(false);
+            RestartWorker.AskForRelaunch(getActivity());
+        } else {
+            RestartWorker.AskForRelaunchCustom(getActivity());
+        }
+    }
+
+    @Override
+    public void OnRewardsMainEnabled(boolean enabled) {}
 }

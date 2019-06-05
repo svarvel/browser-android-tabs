@@ -20,7 +20,7 @@ import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs;
 import org.chromium.chrome.browser.accessibility.FontSizePrefs.FontSizePrefsObserver;
 import org.chromium.chrome.browser.preferences.PrefServiceBridge;
-import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
+import org.chromium.chrome.browser.RestartWorker;
 import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.ui.base.DeviceFormFactor;
 
@@ -96,12 +96,12 @@ public class AppearancePreferences extends PreferenceFragment
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             sharedPreferencesEditor.putBoolean(PREF_HIDE_BRAVE_ICON, (boolean)newValue);
             sharedPreferencesEditor.apply();
-            SingleCategoryPreferences.AskForRelaunch(this.getActivity());
+            RestartWorker.AskForRelaunch(this.getActivity());
         } else if (ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY.equals(preference.getKey())) {
             SharedPreferences prefs = ContextUtils.getAppSharedPreferences();
             Boolean originalStatus = ChromePreferenceManager.getInstance().isBottomToolbarEnabled();
             prefs.edit().putBoolean(ChromePreferenceManager.BOTTOM_TOOLBAR_ENABLED_KEY, !originalStatus).apply();
-            SingleCategoryPreferences.AskForRelaunch(getActivity());
+            RestartWorker.AskForRelaunch(getActivity());
         }
         return true;
     }

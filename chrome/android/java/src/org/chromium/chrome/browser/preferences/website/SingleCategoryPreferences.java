@@ -470,7 +470,7 @@ public class SingleCategoryPreferences extends PreferenceFragment
                 if (type == SiteSettingsCategory.Type.NOTIFICATIONS) {
                     updateNotificationsVibrateCheckBox();
                 } else if (type == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND) {
-                    AskForRelaunch(this.getActivity());
+                    RestartWorker.AskForRelaunch(this.getActivity());
                 }
                 break;
             }
@@ -970,29 +970,5 @@ public class SingleCategoryPreferences extends PreferenceFragment
         } else {
             ManagedPreferencesUtils.showManagedByAdministratorToast(getActivity());
         }
-    }
-
-    // TODO(samartnik): find better place for this function
-    public static void AskForRelaunch(Context context) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-         alertDialogBuilder
-            .setMessage(R.string.settings_require_relaunch_notice)
-            .setCancelable(true)
-            .setPositiveButton(R.string.settings_require_relaunch_now, new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog,int id) {
-                  RestartWorker restartWorker = new RestartWorker();
-                  restartWorker.Restart();
-                  dialog.cancel();
-              }
-            })
-            .setNegativeButton(R.string.settings_require_relaunch_later,new DialogInterface.OnClickListener() {
-              @Override
-              public void onClick(DialogInterface dialog,int id) {
-                  dialog.cancel();
-              }
-            });
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
     }
 }

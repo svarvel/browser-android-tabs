@@ -72,7 +72,7 @@ public class BraveRewardsResetPreference
         if (!enabled) {
             mBraveRewardsNativeWorker.ResetTheWholeState();
         } else {
-            BraveRewardsPreferences.AskForRelaunchCustom(mContext);
+            RestartWorker.AskForRelaunchCustom(mContext);
         }
     }
 
