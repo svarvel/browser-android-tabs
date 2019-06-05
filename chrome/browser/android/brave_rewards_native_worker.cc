@@ -200,6 +200,7 @@ void BraveRewardsNativeWorker::RemovePublisherFromMap(JNIEnv* env,
 
 void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         uint32_t error_code) {
+  GetAddresses(rewards_service);
   JNIEnv* env = base::android::AttachCurrentThread();
   
   Java_BraveRewardsNativeWorker_OnWalletInitialized(env, 
@@ -560,6 +561,30 @@ void BraveRewardsNativeWorker::OnGetRewardsMainEnabled(
 static void JNI_BraveRewardsNativeWorker_Init(JNIEnv* env, const
     base::android::JavaParamRef<jobject>& jcaller) {
   new BraveRewardsNativeWorker(env, jcaller);
+}
+
+void BraveRewardsNativeWorker::OnGetAddresses(
+      const std::map<std::string, std::string>& addresses) {
+  addresses_ = addresses;
+}
+
+void BraveRewardsNativeWorker::GetAddresses(brave_rewards::RewardsService* rewards_service) {
+  if (rewards_service) {
+    rewards_service->GetAddresses(base::Bind(
+          &BraveRewardsNativeWorker::OnGetAddresses,
+          weak_factory_.GetWeakPtr()));
+  }
+}
+
+base::android::ScopedJavaLocalRef<jstring> BraveRewardsNativeWorker::GetAddress(JNIEnv* env,
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& jaddress_name) {
+  base::android::ScopedJavaLocalRef<jstring> res = base::android::ConvertUTF8ToJavaString(env, "");
+  std::string address_name = base::android::ConvertJavaStringToUTF8(env, jaddress_name);
+  if (addresses_.find(address_name) != addresses_.end()) {
+    res = base::android::ConvertUTF8ToJavaString(env, addresses_.at(address_name));
+  }
+  return res;
 }
 
 }

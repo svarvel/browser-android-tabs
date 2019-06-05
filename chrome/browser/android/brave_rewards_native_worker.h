@@ -130,6 +130,10 @@ public:
 
     void FetchGrants(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    base::android::ScopedJavaLocalRef<jstring> GetAddress(JNIEnv* env,
+        const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& jaddress_name);
+
     void OnResetTheWholeState(bool sucess);
 
     void OnGetGetReconcileStamp( uint64_t timestamp);
@@ -183,12 +187,15 @@ public:
         bool rewards_main_enabled) override;
 
 private:
+    void OnGetAddresses(const std::map<std::string, std::string>& addresses);
+    void GetAddresses(brave_rewards::RewardsService* rewards_service);
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;
     brave_rewards::AutoContributeProps auto_contrib_properties_;
     PublishersInfoMap map_publishers_info_; // <tabId, PublisherInfoPtr>
     std::map<std::string, brave_rewards::ContentSite> map_recurrent_publishers_;      // <publisher, reconcile_stampt>
+    std::map<std::string, std::string> addresses_;
     base::WeakPtrFactory<BraveRewardsNativeWorker> weak_factory_;
 };
 }
