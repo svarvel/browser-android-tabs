@@ -1287,6 +1287,8 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/preferences/PreferencesLauncher.java",
   "java/src/org/chromium/chrome/browser/preferences/SearchEngineAdapter.java",
   "java/src/org/chromium/chrome/browser/preferences/SearchEnginePreference.java",
+  "java/src/org/chromium/chrome/browser/preferences/StandardSearchEnginePreference.java",
+  "java/src/org/chromium/chrome/browser/preferences/PrivateSearchEnginePreference.java",
   "java/src/org/chromium/chrome/browser/preferences/SearchUtils.java",
   "java/src/org/chromium/chrome/browser/preferences/SeekBarLinkedCheckBoxPreference.java",
   "java/src/org/chromium/chrome/browser/preferences/SeekBarPreference.java",
@@ -1912,4 +1914,7 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/init/ADBlockUtils.java",
   "java/src/org/chromium/chrome/browser/init/EtagObject.java",
   "java/src/org/chromium/chrome/browser/preferences/AppearancePreferences.java",
+  "java/src/org/chromium/chrome/browser/init/InstallReferrerReceiver.java",
+  "java/src/org/chromium/chrome/browser/upgrade/NotificationIntent.java",
+  "java/src/org/chromium/chrome/browser/upgrade/NotificationUpgradeDismissedReceiver.java",
 ]

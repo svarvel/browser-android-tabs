@@ -4423,12 +4423,12 @@ Saved
       <message name="IDS_OPEN_PAGES_IN_CUSTOM_TABS_SUMMARY" desc="Summary of preference that allows the user to open pages in a full mode always.">
         Offer to open tabs in Custom Tabs
       </message>
-      <!--<message name="IDS_UPDATE_NOTIFICATION_TITLE" desc="Title of notification on application update.">
+      <message name="IDS_UPDATE_NOTIFICATION_TITLE" desc="Title of notification on application update.">
         Brave update
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_TEXT" desc="Text of notification on application update.">
         The new Brave browser is 22% faster
-      </message>-->
+      </message>
 
       <!-- Sync preferences -->
       <!--<message name="IDS_PREFS_SYNC" desc="Title for the Sync preferences. [CHAR-LIMIT=32]">
