@@ -301,6 +301,12 @@ public class BraveRewardsNativeWorker {
         }
     }
 
+    public void GetAddresses() {
+        synchronized(lock) {
+            nativeGetAddresses(mNativeBraveRewardsNativeWorker);
+        }
+    }
+
     public String GetAddress(String addressName) {
         synchronized(lock) {
             return nativeGetAddress(mNativeBraveRewardsNativeWorker, addressName);
@@ -473,5 +479,6 @@ public class BraveRewardsNativeWorker {
     private native void nativeRemoveRecurring(long nativeBraveRewardsNativeWorker, String publisher);
     private native void nativeResetTheWholeState(long nativeBraveRewardsNativeWorker);
     private native void nativeFetchGrants(long nativeBraveRewardsNativeWorker);
+    private native void nativeGetAddresses(long nativeBraveRewardsNativeWorker);
     private native String nativeGetAddress(long nativeBraveRewardsNativeWorker, String addressName);
 }

@@ -130,6 +130,8 @@ public:
 
     void FetchGrants(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
+    void GetAddresses(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+
     base::android::ScopedJavaLocalRef<jstring> GetAddress(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& jaddress_name);
@@ -188,7 +190,6 @@ public:
 
 private:
     void OnGetAddresses(const std::map<std::string, std::string>& addresses);
-    void GetAddresses(brave_rewards::RewardsService* rewards_service);
     JavaObjectWeakGlobalRef weak_java_brave_rewards_native_worker_;
     brave_rewards::RewardsService* brave_rewards_service_;
     brave_rewards::WalletProperties wallet_properties_;

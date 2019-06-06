@@ -200,7 +200,6 @@ void BraveRewardsNativeWorker::RemovePublisherFromMap(JNIEnv* env,
 
 void BraveRewardsNativeWorker::OnWalletInitialized(brave_rewards::RewardsService* rewards_service,
         uint32_t error_code) {
-  GetAddresses(rewards_service);
   JNIEnv* env = base::android::AttachCurrentThread();
   
   Java_BraveRewardsNativeWorker_OnWalletInitialized(env, 
@@ -568,9 +567,9 @@ void BraveRewardsNativeWorker::OnGetAddresses(
   addresses_ = addresses;
 }
 
-void BraveRewardsNativeWorker::GetAddresses(brave_rewards::RewardsService* rewards_service) {
-  if (rewards_service) {
-    rewards_service->GetAddresses(base::Bind(
+void BraveRewardsNativeWorker::GetAddresses(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+  if (brave_rewards_service_) {
+    brave_rewards_service_->GetAddresses(base::Bind(
           &BraveRewardsNativeWorker::OnGetAddresses,
           weak_factory_.GetWeakPtr()));
   }
