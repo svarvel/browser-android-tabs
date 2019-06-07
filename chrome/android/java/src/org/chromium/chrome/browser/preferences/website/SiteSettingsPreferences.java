@@ -163,7 +163,8 @@ public class SiteSettingsPreferences extends PreferenceFragment
             websitePrefs.add(Type.MICROPHONE);
             websitePrefs.add(Type.NOTIFICATIONS);
             websitePrefs.add(Type.POPUPS);
-            if (ChromeFeatureList.isEnabled(ChromeFeatureList.GENERIC_SENSOR_EXTRA_CLASSES)) {
+            websitePrefs.add(Type.DESKTOP_VIEW);
+            if (ChromeFeatureList.isEnabled(ChromeFeatureList.SENSOR_CONTENT_SETTING)) {
                 websitePrefs.add(Type.SENSORS);
             }
             websitePrefs.add(Type.SOUND);
