@@ -36,20 +36,20 @@
     <include layout="@layout/toolbar_space" />
 
     <LinearLayout
-        android:id="@+id/share_button_wrapper"
+        android:id="@+id/bookmark_button_wrapper"
         style="@style/BottomToolbarButtonWrapper">
 
         <org.chromium.chrome.browser.toolbar.BookmarksButton
             android:id="@+id/bookmark_this_page_id"
             app:tint="@color/standard_mode_tint"
-            style="@style/BottomToolbarButton"
+            style="@style/SplitToolbarButton"
             android:layout_gravity="center"
             android:contentDescription="@string/accessibility_toolbar_btn_home"/>
 
         <TextView
-            android:id="@+id/share_button_label"
+            android:id="@+id/bookmark_button_label"
             style="@style/BottomToolbarLabel"
-            android:text="@string/share" />
+            android:text="@string/accessibility_menu_bookmark" />
 
     </LinearLayout>
 
@@ -62,7 +62,6 @@
         android:paddingEnd="4dp"
         android:orientation="vertical"
         android:id="@+id/search_accelerator_wrapper"
-        android:background="?attr/selectableItemBackground"
         android:layout_gravity="top"
         android:layout_marginTop="6dp" >
 
@@ -76,7 +75,7 @@
             android:src="@drawable/ic_search"
             android:clickable="false"
             android:contentDescription="@string/accessibility_toolbar_btn_search_accelerator"
-            style="@style/BottomToolbarButton" />
+            android:background="@android:color/transparent" />
 
         <TextView
             android:id="@+id/search_accelerator_label"

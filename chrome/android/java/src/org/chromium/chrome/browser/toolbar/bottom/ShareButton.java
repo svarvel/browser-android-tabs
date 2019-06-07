@@ -47,7 +47,7 @@ class ShareButton extends ChromeImageButton implements TintObserver {
      */
     public void setWrapperView(ViewGroup wrapper) {
         mWrapper = wrapper;
-        mLabel = mWrapper.findViewById(R.id.share_button_label);
+        //mLabel = mWrapper.findViewById(R.id.share_button_label);
         if (FeatureUtilities.isLabeledBottomToolbarEnabled()) mLabel.setVisibility(View.VISIBLE);
     }
 

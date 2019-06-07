@@ -90,13 +90,13 @@ public class TabSwitcherBottomToolbarCoordinator implements View.OnLongClickList
 
         mNewTabButton = root.findViewById(R.id.tab_switcher_new_tab_button);
         mNewTabButton.setOnClickListener(newTabClickListener);
-        mNewTabButton.setWrapperView(root.findViewById(R.id.new_tab_button_wrapper));
+        //mNewTabButton.setWrapperView(root.findViewById(R.id.new_tab_button_wrapper));
         mNewTabButton.setOnLongClickListener(this);
         mNewTabButton.setIncognitoStateProvider(incognitoStateProvider);
         mNewTabButton.setThemeColorProvider(themeColorProvider);
 
         mMenuButton = root.findViewById(R.id.menu_button_wrapper);
-        mMenuButton.setWrapperView(root.findViewById(R.id.labeled_menu_button_wrapper));
+        //mMenuButton.setWrapperView(root.findViewById(R.id.labeled_menu_button_wrapper));
         mMenuButton.setThemeColorProvider(themeColorProvider);
         mMenuButton.setAppMenuButtonHelper(menuButtonHelper);
     }
