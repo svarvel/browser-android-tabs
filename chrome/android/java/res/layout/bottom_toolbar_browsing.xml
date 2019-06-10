@@ -62,6 +62,7 @@
         android:paddingEnd="4dp"
         android:orientation="vertical"
         android:id="@+id/search_accelerator_wrapper"
+        android:background="?attr/selectableItemBackground"
         android:layout_gravity="top"
         android:layout_marginTop="6dp" >
 

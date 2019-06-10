@@ -81,9 +81,9 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         mMediator = new BrowsingModeBottomToolbarMediator(model);
 
         mHomeButton = toolbarRoot.findViewById(R.id.home_button);
-        //mHomeButton.setWrapperView(toolbarRoot.findViewById(R.id.home_button_wrapper));
+        mHomeButton.setWrapperView(toolbarRoot.findViewById(R.id.home_button_wrapper));
         mHomeButton.setOnClickListener(homeButtonListener);
-        mHomeButton.setOnLongClickListener(this);
+        //mHomeButton.setOnLongClickListener(this);
         mHomeButton.setActivityTabProvider(tabProvider);
 
         //mShareButton = toolbarRoot.findViewById(R.id.share_button);
@@ -92,21 +92,21 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         //mShareButton.setActivityTabProvider(tabProvider);
 
         mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
-        //mSearchAccelerator.setWrapperView(
-        //        toolbarRoot.findViewById(R.id.search_accelerator_wrapper));
+        mSearchAccelerator.setWrapperView(
+                toolbarRoot.findViewById(R.id.search_accelerator_wrapper));
         mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-        mSearchAccelerator.setOnLongClickListener(this);
+        //mSearchAccelerator.setOnLongClickListener(this);
 
         mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
-        //mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
+        mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
-        //((TabSwitcherButtonView) toolbarRoot.findViewById(R.id.tab_switcher_button))
-        //        .setWrapperView(toolbarRoot.findViewById(R.id.tab_switcher_button_wrapper));
+        ((TabSwitcherButtonView) toolbarRoot.findViewById(R.id.tab_switcher_button))
+                .setWrapperView(toolbarRoot.findViewById(R.id.tab_switcher_button_wrapper));
 
         mMenuButton = toolbarRoot.findViewById(R.id.menu_button_wrapper);
-        //mMenuButton.setWrapperView(toolbarRoot.findViewById(R.id.labeled_menu_button_wrapper));
+        mMenuButton.setWrapperView(toolbarRoot.findViewById(R.id.labeled_menu_button_wrapper));
 
         tabProvider.addObserverAndTrigger(new HintlessActivityTabObserver() {
             @Override
@@ -156,7 +156,7 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         if (mBookmarksButton != null) {
             mBookmarksButton.setThemeColorProvider(themeColorProvider);
             mBookmarksButton.setOnClickListener(bookmarkClickListener);
-            mBookmarksButton.setOnLongClickListener(this);
+            //mBookmarksButton.setOnLongClickListener(this);
         }
     }
 
