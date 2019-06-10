@@ -58,6 +58,11 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
     /** The menu button that lives in the browsing mode bottom toolbar. */
     private final MenuButton mMenuButton;
 
+    /** Wrappers. */
+    View mHomeButtonWrapper;
+    View mSearchAcceleratorWrapper;
+    View mBookmarkButtonWrapper;
+
     final Context context = ContextUtils.getApplicationContext();
 
     /**
@@ -83,7 +88,6 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         mHomeButton = toolbarRoot.findViewById(R.id.home_button);
         mHomeButton.setWrapperView(toolbarRoot.findViewById(R.id.home_button_wrapper));
         mHomeButton.setOnClickListener(homeButtonListener);
-        //mHomeButton.setOnLongClickListener(this);
         mHomeButton.setActivityTabProvider(tabProvider);
 
         //mShareButton = toolbarRoot.findViewById(R.id.share_button);
@@ -92,13 +96,8 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         //mShareButton.setActivityTabProvider(tabProvider);
 
         mSearchAccelerator = toolbarRoot.findViewById(R.id.search_accelerator);
-        mSearchAccelerator.setWrapperView(
-                toolbarRoot.findViewById(R.id.search_accelerator_wrapper));
+        mSearchAccelerator.setWrapperView(toolbarRoot.findViewById(R.id.search_accelerator_wrapper));
         mSearchAccelerator.setOnClickListener(searchAcceleratorListener);
-        //mSearchAccelerator.setOnLongClickListener(this);
-
-        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
-        mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
 
         mTabSwitcherButtonCoordinator = new TabSwitcherButtonCoordinator(toolbarRoot);
         // TODO(amaralp): Make this adhere to MVC framework.
@@ -118,6 +117,25 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
                 tabProvider.removeObserver(this);
             }
         });
+
+        mBookmarksButton = toolbarRoot.findViewById(R.id.bookmark_this_page_id);
+        if (mBookmarksButton != null) {
+            mBookmarksButton.setWrapperView(toolbarRoot.findViewById(R.id.bookmark_button_wrapper));
+        }
+
+        // Set long click events
+        mHomeButtonWrapper = toolbarRoot.findViewById(R.id.home_button_wrapper);
+        if (mHomeButtonWrapper != null) {
+            mHomeButtonWrapper.setOnLongClickListener(this);
+        }
+        mSearchAcceleratorWrapper = toolbarRoot.findViewById(R.id.search_accelerator_wrapper);
+        if (mSearchAcceleratorWrapper != null) {
+            mSearchAcceleratorWrapper.setOnLongClickListener(this);
+        }
+        mBookmarkButtonWrapper = toolbarRoot.findViewById(R.id.bookmark_button_wrapper);
+        if (mBookmarkButtonWrapper != null) {
+            mBookmarkButtonWrapper.setOnLongClickListener(this);
+        }
     }
 
     /**
@@ -156,7 +174,6 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         if (mBookmarksButton != null) {
             mBookmarksButton.setThemeColorProvider(themeColorProvider);
             mBookmarksButton.setOnClickListener(bookmarkClickListener);
-            //mBookmarksButton.setOnLongClickListener(this);
         }
     }
 
@@ -165,11 +182,11 @@ public class BrowsingModeBottomToolbarCoordinator implements View.OnLongClickLis
         String description = "";
         Resources resources = context.getResources();
 
-        if (v == mHomeButton) {
-            description = description = resources.getString(R.string.accessibility_toolbar_btn_home);
-        } else if (v == mBookmarksButton) {
+        if (v == mHomeButtonWrapper) {
+            description = resources.getString(R.string.accessibility_toolbar_btn_home);
+        } else if (v == mBookmarkButtonWrapper) {
             description = resources.getString(R.string.accessibility_toolbar_btn_bookmark);
-        } else if (v == mSearchAccelerator) {
+        } else if (v == mSearchAcceleratorWrapper) {
             description = resources.getString(R.string.accessibility_toolbar_btn_search_accelerator);
         }
 
