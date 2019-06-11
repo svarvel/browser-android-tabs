@@ -38,7 +38,9 @@
 
    `sh scripts/getThirdParties.js`
 
-8. Enter information as requested by the script. When asked to create a file for arguments, use [this gn file](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug).
+8. Enter information as requested by the script.
+
+9. Run `gn args out/Default`. When asked to create a file for arguments, use [this gn file](https://github.com/brave/browser-android-tabs/wiki/Sample-gn-file-for-debug).
 
 ### Making the Build
 
