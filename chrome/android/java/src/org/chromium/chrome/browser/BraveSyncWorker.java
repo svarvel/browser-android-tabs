@@ -2850,7 +2850,11 @@ public class BraveSyncWorker {
                 break;
               case "sync-setup-error":
                 Log.e(TAG, "sync-setup-error , !!!arg1 == " + arg1 + ", arg2 == " + arg2);
-                ResetSync();
+                if (mBaseOrder == null || mBaseOrder.isEmpty()) {
+                    // If base order is null, it means that sync wasn't yet initialized and failed to do so
+                    // We need to reset state before the next attempt
+                    ResetSync();
+                }
                 if (null != mSyncScreensObserver) {
                     mSyncScreensObserver.onSyncError(arg1);
                 }
