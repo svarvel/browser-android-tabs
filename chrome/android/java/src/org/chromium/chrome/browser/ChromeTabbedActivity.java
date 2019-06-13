@@ -545,9 +545,9 @@ public class ChromeTabbedActivity
                 Log.d(SUBTAG, "Dimming: OFF - Re-enabling auto brightness");
             } 
             // return to previous manual value
-            else if (defBrightness != -1) {
-                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + defBrightness);
-                Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, defBrightness);
+            else if (previousBrightness != -1) {
+                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness);
+                Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, previousBrightness);
             } else {
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
