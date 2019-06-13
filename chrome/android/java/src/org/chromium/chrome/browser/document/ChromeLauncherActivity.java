@@ -13,7 +13,6 @@ import org.chromium.base.TraceEvent;
 import org.chromium.chrome.browser.LaunchIntentDispatcher;
 import org.chromium.chrome.browser.vr.VrModuleProvider;
 
-
 // [MV] extra import needed to enable writing to setting option 
 // required to manipulate screen settings 
 import android.content.Context;
@@ -25,15 +24,16 @@ import android.provider.Settings;
 import android.util.Log;
 import android.os.Build;
 
+
 /**
  * Dispatches incoming intents to the appropriate activity based on the current configuration and
  * Intent fired.
  */
 public class ChromeLauncherActivity extends Activity {
 
-    // [MV] tag used for logging 
+    // [MV] tag used for logging //
     private String TAG = "MATTEO";
-    private int SDK_INT;
+    ////
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,15 +43,9 @@ public class ChromeLauncherActivity extends Activity {
         try {
             super.onCreate(savedInstanceState);
 
-            // [MV] request settings write permission            
-            // get SDK info
-            SDK_INT = (Build.VERSION.SDK_INT == 25 && Build.VERSION.CODENAME.charAt(0) == 'O') ? 26 : Build.VERSION.SDK_INT;
-            Log.d(TAG, "SDK: " + SDK_INT); 
-
-            // deal with settings write permission
-            boolean status = maybeRequestPermission(this);
-            Log.d(TAG, "Request permission status: " + status);
-            ////////////
+            // [MV] request  WRITE_SETTINGS permission if needed //
+            maybeRequestPermission(this);
+            ////
 
             if (VrModuleProvider.getIntentDelegate().isVrIntent(getIntent())) {
                 // We need to turn VR mode on as early as possible in the intent handling flow to
@@ -81,16 +75,15 @@ public class ChromeLauncherActivity extends Activity {
     }
 
     // [MV] handle request for writing permission 
-    //  Q: better spot where to do this? 
-    //  Q: permission acceptance does not become visible 
+    //  Q: activity is not triggered (maybe). Better spot? 
     public boolean maybeRequestPermission(Activity activity) {
         
-        // nothing to do for old SDKs
-        if (SDK_INT < 23) {
-            Log.d(TAG, "SDK < 23" + SDK_INT);
-            return false;
+        // all good for old SDKs
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            Log.d(TAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
+            return true;
         }
-        else if (Settings.System.canWrite(this)) {
+        if (Settings.System.canWrite(this)) {
             Log.d(TAG, "Permission WRITE_SETTINGS already accepted"); 
             return true;
         } else {
@@ -101,4 +94,5 @@ public class ChromeLauncherActivity extends Activity {
             return true;
         }
     }
+
 }
