@@ -219,9 +219,9 @@ public class ChromeTabbedActivity
 
     // [MV] adding variables needed //
     private static final String SUBTAG = "MATTEO"; // my own TAG
-    private int previousBrightness = -1;           // info on brightness 
-    private boolean settingsCanWrite = false;      // keep track of permission
-    private boolean was_auto_brightness = false;   // keep track of auto-brightness usage 
+    private int previousBrightness = -1;  // info on brightness 
+    private boolean settingsCanWrite;     // keep track of permission
+    private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
     ////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -513,7 +513,7 @@ public class ChromeTabbedActivity
                     Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE,
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
                     Log.d(SUBTAG, "Disabling auto brightness while dimming");
-                    was_auto_brightness = true;
+                    wasAutoBrightness = true;
                 } 
                 // keep track of previously manually set brightness value
                 else {
@@ -539,7 +539,7 @@ public class ChromeTabbedActivity
     private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
         if (settingsCanWrite){
             // let auto-brightness do its jon
-            if (was_auto_brightness) {
+            if (wasAutoBrightness) {
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE,
                         Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
                 Log.d(SUBTAG, "Dimming: OFF - Re-enabling auto brightness");
