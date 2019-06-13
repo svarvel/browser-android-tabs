@@ -85,22 +85,6 @@ public class QAPreferences extends PreferenceFragment
     public void onStart() {
         BraveRewardsNativeWorker.getInstance().AddObserver(this);
         checkQACode();
-        Preference walletBAT = findPreference(PREF_WALLET_BAT);
-        if (walletBAT != null) {
-            walletBAT.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(BAT_ADDRESS_NAME));
-        }
-        Preference walletBTC = findPreference(PREF_WALLET_BTC);
-        if (walletBTC != null) {
-            walletBTC.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(BTC_ADDRESS_NAME));
-        }
-        Preference walletETH = findPreference(PREF_WALLET_ETH);
-        if (walletETH != null) {
-            walletETH.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(ETH_ADDRESS_NAME));
-        }
-        Preference walletLTC = findPreference(PREF_WALLET_LTC);
-        if (walletLTC != null) {
-            walletLTC.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(LTC_ADDRESS_NAME));
-        }
         super.onStart();
     }
 
@@ -148,6 +132,23 @@ public class QAPreferences extends PreferenceFragment
                 if (button != AlertDialog.BUTTON_POSITIVE ||
                     !input.getText().toString().equals(ConfigAPIs.QA_CODE)) {
                     getActivity().finish();
+                } else {
+                    Preference walletBAT = findPreference(PREF_WALLET_BAT);
+                    if (walletBAT != null) {
+                        walletBAT.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(BAT_ADDRESS_NAME));
+                    }
+                    Preference walletBTC = findPreference(PREF_WALLET_BTC);
+                    if (walletBTC != null) {
+                        walletBTC.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(BTC_ADDRESS_NAME));
+                    }
+                    Preference walletETH = findPreference(PREF_WALLET_ETH);
+                    if (walletETH != null) {
+                        walletETH.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(ETH_ADDRESS_NAME));
+                    }
+                    Preference walletLTC = findPreference(PREF_WALLET_LTC);
+                    if (walletLTC != null) {
+                        walletLTC.setSummary(BraveRewardsNativeWorker.getInstance().GetAddress(LTC_ADDRESS_NAME));
+                    }
                 }
             }
         };
