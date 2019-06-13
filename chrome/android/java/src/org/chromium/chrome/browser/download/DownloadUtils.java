@@ -80,6 +80,7 @@ import org.chromium.ui.widget.Toast;
 import java.io.File;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.RuntimeException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -679,7 +680,7 @@ public class DownloadUtils {
             context.startActivity(viewIntent);
             service.updateLastAccessTime(downloadGuid, isOffTheRecord);
             return true;
-        } catch (ActivityNotFoundException e) {
+        } catch (RuntimeException e) {
             // Can't launch the Intent.
             if (source != DownloadMetrics.DownloadOpenSource.DOWNLOAD_PROGRESS_INFO_BAR) {
                 Toast.makeText(context, context.getString(R.string.download_cant_open_file),

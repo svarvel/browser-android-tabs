@@ -1093,7 +1093,9 @@ public class ToolbarManager
      * @return The view containing the pop up menu button.
      */
     public @Nullable View getMenuButton() {
-        if (mBottomControlsCoordinator != null && isBottomToolbarVisible()) {
+        if (mBottomControlsCoordinator != null &&
+            mBottomControlsCoordinator.getMenuButtonWrapper() != null &&
+            isBottomToolbarVisible()) {
             return mBottomControlsCoordinator.getMenuButtonWrapper().getImageButton();
         }
         return mToolbar.getMenuButton();

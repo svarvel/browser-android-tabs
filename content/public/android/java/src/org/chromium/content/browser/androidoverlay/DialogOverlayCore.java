@@ -163,7 +163,7 @@ class DialogOverlayCore {
         @Override
         public void surfaceDestroyed(SurfaceHolder holder) {
             try {
-                assertProperThread();
+                //assertProperThread();
 
                 if (mDialog == null || mHost == null) return;
 
