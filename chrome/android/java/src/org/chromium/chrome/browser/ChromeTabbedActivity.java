@@ -189,6 +189,7 @@ import java.net.URL;
 // [MV] extra import needed to enable writing to setting option 
 // required to manipulate screen settings 
 import android.provider.Settings;
+import android.content.ContentResolver;
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
