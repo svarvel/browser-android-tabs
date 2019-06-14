@@ -520,7 +520,7 @@ public class BraveSyncWorker {
     public void CreateUpdateDeleteBookmarks(String action, BookmarkItem[] bookmarks, final boolean addIdsToNotSynced,
               final boolean isInitialSync) {
         assert null != bookmarks;
-        if (null == bookmarks || 0 == bookmarks.length || !mSyncIsReady.IsReady() || !IsSyncBookmarksEnabled()) {
+        if (null == bookmarks || 0 == bookmarks.length || !SyncHasBeenSetup() || !IsSyncBookmarksEnabled()) {
             return;
         }
 
@@ -568,7 +568,7 @@ public class BraveSyncWorker {
         new Thread() {
             @Override
             public void run() {
-                if (!mSyncIsReady.IsReady()) {
+                if (!SyncHasBeenSetup()) {
                     return;
                 }
 
@@ -1096,7 +1096,7 @@ public class BraveSyncWorker {
     }
 
     public void SendSyncRecords(String recordType, StringBuilder recordsJSON, String action, ArrayList<String> ids) {
-        if (!mSyncIsReady.IsReady()) {
+        if (!SyncHasBeenSetup()) {
             return;
         }
         synchronized (mSendSyncDataThread) {
@@ -2850,10 +2850,12 @@ public class BraveSyncWorker {
                 break;
               case "sync-setup-error":
                 Log.e(TAG, "sync-setup-error , !!!arg1 == " + arg1 + ", arg2 == " + arg2);
-                if (mBaseOrder == null || mBaseOrder.isEmpty()) {
-                    // If base order is null, it means that sync wasn't yet initialized and failed to do so
-                    // We need to reset state before the next attempt
+                if (!SyncHasBeenSetup()) {
+                    // We need to reset state before the next attempt to set up sync
                     ResetSync();
+                } else {
+                    // We need to reset web contents to recreate it when network is up again
+                    ResetSyncWebContents();
                 }
                 if (null != mSyncScreensObserver) {
                     mSyncScreensObserver.onSyncError(arg1);
@@ -3133,6 +3135,11 @@ public class BraveSyncWorker {
             Log.e(TAG, "SaveOrphanBookmarks error: " + e);
         }
         nativeSaveObjectId(ORPHAN_BOOKMARKS, result.toString(), "");
+    }
+
+    private boolean SyncHasBeenSetup() {
+        // If base order is null or empty, it means that sync hasn't been set up yet
+        return mBaseOrder != null && !mBaseOrder.isEmpty();
     }
 
     private native String nativeGetObjectIdByLocalId(String localId);
