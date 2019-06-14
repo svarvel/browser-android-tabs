@@ -53,6 +53,7 @@ public class AppMenuPropertiesDelegate {
 
     // [MV] // 
     private static final String TAG = "MATTEO"; 
+    private static final String DIMMING = "use_dimming";
     ////
 
     protected MenuItem mReloadMenuItem;

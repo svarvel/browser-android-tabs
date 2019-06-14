@@ -258,6 +258,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
     // [MV] adding variables needed //
     private static final String SUBTAG = "MATTEO"; // my own TAG
+    private static final String DIMMING = "use_dimming";
 
     private static AppMenuHandlerFactory sAppMenuHandlerFactory =
             (activity, delegate, menuResourceId) -> new AppMenuHandler(activity, delegate,
