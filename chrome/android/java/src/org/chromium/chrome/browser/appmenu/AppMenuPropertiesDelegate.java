@@ -41,10 +41,19 @@ import org.chromium.components.dom_distiller.core.DomDistillerUrlUtils;
 import org.chromium.ui.base.DeviceFormFactor;
 import org.chromium.webapk.lib.client.WebApkValidator;
 
+// [MV] //
+import org.chromium.base.Log;
+////
+
 /**
  * App Menu helper that handles hiding and showing menu items based on activity state.
  */
 public class AppMenuPropertiesDelegate {
+
+    // [MV] // 
+    private static final String TAG = "MATTEO"; 
+    ////
+
     protected MenuItem mReloadMenuItem;
 
     protected final ChromeActivity mActivity;
@@ -197,7 +206,7 @@ public class AppMenuPropertiesDelegate {
             updateRequestDesktopSiteMenuItem(menu, currentTab, true /* can show */);
             
             // [MV] //
-            updateRequestDimmingMenuItem(menu, currentTab, true);
+            updateRequestDimmingMenuItem(menu, currentTab);
             ////
 
             // Only display reader mode settings menu option if the current page is in reader mode.
@@ -462,27 +471,17 @@ public class AppMenuPropertiesDelegate {
      * @param currentTab      Current tab being displayed.
      */
     protected void updateRequestDimmingMenuItem(
-            Menu menu, Tab currentTab, boolean canShowRequestDekstopSite) {
+            Menu menu, Tab currentTab) {
+
+        // Logging 
+        Log.d(TAG, "updateRequestDimmingMenuItem"); 
         MenuItem requestMenuRow = menu.findItem(R.id.request_dimming_row_menu_id);
         MenuItem requestMenuLabel = menu.findItem(R.id.request_dimming_id);
         MenuItem requestMenuCheck = menu.findItem(R.id.request_dimming_check_id);
-
-        // Hide request desktop site on all chrome:// pages except for the NTP.
-        String url = currentTab.getUrl();
-        boolean isChromeScheme = url.startsWith(UrlConstants.CHROME_URL_PREFIX)
-                || url.startsWith(UrlConstants.CHROME_NATIVE_URL_PREFIX);
-        // Also hide request desktop site on Reader Mode.
-        boolean isDistilledPage = DomDistillerUrlUtils.isDistilledPage(url);
-
-        boolean itemVisible = canShowRequestDekstopSite
-                && (!isChromeScheme || currentTab.isNativePage()) && !isDistilledPage;
-        requestMenuRow.setVisible(itemVisible);
-        if (!itemVisible) return;
-
-        boolean isRds =
-                currentTab.getWebContents().getNavigationController().getUseDesktopUserAgent();
+        
         // Mark the checkbox if RDS is activated on this page.
-        requestMenuCheck.setChecked(isRds);
+        // FIXME -- here u need to learn if it was clicked 
+        requestMenuCheck.setChecked(true);
 
         // This title doesn't seem to be displayed by Android, but it is used to set up
         // accessibility text in {@link AppMenuAdapter#setupMenuButton}.

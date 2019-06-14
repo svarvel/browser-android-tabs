@@ -511,7 +511,8 @@ public class ChromeTabbedActivity
     private void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
         // [MV] -- if works, need to be checked later
         boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
-        Log.d(SUBTAG, "Use dimming: " + useDimming); 
+        boolean useDesktop = PrefServiceBridge.getInstance().desktopViewEnabled();
+        Log.d(SUBTAG, "Use-dimming: " + useDimming + "Desktop-view: " + useDesktop); 
         //
 
         //if (settingsCanWrite && useDimming ){

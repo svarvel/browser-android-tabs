@@ -71,6 +71,7 @@
                 android:checkable="true" />
           </menu>
         </item>
+
         <!-- MV -->
         <item android:id="@+id/request_dimming_row_menu_id"
             android:title="@null">
@@ -83,6 +84,7 @@
           </menu>
         </item>
         <!-- MV -->
+        
         <item android:id="@+id/reader_mode_prefs_id"
             android:title="@string/menu_reader_mode_prefs"
             android:icon="@drawable/reader_mode_prefs_icon" />
