@@ -190,6 +190,7 @@ import java.net.URL;
 // required to manipulate screen settings 
 import android.provider.Settings;
 import android.content.ContentResolver;
+import android.content.SharedPreferences; // MV-TESTING
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
@@ -689,6 +690,11 @@ public class ChromeTabbedActivity
     @Override
     public void initializeCompositor() {
         try {
+            // [MV] get dimming preferences// MV-TESTING
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+            boolean useDimming = sharedPreferences.getBoolean(DIMMING, false)
+            Log.d(SUBTAG, "Use dimming: " + useDimming); 
+            ////
 
             // [MV] verify we have WRITE_SETTINGS permission //
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {

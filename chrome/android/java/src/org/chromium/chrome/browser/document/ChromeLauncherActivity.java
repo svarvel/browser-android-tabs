@@ -33,6 +33,7 @@ public class ChromeLauncherActivity extends Activity {
 
     // [MV] tag used for logging //
     private String TAG = "MATTEO";
+    private static final String DIMMING = "use_dimming";
     ////
 
     @Override
@@ -47,6 +48,13 @@ public class ChromeLauncherActivity extends Activity {
             maybeRequestPermission(this);
             ////
 
+            // [MV] set dimming preferences// MV-TESTING
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            sharedPreferencesEditor.putBoolean(DIMMING, true);
+            sharedPreferencesEditor.apply();
+            ////
+            
             if (VrModuleProvider.getIntentDelegate().isVrIntent(getIntent())) {
                 // We need to turn VR mode on as early as possible in the intent handling flow to
                 // avoid brightness flickering when handling VR intents.
