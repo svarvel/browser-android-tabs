@@ -23,6 +23,8 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.util.Log;
 import android.os.Build;
+import org.chromium.base.ContextUtils;    // MV-TESTING
+import android.content.SharedPreferences; // MV-TESTING
 
 
 /**
@@ -54,7 +56,7 @@ public class ChromeLauncherActivity extends Activity {
             sharedPreferencesEditor.putBoolean(DIMMING, true);
             sharedPreferencesEditor.apply();
             ////
-            
+
             if (VrModuleProvider.getIntentDelegate().isVrIntent(getIntent())) {
                 // We need to turn VR mode on as early as possible in the intent handling flow to
                 // avoid brightness flickering when handling VR intents.
