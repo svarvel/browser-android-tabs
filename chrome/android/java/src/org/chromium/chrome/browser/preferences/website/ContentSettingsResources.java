@@ -382,7 +382,7 @@ public class ContentSettingsResources {
         return R.string.website_settings_category_dimming_enabled_summary;
     }
     public static int getDimmingDisabledSummary() {
-        return R.string.website_settings_category_dimming_enabled_summary;
+        return R.string.website_settings_category_dimming_disabled_summary;
     }
     ////
 
