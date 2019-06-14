@@ -195,6 +195,10 @@ public class AppMenuPropertiesDelegate {
             prepareAddToHomescreenMenuItem(menu, currentTab, canShowHomeScreenMenuItem);
 
             updateRequestDesktopSiteMenuItem(menu, currentTab, true /* can show */);
+            
+            // [MV] //
+            updateRequestDimmingMenuItem(menu, currentTab, true);
+            ////
 
             // Only display reader mode settings menu option if the current page is in reader mode.
             menu.findItem(R.id.reader_mode_prefs_id)
@@ -449,6 +453,45 @@ public class AppMenuPropertiesDelegate {
                         : mActivity.getString(R.string.menu_request_desktop_site_off));
     }
 
+
+    //[MV]//
+    /**
+     * Updates the request screen dimming state.
+     *
+     * @param menu {@link Menu} for request desktop site.
+     * @param currentTab      Current tab being displayed.
+     */
+    protected void updateRequestDimmingMenuItem(
+            Menu menu, Tab currentTab, boolean canShowRequestDekstopSite) {
+        MenuItem requestMenuRow = menu.findItem(R.id.request_dimming_row_menu_id);
+        MenuItem requestMenuLabel = menu.findItem(R.id.request_dimming_id);
+        MenuItem requestMenuCheck = menu.findItem(request_dimming_check_id);
+
+        // Hide request desktop site on all chrome:// pages except for the NTP.
+        String url = currentTab.getUrl();
+        boolean isChromeScheme = url.startsWith(UrlConstants.CHROME_URL_PREFIX)
+                || url.startsWith(UrlConstants.CHROME_NATIVE_URL_PREFIX);
+        // Also hide request desktop site on Reader Mode.
+        boolean isDistilledPage = DomDistillerUrlUtils.isDistilledPage(url);
+
+        boolean itemVisible = canShowRequestDekstopSite
+                && (!isChromeScheme || currentTab.isNativePage()) && !isDistilledPage;
+        requestMenuRow.setVisible(itemVisible);
+        if (!itemVisible) return;
+
+        boolean isRds =
+                currentTab.getWebContents().getNavigationController().getUseDesktopUserAgent();
+        // Mark the checkbox if RDS is activated on this page.
+        requestMenuCheck.setChecked(isRds);
+
+        // This title doesn't seem to be displayed by Android, but it is used to set up
+        // accessibility text in {@link AppMenuAdapter#setupMenuButton}.
+        requestMenuLabel.setTitleCondensed(isRds
+                        ? mActivity.getString(R.string.menu_request_dimming_on)
+                        : mActivity.getString(R.string.menu_request_dimming_off));
+    }
+    ////
+    
     /**
      * A notification that the header view has finished inflating.
      * @param view The view that was inflated.

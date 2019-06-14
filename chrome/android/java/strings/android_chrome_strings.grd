@@ -3080,15 +3080,13 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <message name="IDS_MENU_REQUEST_DIMMING" desc="Menu item in Brave's overflow/options menu. By default, when a user navigates to a web page, no screen dimming is applied. If this menu item is selected, however, Brave will attempt to dim the screen opportunistically, e.g., while a page is loading. [CHAR-LIMIT=24]">
         Dimming
       </message>
-      <!--MV
        <message name="IDS_MENU_REQUEST_DIMMING_ON" desc="Accessibility description for when dimming is enabled.">
         Turn off Request desktop site
       </message>
       <message name="IDS_MENU_REQUEST_DIMMING_OFF" desc="Accessibility description for when dimming is disabled.">
         Turn on Request desktop site
       </message>
-      --> 
-
+      
       <!--[MV]-->
        <message name="IDS_DIMMING_MODE_TITLE" desc="Title of the setting for enabling screen dimming [CHAR-LIMIT=32]">
         Dimming
