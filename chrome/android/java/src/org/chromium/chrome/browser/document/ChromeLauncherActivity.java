@@ -24,7 +24,6 @@ import android.provider.Settings;
 import android.util.Log;
 import android.os.Build;
 import org.chromium.base.ContextUtils;    // MV-TESTING
-import android.content.SharedPreferences; // MV-TESTING
 
 
 /**
@@ -48,13 +47,6 @@ public class ChromeLauncherActivity extends Activity {
 
             // [MV] request  WRITE_SETTINGS permission if needed //
             maybeRequestPermission(this);
-            ////
-
-            // [MV] set dimming preferences// MV-TESTING
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-            sharedPreferencesEditor.putBoolean(DIMMING, true);
-            sharedPreferencesEditor.apply();
             ////
 
             if (VrModuleProvider.getIntentDelegate().isVrIntent(getIntent())) {

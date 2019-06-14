@@ -515,6 +515,11 @@ public class ChromeTabbedActivity
         Log.d(SUBTAG, "Use-dimming: " + useDimming + "Desktop-view: " + useDesktop); 
         //
 
+        // [MV] get dimming preferences// MV-TESTING
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        Log.d(SUBTAG, "Use-dimming-via-shared-preferences: " + useDimming); 
+            
         //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite){
             try {
@@ -720,14 +725,7 @@ public class ChromeTabbedActivity
 
     @Override
     public void initializeCompositor() {
-        try {
-            /* [MV] get dimming preferences// MV-TESTING
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-            boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
-            Log.d(SUBTAG, "Use dimming: " + useDimming); 
-            ////
-            */
-            
+        try {            
             // [MV] verify we have WRITE_SETTINGS permission //
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
                 settingsCanWrite = true;

@@ -210,6 +210,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
 /**
  * A {@link AsyncInitializationActivity} that builds and manages a {@link CompositorViewHolder}
  * and associated classes.
@@ -254,6 +255,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     public static final String BRAVE_PRODUCTION_PACKAGE_NAME = "com.brave.browser";
     public static final String BRAVE_DEVELOPMENT_PACKAGE_NAME = "com.brave.browser_default";
     public static final String CHANNEL_ID = "com.brave.browser";
+
+    // [MV] adding variables needed //
+    private static final String SUBTAG = "MATTEO"; // my own TAG
 
     private static AppMenuHandlerFactory sAppMenuHandlerFactory =
             (activity, delegate, menuResourceId) -> new AppMenuHandler(activity, delegate,
@@ -2376,6 +2380,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
      * @return Whether the action was handled.
      */
     public boolean onMenuOrKeyboardAction(int id, boolean fromMenu) {
+
+        // logging 
+        Log.d(SUBTAG, "onMenuOrKeyboardAction"); 
+
         if (id == R.id.preferences_id) {
             PreferencesLauncher.launchSettingsPage(this, null);
             RecordUserAction.record("MobileMenuSettings");
@@ -2492,7 +2500,17 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             currentTab.getWebContents().getNavigationController().setUseDesktopUserAgent(
                     !usingDesktopUserAgent, reloadOnChange);
             RecordUserAction.record("MobileMenuRequestDesktopSite");
-        } else if (id == R.id.reader_mode_prefs_id) {
+        } 
+        //[MV]//
+        else if (id == R.id.request_dimming_id || id == R.id.request_dimming_check_id) {
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            sharedPreferencesEditor.putBoolean(DIMMING, true);
+            sharedPreferencesEditor.apply();
+            RecordUserAction.record("MobileMenuRequestDimming");
+        } 
+        ////
+        else if (id == R.id.reader_mode_prefs_id) {
             DomDistillerUIUtils.openSettings(currentTab.getWebContents());
         } else if (id == R.id.brave_set_default_browser) {
             handleBraveSetDefaultBrowserDialog();
@@ -2501,6 +2519,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         } else {
             return false;
         }
+        // all good 
         return true;
     }
 

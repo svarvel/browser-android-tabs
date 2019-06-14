@@ -43,6 +43,7 @@ import org.chromium.webapk.lib.client.WebApkValidator;
 
 // [MV] //
 import org.chromium.base.Log;
+import android.content.SharedPreferences; // MV-TESTING
 ////
 
 /**
@@ -481,6 +482,13 @@ public class AppMenuPropertiesDelegate {
         // Mark the checkbox if RDS is activated on this page.
         boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
         Log.d(TAG, "updateRequestDimmingMenuItem: " + useDimming);         
+        
+        // [MV] get dimming preferences// MV-TESTING
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        Log.d(TAG, "updateRequestDimmingMenuItem-via-shared-preferences: " + useDimming); 
+
+        // add check or not based on the above 
         requestMenuCheck.setChecked(useDimming);
 
         // This title doesn't seem to be displayed by Android, but it is used to set up
