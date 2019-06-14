@@ -148,6 +148,18 @@ public class ContentSettingsResources {
                             ContentSettingValues.BLOCK,
                             R.string.website_settings_category_desktop_view_enabled,
                             R.string.website_settings_category_desktop_view_disabled ));
+
+            // [MV]
+            localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_DIMMING,
+                    new ResourceItem(R.drawable.settings_desktop_view,
+                            R.string.dimming_mode_title,
+                            R.string.dimming_mode_title,
+                            ContentSettingValues.ALLOW,
+                            ContentSettingValues.BLOCK,
+                            R.string.website_settings_category_dimming_enabled,
+                            R.string.website_settings_category_dimming_disabled));
+            //// 
+
             localMap.put(ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND,
                     new ResourceItem(R.drawable.settings_play_video_in_background,
                             R.string.play_video_in_background_title,
@@ -364,6 +376,16 @@ public class ContentSettingsResources {
     public static int getDesktopViewDisabledSummary() {
         return R.string.website_settings_category_desktop_view_disabled_summary;
     }
+
+    // [MV] //
+    public static int getDimmingEnabledSummary() {
+        return R.string.website_settings_category_dimming_enabled_summary;
+    }
+    public static int getDimmingDisabledSummary() {
+        return R.string.website_settings_category_dimming_enabled_summary;
+    }
+    ////
+
 
     /**
      * Returns the summary for 'Play video in background' settings when it is enabled.

@@ -139,6 +139,10 @@ enum ContentSettingsType {
   // This content setting type is for displaying desktop version of the website
   CONTENT_SETTINGS_TYPE_DESKTOP_VIEW,
 
+  // [MV] This content setting type is for activating dimming //
+  CONTENT_SETTINGS_TYPE_DIMMING,
+  ////
+
   // This content setting type is for play videos in background, when the
   // browser is hidden or the screen is turned off
   CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND,

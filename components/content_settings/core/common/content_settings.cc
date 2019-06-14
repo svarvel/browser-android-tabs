@@ -77,6 +77,9 @@ constexpr HistogramValue kHistogramValue[kNumHistogramValues] = {
     {CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, 50},
     {CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, 51},
     {CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER, 52},
+    // [MV]//
+    {CONTENT_SETTINGS_TYPE_DIMMING, 53},
+    ////
 };
 
 }  // namespace

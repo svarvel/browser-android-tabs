@@ -2,8 +2,14 @@
 namespace content {
 
 bool IsGlobalDesktopSettingsOnForActiveProfile() {
-  return false;
+    return false;
 }
+
+// [MV] //
+bool IsDimmingOnForActiveProfile() {
+    return false; 
+}
+////
 
 bool NeedPlayVideoInBackgroundForActiveProfile() {
     return false;

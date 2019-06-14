@@ -40,7 +40,7 @@ public class SiteSettingsCategory {
     @IntDef({Type.ALL_SITES, Type.ADS, Type.AUTOMATIC_DOWNLOADS, Type.AUTOPLAY,
             Type.BACKGROUND_SYNC, Type.CAMERA, Type.CLIPBOARD, Type.COOKIES, Type.DEVICE_LOCATION,
             Type.JAVASCRIPT, Type.MICROPHONE, Type.NOTIFICATIONS, Type.POPUPS, Type.PROTECTED_MEDIA,
-            Type.SENSORS, Type.SOUND, Type.USE_STORAGE, Type.USB, Type.DESKTOP_VIEW, Type.PLAY_VIDEO_IN_BACKGROUND, Type.PLAY_YT_VIDEO_IN_BROWSER})
+            Type.SENSORS, Type.SOUND, Type.USE_STORAGE, Type.USB, Type.DESKTOP_VIEW, Type.PLAY_VIDEO_IN_BACKGROUND, Type.PLAY_YT_VIDEO_IN_BROWSER, Type.DIMMING}) //[MV]
     @Retention(RetentionPolicy.SOURCE)
     public @interface Type {
         // Values used to address array index - should be enumerated from 0 and can't have gaps.
@@ -67,10 +67,13 @@ public class SiteSettingsCategory {
         int DESKTOP_VIEW = 18;
         int PLAY_VIDEO_IN_BACKGROUND = 19;
         int PLAY_YT_VIDEO_IN_BROWSER = 20;
+        // [MV]
+        int DIMMING = 21; 
+        ////
         /**
          * Number of handled categories used for calculating array sizes.
          */
-        int NUM_ENTRIES = 21;
+        int NUM_ENTRIES = 22; //[MV]
     }
 
     // The id of this category.
@@ -166,6 +169,10 @@ public class SiteSettingsCategory {
                 return ContentSettingsType.CONTENT_SETTINGS_TYPE_USB_GUARD;
             case Type.DESKTOP_VIEW:
                 return ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW;
+            // [MV] //
+            case Type.DIMMING:
+                return ContentSettingsType.CONTENT_SETTINGS_TYPE_DIMMING;
+            ////
             case Type.PLAY_VIDEO_IN_BACKGROUND:
                 return ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND;
             case Type.PLAY_YT_VIDEO_IN_BROWSER:
@@ -220,6 +227,10 @@ public class SiteSettingsCategory {
                 return "use_storage";
             case Type.DESKTOP_VIEW:
                 return "desktop_view";
+            //[MV]//
+            case Type.DIMMING:
+                return "dimming";
+            ////
             case Type.PLAY_VIDEO_IN_BACKGROUND:
                 return "play_video_in_background";
             case Type.PLAY_YT_VIDEO_IN_BROWSER:

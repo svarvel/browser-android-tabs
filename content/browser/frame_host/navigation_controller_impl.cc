@@ -96,7 +96,9 @@ namespace content {
 
 // TODO(alexeyb): remove this workaround for release monochrome_public_apk
 bool IsGlobalDesktopSettingsOnForActiveProfile();
-
+//[MV]//
+bool IsDimmingOnForActiveProfile();
+////
 namespace {
 
 // Invoked when entries have been pruned, or removed. For example, if the

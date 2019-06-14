@@ -11,6 +11,15 @@ bool IsGlobalDesktopSettingsOnForActiveProfile() {
   return is_desktop_settings_on;
 }
 
+//[MV]//
+bool IsDimmingOnForActiveProfile() {
+  bool is_dimming_settings_on = HostContentSettingsMapFactory::GetForProfile(
+    ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
+    GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_DIMMING, NULL) == CONTENT_SETTING_ALLOW;
+  return is_dimming_settings_on;
+}
+/////
+
 bool NeedPlayVideoInBackgroundForActiveProfile() {
   bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
       ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->

@@ -346,12 +346,31 @@ public class PrefServiceBridge {
         return nativeGetDesktopViewEnabled();
     }
 
+    // [MV]
+    /**
+     * @return true if Dimming is enabled.
+     * The default is false.
+     */
+    public boolean dimmingEnabled() {
+        return nativeGetDimmingEnabled();
+    }
+    ////
+
     /**
      * @return Whether Desktop View is managed by policy.
      */
     public boolean desktopViewManaged() {
         return isContentSettingManaged(ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW);
     }
+
+    // [MV]
+    /**
+     * @return Whether Dimming is managed by policy.
+     */
+    public boolean dimmingManaged() {
+        return isContentSettingManaged(ContentSettingsType.CONTENT_SETTINGS_TYPE_DIMMING);
+    }
+    ////
 
     /**
      * @return true if 'Play video in background' is enabled.
@@ -425,6 +444,12 @@ public class PrefServiceBridge {
     public void setDesktopViewEnabled(boolean enabled) {
         nativeSetDesktopViewEnabled(enabled);
     }
+
+    // [MV] Enable or disable Dimming //
+    public void setDimmingEnabled(boolean enabled) {
+        nativeSetDimmingEnabled(enabled);
+    }
+    ////
 
     /**
      * Enable or disable 'Play video in background' option
@@ -846,6 +871,11 @@ public class PrefServiceBridge {
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
                 nativeSetDesktopViewEnabled(allow);
                 break;
+            // [MV] //
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DIMMING:
+                nativeSetDimmingEnabled(allow);
+                break;
+            ////
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
                 nativeSetPlayVideoInBackgroundEnabled(allow);
                 break;
@@ -890,6 +920,10 @@ public class PrefServiceBridge {
                 return nativeGetSoundEnabled();
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_DESKTOP_VIEW:
                 return nativeGetDesktopViewEnabled();
+            // [MV] //
+            case ContentSettingsType.CONTENT_SETTINGS_TYPE_DIMMING:
+                return nativeGetDimmingEnabled();
+            ////
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND:
                 return nativeGetPlayVideoInBackgroundEnabled();
             case ContentSettingsType.CONTENT_SETTINGS_TYPE_PLAY_YT_VIDEO_IN_BROWSER:
@@ -1247,6 +1281,9 @@ public class PrefServiceBridge {
     private native boolean nativeGetAutoplayEnabled();
     private native boolean nativeGetBackgroundSyncEnabled();
     private native boolean nativeGetDesktopViewEnabled();
+    // [MV] //
+    private native boolean nativeGetDimmingEnabled();
+    ////
     private native boolean nativeGetPlayVideoInBackgroundEnabled();
     private native boolean nativeGetPlayYTVideoInBrowserEnabled();
     private native boolean nativeGetBlockThirdPartyCookiesEnabled();
@@ -1297,6 +1334,9 @@ public class PrefServiceBridge {
     private native void nativeSetAllowCookiesEnabled(boolean enabled);
     private native void nativeSetBackgroundSyncEnabled(boolean enabled);
     private native void nativeSetDesktopViewEnabled(boolean enabled);
+    // [MV] //
+    private native void nativeSetDimmingEnabled(boolean enabled);
+    ////
     private native void nativeSetPlayVideoInBackgroundEnabled(boolean enabled);
     private native void nativeSetPlayYTVideoInBrowserEnabled(boolean enabled);
     private native void nativeSetBlockThirdPartyCookiesEnabled(boolean enabled);
