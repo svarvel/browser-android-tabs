@@ -692,7 +692,7 @@ public class ChromeTabbedActivity
         try {
             // [MV] get dimming preferences// MV-TESTING
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-            boolean useDimming = sharedPreferences.getBoolean(DIMMING, false)
+            boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
             Log.d(SUBTAG, "Use dimming: " + useDimming); 
             ////
 
