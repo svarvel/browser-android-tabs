@@ -191,6 +191,7 @@ import java.net.URL;
 import android.provider.Settings;
 import android.content.ContentResolver;
 import android.content.SharedPreferences; // MV-TESTING
+private static final String DIMMING = "use_dimming"; // MV-TESTING
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
@@ -223,6 +224,8 @@ public class ChromeTabbedActivity
     private int previousBrightness = -1;  // info on brightness 
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
+    private long startDimming = -1; // track start dim
+    private long endDimming   = -1;   // track stop dim
     ////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -528,8 +531,19 @@ public class ChromeTabbedActivity
             }
 
             // dim screen to zero 
-            Log.d(SUBTAG, "Dimming: ON!");
             Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,0);
+
+            // start a timer to calculate savings 
+            startDimming = System.currentTimeMillis();
+
+            // compute time-no-dimming
+            long timeNoDimming = -1
+            if (stopDimming != -1){
+                timeNoDimming = startDimming - stopDimming;
+            }
+
+            // logging 
+            Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);           
         } else { 
             Log.d(SUBTAG, "No permission for dimming"); 
         }
@@ -539,16 +553,26 @@ public class ChromeTabbedActivity
     // [MV] resume screen brightness //
     private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
         if (settingsCanWrite){
-            // let auto-brightness do its jon
+            // let auto-brightness do its job
             if (wasAutoBrightness) {
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE,
                         Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
-                Log.d(SUBTAG, "Dimming: OFF - Re-enabling auto brightness");
+                
+                // stop timer to calculate savings 
+                endDimming = System.currentTimeMillis();
+
+                // logging 
+                Log.d(SUBTAG, "Dimming: OFF  Re-enabling auto brightness. - Dim-duration: " + (endDimming - startDimming));
             } 
             // return to previous manual value
-            else if (previousBrightness != -1) {
-                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness);
+            else if (previousBrightness != -1) {                
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, previousBrightness);
+
+                // stop timer to calculate savings 
+                stopDimming = System.currentTimeMillis();
+
+                // logging 
+                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + "Dim-duration: " + (stopDimming - startDimming));
             } else {
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
