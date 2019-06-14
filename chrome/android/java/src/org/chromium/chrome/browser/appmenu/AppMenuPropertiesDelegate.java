@@ -465,7 +465,7 @@ public class AppMenuPropertiesDelegate {
             Menu menu, Tab currentTab, boolean canShowRequestDekstopSite) {
         MenuItem requestMenuRow = menu.findItem(R.id.request_dimming_row_menu_id);
         MenuItem requestMenuLabel = menu.findItem(R.id.request_dimming_id);
-        MenuItem requestMenuCheck = menu.findItem(R.request_dimming_check_id);
+        MenuItem requestMenuCheck = menu.findItem(R.id.request_dimming_check_id);
 
         // Hide request desktop site on all chrome:// pages except for the NTP.
         String url = currentTab.getUrl();
