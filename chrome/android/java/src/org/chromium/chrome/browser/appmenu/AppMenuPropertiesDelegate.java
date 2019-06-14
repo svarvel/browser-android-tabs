@@ -485,7 +485,7 @@ public class AppMenuPropertiesDelegate {
 
         // This title doesn't seem to be displayed by Android, but it is used to set up
         // accessibility text in {@link AppMenuAdapter#setupMenuButton}.
-        requestMenuLabel.setTitleCondensed(isRds
+        requestMenuLabel.setTitleCondensed(true
                         ? mActivity.getString(R.string.menu_request_dimming_on)
                         : mActivity.getString(R.string.menu_request_dimming_off));
     }
