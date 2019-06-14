@@ -538,8 +538,8 @@ public class ChromeTabbedActivity
 
             // compute time-no-dimming
             long timeNoDimming = -1;
-            if (stopDimming != -1){
-                timeNoDimming = startDimming - stopDimming;
+            if (endDimming != -1){
+                timeNoDimming = startDimming - endDimming;
             }
 
             // logging 
@@ -569,10 +569,10 @@ public class ChromeTabbedActivity
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, previousBrightness);
 
                 // stop timer to calculate savings 
-                stopDimming = System.currentTimeMillis();
+                endDimming = System.currentTimeMillis();
 
                 // logging 
-                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + "Dim-duration: " + (stopDimming - startDimming));
+                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + "Dim-duration: " + (endDimming - startDimming));
             } else {
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
