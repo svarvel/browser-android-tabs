@@ -474,18 +474,18 @@ public class AppMenuPropertiesDelegate {
             Menu menu, Tab currentTab) {
 
         // Logging 
-        Log.d(TAG, "updateRequestDimmingMenuItem"); 
         MenuItem requestMenuRow = menu.findItem(R.id.request_dimming_row_menu_id);
         MenuItem requestMenuLabel = menu.findItem(R.id.request_dimming_id);
         MenuItem requestMenuCheck = menu.findItem(R.id.request_dimming_check_id);
         
         // Mark the checkbox if RDS is activated on this page.
-        // FIXME -- here u need to learn if it was clicked 
-        requestMenuCheck.setChecked(true);
+        boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
+        Log.d(TAG, "updateRequestDimmingMenuItem: " + useDimming);         
+        requestMenuCheck.setChecked(useDimming);
 
         // This title doesn't seem to be displayed by Android, but it is used to set up
         // accessibility text in {@link AppMenuAdapter#setupMenuButton}.
-        requestMenuLabel.setTitleCondensed(true
+        requestMenuLabel.setTitleCondensed(useDimming
                         ? mActivity.getString(R.string.menu_request_dimming_on)
                         : mActivity.getString(R.string.menu_request_dimming_off));
     }

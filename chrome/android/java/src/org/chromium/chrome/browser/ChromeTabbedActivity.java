@@ -1981,6 +1981,7 @@ public class ChromeTabbedActivity
             public void onPreLoadUrl(Tab tab, LoadUrlParams params) {
                if (false == tab.isDesktopModeOverridenByTab()) {
                    final boolean desktopViewFromSettings = PrefServiceBridge.getInstance().desktopViewEnabled();
+                    Log.d(SUBTAG, "desktopViewFromSettings: " + desktopViewFromSettings); 
                     //if required UA is already set, do nothing
                     if (desktopViewFromSettings != tab.getUseDesktopUserAgent()) {
                         tab.setUseDesktopUserAgent(desktopViewFromSettings, false);
