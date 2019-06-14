@@ -191,7 +191,6 @@ import java.net.URL;
 import android.provider.Settings;
 import android.content.ContentResolver;
 import android.content.SharedPreferences; // MV-TESTING
-private static final String DIMMING = "use_dimming"; // MV-TESTING
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
@@ -226,6 +225,7 @@ public class ChromeTabbedActivity
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
     private long startDimming = -1; // track start dim
     private long endDimming   = -1;   // track stop dim
+    private static final String DIMMING = "use_dimming"; // MV-TESTING
     ////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -537,7 +537,7 @@ public class ChromeTabbedActivity
             startDimming = System.currentTimeMillis();
 
             // compute time-no-dimming
-            long timeNoDimming = -1
+            long timeNoDimming = -1;
             if (stopDimming != -1){
                 timeNoDimming = startDimming - stopDimming;
             }
