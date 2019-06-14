@@ -3088,6 +3088,24 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       </message>
       <!--MV-->
 
+      <!--[MV]-->
+       <message name="IDS_DIMMING_MODE_TITLE" desc="Title of the setting for enabling screen dimming [CHAR-LIMIT=32]">
+        Dimming
+      </message>
+      <message name="IDS_WEBSITE_SETTINGS_CATEGORY_DIMMING_ENABLED_SUMMARY" desc="Summary text for Dimming preferences mode enabled">
+        Dimming on 
+      </message>
+      <message name="IDS_WEBSITE_SETTINGS_CATEGORY_DIMMING_DISABLED_SUMMARY" desc="Summary text for Dimming preferences mode disabled">
+        Dimming off
+      </message>
+      <message name="IDS_WEBSITE_SETTINGS_CATEGORY_DIMMING_ENABLED" desc="Summary text explaining that sites will use Screen Dimming.">
+        Enable Screen Dimming
+      </message>
+      <message name="IDS_WEBSITE_SETTINGS_CATEGORY_DIMMING_DISABLED" desc="Summary text explaining that browser  will not use Screen Dimming">
+        Disable Screen Dimming
+      </message>
+      <!--[MV]-->
+       
       <message name="IDS_MENU_READER_MODE_PREFS" desc="Menu item to show reader mode preferences pane, which allows users to change the appearance (font size, theme, etc.) of the page. [CHAR-LIMIT=27]">
         Appearance
       </message>
@@ -4253,6 +4271,8 @@ Saved
       <message name="IDS_WEBSITE_SETTINGS_CATEGORY_DESKTOP_VIEW_DISABLED" desc="Summary text explaining that browser  will use mobile version of sites and that it is the recommended setting.">
         Use mobile versions of sites for new tabs (recommended)
       </message>
+
+
       <message name="IDS_BRAVE_SHIELDS_FIRST_GROUP_TITLE" desc="Title for the first group of Brave's shields panel.">
         Blocking Monitor
       </message>
