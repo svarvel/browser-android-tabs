@@ -464,7 +464,7 @@ void ContentSettingsRegistry::Init() {
 
     // [MV]//
     Register(CONTENT_SETTINGS_TYPE_DIMMING, "dimming",
-           CONTENT_SETTING_ALLOW, //default is a mobile view for pages
+           CONTENT_SETTING_BLOCK, //default is a mobile view for pages
            WebsiteSettingsInfo::UNSYNCABLE,
            WhitelistedSchemes(),
            ValidSettings(CONTENT_SETTING_BLOCK, CONTENT_SETTING_ALLOW),
