@@ -514,7 +514,7 @@ public class ChromeTabbedActivity
         useDimming = sharedPreferences.getBoolean(DIMMING, false);
             
         //if (settingsCanWrite && useDimming ){
-        if (settingsCanWrite and useDimming){
+        if (settingsCanWrite && useDimming){
             try {
                 // disable auto-dimming (temporarily)
                 if (Settings.System.getInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE)
@@ -562,7 +562,7 @@ public class ChromeTabbedActivity
         useDimming = sharedPreferences.getBoolean(DIMMING, false);
 
         // increase screen brightness as needed
-        if (settingsCanWrite and useDimming){
+        if (settingsCanWrite && useDimming){
             // let auto-brightness do its job
             if (wasAutoBrightness) {
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE,
