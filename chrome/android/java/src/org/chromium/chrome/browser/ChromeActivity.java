@@ -210,7 +210,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 /**
  * A {@link AsyncInitializationActivity} that builds and manages a {@link CompositorViewHolder}
  * and associated classes.
@@ -2530,6 +2529,29 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // all good 
         return true;
     }
+
+
+    // [MV] handle request for writing permission 
+    //  Q: activity is not triggered (maybe). Better spot? 
+    public boolean maybeRequestPermission(Activity activity) {
+        
+        // all good for old SDKs
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            Log.d(TAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
+            return true;
+        }
+        if (Settings.System.canWrite(this)) {
+            Log.d(TAG, "Permission WRITE_SETTINGS already accepted"); 
+            return true;
+        } else {
+            Log.d(TAG, "Permission WRITE_SETTINGS missing. Asking to accept");
+            Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+            intent.setData(Uri.parse("package:" + getApplicationInfo().packageName));
+            startActivity(intent);
+            return true;
+        }
+    }
+    ////
 
     public boolean isBraveSetAsDefaultBrowser() {
         return BraveSetDefaultBrowserNotificationService.isBraveSetAsDefaultBrowser(this);
