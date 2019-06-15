@@ -2537,7 +2537,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         
         // all good for old SDKs
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            Log.d(SUTAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
+            Log.d(SUBTAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
             return true;
         }
         if (Settings.System.canWrite(this)) {
