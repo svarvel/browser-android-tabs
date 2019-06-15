@@ -2504,6 +2504,11 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         } 
         //[MV]//
         else if (id == R.id.request_dimming_id || id == R.id.request_dimming_check_id) {
+
+            // [MV] request  WRITE_SETTINGS permission if needed //
+            //maybeRequestPermission(this);
+            ////
+
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             // invert current value after click

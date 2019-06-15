@@ -509,19 +509,12 @@ public class ChromeTabbedActivity
 
     // [MV] lower screen brightness //
     private void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
-        // [MV] -- if works, need to be checked later
-        boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
-        boolean useDesktop = PrefServiceBridge.getInstance().desktopViewEnabled();
-        Log.d(SUBTAG, "Use-dimming: " + useDimming + "Desktop-view: " + useDesktop); 
-        //
-
-        // [MV] get dimming preferences// MV-TESTING
+        // [MV] get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         useDimming = sharedPreferences.getBoolean(DIMMING, false);
-        Log.d(SUBTAG, "Use-dimming-via-shared-preferences: " + useDimming); 
             
         //if (settingsCanWrite && useDimming ){
-        if (settingsCanWrite){
+        if (settingsCanWrite and useDimming){
             try {
                 // disable auto-dimming (temporarily)
                 if (Settings.System.getInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE)
@@ -564,7 +557,12 @@ public class ChromeTabbedActivity
 
     // [MV] resume screen brightness //
     private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
-        if (settingsCanWrite){
+        // get dimming preferences
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+
+        // increase screen brightness as needed
+        if (settingsCanWrite and useDimming){
             // let auto-brightness do its job
             if (wasAutoBrightness) {
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS_MODE,
