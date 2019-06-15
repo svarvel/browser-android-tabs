@@ -511,7 +511,7 @@ public class ChromeTabbedActivity
     private void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
         // [MV] get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
             
         //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite && useDimming){
@@ -559,7 +559,7 @@ public class ChromeTabbedActivity
     private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
         // get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
 
         // increase screen brightness as needed
         if (settingsCanWrite && useDimming){
