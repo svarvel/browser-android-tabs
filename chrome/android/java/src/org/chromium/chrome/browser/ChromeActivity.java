@@ -2505,9 +2505,10 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         //[MV]//
         else if (id == R.id.request_dimming_id || id == R.id.request_dimming_check_id) {
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();            
-            // revert DIMMING sharedPreferences at each click 
-            sharedPreferencesEditor.putBoolean(!sharedPreferences.getBoolean(DIMMING, false), true);
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            // invert current value after click
+            boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
+            sharedPreferencesEditor.putBoolean(DIMMING, !useDimming);
             sharedPreferencesEditor.apply();
             RecordUserAction.record("MobileMenuRequestDimming");
         } 
