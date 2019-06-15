@@ -2537,14 +2537,14 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         
         // all good for old SDKs
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            Log.d(TAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
+            Log.d(SUTAG, Build.VERSION.SDK_INT + "<" + Build.VERSION_CODES.M);
             return true;
         }
         if (Settings.System.canWrite(this)) {
-            Log.d(TAG, "Permission WRITE_SETTINGS already accepted"); 
+            Log.d(SUBTAG, "Permission WRITE_SETTINGS already accepted"); 
             return true;
         } else {
-            Log.d(TAG, "Permission WRITE_SETTINGS missing. Asking to accept");
+            Log.d(SUBTAG, "Permission WRITE_SETTINGS missing. Asking to accept");
             Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
             intent.setData(Uri.parse("package:" + getApplicationInfo().packageName));
             startActivity(intent);
