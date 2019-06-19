@@ -22,7 +22,7 @@
         <org.chromium.ui.widget.ChromeImageButton
             android:id="@+id/forward_menu_id"
             style="@style/OverflowMenuButton"
-            android:src="@drawable/btn_forward"
+            android:src="@drawable/forward_icon"
             android:contentDescription="@string/accessibility_menu_forward" />
 
         <org.chromium.ui.widget.ChromeImageButton
