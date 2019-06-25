@@ -18,6 +18,7 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.bookmarks.BookmarkBridge;
 import org.chromium.chrome.browser.download.DownloadUtils;
+import org.chromium.chrome.browser.util.FeatureUtilities;
 import org.chromium.chrome.browser.tab.Tab;
 
 /**
@@ -46,6 +47,9 @@ public class AppMenuIconRowFooter extends LinearLayout implements View.OnClickLi
 
         mBookmarkButton = findViewById(R.id.bookmark_this_page_id);
         mBookmarkButton.setOnClickListener(this);
+        if(FeatureUtilities.isBottomToolbarEnabled()){
+            mBookmarkButton.setVisibility(View.GONE);
+        }
 
         mDownloadButton = findViewById(R.id.offline_page_id);
         mDownloadButton.setOnClickListener(this);
