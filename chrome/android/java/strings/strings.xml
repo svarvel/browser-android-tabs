@@ -109,7 +109,7 @@ Saved</string>
     <string name="brave_sync_btn_laptop">Add a Computer</string>
     <string name="brave_sync_scan_sync_code">Scan this sync code</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Using a second phone or tablet, navigate to Brave Settings > Sync > Scan.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Capture the QR code (above) with your second device, or enter code words if no camera is available.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">On your mobile device, navigate to Brave Sync in the Settings panel and click the button "Scan Sync Code". Use your camera to scan the QR Code below.</string>
     <string name="brave_sync_btn_done">Done</string>
     <string name="brave_sync_tabs_text">Tabs</string>
     <string name="brave_sync_history_text">History</string>
@@ -258,7 +258,7 @@ content creators you love.</string>
     <string name="reset_brave_rewards_error_title">Reset Error</string>
     <string name="reset_brave_rewards_error_description">There was an error resetting Brave Rewards. Please relaunch Brave and try again</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">On your target computer, navigate to Brave Sync in settings and click the button "I have a Sync Code".\nEnter the sync chain code words shown below.\nTreat this code like a password. If someone gets hold of it, they can read and modify your synced data.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sync</string>

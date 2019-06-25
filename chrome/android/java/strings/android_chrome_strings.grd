@@ -4468,7 +4468,7 @@ Saved
         Using a second phone or tablet, navigate to Brave Settings > Sync > Scan.
       </message>
       <message name="IDS_BRAVE_SYNC_ADD_MOBILE_DEVICE_TEXT_PART_2" desc="Description for 'Add a mobile device' page (part 2).">
-        Capture the QR code (above) with your second device, or enter code words if no camera is available.
+        On your mobile device, navigate to Brave Sync in the Settings panel and click the button "Scan Sync Code". Use your camera to scan the QR Code below.
       </message>
       <message name="IDS_BRAVE_SYNC_BTN_DONE" desc="Title for 'Done' button.">
         Done
@@ -4516,7 +4516,7 @@ Saved
         Enter the code words above, including spaces.
       </message>-->
       <message name="IDS_BRAVE_SYNC_ADD_LAPTOP_TEXT_PART_2_NEW" desc="Part 2 of the text on 'Add Laptop' page.">
-        Enter the sync chain code words shown below. Treat this code like a password. If someone gets ahold of it, they can read and modify your synced data.
+        On your target computer, navigate to Brave Sync in settings and click the button "I have a Sync Code".\nEnter the sync chain code words shown below.\nTreat this code like a password. If someone gets hold of it, they can read and modify your synced data.
       </message>
       <message name="IDS_BRAVE_SYNC_DELETE_DEVICE" desc="Delete device message.">
         Are you sure you want to delete device '<ph name="DEVICE_NAME">%1$s</ph>'?
