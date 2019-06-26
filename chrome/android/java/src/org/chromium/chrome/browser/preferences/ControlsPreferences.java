@@ -14,21 +14,14 @@ import org.chromium.chrome.browser.preferences.website.SiteSettingsCategory;
 import org.chromium.chrome.browser.preferences.website.SingleCategoryPreferences;
 import org.chromium.chrome.browser.preferences.website.ContentSettingsResources;
 import org.chromium.chrome.browser.preferences.website.ContentSettingValues;
-//import org.chromium.chrome.browser.MixPanelWorker;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The main Site Settings screen, which shows all the site settings categories: All sites, Location,
- * Microphone, etc. By clicking into one of these categories, the user can see or and modify
- * permissions that have been granted to websites, as well as enable or disable permissions
- * browser-wide.
+ * The main Controls screen, which shows all the 'Background video playback' option.
  *
- * Depending on version and which experiment is running, this class also handles showing the Media
- * sub-menu, which contains Autoplay and Protected Content. To avoid the Media sub-menu having only
- * one sub-item, when either Autoplay or Protected Content should not be visible the other is shown
- * in the main setting instead (as opposed to under Media).
+ * It enables play audio from video in the background.
  */
 public class ControlsPreferences extends PreferenceFragment
         implements OnPreferenceClickListener {
@@ -97,9 +90,6 @@ public class ControlsPreferences extends PreferenceFragment
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        /*if (R.string.javascript_permission_title == preference.getTitleRes()) {
-            MixPanelWorker.SendEvent("JavaScript Option Changed", "JavaScript", !PrefServiceBridge.getInstance().javaScriptEnabled());
-        }*/
         preference.getExtras().putString(
                 SingleCategoryPreferences.EXTRA_CATEGORY, preference.getKey());
         preference.getExtras().putString(SingleCategoryPreferences.EXTRA_TITLE,
