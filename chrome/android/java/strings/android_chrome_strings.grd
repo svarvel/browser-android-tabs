@@ -4834,6 +4834,9 @@ content creators you love.
       <message name="IDS_PREFS_SECTION_DISPLAY" desc='Title of "Display" section of preferences. [CHAR-LIMIT=32]'>
         Display
       </message>
+      <message name="IDS_PREFS_SECTION_CONTROLS" desc='Title of "Controls" section of preferences. [CHAR-LIMIT=32]'>
+        Controls
+      </message>
       <message name="IDS_PREFS_APPEARANCE" desc="Title of Appearance settings, which allows the user to change display settings. [CHAR-LIMIT=32]">
         Appearance
       </message>
