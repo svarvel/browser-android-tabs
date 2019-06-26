@@ -2484,7 +2484,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             Tracker tracker = TrackerFactory.getTrackerForProfile(getActivityTab().getProfile());
             tracker.notifyEvent(EventConstants.TRANSLATE_MENU_BUTTON_CLICKED);
             TranslateBridge.translateTabWhenReady(getActivityTab());
-        } else if (id == R.id.share_menu_id || id == R.id.direct_share_menu_id) {
+        } else if (id == R.id.share_menu_id || id == R.id.direct_share_menu_id || id==R.id.share_page_id) {
             onShareMenuItemSelected(id == R.id.direct_share_menu_id,
                     getCurrentTabModel().isIncognito());
         } else if (id == R.id.print_id) {

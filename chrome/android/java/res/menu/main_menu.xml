@@ -19,9 +19,9 @@
               <item android:id="@+id/offline_page_id"
                 android:title="@string/download_page"
                 android:icon="@drawable/ic_file_download_white_24dp"/>
-              <item android:id="@+id/info_menu_id"
-                android:title="@string/accessibility_menu_info"
-                android:icon="@drawable/btn_info" />
+              <item android:id="@+id/share_page_id"
+                android:title="@string/accessibility_menu_share"
+                android:icon="@drawable/share_icon" />
               <item android:id="@+id/reload_menu_id"
                 android:title="@string/accessibility_btn_refresh"
                 android:icon="@drawable/btn_reload_stop"/>
