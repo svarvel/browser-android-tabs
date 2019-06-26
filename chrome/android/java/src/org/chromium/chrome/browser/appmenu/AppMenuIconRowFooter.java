@@ -31,7 +31,7 @@ public class AppMenuIconRowFooter extends LinearLayout implements View.OnClickLi
     private ImageButton mForwardButton;
     private ImageButton mBookmarkButton;
     private ImageButton mDownloadButton;
-    private ImageButton mPageInfoButton;
+    private ImageButton mPageShareButton;
     private ImageButton mReloadButton;
 
     public AppMenuIconRowFooter(Context context, AttributeSet attrs) {
@@ -54,8 +54,8 @@ public class AppMenuIconRowFooter extends LinearLayout implements View.OnClickLi
         mDownloadButton = findViewById(R.id.offline_page_id);
         mDownloadButton.setOnClickListener(this);
 
-        mPageInfoButton = findViewById(R.id.info_menu_id);
-        mPageInfoButton.setOnClickListener(this);
+        mPageShareButton = findViewById(R.id.share_page_id);
+        mPageShareButton.setOnClickListener(this);
 
         mReloadButton = findViewById(R.id.reload_menu_id);
         mReloadButton.setOnClickListener(this);

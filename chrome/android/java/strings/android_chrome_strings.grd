@@ -2129,6 +2129,9 @@ To change this setting, <ph name="BEGIN_LINK">&lt;resetlink&gt;</ph>reset sync<p
       <message name="IDS_ACCESSIBILITY_MENU_INFO" desc="Content description for the button which opens the page info popup, which displays security information and permissions for the current page">
         View site information
       </message>
+      <message name="IDS_ACCESSIBILITY_MENU_SHARE" desc="Content description for the button which opens the window to share the website.">
+        Share
+      </message>
       <message name="IDS_ACCESSIBILITY_CONTENT_VIEW" desc="Content description for the content view that holds the web contents [CHAR-LIMIT=30]">
         Web View
       </message>

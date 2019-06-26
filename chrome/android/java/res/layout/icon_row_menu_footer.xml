@@ -38,10 +38,10 @@
             android:contentDescription="@string/download_page" />
 
         <org.chromium.ui.widget.ChromeImageButton
-            android:id="@+id/info_menu_id"
+            android:id="@+id/share_page_id"
             style="@style/OverflowMenuButton"
-            android:src="@drawable/btn_info"
-            android:contentDescription="@string/accessibility_menu_info" />
+            android:src="@drawable/share_icon"
+            android:contentDescription="@string/accessibility_menu_share" />
 
         <!-- The src will be set in onFinishInflate. -->
         <org.chromium.ui.widget.ChromeImageButton
