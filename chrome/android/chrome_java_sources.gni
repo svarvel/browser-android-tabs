@@ -1914,6 +1914,7 @@ chrome_java_sources = [
   "java/src/org/chromium/chrome/browser/init/ADBlockUtils.java",
   "java/src/org/chromium/chrome/browser/init/EtagObject.java",
   "java/src/org/chromium/chrome/browser/preferences/AppearancePreferences.java",
+  "java/src/org/chromium/chrome/browser/preferences/ControlsPreferences.java",
   "java/src/org/chromium/chrome/browser/init/InstallReferrerReceiver.java",
   "java/src/org/chromium/chrome/browser/upgrade/NotificationIntent.java",
   "java/src/org/chromium/chrome/browser/upgrade/NotificationUpgradeDismissedReceiver.java",
