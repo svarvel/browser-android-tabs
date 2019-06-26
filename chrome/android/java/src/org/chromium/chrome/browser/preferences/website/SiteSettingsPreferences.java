@@ -85,8 +85,7 @@ public class SiteSettingsPreferences extends PreferenceFragment
             // The Media sub-menu only contains Protected Content and Autoplay, so remove all other
             // menus.
             for (@Type int i = 0; i < Type.NUM_ENTRIES; i++) {
-                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA || 
-                    i == SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND || i == SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER) continue;
+                if (i == Type.AUTOPLAY || i == Type.PROTECTED_MEDIA || i == SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER) continue;
                 Preference pref = findPreference(i);
                 if (pref != null) {
                     getPreferenceScreen().removePreference(pref);
@@ -105,7 +104,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 getPreferenceScreen().removePreference(findPreference(Type.AUTOPLAY));
             }
             getPreferenceScreen().removePreference(findPreference(Type.PROTECTED_MEDIA));
-            getPreferenceScreen().removePreference(findPreference(Type.PLAY_VIDEO_IN_BACKGROUND));
             getPreferenceScreen().removePreference(findPreference(Type.PLAY_YT_VIDEO_IN_BROWSER));
             // TODO(csharrison): Remove this condition once the experimental UI lands. It is not
             // great to dynamically remove the preference in this way.
@@ -139,7 +137,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
         if (mMediaSubMenu) {
             if (mProtectedContentMenuAvailable) {websitePrefs.add(Type.PROTECTED_MEDIA);}
             websitePrefs.add(Type.AUTOPLAY);
-            websitePrefs.add(Type.PLAY_VIDEO_IN_BACKGROUND);
             websitePrefs.add(Type.PLAY_YT_VIDEO_IN_BROWSER);
         } else {
             /*if (SiteSettingsCategory.adsCategoryEnabled()) {
@@ -216,8 +213,6 @@ public class SiteSettingsPreferences extends PreferenceFragment
                 p.setSummary(ContentSettingsResources.getCategorySummary(setting));
             } else if (SiteSettingsCategory.Type.DESKTOP_VIEW == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getDesktopViewEnabledSummary() : ContentSettingsResources.getDesktopViewDisabledSummary());
-            } else if (SiteSettingsCategory.Type.PLAY_VIDEO_IN_BACKGROUND == prefCategory) {
-                p.setSummary( checked ? ContentSettingsResources.getPlayVideoInBackgroundEnabledSummary() : ContentSettingsResources.getPlayVideoInBackgroundDisabledSummary());
             } else if (SiteSettingsCategory.Type.PLAY_YT_VIDEO_IN_BROWSER == prefCategory) {
                 p.setSummary( checked ? ContentSettingsResources.getPlayYTVideoInBrowserEnabledSummary() : ContentSettingsResources.getPlayYTVideoInBrowserDisabledSummary());
             } else {
