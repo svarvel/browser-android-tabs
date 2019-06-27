@@ -1346,6 +1346,8 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             if (mAutoContributeEnabled){
                 root.findViewById(R.id.attention_layout).setVisibility(View.VISIBLE);
                 root.findViewById(R.id.include_in_ac_layout).setVisibility(View.VISIBLE);
+                root.findViewById(R.id.brave_ui_auto_contribute_separator_top).setVisibility(View.VISIBLE);
+                root.findViewById(R.id.brave_ui_auto_contribute_separator_bottom).setVisibility(View.VISIBLE);
             }
 
             //Temporary commented out due to dropdown spinner inflating issue on PopupWindow (API 24)

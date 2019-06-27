@@ -36,13 +36,15 @@
     </RelativeLayout>
 
     <View
+        android:id="@+id/brave_ui_auto_contribute_separator_top"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="#c0c0c0"/>
+        android:background="#c0c0c0"
+        android:visibility="gone"/>
 
 
     <!-- Include in AC list row-->
@@ -105,12 +107,14 @@
     </RelativeLayout>
 
     <View
+        android:id="@+id/brave_ui_auto_contribute_separator_bottom"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="#c0c0c0"/>
+        android:background="#c0c0c0"
+        android:visibility="gone"/>
 
 </LinearLayout>
