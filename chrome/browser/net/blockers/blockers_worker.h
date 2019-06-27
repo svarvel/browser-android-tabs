@@ -41,7 +41,7 @@ public:
     ~BlockersWorker();
 
     bool shouldTPBlockUrl(const std::string& base_host, const std::string& host);
-    bool shouldAdBlockUrl(const std::string& base_host, const std::string& url, unsigned int resource_type,
+    bool shouldAdBlockUrl(const std::string& tab_url, const std::string& url, unsigned int resource_type,
       bool isAdBlockRegionalEnabled);
     std::string getHTTPSURLFromCacheOnly(const GURL* url, const uint64_t &request_id);
     std::string getHTTPSURL(const GURL* url, const uint64_t &request_id);

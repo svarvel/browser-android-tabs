@@ -674,6 +674,61 @@ void ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockFileWork(std::shared_ptr<O
   }
 }
 
+namespace {
+
+// Taken from brave-core/components/brave_rewards/browser/net/network_delegate_helper.cc
+// TODO(alexeyb) remove when browser-android-tabs will be merged with brave-core
+void GetRenderFrameInfo(const net::URLRequest* request,
+                        int* render_frame_id,
+                        int* render_process_id,
+                        int* frame_tree_node_id) {
+  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
+  *render_frame_id = -1;
+  *render_process_id = -1;
+  *frame_tree_node_id = -1;
+
+  // PlzNavigate requests have a frame_tree_node_id, but no render_process_id
+  auto* request_info = content::ResourceRequestInfo::ForRequest(request);
+  if (request_info) {
+    *frame_tree_node_id = request_info->GetFrameTreeNodeId();
+  }
+  if (!content::ResourceRequestInfo::GetRenderFrameForRequest(
+          request, render_process_id, render_frame_id)) {
+    const content::WebSocketHandshakeRequestInfo* websocket_info =
+      content::WebSocketHandshakeRequestInfo::ForRequest(request);
+    if (websocket_info) {
+      *render_frame_id = websocket_info->GetRenderFrameId();
+      *render_process_id = websocket_info->GetChildId();
+    }
+  }
+}
+
+GURL GetTabUrl(const net::URLRequest* request) {
+  DCHECK(request);
+  GURL tab_url;
+  if (!request->site_for_cookies().is_empty()) {
+    tab_url = request->site_for_cookies();
+  } else {
+    int render_process_id;
+    int render_frame_id;
+    int frame_tree_node_id;
+    GetRenderFrameInfo(request,
+                       &render_frame_id,
+                       &render_process_id,
+                       &frame_tree_node_id);
+    // We can not always use site_for_cookies since it can be empty in certain
+    // cases. See the comments in url_request.h
+    tab_url = brave::BraveTabUrlWebContentsObserver::
+        GetTabURLFromRenderFrameInfo(render_process_id,
+                                     render_frame_id,
+                                     frame_tree_node_id).GetOrigin();
+  }
+
+  return tab_url;
+}
+
+}  // namespace
+
 int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
   net::URLRequest* request,
   net::CompletionOnceCallback callback,
@@ -686,8 +741,9 @@ int ChromeNetworkDelegate::OnBeforeURLRequest_AdBlockPostFileWork(
   }
 
   if (ctx->needPerformAdBlock) {
+    GURL tab_url = GetTabUrl(request);
     if (blockers_worker_->shouldAdBlockUrl(
-        ctx->firstparty_host,
+        tab_url.spec(),
         request->url().spec(),
         (unsigned int)ctx->info->GetResourceType(),
         ctx->isAdBlockRegionalEnabled)) {
@@ -919,7 +975,7 @@ std::string ChromeNetworkDelegate::GetLinkType(net::URLRequest* request, const s
     res = "youtube";
   }  else if (
     (
-      (first_party_url.find("https://www.twitch.tv/") == 0 || 
+      (first_party_url.find("https://www.twitch.tv/") == 0 ||
         first_party_url.find("https://m.twitch.tv/") == 0) ||
       (request->referrer().find("https://player.twitch.tv/") == 0)
     ) &&
@@ -1011,61 +1067,6 @@ ChromeNetworkDelegate::OnAuthRequired(net::URLRequest* request,
   return extensions_delegate_->NotifyAuthRequired(
       request, auth_info, std::move(callback), credentials);
 }
-
-namespace {
-
-// Taken from brave-core/components/brave_rewards/browser/net/network_delegate_helper.cc
-// TODO(alexeyb) remove when browser-android-tabs will be merged with brave-core
-void GetRenderFrameInfo(const net::URLRequest* request,
-                        int* render_frame_id,
-                        int* render_process_id,
-                        int* frame_tree_node_id) {
-  DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
-  *render_frame_id = -1;
-  *render_process_id = -1;
-  *frame_tree_node_id = -1;
-
-  // PlzNavigate requests have a frame_tree_node_id, but no render_process_id
-  auto* request_info = content::ResourceRequestInfo::ForRequest(request);
-  if (request_info) {
-    *frame_tree_node_id = request_info->GetFrameTreeNodeId();
-  }
-  if (!content::ResourceRequestInfo::GetRenderFrameForRequest(
-          request, render_process_id, render_frame_id)) {
-    const content::WebSocketHandshakeRequestInfo* websocket_info =
-      content::WebSocketHandshakeRequestInfo::ForRequest(request);
-    if (websocket_info) {
-      *render_frame_id = websocket_info->GetRenderFrameId();
-      *render_process_id = websocket_info->GetChildId();
-    }
-  }
-}
-
-GURL GetTabUrl(const net::URLRequest* request) {
-  DCHECK(request);
-  GURL tab_url;
-  if (!request->site_for_cookies().is_empty()) {
-    tab_url = request->site_for_cookies();
-  } else {
-    int render_process_id;
-    int render_frame_id;
-    int frame_tree_node_id;
-    GetRenderFrameInfo(request,
-                       &render_frame_id,
-                       &render_process_id,
-                       &frame_tree_node_id);
-    // We can not always use site_for_cookies since it can be empty in certain
-    // cases. See the comments in url_request.h
-    tab_url = brave::BraveTabUrlWebContentsObserver::
-        GetTabURLFromRenderFrameInfo(render_process_id,
-                                     render_frame_id,
-                                     frame_tree_node_id).GetOrigin();
-  }
-
-  return tab_url;
-}
-
-}  // namespace
 
 bool ChromeNetworkDelegate::OnCanGetCookies(const net::URLRequest& request,
                                             const net::CookieList& cookie_list,

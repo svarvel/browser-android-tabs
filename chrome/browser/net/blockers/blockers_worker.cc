@@ -380,11 +380,18 @@ namespace blockers {
         return true;
     }
 
-    bool BlockersWorker::shouldAdBlockUrl(const std::string& base_host, const std::string& url,
+    bool BlockersWorker::shouldAdBlockUrl(const std::string& tab_url, const std::string& url,
                                           unsigned int resource_type, bool isAdBlockRegionalEnabled) {
         if (!isAdBlockerInitialized()) {
           return false;
         }
+
+        // Skip check for sync requests
+        if (tab_url == "file:///android_asset/") {
+          return false;
+        }
+
+        std::string base_host = GURL(tab_url).host();
 
         FilterOption currentOption = ResourceTypeToFilterOption((content::ResourceType)resource_type);
 
