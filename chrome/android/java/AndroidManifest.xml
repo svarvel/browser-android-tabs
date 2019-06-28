@@ -169,6 +169,11 @@ by a child template that "extends" this file.
             </intent-filter>
         </receiver>
 
+        <!-- Education notification for Ads -->
+        <receiver android:name="org.chromium.chrome.browser.notifications.BraveAdsOobeEducationNotification"
+            android:exported="false">
+        </receiver>
+
         <!-- MixPanel proxy server -->
         <!--<meta-data android:name="com.mixpanel.android.MPConfig.EventsEndpoint"
               android:value="https://metric-proxy.brave.com/track" />-->

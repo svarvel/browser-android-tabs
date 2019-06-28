@@ -97,6 +97,10 @@ Tallennettu</string>
     <string name="update_notification_title">Brave-selaimen päivitys</string>
     <string name="update_notification_text">Uusi Brave-selain on 22 % nopeampi</string>
     <string name="prefs_sync">Synkronoi (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave-mainokset ovat täällä!</string>
+    <string name="brave_ads_new_user_offer_title">Ota Brave-palkinnot käyttöön</string>
+    <string name="brave_ads_offer_text">Ansaitse perushuomiopoletti katsomalla yksityisyyden säilyttäviä mainoksia Brave-palkinnoissa.</string>
+    <string name="brave_ads_offer_positive">Olen mukana!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Syncin avulla voit synkronoida kirjanmerkkitietoja yksityisesti Brave-selaintesi välillä eri laitteissasi.</string>
     <string name="brave_sync_description_page_1_part_2">Yksinkertaisesti skannaa koodi synkronointiketjusta, jonka loit toisessa laitteessa. Tai aloita uusi synkronointiketju.</string>
     <string name="brave_sync_scan_chain_code">Skannaa tai anna synkronointikoodi</string>
@@ -236,10 +240,6 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="search_or_url">Haku tai URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Luo kirjanmerkki</string>
     <string name="brave_ui_donate_monthly">Lahjoita tälle sivustolle rahaa kuukausittain</string>
-    <string name="brave_rewards_intro_title">Brave Rewards on täällä</string>
-    <string name="brave_rewards_intro_text">Tue sivustoja, joita rakastat.</string>
-    <string name="brave_rewards_dismiss">Hylkää</string>
-    <string name="brave_rewards_get_started">Aloita</string>
 
     <string name="brave_rewards_not_available">Valitettavasti Brave Rewardsit eivät nähtävästi ole käytettävissä laitteellasi</string>
 
@@ -259,4 +259,10 @@ rakastamillesi sisällöntuottajille.</string>
 
     <string name="brave_sync_official">Brave-synkronointi</string>
     <string name="prefs_sync_official">Synkronoi</string>
+    <string name="notification_category_group_brave_ads">Brave-mainokset</string>
+    <string name="brave_ads_you_earned">Olet ansainnut</string>
+
+    <string name="brave_default_browser_title">Brave on salamannopea</string>
+    <string name="brave_default_browser_body">Tee Bravesta oletusselaimesi!</string>
+    <string name="brave_make_default_text">Aseta oletukseksi</string>
 </resources>

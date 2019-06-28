@@ -102,6 +102,10 @@ Dihemat</string>
     <string name="update_notification_title">Pembaruan Brave</string>
     <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
     <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Iklan Brave ada di sini! </string>
+    <string name="brave_ads_new_user_offer_title">Aktifkan Imbalan Brave</string>
+    <string name="brave_ads_offer_text">Dapatkan Token Atensi Dasar untuk melihat iklan yang menjaga privasi di Imbalan Brave. </string>
+    <string name="brave_ads_offer_positive">Saya ikut! </string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync memungkinkan Anda mensinkronisasi data markah secara pribadi antarperamban Brave di semua perangkat Anda.</string>
     <string name="brave_sync_description_page_1_part_2">Cukup pindai kode dari rantai sinkronisasi yang Anda buat pada perangkat lain. Atau mulai rantai sinkronisasi baru.</string>
     <string name="brave_sync_scan_chain_code">Pindai atau masukkan kode sinkronisasi</string>
@@ -242,10 +246,6 @@ pembuat konten yang Anda sukai.</string>
     <string name="search_or_url">Cari atau URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Buat markah</string>
     <string name="brave_ui_donate_monthly">Beri situs ini tip setiap bulan</string>
-    <string name="brave_rewards_intro_title">Brave Rewards sudah tiba</string>
-    <string name="brave_rewards_intro_text">Dukung situs yang Anda sukai.</string>
-    <string name="brave_rewards_dismiss">Tutup</string>
-    <string name="brave_rewards_get_started">Memulai</string>
 
     <string name="brave_rewards_not_available">Maaf, sepertinya Brave Rewards tidak tersedia di perangkat Anda</string>
 
@@ -265,4 +265,10 @@ pembuat konten yang Anda sukai.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sinkronkan</string>
+    <string name="notification_category_group_brave_ads">Iklan Brave</string>
+    <string name="brave_ads_you_earned">Anda telah memperoleh</string>
+
+    <string name="brave_default_browser_title">Brave sangat cepat</string>
+    <string name="brave_default_browser_body">Jadikan Brave browser default Anda! </string>
+    <string name="brave_make_default_text">Jadikan default</string>
 </resources>

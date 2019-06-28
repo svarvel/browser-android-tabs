@@ -71,6 +71,10 @@ class SettingsPage extends React.Component<Props, State> {
       this.actions.onSettingSave('firstLoad', false)
     }
 
+    if (this.props.rewardsData.adsData.adsEnabled) {
+      this.actions.getTransactionHistory()
+    }
+
     this.isWalletUrl()
 
     window.addEventListener('popstate', (e) => {
@@ -88,6 +92,13 @@ class SettingsPage extends React.Component<Props, State> {
     ) {
       this.actions.getContributeList()
       this.actions.getWalletProperties()
+    }
+
+    if (
+      !prevProps.rewardsData.adsData.adsEnabled &&
+      this.props.rewardsData.adsData.adsEnabled
+    ) {
+      this.actions.getTransactionHistory()
     }
 
     if (
@@ -146,7 +157,7 @@ class SettingsPage extends React.Component<Props, State> {
   render () {
     const { enabledMain } = this.props.rewardsData
     const { balance, rates } = this.props.rewardsData.walletInfo
-    const convertedBalance = utils.convertBalance(balance.toString(), rates)
+    const convertedBalance = utils.convertBalance((balance || 0).toString(), rates)
 
     return (
       <SettingsPageMobile>

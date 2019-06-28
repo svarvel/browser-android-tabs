@@ -7,12 +7,19 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
 // Components
-import { BoxMobile } from 'brave-ui/src/features/rewards/mobile'
+import BoxMobile, { Props as BoxMobileProps } from 'brave-ui/src/features/rewards/mobile/boxMobile'
+import { List, NextContribution, Tokens } from 'brave-ui/src/features/rewards'
 import { Column, Grid, Select, ControlWrapper } from 'brave-ui/src/components'
+import AdsOnboarding from './adsOnboarding'
+import {
+  StyledListContent,
+  StyledTotalContent
+} from './style'
 
 // Utils
 import { getLocale } from '../../../common/locale'
 import * as rewardsActions from '../actions/rewards_actions'
+import * as utils from '../utils'
 
 interface Props extends Rewards.ComponentProps {
 }
@@ -62,36 +69,86 @@ class AdsBox extends React.Component<Props, {}> {
     )
   }
 
-  getBoxMessage = (enabled?: boolean) => {
-    if (enabled) {
-      return getLocale('adsDesc')
-    }
-
-    return getLocale('adsDisabledText')
-  }
-
   render () {
+    // Default values from storage.ts
     let adsEnabled = false
     let adsUIEnabled = false
-    const { adsData, enabledMain } = this.props.rewardsData
+    let adsIsSupported = false
+    let estimatedPendingRewards = '0'
+    let nextPaymentDate = ''
+    let adNotificationsReceivedThisMonth = 0
+    const {
+      adsData,
+      enabledMain,
+      walletInfo,
+      safetyNetFailed
+    } = this.props.rewardsData
 
     if (adsData) {
       adsEnabled = adsData.adsEnabled
       adsUIEnabled = adsData.adsUIEnabled
+      adsIsSupported = adsData.adsIsSupported
+      estimatedPendingRewards = (adsData.adsEstimatedPendingRewards || 0).toFixed(2)
+      nextPaymentDate = adsData.adsNextPaymentDate
+      adNotificationsReceivedThisMonth = adsData.adsAdNotificationsReceivedThisMonth || 0
     }
 
-    const toggle = !(!enabledMain || !adsUIEnabled)
+    // disabled / alert state
+    const isDisabled = safetyNetFailed || !adsIsSupported || !adsUIEnabled
+    const toggle = !isDisabled && enabledMain
+    // Sanity-check: ensure no action can be performed if the box isn't allowed
+    // to be enabled
+    const toggleAction = toggle
+      ? this.onAdsSettingChange.bind(this, 'adsEnabled', '')
+      : () => {}
+    const boxPropsExtra: Partial<BoxMobileProps> = {
+      toggle,
+      toggleAction,
+      checked: toggle && adsEnabled
+    }
+    if (isDisabled) {
+      boxPropsExtra.alertContent = safetyNetFailed
+        ? <>{getLocale('adsNotSupportedDevice')}</>
+        : !adsIsSupported
+          ? <>{getLocale('adsNotSupportedRegion')}</>
+          : <>This version of Brave does not support Ads.</>
+    }
+    if (!isDisabled && !boxPropsExtra.checked) {
+      boxPropsExtra.extraDescriptionChild = <AdsOnboarding />
+    }
 
     return (
       <BoxMobile
         title={getLocale('adsTitle')}
         type={'ads'}
-        description={this.getBoxMessage(toggle)}
+        description={getLocale('adsDesc')}
         settingsChild={this.adsSettings(adsEnabled && enabledMain)}
-        toggle={toggle}
-        checked={enabledMain && adsEnabled}
-        toggleAction={this.onAdsSettingChange.bind(this, 'adsEnabled', '')}
-      />
+        {...boxPropsExtra}
+      >
+        <List title={<StyledListContent>{getLocale('adsCurrentEarnings')}</StyledListContent>}>
+          <StyledTotalContent>
+            <Tokens
+              value={estimatedPendingRewards}
+              converted={utils.convertBalance(estimatedPendingRewards, walletInfo.rates)}
+            />
+          </StyledTotalContent>
+        </List>
+        <List title={<StyledListContent>{getLocale('adsPaymentDate')}</StyledListContent>}>
+          <StyledListContent>
+            <NextContribution>
+              {nextPaymentDate}
+            </NextContribution>
+          </StyledListContent>
+        </List>
+        <List title={<StyledListContent>{getLocale('adsNotificationsReceived')}</StyledListContent>}>
+          <StyledListContent>
+            <Tokens
+              value={adNotificationsReceivedThisMonth.toString()}
+              hideText={true}
+            />
+          </StyledListContent>
+        </List>
+      </BoxMobile>
     )
   }
 }

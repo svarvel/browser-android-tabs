@@ -98,6 +98,10 @@ Kaydedildi</string>
     <string name="update_notification_title">Brave güncellemesi</string>
     <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
     <string name="prefs_sync">Senkronizasyon (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave Reklamları burada! </string>
+    <string name="brave_ads_new_user_offer_title">Brave Ödüllerine İzin Ver</string>
+    <string name="brave_ads_offer_text">Brave Ödüllerindeki gizliliği koruyan reklamları görüntülediğin için Temel Dikkat Parası kazan. </string>
+    <string name="brave_ads_offer_positive">Varım! </string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync, çeşitli cihazlarınızdaki Brave Tarayıcılarınız arasında yer işareti verilerini gizli bir şekilde senkronize etmenize imkan verir.</string>
     <string name="brave_sync_description_page_1_part_2">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</string>
     <string name="brave_sync_scan_chain_code">Senkronizasyon kodu tara veya gir</string>
@@ -237,10 +241,6 @@ para kazanın ve sevdiğiniz içerik
     <string name="search_or_url">Arama veya URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Bir yer imi oluşturun</string>
     <string name="brave_ui_donate_monthly">Bu siteye aylık olarak bahşiş verin</string>
-    <string name="brave_rewards_intro_title">Brave Ödülleri burada</string>
-    <string name="brave_rewards_intro_text">Sevdiğiniz siteleri destekleyin.</string>
-    <string name="brave_rewards_dismiss">Kapat</string>
-    <string name="brave_rewards_get_started">Başlayın</string>
 
     <string name="brave_rewards_not_available">Üzgünüz, görünüşe bakılırsa Brave Ödülleri cihazınızda kullanılamıyor</string>
 
@@ -260,4 +260,10 @@ para kazanın ve sevdiğiniz içerik
 
     <string name="brave_sync_official">Brave Eşitlemesi</string>
     <string name="prefs_sync_official">Eşitle</string>
+    <string name="notification_category_group_brave_ads">Brave Reklamları</string>
+    <string name="brave_ads_you_earned">Kazandığın tutar</string>
+
+    <string name="brave_default_browser_title">Brave şimşek hızındadır</string>
+    <string name="brave_default_browser_body">Brave\'i varsayılan tarayıcı yap! </string>
+    <string name="brave_make_default_text">Varsayılan yap</string>
 </resources>

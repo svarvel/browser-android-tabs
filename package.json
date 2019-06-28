@@ -39,7 +39,7 @@
     "@types/react-dom": "^16.0.9",
     "@types/react-redux": "6.0.4",
     "awesome-typescript-loader": "^5.2.0",
-    "brave-ui": "brave/brave-ui#cad4e14be8de73f059b9ec7de826bd363fe5ba7f",
+    "brave-ui": "brave/brave-ui#b0e39a46184e8625808e0b814c6c764bc2cf47c6",
     "css-loader": "^0.28.9",
     "csstype": "^2.5.5",
     "emptykit.css": "^1.0.1",
@@ -66,6 +66,7 @@
     "tslint-react": "^3.2.0",
     "typesafe-actions": "^2.0.4",
     "typescript": "^3.0.3",
+    "typescript-plugin-styled-components": "^1.4.3",
     "url-loader": "^0.6.2",
     "webpack": "^4.24.0",
     "webpack-cli": "^3.1.2"

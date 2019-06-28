@@ -160,6 +160,9 @@ public class ChannelsInitializer {
             if (!enabled) {
                 channel.setImportance(NotificationManager.IMPORTANCE_NONE);
             }
+            if (channelId.equals(ChannelDefinitions.ChannelId.BRAVE_ADS)) {
+                channel.setShowBadge(false);
+            }
             channelGroups.put(channelGroup.getId(), channelGroup);
             channels.put(channel.getId(), channel);
         }

@@ -359,7 +359,8 @@ deps = {
     'condition': 'host_os == "win"',
   },
 
-  'src/brave': "https://github.com/brave/brave-core.git@android_75",
+  'src/brave': "https://github.com/brave/brave-core.git@android_75-brave-ads",
+
   'src/chrome/browser/resources/media_router/extension/src':
     Var('chromium_git') + '/media_router.git' + '@' + '29324b698ccd8920bc81c71d42dadc6310f0ad0f',
 

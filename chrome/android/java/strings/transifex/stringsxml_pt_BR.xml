@@ -99,6 +99,10 @@ Salvo</string>
     <string name="update_notification_title">Atualize o Brave</string>
     <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
     <string name="prefs_sync">Sincronizar (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Os Anúncios do Brave estão aqui! </string>
+    <string name="brave_ads_new_user_offer_title">Habilitar Prêmios do Brave</string>
+    <string name="brave_ads_offer_text">Receba Tokens de Atenção Básica vendo anúncios sobre preservação da privacidade nos Prêmios do Brave. </string>
+    <string name="brave_ads_offer_positive">Estou dentro!</string>
     <string name="brave_sync_description_page_1_part_1">A opção Sincronizar Brave permite que você sincronize dados de favoritos de modo privado entre seus navegadores Brave em vários dispositivos.</string>
     <string name="brave_sync_description_page_1_part_2">Basta ler o código da cadeia de sincronização que você criou em outro dispositivo ou criar uma nova cadeia de sincronização.</string>
     <string name="brave_sync_scan_chain_code">Ler ou inserir código de sincronização</string>
@@ -239,10 +243,6 @@ contribuindo para seus criadores de conteúdo favoritos.</string>
     <string name="search_or_url">Pesquisar ou URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Criar um favorito</string>
     <string name="brave_ui_donate_monthly">Sugira este site mensalmente</string>
-    <string name="brave_rewards_intro_title">O Brave Rewards está aqui</string>
-    <string name="brave_rewards_intro_text">Apoie os sites que você ama.</string>
-    <string name="brave_rewards_dismiss">Recusar</string>
-    <string name="brave_rewards_get_started">Iniciar</string>
 
     <string name="brave_rewards_not_available">Desculpe, mas parece que o Brave Rewards não está disponível no seu dispositivo</string>
 
@@ -262,4 +262,10 @@ contribuindo para seus criadores de conteúdo favoritos.</string>
 
     <string name="brave_sync_official">Sincronização do Brave</string>
     <string name="prefs_sync_official">Sincronizar</string>
+    <string name="notification_category_group_brave_ads">Anúncios do Brave</string>
+    <string name="brave_ads_you_earned">Você recebeu</string>
+
+    <string name="brave_default_browser_title">O Brave é super-rápido</string>
+    <string name="brave_default_browser_body">Torne o Brave seu navegador padrão</string>
+    <string name="brave_make_default_text">Tornar padrão</string>
 </resources>

@@ -26,6 +26,10 @@ const updateGrant = (newGrant: Rewards.Grant, grants: Rewards.Grant[]) => {
   })
 }
 
+const grantTypeMap = {
+  android: 'ugp'
+}
+
 const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, action) => {
   switch (action.type) {
     case types.GET_GRANTS:
@@ -50,12 +54,14 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
 
       const promotionId = grantProps.promotionId
 
+      const grantType = grantTypeMap[grantProps.type] || grantProps.type
+
       if (!getGrant(promotionId, state.grants)) {
         state.grants.push({
           promotionId: promotionId,
           expiryTime: 0,
           probi: '',
-          type: grantProps.type
+          type: grantType
         })
       }
 
@@ -77,7 +83,7 @@ const grantReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, 
       }
 
       state.currentGrant = currentGrant
-      chrome.send('brave_rewards.getGrantCaptcha', [])
+      chrome.send('brave_rewards.getGrantCaptcha', [currentGrant.promotionId, currentGrant.type])
       break
     case types.ON_GRANT_CAPTCHA: {
       if (state.currentGrant && state.grants) {

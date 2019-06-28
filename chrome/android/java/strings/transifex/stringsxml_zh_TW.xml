@@ -98,6 +98,10 @@
     <string name="update_notification_title">Brave 更新</string>
     <string name="update_notification_text">新的 Brave 瀏覽器快了 22%</string>
     <string name="prefs_sync">同步 (測試版)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave 廣告在此！</string>
+    <string name="brave_ads_new_user_offer_title">啟用 Brave 獎勵</string>
+    <string name="brave_ads_offer_text">掙得基本注意代幣來檢視 Brave 獎勵中的隱私權保留廣告。</string>
+    <string name="brave_ads_offer_positive">我加入！</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync 可讓您私下同步各種裝置上 Brave 瀏覽器的書籤資料。</string>
     <string name="brave_sync_description_page_1_part_2">只要掃瞄您在其他裝置上建立的同步鏈代碼即可。或者，您也可以建立新的同步鏈。</string>
     <string name="brave_sync_scan_chain_code">掃描或輸入同步代碼</string>
@@ -237,10 +241,6 @@
     <string name="search_or_url">搜尋或 URL</string>
     <string name="accessibility_toolbar_btn_bookmark">建立一個書籤</string>
     <string name="brave_ui_donate_monthly">每月固定給這個網站支持金</string>
-    <string name="brave_rewards_intro_title">Brave 獎勵在此</string>
-    <string name="brave_rewards_intro_text">支持你喜愛的網站。</string>
-    <string name="brave_rewards_dismiss">解散</string>
-    <string name="brave_rewards_get_started">開始</string>
 
     <string name="brave_rewards_not_available">我們很抱歉，看似您的裝置上沒有 Brave Rewards 可用</string>
 
@@ -260,4 +260,10 @@
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">同步</string>
+    <string name="notification_category_group_brave_ads">Brave 廣告</string>
+    <string name="brave_ads_you_earned">您已掙得</string>
+
+    <string name="brave_default_browser_title">Brave 快如閃電</string>
+    <string name="brave_default_browser_body">將 Brave 變成您的預設瀏覽器！</string>
+    <string name="brave_make_default_text">變成預設</string>
 </resources>

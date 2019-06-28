@@ -1,6 +1,8 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+/** Copyright (c) 2019 The Brave Authors. All rights reserved.
+  * This Source Code Form is subject to the terms of the Mozilla Public
+  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+  * You can obtain one at http://mozilla.org/MPL/2.0/.
+  */
 
 package org.chromium.chrome.browser;
 
@@ -207,13 +209,13 @@ public class BraveRewardsNativeWorker {
         }
     }
 
-    public void GetGrant() {
+    public void GetGrant(String promotionId) {
         synchronized(lock) {
             if (grantClaimInProcess) {
                 return;
             }
             grantClaimInProcess = true;
-            nativeGetGrant(mNativeBraveRewardsNativeWorker);
+            nativeGetGrant(mNativeBraveRewardsNativeWorker, promotionId);
         }
     }
 
@@ -463,7 +465,7 @@ public class BraveRewardsNativeWorker {
     private native void nativeGetAllNotifications(long nativeBraveRewardsNativeWorker);
     private native void nativeDeleteNotification(long nativeBraveRewardsNativeWorker, 
         String notification_id);
-    private native void nativeGetGrant(long nativeBraveRewardsNativeWorker);
+    private native void nativeGetGrant(long nativeBraveRewardsNativeWorker, String promotionId);
     private native int nativeGetCurrentGrantsCount(long nativeBraveRewardsNativeWorker);
     private native String[] nativeGetCurrentGrant(long nativeBraveRewardsNativeWorker, int position);
     private native void nativeGetPendingContributionsTotal(long nativeBraveRewardsNativeWorker);

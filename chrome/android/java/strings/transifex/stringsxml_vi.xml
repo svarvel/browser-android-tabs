@@ -98,6 +98,10 @@ HTTPS</string>
     <string name="update_notification_title">Cập nhật Brave</string>
     <string name="update_notification_text">Trình duyệt Brave mới nhanh hơn 22%</string>
     <string name="prefs_sync">Đồng bộ (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Quảng cáo Brave đã có mặt!</string>
+    <string name="brave_ads_new_user_offer_title">Bật Tính năng Thưởng Brave</string>
+    <string name="brave_ads_offer_text">Xem các quảng cáo đảm bảo tính riêng tư để nhận Token BAT, trong tính năng Thưởng Brave</string>
+    <string name="brave_ads_offer_positive">Tôi cũng tham gia!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Đồng bộ cho phép bạn đồng bộ dữ liệu dấu trang một cách riêng tư giữa các Trình duyệt Brave trên các thiết bị khác nhau của bạn.</string>
     <string name="brave_sync_description_page_1_part_2">Chỉ cần quét mã từ chuỗi đồng bộ mà bạn đã tạo trên một thiết bị khác. Hoặc bắt đầu một chuỗi đồng bộ mới.</string>
     <string name="brave_sync_scan_chain_code">Quét hoặc nhập mã đồng bộ</string>
@@ -237,10 +241,6 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="search_or_url">Tìm kiếm hoặc nhập URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Tạo dấu trang</string>
     <string name="brave_ui_donate_monthly">Thưởng tiền hàng tháng cho trang web này</string>
-    <string name="brave_rewards_intro_title">Brave Rewards đây rồi</string>
-    <string name="brave_rewards_intro_text">Ủng hộ các trang web bạn yêu thích.</string>
-    <string name="brave_rewards_dismiss">Hủy</string>
-    <string name="brave_rewards_get_started">Bắt đầu</string>
 
     <string name="brave_rewards_not_available">Chúng tôi rất tiếc, dường như tính năng Brave Rewards không khả dụng trên thiết bị của bạn</string>
 
@@ -260,4 +260,10 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
 
     <string name="brave_sync_official">Đồng bộ hóa Brave</string>
     <string name="prefs_sync_official">Đồng bộ hóa</string>
+    <string name="notification_category_group_brave_ads">Quảng cáo Brave</string>
+    <string name="brave_ads_you_earned">Bạn đã nhận được</string>
+
+    <string name="brave_default_browser_title">Brave nhanh như chớp</string>
+    <string name="brave_default_browser_body">Đặt Brave làm trình duyệt mặc định của bạn!</string>
+    <string name="brave_make_default_text">Đặt làm mặc định</string>
 </resources>

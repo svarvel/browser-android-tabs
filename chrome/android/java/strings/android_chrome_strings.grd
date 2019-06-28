@@ -289,6 +289,12 @@ CHAR-LIMIT guidelines:
       <message name="IDS_NOTIFICATION_CATEGORY_GROUP_GENERAL" desc='Subheading for "General" section of a list of notification categories. [CHAR-LIMIT=32]'>
         General
       </message>
+      <message name="IDS_NOTIFICATION_CATEGORY_GROUP_BRAVE_ADS" desc="Subheading for 'Brave Ads' section of a list of notification categories. [CHAR-LIMIT=32]">
+        Brave Ads
+      </message>
+      <message name="IDS_NOTIFICATION_CATEGORY_BRAVE_ADS" desc="Label for Brave Ads. [CHAR-LIMIT=32]">
+        Brave Ads
+      </message>
       <message name="IDS_NOTIFICATION_CATEGORY_INCOGNITO" desc="Label for notification that indicates incognito mode is active, within a list of notification categories. [CHAR-LIMIT=32]">
         Incognito
       </message>
@@ -4399,6 +4405,24 @@ Saved
       <message name="IDS_DDG_OFFER_LINK" desc="Text for DDG offer link.">
         Learn about private search with DuckDuckGo
       </message>
+      <message name="IDS_BRAVE_ADS_EXISTING_USER_OFFER_TITLE" desc="Title for Brave Ads offer.">
+        Brave Ads are here!
+      </message>
+      <message name="IDS_BRAVE_ADS_OOBE_EDUCATION_NOTIFICATION_TITLE" desc="Positive button text for Brave Ads offer.">
+        This is your first Brave ad
+      </message>
+      <message name="IDS_BRAVE_ADS_OOBE_EDUCATION_NOTIFICATION_BODY" desc="Title for Brave Ads offer.">
+        Tap here to learn more
+      </message>
+      <message name="IDS_BRAVE_ADS_NEW_USER_OFFER_TITLE" desc="Title for Brave Ads offer.">
+        Enable Brave Rewards
+      </message>
+      <message name="IDS_BRAVE_ADS_OFFER_POSITIVE" desc="Positive button text for Brave Ads offer.">
+        I'm in!
+      </message>
+      <message name="IDS_BRAVE_ADS_OFFER_TEXT" desc="Text for Brave Ads offer.">
+        Earn Basic Attention Token for viewing privacy preserving ads in Brave Rewards.
+      </message>
       <message name="IDS_PREFS_STANDARD_SEARCH_ENGINE" desc="Text for 'Standard Tab' search engine preference.">
         Standard Tab
       </message>
@@ -4570,13 +4594,13 @@ as your default browser.
         You've already set a default browser.
 You may change default browser in your app settings.
       </message>
-      <message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_BODY" desc="Default browser notification body">
+      <!--<message name="IDS_BRAVE_DEFAULT_BROWSER_NOTIFICATION_BODY" desc="Default browser notification body">
         Save battery and load web pages faster. Make Brave your default Browser. From the Brave menu tap "Set as default browser"
       </message>
       <message name="IDS_BRAVE_DEFAULT_BROWSER_EXISTING_NOTIFICATION_BODY" desc="Default browser notification body">
         Make Brave your default web browser
 Save battery and load web pages faster
-      </message>
+      </message>-->
       <message name="IDS_BRAVE_SET_DEFAULT_BROWSER" desc="Menu item for opening the 'Setting default browser' page.">
         Set as default browser
       </message>
@@ -4806,15 +4830,6 @@ content creators you love.
       <message name="IDS_BRAVE_UI_DONATE_MONTHLY" desc="">
         Tip this site monthly
       </message>
-      <message name="IDS_BRAVE_REWARDS_INTRO_TITLE" desc="Rewards intro title">
-        Brave Rewards is here
-      </message>
-      <message name="IDS_BRAVE_REWARDS_INTRO_TEXT" desc="Rewards intro text">
-        Support the sites you love.
-      </message>
-      <message name="IDS_BRAVE_REWARDS_DISMISS" desc="Dismiss">
-        Dismiss
-      </message>
       <!--End of rewards temporary section.-->
       <message name="IDS_BOTTOM_TOOLBAR_ENABLE" desc="Menu item for enabling the bottom toolbar.">
         Enable bottom toolbar
@@ -4827,9 +4842,6 @@ content creators you love.
       </message>
       <message name="IDS_ACCESSIBILITY_TOOLBAR_BTN_BOOKMARK" desc="Content description for the bookmark button.">
         Create a bookmark
-      </message>
-      <message name="IDS_BRAVE_REWARDS_GET_STARTED" desc="Rewards intro action message">
-        Get started
       </message>
       <message name="IDS_BRAVE_REWARDS_NOT_AVAILABLE" desc="The message for the dialog when Brave Rewards is not available on the device.">
         We're sorry it appears Brave Rewards is not available on your device
@@ -4866,6 +4878,18 @@ content creators you love.
       </message>
       <message name="IDS_BRAVE_SYNC_CODE_WARNING" desc="Warning text for code words adn QR code.">
         Treat this code like a password. If someone gets hold of it, they can read and modify your synced data.
+      </message>
+      <message name="IDS_BRAVE_ADS_YOU_EARNED" desc='Brave Ads "You earned" text'>
+        You've earned
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_TITLE" desc="Title for default browser notification.">
+        Brave is lightning fast
+      </message>
+      <message name="IDS_BRAVE_DEFAULT_BROWSER_BODY" desc="Body for default browser notification.">
+        Make Brave your default browser!
+      </message>
+      <message name="IDS_BRAVE_MAKE_DEFAULT_TEXT" desc="Text for positive default browser notification button.">
+        Make default
       </message>
     </messages>
   </release>

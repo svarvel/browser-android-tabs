@@ -45,6 +45,9 @@ config("compiler") {
     # assembly code with symbols that aren't hidden properly.
     # http://crbug.com/448386
     "-Wl,--exclude-libs=libvpx_assembly_arm.a",
+
+    # Resolve conflict between libgcc++ and rustup symbols (e.g. __divdi3)
+    "-Wl,--allow-multiple-definition",
   ]
 
   # $compile_api_level corresponds to the API level used for the sysroot path

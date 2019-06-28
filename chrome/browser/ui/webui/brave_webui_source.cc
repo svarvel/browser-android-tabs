@@ -35,18 +35,19 @@ void AddResourcePaths(content::WebUIDataSource* html_source,
 
 }  // namespace
 
-void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource* source) {
+void CustomizeWebUIHTMLSource(const std::string &name,
+    content::WebUIDataSource* source) {
   // Resources specific to each page
   std::map<std::string, std::vector<WebUISimpleItem> > resources = {
     {
       std::string("rewards"), {
-        { "878e89ddb547d70019456c4792ce1a23.svg", IDR_BRAVE_REWARDS_IMG_ADS_DISABLED },
-        { "6517b078dcd47a8540230a5453d53927.svg", IDR_BRAVE_REWARDS_IMG_CONTRIBUTE_DISABLED },
-        { "21bfb482964742768c5020312af36224.svg", IDR_BRAVE_REWARDS_IMG_DONATE_DISABLED },
-        { "4fcfa7f92c5fc22c2b6f34701bfdcd0a.jpeg", IDR_BRAVE_REWARDS_IMG_BART_TEMP },
-        { "6dd79d472f9c73429b26dae4ef14575e.svg", IDR_BRAVE_REWARDS_IMG_WALLET_BG },
-        { "c9255cc2aa3d81ca6328e82d25a95766.png", IDR_BRAVE_REWARDS_IMG_CAPTCHA_BAT },
-        { "1bb9aa85741c6d1c077f043324aae835.svg", IDR_BRAVE_REWARDS_IMG_WELCOME_BG },
+        { "878e89ddb547d70019456c4792ce1a23.svg", IDR_BRAVE_REWARDS_IMG_ADS_DISABLED },          // NOLINT
+        { "6517b078dcd47a8540230a5453d53927.svg", IDR_BRAVE_REWARDS_IMG_CONTRIBUTE_DISABLED },   // NOLINT
+        { "21bfb482964742768c5020312af36224.svg", IDR_BRAVE_REWARDS_IMG_DONATE_DISABLED },       // NOLINT
+        { "4fcfa7f92c5fc22c2b6f34701bfdcd0a.jpeg", IDR_BRAVE_REWARDS_IMG_BART_TEMP },            // NOLINT
+        { "6dd79d472f9c73429b26dae4ef14575e.svg", IDR_BRAVE_REWARDS_IMG_WALLET_BG },             // NOLINT
+        { "c9255cc2aa3d81ca6328e82d25a95766.png", IDR_BRAVE_REWARDS_IMG_CAPTCHA_BAT },           // NOLINT
+        { "1bb9aa85741c6d1c077f043324aae835.svg", IDR_BRAVE_REWARDS_IMG_WELCOME_BG },            // NOLINT
         { "88eeadb981d67d5e096afb9b8fe26df7.svg", IDR_BRAVE_REWARDS_IMG_BAT },
         { "87186eec176189163ce037bcc7676f2a.svg", IDR_BRAVE_REWARDS_IMG_BTC },
         { "7d9f0ededf215a4702ae5c457f7779ae.svg", IDR_BRAVE_REWARDS_IMG_ETH },
@@ -65,9 +66,34 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
   std::map<std::string, std::vector<WebUISimpleItem> > localized_strings = {
     {
       std::string("rewards"), {
-        { "adsTitle",  IDS_BRAVE_REWARDS_LOCAL_ADS_TITLE },
+        { "adsCurrentEarnings",  IDS_BRAVE_REWARDS_LOCAL_ADS_CURRENT_EARNINGS },
         { "adsDesc",  IDS_BRAVE_REWARDS_LOCAL_ADS_DESC },
         { "adsDisabledText",  IDS_BRAVE_REWARDS_LOCAL_ADS_DISABLED_TEXT },
+        { "adsDisabledTextOne",  IDS_BRAVE_REWARDS_LOCAL_ADS_DISABLED_TEXT_ONE },                // NOLINT
+        { "adsDisabledTextTwo",  IDS_BRAVE_REWARDS_LOCAL_ADS_DISABLED_TEXT_TWO },                // NOLINT
+        { "adsNotificationsReceived",  IDS_BRAVE_REWARDS_LOCAL_ADS_NOTIFICATIONS_RECEIVED },     // NOLINT
+        { "adsNotSupportedRegion", IDS_BRAVE_REWARDS_LOCAL_ADS_NOT_SUPPORTED_REGION },           // NOLINT
+        { "adsNotSupportedDevice", IDS_BRAVE_REWARDS_LOCAL_ADS_NOT_SUPPORTED_DEVICE },           // NOLINT
+        { "adsPaymentDate",  IDS_BRAVE_REWARDS_LOCAL_ADS_PAYMENT_DATE },
+        { "adsPagesViewed",  IDS_BRAVE_REWARDS_LOCAL_ADS_PAGES_VIEWED },
+        { "adsPerHour",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR },
+        { "adsPerHour1",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR_1 },
+        { "adsPerHour2",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR_2 },
+        { "adsPerHour3",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR_3 },
+        { "adsPerHour4",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR_4 },
+        { "adsPerHour5",  IDS_BRAVE_REWARDS_LOCAL_ADS_PER_HOUR_5 },
+        { "adsTitle",  IDS_BRAVE_REWARDS_LOCAL_ADS_TITLE },
+
+        { "earningsClaimDefault", IDS_BRAVE_UI_EARNINGS_CLAIM_DEFAULT },
+        { "grantDisclaimer", IDS_BRAVE_UI_GRANT_DISCLAIMER },
+        { "grantTitleUGP", IDS_BRAVE_UI_GRANT_TITLE_UGP },
+        { "grantSubtitleUGP", IDS_BRAVE_UI_GRANT_SUBTITLE_UGP },
+        { "grantAmountTitleUGP", IDS_BRAVE_UI_GRANT_AMOUNT_TITLE_UGP },
+        { "grantDateTitleUGP", IDS_BRAVE_UI_GRANT_DATE_TITLE_UGP },
+        { "grantTitleAds", IDS_BRAVE_UI_GRANT_TITLE_ADS },
+        { "grantSubtitleAds", IDS_BRAVE_UI_GRANT_SUBTITLE_ADS },
+        { "grantAmountTitleAds", IDS_BRAVE_UI_GRANT_AMOUNT_TITLE_ADS },
+        { "grantDateTitleAds", IDS_BRAVE_UI_GRANT_DATE_TITLE_ADS },
 
         { "bat", IDS_BRAVE_UI_BAT_REWARDS_TEXT },
         { "contributionTitle",  IDS_BRAVE_REWARDS_LOCAL_CONTR_TITLE },
@@ -75,13 +101,13 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "contributionMonthly",  IDS_BRAVE_REWARDS_LOCAL_CONTR_MONTHLY },
         { "contributionNextDate",  IDS_BRAVE_REWARDS_LOCAL_CONTR_NEXT_DATE },
         { "contributionSites",  IDS_BRAVE_REWARDS_LOCAL_CONTR_SITES },
-        { "contributionDisabledText1",  IDS_BRAVE_REWARDS_LOCAL_CONTR_DISABLED_TEXT1 },
-        { "contributionDisabledText2",  IDS_BRAVE_REWARDS_LOCAL_CONTR_DISABLED_TEXT2 },
+        { "contributionDisabledText1",  IDS_BRAVE_REWARDS_LOCAL_CONTR_DISABLED_TEXT1 },          // NOLINT
+        { "contributionDisabledText2",  IDS_BRAVE_REWARDS_LOCAL_CONTR_DISABLED_TEXT2 },          // NOLINT
         { "contributionVisitSome",  IDS_BRAVE_REWARDS_LOCAL_CONTR_VISIT_SOME },
         { "contributionMinTime",  IDS_BRAVE_REWARDS_LOCAL_CONTR_MIN_TIME },
         { "contributionMinVisits",  IDS_BRAVE_REWARDS_LOCAL_CONTR_MIN_VISITS },
         { "contributionAllowed",  IDS_BRAVE_REWARDS_LOCAL_CONTR_ALLOWED },
-        { "contributionNonVerified",  IDS_BRAVE_REWARDS_LOCAL_CONTR_ALLOW_NON_VERIFIED },
+        { "contributionNonVerified",  IDS_BRAVE_REWARDS_LOCAL_CONTR_ALLOW_NON_VERIFIED },        // NOLINT
         { "contributionVideos",  IDS_BRAVE_REWARDS_LOCAL_CONTR_ALLOW_VIDEOS },
         { "contributionVisit1",  IDS_BRAVE_REWARDS_LOCAL_CONTR_VISIT_1 },
         { "contributionVisit5",  IDS_BRAVE_REWARDS_LOCAL_CONTR_VISIT_5 },
@@ -92,31 +118,31 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
 
         { "donationTitle",  IDS_BRAVE_REWARDS_LOCAL_DONAT_TITLE },
         { "donationDesc",  IDS_BRAVE_REWARDS_LOCAL_DONAT_DESC },
-        { "donationTotalDonations",  IDS_BRAVE_REWARDS_LOCAL_DONAT_TOTAL_DONATIONS },
+        { "donationTotalDonations",  IDS_BRAVE_REWARDS_LOCAL_DONAT_TOTAL_DONATIONS },            // NOLINT
         { "donationVisitSome",  IDS_BRAVE_REWARDS_LOCAL_DONAT_VISIT_SOME },
         { "donationAbility",  IDS_BRAVE_REWARDS_LOCAL_DONAT_ABILITY },
         { "donationAbilityYT",  IDS_BRAVE_REWARDS_LOCAL_DONAT_ABILITY_YT },
         { "donationAbilityTwitter",  IDS_BRAVE_REWARDS_LOCAL_DONAT_ABILITY_TW },
-        { "donationDisabledText1",  IDS_BRAVE_REWARDS_LOCAL_DONAT_DISABLED_TEXT1 },
-        { "donationDisabledText2",  IDS_BRAVE_REWARDS_LOCAL_DONAT_DISABLED_TEXT2 },
+        { "donationDisabledText1",  IDS_BRAVE_REWARDS_LOCAL_DONAT_DISABLED_TEXT1 },              // NOLINT
+        { "donationDisabledText2",  IDS_BRAVE_REWARDS_LOCAL_DONAT_DISABLED_TEXT2 },              // NOLINT
 
         { "panelAddFunds",  IDS_BRAVE_REWARDS_LOCAL_PANEL_ADD_FUNDS },
         { "panelWithdrawFunds",  IDS_BRAVE_REWARDS_LOCAL_PANEL_WITHDRAW_FUNDS },
         { "tokens",  IDS_BRAVE_REWARDS_LOCAL_TOKENS },
-        { "walletRecoverySuccess",  IDS_BRAVE_REWARDS_LOCAL_WALLET_RECOVERY_SUCCESS },
+        { "walletRecoverySuccess",  IDS_BRAVE_REWARDS_LOCAL_WALLET_RECOVERY_SUCCESS },           // NOLINT
         { "walletRestored",  IDS_BRAVE_REWARDS_LOCAL_WALLET_RESTORED },
         { "walletRecoveryFail",  IDS_BRAVE_REWARDS_LOCAL_WALLET_RECOVERY_FAIL },
         { "almostThere",  IDS_BRAVE_REWARDS_LOCAL_ALMOST_THERE },
         { "notQuite",  IDS_BRAVE_REWARDS_LOCAL_NOT_QUITE },
         { "proveHuman",  IDS_BRAVE_REWARDS_LOCAL_PROVE_HUMAN },
-        { "serverNotResponding",  IDS_BRAVE_REWARDS_LOCAL_SERVER_NOT_RESPONDING },
+        { "serverNotResponding",  IDS_BRAVE_REWARDS_LOCAL_SERVER_NOT_RESPONDING },                // NOLINT
         { "uhOh",  IDS_BRAVE_REWARDS_LOCAL_UH_OH },
         { "grantGoneTitle",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_TITLE },
         { "grantGoneButton",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_BUTTON },
         { "grantGoneText",  IDS_BRAVE_REWARDS_LOCAL_GRANT_GONE_TEXT },
-        { "grantGeneralErrorTitle",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TITLE },
-        { "grantGeneralErrorButton",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_BUTTON },
-        { "grantGeneralErrorText",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TEXT },
+        { "grantGeneralErrorTitle",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TITLE },         // NOLINT
+        { "grantGeneralErrorButton",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_BUTTON },       // NOLINT
+        { "grantGeneralErrorText",  IDS_BRAVE_REWARDS_LOCAL_GENERAL_GRANT_ERROR_TEXT },           // NOLINT
 
         { "about", IDS_BRAVE_UI_ABOUT },
         { "accept", IDS_BRAVE_UI_ACCEPT },
@@ -136,7 +162,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "braveContributeDesc", IDS_BRAVE_UI_BRAVE_CONTRIBUTE_DESC },
         { "braveContributeTitle", IDS_BRAVE_UI_BRAVE_CONTRIBUTE_TITLE },
         { "braveRewards", IDS_BRAVE_UI_BRAVE_REWARDS },
-        { "braveRewardsCreatingText", IDS_BRAVE_UI_BRAVE_REWARDS_CREATING_TEXT },
+        { "braveRewardsCreatingText", IDS_BRAVE_UI_BRAVE_REWARDS_CREATING_TEXT },                 // NOLINT
         { "braveRewardsDesc", IDS_BRAVE_UI_BRAVE_REWARDS_DESC },
         { "braveRewardsOptInText", IDS_BRAVE_UI_BRAVE_REWARDS_OPT_IN_TEXT },
         { "braveRewardsSubTitle", IDS_BRAVE_UI_BRAVE_REWARDS_SUB_TITLE },
@@ -169,8 +195,6 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "excludedSitesText", IDS_BRAVE_UI_EXCLUDED_SITES },
         { "expiresOn", IDS_BRAVE_UI_EXPIRES_ON },
         { "for", IDS_BRAVE_UI_FOR },
-        { "grantDisclaimer", IDS_BRAVE_UI_GRANT_DISCLAIMER },
-        { "grantExpire", IDS_BRAVE_UI_GRANT_EXPIRE },
         { "grants", IDS_BRAVE_UI_GRANTS },
         { "import", IDS_BRAVE_UI_IMPORT },
         { "includeInAuto", IDS_BRAVE_UI_INCLUDE_IN_AUTO },
@@ -189,7 +213,6 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
         { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
         { "newGrant", IDS_BRAVE_UI_NEW_GRANT },
-        { "newTokenGrant", IDS_BRAVE_UI_NEW_TOKEN_GRANT },
         { "noActivity", IDS_BRAVE_UI_NO_ACTIVITY },
         { "noGrants", IDS_BRAVE_UI_NO_GRANTS },
         { "notEnoughTokens", IDS_BRAVE_UI_NOT_ENOUGH_TOKENS },
@@ -207,7 +230,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "pleaseNote", IDS_BRAVE_UI_PLEASE_NOTE },
         { "print", IDS_BRAVE_UI_PRINT },
         { "readyToTakePart", IDS_BRAVE_UI_READY_TO_TAKE_PART },
-        { "readyToTakePartOptInText", IDS_BRAVE_UI_READY_TO_TAKE_PART_OPT_IN_TEXT },
+        { "readyToTakePartOptInText", IDS_BRAVE_UI_READY_TO_TAKE_PART_OPT_IN_TEXT },              // NOLINT
         { "readyToTakePartStart", IDS_BRAVE_UI_READY_TO_TAKE_PART_START },
         { "recoveryKeys", IDS_BRAVE_UI_RECOVERY_KEYS },
         { "recurring", IDS_BRAVE_UI_RECURRING },
@@ -224,8 +247,8 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "rewardsBannerText1", IDS_BRAVE_UI_REWARDS_BANNER_TEXT1 },
         { "rewardsBannerText2", IDS_BRAVE_UI_REWARDS_BANNER_TEXT2 },
         { "rewardsContribute", IDS_BRAVE_UI_REWARDS_CONTRIBUTE },
-        { "rewardsContributeAttention", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION },
-        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },
+        { "rewardsContributeAttention", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION },              // NOLINT
+        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },   // NOLINT
         { "rewardsContributeText1", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_TEXT1 },
         { "rewardsOffText2", IDS_BRAVE_UI_REWARDS_OFF_TEXT2 },
         { "rewardsOffText3", IDS_BRAVE_UI_REWARDS_OFF_TEXT3 },
@@ -260,7 +283,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "titleBTC", IDS_BRAVE_UI_TITLE_BTC},
         { "titleETH", IDS_BRAVE_UI_TITLE_ETH},
         { "titleLTC", IDS_BRAVE_UI_TITLE_LTC},
-	{ "tokenGrantClaimed", IDS_BRAVE_UI_TOKEN_GRANT_CLAIMED },
+        { "tokenGrantClaimed", IDS_BRAVE_UI_TOKEN_GRANT_CLAIMED },
         { "tokenGrant", IDS_BRAVE_UI_TOKEN_GRANT },
         { "tokens", IDS_BRAVE_UI_TOKENS },
         { "total", IDS_BRAVE_UI_TOTAL },
@@ -311,7 +334,7 @@ void CustomizeWebUIHTMLSource(const std::string &name, content::WebUIDataSource*
         { "monthNov", IDS_BRAVE_UI_MONTH_NOV },
         { "monthOct", IDS_BRAVE_UI_MONTH_OCT },
         { "monthSep", IDS_BRAVE_UI_MONTH_SEP },
-        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },
+        { "rewardsContributeAttentionScore", IDS_BRAVE_UI_REWARDS_CONTRIBUTE_ATTENTION_SCORE },   // NOLINT
         { "rewardsSummary", IDS_BRAVE_UI_REWARDS_SUMMARY },
         { "welcomeButtonTextTwo", IDS_BRAVE_UI_WELCOME_BUTTON_TEXT_TWO },
         { "welcomeDescTwo", IDS_BRAVE_UI_WELCOME_DESC_TWO },

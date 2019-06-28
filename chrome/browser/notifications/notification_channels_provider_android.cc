@@ -455,3 +455,9 @@ void NotificationChannelsProviderAndroid::InitCachedChannels() {
     cached_channels_.emplace(channel.origin, std::move(channel));
   initialized_cached_channels_ = true;
 }
+
+
+NotificationChannelStatus NotificationChannelsProviderAndroid::
+    GetChannelStatus(const std::string& origin) {
+  return bridge_->GetChannelStatus(origin);
+}

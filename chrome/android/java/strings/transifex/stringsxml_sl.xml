@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS povsod</string>
     <string name="brave_shields_blocks_scripts_switch">Blokiraj skripte</string>
     <string name="accessibility_toolbar_btn_brave_shields">Omogoči/onemogoči ščite Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Upravljaj Nagrade Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Blokiranje piškotkov tretjih strani</string>
 
     <string name="httpse_summary">Odpre podprta spletna mesta z uporabo protokola HTTPS, namesto z uporabo protokola HTTP, kjerkoli je mogoče</string>
@@ -30,12 +31,15 @@
 
     <string name="menu_exit">Izhod</string>
 
+    <string name="brave_sync">Usklajevanje Brave (beta)</string>
     <string name="sync_settings_add_device_name_title">Dodaj ime naprave</string>
     <string name="sync_settings_add_device_name_label">Vnesite izbirno ime za to napravo</string>
     <string name="sync_example_device_name">Naprava Android</string>
     <string name="enter_code_words_sync">Vnos kodnih besed</string>
     <string name="sync_device">Sinhroniziraj napravo</string>
     <string name="sync_device_failure">Sinhronizacije ni bilo mogoče nastaviti</string>
+    <string name="sync_requires_correct_time">Ura vašega računalnika je morda napačno nastavljena ali pa v napačnem časovnem pasu. Preverite nastavitve svoje ure.</string>
+
     <string name="brave_stats_text_trackers">Sledilniki
 so blokirani</string>
     <string name="brave_stats_text_ads">Oglasi
@@ -139,7 +143,9 @@ Shranjeno</string>
 kot vaš privzeti brskalnik.</string>
     <string name="brave_default_browser_go_to_settings">Privzeti brskalnik ste že nastavili.
 Spremenite ga lahko v nastavitvah aplikacije.</string>
+    <string name="brave_default_browser_notification_body">Prihranite baterijo in hitreje naložite spletne strani. Nastavite Brave za svoj privzeti brskalnik. V meniju Brave tapnite »Nastavi kot privzeti brskalnik«.</string>
     <string name="brave_set_default_browser">Nastavi kot privzeti brskalnik</string>
+    <string name="brave_set_default_browser_dialog_text">Na seznamu izberite Brave in tapnite »Vedno«</string>
     <string name="brave_default_browser_existing_notification_body">Nastavite Brave kot privzeti brskalnik
 Prihranite baterijo in hitreje naložite spletne strani.</string>
 
@@ -206,6 +212,7 @@ Donacije, ki jih pošljete, bodo v vaši denarnici, dokler jih ustvarjalec vsebi
     <string name="brave_ui_reserved_amount_text">Namenili ste <ph name=\"BAT_VALUE\">%1$s<ex>50</ex></ph> BAT za ustvarjalce vsebine, ki se še niso
 prijavili za prejemanje donacij. Vaš brskalnik bo še naprej poskušal izvesti donacijo, dokler
 je ne potrdijo oziroma do preteka 90 dni.</string>
+    <string name="brave_ui_notification_desc_no_funds">Vašega izbranega mesečnega plačila za samodejni prispevek ali mesečne prispevke ni bilo mogoče izvesti zaradi nezadostnih sredstev. Ponovno bomo poskusili čez 30 dni.</string>
     <string name="brave_ui_notification_desc_tip_error">Pri obdelavi vaše donacije je prišlo do težave. Prosimo, poskusite znova.</string>
     <string name="brave_ui_notification_desc_contr_error">Pri obdelavi vaše donacije je prišlo do težave.</string>
     <string name="brave_rewards_local_uh_oh">Ojoj!</string>
@@ -223,4 +230,32 @@ je ne potrdijo oziroma do preteka 90 dni.</string>
 vašo zasebnost, in namenite sredstva
 ustvarjalcem vsebin, ki so vam všeč.</string>
     <string name="brave_welcome_page_rewards_title">OMOGOČI MOŽNOST NAGRAD BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">Vaša prva mesečna nagrada bo poslana:</string>
+    <string name="brave_ui_tip_text">Napitnino ste ravnokar poslali:</string>
+    <string name="brave_ui_auto_tip_text">Samodejno pošiljate napitnino:</string>
+    <string name="brave_ui_monthly_text">Mesečno</string>
+    <string name="bottom_toolbar_enable">Omogoči orodno vrstico spodaj</string>
+    <string name="bottom_toolbar_disable">Onemogoči orodno vrstico spodaj</string>
+    <string name="search_or_url">Iskanje ali URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Ustvarite zaznamek</string>
+    <string name="brave_ui_donate_monthly">Nagradi to spletišče mesečno</string>
+
+    <string name="brave_rewards_not_available">Žal Nagrade Brave niso na voljo na vaši napravi.</string>
+
+    <string name="prefs_section_display">Prikaz</string>
+    <string name="prefs_appearance">Videz</string>
+    <string name="hide_brave_rewards_icon_title">Skrij ikono Nagrade Brave</string>
+    <string name="hide_brave_rewards_icon_description">Skrije ikono Nagrade Brave, ko Nagrade Brave niso omogočene.</string>
+
+    <string name="brave_ui_pre_grant_message">Kmalu ponovno preverite za brezplačno donacijo žetona</string>
+
+    <string name="reset_brave_rewards_option">Ponastavi Nagrade Brave</string>
+    <string name="reset_brave_rewards_option_description">S tem boste izbrisali svojo denarnico Brave in ponastavili vse podatke Nagrad Brave.</string>
+    <string name="reset_brave_rewards_error_title">Napaka ponastavljanja</string>
+    <string name="reset_brave_rewards_error_description">Pri ponastavljanju Nagrad Brave je prišlo do napake. Ponovno zaženite Brave in poskusite znova.</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Vnesite besede kode za usklajevanje verige. S to kodo ravnajte kot z geslom. Če kdo pridobi to kodo, lahko bere in spreminja vaše usklajene podatke.</string>
+
+    <string name="brave_sync_official">Usklajevanje Brave</string>
+    <string name="prefs_sync_official">Uskladi</string>
     </resources>

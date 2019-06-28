@@ -97,6 +97,10 @@ HTTPS</string>
     <string name="update_notification_title">עדכון Brave</string>
     <string name="update_notification_text">דפדפן ה-Brave החדש מהיר יותר ב-22%</string>
     <string name="prefs_sync">סנכרון (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">הפרסומות של Brave הגיעו!</string>
+    <string name="brave_ads_new_user_offer_title">אפשר/י את Brave Rewards</string>
+    <string name="brave_ads_offer_text">זכו באסימון תשומת לב בסיסי על צפייה בפרסומות השומרות על הפרטיות בBrave Rewards.</string>
+    <string name="brave_ads_offer_positive">אני בעניין!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync מאפשר לסנכרן נתוני סימניות בפרטיות בין Brave Browsers במכשירים השונים שלך.</string>
     <string name="brave_sync_description_page_1_part_2">פשוט סרוק את הקוד משרשרת הסנכרון שיצרת במכשיר אחר. או התחל שרשרת סנכרון חדשה.</string>
     <string name="brave_sync_scan_chain_code">סרוק או הזן קוד סנכרון</string>
@@ -236,10 +240,6 @@ HTTPS</string>
     <string name="search_or_url">חיפוש או URL</string>
     <string name="accessibility_toolbar_btn_bookmark">יצירת סימניה</string>
     <string name="brave_ui_donate_monthly">תן/י לאתר זה טיפ אחת לחודש</string>
-    <string name="brave_rewards_intro_title">Brave Rewards נמצא כאן</string>
-    <string name="brave_rewards_intro_text">תמכו באתרים שאתם אוהבים.</string>
-    <string name="brave_rewards_dismiss">התעלם/י</string>
-    <string name="brave_rewards_get_started">מתחילים</string>
 
     <string name="brave_rewards_not_available">אנו  מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</string>
 
@@ -259,4 +259,10 @@ HTTPS</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">סנכרון</string>
+    <string name="notification_category_group_brave_ads">פרסומות של Brave </string>
+    <string name="brave_ads_you_earned">זכית</string>
+
+    <string name="brave_default_browser_title">Brave הוא מהיר במיוחד</string>
+    <string name="brave_default_browser_body">הפכו את Brave לדפדפן ברירת המחדל שלכם!</string>
+    <string name="brave_make_default_text">הפכו לברירת מחדל</string>
 </resources>

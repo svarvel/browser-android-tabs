@@ -97,6 +97,10 @@ Salvat</string>
     <string name="update_notification_title">Actualizare Brave</string>
     <string name="update_notification_text">Noul browser Brave este cu 22% mai rapid</string>
     <string name="prefs_sync">Sincronizare (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Reclamele Brave sunt aici!</string>
+    <string name="brave_ads_new_user_offer_title">Activați Recompense Brave</string>
+    <string name="brave_ads_offer_text">Obțineți Basic Attention Token pentru a vizualiza reclame care mențin confidențialitatea în Recompense Brave.</string>
+    <string name="brave_ads_offer_positive">Vreau să particip!</string>
     <string name="brave_sync_description_page_1_part_1">Sincronizare Beta vă permite să sincronizați în mod privat date privind marcajele între Browserele Brave de pe diverse dispozitive.</string>
     <string name="brave_sync_description_page_1_part_2">Scanați codul de pe lanțul de sincronizare pe care l-ați creat pe un alt dispozitiv. Sau inițiați un lanț nou de sincronizare.</string>
     <string name="brave_sync_scan_chain_code">Scanați sau introduceți codul de sincronizare</string>
@@ -236,10 +240,6 @@ creatorii de conținut care vă plac.</string>
     <string name="search_or_url">Căutare sau URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Creați un semn de carte</string>
     <string name="brave_ui_donate_monthly">Susțineți financiar lunar acest site</string>
-    <string name="brave_rewards_intro_title">Recompensele Brave sunt aici</string>
-    <string name="brave_rewards_intro_text">Sprijiniți site-urile care vă plac.</string>
-    <string name="brave_rewards_dismiss">Renunță</string>
-    <string name="brave_rewards_get_started">Începe</string>
 
     <string name="brave_rewards_not_available">Ne pare rău, dar se pare că Brave Rewards nu este disponibil pe dispozitivul dvs.</string>
 
@@ -259,4 +259,10 @@ creatorii de conținut care vă plac.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sync</string>
+    <string name="notification_category_group_brave_ads">Reclame Brave</string>
+    <string name="brave_ads_you_earned">Ați obținut</string>
+
+    <string name="brave_default_browser_title">Brave este iute ca fulgerul</string>
+    <string name="brave_default_browser_body">Setați Brave ca browser implicit!</string>
+    <string name="brave_make_default_text">Setați ca implicit</string>
 </resources>

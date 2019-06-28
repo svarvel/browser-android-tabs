@@ -98,6 +98,10 @@ besparelse</string>
     <string name="update_notification_title">Brave opdatering </string>
     <string name="update_notification_text">Den nye Brave browser er 22% hurtigere </string>
     <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave Annoncer er her!</string>
+    <string name="brave_ads_new_user_offer_title">Aktiver Brave Rewards</string>
+    <string name="brave_ads_offer_text">Optjen Basic Attention Token ved at se privatlivsbevarende annoncer i Brave Rewards. </string>
+    <string name="brave_ads_offer_positive">Jeg er på!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync giver dig mulighed for at synkronisere dine bogmærkedata mellem dine Brave-browsere privat, på tværs af enheder.</string>
     <string name="brave_sync_description_page_1_part_2">Scan koden fra den synkroniseringskæde, du skabte på en anden enhed. Eller begynd på en ny synkroniseringskæde.</string>
     <string name="brave_sync_scan_chain_code">Scan eller indtast synkroniseringskode</string>
@@ -237,10 +241,6 @@ de indholdsskabere, du elsker.</string>
     <string name="search_or_url">Søg eller webadresse</string>
     <string name="accessibility_toolbar_btn_bookmark">Lav et bogmærke</string>
     <string name="brave_ui_donate_monthly">Giv denne side månedlige drikkepenge</string>
-    <string name="brave_rewards_intro_title">Brave Belønninger er her</string>
-    <string name="brave_rewards_intro_text">Støt de sider, du holder af</string>
-    <string name="brave_rewards_dismiss">Afvis</string>
-    <string name="brave_rewards_get_started">Kom i gang</string>
 
     <string name="brave_rewards_not_available">Vi beklager at det ser ud til at Brave Rewards ikke er tilgængelig på din enhed</string>
 
@@ -260,4 +260,10 @@ de indholdsskabere, du elsker.</string>
 
     <string name="brave_sync_official">Brave-synkronisering</string>
     <string name="prefs_sync_official">Synkronisering</string>
+    <string name="notification_category_group_brave_ads">Brave Annoncer</string>
+    <string name="brave_ads_you_earned">Du har optjent</string>
+
+    <string name="brave_default_browser_title">Brave er lynhurtig</string>
+    <string name="brave_default_browser_body">Gør Brave til din standardbrowser!</string>
+    <string name="brave_make_default_text">Gør til standard</string>
 </resources>

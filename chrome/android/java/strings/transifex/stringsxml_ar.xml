@@ -102,6 +102,10 @@ HTTPS</string>
     <string name="update_notification_title">تحديث Brave</string>
     <string name="update_notification_text">متصفح Brave الجديد أسرع بنسبة 22% </string>
     <string name="prefs_sync">مزامنة (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">أصبحت \"إعلانات Brave\" متاحة هنا!</string>
+    <string name="brave_ads_new_user_offer_title">قم بتمكين \"مكافآت Brave\"</string>
+    <string name="brave_ads_offer_text">اربح \"رمز الانتباه الأساسي\" Basic Attention Token مقابل عرض إعلانات تخص الحفاظ على الخصوصية في \"مكافآت Brave\".</string>
+    <string name="brave_ads_offer_positive">سأشارك!</string>
     <string name="brave_sync_description_page_1_part_1">يتيح لك Brave Sync مزامنة بيانات الإشارات المرجعية بخصوصية بين متصفحات Brave الخاصة بك على أجهزتك المختلفة.</string>
     <string name="brave_sync_description_page_1_part_2">ليس عليك إلا المسح الضوئي للرمز من سلسلة المزامنة الخاصة بك الذي أنشأته على جهازٍ آخر، أو ابدأ سلسلة مزامنة جديدة.</string>
     <string name="brave_sync_scan_chain_code">امسح ضوئيًا أو أدخل رمز المزامنة</string>
@@ -241,11 +245,6 @@ HTTPS</string>
     <string name="search_or_url">بحث أو عنوان URL</string>
     <string name="accessibility_toolbar_btn_bookmark">إنشاء إشارة مرجعية</string>
     <string name="brave_ui_donate_monthly">تبرَّع لهذا الموقع شهرياً</string>
-    <string name="brave_rewards_intro_title">مكافآت Brave هنا</string>
-    <string name="brave_rewards_intro_text">ادعم المواقع التي تحبها.</string>
-    <string name="brave_rewards_dismiss">تجاهل
-</string>
-    <string name="brave_rewards_get_started">البدء</string>
 
     <string name="brave_rewards_not_available">عذراً، يبدو أن مكافآت Brave لا تتوفر على جهازك</string>
 
@@ -266,4 +265,10 @@ HTTPS</string>
     <string name="brave_sync_official">مزامنة Brave
 </string>
     <string name="prefs_sync_official">المزامنة</string>
+    <string name="notification_category_group_brave_ads">"إعلانات Brave"</string>
+    <string name="brave_ads_you_earned">لقد ربحت</string>
+
+    <string name="brave_default_browser_title">يتطوّر Brave بسرعة البرق</string>
+    <string name="brave_default_browser_body">اجعل Brave متصفحك الافتراضي!</string>
+    <string name="brave_make_default_text">اجعله المتصفح الافتراضي</string>
 </resources>

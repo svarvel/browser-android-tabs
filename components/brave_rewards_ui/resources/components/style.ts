@@ -44,6 +44,7 @@ export const StyledText = styled<{}, 'p'>('p')`
 export const StyledTotalContent = styled<{}, 'div'>('div')`
   position: relative;
   padding-right: 25px;
+  text-align: right;
 
   @media (max-width: 366px) {
     top: 11px;

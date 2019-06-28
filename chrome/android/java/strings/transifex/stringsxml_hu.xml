@@ -97,6 +97,10 @@ idő</string>
     <string name="update_notification_title">Brave frissítés</string>
     <string name="update_notification_text">Az új Brave böngésző 22%-kal gyorsabb</string>
     <string name="prefs_sync">Szinkonizálás (béta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave hirdetések itt!</string>
+    <string name="brave_ads_new_user_offer_title">Brave jutalmak engedélyezése</string>
+    <string name="brave_ads_offer_text">Szerezz Alap Figyelem tokent adatvédelmet tiszteletben tartó hirdetések megtekintésével a Brave Jutalamakban.</string>
+    <string name="brave_ads_offer_positive">Benne vagyok!</string>
     <string name="brave_sync_description_page_1_part_1">A Brave Sync segítségével privát szinkronizálhatja különböző eszközeinek könyvjelzőadatait Brave böngészőiben.</string>
     <string name="brave_sync_description_page_1_part_2">Csak olvassa be a kódot a szinkronizálási láncból, amelyet az egyik eszközén létrehozott. Vagy kezdjen új szinkronizálási láncot.</string>
     <string name="brave_sync_scan_chain_code">Olvassa be vagy adja meg a szinkronizálási kódot</string>
@@ -236,10 +240,6 @@ tartalomkészítők támogatására.</string>
     <string name="search_or_url">Keresés vagy URL </string>
     <string name="accessibility_toolbar_btn_bookmark">Könyvjelző készítése</string>
     <string name="brave_ui_donate_monthly">Adj borravalót havonta ennek az oldalnak</string>
-    <string name="brave_rewards_intro_title">Itt a Brave Jutalmak</string>
-    <string name="brave_rewards_intro_text">Támogasd a kedvelt oldalakat.</string>
-    <string name="brave_rewards_dismiss">Elvetés</string>
-    <string name="brave_rewards_get_started">Első lépések</string>
 
     <string name="brave_rewards_not_available">Sajnáljuk, úgy tűnik a Brave Jutalmak nem elérhető készülékedről.</string>
 
@@ -259,4 +259,10 @@ tartalomkészítők támogatására.</string>
 
     <string name="brave_sync_official">Brave szinkronizálás</string>
     <string name="prefs_sync_official">Szinkronizálás</string>
+    <string name="notification_category_group_brave_ads">Brave hirdetések</string>
+    <string name="brave_ads_you_earned">Szerzeményed</string>
+
+    <string name="brave_default_browser_title">A Brave villámgyors</string>
+    <string name="brave_default_browser_body">Tedd a Brave-et alapértelmezett böngésződnek!</string>
+    <string name="brave_make_default_text">Tedd alapértelmezetté</string>
 </resources>

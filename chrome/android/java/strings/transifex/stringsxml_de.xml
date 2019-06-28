@@ -99,6 +99,12 @@ gespart</string>
     <string name="update_notification_title">Brave-Update</string>
     <string name="update_notification_text">Der neue Brave-Browser ist 22 % schneller</string>
     <string name="prefs_sync">Synchronisierung (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Dies ist Ihre erste Brave-Werbung</string>
+    <string name="brave_ads_oobe_education_notification_body">Tippen Sie hier, um mehr zu erfahre</string>
+    <string name="brave_ads_existing_user_offer_title">Brave Anzeigen sind hier!</string>
+    <string name="brave_ads_new_user_offer_title">Brave Rewards aktivieren</string>
+    <string name="brave_ads_offer_text">Verdienen Sie Basic Attention Token für das Ansehen datenschutzwahrender Anzeigen in Brave Rewards.</string>
+    <string name="brave_ads_offer_positive">Ich bin dabei!</string>
     <string name="brave_sync_description_page_1_part_1">Mit Brave Sync können Sie Lesezeichendaten privat zwischen Ihren Brave-Browsern auf verschiedenen Geräten synchronisieren.</string>
     <string name="brave_sync_description_page_1_part_2">Scannen Sie einfach den Code aus Ihrer Synchronisierungskette, die Sie auf einem anderen Gerät erstellt haben. Oder beginnen Sie eine neue Synchronisierungskette.</string>
     <string name="brave_sync_scan_chain_code">Synchronisierungscode scannen oder eingeben</string>
@@ -238,10 +244,6 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
     <string name="search_or_url">Suche oder URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Ein Lesezeichen setzen</string>
     <string name="brave_ui_donate_monthly">Rufen Sie diese Seite jeden Monat auf</string>
-    <string name="brave_rewards_intro_title">Brave Rewards ist hier</string>
-    <string name="brave_rewards_intro_text">Unterstützen Sie die Seiten, die Sie lieben.</string>
-    <string name="brave_rewards_dismiss">Verwerfen</string>
-    <string name="brave_rewards_get_started">Anfangen</string>
 
     <string name="brave_rewards_not_available">Tut uns leid: Anscheinend ist Brave Rewards auf Ihrem Gerät nicht verfügbar.</string>
 
@@ -261,4 +263,10 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
 
     <string name="brave_sync_official">Brave</string>
     <string name="prefs_sync_official">Synchronisieren</string>
+    <string name="notification_category_group_brave_ads">Brave Anzeigen</string>
+    <string name="brave_ads_you_earned">Sie haben (translator\'s note: monetary amount goes here) verdient</string>
+
+    <string name="brave_default_browser_title">Brave ist blitzschnell</string>
+    <string name="brave_default_browser_body">Machen Sie Brave zu Ihrem Standardbrowser!</string>
+    <string name="brave_make_default_text">Als Standard festlegen</string>
 </resources>

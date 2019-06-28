@@ -98,6 +98,10 @@ Disimpan</string>
     <string name="update_notification_title">Kemas kini Brave</string>
     <string name="update_notification_text">Pelayar Brave baru ialah lebih cepat sebanyak 22%</string>
     <string name="prefs_sync">Segerak (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Iklan Brave sudah sampai!</string>
+    <string name="brave_ads_new_user_offer_title">Dayakan Ganjaran Brave</string>
+    <string name="brave_ads_offer_text">Dapatkan Token Perhatian Asas dengan melihat iklan yang mengekalkan privasi dalam Ganjaran Brave.</string>
+    <string name="brave_ads_offer_positive">Saya mahu turut serta!</string>
     <string name="brave_sync_description_page_1_part_1">Penyegerakan Brave membolehkan anda menyegerakkan data penanda halaman secara peribadi di antara Pelayar Brave anda pada pelbagai peranti anda.</string>
     <string name="brave_sync_description_page_1_part_2">Imbas kod daripada rantaian penyegerakan yang anda buat pada peranti lain. Atau mulakan rantaian penyegerakan baru.</string>
     <string name="brave_sync_scan_chain_code">Imbas atau masukkan kod penyegerakan</string>
@@ -237,10 +241,6 @@ pencipta kandungan yang anda suka.</string>
     <string name="search_or_url">Cari atau URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Cipta penanda buku</string>
     <string name="brave_ui_donate_monthly">Berikan tip kepada tapak ini secara bulanan</string>
-    <string name="brave_rewards_intro_title">Ganjaran Brave berada di sini</string>
-    <string name="brave_rewards_intro_text">Sokong tapak yang anda gemari.</string>
-    <string name="brave_rewards_dismiss">Tolak</string>
-    <string name="brave_rewards_get_started">Mulakan</string>
 
     <string name="brave_rewards_not_available">Harap maaf, nampaknya Ganjaran Brave tidak boleh didapati pada peranti anda</string>
 
@@ -260,4 +260,10 @@ pencipta kandungan yang anda suka.</string>
 
     <string name="brave_sync_official">Segerak Brave</string>
     <string name="prefs_sync_official">Segerak</string>
+    <string name="notification_category_group_brave_ads">Iklan Brave</string>
+    <string name="brave_ads_you_earned">Anda memperoleh</string>
+
+    <string name="brave_default_browser_title">Brave sememangnya pantas</string>
+    <string name="brave_default_browser_body">Jadikan Brave pelayar lalai anda!</string>
+    <string name="brave_make_default_text">Jadikan sebagai lalai</string>
 </resources>

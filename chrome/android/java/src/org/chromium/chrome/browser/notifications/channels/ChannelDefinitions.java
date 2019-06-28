@@ -53,11 +53,14 @@ public class ChannelDefinitions {
      * and add the ID to the LEGACY_CHANNELS_ID array below. See the README in this directory for
      * more detailed instructions.
      */
-    @StringDef({ChannelId.BROWSER, ChannelId.DOWNLOADS, ChannelId.INCOGNITO, ChannelId.MEDIA,
+    @StringDef({ChannelId.BRAVE, ChannelId.BRAVE_ADS, ChannelId.BROWSER,
+            ChannelId.DOWNLOADS, ChannelId.INCOGNITO, ChannelId.MEDIA,
             ChannelId.SCREEN_CAPTURE, ChannelId.CONTENT_SUGGESTIONS, ChannelId.WEBAPP_ACTIONS,
             ChannelId.SITES, ChannelId.SHARING, ChannelId.UPDATES})
     @Retention(RetentionPolicy.SOURCE)
     public @interface ChannelId {
+        String BRAVE = "com.brave.browser";
+        String BRAVE_ADS = "com.brave.browser.ads";
         String BROWSER = "browser";
         String DOWNLOADS = "downloads";
         String INCOGNITO = "incognito";
@@ -73,10 +76,11 @@ public class ChannelDefinitions {
     }
 
     @StringDef({
-            ChannelGroupId.GENERAL, ChannelGroupId.SITES
+            ChannelGroupId.GENERAL, ChannelGroupId.SITES, ChannelGroupId.BRAVE_ADS
     })
     @Retention(RetentionPolicy.SOURCE)
     public @interface ChannelGroupId {
+        String BRAVE_ADS = "com.brave.browser.ads";
         String SITES = "sites";
         String GENERAL = "general";
     }
@@ -102,6 +106,11 @@ public class ChannelDefinitions {
         static {
             Map<String, PredefinedChannel> map = new HashMap<>();
             Set<String> startup = new HashSet<>();
+
+            map.put(ChannelId.BRAVE_ADS,
+                    new PredefinedChannel(ChannelId.BRAVE_ADS, R.string.notification_category_brave_ads,
+                    NotificationManager.IMPORTANCE_HIGH, ChannelGroupId.BRAVE_ADS));
+            startup.add(ChannelId.BRAVE_ADS);
 
             map.put(ChannelId.BROWSER,
                     new PredefinedChannel(ChannelId.BROWSER, R.string.notification_category_browser,
@@ -193,6 +202,9 @@ public class ChannelDefinitions {
             map.put(ChannelGroupId.SITES,
                     new PredefinedChannelGroup(
                             ChannelGroupId.SITES, R.string.notification_category_sites));
+            map.put(ChannelGroupId.BRAVE_ADS,
+                    new PredefinedChannelGroup(
+                            ChannelGroupId.BRAVE_ADS, R.string.notification_category_group_brave_ads));
             MAP = Collections.unmodifiableMap(map);
         }
     }

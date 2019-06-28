@@ -97,6 +97,10 @@
     <string name="update_notification_title">Braveアプデート</string>
     <string name="update_notification_text">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</string>
     <string name="prefs_sync">Sync (beta版)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave Adsのご紹介です！</string>
+    <string name="brave_ads_new_user_offer_title">Brave Rewardsを有効にしましょう</string>
+    <string name="brave_ads_offer_text">Brave Rewardsでプライバシー保護広告を見てベーシックアテンショントークンをもらいましょう。</string>
+    <string name="brave_ads_offer_positive">参加します！</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync は、さまざまな端末上の Brave ブラウザ間でのブックマークデータの同期を可能にします。</string>
     <string name="brave_sync_description_page_1_part_2">別の端末で作成した同期チェーンからコードをスキャンするだけ。または新しい同期チェーンを開始します。</string>
     <string name="brave_sync_scan_chain_code">同期コードをスキャンまたは入力</string>
@@ -233,10 +237,6 @@
     <string name="search_or_url">検索またはURLを入力します</string>
     <string name="accessibility_toolbar_btn_bookmark">ブックマークを作成</string>
     <string name="brave_ui_donate_monthly">このサイトに毎月チップを支払う</string>
-    <string name="brave_rewards_intro_title">Braveリワードはここにあります</string>
-    <string name="brave_rewards_intro_text">お気に入りのサイトをサポート</string>
-    <string name="brave_rewards_dismiss">解除</string>
-    <string name="brave_rewards_get_started">始める</string>
 
     <string name="brave_rewards_not_available">申し訳ありませんが、お使いの端末ではBrave Rewardsをご利用いただけないようです</string>
 
@@ -256,4 +256,10 @@
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">同期</string>
+    <string name="notification_category_group_brave_ads">Brave Ads</string>
+    <string name="brave_ads_you_earned">獲得しました</string>
+
+    <string name="brave_default_browser_title">Braveは光のように速い</string>
+    <string name="brave_default_browser_body">Braveをあなたのデフォルトブラウザーにしましょう！</string>
+    <string name="brave_make_default_text">デフォルトにしましょう</string>
 </resources>

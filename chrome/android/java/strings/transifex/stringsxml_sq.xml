@@ -38,6 +38,8 @@
     <string name="enter_code_words_sync">Jepni fjalë kod</string>
     <string name="sync_device">Njëkohësoni pajisje</string>
     <string name="sync_device_failure">S\’u rregullua dot njëkohësim</string>
+    <string name="sync_requires_correct_time">Ora e kompjuterit tuaj, ose zona kohore për të, mund të jetë caktuar gabim. Ju lutemi, kontrolloni rregullimet tuaja për orën.</string>
+
     <string name="brave_stats_text_trackers">U bllokuan
 Gjurmues</string>
     <string name="brave_stats_text_ads">U bllokuan
@@ -97,6 +99,10 @@ Afërsisht</string>
     <string name="update_notification_title">Përditësim Brave-i</string>
     <string name="update_notification_text">Shfletuesi i ri Brave është 22% më i shpejtë</string>
     <string name="prefs_sync">Njëkohësim (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Mbërritën Reklamat Brave!</string>
+    <string name="brave_ads_new_user_offer_title">Aktivizo Shpërblime Brave</string>
+    <string name="brave_ads_offer_text">Fitoni Basic Attention Token nga parja reklamash që ruajnë privatësinë, tek Shpërblime Brave.</string>
+    <string name="brave_ads_offer_positive">Dua dhe unë!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync ju lejon të njëkohësoni privatisht të dhëna faqerojtësish mes Shfletuesve tuaj Brave në pajisje të ndryshme.</string>
     <string name="brave_sync_description_page_1_part_2">Thjesht skanoni kodin prej zinxhirit tuaj të njëkohësimit që keni krijuar në pajisje tjetër. Ose nisni një zinxhir të ri.</string>
     <string name="brave_sync_scan_chain_code">Skanoni ose jepni kod njëkohësimi</string>
@@ -233,10 +239,8 @@ përkrahje të krijuesve të lëndës që doni.</string>
     <string name="search_or_url">Kërkim ose URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Krijoni një shenjë referimi</string>
     <string name="brave_ui_donate_monthly">Jepini bakshish këtij uebsajti çdo muaj</string>
-    <string name="brave_rewards_intro_title">Brave Rewards është këtu</string>
-    <string name="brave_rewards_intro_text">Mbështesni uebsajtet të cilat i doni.</string>
-    <string name="brave_rewards_dismiss">Hiqni</string>
-    <string name="brave_rewards_get_started">Filloni</string>
+
+    <string name="brave_rewards_not_available">Na ndjeni, duket se Shpërblimet Brave s’janë të gatshme në pajisjen tuaj</string>
 
     <string name="prefs_section_display">Shfaqni</string>
     <string name="prefs_appearance">Pamja</string>
@@ -250,4 +254,14 @@ përkrahje të krijuesve të lëndës që doni.</string>
     <string name="reset_brave_rewards_error_title">Gabim i rivendosjes</string>
     <string name="reset_brave_rewards_error_description">Pati një gabim në rivendosjen e Brave Rewards. Ju lutemi të rilëshoni Brave dhe të provoni përsëri</string>
 
-    </resources>
+    <string name="brave_sync_add_laptop_text_part_2_new">Jepni më poshtë fjalët e kodit për zinxhirin e njëkohësimeve. Trajtojeni këtë kod si një fjalëkalim. Nëse bie në dorë të dikujt, ai mund të lexojë dje të modifikojë të dhënat që keni njëkohësuar.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Sync</string>
+    <string name="notification_category_group_brave_ads">Reklama Brave</string>
+    <string name="brave_ads_you_earned">Keni fituar</string>
+
+    <string name="brave_default_browser_title">Brave është i shpejtë si rrufe</string>
+    <string name="brave_default_browser_body">Bëjeni Brave-in shfletuesin tuaj parazgjedhje!</string>
+    <string name="brave_make_default_text">Bëje parazgjedhje</string>
+</resources>

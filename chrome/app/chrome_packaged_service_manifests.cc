@@ -6,6 +6,8 @@
 
 #include "base/no_destructor.h"
 #include "brave/components/services/bat_ledger/public/cpp/manifest.h"
+#include "brave/components/services/bat_ads/public/cpp/manifest.h"
+#include "brave/components/brave_ads/browser/buildflags/buildflags.h"
 #include "build/build_config.h"
 #include "chrome/common/buildflags.h"
 #include "chrome/common/constants.mojom.h"
@@ -137,6 +139,9 @@ GetChromePackagedServiceManifests() {
       proxy_resolver::GetManifest(),
       prefs::GetLocalStateManifest(),
       bat_ledger::GetManifest(),
+#if BUILDFLAG(BRAVE_ADS_ENABLED)
+      bat_ads::GetManifest(),
+#endif
 #if BUILDFLAG(ENABLE_EXTENSIONS)
       GetRemovableStorageWriterManifest(),
 #endif

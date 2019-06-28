@@ -9,7 +9,8 @@
     <string name="brave_shields_ads_tracking_switch">Bloquear anuncios y rastreadores</string>
     <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear scripts</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Activar/desactivar escudos Brave</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Activar/desactivar protección de Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Gestionar Recompensas de Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceros</string>
 
     <string name="httpse_summary">Siempre que sea posible, abrir los sitios compatibles usando HTTPS en lugar de HTTP</string>
@@ -98,6 +99,10 @@ ahorrado</string>
     <string name="update_notification_title">Actualización del navegador Brave</string>
     <string name="update_notification_text">El navegador nuevo Brave es 22% más rápido</string>
     <string name="prefs_sync">Sincronización (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">¡Ya han llegado los anuncios Brave!</string>
+    <string name="brave_ads_new_user_offer_title">Activar las Recompensas Brave</string>
+    <string name="brave_ads_offer_text">Gana un Vale de Atención Básica por ver anuncios que preservan la privacidad en las Recompensas Brave.</string>
+    <string name="brave_ads_offer_positive">¡Estoy dentro!</string>
     <string name="brave_sync_description_page_1_part_1">Con Brave Sync, puedes sincronizar los datos de los marcadores con los navegadores Brave en todos tus dispositivos de forma privada.</string>
     <string name="brave_sync_description_page_1_part_2">Para ello, solo tienes que escanear el código de la cadena de sincronización que creaste en otro dispositivo o, si lo prefieres, iniciar una nueva cadena de sincronización.</string>
     <string name="brave_sync_scan_chain_code">Escanear o introducir el código de sincronización</string>
@@ -238,10 +243,6 @@ apoyar a los creadores de contenido que más te gustan.</string>
     <string name="search_or_url">Búsqueda o URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Crea un marcapáginas</string>
     <string name="brave_ui_donate_monthly">Dar propina a este sitio web mensualmente</string>
-    <string name="brave_rewards_intro_title">Brave Rewards ya están aquí</string>
-    <string name="brave_rewards_intro_text">Compatible con tus sitios web favoritos.</string>
-    <string name="brave_rewards_dismiss">Descartar</string>
-    <string name="brave_rewards_get_started">Comienza</string>
 
     <string name="brave_rewards_not_available">Lo sentimos, parece que Brave Rewards no está disponible en su dispositivo</string>
 
@@ -261,4 +262,10 @@ apoyar a los creadores de contenido que más te gustan.</string>
 
     <string name="brave_sync_official">Sincronizar Brave</string>
     <string name="prefs_sync_official">Sincronizar</string>
+    <string name="notification_category_group_brave_ads">Anuncios Brave</string>
+    <string name="brave_ads_you_earned">Has ganado</string>
+
+    <string name="brave_default_browser_title">Brave se está encendiendo rápido</string>
+    <string name="brave_default_browser_body">¡Haz de Brave tu buscador predeterminado!</string>
+    <string name="brave_make_default_text">Establecer como predeterminado</string>
 </resources>

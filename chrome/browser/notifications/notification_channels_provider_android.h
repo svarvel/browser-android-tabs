@@ -100,6 +100,7 @@ class NotificationChannelsProviderAndroid
       const ContentSettingsPattern& secondary_pattern,
       ContentSettingsType content_type,
       const content_settings::ResourceIdentifier& resource_identifier) override;
+  NotificationChannelStatus GetChannelStatus(const std::string& origin);
 
  private:
   explicit NotificationChannelsProviderAndroid(

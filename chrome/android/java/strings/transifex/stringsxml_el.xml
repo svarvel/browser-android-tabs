@@ -98,6 +98,10 @@ HTTPS</string>
     <string name="update_notification_title">Ενημέρωση Brave</string>
     <string name="update_notification_text">Η νέα εφαρμογή περιήγησης Brave είναι 22% πιο γρήγορη</string>
     <string name="prefs_sync">Συγχρονισμός (δοκιμαστική έκδοση)</string>
+    <string name="brave_ads_existing_user_offer_title">Οι Διαφημίσεις του Brave είναι εδώ!</string>
+    <string name="brave_ads_new_user_offer_title">Ενεργοποίηση Brave Ανταμοιβών</string>
+    <string name="brave_ads_offer_text">Κερδίστε το Βασικό Νόμισμα Προσοχής για την προβολή διαφημίσεων οι οποίες διαφυλάσουν την ιδιωτικότητα στο Brave Ανταμοιβές.</string>
+    <string name="brave_ads_offer_positive">Είμαι μέσα!</string>
     <string name="brave_sync_description_page_1_part_1">Ο συγχρονισμός Brave σας επιτρέπει να συγχρονίσετε τα δεδομένα σελιδοδεικτών ιδιωτικά μεταξύ των περιηγητών Brave σας στις διάφορες συσκευές σας.</string>
     <string name="brave_sync_description_page_1_part_2">Σαρώστε τον κωδικό από την αλυσίδα συγχρονισμού που δημιουργήσατε σε άλλη συσκευή. Ή ξεκινήστε μία νέα αλυσίδα συγχρονισμού.</string>
     <string name="brave_sync_scan_chain_code">Σάρωση ή εισαγωγή του κωδικού συγχρονισμού</string>
@@ -234,10 +238,6 @@ HTTPS</string>
     <string name="search_or_url">Αναζήτηση ή διεύθυνση URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Δημιουργία σελιδοδείκτη</string>
     <string name="brave_ui_donate_monthly">Ενισχύστε αυτήν την ιστοσελίδα μηνιαία</string>
-    <string name="brave_rewards_intro_title">Το Brave Rewards είναι εδώ</string>
-    <string name="brave_rewards_intro_text">Υποστηρίξτε τις ιστοσελίδες που αγαπάτε.</string>
-    <string name="brave_rewards_dismiss">Απόρριψη</string>
-    <string name="brave_rewards_get_started">Έναρξη</string>
 
     <string name="brave_rewards_not_available">Λυπούμαστε, φαίνεται ότι το Brave Rewards δεν είναι διαθέσιμο για τη συσκευή σας</string>
 
@@ -257,4 +257,10 @@ HTTPS</string>
 
     <string name="brave_sync_official">Συγχρονισμός Brave</string>
     <string name="prefs_sync_official">Συγχρονισμός</string>
+    <string name="notification_category_group_brave_ads">Brave Διαφημίσεις</string>
+    <string name="brave_ads_you_earned">Έχετε κερδίσει</string>
+
+    <string name="brave_default_browser_title">Το Brave είναι αστραπιαίο</string>
+    <string name="brave_default_browser_body">Κάντε το Brave το προεπιλεγμένο πρόγραμμα περιήγησης σας!</string>
+    <string name="brave_make_default_text">Κάντε προεπιλογή</string>
 </resources>

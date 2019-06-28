@@ -97,6 +97,10 @@
     <string name="update_notification_title">Оновлення Brave</string>
     <string name="update_notification_text">Новий Brave браузер на 22% швидше</string>
     <string name="prefs_sync">Синхронізація (бета)</string>
+    <string name="brave_ads_existing_user_offer_title">Реклама Brave тут!</string>
+    <string name="brave_ads_new_user_offer_title">Увімкнути Винагороди Brave </string>
+    <string name="brave_ads_offer_text">Заробіть Токен Базової Уваги, переглядаючи рекламу, що зберігає приватність, у Винагородах Brave.</string>
+    <string name="brave_ads_offer_positive">Беру участь!</string>
     <string name="brave_sync_description_page_1_part_1">«Синхронізація Brave» дозволяє конфіденційно синхронізувати дані закладок у браузерах Brave на різних пристроях.</string>
     <string name="brave_sync_description_page_1_part_2">Просто відскануйте код ланцюжка синхронізації, створеного на іншому пристрої, або створіть новий ланцюжок синхронізації.</string>
     <string name="brave_sync_scan_chain_code">Відскануйте або введіть код синхронізації</string>
@@ -236,10 +240,6 @@
     <string name="search_or_url">Пошук чи ланка</string>
     <string name="accessibility_toolbar_btn_bookmark">Створити закладку</string>
     <string name="brave_ui_donate_monthly">Щомісяця перераховувати чайові цьому сайту</string>
-    <string name="brave_rewards_intro_title">Нагороди Brave тут</string>
-    <string name="brave_rewards_intro_text">Підтримуйте сайти, які любите.</string>
-    <string name="brave_rewards_dismiss">Відхилити</string>
-    <string name="brave_rewards_get_started">Розпочати</string>
 
     <string name="brave_rewards_not_available">Вибачте, але нагороди Brave, схоже, недоступні на вашому пристрої</string>
 
@@ -259,4 +259,10 @@
 
     <string name="brave_sync_official">Синхронізація Brave</string>
     <string name="prefs_sync_official">Синхронізувати</string>
+    <string name="notification_category_group_brave_ads">Реклама Brave</string>
+    <string name="brave_ads_you_earned">Ви заробили</string>
+
+    <string name="brave_default_browser_title">Brave блискавично швидкий</string>
+    <string name="brave_default_browser_body">Зробити Brave вашим браузером за замовчуванням!</string>
+    <string name="brave_make_default_text">Встановити за замовчуванням</string>
 </resources>

@@ -40,7 +40,11 @@ export const defaultState: Rewards.State = {
   adsData: {
     adsEnabled: false,
     adsPerHour: 0,
-    adsUIEnabled: false
+    adsUIEnabled: false,
+    adsIsSupported: false,
+    adsEstimatedPendingRewards: 0,
+    adsNextPaymentDate: '',
+    adsAdNotificationsReceivedThisMonth: 0
   },
   autoContributeList: [],
   reports: {},

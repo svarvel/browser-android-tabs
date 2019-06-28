@@ -57,7 +57,7 @@ zaoszczędzony czas</string>
     <string name="website_settings_category_desktop_view_enabled">Aktywuj widok desktopowy dla nowych zakładek</string>
     <string name="website_settings_category_desktop_view_disabled">Używaj mobilnych wersji stron dla nowych zakładek (zalecane)</string>
 
-    <string name="brave_shields_first_group_title">Blokada monitora</string>
+    <string name="brave_shields_first_group_title">Zablokowane elementy</string>
     <string name="brave_shields_second_group_title">Kontrolery indywidualne</string>
     <string name="brave_shields">Tarcze</string>
     <string name="brave_shields_ads_and_trackers">Reklamy i skrypty śledzące</string>
@@ -99,6 +99,10 @@ zaoszczędzony czas</string>
     <string name="update_notification_title">Aktualizacja przeglądarki Brave</string>
     <string name="update_notification_text">Nowa przeglądarka Brave działa o 22% szybciej</string>
     <string name="prefs_sync">Synchronizacja (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Reklamy Brave są dostępne!</string>
+    <string name="brave_ads_new_user_offer_title">Włącz nagrody Brave</string>
+    <string name="brave_ads_offer_text">Zarób token BAT za oglądanie reklam chroniących prywatność w nagrodach Brave.</string>
+    <string name="brave_ads_offer_positive">Wchodzę w to!</string>
     <string name="brave_sync_description_page_1_part_1">Synchronizacja Brave pozwala na prywatną synchronizację danych zakładek w Twoich przeglądarkach Brave na różnych urządzeniach.</string>
     <string name="brave_sync_description_page_1_part_2">Po prostu zeskanuj kod z łańcucha synchronizacji utworzonego na innym urządzeniu lub utwórz nowy łańcuch synchronizacji.</string>
     <string name="brave_sync_scan_chain_code">Zeskanuj lub wprowadź kod synchronizacji</string>
@@ -238,10 +242,6 @@ twórcom treści, które lubisz.</string>
     <string name="search_or_url">Szukaj adresu URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Stwórz zakładkę.</string>
     <string name="brave_ui_donate_monthly">Dawaj tej stronie miesięczny napiwek.</string>
-    <string name="brave_rewards_intro_title">Brave Rewards są dostępne</string>
-    <string name="brave_rewards_intro_text">Wspieraj ulubione strony.</string>
-    <string name="brave_rewards_dismiss">Pomiń</string>
-    <string name="brave_rewards_get_started">Zacznij</string>
 
     <string name="brave_rewards_not_available">Przepraszamy. Wygląda na to, że nagroda Brave nie jest dostępna na Twoim urządzeniu</string>
 
@@ -261,4 +261,10 @@ twórcom treści, które lubisz.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Synchronizacja</string>
+    <string name="notification_category_group_brave_ads">Reklamy Brave</string>
+    <string name="brave_ads_you_earned">Zarobiłeś</string>
+
+    <string name="brave_default_browser_title">Brave jest błyskawiczną przeglądarką</string>
+    <string name="brave_default_browser_body">Ustaw Brave jako domyślną przeglądarkę!</string>
+    <string name="brave_make_default_text">Ustaw jako domyślną</string>
 </resources>

@@ -134,6 +134,15 @@ export const onAdsSettingSave = (key: string, value: any) => action(types.ON_ADS
   value
 })
 
+export const onTransactionHistory = (data: {adsEstimatedPendingRewards: number, adsNextPaymentDate: string, adsNotificationsReceivedThisMonth: number}) =>
+  action(types.ON_TRANSACTION_HISTORY, {
+    data
+  })
+
+export const getTransactionHistory = () => action(types.GET_TRANSACTION_HISTORY)
+
+export const onTransactionHistoryChanged = () => action(types.ON_TRANSACTION_HISTORY_CHANGED)
+
 export const onInitAutoContributeSettings = (properties: any) => action(types.INIT_AUTOCONTRIBUTE_SETTINGS, {
   properties
 })

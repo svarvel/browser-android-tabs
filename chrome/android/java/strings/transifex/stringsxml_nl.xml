@@ -98,6 +98,10 @@ Bespaard</string>
     <string name="update_notification_title">Brave-update</string>
     <string name="update_notification_text">De nieuwe Brave-browser is 22% sneller</string>
     <string name="prefs_sync">Synchronisatie (bèta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave Ads zijn hier!</string>
+    <string name="brave_ads_new_user_offer_title">Schakel Brave Rewards in</string>
+    <string name="brave_ads_offer_text">Verdien Basic Attention Token voor het bekijken van privacybeschermende advertenties in Brave Rewards.</string>
+    <string name="brave_ads_offer_positive">Ik doe mee!</string>
     <string name="brave_sync_description_page_1_part_1">Met Brave-synchronisatie kun je bladwijzergegevens privé synchroniseren tussen Brave-browsers op verschillende apparaten.</string>
     <string name="brave_sync_description_page_1_part_2">Hiervoor scan je de code in de synchronisatieketen die je op een ander apparaat hebt gemaakt. Je kunt ook een nieuwe synchronisatieketen starten.</string>
     <string name="brave_sync_scan_chain_code">Synchronisatiecode scannen of invoeren</string>
@@ -237,10 +241,6 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
     <string name="search_or_url">Zoekterm of URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Een bladwijzer maken</string>
     <string name="brave_ui_donate_monthly">Deze website maandelijks een fooi geven</string>
-    <string name="brave_rewards_intro_title">Brave Rewards is hier</string>
-    <string name="brave_rewards_intro_text">Steun de websites waar u van houdt.</string>
-    <string name="brave_rewards_dismiss">Annuleren</string>
-    <string name="brave_rewards_get_started">Aan de slag.</string>
 
     <string name="brave_rewards_not_available">Het spijt ons, maar het lijkt erop dat Brave Rewards niet beschikbaar is op uw apparaat</string>
 
@@ -260,4 +260,10 @@ anderen meegenieten door de inhoudmakers waar jij fan van bent te ondersteunen.<
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Synchroniseren</string>
+    <string name="notification_category_group_brave_ads">Brave Ads</string>
+    <string name="brave_ads_you_earned">Je hebt verdiend</string>
+
+    <string name="brave_default_browser_title">Brave is razendsnel</string>
+    <string name="brave_default_browser_body">Maak Brave je standaardbrowser!</string>
+    <string name="brave_make_default_text">Maak standaard</string>
 </resources>

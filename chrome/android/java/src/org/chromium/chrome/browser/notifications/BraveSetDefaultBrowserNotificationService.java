@@ -28,6 +28,7 @@ import org.chromium.chrome.browser.ChromeActivity;
 import org.chromium.chrome.browser.ChromeActivitySessionTracker;
 import org.chromium.chrome.browser.ChromeFeatureList;
 
+import java.util.Calendar;
 import java.util.Random;
 
 public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver {
@@ -36,6 +37,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     
     public static final String HAS_ASKED_AT_FIFTEEN_MINUTES = "brave_set_default_browser_has_asked_at_fifteen_minutes";
     public static final String HAS_SET_ALARMS_FOR_DAYS_LATER = "brave_set_default_browser_has_set_alarm";
+    public static final String HAS_ASKED_AT_11_22  = "brave_set_default_browser_has_at_11_22";
 
     public static final int FIVE_MINUTES = 300_000;
     public static final int FIFTEEN_MINUTES = 900_000;
@@ -55,6 +57,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
     public static final String FIVE_DAYS_LATER = "five_days_later";
     public static final String TEN_DAYS_LATER = "ten_days_later";
     public static final String FIFTEEN_DAYS_LATER = "fifteen_days_later";
+    public static final String AT_11_22 = "at_11_22";
 
     public static final String CANCEL_NOTIFICATION = "cancel_notification";
 
@@ -83,9 +86,10 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
 
         if (mIntent.getStringExtra(INTENT_TYPE).equals(FIVE_DAYS_LATER) ||
             mIntent.getStringExtra(INTENT_TYPE).equals(TEN_DAYS_LATER) ||
-            mIntent.getStringExtra(INTENT_TYPE).equals(FIFTEEN_DAYS_LATER)
-          )
-            return true;
+            mIntent.getStringExtra(INTENT_TYPE).equals(FIFTEEN_DAYS_LATER) ||
+            mIntent.getStringExtra(INTENT_TYPE).equals(AT_11_22)) {
+          return true;
+        }
 
         if (mIntent.getStringExtra(INTENT_TYPE).equals(BROWSER_UPDATED))
             return true;
@@ -118,19 +122,18 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
 
         b.setSmallIcon(R.drawable.ic_chrome)
          .setAutoCancel(false)
-         .setContentText(mContext.getString(R.string.brave_default_browser_notification_body))
-         .setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_notification_body)))
+         .setContentTitle("⚡" + mContext.getString(R.string.brave_default_browser_title) + "⚡")
+         .setContentText(mContext.getString(R.string.brave_default_browser_body))
+         .setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_body)))
          .setPriority(NotificationCompat.PRIORITY_DEFAULT)
          .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
         if (supportsDefault()) {
-            b.setContentText(mContext.getString(R.string.brave_default_browser_existing_notification_body));
-            b.setStyle(new NotificationCompat.BigTextStyle().bigText(mContext.getString(R.string.brave_default_browser_existing_notification_body)));
             PendingIntent intentYes = getDefaultAppSettingsIntent(mContext);
-            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_positive), intentYes).build();
+            NotificationCompat.Action actionYes = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.brave_make_default_text), intentYes).build();
             NotificationCompat.Action actionNo = new NotificationCompat.Action.Builder(0, mContext.getString(R.string.ddg_offer_negative), getDismissIntent(mContext, NOTIFICATION_ID)).build();
-            b.addAction(actionYes);
             b.addAction(actionNo);
+            b.addAction(actionYes);
             b.setContentIntent(intentYes);
         }
 
@@ -142,6 +145,7 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         Intent intent = new Intent(context, BraveSetDefaultBrowserNotificationService.class);
         intent.setAction(DEEP_LINK);
         intent.putExtra(DEEP_LINK, SHOW_DEFAULT_APP_SETTINGS);
+        intent.putExtra(NOTIFICATION_ID_EXTRA, NOTIFICATION_ID);
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
@@ -207,6 +211,39 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
         );
     }
 
+    private boolean hasAskedAt1122() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        // Check to see if we already asked at 11:22
+        return sharedPref.getBoolean(HAS_ASKED_AT_11_22, false);
+    }
+
+    private void setAlarmFor1122() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(HAS_ASKED_AT_11_22, true);
+        editor.apply();
+
+        Calendar currentTime = Calendar.getInstance();
+        if (currentTime.get(Calendar.HOUR_OF_DAY) > 11 ||
+            (currentTime.get(Calendar.HOUR_OF_DAY) == 11 && currentTime.get(Calendar.MINUTE) >= 22)) {
+            // Current time is after 11:22, so set alarm on tomorrow
+            currentTime.add(Calendar.DAY_OF_YEAR, 1);
+        }
+        currentTime.set(Calendar.HOUR_OF_DAY, 11);
+        currentTime.set(Calendar.MINUTE, 22);
+        currentTime.set(Calendar.SECOND, 0);
+        currentTime.set(Calendar.MILLISECOND, 0);
+        AlarmManager am = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(mContext, BraveSetDefaultBrowserNotificationService.class);
+        intent.putExtra(INTENT_TYPE, AT_11_22);
+        intent.setAction(AT_11_22);
+        am.setExact(
+            AlarmManager.RTC_WAKEUP,
+            currentTime.getTimeInMillis(),
+            PendingIntent.getBroadcast(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        );
+    }
+
     private void handleBraveSetDefaultBrowserDeepLink(Intent intent) {
          Bundle bundle = intent.getExtras();
          if (bundle.getString(BraveSetDefaultBrowserNotificationService.DEEP_LINK).equals(BraveSetDefaultBrowserNotificationService.SHOW_DEFAULT_APP_SETTINGS)) {
@@ -238,71 +275,8 @@ public class BraveSetDefaultBrowserNotificationService extends BroadcastReceiver
 
         if (shouldShowNotification()) {
             showNotification();
-        } else if (shouldNotifyLater()) {
-            notifyLater();
-            if (hasSetAlarmsForDaysLater()) {
-                setAlarmsForDaysLater();
-            }
-        }
-    }
-
-    public static void NotifyRewardsLive(){
-        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-        boolean rewardsIsOn = sharedPreferences.getBoolean(
-            BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON, false);
-        if (ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS) &&
-            !rewardsIsOn){
-            SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
-            boolean first_time_run = sharedPref.getBoolean(FIRST_TIME_RUN, true);
-            if (first_time_run) {
-
-                //save FIRST_TIME_RUN flag
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putBoolean(FIRST_TIME_RUN, false);
-                editor.apply();
-
-                Context context = ContextUtils.getApplicationContext();
-                rewards_live_notification_id = new Random().nextInt();
-
-
-
-                //intent that will fire when the user taps the Learn More
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(REWARDS_LEARN_MORE_URL));
-                intent.setPackage(context.getPackageName());
-                intent.putExtra(BRAVE_REWARDS_SUBSTITUTE_URL, BRAVE_REWARDS_INTERNAL_URL);
-                intent.putExtra(NOTIFICATION_ID_EXTRA, rewards_live_notification_id);
-                PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-                NotificationCompat.Action learnAction =
-                         new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_get_started),
-                                pendingIntent)
-                                .build();
-
-                //Dismiss intent
-                PendingIntent dismissIntent = getDismissIntent(context,rewards_live_notification_id);
-                NotificationCompat.Action dismissAction =
-                        new NotificationCompat.Action.Builder(0, context.getString(R.string.brave_rewards_dismiss),
-                                dismissIntent)
-                                .build();
-
-                //select small and large icons for devices < 21 or higher
-                int smallIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.brave_logo_19 : R.drawable.ic_chrome;
-                int largeIconId =  (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) ? R.drawable.bat_logo : R.drawable.bat_icon;
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(context, ChromeActivity.CHANNEL_ID);
-                builder.setSmallIcon(smallIconId);
-                builder.setContentTitle(context.getString(R.string.brave_rewards_intro_title));
-                builder.setContentText(context.getString(R.string.brave_rewards_intro_text));
-                builder.setContentIntent(pendingIntent);
-                builder.setLargeIcon(BitmapFactory.decodeResource(
-                                context.getResources(),
-                                largeIconId));
-                builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                builder.setAutoCancel(true);
-                builder.addAction(learnAction);
-                builder.addAction(dismissAction);
-
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-                notificationManager.notify(rewards_live_notification_id, builder.build());
-            }
+        } else if (!hasAskedAt1122()) {
+            setAlarmFor1122();
         }
     }
 }

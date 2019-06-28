@@ -93,7 +93,8 @@ public:
     void DeleteNotification(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& notification_id);
 
-    void GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
+    void GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& promotionId);
 
     int GetCurrentGrantsCount(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj);
 
@@ -135,6 +136,8 @@ public:
     base::android::ScopedJavaLocalRef<jstring> GetAddress(JNIEnv* env,
         const base::android::JavaParamRef<jobject>& obj,
         const base::android::JavaParamRef<jstring>& jaddress_name);
+
+    void OnAdsResetTheWholeState(bool sucess);
 
     void OnResetTheWholeState(bool sucess);
 

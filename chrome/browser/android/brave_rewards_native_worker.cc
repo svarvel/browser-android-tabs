@@ -5,6 +5,8 @@
 #include "base/android/jni_android.h"
 #include "base/android/jni_string.h"
 #include "base/android/jni_array.h"
+#include "brave/components/brave_ads/browser/ads_service.h"
+#include "brave/components/brave_ads/browser/ads_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service_factory.h"
 #include "brave/components/brave_rewards/browser/rewards_service.h"
 #include "chrome/browser/profiles/profile.h"
@@ -315,9 +317,10 @@ void BraveRewardsNativeWorker::DeleteNotification(JNIEnv* env,
   }
 }
 
-void BraveRewardsNativeWorker::GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
+void BraveRewardsNativeWorker::GetGrant(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj,
+        const base::android::JavaParamRef<jstring>& promotionId) {
   if (brave_rewards_service_) {
-    brave_rewards_service_->GetGrantViaSafetynetCheck();
+    brave_rewards_service_->GetGrantViaSafetynetCheck(base::android::ConvertJavaStringToUTF8(env, promotionId));
   }
 }
 
@@ -412,10 +415,27 @@ void BraveRewardsNativeWorker::GetReconcileStamp(JNIEnv* env, const base::androi
 }
 
 void BraveRewardsNativeWorker::ResetTheWholeState(JNIEnv* env, const base::android::JavaParamRef<jobject>& obj) {
-  if (brave_rewards_service_) {
+  auto* ads_service_ = brave_ads::AdsServiceFactory::GetForProfile(
+    ProfileManager::GetActiveUserProfile()->GetOriginalProfile());
+  if (ads_service_) {
+    ads_service_->ResetTheWholeState(base::Bind(
+            &BraveRewardsNativeWorker::OnAdsResetTheWholeState,
+            weak_factory_.GetWeakPtr()));
+  } else {
+    OnAdsResetTheWholeState(true);
+  }
+}
+
+void BraveRewardsNativeWorker::OnAdsResetTheWholeState(bool sucess) {
+  if (sucess && brave_rewards_service_) {
     brave_rewards_service_->ResetTheWholeState(base::Bind(
             &BraveRewardsNativeWorker::OnResetTheWholeState,
             weak_factory_.GetWeakPtr()));
+  } else {
+    JNIEnv* env = base::android::AttachCurrentThread();
+
+    Java_BraveRewardsNativeWorker_OnResetTheWholeState(env,
+            weak_java_brave_rewards_native_worker_.get(env), sucess);
   }
 }
 

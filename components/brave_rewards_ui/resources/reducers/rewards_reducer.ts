@@ -6,6 +6,7 @@ import { Reducer } from 'redux'
 
 // Constant
 import { types } from '../constants/rewards_types'
+import { defaultState } from '../storage'
 
 const rewardsReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State, action) => {
   switch (action.type) {
@@ -71,8 +72,13 @@ const rewardsReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State
           break
         }
 
-        state = { ...state }
-        state.adsData = action.payload.adsData
+        state = {
+          ...state,
+          adsData: {
+            ...state.adsData,
+            ...action.payload.adsData
+          }
+        }
         break
       }
     case types.ON_ADS_SETTING_SAVE:
@@ -84,6 +90,30 @@ const rewardsReducer: Reducer<Rewards.State | undefined> = (state: Rewards.State
           state[key] = value
           chrome.send('brave_rewards.saveAdsSetting', [key, value.toString()])
         }
+        break
+      }
+    case types.GET_TRANSACTION_HISTORY:
+    case types.ON_TRANSACTION_HISTORY_CHANGED:
+      {
+        chrome.send('brave_rewards.getTransactionHistory', [])
+        break
+      }
+    case types.ON_TRANSACTION_HISTORY:
+      {
+        if (!action.payload.data) {
+          break
+        }
+
+        state = { ...state }
+
+        if (!state.adsData) {
+          state.adsData = defaultState.adsData
+        }
+
+        const data = action.payload.data
+        state.adsData.adsEstimatedPendingRewards = data.adsEstimatedPendingRewards
+        state.adsData.adsNextPaymentDate = data.adsNextPaymentDate
+        state.adsData.adsAdNotificationsReceivedThisMonth = data.adsAdNotificationsReceivedThisMonth
         break
       }
     case types.INIT_AUTOCONTRIBUTE_SETTINGS:

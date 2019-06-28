@@ -1,6 +1,8 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this file,
- * You can obtain one at http://mozilla.org/MPL/2.0/. */
+/** Copyright (c) 2019 The Brave Authors. All rights reserved.
+  * This Source Code Form is subject to the terms of the Mozilla Public
+  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+  * You can obtain one at http://mozilla.org/MPL/2.0/.
+  */
 
 package org.chromium.chrome.browser;
 
@@ -50,13 +52,17 @@ import org.chromium.base.ContextUtils;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
 import org.chromium.base.task.AsyncTask;
+import org.chromium.chrome.browser.BraveAdsNativeHelper;
 import org.chromium.chrome.browser.BraveRewardsHelper;
 import org.chromium.chrome.browser.BraveRewardsObserver;
 import org.chromium.chrome.browser.ChromeTabbedActivity;
+import org.chromium.chrome.browser.dialogs.BraveAdsSignupDialog;
+import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.tab.Tab;
 import org.chromium.chrome.browser.tabmodel.TabModelImpl;
 import org.chromium.chrome.browser.tabmodel.TabLaunchType;
 import org.chromium.chrome.browser.tabmodel.TabModelSelectorImpl;
+import org.chromium.chrome.browser.util.PackageUtils;
 import org.chromium.chrome.R;
 import org.chromium.content_public.browser.LoadUrlParams;
 import org.chromium.base.ContextUtils;
@@ -81,10 +87,12 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
     private static final String YOUTUBE_TYPE = "youtube#";
     private static final String TWITCH_TYPE = "twitch#";
     private static final String COPYRIGHT_SPECIAL = "\u2122";
+    private static final char NOTIFICATION_PROMID_SEPARATOR = '_';
 
     public static final String PREF_WAS_BRAVE_REWARDS_TURNED_ON = "brave_rewards_turned_on";
     public static final String PREF_GRANTS_NOTIFICATION_RECEIVED = "grants_notification_received";
-    public static final String PREF_WAS_BRAVE_REWARDS_ENABLED = "brave_rewards_enabled";
+    public static final String PREF_IS_BRAVE_REWARDS_ENABLED = "brave_rewards_enabled";
+    public static final String PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED = "was_toolbar_bat_logo_button_pressed";
 
     // Custom Android notification
     private static final int REWARDS_NOTIFICATION_NO_INTERNET = 1000;
@@ -151,6 +159,16 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
     private boolean mAutoContributeEnabled;
     private boolean mPubInReccuredDonation;
+
+    public static boolean isBraveRewardsEnabled() {
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
+        return sharedPreferences.getBoolean(BraveRewardsPanelPopup.PREF_IS_BRAVE_REWARDS_ENABLED, false);
+    }
+
+    public static boolean wasBraveRewardsExplicitlyTurnedOff() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        return sharedPref.contains(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_TURNED_ON) && !isBraveRewardsEnabled();
+    }
 
     public BraveRewardsPanelPopup(View anchor) {
         currentNotificationId = "";
@@ -267,14 +285,18 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
 
         String braveRewardsTitle = root.getResources().getString(R.string.brave_ui_brave_rewards) + COPYRIGHT_SPECIAL;
         ((TextView)root.findViewById(R.id.brave_rewards_id)).setText(braveRewardsTitle);
+        Context context = ContextUtils.getApplicationContext();
         if (btJoinRewards != null) {
           btJoinRewards.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mBraveRewardsNativeWorker != null && false == mWalletCreateInProcess) {
-                  mBraveRewardsNativeWorker.CreateWallet();
-                  mWalletCreateInProcess = true;
-                  startJoinRewardsAnimation();
+                    mBraveRewardsNativeWorker.CreateWallet();
+                    mWalletCreateInProcess = true;
+                    startJoinRewardsAnimation();
+                    if (PackageUtils.isFirstInstall(context)) {
+                        BraveAdsNativeHelper.nativeSetAdsEnabled(Profile.getLastUsedProfile());
+                    }
                 }
             }
           }));
@@ -543,15 +565,26 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                   claimOk.setEnabled(false);
 
                   //claimOk.setEnabled(false) sometimes not fast enough, so block multiple 'Claim' clicks
-                  if (mClaimInProcess){
+                  if (mClaimInProcess || currentNotificationId.isEmpty()){
                       return;
                   }
+
+                  int prom_id_separator = currentNotificationId.lastIndexOf(NOTIFICATION_PROMID_SEPARATOR);
+                  String promId = "";
+                  if (-1 != prom_id_separator ) {
+                      promId = currentNotificationId.substring(prom_id_separator + 1);
+                  }
+                  if (promId.isEmpty()){
+                      return;
+                  }
+
                   mClaimInProcess = true;
 
                   View fadein = root.findViewById(R.id.progress_br_claim_button);
                   BraveRewardsHelper.crossfade(claimOk, fadein, View.GONE, 1f, BraveRewardsHelper.CROSS_FADE_DURATION);
 
-                  mBraveRewardsNativeWorker.GetGrant();
+
+                  mBraveRewardsNativeWorker.GetGrant(promId);
                   walletDetailsReceived = false; //re-read wallet status
                   EnableWalletDetails(false);
 
@@ -880,18 +913,25 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 }
                 break;
             case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT:
+            case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT_ADS:
                 btClaimOk.setText(root.getResources().getString(R.string.brave_ui_claim));
-                notification_icon.setImageResource(R.drawable.grant_icon);
-                title = root.getResources().getString(R.string.brave_ui_new_token_grant);
-                description = root.getResources().getString(R.string.brave_ui_new_grant);
+
+                int grant_icon_id = (BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT == type ) ?
+                        R.drawable.grant_icon : R.drawable.notification_icon;
+                notification_icon.setImageResource(grant_icon_id);
+
+                title = (BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT == type ) ?
+                        root.getResources().getString(R.string.brave_ui_new_token_grant):
+                        root.getResources().getString(R.string.notification_category_group_brave_ads);
+
+                description = (BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT == type ) ?
+                        root.getResources().getString(R.string.brave_ui_new_grant) :
+                        root.getResources().getString(R.string.brave_ads_you_earned);
+
                 TextView pre_grant = (TextView)root.findViewById(R.id.pre_grant_message);
                 if (pre_grant != null) {
                     pre_grant.setVisibility(View.GONE);
                 }
-                break;
-            case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_GRANT_ADS:
-                Log.e(TAG, "REWARDS_NOTIFICATION_GRANT_ADS is not handled yet");
-                assert false;
                 break;
             case BraveRewardsNativeWorker.REWARDS_NOTIFICATION_INSUFFICIENT_FUNDS:
                 btClaimOk.setText(root.getResources().getString(R.string.ok));

@@ -97,6 +97,10 @@ Sačuvano</string>
     <string name="update_notification_title">Brave ažuriranje</string>
     <string name="update_notification_text">Novi Brave pregledač je 22% brži</string>
     <string name="prefs_sync">Sinhronizacija (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave oglasi su ovde!</string>
+    <string name="brave_ads_new_user_offer_title">Omogući Brave Rewards</string>
+    <string name="brave_ads_offer_text">Zaradite Basic Attention Token za gledanje oglasa koji čuvaju privatnost u programu Brave Rewards.</string>
+    <string name="brave_ads_offer_positive">Ja sam za!</string>
     <string name="brave_sync_description_page_1_part_1">Brave sinhronizacija vam omogućava da diskretno sinhronizujete podatke o obeleživačima stranica između pregledača Brave i različitih uređaja koje koristite.</string>
     <string name="brave_sync_description_page_1_part_2">Jednostavno skenirajte kod iz lanca sihnronizacije koji ste kreirali na drugom uređaju. Ili, započnite novi lanac sihronizacije.</string>
     <string name="brave_sync_scan_chain_code">Skenirajte ili unesite kod sinhronizacije</string>
@@ -236,10 +240,6 @@ kreatore sadržaja koji vam se sviđaju.</string>
     <string name="search_or_url">Pretraga ili URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Napravite obeleživač</string>
     <string name="brave_ui_donate_monthly">Savetujte ovu lokaciju mesečno</string>
-    <string name="brave_rewards_intro_title">Brave Rewards je ovde</string>
-    <string name="brave_rewards_intro_text">Podržite lokacije koje volite.</string>
-    <string name="brave_rewards_dismiss">Odbaci</string>
-    <string name="brave_rewards_get_started">Prvi koraci</string>
 
     <string name="brave_rewards_not_available">Nažalost, izgleda da Brave Rewards nije dostupan na vašem uređaju.</string>
 
@@ -259,4 +259,10 @@ kreatore sadržaja koji vam se sviđaju.</string>
 
     <string name="brave_sync_official">Sinhronizacija Brave-a</string>
     <string name="prefs_sync_official">Sinhronizacija</string>
+    <string name="notification_category_group_brave_ads">Brave oglasi</string>
+    <string name="brave_ads_you_earned">Zaradili ste</string>
+
+    <string name="brave_default_browser_title">Brave je brz kao munja</string>
+    <string name="brave_default_browser_body">Podesi da Brave bude tvoj podrazumevani pregledač!</string>
+    <string name="brave_make_default_text">Postavi za podrazumevano</string>
 </resources>

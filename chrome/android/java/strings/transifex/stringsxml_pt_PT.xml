@@ -1,18 +1,19 @@
 <resources>
 
-    <string name="brave_settings_title">Configurações Brave de proteção do site para</string>
-    <string name="brave_shields_down">Baixo</string>
-    <string name="brave_shields_up">Cima</string>
-    <string name="brave_shields_ads_trackers">Anúncios e Controladores Bloqueados</string>
-    <string name="brave_shields_https_upgrades">Atualizações HTTPS </string>
+    <string name="brave_settings_title">Definições de proteção de site Brave para</string>
+    <string name="brave_shields_down">Desativada</string>
+    <string name="brave_shields_up">Ativada</string>
+    <string name="brave_shields_ads_trackers">Anúncios e Monitorizadores Bloqueados</string>
+    <string name="brave_shields_https_upgrades">Atualizações de HTTPS </string>
     <string name="brave_shields_scripts_blocked">Scripts Bloqueados</string>
     <string name="brave_shields_ads_tracking_switch">Bloquear Anúncios e Monitorização</string>
-    <string name="brave_shields_https_everywhere_switch">HTTPS em todo o lado</string>
+    <string name="brave_shields_https_everywhere_switch">HTTPS Everywhere</string>
     <string name="brave_shields_blocks_scripts_switch">Bloquear Scripts</string>
-    <string name="accessibility_toolbar_btn_brave_shields">Ativar/Desativar Brave Shields</string>
+    <string name="accessibility_toolbar_btn_brave_shields">Ativar/Desativar Proteções Brave</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Gerir Recompensas Brave</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">Bloquear cookies de terceiros</string>
 
-    <string name="httpse_summary">Abre sites suportados com recurso a HTTPS em vez de HTTP sempre que possível</string>
+    <string name="httpse_summary">Abre os sites suportados utilizando HTTPS em vez de HTTP quando possível</string>
     <string name="tracking_protection_title">Modo de Proteção de Monitorização</string>
     <string name="tracking_protection_summary">Impede que recursos que o monitorizam sejam carregados</string>
     <string name="ad_block_title">Bloqueio de Anúncios</string>
@@ -24,57 +25,59 @@
     <string name="brave_shields_block_fingerprints_switch">Proteção de Impressão Digital</string>
 
     <string name="ad_block_regional_title">Bloqueio de Anúncios Regionais</string>
-    <string name="ad_block_regional_summary">Impede que anúncios regionais sejam carregados</string>
+    <string name="ad_block_regional_summary">Impede que os anúncios regionais sejam carregados</string>
 
-    <string name="ad_block_regional_summary_no_list">Nenhuma lista adicional disponível para a sua localização</string>
+    <string name="ad_block_regional_summary_no_list">Sem listas adicionais disponíveis para o seu idioma</string>
 
     <string name="menu_exit">Sair</string>
 
     <string name="brave_sync">Brave Sync (beta)</string>
     <string name="sync_settings_add_device_name_title">Adicionar nome do dispositivo</string>
-    <string name="sync_settings_add_device_name_label">Introduza um nome opcional para este dispositivo</string>
+    <string name="sync_settings_add_device_name_label">Insira um nome opcional para este dispositivo</string>
     <string name="sync_example_device_name">Dispositivo Android</string>
-    <string name="enter_code_words_sync">Introduza as palavras de código</string>
+    <string name="enter_code_words_sync">Insira as palavras de código</string>
     <string name="sync_device">Sincronizar dispositivo</string>
     <string name="sync_device_failure">Não foi possível configurar o Sync</string>
-    <string name="brave_stats_text_trackers">Controladores
+    <string name="sync_requires_correct_time">O relógio do seu computador pode estar configurado para a hora errada, ou para o fuso horário errado. Verifique as definições do seu relógio.</string>
+
+    <string name="brave_stats_text_trackers">Monitorizadores
 Bloqueados</string>
     <string name="brave_stats_text_ads">Anúncios
 Bloqueados</string>
-    <string name="brave_stats_text_https">Atualizações
+    <string name="brave_stats_text_https">Atualizações de
 HTTPS</string>
-    <string name="brave_stats_text_time">Tempo Est.
+    <string name="brave_stats_text_time">Tempo Estimado
 Guardado</string>
 
     <string name="send_metrics_title">Enviar métricas</string>
 
-    <string name="desktop_mode_title">Modo de Computador</string>
-    <string name="website_settings_category_desktop_view_enabled_summary">Preferir versões de sites para computador</string>
-    <string name="website_settings_category_desktop_view_disabled_summary">Preferir versões de sites para telemóvel</string>
-    <string name="website_settings_category_desktop_view_enabled">Ativar Vista de Computador para novos separadores</string>
-    <string name="website_settings_category_desktop_view_disabled">Usar versões de sites para telemóvel em novos separadores (recomendado)</string>
+    <string name="desktop_mode_title">Modo de PC</string>
+    <string name="website_settings_category_desktop_view_enabled_summary">Preferir as versões de sites para PC</string>
+    <string name="website_settings_category_desktop_view_disabled_summary">Preferir as versões de sites para dispositivos móveis</string>
+    <string name="website_settings_category_desktop_view_enabled">Ativar \'Visualização de PC\' para os novos separadores</string>
+    <string name="website_settings_category_desktop_view_disabled">Usar as versões de sites para dispositivos móveis para os novos separadores (recomendado)</string>
 
     <string name="brave_shields_first_group_title">Monitorização de Bloqueio</string>
     <string name="brave_shields_second_group_title">Controlos Individuais</string>
-    <string name="brave_shields">Shields</string>
-    <string name="brave_shields_ads_and_trackers">Anúncios e Controladores</string>
-    <string name="brave_shields_fingerprint_methods">Métodos de impressão Digital</string>
+    <string name="brave_shields">Proteções</string>
+    <string name="brave_shields_ads_and_trackers">Anúncios e Monitorizadores</string>
+    <string name="brave_shields_fingerprint_methods">Métodos de Impressão Digital</string>
     <string name="brave_shields_block_phishing_switch">Bloquear Phishing</string>
 
     <string name="play_video_in_background_title">Reprodução de vídeo em segundo plano</string>
-    <string name="website_settings_category_play_video_in_background_enabled_summary">Ativado</string>
-    <string name="website_settings_category_play_video_in_background_disabled_summary">Desativado</string>
-    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Ativa a reprodução do áudio de um vídeo em segundo plano quando o separador não está ativo ou quando o ecrã está desligado. Tente alterar para modo de computador se esta funcionalidade não estiver a funcionar.</string>
-    <string name="settings_require_relaunch_notice">As suas alterações entrarão em vigor da próxima vez que reiniciar o Brave</string>
+    <string name="website_settings_category_play_video_in_background_enabled_summary">Ativada</string>
+    <string name="website_settings_category_play_video_in_background_disabled_summary">Desativada</string>
+    <string name="website_settings_category_play_video_in_background_enabled">Experimental. Ativa a reprodução do áudio de um vídeo em segundo plano quando o separador não está ativo ou quando o ecrã do dispositivo está desligado. Tente alterar para o modo de PC se esta funcionalidade não estiver a funcionar.</string>
+    <string name="settings_require_relaunch_notice">As suas alterações serão aplicadas da próxima vez que reiniciar o Brave</string>
     <string name="settings_require_relaunch_now">REINICIAR AGORA</string>
     <string name="settings_require_relaunch_later">MAIS TARDE</string>
 
     <string name="play_yt_video_in_browser_title">Reprodução de vídeo no Brave</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Ativado</string>
-    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desativado</string>
-    <string name="website_settings_category_play_yt_video_in_browser_enabled">Se ativado, os vídeos serão reproduzidos no Brave e não na aplicação correspondente</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled_summary">Ativada</string>
+    <string name="website_settings_category_play_yt_video_in_browser_disabled_summary">Desativada</string>
+    <string name="website_settings_category_play_yt_video_in_browser_enabled">Se ativada, os vídeos serão reproduzidos no Brave e não na aplicação correspondente</string>
 
-    <string name="close_tabs_on_exit_title">Ao sair, feche os separadores</string>
+    <string name="close_tabs_on_exit_title">Ao sair, fechar os separadores</string>
     <string name="close_tabs_on_exit_summary">Não mantenha os separadores abertos entre as sessões de navegação</string>
 
     <string name="open_pages_in_custom_tabs_title">Abrir separadores em Custom Tabs</string>
@@ -92,55 +95,57 @@ Guardado</string>
     <string name="brave_close_all_private_tabs">Fechar separadores privados</string>
     <string name="brave_new_private_tab">Novo separador privado</string>
     <string name="brave_new_tab_private_header">Este é um Separador Privado</string>
-    <string name="brave_new_tab_private_message">Apesar dos sítios que visita nos separadores privados não ficarem guardados localmente, os separadores privados não asseguram o seu anonimato e não o tornam invisível em relação ao seu ISP (fornecedor de Internet), ao seu empregador, ou em relação aos próprios sítios que visita.</string>
-    <string name="update_notification_title">Atualize o Brave</string>
-    <string name="update_notification_text">O novo navegador Brave é 22% mais rápido</string>
-    <string name="prefs_sync">Sincronização (beta)</string>
-    <string name="brave_sync_description_page_1_part_1">O Brave Sync permite-lhe sincronizar dados de marcadores de modo privado entre os seus navegadores Brave em vários dispositivos.</string>
-    <string name="brave_sync_description_page_1_part_2">Basta digitalizar o código da cadeia de sincronização criada noutro dispositivo ou iniciar uma nova cadeia de sincronização.</string>
-    <string name="brave_sync_scan_chain_code">Digitalizar ou introduzir código de sincronização</string>
-    <string name="brave_sync_start_new_chain">Iniciar uma nova cadeia de sincronização</string>
-    <string name="brave_sync_qrcode_message_v2">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sync. Selecione \"Adicionar dispositivo\" e digitalize o código QR apresentado no ecrã.</string>
-    <string name="brave_sync_codewords_message">Com o dispositivo sincronizado existente, abra as definições do Brave e aceda a Definições > Sincronizar. Selecione \"Adicionar dispositivo\" e, em seguida, \"Apresentar palavras de código em alternativa\".</string>
-    <string name="brave_sync_btn_mobile">Adicionar um dispositivo móvel</string>
-    <string name="brave_sync_btn_laptop">Adicionar um computador</string>
+    <string name="brave_new_tab_private_message">Apesar dos sites que visita nos separadores privados não ficarem guardados localmente, estes não asseguram o seu anonimato e não o tornam invisível para o seu ISP, seu empregador, ou nos sites que está a visitar.</string>
+    <string name="update_notification_title">Atualizar o Brave</string>
+    <string name="update_notification_text">O novo navegador Brave, é 22% mais rápido</string>
+    <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_sync_description_page_1_part_1">O Brave Sync permite-lhe sincronizar os dados dos marcadores de modo privado entre os seus navegadores Brave em vários dispositivos.</string>
+    <string name="brave_sync_description_page_1_part_2">Basta digitalizar o código da sua sequência de sincronização que criou noutro dispositivo. Ou inicie uma nova sequência de sincronização.</string>
+    <string name="brave_sync_scan_chain_code">Digitalizar ou inserir código de sincronização</string>
+    <string name="brave_sync_start_new_chain">Iniciar uma nova sequência de sincronização</string>
+    <string name="brave_sync_qrcode_message_v2">Usando o dispositivo sincronizado existente, abra as \'Definições\' do Brave e vá para Definições > Sincronizar. Escolha \"Adicionar Dispositivo\" e digitalize o código QR exibido no ecrã.</string>
+    <string name="brave_sync_codewords_message">Usando o dispositivo sincronizado existente, abra as \'Definições\' do Brave e vá para Definições > Sincronizar. Escolha \"Adicionar Dispositivo\", depois \"Exibir as palavras de código em alternativa\".</string>
+    <string name="brave_sync_btn_mobile">Adicionar um Dispositivo Móvel</string>
+    <string name="brave_sync_btn_laptop">Adicionar um PC</string>
     <string name="brave_sync_scan_sync_code">Digitalizar este código de sincronização</string>
-    <string name="brave_sync_add_mobile_device_text_part_1">Com um segundo telefone ou tablet, aceda no Brave a Definições > Sync > Digitalizar.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Capture o código QR (acima) com o segundo dispositivo ou introduza as palavras do código se não existir uma câmara disponível.</string>
+    <string name="brave_sync_add_mobile_device_text_part_1">Com um segundo telefone ou tablet, no Brave vá para Definições > Sincronizar > Digitalizar.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Capture o código QR (acima) com o segundo dispositivo, ou insira as palavras de código se não estiver disponível nenhuma câmara.</string>
     <string name="brave_sync_btn_done">Concluído</string>
     <string name="brave_sync_tabs_text">Separadores</string>
     <string name="brave_sync_history_text">Histórico</string>
     <string name="brave_sync_autofill_passwords_text">Preenchimento automático/Palavras-passe</string>
-    <string name="brave_sync_payment_settings_text">Definições de pagamento do Brave</string>
+    <string name="brave_sync_payment_settings_text">Definições de Pagamento Brave</string>
     <string name="brave_sync_settings_title">SINCRONIZAR NESTE DISPOSITIVO</string>
-    <string name="brave_sync_settings_description">Alterar as definições irá apenas afetar os dados que este dispositivo partilhar com outros.</string>
-    <string name="brave_sync_devices_title">OUTROS DISPOSITIVOS NA CADEIA</string>
-    <string name="brave_sync_loading_devices_title">A CARREGAR DISPOSITIVOS...</string>
+    <string name="brave_sync_settings_description">Ao alterar as definições só irá afetar os dados que este dispositivo partilha com outros.</string>
+    <string name="brave_sync_devices_title">OUTROS DISPOSITIVOS NA SEQUÊNCIA</string>
+    <string name="brave_sync_loading_devices_title">A CARREGAR OS DISPOSITIVOS...</string>
     <string name="brave_sync_add_device_text">Adicionar outro dispositivo</string>
     <string name="brave_sync_remove_device_text">Remover este dispositivo</string>
     <string name="brave_sync_code_words_title">Emparelhar</string>
-    <string name="brave_sync_add_laptop_text_title">Introduzir o código da cadeia de sincronização</string>
-    <string name="brave_sync_add_laptop_text_part_1">No seu computador,  aceda ao Brave a Definições > Sync. Selecione \"Introduzir um código de cadeia de sincronização\".</string>
-    <string name="brave_sync_add_laptop_text_part_2">Introduza as palavras do código acima, incluindo espaços.</string>
-    <string name="brave_sync_delete_device">Tem a certeza de que pretende eliminar o dispositivo \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
+    <string name="brave_sync_add_laptop_text_title">Insira o código da sequência de sincronização</string>
+    <string name="brave_sync_add_laptop_text_part_1">No seu computador,  aceda no Brave, Definições > Sincronizar. Escolha \"Inserir um Código de Sequência de Sincronização\".</string>
+    <string name="brave_sync_add_laptop_text_part_2">Insira as palavras de código acima, incluindo os espaços.</string>
+    <string name="brave_sync_delete_device">Tem a certeza que pretende eliminar o dispositivo \'<ph name=\"DEVICE_NAME\">%1$s</ph>\'?</string>
     <string name="brave_sync_delete_sent">O pedido de eliminação foi enviado. O dispositivo será removido em breve.</string>
-    <string name="brave_sync_loading_data_title">A carregar dados...</string>
-    <string name="brave_sync_time_out_message">Ocorreu um erro. Aparentemente, o pedido excedeu o tempo limite.</string>
-    <string name="brave_sync_use_camera_text">Vou usar a câmara...</string>
+    <string name="brave_sync_loading_data_title">A carregar os dados...</string>
+    <string name="brave_sync_time_out_message">Ocorreu um erro. Parece, que o seu pedido expirou.</string>
+    <string name="brave_sync_use_camera_text">Eu irei usar a minha câmara...</string>
     <string name="brave_sync_confirm_code_words_text">Confirmar</string>
     <string name="brave_sync_word_count_text">Contagem de palavras: <ph name=\"WORD_COUNT\">%1$d</ph></string>
-    <string name="brave_sync_word_count_error">Número de palavras incorreto</string>
+    <string name="brave_sync_word_count_error">Número incorreto de palavras</string>
     <string name="brave_sync_qr_code">Código QR</string>
-    <string name="brave_sync_code_words">Palavras do código</string>
-    <string name="brave_sync_copy_button_text">Copiar para a área de transferência</string>
-    <string name="brave_sync_copied_text">Copiado para a área de transferência</string>
+    <string name="brave_sync_code_words">Palavras de Código</string>
+    <string name="brave_sync_copy_button_text">Copiar para a Área de Transferência</string>
+    <string name="brave_sync_copied_text">Copiado para a Área de Transferência</string>
     <string name="brave_sync_this_device_text">(este dispositivo)</string>
 
     <string name="brave_already_set_as_default_browser">O Brave já está definido
 como o seu navegador padrão.</string>
     <string name="brave_default_browser_go_to_settings">Já definiu um navegador padrão.
 Pode alterar o navegador padrão nas configurações da sua aplicação.</string>
+    <string name="brave_default_browser_notification_body">Poupe bateria e carregue as páginas da Web mais rapidamente. Torne o Brave no seu navegador predefinido. No menu do Brave, toque em “Definir como navegador predefinido…”</string>
     <string name="brave_set_default_browser">Definir como navegador padrão</string>
+    <string name="brave_set_default_browser_dialog_text">Selecione Brave na lista e toque em “Sempre”</string>
     <string name="brave_default_browser_existing_notification_body">Torne o Brave o seu navegador de padrão
 Poupe bateria e carregue páginas de internet mais rapidamente</string>
 
@@ -207,6 +212,7 @@ este mês...</string>
     <string name="brave_ui_reserved_amount_text">Designou <ph name=\"BAT_VALUE\">%1$s <ex>50</ex></ph> BAT para criadores que ainda não fizeram o registo
 para receber contribuições. O seu navegador vai continuar a tentar contribuir
 durante 90 dias ou até que o criador efetue a verificação.</string>
+    <string name="brave_ui_notification_desc_no_funds">Não foi possível efetuar o pagamento mensal agendado para a \'Contribuição Automática\' e gratificações mensais devido a fundos insuficientes. Nós iremos tentar novamente em 30 dias.</string>
     <string name="brave_ui_notification_desc_tip_error">Ocorreu um problema ao processar a sua gratificação. Tente novamente.</string>
     <string name="brave_ui_notification_desc_contr_error">Ocorreu um problema ao processar a sua contribuição.</string>
     <string name="brave_rewards_local_uh_oh">Oh-oh!</string>
@@ -224,4 +230,32 @@ durante 90 dias ou até que o criador efetue a verificação.</string>
 que respeitam a privacidade e retribua para apoiar
 os criadores de conteúdo de que adora.</string>
     <string name="brave_welcome_page_rewards_title">ATIVAR BRAVE REWARDS</string>
+    <string name="brave_ui_first_tip_text">A sua primeira gratificação será enviada em:</string>
+    <string name="brave_ui_tip_text">Acabou de enviar uma gratificação para:</string>
+    <string name="brave_ui_auto_tip_text">Está a enviar automaticamente uma gratificação para:</string>
+    <string name="brave_ui_monthly_text">Mensalmente</string>
+    <string name="bottom_toolbar_enable">Ativar barra de ferramentas na base</string>
+    <string name="bottom_toolbar_disable">Desativar barra de ferramentas na base</string>
+    <string name="search_or_url">Pesquisar ou URL</string>
+    <string name="accessibility_toolbar_btn_bookmark">Criar um marcador</string>
+    <string name="brave_ui_donate_monthly">Gratificar este site mensalmente</string>
+
+    <string name="brave_rewards_not_available">Nós lamentamos, mas parece que \'Recompensas Brave\' não está disponível no seu dispositivo</string>
+
+    <string name="prefs_section_display">Exibir</string>
+    <string name="prefs_appearance">Aparência</string>
+    <string name="hide_brave_rewards_icon_title">Ocultar Ícone de Recompensas Brave</string>
+    <string name="hide_brave_rewards_icon_description">Oculta o ícone das \'Recompensas Brave\' quando \'Recompensas Brave\' não está ativada</string>
+
+    <string name="brave_ui_pre_grant_message">Volte em breve para receber uma concessão de \"token\" grátis</string>
+
+    <string name="reset_brave_rewards_option">Reiniciar Recompensas Brave</string>
+    <string name="reset_brave_rewards_option_description">Isto irá eliminar a sua carteira Brave e reiniciar todos os seus dados de Recompensas Brave</string>
+    <string name="reset_brave_rewards_error_title">Erro de Reiniciar</string>
+    <string name="reset_brave_rewards_error_description">Ocorreu um erro ao reiniciar Recompensa Brave. Por favor, reinicie o Brave e tente novamente</string>
+
+    <string name="brave_sync_add_laptop_text_part_2_new">Insira as palavras de código da sequência de sincronização mostradas abaixo. Trate este código como uma palavra-passe. Se alguém souber a mesma, eles poderão ler e modificar os seus dados sincronizados.</string>
+
+    <string name="brave_sync_official">Brave Sync</string>
+    <string name="prefs_sync_official">Sincronizar</string>
     </resources>

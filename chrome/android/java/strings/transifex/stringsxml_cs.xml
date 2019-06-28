@@ -97,6 +97,10 @@ Uložen</string>
     <string name="update_notification_title">Aktualizace Brave</string>
     <string name="update_notification_text">Nový prohlížeč Brave je o 22 % rychlejší</string>
     <string name="prefs_sync">Synchronizace (beta)</string>
+    <string name="brave_ads_existing_user_offer_title">Reklamy Brave jsou tady!</string>
+    <string name="brave_ads_new_user_offer_title">Povolit Odměny Brave</string>
+    <string name="brave_ads_offer_text">Získejte základní token pozornosti za sledování reklam chránících soukromí v Odměnách Brave.</string>
+    <string name="brave_ads_offer_positive">Jdu do toho!</string>
     <string name="brave_sync_description_page_1_part_1">Synchronizace Brave umožňuje soukromě synchronizovat data z uložených záložek mezi vašimi prohlížeči Brave na různých zařízeních.</string>
     <string name="brave_sync_description_page_1_part_2">Jednoduše naskenujte kód z vašeho synchronizačního řetězce, který jste vytvořili na jiném zařízení, nebo spusťte nový.</string>
     <string name="brave_sync_scan_chain_code">Naskenovat nebo zadat synchronizační kód</string>
@@ -236,10 +240,6 @@ tvůrce obsahu, který milujete.</string>
     <string name="search_or_url">Hledat nebo URL</string>
     <string name="accessibility_toolbar_btn_bookmark">Vytvořit záložku</string>
     <string name="brave_ui_donate_monthly">Podpořit stránku každý měsíc</string>
-    <string name="brave_rewards_intro_title">Odměny Brave jsou tady</string>
-    <string name="brave_rewards_intro_text">Podporovat stránku, kterou máte rádi.</string>
-    <string name="brave_rewards_dismiss">Odmítnout</string>
-    <string name="brave_rewards_get_started">Začít</string>
 
     <string name="brave_rewards_not_available">Je nám líto, že na vašem zařízení není k dispozici Brave Rewards</string>
 
@@ -259,4 +259,10 @@ tvůrce obsahu, který milujete.</string>
 
     <string name="brave_sync_official">Synchronizace Brave</string>
     <string name="prefs_sync_official">Synchronizovat</string>
+    <string name="notification_category_group_brave_ads">Reklamy Brave</string>
+    <string name="brave_ads_you_earned">Získali jste</string>
+
+    <string name="brave_default_browser_title">Brave je bleskově rychlý</string>
+    <string name="brave_default_browser_body">Nastavte si Brave jako výchozí prohlížeč!</string>
+    <string name="brave_make_default_text">Nastavit jako výchozí</string>
 </resources>

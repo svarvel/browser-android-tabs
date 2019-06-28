@@ -12,6 +12,7 @@
 #include "base/metrics/histogram_macros.h"
 #include "build/build_config.h"
 #include "build/buildflag.h"
+#include "brave/components/brave_ads/browser/buildflags/buildflags.h"
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/notifications/non_persistent_notification_handler.h"
 #include "chrome/browser/notifications/notification_display_service_factory.h"
@@ -33,6 +34,10 @@
 
 #if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
+#endif
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED) && defined(OS_ANDROID)
+#include "brave/components/brave_ads/browser/ads_service_factory.h"
 #endif
 
 #if defined(OS_WIN)
@@ -302,6 +307,13 @@ void NotificationDisplayServiceImpl::ProfileLoadedCallback(
 
   NotificationDisplayServiceImpl* display_service =
       NotificationDisplayServiceImpl::GetForProfile(profile);
+
+#if BUILDFLAG(BRAVE_ADS_ENABLED) && defined(OS_ANDROID)
+  // Possibly need to restart Brave Ads service if it got killed and the user
+  // clicks on the notification
+  brave_ads::AdsServiceFactory::GetForProfile(profile);
+#endif
+
   display_service->ProcessNotificationOperation(operation, notification_type,
                                                 origin, notification_id,
                                                 action_index, reply, by_user);

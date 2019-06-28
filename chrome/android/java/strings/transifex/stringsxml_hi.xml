@@ -98,6 +98,10 @@
     <string name="update_notification_title">Brave अपडेट</string>
     <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
     <string name="prefs_sync">सिंक (बीटा)</string>
+    <string name="brave_ads_existing_user_offer_title">Brave विज्ञापन यहाँ हैं</string>
+    <string name="brave_ads_new_user_offer_title">Brave Rewards सक्षम करें</string>
+    <string name="brave_ads_offer_text">Brave Rewards मे गोपनीयता संरक्षित विज्ञापनों को देखने के लिए बेसिक अटेंशन टोकन अर्जित करें।</string>
+    <string name="brave_ads_offer_positive">मै आ गया हूँ</string>
     <string name="brave_sync_description_page_1_part_1">Brave सिंक के ज़रिए आप बुकमार्क डेटा को अपने अलग-अलग डिवाइस पर अपने Brave ब्राउज़रों के बीच निजी तौर पर सिंक कर सकते हैं।</string>
     <string name="brave_sync_description_page_1_part_2">दूसरे डिवाइस पर बनाई गई अपनी सिंक चेन के कोड को आसानी से स्कैन करें। या किसी नई सिंक चेन की शुरुआत करें।</string>
     <string name="brave_sync_scan_chain_code">सिंक चेन को स्कैन करें या दर्ज़ करें</string>
@@ -238,10 +242,6 @@
     <string name="search_or_url">खोजें या URL</string>
     <string name="accessibility_toolbar_btn_bookmark">बुकमार्क बनाएं</string>
     <string name="brave_ui_donate_monthly">इस साइट को मासिक रूप से टिप दें</string>
-    <string name="brave_rewards_intro_title">Brave इनाम यहाँ हैं</string>
-    <string name="brave_rewards_intro_text">उन साइटों का सहयोग करें जिन्हें आप पसंद करते हैं।</string>
-    <string name="brave_rewards_dismiss">रद्द करें</string>
-    <string name="brave_rewards_get_started">आरम्भ करें</string>
 
     <string name="brave_rewards_not_available">हमे खेद है, ऐसा प्रतीत होता है कि Brave पुरस्कार आपके डिवाइस पर उपलब्ध नही हैं</string>
 
@@ -261,4 +261,10 @@
 
     <string name="brave_sync_official">Brave सिंक</string>
     <string name="prefs_sync_official">सिंक</string>
+    <string name="notification_category_group_brave_ads">Brave विज्ञापन</string>
+    <string name="brave_ads_you_earned">आपने अर्जित किया है</string>
+
+    <string name="brave_default_browser_title">Brave बहुत तेज़ है</string>
+    <string name="brave_default_browser_body">Brave को अपना डिफ़ॉल्ट ब्राउज़र बनाएँ!</string>
+    <string name="brave_make_default_text">डिफ़ॉल्ट बनाएँ</string>
 </resources>

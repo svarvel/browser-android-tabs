@@ -68,6 +68,7 @@ import org.chromium.chrome.browser.ChromeTabbedActivity;
 import org.chromium.chrome.browser.compositor.Invalidator;
 import org.chromium.chrome.browser.compositor.layouts.LayoutUpdateHost;
 import org.chromium.chrome.browser.device.DeviceClassManager;
+import org.chromium.chrome.browser.dialogs.BraveAdsSignupDialog;
 import org.chromium.chrome.browser.feature_engagement.TrackerFactory;
 import org.chromium.chrome.browser.ntp.NewTabPage;
 import org.chromium.chrome.browser.omaha.UpdateMenuItemHelper;
@@ -90,6 +91,7 @@ import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.chrome.browser.util.ColorUtils;
 import org.chromium.chrome.browser.util.FeatureUtilities;
 import org.chromium.chrome.browser.util.MathUtils;
+import org.chromium.chrome.browser.util.PackageUtils;
 import org.chromium.chrome.browser.util.ViewUtils;
 import org.chromium.chrome.browser.widget.animation.CancelAwareAnimatorListener;
 import org.chromium.components.feature_engagement.EventConstants;
@@ -615,10 +617,32 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             }
         } else if (mBraveRewardsPanelButton == v) {
             if (null == mRewardsPopup) {
-              mRewardsPopup = new BraveRewardsPanelPopup(v);
-              mRewardsPopup.showLikePopDownMenu();
+                mRewardsPopup = new BraveRewardsPanelPopup(v);
+                mRewardsPopup.showLikePopDownMenu();
+                if (mBraveRewardsNotificationsCount.isShown()) {
+                    SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, true);
+                    editor.apply();
+                    mBraveRewardsNotificationsCount.setVisibility(View.GONE);
+                }
             }
         }
+    }
+
+    private boolean mayShowBraveAdsOobeDialog() {
+        Context context = getContext();
+        if (BraveAdsSignupDialog.shouldShowNewUserDialog(context)) {
+            BraveAdsSignupDialog.showNewUserDialog(getContext());
+            return true;
+        } else if (BraveAdsSignupDialog.shouldShowExistingUserDialog(context)) {
+            BraveAdsSignupDialog.showExistingUserDialog(getContext());
+            return true;
+        } else if (BraveAdsSignupDialog.shouldShowForUserWhoNeverTurnedOnRewards(context)) {
+            BraveAdsSignupDialog.showNewUserDialog(getContext());
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -2062,9 +2086,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
     @Override
     public void OnNotificationsCount(int count) {
-        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
-        boolean rewardsEnabled = sharedPreferences.getBoolean(
-            BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, true);
+        boolean rewardsEnabled = BraveRewardsPanelPopup.isBraveRewardsEnabled();
         if (mBraveRewardsNotificationsCount != null && rewardsEnabled) {
             if (count != 0) {
                 String value = Integer.toString(count);
@@ -2083,6 +2105,24 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
                 mBraveRewardsNotificationsCount.setVisibility(View.GONE);
             }
         }
+
+        updateNotificationBadgeForNewInstall(rewardsEnabled);
+        mayShowBraveAdsOobeDialog();
+    }
+
+    private void updateNotificationBadgeForNewInstall(boolean rewardsEnabled) {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        boolean shownBefore = sharedPref.getBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, false);
+        boolean shouldShow =
+          PackageUtils.isFirstInstall(getContext())
+          && !shownBefore
+          && !rewardsEnabled
+          && !BraveRewardsPanelPopup.wasBraveRewardsExplicitlyTurnedOff();
+
+        if (!shouldShow) return;
+
+        mBraveRewardsNotificationsCount.setText("");
+        mBraveRewardsNotificationsCount.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -2117,7 +2157,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     public void OnRewardsMainEnabled(boolean enabled) {
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences();
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-        sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_WAS_BRAVE_REWARDS_ENABLED, enabled);
+        sharedPreferencesEditor.putBoolean(BraveRewardsPanelPopup.PREF_IS_BRAVE_REWARDS_ENABLED, enabled);
         sharedPreferencesEditor.apply();
         if (mBraveRewardsNotificationsCount != null) {
             String count = mBraveRewardsNotificationsCount.getText().toString();
