@@ -514,6 +514,12 @@ public class ChromeTabbedActivity
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
             
+        // keep track of previous brightness (both for manual and auto) 
+        previousBrightness = Settings.System.getInt(
+            this.getContentResolver(),
+            Settings.System.SCREEN_BRIGHTNESS
+        );
+        
         //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite && useDimming){
             try {
@@ -524,19 +530,13 @@ public class ChromeTabbedActivity
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
                     Log.d(SUBTAG, "Disabling auto brightness while dimming");
                     wasAutoBrightness = true;
-                } 
-                
-                // keep track of previous brightness (both for manual and auto) 
-                previousBrightness = Settings.System.getInt(
-                        this.getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS
-                );
+                }                 
             } catch (Settings.SettingNotFoundException e) {
                 e.printStackTrace();
             }
 
-            // dim screen to zero 
-            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,0);
+            // dim screen to half of the current value 
+            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,previousBrightness/2);
 
             // start a timer to calculate savings 
             startDimming = System.currentTimeMillis();
@@ -590,10 +590,11 @@ public class ChromeTabbedActivity
             }
         }
     
-    // update saving counter -- FIXME (actual formula)
+    // update saving counter
     long estimatedMahSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*(previousBrightness/50);
-    Log.d(SUBTAG, "Previous saving: " + estimatedMahSavedPrev + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming) + " Brightness: " + previousBrightness);     
+    int ceilVal = (previousBrightness/50) + ((previousBrightness%50) != 0)
+    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*ceilVal;
+    Log.d(SUBTAG, "Previous saving: " + estimatedMahSavedPrev + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Ceil-val: " + ceilVal);    
     sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMahSaved);
     sharedPreferencesEditor.apply();
     }
