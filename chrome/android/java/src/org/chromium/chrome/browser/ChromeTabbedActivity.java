@@ -592,7 +592,12 @@ public class ChromeTabbedActivity
     
     // update saving counter
     long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-    int current = 40*((previousBrightness/50) + ((previousBrightness%50) != 0)); // on average, we save about 40mA per 50 brightness increase 
+    if((previousBrightness % 50) == 0) { 
+    // on average, we save about 40mA per 50 brightness increase 
+      current = 40*(previousBrightness/50); 
+    }else {
+      current = 40*(previousBrightness/50 + 1); 
+    }
     //C = (I * t) / 3600
     long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000)/3600;
     Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness);    
