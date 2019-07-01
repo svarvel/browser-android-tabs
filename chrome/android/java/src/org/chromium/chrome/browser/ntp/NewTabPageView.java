@@ -322,7 +322,9 @@ public class NewTabPageView extends HistoryNavigationLayout {
     * Gets string view of battery savings 
     */ // [MV]
     private String getBraveStatsStringFromBattery(long mAh) {
-        String result = mAh + "mA";
+        float x = mAh;
+        float res = x/3600;
+        String result = String.format ("%.2f", res) + "mAh";
         return result;
     }
 
