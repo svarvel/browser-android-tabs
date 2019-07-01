@@ -1892,6 +1892,9 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadStarted(Tab tab, String url) {
 
+                // [MV] logging
+                Log.d(SUBTAG, "onPageLoadStarted"); 
+
                 // [MV] added one step to get Context available //
                 Context appContext = ContextUtils.getApplicationContext();
                 ChromeApplication app = (ChromeApplication)appContext; 
