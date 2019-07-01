@@ -592,7 +592,7 @@ public class ChromeTabbedActivity
     
     // update saving counter -- FIXME (actual formula)
     long estimatedMahSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*(previousBrightness/50)
+    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*(previousBrightness/50);
     Log.d(SUBTAG, "Previous saving: " + estimatedMahSavedPrev + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming) + " Brightness: " + previousBrightness);     
     sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMahSaved);
     sharedPreferencesEditor.apply();
