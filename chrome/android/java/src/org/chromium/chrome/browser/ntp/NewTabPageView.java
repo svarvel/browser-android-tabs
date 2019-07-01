@@ -51,6 +51,9 @@ public class NewTabPageView extends HistoryNavigationLayout {
     private static final String PREF_ADS_BLOCKED_COUNT = "ads_blocked_count";
     private static final String PREF_HTTPS_UPGRADES_COUNT = "https_upgrades_count";
     private static final short MILLISECONDS_PER_ITEM = 50;
+    // [MV] //
+    private static final String PREF_BATTERY_COUNT = "battery_savings";
+    ////
 
     private NewTabPageRecyclerView mRecyclerView;
 
@@ -291,6 +294,10 @@ public class NewTabPageView extends HistoryNavigationLayout {
         long adsBlockedCount = mSharedPreferences.getLong(PREF_ADS_BLOCKED_COUNT, 0);
         long httpsUpgradesCount = mSharedPreferences.getLong(PREF_HTTPS_UPGRADES_COUNT, 0);
         long estimatedMillisecondsSaved = (trackersBlockedCount + adsBlockedCount) * MILLISECONDS_PER_ITEM;
+        // [MV] //        
+        long estimatedMahSaved = mSharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+        // [MV] //
+
         TextView trackersBlockedCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_trackers_count);
         TextView adsBlockedCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_ads_count);
         TextView httpsUpgradesCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_https_count);
@@ -298,16 +305,25 @@ public class NewTabPageView extends HistoryNavigationLayout {
         // [MV] //
         TextView estBatterySavedTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_battery_count);
         ////
+
         trackersBlockedCountTextView.setText(getBraveStatsStringFormNumber(trackersBlockedCount));
         adsBlockedCountTextView.setText(getBraveStatsStringFormNumber(adsBlockedCount));
         httpsUpgradesCountTextView.setText(getBraveStatsStringFormNumber(httpsUpgradesCount));
         estTimeSavedTextView.setText(getBraveStatsStringFromTime(estimatedMillisecondsSaved / 1000));
-        // [MV] - TEMP //
-        estBatterySavedTextView.setText(getBraveStatsStringFromTime(estimatedMillisecondsSaved / 1000)); 
+        // [MV] //
+        estBatterySavedTextView.setText(getBraveStatsStringFromBattery(estimatedMahSaved)); 
         ////
 
         // logging
         TraceEvent.end(TAG + ".updateBraveStats()");
+    }
+
+    /* // [MV]
+    * Gets string view of battery savings 
+    */ // [MV]
+    private String getBraveStatsStringFromBattery(long mAh) {
+        String result = mAh + "mAh";        
+        return result;
     }
 
     /*

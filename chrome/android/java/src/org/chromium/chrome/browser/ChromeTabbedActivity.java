@@ -225,7 +225,8 @@ public class ChromeTabbedActivity
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
     private long startDimming = -1; // track start dim
     private long endDimming   = -1;   // track stop dim
-    private static final String DIMMING = "use_dimming"; // MV-TESTING
+    private static final String DIMMING = "use_dimming"; // store dimming status
+    private static final String PREF_BATTERY_COUNT = "battery_savings"; //batt stats
     ////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -588,6 +589,9 @@ public class ChromeTabbedActivity
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
             }
         }
+    
+    // update saving counter -- FIXME (actual formula)
+    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  (endDimming - startDimming));
     }
     ////
 
