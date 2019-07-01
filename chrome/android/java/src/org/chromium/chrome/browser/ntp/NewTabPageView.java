@@ -37,6 +37,11 @@ import org.chromium.chrome.browser.util.ViewUtils;
 import org.chromium.chrome.browser.widget.displaystyle.UiConfig;
 import org.chromium.chrome.browser.widget.displaystyle.ViewResizer;
 
+//[MV]//
+import java.util.Locale;
+////
+
+
 /**
  * The native new tab page, represented by some basic data such as title and url, and an Android
  * View that displays the page.

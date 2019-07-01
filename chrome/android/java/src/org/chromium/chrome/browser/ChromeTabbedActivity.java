@@ -190,7 +190,8 @@ import java.net.URL;
 // required to manipulate screen settings 
 import android.provider.Settings;
 import android.content.ContentResolver;
-import android.content.SharedPreferences; // MV-TESTING
+import android.content.SharedPreferences; 
+
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
