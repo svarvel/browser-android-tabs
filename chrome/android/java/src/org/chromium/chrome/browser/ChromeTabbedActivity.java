@@ -525,13 +525,12 @@ public class ChromeTabbedActivity
                     Log.d(SUBTAG, "Disabling auto brightness while dimming");
                     wasAutoBrightness = true;
                 } 
-                // keep track of previously manually set brightness value
-                else {
-                    previousBrightness = Settings.System.getInt(
-                            this.getContentResolver(),
-                            Settings.System.SCREEN_BRIGHTNESS
-                    );
-                }
+                
+                // keep track of previous brightness (both for manual and auto) 
+                previousBrightness = Settings.System.getInt(
+                        this.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS
+                );
             } catch (Settings.SettingNotFoundException e) {
                 e.printStackTrace();
             }
@@ -560,6 +559,7 @@ public class ChromeTabbedActivity
     private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
         // get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
 
         // increase screen brightness as needed
@@ -591,7 +591,11 @@ public class ChromeTabbedActivity
         }
     
     // update saving counter -- FIXME (actual formula)
-    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  (endDimming - startDimming));
+    long estimatedMahSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*(previousBrightness/50)
+    Log.d(SUBTAG, "Previous saving: " + estimatedMahSavedPrev + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming) + " Brightness: " + previousBrightness);     
+    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMahSaved);
+    sharedPreferencesEditor.apply();
     }
     ////
 
