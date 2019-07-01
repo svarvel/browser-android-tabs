@@ -296,7 +296,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         TextView httpsUpgradesCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_https_count);
         TextView estTimeSavedTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_time_count);
         // [MV] //
-        TextView estBatterySavedTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_battery_count);
+        TextView estBatterySavedTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_battery_count);
         ////
         trackersBlockedCountTextView.setText(getBraveStatsStringFormNumber(trackersBlockedCount));
         adsBlockedCountTextView.setText(getBraveStatsStringFormNumber(adsBlockedCount));
