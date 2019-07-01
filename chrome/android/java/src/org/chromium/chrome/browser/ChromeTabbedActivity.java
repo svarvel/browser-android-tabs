@@ -515,10 +515,14 @@ public class ChromeTabbedActivity
         boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
             
         // keep track of previous brightness (both for manual and auto) 
-        previousBrightness = Settings.System.getInt(
+        try{
+            previousBrightness = Settings.System.getInt(
             this.getContentResolver(),
-            Settings.System.SCREEN_BRIGHTNESS
-        );
+            Settings.System.SCREEN_BRIGHTNESS);
+            Log.d(SUBTAG, "Previous brightness: " + previousBrightness); 
+        } catch (Settings.SettingNotFoundException e) {
+                e.printStackTrace();
+        }
 
         //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite && useDimming){
