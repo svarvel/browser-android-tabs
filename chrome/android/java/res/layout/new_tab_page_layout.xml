@@ -118,6 +118,32 @@
                 android:textSize="12sp"
                 android:text="@string/brave_stats_text_time" />
         </LinearLayout>
+        
+        <!-- MV -->
+        <LinearLayout
+            android:id="@+id/brave_stats_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:baselineAligned="false"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/brave_stats_text_battery_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#222326"
+                android:textStyle="bold"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/brave_stats_text_battery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:text="@string/brave_stats_text_battery" />
+        </LinearLayout>
+        <!-- MV -->
     </LinearLayout>
 
     <ImageView

@@ -4252,6 +4252,12 @@ Upgrades
         Est. Time
 Saved
       </message>
+      <!-- [MV] -->
+      <message name="IDS_BRAVE_STATS_TEXT_BATTERY" desc="Text for extimated battery saving on new tab page.">
+        Est. Battery Saved
+      </message>
+      <!-- [MV] -->
+
       <!--<message name="IDS_SEND_METRICS_TITLE" desc="Text for 'Send metrics' menu item.">
         Send metrics
       </message>-->
