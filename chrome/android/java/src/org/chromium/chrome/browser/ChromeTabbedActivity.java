@@ -519,7 +519,7 @@ public class ChromeTabbedActivity
             this.getContentResolver(),
             Settings.System.SCREEN_BRIGHTNESS
         );
-        
+
         //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite && useDimming){
             try {
@@ -592,10 +592,11 @@ public class ChromeTabbedActivity
     
     // update saving counter
     long estimatedMahSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-    int ceilVal = (previousBrightness/50) + ((previousBrightness%50) != 0)
-    long estimatedMahSaved = estimatedMahSavedPrev + (endDimming - startDimming)*40*ceilVal;
-    Log.d(SUBTAG, "Previous saving: " + estimatedMahSavedPrev + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Ceil-val: " + ceilVal);    
-    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMahSaved);
+    int current = 40*(previousBrightness/50) + ((previousBrightness%50) != 0) // on average, we save about 40mA per 50 brightness increase 
+    //C = (I * t) / 3600
+    long estimatedMAhSaved = estimatedMahSavedPrev + (current * (endDimming - startDimming)/1000)/3600;
+    Log.d(SUBTAG, "Previous saving: " + estimatedMAhSaved + " New saving: " + estimatedMahSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Ceil-val: " + ceilVal);    
+    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
     sharedPreferencesEditor.apply();
     }
     ////

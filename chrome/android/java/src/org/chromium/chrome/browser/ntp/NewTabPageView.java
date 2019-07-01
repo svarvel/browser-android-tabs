@@ -295,7 +295,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         long httpsUpgradesCount = mSharedPreferences.getLong(PREF_HTTPS_UPGRADES_COUNT, 0);
         long estimatedMillisecondsSaved = (trackersBlockedCount + adsBlockedCount) * MILLISECONDS_PER_ITEM;
         // [MV] //        
-        long estimatedMahSaved = mSharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+        long estimatedMAhSaved = mSharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
         // [MV] //
 
         TextView trackersBlockedCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_trackers_count);
@@ -311,7 +311,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         httpsUpgradesCountTextView.setText(getBraveStatsStringFormNumber(httpsUpgradesCount));
         estTimeSavedTextView.setText(getBraveStatsStringFromTime(estimatedMillisecondsSaved / 1000));
         // [MV] //
-        estBatterySavedTextView.setText(getBraveStatsStringFromBattery(estimatedMahSaved)); 
+        estBatterySavedTextView.setText(getBraveStatsStringFromBattery(estimatedMAhSaved)); 
         ////
 
         // logging
@@ -322,7 +322,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
     * Gets string view of battery savings 
     */ // [MV]
     private String getBraveStatsStringFromBattery(long mAh) {
-        String result = int(mAh) + "mA";        
+        String result = mAh + "mAh";
         return result;
     }
 
