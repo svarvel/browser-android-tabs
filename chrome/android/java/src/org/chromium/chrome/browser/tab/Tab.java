@@ -291,6 +291,8 @@ public class Tab
     private int mHttpsUpgrades;
     private int mScriptsBlocked;
     private int mFingerprintsBlocked;
+    //[MV]
+    private int mBatteySaved; 
 
     /** The current browser controls constraints. -1 if not set. */
     private @BrowserControlsState int mBrowserConstrolsConstraints = -1;
@@ -416,6 +418,8 @@ public class Tab
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
+        // [MV]
+        mBatteySaved = 0; 
     }
 
     /**
@@ -2436,6 +2440,8 @@ public class Tab
         mHttpsUpgrades += httpsUpgrades;
         mScriptsBlocked += scriptsBlocked;
         mFingerprintsBlocked += fingerprintsBlocked;
+        // [MV]
+        //mBatteySaved += ???; 
     }
 
     public int getAdsAndTrackers() {
@@ -2454,11 +2460,18 @@ public class Tab
         return mFingerprintsBlocked;
     }
 
+    // [MV] 
+    public int getBatterySaved() {
+        return mBatteySaved;
+    }
+
     public void clearBraveShieldsCount() {
         mAdsAndTrackers = 0;
         mHttpsUpgrades = 0;
         mScriptsBlocked = 0;
         mFingerprintsBlocked = 0;
+        // [MV]
+        mBatteySaved = 0; 
     }
 
     /**
