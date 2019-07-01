@@ -552,7 +552,7 @@ public class ChromeTabbedActivity
             }
 
             // logging 
-            Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);           
+            Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);           
         } else { 
             Log.d(SUBTAG, "No permission for dimming"); 
         }
@@ -598,14 +598,15 @@ public class ChromeTabbedActivity
     long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
     // on average, we save about 40mA per 50 brightness increase     
     int current = -1; 
-    if((previousBrightness % 50) == 0) { 
-      current = 40*(previousBrightness/50); 
+    int brightnessDrop = previousBrightness/2; 
+    if((brightnessDrop % 50) == 0) { 
+      current = 40*(brightnessDrop/50); 
     }else {
-      current = 40*(previousBrightness/50 + 1); 
+      current = 40*(brightnessDrop/50 + 1); 
     }
-    //C = (I * t) / 3600
-    long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000)/3600;
-    Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness);    
+    //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
+    long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);///3600;
+    Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
     sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
     sharedPreferencesEditor.apply();
     }
