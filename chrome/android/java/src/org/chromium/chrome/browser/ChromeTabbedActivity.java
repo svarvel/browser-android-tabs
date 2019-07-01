@@ -1898,9 +1898,14 @@ public class ChromeTabbedActivity
                 //ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();                
                 ////
                 
-                // [MV] lower current screen brightness
-                decreaseScreenBrightness(appContext.getContentResolver(), "onPageLoadStarted");
-                ////
+                // [MV] lower screen brightness - unless already low (e.g., coming from HOME menu)
+                if (startDimming < endDimming){
+                    decreaseScreenBrightness(appContext.getContentResolver(), "onPageLoadStarted");
+                } else {
+                    long prevDimming = System.currentTimeMillis() - startDimming; 
+                    Log.d(SUBTAG, "Already dimmed (e.g., HOME) for: " + prevDimming); 
+                }
+                /////
 
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
