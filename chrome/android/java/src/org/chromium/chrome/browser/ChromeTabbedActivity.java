@@ -590,10 +590,11 @@ public class ChromeTabbedActivity
             }
         }
     
-    // update saving counter
+    // update counter for battery savings 
     long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+    // on average, we save about 40mA per 50 brightness increase     
+    int current = -1; 
     if((previousBrightness % 50) == 0) { 
-    // on average, we save about 40mA per 50 brightness increase 
       current = 40*(previousBrightness/50); 
     }else {
       current = 40*(previousBrightness/50 + 1); 
