@@ -329,7 +329,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
     private String getBraveStatsStringFromBattery(long mAh) {
         float x = mAh;
         float res = x/3600;
-        String result = String.format(Locale.getDefault(), "%.2f", res) + "mAh";
+        String result = String.format(Locale.getDefault(), "%.1f", res) + "mAh";
         return result;
     }
 

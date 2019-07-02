@@ -1229,6 +1229,13 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
     @Override
     public void onPauseWithNative() {
+        // [MV] deal with brightness if needed // 
+        if (this instanceof ChromeTabbedActivity) {
+            Context appContext = ContextUtils.getApplicationContext();
+            ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(). "onPauseWithNative");
+        }
+        ////
+
         RecordUserAction.record("MobileGoToBackground");
         Tab tab = getActivityTab();
         if (tab != null) getTabContentManager().cacheTabThumbnail(tab);

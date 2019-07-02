@@ -224,8 +224,9 @@ public class ChromeTabbedActivity
     private int previousBrightness = -1;  // info on brightness 
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
-    private long startDimming = -1; // track start dim
-    private long endDimming   = -1;   // track stop dim
+    private boolean isDimmed = False;     // keep track if dimmed or not 
+    private long startDimming = -1;       // track start dim
+    private long endDimming   = -1;       // track stop dim
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_BATTERY_COUNT = "battery_savings"; //batt stats
     ////
@@ -511,10 +512,16 @@ public class ChromeTabbedActivity
 
     // [MV] lower screen brightness //
     private void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
-        // [MV] get dimming preferences
+        // check if something needs to be done
+        if (isDimmed){
+            Log.d(SUBTAG, "[decreaseScreenBrightness]. Already dimmed detected"); 
+            return;
+        }
+
+        // get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
-            
+        
         // keep track of previous brightness (both for manual and auto) 
         try{
             previousBrightness = Settings.System.getInt(
@@ -525,7 +532,6 @@ public class ChromeTabbedActivity
                 e.printStackTrace();
         }
 
-        //if (settingsCanWrite && useDimming ){
         if (settingsCanWrite && useDimming){
             try {
                 // disable auto-dimming (temporarily)
@@ -552,6 +558,9 @@ public class ChromeTabbedActivity
                 timeNoDimming = startDimming - endDimming;
             }
 
+            // flag update 
+            isDimmed = True;
+
             // logging 
             Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);           
         } else { 
@@ -561,7 +570,14 @@ public class ChromeTabbedActivity
     ////
 
     // [MV] resume screen brightness //
-    private void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
+    public void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
+
+        // check if something needs to be done
+        if (! isDimmed){
+            Log.d(SUBTAG, "[increaseScreenBrightness]. Not dimmed. Nothing to do"); 
+            return;
+        }
+
         // get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
@@ -593,6 +609,9 @@ public class ChromeTabbedActivity
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
             }
+
+            // flag update 
+            isDimmed = False;
         }
     
     // update counter for battery savings 
