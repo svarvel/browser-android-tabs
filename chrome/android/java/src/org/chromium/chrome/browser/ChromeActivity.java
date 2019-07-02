@@ -1238,7 +1238,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // [MV] deal with brightness if needed // 
         if (this instanceof ChromeTabbedActivity) {
             Context appContext = ContextUtils.getApplicationContext();
-            ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative");
+            ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative", false);
         }
         ////
 
@@ -2523,13 +2523,13 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
 
             SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
             SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-            // invert current value after click
             boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
+            
+            // invert current value after click            
             sharedPreferencesEditor.putBoolean(DIMMING, !useDimming);
             sharedPreferencesEditor.apply();
             useDimming = !useDimming;
             RecordUserAction.record("MobileMenuRequestDimming");
-
 
             // deal with brightness if needed 
             if (this instanceof ChromeTabbedActivity) {
@@ -2537,7 +2537,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
                 if (useDimming){
                     ((ChromeTabbedActivity)this).decreaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative");
                 } else {
-                   ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative"); 
+                   ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative", true); 
                 }
             }
         } 

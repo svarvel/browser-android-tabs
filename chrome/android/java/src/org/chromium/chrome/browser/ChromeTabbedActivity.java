@@ -512,6 +512,9 @@ public class ChromeTabbedActivity
 
     // [MV] lower screen brightness //
     public void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
+        //  logging 
+        Log.d(SUBTAG, "[decreaseScreenBrightness] " + pageEvent); 
+
         // check if something needs to be done
         if (isDimmed){
             Log.d(SUBTAG, "[decreaseScreenBrightness]. Already dimmed detected"); 
@@ -577,7 +580,9 @@ public class ChromeTabbedActivity
     ////
 
     // [MV] resume screen brightness //
-    public void increaseScreenBrightness(ContentResolver CR, String pageEvent) {
+    public void increaseScreenBrightness(ContentResolver CR, String pageEvent, boolean useDimming) {
+        //  logging 
+        Log.d(SUBTAG, "[increaseScreenBrightness] " + pageEvent); 
 
         // check if something needs to be done
         if (! isDimmed){
@@ -585,10 +590,12 @@ public class ChromeTabbedActivity
             return;
         }
 
-        // get dimming preferences
-        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
-        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        // get dimming preferences (unless is being forced)
+        if (! useDimming){
+            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+            useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        }
 
         // increase screen brightness as needed
         if (settingsCanWrite && useDimming){
@@ -632,10 +639,17 @@ public class ChromeTabbedActivity
           current = 40*(brightnessDrop/50 + 1); 
         }
         //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
-        long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);///3600;
-        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
+        long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);
+        if (estimatedMAhSaved < 0){
+            Log.d(SUBTAG, "Something is wrong. Resetting estimatedMAhSaved"); 
+            estimatedMAhSaved = 0; 
+        }
         sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
         sharedPreferencesEditor.apply();
+
+        // logging 
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
+       
     }
     ////
 
@@ -1951,7 +1965,7 @@ public class ChromeTabbedActivity
                 Log.d(SUBTAG, "Load finished. URL: " + url); 
                 if (! url.equals(UrlConstants.NTP_URL)){
                     Context appContext = ContextUtils.getApplicationContext();
-                    increaseScreenBrightness(appContext.getContentResolver(), "onPageLoadFinished");            
+                    increaseScreenBrightness(appContext.getContentResolver(), "onPageLoadFinished", false);      
                 }
                 ////
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
