@@ -511,7 +511,7 @@ public class ChromeTabbedActivity
 
 
     // [MV] lower screen brightness //
-    private void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
+    public void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
         // check if something needs to be done
         if (isDimmed){
             Log.d(SUBTAG, "[decreaseScreenBrightness]. Already dimmed detected"); 
@@ -570,7 +570,8 @@ public class ChromeTabbedActivity
             // logging 
             Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);           
         } else { 
-            Log.d(SUBTAG, "No permission for dimming"); 
+            if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
+            else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
         }
     }
     ////
