@@ -1232,7 +1232,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         // [MV] deal with brightness if needed // 
         if (this instanceof ChromeTabbedActivity) {
             Context appContext = ContextUtils.getApplicationContext();
-            ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(). "onPauseWithNative");
+            ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative");
         }
         ////
 
