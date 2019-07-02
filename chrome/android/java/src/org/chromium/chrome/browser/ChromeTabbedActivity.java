@@ -224,7 +224,7 @@ public class ChromeTabbedActivity
     private int previousBrightness = -1;  // info on brightness 
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
-    private boolean isDimmed = False;     // keep track if dimmed or not 
+    private boolean isDimmed = false;     // keep track if dimmed or not 
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
     private static final String DIMMING = "use_dimming"; // store dimming status
@@ -559,7 +559,7 @@ public class ChromeTabbedActivity
             }
 
             // flag update 
-            isDimmed = True;
+            isDimmed = true;
 
             // logging 
             Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);           
@@ -611,7 +611,7 @@ public class ChromeTabbedActivity
             }
 
             // flag update 
-            isDimmed = False;
+            isDimmed = false;
         }
     
     // update counter for battery savings 
