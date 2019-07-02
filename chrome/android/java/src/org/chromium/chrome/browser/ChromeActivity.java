@@ -2522,6 +2522,12 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             sharedPreferencesEditor.putBoolean(DIMMING, !useDimming);
             sharedPreferencesEditor.apply();
             RecordUserAction.record("MobileMenuRequestDimming");
+
+            // deal with brightness if needed 
+            if (this instanceof ChromeTabbedActivity) {
+                Context appContext = ContextUtils.getApplicationContext();
+                ((ChromeTabbedActivity)this).increaseScreenBrightness(appContext.getContentResolver(), "onPauseWithNative");
+            }
         } 
         ////
         else if (id == R.id.reader_mode_prefs_id) {
