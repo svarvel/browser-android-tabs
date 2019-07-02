@@ -518,6 +518,12 @@ public class ChromeTabbedActivity
             return;
         }
 
+        // extra check on time
+        if (startDimming >= endDimming){
+            Log.d(SUBTAG, "This should not happen. startDimming: " + startDimming 
+                + " endDimming: " + endDimming); 
+        }
+        
         // get dimming preferences
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
@@ -574,7 +580,7 @@ public class ChromeTabbedActivity
 
         // check if something needs to be done
         if (! isDimmed){
-            Log.d(SUBTAG, "[increaseScreenBrightness]. Not dimmed. Nothing to do"); 
+            Log.d(SUBTAG, "[increaseScreenBrightness]. Not dimmed. Nothing to do. Event: " + pageEvent); 
             return;
         }
 
@@ -1920,18 +1926,11 @@ public class ChromeTabbedActivity
                 // [MV] added one step to get Context available //
                 Context appContext = ContextUtils.getApplicationContext();
                 ChromeApplication app = (ChromeApplication)appContext; 
-                //ChromeApplication app = (ChromeApplication)ContextUtils.getApplicationContext();                
+                
+                // [MV] lower screen brightness 
+                decreaseScreenBrightness(appContext.getContentResolver(), "onPageLoadStarted");
                 ////
                 
-                // [MV] lower screen brightness - unless already low (e.g., coming from HOME menu)
-                if (startDimming < endDimming){
-                    decreaseScreenBrightness(appContext.getContentResolver(), "onPageLoadStarted");
-                } else {
-                    long prevDimming = System.currentTimeMillis() - startDimming; 
-                    Log.d(SUBTAG, "Already dimmed (e.g., HOME) for: " + prevDimming); 
-                }
-                /////
-
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
                 }
