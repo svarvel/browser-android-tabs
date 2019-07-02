@@ -224,7 +224,7 @@ public class ChromeTabbedActivity
     private int previousBrightness = -1;  // info on brightness 
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
-    private boolean isDimmed = false;     // keep track if dimmed or not 
+    private boolean isDimmed;             // keep track if dimmed or not 
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
     private static final String DIMMING = "use_dimming"; // store dimming status
@@ -614,21 +614,21 @@ public class ChromeTabbedActivity
             isDimmed = false;
         }
     
-    // update counter for battery savings 
-    long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-    // on average, we save about 40mA per 50 brightness increase     
-    int current = -1; 
-    int brightnessDrop = previousBrightness/2; 
-    if((brightnessDrop % 50) == 0) { 
-      current = 40*(brightnessDrop/50); 
-    }else {
-      current = 40*(brightnessDrop/50 + 1); 
-    }
-    //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
-    long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);///3600;
-    Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
-    sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
-    sharedPreferencesEditor.apply();
+        // update counter for battery savings 
+        long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+        // on average, we save about 40mA per 50 brightness increase     
+        int current = -1; 
+        int brightnessDrop = previousBrightness/2; 
+        if((brightnessDrop % 50) == 0) { 
+          current = 40*(brightnessDrop/50); 
+        }else {
+          current = 40*(brightnessDrop/50 + 1); 
+        }
+        //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
+        long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);///3600;
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
+        sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
+        sharedPreferencesEditor.apply();
     }
     ////
 
@@ -681,6 +681,8 @@ public class ChromeTabbedActivity
         mActivityStopMetrics = new ActivityStopMetrics();
         mMainIntentMetrics = new MainIntentBehaviorMetrics(this);
         mAppIndexingUtil = new AppIndexingUtil();
+        // [MV]
+        isDimmed = false;
     }
 
     @Override
