@@ -575,6 +575,7 @@ public class ChromeTabbedActivity
         } else { 
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
             else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
+            return;
         }
     }
     ////
@@ -591,9 +592,9 @@ public class ChromeTabbedActivity
         }
 
         // get dimming preferences (unless is being forced)
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();            
         if (! useDimming){
-            SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-            SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
             useDimming = sharedPreferences.getBoolean(DIMMING, false);
         }
 
@@ -626,6 +627,18 @@ public class ChromeTabbedActivity
 
             // flag update 
             isDimmed = false;
+        } else {
+            if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
+            else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
+            // potential fix counter (TMP)
+            long e = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+            if (e < 0){
+                Log.d(SUBTAG, "Something is wrong. Resetting estimatedMAhSaved"); 
+                e = 0; 
+                sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  e);
+                sharedPreferencesEditor.apply();
+            }
+            return;
         }
     
         // update counter for battery savings 
