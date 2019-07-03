@@ -2227,6 +2227,10 @@ public class ChromeTabbedActivity
 
     @Override
     public boolean onMenuOrKeyboardAction(final int id, boolean fromMenu) {
+        // [MV] //
+        Log.d(SUBTAG, "[onMenuOrKeyboardAction][ChromeTabbedActivity] ID:  " + id);
+        // [MV] //
+
         final Tab currentTab = getActivityTab();
         boolean currentTabIsNtp = currentTab != null && NewTabPage.isNTPUrl(currentTab.getUrl());
         if (id == R.id.move_to_other_window_menu_id) {
