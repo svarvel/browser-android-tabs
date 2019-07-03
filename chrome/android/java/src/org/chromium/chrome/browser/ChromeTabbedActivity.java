@@ -715,8 +715,9 @@ public class ChromeTabbedActivity
         mActivityStopMetrics = new ActivityStopMetrics();
         mMainIntentMetrics = new MainIntentBehaviorMetrics(this);
         mAppIndexingUtil = new AppIndexingUtil();
-        // [MV]
+        // [MV] //
         isDimmed = false;
+        ////
     }
 
     @Override
@@ -1359,6 +1360,11 @@ public class ChromeTabbedActivity
      * tab is an NTP, and no action is taken.
      */
     private boolean reuseOrCreateNewNtp() {
+
+        // MV //
+        Log.d(SUBTAG, "reuseOrCreateNewNtp -- useful for URL entering?"); 
+        //
+
         // In cases where the tab model is initialized, attempt to reuse an existing NTP if
         // available before attempting to create a new one.
         TabModel normalTabModel = getTabModelSelector().getModel(false);
