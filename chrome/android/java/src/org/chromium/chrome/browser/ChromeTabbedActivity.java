@@ -2280,6 +2280,11 @@ public class ChromeTabbedActivity
             // TODO(nileshagrawal) Record unique action for this. See bug http://b/5542946.
             RecordUserAction.record("MobileMenuCloseAllTabs");
         } else if (id == R.id.focus_url_bar) {
+            // [MV] //
+            Context appContext = ContextUtils.getApplicationContext();
+            decreaseScreenBrightness(appContext.getContentResolver(), "onMenuOrKeyboardAction - focus_url_bar"); 
+            ////
+
             boolean isUrlBarVisible = !mOverviewModeController.overviewVisible()
                     && (!isTablet() || getCurrentTabModel().getCount() != 0);
             if (isUrlBarVisible) {
