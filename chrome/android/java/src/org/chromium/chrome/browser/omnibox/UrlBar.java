@@ -48,7 +48,11 @@ import java.lang.annotation.RetentionPolicy;
  */
 public class UrlBar extends AutocompleteEditText {
     private static final String TAG = "cr_UrlBar";
-
+    
+    // [MV] //
+    private static final String SUBTAG = "MATTEO";
+    ////
+    
     private static final boolean DEBUG = false;
 
     private static final CachedMetrics.ActionEvent ACTION_LONG_PRESS_COPY =
@@ -417,6 +421,10 @@ public class UrlBar extends AutocompleteEditText {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        // [MV] //
+        Log.i(SUBTAG, "onTouchEvent " + TAG);
+        ////
+
         // This method contains special logic to enable long presses to be handled correctly.
 
         // One piece of the logic is to suppress all ACTION_DOWN events received while the UrlBar is
