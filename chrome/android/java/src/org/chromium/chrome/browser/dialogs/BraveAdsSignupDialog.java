@@ -27,6 +27,7 @@ import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveAdsNativeHelper;
 import org.chromium.chrome.browser.BraveRewardsNativeWorker;
 import org.chromium.chrome.browser.BraveRewardsPanelPopup;
+import org.chromium.chrome.browser.ChromeFeatureList;
 import org.chromium.chrome.browser.notifications.BraveAdsOobeEducationNotification;
 import org.chromium.chrome.browser.profiles.Profile;
 import org.chromium.chrome.browser.util.PackageUtils;
@@ -42,7 +43,8 @@ public class BraveAdsSignupDialog {
           PackageUtils.isFirstInstall(context)
           && !BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
           && hasElapsed24Hours(context)
-          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile());
+          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+          && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
 
         boolean shouldShowForViewCount = shouldShowForViewCount();
         if (shouldShow) updateViewCount();
@@ -55,7 +57,9 @@ public class BraveAdsSignupDialog {
           !PackageUtils.isFirstInstall(context)
           && !BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
           && !BraveRewardsPanelPopup.wasBraveRewardsExplicitlyTurnedOff()
-          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile());
+          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+          && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
+
         boolean shouldShowForViewCount = shouldShowForViewCount();
         if (shouldShow) updateViewCount();
 
@@ -67,7 +71,8 @@ public class BraveAdsSignupDialog {
           !PackageUtils.isFirstInstall(context)
           && (!BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
           && BraveRewardsPanelPopup.isBraveRewardsEnabled())
-          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile());
+          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+          && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
 
         boolean shouldShowForViewCount = shouldShowForViewCount();
         if (shouldShow) updateViewCount();
