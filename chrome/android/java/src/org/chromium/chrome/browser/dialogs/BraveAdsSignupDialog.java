@@ -34,16 +34,19 @@ import org.chromium.chrome.browser.util.PackageUtils;
 
 public class BraveAdsSignupDialog {
 
-    private static String SHOULD_SHOW_DIALOG_COUNTER = "should_show_dialog_counter";
+    private static String SHOULD_SHOW_ONBOARDING_DIALOG_VIEW_COUNTER = "should_show_onboarding_dialog_view_counter";
+    private static String SHOULD_SHOW_ONBOARDING_DIALOG = "should_show_onboarding_dialog";
+
     private static final long TWENTY_FOUR_HOURS = 86_400_000;
     private static final long MOMENT_LATER = 2_500;
 
     public static boolean shouldShowNewUserDialog(Context context) {
         boolean shouldShow =
-          PackageUtils.isFirstInstall(context)
+          shouldShowOnboardingDialog()
+          && PackageUtils.isFirstInstall(context)
           && !BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
+          && !BraveRewardsPanelPopup.isBraveRewardsEnabled()
           && hasElapsed24Hours(context)
-          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
           && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
 
         boolean shouldShowForViewCount = shouldShowForViewCount();
@@ -52,12 +55,12 @@ public class BraveAdsSignupDialog {
         return shouldShow && shouldShowForViewCount;
     }
 
-    public static boolean shouldShowForUserWhoNeverTurnedOnRewards(Context context) {
+    public static boolean shouldShowNewUserDialogIfRewardsIsSwitchedOff(Context context) {
         boolean shouldShow =
-          !PackageUtils.isFirstInstall(context)
+          shouldShowOnboardingDialog()
+          && !PackageUtils.isFirstInstall(context)
           && !BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
-          && !BraveRewardsPanelPopup.wasBraveRewardsExplicitlyTurnedOff()
-          && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
+          && !BraveRewardsPanelPopup.isBraveRewardsEnabled()
           && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
 
         boolean shouldShowForViewCount = shouldShowForViewCount();
@@ -68,9 +71,10 @@ public class BraveAdsSignupDialog {
 
     public static boolean shouldShowExistingUserDialog(Context context) {
         boolean shouldShow =
-          !PackageUtils.isFirstInstall(context)
-          && (!BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
-          && BraveRewardsPanelPopup.isBraveRewardsEnabled())
+          shouldShowOnboardingDialog()
+          && !PackageUtils.isFirstInstall(context)
+          && !BraveAdsNativeHelper.nativeIsBraveAdsEnabled(Profile.getLastUsedProfile())
+          && BraveRewardsPanelPopup.isBraveRewardsEnabled()
           && BraveAdsNativeHelper.nativeIsLocaleValid(Profile.getLastUsedProfile())
           && ChromeFeatureList.isEnabled(ChromeFeatureList.BRAVE_REWARDS);
 
@@ -101,6 +105,8 @@ public class BraveAdsSignupDialog {
         .setPositiveButton(R.string.brave_ads_offer_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                neverShowOnboardingDialogAgain();
+
                 BraveRewardsNativeWorker braveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
                 braveRewardsNativeWorker.GetRewardsMainEnabled();
                 braveRewardsNativeWorker.CreateWallet();
@@ -127,6 +133,8 @@ public class BraveAdsSignupDialog {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Enable ads
+                neverShowOnboardingDialogAgain();
+
                 BraveAdsNativeHelper.nativeSetAdsEnabled(Profile.getLastUsedProfile());
             }
         }).create();
@@ -151,14 +159,30 @@ public class BraveAdsSignupDialog {
 
     private static boolean shouldShowForViewCount() {
         SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
-        int viewCount = sharedPref.getInt(SHOULD_SHOW_DIALOG_COUNTER, 0);
+
+        int viewCount = sharedPref.getInt(SHOULD_SHOW_ONBOARDING_DIALOG_VIEW_COUNTER, 0);
         return 0 == viewCount || 20 == viewCount || 40 == viewCount;
     }
 
     private static void updateViewCount() {
         SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(SHOULD_SHOW_DIALOG_COUNTER, sharedPref.getInt(SHOULD_SHOW_DIALOG_COUNTER, 0) + 1);
+
+        editor.putInt(SHOULD_SHOW_ONBOARDING_DIALOG_VIEW_COUNTER, sharedPref.getInt(SHOULD_SHOW_ONBOARDING_DIALOG_VIEW_COUNTER, 0) + 1);
         editor.apply();
+    }
+
+    private static void neverShowOnboardingDialogAgain() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putBoolean(SHOULD_SHOW_ONBOARDING_DIALOG, false);
+        editor.apply();
+    }
+
+    private static boolean shouldShowOnboardingDialog() {
+        SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
+ 
+        return sharedPref.getBoolean(SHOULD_SHOW_ONBOARDING_DIALOG, true);
     }
 }
