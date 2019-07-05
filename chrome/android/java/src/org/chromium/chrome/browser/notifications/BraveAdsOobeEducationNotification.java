@@ -11,6 +11,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import org.chromium.chrome.R;
 import org.chromium.chrome.browser.BraveRewardsHelper;
@@ -63,8 +64,10 @@ public class BraveAdsOobeEducationNotification extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         if (action != null && action.equals(DEEP_LINK)) {
-            ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
-            activity.openNewOrSelectExistingTab(BRAVE_ADS_OOBE_ORIGIN);
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(BRAVE_ADS_OOBE_ORIGIN));
+            webIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            webIntent.setPackage(context.getPackageName());
+            context.startActivity(webIntent);
         } else {
             showOobeNotification(context);
         }
