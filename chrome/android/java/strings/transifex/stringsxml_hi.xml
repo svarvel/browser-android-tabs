@@ -98,6 +98,8 @@
     <string name="update_notification_title">Brave अपडेट</string>
     <string name="update_notification_text">नया Brave ब्राउज़र पहले से 22% ज़्यादा तेज़ है</string>
     <string name="prefs_sync">सिंक (बीटा)</string>
+    <string name="brave_ads_oobe_education_notification_title">यह आपका पहला Brave विज्ञापन है</string>
+    <string name="brave_ads_oobe_education_notification_body">अधिक जानकारी के लिए यहाँ टैप करें</string>
     <string name="brave_ads_existing_user_offer_title">Brave विज्ञापन यहाँ हैं</string>
     <string name="brave_ads_new_user_offer_title">Brave Rewards सक्षम करें</string>
     <string name="brave_ads_offer_text">Brave Rewards मे गोपनीयता संरक्षित विज्ञापनों को देखने के लिए बेसिक अटेंशन टोकन अर्जित करें।</string>
@@ -112,7 +114,6 @@
     <string name="brave_sync_btn_laptop">कोई कंप्यूटर जोड़ें</string>
     <string name="brave_sync_scan_sync_code">यह सिंक कोड स्कैन करें</string>
     <string name="brave_sync_add_mobile_device_text_part_1">किसी दूसरे फोन या टैबलेट का उपयोग करके, \'Brave सेटिंग्स > सिंक करें > स्कैन करें\' पर जाएं।</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">अपने दूसरे डिवाइस से QR कोड (ऊपर बताया गया) को कैप्चर करें या कोई कैमरा मौजूद नहीं होने पर कोड वर्ड दर्ज़ करें।</string>
     <string name="brave_sync_btn_done">हो गया</string>
     <string name="brave_sync_tabs_text">टैब</string>
     <string name="brave_sync_history_text">इतिहास</string>
@@ -246,6 +247,7 @@
     <string name="brave_rewards_not_available">हमे खेद है, ऐसा प्रतीत होता है कि Brave पुरस्कार आपके डिवाइस पर उपलब्ध नही हैं</string>
 
     <string name="prefs_section_display">डिस्प्ले</string>
+    <string name="prefs_section_controls">नियंत्रण</string>
     <string name="prefs_appearance">रंगरूप</string>
     <string name="hide_brave_rewards_icon_title">Brave इनाम आइकन छुपाएं</string>
     <string name="hide_brave_rewards_icon_description">Brave इनाम आइकन सक्रिय न होने पर Brave इनाम आइकन छुपाएं</string>
@@ -257,10 +259,13 @@
     <string name="reset_brave_rewards_error_title">रिसेट त्रुटि</string>
     <string name="reset_brave_rewards_error_description">Brave इनामों को रीसेट करने में त्रुटि हुई। कृपया Brave को पुनः चलाएँ और दुबारा प्रयास करें</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">नीचे दर्शाए गए सिंक चेन कोड शब्दों को दर्ज करें। इस कोड को पासवर्ड ही समझें। अगर कोई इसे प्राप्त कर लेता है तो वे आपके सिंक किए गए डेटा को पढ़ और बदल कर सकते हैं।</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">अपने लक्षित कंप्यूटर पर सेटिंग मे Brave सिंक पर जाएँ और \"मेरे पास सिंक कोड है\" बटन पर क्लिक करें।\nनीचे दर्शाए गए सिंक चेन कोड शब्दों को दर्ज करें।</string>
 
     <string name="brave_sync_official">Brave सिंक</string>
     <string name="prefs_sync_official">सिंक</string>
+
+    <string name="brave_sync_code_warning">इस कोड को पासवर्ड की तरह सुरक्षित रखें। यदि कोई इसे प्राप्त कर लेता है तो वे आपके सिंक किए गए डेटा को पढ़ और संशोधित कर सकते हैं।</string>
+
     <string name="notification_category_group_brave_ads">Brave विज्ञापन</string>
     <string name="brave_ads_you_earned">आपने अर्जित किया है</string>
 

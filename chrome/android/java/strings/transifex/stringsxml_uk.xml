@@ -97,6 +97,8 @@
     <string name="update_notification_title">Оновлення Brave</string>
     <string name="update_notification_text">Новий Brave браузер на 22% швидше</string>
     <string name="prefs_sync">Синхронізація (бета)</string>
+    <string name="brave_ads_oobe_education_notification_title">Це ваше перше оголошення Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Натисніть тут, щоб дізнатись більше</string>
     <string name="brave_ads_existing_user_offer_title">Реклама Brave тут!</string>
     <string name="brave_ads_new_user_offer_title">Увімкнути Винагороди Brave </string>
     <string name="brave_ads_offer_text">Заробіть Токен Базової Уваги, переглядаючи рекламу, що зберігає приватність, у Винагородах Brave.</string>
@@ -111,7 +113,6 @@
     <string name="brave_sync_btn_laptop">Додати комп’ютер</string>
     <string name="brave_sync_scan_sync_code">Відскануйте цей код синхронізації</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Використовуючи другий телефон або планшет, перейдіть у меню «Налаштування Brave» > «Синхронізація» > «Сканування».</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Відскануйте наведений вище QR-код другим пристроєм або введіть кодові слова, якщо камера недоступна.</string>
     <string name="brave_sync_btn_done">Готово</string>
     <string name="brave_sync_tabs_text">Вкладки</string>
     <string name="brave_sync_history_text">Історія</string>
@@ -244,6 +245,7 @@
     <string name="brave_rewards_not_available">Вибачте, але нагороди Brave, схоже, недоступні на вашому пристрої</string>
 
     <string name="prefs_section_display">Відобразити</string>
+    <string name="prefs_section_controls">Керування</string>
     <string name="prefs_appearance">Вигляд</string>
     <string name="hide_brave_rewards_icon_title">Сховати іконку нагород Brave</string>
     <string name="hide_brave_rewards_icon_description">Приховує іконку нагород Brave, коли ті вимкнуті</string>
@@ -255,10 +257,13 @@
     <string name="reset_brave_rewards_error_title">Помилка скидання</string>
     <string name="reset_brave_rewards_error_description">При скиданні налаштувань нагород Brave сталася помилка. Будь ласка, перезапустіть Brave і спробуйте знову</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Введіть показані нижче кодові слова ланцюжка синхронізації. Вважайте цей код паролем. Якщо хтось його дізнається, то зможе читати і змінювати ваші синхронізовані дані.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">На вашому комп\'ютері перейдіть до Brave Sync у налаштуваннях та натисніть кнопку \"Я маю код синхронізації\". \nВведіть слова коду синхронізації, що вказані нижче.</string>
 
     <string name="brave_sync_official">Синхронізація Brave</string>
     <string name="prefs_sync_official">Синхронізувати</string>
+
+    <string name="brave_sync_code_warning">Бережіть цей код як пароль. Якщо хтось отримає до нього доступ, то зможе читати та змінювати ваші синхронізовані дані.</string>
+
     <string name="notification_category_group_brave_ads">Реклама Brave</string>
     <string name="brave_ads_you_earned">Ви заробили</string>
 

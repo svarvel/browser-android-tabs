@@ -97,6 +97,8 @@ idő</string>
     <string name="update_notification_title">Brave frissítés</string>
     <string name="update_notification_text">Az új Brave böngésző 22%-kal gyorsabb</string>
     <string name="prefs_sync">Szinkonizálás (béta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Ez az első Brave hirdetése</string>
+    <string name="brave_ads_oobe_education_notification_body">Pöccintsen ide a további információkért</string>
     <string name="brave_ads_existing_user_offer_title">Brave hirdetések itt!</string>
     <string name="brave_ads_new_user_offer_title">Brave jutalmak engedélyezése</string>
     <string name="brave_ads_offer_text">Szerezz Alap Figyelem tokent adatvédelmet tiszteletben tartó hirdetések megtekintésével a Brave Jutalamakban.</string>
@@ -111,7 +113,6 @@ idő</string>
     <string name="brave_sync_btn_laptop">Számítógép hozzáadása</string>
     <string name="brave_sync_scan_sync_code">Szinkronizációs kód beolvasása</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Második telefon vagy tablet használatakor kövesse a Beállítások > Szinkronizálás > Beolvasás útvonalat.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">A második eszközzel rögzítse a fenti QR-kódot, vagy adja meg a kódszavakat, ha fényképező nem áll rendelkezésre.</string>
     <string name="brave_sync_btn_done">Kész</string>
     <string name="brave_sync_tabs_text">Fülek</string>
     <string name="brave_sync_history_text">Előzmények</string>
@@ -244,6 +245,7 @@ tartalomkészítők támogatására.</string>
     <string name="brave_rewards_not_available">Sajnáljuk, úgy tűnik a Brave Jutalmak nem elérhető készülékedről.</string>
 
     <string name="prefs_section_display">Megjelenítés</string>
+    <string name="prefs_section_controls">Irányítás</string>
     <string name="prefs_appearance">Megjelenés</string>
     <string name="hide_brave_rewards_icon_title">Brave Jutalmak ikon elrejtése</string>
     <string name="hide_brave_rewards_icon_description">Elrejti a Brave Jutalmak ikont, ha a Brave Jutalmak nincs engedélyezve.</string>
@@ -255,10 +257,13 @@ tartalomkészítők támogatására.</string>
     <string name="reset_brave_rewards_error_title">Újraállítási hiba</string>
     <string name="reset_brave_rewards_error_description">Hiba történt a Brave Jutalmak újraállítása során. Kérünk, indítsd újra a Brave-et, majd próbáld újra.</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Írd be az alább látható szinkronlánc-kulcsszavakat. Kezeld ezt a kódot jelszóként. Ha valaki megszerzi, elolvashatja és módosíthatja a szinkronizált adataidat.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">A célszámítógépén, a beállításokban navigáljon a Brave Sync részhez, majd kattintson a \"Szinkronizációs kódom van\" gombra.\nAdja meg az alább látható szinkronizációs lánc kódszavakat.</string>
 
     <string name="brave_sync_official">Brave szinkronizálás</string>
     <string name="prefs_sync_official">Szinkronizálás</string>
+
+    <string name="brave_sync_code_warning">Tekintsen erre a kódra úgy, mint egy jelszóra. Ha valaki hozzájut, akkor olvashatja és módosíthatja a szinkronizált adatait. </string>
+
     <string name="notification_category_group_brave_ads">Brave hirdetések</string>
     <string name="brave_ads_you_earned">Szerzeményed</string>
 

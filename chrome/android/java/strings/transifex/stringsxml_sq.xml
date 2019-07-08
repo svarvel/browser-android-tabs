@@ -99,6 +99,8 @@ Afërsisht</string>
     <string name="update_notification_title">Përditësim Brave-i</string>
     <string name="update_notification_text">Shfletuesi i ri Brave është 22% më i shpejtë</string>
     <string name="prefs_sync">Njëkohësim (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Kjo është reklama juaj e parë Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Prekeni këtu që të mësoni më tepër</string>
     <string name="brave_ads_existing_user_offer_title">Mbërritën Reklamat Brave!</string>
     <string name="brave_ads_new_user_offer_title">Aktivizo Shpërblime Brave</string>
     <string name="brave_ads_offer_text">Fitoni Basic Attention Token nga parja reklamash që ruajnë privatësinë, tek Shpërblime Brave.</string>
@@ -113,7 +115,6 @@ Afërsisht</string>
     <string name="brave_sync_btn_laptop">Shtoni një Kompjuter</string>
     <string name="brave_sync_scan_sync_code">Skanoni këtë kod njëkohësimi</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Duke përdorur një telefon apo tablet të dytë, kaloni te Rregullime Brave-i > Njëkohësim > Skanim.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Fiksoni kodin QR (më sipër) me pajisjen tuaj të dytë, ose jepni fjalë kodi, nëse s\’ka kamera të përdorshme.</string>
     <string name="brave_sync_btn_done">U bë</string>
     <string name="brave_sync_tabs_text">Skeda</string>
     <string name="brave_sync_history_text">Historik</string>
@@ -254,10 +255,9 @@ përkrahje të krijuesve të lëndës që doni.</string>
     <string name="reset_brave_rewards_error_title">Gabim i rivendosjes</string>
     <string name="reset_brave_rewards_error_description">Pati një gabim në rivendosjen e Brave Rewards. Ju lutemi të rilëshoni Brave dhe të provoni përsëri</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Jepni më poshtë fjalët e kodit për zinxhirin e njëkohësimeve. Trajtojeni këtë kod si një fjalëkalim. Nëse bie në dorë të dikujt, ai mund të lexojë dje të modifikojë të dhënat që keni njëkohësuar.</string>
-
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sync</string>
+
     <string name="notification_category_group_brave_ads">Reklama Brave</string>
     <string name="brave_ads_you_earned">Keni fituar</string>
 

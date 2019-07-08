@@ -98,6 +98,8 @@ Kaydedildi</string>
     <string name="update_notification_title">Brave güncellemesi</string>
     <string name="update_notification_text">Yeni Brave tarayıcı %22 daha hızlı</string>
     <string name="prefs_sync">Senkronizasyon (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Bu sizin ilk Brave ilanınız</string>
+    <string name="brave_ads_oobe_education_notification_body">Daha fazla bilgi edinmek için buraya dokunun</string>
     <string name="brave_ads_existing_user_offer_title">Brave Reklamları burada! </string>
     <string name="brave_ads_new_user_offer_title">Brave Ödüllerine İzin Ver</string>
     <string name="brave_ads_offer_text">Brave Ödüllerindeki gizliliği koruyan reklamları görüntülediğin için Temel Dikkat Parası kazan. </string>
@@ -112,7 +114,6 @@ Kaydedildi</string>
     <string name="brave_sync_btn_laptop">Bilgisayar Ekle</string>
     <string name="brave_sync_scan_sync_code">Bu senkronizasyon kodunu tarayın</string>
     <string name="brave_sync_add_mobile_device_text_part_1">İkinci bir telefon veya tablet kullanarak Brave Ayarları > Senkronizasyon > Tara öğesine gidin.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">İkinci cihazınızla (yukarıdaki) QR kodunu çekin veya kamera mevcut değilse kod kelimelerini girin.</string>
     <string name="brave_sync_btn_done">Bitti</string>
     <string name="brave_sync_tabs_text">Sekmeler</string>
     <string name="brave_sync_history_text">Geçmiş</string>
@@ -245,6 +246,7 @@ para kazanın ve sevdiğiniz içerik
     <string name="brave_rewards_not_available">Üzgünüz, görünüşe bakılırsa Brave Ödülleri cihazınızda kullanılamıyor</string>
 
     <string name="prefs_section_display">Göster</string>
+    <string name="prefs_section_controls">Kontroller</string>
     <string name="prefs_appearance">Görünüm</string>
     <string name="hide_brave_rewards_icon_title">Brave Ödülleri Simgesini Gizle</string>
     <string name="hide_brave_rewards_icon_description">Brave Ödülleri etkin olmadığında Brave Ödülleri simgesini gizler</string>
@@ -256,10 +258,13 @@ para kazanın ve sevdiğiniz içerik
     <string name="reset_brave_rewards_error_title">Sıfırlama Hatası</string>
     <string name="reset_brave_rewards_error_description">Brave Ödülleri sıfırlanırken bir hata oluştu. Lütfen Brave\'i yeniden başlatın ve tekrar deneyin</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Aşağıda gösterilen eşitleme zinciri kodu sözcüklerini girin. Bu koda bir şifre gibi davranın. Birisi kodu ele geçirirse, eşitlenmiş verilerinizi okuyup değiştirebilir.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Hedef bilgisayarınızda, ayarlardaki Brave Sync bölümüne gidip  \"Bir Sync Kodum Var\".\n butonuna tıklayın ve aşağıda gösterilen eşzamanlama zincir kodu sözcüklerini girin.</string>
 
     <string name="brave_sync_official">Brave Eşitlemesi</string>
     <string name="prefs_sync_official">Eşitle</string>
+
+    <string name="brave_sync_code_warning">Bu kodu bir şifre gibi düşünün. Birinin eline geçerse eşzamanlanmış verilerinizi okuyabilir ve değiştirebilirler. </string>
+
     <string name="notification_category_group_brave_ads">Brave Reklamları</string>
     <string name="brave_ads_you_earned">Kazandığın tutar</string>
 

@@ -97,6 +97,8 @@ Tallennettu</string>
     <string name="update_notification_title">Brave-selaimen päivitys</string>
     <string name="update_notification_text">Uusi Brave-selain on 22 % nopeampi</string>
     <string name="prefs_sync">Synkronoi (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Tämä on ensimmäinen Brave-mainoksesi</string>
+    <string name="brave_ads_oobe_education_notification_body">Lue lisää tätä napauttamalla</string>
     <string name="brave_ads_existing_user_offer_title">Brave-mainokset ovat täällä!</string>
     <string name="brave_ads_new_user_offer_title">Ota Brave-palkinnot käyttöön</string>
     <string name="brave_ads_offer_text">Ansaitse perushuomiopoletti katsomalla yksityisyyden säilyttäviä mainoksia Brave-palkinnoissa.</string>
@@ -111,7 +113,6 @@ Tallennettu</string>
     <string name="brave_sync_btn_laptop">Lisää tietokone</string>
     <string name="brave_sync_scan_sync_code">Skannaa tämä synkronointikoodi</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Käyttämällä toista puhelinta tai tablettia, siirry kohtaan Braven asetukset > Synkronoi > Skannaa.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Sieppaa QR-koodi (yllä) toisella laitteellasi tai anna koodisanat, jos kameraa ei ole saatavilla.</string>
     <string name="brave_sync_btn_done">Valmis</string>
     <string name="brave_sync_tabs_text">Välilehdet</string>
     <string name="brave_sync_history_text">Historia</string>
@@ -244,6 +245,7 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="brave_rewards_not_available">Valitettavasti Brave Rewardsit eivät nähtävästi ole käytettävissä laitteellasi</string>
 
     <string name="prefs_section_display">Näytä</string>
+    <string name="prefs_section_controls">Ohjaimet</string>
     <string name="prefs_appearance">Ulkoasu</string>
     <string name="hide_brave_rewards_icon_title">Piilota Brave Rewards -kuvake</string>
     <string name="hide_brave_rewards_icon_description">Piilottaa Brave Rewards -kuvakkeen, kun Brave Rewards ei ole käytössä</string>
@@ -255,10 +257,13 @@ rakastamillesi sisällöntuottajille.</string>
     <string name="reset_brave_rewards_error_title">Virhe nollattaessa</string>
     <string name="reset_brave_rewards_error_description">Brave Rewards -järjestelmää nollattaessa ilmeni virhe. Käynnistä Brave uudelleen ja yritä uudestaan</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Syötä alla olevat synkronointiketjun koodisanat. Käsittele tätä koodia salasanan tavoin. Koodin haltuunsa saaneen on mahdollista lukea ja muokata synkronoituja tietojasi.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Siirry kohdetietokoneellasi Braven synkronointiasetuksiin ja napauta \"Minulla on synkronointikoodi\" -painiketta.\nKirjoita alla näkyvät synkronointiketjun koodisanat.</string>
 
     <string name="brave_sync_official">Brave-synkronointi</string>
     <string name="prefs_sync_official">Synkronoi</string>
+
+    <string name="brave_sync_code_warning">Käsittele tätä koodia salasanan tavoin. Salasanan haltuunsa saava henkilö voi lukea ja muokata synkronoituja tietojasi.</string>
+
     <string name="notification_category_group_brave_ads">Brave-mainokset</string>
     <string name="brave_ads_you_earned">Olet ansainnut</string>
 

@@ -97,6 +97,8 @@ Lagret</string>
     <string name="update_notification_title">Brave-oppdatering</string>
     <string name="update_notification_text">Den nye nettleseren til Brave er 22 % raskere</string>
     <string name="prefs_sync">Synkronisering (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Dette er den første Brave-annonsen din</string>
+    <string name="brave_ads_oobe_education_notification_body">Klikk her for å lære mer</string>
     <string name="brave_ads_existing_user_offer_title">Brave Ads er her!</string>
     <string name="brave_ads_new_user_offer_title">Aktiver Brave Rewards</string>
     <string name="brave_ads_offer_text">Opptjen Basic Attention Token for å se på personvernbeskyttende annonser i Brave Rewards.</string>
@@ -111,7 +113,6 @@ Lagret</string>
     <string name="brave_sync_btn_laptop">Legg til en datamaskin</string>
     <string name="brave_sync_scan_sync_code">Skann synkkoden</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Bruk en annen telefon eller nettbrett, og gå til Innstillinger i Brave > Synkroniser > Skann.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Ta bilde av QR-koden med den andre enheten, eller skriv inn kodeord hvis du ikke kan bruke kameraet.</string>
     <string name="brave_sync_btn_done">Ferdig</string>
     <string name="brave_sync_tabs_text">Faner</string>
     <string name="brave_sync_history_text">Historikk</string>
@@ -244,6 +245,7 @@ til å støtte innholdsskapere du liker.</string>
     <string name="brave_rewards_not_available">Vi beklager, men det virker som Brave Rewards ikke er tilgjengelig på enheten din</string>
 
     <string name="prefs_section_display">Vis</string>
+    <string name="prefs_section_controls">Kontroller</string>
     <string name="prefs_appearance">Utseende</string>
     <string name="hide_brave_rewards_icon_title">Skjul Brave Rewards-ikonet</string>
     <string name="hide_brave_rewards_icon_description">Skjuler Brave Rewards-ikonet når Brave Rewards ikke er aktivert</string>
@@ -255,10 +257,13 @@ til å støtte innholdsskapere du liker.</string>
     <string name="reset_brave_rewards_error_title">Feil ved tilbakestilling</string>
     <string name="reset_brave_rewards_error_description">En feil oppsto under tilbakestilling av Brave Rewards. Start Brave på nytt og prøv igjen</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Legg inn synkroniseringskjedens kodeord som vist nedenfor. Beskytt koden som et passord. Hvis noen får tak i det </string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Gå til Brave Sync-innstillinger på målmaskinen din og klikk på knappen \"Jeg har en synkroniseringskode\".\nLegg inn synkroniseringskjedens kodeord, som vist nedenfor.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Synkroniser</string>
+
+    <string name="brave_sync_code_warning">Anse denne koden som et passord. Hvis noen får tak i den kan de lese og endre de synkroniserte dataene dine.</string>
+
     <string name="notification_category_group_brave_ads">Brave Ads</string>
     <string name="brave_ads_you_earned">Du har opptjent</string>
 

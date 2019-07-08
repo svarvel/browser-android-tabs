@@ -102,6 +102,8 @@ HTTPS</string>
     <string name="update_notification_title">تحديث Brave</string>
     <string name="update_notification_text">متصفح Brave الجديد أسرع بنسبة 22% </string>
     <string name="prefs_sync">مزامنة (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">هذا أول إعلان Brave لك</string>
+    <string name="brave_ads_oobe_education_notification_body">اضغط هنا لمعرفة المزيد</string>
     <string name="brave_ads_existing_user_offer_title">أصبحت \"إعلانات Brave\" متاحة هنا!</string>
     <string name="brave_ads_new_user_offer_title">قم بتمكين \"مكافآت Brave\"</string>
     <string name="brave_ads_offer_text">اربح \"رمز الانتباه الأساسي\" Basic Attention Token مقابل عرض إعلانات تخص الحفاظ على الخصوصية في \"مكافآت Brave\".</string>
@@ -116,7 +118,6 @@ HTTPS</string>
     <string name="brave_sync_btn_laptop">إضافة كمبيوتر</string>
     <string name="brave_sync_scan_sync_code">مسح رمز المزامنة هذا ضوئيًا</string>
     <string name="brave_sync_add_mobile_device_text_part_1">باستخدام هاتف أو حاسب لوحي ثانٍ، انتقل إلى إعدادات Brave > مزامنة > مسح ضوئي.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">التقط صورة رمز الاستجابة السريعة (أعلاه) باستخدام جهازك الثاني، أو أدخل كلمات الرمز إذا لم تتوفر كاميرا.</string>
     <string name="brave_sync_btn_done">تم</string>
     <string name="brave_sync_tabs_text">علامات التبويب</string>
     <string name="brave_sync_history_text">السجل</string>
@@ -249,6 +250,7 @@ HTTPS</string>
     <string name="brave_rewards_not_available">عذراً، يبدو أن مكافآت Brave لا تتوفر على جهازك</string>
 
     <string name="prefs_section_display">العرض</string>
+    <string name="prefs_section_controls">أدوات التحكم</string>
     <string name="prefs_appearance">المظهر</string>
     <string name="hide_brave_rewards_icon_title">إخفاء أيقونة مكافآت Brave</string>
     <string name="hide_brave_rewards_icon_description">تخفي أيقونة مكافآت Brave عند عدم تمكين مكافآت Brave.</string>
@@ -260,11 +262,14 @@ HTTPS</string>
     <string name="reset_brave_rewards_error_title">خطأٌ في إعادة التعيين</string>
     <string name="reset_brave_rewards_error_description">حدث خطأ أثناء إعادة تعيين مكافآت Brave. يُرجى إعادة تشغيل Brave والمحاولة مرةً أخرى</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">أدخل كلمات رمز سلسلة المزامنة الموضحة أدناه. تَعامل مع هذا الرمز مثل كلمة المرور. إذا حصل شخص ما على هذه المعلومات، فيمكنه قراءة بياناتك المتزامنة وتعديلها.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">انتقل إلى Brave Sync في إعدادات الحاسوب المقصود وانقر على زر \"لدي رمز مزامنة\".\nأدخل كلمات رمز سلسلة المزامنة الموضحة أدناه.</string>
 
     <string name="brave_sync_official">مزامنة Brave
 </string>
     <string name="prefs_sync_official">المزامنة</string>
+
+    <string name="brave_sync_code_warning">اعتبر هذا الرمز بمثابة كلمة المرور. إذا حصل عليه شخصٌ ما فسيمكنه قراءة وتعديل بياناتك المتزامنة.</string>
+
     <string name="notification_category_group_brave_ads">"إعلانات Brave"</string>
     <string name="brave_ads_you_earned">لقد ربحت</string>
 

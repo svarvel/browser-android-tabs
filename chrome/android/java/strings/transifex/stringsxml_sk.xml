@@ -111,7 +111,6 @@ ušetrený čas</string>
     <string name="brave_sync_btn_laptop">Pridať počítač</string>
     <string name="brave_sync_scan_sync_code">Naskenovať tento synchronizačný kód</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Pomocou druhého telefónu alebo tabletu prejdite na položku Brave Settings (Nastavenia Brave) > Sync (Synchronizácia) > Scan (Skenovať).</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Nasnímajte QR kód (vyššie) pomocou vášho druhého zariadenia alebo zadajte slová kódu, ak nemáte k dispozícii fotoaparát.</string>
     <string name="brave_sync_btn_done">Hotovo</string>
     <string name="brave_sync_tabs_text">Karty</string>
     <string name="brave_sync_history_text">História</string>
@@ -256,10 +255,9 @@ tvorcov obsahu, ktorých máte radi.</string>
     <string name="reset_brave_rewards_error_title">Chyba obnovenia</string>
     <string name="reset_brave_rewards_error_description">Pri resetovaní Odmeny Brave sa vyskytla chyba. Znova spustite Brave a skúste to znova</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Zadajte dole uvedené kódové slová synchronizačného reťazca. S týmto kódom zaobchádzajte ako s heslom. Ak ho niekto získa neoprávnene, bude môcť čítať a upravovať synchronizované údaje.</string>
-
     <string name="brave_sync_official">Brave synchronizácia</string>
     <string name="prefs_sync_official">Synchronizovať</string>
+
     <string name="notification_category_group_brave_ads">Reklamy Brave</string>
     <string name="brave_ads_you_earned">Zarobili ste</string>
 

@@ -112,7 +112,6 @@ Disimpan</string>
     <string name="brave_sync_btn_laptop">Tambah Komputer</string>
     <string name="brave_sync_scan_sync_code">Imbas kod penyegerakan ini</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Dengan menggunakan telefon atau tablet kedua, navigasi ke Tetapan Brave> Segerak> Imbas.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Tangkap kod QR (di atas) dengan peranti kedua anda, atau masukkan kata-kata kod jika tiada kamera tersedia.</string>
     <string name="brave_sync_btn_done">Siap</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Sejarah</string>
@@ -256,10 +255,9 @@ pencipta kandungan yang anda suka.</string>
     <string name="reset_brave_rewards_error_title">Tetapkan Semula Ralat</string>
     <string name="reset_brave_rewards_error_description">Terdapat ralat ketika menetapkan semula Ganjaran Brave. Sila lancar semula Brave dan cuba lagi</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Masukkan perkataan kod rantai segerak yang ditunjukkan di bawah. Anggap kod ini seperti kata laluan. Jika seseorang memperolehnya, mereka boleh membaca dan mengubah suai data anda yang disegerakkan.</string>
-
     <string name="brave_sync_official">Segerak Brave</string>
     <string name="prefs_sync_official">Segerak</string>
+
     <string name="notification_category_group_brave_ads">Iklan Brave</string>
     <string name="brave_ads_you_earned">Anda memperoleh</string>
 

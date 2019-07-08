@@ -112,7 +112,6 @@ HTTPS</string>
     <string name="brave_sync_btn_laptop">Thêm một máy tính</string>
     <string name="brave_sync_scan_sync_code">Quét mã đồng bộ này</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Sử dụng một điện thoại hoặc máy tính bảng thứ hai, tìm đến Cài đặt Brave > Đồng bộ > Quét.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Chụp mã QR (ở trên) bằng thiết bị thứ hai của bạn hoặc nhập các từ mã nếu không có camera.</string>
     <string name="brave_sync_btn_done">Xong</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Lịch sử</string>
@@ -256,10 +255,9 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="reset_brave_rewards_error_title">Lỗi khi Đặt lại</string>
     <string name="reset_brave_rewards_error_description">Đã xảy ra lỗi khi khôi phục Brave Rewards về cài đặt gốc. Vui lòng khởi động lại Brave và thử lại</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Nhập các từ của chuỗi mã đồng bộ hóa hiển thị dưới đây. Hãy coi mã này như một mật khẩu. Nếu ai đó lấy được mã này, họ sẽ có thể đọc và thay đổi dữ liệu đồng bộ hóa của bạn.</string>
-
     <string name="brave_sync_official">Đồng bộ hóa Brave</string>
     <string name="prefs_sync_official">Đồng bộ hóa</string>
+
     <string name="notification_category_group_brave_ads">Quảng cáo Brave</string>
     <string name="brave_ads_you_earned">Bạn đã nhận được</string>
 

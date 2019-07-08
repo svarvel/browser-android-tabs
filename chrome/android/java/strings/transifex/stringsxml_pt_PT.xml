@@ -109,7 +109,6 @@ Guardado</string>
     <string name="brave_sync_btn_laptop">Adicionar um PC</string>
     <string name="brave_sync_scan_sync_code">Digitalizar este código de sincronização</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Com um segundo telefone ou tablet, no Brave vá para Definições > Sincronizar > Digitalizar.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Capture o código QR (acima) com o segundo dispositivo, ou insira as palavras de código se não estiver disponível nenhuma câmara.</string>
     <string name="brave_sync_btn_done">Concluído</string>
     <string name="brave_sync_tabs_text">Separadores</string>
     <string name="brave_sync_history_text">Histórico</string>
@@ -254,8 +253,7 @@ os criadores de conteúdo de que adora.</string>
     <string name="reset_brave_rewards_error_title">Erro de Reiniciar</string>
     <string name="reset_brave_rewards_error_description">Ocorreu um erro ao reiniciar Recompensa Brave. Por favor, reinicie o Brave e tente novamente</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Insira as palavras de código da sequência de sincronização mostradas abaixo. Trate este código como uma palavra-passe. Se alguém souber a mesma, eles poderão ler e modificar os seus dados sincronizados.</string>
-
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sincronizar</string>
+
     </resources>

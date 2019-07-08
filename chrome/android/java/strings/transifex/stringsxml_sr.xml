@@ -97,6 +97,8 @@ Sačuvano</string>
     <string name="update_notification_title">Brave ažuriranje</string>
     <string name="update_notification_text">Novi Brave pregledač je 22% brži</string>
     <string name="prefs_sync">Sinhronizacija (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Ovo je vaš prvi Brave oglas</string>
+    <string name="brave_ads_oobe_education_notification_body">Dodirnite ovde da biste saznali više</string>
     <string name="brave_ads_existing_user_offer_title">Brave oglasi su ovde!</string>
     <string name="brave_ads_new_user_offer_title">Omogući Brave Rewards</string>
     <string name="brave_ads_offer_text">Zaradite Basic Attention Token za gledanje oglasa koji čuvaju privatnost u programu Brave Rewards.</string>
@@ -111,7 +113,6 @@ Sačuvano</string>
     <string name="brave_sync_btn_laptop">Dodaj računar</string>
     <string name="brave_sync_scan_sync_code">Skenirajte ovaj kod sinhronizacije</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Na drugom telefonu ili tabletu idite na Brave Settings > Sync > Scan.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Snimite QR kod (iznad) pomoću drugog uređaja ili unesite kodne reči ako nemate dostupnu kameru.</string>
     <string name="brave_sync_btn_done">Gotovo</string>
     <string name="brave_sync_tabs_text">Kartice</string>
     <string name="brave_sync_history_text">Istorija</string>
@@ -244,6 +245,7 @@ kreatore sadržaja koji vam se sviđaju.</string>
     <string name="brave_rewards_not_available">Nažalost, izgleda da Brave Rewards nije dostupan na vašem uređaju.</string>
 
     <string name="prefs_section_display">Prikaz</string>
+    <string name="prefs_section_controls">Kontrole</string>
     <string name="prefs_appearance">Izgled</string>
     <string name="hide_brave_rewards_icon_title">Sakrijte Brave Rewards ikonicu</string>
     <string name="hide_brave_rewards_icon_description">Sakrijte Brave Rewards ikonicu kada Brave Rewards nije omogućena</string>
@@ -255,10 +257,13 @@ kreatore sadržaja koji vam se sviđaju.</string>
     <string name="reset_brave_rewards_error_title">Greška pri ponovnom postavljanju</string>
     <string name="reset_brave_rewards_error_description">Došlo je do greške prilikom postavljanja Brave Rewards na početne vrednosti. Ponovo pokrenite Brave i pokušajte opet</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Unesite dole prikazane kôdne reči za sinhronizaciju. Postupajte sa ovim kôdom kao sa lozinkom. Ako neko dođe do ovog podatka, može da čita i menja vaše sinhronizovane podatke.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Na vašem ciljnom računaru, idite na postavke za Brave sinhronizovanje i kliknite na dugme „Imam kod za sinhronizovanje”.\nUnesite dole prikazane kôdne reči za sinhronizaciju.</string>
 
     <string name="brave_sync_official">Sinhronizacija Brave-a</string>
     <string name="prefs_sync_official">Sinhronizacija</string>
+
+    <string name="brave_sync_code_warning">Postupajte sa ovim kodom kao da je lozinka. Ako neko uspe da joj pristupi, moći će da čita i menja vaše sinhronizovane podatke.</string>
+
     <string name="notification_category_group_brave_ads">Brave oglasi</string>
     <string name="brave_ads_you_earned">Zaradili ste</string>
 

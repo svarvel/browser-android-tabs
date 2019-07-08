@@ -99,6 +99,8 @@ zaoszczędzony czas</string>
     <string name="update_notification_title">Aktualizacja przeglądarki Brave</string>
     <string name="update_notification_text">Nowa przeglądarka Brave działa o 22% szybciej</string>
     <string name="prefs_sync">Synchronizacja (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">To Twoja pierwsza reklama Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Dotknij, aby dowiedzieć się więcej</string>
     <string name="brave_ads_existing_user_offer_title">Reklamy Brave są dostępne!</string>
     <string name="brave_ads_new_user_offer_title">Włącz nagrody Brave</string>
     <string name="brave_ads_offer_text">Zarób token BAT za oglądanie reklam chroniących prywatność w nagrodach Brave.</string>
@@ -113,7 +115,6 @@ zaoszczędzony czas</string>
     <string name="brave_sync_btn_laptop">Dodaj komputer</string>
     <string name="brave_sync_scan_sync_code">Skanuj ten kod synchronizacji</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Za pomocą drugiego telefonu lub tabletu, przejdź do ustawień Brave > Synchronizacja > Skanuj.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Zarejestruj kod QR (powyżej) drugim urządzeniem lub wprowadź hasło, jeśli aparat fotograficzny jest niedostępny.</string>
     <string name="brave_sync_btn_done">Gotowe</string>
     <string name="brave_sync_tabs_text">Karty</string>
     <string name="brave_sync_history_text">Historia</string>
@@ -245,7 +246,8 @@ twórcom treści, które lubisz.</string>
 
     <string name="brave_rewards_not_available">Przepraszamy. Wygląda na to, że nagroda Brave nie jest dostępna na Twoim urządzeniu</string>
 
-    <string name="prefs_section_display">Wyświetl</string>
+    <string name="prefs_section_display">Wyświetlanie</string>
+    <string name="prefs_section_controls">Elementy kontrolne</string>
     <string name="prefs_appearance">Wygląd</string>
     <string name="hide_brave_rewards_icon_title">Ukryj ikonę Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">Ukrywa ikonę Brave Rewards, kiedy nie są one włączone.</string>
@@ -257,10 +259,13 @@ twórcom treści, które lubisz.</string>
     <string name="reset_brave_rewards_error_title">Błąd resetowania</string>
     <string name="reset_brave_rewards_error_description">Podczas resetowania Brave Rewards wystąpił błąd. Uruchom Brave ponownie i spróbuj jeszcze raz.</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Wprowadź wyświetloną poniżej treść kodu łańcucha synchronizacji. Traktuj ten kod jako hasło. Jeśli osoba trzecia uzyska dostęp do kodu, będzie mogła czytać i modyfikować zsynchronizowane dane.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Na docelowym komputerze przejdź do programu Brave Sync w ustawieniach i kliknij przycisk Mam kod Sync.\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Synchronizacja</string>
+
+    <string name="brave_sync_code_warning">Potraktuj ten kod jako hasło. Jeśli ktoś uzyska do niego dostęp, będzie móc odczytywać i modyfikować Twoje zsynchronizowane dane.</string>
+
     <string name="notification_category_group_brave_ads">Reklamy Brave</string>
     <string name="brave_ads_you_earned">Zarobiłeś</string>
 

@@ -97,6 +97,8 @@
     <string name="update_notification_title">Brave 업데이트</string>
     <string name="update_notification_text">새로운 Brave 브라우저는 22% 더 빠릅니다</string>
     <string name="prefs_sync">싱크(베타)</string>
+    <string name="brave_ads_oobe_education_notification_title">다음은 귀하의 첫 Brave 광고입니다</string>
+    <string name="brave_ads_oobe_education_notification_body">여기를 탭해서 자세히 알아보세요</string>
     <string name="brave_ads_existing_user_offer_title">여기 Brave 광고가 있습니다!</string>
     <string name="brave_ads_new_user_offer_title">Brave Rewards 활성화 </string>
     <string name="brave_ads_offer_text">Brave Rewards에서 개인정보 보호 광고를 시청하고 베이직 어텐션 토큰(Basic Attention Token)을 획득하세요.</string>
@@ -111,7 +113,6 @@
     <string name="brave_sync_btn_laptop">컴퓨터 추가</string>
     <string name="brave_sync_scan_sync_code">이 싱크 코드 스캔</string>
     <string name="brave_sync_add_mobile_device_text_part_1">두 번째 전화기 또는 태블릿을 사용하여 Brave 설정 > 싱크 > 스캔으로 이동합니다.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">두 번째 기기에서 QR 코드(위)를 캡처합니다. 카메라를 사용할 수 없는 경우에는 코드 단어를 입력하세요.</string>
     <string name="brave_sync_btn_done">완료</string>
     <string name="brave_sync_tabs_text">탭</string>
     <string name="brave_sync_history_text">내역</string>
@@ -244,6 +245,7 @@
     <string name="brave_rewards_not_available">죄송하지만 Brave Rewards를 이 장치에서 사용할 수 없는 것으로 보입니다</string>
 
     <string name="prefs_section_display">표시하기</string>
+    <string name="prefs_section_controls">제어</string>
     <string name="prefs_appearance">외형</string>
     <string name="hide_brave_rewards_icon_title">Brave 리워드 아이콘 숨기기</string>
     <string name="hide_brave_rewards_icon_description">Brave 리워드 비활성화 시에 Brave 리워드 아이콘 숨기기</string>
@@ -255,10 +257,13 @@
     <string name="reset_brave_rewards_error_title">오류 초기화</string>
     <string name="reset_brave_rewards_error_description">Brave 리워드 재설정 중에 오류가 발생했습니다. Brave를 재시작하고 다시 시도해 주세요.</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">동기화 체인 코드 단어를 아래에 입력해주세요. 이 코드를 비밀번호처럼 취급해 주세요. 다른 사람이 이 코드를 알게 되면 귀하의 동기화된 데이터를 읽고 변경할 수 있습니다.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">대상 컴퓨터에서, 설정의 Brave Sync로 찾아가신 후 “저에게 Sync Code가 있습니다”를 클릭하세요.\n아래에 나타난 동기화 체인 코드를 입력하세요.</string>
 
     <string name="brave_sync_official">Brave 동기화</string>
     <string name="prefs_sync_official">동기화</string>
+
+    <string name="brave_sync_code_warning">다음 코드를 패스워드와 같이 취급하세요. 누군가가 해당 코드를 가지게 되면, 귀하의 동기화 데이터를 읽고 수정할 수 있게 됩니다.</string>
+
     <string name="notification_category_group_brave_ads">Brave 광고</string>
     <string name="brave_ads_you_earned">획득</string>
 

@@ -99,6 +99,11 @@ Shranjeno</string>
     <string name="update_notification_title">Posodobitev Brave</string>
     <string name="update_notification_text">Novi brskalnik Brave je 22 % hitrejši</string>
     <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">To je vaš prvi oglas Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Tapni tukaj, da izveste več</string>
+    <string name="brave_ads_existing_user_offer_title">Oglasi Brave so tu!</string>
+    <string name="brave_ads_new_user_offer_title">Omogoči nagrade Brave</string>
+    <string name="brave_ads_offer_positive">Sem zraven!</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync vam omogoča zasebno sinhronizacijo podatkov o zaznamkih med brskalniki Brave na vaših različnih napravah.</string>
     <string name="brave_sync_description_page_1_part_2">Enostavno skenirajte kodo vaše sinhronizacijske verige, ki ste jo ustvarili na drugi napravi ali pa ustvarite novo sinhronizacijsko verigo.</string>
     <string name="brave_sync_scan_chain_code">Skeniraj ali vnesi kodo za sinhronizacijo</string>
@@ -109,7 +114,6 @@ Shranjeno</string>
     <string name="brave_sync_btn_laptop">Dodaj računalnik</string>
     <string name="brave_sync_scan_sync_code">Skeniraj to kodo za sinhronizacijo</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Na drugem telefonu ali tabličnem računalniku izberite Nastavitve Brave > Sinhronizacija > Skeniranje.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Zajemite kodo QR (zgoraj) z drugo napravo ali vnesite kodne besede, če kamera naprave ni na voljo.</string>
     <string name="brave_sync_btn_done">Končano</string>
     <string name="brave_sync_tabs_text">Zavihki</string>
     <string name="brave_sync_history_text">Zgodovina</string>
@@ -254,8 +258,12 @@ ustvarjalcem vsebin, ki so vam všeč.</string>
     <string name="reset_brave_rewards_error_title">Napaka ponastavljanja</string>
     <string name="reset_brave_rewards_error_description">Pri ponastavljanju Nagrad Brave je prišlo do napake. Ponovno zaženite Brave in poskusite znova.</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Vnesite besede kode za usklajevanje verige. S to kodo ravnajte kot z geslom. Če kdo pridobi to kodo, lahko bere in spreminja vaše usklajene podatke.</string>
-
     <string name="brave_sync_official">Usklajevanje Brave</string>
     <string name="prefs_sync_official">Uskladi</string>
-    </resources>
+
+    <string name="notification_category_group_brave_ads">Oglasi Brave</string>
+    <string name="brave_ads_you_earned">Zaslužili ste</string>
+
+    <string name="brave_default_browser_title">Brave je svetlobno hiter</string>
+    <string name="brave_make_default_text">Naredi privzeto</string>
+</resources>

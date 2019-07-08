@@ -97,6 +97,8 @@ tid</string>
     <string name="update_notification_title">Brave-uppdatering</string>
     <string name="update_notification_text">Nya Brave-webbläsaren är 22 % snabbare</string>
     <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Detta är din första Brave-annons</string>
+    <string name="brave_ads_oobe_education_notification_body">Tryck här för att få reda på mer</string>
     <string name="brave_ads_existing_user_offer_title">Brave-annonser är här!</string>
     <string name="brave_ads_new_user_offer_title">Aktivera belöningar i Brave</string>
     <string name="brave_ads_offer_text">Få Basic Attention Token när du tittar på annonser som värnar din integritet i Brave Rewards.</string>
@@ -111,7 +113,6 @@ tid</string>
     <string name="brave_sync_btn_laptop">Lägg till en dator</string>
     <string name="brave_sync_scan_sync_code">Skanna den här synkroniseringskoden</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Öppna Brave på en annan mobil eller surfplatta och gå till Inställningar > Synkronisering > Skanna.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Läs av QR-koden (ovan) med den andra enheten eller ange kodorden om den saknar kamera.</string>
     <string name="brave_sync_btn_done">Klar</string>
     <string name="brave_sync_tabs_text">Flikar</string>
     <string name="brave_sync_history_text">Historik</string>
@@ -244,6 +245,7 @@ för att visa ditt stöd för skapare du gillar.</string>
     <string name="brave_rewards_not_available">Tyvärr verkar Brave Rewards inte vara tillgängligt på din enhet.</string>
 
     <string name="prefs_section_display">Visa</string>
+    <string name="prefs_section_controls">Styrning</string>
     <string name="prefs_appearance">Utseende</string>
     <string name="hide_brave_rewards_icon_title">Göm ikonen Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">Gömmer ikonen Brave Rewards när Brave Rewards inte är aktiverad</string>
@@ -255,10 +257,13 @@ för att visa ditt stöd för skapare du gillar.</string>
     <string name="reset_brave_rewards_error_title">Återställ fel</string>
     <string name="reset_brave_rewards_error_description">Ett fel uppstod när Brave Reward återställdes. Starta om Brave och försök igen</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Skriv in synkroniseringskoden nedan. Hantera koden som ett lösenord. Kommer någon över det kan vederbörande läsa och modifiera dina synkade data. </string>
+    <string name="brave_sync_add_laptop_text_part_2_new">På din måldator navigerar du till Brave-synkning i inställningarna och klickar på knappen \"Jag har en synkningskod\".\nAnge synkningskoden som visas nedan.</string>
 
     <string name="brave_sync_official">Brave-synkronisering</string>
     <string name="prefs_sync_official">Synkronisera</string>
+
+    <string name="brave_sync_code_warning">Hantera koden som ett lösenord. Kommer någon över koden kan vederbörande läsa och modifiera dina synkade data. </string>
+
     <string name="notification_category_group_brave_ads">Brave-annonser</string>
     <string name="brave_ads_you_earned">Du har tjänat</string>
 

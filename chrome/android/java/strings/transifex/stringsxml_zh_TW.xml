@@ -112,7 +112,6 @@
     <string name="brave_sync_btn_laptop">新增電腦</string>
     <string name="brave_sync_scan_sync_code">掃描此同步代碼</string>
     <string name="brave_sync_add_mobile_device_text_part_1">使用第二部手機或平板電腦，依序瀏覽至「Brave 設定 > 同步 > 掃描」。</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">使用第二部裝置擷取 QR 碼 (請見下方)；若裝置沒有相機功能，則可改為輸入代碼。</string>
     <string name="brave_sync_btn_done">完成</string>
     <string name="brave_sync_tabs_text">分頁</string>
     <string name="brave_sync_history_text">記錄</string>
@@ -256,10 +255,9 @@
     <string name="reset_brave_rewards_error_title">重新設定發生錯誤</string>
     <string name="reset_brave_rewards_error_description">重新設定 Brave 獎勵時發生錯誤。請重新啟動 Brave 並再次嘗試</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">輸入下方顯示的同步鏈代碼字。將這代碼視同密碼。如果有人取得這代碼，他們便能讀取和修改您同步過的資料。</string>
-
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">同步</string>
+
     <string name="notification_category_group_brave_ads">Brave 廣告</string>
     <string name="brave_ads_you_earned">您已掙得</string>
 

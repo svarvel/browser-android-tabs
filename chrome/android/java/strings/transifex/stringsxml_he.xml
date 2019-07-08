@@ -97,6 +97,8 @@ HTTPS</string>
     <string name="update_notification_title">עדכון Brave</string>
     <string name="update_notification_text">דפדפן ה-Brave החדש מהיר יותר ב-22%</string>
     <string name="prefs_sync">סנכרון (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">זו פרסומת Brave הראשונה שלך</string>
+    <string name="brave_ads_oobe_education_notification_body">הקש/י כאן למידע נוסף</string>
     <string name="brave_ads_existing_user_offer_title">הפרסומות של Brave הגיעו!</string>
     <string name="brave_ads_new_user_offer_title">אפשר/י את Brave Rewards</string>
     <string name="brave_ads_offer_text">זכו באסימון תשומת לב בסיסי על צפייה בפרסומות השומרות על הפרטיות בBrave Rewards.</string>
@@ -111,7 +113,6 @@ HTTPS</string>
     <string name="brave_sync_btn_laptop">הוסף מחשב</string>
     <string name="brave_sync_scan_sync_code">סרוק את קוד הסנכרון</string>
     <string name="brave_sync_add_mobile_device_text_part_1">באמצעות מכשיר טלפון שני או טאבלט, נווט אל הגדרות Brave> סנכרון > סריקה.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">לכוד את קוד ה-QR (המופיע מטה) באמצעות המכשיר השני, או הזן מילות קוד אם המצלמה אינה זמינה.</string>
     <string name="brave_sync_btn_done">סיום</string>
     <string name="brave_sync_tabs_text">כרטיסיות</string>
     <string name="brave_sync_history_text">היסטוריה</string>
@@ -244,6 +245,7 @@ HTTPS</string>
     <string name="brave_rewards_not_available">אנו  מצטערים, נראה ש-Brave Rewards אינו זמין במכשיר שלך</string>
 
     <string name="prefs_section_display">תצוגה</string>
+    <string name="prefs_section_controls">פקדים</string>
     <string name="prefs_appearance">מראה</string>
     <string name="hide_brave_rewards_icon_title">מסתיר את אייקון Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">מסתיר את אייקון Brave Rewards כש-Brave Rewards אינו זמין</string>
@@ -255,10 +257,13 @@ HTTPS</string>
     <string name="reset_brave_rewards_error_title">איפוס שגיאה</string>
     <string name="reset_brave_rewards_error_description">אירעה שגיאה באיפוס Brave Rewards. נא להפעיל מחדש את Brave ולנסות שוב</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">נא להזין את מילות הקוד לשרשרת סנכרון להלן. יש להתייחס לקוד זה כסיסמה. אם היא תגיע לידיו של מישהו, הוא יוכל לקרוא ולשנות את הנתונים המסונכרנים שלך.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">במחשב היעד, נווט/י ל-Brave Sync בהגדרות ולחץ/י על הכפתור \"יש לי קוד סינק.\nהכנס/י את המילים של שרשרת קוד הסינק המוצגות למטה.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">סנכרון</string>
+
+    <string name="brave_sync_code_warning">יש להתייחס לקוד זה כאל סיסמה. אם מישהו ישיג אותה, הוא יוכל לקרוא ולשנות את הנתונים המסונכרנים שלך.</string>
+
     <string name="notification_category_group_brave_ads">פרסומות של Brave </string>
     <string name="brave_ads_you_earned">זכית</string>
 

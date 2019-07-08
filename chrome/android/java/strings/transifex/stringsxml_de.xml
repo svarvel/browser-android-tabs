@@ -115,7 +115,6 @@ gespart</string>
     <string name="brave_sync_btn_laptop">Computer hinzufügen</string>
     <string name="brave_sync_scan_sync_code">Synchronisierungscode scannen</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Navigieren Sie mit einem zweiten Telefon oder Tablet zu den Brave-Einstellungen > Synchronisierung > Scannen.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Erfassen Sie den QR-Code (oben) mit Ihrem zweiten Gerät oder geben Sie die Codewörter ein, wenn keine Kamera verfügbar ist.</string>
     <string name="brave_sync_btn_done">Fertig</string>
     <string name="brave_sync_tabs_text">Tabs</string>
     <string name="brave_sync_history_text">Verlauf</string>
@@ -248,6 +247,7 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
     <string name="brave_rewards_not_available">Tut uns leid: Anscheinend ist Brave Rewards auf Ihrem Gerät nicht verfügbar.</string>
 
     <string name="prefs_section_display">Anzeige</string>
+    <string name="prefs_section_controls">Steuerung</string>
     <string name="prefs_appearance">Aussehen</string>
     <string name="hide_brave_rewards_icon_title">Brave-Rewards-Symbol ausblenden</string>
     <string name="hide_brave_rewards_icon_description">Blendet das Brave-Rewards-Symbol aus, wenn Brave Rewards nicht aktiviert ist</string>
@@ -259,10 +259,13 @@ um Ihre Lieblingsersteller zu unterstützen.</string>
     <string name="reset_brave_rewards_error_title">Fehler beim Zurücksetzen</string>
     <string name="reset_brave_rewards_error_description">Es ist ein Fehler beim Zurücksetzen von Brave Rewards aufgetreten. Bitte starten Sie Brave neu und versuchen es noch einmal</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Geben Sie die Codeworte der Synchronisationskette ein, die unten gezeigt werden. Behandeln Sie diesen Code wie ein Passwort: Jemand, der in seinen Besitz kommt, kann Ihre synchronisierten Daten lesen und verändern.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Gehen Sie bei Ihrem Zielcomputer in den Einstellungen auf Brave Sync. Klicken Sie auf die Schaltfläche \"Ich habe einen Synchronisationscode\".\nGeben Sie die Codewörter der Synchronisationskette ein, die unten angezeigt werden.</string>
 
     <string name="brave_sync_official">Brave</string>
     <string name="prefs_sync_official">Synchronisieren</string>
+
+    <string name="brave_sync_code_warning">Behandeln Sie diesen Code wie ein Passwort. Wenn jemand an diesen Code gelangt, kann er Ihre synchronisierten Daten auslesen und verändern.</string>
+
     <string name="notification_category_group_brave_ads">Brave Anzeigen</string>
     <string name="brave_ads_you_earned">Sie haben (translator\'s note: monetary amount goes here) verdient</string>
 

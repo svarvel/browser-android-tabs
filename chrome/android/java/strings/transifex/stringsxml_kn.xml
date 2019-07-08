@@ -10,6 +10,7 @@
     <string name="brave_shields_https_everywhere_switch">HTTPS ಪ್ರತಿಯೊಂದು ಕಡೆಗೆ</string>
     <string name="brave_shields_blocks_scripts_switch">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ನಿರ್ಬಂಧಿಸಿ</string>
     <string name="accessibility_toolbar_btn_brave_shields">Brave ಶೀಲ್ಡ್‌ಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ/ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="accessibility_toolbar_btn_brave_rewards">Brave ಪ್ರತಿಫಲಗಳನ್ನು ನಿರ್ವಹಿಸಿ</string>
     <string name="brave_shields_block_3rd_party_cookies_switch">3ನೇ ಪಾರ್ಟಿ ಕುಕೀಗಳನ್ನು ನಿರ್ಬಂಧಿಸಿ</string>
 
     <string name="httpse_summary">ಸಾಧ್ಯವಾದಾಗಲೆಲ್ಲಾ HTTP ಬದಲಿಗೆ HTTPS ಬಳಸಿಕೊಂಡು ಬೆಂಬಲಿತ ಸೈಟ್‌ಗಳನ್ನು ತೆರೆಯುತ್ತದೆ</string>
@@ -37,6 +38,8 @@
     <string name="enter_code_words_sync">ಕೋಡ್ ಪದಗಳನ್ನು ನಮೂದಿಸಿ</string>
     <string name="sync_device">ಸಾಧನ ಸಿಂಕ್ ಮಾಡಿ</string>
     <string name="sync_device_failure">ಸಿಂಕ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಲಿಲ್ಲ</string>
+    <string name="sync_requires_correct_time">ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನ ಗಡಿಯಾರವನ್ನು ತಪ್ಪಾದ ಸಮಯಕ್ಕೆ ಅಥವಾ ತಪ್ಪಾದ ಸಮಯ ವಲಯಕ್ಕೆ ಹೊಂದಿಸಲಾಗಿದೆ. ನಿಮ್ಮ ಗಡಿಯಾರ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ</string>
+
     <string name="brave_stats_text_trackers">ಟ್ರ್ಯಾಕರ್‌ಗಳನ್ನು
 ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ</string>
     <string name="brave_stats_text_ads">ಜಾಹೀರಾತುಗಳನ್ನು
@@ -96,6 +99,12 @@
     <string name="update_notification_title">Brave ನವೀಕರಣ</string>
     <string name="update_notification_text">ಹೊಸ Brave ಬ್ರೌಸರ್ 22% ಪಟ್ಟು ವೇಗವಾಗಿದೆ</string>
     <string name="prefs_sync">ಸಿಂಕ್ (ಬೀಟಾ)</string>
+    <string name="brave_ads_oobe_education_notification_title">ಇದು ನಿಮ್ಮ ಮೊದಲ Brave ಜಾಹೀರಾತು</string>
+    <string name="brave_ads_oobe_education_notification_body">ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಇಲ್ಲಿ ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="brave_ads_existing_user_offer_title">Brave ಜಾಹೀರಾತುಗಳು ಇಲ್ಲಿವೆ!</string>
+    <string name="brave_ads_new_user_offer_title">ಬ್ರೇವ್ ಬಹುಮಾನಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
+    <string name="brave_ads_offer_text">Brave ರಿವಾರ್ಡ್‌ಗಳಲ್ಲಿ ಗೌಪ್ಯತೆ ಕಾಪಾಡುವ ಜಾಹೀರಾತುಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಮೂಲ ಗಮನ ಟೋಕನ್ ಸಂಪಾದಿಸಿ.</string>
+    <string name="brave_ads_offer_positive">ನಾನಿದ್ದೇನೆ!</string>
     <string name="brave_sync_description_page_1_part_1">Brave ಸಿಂಕ್ ನಿಮಗೆ ನಿಮ್ಮ ವಿವಿಧ ಸಾಧನಗಳಲ್ಲಿನ ನಿಮ್ಮ Brave ಬ್ರೌಸರ್‌ಗಳ ನಡುವೆ ಖಾಸಗಿಯಾಗಿ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳ ಡೇಟಾವನ್ನು ಸಿಂಕ್ ಮಾಡಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ.</string>
     <string name="brave_sync_description_page_1_part_2">ಮತ್ತೊಂದು ಸಾಧನದಲ್ಲಿ ನೀವು ರಚಿಸಿದ ನಿಮ್ಮ ಸಿಂಕ್ ಚೈನ್‌ನಿಂದ ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ. ಅಥವಾ ಹೊಸ ಸಿಂಕ್ ಚೈನ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿ.</string>
     <string name="brave_sync_scan_chain_code">ಸಿಂಕ್ ಕೋಡ್ ಸ್ಕ್ಯಾನ್ ಮಾಡಿ ಅಥವಾ ನಮೂದಿಸಿ</string>
@@ -106,7 +115,6 @@
     <string name="brave_sync_btn_laptop">ಕಂಪ್ಯೂಟರ್ ಸೇರಿಸಿ</string>
     <string name="brave_sync_scan_sync_code">ಈ ಸಿಂಕ್ ಕೋಡ್ ಅನ್ನು ಸ್ಕ್ಯಾನ್ ಮಾಡಿ</string>
     <string name="brave_sync_add_mobile_device_text_part_1">ಎರಡನೆಯ ಫೋನ್ ಅಥವಾ ಟ್ಯಾಬ್ಲೆಟ್ ಬಳಸಿಕೊಂಡು, Brave ಸೆಟ್ಟಿಂಗ್‌ಗಳು > ಸಿಂಕ್ > ಸ್ಕ್ಯಾನ್ ಎಂಬಲ್ಲಿಗೆ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಿ.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">ನಿಮ್ಮ ಎರಡನೆಯ ಸಾಧನದೊಂದಿಗೆ QR ಕೋಡ್ (ಮೇಲಿನದ್ದು) ಸ್ಕ್ಯಾನ್ ಮಾಡಿ ಅಥವಾ ಯಾವುದೇ ಕ್ಯಾಮೆರಾ ಲಭ್ಯವಿಲ್ಲದೇ ಇದ್ದರೆ ಕೋಡ್ ಪದಗಳನ್ನು ನಮೂದಿಸಿ.</string>
     <string name="brave_sync_btn_done">ಮುಗಿದಿದೆ</string>
     <string name="brave_sync_tabs_text">ಟ್ಯಾಬ್‌ಗಳು</string>
     <string name="brave_sync_history_text">ಇತಿಹಾಸ</string>

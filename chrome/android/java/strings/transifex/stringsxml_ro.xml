@@ -97,6 +97,8 @@ Salvat</string>
     <string name="update_notification_title">Actualizare Brave</string>
     <string name="update_notification_text">Noul browser Brave este cu 22% mai rapid</string>
     <string name="prefs_sync">Sincronizare (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Acesta este primul dumneavoastră anunț Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Apăsați aici pentru a afla mai multe</string>
     <string name="brave_ads_existing_user_offer_title">Reclamele Brave sunt aici!</string>
     <string name="brave_ads_new_user_offer_title">Activați Recompense Brave</string>
     <string name="brave_ads_offer_text">Obțineți Basic Attention Token pentru a vizualiza reclame care mențin confidențialitatea în Recompense Brave.</string>
@@ -111,7 +113,6 @@ Salvat</string>
     <string name="brave_sync_btn_laptop">Adăugare computer</string>
     <string name="brave_sync_scan_sync_code">Scanați acest cod de sincronizare</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Pe o a doua tabletă sau un al doilea telefon, accesați Setări Brave  > Sincronizare  > Scanare.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Scanați codul QR (de mai sus) cu un al doilea dispozitiv sau introduceți cuvintele cod dacă nu este disponibilă camera.</string>
     <string name="brave_sync_btn_done">Efectuat</string>
     <string name="brave_sync_tabs_text">File</string>
     <string name="brave_sync_history_text">Istoric</string>
@@ -244,6 +245,7 @@ creatorii de conținut care vă plac.</string>
     <string name="brave_rewards_not_available">Ne pare rău, dar se pare că Brave Rewards nu este disponibil pe dispozitivul dvs.</string>
 
     <string name="prefs_section_display">Afișaj</string>
+    <string name="prefs_section_controls">Controale</string>
     <string name="prefs_appearance">Aspect</string>
     <string name="hide_brave_rewards_icon_title">Ascunde Iconița Recompense Brave</string>
     <string name="hide_brave_rewards_icon_description">Ascunde Ioniță de Recompense Brave când Recompensele Brave nu sunt activate</string>
@@ -255,10 +257,13 @@ creatorii de conținut care vă plac.</string>
     <string name="reset_brave_rewards_error_title">Resetare Eroare</string>
     <string name="reset_brave_rewards_error_description">A apărut o eroare la resetarea Recompenselor Brave. Vă rugăm relansați Brave și încercați din nou</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Introduceți cuvintele cod pentru lanțul de sincronizare afișate mai jos. Tratați acest cod ca pe o parolă. Dacă cineva pune mâna pe el, persoana respectivă poate să citească și să modifice datele dvs. sincronizate.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Pe computerul țintă, navigați pe Brave Sync în setări şi apăsați pe butonul \"Am un Cod Sync\".\nIntroduceți cuvintele înlănțuite cod sync afişate mai jos.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sync</string>
+
+    <string name="brave_sync_code_warning">Tratați acest cod ca pe o parolă. Dacă cineva îl obține, acea persoană poate să citească şi să modifice datele dumneavoastră sincronizate.</string>
+
     <string name="notification_category_group_brave_ads">Reclame Brave</string>
     <string name="brave_ads_you_earned">Ați obținut</string>
 

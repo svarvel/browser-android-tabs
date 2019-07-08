@@ -111,7 +111,6 @@ EST แล้ว</string>
     <string name="brave_sync_btn_laptop">เพิ่มคอมพิวเตอร์</string>
     <string name="brave_sync_scan_sync_code">สแกนรหัสการซิงค์นี้</string>
     <string name="brave_sync_add_mobile_device_text_part_1">หากต้องการใช้โทรศัพท์หรือแท็บเล็ตเครื่องที่สอง ให้นำทางไปยัง การตั้งค่า Brave > ซิงค์ > สแกน</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">จับภาพรหัส QR (ด้านล่าง) ด้วยอุปกรณ์เครื่องที่สองของคุณ หรือป้อนข้อความรหัสหากไม่มีกล้องที่พร้อมใช้งาน</string>
     <string name="brave_sync_btn_done">เสร็จสิ้น</string>
     <string name="brave_sync_tabs_text">แท็บ</string>
     <string name="brave_sync_history_text">ประวัติ</string>
@@ -255,10 +254,9 @@ EST แล้ว</string>
     <string name="reset_brave_rewards_error_title">ข้อผิดพลาดในการรีเซ็ต</string>
     <string name="reset_brave_rewards_error_description">เกิดข้อผิดพลาดขณะรีเซ็ต Brave Rewards กรุณาปิดแล้วเปิด Brave ใหม่และลองอีกครั้ง</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">กรอกโค้ดคำซิงก์เชนที่แสดงด้านล่าง โปรดดูแลโค้ดนี้เสมือนเป็นรหัสผ่าน หากมีผู้ใดยึดครองโค้ดนี้ พวกเขาจะสามารถอ่านและแก้ไขข้อมูลที่คุณซิงก์ได้</string>
-
     <string name="brave_sync_official">ซิงก์ Brave</string>
     <string name="prefs_sync_official">ซิงก์</string>
+
     <string name="notification_category_group_brave_ads">Brave Ads</string>
     <string name="brave_ads_you_earned">คุณได้รับ</string>
 

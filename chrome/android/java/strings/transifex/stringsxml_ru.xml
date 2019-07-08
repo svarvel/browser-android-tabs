@@ -99,6 +99,8 @@
     <string name="update_notification_title">Обновление Brave</string>
     <string name="update_notification_text">Новый Brave браузер на 22% быстрее</string>
     <string name="prefs_sync">Синхронизация (бета-версия)</string>
+    <string name="brave_ads_oobe_education_notification_title">Это ваша первая реклама от Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Нажмите здесь, чтобы узнать больше</string>
     <string name="brave_ads_existing_user_offer_title">Появилась реклама Brave</string>
     <string name="brave_ads_new_user_offer_title">Включить вознаграждения Brave</string>
     <string name="brave_ads_offer_text">Заработайте базовый токен внимания за просмотр рекламы, сохраняющей конфиденциальность, в вознаграждениях Brave.</string>
@@ -113,7 +115,6 @@
     <string name="brave_sync_btn_laptop">Добавить компьютер</string>
     <string name="brave_sync_scan_sync_code">Отсканируйте этот код синхронизации</string>
     <string name="brave_sync_add_mobile_device_text_part_1">В настройках Brave на втором телефоне или планшете выберите «Синхронизация» > «Сканировать».</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Отсканируйте QR-код (см. выше), используя второе устройство. Если камера недоступна, введите кодовые слова.</string>
     <string name="brave_sync_btn_done">Готово</string>
     <string name="brave_sync_tabs_text">Вкладки</string>
     <string name="brave_sync_history_text">История</string>
@@ -247,6 +248,7 @@
     <string name="brave_rewards_not_available">К сожалению, похоже, что награды Brave недоступны на вашем устройстве</string>
 
     <string name="prefs_section_display">Отобразить</string>
+    <string name="prefs_section_controls">Управление</string>
     <string name="prefs_appearance">Внешний вид</string>
     <string name="hide_brave_rewards_icon_title">Скрыть иконку  Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">Скрывает иконку Brave Rewards, когда Brave Rewards не активно</string>
@@ -258,10 +260,13 @@
     <string name="reset_brave_rewards_error_title">Ошибка сброса</string>
     <string name="reset_brave_rewards_error_description">Произошла ошибка сброса Brave Rewards. Перезапустите Brave и повторите попытку</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Введите кодовые слова цепочки синхронизации, показанные ниже. Рассматривайте этот код как пароль. Если кто-то получит его, они сможет просматривать и изменять ваши синхронизированные данные.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">На своем целевом компьютере перейдите к Brave Sync в настройках и нажмите кнопку «У меня есть код синхронизации».\nВведите отображаемые ниже кодовые слова цепочки синхронизации.</string>
 
     <string name="brave_sync_official">Синхронизация Brave</string>
     <string name="prefs_sync_official">Синхронизировать</string>
+
+    <string name="brave_sync_code_warning">Рассматривайте этот код как пароль. Если кто-либо получит его, он или она могут сможет просматривать и изменять ваши синхронизированные данные.</string>
+
     <string name="notification_category_group_brave_ads">Реклама Brave</string>
     <string name="brave_ads_you_earned">Вы заработали</string>
 

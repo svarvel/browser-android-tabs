@@ -102,6 +102,8 @@ Dihemat</string>
     <string name="update_notification_title">Pembaruan Brave</string>
     <string name="update_notification_text">Peramban Brave baru 22% lebih cepat</string>
     <string name="prefs_sync">Sync (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Ini adalah iklan Brave Anda yang pertama</string>
+    <string name="brave_ads_oobe_education_notification_body">Ketuk di sini untuk mengetahui lebih lanjut</string>
     <string name="brave_ads_existing_user_offer_title">Iklan Brave ada di sini! </string>
     <string name="brave_ads_new_user_offer_title">Aktifkan Imbalan Brave</string>
     <string name="brave_ads_offer_text">Dapatkan Token Atensi Dasar untuk melihat iklan yang menjaga privasi di Imbalan Brave. </string>
@@ -116,7 +118,6 @@ Dihemat</string>
     <string name="brave_sync_btn_laptop">Tambah Komputer</string>
     <string name="brave_sync_scan_sync_code">Pindai kode sinkronisasi ini</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Menggunakan ponsel atau tablet kedua, buka Pengaturan Brave > Sinkronisasi > Pindai.</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">Tangkap kode QR (di atas) dengan perangkat kedua Anda, atau masukkan kata-kata kode jika tidak ada kamera.</string>
     <string name="brave_sync_btn_done">Selesai</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Riwayat</string>
@@ -250,6 +251,7 @@ pembuat konten yang Anda sukai.</string>
     <string name="brave_rewards_not_available">Maaf, sepertinya Brave Rewards tidak tersedia di perangkat Anda</string>
 
     <string name="prefs_section_display">Layar Tampilan</string>
+    <string name="prefs_section_controls">Kendali</string>
     <string name="prefs_appearance">Tampilan</string>
     <string name="hide_brave_rewards_icon_title">Sembunyikan Ikon Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">Menyembunyikan Ikon Brave Rewards ketika Brave Rewards tidak diaktifkan</string>
@@ -261,10 +263,13 @@ pembuat konten yang Anda sukai.</string>
     <string name="reset_brave_rewards_error_title">Kesalahan Pengaturan Ulang</string>
     <string name="reset_brave_rewards_error_description">Terjadi kesalahan saat mengatur ulang Brave Rewards. Harap luncurkan ulang Brave dan coba lagi</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Masukkan kata-kata kode rantai sinkronisasi yang ditunjukkan di bawah ini. Perlakukan kode ini seperti kata sandi. Jika orang lain mengetahuinya, mereka dapat membaca dan memodifikasi data tersinkronkan milik Anda.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Di komputer target Anda, masuklah ke Brave Sync dalam pengaturan dan klik tombol \"Saya punya Kode Sinkronisasi\".\nMasukkan rangkaian kata kode sinkronisasi yang ditampilkan di bawah ini.</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">Sinkronkan</string>
+
+    <string name="brave_sync_code_warning">Perlakukan kode ini seperti kata sandi. Jika seseorang bisa mengetahuinya, mereka akan bisa membaca dan memodifikasi data yang Anda sinkronkan.</string>
+
     <string name="notification_category_group_brave_ads">Iklan Brave</string>
     <string name="brave_ads_you_earned">Anda telah memperoleh</string>
 

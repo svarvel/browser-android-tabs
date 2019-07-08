@@ -97,6 +97,8 @@
     <string name="update_notification_title">Braveアプデート</string>
     <string name="update_notification_text">新しく生まれ変わったBraveブラウザは、22%の高速化を達成しました</string>
     <string name="prefs_sync">Sync (beta版)</string>
+    <string name="brave_ads_oobe_education_notification_title">これはあなたの最初のBrave広告です</string>
+    <string name="brave_ads_oobe_education_notification_body">詳しく知るにはここをタップします</string>
     <string name="brave_ads_existing_user_offer_title">Brave Adsのご紹介です！</string>
     <string name="brave_ads_new_user_offer_title">Brave Rewardsを有効にしましょう</string>
     <string name="brave_ads_offer_text">Brave Rewardsでプライバシー保護広告を見てベーシックアテンショントークンをもらいましょう。</string>
@@ -111,7 +113,6 @@
     <string name="brave_sync_btn_laptop">コンピュータを追加</string>
     <string name="brave_sync_scan_sync_code">この同期コードをスキャンします</string>
     <string name="brave_sync_add_mobile_device_text_part_1">2 つ目の電話またはタブレットを使用して、[Brave 設定] > [同期] > {スキャン} に移動します。</string>
-    <string name="brave_sync_add_mobile_device_text_part_2">2 つ目のデバイスで QR コード (上記) を読み込むか、カメラが利用できない場合はコードの単語を入力します。</string>
     <string name="brave_sync_btn_done">完了</string>
     <string name="brave_sync_tabs_text">タブ</string>
     <string name="brave_sync_history_text">履歴</string>
@@ -241,6 +242,7 @@
     <string name="brave_rewards_not_available">申し訳ありませんが、お使いの端末ではBrave Rewardsをご利用いただけないようです</string>
 
     <string name="prefs_section_display">表示</string>
+    <string name="prefs_section_controls">コントロール</string>
     <string name="prefs_appearance">見た目</string>
     <string name="hide_brave_rewards_icon_title">Braveリワードアイコンを隠す</string>
     <string name="hide_brave_rewards_icon_description">Braveリワードが有効でない場合にBraveリワードアイコンを隠す</string>
@@ -252,10 +254,13 @@
     <string name="reset_brave_rewards_error_title">エラーをリセット</string>
     <string name="reset_brave_rewards_error_description">Braveリワードのリセット中にエラーが発生しました。Braveを再開して、再度お試しください。</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">下に表示された同期チェーンコードワードを入力してください。このコードはパスワードのようにお取り扱いください。誰かがそれを入手すると、あなたの同期データを読んだり、変更したりすることができます。</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">あなたのターゲットコンピューター上で、設定の[Brave同期]に移動し、[同期コードを持っています]ボタンをクリックします。\n以下に示す同期チェーンコードワードを入力してください。</string>
 
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">同期</string>
+
+    <string name="brave_sync_code_warning">このコードをパスワードのように扱ってください。何者かがコードを手に入れた場合、コードを入手した者はあなたの同期化されたデータを読んだり、変更を加えたりすることができます。</string>
+
     <string name="notification_category_group_brave_ads">Brave Ads</string>
     <string name="brave_ads_you_earned">獲得しました</string>
 
