@@ -1257,7 +1257,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (null != mBraveSyncTextViewAddMobileDevice) {
           setSyncText(getResources().getString(R.string.brave_sync_scan_sync_code),
                         getResources().getString(R.string.brave_sync_add_mobile_device_text_part_1) + "\n\n" +
-                        getResources().getString(R.string.brave_sync_add_mobile_device_text_part_2), mBraveSyncTextViewAddMobileDevice);
+                        getResources().getString(R.string.brave_sync_add_mobile_device_text_part_2) + "\n" +
+                        getResources().getString(R.string.brave_sync_code_warning), mBraveSyncTextViewAddMobileDevice);
       }
       if (null != mScrollViewSyncInitial) {
           mScrollViewSyncInitial.setVisibility(View.GONE);
@@ -1299,7 +1300,8 @@ public class BraveSyncScreensPreference extends PreferenceFragment
       if (null != mBraveSyncTextViewAddLaptop) {
           setSyncText(getResources().getString(R.string.brave_sync_add_laptop_text_title),
                         getResources().getString(R.string.brave_sync_add_laptop_text_part_1) + "\n\n" +
-                        getResources().getString(R.string.brave_sync_add_laptop_text_part_2_new), mBraveSyncTextViewAddLaptop);
+                        getResources().getString(R.string.brave_sync_add_laptop_text_part_2_new) + "\n" +
+                        getResources().getString(R.string.brave_sync_code_warning), mBraveSyncTextViewAddLaptop);
       }
       if (null != mScrollViewSyncInitial) {
           mScrollViewSyncInitial.setVisibility(View.GONE);
