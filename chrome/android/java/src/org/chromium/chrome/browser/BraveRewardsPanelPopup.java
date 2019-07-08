@@ -289,9 +289,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                     mBraveRewardsNativeWorker.CreateWallet();
                     mWalletCreateInProcess = true;
                     startJoinRewardsAnimation();
-                    if (PackageUtils.isFirstInstall(context)) {
-                        BraveAdsNativeHelper.nativeSetAdsEnabled(Profile.getLastUsedProfile());
-                    }
+                    BraveAdsNativeHelper.nativeSetAdsEnabled(Profile.getLastUsedProfile());
                 }
             }
           }));

@@ -2115,10 +2115,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     private void updateNotificationBadgeForNewInstall(boolean rewardsEnabled) {
         SharedPreferences sharedPref = ContextUtils.getAppSharedPreferences();
         boolean shownBefore = sharedPref.getBoolean(BraveRewardsPanelPopup.PREF_WAS_TOOLBAR_BAT_LOGO_BUTTON_PRESSED, false);
-        boolean shouldShow =
-          PackageUtils.isFirstInstall(getContext())
-          && !shownBefore
-          && !rewardsEnabled;
+        boolean shouldShow = !shownBefore && !rewardsEnabled;
 
         if (!shouldShow) return;
 
