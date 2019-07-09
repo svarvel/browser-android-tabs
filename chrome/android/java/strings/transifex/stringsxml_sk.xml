@@ -97,6 +97,8 @@ ušetrený čas</string>
     <string name="update_notification_title">Aktualizácia prehliadača Brave</string>
     <string name="update_notification_text">Nový prehliadač Brave je o 22 % rýchlejší</string>
     <string name="prefs_sync">Sync (beta verzia)</string>
+    <string name="brave_ads_oobe_education_notification_title">Toto je vaša prvá reklama Brave</string>
+    <string name="brave_ads_oobe_education_notification_body">Pre viac informácií kliknite sem</string>
     <string name="brave_ads_existing_user_offer_title">Reklamy Brave sú tu!</string>
     <string name="brave_ads_new_user_offer_title">Aktivovať odmeny Brave</string>
     <string name="brave_ads_offer_text">Získajte v odmenách Brave token základnej pozornosti na prezeranie reklám zameraných na ochranu súkromia.</string>
@@ -244,6 +246,7 @@ tvorcov obsahu, ktorých máte radi.</string>
     <string name="brave_rewards_not_available">Ľutujeme, ale Odmeny Brave vo vašom zariadení nie sú  k dispozícii</string>
 
     <string name="prefs_section_display">Zobraziť</string>
+    <string name="prefs_section_controls">Ovládacie prvky</string>
     <string name="prefs_appearance">Vzhľad</string>
     <string name="hide_brave_rewards_icon_title">Skryť ikonu Odmeny Brave</string>
     <string name="hide_brave_rewards_icon_description">Skryť ikonu Odmeny Brave, keď Odmeny Brave nie sú povolené</string>
@@ -255,8 +258,12 @@ tvorcov obsahu, ktorých máte radi.</string>
     <string name="reset_brave_rewards_error_title">Chyba obnovenia</string>
     <string name="reset_brave_rewards_error_description">Pri resetovaní Odmeny Brave sa vyskytla chyba. Znova spustite Brave a skúste to znova</string>
 
+    <string name="brave_sync_add_laptop_text_part_2_new">V cieľovom počítači prejdite na položku Brave Sync v nastaveniach a kliknite na tlačidlo „Mám synchronizačný kód“ .\nZadajte nižšie uvedené kódové slová synchrónneho reťazca.</string>
+
     <string name="brave_sync_official">Brave synchronizácia</string>
     <string name="prefs_sync_official">Synchronizovať</string>
+
+    <string name="brave_sync_code_warning">S týmto kódom zaobchádzajte ako s heslom. Ak sa ho niekto zmocní, môže čítať a upravovať vaše synchronizované údaje.</string>
 
     <string name="notification_category_group_brave_ads">Reklamy Brave</string>
     <string name="brave_ads_you_earned">Zarobili ste</string>

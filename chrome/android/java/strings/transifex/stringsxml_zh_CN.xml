@@ -38,6 +38,8 @@
     <string name="enter_code_words_sync">输入同步代码</string>
     <string name="sync_device">同步设备</string>
     <string name="sync_device_failure">无法设置同步</string>
+    <string name="sync_requires_correct_time">你的设备上可能设置了错误的系统时间或时区。 请设置正确的时间和时区 </string>
+
     <string name="brave_stats_text_trackers">跟踪器
 已屏蔽</string>
     <string name="brave_stats_text_ads">广告
@@ -97,6 +99,10 @@
     <string name="update_notification_title">更新 Brave</string>
     <string name="update_notification_text">新版Brave浏览器快了22%</string>
     <string name="prefs_sync">同步（beta）</string>
+    <string name="brave_ads_oobe_education_notification_title">这是你的第一条 Brave 广告</string>
+    <string name="brave_ads_oobe_education_notification_body">点击了解更多</string>
+    <string name="brave_ads_existing_user_offer_title">Brave 的广告在这！</string>
+    <string name="brave_ads_new_user_offer_title">启用 Brave 奖励</string>
     <string name="brave_sync_description_page_1_part_1">Brave Sync允许您在不同设备上的Brave浏览器之间自行同步书签数据。</string>
     <string name="brave_sync_description_page_1_part_2">只需从另一个设备上创建的同步链中扫描代码。或者启动一个新的同步链。</string>
     <string name="brave_sync_scan_chain_code">扫描或输入同步代码</string>

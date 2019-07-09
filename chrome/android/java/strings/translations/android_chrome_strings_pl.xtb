@@ -1267,7 +1267,7 @@ Twoją domyślną przeglądarką.</translation>
 Możesz zmienić domyślną przeglądarkę w ustawieniach aplikacji.</translation>
 <translation id="5708254139873333042">Oszczędzaj baterię i wczytuj strony internetowe szybciej. Ustaw Brave jako domyślną przeglądarkę internetową. W menu przeglądarki Brave stuknij opcję Ustaw jako domyślną przeglądarkę internetową.</translation>
 <translation id="3570367516044491911">Ustaw jako domyślną przeglądarkę</translation>
-<translation id="5827583267117939716">Wybierz przeglądarkę internetową Brave z listy i kliknij przycisk Zawsze</translation>
+<translation id="5827583267117939716">Wybierz przeglądarkę Brave z listy i kliknij przycisk "Zawsze"</translation>
 <translation id="2262526166668973593">Ustaw Brave jako domyślną przeglądarkę
 Oszczędzaj baterię dzięki szybszemu ładowaniu stron</translation>
 <translation id="1916285746997567466">Przygotuj się na
@@ -1350,7 +1350,7 @@ reklamy i przekazuj to, co zarobisz
 twórcom treści, które lubisz.</translation>
 <translation id="5148719990624240755">WŁĄCZ NAGRODY BRAVE</translation>
 <translation id="1628742278973105368">Twój pierwszy miesięczny napiwek zostanie wysłany:</translation>
-<translation id="6665366815203065060">Właśnie wysłałeś(aś) napiwek do:</translation>
+<translation id="6665366815203065060">Wysłałeś napiwek do:</translation>
 <translation id="5441565662498481293">Automatycznie wysyłasz napiwek do:</translation>
 <translation id="1166682575529520472">Miesięcznie</translation>
 <translation id="8495235435594442882">Włącz dolny pasek narzędzi</translation>
@@ -1362,7 +1362,7 @@ twórcom treści, które lubisz.</translation>
 <translation id="7722441371828049691">Wspieraj ulubione strony.</translation>
 <translation id="5234764350956374838">Pomiń</translation>
 <translation id="4472575034687746823">Zacznij</translation>
-<translation id="4162066325465825185">Przepraszamy. Wygląda na to, że nagroda Brave nie jest dostępna na Twoim urządzeniu</translation>
+<translation id="4162066325465825185">Przepraszamy. Wygląda na to, że Nagrody Brave nie są dostępne na Twoim urządzeniu</translation>
 <translation id="4150201353443180367">Wyświetlanie</translation>
 <translation id="2804710924397009224">Ukryj ikonę Brave Rewards</translation>
 <translation id="7358991116457217836">Ukrywa ikonę Brave Rewards, kiedy nie są one włączone.</translation>
@@ -1372,11 +1372,11 @@ twórcom treści, które lubisz.</translation>
 <translation id="5321518976657560663">Błąd resetowania</translation>
 <translation id="7071576788062714665">Podczas resetowania Brave Rewards wystąpił błąd. Uruchom Brave ponownie i spróbuj jeszcze raz.</translation>
 <translation id="24067401253841795">Wprowadź wyświetloną poniżej treść kodu łańcucha synchronizacji. Traktuj ten kod jako hasło. Jeśli osoba trzecia uzyska dostęp do kodu, będzie mogła czytać i modyfikować zsynchronizowane dane.</translation>
-<translation id="3149880132460839085">Brave Sync</translation>
+<translation id="3149880132460839085">Synchronizacja Brave</translation>
 <translation id="2001614721500463888">To jest próbka reklamy z przeglądarki Brave</translation>
 <translation id="3042893390176785001">Tak będzie wyglądała reklama</translation>
 <translation id="8038539967102225446">Reklamy Brave są dostępne!</translation>
-<translation id="8050847734948770789">Włącz nagrody Brave</translation>
+<translation id="8050847734948770789">Włącz Nagrody Brave</translation>
 <translation id="2980493584149453310">Zarób token BAT za oglądanie reklam chroniących prywatność w nagrodach Brave.</translation>
 <translation id="9187185473011056079">Wchodzę w to!</translation>
 <translation id="6417420737057016607">Reklamy Brave</translation>
@@ -1387,6 +1387,7 @@ twórcom treści, które lubisz.</translation>
 <translation id="5302936549181470775">To Twoja pierwsza reklama Brave</translation>
 <translation id="2962368420497022811">Dotknij, aby dowiedzieć się więcej</translation>
 <translation id="2645380101799517405">Elementy kontrolne</translation>
-<translation id="6707003343517029414">Na docelowym komputerze przejdź do programu Brave Sync w ustawieniach i kliknij przycisk Mam kod Sync.\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</translation>
+<translation id="6707003343517029414">Na docelowym komputerze przejdź do synchronizacji Brave w ustawieniach i kliknij przycisk "Mam kod synchronizacji"\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</translation>
 <translation id="6764016175302339802">Potraktuj ten kod jako hasło. Jeśli ktoś uzyska do niego dostęp, będzie móc odczytywać i modyfikować Twoje zsynchronizowane dane.</translation>
+<translation id="8508856434435157945">Na telefonie przejdź do synchronizacji Brave w ustawieniach i kliknij przycisk "Mam kod synchronizacji"\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</translation>
 </translationbundle>

@@ -98,6 +98,8 @@ Disimpan</string>
     <string name="update_notification_title">Kemas kini Brave</string>
     <string name="update_notification_text">Pelayar Brave baru ialah lebih cepat sebanyak 22%</string>
     <string name="prefs_sync">Segerak (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Inilah iklan Brave anda yang pertama</string>
+    <string name="brave_ads_oobe_education_notification_body">Ketik di sini untuk mengetahui selanjutnya</string>
     <string name="brave_ads_existing_user_offer_title">Iklan Brave sudah sampai!</string>
     <string name="brave_ads_new_user_offer_title">Dayakan Ganjaran Brave</string>
     <string name="brave_ads_offer_text">Dapatkan Token Perhatian Asas dengan melihat iklan yang mengekalkan privasi dalam Ganjaran Brave.</string>
@@ -112,6 +114,7 @@ Disimpan</string>
     <string name="brave_sync_btn_laptop">Tambah Komputer</string>
     <string name="brave_sync_scan_sync_code">Imbas kod penyegerakan ini</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Dengan menggunakan telefon atau tablet kedua, navigasi ke Tetapan Brave> Segerak> Imbas.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Dalam peranti mudah alih anda, kemudi ke Penyegerakan Brave dalam panel Tetapan dan klik butang \"Imbas Kod Penyegerakan\". Gunakan kamera anda untuk mengimbas Kod QR di bawah.</string>
     <string name="brave_sync_btn_done">Siap</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Sejarah</string>
@@ -244,6 +247,7 @@ pencipta kandungan yang anda suka.</string>
     <string name="brave_rewards_not_available">Harap maaf, nampaknya Ganjaran Brave tidak boleh didapati pada peranti anda</string>
 
     <string name="prefs_section_display">Papar</string>
+    <string name="prefs_section_controls">Kawalan</string>
     <string name="prefs_appearance">Penampilan</string>
     <string name="hide_brave_rewards_icon_title">Sembunyikan Ikon Ganjaran Brave</string>
     <string name="hide_brave_rewards_icon_description">Sembunyikan Ikon Ganjaran Brave apabila Ganjaran Brave tidak diaktifkan</string>
@@ -255,8 +259,12 @@ pencipta kandungan yang anda suka.</string>
     <string name="reset_brave_rewards_error_title">Tetapkan Semula Ralat</string>
     <string name="reset_brave_rewards_error_description">Terdapat ralat ketika menetapkan semula Ganjaran Brave. Sila lancar semula Brave dan cuba lagi</string>
 
+    <string name="brave_sync_add_laptop_text_part_2_new">Dalam komputer sasaran anda, kemudi ke Penyegerakan Brave dalam tetapan dan klik pada butang \"Saya mempunyai Kod Penyegerakan\".\nMasukkan perkataan kod rantaian penyegerakan yang ditunjukkan di bawah.</string>
+
     <string name="brave_sync_official">Segerak Brave</string>
     <string name="prefs_sync_official">Segerak</string>
+
+    <string name="brave_sync_code_warning">Anggap kod ini seperti sebuah kata laluan. Sekiranya seseorang mendapatinya, mereka boleh membaca dan mengubah data anda yang disegerakkan.</string>
 
     <string name="notification_category_group_brave_ads">Iklan Brave</string>
     <string name="brave_ads_you_earned">Anda memperoleh</string>

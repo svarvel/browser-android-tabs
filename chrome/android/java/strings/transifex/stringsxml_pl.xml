@@ -102,7 +102,7 @@ zaoszczędzony czas</string>
     <string name="brave_ads_oobe_education_notification_title">To Twoja pierwsza reklama Brave</string>
     <string name="brave_ads_oobe_education_notification_body">Dotknij, aby dowiedzieć się więcej</string>
     <string name="brave_ads_existing_user_offer_title">Reklamy Brave są dostępne!</string>
-    <string name="brave_ads_new_user_offer_title">Włącz nagrody Brave</string>
+    <string name="brave_ads_new_user_offer_title">Włącz Nagrody Brave</string>
     <string name="brave_ads_offer_text">Zarób token BAT za oglądanie reklam chroniących prywatność w nagrodach Brave.</string>
     <string name="brave_ads_offer_positive">Wchodzę w to!</string>
     <string name="brave_sync_description_page_1_part_1">Synchronizacja Brave pozwala na prywatną synchronizację danych zakładek w Twoich przeglądarkach Brave na różnych urządzeniach.</string>
@@ -115,6 +115,7 @@ zaoszczędzony czas</string>
     <string name="brave_sync_btn_laptop">Dodaj komputer</string>
     <string name="brave_sync_scan_sync_code">Skanuj ten kod synchronizacji</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Za pomocą drugiego telefonu lub tabletu, przejdź do ustawień Brave > Synchronizacja > Skanuj.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Na telefonie przejdź do synchronizacji Brave w ustawieniach i kliknij przycisk \"Mam kod synchronizacji\"\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</string>
     <string name="brave_sync_btn_done">Gotowe</string>
     <string name="brave_sync_tabs_text">Karty</string>
     <string name="brave_sync_history_text">Historia</string>
@@ -150,7 +151,7 @@ Twoją domyślną przeglądarką.</string>
 Możesz zmienić domyślną przeglądarkę w ustawieniach aplikacji.</string>
     <string name="brave_default_browser_notification_body">Oszczędzaj baterię i wczytuj strony internetowe szybciej. Ustaw Brave jako domyślną przeglądarkę internetową. W menu przeglądarki Brave stuknij opcję Ustaw jako domyślną przeglądarkę internetową.</string>
     <string name="brave_set_default_browser">Ustaw jako domyślną przeglądarkę</string>
-    <string name="brave_set_default_browser_dialog_text">Wybierz przeglądarkę internetową Brave z listy i kliknij przycisk Zawsze</string>
+    <string name="brave_set_default_browser_dialog_text">Wybierz przeglądarkę Brave z listy i kliknij przycisk \"Zawsze\"</string>
     <string name="brave_default_browser_existing_notification_body">Ustaw Brave jako domyślną przeglądarkę
 Oszczędzaj baterię dzięki szybszemu ładowaniu stron</string>
 
@@ -235,7 +236,7 @@ reklamy i przekazuj to, co zarobisz
 twórcom treści, które lubisz.</string>
     <string name="brave_welcome_page_rewards_title">WŁĄCZ NAGRODY BRAVE</string>
     <string name="brave_ui_first_tip_text">Twój pierwszy miesięczny napiwek zostanie wysłany:</string>
-    <string name="brave_ui_tip_text">Właśnie wysłałeś(aś) napiwek do:</string>
+    <string name="brave_ui_tip_text">Wysłałeś napiwek do:</string>
     <string name="brave_ui_auto_tip_text">Automatycznie wysyłasz napiwek do:</string>
     <string name="brave_ui_monthly_text">Miesięcznie</string>
     <string name="bottom_toolbar_enable">Włącz dolny pasek narzędzi</string>
@@ -244,7 +245,7 @@ twórcom treści, które lubisz.</string>
     <string name="accessibility_toolbar_btn_bookmark">Stwórz zakładkę.</string>
     <string name="brave_ui_donate_monthly">Dawaj tej stronie miesięczny napiwek.</string>
 
-    <string name="brave_rewards_not_available">Przepraszamy. Wygląda na to, że nagroda Brave nie jest dostępna na Twoim urządzeniu</string>
+    <string name="brave_rewards_not_available">Przepraszamy. Wygląda na to, że Nagrody Brave nie są dostępne na Twoim urządzeniu</string>
 
     <string name="prefs_section_display">Wyświetlanie</string>
     <string name="prefs_section_controls">Elementy kontrolne</string>
@@ -259,9 +260,9 @@ twórcom treści, które lubisz.</string>
     <string name="reset_brave_rewards_error_title">Błąd resetowania</string>
     <string name="reset_brave_rewards_error_description">Podczas resetowania Brave Rewards wystąpił błąd. Uruchom Brave ponownie i spróbuj jeszcze raz.</string>
 
-    <string name="brave_sync_add_laptop_text_part_2_new">Na docelowym komputerze przejdź do programu Brave Sync w ustawieniach i kliknij przycisk Mam kod Sync.\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</string>
+    <string name="brave_sync_add_laptop_text_part_2_new">Na docelowym komputerze przejdź do synchronizacji Brave w ustawieniach i kliknij przycisk \"Mam kod synchronizacji\"\nWpisz słowa kodu łańcucha synchronizacji pokazane poniżej.</string>
 
-    <string name="brave_sync_official">Brave Sync</string>
+    <string name="brave_sync_official">Synchronizacja Brave</string>
     <string name="prefs_sync_official">Synchronizacja</string>
 
     <string name="brave_sync_code_warning">Potraktuj ten kod jako hasło. Jeśli ktoś uzyska do niego dostęp, będzie móc odczytywać i modyfikować Twoje zsynchronizowane dane.</string>

@@ -98,6 +98,8 @@
     <string name="update_notification_title">Brave 更新</string>
     <string name="update_notification_text">新的 Brave 瀏覽器快了 22%</string>
     <string name="prefs_sync">同步 (測試版)</string>
+    <string name="brave_ads_oobe_education_notification_title">這是您的第一個 Brave 廣告</string>
+    <string name="brave_ads_oobe_education_notification_body">觸碰這裡並了解更多</string>
     <string name="brave_ads_existing_user_offer_title">Brave 廣告在此！</string>
     <string name="brave_ads_new_user_offer_title">啟用 Brave 獎勵</string>
     <string name="brave_ads_offer_text">掙得基本注意代幣來檢視 Brave 獎勵中的隱私權保留廣告。</string>
@@ -244,6 +246,7 @@
     <string name="brave_rewards_not_available">我們很抱歉，看似您的裝置上沒有 Brave Rewards 可用</string>
 
     <string name="prefs_section_display">顯示</string>
+    <string name="prefs_section_controls">控制功能</string>
     <string name="prefs_appearance">外觀</string>
     <string name="hide_brave_rewards_icon_title">隱藏 Brave 獎勵圖標</string>
     <string name="hide_brave_rewards_icon_description">當 Brave 獎勵未啟用時隱藏 Brave 獎勵圖示</string>
@@ -255,8 +258,12 @@
     <string name="reset_brave_rewards_error_title">重新設定發生錯誤</string>
     <string name="reset_brave_rewards_error_description">重新設定 Brave 獎勵時發生錯誤。請重新啟動 Brave 並再次嘗試</string>
 
+    <string name="brave_sync_add_laptop_text_part_2_new">在您的目標電腦上，去到設定中的 Brave Sync 並點擊「我有同步代碼」按鈕。\n輸入顯示於下方的同步鏈代碼字詞。</string>
+
     <string name="brave_sync_official">Brave Sync</string>
     <string name="prefs_sync_official">同步</string>
+
+    <string name="brave_sync_code_warning">將這代碼視為密碼。如果被人知道，他們便能讀取和修改您同步過的資料。</string>
 
     <string name="notification_category_group_brave_ads">Brave 廣告</string>
     <string name="brave_ads_you_earned">您已掙得</string>

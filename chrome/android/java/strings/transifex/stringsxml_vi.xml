@@ -98,6 +98,8 @@ HTTPS</string>
     <string name="update_notification_title">Cập nhật Brave</string>
     <string name="update_notification_text">Trình duyệt Brave mới nhanh hơn 22%</string>
     <string name="prefs_sync">Đồng bộ (beta)</string>
+    <string name="brave_ads_oobe_education_notification_title">Đây là quảng cáo Brave đầu tiên của bạn</string>
+    <string name="brave_ads_oobe_education_notification_body">Nhấn vào đây để tìm hiểu thêm</string>
     <string name="brave_ads_existing_user_offer_title">Quảng cáo Brave đã có mặt!</string>
     <string name="brave_ads_new_user_offer_title">Bật Tính năng Thưởng Brave</string>
     <string name="brave_ads_offer_text">Xem các quảng cáo đảm bảo tính riêng tư để nhận Token BAT, trong tính năng Thưởng Brave</string>
@@ -112,6 +114,7 @@ HTTPS</string>
     <string name="brave_sync_btn_laptop">Thêm một máy tính</string>
     <string name="brave_sync_scan_sync_code">Quét mã đồng bộ này</string>
     <string name="brave_sync_add_mobile_device_text_part_1">Sử dụng một điện thoại hoặc máy tính bảng thứ hai, tìm đến Cài đặt Brave > Đồng bộ > Quét.</string>
+    <string name="brave_sync_add_mobile_device_text_part_2">Trên thiết bị di động của bạn, tìm đến Brave Sync trong mục Cài đặt và nhấp vào nút \"Quét mã đồng bộ hóa\". Sử dụng máy ảnh của bạn để quét Mã QR bên dưới.</string>
     <string name="brave_sync_btn_done">Xong</string>
     <string name="brave_sync_tabs_text">Tab</string>
     <string name="brave_sync_history_text">Lịch sử</string>
@@ -244,6 +247,7 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="brave_rewards_not_available">Chúng tôi rất tiếc, dường như tính năng Brave Rewards không khả dụng trên thiết bị của bạn</string>
 
     <string name="prefs_section_display">Hiển thị</string>
+    <string name="prefs_section_controls">Bộ điều khiển</string>
     <string name="prefs_appearance">Hiển thị</string>
     <string name="hide_brave_rewards_icon_title">Ẩn Biểu tượng Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">Ẩn biểu tượng </string>
@@ -255,8 +259,12 @@ những nhà sáng tạo nội dung bạn yêu thích.</string>
     <string name="reset_brave_rewards_error_title">Lỗi khi Đặt lại</string>
     <string name="reset_brave_rewards_error_description">Đã xảy ra lỗi khi khôi phục Brave Rewards về cài đặt gốc. Vui lòng khởi động lại Brave và thử lại</string>
 
+    <string name="brave_sync_add_laptop_text_part_2_new">Trên máy tính của bạn, tìm đến Brave Sync trong mục Cài đặt và nhấp vào nút \"Tôi có Mã đồng bộ hóa\".\nNhập các từ chuỗi mã đồng bộ hóa hiển thị bên dưới.</string>
+
     <string name="brave_sync_official">Đồng bộ hóa Brave</string>
     <string name="prefs_sync_official">Đồng bộ hóa</string>
+
+    <string name="brave_sync_code_warning">Hãy coi mã này như mật khẩu. Nếu ai đó biết được nó, họ có thể đọc và sửa đổi dữ liệu đồng bộ hóa của bạn.</string>
 
     <string name="notification_category_group_brave_ads">Quảng cáo Brave</string>
     <string name="brave_ads_you_earned">Bạn đã nhận được</string>

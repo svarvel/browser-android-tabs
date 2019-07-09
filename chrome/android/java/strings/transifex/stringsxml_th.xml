@@ -97,6 +97,8 @@ EST แล้ว</string>
     <string name="update_notification_title">อัปเดตของ Brave</string>
     <string name="update_notification_text">เบราว์เซอร์ Brave รุ่นใหม่เร็วขึ้น 22%</string>
     <string name="prefs_sync">Sync (เบต้า)</string>
+    <string name="brave_ads_oobe_education_notification_title">นี่คือโฆษณา Brave ชิ้นแรกของคุณ</string>
+    <string name="brave_ads_oobe_education_notification_body">แตะที่นี่เพื่อเรียนรู้เพิ่มเติม</string>
     <string name="brave_ads_existing_user_offer_title">Brave Ads อยู่ที่นี่!</string>
     <string name="brave_ads_new_user_offer_title">เปิดใช้งาน Brave Rewards</string>
     <string name="brave_ads_offer_text">รับ Basic Attention Token สำหรับการชม โฆษณาที่รักษาความเป็นส่วนตัวใน Brave Rewards</string>
@@ -243,6 +245,7 @@ EST แล้ว</string>
     <string name="brave_rewards_not_available">ขออภัย ดูเหมือนว่า Brave Rewards จะไม่สามารถใช้งานบนอุปกรณ์ของคุณได้</string>
 
     <string name="prefs_section_display">แสดง</string>
+    <string name="prefs_section_controls">ควบคุม</string>
     <string name="prefs_appearance">ลักษณะ</string>
     <string name="hide_brave_rewards_icon_title">ซ่อนไอคอน Brave Rewards</string>
     <string name="hide_brave_rewards_icon_description">ซ่อนไอคอน Brave Rewards เมื่อไม่ได้เปิดใช้งาน Brave Rewards</string>
@@ -254,8 +257,12 @@ EST แล้ว</string>
     <string name="reset_brave_rewards_error_title">ข้อผิดพลาดในการรีเซ็ต</string>
     <string name="reset_brave_rewards_error_description">เกิดข้อผิดพลาดขณะรีเซ็ต Brave Rewards กรุณาปิดแล้วเปิด Brave ใหม่และลองอีกครั้ง</string>
 
+    <string name="brave_sync_add_laptop_text_part_2_new">ในคอมพิวเตอร์เป้าหมายของคุณ เข้าไปที่ Brave Sync ในการตั้งค่าและคลิกปุ่ม \"ฉันมีรหัสซิงค์\"\nป้อนคำของรหัสลูกโซ่ซิงค์ที่แสดงด้านล่าง</string>
+
     <string name="brave_sync_official">ซิงก์ Brave</string>
     <string name="prefs_sync_official">ซิงก์</string>
+
+    <string name="brave_sync_code_warning">ดูแลรหัสนี้ให้เสมือนเป็นรหัสผ่าน หากใครสักคนได้รหัสนี้ไป เขาจะสามารถอ่านและแก้ไขข้อมูลที่ซิงค์ของคุณได้</string>
 
     <string name="notification_category_group_brave_ads">Brave Ads</string>
     <string name="brave_ads_you_earned">คุณได้รับ</string>
