@@ -213,7 +213,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
                 mActivity.OnRewardsPanelDismiss();
             }
         });
-        mActivity = BraveRewardsHelper.GetChromeTabbedActivity();
+        mActivity = BraveRewardsHelper.getChromeTabbedActivity();
         mBraveRewardsNativeWorker = BraveRewardsNativeWorker.getInstance();
         if (mBraveRewardsNativeWorker != null) {
           mBraveRewardsNativeWorker.AddObserver(thisObject);

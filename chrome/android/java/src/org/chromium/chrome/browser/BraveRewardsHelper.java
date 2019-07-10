@@ -190,7 +190,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
     }
 
 
-    static public ChromeTabbedActivity GetChromeTabbedActivity() {
+    static public ChromeTabbedActivity getChromeTabbedActivity() {
       for (Activity ref : ApplicationStatus.getRunningActivities()) {
           if (!(ref instanceof ChromeTabbedActivity)) continue;
 
@@ -254,7 +254,7 @@ public class BraveRewardsHelper implements LargeIconBridge.LargeIconCallback{
   }
 
   public static Tab currentActiveTab() {
-    ChromeTabbedActivity activity = BraveRewardsHelper.GetChromeTabbedActivity();
+    ChromeTabbedActivity activity = BraveRewardsHelper.getChromeTabbedActivity();
     if (activity == null || activity.getTabModelSelector() == null) {
       return null;
     }
