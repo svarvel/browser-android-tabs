@@ -556,7 +556,8 @@ public class ChromeTabbedActivity
             }
 
             // dim screen to half of the current value 
-            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,previousBrightness/2);
+            //Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,previousBrightness/2);
+            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,0);
 
             // start a timer to calculate savings 
             startDimming = System.currentTimeMillis();
@@ -571,7 +572,8 @@ public class ChromeTabbedActivity
             isDimmed = true;
 
             // logging 
-            Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);           
+            //Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);
+            Log.d(SUBTAG, "Full Dimming: ON! - No-dim-duration: " + timeNoDimming);
         } else { 
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
             else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
