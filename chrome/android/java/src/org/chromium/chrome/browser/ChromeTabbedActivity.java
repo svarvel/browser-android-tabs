@@ -684,7 +684,7 @@ public class ChromeTabbedActivity
         }
 
         // logging
-        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
     }
     ////
 
