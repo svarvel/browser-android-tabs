@@ -608,11 +608,12 @@ public class ChromeTabbedActivity
             return;
         }
 
-        // get dimming preferences (unless is being forced)
+        // get dimming preferences (unless forced, e.g., when pausing the app) 
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         if (! useDimming){
             useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        } else {
             isBeingPaused = true; 
         }
 
