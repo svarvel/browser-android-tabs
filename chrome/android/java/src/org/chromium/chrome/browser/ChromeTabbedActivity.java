@@ -225,10 +225,12 @@ public class ChromeTabbedActivity
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
     private boolean isDimmed;             // keep track if dimmed or not 
+    private boolean isBeingPaused;        // keep track if an app is being paused (for timers)
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_BATTERY_COUNT = "battery_savings"; //batt stats
+    private static final String DIM_STRATEGY = "conservative" // aggressive // dimming strategy 
     ////
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -512,6 +514,7 @@ public class ChromeTabbedActivity
 
     // [MV] lower screen brightness //
     public void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
+        
         //  logging 
         Log.d(SUBTAG, "[decreaseScreenBrightness] " + pageEvent); 
 
@@ -555,14 +558,25 @@ public class ChromeTabbedActivity
                 e.printStackTrace();
             }
 
-            // dim screen to half of the current value 
-            //Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,previousBrightness/2);
-            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS,0);
+            // dim screen based on strategy
+            int dimValue = -1;             
+            if (DIM_STRATEGY.equals('conservative')){
+                dimValue = previousBrightness/2; 
+            } else {
+                dimValue = 0;  
+            }
+            Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, dimValue);
 
             // start a timer to calculate savings 
             startDimming = System.currentTimeMillis();
 
-            // compute time-no-dimming
+            // update last timer if app was paused (do not count dimming out of the app)
+            if (isBeingPaused){
+                endDimming = -1; 
+                isBeingPaused = false; 
+            }
+            
+            // compute time-no-dimming            
             long timeNoDimming = -1;
             if (endDimming != -1){
                 timeNoDimming = startDimming - endDimming;
@@ -570,6 +584,7 @@ public class ChromeTabbedActivity
 
             // flag update 
             isDimmed = true;
+            isBeingPaused = false; 
 
             // logging 
             //Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);
@@ -595,9 +610,10 @@ public class ChromeTabbedActivity
 
         // get dimming preferences (unless is being forced)
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();            
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         if (! useDimming){
             useDimming = sharedPreferences.getBoolean(DIMMING, false);
+            isBeingPaused = true; 
         }
 
         // increase screen brightness as needed
@@ -621,7 +637,7 @@ public class ChromeTabbedActivity
                 endDimming = System.currentTimeMillis();
 
                 // logging 
-                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + "Dim-duration: " + (endDimming - startDimming));
+                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + " Dim-duration: " + (endDimming - startDimming));
             } else {
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
@@ -647,12 +663,8 @@ public class ChromeTabbedActivity
         long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
         // on average, we save about 40mA per 50 brightness increase     
         int current = -1; 
-        int brightnessDrop = previousBrightness/2; 
-        if((brightnessDrop % 50) == 0) { 
-          current = 40*(brightnessDrop/50); 
-        }else {
-          current = 40*(brightnessDrop/50 + 1); 
-        }
+        // FIXME -- this is not static anymore. 
+
         //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
         long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);
         if (estimatedMAhSaved < 0){
@@ -662,9 +674,16 @@ public class ChromeTabbedActivity
         sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
         sharedPreferencesEditor.apply();
 
-        // logging 
-        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);    
-       
+        // derive how much dimmed based on strategy
+        int brightnessDrop = -1;
+        if (DIM_STRATEGY.equals('conservative')){
+            brightnessDrop = previousBrightness/2; 
+        } else {
+            brightnessDrop = 0;  
+        }
+
+        // logging
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current: " + current + " BrightnessDrop: " + brightnessDrop);
     }
     ////
 
