@@ -228,9 +228,11 @@ public class ChromeTabbedActivity
     private boolean isBeingPaused;        // keep track if an app is being paused (for timers)
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
+    private int dimValue = -1;            // dimming value to be used based on strategy    
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_BATTERY_COUNT = "battery_savings";     //batt stats
-    private static final String DIM_STRATEGY = "conservative";// aggressive // dimming strategy 
+    private static final String DIM_STRATEGY = "conservative"; // dimming strategy 
+    //[fake-for-stats,aggressive]
     
 
     private static final String TAG = "ChromeTabbedActivity";
@@ -558,10 +560,11 @@ public class ChromeTabbedActivity
                 e.printStackTrace();
             }
 
-            // dim screen based on strategy
-            int dimValue = -1;             
+            // dim screen based on strategy                                 
             if (DIM_STRATEGY.equals("conservative")){
                 dimValue = previousBrightness/2; 
+            } else if (DIM_STRATEGY.equals("fake-for-stats")){
+                dimValue = previousBrightness;
             } else {
                 dimValue = 0;  
             }
@@ -675,16 +678,8 @@ public class ChromeTabbedActivity
         sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
         sharedPreferencesEditor.apply();
 
-        // derive how much dimmed based on strategy
-        int brightnessDrop = -1;
-        if (DIM_STRATEGY.equals("conservative")){
-            brightnessDrop = previousBrightness/2; 
-        } else {
-            brightnessDrop = 0;  
-        }
-
         // logging
-        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + dimValue  + " Strategy: " + DIM_STRATEGY);
     }
     ////
 
