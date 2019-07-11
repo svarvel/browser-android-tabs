@@ -136,7 +136,7 @@ public class HomepageManager {
      * @see #isHomepageEnabled
      */
     public boolean getPrefHomepageEnabled() {
-        return mSharedPreferences.getBoolean(PREF_HOMEPAGE_ENABLED, true);
+        return mSharedPreferences.getBoolean(PREF_HOMEPAGE_ENABLED, false);
     }
 
     /**
