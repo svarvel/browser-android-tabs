@@ -229,9 +229,9 @@ public class ChromeTabbedActivity
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
     private static final String DIMMING = "use_dimming"; // store dimming status
-    private static final String PREF_BATTERY_COUNT = "battery_savings"; //batt stats
-    private static final String DIM_STRATEGY = "conservative" // aggressive // dimming strategy 
-    ////
+    private static final String PREF_BATTERY_COUNT = "battery_savings";     //batt stats
+    private static final String DIM_STRATEGY = "conservative";// aggressive // dimming strategy 
+    
 
     private static final String TAG = "ChromeTabbedActivity";
 
@@ -560,7 +560,7 @@ public class ChromeTabbedActivity
 
             // dim screen based on strategy
             int dimValue = -1;             
-            if (DIM_STRATEGY.equals('conservative')){
+            if (DIM_STRATEGY.equals("conservative")){
                 dimValue = previousBrightness/2; 
             } else {
                 dimValue = 0;  
@@ -676,7 +676,7 @@ public class ChromeTabbedActivity
 
         // derive how much dimmed based on strategy
         int brightnessDrop = -1;
-        if (DIM_STRATEGY.equals('conservative')){
+        if (DIM_STRATEGY.equals("conservative")){
             brightnessDrop = previousBrightness/2; 
         } else {
             brightnessDrop = 0;  
