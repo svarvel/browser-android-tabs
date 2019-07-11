@@ -601,7 +601,7 @@ public class ChromeTabbedActivity
     ////
 
     // [MV] resume screen brightness //
-    public void increaseScreenBrightness(ContentResolver CR, String pageEvent, boolean useDimming) {
+    public void increaseScreenBrightness(ContentResolver CR, String pageEvent, boolean useDimming, boolean appIsBeingPaused) {
         //  logging 
         Log.d(SUBTAG, "[increaseScreenBrightness] " + pageEvent); 
 
@@ -616,7 +616,11 @@ public class ChromeTabbedActivity
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
         if (! useDimming){
             useDimming = sharedPreferences.getBoolean(DIMMING, false);
-        } else {
+        } 
+
+        // check if app is being paused 
+        if (appIsBeingPaused){
+            Log.d(SUBTAG, "App paused detected"); 
             isBeingPaused = true; 
         }
 
@@ -665,9 +669,15 @@ public class ChromeTabbedActivity
     
         // update counter for battery savings 
         long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
-        // on average, we save about 40mA per 50 brightness increase     
+        
+         // on average, we save about 40mA per 50 brightness increase     
         int current = -1; 
-        // FIXME -- this is not static anymore. 
+        int brightnessDrop = previousBrightness - dimValue; 
+        if((brightnessDrop % 50) == 0) { 
+          current = 40*(brightnessDrop/50); 
+        }else {
+          current = 40*(brightnessDrop/50 + 1); 
+        }
 
         //C = (I * t) / 3600 // saving the per hour since would take forever to show something. 
         long estimatedMAhSaved = estimatedMAhSavedPrev + (current * (endDimming - startDimming)/1000);
@@ -679,7 +689,7 @@ public class ChromeTabbedActivity
         sharedPreferencesEditor.apply();
 
         // logging
-        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + dimValue  + " Strategy: " + DIM_STRATEGY);
+        Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
     }
     ////
 
@@ -2001,7 +2011,7 @@ public class ChromeTabbedActivity
                 Log.d(SUBTAG, "Load finished. URL: " + url); 
                 if (! url.equals(UrlConstants.NTP_URL)){
                     Context appContext = ContextUtils.getApplicationContext();
-                    increaseScreenBrightness(appContext.getContentResolver(), "onPageLoadFinished", false);      
+                    increaseScreenBrightness(appContext.getContentResolver(), "onPageLoadFinished", false, false);      
                 }
                 ////
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
