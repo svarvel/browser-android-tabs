@@ -585,7 +585,7 @@ public class ChromeTabbedActivity
             if (isBeingPaused){
                 endDimming    = -1; 
                 isBeingPaused = false; 
-                timeNoDimming = -1 
+                timeNoDimming = -1; 
             }
             
             // update time-no-dimming           
