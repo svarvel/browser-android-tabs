@@ -228,10 +228,12 @@ public class ChromeTabbedActivity
     private boolean isBeingPaused;        // keep track if an app is being paused (for timers)
     private long startDimming = -1;       // track start dim
     private long endDimming   = -1;       // track stop dim
+    private long timeNoDimming = -1;      // keep track of last duration of timeNoDimming
     private int dimValue = -1;            // dimming value to be used based on strategy    
     private static final String DIMMING = "use_dimming"; // store dimming status
-    private static final String PREF_BATTERY_COUNT = "battery_savings";     //batt stats
-    private static final String DIM_STRATEGY = "conservative"; // dimming strategy 
+    private static final String PREF_DIM_TIME = "total_dim_duration";           //batt stats
+    private static final String PREF_NO_DIM_TIME = "total_no_dim_duration";     //batt stats    
+    private static final String DIM_STRATEGY  = "conservative"; // dimming strategy 
     //[fake-for-stats,aggressive]
     
 
@@ -560,11 +562,17 @@ public class ChromeTabbedActivity
                 e.printStackTrace();
             }
 
-            // dim screen based on strategy                                 
+            // dim screen based on strategy selected 
             if (DIM_STRATEGY.equals("conservative")){
                 dimValue = previousBrightness/2; 
             } else if (DIM_STRATEGY.equals("fake-for-stats")){
                 dimValue = previousBrightness;
+            } else if (DIM_STRATEGY.equals("hourglass")){                
+                if (previousBrightness <= 125) {
+                   dimValue = 0;  
+                } else {
+                    dimValue = previousBrightness - 125; 
+                }
             } else {
                 dimValue = 0;  
             }
@@ -575,12 +583,12 @@ public class ChromeTabbedActivity
 
             // update last timer if app was paused (do not count dimming out of the app)
             if (isBeingPaused){
-                endDimming = -1; 
+                endDimming    = -1; 
                 isBeingPaused = false; 
+                timeNoDimming = -1 
             }
             
-            // compute time-no-dimming            
-            long timeNoDimming = -1;
+            // update time-no-dimming           
             if (endDimming != -1){
                 timeNoDimming = startDimming - endDimming;
             }
@@ -656,17 +664,35 @@ public class ChromeTabbedActivity
         } else {
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
             else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
-            // potential fix counter (TMP)
-            long e = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+            /* potential fix counter (TMP)
+            long e = sharedPreferences.getLong(PREF_DIM_TIME, 0);
             if (e < 0){
                 Log.d(SUBTAG, "Something is wrong. Resetting estimatedMAhSaved"); 
                 e = 0; 
-                sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  e);
+                sharedPreferencesEditor.putLong(PREF_DIM_TIME,  e);
                 sharedPreferencesEditor.apply();
             }
             return;
+            */
         }
-    
+        
+        // update home page stats
+        long currTotalDimming = sharedPreferences.getLong(PREF_DIM_TIME, 0);
+        long currTotalNoDimming = sharedPreferences.getLong(PREF_NO_DIM_TIME, 0);        
+        long dimmingTime = endDimming - startDimming;
+        if (dimmingTime > 0){
+            currTotalDimming += dimmingTime; 
+        }        
+        if (timeNoDimming > 0){
+            currTotalNoDimming += timeNoDimming; 
+        }
+
+        // update info to be displayed 
+        sharedPreferencesEditor.putLong(PREF_DIM_TIME,     currTotalDimming);
+        sharedPreferencesEditor.putLong(PREF_NO_DIM_TIME,  currTotalNoDimming);        
+        sharedPreferencesEditor.apply();
+        
+        /*
         // update counter for battery savings 
         long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
         
@@ -685,11 +711,14 @@ public class ChromeTabbedActivity
             Log.d(SUBTAG, "Something is wrong. Resetting estimatedMAhSaved"); 
             estimatedMAhSaved = 0; 
         }
+        
+        // update info to be displayed 
         sharedPreferencesEditor.putLong(PREF_BATTERY_COUNT,  estimatedMAhSaved);
         sharedPreferencesEditor.apply();
-
+            
         // logging
         Log.d(SUBTAG, "Previous saving: " + estimatedMAhSavedPrev + " New saving: " + estimatedMAhSaved + " Duration: " + (endDimming - startDimming)/1000 + " Brightness: " + previousBrightness + " Current (ma): " + current + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
+        */
     }
     ////
 

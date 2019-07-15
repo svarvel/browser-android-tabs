@@ -57,7 +57,8 @@ public class NewTabPageView extends HistoryNavigationLayout {
     private static final String PREF_HTTPS_UPGRADES_COUNT = "https_upgrades_count";
     private static final short MILLISECONDS_PER_ITEM = 50;
     // [MV] //
-    private static final String PREF_BATTERY_COUNT = "battery_savings";
+    private static final String PREF_DIM_TIME = "total_dim_duration"; 
+    private static final String PREF_NO_DIM_TIME = "total_no_dim_duration";
     ////
 
     private NewTabPageRecyclerView mRecyclerView;
@@ -300,7 +301,8 @@ public class NewTabPageView extends HistoryNavigationLayout {
         long httpsUpgradesCount = mSharedPreferences.getLong(PREF_HTTPS_UPGRADES_COUNT, 0);
         long estimatedMillisecondsSaved = (trackersBlockedCount + adsBlockedCount) * MILLISECONDS_PER_ITEM;
         // [MV] //        
-        long estimatedMAhSaved = mSharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
+        long dimmingTime = mSharedPreferences.getLong(PREF_DIM_TIME, 0);
+        long noDimmingTime = mSharedPreferences.getLong(PREF_NO_DIM_TIME, 0);        
         // [MV] //
 
         TextView trackersBlockedCountTextView = (TextView) mBraveStatsView.findViewById(R.id.brave_stats_text_trackers_count);
@@ -316,7 +318,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         httpsUpgradesCountTextView.setText(getBraveStatsStringFormNumber(httpsUpgradesCount));
         estTimeSavedTextView.setText(getBraveStatsStringFromTime(estimatedMillisecondsSaved / 1000));
         // [MV] //
-        estBatterySavedTextView.setText(getBraveStatsStringFromBattery(estimatedMAhSaved)); 
+        estBatterySavedTextView.setText(getBraveStatsStringFromBattery(dimmingTime, noDimmingTime)); 
         ////
 
         // logging
@@ -326,10 +328,24 @@ public class NewTabPageView extends HistoryNavigationLayout {
     /* // [MV]
     * Gets string view of battery savings 
     */ // [MV]
-    private String getBraveStatsStringFromBattery(long mAh) {
-        float x = mAh;
+    private String getBraveStatsStringFromBattery(long dimming, long noDimming) {
+        // convert dimming to minutes        
+        float x = dimming;
+        float res_x = x/60;
+        String res_dimming = String.format(Locale.getDefault(), "%.1f", res_x);
+
+        // convert noDimming to minute
+        x = noDimming;
+        res_x = x/60;
+        String res_no_dimming = String.format(Locale.getDefault(), "%.1f", res_x); 
+
+        // form String 
+        String result = res_dimming + "/" + res_no_dimming
+
+        /*float x = mAh;
         float res = x/3600;
         String result = String.format(Locale.getDefault(), "%.1f", res) + "mAh";
+        */
         return result;
     }
 
