@@ -180,7 +180,9 @@ void DistillerPageWebContents::ExecuteJavaScript() {
   content::WebContentsObserver::Observe(nullptr);
   // Stop any pending navigation since the intent is to distill the current
   // page.
-  source_page_handle_->web_contents()->Stop();
+  if (source_page_handle_->web_contents()->GetDelegate() == this)
+      source_page_handle_->web_contents()->Stop();
+
   DVLOG(1) << "Beginning distillation";
   RunIsolatedJavaScript(
       frame, script_,
