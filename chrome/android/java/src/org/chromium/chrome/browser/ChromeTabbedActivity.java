@@ -598,8 +598,7 @@ public class ChromeTabbedActivity
             isBeingPaused = false; 
 
             // logging 
-            //Log.d(SUBTAG, "Half Dimming: ON! - No-dim-duration: " + timeNoDimming);
-            Log.d(SUBTAG, "Full Dimming: ON! - No-dim-duration: " + timeNoDimming);
+            Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);
         } else { 
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
             else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
@@ -681,10 +680,10 @@ public class ChromeTabbedActivity
         long currTotalNoDimming = sharedPreferences.getLong(PREF_NO_DIM_TIME, 0);        
         long dimmingTime = endDimming - startDimming;
         if (dimmingTime > 0){
-            currTotalDimming += dimmingTime; 
+            currTotalDimming += dimmingTime/1000; 
         }        
         if (timeNoDimming > 0){
-            currTotalNoDimming += timeNoDimming; 
+            currTotalNoDimming += timeNoDimming/1000; 
         }
 
         // update info to be displayed 
@@ -692,6 +691,9 @@ public class ChromeTabbedActivity
         sharedPreferencesEditor.putLong(PREF_NO_DIM_TIME,  currTotalNoDimming);        
         sharedPreferencesEditor.apply();
         
+        // logging
+        Log.d(SUBTAG, "CurrTotalDimming: " + currTotalDimming + "CurrTotalNoDimming: " + currTotalNoDimming + " Brightness: " + previousBrightness + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
+
         /*
         // update counter for battery savings 
         long estimatedMAhSavedPrev = sharedPreferences.getLong(PREF_BATTERY_COUNT, 0);
