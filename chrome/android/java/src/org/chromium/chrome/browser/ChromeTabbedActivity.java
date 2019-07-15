@@ -692,6 +692,7 @@ public class ChromeTabbedActivity
         sharedPreferencesEditor.apply();
         
         // logging
+        int brightnessDrop = previousBrightness - dimValue;
         Log.d(SUBTAG, "CurrTotalDimming: " + currTotalDimming + "CurrTotalNoDimming: " + currTotalNoDimming + " Brightness: " + previousBrightness + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
 
         /*
