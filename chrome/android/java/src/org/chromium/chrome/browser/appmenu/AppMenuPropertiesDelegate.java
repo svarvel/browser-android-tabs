@@ -484,10 +484,10 @@ public class AppMenuPropertiesDelegate {
         /*boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
         Log.d(TAG, "updateRequestDimmingMenuItem: " + useDimming);         
         */
-        
+
         // [MV] get dimming preferences// MV-TESTING
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        useDimming = sharedPreferences.getBoolean(DIMMING, false);
+        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
         Log.d(TAG, "updateRequestDimmingMenuItem-via-shared-preferences: " + useDimming); 
 
         // add check or not based on the above 
