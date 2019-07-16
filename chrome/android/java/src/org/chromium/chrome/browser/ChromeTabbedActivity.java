@@ -570,9 +570,9 @@ public class ChromeTabbedActivity
             } else if (DIM_STRATEGY.equals("hourglass")){                
                 if (previousBrightness <= 50) {
                    dimValue = 0;
-                else if (previousBrightness > 50 && <= 75) {
+                }else if (previousBrightness > 50 && <= 75) {
                    dimValue = previousBrightness/4;  
-                else if (previousBrightness > 75 && <= 125) {
+                }else if (previousBrightness > 75 && <= 125) {
                    dimValue = previousBrightness/3;  
                 } else {
                     dimValue = previousBrightness/2; 
