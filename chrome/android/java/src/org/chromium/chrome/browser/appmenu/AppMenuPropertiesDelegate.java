@@ -481,8 +481,9 @@ public class AppMenuPropertiesDelegate {
         MenuItem requestMenuCheck = menu.findItem(R.id.request_dimming_check_id);
         
         // Mark the checkbox if RDS is activated on this page.
-        boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
+        /*boolean useDimming = PrefServiceBridge.getInstance().dimmingEnabled();
         Log.d(TAG, "updateRequestDimmingMenuItem: " + useDimming);         
+        */
         
         // [MV] get dimming preferences// MV-TESTING
         SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 

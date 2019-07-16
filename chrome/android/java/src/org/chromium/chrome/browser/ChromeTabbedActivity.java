@@ -529,7 +529,7 @@ public class ChromeTabbedActivity
         }
 
         // extra check on time
-        if (startDimming >= endDimming){
+        if (startDimming > endDimming){
             Log.d(SUBTAG, "This should not happen. startDimming: " + startDimming 
                 + " endDimming: " + endDimming); 
         }
@@ -557,7 +557,9 @@ public class ChromeTabbedActivity
                             Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
                     Log.d(SUBTAG, "Disabling auto brightness while dimming");
                     wasAutoBrightness = true;
-                }                 
+                }   else {
+                    Log.d(SUBTAG, "Manual brightness control");
+                }              
             } catch (Settings.SettingNotFoundException e) {
                 e.printStackTrace();
             }
@@ -695,7 +697,7 @@ public class ChromeTabbedActivity
         
         // logging
         int brightnessDrop = previousBrightness - dimValue;
-        Log.d(SUBTAG, "CurrTotalDimming: " + currTotalDimming + "CurrTotalNoDimming: " + currTotalNoDimming + " Brightness: " + previousBrightness + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
+        Log.d(SUBTAG, "CurrTotalDimming: " + currTotalDimming + " CurrTotalNoDimming: " + currTotalNoDimming + " Brightness: " + previousBrightness + " BrightnessDrop: " + brightnessDrop  + " Strategy: " + DIM_STRATEGY);
 
         /*
         // update counter for battery savings 
@@ -2042,11 +2044,15 @@ public class ChromeTabbedActivity
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value //
-                Log.d(SUBTAG, "Load finished. URL: " + url); 
+                //Log.d(SUBTAG, "Load finished. URL: " + url); 
+                Log.d(SUBTAG, "onPageLoadFinished");                 
                 if (! url.equals(UrlConstants.NTP_URL)){
                     Context appContext = ContextUtils.getApplicationContext();
                     increaseScreenBrightness(appContext.getContentResolver(), "onPageLoadFinished", false, false);      
+                } else {
+                    Log.d(SUBTAG, "At HOME screen"); 
                 }
+
                 ////
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 if (getActivityTab() == tab) {
@@ -2122,7 +2128,6 @@ public class ChromeTabbedActivity
             public void onPreLoadUrl(Tab tab, LoadUrlParams params) {
                if (false == tab.isDesktopModeOverridenByTab()) {
                    final boolean desktopViewFromSettings = PrefServiceBridge.getInstance().desktopViewEnabled();
-                    Log.d(SUBTAG, "desktopViewFromSettings: " + desktopViewFromSettings); 
                     //if required UA is already set, do nothing
                     if (desktopViewFromSettings != tab.getUseDesktopUserAgent()) {
                         tab.setUseDesktopUserAgent(desktopViewFromSettings, false);

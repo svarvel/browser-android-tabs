@@ -340,7 +340,7 @@ public class NewTabPageView extends HistoryNavigationLayout {
         String res_no_dimming = String.format(Locale.getDefault(), "%.1f", res_x); 
 
         // form String 
-        String result = res_dimming + "/" + res_no_dimming;
+        String result = res_dimming + "/" + res_no_dimming + "m";
 
         /*float x = mAh;
         float res = x/3600;

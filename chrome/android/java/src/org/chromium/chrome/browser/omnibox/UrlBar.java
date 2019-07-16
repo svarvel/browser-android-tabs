@@ -422,7 +422,7 @@ public class UrlBar extends AutocompleteEditText {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // [MV] //
-        Log.i(SUBTAG, "onTouchEvent " + TAG);
+        //Log.i(SUBTAG, "onTouchEvent " + TAG);
         ////
 
         // This method contains special logic to enable long presses to be handled correctly.
