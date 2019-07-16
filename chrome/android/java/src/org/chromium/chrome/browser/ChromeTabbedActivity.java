@@ -572,11 +572,9 @@ public class ChromeTabbedActivity
                    dimValue = 0;
                 }else if (previousBrightness > 50 && previousBrightness <= 75) {
                    dimValue = previousBrightness/4;  
-                }else if (previousBrightness > 75 && previousBrightness <= 125) {
-                   dimValue = previousBrightness/3;  
-                } else {
-                    dimValue = previousBrightness/2; 
-                }
+                }else if (previousBrightness > 75){
+                    dimValue = previousBrightness/2;  
+                } 
             } else {
                 dimValue = 0;  
             }
