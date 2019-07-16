@@ -568,10 +568,12 @@ public class ChromeTabbedActivity
             } else if (DIM_STRATEGY.equals("fake-for-stats")){
                 dimValue = previousBrightness;
             } else if (DIM_STRATEGY.equals("hourglass")){                
-                if (previousBrightness <= 125) {
-                   dimValue = 0;  
+                if (previousBrightness <= 50) {
+                   dimValue = 0;
+                else if (previousBrightness > 50 && <= 125) {
+                   dimValue = previousBrightness/3;  
                 } else {
-                    dimValue = previousBrightness - 125; 
+                    dimValue = previousBrightness/2; 
                 }
             } else {
                 dimValue = 0;  
