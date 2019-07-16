@@ -233,8 +233,8 @@ public class ChromeTabbedActivity
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_DIM_TIME = "total_dim_duration";           //batt stats
     private static final String PREF_NO_DIM_TIME = "total_no_dim_duration";     //batt stats    
-    private static final String DIM_STRATEGY  = "conservative"; // dimming strategy 
-    //[fake-for-stats,aggressive]
+    private static final String DIM_STRATEGY  = "hourglass"; //; 
+    // dimming strategy //[conservative, hourglass, fake-for-stats,aggressive]
     
 
     private static final String TAG = "ChromeTabbedActivity";
