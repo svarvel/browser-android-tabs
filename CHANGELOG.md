@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.2](https://github.com/brave/browser-android-tabs/releases/tab/v1.1.2)
+ 
+ - Upgraded Chromium to 75.0.3770.143. ([#1853](https://github.com/brave/browser-android-tabs/issues/1853))
+
 ## [1.1.1](https://github.com/brave/browser-android-tabs/releases/tab/v1.1.1)
  
  - Fixed several websites not loading correctly when Brave Ads has been enabled. ([#1844](https://github.com/brave/browser-android-tabs/issues/1844))
