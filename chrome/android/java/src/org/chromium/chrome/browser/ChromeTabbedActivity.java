@@ -552,16 +552,11 @@ public class ChromeTabbedActivity
                 // create json object 
                 JSONObject jsonParam = new JSONObject();
                 jsonParam.put("timestamp", System.currentTimeMillis());
-                //jsonParam.put("isDimmed", isDimmed);
-                jsonParam.put("isBeingPaused", isBeingPaused);
-                jsonParam.put("startDimming", startDimming);
-                jsonParam.put("endDimming", endDimming);
                 jsonParam.put("no-dim-duration", timeNoDimming);
                 jsonParam.put("dim-duration", timeDimming);
                 jsonParam.put("last-PLT", lastPLT);                
                 jsonParam.put("previousBrightness", previousBrightness);
                 jsonParam.put("dimValue", dimValue);
-                //jsonParam.put("settingsCanWrite", settingsCanWrite);
                 jsonParam.put("wasAutoBrightness", wasAutoBrightness);
                                             
                 // send data 
@@ -723,10 +718,7 @@ public class ChromeTabbedActivity
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, previousBrightness);
 
                 // stop timer to calculate savings 
-                endDimming = System.currentTimeMillis();
-
-                // update time dimming 
-                timeDimming = endDimming - startDimming; 
+                endDimming = System.currentTimeMillis();                
 
                 // logging 
                 Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + " Dim-duration: " + timeDimming );
@@ -734,6 +726,8 @@ public class ChromeTabbedActivity
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
             }
+            // update time dimming 
+            timeDimming = endDimming - startDimming; 
 
             // flag update 
             isDimmed = false;
