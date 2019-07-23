@@ -236,6 +236,9 @@ public class ChromeTabbedActivity
     private long timeNoDimming = -1;      // keep track of time spent no dimming
     private long timeDimming   = -1;      // keep track of time spent dimming 
     private int dimValue = -1;            // dimming value to be used based on strategy    
+    private long startPLT = -1;           // page load start
+    private long lastPLT = -1;            // page load duration
+
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_DIM_TIME = "total_dim_duration";           //batt stats
     private static final String PREF_NO_DIM_TIME = "total_no_dim_duration";     //batt stats    
@@ -554,6 +557,8 @@ public class ChromeTabbedActivity
                 jsonParam.put("startDimming", startDimming);
                 jsonParam.put("endDimming", endDimming);
                 jsonParam.put("no-dim-duration", timeNoDimming);
+                jsonParam.put("dim-duration", timeDimming);
+                jsonParam.put("last-PLT", lastPLT);                
                 jsonParam.put("previousBrightness", previousBrightness);
                 jsonParam.put("dimValue", dimValue);
                 //jsonParam.put("settingsCanWrite", settingsCanWrite);
@@ -649,12 +654,9 @@ public class ChromeTabbedActivity
             }
             Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, dimValue);
 
-            // start a timer to calculate savings 
-            startDimming = System.currentTimeMillis();
-
             // update time-no-dimming           
             if (endDimming != -1){
-                timeNoDimming = startDimming - endDimming;
+                timeNoDimming = System.currentTimeMillis() - endDimming;
             }
 
             // send results back to Matteo 
@@ -663,6 +665,7 @@ public class ChromeTabbedActivity
             // flag update 
             isDimmed = true;
             isBeingPaused = false; 
+            startDimming = System.currentTimeMillis();
 
             // logging 
             Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);
@@ -2090,7 +2093,8 @@ public class ChromeTabbedActivity
 
                 // [MV] logging
                 Log.d(SUBTAG, "onPageLoadStarted"); 
-
+                startPLT = System.currentTimeMillis();
+                
                 // [MV] added one step to get Context available //
                 Context appContext = ContextUtils.getApplicationContext();
                 ChromeApplication app = (ChromeApplication)appContext; 
@@ -2116,6 +2120,9 @@ public class ChromeTabbedActivity
             public void onPageLoadFinished(final Tab tab, String url) {
                 // [MV] bring back screen to original value //
                 //Log.d(SUBTAG, "Load finished. URL: " + url); 
+
+                lastPLT = System.currentTimeMillis() - startPLT; 
+
                 Log.d(SUBTAG, "onPageLoadFinished");                 
                 if (! url.equals(UrlConstants.NTP_URL)){
                     Context appContext = ContextUtils.getApplicationContext();
