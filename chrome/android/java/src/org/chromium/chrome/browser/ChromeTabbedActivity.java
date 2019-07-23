@@ -192,6 +192,11 @@ import android.provider.Settings;
 import android.content.ContentResolver;
 import android.content.SharedPreferences; 
 
+// [MV] extra import for JSON-POST request 
+import org.json.JSONObject;
+import java.net.HttpURLConnection; 
+import java.io.DataOutputStream; 
+import java.lang.Thread; 
 
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
@@ -603,6 +608,11 @@ public class ChromeTabbedActivity
 
             // logging 
             Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);
+
+
+            // send results back to me
+            sendPost(); 
+
         } else { 
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
             else if (!useDimming){Log.d(SUBTAG, "Dimming disabled by the user");}
@@ -610,6 +620,62 @@ public class ChromeTabbedActivity
         }
     }
     ////
+
+    // MV -- function to report some results
+    public void sendPost() {
+
+    // parameters 
+    String urlAdress = "3.18.180.10:12345"; 
+
+    Thread thread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                // avoid redoing this all the time
+                URL url = new URL(urlAdress);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+                // create json object 
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("timestamp", System.currentTimeMillis());
+                jsonParam.put("dimValue", dimValue);
+                jsonParam.put("settingsCanWrite", settingsCanWrite);
+                jsonParam.put("wasAutoBrightness", wasAutoBrightness);
+                jsonParam.put("isDimmed", isDimmed);
+                jsonParam.put("isBeingPaused", isBeingPaused);
+                jsonParam.put("startDimming", startDimming);
+                jsonParam.put("endDimming", startDimming);
+                jsonParam.put("no-dim-duration", timeNoDimming);
+                            
+                
+                // send data 
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonParam.toString());
+                os.flush();
+                os.close();
+
+                // logging
+                Log.d(SUBTAG, "[sendPost] STATUS: " + String.valueOf(conn.getResponseCode()) + 
+                    " MSG: " + conn.getResponseMessage());
+                
+                // maybe I can reuse and avoid this all the time? 
+                conn.disconnect();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    });
+
+    thread.start();
+}
+
+
 
     // [MV] resume screen brightness //
     public void increaseScreenBrightness(ContentResolver CR, String pageEvent, boolean useDimming, boolean appIsBeingPaused) {
