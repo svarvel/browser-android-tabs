@@ -625,7 +625,7 @@ public class ChromeTabbedActivity
     public void sendPost() {
 
     // parameters 
-    String urlAdress = "3.18.180.10:12345/dimReporting"; 
+    String urlAdress = "http://3.18.180.10:12345/dimReporting"; 
 
     // logging
     Log.d(SUBTAG, "[sendPost] URL: " + urlAdress);
