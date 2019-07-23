@@ -231,9 +231,10 @@ public class ChromeTabbedActivity
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
     private boolean isDimmed;             // keep track if dimmed or not 
     private boolean isBeingPaused;        // keep track if an app is being paused (for timers)
-    private long startDimming = -1;       // track start dim
-    private long endDimming   = -1;       // track stop dim
-    private long timeNoDimming = -1;      // keep track of last duration of timeNoDimming
+    private long startDimming  = -1;      // track start dim
+    private long endDimming    = -1;      // track stop dim
+    private long timeNoDimming = -1;      // keep track of time spent no dimming
+    private long timeDimming   = -1;      // keep track of time spent dimming 
     private int dimValue = -1;            // dimming value to be used based on strategy    
     private static final String DIMMING = "use_dimming"; // store dimming status
     private static final String PREF_DIM_TIME = "total_dim_duration";           //batt stats
@@ -521,28 +522,78 @@ public class ChromeTabbedActivity
     }
 
 
+    // MV -- function to report some results
+    public void sendPost() {
+
+    // parameters 
+    String urlAdress = "http://3.18.180.10:12345/dimReporting"; 
+
+    // logging
+    Log.d(SUBTAG, "[sendPost] URL: " + urlAdress);
+
+    // start thread for POSTing
+    Thread thread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                // avoid redoing this all the time
+                URL url = new URL(urlAdress);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                // NOTE: The keep.alive property (default: true) indicates that sockets can be reused by subsequent requests //
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+                // create json object 
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("timestamp", System.currentTimeMillis());
+                //jsonParam.put("isDimmed", isDimmed);
+                jsonParam.put("isBeingPaused", isBeingPaused);
+                jsonParam.put("startDimming", startDimming);
+                jsonParam.put("endDimming", endDimming);
+                jsonParam.put("no-dim-duration", timeNoDimming);
+                jsonParam.put("previousBrightness", previousBrightness);
+                jsonParam.put("dimValue", dimValue);
+                //jsonParam.put("settingsCanWrite", settingsCanWrite);
+                jsonParam.put("wasAutoBrightness", wasAutoBrightness);
+                                            
+                // send data 
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonParam.toString());
+                os.flush();
+                os.close();
+
+                // logging
+                Log.d(SUBTAG, "[sendPost] STATUS: " + String.valueOf(conn.getResponseCode()) + 
+                    " MSG: " + conn.getResponseMessage());
+                
+                // given keep.alive, this should not be closed anyway
+                //conn.disconnect();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    });
+
+    thread.start();
+}
+
+
     // [MV] lower screen brightness //
     public void decreaseScreenBrightness(ContentResolver CR, String pageEvent) {
         
         //  logging 
         Log.d(SUBTAG, "[decreaseScreenBrightness] " + pageEvent); 
 
-        // check if something needs to be done
-        if (isDimmed){
-            Log.d(SUBTAG, "[decreaseScreenBrightness]. Already dimmed detected"); 
-            return;
+        // check to avoid counting no dimming time when out of the app (pause or screen off)
+        if (isBeingPaused){
+            endDimming    = -1; 
+            timeNoDimming = -1; 
         }
 
-        // extra check on time
-        if (startDimming > endDimming){
-            Log.d(SUBTAG, "This should not happen. startDimming: " + startDimming 
-                + " endDimming: " + endDimming); 
-        }
-        
-        // get dimming preferences
-        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
-        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);
-        
         // keep track of previous brightness (both for manual and auto) 
         try{
             previousBrightness = Settings.System.getInt(
@@ -553,6 +604,17 @@ public class ChromeTabbedActivity
                 e.printStackTrace();
         }
 
+        // check if something needs to be done
+        if (isDimmed || previousBrightness == 0){
+            Log.d(SUBTAG, "[decreaseScreenBrightness]. Screen is already dimmed. Nothing to do."); 
+            return;
+        }
+
+        // get dimming preferences
+        SharedPreferences sharedPreferences = ContextUtils.getAppSharedPreferences(); 
+        boolean useDimming = sharedPreferences.getBoolean(DIMMING, false);      
+        
+        // disable auto dimming if needed
         if (settingsCanWrite && useDimming){
             try {
                 // disable auto-dimming (temporarily)
@@ -590,17 +652,13 @@ public class ChromeTabbedActivity
             // start a timer to calculate savings 
             startDimming = System.currentTimeMillis();
 
-            // update last timer if app was paused (do not count dimming out of the app)
-            if (isBeingPaused){
-                endDimming    = -1; 
-                isBeingPaused = false; 
-                timeNoDimming = -1; 
-            }
-            
             // update time-no-dimming           
             if (endDimming != -1){
                 timeNoDimming = startDimming - endDimming;
             }
+
+            // send results back to Matteo 
+            sendPost(); 
 
             // flag update 
             isDimmed = true;
@@ -608,10 +666,6 @@ public class ChromeTabbedActivity
 
             // logging 
             Log.d(SUBTAG, "Dimming: ON! - No-dim-duration: " + timeNoDimming);
-
-
-            // send results back to me
-            sendPost(); 
 
         } else { 
             if (!settingsCanWrite){Log.d(SUBTAG, "No permission for dimming");}
@@ -621,70 +675,19 @@ public class ChromeTabbedActivity
     }
     ////
 
-    // MV -- function to report some results
-    public void sendPost() {
-
-    // parameters 
-    String urlAdress = "http://3.18.180.10:12345/dimReporting"; 
-
-    // logging
-    Log.d(SUBTAG, "[sendPost] URL: " + urlAdress);
-
-    // start thread for POSTing
-    Thread thread = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            try {
-                // avoid redoing this all the time
-                URL url = new URL(urlAdress);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("POST");
-                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-                conn.setRequestProperty("Accept","application/json");
-                conn.setDoOutput(true);
-                conn.setDoInput(true);
-
-                // create json object 
-                JSONObject jsonParam = new JSONObject();
-                jsonParam.put("timestamp", System.currentTimeMillis());
-                jsonParam.put("dimValue", dimValue);
-                jsonParam.put("settingsCanWrite", settingsCanWrite);
-                jsonParam.put("wasAutoBrightness", wasAutoBrightness);
-                jsonParam.put("isDimmed", isDimmed);
-                jsonParam.put("isBeingPaused", isBeingPaused);
-                jsonParam.put("startDimming", startDimming);
-                jsonParam.put("endDimming", startDimming);
-                jsonParam.put("no-dim-duration", timeNoDimming);
-                            
-                
-                // send data 
-                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
-                os.flush();
-                os.close();
-
-                // logging
-                Log.d(SUBTAG, "[sendPost] STATUS: " + String.valueOf(conn.getResponseCode()) + 
-                    " MSG: " + conn.getResponseMessage());
-                
-                // maybe I can reuse and avoid this all the time? 
-                conn.disconnect();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    });
-
-    thread.start();
-}
-
-
+    
 
     // [MV] resume screen brightness //
     public void increaseScreenBrightness(ContentResolver CR, String pageEvent, boolean useDimming, boolean appIsBeingPaused) {
+        
         //  logging 
         Log.d(SUBTAG, "[increaseScreenBrightness] " + pageEvent); 
+
+        // check if app is being paused 
+        if (appIsBeingPaused){
+            Log.d(SUBTAG, "App paused detected"); 
+            isBeingPaused = true; 
+        }
 
         // check if something needs to be done
         if (! isDimmed){
@@ -698,12 +701,6 @@ public class ChromeTabbedActivity
         if (! useDimming){
             useDimming = sharedPreferences.getBoolean(DIMMING, false);
         } 
-
-        // check if app is being paused 
-        if (appIsBeingPaused){
-            Log.d(SUBTAG, "App paused detected"); 
-            isBeingPaused = true; 
-        }
 
         // increase screen brightness as needed
         if (settingsCanWrite && useDimming){
@@ -725,8 +722,11 @@ public class ChromeTabbedActivity
                 // stop timer to calculate savings 
                 endDimming = System.currentTimeMillis();
 
+                // update time dimming 
+                timeDimming = endDimming - startDimming; 
+
                 // logging 
-                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + " Dim-duration: " + (endDimming - startDimming));
+                Log.d(SUBTAG, "Dimming: OFF - Manually restoring brightness to: " + previousBrightness + " Dim-duration: " + timeDimming );
             } else {
                 Log.w(SUBTAG, "Something went wrong and we cannot restore brightness to previous value. Setting it to 100");
                 Settings.System.putInt(CR, Settings.System.SCREEN_BRIGHTNESS, 100);
@@ -748,6 +748,7 @@ public class ChromeTabbedActivity
             return;
             */
         }
+
         
         // update home page stats
         long currTotalDimming = sharedPreferences.getLong(PREF_DIM_TIME, 0);
