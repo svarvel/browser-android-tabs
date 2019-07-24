@@ -68,8 +68,14 @@ public class ChromeKeyboardVisibilityDelegate extends SingleWindowKeyboardVisibi
     @Override
     public boolean isKeyboardShowing(Context context, View view) {
         ChromeActivity activity = getActivity();
-        return super.isKeyboardShowing(context, view)
+
+        // Biometric Attestation
+        boolean isShowing = super.isKeyboardShowing(context, view)
                 || (activity != null
-                           && activity.getManualFillingController().isFillingViewShown(view));
+                        && activity.getManualFillingController().isFillingViewShown(view));
+
+        activity.isKeyboardShowing = isShowing ? 1 : 0;
+        
+        return isShowing;
     }
 }

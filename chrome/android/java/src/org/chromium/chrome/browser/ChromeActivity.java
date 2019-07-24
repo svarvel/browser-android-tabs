@@ -18,6 +18,10 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -40,6 +44,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -61,6 +66,7 @@ import org.chromium.base.CommandLine;
 import org.chromium.base.ObserverList;
 import org.chromium.base.ContextUtils;
 import org.chromium.base.DiscardableReferencePool;
+import org.chromium.base.PathUtils;
 import org.chromium.base.StrictModeContext;
 import org.chromium.base.SysUtils;
 import org.chromium.base.TraceEvent;
@@ -205,9 +211,14 @@ import org.chromium.ui.widget.Toast;
 import org.chromium.webapk.lib.client.WebApkNavigationClient;
 import org.chromium.webapk.lib.client.WebApkValidator;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -218,7 +229,8 @@ import java.util.Set;
 public abstract class ChromeActivity<C extends ChromeActivityComponent>
         extends AsyncInitializationActivity
         implements TabCreatorManager, AccessibilityStateChangeListener, PolicyChangeListener,
-                   ContextualSearchTabPromotionDelegate, SnackbarManageable, SceneChangeObserver {
+                   ContextualSearchTabPromotionDelegate, SnackbarManageable, SceneChangeObserver,
+                   SensorEventListener {
 
     /**
      * Factory which creates the AppMenuHandler.
@@ -363,6 +375,16 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     private boolean mStarted;
 
     private final Runnable mUpdateStateChangedListener = this::onUpdateStateChanged;
+
+    /** Biometric Attestation */
+    private static final boolean isSensingEnabled = true;
+    private SensorManager mMotionManager;
+    final private String MTAG = "STAN";
+    public int isKeyboardShowing;
+    private int isTouching;
+    private float[] mGravity;
+    private float[] mGeomagnetic;
+    private FileOutputStream mFileHandle;
 
     /**
      * @param factory The {@link AppMenuHandlerFactory} for creating {@link #mAppMenuHandler}
@@ -532,6 +554,9 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             if (mStarted) {
                 mCompositorViewHolder.onStart();
             }
+
+            // Biometric Attestation
+            mMotionManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         }
 
         // Comment sync temporary
@@ -1456,6 +1481,21 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mScreenWidthDp = config.screenWidthDp;
         mScreenHeightDp = config.screenHeightDp;
         mStarted = true;
+
+        // Biometric Attestation
+
+        if (isSensingEnabled) {
+            String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_").replace(" ", "_"), Build.MODEL.replace("-", "_").replace(" ", "_"), (new Date()).getTime());
+
+            try {
+                File path = new File(getExternalFilesDir(null).getAbsolutePath(), filename);
+                mFileHandle = new FileOutputStream(path);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        
+            startSensorUpdate();
+        }
     }
 
     @Override
@@ -1472,6 +1512,30 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mStarted = false;
         if (this instanceof ChromeTabbedActivity) {
             ((ChromeTabbedActivity)this).dismissRewardsPanel();
+        }
+
+        // Stop Biometric Attestation
+        if (isSensingEnabled) {
+            stopSensorUpdate();
+        }
+       
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        if (isSensingEnabled) {
+            stopSensorUpdate();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (isSensingEnabled) {
+            startSensorUpdate();
         }
     }
 
@@ -2999,5 +3063,131 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     @Nullable
     public BottomSheetController getBottomSheetController() {
         return mBottomSheetController;
+    }
+
+    /** Biometric Attestation */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent e) {
+        if (isSensingEnabled) {
+            int tag = 0;
+
+            switch(e.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    tag = 1;
+                    isTouching = 1;
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    tag = 2;
+                    break;
+                case MotionEvent.ACTION_UP:
+                    tag = 3;
+                    isTouching = 0;
+                    break;
+            }
+
+            String data = String.format(Locale.US, "%d,TOU,%d,%d,%d:%f,%f\n", (new Date()).getTime(), tag, isKeyboardShowing, isLandscape(), e.getX(), e.getY());
+            logAttestationData(data);
+        }
+
+        return super.dispatchTouchEvent(e);
+    }
+    
+    private void startSensorUpdate() {
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER_UNCALIBRATED), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE_UNCALIBRATED), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_POSE_6DOF), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_STATIONARY_DETECT), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_MOTION_DETECT), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_FASTEST);
+        mMotionManager.registerListener(ChromeActivity.this, mMotionManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD), SensorManager.SENSOR_DELAY_FASTEST);
+    }
+
+    private void stopSensorUpdate() {
+        mMotionManager.flush(ChromeActivity.this);
+        mMotionManager.unregisterListener(ChromeActivity.this);
+    }
+
+     @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+
+    @Override
+    public void onSensorChanged(SensorEvent e) {
+        switch(e.sensor.getType()) {
+            case Sensor.TYPE_ACCELEROMETER_UNCALIBRATED:
+                logAttestationData(formatSensorData(e, "ACC"));
+                break;
+            case Sensor.TYPE_GYROSCOPE_UNCALIBRATED:
+                logAttestationData(formatSensorData(e, "GYR"));
+                break;
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+                logAttestationData(formatSensorData(e, "UAC"));
+                break;
+            case Sensor.TYPE_ROTATION_VECTOR:
+                logAttestationData(formatSensorData(e, "ROT"));
+                break;
+            case Sensor.TYPE_GRAVITY:
+                logAttestationData(formatSensorData(e, "GRA"));
+                break;
+            case Sensor.TYPE_POSE_6DOF:
+                logAttestationData(formatSensorData(e, "POS"));
+                break;
+            case Sensor.TYPE_STATIONARY_DETECT:
+                logAttestationData(formatSensorData(e, "STA"));
+                break;
+            case Sensor.TYPE_MOTION_DETECT:
+                logAttestationData(formatSensorData(e, "MOT"));
+                break;
+            case Sensor.TYPE_ACCELEROMETER:
+                mGravity = e.values;
+                updateOrientationData(mGravity, mGeomagnetic);
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                mGeomagnetic = e.values;
+                updateOrientationData(mGravity, mGeomagnetic);
+                break;
+        }
+    }
+
+    private void updateOrientationData(float[] mGravity, float[] mGeomagnetic) {
+        if (mGravity != null && mGeomagnetic != null) {
+            float R[] = new float[9];
+            float I[] = new float[9];
+            boolean success = SensorManager.getRotationMatrix(R, I, mGravity, mGeomagnetic);
+            if (success) {
+                float orientation[] = new float[3];
+                SensorManager.getOrientation(R, orientation);
+                String data = String.format(Locale.US, "%d,ORI,%d,%d,%d,%s\n", (new Date()).getTime(), isTouching, isKeyboardShowing, isLandscape(), formatSensorValues(orientation));
+                logAttestationData(data);
+            } 
+        }
+    }
+
+    private String formatSensorData(SensorEvent e, String sensor) {
+        // To save storage
+        String values = Arrays.toString(e.values).replace("[", "").replace("]", "").replace(" ", "");
+        return String.format(Locale.US, "%d,%s,%d,%d,%d,%s\n", (new Date()).getTime(), sensor, isTouching, isKeyboardShowing, isLandscape(), formatSensorValues(e.values));
+    }
+
+    private String formatSensorValues(float[] values) {
+        return Arrays.toString(values).replace("[", "").replace("]", "").replace(" ", "");
+    }
+
+    private int isLandscape() {
+        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 1 : 0;
+    }
+
+    private void logAttestationData(String data) {
+        // Log.d(MTAG, data);
+
+        try (StrictModeContext smc = StrictModeContext.allowDiskWrites()) {
+            try {
+                mFileHandle.write(data.getBytes());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } 
     }
 }
