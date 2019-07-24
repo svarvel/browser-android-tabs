@@ -1165,7 +1165,7 @@ public class BraveRewardsPanelPopup implements BraveRewardsObserver, BraveReward
             Spanned toInsert = BraveRewardsHelper.spannedFromHtmlString(verified_description);
             tv.setText(toInsert);
             tv.setVisibility(View.VISIBLE);
-            tvVerified.setCompoundDrawablesWithIntrinsicBounds(R.drawable.icn_unverified, 0, 0, 0);
+            tvVerified.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bat_unverified, 0, 0, 0);
         }
         tvVerified.setText(verified_text);
         tvVerified.setVisibility(View.VISIBLE);
