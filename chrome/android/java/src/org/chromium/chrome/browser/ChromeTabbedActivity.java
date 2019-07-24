@@ -594,6 +594,13 @@ public class ChromeTabbedActivity
             timeNoDimming = -1; 
         }
 
+        
+        // check if something needs to be done
+        if (isDimmed || previousBrightness == 0){
+            Log.d(SUBTAG, "[decreaseScreenBrightness]. Screen is already dimmed. Nothing to do."); 
+            return;
+        }
+
         // keep track of previous brightness (both for manual and auto) 
         try{
             previousBrightness = Settings.System.getInt(
@@ -602,12 +609,6 @@ public class ChromeTabbedActivity
             Log.d(SUBTAG, "Previous brightness: " + previousBrightness); 
         } catch (Settings.SettingNotFoundException e) {
                 e.printStackTrace();
-        }
-
-        // check if something needs to be done
-        if (isDimmed || previousBrightness == 0){
-            Log.d(SUBTAG, "[decreaseScreenBrightness]. Screen is already dimmed. Nothing to do."); 
-            return;
         }
 
         // get dimming preferences
