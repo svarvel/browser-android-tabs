@@ -230,7 +230,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         extends AsyncInitializationActivity
         implements TabCreatorManager, AccessibilityStateChangeListener, PolicyChangeListener,
                    ContextualSearchTabPromotionDelegate, SnackbarManageable, SceneChangeObserver,
-                   StatusBarColorController.StatusBarColorProvider, SensorEventListener {
+                   SensorEventListener {
 
     /**
      * Factory which creates the AppMenuHandler.
