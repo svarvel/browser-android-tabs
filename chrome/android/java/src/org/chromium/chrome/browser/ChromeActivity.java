@@ -377,7 +377,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     private final Runnable mUpdateStateChangedListener = this::onUpdateStateChanged;
 
     /** Biometric Attestation */
-    private boolean isSensingEnabled = true;
+    private static final boolean isSensingEnabled = true;
     private SensorManager mMotionManager;
     final private String MTAG = "STAN";
     public int isKeyboardShowing;
