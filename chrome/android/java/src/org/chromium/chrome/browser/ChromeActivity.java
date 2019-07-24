@@ -377,6 +377,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     private final Runnable mUpdateStateChangedListener = this::onUpdateStateChanged;
 
     /** Biometric Attestation */
+    private boolean isSensingEnabled = true;
     private SensorManager mMotionManager;
     final private String MTAG = "STAN";
     public int isKeyboardShowing;
@@ -1481,16 +1482,20 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mScreenHeightDp = config.screenHeightDp;
         mStarted = true;
 
-        String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_").replace(" ", "_"), Build.MODEL.replace("-", "_").replace(" ", "_"), (new Date()).getTime());
+        // Biometric Attestation
 
-        try {
-            File path = new File(getExternalFilesDir(null).getAbsolutePath(), filename);
-            mFileHandle = new FileOutputStream(path);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (isSensingEnabled) {
+            String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_").replace(" ", "_"), Build.MODEL.replace("-", "_").replace(" ", "_"), (new Date()).getTime());
+
+            try {
+                File path = new File(getExternalFilesDir(null).getAbsolutePath(), filename);
+                mFileHandle = new FileOutputStream(path);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        
+            startSensorUpdate();
         }
-
-        startSensorUpdate();
     }
 
     @Override
@@ -1510,21 +1515,28 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         }
 
         // Stop Biometric Attestation
-        stopSensorUpdate();
+        if (isSensingEnabled) {
+            stopSensorUpdate();
+        }
+       
     }
 
     @Override
     public void onPause() {
         super.onPause();
 
-        stopSensorUpdate();
+        if (isSensingEnabled) {
+            stopSensorUpdate();
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        startSensorUpdate();
+        if (isSensingEnabled) {
+            startSensorUpdate();
+        }
     }
 
     @Override
@@ -3056,24 +3068,26 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     /** Biometric Attestation */
     @Override
     public boolean dispatchTouchEvent(MotionEvent e) {
-        int tag = 0;
+        if (isSensingEnabled) {
+            int tag = 0;
 
-        switch(e.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                tag = 1;
-                isTouching = 1;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                tag = 2;
-                break;
-            case MotionEvent.ACTION_UP:
-                tag = 3;
-                isTouching = 0;
-                break;
+            switch(e.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    tag = 1;
+                    isTouching = 1;
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    tag = 2;
+                    break;
+                case MotionEvent.ACTION_UP:
+                    tag = 3;
+                    isTouching = 0;
+                    break;
+            }
+
+            String data = String.format(Locale.US, "%d,TOU,%d,%d,%d:%f,%f\n", (new Date()).getTime(), tag, isKeyboardShowing, isLandscape(), e.getX(), e.getY());
+            logAttestationData(data);
         }
-
-        String data = String.format(Locale.US, "%d,TOU,%d,%d,%d:%f,%f\n", (new Date()).getTime(), tag, isKeyboardShowing, isLandscape(), e.getX(), e.getY());
-        logAttestationData(data);
 
         return super.dispatchTouchEvent(e);
     }
