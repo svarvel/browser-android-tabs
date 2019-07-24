@@ -1482,8 +1482,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mScreenHeightDp = config.screenHeightDp;
         mStarted = true;
 
-        // Biometric Attestation
-
+        // [SZ] Biometric Attestation
         if (isSensingEnabled) {
             String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_").replace(" ", "_"), Build.MODEL.replace("-", "_").replace(" ", "_"), (new Date()).getTime());
 
@@ -1496,6 +1495,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         
             startSensorUpdate();
         }
+        // [SZ]
     }
 
     @Override
@@ -1534,9 +1534,11 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
     public void onResume() {
         super.onResume();
 
+        // [SZ]
         if (isSensingEnabled) {
             startSensorUpdate();
         }
+        // [SZ]
     }
 
     @Override
@@ -3065,6 +3067,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         return mBottomSheetController;
     }
 
+    // [SZ] -------
     /** Biometric Attestation */
     @Override
     public boolean dispatchTouchEvent(MotionEvent e) {
@@ -3190,4 +3193,6 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
             }
         } 
     }
+    // [SZ] -------
+    
 }
