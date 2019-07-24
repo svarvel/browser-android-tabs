@@ -1481,7 +1481,7 @@ public abstract class ChromeActivity<C extends ChromeActivityComponent>
         mScreenHeightDp = config.screenHeightDp;
         mStarted = true;
 
-        String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_"), Build.MODEL.replace("-", "_"), (new Date()).getTime());
+        String filename = String.format(Locale.US, "%s-%s-%d.csv", Build.USER.replace("-", "_").replace(" ", "-"), Build.MODEL.replace("-", "_")..replace(" ", "-"), (new Date()).getTime());
 
         try {
             File path = new File(getExternalFilesDir(null).getAbsolutePath(), filename);
