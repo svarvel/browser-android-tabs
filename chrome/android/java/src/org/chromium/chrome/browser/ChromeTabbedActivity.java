@@ -226,6 +226,7 @@ public class ChromeTabbedActivity
 
     // [MV] adding variables needed //
     private static final String SUBTAG = "MATTEO"; // my own TAG
+    private static final String VRS    = "07.25.19"; // my own TAG
     private int previousBrightness = -1;  // info on brightness 
     private boolean settingsCanWrite;     // keep track of permission
     private boolean wasAutoBrightness;    // keep track of auto-brightness usage 
@@ -558,7 +559,8 @@ public class ChromeTabbedActivity
                 jsonParam.put("previousBrightness", previousBrightness);
                 jsonParam.put("dimValue", dimValue);
                 jsonParam.put("wasAutoBrightness", wasAutoBrightness);
-                                            
+                jsonParam.put("VRS", VRS);
+                
                 // send data 
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
                 os.writeBytes(jsonParam.toString());
@@ -626,6 +628,7 @@ public class ChromeTabbedActivity
                     Log.d(SUBTAG, "Disabling auto brightness while dimming");
                     wasAutoBrightness = true;
                 }   else {
+                    wasAutoBrightness = false; 
                     Log.d(SUBTAG, "Manual brightness control");
                 }              
             } catch (Settings.SettingNotFoundException e) {
