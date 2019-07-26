@@ -162,6 +162,8 @@ public class ChannelsInitializer {
             }
             if (channelId.equals(ChannelDefinitions.ChannelId.BRAVE_ADS)) {
                 channel.setShowBadge(false);
+                channel.setVibrationPattern(new long[]{0L});
+                channel.enableVibration(true);
             }
             channelGroups.put(channelGroup.getId(), channelGroup);
             channels.put(channel.getId(), channel);

@@ -29,6 +29,7 @@ import org.chromium.base.ApiCompatibilityUtils;
 import org.chromium.base.Log;
 import org.chromium.base.VisibleForTesting;
 import org.chromium.base.metrics.RecordHistogram;
+import org.chromium.chrome.browser.notifications.channels.ChannelDefinitions;
 import org.chromium.chrome.R;
 import org.chromium.ui.base.LocalizationUtils;
 
@@ -107,7 +108,7 @@ public class BraveAdsNotificationBuilder extends NotificationBuilderBase {
         bigView.setInt(R.id.body, "setMaxLines", calculateMaxBodyLines(fontScale));
         int scaledPadding =
                 calculateScaledPadding(fontScale, mContext.getResources().getDisplayMetrics());
-        setChannelId("com.brave.browser.ads");
+        setChannelId(ChannelDefinitions.ChannelId.BRAVE_ADS);
 
         for (RemoteViews view : new RemoteViews[] {compactView, bigView}) {
             view.setTextViewText(R.id.title, mTitle);

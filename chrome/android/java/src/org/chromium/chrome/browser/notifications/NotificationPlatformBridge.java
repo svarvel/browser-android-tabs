@@ -584,7 +584,8 @@ public class NotificationPlatformBridge {
         // The Android framework applies a fallback vibration pattern for the sound when the device
         // is in vibrate mode, there is no custom pattern, and the vibration default has been
         // disabled. To truly prevent vibration, provide a custom empty pattern.
-        boolean vibrateEnabled = PrefServiceBridge.getInstance().isNotificationsVibrateEnabled();
+        boolean vibrateEnabled = (isBraveAdNotification()) ? false
+            : PrefServiceBridge.getInstance().isNotificationsVibrateEnabled();
         if (!vibrateEnabled) {
             vibrationPattern = EMPTY_VIBRATION_PATTERN;
         }
@@ -646,7 +647,7 @@ public class NotificationPlatformBridge {
 
     /** Returns whether to set a channel id when building a notification. */
     private boolean shouldSetChannelId(boolean forWebApk) {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !forWebApk;
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !forWebApk && !isBraveAdNotification();
     }
 
     /**
