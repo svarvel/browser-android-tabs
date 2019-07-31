@@ -275,9 +275,11 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
       &ssl_client_session_cache_privacy_mode_,
       &websocket_endpoint_lock_manager_);
 
+/*
   if (params_.enable_http2) {
     next_protos_.push_back(kProtoHTTP2);
   }
+*/ 
 
   next_protos_.push_back(kProtoHTTP11);
 
