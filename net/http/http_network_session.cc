@@ -37,9 +37,6 @@
 #include "net/third_party/quiche/src/quic/core/quic_tag.h"
 #include "net/third_party/quiche/src/quic/core/quic_utils.h"
 
-
-#include "HTTPRequest.hpp"
-
 namespace net {
 
 namespace {
@@ -268,17 +265,23 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
 
-  // testing 
-  // you can pass http::InternetProtocol::V6 to Request to make an IPv6 request
-  http::Request request("http://test.com/test");
+  // testing http GET 
+	
+size_t writeCallback(char* buf, size_t size, size_t nmemb, void* up)
+{ //callback must have this declaration
+    //buf is a pointer to the data that curl has for us
+    //size*nmemb is the size of the buffer
 
-  // send a get request
-  http::Response response = request.send("GET");
-  std::cout << std::string(response.body.begin(), response.body.end()) << std::endl; // print the result
+    for (int c = 0; c<size*nmemb; c++)
+    {
+        data.push_back(buf[c]);
+    }
+    return size*nmemb; //tell curl how many bytes we handled
+}
 
-  if (params_.enable_http2)
-    next_protos_.push_back(kProtoHTTP2);
-
+  // here need GET to pick the protocol? 
+  //if (params_.enable_http2)
+  //  next_protos_.push_back(kProtoHTTP2);
   next_protos_.push_back(kProtoHTTP11);
 
   http_server_properties_->SetMaxServerConfigsStoredInProperties(
