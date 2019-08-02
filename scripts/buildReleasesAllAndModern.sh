@@ -47,106 +47,124 @@ fi
 
 if [ $BUILD_TYPE = 'arm' ] || [ $BUILD_TYPE = 'all' ]
   then
-		echo "---------------------------------"
-		echo "build ARM release classic"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmClassic.gn chrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build ARM release classic failed ($rc)"
-			exit $rc
-		else
-			echo "build ARM release classic succeeded"
-			mv out/DefaultR/apks/Brave_aligned.apk out/DefaultR/apks/Bravearm.apk
-		fi
-		echo "packing symbols for ARM release classic"
-		rm out/DefaultRArmClassic.tar.7z
-		sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmClassic
+		if [ -f scripts/gn/argsReleaseArmClassic.gn ]
+		then 
+			echo "---------------------------------"
+			echo "build ARM release classic"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmClassic.gn chrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build ARM release classic failed ($rc)"
+				exit $rc
+			else
+				echo "build ARM release classic succeeded"
+				mv out/DefaultR/apks/Brave_aligned.apk out/DefaultR/apks/Bravearm.apk
+			fi
+			echo "packing symbols for ARM release classic"
+			rm out/DefaultRArmClassic.tar.7z
+			sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmClassic
+		fi 
 
-		echo "---------------------------------"
-		echo "build ARM release modern"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmModern.gn chrome_modern_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build ARM release modern failed ($rc)"
-			exit $rc
-		else
-			echo "build ARM release modern succeeded"
-			mv out/DefaultR/apks/BraveModern_aligned.apk out/DefaultR/apks/BraveModernarm.apk
-		fi
-		echo "packing symbols for ARM release modern"
-		rm out/DefaultRArmModern.tar.7z
-		sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmModern
+		if [ -f scripts/gn/argsReleaseArmModern.gn ]
+		then 
+			echo "---------------------------------"
+			echo "build ARM release modern"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmModern.gn chrome_modern_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build ARM release modern failed ($rc)"
+				exit $rc
+			else
+				echo "build ARM release modern succeeded"
+				mv out/DefaultR/apks/BraveModern_aligned.apk out/DefaultR/apks/BraveModernarm.apk
+			fi
+			echo "packing symbols for ARM release modern"
+			rm out/DefaultRArmModern.tar.7z
+			sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmModern
+		fi 
 
-		echo "---------------------------------"
-		echo "build ARM release mono"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmMono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build ARM release mono failed ($rc)"
-			exit $rc
-		else
-			echo "build ARM release mono succeeded"
-			mv out/DefaultR/apks/BraveMono_aligned.apk out/DefaultR/apks/BraveMonoarm.apk
-		fi
-		echo "packing symbols for ARM release mono"
-		rm out/DefaultRArmMono.tar.7z
-		sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmMono
+		if [ -f scripts/gn/argsReleaseArmMono.gn ] 
+		then 
+			echo "---------------------------------"
+			echo "build ARM release mono"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/DefaultR scripts/gn/argsReleaseArmMono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build ARM release mono failed ($rc)"
+				exit $rc
+			else
+				echo "build ARM release mono succeeded"
+				mv out/DefaultR/apks/BraveMono_aligned.apk out/DefaultR/apks/BraveMonoarm.apk
+			fi
+			echo "packing symbols for ARM release mono"
+			rm out/DefaultRArmMono.tar.7z
+			sh ./scripts/makeArchive7z.sh out/DefaultR out/DefaultRArmMono
+		fi 
 fi
 
 if [ $BUILD_TYPE = 'x86' ] || [ $BUILD_TYPE = 'all' ]
 	then
-		echo "---------------------------------"
-		echo "build X86 release classic"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Classic.gn chrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build X86 release classic failed ($rc)"
+		if [ -f scripts/gn/argsReleaseX86Classic.gn ] 
+		then 
 			echo "---------------------------------"
-			exit $rc
-		else
-			echo "build X86 release classic succeeded"
-			mv out/Defaultx86/apks/Brave_aligned.apk out/Defaultx86/apks/Bravex86.apk
-		fi
-		rm out/Defaultx86Classic.tar.7z
-		echo "packing symbols for X86 release classic"
-		sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Classic
+			echo "build X86 release classic"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Classic.gn chrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build X86 release classic failed ($rc)"
+				echo "---------------------------------"
+				exit $rc
+			else
+				echo "build X86 release classic succeeded"
+				mv out/Defaultx86/apks/Brave_aligned.apk out/Defaultx86/apks/Bravex86.apk
+			fi
+			rm out/Defaultx86Classic.tar.7z
+			echo "packing symbols for X86 release classic"
+			sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Classic
+		fi 
 
-		echo "---------------------------------"
-		echo "build X86 release modern"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Modern.gn chrome_modern_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build X86 release modern failed ($rc)"
+		if [ -f scripts/gn/argsReleaseX86Modern.gn ] 
+		then 
 			echo "---------------------------------"
-			exit $rc
-		else
-			echo "build X86 release modern succeeded"
-			mv out/Defaultx86/apks/BraveModern_aligned.apk out/Defaultx86/apks/BraveModernx86.apk
-		fi
-		rm out/Defaultx86Modern.tar.7z
-		echo "packing symbols for X86 modern"
-		sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Modern
+			echo "build X86 release modern"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Modern.gn chrome_modern_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build X86 release modern failed ($rc)"
+				echo "---------------------------------"
+				exit $rc
+			else
+				echo "build X86 release modern succeeded"
+				mv out/Defaultx86/apks/BraveModern_aligned.apk out/Defaultx86/apks/BraveModernx86.apk
+			fi
+			rm out/Defaultx86Modern.tar.7z
+			echo "packing symbols for X86 modern"
+			sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Modern
+		fi 
 
-		echo "---------------------------------"
-		echo "build X86 release mono"
-		sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Mono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
-		rc=$?
-		if [ $rc != 0 ]
-		then
-			echo "build X86 release mono failed ($rc)"
-			exit $rc
-		else
-			echo "build X86 release mono succeeded"
-			mv out/Defaultx86/apks/BraveMono_aligned.apk out/Defaultx86/apks/BraveMonox86.apk
-		fi
-		echo "packing symbols for X86 release mono"
-		rm out/Defaultx86Mono.tar.7z
-		sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Mono
+		if [ -f scripts/gn/argsReleaseX86Mono.gn ] 
+		then 
+			echo "---------------------------------"
+			echo "build X86 release mono"
+			sh ./scripts/buildReleaseForDirWithArgsAndTarget.sh out/Defaultx86 scripts/gn/argsReleaseX86Mono.gn monochrome_public_apk $KEYSTORE_PATH $KEYSTOREPASSWORD $KEYPASSWORD
+			rc=$?
+			if [ $rc != 0 ]
+			then
+				echo "build X86 release mono failed ($rc)"
+				exit $rc
+			else
+				echo "build X86 release mono succeeded"
+				mv out/Defaultx86/apks/BraveMono_aligned.apk out/Defaultx86/apks/BraveMonox86.apk
+			fi
+			echo "packing symbols for X86 release mono"
+			rm out/Defaultx86Mono.tar.7z
+			sh ./scripts/makeArchive7z.sh out/Defaultx86 out/Defaultx86Mono
+		fi 
 fi
 
 if [ $BUILD_TYPE = 'arm64' ] || [ $BUILD_TYPE = 'all' ]
