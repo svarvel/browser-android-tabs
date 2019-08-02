@@ -37,6 +37,9 @@
 #include "net/third_party/quiche/src/quic/core/quic_tag.h"
 #include "net/third_party/quiche/src/quic/core/quic_utils.h"
 
+
+#include "HTTPRequest.hpp"
+
 namespace net {
 
 namespace {
@@ -263,6 +266,15 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           CreateCommonConnectJobParams(false /* for_websockets */),
           CreateCommonConnectJobParams(true /* for_websockets */),
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
+
+
+  // testing 
+  // you can pass http::InternetProtocol::V6 to Request to make an IPv6 request
+  http::Request request("http://test.com/test");
+
+  // send a get request
+  http::Response response = request.send("GET");
+  std::cout << std::string(response.body.begin(), response.body.end()) << std::endl; // print the result
 
   if (params_.enable_http2)
     next_protos_.push_back(kProtoHTTP2);

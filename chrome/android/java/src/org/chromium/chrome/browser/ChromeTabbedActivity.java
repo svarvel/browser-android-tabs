@@ -185,6 +185,13 @@ import java.util.Locale;
 import java.util.ArrayList;
 import java.net.URL;
 
+
+// [MV] extra import for JSON-POST request 
+import org.json.JSONObject;
+import java.net.HttpURLConnection; 
+import java.io.DataOutputStream; 
+import java.lang.Thread; 
+
 /**
  * This is the main activity for ChromeMobile when not running in document mode.  All the tabs
  * are accessible via a chrome specific tab switching UI.
@@ -210,6 +217,12 @@ public class ChromeTabbedActivity
 
         int NUM_ENTRIES = 9;
     }
+
+    // [MV] adding variables needed //
+    private static final String SUBTAG = "MATTEO";  // my own TAG
+    private static final String VRS    = "08.2.19"; // my own VRS
+    private long startPLT = -1;                     // page load start
+    // MV //
 
     private static final String TAG = "ChromeTabbedActivity";
 
@@ -490,6 +503,58 @@ public class ChromeTabbedActivity
             return new TabbedModeTabDelegateFactory();
         }
     }
+
+
+    // MV -- report results via JSON
+    public void sendPost(String url, long plt) {
+
+    // parameters 
+    String urlAdress = "http://3.18.180.10:12345/h2Reporting"; 
+
+    // logging
+    Log.d(SUBTAG, "[sendPost] URL: " + urlAdress);
+
+    // start thread for POSTing
+    Thread thread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            try {
+                // avoid redoing this all the time
+                URL url = new URL(urlAdress);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                // NOTE: The keep.alive property (default: true) indicates that sockets can be reused by subsequent requests //
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+
+                // create json object 
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("timestamp", System.currentTimeMillis());
+                jsonParam.put("URL", url);                
+                jsonParam.put("last-PLT", plt);                
+                jsonParam.put("VRS", VRS);
+                
+                // send data 
+                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                os.writeBytes(jsonParam.toString());
+                os.flush();
+                os.close();
+
+                // logging
+                Log.d(SUBTAG, "[sendPost] STATUS: " + String.valueOf(conn.getResponseCode()) + 
+                    " MSG: " + conn.getResponseMessage());
+                
+                // given keep.alive, this should not be closed anyway
+                //conn.disconnect();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    });
+
 
     /**
      * Return whether the passed in component name matches any of the supported tabbed mode
@@ -1726,6 +1791,11 @@ public class ChromeTabbedActivity
         mTabModelSelectorTabObserver = new TabModelSelectorTabObserver(mTabModelSelectorImpl) {
             @Override
             public void onPageLoadStarted(Tab tab, String url) {
+                // [MV] logging
+                Log.d(SUBTAG, "onPageLoadStarted"); 
+                startPLT = System.currentTimeMillis();
+                // MV //
+
                 ChromeApplication app = (ChromeApplication)ContextUtils.getBaseApplicationContext();
                 if ((null != app) && (null != app.getShieldsConfig())) {
                     app.getShieldsConfig().setTabModelSelectorTabObserver(mTabModelSelectorTabObserver);
@@ -1743,6 +1813,12 @@ public class ChromeTabbedActivity
 
             @Override
             public void onPageLoadFinished(final Tab tab, String url) {
+                // [MV] send POST 
+                long plt = System.currentTimeMillis() - startPLT; 
+                Log.d(SUBTAG, "PageLoadFinished. URL: " + url + " Duration: " + plt + " Sending POST...");                 
+                sendPost(url, plt);
+                // 
+
                 mAppIndexingUtil.extractCopylessPasteMetadata(tab);
                 if (getActivityTab() == tab) {
                     try {
