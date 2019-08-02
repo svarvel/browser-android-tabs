@@ -107,6 +107,9 @@ class TemplateUrlServiceAndroid : public TemplateURLServiceObserver {
       JNIEnv* env,
       const base::android::JavaParamRef<jobject>& obj);
 
+  // Get current default search engine from preferences
+  static std::string GetDefaultSearchEngineNamePref(bool is_private);
+
  private:
   ~TemplateUrlServiceAndroid() override;
 

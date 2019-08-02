@@ -1181,8 +1181,8 @@ Desat</translation>
 <translation id="3735228155296883311">Simplement escaneja el codi de la cadena de sincronització  que vas crear en un altre dispositiu o comença una altra cadena de sincronització.</translation>
 <translation id="7745082336226088126">Escaneja o introdueix un codi de sincronització</translation>
 <translation id="1602067095281698985">Comença una cadena de sincronització nova</translation>
-<translation id="4690880825349994619">Des d'un dispositiu de sincronització existent, obre l'opció de configuració de Brave i ves a Configuració &gt; Sync. Tria \"Afegeix dispositiu\" i escaneja el codi QR que es mostra a la pantalla.</translation>
-<translation id="6270614677029463366">Des d'un dispositiu de sincronització existent, obre l'opció de configuració de Brave i ves a Configuració &gt; Sincronització. Tria \"Afegeix dispositiu\" i, a continuació, \"Mostra les paraules del codi\".</translation>
+<translation id="4690880825349994619">Des d'un dispositiu de sincronització existent, obre l'opció de configuració de Brave i ves a Configuració &gt; Sync. Tria "Afegeix dispositiu" i escaneja el codi QR que es mostra a la pantalla.</translation>
+<translation id="6270614677029463366">Des d'un dispositiu de sincronització existent, obre l'opció de configuració de Brave i ves a Configuració &gt; Sincronització. Tria "Afegeix dispositiu" i, a continuació, "Mostra les paraules del codi".</translation>
 <translation id="1475223680121592371">Afegeix un dispositiu mòbil</translation>
 <translation id="2965377893636908578">Afegeix un ordinador</translation>
 <translation id="65315202420929965">Escaneja aquest codi de sincronització</translation>
@@ -1198,7 +1198,7 @@ Desat</translation>
 <translation id="6450924769151530465">Afegeix un altre dispositiu</translation>
 <translation id="2004365171440701679">Suprimeix aquest dispositiu</translation>
 <translation id="2731921493694251495">Introdueix el codi de la cadena de sincronització</translation>
-<translation id="2590683710114839102">Des del teu ordinador, ves a l'opció de configuració de Brave &gt; Sync. Tria \"Introdueix un codi de cadena de sincronització\".</translation>
+<translation id="2590683710114839102">Des del teu ordinador, ves a l'opció de configuració de Brave &gt; Sync. Tria "Introdueix un codi de cadena de sincronització".</translation>
 <translation id="1732271215616957850">Introdueix les paraules del codi a dalt, amb espais.</translation>
 <translation id="3951555451708119590">Estàs segur que vols suprimir el dispositiu '</translation>
 <translation id="9154490620151093733">S'ha enviat la petició de supressió. El dispositiu se suprimirà de seguida.</translation>
@@ -1214,4 +1214,6 @@ Desat</translation>
 <translation id="5241263629636958324">S'ha copiat al porta-retalls</translation>
 <translation id="222883304157347087">(aquest dispositiu)</translation>
 <translation id="7820683005702098135">Sincronització de Brave (beta)</translation>
+<translation id="1178128181015923849">Estàs segur que vols suprimir el dispositiu '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="2569646144216067185">Recompte de paraules: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

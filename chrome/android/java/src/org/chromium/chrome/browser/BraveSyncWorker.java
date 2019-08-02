@@ -49,6 +49,7 @@ import org.json.JSONObject;
 
 import java.lang.IllegalArgumentException;
 import java.lang.Runnable;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -745,12 +746,21 @@ public class BraveSyncWorker {
       return in.replace("\\", "\\\\").replace("\"", "\\\"");
     }
 
+    private String UrlEncode(String url) {
+        try {
+            String urlEncoded = URLEncoder.encode(url, "utf-8");
+            return urlEncoded;
+        } catch (UnsupportedEncodingException ex) {
+            return url;
+        }
+    }
+
     private StringBuilder CreateBookmarkRecord(String url, String title, boolean isFolder, long parentFolderId,
               String parentFolderObjectId, String customTitle, long lastAccessedTime, long creationTime, String favIcon,
               String order) {
         StringBuilder bookmarkRequest = new StringBuilder("bookmark:");
         bookmarkRequest.append("{ site:");
-        bookmarkRequest.append("{ location: \"").append(url).append("\", ");
+        bookmarkRequest.append("{ location: \"").append(UrlEncode(url)).append("\", ");
         if (!isFolder) {
             bookmarkRequest.append("title: \"").append(replaceUnsupportedCharacters(title)).append("\", ");
             bookmarkRequest.append("customTitle: \"").append(replaceUnsupportedCharacters(customTitle)).append("\", ");
@@ -762,7 +772,7 @@ public class BraveSyncWorker {
                 bookmarkRequest.append("customTitle: \"").append(replaceUnsupportedCharacters(title)).append("\", ");
             }
         }
-        bookmarkRequest.append("favicon: \"").append(favIcon).append("\", ");
+        bookmarkRequest.append("favicon: \"").append(UrlEncode(favIcon)).append("\", ");
         bookmarkRequest.append("lastAccessedTime: ").append(lastAccessedTime).append(", ");
         bookmarkRequest.append("creationTime: ").append(creationTime).append("}, ");
         bookmarkRequest.append("isFolder: ").append(isFolder).append(", ");

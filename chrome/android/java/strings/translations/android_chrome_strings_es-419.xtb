@@ -1181,8 +1181,8 @@ estimado</translation>
 <translation id="3735228155296883311">Simplemente escanea el código de tu cadena de sincronización que creaste en otro dispositivo o inicia una cadena de sincronización nueva.</translation>
 <translation id="7745082336226088126">Escanear o introducir el código de sincronización</translation>
 <translation id="1602067095281698985">Iniciar una cadena de sincronización nueva</translation>
-<translation id="4690880825349994619">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona \"Añadir dispositivo\" y escanea el código QR que se muestra en la pantalla.</translation>
-<translation id="6270614677029463366">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona \"Añadir dispositivo\" y luego \"Mostrar palabras del código en su lugar\".</translation>
+<translation id="4690880825349994619">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona "Añadir dispositivo" y escanea el código QR que se muestra en la pantalla.</translation>
+<translation id="6270614677029463366">Abre la configuración de Brave desde un dispositivo ya sincronizado y navega hasta Configuración &gt; Sincronización. Selecciona "Añadir dispositivo" y luego "Mostrar palabras del código en su lugar".</translation>
 <translation id="1475223680121592371">Añadir un dispositivo móvil</translation>
 <translation id="2965377893636908578">Añadir una computadora</translation>
 <translation id="65315202420929965">Escanear este código de sincronización</translation>
@@ -1198,7 +1198,7 @@ estimado</translation>
 <translation id="6450924769151530465">Añadir otro dispositivo</translation>
 <translation id="2004365171440701679">Eliminar este dispositivo</translation>
 <translation id="2731921493694251495">Introducir el código de cadena de sincronización</translation>
-<translation id="2590683710114839102">Desde tu computadora, navega hasta Configuración de Brave &gt; Sincronización. Elige \"Introducir un código de cadena de sincronización\".</translation>
+<translation id="2590683710114839102">Desde tu computadora, navega hasta Configuración de Brave &gt; Sincronización. Elige "Introducir un código de cadena de sincronización".</translation>
 <translation id="1732271215616957850">Introduce las palabras del código de arriba incluyendo los espacios.</translation>
 <translation id="3951555451708119590">¿Estás seguro de que quieres eliminar el dispositivo \"</translation>
 <translation id="9154490620151093733">Se envió la solicitud de eliminación. El dispositivo se eliminará a la brevedad.</translation>
@@ -1213,4 +1213,6 @@ estimado</translation>
 <translation id="8624315169751085215">Copiar al portapapeles</translation>
 <translation id="5241263629636958324">Se copió al portapapeles.</translation>
 <translation id="222883304157347087">(este dispositivo)</translation>
+<translation id="1178128181015923849">¿Estás seguro de que quieres eliminar el dispositivo "<ph name="DEVICE_NAME" />"?</translation>
+<translation id="2569646144216067185">Cantidad de palabras: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

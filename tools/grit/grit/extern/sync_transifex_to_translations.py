@@ -9,6 +9,51 @@ transifex_folder='../../../../chrome/android/java/strings/transifex'
 translations_folder='../../../../chrome/android/java/strings/translations'
 base_strings_file='../../../../chrome/android/java/strings/strings.xml'
 
+# Generate message id from message text and meaning string (optional),
+# both in utf-8 encoding
+#
+def GenerateMessageId(message, meaning=''):
+    fp = FP.FingerPrint(message)
+    if meaning:
+        # combine the fingerprints of message and meaning
+        fp2 = FP.FingerPrint(meaning)
+        if fp < 0:
+            fp = fp2 + (fp << 1) + 1
+        else:
+            fp = fp2 + (fp << 1)
+    # To avoid negative ids we strip the high-order bit
+    return fp & 0x7fffffffffffffffL
+
+def GetFullTextFromTag(string_tag, parse_ph):
+    string_value = string_tag.text
+    string_value_phs = string_tag.findall('ph')
+    for string_value_ph in string_value_phs:
+        if parse_ph:
+            string_value = (string_value if string_value is not None else '') + string_value_ph.get('name').upper() + (string_value_ph.tail if string_value_ph.tail is not None else '')
+        else:
+            if string_value_ph.text is not None:
+                string_value_ph.text = ''
+            string_value = (string_value if string_value is not None else '') + xml.etree.ElementTree.tostring(string_value_ph, encoding='utf-8').decode('utf-8')
+    return string_value
+
+def CleanUpString(string):
+    return string.replace("\\'", "'").replace('\\"', '"')
+
+def UpdateTagText(new_translation_tag, string_tag):
+    new_translation_tag.text = CleanUpString(string_tag.text)
+    # clean up old place holders
+    new_translation_tag_phs = new_translation_tag.findall('ph')
+    for new_translation_tag_ph in new_translation_tag_phs:
+        new_translation_tag.remove(new_translation_tag_ph)
+    # apply new place holders
+    string_value_phs = string_tag.findall('ph')
+    for string_value_ph in string_value_phs:
+        if string_value_ph.tail is not None:
+            string_value_ph.tail = CleanUpString(string_value_ph.tail)
+        if string_value_ph.text is not None:
+            string_value_ph.text = ''
+        new_translation_tag.append(string_value_ph)
+
 # sync translations from .xtb files to .xml files to be uploaded on transifex
 def SyncTranslationsToTransifex():
     # load all strings and calculate their translation id (ignore memory consumption at this point to speed up whole process)
@@ -22,7 +67,7 @@ def SyncTranslationsToTransifex():
         if not string_value:
             sys.exit("String value is empty")
         # calculate translation id
-        string_fp = FP.FingerPrint(string_value) & 0x7fffffffffffffffL
+        string_fp = GenerateMessageId(string_value, None)
         if string_name in brave_strings:
             sys.exit('String name "' + string_name + '" is duplicated')
         brave_strings[string_name] = string_fp
@@ -94,13 +139,13 @@ def SyncTransifexToTranslations():
     e = xml.etree.ElementTree.parse(base_strings_file).getroot()
     for string_tag in e.findall('string'):
         string_name = string_tag.get('name')
-        string_value = string_tag.text    
+        string_value = GetFullTextFromTag(string_tag, True)
         if not string_name:
             sys.exit('String name is empty')
         if not string_value:
             sys.exit("String value is empty")
         # calculate translation id
-        string_fp = FP.FingerPrint(string_value) & 0x7fffffffffffffffL
+        string_fp = GenerateMessageId(string_value, None)
         if string_name in brave_strings:
             sys.exit('String name "' + string_name + '" is duplicated')
         brave_strings[string_name] = string_fp
@@ -140,19 +185,19 @@ def SyncTransifexToTranslations():
                     translations_file_was_changed = False
                     for string_tag in strings.findall('string'):
                         string_name = string_tag.get('name')
-                        string_value = string_tag.text.replace("\\'", "'")
+                        string_value = CleanUpString(GetFullTextFromTag(string_tag, False))
                         if string_name in brave_strings:
                             # we have its translation id, lets look for it in .xtb file
-                            translation_id_found = False                        
+                            translation_id_found = False
                             for translation_tag in translations.findall('translation'):
                                 translation_id = translation_tag.get('id')
-                                translation_text = translation_tag.text
+                                translation_text = GetFullTextFromTag(translation_tag, False)
                                 # we found id, so replace it
                                 if translation_id == str(brave_strings[string_name]):
                                     if not translation_text == string_value:
                                         print(str(replacingNumber) + ' replacing "' + translation_text + '" with "' + string_value + '"')
                                         replacingNumber += 1
-                                        translation_tag.text = string_value
+                                        UpdateTagText(translation_tag, string_tag)
                                         translations_file_was_changed = True
                                     translation_id_found = True
                                     break
@@ -162,7 +207,7 @@ def SyncTransifexToTranslations():
                                 addingNumber += 1
                                 new_translation_tag = xml.etree.ElementTree.Element('translation')
                                 new_translation_tag.set('id', str(brave_strings[string_name]))
-                                new_translation_tag.text = string_value
+                                UpdateTagText(new_translation_tag, string_tag)
                                 new_translation_tag.tail = '\n'
                                 translations.append(new_translation_tag)
                                 translations_file_was_changed = True

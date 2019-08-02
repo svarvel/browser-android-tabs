@@ -1182,8 +1182,8 @@ Kaydedildi</translation>
 <translation id="3735228155296883311">Başka bir cihazda oluşturduğunuz senkronizasyon zincirinizden kodu taramanız veya yeni bir senkronizasyon zinciri başlatmanız yeterlidir.</translation>
 <translation id="7745082336226088126">Senkronizasyon kodu tara veya gir</translation>
 <translation id="1602067095281698985">Yeni bir senkronizasyon zinciri başlat</translation>
-<translation id="4690880825349994619">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini seçin ve ekranda görüntülenen QR Kodunu tarayın.</translation>
-<translation id="6270614677029463366">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. \"Cihaz Ekle\" öğesini ve ardından \"Bunun yerine kod kelimelerini görüntüle\" öğesini seçin.</translation>
+<translation id="4690880825349994619">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. "Cihaz Ekle" öğesini seçin ve ekranda görüntülenen QR Kodunu tarayın.</translation>
+<translation id="6270614677029463366">Senkronize edilmiş mevcut cihazı kullanarak Brave Ayarları'nı açın ve Ayarlar &gt; Senkronizasyon öğesine gidin. "Cihaz Ekle" öğesini ve ardından "Bunun yerine kod kelimelerini görüntüle" öğesini seçin.</translation>
 <translation id="1475223680121592371">Mobil Cihaz Ekle</translation>
 <translation id="2965377893636908578">Bilgisayar Ekle</translation>
 <translation id="65315202420929965">Bu senkronizasyon kodunu tarayın</translation>
@@ -1199,7 +1199,7 @@ Kaydedildi</translation>
 <translation id="6450924769151530465">Başka cihaz ekle</translation>
 <translation id="2004365171440701679">Bu cihazı kaldır</translation>
 <translation id="2731921493694251495">Senkronizasyon zinciri kodunu gir</translation>
-<translation id="2590683710114839102">Bilgisayarınızda Brave Ayarları &gt; Senkronizasyon öğesine gidin. \"Senkronizasyon Zinciri Kodu Gir\" öğesini seçin.</translation>
+<translation id="2590683710114839102">Bilgisayarınızda Brave Ayarları &gt; Senkronizasyon öğesine gidin. "Senkronizasyon Zinciri Kodu Gir" öğesini seçin.</translation>
 <translation id="1732271215616957850">Yukarıdaki kod kelimelerini boşluklar dahil girin.</translation>
 <translation id="3951555451708119590">\"</translation>
 <translation id="9154490620151093733">Silme talebi gönderildi. Cihaz kısa süre içinde kaldırılacak.</translation>
@@ -1215,4 +1215,6 @@ Kaydedildi</translation>
 <translation id="5241263629636958324">Panoya Kopyalandı</translation>
 <translation id="222883304157347087">(bu cihaz)</translation>
 <translation id="7820683005702098135">Brave (beta) Senkronizasyon</translation>
+<translation id="1178128181015923849">"<ph name="DEVICE_NAME" />" cihazını silmek istediğinizden emin misiniz?</translation>
+<translation id="2569646144216067185">Kelime sayısı: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

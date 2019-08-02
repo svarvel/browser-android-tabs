@@ -33,463 +33,442 @@ namespace {
 
 // Default (for countries with no better engine set)
 const PrepopulatedEngine* engines_default[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // United Arab Emirates
 const PrepopulatedEngine* engines_AE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex,  };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Albania
 const PrepopulatedEngine* engines_AL[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex,  };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Argentina
 const PrepopulatedEngine* engines_AR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ar, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Austria
 const PrepopulatedEngine* engines_AT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_at, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Australia
 const PrepopulatedEngine* engines_AU[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_au, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Bosnia and Herzegovina
 const PrepopulatedEngine* engines_BA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Belgium
 const PrepopulatedEngine* engines_BE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yahoo_fr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Bulgaria
 const PrepopulatedEngine* engines_BG[] =
-    { &google, &amazon, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Bahrain
 const PrepopulatedEngine* engines_BH[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Burundi
 const PrepopulatedEngine* engines_BI[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Brunei
 const PrepopulatedEngine* engines_BN[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_my, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Bolivia
 const PrepopulatedEngine* engines_BO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube,  &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Brazil
 const PrepopulatedEngine* engines_BR[] =
-    { &google, &amazon, &ask_br, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube,  &yahoo_br, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Belarus
 const PrepopulatedEngine* engines_BY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mail_ru, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex_by, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_by, };
 
 // Belize
 const PrepopulatedEngine* engines_BZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Canada
 const PrepopulatedEngine* engines_CA[] =
-    { &google, &amazon, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ca, &yahoo_qc, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Switzerland
 const PrepopulatedEngine* engines_CH[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ch, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Chile
 const PrepopulatedEngine* engines_CL[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_cl, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // China
 const PrepopulatedEngine* engines_CN[] =
-    { &google, &amazon, &baidu, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &sogou, &so_360, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Colombia
 const PrepopulatedEngine* engines_CO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_co, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Costa Rica
 const PrepopulatedEngine* engines_CR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Czech Republic
 const PrepopulatedEngine* engines_CZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &seznam, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Germany
 const PrepopulatedEngine* engines_DE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_de, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Denmark
 const PrepopulatedEngine* engines_DK[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_dk, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Dominican Republic
 const PrepopulatedEngine* engines_DO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Algeria
 const PrepopulatedEngine* engines_DZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Ecuador
 const PrepopulatedEngine* engines_EC[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Estonia
 const PrepopulatedEngine* engines_EE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Egypt
 const PrepopulatedEngine* engines_EG[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Spain
 const PrepopulatedEngine* engines_ES[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_es, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Faroe Islands
 const PrepopulatedEngine* engines_FO[] =
-    { &google, &amazon, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Finland
 const PrepopulatedEngine* engines_FI[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_fi, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // France
 const PrepopulatedEngine* engines_FR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_fr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // United Kingdom
 const PrepopulatedEngine* engines_GB[] =
-    { &google, &amazon, &ask_uk, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_uk, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Greece
 const PrepopulatedEngine* engines_GR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_gr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Guatemala
 const PrepopulatedEngine* engines_GT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Hong Kong
 const PrepopulatedEngine* engines_HK[] =
-    { &google, &amazon, &baidu, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_hk, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Honduras
 const PrepopulatedEngine* engines_HN[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Croatia
 const PrepopulatedEngine* engines_HR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Hungary
 const PrepopulatedEngine* engines_HU[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Indonesia
 const PrepopulatedEngine* engines_ID[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_id, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Ireland
 const PrepopulatedEngine* engines_IE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_uk, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Israel
 const PrepopulatedEngine* engines_IL[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // India
 const PrepopulatedEngine* engines_IN[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_in, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Iraq
 const PrepopulatedEngine* engines_IQ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Iran
 const PrepopulatedEngine* engines_IR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Iceland
 const PrepopulatedEngine* engines_IS[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube,  &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Italy
 const PrepopulatedEngine* engines_IT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &virgilio, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Jamaica
 const PrepopulatedEngine* engines_JM[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Jordan
 const PrepopulatedEngine* engines_JO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Japan
 const PrepopulatedEngine* engines_JP[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_jp, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Kenya
 const PrepopulatedEngine* engines_KE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Kuwait
 const PrepopulatedEngine* engines_KW[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // South Korea
 const PrepopulatedEngine* engines_KR[] =
-    { &google, &amazon, &bing, &daum, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &naver, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Kazakhstan
 const PrepopulatedEngine* engines_KZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &mail_ru, &yahoo, &yandex_kz, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_kz, };
 
 // Lebanon
 const PrepopulatedEngine* engines_LB[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Liechtenstein
 const PrepopulatedEngine* engines_LI[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_de, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Lithuania
 const PrepopulatedEngine* engines_LT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex_ru, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_ru, };
 
 // Luxembourg
 const PrepopulatedEngine* engines_LU[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_fr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Latvia
 const PrepopulatedEngine* engines_LV[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex_ru, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_ru, };
 
 // Libya
 const PrepopulatedEngine* engines_LY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Morocco
 const PrepopulatedEngine* engines_MA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Monaco
 const PrepopulatedEngine* engines_MC[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_fr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Moldova
 const PrepopulatedEngine* engines_MD[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Montenegro
 const PrepopulatedEngine* engines_ME[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Macedonia
 const PrepopulatedEngine* engines_MK[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Mexico
 const PrepopulatedEngine* engines_MX[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_mx, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Malaysia
 const PrepopulatedEngine* engines_MY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_my, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Nicaragua
 const PrepopulatedEngine* engines_NI[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Netherlands
 const PrepopulatedEngine* engines_NL[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &vinden, &wikipedia, &wolframalpha, &youtube, &yahoo_nl, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Norway
 const PrepopulatedEngine* engines_NO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &kvasir, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // New Zealand
 const PrepopulatedEngine* engines_NZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_nz, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Oman
 const PrepopulatedEngine* engines_OM[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Panama
 const PrepopulatedEngine* engines_PA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Peru
 const PrepopulatedEngine* engines_PE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_pe, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Philippines
 const PrepopulatedEngine* engines_PH[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ph, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Pakistan
 const PrepopulatedEngine* engines_PK[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Puerto Rico
 const PrepopulatedEngine* engines_PR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Poland
 const PrepopulatedEngine* engines_PL[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &onet, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Portugal
 const PrepopulatedEngine* engines_PT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Paraguay
 const PrepopulatedEngine* engines_PY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Qatar
 const PrepopulatedEngine* engines_QA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Romania
 const PrepopulatedEngine* engines_RO[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ro, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Serbia
 const PrepopulatedEngine* engines_RS[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Russia
 const PrepopulatedEngine* engines_RU[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mail_ru, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex_ru, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_ru, };
 
 // Rwanda
 const PrepopulatedEngine* engines_RW[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Saudi Arabia
 const PrepopulatedEngine* engines_SA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Sweden
 const PrepopulatedEngine* engines_SE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_se, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Singapore
 const PrepopulatedEngine* engines_SG[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_sg, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Slovenia
 const PrepopulatedEngine* engines_SI[] =
-    { &google, &amazon, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &najdi, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Slovakia
 const PrepopulatedEngine* engines_SK[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // El Salvador
 const PrepopulatedEngine* engines_SV[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Syria
 const PrepopulatedEngine* engines_SY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Thailand
 const PrepopulatedEngine* engines_TH[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_th, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Tunisia
 const PrepopulatedEngine* engines_TN[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Turkey
 const PrepopulatedEngine* engines_TR[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_tr, &yandex_tr, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_tr, &yandex, };
 
 // Trinidad and Tobago
 const PrepopulatedEngine* engines_TT[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Taiwan
 const PrepopulatedEngine* engines_TW[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_tw, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Tanzania
 const PrepopulatedEngine* engines_TZ[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Ukraine
 const PrepopulatedEngine* engines_UA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex_ua, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex_ua, };
 
 // United States
 const PrepopulatedEngine* engines_US[] =
-    { &google, &amazon, &aol, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Uruguay
 const PrepopulatedEngine* engines_UY[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Venezuela
 const PrepopulatedEngine* engines_VE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_ve, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Vietnam
 const PrepopulatedEngine* engines_VN[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_vn, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Yemen
 const PrepopulatedEngine* engines_YE[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo_maktoob, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // South Africa
 const PrepopulatedEngine* engines_ZA[] =
-    { &google, &amazon, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // Zimbabwe
 const PrepopulatedEngine* engines_ZW[] =
-    { &google, &amazon, &ask, &bing, &duckduckgo, &duckduckgo_light, &ecosia, &github, &infogalactic, &mdn, &qwant, &searx, &semanticscholar, &stackoverflow, &startpage, &twitter, &wikipedia, &wolframalpha, &youtube, &yahoo, &yandex, };
+    { &google, &bing, &duckduckgo, &duckduckgo_light, &qwant, &startpage, &yandex, };
 
 // A list of all the engines that we know about.
 const PrepopulatedEngine* kAllEngines[] = {
   // Prepopulated engines:
-  &amazon,       &aol,          &ask,          &ask_br,       &ask_uk,
-  &baidu,        &bing,         &daum,         &duckduckgo,   &github,
-  &google,       &infogalactic, &kvasir,       &mail_ru,      &mdn,
-  &najdi,        &naver,        &onet,         &qwant,        &semanticscholar,
-  &seznam,       &sogou,        &stackoverflow,&startpage,    &twitter,
-  &vinden,       &virgilio,     &wikipedia,    &wolframalpha, &yahoo,
-  &yahoo_ar,     &yahoo_at,     &yahoo_au,     &yahoo_br,     &yahoo_ca,
-  &yahoo_ch,     &yahoo_cl,     &yahoo_co,     &yahoo_de,     &yahoo_dk,
-  &yahoo_es,     &yahoo_fi,     &yahoo_fr,     &yahoo_gr,     &yahoo_hk,
-  &yahoo_id,     &yahoo_in,     &yahoo_jp,     &yahoo_maktoob,&yahoo_mx,
-  &yahoo_my,     &yahoo_nl,     &yahoo_nz,     &yahoo_pe,     &yahoo_ph,
-  &yahoo_qc,     &yahoo_ro,     &yahoo_se,     &yahoo_sg,     &yahoo_th,
-  &yahoo_tr,     &yahoo_tw,     &yahoo_uk,     &yahoo_ve,     &yahoo_vn,
+  &bing,         &duckduckgo,   &google,       &qwant,        &startpage,
   &yandex,       &yandex_by,    &yandex_kz,    &yandex_ru,    &yandex_tr,
-  &yandex_ua,    &youtube,      &ecosia,       &searx,        &duckduckgo_light,
-
-  // UMA-only engines:
-  &atlas_cz,     &atlas_sk,     &avg,          &babylon,      &conduit,
-  &delfi_lt,     &delfi_lv,     &delta,        &funmoods,     &goo,
-  &imesh,        &iminent,      &in,           &incredibar,   &libero,
-  &neti,         &nigma,        &ok,           &rambler,      &sapo,
-  &search_results, &searchnu,   &snapdo,       &softonic,     &sweetim,
-  &terra_ar,     &terra_es,     &tut,          &walla,        &wp,
-  &zoznam,
+  &yandex_ua,    &duckduckgo_light,
 };
 
 std::vector<std::unique_ptr<TemplateURLData>> GetPrepopulationSetFromCountryID(

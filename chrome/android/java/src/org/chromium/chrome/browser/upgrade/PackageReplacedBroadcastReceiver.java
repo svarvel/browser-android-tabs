@@ -11,6 +11,7 @@ import android.os.Build;
 
 import org.chromium.base.Log;
 import org.chromium.base.task.AsyncTask;
+import org.chromium.chrome.browser.init.StatsUpdater;
 import org.chromium.chrome.browser.notifications.channels.ChannelsUpdater;
 
 /**
@@ -31,29 +32,61 @@ public final class PackageReplacedBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (!Intent.ACTION_MY_PACKAGE_REPLACED.equals(intent.getAction())) return;
-        updateChannelsIfNecessary();
-        try {
-            NotificationIntent.fireNotificationIfNecessary(context);
-        } catch (Exception exc) {
+        updateChannelsIfNecessary(context);
+        //try {
+        //    NotificationIntent.fireNotificationIfNecessary(context);
+        //} catch (Exception exc) {
             // Just ignore if we could not send a notification
-            Log.i("TAG", "notification error " + exc.getMessage());
-        }
+        //    Log.i("TAG", "notification error " + exc.getMessage());
+        //}
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) return;
         UpgradeIntentService.startMigrationIfNecessary(context);
     }
 
-    private void updateChannelsIfNecessary() {
-        if (!ChannelsUpdater.getInstance().shouldUpdateChannels()) return;
+    private void updateChannelsIfNecessary(final Context context) {
+        if (!ChannelsUpdater.getInstance().shouldUpdateChannels()) {
+            //StatTask(context);
 
-        final PendingResult result = goAsync();
+            return;
+        }
+
+        /*final PendingResult result = goAsync();
         new AsyncTask<Void>() {
             @Override
             protected Void doInBackground() {
                 ChannelsUpdater.getInstance().updateChannels();
+                try {
+                    StatsUpdater.UpdateStats(context);
+                } catch (Exception exc) {
+                    // Just ignore if we could not update stats
+                    Log.e("TAG", "update stats error " + exc.getMessage());
+                } catch (UnsatisfiedLinkError exc) {
+                    // Just ignore if we could not update stats
+                    Log.e("TAG", "update stats error " + exc.getMessage());
+                }
                 result.finish();
                 return null;
             }
-        }
-                .executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        }.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);*/
+    }
+
+    private void StatTask(final Context context) {
+        final PendingResult result = goAsync();
+        new AsyncTask<Void>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    StatsUpdater.UpdateStats(context);
+                } catch (Exception exc) {
+                    // Just ignore if we could not update stats
+                    Log.e("TAG", "update stats error " + exc.getMessage());
+                } catch (UnsatisfiedLinkError exc) {
+                    // Just ignore if we could not update stats
+                    Log.e("TAG", "update stats error " + exc.getMessage());
+                }
+                result.finish();
+                return null;
+            }
+        }.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
     }
 }

@@ -1181,8 +1181,8 @@ Tallennettu</translation>
 <translation id="3735228155296883311">Yksinkertaisesti skannaa koodi synkronointiketjusta, jonka loit toisessa laitteessa. Tai aloita uusi synkronointiketju.</translation>
 <translation id="7745082336226088126">Skannaa tai anna synkronointikoodi</translation>
 <translation id="1602067095281698985">Aloita uusi synkronointikoodi</translation>
-<translation id="4690880825349994619">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Asetukset &gt; Synkronoi -kohtaan. Valitse \"Lisää laite\" ja skannaa näytöllä näkyvä QR-koodi. </translation>
-<translation id="6270614677029463366">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Asetukset &gt; Synkronoi -kohtaan. Valitse \"Lisää laite\" ja sen jälkeen \"Näytä sen sijaan koodisanat\".</translation>
+<translation id="4690880825349994619">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Asetukset &gt; Synkronoi -kohtaan. Valitse "Lisää laite" ja skannaa näytöllä näkyvä QR-koodi. </translation>
+<translation id="6270614677029463366">Kun käytät olemassa olevaa synkronoitua laitetta, avaa Braven asetukset ja siirry Asetukset &gt; Synkronoi -kohtaan. Valitse "Lisää laite" ja sen jälkeen "Näytä sen sijaan koodisanat".</translation>
 <translation id="1475223680121592371">Lisää mobiililaite</translation>
 <translation id="2965377893636908578">Lisää tietokone</translation>
 <translation id="65315202420929965">Skannaa tämä synkronointikoodi</translation>
@@ -1198,7 +1198,7 @@ Tallennettu</translation>
 <translation id="6450924769151530465">Lisää toinen laite</translation>
 <translation id="2004365171440701679">Poista tämä laite</translation>
 <translation id="2731921493694251495">Anna synkronointiketjun koodi</translation>
-<translation id="2590683710114839102">Siirry tietokoneellasi kohtaan Braven asetukset &gt; Synkronoi. Valitse \"Anna synkronointiketjun koodi\".</translation>
+<translation id="2590683710114839102">Siirry tietokoneellasi kohtaan Braven asetukset &gt; Synkronoi. Valitse "Anna synkronointiketjun koodi".</translation>
 <translation id="1732271215616957850">Anna yllä olevat koodisanat, mukaan lukien välilyönnit.</translation>
 <translation id="3951555451708119590">Haluatko varmasti poistaa laitteen '</translation>
 <translation id="9154490620151093733">Poistopyyntö on lähetetty. Laite poistetaan kohta.</translation>
@@ -1214,4 +1214,6 @@ Tallennettu</translation>
 <translation id="5241263629636958324">Kopioitu leikepöydälle</translation>
 <translation id="222883304157347087">(tämä laite)</translation>
 <translation id="7820683005702098135">Brave (beta) -synkronointi</translation>
+<translation id="1178128181015923849">Haluatko varmasti poistaa laitteen '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="2569646144216067185">Sanamäärä: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

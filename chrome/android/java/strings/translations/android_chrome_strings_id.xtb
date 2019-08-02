@@ -1185,8 +1185,8 @@ Dihemat</translation>
 <translation id="3735228155296883311">Cukup pindai kode dari rantai sinkronisasi yang Anda buat pada perangkat lain. Atau mulai rantai sinkronisasi baru.</translation>
 <translation id="7745082336226088126">Pindai atau masukkan kode sinkronisasi</translation>
 <translation id="1602067095281698985">Mulai rantai sinkronisasi baru</translation>
-<translation id="4690880825349994619">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih \"Tambah Perangkat\" dan pindai Kode QR yang ditampilkan di layar.</translation>
-<translation id="6270614677029463366">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih \"Tambah Perangkat\" lalu \"Tampilkan kata-kata kode\".</translation>
+<translation id="4690880825349994619">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih "Tambah Perangkat" dan pindai Kode QR yang ditampilkan di layar.</translation>
+<translation id="6270614677029463366">Menggunakan perangkat tersinkronisasi yang ada, buka Pengaturan Brave dan bernavigasi ke Pengaturan &gt; Sinkronisasi. Pilih "Tambah Perangkat" lalu "Tampilkan kata-kata kode".</translation>
 <translation id="1475223680121592371">Tambah Perangkat Seluler</translation>
 <translation id="2965377893636908578">Tambah Komputer</translation>
 <translation id="65315202420929965">Pindai kode sinkronisasi ini</translation>
@@ -1202,7 +1202,7 @@ Dihemat</translation>
 <translation id="6450924769151530465">Tambah perangkat lain</translation>
 <translation id="2004365171440701679">Hapus perangkat ini</translation>
 <translation id="2731921493694251495">Masukkan kode rantai sinkronisasi</translation>
-<translation id="2590683710114839102">Pada komputer Anda, bernavigasi ke Pengaturan Brave &gt; Sinkronisasi. Pilih \"Masukkan Kode Rantai Sinkronisasi\".</translation>
+<translation id="2590683710114839102">Pada komputer Anda, bernavigasi ke Pengaturan Brave &gt; Sinkronisasi. Pilih "Masukkan Kode Rantai Sinkronisasi".</translation>
 <translation id="1732271215616957850">Masukkan kata-kata kode di bawah ini, termasuk spasi.</translation>
 <translation id="3951555451708119590">Yakin ingin menghapus perangkat '</translation>
 <translation id="9154490620151093733">Permintaan penghapusan telah dikirim. Perangkat akan dihapus sebentar lagi.</translation>
@@ -1217,4 +1217,6 @@ Dihemat</translation>
 <translation id="8624315169751085215">Salin ke Clipboard</translation>
 <translation id="5241263629636958324">Telah Disalin ke Clipboard</translation>
 <translation id="222883304157347087">(perangkat ini)</translation>
+<translation id="1178128181015923849">Yakin ingin menghapus perangkat '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="2569646144216067185">Jumlah kata: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

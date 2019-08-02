@@ -1182,8 +1182,8 @@ besparelse</translation>
 <translation id="3735228155296883311">Scan koden fra den synkroniseringskæde, du skabte på en anden enhed. Eller begynd på en ny synkroniseringskæde.</translation>
 <translation id="7745082336226088126">Scan eller indtast synkroniseringskode</translation>
 <translation id="1602067095281698985">Begynd på en ny synkroniseringskæde</translation>
-<translation id="4690880825349994619">På din eksisterende, synkroniserede enhed skal du åbne Brave-indstillinger og gå til Indstillinger &gt; Sync.  Vælg \"Tilføj enhed\", og scan QR-koden, der vises på skærmen.</translation>
-<translation id="6270614677029463366">På din eksisterende, synkroniserede enhed skal du åbne Brave-indstillinger og gå til Indstillinger &gt; Sync.  Vælg \"Tilføj enhed\" og derefter \"Vis kodeord i stedet\".</translation>
+<translation id="4690880825349994619">På din eksisterende, synkroniserede enhed skal du åbne Brave-indstillinger og gå til Indstillinger &gt; Sync.  Vælg "Tilføj enhed", og scan QR-koden, der vises på skærmen.</translation>
+<translation id="6270614677029463366">På din eksisterende, synkroniserede enhed skal du åbne Brave-indstillinger og gå til Indstillinger &gt; Sync.  Vælg "Tilføj enhed" og derefter "Vis kodeord i stedet".</translation>
 <translation id="1475223680121592371">Tilføj en mobilenhed</translation>
 <translation id="2965377893636908578">Tilføj en computer</translation>
 <translation id="65315202420929965">Scan denne synkroniseringskode</translation>
@@ -1199,7 +1199,7 @@ besparelse</translation>
 <translation id="6450924769151530465">Tilføj en anden enhed</translation>
 <translation id="2004365171440701679">Fjern denne enhed</translation>
 <translation id="2731921493694251495">Indtast kode til synkroniseringskæde</translation>
-<translation id="2590683710114839102">Gå til Brave-indstillinger &gt; Sync på din computer. Vælg \"Indtast kode til synkroniseringskæden\".</translation>
+<translation id="2590683710114839102">Gå til Brave-indstillinger &gt; Sync på din computer. Vælg "Indtast kode til synkroniseringskæden".</translation>
 <translation id="1732271215616957850">Indtast kodeordene foroven, med mellemrum.</translation>
 <translation id="3951555451708119590">Er du sikker på, at du vil slette enheden '</translation>
 <translation id="9154490620151093733">Sletningsanmodningen er sendt. Enheden fjernes snart.</translation>
@@ -1214,4 +1214,6 @@ besparelse</translation>
 <translation id="8624315169751085215">Kopiér til udklipsholderen</translation>
 <translation id="5241263629636958324">Kopieret til udklipsholderen</translation>
 <translation id="222883304157347087">(denne enhed)</translation>
+<translation id="1178128181015923849">Er du sikker på, at du vil slette enheden '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="2569646144216067185">Ordoptælling: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

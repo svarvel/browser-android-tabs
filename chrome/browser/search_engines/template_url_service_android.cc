@@ -374,6 +374,11 @@ TemplateUrlServiceAndroid::GetDefaultSearchEngine(
   return CreateTemplateUrlAndroid(env, default_search_provider);
 }
 
+std::string TemplateUrlServiceAndroid::GetDefaultSearchEngineNamePref(bool is_private) {
+  JNIEnv* env = base::android::AttachCurrentThread();
+  return base::android::ConvertJavaStringToUTF8(Java_TemplateUrlService_getDefaultSearchEngineNamePref(env, is_private));
+}
+
 static jlong JNI_TemplateUrlService_Init(JNIEnv* env,
                                          const JavaParamRef<jobject>& obj) {
   TemplateUrlServiceAndroid* template_url_service_android =

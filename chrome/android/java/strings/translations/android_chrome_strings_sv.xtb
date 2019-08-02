@@ -1182,8 +1182,8 @@ tid</translation>
 <translation id="3735228155296883311">Skanna koden från synkroniseringskedjan du skapade på en annan enhet, eller starta en ny synkroniseringskedja.</translation>
 <translation id="7745082336226088126">Skanna eller ange synkroniseringskod</translation>
 <translation id="1602067095281698985">Starta en ny synkroniseringskedja</translation>
-<translation id="4690880825349994619">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj \"Lägg till enhet\" och skanna QR-koden som visas på skärmen.</translation>
-<translation id="6270614677029463366">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj \"Lägg till enhet\" och sedan \"Visa kodord i stället\".</translation>
+<translation id="4690880825349994619">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj "Lägg till enhet" och skanna QR-koden som visas på skärmen.</translation>
+<translation id="6270614677029463366">Öppna Brave på en synkroniserad enhet och gå till Inställningar &gt; Synkronisering. Välj "Lägg till enhet" och sedan "Visa kodord i stället".</translation>
 <translation id="1475223680121592371">Lägg till en mobil enhet</translation>
 <translation id="2965377893636908578">Lägg till en dator</translation>
 <translation id="65315202420929965">Skanna den här synkroniseringskoden</translation>
@@ -1199,7 +1199,7 @@ tid</translation>
 <translation id="6450924769151530465">Lägg till en enhet</translation>
 <translation id="2004365171440701679">Ta bort enheten</translation>
 <translation id="2731921493694251495">Ange synkroniseringskoden</translation>
-<translation id="2590683710114839102">Öppna Brave på datorn och gå till Inställningar &gt; Synkronisering. Välj \"Ange en synkroniseringskod\".</translation>
+<translation id="2590683710114839102">Öppna Brave på datorn och gå till Inställningar &gt; Synkronisering. Välj "Ange en synkroniseringskod".</translation>
 <translation id="1732271215616957850">Ange kodorden ovan, inklusive mellanslag.</translation>
 <translation id="3951555451708119590">Vill du ta bort enheten </translation>
 <translation id="9154490620151093733">Borttagningen har loggats. Enheten tas bort inom kort.</translation>
@@ -1214,4 +1214,6 @@ tid</translation>
 <translation id="8624315169751085215">Kopiera till urklipp</translation>
 <translation id="5241263629636958324">Kopierades till urklipp</translation>
 <translation id="222883304157347087">(den här enheten)</translation>
+<translation id="1178128181015923849">Vill du ta bort enheten <ph name="DEVICE_NAME" />?</translation>
+<translation id="2569646144216067185">Antal ord: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

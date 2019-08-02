@@ -1175,8 +1175,8 @@
 <translation id="3735228155296883311">በቀላሉ በሌላ መሳሪያ ላይ የተፈጠረውን ኮድ ከሲክዎ ላይ ስካን ያድርጉ። ወይም አዲስ የሲንክ ሰንሰለት ይጀምሩ።</translation>
 <translation id="7745082336226088126">ስካን ያድርጉ ወይም አዲስ ኮድ ያስገቡ</translation>
 <translation id="1602067095281698985">አዲስ የሲንክ ሰንሰለት ይጀምሩ</translation>
-<translation id="4690880825349994619">አሁን ያለን የስንክ መሳሪያ መጠቀም፣ የ Brave ቅንብርን ይክፈቱ እና ወደ ቅንብሮች &gt; ሲንክ ይሂዱ ከዚያም \"መሳሪያ ጨምር\" የሚለውን ይምረጡ እና በማያው ላይ ያለውን QR ኮድ ይጨምሩ።</translation>
-<translation id="6270614677029463366">አሁን ያለውን ሲንክ የተደረገ መሳሪያ በመጠቀም የ Brave ቀንብርን ይክፈቱ እና ወደ ቅንብሮች &gt;ሲንክ ይሂዱ ከዚያም \" መሳሪያ ጨምር\" የሚለውን መርጠው \"የኮድ ቃላትን ምረጥ የሚለውን ይምረጡ\"</translation>
+<translation id="4690880825349994619">አሁን ያለን የስንክ መሳሪያ መጠቀም፣ የ Brave ቅንብርን ይክፈቱ እና ወደ ቅንብሮች &gt; ሲንክ ይሂዱ ከዚያም "መሳሪያ ጨምር" የሚለውን ይምረጡ እና በማያው ላይ ያለውን QR ኮድ ይጨምሩ።</translation>
+<translation id="6270614677029463366">አሁን ያለውን ሲንክ የተደረገ መሳሪያ በመጠቀም የ Brave ቀንብርን ይክፈቱ እና ወደ ቅንብሮች &gt;ሲንክ ይሂዱ ከዚያም " መሳሪያ ጨምር" የሚለውን መርጠው "የኮድ ቃላትን ምረጥ የሚለውን ይምረጡ"</translation>
 <translation id="1475223680121592371">የሞባይል መሳሪያን ይጨምሩ</translation>
 <translation id="2965377893636908578">ኮምፒውተር ይጨምሩ</translation>
 <translation id="65315202420929965">ይህንን የሲንክ ኮድ ይጨምሩ</translation>
@@ -1192,7 +1192,7 @@
 <translation id="6450924769151530465">ሌላ መሳሪያ ጨምር</translation>
 <translation id="2004365171440701679">ይህንን መሳሪያ አስወግድ</translation>
 <translation id="2731921493694251495">የሲንክ ሰንሰለት ኮድን አስገባ</translation>
-<translation id="2590683710114839102">በኮምፒውተርዎ ላይ፣ ወደ Brave ቅንብር &gt; ሲንክ ሄደው \"የሲንክ ሰንሰለት ኮድን አስገባ\" የሚለውን ይምረጡ።</translation>
+<translation id="2590683710114839102">በኮምፒውተርዎ ላይ፣ ወደ Brave ቅንብር &gt; ሲንክ ሄደው "የሲንክ ሰንሰለት ኮድን አስገባ" የሚለውን ይምረጡ።</translation>
 <translation id="1732271215616957850">ከላይ ያለውን የቃላት ኮድ ክፍት ቦታዎችን ጨምረው ያስገቡ።</translation>
 <translation id="3951555451708119590">መሳሪያውን ለማጥፋት እንደሚፈልጉ እርግጠኛ ነዎት</translation>
 <translation id="9154490620151093733">እንጠፋ ያቀረቡት ጥያቄ ተላፏል። መሳሪያወ በአጭር ጊዜ ውስጥ ይወገዳል።</translation>
@@ -1207,4 +1207,6 @@
 <translation id="8624315169751085215">ወደ ክሊፕቦርድ ገልብጥ</translation>
 <translation id="5241263629636958324">ወደ ክሊፕቦርድ ተገልብጧል</translation>
 <translation id="222883304157347087">(ይህ መሳሪያ)</translation>
+<translation id="1178128181015923849">መሳሪያውን ለማጥፋት እንደሚፈልጉ እርግጠኛ ነዎት<ph name="DEVICE_NAME" />?</translation>
+<translation id="2569646144216067185">የቃላት ብዛት<ph name="WORD_COUNT" /></translation>
 </translationbundle>

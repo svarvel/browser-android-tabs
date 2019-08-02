@@ -1155,8 +1155,8 @@ Saved</translation>
 <translation id="3735228155296883311">Simply scan the code from your sync chain that you created on another device. Or start a new sync chain.</translation>
 <translation id="7745082336226088126">Scan or enter sync code</translation>
 <translation id="1602067095281698985">Start a new sync chain</translation>
-<translation id="4690880825349994619">Using existing synced device, open Brave Settings and navigate to Settings &gt; Sync. Choose \"Add Device\" and scan the QR Code displayed on the screen.</translation>
-<translation id="6270614677029463366">Using existing synced device, open Brave Settings and navigate to Settings &gt; Sync. Choose \"Add Device\" then \"Display code words instead\".</translation>
+<translation id="4690880825349994619">Using existing synced device, open Brave Settings and navigate to Settings &gt; Sync. Choose "Add Device" and scan the QR Code displayed on the screen.</translation>
+<translation id="6270614677029463366">Using existing synced device, open Brave Settings and navigate to Settings &gt; Sync. Choose "Add Device" then "Display code words instead".</translation>
 <translation id="1475223680121592371">Add a Mobile Device</translation>
 <translation id="2965377893636908578">Add a Computer</translation>
 <translation id="65315202420929965">Scan this sync code</translation>
@@ -1172,7 +1172,7 @@ Saved</translation>
 <translation id="6450924769151530465">Add another device</translation>
 <translation id="2004365171440701679">Remove this device</translation>
 <translation id="2731921493694251495">Enter the sync chain code</translation>
-<translation id="2590683710114839102">On your computer, navigate to Brave Settings &gt; Sync. Choose \"Enter a Sync Chain Code\".</translation>
+<translation id="2590683710114839102">On your computer, navigate to Brave Settings &gt; Sync. Choose "Enter a Sync Chain Code".</translation>
 <translation id="1732271215616957850">Enter the code words above, including spaces.</translation>
 <translation id="3951555451708119590">Are you sure you want to delete device '</translation>
 <translation id="9154490620151093733">Delete request has been sent. Device will be removed shortly.</translation>
@@ -1187,4 +1187,6 @@ Saved</translation>
 <translation id="8624315169751085215">Copy to Clipboard</translation>
 <translation id="5241263629636958324">Copied to Clipboard</translation>
 <translation id="222883304157347087">(this device)</translation>
+<translation id="1178128181015923849">Are you sure you want to delete device '<ph name="DEVICE_NAME" />'?</translation>
+<translation id="2569646144216067185">Word count: <ph name="WORD_COUNT" /></translation>
 </translationbundle>

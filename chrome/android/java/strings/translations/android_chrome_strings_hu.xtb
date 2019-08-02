@@ -1183,8 +1183,8 @@ idő</translation>
 <translation id="3735228155296883311">Csak olvassa be a kódot a szinkronizálási láncból, amelyet az egyik eszközén létrehozott. Vagy kezdjen új szinkronizálási láncot.</translation>
 <translation id="7745082336226088126">Olvassa be vagy adja meg a szinkronizálási kódot</translation>
 <translation id="1602067095281698985">Új szinkronizálási lánc kezdése</translation>
-<translation id="4690880825349994619">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások &gt; Szinkronizálás útvonalat. Válassza az \"Eszköz hozzáadása\" lehetőséget és olvassa be a képernyőn megjelenő QR-kódot.</translation>
-<translation id="6270614677029463366">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások &gt; Szinkronizálás útvonalat. Válassza az \"Eszköz hozzáadása\" lehetőséget és a \"Kód megjelenítése\" lehetőséget.</translation>
+<translation id="4690880825349994619">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások &gt; Szinkronizálás útvonalat. Válassza az "Eszköz hozzáadása" lehetőséget és olvassa be a képernyőn megjelenő QR-kódot.</translation>
+<translation id="6270614677029463366">Már szinkronizált eszköz segítségével nyissa meg a Brave beállításokat és kövesse a Beállítások &gt; Szinkronizálás útvonalat. Válassza az "Eszköz hozzáadása" lehetőséget és a "Kód megjelenítése" lehetőséget.</translation>
 <translation id="1475223680121592371">Mobileszköz hozzáadása</translation>
 <translation id="2965377893636908578">Számítógép hozzáadása</translation>
 <translation id="65315202420929965">Szinkronizációs kód beolvasása</translation>
@@ -1200,7 +1200,7 @@ idő</translation>
 <translation id="6450924769151530465">Másik eszköz hozzáadása</translation>
 <translation id="2004365171440701679">Eszköz eltávolítása</translation>
 <translation id="2731921493694251495">Szinkronizálási lánc kódjának megadása</translation>
-<translation id="2590683710114839102">Számítógépén kövesse a Brave beállítások &gt; Szinkronizálás útvonalat. Válassza a \"Szinkronizálási lánc kódjának megadása\" lehetőséget.</translation>
+<translation id="2590683710114839102">Számítógépén kövesse a Brave beállítások &gt; Szinkronizálás útvonalat. Válassza a "Szinkronizálási lánc kódjának megadása" lehetőséget.</translation>
 <translation id="1732271215616957850">Adja meg a fenti kódszavakat, a szóközökkel együtt.</translation>
 <translation id="3951555451708119590">Biztosan törli '</translation>
 <translation id="9154490620151093733">A törlési kérés elküldve. Az eszközt hamarosan eltávolítjuk.</translation>
@@ -1216,4 +1216,6 @@ idő</translation>
 <translation id="5241263629636958324">Másolva a vágólapra</translation>
 <translation id="222883304157347087">(ez az eszköz)</translation>
 <translation id="7820683005702098135">Brave (béta) Szinkonizálás</translation>
+<translation id="1178128181015923849">Biztosan törli '<ph name="DEVICE_NAME" />' eszközt?</translation>
+<translation id="2569646144216067185">Szószám: <ph name="WORD_COUNT" /></translation>
 </translationbundle>
