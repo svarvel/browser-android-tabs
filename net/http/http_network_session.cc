@@ -265,20 +265,6 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
 
-  // testing http GET 
-	
-size_t writeCallback(char* buf, size_t size, size_t nmemb, void* up)
-{ //callback must have this declaration
-    //buf is a pointer to the data that curl has for us
-    //size*nmemb is the size of the buffer
-
-    for (int c = 0; c<size*nmemb; c++)
-    {
-        data.push_back(buf[c]);
-    }
-    return size*nmemb; //tell curl how many bytes we handled
-}
-
   // here need GET to pick the protocol? 
   //if (params_.enable_http2)
   //  next_protos_.push_back(kProtoHTTP2);
