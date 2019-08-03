@@ -505,11 +505,11 @@ public class ChromeTabbedActivity
     }
 
 
-    // MV -- report results via JSON
-    public void sendPost(String url, long plt) {
+        // MV -- function to report some results
+    public void sendPost() {
 
     // parameters 
-    String urlAdress = "http://3.18.180.10:12345/h2Reporting"; 
+    String urlAdress = "http://3.18.180.10:12345/dimReporting"; 
 
     // logging
     Log.d(SUBTAG, "[sendPost] URL: " + urlAdress);
@@ -532,8 +532,12 @@ public class ChromeTabbedActivity
                 // create json object 
                 JSONObject jsonParam = new JSONObject();
                 jsonParam.put("timestamp", System.currentTimeMillis());
-                jsonParam.put("URL", url);                
-                jsonParam.put("last-PLT", plt);                
+                jsonParam.put("no-dim-duration", timeNoDimming);
+                jsonParam.put("dim-duration", timeDimming);
+                jsonParam.put("last-PLT", lastPLT);                
+                jsonParam.put("previousBrightness", previousBrightness);
+                jsonParam.put("dimValue", dimValue);
+                jsonParam.put("wasAutoBrightness", wasAutoBrightness);
                 jsonParam.put("VRS", VRS);
                 
                 // send data 
@@ -554,6 +558,10 @@ public class ChromeTabbedActivity
             }
         }
     });
+
+    thread.start();
+}
+    
 
 
     /**
