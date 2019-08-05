@@ -219,9 +219,9 @@ public class ChromeTabbedActivity
     }
 
     // [MV] adding variables needed //
-    private static final String SUBTAG = "MATTEO";  // my own TAG
-    private static final String VRS    = "08.2.19"; // my own VRS
-    private long startPLT = -1;                     // page load start
+    private static final String SUBTAG = "MATTEO";     // my own TAG
+    private static final String VRS    = "08.2.19-H2"; // my own VRS
+    private long startPLT = -1;                        // page load start
     // MV //
 
     private static final String TAG = "ChromeTabbedActivity";
