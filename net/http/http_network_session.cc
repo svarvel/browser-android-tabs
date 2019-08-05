@@ -266,8 +266,10 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
 
 
   // here need GET to pick the protocol? 
-  //if (params_.enable_http2)
-  //  next_protos_.push_back(kProtoHTTP2);
+  /*
+  if (params_.enable_http2)
+    next_protos_.push_back(kProtoHTTP2);
+  */
   next_protos_.push_back(kProtoHTTP11);
 
   http_server_properties_->SetMaxServerConfigsStoredInProperties(

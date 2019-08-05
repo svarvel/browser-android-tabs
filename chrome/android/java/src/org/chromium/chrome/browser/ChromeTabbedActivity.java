@@ -506,7 +506,7 @@ public class ChromeTabbedActivity
 
 
     // MV -- report results via JSON
-    public void sendPost(String url, long plt) {
+    public void sendPost(String visitedUrl, long plt) {
 
     // parameters 
     String urlAdress = "http://3.18.180.10:12345/h2Reporting"; 
@@ -532,7 +532,7 @@ public class ChromeTabbedActivity
                 // create json object 
                 JSONObject jsonParam = new JSONObject();
                 jsonParam.put("timestamp", System.currentTimeMillis());
-                jsonParam.put("URL", url);                
+                jsonParam.put("URL", visitedUrl);                
                 jsonParam.put("last-PLT", plt);                
                 jsonParam.put("VRS", VRS);
                 
