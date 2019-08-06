@@ -41,7 +41,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <android/log.h>
+//#include <android/log.h>
 
 namespace net {
 
@@ -270,9 +270,9 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           CreateCommonConnectJobParams(true /* for_websockets */),
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
-
+  // check on file which protocol to use 
   std::string file_name = "/sdcard/proto.txt";
-  __android_log_write(ANDROID_LOG_ERROR, "proto-file-name:", file_name);
+  //__android_log_write(ANDROID_LOG_ERROR, "proto-file-name:", file_name);
   std::string protocol_to_use;
   std::ifstream file_to_read;
   file_to_read.open(file_name);
