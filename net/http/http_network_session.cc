@@ -280,9 +280,8 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   file_to_read.close();
 
   // enable H2 if possible 
+  //if (params_.enable_http2 && protocol_to_use == "H2"){  
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
-  //if (params_.enable_http2 && protocol_to_use == "H2"){
-    std::string::compare()
     next_protos_.push_back(kProtoHTTP2);
   }
   next_protos_.push_back(kProtoHTTP11);
