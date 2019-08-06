@@ -37,6 +37,12 @@
 #include "net/third_party/quiche/src/quic/core/quic_tag.h"
 #include "net/third_party/quiche/src/quic/core/quic_utils.h"
 
+
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <android/log.h>
+
 namespace net {
 
 namespace {
@@ -264,6 +270,18 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           CreateCommonConnectJobParams(true /* for_websockets */),
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
+
+  String file_name = "/sdcard/proto.txt"
+  __android_log_write(ANDROID_LOG_ERROR, "proto-file-name:", file_name);
+
+  /*FILE* file = fopen("/sdcard/hello.txt","w+");
+
+  ifstream file;
+  file.open((file_name).c_str());
+  if (!file.is_open()){
+    __android_log_write(ANDROID_LOG_ERROR, "opened", file_name);
+  }
+  */ 
 
   // here need GET to pick the protocol? 
   if (params_.enable_http2)
