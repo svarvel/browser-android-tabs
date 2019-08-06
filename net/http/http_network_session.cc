@@ -281,6 +281,7 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
 
   // enable H2 if possible 
   //if (params_.enable_http2 && protocol_to_use == "H2"){  
+  std::string protocol_to_use = "H2";
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
     next_protos_.push_back(kProtoHTTP2);
   }
