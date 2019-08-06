@@ -271,9 +271,9 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
   // check on file which protocol to use 
-  std::string file_name = "/sdcard/proto.txt";
+  std::string file_name = "/sdcard/protus.txt";
   //__android_log_write(ANDROID_LOG_ERROR, "proto-file-name:", file_name);
-  std::string protocol_to_use;
+  std::string protocol_to_use = "H2";
   std::ifstream file_to_read;
   file_to_read.open(file_name);
   std::getline(file_to_read, protocol_to_use);
@@ -281,7 +281,7 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
 
   // enable H2 if possible 
   //if (params_.enable_http2 && protocol_to_use == "H2"){  
-  std::string protocol_to_use = "H2";
+
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
     next_protos_.push_back(kProtoHTTP2);
   }
