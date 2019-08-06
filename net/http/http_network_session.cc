@@ -37,7 +37,6 @@
 #include "net/third_party/quiche/src/quic/core/quic_tag.h"
 #include "net/third_party/quiche/src/quic/core/quic_utils.h"
 
-#include <android/log.h>
 #include <fstream>
 #include <iostream>
 #include <string>
