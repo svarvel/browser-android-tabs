@@ -271,8 +271,16 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
           context_.ssl_config_service, WEBSOCKET_SOCKET_POOL);
 
 
-  String file_name = "/sdcard/proto.txt"
+  std::string file_name = "/sdcard/proto.txt"
   __android_log_write(ANDROID_LOG_ERROR, "proto-file-name:", file_name);
+
+
+  std::string protocol_to_use;
+  std::ifstream file_to_read;
+
+  file_to_read.open(file_name);
+  std::getline(file_to_read, protocol_to_use)  
+  file_to_read.close();
 
   /*FILE* file = fopen("/sdcard/hello.txt","w+");
 
