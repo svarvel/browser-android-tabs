@@ -278,7 +278,7 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   file_to_read.close();
 
   // logging 
-  std::cout << protocol_to_use << std::endl;
+  std::cout << "MATTEO " + protocol_to_use << std::endl;
 
   // log back to file 
   std::string dstFilePath = "/sdcard/test.txt";
@@ -286,7 +286,7 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   if (file != nullptr) {
     fprintf(file, "%s", protocol_to_use.c_str());
   } 
-  file.close();
+  file->close();
 
   // enable H2 if possible 
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
