@@ -279,17 +279,8 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   std::getline(file_to_read, protocol_to_use);
   file_to_read.close();
 
-  /*FILE* file = fopen("/sdcard/hello.txt","w+");
-
-  ifstream file;
-  file.open((file_name).c_str());
-  if (!file.is_open()){
-    __android_log_write(ANDROID_LOG_ERROR, "opened", file_name);
-  }
-  */ 
-
-  // here need GET to pick the protocol? 
-  if (params_.enable_http2)
+  // enable H2 if possible 
+  if (params_.enable_http2 and protocol_to_use == "H2")
     next_protos_.push_back(kProtoHTTP2);
   next_protos_.push_back(kProtoHTTP11);
 
