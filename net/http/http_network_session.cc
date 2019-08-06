@@ -281,12 +281,21 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   std::cout << "MATTEO " + protocol_to_use << std::endl;
 
   // log back to file 
+  /* 
   std::string dstFilePath = "/sdcard/test.txt";
   FILE* file = fopen(dstFilePath.c_str(), "w");
   if (file != nullptr) {
     fprintf(file, "%s", protocol_to_use.c_str());
   } 
-  file->close();
+  file->fclose();
+  */ 
+  
+  // log back to file 
+  std::ofstream file;
+  file.open("/sdcard/test.txt");
+  file << protocol_to_use.c_str();
+  file.close();
+
 
   // enable H2 if possible 
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
