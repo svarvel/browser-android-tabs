@@ -277,14 +277,16 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   std::getline(file_to_read, protocol_to_use);
   file_to_read.close();
 
-  // log back to file 
+  // log back to file (to see if read correctly)
+  /* 
   std::ofstream file;
   file.open("/sdcard/test.txt");
   file << protocol_to_use.c_str();
   file.close();
+  */ 
 
   // enable H2 if possible 
-  if (params_.enable_http2 && protocol_to_use.c_str().compare("H2") == 0){
+  if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
     next_protos_.push_back(kProtoHTTP2);
   }
   next_protos_.push_back(kProtoHTTP11);
