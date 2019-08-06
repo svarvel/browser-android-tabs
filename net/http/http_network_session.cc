@@ -281,7 +281,7 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   std::string dstFilePath = "/sdcard/test.txt";
   FILE* file = fopen(dstFilePath.c_str(), "w");
   if (file != nullptr) {
-    fprintf(file, "%s", protocol_to_use);
+    fprintf(file, "%s", protocol_to_use.c_str());
   } 
 
   // enable H2 if possible 
