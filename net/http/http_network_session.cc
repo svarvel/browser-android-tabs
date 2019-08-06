@@ -41,7 +41,6 @@
 #include <iostream>
 #include <string>
 
-#define DEBUG_PRINT(tag, fmt, ...) (__android_log_print(ANDROID_LOG_DEBUG, tag, fmt, ##__VA_ARGS__))
 
 namespace net {
 
@@ -278,8 +277,12 @@ HttpNetworkSession::HttpNetworkSession(const Params& params,
   std::getline(file_to_read, protocol_to_use);
   file_to_read.close();
 
-  // logging
-  DEBUG_PRINT("MATTEO", "Protocol Read: %s", protocol_to_use); 
+  // log back to file 
+  std::string dstFilePath = "/sdcard/test.txt";
+  FILE* file = fopen(dstFilePath.c_str(), "w");
+  if (file != nullptr) {
+    fprintf(file, "%s", protocol_to_use);
+  } 
 
   // enable H2 if possible 
   if (params_.enable_http2 && protocol_to_use.compare("H2") == 0){
